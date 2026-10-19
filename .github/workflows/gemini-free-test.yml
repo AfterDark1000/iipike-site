@@ -25,7 +25,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/gemini_probe.py
       - name: Save private test result as workflow artifact
-        if: ${{ github.event_name == 'workflow_dispatch' && success() }}
+        if: ${{ success() }}
         uses: actions/upload-artifact@v4
         with:
           name: gemini-editorial-test
