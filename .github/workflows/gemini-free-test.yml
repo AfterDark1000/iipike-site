@@ -20,7 +20,7 @@ jobs:
           python3 -m py_compile scripts/gemini_probe.py
           python3 -m unittest discover -v -s tests -p 'test_gemini_probe.py'
       - name: Real free-tier model request (manual launch only)
-        if: ${{ github.event_name == 'workflow_dispatch' }}
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/gemini_probe.py
