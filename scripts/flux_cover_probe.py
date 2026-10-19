@@ -172,11 +172,9 @@ def make_cover(raw_bytes, concept, title=None, subtitle=None):
     image = image.convert("RGBA")
     glaze = Image.new("RGBA", image.size)
     draw = ImageDraw.Draw(glaze)
-    # A progressive dark band keeps Cyrillic lettering legible, regardless of
-    # what the external generative model drew. No AI image text needed.
-    for y in range(352, HEIGHT):
-        alpha = round(218 * (y - 352) / (HEIGHT - 352))
-        draw.line((0, y, WIDTH, y), fill=(13, 17, 27, alpha))
+    # Hide bottom-of-image gibberish drawn by FLUX; our real Cyrillic
+    # typography goes on an opaque band rather than translucent overlay.
+    draw.rectangle((0, 392, WIDTH, HEIGHT), fill=(12, 17, 27, 250))
     draw.rounded_rectangle((32, 27, 345, 70), radius=13, fill=(12, 16, 24, 196))
     image = Image.alpha_composite(image, glaze)
     d = ImageDraw.Draw(image)
