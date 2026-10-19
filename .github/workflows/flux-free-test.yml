@@ -22,13 +22,13 @@ jobs:
           python3 -m py_compile scripts/flux_cover_probe.py
           python3 -m unittest discover -v -s tests -p 'test_flux_cover_probe.py'
       - name: Generate exactly three private cover drafts with Cloudflare FLUX
-        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: python3 scripts/flux_cover_probe.py
       - name: Save generated covers for inspection (not site publication)
-        if: ${{ success() }}
+        if: ${{ github.event_name == 'workflow_dispatch' && success() }}
         uses: actions/upload-artifact@v4
         with:
           name: hpi-flux-three-covers
