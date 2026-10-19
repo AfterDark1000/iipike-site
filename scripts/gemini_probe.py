@@ -12,7 +12,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-MODEL = "gemini-2.5-flash-lite"
+MODEL = "gemini-3.5-flash-lite"
 ENDPOINT = (
     "https://generativelanguage.googleapis.com/v1beta/models/"
     + MODEL + ":generateContent"
