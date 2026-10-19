@@ -1,0 +1,42 @@
+name: Import first saved HPI draft to public preview shelf
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-first-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: hpi-editorial-draft
+  cancel-in-progress: false
+jobs:
+  import-first-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Restore saved first editorial draft without new API calls
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 39235167638
+          name: hpi-editorial-pilot
+          path: _test_output/editorial
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Render first labelled preview on existing HPI site
+        run: |
+          python3 -m py_compile scripts/publish_draft_preview.py
+          python3 scripts/publish_draft_preview.py
+      - name: Commit generated HTML and PNG for GitHub Pages
+        run: |
+          if [ -n "$(git status --porcelain -- drafts/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add drafts/
+            git commit -m "Add first sourced HPI draft preview to site"
+            git pull --rebase origin main
+            git push
+          fi
