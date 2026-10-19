@@ -159,7 +159,9 @@ def generate(account_id, token, prompt):
         raise RuntimeError("Cloudflare network request failed") from None
 
 
-def make_cover(raw_bytes, concept):
+def make_cover(raw_bytes, concept, title=None, subtitle=None):
+    title = (title or TITLE).strip()
+    subtitle = (subtitle or SUBTITLE).strip()
     from PIL import Image, ImageDraw, ImageFont, ImageOps
     with Image.open(io.BytesIO(raw_bytes)) as input_image:
         input_image.load()
@@ -183,12 +185,17 @@ def make_cover(raw_bytes, concept):
     if not Path(font_path).exists() or not Path(font_regular).exists():
         raise RuntimeError("Cyrillic DejaVu fonts not available on GitHub runner")
     font_brand = ImageFont.truetype(font_path, 17)
-    font_title = ImageFont.truetype(font_path, 67)
+    # Shrink to width; news headlines vary from one draft to the next.
+    font_size = 67
+    font_title = ImageFont.truetype(font_path, font_size)
+    while d.textbbox((0, 0), title, font=font_title)[2] > WIDTH - 90 and font_size > 32:
+        font_size -= 2
+        font_title = ImageFont.truetype(font_path, font_size)
     font_subtitle = ImageFont.truetype(font_regular, 27)
     d.text((47, 36), "ХРОНИКИ ПИКИРУЮЩЕГО ИИ", font=font_brand, fill="white")
-    d.text((44, 411), TITLE, font=font_title, fill="white",
+    d.text((44, 411), title, font=font_title, fill="white",
            stroke_width=1, stroke_fill=(14, 18, 28))
-    d.text((47, 502), SUBTITLE, font=font_subtitle, fill="#e6e6e6")
+    d.text((47, 502), subtitle, font=font_subtitle, fill="#e6e6e6")
     return image.convert("RGB")
 
 
