@@ -1,0 +1,37 @@
+name: Test free FLUX covers (no publishing)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/flux_cover_probe.py'
+      - 'tests/test_flux_cover_probe.py'
+      - '.github/workflows/flux-free-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  flux-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install offline image-rendering dependency
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Run safety and format tests without an API key
+        run: |
+          python3 -m py_compile scripts/flux_cover_probe.py
+          python3 -m unittest discover -v -s tests -p 'test_flux_cover_probe.py'
+      - name: Generate exactly three private cover drafts with Cloudflare FLUX
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python3 scripts/flux_cover_probe.py
+      - name: Save generated covers for inspection (not site publication)
+        if: ${{ github.event_name == 'workflow_dispatch' && success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpi-flux-three-covers
+          path: _test_output/flux/
+          if-no-files-found: error
+          retention-days: 7
