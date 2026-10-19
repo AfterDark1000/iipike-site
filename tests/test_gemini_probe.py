@@ -11,8 +11,8 @@ import gemini_probe as probe
 
 class ProbeTests(unittest.TestCase):
     def test_uses_fixed_free_model(self):
-        self.assertEqual(probe.MODEL, "gemini-2.5-flash-lite")
-        self.assertTrue(probe.ENDPOINT.endswith("/gemini-2.5-flash-lite:generateContent"))
+        self.assertEqual(probe.MODEL, "gemini-3.5-flash-lite")
+        self.assertTrue(probe.ENDPOINT.endswith("/gemini-3.5-flash-lite:generateContent"))
 
     def test_public_source_and_schema(self):
         with tempfile.TemporaryDirectory() as t:
