@@ -20,12 +20,12 @@ jobs:
           python3 -m py_compile scripts/gemini_probe.py
           python3 -m unittest discover -v -s tests -p 'test_gemini_probe.py'
       - name: Real free-tier model request (manual launch only)
-        if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' }}
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/gemini_probe.py
       - name: Save private test result as workflow artifact
-        if: ${{ success() }}
+        if: ${{ github.event_name == 'workflow_dispatch' && success() }}
         uses: actions/upload-artifact@v4
         with:
           name: gemini-editorial-test
