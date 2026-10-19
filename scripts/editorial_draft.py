@@ -28,7 +28,7 @@ OUTPUT = ROOT / "_test_output" / "editorial"
 MODEL = "gemini-3.5-flash-lite"
 GEMINI_ENDPOINT = ("https://generativelanguage.googleapis.com/v1beta/models/"
                    + MODEL + ":generateContent")
-MAX_AGE_HOURS = 96
+MAX_AGE_HOURS = 72
 MAX_CANDIDATES = 3
 NOW = dt.timezone.utc
 
