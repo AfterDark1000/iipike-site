@@ -1,4 +1,4 @@
-name: HPI autonomous editorial drafts (NOT PUBLISHED)
+name: HPI autonomous editorial previews (SITE DRAFTS ONLY)
 on:
   workflow_dispatch:
   schedule:
@@ -7,6 +7,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/editorial_draft.py'
+      - 'scripts/publish_draft_preview.py'
       - 'scripts/flux_cover_probe.py'
       - 'tests/test_editorial_draft.py'
       - '.github/workflows/editorial-draft.yml'
@@ -36,6 +37,9 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: python3 scripts/editorial_draft.py
+      - name: Create labelled draft preview pages for existing public site
+        if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && success() }}
+        run: python3 scripts/publish_draft_preview.py
       - name: Keep draft and cover as a temporary GitHub Actions artifact
         if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && success() }}
         uses: actions/upload-artifact@v4
@@ -44,14 +48,14 @@ jobs:
           path: _test_output/editorial/
           if-no-files-found: ignore
           retention-days: 21
-      - name: Save deduplication state only (not drafts or covers)
+      - name: Save previews and deduplication state to GitHub Pages repository
         if: ${{ (github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && success() }}
         run: |
-          if [ -n "$(git status --porcelain -- editorial_state.json)" ]; then
+          if [ -n "$(git status --porcelain -- editorial_state.json drafts/)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add editorial_state.json
-            git commit -m "Record HPI unpublished editorial draft ID [skip ci]"
+            git add editorial_state.json drafts/
+            git commit -m "Save labelled HPI draft preview and source ID [skip ci]"
             git pull --rebase origin main
             git push
           fi
