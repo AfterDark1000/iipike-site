@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 import shutil
 import sys
-from urllib.parse import urlparse
+from editorial_sources import is_official_article
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "_test_output" / "editorial"
@@ -101,9 +101,8 @@ def build(output=OUTPUT, shelf=SHELF):
     if report.get('status') != 'awaiting_human_quality_review':
         raise ValueError('Refusing to display unexpected editorial status')
     source = report['source_url']
-    url = urlparse(source)
-    if url.scheme != 'https' or url.hostname not in {'deepmind.google', 'openai.com', 'blog.google', 'www.blog.google', 'mistral.ai', 'www.mistral.ai'}:
-        raise ValueError('Source must be first-party HTTPS URL')
+    if not is_official_article(source):
+        raise ValueError('Source must be an approved first-party HTTPS article')
     date = report['date']
     if not re.fullmatch(r'20\d\d-\d\d-\d\d', date):
         raise ValueError('Invalid draft date')
