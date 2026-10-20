@@ -5,6 +5,7 @@ NO publishing, social actions, automatic paid fallback, or modification of site 
 One model text request and at most one image request per successful daily run.
 """
 import datetime as dt
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import difflib
 import email.utils
 import hashlib
@@ -21,6 +22,8 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 from flux_cover_probe import generate as flux_generate, make_cover
+from editorial_sources import (SOURCES, ALLOWED_HOSTS, discover_hn, is_official_article,
+                               relevant_headline)
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "editorial_state.json"
@@ -33,16 +36,6 @@ MAX_AGE_HOURS = 72
 MAX_CANDIDATES = 3
 NOW = dt.timezone.utc
 
-# Use ONLY verified first-party domains. Never follow arbitrary links discovered
-# by an LLM, and never allow generated text to select a network endpoint.
-SOURCES = (
-    ("OpenAI", "https://openai.com/news/rss.xml", ("openai.com",)),
-    ("Google DeepMind", "https://deepmind.google/blog/rss.xml", ("deepmind.google",)),
-    ("Google AI", "https://blog.google/innovation-and-ai/technology/ai/rss/",
-     ("blog.google", "www.blog.google")),
-    ("Mistral", "https://mistral.ai/news/rss", ("mistral.ai", "www.mistral.ai")),
-)
-ALLOWED_HOSTS = {h for _, _, hosts in SOURCES for h in hosts}
 STYLE_VARIANTS = (
     "Editorial European conceptual poster with 3-4 strong flat colours and ingenious metaphor.",
     "Expressive hand-painted cinematic illustration, unusual close camera angle and dramatic natural light.",
@@ -55,7 +48,8 @@ STYLE_VARIANTS = (
 def extract_host(url):
     parsed = urllib.parse.urlparse(url)
     host = (parsed.hostname or "").lower()
-    if parsed.scheme != "https" or host not in ALLOWED_HOSTS or parsed.username:
+    if (parsed.scheme != "https" or host not in ALLOWED_HOSTS or parsed.username or
+            parsed.password or parsed.port not in (None, 443)):
         raise ValueError("Unapproved source URL")
     return host
 
@@ -122,6 +116,8 @@ def parse_feed(xml_bytes, source_name, now):
             continue
         try:
             host = extract_host(link)
+            if not is_official_article(link):
+                continue
         except ValueError:
             continue
         published = parse_date(field(item, {"pubdate", "published", "updated", "date"}))
@@ -168,6 +164,8 @@ class ArticleExtractor(HTMLParser):
 
 
 def source_article(url):
+    if not is_official_article(url):
+        raise ValueError("Article is not a verified first-party source")
     raw = get_bytes(url, max_bytes=2_500_000)
     parser = ArticleExtractor()
     parser.feed(raw.decode("utf-8", errors="replace"))
@@ -191,66 +189,120 @@ def similar_title(a, b):
     return len(x & y) / max(1, len(x | y)) > .72
 
 
-def select_candidates(now, state, fetcher=get_bytes, read_article=source_article):
-    published_urls = {x.get("source_url", "").rstrip("/") for x in
-                      json.loads((ROOT / "news.json").read_text(encoding="utf-8"))}
-    prior_titles = [x.get("title", "") for x in
-                    json.loads((ROOT / "news.json").read_text(encoding="utf-8"))]
+def select_candidates(now, state, fetcher=get_bytes, read_article=source_article,
+                      discovery=None):
+    # The regular-site archive is not the Dzen archive; this only deduplicates
+    # site articles and already prepared autonomous drafts.
+    site_rows = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+    published_urls = {x.get("source_url", "").rstrip("/") for x in site_rows}
+    prior_titles = [x.get("title", "") for x in site_rows]
     prior_titles.extend(row.get("source_title", "") for row in state.get("drafted", []))
     already = {row["id"] for row in state.get("drafted", [])}
     found = []
-    feed_ok = 0
-    for publisher, rss_url, _ in SOURCES:
+    stats = {"feeds_configured": len(SOURCES), "feeds_readable": 0,
+             "feed_candidates": 0, "discoveries": 0, "validated": 0}
+
+    # Parallel requests keep 22+ feeds from becoming a 10-minute serial job.
+    def scan_feed(source):
+        publisher, rss_url, _ = source
         try:
             rows = parse_feed(fetcher(rss_url), publisher, now)
-            feed_ok += 1
-            found.extend(rows)
-            print(f"RSS {publisher}: {len(rows)} recent items", flush=True)
-        except (ValueError, ET.ParseError, urllib.error.URLError, RuntimeError) as error:
-            print(f"RSS {publisher}: unavailable ({type(error).__name__})", flush=True)
-    if feed_ok == 0:
-        raise RuntimeError("All official RSS feeds unavailable, no draft made")
+            if publisher in {"Microsoft", "NVIDIA", "NVIDIA Developers",
+                             "Amazon AWS ML", "Cloudflare", "Google Developers",
+                             "Google Research"}:
+                rows = [r for r in rows if relevant_headline(r["headline"])]
+            return publisher, rows, None
+        except (ValueError, ET.ParseError, urllib.error.URLError, RuntimeError,
+                TimeoutError) as error:
+            return publisher, [], type(error).__name__
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = [pool.submit(scan_feed, source) for source in SOURCES]
+        for result in as_completed(futures):
+            publisher, rows, error = result.result()
+            if error:
+                print(f"RSS {publisher}: unavailable ({error})", flush=True)
+            else:
+                stats["feeds_readable"] += 1
+                stats["feed_candidates"] += len(rows)
+                found.extend(rows)
+                print(f"RSS {publisher}: {len(rows)} relevant fresh items", flush=True)
+
+    if discovery is None:
+        # In unit tests, an injected fetcher should not unexpectedly hit HN.
+        discovery = discover_hn if fetcher is get_bytes else lambda _, **__: []
+    try:
+        external = discovery(now, max_age_hours=MAX_AGE_HOURS)
+    except (RuntimeError, ValueError, urllib.error.URLError) as error:
+        print("HN discovery unavailable:", type(error).__name__, flush=True)
+        external = []
+    for item in external:
+        url = item["url"]
+        if not is_official_article(url):
+            continue
+        found.append({
+            "id": hashlib.sha256(url.encode()).hexdigest()[:20],
+            "publisher": urllib.parse.urlparse(url).hostname,
+            "headline": item["headline"], "url": url,
+            "published": item["discovered_at"],
+            "date_kind": "discovered_at", "host": urllib.parse.urlparse(url).hostname,
+            "summary": "",
+        })
+        stats["discoveries"] += 1
+    print("Editorial source scan: " + json.dumps(stats, ensure_ascii=False), flush=True)
+    if not found and stats["feeds_readable"] == 0:
+        raise RuntimeError("No accessible official RSS and no verified-source discoveries")
+
     unique = {}
     for row in found:
         if row["id"] in already or row["url"].rstrip("/") in published_urls:
             continue
         if any(similar_title(row["headline"], x) for x in prior_titles):
             continue
-        unique[row["url"]] = row
+        url = row["url"].split("#", 1)[0]
+        if url not in unique or (
+            row.get("date_kind") != "discovered_at" and
+            unique[url].get("date_kind") == "discovered_at"
+        ):
+            unique[url] = row
     sorted_rows = sorted(unique.values(), key=lambda x: x["published"], reverse=True)
-    # One source should not fill the whole shortlist.
-    balanced = []
-    used_publishers = set()
+
+    # Rank cross-vendor news before many near-identical cloud tutorials.
+    balanced, publishers = [], set()
     for item in sorted_rows:
-        if item["publisher"] not in used_publishers:
+        if item["publisher"] not in publishers:
             balanced.append(item)
-            used_publishers.add(item["publisher"])
+            publishers.add(item["publisher"])
     for item in sorted_rows:
         if item not in balanced:
             balanced.append(item)
+
     validated = []
-    for row in balanced[:8]:
+    for row in balanced[:24]:
         try:
             source_text = read_article(row["url"])
             if len(source_text) < 600:
-                print("Source text too short:", row["publisher"], row["url"],
-                      "readable characters:", len(source_text), flush=True)
+                print("Article too short:", row["publisher"], row["url"],
+                      "characters:", len(source_text), flush=True)
                 continue
             validated.append({**row, "source_text": source_text})
-            print("Source validated: " + row["publisher"] + " / " + row["id"], flush=True)
-        except (ValueError, RuntimeError, urllib.error.URLError) as error:
+            print("Source validated:", row["publisher"], row["url"], flush=True)
+        except (ValueError, RuntimeError, urllib.error.URLError, TimeoutError) as error:
             code = (" HTTP " + str(error.code)) if isinstance(error, urllib.error.HTTPError) else ""
             print("Skipping unreadable source:", row["publisher"], row["url"],
                   type(error).__name__ + code, flush=True)
         if len(validated) >= MAX_CANDIDATES:
             break
+    print(f"Editorial candidates: {len(sorted_rows)} distinct, "
+          f"{len(validated)} fully readable primary sources.", flush=True)
     return validated
-
 
 def gemini_payload(candidates):
     briefing = [{
         "id": c["id"], "title": c["headline"], "publisher": c["publisher"],
-        "source_url": c["url"], "source_published_utc": c["published"],
+        "source_url": c["url"],
+        "source_published_utc": (c["published"] if c.get("date_kind") != "discovered_at" else None),
+        "first_discovered_utc": c["published"],
         "official_source_text": c["source_text"],
     } for c in candidates]
     text = (
@@ -431,6 +483,7 @@ def main():
         "source_url": chosen["url"],
         "source_name": chosen["publisher"],
         "source_date": chosen["published"],
+        "source_date_kind": chosen.get("date_kind", "source_feed"),
         "source_title": chosen["headline"],
         "evidence_matched_verbatim": True,
         "note": "This does not independently verify article accuracy; review before publishing.",
