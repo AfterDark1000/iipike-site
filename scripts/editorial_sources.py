@@ -7,6 +7,7 @@ No paid APIs, scraping services, model calls, or social publishing.
 """
 import datetime as dt
 import json
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -106,7 +107,10 @@ def is_official_article(url):
     host = (parsed.hostname or "").lower()
     if parsed.scheme != "https" or host not in PRIMARY_HOSTS:
         return False
-    if parsed.username or parsed.password or parsed.port not in (None, 443):
+    try:
+        if parsed.username or parsed.password or parsed.port not in (None, 443):
+            return False
+    except ValueError:
         return False
     if host == "github.com":
         parts = [x.casefold() for x in parsed.path.split("/") if x]
@@ -121,7 +125,9 @@ def is_official_article(url):
 
 def relevant_headline(title):
     s = (title or "").lower()
-    return any(term in s for term in RELEVANCE_TERMS)
+    # Short abbreviations require word boundaries ("ai" must not match "paid").
+    return any(bool(re.search(r"\b" + re.escape(term) + r"\b", s))
+               if len(term) <= 3 else term in s for term in RELEVANCE_TERMS)
 
 
 def discover_hn(now, *, request_json=None, max_age_hours=72):
