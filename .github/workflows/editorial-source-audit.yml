@@ -1,0 +1,17 @@
+name: Audit multi-vendor AI news sources (no paid API)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/editorial-source-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify primary source feeds and HN discovery (no AI generation)
+        run: python3 scripts/editorial_source_audit.py
