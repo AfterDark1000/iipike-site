@@ -31,9 +31,10 @@ SOURCES = (
     ("Amazon AWS ML", "https://aws.amazon.com/blogs/machine-learning/feed/", ("aws.amazon.com",)),
     ("Hugging Face", "https://huggingface.co/blog/feed.xml", ("huggingface.co",)),
     ("Cloudflare", "https://blog.cloudflare.com/rss/", ("blog.cloudflare.com",)),
-    ("LangChain", "https://blog.langchain.dev/rss/", ("blog.langchain.dev",)),
-    ("Anthropic (experimental)", "https://www.anthropic.com/news/rss.xml",
-     ("www.anthropic.com", "anthropic.com")),
+    ("LangChain releases", "https://github.com/langchain-ai/langchain/releases.atom",
+     ("github.com",)),
+    ("Anthropic Claude Code releases", "https://github.com/anthropics/claude-code/releases.atom",
+     ("github.com",)),
     ("Ollama releases", "https://github.com/ollama/ollama/releases.atom", ("github.com",)),
     ("ComfyUI releases", "https://github.com/comfyanonymous/ComfyUI/releases.atom", ("github.com",)),
     ("Transformers releases", "https://github.com/huggingface/transformers/releases.atom", ("github.com",)),
@@ -89,6 +90,7 @@ GITHUB_PROJECTS = {
     ("huggingface", "transformers"), ("vllm-project", "vllm"),
     ("openai", "codex"), ("google-gemini", "gemini-cli"),
     ("ggml-org", "llama.cpp"), ("langchain-ai", "langchain"),
+    ("anthropics", "claude-code"),
 }
 
 SEARCH_QUERIES = ("AI model", "Claude Gemini GPT", "AI video", "AI voice", "open source LLM")
