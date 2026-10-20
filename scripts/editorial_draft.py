@@ -230,11 +230,15 @@ def select_candidates(now, state, fetcher=get_bytes, read_article=source_article
         try:
             source_text = read_article(row["url"])
             if len(source_text) < 600:
+                print("Source text too short:", row["publisher"], row["url"],
+                      "readable characters:", len(source_text), flush=True)
                 continue
             validated.append({**row, "source_text": source_text})
             print("Source validated: " + row["publisher"] + " / " + row["id"], flush=True)
         except (ValueError, RuntimeError, urllib.error.URLError) as error:
-            print("Skipping unreadable source: " + row["id"], flush=True)
+            code = (" HTTP " + str(error.code)) if isinstance(error, urllib.error.HTTPError) else ""
+            print("Skipping unreadable source:", row["publisher"], row["url"],
+                  type(error).__name__ + code, flush=True)
         if len(validated) >= MAX_CANDIDATES:
             break
     return validated
