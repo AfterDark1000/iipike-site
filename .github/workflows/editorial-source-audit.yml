@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/editorial-source-audit.yml'
+      - 'scripts/editorial_sources.py'
+      - 'scripts/editorial_source_audit.py'
   workflow_dispatch:
 permissions:
   contents: read
