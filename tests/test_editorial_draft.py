@@ -102,6 +102,37 @@ class EditorialTests(unittest.TestCase):
                 self.assertEqual(ed.select_candidates(NOW, state, fetcher=fetch,
                     read_article=lambda _: "Official factual statement. " * 40), [])
 
+    def test_editorial_archive_blocks_previous_official_source(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "news.json").write_text("[]", encoding="utf-8")
+            data = (f"<rss><channel><item><title>Same announcement repackaged</title>"
+                    f"<link>{GOOD_URL}</link>"
+                    "<pubDate>Mon, 19 Oct 2026 08:00:00 GMT</pubDate>"
+                    "</item></channel></rss>").encode("utf-8")
+            def fetch(_):
+                return data
+            archive = [{"title": "В Дзене уже рассказывали про новый запуск",
+                        "source_url": GOOD_URL, "status": "published",
+                        "excerpt": ""}]
+            with patch.object(ed, "ROOT", root):
+                found = ed.select_candidates(NOW, {"drafted": []}, fetcher=fetch,
+                                             discovery=lambda *a, **kw: [],
+                                             read_article=lambda _: "Source article " * 90,
+                                             archive_entries=archive)
+            self.assertEqual(found, [])
+
+    def test_archive_headlines_are_provided_for_semantic_comparison(self):
+        data = ed.gemini_payload([{
+            "id": "test", "publisher": "Google", "headline": "New AI model",
+            "url": GOOD_URL, "published": NOW.isoformat(),
+            "source_text": "Official source details " * 35
+        }], [{"title": "ИИ-модель уже вышла", "status": "published",
+              "excerpt": "Обзор запуска"}])
+        prompt = data["contents"][0]["parts"][0]["text"]
+        self.assertIn("ИИ-модель уже вышла", prompt)
+        self.assertIn("сверь КАЖДОГО кандидата".casefold()[:10], prompt.casefold())
+
     def test_no_paid_or_publishing_endpoints(self):
         self.assertEqual(ed.MODEL, "gemini-3.5-flash-lite")
         payload = ed.gemini_payload([{
