@@ -6,6 +6,12 @@
       "utc_date": "2026-10-19",
       "source_url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
       "source_title": "Accelerating the search for antimicrobial peptides with Google Antigravity"
+    },
+    {
+      "id": "e0adeca3ba3bda075ff5",
+      "utc_date": "2026-10-20",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/",
+      "source_title": "Developers can now access SageMaker Studio through the new AWS experience"
     }
   ]
 }

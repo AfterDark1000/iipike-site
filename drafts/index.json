@@ -1,5 +1,12 @@
 [
   {
+    "id": "e0adeca3ba3bda075ff5",
+    "date": "2026-10-20",
+    "title": "AWS упрощает жизнь разработчикам: войти в SageMaker Studio теперь можно без банковской карты и бюрократии",
+    "source_name": "Amazon AWS AI",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/"
+  },
+  {
     "id": "ad09b0946a60b7ff505a",
     "date": "2026-10-19",
     "title": "В поисках лекарств от супербактерий: как Google Antigravity помогает биологам",
