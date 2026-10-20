@@ -1,0 +1,28 @@
+name: Verify editorial archive deduplication link
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/editorial-archive-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read the real crosspost archive and check records
+        run: |
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, "scripts")
+          import editorial_draft
+          entries = editorial_draft.read_editorial_archive()
+          pub = sum(x["status"] == "published" for x in entries)
+          covers = sum(x["status"] == "cover_ready" for x in entries)
+          print("HPI canonical archive reachable: published", pub, "cover_ready", covers)
+          if pub < 1:
+              raise SystemExit("Archive has no published titles")
+          PY
