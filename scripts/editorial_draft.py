@@ -24,6 +24,7 @@ from flux_cover_probe import generate as flux_generate, make_cover
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "editorial_state.json"
+STATUS = ROOT / "editorial_status.json"
 OUTPUT = ROOT / "_test_output" / "editorial"
 MODEL = "gemini-3.5-flash-lite"
 GEMINI_ENDPOINT = ("https://generativelanguage.googleapis.com/v1beta/models/"
@@ -375,19 +376,33 @@ def make_draft_markdown(draft, selected, now):
             + "\n".join("- " + q for q in draft["evidence"]) + "\n")
 
 
+def write_status(today, code, message):
+    """Public operational status only; contains no tokens or unpublished content."""
+    payload = {
+        "checked_at_utc": today.isoformat(timespec="seconds"),
+        "status": code,
+        "message": message,
+    }
+    STATUS.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+                      encoding="utf-8")
+
+
 def main():
     today = dt.datetime.now(NOW)
     state = load_state()
     if any(r.get("utc_date") == today.date().isoformat() for r in state["drafted"]):
+        write_status(today, "already", "Черновик на сегодня уже подготовлен.")
         print("Already prepared today's draft; skipping API calls.", flush=True)
         return
     candidates = select_candidates(today, state)
     if not candidates:
+        write_status(today, "no_source", "Свежих источников с доступным проверяемым текстом не нашлось.")
         print("No adequately sourced fresh news today; no draft. This is normal.", flush=True)
         return
     draft = ask_gemini(os.environ.get("GEMINI_API_KEY", "").strip(), candidates)
     chosen = validate_draft(draft, candidates)
     if chosen is None:
+        write_status(today, "rejected", "Редакторская модель отклонила найденные новости: черновик не создан.")
         print("Gemini rejected today's shortlist; no draft.", flush=True)
         return
     account = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
@@ -430,6 +445,7 @@ def main():
     })
     STATE.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n",
                      encoding="utf-8")
+    write_status(today, "created", "Новый черновик и обложка подготовлены.")
     print("SUCCESS: one sourced draft and cover ready for editorial review.", flush=True)
     print("No website, Dzen, Telegram, VK or Meta publication performed.", flush=True)
 
