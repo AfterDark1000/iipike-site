@@ -125,7 +125,7 @@ def build(output=OUTPUT, shelf=SHELF):
 <div class="draft-note"><strong>⚠ Автоматический черновик — не проверен редактором</strong><p>Этот текст и иллюстрация созданы автоматически. В статье могут быть неточности; это не опубликованная редакционная новость.</p></div>
 <figure class="draft-cover"><img src="cover.png" width="1024" height="576" alt="Автоматически созданная иллюстрация"><figcaption class="caption">Тестовая иллюстрация ИИ · качество не подтверждено</figcaption></figure>
 <div class="draft-reading">{body_text}
-<div class="draft-source"><strong>Первоисточник:</strong> {esc(source_name)} — <a href="{esc(source)}" rel="nofollow noopener noreferrer">{esc(source)}</a><p>Дата первоисточника: {esc(report['source_date'][:10])}. Дата черновика: {esc(date)}.</p></div></div>
+<div class="draft-source"><strong>Первоисточник:</strong> {esc(source_name)} — <a href="{esc(source)}" rel="nofollow noopener noreferrer">{esc(source)}</a><p>{'Дата обнаружения через Hacker News (не дата первоисточника)' if report.get('source_date_kind') == 'discovered_at' else 'Дата объявления в RSS'}: {esc(report['source_date'][:10])}. Дата черновика: {esc(date)}.</p></div></div>
 <p style="margin-bottom:60px"><a class="button" href="../">← Все авточерновики</a></p>'''
     (article_dir / 'index.html').write_text(shell(headline, page_body, '../../', headline), encoding='utf-8')
     current = {'id': draft_id, 'date': date, 'title': headline,
