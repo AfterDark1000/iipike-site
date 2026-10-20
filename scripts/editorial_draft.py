@@ -62,8 +62,10 @@ def extract_host(url):
 def get_bytes(url, max_bytes=1_600_000):
     extract_host(url)
     req = urllib.request.Request(url, headers={
-        "User-Agent": "HPI-Editorial-Pilot/0.1 (+https://afterdark1000.github.io/iipike-site/)",
-        "Accept": "application/rss+xml, application/atom+xml, text/html, application/xml, */*",
+        "User-Agent": ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
     })
     with urllib.request.urlopen(req, timeout=18) as response:
         extract_host(response.geturl())
