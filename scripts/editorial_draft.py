@@ -423,7 +423,10 @@ def make_draft_markdown(draft, selected, now):
             f"*Черновик, НЕ ПУБЛИКОВАТЬ без проверки. Создан {now.date()}.*\n\n"
             + draft["article"].strip() + "\n\n"
             + "**Первоисточник:** " + selected["publisher"] + " — " + selected["url"]
-            + "\n**Дата объявления в RSS:** " + selected["published"][:10] + "\n"
+            + ("\n**Дата обнаружения через Hacker News (дата новости не установлена):** "
+               if selected.get("date_kind") == "discovered_at"
+               else "\n**Дата объявления в RSS:** ")
+            + selected["published"][:10] + "\n"
             + "\n**Фрагменты первоисточника для редакционной проверки:**\n"
             + "\n".join("- " + q for q in draft["evidence"]) + "\n")
 
