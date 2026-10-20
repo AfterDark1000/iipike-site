@@ -265,7 +265,12 @@ def select_candidates(now, state, fetcher=get_bytes, read_article=source_article
             unique[url].get("date_kind") == "discovered_at"
         ):
             unique[url] = row
-    sorted_rows = sorted(unique.values(), key=lambda x: x["published"], reverse=True)
+    # Prefer meaningful vendor announcements before rapid patch-version feeds.
+    # GitHub releases remain eligible when major launches happen there.
+    sorted_rows = sorted(unique.values(),
+                         key=lambda x: (not x["url"].startswith("https://github.com/"),
+                                        x["published"]),
+                         reverse=True)
 
     # Rank cross-vendor news before many near-identical cloud tutorials.
     balanced, publishers = [], set()
@@ -314,6 +319,11 @@ def gemini_payload(candidates):
         "приведённые полные или частичные тексты официальных источников. "
         "Проверяй только утверждения, прямо подтверждённые выбранным текстом. "
         "Не добавляй выдуманные цены, даты, цитаты, статистику, прогнозы и сравнения. "
+        "Приоритет: существенные запуски моделей, функции для людей, генерация видео/графики/голоса, "
+        "цены, доступность, изменения правил, серьёзные инциденты. "
+        "Не выбирай рутинный патч, инструкцию по настройке или маркетинговую заметку, "
+        "если нет действительно значимого изменения. "
+        "Избегай штампов «представьте», «не X, а Y» и рекламной интонации. "
         "Если данных мало, use=false. Если новость выбрана, напиши самостоятельный "
         "заголовок и живую, спокойную журналистскую статью на русском (1200–2500 знаков), "
         "с ясными подробностями и чуть заметной иронией, без рекламы и сенсационной лжи. "
