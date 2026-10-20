@@ -11,9 +11,11 @@ on:
     branches: [main]
     paths:
       - 'scripts/editorial_draft.py'
+      - 'scripts/editorial_sources.py'
       - 'scripts/publish_draft_preview.py'
       - 'scripts/flux_cover_probe.py'
       - 'tests/test_editorial_draft.py'
+      - 'tests/test_editorial_sources.py'
       - '.github/workflows/editorial-draft.yml'
 permissions:
   contents: write
@@ -32,8 +34,8 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check pillow
       - name: Check code and editorial safeguards offline
         run: |
-          python3 -m py_compile scripts/editorial_draft.py
-          python3 -m unittest discover -v -s tests -p 'test_editorial_draft.py'
+          python3 -m py_compile scripts/editorial_draft.py scripts/editorial_sources.py
+          python3 -m unittest discover -v -s tests -p 'test_editorial*.py'
       - name: Prepare one sourced news draft and one FLUX cover (never publish)
         if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || (github.event_name == 'push' && github.event.head_commit.message == 'Start missed daily draft after schedule fix') }}
         env:
