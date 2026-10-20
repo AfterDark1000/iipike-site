@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Publish labelled AI draft previews on GitHub Pages; never touch news.json or RSS."""
+import datetime as dt
 import hashlib
 import html
 import json
@@ -57,10 +58,42 @@ def parse_markdown(raw):
     return headline, paras
 
 
+def status_note():
+    status_path = ROOT / "editorial_status.json"
+    if not status_path.is_file():
+        return ""
+    try:
+        info = json.loads(status_path.read_text(encoding="utf-8"))
+        stamp = dt.datetime.fromisoformat(info["checked_at_utc"])
+        local = stamp.astimezone(dt.timezone(dt.timedelta(hours=5)))
+        note = str(info.get("message", ""))[:250]
+    except (OSError, ValueError, TypeError, KeyError, OverflowError):
+        return ""
+    return (f'<p id="editorial-last-check" style="font-size:15px;margin:18px 0 28px">'
+            f'<strong>Последняя проверка:</strong> {esc(local.strftime("%d.%m.%Y, %H:%M"))} '
+            f'(UTC+5). {esc(note)}</p>')
+
+
+def update_existing_index(shelf):
+    listing = shelf / "index.html"
+    if not listing.is_file():
+        return
+    body = listing.read_text(encoding="utf-8")
+    body = re.sub(r'<p id="editorial-last-check"[^>]*>.*?</p>', '', body,
+                  flags=re.DOTALL)
+    headline = '<h1>Авточерновики</h1>'
+    if headline not in body:
+        raise RuntimeError("Draft index markup changed; cannot add check status")
+    body = body.replace(headline, headline + status_note(), 1)
+    listing.write_text(body, encoding="utf-8")
+    print("Website last-check status updated.")
+
+
 def build(output=OUTPUT, shelf=SHELF):
     required = [output / x for x in ('draft.md', 'cover.png', 'report.json')]
     if not any(p.exists() for p in required):
-        print('No new draft: website preview unchanged.')
+        print('No new draft: keeping existing previews.')
+        update_existing_index(shelf)
         return False
     if not all(p.is_file() and p.stat().st_size for p in required):
         raise RuntimeError('Partial draft package; cannot update preview')
@@ -107,7 +140,7 @@ def build(output=OUTPUT, shelf=SHELF):
         for row in rows)
     listing = f'''
 <div class="overline"><span>ХПИИ / Лаборатория</span><b>Тестовые выпуски ({len(rows)})</b></div>
-<h1>Авточерновики</h1><p class="summary">Здесь можно смотреть, что самостоятельно создаёт наша новостная система: новости, статьи, обложки, первоисточники. Никаких архивов ZIP.</p>
+<h1>Авточерновики</h1>{status_note()}<p class="summary">Здесь можно смотреть, что самостоятельно создаёт наша новостная система: новости, статьи, обложки, первоисточники. Никаких архивов ZIP.</p>
 <div class="draft-note"><strong>Это не обычная новостная лента</strong><p>Каждый материал сделан программой без окончательной редакторской проверки. Ошибки возможны. В соцсети эти тексты не отправляются.</p></div>
 <section class="archive" style="margin-top:45px"><h2>Готовые тестовые выпуски</h2>{cards}</section>'''
     (shelf / 'index.html').write_text(shell('Авточерновики', listing, '../', 'Автоматические тестовые выпуски ХПИИ'), encoding='utf-8')
