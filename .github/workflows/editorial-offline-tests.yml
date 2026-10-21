@@ -1,0 +1,39 @@
+name: HPI editorial offline safety (NO PUBLICATION)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/editorial_draft.py'
+      - 'scripts/editorial_sources.py'
+      - 'scripts/publish_draft_preview.py'
+      - 'scripts/flux_cover_probe.py'
+      - 'tests/test_editorial_draft.py'
+      - 'tests/test_editorial_sources.py'
+      - '.github/workflows/editorial-draft.yml'
+      - '.github/workflows/editorial-offline-tests.yml'
+permissions:
+  contents: read
+jobs:
+  no-network-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install offline test dependencies
+        run: python3 -m pip install --disable-pip-version-check pillow pyyaml
+      - name: Compile editorial code
+        run: python3 -m compileall -q scripts tests
+      - name: Test editor and preview safeguards (no network / no secrets)
+        run: python3 -m unittest discover -v -s tests -p 'test_editorial*.py'
+      - name: Validate cron and workflow YAML
+        run: |
+          python3 - <<'PY'
+          import yaml
+          from pathlib import Path
+          workflow = yaml.load(Path('.github/workflows/editorial-draft.yml').read_text(), Loader=yaml.BaseLoader)
+          assert len(workflow['on']['schedule']) >= 6
+          assert 'workflow_dispatch' in workflow['on']
+          assert 'contents' in workflow['permissions']
+          assert workflow['concurrency']['cancel-in-progress'] == 'false'
+          print('Workflow YAML and backup cron validated')
+          PY
