@@ -9,6 +9,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import editorial_draft as ed
+import publish_draft_preview as preview
 
 UTC = dt.timezone.utc
 NOW = dt.datetime(2026, 10, 19, 12, 0, tzinfo=UTC)
@@ -41,6 +42,66 @@ class EditorialTests(unittest.TestCase):
         <entry><title>Model shipped</title><link href="{GOOD_URL}"/>
         <updated>2026-10-19T07:30:00Z</updated></entry></feed>""".encode()
         self.assertEqual(len(ed.parse_feed(atom, "Google DeepMind", NOW)), 1)
+
+    def preview_package(self, root, url):
+        output = root / "editorial"
+        output.mkdir()
+        (output / "cover.png").write_bytes(b"offline cover fixture")
+        (output / "draft.md").write_text(
+            "# Проверка источника черновика\n\n"
+            "*Черновик, НЕ ПУБЛИКОВАТЬ без проверки.*\n\n"
+            "Тестовый текст для локального превью.\n\n"
+            "**Первоисточник:** " + url, encoding="utf-8")
+        (output / "report.json").write_text(json.dumps({
+            "status": "awaiting_human_quality_review", "date": "2026-10-19",
+            "source_url": url, "source_name": "Offline fixture",
+            "source_date": "2026-10-19T08:00:00+00:00",
+        }), encoding="utf-8")
+        return output
+
+    def test_preview_accepts_scanned_aws_and_nvidia_sources(self):
+        for url in (
+            "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/",
+            "https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/",
+            "https://blogs.nvidia.com/blog/germany-wants-to-lead-the-world-in-industrial-ai-how-nvidia-will-help/",
+        ):
+            with self.subTest(url=url), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                rss = (f"<rss><channel><item><title>New AI release</title><link>{url}</link>"
+                       "<pubDate>Mon, 19 Oct 2026 08:00:00 GMT</pubDate>"
+                       "</item></channel></rss>").encode()
+                selected, = ed.parse_feed(rss, "Offline fixture", NOW)
+                output = self.preview_package(root, selected["url"])
+                shelf = root / "drafts"
+                with patch.object(preview, "ROOT", root):
+                    self.assertTrue(preview.build(output, shelf))
+                    self.assertTrue(preview.build(output, shelf))
+                rows = json.loads((shelf / "index.json").read_text(encoding="utf-8"))
+                self.assertEqual([row["id"] for row in rows], [selected["id"]])
+                self.assertEqual(rows[0]["source_url"], url)
+                page = (shelf / selected["id"] / "index.html").read_text(encoding="utf-8")
+                self.assertIn('href="' + url + '"', page)
+                self.assertIn("noindex, nofollow", page)
+                self.assertIn("Автоматический черновик", page)
+                self.assertEqual((shelf / selected["id"] / "cover.png").read_bytes(),
+                                 b"offline cover fixture")
+
+    def test_preview_rejects_unapproved_sources_before_writing(self):
+        for url in (
+            "http://aws.amazon.com/blogs/machine-learning/test/",
+            "https://aws.amazon.com.evil.example/blogs/test/",
+            "https://user:secret@aws.amazon.com/blogs/test/",
+            "https://aws.amazon.com:8000/blogs/test/",
+            "https://github.com/random-user/project/releases/tag/v1",
+        ):
+            with self.subTest(url=url), tempfile.TemporaryDirectory() as temp:
+                root = Path(temp)
+                output = self.preview_package(root, url)
+                shelf = root / "drafts"
+                with patch.object(preview, "ROOT", root):
+                    with self.assertRaisesRegex(ValueError, "Source must be"):
+                        preview.build(output, shelf)
+                self.assertFalse(shelf.exists())
 
     def test_article_parser_skips_script_and_nav(self):
         parser = ed.ArticleExtractor()
