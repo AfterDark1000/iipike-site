@@ -16,11 +16,11 @@
 .home-strip>span{display:flex;align-items:center;gap:10px}
 .home-strip-right{color:var(--muted);text-align:right}
 .home-signal{display:inline-block;height:8px;width:8px;flex:none;background:var(--red);border-radius:50%;box-shadow:0 0 0 3px rgba(229,71,49,.15)}
-.home-intro{padding:63px 0 84px;display:grid;grid-template-columns:minmax(0,1.53fr) minmax(260px,.7fr);gap:clamp(40px,6vw,100px);align-items:center}
+.home-intro{padding:45px 0 60px;display:grid;grid-template-columns:minmax(0,1.53fr) minmax(260px,.7fr);gap:clamp(40px,6vw,100px);align-items:center}
 .home-eyebrow,.home-section-index{display:block;font-size:11px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
 .home-eyebrow{color:var(--red);margin:0 0 18px;display:flex;gap:10px;align-items:center}
 .home-asterisk{font-size:24px;line-height:1}
-.home-intro h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,5.7vw,81px);line-height:1.07;letter-spacing:-.065em;margin:0 0 26px;max-width:900px}
+.home-intro h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(48px,5.1vw,74px);line-height:1.07;letter-spacing:-.065em;margin:0 0 26px;max-width:900px}
 .home-intro h1 em{font-style:italic;font-weight:400}
 .home-intro h1 span{color:var(--red);font-style:italic}
 .home-deck{font-size:clamp(17px,1.7vw,20px);line-height:1.65;max-width:640px;color:#494c4d;margin:0 0 25px}
@@ -31,7 +31,7 @@
 .home-action-primary:hover{background:var(--red);color:white}
 .home-action-quiet{border:1px solid var(--ink);color:var(--ink)}
 .home-action-quiet:hover{background:#e7dfd5;color:var(--ink)}
-.home-stamp{min-height:397px;background:var(--red);color:#18191a;box-shadow:14px 14px 0 #e9e0d2;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transform:rotate(1.7deg);padding:23px 25px}
+.home-stamp{min-height:367px;background:var(--red);color:#18191a;box-shadow:14px 14px 0 #e9e0d2;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transform:rotate(1.7deg);padding:23px 25px}
 .home-stamp::before{content:"";position:absolute;inset:10px;border:1px solid rgba(27,27,27,.28);pointer-events:none}
 .home-stamp-top,.home-stamp-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;gap:12px}
 .home-stamp-top{font-size:11px;font-weight:900;letter-spacing:.12em;line-height:1.45}
