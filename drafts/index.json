@@ -1,5 +1,12 @@
 [
   {
+    "id": "e8a8161ff83426ef4f6b",
+    "date": "2026-10-21",
+    "title": "Операции в цифре: NVIDIA научила нейросеть симулировать хирургические вмешательства в реальном времени",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/nvidia/cosmos3-h-dreams"
+  },
+  {
     "id": "e0adeca3ba3bda075ff5",
     "date": "2026-10-20",
     "title": "AWS упрощает жизнь разработчикам: войти в SageMaker Studio теперь можно без банковской карты и бюрократии",

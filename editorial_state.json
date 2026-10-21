@@ -12,6 +12,12 @@
       "utc_date": "2026-10-20",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/",
       "source_title": "Developers can now access SageMaker Studio through the new AWS experience"
+    },
+    {
+      "id": "e8a8161ff83426ef4f6b",
+      "utc_date": "2026-10-21",
+      "source_url": "https://huggingface.co/blog/nvidia/cosmos3-h-dreams",
+      "source_title": "NVIDIA Cosmos3-H-Dreams: Bringing Clinical Surgery to Life Through Generative Simulation"
     }
   ]
 }
