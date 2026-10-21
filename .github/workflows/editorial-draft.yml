@@ -2,11 +2,17 @@ name: HPI autonomous editorial previews (SITE DRAFTS ONLY)
 on:
   workflow_dispatch:
   schedule:
-    # Primary: 08:37 UTC+5; backups protect against missing GitHub cron events.
-    # Idempotency in editorial_draft.py prevents a second daily draft.
-    - cron: "37 3 * * *"
-    - cron: "49 4 * * *"
-    - cron: "11 6 * * *"
+    # GitHub's schedule delivery is best-effort: keep retries across the day.
+    # Stagger away from :00, when events are more likely to be dropped.
+    # All UTC, shown in UTC+5 (Yekaterinburg) in comments.
+    # editorial_draft.py returns before paid API calls after one daily draft.
+    - cron: "37 3 * * *"    # 08:37
+    - cron: "49 4 * * *"    # 09:49
+    - cron: "11 6 * * *"    # 11:11
+    - cron: "47 7 * * *"    # 12:47
+    - cron: "13 9 * * *"    # 14:13
+    - cron: "29 11 * * *"   # 16:29
+    - cron: "43 13 * * *"   # 18:43
   push:
     branches: [main]
     paths:
