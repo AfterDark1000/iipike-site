@@ -194,6 +194,42 @@ class EditorialTests(unittest.TestCase):
         self.assertIn("ИИ-модель уже вышла", prompt)
         self.assertIn("сверь КАЖДОГО кандидата".casefold()[:10], prompt.casefold())
 
+    def test_daily_draft_idempotency_skips_all_external_calls(self):
+        """More backup cron triggers must not spend tokens after today's success."""
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            stamp = dt.datetime.now(ed.NOW)
+            state_file = root / "editorial_state.json"
+            status_file = root / "editorial_status.json"
+            state = {"schema_version": 1, "drafted": [{
+                "id": "already-created", "utc_date": stamp.date().isoformat(),
+                "source_url": GOOD_URL, "source_title": "Already done"
+            }]}
+            state_file.write_text(json.dumps(state), encoding="utf-8")
+            with (patch.object(ed, "ROOT", root),
+                  patch.object(ed, "STATE", state_file),
+                  patch.object(ed, "STATUS", status_file),
+                  patch.object(ed, "read_editorial_archive",
+                               side_effect=AssertionError("Already made today's draft")),
+                  patch.object(ed, "ask_gemini",
+                               side_effect=AssertionError("Do not call Gemini twice")),
+                  patch.object(ed, "flux_generate",
+                               side_effect=AssertionError("Do not call FLUX twice"))):
+                ed.main()
+            self.assertEqual(json.loads(state_file.read_text()), state)
+            self.assertEqual(json.loads(status_file.read_text())["status"], "already")
+
+    def test_editorial_cron_has_staggered_retries(self):
+        """GitHub may drop schedule events; maintain multiple daily chances."""
+        workflow = (Path(__file__).resolve().parents[1] /
+                    ".github/workflows/editorial-draft.yml").read_text(encoding="utf-8")
+        import re
+        crons = re.findall(r'^\s+- cron: "(\d{1,2}) (\d{1,2}) \* \* \*"', workflow,
+                           flags=re.MULTILINE)
+        self.assertGreaterEqual(len(crons), 6)
+        self.assertEqual(len(crons), len(set(crons)))
+        self.assertTrue(all(0 < int(minute) < 60 for minute, _ in crons))
+
     def test_no_paid_or_publishing_endpoints(self):
         self.assertEqual(ed.MODEL, "gemini-3.5-flash-lite")
         payload = ed.gemini_payload([{
