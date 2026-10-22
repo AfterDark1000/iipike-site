@@ -1,5 +1,12 @@
 [
   {
+    "id": "bc3eb8977fc1d5b5926a",
+    "date": "2026-10-22",
+    "title": "NVIDIA выпустила мультимодальную модель Nemotron 3.5 Super VL для ИИ-агентов",
+    "source_name": "NVIDIA Developers",
+    "source_url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/"
+  },
+  {
     "id": "e8a8161ff83426ef4f6b",
     "date": "2026-10-21",
     "title": "Операции в цифре: NVIDIA научила нейросеть симулировать хирургические вмешательства в реальном времени",

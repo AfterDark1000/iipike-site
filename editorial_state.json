@@ -18,6 +18,12 @@
       "utc_date": "2026-10-21",
       "source_url": "https://huggingface.co/blog/nvidia/cosmos3-h-dreams",
       "source_title": "NVIDIA Cosmos3-H-Dreams: Bringing Clinical Surgery to Life Through Generative Simulation"
+    },
+    {
+      "id": "bc3eb8977fc1d5b5926a",
+      "utc_date": "2026-10-22",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/",
+      "source_title": "NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning"
     }
   ]
 }
