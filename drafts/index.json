@@ -1,5 +1,12 @@
 [
   {
+    "id": "c479324c7490a9421050",
+    "date": "2026-10-23",
+    "title": "Amazon Polly научилась говорить по-фински и по-хинди без потери качества",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/"
+  },
+  {
     "id": "bc3eb8977fc1d5b5926a",
     "date": "2026-10-22",
     "title": "NVIDIA выпустила мультимодальную модель Nemotron 3.5 Super VL для ИИ-агентов",

@@ -24,6 +24,12 @@
       "utc_date": "2026-10-22",
       "source_url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/",
       "source_title": "NVIDIA Nemotron 3.5 Super VL Powers Specialized Agents with Multimodal Reasoning"
+    },
+    {
+      "id": "c479324c7490a9421050",
+      "utc_date": "2026-10-23",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/",
+      "source_title": "Amazon Polly delivers a major upgrade to its Generative engine"
     }
   ]
 }
