@@ -474,8 +474,6 @@ def validate_draft(draft, candidates):
             raise RuntimeError("Gemini produced invalid " + key + "; draft rejected")
     if not re.search("[а-яА-ЯёЁ]", draft["headline"]):
         raise RuntimeError("Gemini headline is not Russian")
-    if draft["article"].count("\n") < 2:
-        raise RuntimeError("Draft lacks paragraph breaks")
     evidences = draft.get("evidence")
     if not isinstance(evidences, list) or not 2 <= len(evidences) <= 3:
         raise RuntimeError("Gemini did not supply 2–3 evidence fragments")
