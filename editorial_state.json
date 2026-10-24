@@ -30,6 +30,12 @@
       "utc_date": "2026-10-23",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/",
       "source_title": "Amazon Polly delivers a major upgrade to its Generative engine"
+    },
+    {
+      "id": "32ef7801f5802984dfdd",
+      "utc_date": "2026-10-24",
+      "source_url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+      "source_title": "Bringing foundational models to the front lines of TB screening"
     }
   ]
 }
