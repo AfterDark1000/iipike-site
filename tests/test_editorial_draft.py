@@ -136,6 +136,41 @@ class EditorialTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, "absent"):
             ed.validate_draft(bogus, [source])
 
+    def test_single_paragraph_draft_keeps_all_fact_checks(self):
+        """Presentation whitespace must not reject a sourced, valid draft."""
+        source = {
+            "id": "safe-id",
+            "source_text": (
+                "This new model is now available to developers through the standard API interface. "
+                "Updated safety evaluations are included in the latest technical report. "
+            ) * 12,
+        }
+        draft = {
+            "use": True, "selected_id": "safe-id",
+            "headline": "Разработчикам открыли доступ к новой модели",
+            "article": (
+                "Сегодня компания объявила об обновлении интерфейса. "
+                "Подробности представлены в официальном отчёте. "
+            ) * 12,
+            "cover_title": "НОВАЯ МОДЕЛЬ", "cover_subtitle": "Доступ для разработчиков",
+            "image_prompt_en": "An open cabinet reveals several carefully stacked source documents.",
+            "evidence": [
+                "This new model is now available to developers",
+                "Updated safety evaluations are included in the latest technical report",
+            ],
+        }
+        self.assertNotIn("\n", draft["article"])
+        self.assertEqual(ed.validate_draft(draft, [source]), source)
+
+        with self.assertRaisesRegex(RuntimeError, "absent"):
+            ed.validate_draft(
+                dict(draft, evidence=["Company sold 900 trillion licenses in 2026",
+                                      draft["evidence"][1]]), [source])
+        with self.assertRaisesRegex(RuntimeError, "invalid article"):
+            ed.validate_draft(dict(draft, article="Слишком коротко"), [source])
+        with self.assertRaisesRegex(RuntimeError, "unknown source ID"):
+            ed.validate_draft(dict(draft, selected_id="not-a-candidate"), [source])
+
     def test_no_unverified_source_id(self):
         source = {"id": "one", "source_text": "a " * 1000}
         self.assertIsNone(ed.validate_draft({"use": False}, [source]))
