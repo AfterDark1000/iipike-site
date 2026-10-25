@@ -1,5 +1,12 @@
 [
   {
+    "id": "c6dba218462cbd9ba34b",
+    "date": "2026-10-25",
+    "title": "AWS научила искусственный интеллект играть в Wordle для сложного обучения",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/"
+  },
+  {
     "id": "32ef7801f5802984dfdd",
     "date": "2026-10-24",
     "title": "Google перенесла туберкулезный сканер на базе ИИ в реальные клиники шести стран",
