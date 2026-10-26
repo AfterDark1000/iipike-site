@@ -42,6 +42,12 @@
       "utc_date": "2026-10-25",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/",
       "source_title": "Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide"
+    },
+    {
+      "id": "5d794c3788a3a4be0d42",
+      "utc_date": "2026-10-26",
+      "source_url": "https://huggingface.co/blog/allenai/litpivot",
+      "source_title": "LitPivot: Developing research ideas through dynamic contextualization within the literature landscape"
     }
   ]
 }

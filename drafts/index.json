@@ -1,5 +1,12 @@
 [
   {
+    "id": "5d794c3788a3a4be0d42",
+    "date": "2026-10-26",
+    "title": "LitPivot помогает ученым находить слепые зоны в научных работах с помощью ИИ",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/allenai/litpivot"
+  },
+  {
     "id": "c6dba218462cbd9ba34b",
     "date": "2026-10-25",
     "title": "AWS научила искусственный интеллект играть в Wordle для сложного обучения",
