@@ -1,5 +1,12 @@
 [
   {
+    "id": "e77549dba84aa9c32f2e",
+    "date": "2026-10-27",
+    "title": "Cloudflare случайно подмешала чужие секреты в ответы ИИ из-за нехватки памяти",
+    "source_name": "Cloudflare",
+    "source_url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/"
+  },
+  {
     "id": "5d794c3788a3a4be0d42",
     "date": "2026-10-26",
     "title": "LitPivot помогает ученым находить слепые зоны в научных работах с помощью ИИ",
