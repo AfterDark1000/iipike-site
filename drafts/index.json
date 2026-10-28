@@ -1,5 +1,12 @@
 [
   {
+    "id": "f4247e9fd2a272b24681",
+    "date": "2026-10-28",
+    "title": "NVIDIA запускает RTX Spark: мобильные рабочие станции для локальных нейросетей и графики",
+    "source_name": "NVIDIA Developers",
+    "source_url": "https://developer.nvidia.com/blog/nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-games/"
+  },
+  {
     "id": "e77549dba84aa9c32f2e",
     "date": "2026-10-27",
     "title": "Cloudflare случайно подмешала чужие секреты в ответы ИИ из-за нехватки памяти",

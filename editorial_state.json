@@ -54,6 +54,12 @@
       "utc_date": "2026-10-27",
       "source_url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
       "source_title": "Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang"
+    },
+    {
+      "id": "f4247e9fd2a272b24681",
+      "utc_date": "2026-10-28",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-games/",
+      "source_title": "NVIDIA RTX Spark Powers Neural Rendering and AI Characters in Games"
     }
   ]
 }
