@@ -60,6 +60,12 @@
       "utc_date": "2026-10-28",
       "source_url": "https://developer.nvidia.com/blog/nvidia-rtx-spark-powers-neural-rendering-and-ai-characters-in-games/",
       "source_title": "NVIDIA RTX Spark Powers Neural Rendering and AI Characters in Games"
+    },
+    {
+      "id": "6825ae5281ac7c3fe9af",
+      "utc_date": "2026-10-29",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "source_title": "Gemini 4 Carbon"
     }
   ]
 }
