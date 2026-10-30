@@ -66,6 +66,12 @@
       "utc_date": "2026-10-29",
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
       "source_title": "Gemini 4 Carbon"
+    },
+    {
+      "id": "fa73a25059b17ce1669d",
+      "utc_date": "2026-10-30",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/",
+      "source_title": "How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway"
     }
   ]
 }

@@ -1,5 +1,12 @@
 [
   {
+    "id": "fa73a25059b17ce1669d",
+    "date": "2026-10-30",
+    "title": "MoEngage превратила 400 внутренних API в инструменты для ИИ без лишней головной боли",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/"
+  },
+  {
     "id": "6825ae5281ac7c3fe9af",
     "date": "2026-10-29",
     "title": "Google представила Gemini 4 Carbon: киберзащита, поиск уязвимостей и прежняя цена",
