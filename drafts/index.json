@@ -1,5 +1,12 @@
 [
   {
+    "id": "ba4f0ba987a7b511b7f4",
+    "date": "2026-10-31",
+    "title": "NVIDIA выпустила инструмент для запуска ИИ на железе: чат с Nemotron в несколько команд",
+    "source_name": "NVIDIA Developers",
+    "source_url": "https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/"
+  },
+  {
     "id": "fa73a25059b17ce1669d",
     "date": "2026-10-30",
     "title": "MoEngage превратила 400 внутренних API в инструменты для ИИ без лишней головной боли",

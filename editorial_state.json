@@ -72,6 +72,12 @@
       "utc_date": "2026-10-30",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/",
       "source_title": "How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway"
+    },
+    {
+      "id": "ba4f0ba987a7b511b7f4",
+      "utc_date": "2026-10-31",
+      "source_url": "https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/",
+      "source_title": "Run AI Models for Edge Application Development with Just a Few Commands"
     }
   ]
 }
