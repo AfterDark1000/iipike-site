@@ -42,7 +42,7 @@ def shell(page_title, body, prefix, description):
 </style></head><body>
 <header class="header"><div class="wrap bar"><a class="logo" href="{prefix}index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a><nav class="menu"><a href="{prefix}index.html">Главная</a><a href="{prefix}registry/">Редархив</a><a href="{prefix}drafts/">Авточерновики</a></nav></div></header>
 <main class="wrap">{body}</main>
-<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Здесь размещаются автоматически созданные материалы для испытаний редакционной системы. Их содержание может содержать ошибки.</p></div></footer></body></html>'''
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Здесь размещаются автоматически созданные материалы для испытаний редакционной системы. Их содержание может содержать ошибки.</p></div></footer><script defer src="{prefix}assets/social-footer.js"></script></body></html>'''
 
 
 def parse_markdown(raw):

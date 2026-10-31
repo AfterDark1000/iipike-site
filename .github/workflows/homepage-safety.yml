@@ -6,6 +6,12 @@ on:
       - 'index.html'
       - 'assets/site.css'
       - 'tests/test_homepage.py'
+      - 'assets/social-footer.js'
+      - 'tests/test_social_footer.py'
+      - 'registry/index.html'
+      - 'articles/**/index.html'
+      - 'drafts/**/index.html'
+      - 'scripts/publish_draft_preview.py'
       - '.github/workflows/homepage-safety.yml'
 permissions:
   contents: read
@@ -16,7 +22,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate homepage markup, dependencies and inline JavaScript
-        run: python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+        run: |
+          python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+          python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
       - name: Check desktop/mobile browser rendering
         run: |
           set -e

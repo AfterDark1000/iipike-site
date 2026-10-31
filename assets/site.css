@@ -161,3 +161,50 @@
   .home-action:hover{transform:none}
   .home-feature-link:hover img{transform:none}
 }
+
+
+/* ХПИИ / Все площадки. Общий модуль подвала для главной, архива и статей. */
+.hpi-social-section{margin-top:34px;padding-top:34px;border-top:1px solid rgba(255,255,255,.18)}
+.hpi-social-heading{margin:0 0 23px;max-width:720px}
+.hpi-social-eyebrow{font:850 11px/1.4 system-ui,-apple-system,Segoe UI,Arial,sans-serif!important;letter-spacing:.18em;text-transform:uppercase;color:#ffad9a!important;margin:0 0 9px!important}
+.hpi-social-title{font:700 clamp(29px,3.4vw,44px)/1.14 Georgia,serif;letter-spacing:-.045em;color:#fbf6ed;margin:0 0 8px}
+.hpi-social-title em{color:#ffad9a;font-weight:400}
+.footer .hpi-social-subtitle{max-width:760px;color:#c4c9c8;margin:0;font-size:14px;line-height:1.65}
+.hpi-social-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.hpi-social-card{--hpi-icon:#f6ddce;position:relative;display:flex;align-items:center;min-width:0;gap:12px;min-height:81px;padding:15px 13px;color:#f7f5ed;text-decoration:none;background:#2a3035;border:1px solid #42484b;border-radius:3px;transition:background .18s,border-color .18s,transform .18s}
+.hpi-social-card:hover{color:#fff;background:#353b40;border-color:#f1a08d;transform:translateY(-3px)}
+.hpi-social-card:focus-visible{outline:3px solid #ffad9a;outline-offset:3px;color:#fff}
+.hpi-social-mark{display:grid;place-items:center;flex:none;width:43px;height:43px;color:#252b30;background:var(--hpi-icon);border-radius:10px;transform:rotate(-3deg)}
+.hpi-social-mark svg{display:block;width:24px;height:24px}
+.hpi-social-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.hpi-social-copy strong{font-size:14px;line-height:1.23;letter-spacing:-.01em;font-weight:800;overflow-wrap:break-word}
+.hpi-social-copy small{font-size:11px;line-height:1.3;color:#b7bfbe;overflow-wrap:break-word}
+.hpi-social-arrow{font-size:16px;color:#ffad9a;margin-left:auto;align-self:flex-start;line-height:1}
+.hpi-social-dzen{--hpi-icon:#f4dfbe}
+.hpi-social-telegram{--hpi-icon:#9bd4f1}
+.hpi-social-vk{--hpi-icon:#a5cafa}
+.hpi-social-threads{--hpi-icon:#ddd9ee}
+.hpi-social-x{--hpi-icon:#e8e7e2}
+.hpi-social-max{--hpi-icon:#ceb5fc}
+.hpi-social-youtube{--hpi-icon:#f3aa9c}
+.hpi-social-instagram{--hpi-icon:#e6b6d6}
+.hpi-social-paused{opacity:.63}
+.hpi-social-paused:hover,.hpi-social-paused:focus-visible{opacity:1}
+.hpi-social-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);margin-top:19px;padding-top:18px;color:#adb3b2;font-size:11px;letter-spacing:.025em}
+@media(max-width:930px){.hpi-social-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){
+  .hpi-social-section{margin-top:29px;padding-top:28px}
+  .hpi-social-title{font-size:clamp(28px,8vw,35px)}
+  .hpi-social-grid{gap:9px}
+  .hpi-social-card{padding:11px 9px;min-height:83px;gap:8px}
+  .hpi-social-mark{width:33px;height:36px;border-radius:8px}
+  .hpi-social-mark svg{width:20px;height:20px}
+  .hpi-social-copy strong{font-size:12px}
+  .hpi-social-copy small{font-size:10px}
+  .hpi-social-arrow{font-size:12px}
+  .hpi-social-bottom{align-items:flex-start;flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hpi-social-card{transition:none}
+  .hpi-social-card:hover{transform:none}
+}
