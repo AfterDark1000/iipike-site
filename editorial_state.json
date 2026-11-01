@@ -78,6 +78,12 @@
       "utc_date": "2026-10-31",
       "source_url": "https://developer.nvidia.com/blog/run-ai-models-for-edge-application-development-with-just-a-few-commands/",
       "source_title": "Run AI Models for Edge Application Development with Just a Few Commands"
+    },
+    {
+      "id": "037154e824aaff256e14",
+      "utc_date": "2026-11-01",
+      "source_url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
+      "source_title": "nemotron-halloween"
     }
   ]
 }

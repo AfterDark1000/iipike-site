@@ -1,5 +1,12 @@
 [
   {
+    "id": "037154e824aaff256e14",
+    "date": "2026-11-01",
+    "title": "Дом с характером: NVIDIA научила гаражную дверь жаловаться на жизнь и слушать «пожалуйста»",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/nvidia/nemotron-halloween"
+  },
+  {
     "id": "ba4f0ba987a7b511b7f4",
     "date": "2026-10-31",
     "title": "NVIDIA выпустила инструмент для запуска ИИ на железе: чат с Nemotron в несколько команд",
