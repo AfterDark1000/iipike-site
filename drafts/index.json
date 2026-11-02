@@ -1,5 +1,12 @@
 [
   {
+    "id": "f9b3653194a263cc79d8",
+    "date": "2026-11-02",
+    "title": "AWS показала живой просмотр веб-приложений прямо в изоляторе ИИ-агента",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/"
+  },
+  {
     "id": "037154e824aaff256e14",
     "date": "2026-11-01",
     "title": "Дом с характером: NVIDIA научила гаражную дверь жаловаться на жизнь и слушать «пожалуйста»",

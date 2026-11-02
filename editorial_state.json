@@ -84,6 +84,12 @@
       "utc_date": "2026-11-01",
       "source_url": "https://huggingface.co/blog/nvidia/nemotron-halloween",
       "source_title": "nemotron-halloween"
+    },
+    {
+      "id": "f9b3653194a263cc79d8",
+      "utc_date": "2026-11-02",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/",
+      "source_title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime"
     }
   ]
 }
