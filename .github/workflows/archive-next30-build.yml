@@ -1,0 +1,78 @@
+name: Generate second batch of 30 archival stories (ISOLATED)
+on:
+  push:
+    branches: [archive/next30-20261104]
+    paths:
+      - '.github/workflows/archive-next30-build.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.ref == 'refs/heads/archive/next30-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/next30-20261104
+          persist-credentials: true
+      - name: Verify historical originals and prepare 30 checked editorial records
+        run: |
+          python3 research/prepare_next30.py
+          python3 - <<'PY'
+          import json
+          data=json.load(open('research/next30_preparation_report.json'))
+          if data['ready']!=30:
+            raise SystemExit(f"Only {data['ready']} of 30 passed original text + cover verification. No site release.")
+          print("Exactly 30 historical originals validated.")
+          PY
+      - name: Generate first-party HTML only on archive branch
+        run: |
+          set -e
+          python3 - <<'PY' > /tmp/hpii-ready-slugs.txt
+          import json
+          print('\n'.join(r['slug'] for r in json.load(open('research/next30_preparation_report.json'))['entries'] if r['status']=='ready'))
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done < /tmp/hpii-ready-slugs.txt
+      - name: Regression checks for original dates, internal links, RSS and SEO
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_rubrics_related.py' -v
+          python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+          python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
+      - name: Preserve generated pages for later supervised PR
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: next30-generated-stories
+          path: |
+            research/next30_preparation_report.json
+            content/approved/*.json
+            articles/**/index.html
+            rubrics/**/index.html
+            news.json
+            sitemap.xml
+            feed.xml
+            index.html
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit validated static pages to isolated archive branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add content/approved/ news.json index.html articles/ rubrics/ sitemap.xml feed.xml research/next30_preparation_report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: generate 30 original-date HTML articles and source-approved catalogue'
+            git pull --rebase origin archive/next30-20261104
+            git push origin HEAD:archive/next30-20261104
+          fi
