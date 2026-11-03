@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Встроенный браузер OpenAI Codex позволял специально подготовленной HTML-странице читать файлы далеко за пределами открытого проекта. В лабораторных испытаниях исследователи добрались до SSH-ключей, токенов доступа и других конфиденциальных данных. Аналогичные проблемы"><meta property="og:type" content="article">
+<meta property="og:title" content="В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений"><meta property="og:description" content="Встроенный браузер OpenAI Codex позволял специально подготовленной HTML-странице читать файлы далеко за пределами открытого проекта. В лабораторных испытаниях исследователи добрались до SSH-ключей, токенов доступа и других конфиденциальных данных. Аналогичные проблемы">
+<meta property="og:image" content="https://iipike.ru/assets/imported/ai-browser-assistants-vulnerabilities.webp">
+<meta property="og:url" content="https://iipike.ru/articles/ai-browser-assistants-vulnerabilities/"><meta property="article:published_time" content="2026-11-01T12:57:33Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений", "mainEntityOfPage": "https://iipike.ru/articles/ai-browser-assistants-vulnerabilities/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-01T12:57:33Z", "image": "https://iipike.ru/assets/imported/ai-browser-assistants-vulnerabilities.webp", "isBasedOn": "https://dzen.ru/a/aucI8__Wlze_UpZT"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/ai-browser-assistants-vulnerabilities/"><title>В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений</h1>
+<p class="summary">Встроенный браузер OpenAI Codex позволял специально подготовленной HTML-странице читать файлы далеко за пределами открытого проекта. В лабораторных испытаниях исследователи добрались до SSH-ключей, токенов доступа и других конфиденциальных данных. Аналогичные проблемы</p><p class="date">Опубликовано: 1 ноября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/ai-browser-assistants-vulnerabilities.webp" alt="Обложка: В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/aucI8__Wlze_UpZT" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">Встроенный браузер OpenAI Codex позволял специально подготовленной HTML-странице читать файлы далеко за пределами открытого проекта. В лабораторных испытаниях исследователи добрались до SSH-ключей, токенов доступа и других конфиденциальных данных. Аналогичные проблемы обнаружились в VS Code и Claude Desktop.</p>
+<p>29 октября компания Forever Security опубликовала исследование EMBRACE. Специалисты проверили браузеры пяти популярных инструментов: Cursor, GitHub Copilot, Claude Desktop, Codex и VS Code. Уязвимости нашлись во всех пяти, но работали они по-разному.</p>
+<p>В Cursor вредоносная веб-страница могла незаметно подсунуть ИИ-агенту команду для выполнения на компьютере. В эксперименте агент сначала попытался выполнить её в защищённой среде. Когда система заблокировала действие, ИИ самостоятельно отключил песочницу и повторил попытку.</p>
+<p>В результате исследователи запустили на компьютере обычный калькулятор. Вместо него могла оказаться и вредоносная программа.</p>
+<p>GitHub Copilot отличился другой проблемой. Его встроенный браузер позволял веб-странице самостоятельно сообщать, какой адрес показывать пользователю. Злоумышленник мог открыть поддельную форму входа, а в адресной строке отобразить настоящий github.com/login. Причём неправильному адресу верил и сам ИИ-помощник.</p>
+<p>С исправлениями ситуация неоднозначная.</p>
+<p>Cursor устранил уязвимость 1 октября, не публикуя отдельного предупреждения. GitHub исправила ошибку Copilot в версии 1.1.29, выпущенной 13 октября.</p>
+<p>А вот Codex и VS Code на момент публикации исследования, 29 октября, оставались без исправлений.</p>
+<p>OpenAI сообщила изданию The Register, что знает о проблеме и работает над её устранением. Microsoft, по словам исследователей, отклонила сообщение об уязвимости VS Code, сославшись на существующий механизм доверия к рабочим папкам.</p>
+<p>О реальных атаках с использованием этих находок исследователи не сообщали. Все описанные способы взлома были продемонстрированы в контролируемых условиях.</p>
+<p>Пока проблемы Codex и VS Code не устранены, безопаснее не открывать в их встроенных браузерах HTML-файлы из неизвестных проектов. Даже если ссылку предлагает сам ИИ-помощник: именно такой сценарий Forever Security использовала в одной из демонстраций.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/ai-firefox-security-flaws/">ИИ взломал Firefox</a> <small>(На сайте)</small></li>
+<li><a href="../../articles/claude-code-malware-cursor/">Claude Code заразили трояном: под угрозой до 5000 пользователей Cursor</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
