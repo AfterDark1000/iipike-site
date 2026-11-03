@@ -37,9 +37,14 @@ async def main():
                     if outcome.get("dom"):
                         prev=outcome["dom"].get("images") or []
                         outcome["dom"]["images"]=list({x["src"]:x for x in prev+images}.values())
-                    if (outcome.get("http_status")==200 and outcome.get("dom",{}).get("og_title")==item["title"]
-                          and len(outcome.get("dom",{}).get("main") or "")>=len(best.get("dom",{}).get("main") or "")):
-                        best=outcome
+                    if outcome.get("http_status")==200 and outcome.get("dom",{}).get("og_title")==item["title"]:
+                        if len(outcome.get("dom",{}).get("main") or "")>=len(best.get("dom",{}).get("main") or ""):
+                            best=outcome
+                        else:
+                            # Preserve more complete article text, but merge recovered cover refs.
+                            original_images=(best.get("dom") or {}).get("images") or []
+                            new_images=outcome["dom"].get("images") or []
+                            best["dom"]["images"]=list({i["src"]:i for i in original_images+new_images}.values())
                     images_good=[x for x in best.get("dom",{}).get("images",[])
                           if "/get-zen_doc/" in x.get("src","") and ("pub_"+item["dzen_id"]+"_") in x["src"]]
                     print("Attempt",n+1,slug,"body",len(best.get("dom",{}).get("main") or ""),
