@@ -3,9 +3,12 @@
 import argparse
 import json
 from pathlib import Path
+import sys
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import render_all
 
-ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
