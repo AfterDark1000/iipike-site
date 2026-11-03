@@ -103,6 +103,7 @@ class RubricAndArchiveTests(unittest.TestCase):
             (root / "assets" / "cover.svg").write_text("<svg/>", encoding="utf-8")
             shutil.copy(ROOT / "news.json", root / "news.json")
             shutil.copy(ROOT / "feed.xml", root / "feed.xml")
+            shutil.copy(ROOT / "index.html", root / "index.html")
             shutil.copy(ROOT / "data" / "editorial_full_catalog_snapshot.json",
                         root / "data" / "editorial_full_catalog_snapshot.json")
             original = self.trusted["published_at_utc"]
