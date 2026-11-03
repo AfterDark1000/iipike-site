@@ -48,7 +48,7 @@ def render_page(key, records):
     cards = "\n".join(
         '<a class="archive-card" href="../../' + escape(r["url"], quote=True) + '">'
         '<img loading="lazy" src="../../' + escape(r["cover"], quote=True) + '" alt="Обложка статьи">'
-        '<span><small class="date">На сайте: ' + escape(r["published"]) + '</small>'
+        '<span><small class="date">Опубликовано: ' + escape(r["published"]) + '</small>'
         '<h3>' + escape(r["title"]) + '</h3>'
         '<p>' + escape(r["summary"]) + '</p></span>'
         '<span aria-hidden="true">↗</span></a>'

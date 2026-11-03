@@ -127,6 +127,35 @@ class PublisherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "lead"):
             PUBLISHER.publish(self.root, "sample-verified-news")
 
+    def test_modified_date_is_machine_only_and_sitemap_lastmod(self):
+        self.article["modified_at_utc"] = "2026-11-03T16:00:00Z"
+        self.write_article()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
+        html = outputs[self.root / "articles" / "sample-verified-news" / "index.html"]
+        self.assertIn('article:published_time" content="2026-11-03T15:00:00Z"', html)
+        self.assertIn('article:modified_time" content="2026-11-03T16:00:00Z"', html)
+        self.assertIn('"datePublished": "2026-11-03T15:00:00Z"', html)
+        self.assertIn('"dateModified": "2026-11-03T16:00:00Z"', html)
+        self.assertIn("Опубликовано: 3 ноября 2026", html)
+        self.assertNotIn("Обновлено:", html)
+        self.assertNotIn("На сайте:", html)
+        sitemap = ET.fromstring(outputs[self.root / "sitemap.xml"])
+        ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        entries = sitemap.findall(".//s:url", ns)
+        migrated = next(row for row in entries if "sample-verified-news" in row.findtext("s:loc", "", ns))
+        self.assertEqual(migrated.findtext("s:lastmod", "", ns), "2026-11-03T16:00:00Z")
+        self.assertEqual(sum(row.find("s:lastmod", ns) is not None for row in entries), 1)
+        manifest = json.loads(outputs[self.root / "news.json"])
+        self.assertEqual(manifest[-1]["published"], "2026-11-03")
+        self.assertEqual(manifest[-1]["modified_at_utc"], "2026-11-03T16:00:00Z")
+
+    def test_rejects_invalid_or_future_modification_time(self):
+        for changed in ("2026-11-03T14:00:00Z", "2099-01-01T00:00:00Z", "invalid"):
+            self.article["modified_at_utc"] = changed
+            self.write_article()
+            with self.assertRaisesRegex(ValueError, "modified_at_utc"):
+                PUBLISHER.publish(self.root, "sample-verified-news")
+
     def test_public_repo_catalog_links_are_static(self):
         content = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="articles/"', content)
