@@ -56,11 +56,28 @@ class HomepageTests(unittest.TestCase):
                     "home-dzen-count", "home-draft-live"):
             self.assertIn(key, self.parsed.ids)
         for link in ("#latest", "#archive", "registry/", "drafts/",
-                     "articles/google-search-ai-links/", "feed.xml"):
+                     "articles/codex-git-server/", "feed.xml"):
             self.assertIn(link, self.parsed.links)
-        self.assertIn("ПИЛОТНЫЙ ВЫПУСК", self.html)
+        self.assertIn("Наши публикации", self.html)
+        self.assertIn("HPII_PUBLISHED_SECTION_START", self.html)
+        self.assertIn("home-site-posts", self.html)
         self.assertIn("НЕ ОПУБЛИКОВАНО", self.html)
         self.assertNotIn("https://dzen.ru/iipike", self.html)
+
+    def test_homepage_first_party_articles_are_current_and_readable(self):
+        import json
+        from scripts.site_home import update_home, sorted_published
+        from scripts.site_rubrics import publication_date
+        records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        self.assertEqual(update_home(self.html, records), self.html)
+        newest = sorted_published(records)[0]
+        self.assertIn('href="' + newest["url"] + '"', self.html)
+        self.assertIn('src="' + newest["cover"] + '"', self.html)
+        self.assertIn(publication_date(newest["published"]).upper(), self.html)
+        self.assertNotIn("ПИЛОТНЫЙ ВЫПУСК", self.html)
+        self.assertNotIn("Полная новостная лента ХПИИ сейчас выходит в Дзене", self.html)
+        for item in sorted_published(records)[:5]:
+            self.assertIn('href="' + item["url"] + '"', self.html)
 
     def test_dynamic_news_uses_real_published_articles_only(self):
         self.assertIn('row.status === "published"', self.html)
