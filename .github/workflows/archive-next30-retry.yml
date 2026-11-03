@@ -1,0 +1,48 @@
+name: Recover five missing Dzen archival covers (NO PUBLICATION)
+on:
+  push:
+    branches: [archive/next30-20261104]
+    paths:
+      - '.github/workflows/archive-next30-retry.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  retry:
+    if: github.ref == 'refs/heads/archive/next30-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/next30-20261104
+          persist-credentials: true
+      - name: Browser and image verification
+        run: |
+          python3 -m pip install playwright pillow
+          python3 -m playwright install --with-deps chromium
+      - name: Retry only missing article-owned covers and any absent full text
+        run: python3 research/probe_missing_next30.py
+      - name: Recover any newly found 16:9 original cover
+        run: python3 research/download_next30_covers.py
+      - name: Store research evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: next30-retry-report
+          path: |
+            research/next30_probe_results.json
+            research/next30_cover_report.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Preserve original sources and covers in archive branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/next30_probe_results.json research/next30_cover_report.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: retry missing original covers without inventing artwork'
+            git pull --rebase origin archive/next30-20261104
+            git push origin HEAD:archive/next30-20261104
+          fi
