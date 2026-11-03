@@ -20,7 +20,7 @@ def get_urls():
     records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
     if not isinstance(records, list):
         raise ValueError("news.json must be a list of published articles")
-    urls = [BASE + "/"]
+    urls = [BASE + "/", BASE + "/articles/"]
     seen = set()
     for item in records:
         if not isinstance(item, dict):

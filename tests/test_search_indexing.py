@@ -29,7 +29,7 @@ class SearchIndexingTests(unittest.TestCase):
     def test_sitemap_only_has_real_reviewed_site_pages(self):
         tree = ET.parse(ROOT / "sitemap.xml")
         urls = [p.text for p in tree.findall(".//s:loc", NAMESPACE)]
-        expected = [BASE + "/"] + [BASE + "/" + row["url"] for row in self.records]
+        expected = [BASE + "/", BASE + "/articles/"] + [BASE + "/" + row["url"] for row in self.records]
         self.assertEqual(urls, expected)
         self.assertEqual(len(urls), len(set(urls)))
         for url in urls:
