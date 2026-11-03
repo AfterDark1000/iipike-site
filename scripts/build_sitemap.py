@@ -9,8 +9,12 @@ import json
 import re
 from pathlib import Path
 from xml.sax.saxutils import escape
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.site_rubrics import populated, RUBRICS
 BASE = "https://iipike.ru"
 SITEMAP = ROOT / "sitemap.xml"
 SLUG_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/")
@@ -21,6 +25,10 @@ def get_urls():
     if not isinstance(records, list):
         raise ValueError("news.json must be a list of published articles")
     urls = [BASE + "/", BASE + "/articles/"]
+    for key in populated(records):
+        if not (ROOT / "rubrics" / key / "index.html").is_file():
+            raise ValueError(f"Rubric HTML missing: {key}")
+        urls.append(BASE + "/rubrics/" + key + "/")
     seen = set()
     for item in records:
         if not isinstance(item, dict):
