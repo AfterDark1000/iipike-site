@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "slug": "codex-git-server",
+      "status": "failed",
+      "why": "No article-owned original image URL found"
+    },
+    {
+      "slug": "nvidia-local-assistant-4gb",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc5030769daa5de27ac311_6adc505708dabf0105520fe8/orig",
+      "cover": "assets/imported/nvidia-local-assistant-4gb.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "4049e77285362b079978f5b16eb839b139aae1d84adb8365a91261c54525702a",
+      "bytes": 190126
+    },
+    {
+      "slug": "opera-browser-ai-websites",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae316bb5527bd1329981824_6ae31c1c4d27f64e5d0e2bf4/orig",
+      "cover": "assets/imported/opera-browser-ai-websites.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "5f45ce1d3697cf9200d6e24d95f717d64bdde1223f08c1b8dc2456861b23879b",
+      "bytes": 440262
+    },
+    {
+      "slug": "ai-agents-cent-spending-limit",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae9717a7cc62d6eeab61a66_6ae9736c7cc62d6eeab8dd8b/orig",
+      "cover": "assets/imported/ai-agents-cent-spending-limit.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "29eddeb89d636175d4e2560ccddf439b18d5575f1298927a618827d6a43a2b9c",
+      "bytes": 544546
+    },
+    {
+      "slug": "openai-agent-disabled-monitoring",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ad997ade9368d4a2df2fb6a_6ad99afbb5289f5e98b23261/orig",
+      "cover": "assets/imported/openai-agent-disabled-monitoring.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "e0071ea6cf35cd5096c9f7999c25489c5dfda42ce7694f34e39812709d30c02b",
+      "bytes": 603856
+    },
+    {
+      "slug": "deepseek-shutdown-override",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0b944bf532254301e86e7_6ae0bedc0be991530e24c600/orig",
+      "cover": "assets/imported/deepseek-shutdown-override.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "f4c9537d684318ee60b0efd2b37c9e6cf3354386847383a91f92db2e0d6a534c",
+      "bytes": 472082
+    },
+    {
+      "slug": "grok-mp-letters-refund",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ad7720b46ef666b5665b1b6_6ad789482bb9d97aa27f5ce5/orig",
+      "cover": "assets/imported/grok-mp-letters-refund.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "68387a22c36f5f4639d00e783684f1c5da2e52b27bbff54e82221293cb1ab3f6",
+      "bytes": 620342
+    },
+    {
+      "slug": "google-ai-orbit",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae80f20a578bc23f54c478b_6ae80f2f7a42c254502e3d92/orig",
+      "cover": "assets/imported/google-ai-orbit.webp",
+      "width": 1672,
+      "height": 940,
+      "sha256": "9720d247c51e04047e4b0bf2a483b34ce61d2de4fe32e2b07c857cfa7c6c10a5",
+      "bytes": 525618
+    },
+    {
+      "slug": "altman-ai-scientists-office",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae97df092fe1009414bb9fe_6ae97fa870b2207347ff1580/orig",
+      "cover": "assets/imported/altman-ai-scientists-office.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "5a65f470a893eeff86d4778cd92d05544acb2417758137972d2e307f1167895c",
+      "bytes": 411696
+    },
+    {
+      "slug": "musk-grok-bot-cost",
+      "status": "downloaded",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae96750587e28053e31f0a3_6ae96824e116fa28c586a1b3/orig",
+      "cover": "assets/imported/musk-grok-bot-cost.webp",
+      "width": 1672,
+      "height": 941,
+      "sha256": "73c8242dbf850b9ea8cbb7b4db941152713d9b0e399a30a4c308ccb501715988",
+      "bytes": 622854
+    }
+  ],
+  "note": "Dzen-hosted originals (resized for hosting), not newly generated."
+}
