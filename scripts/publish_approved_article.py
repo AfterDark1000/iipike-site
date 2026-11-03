@@ -263,11 +263,11 @@ def render_sitemap(records):
     def xml_entry(url):
         stamp = updates.get(url)
         lastmod = f"<lastmod>{xml_escape(stamp)}</lastmod>" if stamp else ""
-        return f"  <url><loc>{xml_escape(url)}</loc>{lastmod}</url>\\n"
-    return ('<?xml version="1.0" encoding="UTF-8"?>\\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n'
+        return f"  <url><loc>{xml_escape(url)}</loc>{lastmod}</url>\n"
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             + "".join(xml_entry(url) for url in urls)
-            + "</urlset>\\n")
+            + "</urlset>\n")
 
 
 def publish(root, slug, apply=False):
