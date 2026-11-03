@@ -1,0 +1,45 @@
+name: Read-only Dzen source probe (RESEARCH BRANCH ONLY)
+on:
+  push:
+    branches:
+      - research/dzen-migration-first10-20261104
+    paths:
+      - 'research/probe_dzen.py'
+      - '.github/workflows/dzen-source-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe-dzen:
+    if: github.ref == 'refs/heads/research/dzen-migration-first10-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/dzen-migration-first10-20261104
+          persist-credentials: true
+      - name: Install read-only browser
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Probe three existing Dzen pages (NO SITE PUBLICATION)
+        run: python3 research/probe_dzen.py
+      - name: Preserve probe output as recovery artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpi-dzen-source-probe
+          path: research/dzen_probe_results.json
+          if-no-files-found: ignore
+          retention-days: 3
+      - name: Save research results to this isolated branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/dzen_probe_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: capture public Dzen article source diagnostics'
+            git push origin HEAD:research/dzen-migration-first10-20261104
+          fi
