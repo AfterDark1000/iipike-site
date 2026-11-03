@@ -14,8 +14,13 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.site_rubrics import RUBRICS, render_all, populated, navigation
+from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
 BASE = "https://iipike.ru"
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ASSET = re.compile(r"assets/[a-zA-Z0-9/_-]+\.(?:png|jpg|jpeg|webp|svg)\Z")
@@ -44,6 +49,26 @@ def approved_article(root, slug):
         raise ValueError("Article status must be explicitly approved")
     if data.get("slug") != slug:
         raise ValueError("Approved source slug does not match CLI argument")
+    rubric = need_text(data, "rubric", 80)
+    if rubric not in RUBRICS:
+        raise ValueError("Invalid article rubric: " + rubric)
+    references = data.get("related_dzen_ids", [])
+    dzen_id = data.get("dzen_id")
+    if dzen_id is not None or references:
+        catalog = catalog_entries(root)
+        validate_links(references, catalog, current=dzen_id)
+        if dzen_id is not None:
+            entry = validate_reference(dzen_id, catalog)
+            if data.get("dzen_url") != entry["dzen_url"]:
+                raise ValueError("Dzen original URL mismatch with verified catalog")
+            original = need_text(data, "original_dzen_published_at_utc", 40)
+            if not original.endswith("Z"):
+                raise ValueError("Original Dzen publish timestamp must be UTC (Z)")
+            orig_dt = dt.datetime.fromisoformat(original.replace("Z", "+00:00"))
+            if orig_dt.tzinfo is None:
+                raise ValueError("Original Dzen timestamp has no timezone")
+    elif "original_dzen_published_at_utc" in data or "dzen_url" in data:
+        raise ValueError("Dzen source metadata requires a verified dzen_id")
     need_text(data, "approved_by", 100)
     dt.date.fromisoformat(need_text(data, "approved_at", 20))
     for k in ("title", "summary", "section", "source_title"):
@@ -56,6 +81,10 @@ def approved_article(root, slug):
     when = dt.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
     if when.date().isoformat() != data["published"]:
         raise ValueError("published date differs from published_at_utc")
+    # Imported materials may share the same real site publication date;
+    # the original Dzen timestamp is preserved, never rewritten.
+    if dzen_id is not None and orig_dt > when:
+        raise ValueError("Site publication may not predate original Dzen publication")
     source = need_text(data, "source_url", 2000)
     u = urlsplit(source)
     if (u.scheme != "https" or not u.hostname or u.username or u.password
@@ -77,11 +106,24 @@ def approved_article(root, slug):
     return data
 
 
-def render_article(data):
+def render_article(data, records=None, catalog=None):
     slug = data["slug"]
     url = f"{BASE}/articles/{slug}/"
     title, summary = quote(data["title"]), quote(data["summary"])
     cover = f"../../{quote(data['cover'])}"
+    rubric = data["rubric"]
+    rubric_name = quote(RUBRICS[rubric]["name"])
+    original_note = ""
+    if data.get("dzen_id"):
+        original_date = dt.datetime.fromisoformat(
+            data["original_dzen_published_at_utc"].replace("Z", "+00:00")
+        ).date().isoformat()
+        original_note = (
+            '<p class="date">Первоначально опубликовано в Дзене: ' + quote(original_date)
+            + ' · <a href="' + quote(data["dzen_url"]) + '" target="_blank" rel="noopener noreferrer">'
+            'Исходная публикация ↗</a></p>'
+        )
+    related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
     body = "\n".join(
         f'<{TYPES[b["type"]]} class="lead">{quote(b["text"])}</p>'
         if b["type"] == "lead"
@@ -105,12 +147,12 @@ def render_article(data):
 <a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
 <nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
 <main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
-<p class="kicker">{quote(data["section"])}</p><h1>{title}</h1>
-<p class="summary">{summary}</p><p class="date">{label}</p></div>
+<p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a> / {quote(data["section"])}</p><h1>{title}</h1>
+<p class="summary">{summary}</p><p class="date">На сайте: {label}</p>{original_note}</div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
 <section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
 <a href="{quote(data["source_url"])}" target="_blank" rel="noopener noreferrer">{quote(data["source_title"])} ↗</a>
-</aside><article class="article-text">{body}</article></section></main>
+</aside><article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
 <script defer src="../../assets/social-footer.js"></script></body></html>
 '''
@@ -121,7 +163,8 @@ def render_catalog(records):
     cards = "\n".join(
         f'<a class="archive-card" href="{quote(row["id"])}/">'
         f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
-        f'<span><small class="date">{quote(row["published"])}</small>'
+        f'<span><small class="date">На сайте: {quote(row["published"])}'
+        f' · {quote(RUBRICS[row.get("rubric", "news")]["name"])}</small>'
         f'<h3>{quote(row["title"])}</h3><p>{quote(row["summary"])}</p></span>'
         '<span aria-hidden="true">↗</span></a>' for row in ordered
     )
@@ -137,6 +180,7 @@ def render_catalog(records):
 <nav class="menu"><a href="../index.html">Главная</a><a href="../feed.xml">RSS</a></nav></div></header>
 <main class="wrap"><div class="overline"><span>ХПИИ / Редакционная лента</span></div>
 <h1>Все статьи</h1><p class="summary">Опубликованные материалы с проверенными источниками. Черновики здесь не появляются.</p>
+<nav class="rubric-navigation" aria-label="Рубрики">{navigation("../")}</nav>
 <section class="archive"><h2>Публикации</h2>{cards}</section></main>
 <footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
 <script defer src="../assets/social-footer.js"></script></body></html>
@@ -178,7 +222,9 @@ def render_feed(records, old_feed):
 
 def render_sitemap(records):
     from xml.sax.saxutils import escape as xml_escape
-    urls = [BASE + "/", BASE + "/articles/"] + [BASE + "/" + r["url"] for r in records]
+    urls = ([BASE + "/", BASE + "/articles/"]
+            + [BASE + "/rubrics/" + key + "/" for key in populated(records)]
+            + [BASE + "/" + r["url"] for r in records])
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
             + "".join(f"  <url><loc>{xml_escape(url)}</loc></url>\n" for url in urls)
@@ -193,17 +239,34 @@ def publish(root, slug, apply=False):
     if dest.exists() or any(r["id"] == slug or r["url"] == f"articles/{slug}/" for r in entries):
         raise ValueError("Already published: cannot overwrite an existing article")
     row = {k: data[k] for k in ("title", "summary", "published", "event_date",
-                               "source_url", "cover", "published_at_utc")}
+                               "source_url", "cover", "published_at_utc", "rubric")}
+    # published/published_at_utc = actual appearance on this site.
+    for key in ("dzen_id", "dzen_url", "original_dzen_published_at_utc"):
+        if key in data:
+            row[key] = data[key]
     row["id"] = slug
     row["url"] = f"articles/{slug}/"
     updated = entries + [row]
+    catalog = catalog_entries(root) if data.get("dzen_id") or data.get("related_dzen_ids") else {}
     outputs = {
-        dest: render_article(data),
+        dest: render_article(data, updated, catalog),
         entries_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "sitemap.xml": render_sitemap(updated),
     }
+    outputs.update(render_all(updated, root))
+    # Refresh prior approved pages so their related links point internally
+    # when a linked target migrates; manually authored pilot is unchanged.
+    for record in entries:
+        old_slug = record["id"]
+        if old_slug == slug:
+            continue
+        source = root / "content" / "approved" / (old_slug + ".json")
+        if source.is_file():
+            prior = approved_article(root, old_slug)
+            outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog)
+
     if apply:
         for path, contents in outputs.items():
             path.parent.mkdir(parents=True, exist_ok=True)
