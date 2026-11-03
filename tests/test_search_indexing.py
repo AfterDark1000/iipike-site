@@ -1,0 +1,74 @@
+"""Search indexing regression checks for iipike.ru (offline, no publication)."""
+import json
+import re
+import subprocess
+import sys
+import unittest
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+BASE = "https://iipike.ru"
+NAMESPACE = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+
+class SearchIndexingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.home = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        cls.feed = (ROOT / "feed.xml").read_text(encoding="utf-8")
+
+    def test_domain_and_home_metadata(self):
+        self.assertEqual((ROOT / "CNAME").read_text(encoding="utf-8").strip(), "iipike.ru")
+        self.assertIn('<link rel="canonical" href="https://iipike.ru/">', self.home)
+        self.assertIn('<meta property="og:url" content="https://iipike.ru/">', self.home)
+        self.assertIn('https://iipike.ru/assets/google-search-links.svg', self.home)
+        self.assertNotIn('https://afterdark1000.github.io/iipike-site/', self.home)
+
+    def test_sitemap_only_has_real_reviewed_site_pages(self):
+        tree = ET.parse(ROOT / "sitemap.xml")
+        urls = [p.text for p in tree.findall(".//s:loc", NAMESPACE)]
+        expected = [BASE + "/"] + [BASE + "/" + row["url"] for row in self.records]
+        self.assertEqual(urls, expected)
+        self.assertEqual(len(urls), len(set(urls)))
+        for url in urls:
+            self.assertTrue(url.startswith(BASE + "/"), url)
+            self.assertNotIn("/drafts/", url)
+            self.assertNotIn("/registry/", url)
+            self.assertNotIn("dzen.ru", url)
+        for row in self.records:
+            html_path = ROOT / row["url"] / "index.html"
+            self.assertTrue(html_path.exists(), html_path)
+            html = html_path.read_text(encoding="utf-8")
+            self.assertIn(f'rel="canonical" href="{BASE}/{row["url"]}"', html)
+            self.assertIn(f'property="og:url" content="{BASE}/{row["url"]}"', html)
+            self.assertNotIn('https://afterdark1000.github.io/iipike-site/', html)
+            self.assertNotIn('name="robots" content="noindex', html.lower())
+
+    def test_drafts_and_registry_stay_noindex(self):
+        pages = list((ROOT / "drafts").glob("*/index.html"))
+        self.assertGreater(len(pages), 0, "Expected labelled draft previews")
+        pages.extend([ROOT / "drafts/index.html", ROOT / "registry/index.html"])
+        for p in pages:
+            self.assertIn('name="robots" content="noindex, nofollow"', p.read_text(encoding="utf-8"), str(p))
+
+    def test_robots_and_rss_use_primary_domain(self):
+        robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+        self.assertIn("Sitemap: https://iipike.ru/sitemap.xml", robots)
+        self.assertNotIn("Disallow: /", robots)
+        self.assertIn("<link>https://iipike.ru/</link>", self.feed)
+        self.assertIn("<link>https://iipike.ru/articles/google-search-ai-links/</link>", self.feed)
+        # An existing RSS item's GUID must not change when changing hosting domains.
+        self.assertIn('<guid isPermaLink="true">https://afterdark1000.github.io/iipike-site/articles/google-search-ai-links/</guid>', self.feed)
+
+    def test_sitemap_generation_is_up_to_date(self):
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "build_sitemap.py"), "--check"],
+            cwd=ROOT, capture_output=True, text=True, timeout=15,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+
+
+if __name__ == "__main__":
+    unittest.main()

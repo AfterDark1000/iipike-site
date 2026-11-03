@@ -4,6 +4,13 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'CNAME'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'feed.xml'
+      - 'news.json'
+      - 'scripts/build_sitemap.py'
+      - 'tests/test_search_indexing.py'
       - 'assets/site.css'
       - 'tests/test_homepage.py'
       - 'assets/social-footer.js'
@@ -25,6 +32,8 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p 'test_homepage.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
       - name: Check desktop/mobile browser rendering
         run: |
           set -e
