@@ -46,6 +46,18 @@ class RubricAndArchiveTests(unittest.TestCase):
             if path.parent.name == "news":
                 self.assertIn("google-search-ai-links", markup)
 
+    def test_mobile_archive_cards_have_full_width_covers_and_clamped_teasers(self):
+        stylesheet = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
+        # The last, mobile-specific declaration overrides an older two-column
+        # card rule that made text unreadable beside 116px thumbnail images.
+        media = stylesheet.rsplit("@media(max-width:680px)", 1)[-1]
+        self.assertIn(".archive-card{", media)
+        self.assertIn("grid-template-columns:minmax(0,1fr)", media)
+        self.assertIn("aspect-ratio:16/9", media)
+        self.assertIn(".archive-card p{", media)
+        self.assertIn("-webkit-line-clamp:3", media)
+        self.assertIn(".archive-card > span:last-child{display:none;}", media)
+
     def test_unsafe_related_and_self_links_refused(self):
         current = self.trusted["dzen_id"]
         with self.assertRaisesRegex(ValueError, "itself"):
