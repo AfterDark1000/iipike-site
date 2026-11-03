@@ -76,7 +76,7 @@ class RubricAndArchiveTests(unittest.TestCase):
         for _, _, ident in suggested:
             self.assertTrue(verified(self.catalog[ident]))
 
-    def test_same_site_date_and_original_date_remain_distinct(self):
+    def test_original_dzen_date_is_the_single_visible_publication_date(self):
         import importlib.util
         spec = importlib.util.spec_from_file_location(
             "publisher", ROOT / "scripts" / "publish_approved_article.py")
@@ -95,21 +95,22 @@ class RubricAndArchiveTests(unittest.TestCase):
             original = self.trusted["published_at_utc"]
             self.assertTrue(original)
             original = original.replace("+00:00", "Z")
+            from zoneinfo import ZoneInfo
+            original_day = dt.datetime.fromisoformat(original.replace("Z", "+00:00")).astimezone(ZoneInfo("Asia/Yekaterinburg")).date().isoformat()
             record = {
                 "slug": "migrated-article", "status": "approved",
                 "approved_by": "editor", "approved_at": "2026-11-04",
                 "rubric": "skynet", "section": "РАЗБОР",
                 "title": self.trusted["title"],
                 "summary": "Отредактированный и проверенный материал.",
-                "published": "2026-11-04",
-                "published_at_utc": "2026-11-04T12:00:00Z",
+                "published": original_day,
+                "published_at_utc": original,
                 "event_date": "2026-11-03",
                 "source_url": "https://example.org/story",
                 "source_title": "Первичный источник",
                 "cover": "assets/cover.svg",
                 "dzen_id": self.trusted["dzen_id"],
                 "dzen_url": self.trusted["dzen_url"],
-                "original_dzen_published_at_utc": original,
                 "related_dzen_ids": [],
                 "paragraphs": [{"type":"lead", "text":"Вступление."},
                                {"type":"p", "text":"Текст статьи."}]
@@ -118,13 +119,19 @@ class RubricAndArchiveTests(unittest.TestCase):
             source.write_text(json.dumps(record, ensure_ascii=False), encoding="utf-8")
             outputs = pub.publish(root, "migrated-article", apply=False)
             html = outputs[root / "articles" / "migrated-article" / "index.html"]
-            self.assertIn('article:published_time" content="2026-11-04T12:00:00Z"', html)
-            self.assertIn("На сайте: 4 ноября 2026", html)
-            self.assertIn("Первоначально опубликовано в Дзене:", html)
+            self.assertIn('article:published_time" content="' + original + '"', html)
+            self.assertIn("Опубликовано:", html)
+            self.assertNotIn("На сайте:", html)
+            self.assertNotIn("Первоначально опубликовано в Дзене:", html)
+            self.assertIn("Версия в Дзене", html)
+            self.assertNotIn("article:modified_time", html)
+            self.assertIn('"datePublished": "' + original + '"', html)
+            self.assertNotIn('"dateModified"', html)
             self.assertIn(self.trusted["dzen_url"], html)
             records = json.loads(outputs[root / "news.json"])
-            self.assertEqual(records[-1]["published"], "2026-11-04")
-            self.assertEqual(records[-1]["original_dzen_published_at_utc"], original)
+            self.assertEqual(records[-1]["published"], original_day)
+            self.assertEqual(records[-1]["published_at_utc"], original)
+            self.assertNotIn("original_dzen_published_at_utc", records[-1])
             self.assertIn("https://iipike.ru/rubrics/skynet/",
                           outputs[root / "sitemap.xml"])
             self.assertFalse((root / "articles").exists())
@@ -135,7 +142,7 @@ class RubricAndArchiveTests(unittest.TestCase):
             "publisher", ROOT / "scripts" / "publish_approved_article.py")
         pub = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(pub)
-        self.assertIn("Site publication may not predate original Dzen publication",
+        self.assertIn("Publication date must match verified original Dzen publication",
                       Path(pub.__file__).read_text(encoding="utf-8"))
 
 
