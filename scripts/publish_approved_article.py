@@ -20,8 +20,9 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.site_rubrics import RUBRICS, render_all, populated, navigation
+from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
+from scripts.site_home import update_home
 BASE = "https://iipike.ru"
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ASSET = re.compile(r"assets/[a-zA-Z0-9/_-]+\.(?:png|jpg|jpeg|webp|svg)\Z")
@@ -196,7 +197,7 @@ def render_catalog(records):
     cards = "\n".join(
         f'<a class="archive-card" href="{quote(row["id"])}/">'
         f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
-        f'<span><small class="date">{quote(row["published"])}'
+        f'<span><small class="date">{quote(publication_date(row["published"]))}'
         f' · {quote(RUBRICS[row.get("rubric", "news")]["name"])}</small>'
         f'<h3>{quote(row["title"])}</h3><p>{quote(row["summary"])}</p></span>'
         '<span aria-hidden="true">↗</span></a>' for row in ordered
@@ -293,6 +294,7 @@ def publish(root, slug, apply=False):
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "sitemap.xml": render_sitemap(updated),
+        root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated),
     }
     outputs.update(render_all(updated, root))
     # Refresh prior approved pages so their related links point internally
