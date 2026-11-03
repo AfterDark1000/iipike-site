@@ -119,6 +119,12 @@ class PublisherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "at least"):
             PUBLISHER.publish(self.root, "sample-verified-news")
 
+    def test_malformed_first_paragraph_is_rejected_cleanly(self):
+        self.article["paragraphs"] = ["not a block", {"type": "p", "text": "A paragraph"}]
+        self.write_article()
+        with self.assertRaisesRegex(ValueError, "lead"):
+            PUBLISHER.publish(self.root, "sample-verified-news")
+
     def test_public_repo_catalog_links_are_static(self):
         content = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="articles/"', content)
