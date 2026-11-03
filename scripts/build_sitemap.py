@@ -54,7 +54,13 @@ def get_urls():
 
 def render():
     urls = get_urls()
-    rows = "\n".join(f"  <url><loc>{escape(url)}</loc></url>" for url in urls)
+    records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+    updates = {BASE + "/" + item["url"]: item["modified_at_utc"] for item in records
+               if item.get("modified_at_utc")}
+    def row(url):
+        lastmod = f"<lastmod>{escape(updates[url])}</lastmod>" if url in updates else ""
+        return f"  <url><loc>{escape(url)}</loc>{lastmod}</url>"
+    rows = "\n".join(row(url) for url in urls)
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + (
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         + rows + '\n</urlset>\n'
