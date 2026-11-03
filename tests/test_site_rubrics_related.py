@@ -27,23 +27,24 @@ class RubricAndArchiveTests(unittest.TestCase):
         self.assertFalse(verified(self.untrusted))
         with self.assertRaisesRegex(ValueError, "Unverified"):
             validate_reference(self.untrusted["dzen_id"], self.catalog)
-        self.assertFalse(any(row.get("dzen_id") for row in self.records),
-                         "Pilot article must not inherit a fake Dzen ID")
+        pilot = next(row for row in self.records if row["id"] == "google-search-ai-links")
+        self.assertFalse(pilot.get("dzen_id"), "Pilot article must not inherit a fake Dzen ID")
 
     def test_canonical_four_rubrics_and_valid_pages(self):
         self.assertEqual(list(RUBRICS), ["news", "skynet", "what-are-you-doing", "quotes"])
-        self.assertEqual(populated(self.records), ["news"])
+        self.assertEqual(populated(self.records), list(RUBRICS))
         expected = render_all(self.records, ROOT)
         self.assertEqual(len(expected), 4)
         for path, markup in expected.items():
             self.assertEqual(path.read_text(encoding="utf-8"), markup, str(path))
             self.assertIn('rel="canonical" href="https://iipike.ru/rubrics/', markup)
             self.assertIn("Хроники Пикирующего ИИ", markup)
-            if "news/" in str(path):
+            if path.parent.name in populated(self.records):
                 self.assertNotIn('name="robots" content="noindex', markup)
-                self.assertIn("google-search-ai-links", markup)
             else:
                 self.assertIn('name="robots" content="noindex, follow"', markup)
+            if path.parent.name == "news":
+                self.assertIn("google-search-ai-links", markup)
 
     def test_unsafe_related_and_self_links_refused(self):
         current = self.trusted["dzen_id"]
