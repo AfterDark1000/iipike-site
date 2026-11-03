@@ -6,6 +6,7 @@ import sys
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from scripts.site_rubrics import populated
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
@@ -29,7 +30,9 @@ class SearchIndexingTests(unittest.TestCase):
     def test_sitemap_only_has_real_reviewed_site_pages(self):
         tree = ET.parse(ROOT / "sitemap.xml")
         urls = [p.text for p in tree.findall(".//s:loc", NAMESPACE)]
-        expected = [BASE + "/", BASE + "/articles/"] + [BASE + "/rubrics/news/"] + [BASE + "/" + row["url"] for row in self.records]
+        expected = ([BASE + "/", BASE + "/articles/"] +
+                    [BASE + "/rubrics/" + key + "/" for key in populated(self.records)] +
+                    [BASE + "/" + row["url"] for row in self.records])
         self.assertEqual(urls, expected)
         self.assertEqual(len(urls), len(set(urls)))
         for url in urls:
