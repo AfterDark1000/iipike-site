@@ -28,6 +28,7 @@ class PublisherTests(unittest.TestCase):
         self.article = {
             "slug": "sample-verified-news",
             "status": "approved",
+            "rubric": "news",
             "approved_by": "editor",
             "approved_at": "2026-11-03",
             "title": "Пример <настоящей> новости",
@@ -54,7 +55,7 @@ class PublisherTests(unittest.TestCase):
     def test_preflight_never_writes_anything(self):
         prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
-        self.assertEqual(len(outputs), 5)
+        self.assertEqual(len(outputs), 9)
         self.assertFalse((self.root / "articles").exists())
         self.assertFalse((self.root / "sitemap.xml").exists())
         for p, before in prev.items():
