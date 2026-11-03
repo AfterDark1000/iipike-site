@@ -1,0 +1,61 @@
+name: Restore archive sources and original covers (ISOLATED BRANCH)
+on:
+  push:
+    branches: [archive/next30-20261104]
+    paths:
+      - '.github/workflows/archive-next30-recover.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/archive/next30-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/next30-20261104
+          persist-credentials: true
+      - name: Recover 30 article text records from previous read-only probe artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: read-only-next30-source-report
+          run-id: 41717622248
+          github-token: ${{ github.token }}
+          path: research/
+      - name: Verify recovered source data
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('research/next30_probe_results.json'))
+          assert len(x['results'])==30
+          print("Recovered",len(x['results']),"source diagnostics")
+          PY
+      - name: Install Pillow for original cover validation
+        run: python3 -m pip install pillow
+      - name: Download only source article artwork (NO SITE DEPLOY)
+        run: python3 research/download_next30_covers.py
+      - name: Preserve results for editorial QA
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: next30-cover-originals
+          path: |
+            research/next30_probe_results.json
+            research/next30_cover_report.json
+            assets/imported/*.webp
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit recovered sources and art to archive branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/next30_probe_results.json research/next30_cover_report.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: preserve 30 verified Dzen source texts and recovered cover originals'
+            git pull --rebase origin archive/next30-20261104
+            git push origin HEAD:archive/next30-20261104
+          fi
