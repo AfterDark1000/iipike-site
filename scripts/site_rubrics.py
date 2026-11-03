@@ -1,5 +1,6 @@
 """Canonical HPII rubrics: editorial categories, not extra copies of articles."""
 from html import escape
+from datetime import date
 from pathlib import Path
 
 BASE = "https://iipike.ru"
@@ -21,6 +22,22 @@ RUBRICS = {
         "description": "Громкие заявления известных людей: кто что сказал и чем слова подтверждаются.",
     },
 }
+
+
+MONTHS_RU = (
+    "января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря",
+)
+
+
+def publication_date(value):
+    """Show an original historical publication day in reader-friendly Russian."""
+    day = date.fromisoformat(value)
+    return f"{day.day} {MONTHS_RU[day.month - 1]} {day.year}"
+
+
+def publication_date_caps(value):
+    return publication_date(value).upper()
 
 
 def rubric_link(key, prefix=""):
@@ -48,7 +65,7 @@ def render_page(key, records):
     cards = "\n".join(
         '<a class="archive-card" href="../../' + escape(r["url"], quote=True) + '">'
         '<img loading="lazy" src="../../' + escape(r["cover"], quote=True) + '" alt="Обложка статьи">'
-        '<span><small class="date">Опубликовано: ' + escape(r["published"]) + '</small>'
+        '<span><small class="date">Опубликовано: ' + escape(publication_date(r["published"])) + '</small>'
         '<h3>' + escape(r["title"]) + '</h3>'
         '<p>' + escape(r["summary"]) + '</p></span>'
         '<span aria-hidden="true">↗</span></a>'
