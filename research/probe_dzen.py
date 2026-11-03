@@ -40,7 +40,9 @@ async def extract(page, item):
             main:txt('main'),
             body:document.body?document.body.innerText.slice(0,45000):'',
             selectors:{article:stat('article'),itemprop:stat('[itemprop="articleBody"]'),main:stat('main')},
-            images:imgs
+            images:imgs,
+            external_links:Array.from(document.querySelectorAll('main a[href]')).map(a=>({text:a.innerText?.trim().slice(0,150),href:a.href})).filter(a=>a.href?.startsWith('https:')&&!a.href.includes('dzen.ru')).slice(0,60),
+            headings:Array.from(document.querySelectorAll('main h1,main h2,main h3')).map(x=>({tag:x.tagName,text:x.innerText?.trim()})).slice(0,35)
           };
         }""")
         result["dom"]["article"] = (result["dom"]["article"] or "")[:45000]
@@ -58,7 +60,7 @@ async def main():
         raise
     manifest=json.loads(INPUT.read_text(encoding="utf-8"))
     candidates=manifest["items"]
-    selected=[candidates[i] for i in (0,2,3)]
+    selected=candidates
     output=[]
     async with async_playwright() as play:
         browser=await play.chromium.launch(headless=True, args=["--no-sandbox"])
