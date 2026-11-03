@@ -83,7 +83,8 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(guid, "https://afterdark1000.github.io/iipike-site/articles/google-search-ai-links/")
         site = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
         locs = [x.text for x in site.iter() if x.tag.endswith("}loc")]
-        self.assertEqual(len(locs), 4)
+        self.assertEqual(len(locs), 5)
+        self.assertIn("https://iipike.ru/rubrics/news/", locs)
         self.assertIn("https://iipike.ru/articles/sample-verified-news/", locs)
         self.assertNotIn("drafts/", str(locs))
         with self.assertRaisesRegex(ValueError, "Already published"):
