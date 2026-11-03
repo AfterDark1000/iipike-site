@@ -208,3 +208,14 @@
   .hpi-social-card{transition:none}
   .hpi-social-card:hover{transform:none}
 }
+
+/* Editorial taxonomy and related stories: shared mobile-safe navigation. */
+.rubric-navigation{display:flex;gap:10px;flex-wrap:wrap;margin:24px auto 34px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rubric-navigation a{font-size:13px;font-weight:800;text-decoration:none;padding:8px 12px;background:#fffdf8;border:1px solid var(--line)}
+.rubric-navigation a:hover,.rubric-navigation a:focus-visible{border-color:var(--red);color:var(--red)}
+.related-stories{margin-top:35px;padding:20px 24px;border-top:2px solid var(--ink);background:#fffcf6}
+.related-stories h2{font-size:24px;margin:0 0 14px}
+.related-stories ul{padding-left:22px;margin:0}
+.related-stories li{margin:10px 0;line-height:1.6}
+.related-stories small{color:var(--muted);font-size:12px;white-space:nowrap}
+@media(max-width:520px){.rubric-navigation{gap:7px}.rubric-navigation a{font-size:12px;padding:7px 9px}.related-stories{padding:16px}}
