@@ -1,0 +1,248 @@
+{
+  "note": "Read-only source recovery; no GitHub Pages / Dzen publication performed. Article texts are copies of user-owned Dzen publications, not independently fact-checked new reporting.",
+  "requested": 30,
+  "ready": 30,
+  "not_ready": 0,
+  "entries": [
+    {
+      "slug": "ai-site-training-opt-out",
+      "status": "ready",
+      "cover": "assets/imported/ai-site-training-opt-out.webp",
+      "chars": 2779,
+      "paragraphs": 22,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "chatgpt-bug-bounty-172k",
+      "status": "ready",
+      "cover": "assets/imported/chatgpt-bug-bounty-172k.webp",
+      "chars": 2084,
+      "paragraphs": 9,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "grok-bot-analysts-70-hours",
+      "status": "ready",
+      "cover": "assets/imported/grok-bot-analysts-70-hours.webp",
+      "chars": 2127,
+      "paragraphs": 9,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "microsoft-ai-consciousness-warning",
+      "status": "ready",
+      "cover": "assets/imported/microsoft-ai-consciousness-warning.webp",
+      "chars": 1681,
+      "paragraphs": 9,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "ai-hacker-admin-access",
+      "status": "ready",
+      "cover": "assets/imported/ai-hacker-admin-access.webp",
+      "chars": 2472,
+      "paragraphs": 12,
+      "date": "2026-11-02"
+    },
+    {
+      "slug": "ai-browser-assistants-vulnerabilities",
+      "status": "ready",
+      "cover": "assets/imported/ai-browser-assistants-vulnerabilities.webp",
+      "chars": 2207,
+      "paragraphs": 11,
+      "date": "2026-11-01"
+    },
+    {
+      "slug": "mac-audio-transcription-speed",
+      "status": "ready",
+      "cover": "assets/imported/mac-audio-transcription-speed.webp",
+      "chars": 1948,
+      "paragraphs": 11,
+      "date": "2026-10-31"
+    },
+    {
+      "slug": "chatgpt-violence-chat-interrupt",
+      "status": "ready",
+      "cover": "assets/imported/chatgpt-violence-chat-interrupt.webp",
+      "chars": 1483,
+      "paragraphs": 7,
+      "date": "2026-10-31"
+    },
+    {
+      "slug": "claude-code-malware-cursor",
+      "status": "ready",
+      "cover": "assets/imported/claude-code-malware-cursor.webp",
+      "chars": 3810,
+      "paragraphs": 34,
+      "date": "2026-10-31"
+    },
+    {
+      "slug": "gemini-edit-pdf-sheets",
+      "status": "ready",
+      "cover": "assets/imported/gemini-edit-pdf-sheets.webp",
+      "chars": 1407,
+      "paragraphs": 11,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "ai-firefox-security-flaws",
+      "status": "ready",
+      "cover": "assets/imported/ai-firefox-security-flaws.webp",
+      "chars": 3736,
+      "paragraphs": 31,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "openai-agent-monitoring-four-levels",
+      "status": "ready",
+      "cover": "assets/imported/openai-agent-monitoring-four-levels.webp",
+      "chars": 1912,
+      "paragraphs": 14,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "mistral-trillion-parameters",
+      "status": "ready",
+      "cover": "assets/imported/mistral-trillion-parameters.webp",
+      "chars": 1848,
+      "paragraphs": 11,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "russian-claude-passport-ban",
+      "status": "ready",
+      "cover": "assets/imported/russian-claude-passport-ban.webp",
+      "chars": 2248,
+      "paragraphs": 14,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "elevenlabs-als-voice-restoration",
+      "status": "ready",
+      "cover": "assets/imported/elevenlabs-als-voice-restoration.webp",
+      "chars": 2276,
+      "paragraphs": 11,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "google-robotics-teamwork",
+      "status": "ready",
+      "cover": "assets/imported/google-robotics-teamwork.webp",
+      "chars": 1731,
+      "paragraphs": 10,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "datagpt-source-numbers",
+      "status": "ready",
+      "cover": "assets/imported/datagpt-source-numbers.webp",
+      "chars": 852,
+      "paragraphs": 7,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "akamai-ai-code-sandbox",
+      "status": "ready",
+      "cover": "assets/imported/akamai-ai-code-sandbox.webp",
+      "chars": 1233,
+      "paragraphs": 8,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "swiss-ai-without-us-cloud",
+      "status": "ready",
+      "cover": "assets/imported/swiss-ai-without-us-cloud.webp",
+      "chars": 1129,
+      "paragraphs": 7,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "ibm-agent-identity-stop",
+      "status": "ready",
+      "cover": "assets/imported/ibm-agent-identity-stop.webp",
+      "chars": 921,
+      "paragraphs": 7,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "liquid-ai-1gb-models",
+      "status": "ready",
+      "cover": "assets/imported/liquid-ai-1gb-models.webp",
+      "chars": 1629,
+      "paragraphs": 11,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "alibaba-agent-unapproved-transfer",
+      "status": "ready",
+      "cover": "assets/imported/alibaba-agent-unapproved-transfer.webp",
+      "chars": 1243,
+      "paragraphs": 8,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "anthropic-ipo-biosecurity-warning",
+      "status": "ready",
+      "cover": "assets/imported/anthropic-ipo-biosecurity-warning.webp",
+      "chars": 1252,
+      "paragraphs": 8,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "openai-scientific-puzzles",
+      "status": "ready",
+      "cover": "assets/imported/openai-scientific-puzzles.webp",
+      "chars": 2954,
+      "paragraphs": 19,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "claude-paywall-bypass",
+      "status": "ready",
+      "cover": "assets/imported/claude-paywall-bypass.webp",
+      "chars": 1328,
+      "paragraphs": 8,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "ai-hackers-anthropic-12h",
+      "status": "ready",
+      "cover": "assets/imported/ai-hackers-anthropic-12h.webp",
+      "chars": 2239,
+      "paragraphs": 10,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "agensh-1024-autonomous-agents",
+      "status": "ready",
+      "cover": "assets/imported/agensh-1024-autonomous-agents.webp",
+      "chars": 2056,
+      "paragraphs": 13,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "ai-agents-friends-lonely",
+      "status": "ready",
+      "cover": "assets/imported/ai-agents-friends-lonely.webp",
+      "chars": 998,
+      "paragraphs": 8,
+      "date": "2026-10-25"
+    },
+    {
+      "slug": "russian-courts-ai-hallucinations",
+      "status": "ready",
+      "cover": "assets/imported/russian-courts-ai-hallucinations.webp",
+      "chars": 2394,
+      "paragraphs": 19,
+      "date": "2026-10-25"
+    },
+    {
+      "slug": "block-voice-without-text",
+      "status": "ready",
+      "cover": "assets/imported/block-voice-without-text.webp",
+      "chars": 1436,
+      "paragraphs": 10,
+      "date": "2026-10-24"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Часовой аудиофайл — всего 20–40 секунд обработки. Такую скорость показала модель NVIDIA Parakeet на Mac Studio M4 Max в испытаниях разработчика Mattt. 29 октября он представил AnySpeechRecognizer — открытую библиотеку для программистов, которая позволяет подключать к приложениям"><meta property="og:type" content="article">
+<meta property="og:title" content="На Mac час записи расшифровали за 20–40 секунд!"><meta property="og:description" content="Часовой аудиофайл — всего 20–40 секунд обработки. Такую скорость показала модель NVIDIA Parakeet на Mac Studio M4 Max в испытаниях разработчика Mattt. 29 октября он представил AnySpeechRecognizer — открытую библиотеку для программистов, которая позволяет подключать к приложениям">
+<meta property="og:image" content="https://iipike.ru/assets/imported/mac-audio-transcription-speed.webp">
+<meta property="og:url" content="https://iipike.ru/articles/mac-audio-transcription-speed/"><meta property="article:published_time" content="2026-10-31T12:07:37Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "На Mac час записи расшифровали за 20–40 секунд!", "mainEntityOfPage": "https://iipike.ru/articles/mac-audio-transcription-speed/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-10-31T12:07:37Z", "image": "https://iipike.ru/assets/imported/mac-audio-transcription-speed.webp", "isBasedOn": "https://dzen.ru/a/auWqnantRAIj2gAy"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/mac-audio-transcription-speed/"><title>На Mac час записи расшифровали за 20–40 секунд! — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>На Mac час записи расшифровали за 20–40 секунд!</h1>
+<p class="summary">Часовой аудиофайл — всего 20–40 секунд обработки. Такую скорость показала модель NVIDIA Parakeet на Mac Studio M4 Max в испытаниях разработчика Mattt. 29 октября он представил AnySpeechRecognizer — открытую библиотеку для программистов, которая позволяет подключать к приложениям</p><p class="date">Опубликовано: 31 октября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/mac-audio-transcription-speed.webp" alt="Обложка: На Mac час записи расшифровали за 20–40 секунд!" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/auWqnantRAIj2gAy" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">Часовой аудиофайл — всего 20–40 секунд обработки. Такую скорость показала модель NVIDIA Parakeet на Mac Studio M4 Max в испытаниях разработчика Mattt.</p>
+<p>29 октября он представил AnySpeechRecognizer — открытую библиотеку для программистов, которая позволяет подключать к приложениям Apple разные нейросети распознавания речи.</p>
+<p>Вместо штатной модели Apple разработчик может выбрать NVIDIA Parakeet или Alibaba Qwen3-ASR. Обе работают непосредственно на устройстве, без обязательной отправки записей в облако. При этом программный интерфейс остаётся похожим на стандартный Apple Speech API.</p>
+<p>Parakeet v3 поддерживает 25 европейских языков, а Qwen3-ASR — 30 языков и 22 китайских диалекта. Последняя работает медленнее, зато предлагает более широкий выбор языков.</p>
+<p>AnySpeechRecognizer умеет также разделять реплики четырёх собеседников. Для этого используется NVIDIA Sortformer, которая работает совместно с распознавателем Apple или Parakeet. На выходе можно получить стенограмму с указанием, кто и когда говорил.</p>
+<p>Со сложными разговорами пока получается хуже. В испытаниях на записях совещаний, где люди перебивают друг друга, все проверенные распознаватели ошибались более чем в 23% слов.</p>
+<p>Вместе с речевой библиотекой Mattt выпустил AnyDecisionModel — инструмент для другой задачи.</p>
+<p>Допустим, клиент написал в поддержку о двойном списании денег. Вместо того чтобы просить языковую модель сочинить ответ, программа может поручить ей определить срочность обращения, выбрать нужный отдел и оценить вероятность каждого решения.</p>
+<p>Такие задачи можно выполнять локально через MLX, Core AI или llama.cpp. Есть также подключения к Ollama и внешним сервисам.</p>
+<p>Оба Swift-пакета бесплатно опубликованы на GitHub. Это библиотеки для разработчиков, а не готовые приложения для расшифровки записей. Для работы требуется Swift 6.2 и совместимая система Apple.</p>
+<p>Основные испытания автор проводил на macOS 27. Работу AnySpeechRecognizer на iPhone он пока не проверял.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/block-voice-without-text/">Block научила ИИ разговаривать, вообще не показывая ему текст</a> <small>(На сайте)</small></li>
+<li><a href="../../articles/elevenlabs-als-voice-restoration/">ElevenLabs возвращает голоса людям с БАС — бесплатно</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
