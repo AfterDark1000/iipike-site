@@ -23,6 +23,7 @@ on:
       - 'content/approved/**'
       - 'articles/index.html'
       - 'tests/test_approved_publisher.py'
+      - 'tests/test_historical_batch.py'
       - 'tests/test_search_indexing.py'
       - 'assets/site.css'
       - 'tests/test_homepage.py'
@@ -51,6 +52,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_rubrics_related.py' -v
           python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_historical_batch.py' -v
       - name: Check desktop/mobile browser rendering
         run: |
           set -e
