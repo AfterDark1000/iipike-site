@@ -25,6 +25,7 @@ class PublisherTests(unittest.TestCase):
         (self.root / "assets" / "sample.svg").write_text("<svg/>", encoding="utf-8")
         shutil.copyfile(ROOT / "news.json", self.root / "news.json")
         shutil.copyfile(ROOT / "feed.xml", self.root / "feed.xml")
+        shutil.copyfile(ROOT / "index.html", self.root / "index.html")
         self.article = {
             "slug": "sample-verified-news",
             "status": "approved",
@@ -53,9 +54,9 @@ class PublisherTests(unittest.TestCase):
         p.write_text(json.dumps(self.article, ensure_ascii=False), encoding="utf-8")
 
     def test_preflight_never_writes_anything(self):
-        prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml")}
+        prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml", self.root / "index.html")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
-        self.assertEqual(len(outputs), 9)
+        self.assertEqual(len(outputs), 10)
         self.assertFalse((self.root / "articles").exists())
         self.assertFalse((self.root / "sitemap.xml").exists())
         for p, before in prev.items():
@@ -76,6 +77,9 @@ class PublisherTests(unittest.TestCase):
         catalog = (self.root / "articles" / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="sample-verified-news/"', catalog)
         self.assertIn('href="google-search-ai-links/"', catalog)
+        home = (self.root / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="articles/sample-verified-news/"', home)
+        self.assertIn("Пример &lt;настоящей&gt; новости", home)
         rss = ET.fromstring((self.root / "feed.xml").read_text(encoding="utf-8"))
         self.assertEqual(len(rss.findall("./channel/item")), len(records))
         guid = [x.findtext("guid") for x in rss.findall("./channel/item")
