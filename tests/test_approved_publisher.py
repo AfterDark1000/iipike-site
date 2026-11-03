@@ -94,6 +94,14 @@ class PublisherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Already published"):
             PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
 
+    def test_archive_can_omit_unverified_event_date(self):
+        self.article.pop("event_date")
+        self.write_article()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+        records = json.loads(outputs[self.root / "news.json"])
+        self.assertEqual(records[-1]["id"], "sample-verified-news")
+        self.assertNotIn("event_date", records[-1])
+
     def test_rejects_unapproved_status(self):
         self.article["status"] = "draft"
         self.write_article()
