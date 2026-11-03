@@ -7,7 +7,7 @@ then explicitly run --publish. Default operation is read-only preflight.
 """
 import argparse
 import datetime as dt
-from email.utils import format_datetime, parsedate_to_datetime
+from email.utils import format_datetime
 import html
 import json
 from pathlib import Path
@@ -67,6 +67,7 @@ def approved_article(root, slug):
         raise ValueError("cover must be an existing local assets image")
     paragraphs = data.get("paragraphs")
     if (not isinstance(paragraphs, list) or len(paragraphs) < 2
+            or not isinstance(paragraphs[0], dict)
             or paragraphs[0].get("type") != "lead"):
         raise ValueError("Article requires a lead and at least another paragraph")
     for block in paragraphs:
