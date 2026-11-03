@@ -265,6 +265,8 @@ def publish(root, slug, apply=False):
         source = root / "content" / "approved" / (old_slug + ".json")
         if source.is_file():
             prior = approved_article(root, old_slug)
+            if prior.get("related_dzen_ids") and not catalog:
+                catalog = catalog_entries(root)
             outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog)
 
     if apply:
