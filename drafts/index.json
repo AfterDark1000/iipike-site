@@ -1,5 +1,12 @@
 [
   {
+    "id": "218c5dc9b18cefceb61f",
+    "date": "2026-11-03",
+    "title": "NVIDIA выпустила инструмент для поиска сбоев в распределенном ИИ",
+    "source_name": "NVIDIA Developers",
+    "source_url": "https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution/"
+  },
+  {
     "id": "f9b3653194a263cc79d8",
     "date": "2026-11-02",
     "title": "AWS показала живой просмотр веб-приложений прямо в изоляторе ИИ-агента",

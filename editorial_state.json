@@ -90,6 +90,12 @@
       "utc_date": "2026-11-02",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/",
       "source_title": "Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime"
+    },
+    {
+      "id": "218c5dc9b18cefceb61f",
+      "utc_date": "2026-11-03",
+      "source_url": "https://developer.nvidia.com/blog/diagnose-distributed-ai-workload-failures-with-nvidia-attribution/",
+      "source_title": "Diagnose Distributed AI Workload Failures with NVIDIA Attribution"
     }
   ]
 }
