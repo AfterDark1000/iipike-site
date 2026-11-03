@@ -1,0 +1,44 @@
+name: Read-only Dzen archive probe (30 historical posts)
+on:
+  push:
+    branches: [archive/next30-20261104]
+    paths:
+      - 'research/probe_next30.py'
+      - '.github/workflows/archive-next30-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: github.ref == 'refs/heads/archive/next30-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/next30-20261104
+          persist-credentials: true
+      - name: Install browser for public Dzen pages
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Inspect 30 original pages (NO PUBLICATION)
+        run: python3 research/probe_next30.py
+      - name: Preserve findings as an artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: read-only-next30-source-report
+          path: research/next30_probe_results.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Save reports on isolated archive branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/next30_probe_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: verify source text and images of next 30 historical articles'
+            git push origin HEAD:archive/next30-20261104
+          fi
