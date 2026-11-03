@@ -80,8 +80,9 @@ def approved_article(root, slug):
     dt.date.fromisoformat(need_text(data, "approved_at", 20))
     for k in ("title", "summary", "section", "source_title"):
         need_text(data, k, 500 if k != "summary" else 1500)
-    for k in ("published", "event_date"):
-        dt.date.fromisoformat(need_text(data, k, 20))
+    dt.date.fromisoformat(need_text(data, "published", 20))
+    if "event_date" in data:
+        dt.date.fromisoformat(need_text(data, "event_date", 20))
     stamp = need_text(data, "published_at_utc", 40)
     if not stamp.endswith("Z"):
         raise ValueError("published_at_utc must be explicitly UTC (Z)")
@@ -129,7 +130,7 @@ def render_article(data, records=None, catalog=None):
     rubric = data["rubric"]
     rubric_name = quote(RUBRICS[rubric]["name"])
     source_link = ""
-    if data.get("dzen_id"):
+    if data.get("dzen_id") and data.get("source_url") != data.get("dzen_url"):
         source_link = (
             '<p class="date"><a href="' + quote(data["dzen_url"])
             + '" target="_blank" rel="noopener noreferrer">Версия в Дзене ↗</a></p>'
@@ -157,6 +158,8 @@ def render_article(data, records=None, catalog=None):
         structured["isBasedOn"] = data["dzen_url"]
     structured_json = json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c")
     related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
+    provenance_only = data.get("source_url") == data.get("dzen_url")
+    source_heading = "Архивная публикация" if provenance_only else "Первоисточник"
     body = "\n".join(
         f'<{TYPES[b["type"]]} class="lead">{quote(b["text"])}</p>'
         if b["type"] == "lead"
@@ -184,7 +187,7 @@ def render_article(data, records=None, catalog=None):
 <p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a> / {quote(data["section"])}</p><h1>{title}</h1>
 <p class="summary">{summary}</p><p class="date">Опубликовано: {label}</p>{source_link}</div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
-<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<section class="article-body"><aside class="sources"><h3>{source_heading}</h3>
 <a href="{quote(data["source_url"])}" target="_blank" rel="noopener noreferrer">{quote(data["source_title"])} ↗</a>
 </aside><article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
@@ -278,8 +281,10 @@ def publish(root, slug, apply=False):
     dest = root / "articles" / slug / "index.html"
     if dest.exists() or any(r["id"] == slug or r["url"] == f"articles/{slug}/" for r in entries):
         raise ValueError("Already published: cannot overwrite an existing article")
-    row = {k: data[k] for k in ("title", "summary", "published", "event_date",
+    row = {k: data[k] for k in ("title", "summary", "published",
                                "source_url", "cover", "published_at_utc", "rubric")}
+    if "event_date" in data:
+        row["event_date"] = data["event_date"]
     # published/published_at_utc = original editorial publication time.
     for key in ("dzen_id", "dzen_url", "modified_at_utc"):
         if key in data:
