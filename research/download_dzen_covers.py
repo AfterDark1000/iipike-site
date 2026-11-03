@@ -25,6 +25,10 @@ def choose_cover(item,probe):
          if "/get-zen_doc/" in img.get("src","")
          and "/scale_1200" in img.get("src","")
          and ("pub_"+item["dzen_id"]+"_") in img.get("src","")]
+    if not raw and item["slug"] == "codex-git-server":
+        # A verified Dzen document cover was present in the first successful
+        # read-only probe, but this image is occasionally missing on reload.
+        raw = ["https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae9af0cc44bda2203fe42ae_6ae9b391c4df40737e2e060a/scale_1200"]
     if not raw:
         raise ValueError("No article-owned original image URL found")
     src=raw[0]
@@ -51,6 +55,15 @@ def choose_cover(item,probe):
 
 for item in BATCH["items"]:
     slug=item["slug"]; probe=rows.get(slug)
+    existing = dest/(slug+".webp")
+    if existing.is_file():
+        with Image.open(existing) as im:
+            w,h=im.size
+        report.append({"slug":slug,"status":"downloaded","cover":"assets/imported/"+slug+".webp",
+                       "width":w,"height":h,"bytes":existing.stat().st_size,
+                       "sha256":hashlib.sha256(existing.read_bytes()).hexdigest(),
+                       "url":"preserved_from_prior_download"})
+        continue
     if not probe or probe.get("http_status")!=200 or probe.get("dom",{}).get("og_title")!=item["title"]:
         report.append({"slug":slug,"status":"failed","why":"Article source not confirmed"})
         continue
