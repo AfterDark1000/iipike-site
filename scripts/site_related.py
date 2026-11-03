@@ -46,7 +46,9 @@ def validate_reference(ref, catalog):
 
 
 def validate_links(ids, catalog, current=None):
-    if not isinstance(ids, list) or len(ids) > 4 or len(ids) != len(set(ids)):
+    if (not isinstance(ids, list) or len(ids) > 4
+            or not all(isinstance(ident, str) for ident in ids)
+            or len(ids) != len(set(ids))):
         raise ValueError("Related articles must be a list of up to 4 unique Dzen IDs")
     for ident in ids:
         if ident == current:
