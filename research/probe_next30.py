@@ -59,7 +59,7 @@ async def main():
         print("playwright package missing", file=sys.stderr)
         raise
     manifest=json.loads(INPUT.read_text(encoding="utf-8"))
-    candidates=manifest["items"]
+    candidates=manifest["candidates"]
     selected=candidates
     output=[]
     async with async_playwright() as play:
