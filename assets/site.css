@@ -219,3 +219,38 @@
 .related-stories li{margin:10px 0;line-height:1.6}
 .related-stories small{color:var(--muted);font-size:12px;white-space:nowrap}
 @media(max-width:520px){.rubric-navigation{gap:7px}.rubric-navigation a{font-size:12px;padding:7px 9px}.related-stories{padding:16px}}
+
+/* Editorial archive cards: keep title/teaser readable at phone widths.
+   Older base CSS used three grid items with only two mobile tracks, forcing
+   the arrow into an implicit row and squeezing the text beside a tiny cover. */
+.archive-card{
+  grid-template-columns:200px minmax(0,1fr) 20px;
+  align-items:start;
+  gap:22px;
+}
+.archive-card > span:nth-child(2){min-width:0;}
+.archive-card > span:last-child{align-self:start;line-height:1.4;}
+.archive-card h3{line-height:1.28;overflow-wrap:break-word;}
+.archive-card p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.55;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}
+.archive-card img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+@media(max-width:680px){
+  .archive-card{
+    grid-template-columns:minmax(0,1fr);
+    gap:12px;
+    padding:24px 0;
+  }
+  .archive-card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;}
+  .archive-card h3{font-size:21px;line-height:1.24;margin:6px 0 0;}
+  .archive-card > span:nth-child(2){min-width:0;display:block;}
+  .archive-card > span:last-child{display:none;}
+  .archive-card p{font-size:15px;line-height:1.5;-webkit-line-clamp:3;}
+}
