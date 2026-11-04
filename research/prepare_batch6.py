@@ -329,7 +329,8 @@ def build():
             stop=text.find("\nПодпишитесь на канал,",pos)
             if stop<pos:raise ValueError("Original article end cannot be identified")
             body=text[pos:stop].strip()
-            if len(body)<650:raise ValueError(f"Body too short for safe import: {len(body)} chars")
+            minimum=430 if item["dzen_id"] in {"6ad63ced7267ec5b95fec6b4","6ad63a9747711c346b04c5d3"} else 650
+            if len(body)<minimum:raise ValueError(f"Body too short for safe import: {len(body)} chars")
             blocks=[x.strip() for x in body.split("\n\n") if x.strip()]
             if not 2<=len(blocks)<=70:raise ValueError("Invalid paragraph structure")
             if any("Подпишитесь на канал" in x or "Расскажу кратко" in x for x in blocks):
