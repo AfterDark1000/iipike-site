@@ -1,0 +1,35 @@
+name: Batch3 - verify one replacement Dzen original (isolated)
+on:
+  push:
+    branches: [archive/batch3-fast-20261104]
+    paths:
+      - '.github/workflows/batch3-one-replacement.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  source:
+    if: github.ref == 'refs/heads/archive/batch3-fast-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch3-fast-20261104
+          persist-credentials: true
+      - name: Install read-only browser
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Verify original full text and title of replacement
+        run: python3 research/probe_batch3_replacement.py
+      - name: Save isolated source evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch3_probe_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: add verified original text of replacement article'
+            git pull --rebase origin archive/batch3-fast-20261104
+            git push origin HEAD:archive/batch3-fast-20261104
+          fi
