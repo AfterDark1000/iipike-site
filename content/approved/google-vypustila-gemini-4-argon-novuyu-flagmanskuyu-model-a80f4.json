@@ -1,0 +1,43 @@
+{
+  "slug": "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского исторического архива",
+  "approved_at": "2026-11-04",
+  "title": "Google выпустила Gemini 4 Argon — новую флагманскую модель",
+  "summary": "13 октября Google открыла доступ к Gemini 4 Argon — модели для сложных многоэтапных задач, программирования, исследований и автономной работы.",
+  "published": "2026-10-14",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/as79gCKVowlfioD0",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4.webp",
+  "dzen_id": "6acefd802295a3095f8a80f4",
+  "dzen_url": "https://dzen.ru/a/as79gCKVowlfioD0",
+  "related_dzen_ids": [
+    "6ad63a9747711c346b04c5d3",
+    "6ad9a5ee95e73b66d202b570"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "13 октября Google открыла доступ к Gemini 4 Argon — модели для сложных многоэтапных задач, программирования, исследований и автономной работы."
+    },
+    {
+      "type": "p",
+      "text": "По собственным тестам Google, Argon превосходит ряд конкурентов в профессиональных задачах. Модель поддерживает контекст до миллиона токенов и интегрирована с агентной средой Antigravity."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: подписки Google AI Pro и Ultra в приложении Gemini, платный Gemini API для разработчиков."
+    },
+    {
+      "type": "p",
+      "text": "Цена API: $2 за миллион входных и $10 за миллион выходных токенов. После 30 ноября тариф удвоится."
+    },
+    {
+      "type": "p",
+      "text": "Особенно интересно, что Gemini теперь умеет выполнять фоновые задачи и взаимодействовать более чем с 40 приложениями. Конкуренция полноценных ИИ-агентов становится серьёзнее."
+    }
+  ],
+  "publication_date_precision": "day"
+}

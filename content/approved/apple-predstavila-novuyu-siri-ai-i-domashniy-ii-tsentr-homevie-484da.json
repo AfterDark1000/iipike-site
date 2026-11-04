@@ -1,0 +1,43 @@
+{
+  "slug": "apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского исторического архива",
+  "approved_at": "2026-11-04",
+  "title": "Apple представила новую Siri AI и домашний ИИ-центр HomeView",
+  "summary": "13 октября Apple представила HomeView — устройство с семидюймовым экраном и новой версией Siri AI.",
+  "published": "2026-10-14",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/as7-O0z4Fk2YtITa",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da.webp",
+  "dzen_id": "6acefe3b4cf8164d98b484da",
+  "dzen_url": "https://dzen.ru/a/as7-O0z4Fk2YtITa",
+  "related_dzen_ids": [
+    "6ad0bd4d318b284334814728",
+    "6ae19154d2f43220dc1a7aa6"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "13 октября Apple представила HomeView — устройство с семидюймовым экраном и новой версией Siri AI."
+    },
+    {
+      "type": "p",
+      "text": "Новая Siri понимает содержимое экрана, использует персональный контекст пользователя и помогает управлять умным домом. HomeView распознаёт лица членов семьи и показывает каждому его сообщения, календарь и другие персональные данные."
+    },
+    {
+      "type": "p",
+      "text": "Цена: от $299. Предзаказы уже открыты, продажи начнутся 13 ноября."
+    },
+    {
+      "type": "p",
+      "text": "Устройство первоначально появится в восьми странах, включая США и Великобританию. В Евросоюзе продажи пока не планируются из-за ограничений доступности Siri AI."
+    },
+    {
+      "type": "p",
+      "text": "Это заметный шаг Apple от обычного голосового помощника к персональному ИИ, встроенному в повседневную жизнь."
+    }
+  ],
+  "publication_date_precision": "day"
+}
