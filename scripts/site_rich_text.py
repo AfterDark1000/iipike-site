@@ -8,7 +8,7 @@ import html
 import re
 from urllib.parse import urlsplit
 
-TEXT_TYPES = frozenset({"lead", "p", "h2", "quote"})
+TEXT_TYPES = frozenset({"lead", "p", "h2", "h3", "quote"})
 LIST_TYPES = frozenset({"ul", "ol"})
 BLOCK_TYPES = TEXT_TYPES | LIST_TYPES
 # Only editor-used inline forms: **bold**, *italic*, [label](https://url).
@@ -116,8 +116,8 @@ def render_blocks(blocks):
             rendered.append('<p class="lead">' + inline_html(block["text"]) + "</p>")
         elif kind == "p":
             rendered.append("<p>" + inline_html(block["text"]) + "</p>")
-        elif kind == "h2":
-            rendered.append("<h2>" + inline_html(block["text"]) + "</h2>")
+        elif kind in ("h2", "h3"):
+            rendered.append(f"<{kind}>" + inline_html(block["text"]) + f"</{kind}>")
         elif kind in LIST_TYPES:
             body = "".join("<li>" + inline_html(item) + "</li>" for item in block["items"])
             rendered.append(f'<{kind} class="editorial-list">' + body + f"</{kind}>")
@@ -127,3 +127,97 @@ def render_blocks(blocks):
                 quote_body += "<footer><cite>" + inline_html(block["attribution"]) + "</cite></footer>"
             rendered.append(quote_body + "</blockquote>")
     return "\n".join(rendered)
+
+
+def markdown_to_blocks(source):
+    """Parse the VERBATIM human-approved Dzen body, without a second rewrite.
+
+    One Markdown source is authoritative. It is saved intact in the inbox and
+    approved source; HTML is derived from it, preserving its paragraph/headings/
+    lists/quote structure. Unsupported block syntax fails closed rather than
+    silently disappearing. The standalone title lives in the JSON title fields.
+    """
+    if not isinstance(source, str) or not 400 <= len(source) <= 110_000:
+        raise ValueError("article_markdown must be complete approved article text")
+    if "\r" in source or "\x00" in source:
+        raise ValueError("article_markdown has invalid newline/control encoding")
+    blocks = []
+    paragraph = []
+    items = []
+    list_kind = None
+    quotation = []
+    heading = re.compile(r"^(#{1,6})[ \t]+(.+)$")
+    unordered = re.compile(r"^[-*][ \t]+(.+)$")
+    numbered = re.compile(r"^[0-9]{1,2}[.)][ \t]+(.+)$")
+
+    def flush_paragraph():
+        if paragraph:
+            blocks.append({"type": "p", "text": " ".join(paragraph)})
+            paragraph.clear()
+
+    def flush_list():
+        nonlocal list_kind
+        if items:
+            blocks.append({"type": list_kind, "items": list(items)})
+            items.clear()
+        list_kind = None
+
+    def flush_quote():
+        if quotation:
+            lines = list(quotation)
+            quotation.clear()
+            block = {"type": "quote"}
+            if len(lines) > 1 and lines[-1].startswith("— "):
+                block["attribution"] = lines.pop()[2:].strip()
+            block["text"] = " ".join(lines)
+            blocks.append(block)
+
+    def flush_all():
+        flush_paragraph()
+        flush_list()
+        flush_quote()
+
+    for number, line in enumerate(source.split("\n"), 1):
+        clean = line.strip()
+        if not clean:
+            flush_all()
+            continue
+        if clean.startswith(chr(96) * 3) or clean.startswith("~~~") or clean == "---":
+            raise ValueError(f"Unsupported Markdown block at line {number}")
+        heading_match = heading.fullmatch(clean)
+        if heading_match:
+            flush_all()
+            hashes, body = heading_match.groups()
+            if len(hashes) not in (2, 3):
+                raise ValueError("Article title is separate; use ## and ### headings in body")
+            blocks.append({"type": "h2" if len(hashes) == 2 else "h3", "text": body})
+            continue
+        ul = unordered.fullmatch(clean)
+        ol = numbered.fullmatch(clean)
+        if ul or ol:
+            kind = "ul" if ul else "ol"
+            flush_paragraph()
+            flush_quote()
+            if list_kind not in (None, kind):
+                flush_list()
+            list_kind = kind
+            items.append((ul or ol).group(1))
+            continue
+        if clean.startswith(">"):
+            if not clean.startswith("> "):
+                raise ValueError(f"Quote needs '> ' prefix on line {number}")
+            flush_paragraph()
+            flush_list()
+            quote_line = clean[2:].strip()
+            if not quote_line:
+                raise ValueError("Empty quotation line")
+            quotation.append(quote_line)
+            continue
+        # A new ordinary paragraph must terminate an adjacent quote/list.
+        flush_list()
+        flush_quote()
+        paragraph.append(clean)
+    flush_all()
+    if blocks and blocks[0]["type"] == "p":
+        blocks[0]["type"] = "lead"
+    return validate_blocks(blocks, max_blocks=80, min_chars=400)
