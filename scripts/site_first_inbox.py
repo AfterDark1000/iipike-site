@@ -24,11 +24,11 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.publish_approved_article import approved_article, publish
 from scripts.site_rubrics import RUBRICS
+from scripts.site_rich_text import validate_blocks
 
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 STORY_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
-KINDS = {"lead", "p", "h2"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
@@ -86,19 +86,9 @@ def validate_story(root, story_id, *, today=None):
         if optional in data and (not isinstance(data[optional], str) or
                                  not re.fullmatch(r"[a-zA-Z0-9_-]{8,72}", data[optional])):
             raise ValueError("Invalid stable social queue identifier: " + optional)
-    blocks = data.get("paragraphs")
-    if not isinstance(blocks, list) or not 2 <= len(blocks) <= 80:
-        raise ValueError("Full approved Dzen article needs at least two text blocks")
-    for index, block in enumerate(blocks):
-        if (not isinstance(block, dict) or set(block) != {"type", "text"}
-                or block["type"] not in KINDS):
-            raise ValueError("Unsupported article paragraph structure")
-        if index == 0 and block["type"] != "lead":
-            raise ValueError("First paragraph must be the lead")
-        if not isinstance(block["text"], str) or not block["text"].strip() or len(block["text"]) > 12000:
-            raise ValueError("Article contains an empty or oversized paragraph")
-    if len(" ".join(b["text"] for b in blocks)) < 400:
-        raise ValueError("Cannot publish incomplete article text")
+    # Preserve ALL approved formatting; never flatten lists/quotes into prose.
+    # Publication uses the exact same validated block schema.
+    validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
     entries = json.loads((root / "news.json").read_text(encoding="utf-8"))
     if (any(x.get("id") == story_id for x in entries) or
             (root / "articles" / story_id / "index.html").exists()):
