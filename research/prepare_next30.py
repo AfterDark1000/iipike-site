@@ -12,11 +12,11 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT=Path(__file__).resolve().parents[1]
-CAND=ROOT/"research/batch3_candidates.json"
-PROBE=ROOT/"research/batch3_probe_results.json"
-COVERS=ROOT/"research/batch3_cover_report.json"
+CAND=ROOT/"research/batch4_candidates.json"
+PROBE=ROOT/"research/batch4_probe_results.json"
+COVERS=ROOT/"research/batch4_cover_report.json"
 DEST=ROOT/"content/approved"
-REPORT=ROOT/"research/batch3_preparation_report.json"
+REPORT=ROOT/"research/batch4_preparation_report.json"
 
 RELATED = {
  "ai-site-training-opt-out":["datagpt-source-numbers"],
@@ -155,8 +155,6 @@ RELATED.update({
   ]
 })
 
-RELATED.pop("ai-market-intel-alphabet-losses", None)
-RELATED["microsoft-offers-60k-exits"] = ["netherlands-civil-service-ai-cuts"]
 
 
 def build():
