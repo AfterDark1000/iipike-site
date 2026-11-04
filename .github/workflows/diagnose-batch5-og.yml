@@ -19,8 +19,8 @@ jobs:
       - name: Restore old source capture without recontacting Dzen
         uses: actions/download-artifact@v4
         with:
-          name: hpii-batch5-source-recovery-and-build
-          run-id: 41778333841
+          name: hpii-batch5-recovered-release
+          run-id: 41779146060
           github-token: ${{ github.token }}
           path: .
       - name: Dump exact image URLs from public Dzen originals
@@ -31,5 +31,4 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add research/batch5_og_diagnostic.json
           git commit -m 'research: map Dzen generated OG previews to article image metadata'
-          git pull --rebase origin repair/batch5-original-covers-20261104
           git push origin HEAD:repair/batch5-original-covers-20261104
