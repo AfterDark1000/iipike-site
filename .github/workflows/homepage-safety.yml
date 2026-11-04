@@ -27,6 +27,8 @@ on:
       - 'tests/test_archival_batch3.py'
       - 'tests/test_archival_batch4.py'
       - 'tests/test_archival_batch5.py'
+      - 'tests/test_archival_batch6.py'
+      - 'registry/archive_batch6_sources.json'
       - 'tests/test_search_indexing.py'
       - 'assets/site.css'
       - 'assets/imported/**'
@@ -62,6 +64,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_archival_batch3.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch4.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch5.py' -v
+          python3 -m unittest discover -s tests -p 'test_archival_batch6.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch5_cover_quality.py' -v
       - name: Check desktop/mobile browser rendering
         run: |
