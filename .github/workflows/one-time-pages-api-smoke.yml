@@ -1,0 +1,21 @@
+name: HPII one-time Pages rebuild API capability check
+on:
+  push:
+    branches: [editorial-intake]
+    paths:
+      - '.github/workflows/one-time-pages-api-smoke.yml'
+permissions:
+  contents: read
+  pages: write
+jobs:
+  pages-rebuild-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Verify trusted bot can request rebuild of existing live Pages content
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/"$GITHUB_REPOSITORY"/pages --jq '{status,build_type,source}' || true
+          gh api --method POST repos/"$GITHUB_REPOSITORY"/pages/builds
+          echo 'PAGES_REBUILD_API_OK: rebuild of unchanged site requested; no editorial article published'
