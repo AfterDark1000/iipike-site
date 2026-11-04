@@ -132,6 +132,47 @@ def run_checked(*args):
     subprocess.run(args, check=True)
 
 
+def auto_publish_site(story_id, base_sha, source_paths):
+    """Fast-forward ONLY the already-tested site release, then request Pages build.
+
+    GitHub Actions cannot open PRs with this repository's token, and pushes
+    made via GITHUB_TOKEN do not trigger an ordinary Pages build on their own.
+    The explicit REST rebuild request is therefore required. A failed request
+    is reported as failure (the release branch remains for recovery).
+    """
+    expected_files = {
+        source_paths[0], source_paths[1],
+        "assets/editorial/" + Path(source_paths[1]).name,
+        f"content/approved/{story_id}.json",
+        f"articles/{story_id}/index.html",
+        "news.json", "feed.xml", "sitemap.xml", "index.html",
+        "articles/index.html",
+    }
+    rubric_files = {"rubrics/" + name + "/index.html" for name in (
+        "news", "skynet", "what-are-you-doing", "quotes"
+    )}
+    changed = set(git("diff", "--name-only", f"{base_sha}..HEAD").stdout.splitlines())
+    if not expected_files <= changed:
+        raise ValueError("Release is missing required site/article artifacts: "
+                         + str(sorted(expected_files - changed)))
+    if changed - expected_files - rubric_files:
+        raise ValueError("Refusing non-editorial changes in automatic release: "
+                         + str(sorted(changed - expected_files - rubric_files)))
+    git("fetch", "origin", "main")
+    remote_head = git("rev-parse", "origin/main").stdout.strip()
+    if remote_head != base_sha:
+        raise ValueError("Main moved during editorial release; refusing to overwrite it")
+    # A normal non-forced push of a single reviewed commit. Fails closed if
+    # branch protection or intervening updates disallow a fast-forward.
+    git("push", "origin", "HEAD:refs/heads/main")
+    print("AUTO_RELEASE_MAIN_UPDATED: " + story_id, flush=True)
+    # Explicit Pages build is essential: GITHUB_TOKEN-originated pushes do not
+    # trigger most additional workflows or the ordinary automatic Pages build.
+    run_checked("gh", "api", "-X", "POST",
+                f"repos/{GH_REPO}/pages/builds")
+    print("PAGES_REBUILD_REQUESTED: " + story_id, flush=True)
+
+
 def release_one(story_id, ref):
     paths = pending_paths(ref, story_id)
     if paths is None:
@@ -147,6 +188,7 @@ def release_one(story_id, ref):
     if exists_at("origin/main", f"articles/{story_id}/index.html"):
         print(f"ALREADY_PUBLISHED: {story_id}", flush=True)
         return "published"
+    base_sha = git("rev-parse", "origin/main").stdout.strip()
     git("switch", "--detach", "origin/main")
     git("switch", "-c", branch)
     for path in paths:
@@ -166,6 +208,9 @@ def release_one(story_id, ref):
     git("add", "--", *files)
     git("commit", "-m", f"site-first: prepare reviewed story and artwork {story_id}")
     git("push", "origin", "HEAD:refs/heads/" + branch)
+    if os.environ.get("HPII_SITE_FIRST_AUTOPUBLISH") == "1":
+        auto_publish_site(story_id, base_sha, paths)
+        return "auto_published_rebuild_requested"
     source = json.loads(Path(paths[0]).read_text(encoding="utf-8"))
     title = source["title"].replace("\n", " ").strip()[:92]
     pr_body = (
