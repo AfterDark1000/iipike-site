@@ -156,6 +156,105 @@ RELATED.update({
 })
 
 
+# Topically checked candidate crosslinks for this migration batch; missing targets are ignored.
+RELATED.update({
+  "claude-uvolnyaet-ii-agentov-cf215": [
+    "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb",
+    "ibm-agent-identity-stop"
+  ],
+  "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad": [
+    "nvidia-ai-meeting-secretary",
+    "nvidia-local-assistant-4gb"
+  ],
+  "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b": [
+    "kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934",
+    "mistral-trillion-parameters"
+  ],
+  "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612": [
+    "oracle-chatgpt-accounting",
+    "chatgpt-service-now-support"
+  ],
+  "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9": [
+    "ai-hackers-anthropic-12h",
+    "microsoft-ai-consciousness-warning"
+  ],
+  "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793": [
+    "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad"
+  ],
+  "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a": [
+    "openai-power-grid-georgia-1000mw"
+  ],
+  "anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c": [
+    "anthropic-ipo-biosecurity-warning"
+  ],
+  "v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d": [
+    "openai-agent-disabled-monitoring",
+    "openai-agent-monitoring-four-levels"
+  ],
+  "tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef": [
+    "runway-app-studio-no-code-video",
+    "google-genie4-worlds"
+  ],
+  "ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee": [
+    "liquid-ai-1gb-models",
+    "nvidia-local-assistant-4gb"
+  ],
+  "claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6": [
+    "claude-code-malware-cursor",
+    "ai-hacker-admin-access"
+  ],
+  "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0": [
+    "google-genie4-worlds",
+    "grok-mp-letters-refund"
+  ],
+  "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa": [
+    "microsoft-copilot-twenty-models"
+  ],
+  "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb": [
+    "ibm-agent-identity-stop"
+  ],
+  "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80": [
+    "ai-agents-friends-lonely"
+  ],
+  "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4": [
+    "chatgpt-service-now-support"
+  ],
+  "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d": [
+    "openai-agent-disabled-monitoring",
+    "claude-code-malware-cursor"
+  ],
+  "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095": [
+    "claude-code-malware-cursor",
+    "ai-hacker-admin-access"
+  ],
+  "kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934": [
+    "mistral-trillion-parameters",
+    "liquid-ai-1gb-models"
+  ],
+  "1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf": [
+    "ai-agents-friends-lonely"
+  ],
+  "canva-vypustila-sobstvennuyu-neyroset-4b186": [
+    "microsoft-mai-image-editor"
+  ],
+  "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3": [
+    "claude-code-malware-cursor",
+    "ai-hacker-admin-access"
+  ],
+  "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700": [
+    "akamai-ai-code-sandbox"
+  ],
+  "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca": [
+    "claude-35k-antibodies"
+  ],
+  "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729": [
+    "claude-35k-antibodies"
+  ],
+  "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085": [
+    "google-ai-orbit"
+  ]
+})
+
 
 def build():
     batch=json.loads(CAND.read_text(encoding="utf-8"))["candidates"]
