@@ -5,7 +5,10 @@ on:
     paths:
       - 'editorial_inbox/**'
       - 'scripts/site_first_inbox.py'
+      - 'scripts/site_first_release_pr.py'
       - 'tests/test_site_first_inbox.py'
+      - 'tests/test_site_first_release_pr.py'
+      - '.github/workflows/site-first-release-pr.yml'
       - '.github/workflows/site-first-inbox-safety.yml'
 permissions:
   contents: read
@@ -21,6 +24,7 @@ jobs:
         run: |
           python3 -m py_compile scripts/site_first_inbox.py
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
       - name: Audit independent story and cover inbox without publishing
         run: python3 scripts/site_first_inbox.py --audit

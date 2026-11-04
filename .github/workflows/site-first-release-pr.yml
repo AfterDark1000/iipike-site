@@ -1,0 +1,42 @@
+name: HPII — approved editor story + cover → site-first release PR
+on:
+  push:
+    branches: [editorial-intake]
+    paths:
+      - 'editorial_inbox/stories/**'
+      - 'editorial_inbox/covers/**'
+  workflow_dispatch:
+    inputs:
+      story_id:
+        description: 'ID already present in editorial-intake (retry only)'
+        required: true
+        type: string
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: hpii-site-first-editorial-intake
+  cancel-in-progress: false
+jobs:
+  release-proposal:
+    if: github.ref == 'refs/heads/editorial-intake'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Read editorial inbox source branch, not production main
+        uses: actions/checkout@v4
+        with:
+          ref: editorial-intake
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install offline image validator
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Validate site-first delivery helper and incoming records
+        run: |
+          python3 -m py_compile scripts/site_first_release_pr.py scripts/site_first_inbox.py
+          python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
+      - name: Create a release branch and gated PR only if exact text and cover both exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/site_first_release_pr.py
