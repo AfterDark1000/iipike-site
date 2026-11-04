@@ -1,0 +1,48 @@
+name: HPII batch4 restore verified source artifact (isolated)
+on:
+  push:
+    branches: [archive/batch4-20261104]
+    paths: ['.github/workflows/batch4-recover-source.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/archive/batch4-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch4-20261104
+          persist-credentials: true
+      - name: Download source evidence already collected from thirty originals
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-fourth-batch-source-check
+          run-id: 41773769274
+          github-token: ${{ github.token }}
+          path: research/
+      - name: Check original page count and statuses
+        run: |
+          python3 - <<'PY'
+          import json
+          j=json.load(open("research/batch4_probe_results.json"))
+          print("Source pages:",len(j["results"]))
+          assert len(j["results"])==30
+          print("HTTP 200:",sum(e.get("http_status")==200 for e in j["results"]))
+          PY
+      - name: Store evidence only in isolated archive branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch4_probe_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: preserve 30 independently observed historical Dzen full text originals'
+            for attempt in 1 2 3; do
+              git pull --rebase origin archive/batch4-20261104
+              if git push origin HEAD:archive/batch4-20261104; then exit 0; fi
+            done
+            exit 1
+          fi
