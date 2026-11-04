@@ -1,0 +1,44 @@
+name: HPII batch8 final 28 public Dzen source audit
+on:
+  push:
+    branches: [archive/batch8-final-research-20261104]
+    paths: ['.github/workflows/batch8-probe.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install public-page read-only browser
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Inspect canonical titles, author, date, full HTML and original image refs
+        run: python3 research/probe_batch8.py
+      - name: Summarize source-page identity and date evidence
+        if: ${{ always() }}
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('research/batch8_probe_results.json')
+          if p.is_file():
+            rows=json.loads(p.read_text())['results']
+            for row in rows:
+              meta=row.get('dom') or {}
+              days=[x.get('value') for x in meta.get('date_meta',[]) if x.get('key')=='datePublished']
+              print('ORIGINAL',row['slug'],row.get('http_status'),row.get('final_url'),
+                    'DAYS',days,'TITLE',repr(meta.get('og_title')),
+                    'MAIN_LEN',len(meta.get('main') or ''),
+                    'SOURCE',repr((meta.get('main') or '')[:160]))
+            print('TOTAL',len(rows),'HTTP200',sum(x.get('http_status')==200 for x in rows))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: hpii-batch8-original-pages
+          path: research/batch8_probe_results.json
+          retention-days: 7
+          if-no-files-found: ignore
