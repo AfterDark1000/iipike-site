@@ -1,0 +1,248 @@
+{
+  "note": "Read-only source recovery; no GitHub Pages / Dzen publication performed. Article texts are copies of user-owned Dzen publications, not independently fact-checked new reporting.",
+  "requested": 30,
+  "ready": 30,
+  "not_ready": 0,
+  "entries": [
+    {
+      "slug": "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
+      "status": "ready",
+      "cover": "assets/imported/anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9.webp",
+      "chars": 1820,
+      "paragraphs": 12,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793",
+      "status": "ready",
+      "cover": "assets/imported/nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793.webp",
+      "chars": 1299,
+      "paragraphs": 9,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a",
+      "status": "ready",
+      "cover": "assets/imported/meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a.webp",
+      "chars": 1559,
+      "paragraphs": 11,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c",
+      "status": "ready",
+      "cover": "assets/imported/anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c.webp",
+      "chars": 1567,
+      "paragraphs": 12,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d",
+      "status": "ready",
+      "cover": "assets/imported/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d.webp",
+      "chars": 1973,
+      "paragraphs": 12,
+      "date": "2026-10-27"
+    },
+    {
+      "slug": "kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c",
+      "status": "ready",
+      "cover": "assets/imported/kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c.webp",
+      "chars": 855,
+      "paragraphs": 5,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef",
+      "status": "ready",
+      "cover": "assets/imported/tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef.webp",
+      "chars": 2212,
+      "paragraphs": 12,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23",
+      "status": "ready",
+      "cover": "assets/imported/kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23.webp",
+      "chars": 2005,
+      "paragraphs": 12,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee",
+      "status": "ready",
+      "cover": "assets/imported/ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee.webp",
+      "chars": 1705,
+      "paragraphs": 10,
+      "date": "2026-10-26"
+    },
+    {
+      "slug": "claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6",
+      "status": "ready",
+      "cover": "assets/imported/claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6.webp",
+      "chars": 2879,
+      "paragraphs": 19,
+      "date": "2026-10-25"
+    },
+    {
+      "slug": "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
+      "status": "ready",
+      "cover": "assets/imported/mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0.webp",
+      "chars": 1981,
+      "paragraphs": 14,
+      "date": "2026-10-25"
+    },
+    {
+      "slug": "kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c",
+      "status": "ready",
+      "cover": "assets/imported/kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c.webp",
+      "chars": 2181,
+      "paragraphs": 13,
+      "date": "2026-10-25"
+    },
+    {
+      "slug": "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa",
+      "status": "ready",
+      "cover": "assets/imported/openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa.webp",
+      "chars": 1680,
+      "paragraphs": 14,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb",
+      "status": "ready",
+      "cover": "assets/imported/openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb.webp",
+      "chars": 1291,
+      "paragraphs": 7,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4",
+      "status": "ready",
+      "cover": "assets/imported/durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4.webp",
+      "chars": 2017,
+      "paragraphs": 14,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d",
+      "status": "ready",
+      "cover": "assets/imported/ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d.webp",
+      "chars": 2275,
+      "paragraphs": 15,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
+      "status": "ready",
+      "cover": "assets/imported/claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095.webp",
+      "chars": 4009,
+      "paragraphs": 32,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934",
+      "status": "ready",
+      "cover": "assets/imported/kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934.webp",
+      "chars": 3141,
+      "paragraphs": 28,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf",
+      "status": "ready",
+      "cover": "assets/imported/1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf.webp",
+      "chars": 2846,
+      "paragraphs": 17,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "canva-vypustila-sobstvennuyu-neyroset-4b186",
+      "status": "ready",
+      "cover": "assets/imported/canva-vypustila-sobstvennuyu-neyroset-4b186.webp",
+      "chars": 1440,
+      "paragraphs": 10,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
+      "status": "ready",
+      "cover": "assets/imported/hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3.webp",
+      "chars": 3786,
+      "paragraphs": 27,
+      "date": "2026-10-24"
+    },
+    {
+      "slug": "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700",
+      "status": "ready",
+      "cover": "assets/imported/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700.webp",
+      "chars": 3206,
+      "paragraphs": 28,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca",
+      "status": "ready",
+      "cover": "assets/imported/hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca.webp",
+      "chars": 5412,
+      "paragraphs": 40,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729",
+      "status": "ready",
+      "cover": "assets/imported/ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729.webp",
+      "chars": 3894,
+      "paragraphs": 31,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085",
+      "status": "ready",
+      "cover": "assets/imported/les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085.webp",
+      "chars": 3262,
+      "paragraphs": 25,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "gpt6-luna-fast-reasoning-7a95a",
+      "status": "ready",
+      "cover": "assets/imported/gpt6-luna-fast-reasoning-7a95a.webp",
+      "chars": 3109,
+      "paragraphs": 27,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "agent-skills-standards-0352e",
+      "status": "ready",
+      "cover": "assets/imported/agent-skills-standards-0352e.webp",
+      "chars": 2967,
+      "paragraphs": 26,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "nvidia-factory-datacenters-e7bb1",
+      "status": "ready",
+      "cover": "assets/imported/nvidia-factory-datacenters-e7bb1.webp",
+      "chars": 3042,
+      "paragraphs": 23,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "zoom-ai-commitments-637f2",
+      "status": "ready",
+      "cover": "assets/imported/zoom-ai-commitments-637f2.webp",
+      "chars": 2972,
+      "paragraphs": 24,
+      "date": "2026-10-23"
+    },
+    {
+      "slug": "bria-fibo-editor-e3ed5",
+      "status": "ready",
+      "cover": "assets/imported/bria-fibo-editor-e3ed5.webp",
+      "chars": 3042,
+      "paragraphs": 22,
+      "date": "2026-10-23"
+    }
+  ]
+}
