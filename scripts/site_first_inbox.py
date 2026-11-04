@@ -193,13 +193,33 @@ def stage(root, story_id, *, apply=False, now=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("story_id", help="Stable story ID in editorial_inbox/stories/")
+    parser.add_argument("story_id", nargs="?", help="Stable story ID in editorial_inbox/stories/")
+    parser.add_argument("--audit", action="store_true", help="Validate whole inbox without changing files")
     parser.add_argument("--stage", action="store_true", help="Explicitly create approved JSON and local cover")
     parser.add_argument("--publish", action="store_true", help="Also compile HTML and indexes in current branch")
     args = parser.parse_args()
     if args.publish and not args.stage:
         parser.exit(2, "--publish requires explicit --stage\n")
+    if args.audit and (args.story_id or args.stage or args.publish):
+        parser.exit(2, "--audit cannot be combined with one-story release options\n")
+    if not args.audit and not args.story_id:
+        parser.exit(2, "Provide story ID or --audit\n")
     try:
+        if args.audit:
+            stories = ROOT / "editorial_inbox" / "stories"
+            covers = ROOT / "editorial_inbox" / "covers"
+            seen = set()
+            for item in sorted(stories.glob("*.json")):
+                validate_story(ROOT, item.stem)
+                art = cover_info(ROOT, item.stem)
+                print(("READY" if art else "AWAITING_COVER") + ": " + item.stem)
+                seen.add(item.stem)
+            for suffix in COVER_EXTENSIONS:
+                for item in sorted(covers.glob("*." + suffix)):
+                    if item.stem not in seen:
+                        print("COVER_AWAITING_ARTICLE: " + item.stem)
+            print("INBOX_AUDIT_OK: " + str(len(seen)) + " approved text records")
+            return
         approved = stage(ROOT, args.story_id, apply=args.stage)
         if approved is not None and args.publish:
             publish(ROOT, args.story_id, apply=False)
