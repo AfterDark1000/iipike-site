@@ -1,0 +1,91 @@
+name: HPII batch6 original Dzen archive restoration (isolated)
+on:
+  push:
+    branches: [archive/batch6-20261104]
+    paths: ['.github/workflows/batch6-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/archive/batch6-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch6-20261104
+          persist-credentials: true
+      - name: Install browser and original-art image validators
+        run: |
+          python3 -m pip install playwright pillow beautifulsoup4
+          python3 -m playwright install --with-deps chromium
+      - name: Capture original full Dzen article bodies without publishing
+        run: python3 research/probe_batch6.py
+      - name: Retry delayed original article bodies
+        run: python3 research/retry_batch6_text.py
+      - name: Recover only original artwork from exact Dzen or Telegram article
+        run: python3 research/recover_batch6_covers.py
+      - name: Reconstruct 30 original historical editorial records
+        run: |
+          python3 research/prepare_batch6.py
+          python3 - <<'PY'
+          import json
+          r=json.load(open('research/batch6_preparation_report.json'))
+          assert r['ready']==30 and r['not_ready']==0, r
+          images=json.load(open('research/batch6_cover_report.json'))['entries']
+          assert len(images)==30
+          assert all(x['status']=='downloaded' and
+              x['source'] in ('telegram_original_photo','dzen_article_image') and
+              1.65<x['width']/x['height']<1.86 for x in images)
+          print('PASS: 30 complete original texts, historic dates, genuine HPII covers',flush=True)
+          PY
+      - name: Save verified author-owned image provenance
+        run: python3 research/finalize_batch6_sources.py
+      - name: Generate standalone HTML, home, archive, rubrics, RSS and Sitemap
+        run: |
+          set -e
+          python3 - <<'PY' >/tmp/batch6_slugs.txt
+          import json
+          j=json.load(open('research/batch6_preparation_report.json'))
+          for row in j['entries']:
+            if row['status']=='ready': print(row['slug'])
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done </tmp/batch6_slugs.txt
+      - name: Run all regressions including prior batch5 image failure
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Save recovery evidence and output on any failure
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch6-originals-and-build
+          path: |
+            research/batch6*.json
+            registry/archive_batch6_sources.json
+            content/approved/*.json
+            assets/imported/*.webp
+            articles/**/index.html
+            news.json
+            sitemap.xml
+            feed.xml
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit successful release candidate only to isolated archive branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch6*.json registry/archive_batch6_sources.json content/approved/ assets/imported/ articles/ rubrics/ news.json sitemap.xml feed.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: compile 30 complete original HPII stories in batch six'
+            git pull --rebase origin archive/batch6-20261104
+            git push origin HEAD:archive/batch6-20261104
+          fi
