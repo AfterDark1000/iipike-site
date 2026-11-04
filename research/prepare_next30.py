@@ -156,6 +156,9 @@ RELATED.update({
   ]
 })
 
+RELATED.pop("ai-market-intel-alphabet-losses", None)
+RELATED["china-ai-stock-bubble-480b"] = ["openai-power-grid-georgia-1000mw"]
+
 
 def build():
     batch=json.loads(CAND.read_text(encoding="utf-8"))["candidates"]
