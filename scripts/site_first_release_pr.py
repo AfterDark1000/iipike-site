@@ -114,6 +114,11 @@ def proposed_changes():
         name = row[3:]
         if " -> " in name:
             raise ValueError("Rename in release tree requires manual review")
+        # Python tests intentionally compile .pyc inside untracked cache
+        # directories. They are build byproducts, never release assets.
+        # Continue blocking EVERY other unexpected path.
+        if re.fullmatch(r"(?:[a-zA-Z0-9_-]+/)*__pycache__/[a-zA-Z0-9_.-]+\.pyc", name):
+            continue
         if name not in exact and not name.startswith(allowed):
             raise ValueError("Unexpected modified file from publisher: " + name)
         changed.append(name)
