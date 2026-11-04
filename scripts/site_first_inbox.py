@@ -44,7 +44,7 @@ def required_text(record, key, limit):
     return val.strip()
 
 
-def validate_story(root, story_id, *, today=None):
+def validate_story(root, story_id, *, today=None, allow_published=False):
     if not isinstance(story_id, str) or len(story_id) > 72 or not STORY_ID.fullmatch(story_id):
         raise ValueError("Invalid stable editorial ID")
     path = root / "editorial_inbox" / "stories" / (story_id + ".json")
@@ -96,9 +96,25 @@ def validate_story(root, story_id, *, today=None):
     else:
         validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
     entries = json.loads((root / "news.json").read_text(encoding="utf-8"))
-    if (any(x.get("id") == story_id for x in entries) or
-            (root / "articles" / story_id / "index.html").exists()):
-        raise ValueError("Story already published on the site")
+    published = next((x for x in entries if x.get("id") == story_id), None)
+    has_page = (root / "articles" / story_id / "index.html").exists()
+    if published or has_page:
+        if not allow_published:
+            raise ValueError("Story already published on the site")
+        # A read-only audit of an already published inbox source is allowed,
+        # but reject a changed title, source or missing approved source.
+        if (not published or not has_page or
+                published.get("title") != title or
+                published.get("source_url") != original):
+            raise ValueError("Published inbox record has changed since release")
+        approved = approved_article(root, story_id)
+        if ("article_markdown" in data and
+                approved.get("article_markdown") != data["article_markdown"]):
+            raise ValueError("Published editor Markdown differs from inbox original")
+        if ("paragraphs" in data and
+                approved.get("paragraphs") != data["paragraphs"]):
+            raise ValueError("Published editor blocks differ from inbox original")
+        return data
     if any(x.get("title", "").casefold() == title.casefold() or
            x.get("source_url") == original for x in entries):
         raise ValueError("Potential duplicate title or primary source on the site")
@@ -211,9 +227,11 @@ def main():
             covers = ROOT / "editorial_inbox" / "covers"
             seen = set()
             for item in sorted(stories.glob("*.json")):
-                validate_story(ROOT, item.stem)
+                validate_story(ROOT, item.stem, allow_published=True)
                 art = cover_info(ROOT, item.stem)
-                print(("READY" if art else "AWAITING_COVER") + ": " + item.stem)
+                entries = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+                already_public = any(x.get("id") == item.stem for x in entries)
+                print(("ALREADY_PUBLISHED" if already_public else "READY" if art else "AWAITING_COVER") + ": " + item.stem)
                 seen.add(item.stem)
             for suffix in COVER_EXTENSIONS:
                 for item in sorted(covers.glob("*." + suffix)):
