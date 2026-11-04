@@ -51,7 +51,7 @@ jobs:
             python3 scripts/publish_approved_article.py "$slug"
             python3 scripts/publish_approved_article.py "$slug" --publish
           done </tmp/final-28-slugs
-      - name: Verify no duplicates, all 218 sources, original dates and full tests
+      - name: Verify all 218 sources, original dates, and synthetic negative provenance fixture
         run: |
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
