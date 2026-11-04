@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
 
-from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree
+from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree, proposed_changes
 
 ID = "news-example-20261104"
 
@@ -40,6 +40,27 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         with patch("scripts.site_first_release_pr.git",
                    return_value=SimpleNamespace(stdout=tree)):
             self.assertEqual(candidate_ids_from_tree("sha"), [ID])
+
+    def test_release_diff_skips_only_generated_bytecode(self):
+        porcelain = "\n".join([
+            "?? scripts/__pycache__/editorial_draft.cpython-312.pyc",
+            "?? tests/__pycache__/test_site_first_inbox.cpython-312.pyc",
+            "?? __pycache__/script.cpython-312.pyc",
+            " M index.html",
+            "?? assets/editorial/image.webp",
+        ]) + "\n"
+        with patch("scripts.site_first_release_pr.git",
+                   return_value=SimpleNamespace(stdout=porcelain)):
+            self.assertEqual(proposed_changes(), ["index.html", "assets/editorial/image.webp"])
+
+    def test_release_diff_still_blocks_unexpected_generated_or_executable_files(self):
+        for path in ("scripts/tmp.log", "scripts/__pycache__/evil.sh",
+                     "README.md", ".github/workflows/unauthorized.yml"):
+            with self.subTest(path=path):
+                with patch("scripts.site_first_release_pr.git",
+                           return_value=SimpleNamespace(stdout="?? " + path + "\n")):
+                    with self.assertRaisesRegex(ValueError, "Unexpected modified file"):
+                        proposed_changes()
 
     def test_one_editorial_text_or_one_cover_is_not_a_release(self):
         with patch("scripts.site_first_release_pr.exists_at", side_effect=lambda ref, p: p.endswith(".json")):
