@@ -1,0 +1,248 @@
+{
+  "note": "Read-only source recovery; no GitHub Pages / Dzen publication performed. Article texts are copies of user-owned Dzen publications, not independently fact-checked new reporting.",
+  "requested": 30,
+  "ready": 30,
+  "not_ready": 0,
+  "entries": [
+    {
+      "slug": "openai-power-grid-georgia-1000mw",
+      "status": "ready",
+      "cover": "assets/imported/openai-power-grid-georgia-1000mw.webp",
+      "chars": 1503,
+      "paragraphs": 9,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "openai-gpt6-astra-household-benchmark",
+      "status": "ready",
+      "cover": "assets/imported/openai-gpt6-astra-household-benchmark.webp",
+      "chars": 1568,
+      "paragraphs": 8,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "openai-abu-dhabi-regulation-ai",
+      "status": "ready",
+      "cover": "assets/imported/openai-abu-dhabi-regulation-ai.webp",
+      "chars": 1445,
+      "paragraphs": 8,
+      "date": "2026-11-03"
+    },
+    {
+      "slug": "telus-ai-calls-cancellations",
+      "status": "ready",
+      "cover": "assets/imported/telus-ai-calls-cancellations.webp",
+      "chars": 2034,
+      "paragraphs": 13,
+      "date": "2026-11-02"
+    },
+    {
+      "slug": "chainalysis-hacked",
+      "status": "ready",
+      "cover": "assets/imported/chainalysis-hacked.webp",
+      "chars": 1922,
+      "paragraphs": 9,
+      "date": "2026-11-01"
+    },
+    {
+      "slug": "malware-ai-scores-victims",
+      "status": "ready",
+      "cover": "assets/imported/malware-ai-scores-victims.webp",
+      "chars": 2348,
+      "paragraphs": 13,
+      "date": "2026-11-01"
+    },
+    {
+      "slug": "claude-mouse-brain-injection",
+      "status": "ready",
+      "cover": "assets/imported/claude-mouse-brain-injection.webp",
+      "chars": 2404,
+      "paragraphs": 11,
+      "date": "2026-11-01"
+    },
+    {
+      "slug": "openai-gpt6-biologists-restricted",
+      "status": "ready",
+      "cover": "assets/imported/openai-gpt6-biologists-restricted.webp",
+      "chars": 2133,
+      "paragraphs": 11,
+      "date": "2026-10-31"
+    },
+    {
+      "slug": "ai-680-tokens-second",
+      "status": "ready",
+      "cover": "assets/imported/ai-680-tokens-second.webp",
+      "chars": 1749,
+      "paragraphs": 9,
+      "date": "2026-10-31"
+    },
+    {
+      "slug": "claude-code-pentagon-systems",
+      "status": "ready",
+      "cover": "assets/imported/claude-code-pentagon-systems.webp",
+      "chars": 3317,
+      "paragraphs": 24,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "pika-15s-video-7s-compute",
+      "status": "ready",
+      "cover": "assets/imported/pika-15s-video-7s-compute.webp",
+      "chars": 1869,
+      "paragraphs": 13,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "elevenlabs-sfxv3-ai-sound-design",
+      "status": "ready",
+      "cover": "assets/imported/elevenlabs-sfxv3-ai-sound-design.webp",
+      "chars": 936,
+      "paragraphs": 7,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "nvidia-ai-meeting-secretary",
+      "status": "ready",
+      "cover": "assets/imported/nvidia-ai-meeting-secretary.webp",
+      "chars": 2510,
+      "paragraphs": 15,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "indian-voice-model-elevenlabs",
+      "status": "ready",
+      "cover": "assets/imported/indian-voice-model-elevenlabs.webp",
+      "chars": 1592,
+      "paragraphs": 14,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "runway-ai-advertising-agent",
+      "status": "ready",
+      "cover": "assets/imported/runway-ai-advertising-agent.webp",
+      "chars": 1893,
+      "paragraphs": 13,
+      "date": "2026-10-30"
+    },
+    {
+      "slug": "nate-soares-retirement-apocalypse",
+      "status": "ready",
+      "cover": "assets/imported/nate-soares-retirement-apocalypse.webp",
+      "chars": 1795,
+      "paragraphs": 11,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "chatgpt-service-now-support",
+      "status": "ready",
+      "cover": "assets/imported/chatgpt-service-now-support.webp",
+      "chars": 1914,
+      "paragraphs": 10,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "microsoft-copilot-twenty-models",
+      "status": "ready",
+      "cover": "assets/imported/microsoft-copilot-twenty-models.webp",
+      "chars": 1239,
+      "paragraphs": 7,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "rime-prism-voice-guardrails",
+      "status": "ready",
+      "cover": "assets/imported/rime-prism-voice-guardrails.webp",
+      "chars": 1556,
+      "paragraphs": 11,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "microsoft-mai-image-editor",
+      "status": "ready",
+      "cover": "assets/imported/microsoft-mai-image-editor.webp",
+      "chars": 1354,
+      "paragraphs": 6,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "gemini4-carbon-ranking",
+      "status": "ready",
+      "cover": "assets/imported/gemini4-carbon-ranking.webp",
+      "chars": 1806,
+      "paragraphs": 12,
+      "date": "2026-10-29"
+    },
+    {
+      "slug": "kling40-api-video-price",
+      "status": "ready",
+      "cover": "assets/imported/kling40-api-video-price.webp",
+      "chars": 1031,
+      "paragraphs": 9,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "runway-app-studio-no-code-video",
+      "status": "ready",
+      "cover": "assets/imported/runway-app-studio-no-code-video.webp",
+      "chars": 1241,
+      "paragraphs": 8,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "south-korea-ai-data-theft",
+      "status": "ready",
+      "cover": "assets/imported/south-korea-ai-data-theft.webp",
+      "chars": 1849,
+      "paragraphs": 13,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "oracle-chatgpt-accounting",
+      "status": "ready",
+      "cover": "assets/imported/oracle-chatgpt-accounting.webp",
+      "chars": 1627,
+      "paragraphs": 10,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "claude-35k-antibodies",
+      "status": "ready",
+      "cover": "assets/imported/claude-35k-antibodies.webp",
+      "chars": 1661,
+      "paragraphs": 10,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "apple-iwork-ai-agents",
+      "status": "ready",
+      "cover": "assets/imported/apple-iwork-ai-agents.webp",
+      "chars": 1730,
+      "paragraphs": 11,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "google-genie4-worlds",
+      "status": "ready",
+      "cover": "assets/imported/google-genie4-worlds.webp",
+      "chars": 1988,
+      "paragraphs": 12,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "netherlands-civil-service-ai-cuts",
+      "status": "ready",
+      "cover": "assets/imported/netherlands-civil-service-ai-cuts.webp",
+      "chars": 1216,
+      "paragraphs": 7,
+      "date": "2026-10-28"
+    },
+    {
+      "slug": "microsoft-offers-60k-exits",
+      "status": "ready",
+      "cover": "assets/imported/microsoft-offers-60k-exits.webp",
+      "chars": 1655,
+      "paragraphs": 11,
+      "date": "2026-10-27"
+    }
+  ]
+}

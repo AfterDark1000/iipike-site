@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="680 токенов в секунду на одной NVIDIA GB300. Такую скорость показала Clover-35B-A3B-Preview — новая языковая модель от DiffuSpace, выпущенная 30 октября. Результат получен в собственных испытаниях команды на задачах ИИ-агентов. Привычные языковые модели формируют ответ"><meta property="og:type" content="article">
+<meta property="og:title" content="Нейросеть разогнали до 680 токенов в секунду!"><meta property="og:description" content="680 токенов в секунду на одной NVIDIA GB300. Такую скорость показала Clover-35B-A3B-Preview — новая языковая модель от DiffuSpace, выпущенная 30 октября. Результат получен в собственных испытаниях команды на задачах ИИ-агентов. Привычные языковые модели формируют ответ">
+<meta property="og:image" content="https://iipike.ru/assets/imported/ai-680-tokens-second.webp">
+<meta property="og:url" content="https://iipike.ru/articles/ai-680-tokens-second/"><meta property="article:published_time" content="2026-10-31T08:31:15Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Нейросеть разогнали до 680 токенов в секунду!", "mainEntityOfPage": "https://iipike.ru/articles/ai-680-tokens-second/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-10-31T08:31:15Z", "image": "https://iipike.ru/assets/imported/ai-680-tokens-second.webp", "isBasedOn": "https://dzen.ru/a/auWlsxIfBDqYpqpt"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/ai-680-tokens-second/"><title>Нейросеть разогнали до 680 токенов в секунду! — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>Нейросеть разогнали до 680 токенов в секунду!</h1>
+<p class="summary">680 токенов в секунду на одной NVIDIA GB300. Такую скорость показала Clover-35B-A3B-Preview — новая языковая модель от DiffuSpace, выпущенная 30 октября. Результат получен в собственных испытаниях команды на задачах ИИ-агентов. Привычные языковые модели формируют ответ</p><p class="date">Опубликовано: 31 октября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/ai-680-tokens-second.webp" alt="Обложка: Нейросеть разогнали до 680 токенов в секунду!" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/auWlsxIfBDqYpqpt" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">680 токенов в секунду на одной NVIDIA GB300. Такую скорость показала Clover-35B-A3B-Preview — новая языковая модель от DiffuSpace, выпущенная 30 октября. Результат получен в собственных испытаниях команды на задачах ИИ-агентов.</p>
+<p>Привычные языковые модели формируют ответ последовательно, токен за токеном. Clover работает сразу с целыми блоками текста: сначала заполняет их черновыми вариантами, затем постепенно уточняет результат. Такой подход называется диффузионной генерацией.</p>
+<p>В основе модели — Qwen3.6-35B-A3B. Всего у Clover 35 миллиардов параметров, но при обработке каждого токена задействуется около трёх миллиардов. Разработчики сохранили способность модели рассуждать, писать программы и пользоваться инструментами.</p>
+<p>На SWE-bench Verified Clover набрала 73,6 балла, а на Terminal-Bench 2.1 — 51,7. Это тесты, в которых ИИ решает реальные задачи программирования и работает в терминале. По результатам DiffuSpace, модель обошла несколько сопоставимых конкурентов, включая исходную Qwen3.6-35B-A3B.</p>
+<p>Интереснее всего дела обстоят с домашним запуском.</p>
+<p>Разработчики испытали Clover в 4-битном режиме на RTX 5070 Ti с 16 ГБ видеопамяти и получили 101,8 токена в секунду на наборе математических задач MATH-500.</p>
+<p>Разумеется, это уже не серверные 680 токенов/с, а другая конфигурация и другая нагрузка.</p>
+<p>Веса модели опубликованы на Hugging Face под лицензией Apache 2.0, исходный код — на GitHub. Поддерживаются инструменты SGLang и llama.cpp.</p>
+<p>Правда, обычная версия BF16 требует примерно 69 ГБ памяти только для хранения весов. А самый компактный из опубликованных файлов GGUF занимает 18,24 ГиБ. Поэтому демонстрация на 16-гигабайтной видеокарте пока не равнозначна простому запуску любого доступного варианта модели на таком оборудовании.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/nvidia-local-assistant-4gb/">NVIDIA выпустила ИИ для локальных помощников. Ему хватает около 4 ГБ памяти</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
