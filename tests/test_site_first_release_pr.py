@@ -1,8 +1,9 @@
 """Offline tests for site-first intake release proposal; no GitHub calls or site writes."""
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
-from scripts.site_first_release_pr import changed_ids, pending_paths
+from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree
 
 ID = "news-example-20261104"
 
@@ -20,6 +21,25 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
             ]
         }
         self.assertEqual(changed_ids(event), [ID])
+
+    def test_push_without_changed_files_recovers_real_committed_story_and_cover(self):
+        self.assertEqual(changed_ids({"commits": []}), [])
+        tree = "\n".join([
+            "editorial_inbox/stories/news-example-20261104.json",
+            "editorial_inbox/covers/news-example-20261104.webp",
+            "editorial_inbox/stories/.gitkeep",
+            "editorial_inbox/covers/OTHER.webp",
+        ]) + "\n"
+        with patch("scripts.site_first_release_pr.git",
+                   return_value=SimpleNamespace(stdout=tree)) as g:
+            self.assertEqual(candidate_ids_from_tree("a-real-commit-sha"), [ID])
+            g.assert_called_once()
+
+    def test_tree_scan_can_find_cover_sent_in_separate_later_commit(self):
+        tree = "editorial_inbox/stories/news-example-20261104.json\n"
+        with patch("scripts.site_first_release_pr.git",
+                   return_value=SimpleNamespace(stdout=tree)):
+            self.assertEqual(candidate_ids_from_tree("sha"), [ID])
 
     def test_one_editorial_text_or_one_cover_is_not_a_release(self):
         with patch("scripts.site_first_release_pr.exists_at", side_effect=lambda ref, p: p.endswith(".json")):
