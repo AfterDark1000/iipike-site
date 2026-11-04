@@ -26,6 +26,21 @@ def choose_cover(item,probe):
          and "/scale_1200" in img.get("src","")
          and ("pub_"+item["dzen_id"]+"_") in img.get("src","")]
     if not raw:
+        # Derive the exact same article-owned source image ID from Dzen's
+        # social-image metadata. Never guess an unrelated cover or file.
+        from urllib.parse import urlsplit
+        import re
+        og=(probe.get("dom") or {}).get("og_image") or ""
+        match=re.fullmatch(
+          r"https://avatars\\.dzeninfra\\.ru/get-zen-pub-og/(\\d+)/pub_([0-9a-f]{24})_([0-9a-f]{24})/optimize",
+          og
+        )
+        if match and match.group(2)==item["dzen_id"]:
+            raw=[
+              "https://avatars.dzeninfra.ru/get-zen_doc/"+match.group(1)
+              +"/pub_"+match.group(2)+"_"+match.group(3)+"/scale_1200"
+            ]
+    if not raw:
         raise ValueError("No article-owned original image URL found")
     src=raw[0]
     variants=[src.replace("/scale_1200","/orig"),
