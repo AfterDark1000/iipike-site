@@ -1,26 +1,6 @@
 {
   "entries": [
     {
-      "slug": "claude-uvolnyaet-ii-agentov-cf215",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "slug": "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "slug": "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
-    },
-    {
-      "slug": "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
-    },
-    {
       "slug": "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
       "status": "downloaded",
       "cover": "assets/imported/anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9.webp",
@@ -161,11 +141,6 @@
       "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc7113b5289f5e98ae18bb_6adc7168d9d1c158a90f27f8/scale_1200"
     },
     {
-      "slug": "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
-    },
-    {
       "slug": "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4",
       "status": "downloaded",
       "cover": "assets/imported/durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4.webp",
@@ -274,6 +249,56 @@
       "sha256": "83a0c63eaf5a69cd4de430dfcdae773d24350dc632b8e853fb8b182281347fab",
       "bytes": 196140,
       "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb2d2f97126b5477f73085_6adb2f30cba82619cb6b03a1/scale_1200"
+    },
+    {
+      "slug": "gpt6-luna-fast-reasoning-7a95a",
+      "status": "downloaded",
+      "cover": "assets/imported/gpt6-luna-fast-reasoning-7a95a.webp",
+      "width": 1200,
+      "height": 676,
+      "bytes": 212430,
+      "sha256": "2a2fe038c9ab0e6b9fddca08a44eeca58308a5953e8533fda37b4509f9003986",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb23aa40c3ad0e7fe7a95a_6adb252b769daa5de24b56be/scale_1200"
+    },
+    {
+      "slug": "agent-skills-standards-0352e",
+      "status": "downloaded",
+      "cover": "assets/imported/agent-skills-standards-0352e.webp",
+      "width": 1200,
+      "height": 676,
+      "bytes": 159618,
+      "sha256": "9af3ce086a4f4ae8944d8ca62d1c500f877751e8ded1f6a510cf96ff637b843e",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb1d8ae601f329d680352e_6adb2134e17db65333a93c8b/scale_1200"
+    },
+    {
+      "slug": "nvidia-factory-datacenters-e7bb1",
+      "status": "downloaded",
+      "cover": "assets/imported/nvidia-factory-datacenters-e7bb1.webp",
+      "width": 1200,
+      "height": 676,
+      "bytes": 203676,
+      "sha256": "9dd145e801c444abf204ba9333305523484e5845b6035382fdfd890757cd9a73",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb1b05397db6616b5e7bb1_6adb1d0bbe6dfd538d09adf6/scale_1200"
+    },
+    {
+      "slug": "zoom-ai-commitments-637f2",
+      "status": "downloaded",
+      "cover": "assets/imported/zoom-ai-commitments-637f2.webp",
+      "width": 1200,
+      "height": 676,
+      "bytes": 281564,
+      "sha256": "9646d94a3e861d8351faae65d0f9ec8eb17dbc5984ee4acfc0253330b590134c",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb0b290e1ecf632f3637f2_6adb18f299791f7d2c246a11/scale_1200"
+    },
+    {
+      "slug": "bria-fibo-editor-e3ed5",
+      "status": "downloaded",
+      "cover": "assets/imported/bria-fibo-editor-e3ed5.webp",
+      "width": 1200,
+      "height": 676,
+      "bytes": 308932,
+      "sha256": "efd2d994d20955dc8f43f90e01cf317b1fc613b66da90c781ba419167fe3f6cc",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb07e5edeaf11d1f4e3ed5_6adb09950e1ecf632f337705/scale_1200"
     }
   ],
   "note": "Original article-owned image sources on Dzen, not generated artwork."

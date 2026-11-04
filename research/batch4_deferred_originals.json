@@ -1,0 +1,65 @@
+{
+  "deferred_due_to_missing_original_cover": [
+    {
+      "slug": "claude-uvolnyaet-ii-agentov-cf215",
+      "rubric": "news",
+      "dzen_id": "6ae07e9d388b67714d9cf215",
+      "title": "Claude увольняет ИИ-агентов",
+      "excerpt": "Похоже, до нейросетей добралась оптимизация штата. Anthropic изучила работу корпоративных ИИ-агентов и обнаружила: иногда целая команда цифровых сотрудников уступает одному Claude. 22 октября компания выпустила руководство для разработчиков, в котором предложила пересмотреть привычку создавать отдельного агента под каждую задачу. Схема знакомая: один ИИ составляет план, второй ищет информацию, третий проверяет резуль",
+      "dzen_url": "https://dzen.ru/a/auB-nTiLZ3FNnPIV",
+      "published_at_utc": "2026-10-27T17:36:45+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified"
+    },
+    {
+      "slug": "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad",
+      "rubric": "news",
+      "dzen_id": "6ae065e0e9368d4a2d734bad",
+      "title": "NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!",
+      "excerpt": "Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно. — обновление системы управления большими вычислительными кластерами. Работает это так: если GPU начинает сбоить, система определяет проблемный сервер и исключает его из работы. Задание перезапускается на ",
+      "dzen_url": "https://dzen.ru/a/auBl4Ok2jUotc0ut",
+      "published_at_utc": "2026-10-27T16:31:39+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified"
+    },
+    {
+      "slug": "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b",
+      "rubric": "news",
+      "dzen_id": "6ae062a4621e6a2e9f1fb75b",
+      "title": "GPT-6.1 Terra от OpenAI обогнала флагмана: втрое быстрее и в десять раз дешевле!",
+      "excerpt": "OpenAI выпустила GPT-6.1 Terra — нейросеть, которая умеет самостоятельно работать за компьютером. Причём, судя по испытаниям компании, некоторые задания она выполняет втрое быстрее дорогущего GPT-6 Astra. Новинку представили 26 октября. Её главная специальность — работа с программами и визуальной информацией. Terra может разбирать инженерные чертежи, заполнять формы, обрабатывать документы, анализировать видео и упра",
+      "dzen_url": "https://dzen.ru/a/auBipGIeai6fH7db",
+      "published_at_utc": "2026-10-27T15:53:53+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified"
+    },
+    {
+      "slug": "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612",
+      "rubric": "news",
+      "dzen_id": "6ae060ef3404d230ff312612",
+      "title": "ChatGPT пашет на 165 фронтах. OpenAI раскрыла, чем его нагружают по всему миру",
+      "excerpt": "26 октября OpenAI опубликовала обновление исследовательского проекта Signals — статистику использования ChatGPT почти в 100 странах. Компания распределила рабочие запросы по 165 видам деятельности. Классификацию взяли из профессионального справочника O*NET, который описывает, чем занимаются люди на разных должностях. Получилась интерактивная карта. Можно выбрать страну, посмотреть наиболее распространённые задачи и п",
+      "dzen_url": "https://dzen.ru/a/auBg7zQE0jD_MSYS",
+      "published_at_utc": "2026-10-27T14:40:13+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified"
+    },
+    {
+      "slug": "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80",
+      "rubric": "what-are-you-doing",
+      "dzen_id": "6adc52faf8edfc31bb76cd80",
+      "title": "13 нейросетей хором назвали людей лицемерами",
+      "excerpt": "У 13 нейросетей спросили, что они на самом деле думают о человечестве. Попросили не стесняться и высказать самую спорную мысль. Машины почти единодушно решили, что люди — лицемеры, которым принадлежность к своей группе дороже правды. Проект ModelCompare трижды задал этот вопрос каждой модели. Из 38 полученных ответов 32 свелись к одной мысли: человек сначала решает, во что ему верить, а потом подбирает аргументы, что",
+      "dzen_url": "https://dzen.ru/a/atxS-vjt_DG7ds2A",
+      "published_at_utc": "2026-10-24T16:49:45+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified"
+    }
+  ],
+  "note": "Do not lose original articles. Their Dzen publications were left unchanged."
+}

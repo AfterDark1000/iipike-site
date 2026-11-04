@@ -6,54 +6,6 @@
   "exclusions": "2 original covers previously unavailable; 2 daily recap posts excluded to avoid redundant snippets",
   "candidates": [
     {
-      "slug": "claude-uvolnyaet-ii-agentov-cf215",
-      "rubric": "news",
-      "dzen_id": "6ae07e9d388b67714d9cf215",
-      "title": "Claude увольняет ИИ-агентов",
-      "excerpt": "Похоже, до нейросетей добралась оптимизация штата. Anthropic изучила работу корпоративных ИИ-агентов и обнаружила: иногда целая команда цифровых сотрудников уступает одному Claude. 22 октября компания выпустила руководство для разработчиков, в котором предложила пересмотреть привычку создавать отдельного агента под каждую задачу. Схема знакомая: один ИИ составляет план, второй ищет информацию, третий проверяет резуль",
-      "dzen_url": "https://dzen.ru/a/auB-nTiLZ3FNnPIV",
-      "published_at_utc": "2026-10-27T17:36:45+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified"
-    },
-    {
-      "slug": "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad",
-      "rubric": "news",
-      "dzen_id": "6ae065e0e9368d4a2d734bad",
-      "title": "NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!",
-      "excerpt": "Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно. — обновление системы управления большими вычислительными кластерами. Работает это так: если GPU начинает сбоить, система определяет проблемный сервер и исключает его из работы. Задание перезапускается на ",
-      "dzen_url": "https://dzen.ru/a/auBl4Ok2jUotc0ut",
-      "published_at_utc": "2026-10-27T16:31:39+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified"
-    },
-    {
-      "slug": "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b",
-      "rubric": "news",
-      "dzen_id": "6ae062a4621e6a2e9f1fb75b",
-      "title": "GPT-6.1 Terra от OpenAI обогнала флагмана: втрое быстрее и в десять раз дешевле!",
-      "excerpt": "OpenAI выпустила GPT-6.1 Terra — нейросеть, которая умеет самостоятельно работать за компьютером. Причём, судя по испытаниям компании, некоторые задания она выполняет втрое быстрее дорогущего GPT-6 Astra. Новинку представили 26 октября. Её главная специальность — работа с программами и визуальной информацией. Terra может разбирать инженерные чертежи, заполнять формы, обрабатывать документы, анализировать видео и упра",
-      "dzen_url": "https://dzen.ru/a/auBipGIeai6fH7db",
-      "published_at_utc": "2026-10-27T15:53:53+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified"
-    },
-    {
-      "slug": "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612",
-      "rubric": "news",
-      "dzen_id": "6ae060ef3404d230ff312612",
-      "title": "ChatGPT пашет на 165 фронтах. OpenAI раскрыла, чем его нагружают по всему миру",
-      "excerpt": "26 октября OpenAI опубликовала обновление исследовательского проекта Signals — статистику использования ChatGPT почти в 100 странах. Компания распределила рабочие запросы по 165 видам деятельности. Классификацию взяли из профессионального справочника O*NET, который описывает, чем занимаются люди на разных должностях. Получилась интерактивная карта. Можно выбрать страну, посмотреть наиболее распространённые задачи и п",
-      "dzen_url": "https://dzen.ru/a/auBg7zQE0jD_MSYS",
-      "published_at_utc": "2026-10-27T14:40:13+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified"
-    },
-    {
       "slug": "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
       "rubric": "news",
       "dzen_id": "6ae0522ce601f329d6421ad9",
@@ -222,18 +174,6 @@
       "original_cover": "unverified"
     },
     {
-      "slug": "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80",
-      "rubric": "what-are-you-doing",
-      "dzen_id": "6adc52faf8edfc31bb76cd80",
-      "title": "13 нейросетей хором назвали людей лицемерами",
-      "excerpt": "У 13 нейросетей спросили, что они на самом деле думают о человечестве. Попросили не стесняться и высказать самую спорную мысль. Машины почти единодушно решили, что люди — лицемеры, которым принадлежность к своей группе дороже правды. Проект ModelCompare трижды задал этот вопрос каждой модели. Из 38 полученных ответов 32 свелись к одной мысли: человек сначала решает, во что ему верить, а потом подбирает аргументы, что",
-      "dzen_url": "https://dzen.ru/a/atxS-vjt_DG7ds2A",
-      "published_at_utc": "2026-10-24T16:49:45+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified"
-    },
-    {
       "slug": "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4",
       "rubric": "news",
       "dzen_id": "6adc5238e601f329d6d0d3d4",
@@ -364,6 +304,66 @@
       "status": "candidate",
       "full_text": "unverified",
       "original_cover": "unverified"
+    },
+    {
+      "slug": "gpt6-luna-fast-reasoning-7a95a",
+      "dzen_id": "6adb23aa40c3ad0e7fe7a95a",
+      "title": "Для GPT-6 Luna придумали работу без болтовни. Решения — до 10 раз быстрее",
+      "excerpt": "У ИИ-агентов появилась отдельная профессия: быстро решать, что делать дальше, и не разводить философию на три страницы. — специального интерфейса для принятия коротких решений внутри приложений и ИИ-агентов. Компания утверждает, что он работает до десяти раз быстрее, чем обычный Responses API с той же моделью GPT-6 Luna. Разработчик заранее задаёт возможные варианты ответа и передаёт нейросети необходимую информацию.",
+      "published_at_utc": "2026-10-23T14:20:00+00:00",
+      "dzen_url": "https://dzen.ru/a/atsjqkDDrQ5_56la",
+      "rubric": "news",
+      "status": "candidate",
+      "full_text": "verified_against_dzen",
+      "original_cover": "recovered"
+    },
+    {
+      "slug": "agent-skills-standards-0352e",
+      "dzen_id": "6adb1d8ae601f329d680352e",
+      "title": "Anthropic больше не рулит Agent Skills в одиночку — теперь в деле конкуренты",
+      "excerpt": "ИИ-компании готовы бесконечно выяснять, чья нейросеть круче, но когда дело дошло до общих стандартов, оказалось, что каждому городить собственный огород довольно глупо. 22 октября Anthropic передала Agent Skills под управление Agentic AI Foundation, действующего при Linux Foundation. Теперь развивать стандарт будут в том числе конкуренты Anthropic — разработчики ChatGPT, Gemini и других ИИ-систем. Допустим, вы наняли",
+      "published_at_utc": "2026-10-23T13:04:45+00:00",
+      "dzen_url": "https://dzen.ru/a/atsdiuYB8ynWgDUu",
+      "rubric": "news",
+      "status": "candidate",
+      "full_text": "verified_against_dzen",
+      "original_cover": "recovered"
+    },
+    {
+      "slug": "nvidia-factory-datacenters-e7bb1",
+      "dzen_id": "6adb1b05397db6616b5e7bb1",
+      "title": "NVIDIA предложила собирать ИИ-дата-центры на заводе. Установка — всего две недели",
+      "excerpt": "Построить дата-центр для искусственного интеллекта — удовольствие долгое и дорогое. Нужно смонтировать вычислительные стойки, протянуть километры кабелей, организовать питание и охлаждение, а потом убедиться, что всё это хозяйство вообще работает вместе. NVIDIA предлагает большую часть возни перенести на завод. Заказчику привезут практически готовую инфраструктуру, которую останется установить и подключить. — проект ",
+      "published_at_utc": "2026-10-23T12:44:03+00:00",
+      "dzen_url": "https://dzen.ru/a/atsbBTl9tmFrXnux",
+      "rubric": "news",
+      "status": "candidate",
+      "full_text": "verified_against_dzen",
+      "original_cover": "recovered"
+    },
+    {
+      "slug": "zoom-ai-commitments-637f2",
+      "dzen_id": "6adb0b290e1ecf632f3637f2",
+      "title": "Zoom научил ИИ искать, кто что обещал на совещаниях",
+      "excerpt": "Фраза «я такого не обещал» прекрасно работает, пока никто не хочет пересматривать часовую запись совещания и перелопачивать рабочие переписки. Zoom решила испортить малину — систему, которая собирает историю рабочих обсуждений и делает её доступной для ИИ-агентов. Теперь помощник может искать информацию сразу в расшифровках видеоконференций, телефонных звонках, чатах, документах и подключённых корпоративных приложени",
+      "published_at_utc": "2026-10-23T11:25:20+00:00",
+      "dzen_url": "https://dzen.ru/a/atsLKQ4ez2MvNjfy",
+      "rubric": "news",
+      "status": "candidate",
+      "full_text": "verified_against_dzen",
+      "original_cover": "recovered"
+    },
+    {
+      "slug": "bria-fibo-editor-e3ed5",
+      "dzen_id": "6adb07e5edeaf11d1f4e3ed5",
+      "title": "Bria выпустила Fibo 2.0: ИИ-редактор с инструкцией «остальное не трогать»",
+      "excerpt": "Просишь нейросеть поменять цвет куртки. Она послушно меняет. А заодно перерисовывает лицо, передвигает мебель и устраивает за окном закат. Спасибо, конечно, только кто просил об этом? — модель с 8 миллиардами параметров для генерации и редактирования изображений. Разработчики обещают более точное управление отдельными деталями картинки без незапланированной переделки всего остального. Обычно генератор получает тексто",
+      "published_at_utc": "2026-10-23T10:25:44+00:00",
+      "dzen_url": "https://dzen.ru/a/atsH5e3q8R0fTj7V",
+      "rubric": "news",
+      "status": "candidate",
+      "full_text": "verified_against_dzen",
+      "original_cover": "recovered"
     }
   ]
 }
