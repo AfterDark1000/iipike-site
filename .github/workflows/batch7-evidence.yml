@@ -18,7 +18,8 @@ jobs:
           run-id: 41785744045
           github-token: ${{ github.token }}
           path: research
-      - run: python3 research/audit_batch7_evidence.py
+      - name: Match article body after Dzen description boilerplate
+        run: python3 research/audit_batch7_evidence.py
       - name: Commit compact provenance only to research branch
         run: |
           git config user.name 'github-actions[bot]'
