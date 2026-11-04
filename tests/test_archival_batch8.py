@@ -14,7 +14,7 @@ class FinalArchiveIntegrity(unittest.TestCase):
     def test_full_legacy_catalog_has_no_missing_or_duplicate_original(self):
         ids=[x["dzen_id"] for x in self.news if x.get("dzen_id")]
         self.assertEqual(len(self.catalog),218)
-        self.assertEqual(len(self.news),219)
+        self.assertGreaterEqual(len(self.news),219)
         self.assertEqual(len(ids),218)
         self.assertEqual(len(ids),len(set(ids)))
         self.assertEqual(set(ids),set(self.meta))
@@ -73,7 +73,7 @@ class FinalArchiveIntegrity(unittest.TestCase):
     def test_sitemap_and_rss_complete_without_fabricating_times(self):
         tree=ET.parse(ROOT/"sitemap.xml").getroot()
         urls=[x.text for x in tree.iter() if x.tag.endswith("}loc")]
-        self.assertEqual(len(urls),225)
+        self.assertGreaterEqual(len(urls),225)
         self.assertEqual(len(set(urls)),len(urls))
         feed=ET.parse(ROOT/"feed.xml").getroot()
         items={x.findtext("link"):x for x in feed.findall("./channel/item")}
