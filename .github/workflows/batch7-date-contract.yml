@@ -1,0 +1,15 @@
+name: HPII verify historical date-only publication contract
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-date-contract.yml']
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests -p 'test_archive_date_only.py' -v
+      - run: python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+      - run: python3 -m unittest discover -s tests -p 'test_site_rubrics_related.py' -v
