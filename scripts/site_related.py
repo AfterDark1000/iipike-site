@@ -28,8 +28,12 @@ def verified(entry):
         return False
     if entry["dzen_id"] == DIARY or not isinstance(entry.get("title"), str) or not entry["title"].strip():
         return False
-    if (entry.get("url_evidence") != "recorded_in_editorial_archive"
-            or entry.get("title_evidence") != "recorded"):
+    source_pair = (entry.get("url_evidence"), entry.get("title_evidence"))
+    approved_provenance = {
+        ("recorded_in_editorial_archive", "recorded"),
+        ("verified_on_public_dzen_page", "verified_on_public_dzen_page"),
+    }
+    if source_pair not in approved_provenance:
         return False
     ident = entry["dzen_id"]
     slug = base64.urlsafe_b64encode(bytes.fromhex(ident)).decode("ascii").rstrip("=")

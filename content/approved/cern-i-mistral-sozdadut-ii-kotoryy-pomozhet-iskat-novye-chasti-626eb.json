@@ -1,0 +1,39 @@
+{
+  "slug": "cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "CERN и Mistral создадут ИИ, который поможет искать новые частицы",
+  "summary": "CERN и Mistral AI объявили о намерении совместно разработать Large Physics Model — большую модель искусственного интеллекта для физики элементарных",
+  "published": "2026-10-16",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atGXA3M7ZxTpZibr",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb.webp",
+  "dzen_id": "6ad19703733b6714e96626eb",
+  "dzen_url": "https://dzen.ru/a/atGXA3M7ZxTpZibr",
+  "related_dzen_ids": [
+    "6ad5a38047711c346bc9f409",
+    "6ae41757998fc72703c6c2cb"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "CERN и Mistral AI объявили о намерении совместно разработать Large Physics Model — большую модель искусственного интеллекта для физики элементарных частиц."
+    },
+    {
+      "type": "p",
+      "text": "Её планируют обучать на миллиардах смоделированных столкновений протонов в Большом адронном коллайдере."
+    },
+    {
+      "type": "p",
+      "text": "В отличие от ChatGPT, такая модель будет работать не с обычными разговорами, а с результатами физических экспериментов: восстанавливать события столкновений, распознавать частицы и помогать искать необычные сигналы."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: пока подписано соглашение о намерениях. Готовой модели нет, срок выпуска не объявлен."
+    }
+  ]
+}

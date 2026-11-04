@@ -1,0 +1,43 @@
+{
+  "slug": "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "ChatGPT получил новую голосовую модель — разговоры обещают сделать естественнее",
+  "summary": "OpenAI начала внедрять GPT-Live-1.1 и её облегченную версию GPT-Live-1.1",
+  "published": "2026-10-16",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atHtfWDX1lL6SnS3",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7.webp",
+  "dzen_id": "6ad1ed7d60d7d652fa4a74b7",
+  "dzen_url": "https://dzen.ru/a/atHtfWDX1lL6SnS3",
+  "related_dzen_ids": [
+    "6ae5a9ef8b88aa09443370db",
+    "6ad0bd4d318b284334814728"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "OpenAI начала внедрять GPT-Live-1.1 и её облегченную версию GPT-Live-1.1 Quip."
+    },
+    {
+      "type": "p",
+      "text": "Разработчики обещают более естественное произношение и акценты на разных языках. Кроме того, голосовой помощник получил больше коротких фраз, которыми сообщает пользователю, что выполняет поиск."
+    },
+    {
+      "type": "p",
+      "text": "Добавлены новые варианты голосов, включая французский, немецкий, японский, корейский, хинди, мексиканский испанский и англоязычный Bubbie."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: обновление постепенно появляется в голосовом режиме ChatGPT. Набор голосов зависит от региона и аккаунта. Отдельные условия доступности именно GPT-Live-1.1 по тарифам в записи не уточняются."
+    },
+    {
+      "type": "p",
+      "text": "Почему важно: голосовой ИИ развивается не только в направлении точности ответов, но и естественности самого разговора."
+    }
+  ]
+}
