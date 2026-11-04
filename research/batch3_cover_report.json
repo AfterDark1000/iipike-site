@@ -291,9 +291,14 @@
       "url": "previously verified"
     },
     {
-      "slug": "china-ai-stock-bubble-480b",
-      "status": "failed",
-      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+      "slug": "microsoft-offers-60k-exits",
+      "status": "downloaded",
+      "cover": "assets/imported/microsoft-offers-60k-exits.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f67eff461919f0ce800d014d60843b77e0ad159a0a61b3b83ba87700663e4ca5",
+      "bytes": 387200,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0813b6c54fa23921064ed_6ae08d58e642a12e2785daf1/scale_1200"
     }
   ],
   "note": "Original article-owned image sources on Dzen, not generated artwork."
