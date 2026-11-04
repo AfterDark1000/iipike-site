@@ -1,0 +1,42 @@
+name: HPII batch4 original 16x9 Dzen image recovery (research)
+on:
+  push:
+    branches: [archive/batch4-covers-20261104]
+    paths: ['.github/workflows/batch4-original-images.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/archive/batch4-covers-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch4-covers-20261104
+          persist-credentials: true
+      - name: Install original image verification
+        run: python3 -m pip install pillow
+      - name: Restore matched article-owned original Dzen landscape covers
+        run: python3 research/download_batch3_fast.py
+      - name: Preserve original image diagnostics even if partial
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch4-cover-originals
+          path: |
+            research/batch4_cover_report.json
+            assets/imported/*.webp
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Save artworks in isolated cover branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch4_cover_report.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: restore article-owned originals for batch four'
+            git push origin HEAD:archive/batch4-covers-20261104
+          fi
