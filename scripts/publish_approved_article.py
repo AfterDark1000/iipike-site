@@ -23,7 +23,7 @@ if str(ROOT) not in sys.path:
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
 from scripts.site_home import update_home
-from scripts.site_rich_text import validate_blocks, render_blocks
+from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
 BASE = "https://iipike.ru"
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ASSET = re.compile(r"assets/[a-zA-Z0-9/_-]+\.(?:png|jpg|jpeg|webp|svg)\Z")
@@ -137,6 +137,11 @@ def approved_article(root, slug):
     # Share exactly one schema with the ChatGPT intake validator so that the
     # approved article retains the editor's full inline and block formatting.
     validate_blocks(data.get("paragraphs"))
+    if "article_markdown" in data:
+        # Never silently publish content altered during JSON transformation:
+        # the verbatim editor-approved Markdown must reproduce these blocks.
+        if markdown_to_blocks(data["article_markdown"]) != data["paragraphs"]:
+            raise ValueError("Approved paragraphs differ from original article_markdown")
     return data
 
 

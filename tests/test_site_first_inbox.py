@@ -100,6 +100,66 @@ class SiteFirstInboxTests(unittest.TestCase):
         self.assertIn('href="https://example.org/story/verified"', html)
         self.assertEqual(staged["paragraphs"], self.story["paragraphs"])
 
+    def test_verbatim_markdown_is_only_source_and_survives_exactly(self):
+        original = (
+            "GPT-6 Astra **разработала гаджет**, а авторы проверили "
+            "результат на настоящем оборудовании. " * 5
+            + "\n\n## Что сделали инженеры\n\n"
+            + "Основной [первоисточник](https://example.org/story/verified) "
+            "описывает шаги исследования и производственные ограничения. " * 3
+            + "\n\n- Первый результат\n- **Второй результат**\n\n"
+            + "> Это *реальная* проверка результатов.\n> — Представитель команды\n\n"
+            + "1. Сначала публикация на сайте\n2. Затем публикация в Дзене"
+        )
+        self.story.pop("paragraphs")
+        self.story["article_markdown"] = original
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(staged["article_markdown"], original)
+        self.assertEqual([b["type"] for b in staged["paragraphs"]],
+                         ["lead", "h2", "p", "ul", "quote", "ol"])
+        from scripts.publish_approved_article import render_article
+        page = render_article(staged)
+        self.assertIn("<strong>разработала гаджет</strong>", page)
+        self.assertIn("<h2>Что сделали инженеры</h2>", page)
+        self.assertIn('<ul class="editorial-list">', page)
+        self.assertIn('<ol class="editorial-list">', page)
+        self.assertIn('<blockquote class="editorial-quote">', page)
+        self.assertIn('href="https://example.org/story/verified"', page)
+        src = self.root / "content" / "approved" / (ID + ".json")
+        tampered = json.loads(src.read_text(encoding="utf-8"))
+        tampered["paragraphs"][0]["text"] = "Вместо оригинального текста"
+        src.write_text(json.dumps(tampered, ensure_ascii=False), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "differ"):
+            approved_article(self.root, ID)
+
+    def test_reject_duplicate_markdown_and_manual_blocks(self):
+        self.story["article_markdown"] = "Текст настоящей статьи для сайта. " * 20
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "either"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))
+
+    def test_audit_accepts_real_published_inbox_but_detects_tampering(self):
+        self.save_cover()
+        stage(self.root, ID, apply=True, now=UTC)
+        page = self.root / "articles" / ID / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text("approved rendered page", encoding="utf-8")
+        (self.root / "news.json").write_text(json.dumps([{
+            "id": ID, "title": self.story["title"],
+            "source_url": self.story["source_url"]
+        }]), encoding="utf-8")
+        self.assertEqual(validate_story(self.root, ID, today=dt.date(2026, 11, 4),
+                                        allow_published=True)["id"], ID)
+        with self.assertRaisesRegex(ValueError, "already published"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))
+        self.story["paragraphs"][1]["text"] = "Подменённый опубликованный текст"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "differ"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4),
+                           allow_published=True)
+
     def test_refuse_unapproved_or_tampered_editorial_article(self):
         self.save_cover()
         for field, new_value in (

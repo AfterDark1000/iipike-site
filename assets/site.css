@@ -331,3 +331,6 @@
   .article-text .editorial-list li {padding-left:.15em;}
   .article-text .editorial-quote {margin:28px 0 31px;padding:19px 18px;font-size:19px;}
 }
+
+/* Verbatim editorial Markdown third-level headings. */
+.article-text h3 {font:700 clamp(21px,2.5vw,25px)/1.28 Georgia,serif;letter-spacing:-.02em;margin:32px 0 17px;}

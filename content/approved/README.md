@@ -71,3 +71,7 @@
 После подготовки источника: `python3 scripts/publish_approved_article.py <slug>` (только проверка), затем по отдельному редакционному решению `python3 scripts/publish_approved_article.py <slug> --publish` в рабочей ветке, просмотр diff, тесты и pull request.
 
 Обложку нужно предварительно положить в `assets/` — механизм не пытается загружать картинку с Дзена и не создаёт её автоматически.
+
+## Новый единый Markdown-источник для следующих site-first выпусков
+
+После первого реального выпуска редактор ChatGPT больше не должен заново вручную делить утверждённую статью на JSON `paragraphs`. Он передаёт **дословный текст с Markdown-оформлением** в `editorial_inbox/stories/<id>.json` как `article_markdown`; генератор создаёт блоки, но оригинальный Markdown также копируется в `content/approved/<id>.json`. Publisher проверяет, что блоки соответствуют этому оригиналу. Если оба источника расходятся — публикация отклоняется. Старые статьи с одним `paragraphs` работают по-прежнему. Подробности: [RICH_TEXT_FORMAT.md](../../editorial_inbox/RICH_TEXT_FORMAT.md).

@@ -1,4 +1,4 @@
-name: HPII — approved editor story + cover → site-first release PR
+name: HPII — approved editor + cover → automatic site-first release
 on:
   push:
     branches: [editorial-intake]
@@ -14,6 +14,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  pages: write
 concurrency:
   group: hpii-site-first-editorial-intake
   cancel-in-progress: false
@@ -36,7 +37,8 @@ jobs:
           python3 -m py_compile scripts/site_first_release_pr.py scripts/site_first_inbox.py
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
-      - name: Create a release branch and gated PR only if exact text and cover both exist
+      - name: Validate both approved components then publish site-first without manual PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HPII_SITE_FIRST_AUTOPUBLISH: '1'
         run: python3 scripts/site_first_release_pr.py
