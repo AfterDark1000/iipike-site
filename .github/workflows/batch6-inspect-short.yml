@@ -1,0 +1,20 @@
+name: Batch 6 inspect short articles
+on:
+  push:
+    branches: [archive/batch6-20261104]
+    paths: ['.github/workflows/batch6-inspect-short.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch6-originals-and-build
+          run-id: 41783757736
+          github-token: ${{ github.token }}
+          path: .
+      - run: python3 research/inspect_short_batch6.py
