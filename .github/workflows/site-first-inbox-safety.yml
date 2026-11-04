@@ -24,3 +24,49 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
       - name: Audit independent story and cover inbox without publishing
         run: python3 scripts/site_first_inbox.py --audit
+      - name: Smoke test full site-first release in disposable CI workspace only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import json
+          root=Path('.')
+          slug='site-first-ci-smoke-20261104'
+          old=len(json.loads((root/'news.json').read_text(encoding='utf-8')))
+          Path('/tmp/site-first-old-count').write_text(str(old))
+          incoming={
+            'schema_version':1,'id':slug,'status':'editor_approved',
+            'approved_by':'human_editor','approved_at':'2026-11-04',
+            'title':'Тестовый выпуск сайта из настоящего редакционного входящего ящика',
+            'dzen_title':'Тестовый выпуск сайта из настоящего редакционного входящего ящика',
+            'summary':'Локальная CI проверка преобразования утверждённой новости в страницу сайта.',
+            'rubric':'news','section':'НОВОСТИ ИИ',
+            'source_url':'https://example.org/hpii-site-first-smoke-test',
+            'source_title':'Технический фиктивный источник CI',
+            'related_dzen_ids':[],
+            'paragraphs':[
+              {'type':'lead','text':'Технический полный абзац для проверки публикации на сайте. '*10},
+              {'type':'p','text':'Проверяем формирование корректных HTML RSS Sitemap и рубрик без публикации в Дзен. '*8}
+            ]
+          }
+          target=root/'editorial_inbox/stories'/f'{slug}.json'
+          target.write_text(json.dumps(incoming,ensure_ascii=False),encoding='utf-8')
+          Image.effect_noise((1024,576),68).convert('RGB').save(
+            root/'editorial_inbox/covers'/f'{slug}.webp','WEBP',quality=88)
+          PY
+          python3 scripts/site_first_inbox.py site-first-ci-smoke-20261104 --stage --publish
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          slug='site-first-ci-smoke-20261104'
+          root=Path('.')
+          entries=json.loads((root/'news.json').read_text(encoding='utf-8'))
+          old=int(Path('/tmp/site-first-old-count').read_text())
+          assert len(entries)==old+1,(len(entries),old)
+          new=next(x for x in entries if x['id']==slug)
+          assert not new.get('dzen_id')
+          assert (root/'articles'/slug/'index.html').is_file()
+          assert 'https://iipike.ru/articles/'+slug+'/' in (root/'sitemap.xml').read_text()
+          assert 'https://iipike.ru/articles/'+slug+'/' in (root/'feed.xml').read_text()
+          print('PASS: site-first HTML, RSS, rubrics and Sitemap compiled without any external publication')
+          PY
