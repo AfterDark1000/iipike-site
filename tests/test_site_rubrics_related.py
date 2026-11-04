@@ -18,8 +18,17 @@ class RubricAndArchiveTests(unittest.TestCase):
     def setUpClass(cls):
         cls.catalog = catalog_entries(ROOT)
         cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
-        cls.trusted = next(x for x in cls.catalog.values() if verified(x))
-        cls.untrusted = next(x for x in cls.catalog.values() if not verified(x))
+        cls.trusted = next(x for x in cls.catalog.values()
+                           if verified(x) and x.get("published_at_utc"))
+        # Once the historical backlog is fully recovered, no real unverified
+        # catalog entry should remain. Use an explicit invalid fixture.
+        synthetic_id = "ffffffffffffffffffffffff"
+        assert synthetic_id not in cls.catalog
+        cls.untrusted = dict(cls.trusted, dzen_id=synthetic_id,
+                             title="НЕПРОВЕРЕННЫЙ ТЕСТОВЫЙ ИСТОЧНИК",
+                             title_evidence="unavailable",
+                             url_evidence="derived_from_12_byte_id")
+        cls.catalog = {**cls.catalog, synthetic_id: cls.untrusted}
 
     def test_existing_catalog_not_recreated_or_all_published(self):
         self.assertGreaterEqual(len(self.catalog), 200)
