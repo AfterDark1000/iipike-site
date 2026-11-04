@@ -383,21 +383,22 @@
       "source_url": "unverified"
     },
     {
-      "slug": "china-ai-stock-bubble-480b",
+      "slug": "microsoft-offers-60k-exits",
       "rubric": "news",
-      "dzen_id": "6ae0a6d4eedc244b0da74d9e",
-      "title": "ИИ-пузырь в Китае лопнул. За четыре месяца испарились $480 миллиардов",
-      "excerpt": "Минус 480 миллиардов долларов. Столько рыночной стоимости потеряли компании китайского индекса STAR50 менее чем за четыре месяца. Сам индекс обвалился на 40%. 26 октября Reuters опубликовало анализ китайского фондового рынка с довольно безжалостным выводом: пузырь вокруг искусственного интеллекта уже лопнул. И пострадали далеко не безымянные стартапы. Unitree, известная своими человекоподобными роботами, потеряла при",
-      "dzen_url": "https://dzen.ru/a/auCm1O7cJEsNp02e",
-      "published_at_utc": "2026-10-27T13:37:47+00:00",
+      "dzen_id": "6ae0813b6c54fa23921064ed",
+      "title": "Microsoft предложила уйти каждому четвёртому сотруднику. Даже вице-президентам",
+      "excerpt": "60 тысяч сотрудников Microsoft получили предложение уволиться. Добровольно, с компенсацией. Это примерно 27% всего штата компании. 26 октября Microsoft объявила программу Voluntary Exit Offer — добровольного ухода с выходным пособием. Предложения распространяются на сотрудников отдельных подразделений в США, Канаде, Великобритании и Индии. В список попали команды Windows, Xbox, Copilot, финансовые службы и даже некот",
+      "dzen_url": "https://dzen.ru/a/auCBO2xU-iOSEGTt",
+      "published_at_utc": "2026-10-27T18:39:10+00:00",
       "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified",
+      "full_text": "verified",
+      "original_cover": "observed",
       "source_url": "unverified"
     }
   ],
   "replaced_unavailable_artwork": {
-    "slug": "ai-market-intel-alphabet-losses",
-    "reason": "Dzen's article image endpoint returned HTTP 404; original cover remains in user's personal image library for later direct migration."
+    "slug": "china-ai-stock-bubble-480b",
+    "also_missing": "ai-market-intel-alphabet-losses",
+    "reason": "Both public Dzen original image endpoints returned 404; preserved for later recovery. Chosen replacement has original-scale Dzen image URL."
   }
 }
