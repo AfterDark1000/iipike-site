@@ -1,0 +1,43 @@
+name: Batch3 parallel original artwork recovery (independent fallback)
+on:
+  push:
+    branches: [archive/batch3-fast-20261104]
+    paths:
+      - '.github/workflows/batch3-fast-covers.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/archive/batch3-fast-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch3-fast-20261104
+          persist-credentials: true
+      - name: Install image verification tools
+        run: python3 -m pip install pillow
+      - name: Match originals to verified Dzen documents (NO PUBLICATION)
+        run: python3 research/download_batch3_fast.py
+      - name: Archive results for editorial verification
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: third-batch-concurrent-artwork
+          path: |
+            research/batch3_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Save isolated original artwork branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch3_cover_report.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: restore verified original covers without external post changes'
+            git push origin HEAD:archive/batch3-fast-20261104
+          fi
