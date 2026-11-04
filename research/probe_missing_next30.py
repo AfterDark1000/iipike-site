@@ -7,11 +7,11 @@ from playwright.async_api import async_playwright
 from probe_next30 import extract
 
 ROOT=Path(__file__).resolve().parents[1]
-report=json.loads((ROOT/"research/next30_cover_report.json").read_text(encoding="utf-8"))
+report=json.loads((ROOT/"research/batch3_cover_report.json").read_text(encoding="utf-8"))
 missing={x["slug"] for x in report["entries"] if x["status"]!="downloaded"}
-probe_file=ROOT/"research/next30_probe_results.json"
+probe_file=ROOT/"research/batch3_probe_results.json"
 data=json.loads(probe_file.read_text(encoding="utf-8"))
-manifest=json.loads((ROOT/"research/next30_candidates.json").read_text(encoding="utf-8"))
+manifest=json.loads((ROOT/"research/batch3_candidates.json").read_text(encoding="utf-8"))
 items={x["slug"]:x for x in manifest["candidates"]}
 initial={x["slug"]:x for x in data["results"]}
 missing.update(x["slug"] for x in data["results"] if not (x.get("dom") or {}).get("main"))
