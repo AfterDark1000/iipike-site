@@ -50,3 +50,4 @@ jobs:
             git pull --rebase origin archive/batch3-20261104
             git push origin HEAD:archive/batch3-20261104
           fi
+# Source probe: 30/30 Dzen pages verified before recovery.
