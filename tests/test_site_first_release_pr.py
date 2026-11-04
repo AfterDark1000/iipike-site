@@ -23,22 +23,21 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
 
     def test_push_without_changed_files_recovers_real_committed_story_and_cover(self):
         self.assertEqual(changed_ids({"commits": []}), [])
-        tree = (
-            "editorial_inbox/stories/news-example-20261104.json\\n"
-            "editorial_inbox/covers/news-example-20261104.webp\\n"
-            "editorial_inbox/stories/.gitkeep\\n"
-            "editorial_inbox/covers/OTHER.webp\\n"
-        )
-        tree = tree.replace("\\\\n", "\\n")
+        tree = "\n".join([
+            "editorial_inbox/stories/news-example-20261104.json",
+            "editorial_inbox/covers/news-example-20261104.webp",
+            "editorial_inbox/stories/.gitkeep",
+            "editorial_inbox/covers/OTHER.webp",
+        ]) + "\n"
         with patch("scripts.site_first_release_pr.git",
                    return_value=SimpleNamespace(stdout=tree)) as g:
             self.assertEqual(candidate_ids_from_tree("a-real-commit-sha"), [ID])
             g.assert_called_once()
 
     def test_tree_scan_can_find_cover_sent_in_separate_later_commit(self):
-        tree = "editorial_inbox/stories/news-example-20261104.json\\n"
+        tree = "editorial_inbox/stories/news-example-20261104.json\n"
         with patch("scripts.site_first_release_pr.git",
-                   return_value=SimpleNamespace(stdout=tree.replace("\\\\n", "\\n"))):
+                   return_value=SimpleNamespace(stdout=tree)):
             self.assertEqual(candidate_ids_from_tree("sha"), [ID])
 
     def test_one_editorial_text_or_one_cover_is_not_a_release(self):
