@@ -1,0 +1,280 @@
+{
+  "entries": [
+    {
+      "slug": "claude-uvolnyaet-ii-agentov-cf215",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
+      "status": "downloaded",
+      "cover": "assets/imported/anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "96fe1f5e9c042f1360252d82414dc363b287a981b91a5b6dabde901e21ecb7f3",
+      "bytes": 298506,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0522ce601f329d6421ad9_6ae05e6897126b54778da583/scale_1200"
+    },
+    {
+      "slug": "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793",
+      "status": "downloaded",
+      "cover": "assets/imported/nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "d59114bd42e057c3e9577c14ce7132b63252508f2010dd8e7e42351da6d222ed",
+      "bytes": 337914,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae049b399791f7d2c3b3793_6ae04b8140c3ad0e7fcf3e8d/scale_1200"
+    },
+    {
+      "slug": "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a",
+      "status": "downloaded",
+      "cover": "assets/imported/meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "3d50a832d864842752c05390cd45713775504304e0121d252a3c1d7f2a430988",
+      "bytes": 349276,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0485408dabf010518b82a_6ae0495a38340e44ed7b5192/scale_1200"
+    },
+    {
+      "slug": "anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c",
+      "status": "downloaded",
+      "cover": "assets/imported/anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "c871a2bc986901fd69f20e2c2170c20b17ead3284c0676292829502c07b7d2c3",
+      "bytes": 192312,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0447e63b27e51e1c12e5c_6ae047cee601f329d62c7415/scale_1200"
+    },
+    {
+      "slug": "v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d",
+      "status": "downloaded",
+      "cover": "assets/imported/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "35c0ebdb5c3b373c5d80737424bf39a0b7742941d9ac79bbeefad56d8f98f2d0",
+      "bytes": 115524,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae040ace9368d4a2d265e1d_6ae0445cd9d1c158a9f9931e/scale_1200"
+    },
+    {
+      "slug": "kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c",
+      "status": "downloaded",
+      "cover": "assets/imported/kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "1692a3c1f5aa546b9740385d6125f616c76505f4d1843aa18c4614a2d34cc656",
+      "bytes": 354266,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adf2f42f8edfc31bb69a73c_6adf32603404d230ff460b91/scale_1200"
+    },
+    {
+      "slug": "tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef",
+      "status": "downloaded",
+      "cover": "assets/imported/tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "405f45b0d41cc960e7ea4f5a79a88676b78d5bc544419653655b22207073b6fa",
+      "bytes": 201108,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adf28bce17db653337bebef_6adf2c47e17db65333a53a07/scale_1200"
+    },
+    {
+      "slug": "kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23",
+      "status": "downloaded",
+      "cover": "assets/imported/kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "ed7ac84da568042afa36dbe524d3f6f09607e805e012616b7d823bd2b1a2055a",
+      "bytes": 363726,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adf2634edeaf11d1f76cd23_6adf279a91554b2467e0ad14/scale_1200"
+    },
+    {
+      "slug": "ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee",
+      "status": "downloaded",
+      "cover": "assets/imported/ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "71834d9e44a71f103e47c6973086952bb1e68f93b00806969b689b9f2d2d3580",
+      "bytes": 153682,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adee4d2397db6616bdb31ee_6adee63e2c0b050911bbf972/scale_1200"
+    },
+    {
+      "slug": "claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6",
+      "status": "downloaded",
+      "cover": "assets/imported/claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "d39adaa592c8a0f6e5a24ff0b2564c251444e3e125fe32b92ca5a07bbabd2fb6",
+      "bytes": 322164,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6addff2a38340e44ed00e7e6_6addffdbf8edfc31bba7e482/scale_1200"
+    },
+    {
+      "slug": "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
+      "status": "downloaded",
+      "cover": "assets/imported/mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "50605aad5fcb71c65e653c41c4a22a4bbbd1938f1bbc71a2b16c0f5a82033bf2",
+      "bytes": 182330,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6add811297126b54779d94a0_6add8360e601f329d6729784/scale_1200"
+    },
+    {
+      "slug": "kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c",
+      "status": "downloaded",
+      "cover": "assets/imported/kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "aa2384f3955592738f06dc6bfbe19a0faa0470f000760a7c31875514fea3ded7",
+      "bytes": 244116,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adcb98a40c3ad0e7f80e95c_6adcbb3408dabf0105f364c8/scale_1200"
+    },
+    {
+      "slug": "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "de0b3d8b728f1a3cb514f265053bc790191638e8cfe89177aeaf180d9994f2e5",
+      "bytes": 115236,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc71cd3e43c31ff1214aaa_6adc71fc91554b2467181545/scale_1200"
+    },
+    {
+      "slug": "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "ec4cb851422e8ce748e63930db15232d3c5285b5947068f69e73afb7af407681",
+      "bytes": 97108,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc7113b5289f5e98ae18bb_6adc7168d9d1c158a90f27f8/scale_1200"
+    },
+    {
+      "slug": "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4",
+      "status": "downloaded",
+      "cover": "assets/imported/durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "69da33cbd3e3b83200fa0a82039b4adeb5562aa9a6d26e5a014e4e8ad101348c",
+      "bytes": 187768,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc5238e601f329d6d0d3d4_6adc5254cba82619cb32f0fe/scale_1200"
+    },
+    {
+      "slug": "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d",
+      "status": "downloaded",
+      "cover": "assets/imported/ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "cbbee99d8a0061bf3272157ee0e84f84b7f7a3515d6a2646b510118ee65e718b",
+      "bytes": 400566,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc5171e6b18e075bdb167d_6adc518d95e73b66d2eae3ba/scale_1200"
+    },
+    {
+      "slug": "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
+      "status": "downloaded",
+      "cover": "assets/imported/claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "c5f6d41a49e8ab6f9dfd7b7255d560154f94d2ed9356755f507335add34ef4e0",
+      "bytes": 297864,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc4f90e17db653330ff095_6adc4fa540c3ad0e7fe08aa0/scale_1200"
+    },
+    {
+      "slug": "kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934",
+      "status": "downloaded",
+      "cover": "assets/imported/kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "fa4de224a6bca3d5cd0442826053035842b439ae98c8824ae71f25943a410d54",
+      "bytes": 281284,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc4eefedeaf11d1f7a3934_6adc4f14f8edfc31bb71879f/scale_1200"
+    },
+    {
+      "slug": "1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf",
+      "status": "downloaded",
+      "cover": "assets/imported/1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "cfef54a9ec25631d1fd17991cf2d82c950100944854a67f29956c3981cb8b82c",
+      "bytes": 412970,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc4df03404d230ff51cdaf_6adc4e09dda23344953ce95f/scale_1200"
+    },
+    {
+      "slug": "canva-vypustila-sobstvennuyu-neyroset-4b186",
+      "status": "downloaded",
+      "cover": "assets/imported/canva-vypustila-sobstvennuyu-neyroset-4b186.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "35a622d714740b3f07ea5f3e57a12d997a23469f6396017e72379beba57e83c9",
+      "bytes": 139966,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc4d61be6dfd538d14b186_6adc4d81cba82619cb2cb47d/scale_1200"
+    },
+    {
+      "slug": "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
+      "status": "downloaded",
+      "cover": "assets/imported/hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "df5e6d30b863840e5cb1fbe202c0ebfd149b32892dd6c3bcd0fd7cf7e51365cf",
+      "bytes": 388666,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adc4b7fbefc9746e6b083c3_6adc4ca8dda23344953a3fa5/scale_1200"
+    },
+    {
+      "slug": "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700",
+      "status": "downloaded",
+      "cover": "assets/imported/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "ed246b4907985806247243299f0c18b0d334cae458761502c9f559bfb9f8ebc8",
+      "bytes": 241250,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb35c595e73b66d2f28700_6adb4ccae6b18e075b26b944/scale_1200"
+    },
+    {
+      "slug": "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca",
+      "status": "downloaded",
+      "cover": "assets/imported/hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f69cbd3ed8f8ec5a2def36a08eb3c35db8d85c789646565dafb6696b71456035",
+      "bytes": 379196,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb353063b27e51e1ff6dca_6adb3644f8edfc31bbad7826/scale_1200"
+    },
+    {
+      "slug": "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729",
+      "status": "downloaded",
+      "cover": "assets/imported/ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "d07a2f9732589fb6be92f6e64f984b09b59b76f7c6fe2e4e32f593053bda74bd",
+      "bytes": 276308,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb3061621e6a2e9fef8729_6adb34ef7c67b043a51f9d5f/scale_1200"
+    },
+    {
+      "slug": "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085",
+      "status": "downloaded",
+      "cover": "assets/imported/les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "83a0c63eaf5a69cd4de430dfcdae773d24350dc632b8e853fb8b182281347fab",
+      "bytes": 196140,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6adb2d2f97126b5477f73085_6adb2f30cba82619cb6b03a1/scale_1200"
+    }
+  ],
+  "note": "Original article-owned image sources on Dzen, not generated artwork."
+}
