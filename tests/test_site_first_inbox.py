@@ -140,6 +140,26 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "either"):
             validate_story(self.root, ID, today=dt.date(2026, 11, 4))
 
+    def test_audit_accepts_real_published_inbox_but_detects_tampering(self):
+        self.save_cover()
+        stage(self.root, ID, apply=True, now=UTC)
+        page = self.root / "articles" / ID / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text("approved rendered page", encoding="utf-8")
+        (self.root / "news.json").write_text(json.dumps([{
+            "id": ID, "title": self.story["title"],
+            "source_url": self.story["source_url"]
+        }]), encoding="utf-8")
+        self.assertEqual(validate_story(self.root, ID, today=dt.date(2026, 11, 4),
+                                        allow_published=True)["id"], ID)
+        with self.assertRaisesRegex(ValueError, "already published"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))
+        self.story["paragraphs"][1]["text"] = "Подменённый опубликованный текст"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "differ"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4),
+                           allow_published=True)
+
     def test_refuse_unapproved_or_tampered_editorial_article(self):
         self.save_cover()
         for field, new_value in (
