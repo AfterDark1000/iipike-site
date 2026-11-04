@@ -10,10 +10,6 @@ import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
 EXPECTED={
-  "claude-uvolnyaet-ii-agentov-cf215": "6ae07e9d388b67714d9cf215",
-  "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-vi-34bad": "6ae065e0e9368d4a2d734bad",
-  "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-fb75b": "6ae062a4621e6a2e9f1fb75b",
-  "chatgpt-pashet-na-165-frontah-openai-raskryla-chem-ego-nagr-12612": "6ae060ef3404d230ff312612",
   "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9": "6ae0522ce601f329d6421ad9",
   "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793": "6ae049b399791f7d2c3b3793",
   "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a": "6ae0485408dabf010518b82a",
@@ -28,7 +24,6 @@ EXPECTED={
   "kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c": "6adcb98a40c3ad0e7f80e95c",
   "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa": "6adc71cd3e43c31ff1214aaa",
   "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb": "6adc7113b5289f5e98ae18bb",
-  "13-neyrosetey-horom-nazvali-lyudey-litsemerami-6cd80": "6adc52faf8edfc31bb76cd80",
   "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4": "6adc5238e601f329d6d0d3d4",
   "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d": "6adc5171e6b18e075bdb167d",
   "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095": "6adc4f90e17db653330ff095",
@@ -39,7 +34,12 @@ EXPECTED={
   "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700": "6adb35c595e73b66d2f28700",
   "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca": "6adb353063b27e51e1ff6dca",
   "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729": "6adb3061621e6a2e9fef8729",
-  "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085": "6adb2d2f97126b5477f73085"
+  "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085": "6adb2d2f97126b5477f73085",
+  "gpt6-luna-fast-reasoning-7a95a": "6adb23aa40c3ad0e7fe7a95a",
+  "agent-skills-standards-0352e": "6adb1d8ae601f329d680352e",
+  "nvidia-factory-datacenters-e7bb1": "6adb1b05397db6616b5e7bb1",
+  "zoom-ai-commitments-637f2": "6adb0b290e1ecf632f3637f2",
+  "bria-fibo-editor-e3ed5": "6adb07e5edeaf11d1f4e3ed5"
 } 
 
 class Batch4IntegrityTests(unittest.TestCase):
