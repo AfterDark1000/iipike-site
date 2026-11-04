@@ -1,0 +1,35 @@
+name: HPII inspect Dzen cover sources (isolated read-only)
+on:
+  push:
+    branches: [repair/batch5-original-covers-20261104]
+    paths: ['.github/workflows/diagnose-batch5-og.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  diagnose:
+    if: github.ref == 'refs/heads/repair/batch5-original-covers-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: repair/batch5-original-covers-20261104
+      - name: Restore old source capture without recontacting Dzen
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch5-source-recovery-and-build
+          run-id: 41778333841
+          github-token: ${{ github.token }}
+          path: .
+      - name: Dump exact image URLs from public Dzen originals
+        run: python3 research/diagnose_batch5_og.py
+      - name: Commit only slim metadata to isolated repair branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch5_og_diagnostic.json
+          git commit -m 'research: map Dzen generated OG previews to article image metadata'
+          git pull --rebase origin repair/batch5-original-covers-20261104
+          git push origin HEAD:repair/batch5-original-covers-20261104
