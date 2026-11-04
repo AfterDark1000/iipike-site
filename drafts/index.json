@@ -1,5 +1,12 @@
 [
   {
+    "id": "8d86676710497099b109",
+    "date": "2026-11-04",
+    "title": "Hugging Face представила StateBench: тест для проверки памяти ИИ на длинных дистанциях",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/allenai/statebench"
+  },
+  {
     "id": "218c5dc9b18cefceb61f",
     "date": "2026-11-03",
     "title": "NVIDIA выпустила инструмент для поиска сбоев в распределенном ИИ",
