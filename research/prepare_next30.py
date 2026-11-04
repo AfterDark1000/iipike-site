@@ -50,6 +50,112 @@ RELATED = {
  "russian-courts-ai-hallucinations":["datagpt-source-numbers"],
  "block-voice-without-text":["mac-audio-transcription-speed","elevenlabs-als-voice-restoration"],
 }
+# Related-story candidates reviewed by topic for this historical batch.
+RELATED.update({
+  "ai-market-intel-alphabet-losses": [
+    "openai-power-grid-georgia-1000mw",
+    null
+  ],
+  "openai-power-grid-georgia-1000mw": [
+    "ai-market-intel-alphabet-losses"
+  ],
+  "openai-gpt6-astra-household-benchmark": [
+    "chatgpt-service-now-support"
+  ],
+  "openai-abu-dhabi-regulation-ai": [
+    "oracle-chatgpt-accounting"
+  ],
+  "telus-ai-calls-cancellations": [
+    "nvidia-ai-meeting-secretary",
+    "chatgpt-service-now-support"
+  ],
+  "chainalysis-hacked": [
+    "malware-ai-scores-victims",
+    "south-korea-ai-data-theft"
+  ],
+  "malware-ai-scores-victims": [
+    "chainalysis-hacked",
+    "south-korea-ai-data-theft"
+  ],
+  "claude-mouse-brain-injection": [
+    "claude-35k-antibodies",
+    "openai-gpt6-biologists-restricted"
+  ],
+  "openai-gpt6-biologists-restricted": [
+    "claude-35k-antibodies",
+    "claude-mouse-brain-injection"
+  ],
+  "ai-680-tokens-second": [
+    "nvidia-local-assistant-4gb"
+  ],
+  "claude-code-pentagon-systems": [
+    "ai-hacker-admin-access"
+  ],
+  "pika-15s-video-7s-compute": [
+    "kling40-api-video-price",
+    "runway-app-studio-no-code-video"
+  ],
+  "elevenlabs-sfxv3-ai-sound-design": [
+    "indian-voice-model-elevenlabs"
+  ],
+  "nvidia-ai-meeting-secretary": [
+    "telus-ai-calls-cancellations",
+    "rime-prism-voice-guardrails"
+  ],
+  "indian-voice-model-elevenlabs": [
+    "elevenlabs-sfxv3-ai-sound-design"
+  ],
+  "runway-ai-advertising-agent": [
+    "runway-app-studio-no-code-video"
+  ],
+  "nate-soares-retirement-apocalypse": [
+    "microsoft-ai-consciousness-warning"
+  ],
+  "chatgpt-service-now-support": [
+    "oracle-chatgpt-accounting"
+  ],
+  "microsoft-copilot-twenty-models": [
+    "microsoft-mai-image-editor"
+  ],
+  "rime-prism-voice-guardrails": [
+    "nvidia-ai-meeting-secretary"
+  ],
+  "microsoft-mai-image-editor": [
+    "gemini4-carbon-ranking"
+  ],
+  "gemini4-carbon-ranking": [
+    "microsoft-mai-image-editor"
+  ],
+  "kling40-api-video-price": [
+    "pika-15s-video-7s-compute"
+  ],
+  "runway-app-studio-no-code-video": [
+    "runway-ai-advertising-agent",
+    "pika-15s-video-7s-compute"
+  ],
+  "south-korea-ai-data-theft": [
+    "chainalysis-hacked",
+    "malware-ai-scores-victims"
+  ],
+  "oracle-chatgpt-accounting": [
+    "chatgpt-service-now-support",
+    "openai-abu-dhabi-regulation-ai"
+  ],
+  "claude-35k-antibodies": [
+    "openai-gpt6-biologists-restricted",
+    "claude-mouse-brain-injection"
+  ],
+  "apple-iwork-ai-agents": [
+    "microsoft-copilot-twenty-models"
+  ],
+  "google-genie4-worlds": [
+    "pika-15s-video-7s-compute"
+  ],
+  "netherlands-civil-service-ai-cuts": [
+    "openai-abu-dhabi-regulation-ai"
+  ]
+})
+
 
 def build():
     batch=json.loads(CAND.read_text(encoding="utf-8"))["candidates"]
