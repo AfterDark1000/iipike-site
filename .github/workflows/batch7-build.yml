@@ -54,7 +54,7 @@ jobs:
             python3 scripts/publish_approved_article.py "$slug"
             python3 scripts/publish_approved_article.py "$slug" --publish
           done </tmp/batch7slugs
-      - name: Full regression across old and new archives and search metadata
+      - name: Full regression across exact-time and source-verified day-only histories
         run: |
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
