@@ -1,0 +1,48 @@
+name: HPII batch7 historical Dzen source-and-date audit
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-probe.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    if: github.ref == 'refs/heads/archive/batch7-research-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser for public original article inspection
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Read only original article HTML and publication metadata
+        run: python3 research/probe_batch7.py
+      - name: Summarize original date and title evidence
+        if: ${{ always() }}
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('research/batch7_probe_results.json')
+          if not p.exists():
+            print('No capture exists yet')
+          else:
+            rows=json.loads(p.read_text())['results']
+            print('CAPTURED:',len(rows),'HTTP200:',sum(x.get('http_status')==200 for x in rows))
+            for x in rows:
+              d=x.get('dom') or {}
+              print('DOC',x['slug'],x.get('http_status'), 'title?',bool(d.get('og_title')),'match?',d.get('og_title')==x.get('expected_title'), 'published=',d.get('published'),
+                    'date_meta=',d.get('date_meta'), 'time=',d.get('time_elements'),
+                    'ldjson=',[y[:300] for y in d.get('ldjson',[])],
+                    'snippet=',d.get('snippet_dates'), 'opening=',repr((d.get('main') or '')[:280]))
+          PY
+      - name: Preserve original source evidence without deploying
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch7-source-dates-probe
+          path: research/batch7_probe_results.json
+          retention-days: 7
+          if-no-files-found: ignore
