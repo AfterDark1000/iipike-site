@@ -77,6 +77,29 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Already staged"):
             stage(self.root, ID, apply=True, now=UTC)
 
+    def test_editor_rich_formatting_survives_inbox_to_site_html(self):
+        self.story["paragraphs"] = [
+            {"type": "lead", "text": "Первый абзац с **жирным** словом и *курсивом*. " * 5},
+            {"type": "p", "text": "Подробности в [первоисточнике](https://example.org/story/verified). " * 4},
+            {"type": "h2", "text": "Что произошло"},
+            {"type": "ul", "items": ["**Первое:** результат исследования", "Второе: практика"]},
+            {"type": "ol", "items": ["Редактор", "Художник", "Сайт", "Дзен"]},
+            {"type": "quote", "text": "Подтверждённое *заявление* для читателей.",
+             "attribution": "Автор исследования"},
+        ]
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        from scripts.publish_approved_article import render_article
+        html = render_article(staged)
+        self.assertIn("<strong>жирным</strong>", html)
+        self.assertIn("<em>курсивом</em>", html)
+        self.assertIn('<ul class="editorial-list"><li><strong>Первое:</strong>', html)
+        self.assertIn('<ol class="editorial-list"><li>Редактор</li>', html)
+        self.assertIn('<blockquote class="editorial-quote">', html)
+        self.assertIn('href="https://example.org/story/verified"', html)
+        self.assertEqual(staged["paragraphs"], self.story["paragraphs"])
+
     def test_refuse_unapproved_or_tampered_editorial_article(self):
         self.save_cover()
         for field, new_value in (

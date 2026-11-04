@@ -297,3 +297,37 @@
   .home-site-post h3{font-size:17px;}
   .home-site-post .date{font-size:11px;}
 }
+
+/* Site-first editor formatting: semantic article typography, not raw HTML.
+   Keep all visual rules inside the published article and responsive on mobile. */
+.article-text strong {font-weight:750;color:var(--ink);}
+.article-text em {font-style:italic;}
+.article-text a.editorial-inline-link {
+  color:#b52819;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;overflow-wrap:anywhere;
+}
+.article-text a.editorial-inline-link:hover,.article-text a.editorial-inline-link:focus-visible {
+  color:var(--red);text-decoration-thickness:2px;
+}
+.article-text .editorial-list {
+  margin:0 0 30px;padding:0 0 0 1.7em;
+  list-style-position:outside;
+}
+.article-text .editorial-list li {
+  margin:0 0 11px;padding-left:.35em;line-height:1.75;
+}
+.article-text ul.editorial-list li::marker {color:var(--red);}
+.article-text ol.editorial-list li::marker {color:var(--red);font-weight:800;}
+.article-text .editorial-quote {
+  margin:34px 0 38px;padding:24px 28px 22px;
+  background:#ebe4d9;border-left:4px solid var(--red);
+  color:var(--ink);font:italic 22px/1.62 Georgia,serif;
+}
+.article-text .editorial-quote p {margin:0;}
+.article-text .editorial-quote footer {margin-top:17px;font:700 13px/1.6 system-ui,sans-serif;color:var(--muted);}
+.article-text .editorial-quote cite {font-style:normal;}
+@media(max-width:600px) {
+  .article-text .editorial-list {padding-left:1.35em;}
+  .article-text .editorial-list li {padding-left:.15em;}
+  .article-text .editorial-quote {margin:28px 0 31px;padding:19px 18px;font-size:19px;}
+}

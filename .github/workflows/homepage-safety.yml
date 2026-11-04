@@ -11,6 +11,8 @@ on:
       - 'news.json'
       - 'scripts/build_sitemap.py'
       - 'scripts/publish_approved_article.py'
+      - 'scripts/site_rich_text.py'
+      - 'tests/test_site_rich_text.py'
       - 'scripts/site_related.py'
       - 'scripts/site_rubrics.py'
       - 'scripts/site_home.py'
@@ -65,6 +67,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_rubrics_related.py' -v
           python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
           python3 -m unittest discover -s tests -p 'test_historical_batch.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch3.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch4.py' -v
