@@ -1,0 +1,80 @@
+name: HPII batch4 compile and verify 30 historical stories (isolated)
+on:
+  push:
+    branches: [archive/batch4-20261104]
+    paths: ['.github/workflows/batch4-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.ref == 'refs/heads/archive/batch4-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch4-20261104
+          persist-credentials: true
+      - name: Prepare 30 historically authenticated editorial records
+        run: |
+          python3 research/prepare_next30.py
+          python3 - <<'PY'
+          import json
+          j=json.load(open('research/batch4_preparation_report.json'))
+          if j['ready']!=30 or j['not_ready']!=0:
+            raise SystemExit("Insufficient verified texts/covers: "+str(j['entries']))
+          print("Validated 30/30 original full text articles, artwork and dates")
+          PY
+      - name: Generate HTML, rubrics, feed, sitemap and first-party homepage in research branch
+        run: |
+          set -e
+          python3 - <<'PY' > /tmp/hpi-batch4.txt
+          import json
+          j=json.load(open('research/batch4_preparation_report.json'))
+          print('\n'.join(x['slug'] for x in j['entries'] if x['status']=='ready'))
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done < /tmp/hpi-batch4.txt
+      - name: Check complete HTML original-date archive and indexing
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_archival_batch4.py' -v
+          python3 -m unittest discover -s tests -p 'test_archival_batch3.py' -v
+          python3 -m unittest discover -s tests -p 'test_historical_batch.py' -v
+          python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_rubrics_related.py' -v
+          python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+      - name: Preserve build report as recovery artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch4-complete-build
+          path: |
+            research/batch4_preparation_report.json
+            content/approved/*.json
+            articles/**/index.html
+            rubrics/**/index.html
+            news.json
+            feed.xml
+            sitemap.xml
+            index.html
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit only in isolated research branch, without public deployment
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch4_preparation_report.json content/approved/ articles/ rubrics/ news.json feed.xml sitemap.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: compile 30 original-date full HPII stories with authentic artwork'
+            git pull --rebase origin archive/batch4-20261104
+            git push origin HEAD:archive/batch4-20261104
+          fi
