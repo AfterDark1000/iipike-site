@@ -1,0 +1,157 @@
+{
+  "requested": 30,
+  "verified": 30,
+  "deferred": [
+    {
+      "dzen_id": "6ad841c15504cd7f3268dd8e",
+      "title": "ChatGPT разрешил прятать переписки под PIN-кодом. Но сбрасывать его опасно",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad83f6c2f47836f3707412a",
+      "title": "Один запрос — целый фильм: VideoGen показала, как ИИ самостоятельно собирает кино",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad83dc546bcf26f507dcc9d",
+      "title": "Google подключила автомобильный Gemini к личным данным",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad8373656a5433cf42ac376",
+      "title": "«Запиши меня к врачу»: Mistral выпустила голосовой ИИ, который умеет выполнять поручения",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad8322defbf813a131dba7d",
+      "title": "ИИ научился переделывать машинный код на ходу. Генерация 4K-видео ускорилась почти вдвое",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad8305ababeb53f31a1397a",
+      "title": "Google открыла проект ИИ-процессора для часов и датчиков. Цель — всего 10 милливатт",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad74813be108a14528bee3a",
+      "title": "Cloudflare выпустила Clairic — ИИ, который извлекает данные без генерации текста",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad747205dd01a7e03411ef5",
+      "title": "OpenAI: ИИ научился лучше работать со старым программным кодом",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad73f852d69ac1460137ba9",
+      "title": "Google научила Gemini Notebook показывать план видео до его создания",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad70dd357450928e2779daf",
+      "title": "ИИ отказался ловить хакеров",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6f21ca4204c21d6073b38",
+      "title": "Пять минут видео из одной картинки. Китайцы выпустили OmniHuman 2.0",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6ee4347711c346bf53169",
+      "title": "Google выпустила инструмент для запуска ИИ непосредственно на устройствах",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6eb847b47497b1ee5a039",
+      "title": "Mercury 3: нейросеть, которая пишет быстрее, чем успеваешь читать",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6eb11fd530f1a039ce793",
+      "title": "FLUX 3 Max: десять секунд видео за двенадцать секунд",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad63e067fa5c9322f68c8cf",
+      "title": "Amazon упрощает запуск ИИ на собственных процессорах вместо NVIDIA",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad63ced7267ec5b95fec6b4",
+      "title": "США запретили DeepSeek в гражданских федеральных ведомствах",
+      "reason": "Cannot delimit full original source body"
+    },
+    {
+      "dzen_id": "6ad63b1228014a16952394c1",
+      "title": "Хакер использовал ИИ для атак на 1200 сайтов",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad63a9747711c346b04c5d3",
+      "title": "MiniMax выпустила ИИ в три раза быстрее и на 70% дешевле",
+      "reason": "Cannot delimit full original source body"
+    },
+    {
+      "dzen_id": "6ad6394a2cdfb474e89be1ba",
+      "title": "Tencent подтвердила: ИИ-агенты вышли за рамки задания и начали обходить ограничения чужого сервиса.",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6385a733b6714e99cdbf2",
+      "title": "ИИ обошёл защиту государственного сайта и получил секретные данные сервера",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad6025e7e6dd4477fd6d4cb",
+      "title": "Маск пообещал каждому ребёнку США по акции SpaceX. Цена вопроса — $10,5 млрд",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a8f747711c346bd1c11d",
+      "title": "ИИ проник во внутренние системы исследовательской организации",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a86b28014a169528c8c1",
+      "title": "Anthropic направит 5% своих акций на общественные проекты",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a5d37fa5c9322f45dfab",
+      "title": "Anthropic: ИИ-агенты работают в шесть раз больше, чем сотрудники",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a483d0db753764002c93",
+      "title": "NVIDIA выпустила ноутбуки для запуска мощного ИИ без облака",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a3da2d69ac1460e5c4d6",
+      "title": "Claude разгадал 25-летнюю загадку криптографии",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a38047711c346bc9f409",
+      "title": "DeepSeek открыла собственный поисковый API",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a11a53d2e4088607bc93",
+      "title": "DeepSeek обновила свою открытую модель: лучше пишет код и быстрее выполняет задачи",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad5a09ebe108a1452e51112",
+      "title": "GPT-6 Pro научился распределять задачи между несколькими ИИ-агентами",
+      "reason": "Valid reserve; not selected"
+    },
+    {
+      "dzen_id": "6ad3433234955e5dfa8f93ec",
+      "title": "GitHub запустил ИИ-проверку безопасности программного кода",
+      "reason": "Valid reserve; not selected"
+    }
+  ],
+  "note": "Deferred entries remain in the original Dzen archive; no substitute artwork or fabricated prose."
+}
