@@ -1,0 +1,51 @@
+name: HPII batch8 restore original HPII covers, not Dzen share cards
+on:
+  push:
+    branches: [archive/batch8-final-research-20261104]
+    paths: ['.github/workflows/batch8-cover.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image verifier and public Telegram parser
+        run: python3 -m pip install pillow beautifulsoup4
+      - name: Restore exact browser capture of 28 original articles
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch8-original-pages
+          run-id: 41788811179
+          github-token: ${{ github.token }}
+          path: research/
+      - name: Recover genuine original artwork via exact Dzen or HPII Telegram article
+        run: python3 research/recover_batch8_covers.py
+      - name: Retry original native Dzen images at alternative sizes
+        run: python3 research/retry_batch8_image_sizes.py
+      - name: Recreate native 16-to-9 crop from original high-resolution upload
+        run: python3 research/native_crop_batch8_originals.py
+      - name: Validate never use Dzen OpenGraph card as cover
+        run: |
+          python3 - <<'PY'
+          import json
+          p=json.load(open('research/batch8_cover_report.json'))['entries']
+          done=[x for x in p if x.get('status')=='downloaded']
+          assert all('get-zen-pub-og' not in x['source_url'] for x in done)
+          assert all(1.65 < x['width']/x['height'] < 1.86 for x in done)
+          print('ORIGINALS_FOUND',len(done),'of 28')
+          print('GOOD_QUALITY',sum(x['width']>=780 and x['height']>=430 for x in done))
+          print('MISSING',[(x['slug'],x.get('reason')) for x in p if x.get('status')!='downloaded'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: hpii-batch8-original-art-and-pages
+          path: |
+            research/batch8_probe_results.json
+            research/batch8_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
