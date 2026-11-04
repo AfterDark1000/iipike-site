@@ -1,0 +1,52 @@
+name: Batch3 - recover matching Dzen original covers (isolated)
+on:
+  push:
+    branches: [archive/batch3-20261104]
+    paths:
+      - '.github/workflows/batch3-covers.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  covers:
+    if: github.ref == 'refs/heads/archive/batch3-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch3-20261104
+          persist-credentials: true
+      - name: Validate original source evidence is present
+        run: |
+          python3 - <<'PY'
+          import json
+          x=json.load(open('research/batch3_probe_results.json'))
+          assert len(x['results'])==30
+          print('Verified Dzen article requests:',len(x['results']))
+          PY
+      - name: Install Pillow
+        run: python3 -m pip install pillow
+      - name: Recover original article-owned 16:9 artwork (NO PUBLICATION)
+        run: python3 research/download_next30_covers.py
+      - name: Preserve recovery report even if partial
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: third-batch-cover-results
+          path: |
+            research/batch3_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit recovered covers and report to isolated archive branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch3_cover_report.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: preserve recovered third-batch original cover images'
+            git pull --rebase origin archive/batch3-20261104
+            git push origin HEAD:archive/batch3-20261104
+          fi
