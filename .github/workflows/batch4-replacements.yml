@@ -1,0 +1,47 @@
+name: HPII batch4 replace missing artwork with verified archival articles
+on:
+  push:
+    branches: [archive/batch4-20261104]
+    paths: ['.github/workflows/batch4-replacements.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  restore:
+    if: github.ref == 'refs/heads/archive/batch4-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch4-20261104
+          persist-credentials: true
+      - name: Install read-only browser and image validation
+        run: |
+          python3 -m pip install playwright pillow
+          python3 -m playwright install --with-deps chromium
+      - name: Find five matching complete Dzen texts and authentic artwork
+        run: python3 research/recover_batch4_replacements.py
+      - name: Preserve recovered originals and explicit deferred backlog
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch4-replacement-evidence
+          path: |
+            research/batch4_candidates.json
+            research/batch4_probe_results.json
+            research/batch4_cover_report.json
+            research/batch4_deferred_originals.json
+            assets/imported/*.webp
+          retention-days: 7
+      - name: Commit five substitutes only in isolated research branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch4_candidates.json research/batch4_probe_results.json research/batch4_cover_report.json research/batch4_deferred_originals.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: recover five authentic original-cover articles; retain unavailable stories in backlog'
+            git pull --rebase origin archive/batch4-20261104
+            git push origin HEAD:archive/batch4-20261104
+          fi
