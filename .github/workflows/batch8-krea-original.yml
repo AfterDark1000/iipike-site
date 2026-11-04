@@ -1,0 +1,32 @@
+name: HPII batch8 last original Krea cover native high-res recovery
+on:
+  push:
+    branches: [archive/batch8-final-research-20261104]
+    paths: ['.github/workflows/batch8-krea-original.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install pillow
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch8-original-art-and-pages
+          run-id: 41789116087
+          github-token: ${{ github.token }}
+          path: .
+      - run: python3 research/restore_krea8_full_original.py
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: hpii-batch8-final-28-originals
+          path: |
+            research/batch8_probe_results.json
+            research/batch8_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
