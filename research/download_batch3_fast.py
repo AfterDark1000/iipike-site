@@ -14,8 +14,8 @@ from urllib.request import Request, urlopen
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
-batch = json.loads((ROOT/"research/batch3_candidates.json").read_text(encoding="utf-8"))["candidates"]
-probe = {r["slug"]:r for r in json.loads((ROOT/"research/batch3_probe_results.json").read_text(encoding="utf-8"))["results"]}
+batch = json.loads((ROOT/"research/batch4_candidates.json").read_text(encoding="utf-8"))["candidates"]
+probe = {r["slug"]:r for r in json.loads((ROOT/"research/batch4_probe_results.json").read_text(encoding="utf-8"))["results"]}
 dest = ROOT/"assets/imported"
 dest.mkdir(exist_ok=True, parents=True)
 OG = re.compile(r"^https://avatars\.dzeninfra\.ru/get-zen-pub-og/(\d+)/pub_([a-f0-9]{24})_([a-f0-9]{24})/optimize$")
@@ -82,6 +82,6 @@ with cf.ThreadPoolExecutor(max_workers=6) as executor:
         print("ART", value["status"], value["slug"],str(value.get("width") or value.get("why"))[:170],flush=True)
         results.append(value)
 results.sort(key=lambda x: next(i for i,b in enumerate(batch) if b["slug"]==x["slug"]))
-out=ROOT/"research/batch3_cover_report.json"
+out=ROOT/"research/batch4_cover_report.json"
 out.write_text(json.dumps({"entries":results,"note":"Original article-owned image sources on Dzen, not generated artwork."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print("Authenticated original covers:",sum(x["status"]=="downloaded" for x in results),"/",len(results),flush=True)
