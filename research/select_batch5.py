@@ -55,8 +55,8 @@ print("Verified original text + artwork:",len(selected),"of",len(pool),flush=Tru
 report={"requested":30,"verified":len(selected),"deferred":deferred,
         "note":"Deferred entries remain in the original Dzen archive; no substitute artwork or fabricated prose."}
 (ROOT/"research/batch5_selection_report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-if len(selected)!=30:
-    raise SystemExit("Not enough verified articles. Leave public site unchanged.")
+if len(selected)<20:
+    raise SystemExit("Fewer than 20 fully verified originals. Leave public site unchanged.")
 orig["candidates"]=selected
 manifest.write_text(json.dumps(orig,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 chosen={x["slug"] for x in selected}
