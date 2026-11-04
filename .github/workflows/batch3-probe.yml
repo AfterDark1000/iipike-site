@@ -1,0 +1,44 @@
+name: Batch3 - read original Dzen stories (isolated)
+on:
+  push:
+    branches: [archive/batch3-20261104]
+    paths:
+      - '.github/workflows/batch3-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: github.ref == 'refs/heads/archive/batch3-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch3-20261104
+          persist-credentials: true
+      - name: Install isolated browser
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Read thirty publicly published originals; never create or modify live posts
+        run: python3 research/probe_next30.py
+      - name: Preserve original source evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: third-batch-source-probe
+          path: research/batch3_probe_results.json
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit source evidence on isolated archive branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch3_probe_results.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: capture original public article evidence for third batch'
+            git pull --rebase origin archive/batch3-20261104
+            git push origin HEAD:archive/batch3-20261104
+          fi
