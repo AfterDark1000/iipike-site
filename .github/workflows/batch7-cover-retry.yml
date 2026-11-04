@@ -1,0 +1,32 @@
+name: HPII batch7 retry original article-owned Dzen image sizes
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-cover-retry.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install pillow
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch7-original-covers-and-page-evidence
+          run-id: 41786600093
+          github-token: ${{ github.token }}
+          path: .
+      - run: python3 research/retry_batch7_image_sizes.py
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: hpii-batch7-originals-recovered
+          path: |
+            research/batch7_probe_results.json
+            research/batch7_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
