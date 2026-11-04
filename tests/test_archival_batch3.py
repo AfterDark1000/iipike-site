@@ -9,7 +9,7 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    "china-ai-stock-bubble-480b": "6ae0a6d4eedc244b0da74d9e",
+    "microsoft-offers-60k-exits": "6ae0813b6c54fa23921064ed",
     "openai-power-grid-georgia-1000mw": "6ae96ea055a910701b153d93",
     "openai-gpt6-astra-household-benchmark": "6ae96c5329933216f113c227",
     "openai-abu-dhabi-regulation-ai": "6ae9687670b2207347df850c",
