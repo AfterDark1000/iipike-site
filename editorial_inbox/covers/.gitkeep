@@ -1,3 +1,4 @@
 # Editor-approved records or original artist files arrive here. No automatic publication.
 # GitHub Actions recheck after fixing omitted push file metadata; keep real cover unchanged.
 # Recheck exact Astra cover after excluding generated Python cache from release diff.
+# Final post-upgrade check: existing Astra source must be recognized as already published.
