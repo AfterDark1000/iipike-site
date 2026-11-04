@@ -2853,5 +2853,17 @@
     "dzen_url": "https://dzen.ru/a/asO9F7g9GWAMS_Xk",
     "id": "ii-agent-vzlomal-kiberspetsov-bf5e4",
     "url": "articles/ii-agent-vzlomal-kiberspetsov-bf5e4/"
+  },
+  {
+    "title": "GPT-6 Astra спроектировала гаджет. Его уже изготовили на заводе",
+    "summary": "OpenAI изготовила небольшую партию прототипов устройства для общения с Codex по проекту, подготовленному с помощью GPT-6 Astra. Разработка заняла меньше недели, а подготовка к производству потребовала доработок.",
+    "published": "2026-11-04",
+    "source_url": "https://openai.com/index/accelerating-engineering-for-the-physical-world/",
+    "cover": "assets/editorial/openai-gpt6-astra-device-20261103.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-04T14:50:26Z",
+    "event_date": "2026-11-03",
+    "id": "openai-gpt6-astra-device-20261103",
+    "url": "articles/openai-gpt6-astra-device-20261103/"
   }
 ]
