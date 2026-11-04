@@ -5,7 +5,11 @@ on:
     paths:
       - 'editorial_inbox/**'
       - 'scripts/site_first_inbox.py'
+      - 'scripts/site_rich_text.py'
+      - 'scripts/publish_approved_article.py'
       - 'scripts/site_first_release_pr.py'
+      - 'tests/test_site_rich_text.py'
+      - 'tests/test_approved_publisher.py'
       - 'tests/test_site_first_inbox.py'
       - 'tests/test_site_first_release_pr.py'
       - '.github/workflows/site-first-release-pr.yml'
@@ -22,8 +26,9 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check pillow
       - name: Check safe editor-to-site handoff
         run: |
-          python3 -m py_compile scripts/site_first_inbox.py
+          python3 -m py_compile scripts/site_first_inbox.py scripts/site_rich_text.py
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
       - name: Audit independent story and cover inbox without publishing
@@ -49,8 +54,12 @@ jobs:
             'source_title':'Технический фиктивный источник CI',
             'related_dzen_ids':[],
             'paragraphs':[
-              {'type':'lead','text':'Технический полный абзац для проверки публикации на сайте. '*10},
-              {'type':'p','text':'Проверяем формирование корректных HTML RSS Sitemap и рубрик без публикации в Дзен. '*8}
+              {'type':'lead','text':'Технический **полный абзац** для проверки публикации на сайте. '*10},
+              {'type':'p','text':'Проверяем *реальные* структуры HTML и [источник](https://example.org/hpii-site-first-smoke-test). '*8},
+              {'type':'h2','text':'Раздел новой статьи'},
+              {'type':'ul','items':['**Первый** проверенный пункт','Второй пункт']},
+              {'type':'ol','items':['Сначала сайт','Потом Дзен']},
+              {'type':'quote','text':'Это цитата без потери *интонации*.','attribution':'Редактор ХПИИ'}
             ]
           }
           target=root/'editorial_inbox/stories'/f'{slug}.json'
@@ -69,7 +78,13 @@ jobs:
           assert len(entries)==old+1,(len(entries),old)
           new=next(x for x in entries if x['id']==slug)
           assert not new.get('dzen_id')
-          assert (root/'articles'/slug/'index.html').is_file()
+          page=(root/'articles'/slug/'index.html').read_text()
+          assert '<strong>полный абзац</strong>' in page
+          assert '<em>реальные</em>' in page
+          assert '<ul class="editorial-list">' in page
+          assert '<ol class="editorial-list">' in page
+          assert '<blockquote class="editorial-quote">' in page
+          assert 'href="https://example.org/hpii-site-first-smoke-test"' in page
           assert 'https://iipike.ru/articles/'+slug+'/' in (root/'sitemap.xml').read_text()
           assert 'https://iipike.ru/articles/'+slug+'/' in (root/'feed.xml').read_text()
           print('PASS: site-first HTML, RSS, rubrics and Sitemap compiled without any external publication')
