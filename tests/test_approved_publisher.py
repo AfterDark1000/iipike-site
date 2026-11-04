@@ -94,6 +94,39 @@ class PublisherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Already published"):
             PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
 
+    def test_full_editor_layout_is_preserved_in_published_html(self):
+        self.article["paragraphs"] = [
+            {"type": "lead", "text": "В **важной новости** появился *неожиданный* вывод."},
+            {"type": "p", "text": "В оригинале есть [документ](https://example.org/paper?part=1&v=2)."},
+            {"type": "h2", "text": "Что изменилось"},
+            {"type": "ul", "items": ["Первый **факт**", "Второй *факт*"]},
+            {"type": "ol", "items": ["Сначала сайт", "Затем Дзен"]},
+            {"type": "quote", "text": "Это цитата из <реального> источника.",
+             "attribution": "Указанный представитель"},
+        ]
+        self.write_article()
+        page = PUBLISHER.publish(self.root, "sample-verified-news", apply=True)[
+            self.root / "articles" / "sample-verified-news" / "index.html"
+        ]
+        self.assertIn("<strong>важной новости</strong>", page)
+        self.assertIn("<em>неожиданный</em>", page)
+        self.assertIn('href="https://example.org/paper?part=1&amp;v=2"', page)
+        self.assertIn("<h2>Что изменилось</h2>", page)
+        self.assertIn('<ul class="editorial-list"><li>Первый <strong>факт</strong></li>', page)
+        self.assertIn('<ol class="editorial-list"><li>Сначала сайт</li>', page)
+        self.assertIn('<blockquote class="editorial-quote">', page)
+        self.assertIn("Это цитата из &lt;реального&gt; источника.", page)
+        self.assertIn("<cite>Указанный представитель</cite>", page)
+        self.assertLess(page.index("<ul class="), page.index("<ol class="))
+        self.assertLess(page.index("<ol class="), page.index("<blockquote class="))
+
+    def test_unsafe_editorial_inline_link_refuses_publication(self):
+        self.article["paragraphs"][1]["text"] = "[Ссылка](javascript:alert(1))"
+        self.write_article()
+        with self.assertRaisesRegex(ValueError, "HTTPS"):
+            PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
+        self.assertFalse((self.root / "articles").exists())
+
     def test_archive_can_omit_unverified_event_date(self):
         self.article.pop("event_date")
         self.write_article()
