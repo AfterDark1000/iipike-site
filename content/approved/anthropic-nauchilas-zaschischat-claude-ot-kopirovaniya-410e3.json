@@ -1,0 +1,47 @@
+{
+  "slug": "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "Anthropic научилась защищать Claude от копирования",
+  "summary": "12 октября Anthropic рассказала о новых механизмах защиты Claude от так называемой",
+  "published": "2026-10-14",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/as8AZC1prBRgxBDj",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3.webp",
+  "dzen_id": "6acf00642d69ac1460c410e3",
+  "dzen_url": "https://dzen.ru/a/as8AZC1prBRgxBDj",
+  "related_dzen_ids": [
+    "6ae194224d27f64e5daa7c7b",
+    "6ae0522ce601f329d6421ad9"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "12 октября Anthropic рассказала о новых механизмах защиты Claude от так называемой дистилляции."
+    },
+    {
+      "type": "p",
+      "text": "Речь о массовом извлечении ответов и рассуждений сильной модели для обучения другой нейросети."
+    },
+    {
+      "type": "p",
+      "text": "По предварительным внутренним оценкам Anthropic, новые защитные механизмы сократили объём извлекаемых данных примерно на 90–99%."
+    },
+    {
+      "type": "p",
+      "text": "Компания также утверждает, что подобные методы использовались конкурентами для ускорения разработки собственных моделей."
+    },
+    {
+      "type": "p",
+      "text": "Почему важно: борьба за возможности передовых моделей теперь идёт не только через исследования, но и через защиту результатов обучения от копирования."
+    },
+    {
+      "type": "p",
+      "text": "При этом независимого подтверждения заявленной эффективности пока нет."
+    }
+  ]
+}

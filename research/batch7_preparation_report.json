@@ -1,0 +1,248 @@
+{
+  "batch": 7,
+  "ready": 30,
+  "not_ready": 0,
+  "eligible_high_res_art": 39,
+  "entries": [
+    {
+      "slug": "kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd",
+      "status": "ready",
+      "body_chars": 841,
+      "paragraphs": 5,
+      "cover": "assets/imported/kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "ii-agenty-pronikli-v-sistemy-indiyskikh-kompaniy-i-poluchili-d-e3f97",
+      "status": "ready",
+      "body_chars": 1584,
+      "paragraphs": 13,
+      "cover": "assets/imported/ii-agenty-pronikli-v-sistemy-indiyskikh-kompaniy-i-poluchili-d-e3f97.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8",
+      "status": "ready",
+      "body_chars": 4367,
+      "paragraphs": 33,
+      "cover": "assets/imported/ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e",
+      "status": "ready",
+      "body_chars": 907,
+      "paragraphs": 7,
+      "cover": "assets/imported/openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3",
+      "status": "ready",
+      "body_chars": 921,
+      "paragraphs": 6,
+      "cover": "assets/imported/amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "kitay-predlozhil-ogranichit-eksport-peredovykh-tekhnologiy-ii-7e1da",
+      "status": "ready",
+      "body_chars": 899,
+      "paragraphs": 5,
+      "cover": "assets/imported/kitay-predlozhil-ogranichit-eksport-peredovykh-tekhnologiy-ii-7e1da.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da",
+      "status": "ready",
+      "body_chars": 890,
+      "paragraphs": 5,
+      "cover": "assets/imported/ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da.webp",
+      "date": "2026-10-17"
+    },
+    {
+      "slug": "anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09",
+      "status": "ready",
+      "body_chars": 734,
+      "paragraphs": 5,
+      "cover": "assets/imported/anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501",
+      "status": "ready",
+      "body_chars": 674,
+      "paragraphs": 5,
+      "cover": "assets/imported/golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7",
+      "status": "ready",
+      "body_chars": 897,
+      "paragraphs": 6,
+      "cover": "assets/imported/ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7",
+      "status": "ready",
+      "body_chars": 739,
+      "paragraphs": 5,
+      "cover": "assets/imported/chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220",
+      "status": "ready",
+      "body_chars": 939,
+      "paragraphs": 5,
+      "cover": "assets/imported/novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b",
+      "status": "ready",
+      "body_chars": 827,
+      "paragraphs": 6,
+      "cover": "assets/imported/v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff",
+      "status": "ready",
+      "body_chars": 730,
+      "paragraphs": 5,
+      "cover": "assets/imported/openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1",
+      "status": "ready",
+      "body_chars": 841,
+      "paragraphs": 7,
+      "cover": "assets/imported/nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1",
+      "status": "ready",
+      "body_chars": 901,
+      "paragraphs": 6,
+      "cover": "assets/imported/ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a",
+      "status": "ready",
+      "body_chars": 926,
+      "paragraphs": 7,
+      "cover": "assets/imported/meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2",
+      "status": "ready",
+      "body_chars": 774,
+      "paragraphs": 5,
+      "cover": "assets/imported/elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb",
+      "status": "ready",
+      "body_chars": 577,
+      "paragraphs": 4,
+      "cover": "assets/imported/cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0",
+      "status": "ready",
+      "body_chars": 740,
+      "paragraphs": 4,
+      "cover": "assets/imported/moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1",
+      "status": "ready",
+      "body_chars": 603,
+      "paragraphs": 4,
+      "cover": "assets/imported/ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1.webp",
+      "date": "2026-10-16"
+    },
+    {
+      "slug": "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
+      "status": "ready",
+      "body_chars": 3008,
+      "paragraphs": 25,
+      "cover": "assets/imported/grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc",
+      "status": "ready",
+      "body_chars": 4261,
+      "paragraphs": 36,
+      "cover": "assets/imported/na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "desyat-tysyach-ii-agentov-odnovremenno-rabotayut-nad-issledova-eab77",
+      "status": "ready",
+      "body_chars": 742,
+      "paragraphs": 5,
+      "cover": "assets/imported/desyat-tysyach-ii-agentov-odnovremenno-rabotayut-nad-issledova-eab77.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca",
+      "status": "ready",
+      "body_chars": 647,
+      "paragraphs": 5,
+      "cover": "assets/imported/ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "ii-uzhe-nauchilsya-uluchshat-samogo-sebya-d6f56",
+      "status": "ready",
+      "body_chars": 3599,
+      "paragraphs": 30,
+      "cover": "assets/imported/ii-uzhe-nauchilsya-uluchshat-samogo-sebya-d6f56.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "razrabotchiki-nauchili-ii-vodit-mashinu-teper-platyat-za-eto-p-c817f",
+      "status": "ready",
+      "body_chars": 1413,
+      "paragraphs": 10,
+      "cover": "assets/imported/razrabotchiki-nauchili-ii-vodit-mashinu-teper-platyat-za-eto-p-c817f.webp",
+      "date": "2026-10-15"
+    },
+    {
+      "slug": "liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77",
+      "status": "ready",
+      "body_chars": 1156,
+      "paragraphs": 7,
+      "cover": "assets/imported/liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77.webp",
+      "date": "2026-10-14"
+    },
+    {
+      "slug": "openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00",
+      "status": "ready",
+      "body_chars": 652,
+      "paragraphs": 7,
+      "cover": "assets/imported/openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00.webp",
+      "date": "2026-10-14"
+    },
+    {
+      "slug": "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
+      "status": "ready",
+      "body_chars": 667,
+      "paragraphs": 6,
+      "cover": "assets/imported/anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3.webp",
+      "date": "2026-10-14"
+    }
+  ]
+}

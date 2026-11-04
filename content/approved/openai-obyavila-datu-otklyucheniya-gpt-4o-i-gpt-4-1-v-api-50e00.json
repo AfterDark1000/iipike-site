@@ -1,0 +1,51 @@
+{
+  "slug": "openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "OpenAI объявила дату отключения GPT-4o и GPT-4.1 в API",
+  "summary": "14 октября OpenAI официально объявила о прекращении поддержки нескольких моделей семейства",
+  "published": "2026-10-14",
+  "publication_date_precision": "day",
+  "rubric": "quotes",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/as8-KnM7ZxTphQ4A",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00.webp",
+  "dzen_id": "6acf3e2a733b6714e9850e00",
+  "dzen_url": "https://dzen.ru/a/as8-KnM7ZxTphQ4A",
+  "related_dzen_ids": [
+    "6ad6394a2cdfb474e89be1ba",
+    "6ae04e891796c105c2fd2bd8"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "14 октября OpenAI официально объявила о прекращении поддержки нескольких моделей семейства GPT-4."
+    },
+    {
+      "type": "p",
+      "text": "14 января 2027 года из API удалят следующие версии:"
+    },
+    {
+      "type": "p",
+      "text": "GPT-4o — снимки от августа и ноября 2024 года.\nGPT-4o mini — версия от июля 2024 года.\nGPT-4.1 и GPT-4.1 mini — версии от апреля 2025 года."
+    },
+    {
+      "type": "p",
+      "text": "Под отключение попадают и модели, дополнительно обученные на их основе."
+    },
+    {
+      "type": "p",
+      "text": "Рекомендуемая замена — GPT-6 Luna."
+    },
+    {
+      "type": "p",
+      "text": "Почему важно: разработчикам приложений и автоматизаций придётся переходить на новые модели. Причём простая замена названия в настройках не гарантирует одинакового поведения."
+    },
+    {
+      "type": "p",
+      "text": "Это касается конкретных версий API, а не всех моделей GPT-4 без исключения."
+    }
+  ]
+}

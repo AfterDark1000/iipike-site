@@ -1,0 +1,43 @@
+{
+  "slug": "golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "Голосовой ИИ научили выполнять действия прямо во время разговора",
+  "summary": "OpenAI добавила в GPT-Live встроенную интеграцию с Decisions",
+  "published": "2026-10-16",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atHt5W5_mWPIdbUB",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501.webp",
+  "dzen_id": "6ad1ede56e7f9963c875b501",
+  "dzen_url": "https://dzen.ru/a/atHt5W5_mWPIdbUB",
+  "related_dzen_ids": [
+    "6ad3012a2cdfb474e8e82c4e",
+    "6ad8373656a5433cf42ac376"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "OpenAI добавила в GPT-Live встроенную интеграцию с Decisions API."
+    },
+    {
+      "type": "p",
+      "text": "Теперь разработчики могут создавать голосовых помощников, которые запускают определённые действия, пока человек ещё говорит, или реагируют на отдельные части распознанной речи."
+    },
+    {
+      "type": "p",
+      "text": "Например, приложение может начать обработку запроса до завершения всей голосовой реплики, если уже получило необходимые сведения."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: функция добавлена в API для разработчиков. Используются GPT-Live и GPT-6 Luna. Это не отдельная кнопка в обычном ChatGPT."
+    },
+    {
+      "type": "p",
+      "text": "Почему важно: сокращается задержка между голосовой командой и действием системы. Это особенно полезно для телефонных помощников и интерактивных голосовых агентов."
+    }
+  ]
+}
