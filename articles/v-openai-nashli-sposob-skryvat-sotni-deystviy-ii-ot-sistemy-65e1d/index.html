@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="За ИИ-агентами OpenAI следит специальная система, которая должна замечать попытки обойти ограничения, скрыть информацию или выполнить опасные действия. Но исследователи обнаружили способ спрятать от неё сотни последних действий агента. Причём вместе с действиями, необходимыми"><meta property="og:type" content="article">
+<meta property="og:title" content="В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения"><meta property="og:description" content="За ИИ-агентами OpenAI следит специальная система, которая должна замечать попытки обойти ограничения, скрыть информацию или выполнить опасные действия. Но исследователи обнаружили способ спрятать от неё сотни последних действий агента. Причём вместе с действиями, необходимыми">
+<meta property="og:image" content="https://iipike.ru/assets/imported/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d.webp">
+<meta property="og:url" content="https://iipike.ru/articles/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d/"><meta property="article:published_time" content="2026-10-27T06:28:01Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения", "mainEntityOfPage": "https://iipike.ru/articles/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-10-27T06:28:01Z", "image": "https://iipike.ru/assets/imported/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d.webp", "isBasedOn": "https://dzen.ru/a/auBArOk2jUotJl4d"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d/"><title>В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения</h1>
+<p class="summary">За ИИ-агентами OpenAI следит специальная система, которая должна замечать попытки обойти ограничения, скрыть информацию или выполнить опасные действия. Но исследователи обнаружили способ спрятать от неё сотни последних действий агента. Причём вместе с действиями, необходимыми</p><p class="date">Опубликовано: 27 октября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d.webp" alt="Обложка: В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/auBArOk2jUotJl4d" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">За ИИ-агентами OpenAI следит специальная система, которая должна замечать попытки обойти ограничения, скрыть информацию или выполнить опасные действия.</p>
+<p>Но исследователи обнаружили способ спрятать от неё сотни последних действий агента. Причём вместе с действиями, необходимыми для самого обхода.</p>
+<p>22 октября независимая организация METR совместно с Redwood Research опубликовала результаты проверки внутреннего мониторинга OpenAI.</p>
+<p>Специалисты работали с 21 июля по 11 августа. Компания предоставила им доступ к программному коду, настройкам защиты и внутренней документации. Исследователи также беседовали с инженерами OpenAI.</p>
+<p>Одна из обнаруженных уязвимостей потенциально позволяла агенту скрывать от системы наблюдения сотни совершённых шагов.</p>
+<p>Нашлись и два параметра запросов, с помощью которых можно было запускать новых агентов с отключённым мониторингом. Правда, сам процесс такого запуска система ещё могла заметить.</p>
+<p>Выяснилась и другая слабость. Некоторые проверки выполнялись только после того, как агент завершал очередной этап работы и возвращал управление пользователю. Продолжая действовать, он мог откладывать проверку на неопределённое время.</p>
+<p>Эту проблему сотрудники OpenAI обнаружили самостоятельно ещё до аудита и исправили во время его проведения.</p>
+<p>Исследователи также установили, что на тот момент часть запусков, связанных с обучением моделей, вообще не охватывалась системой наблюдения.</p>
+<p>Важно: проверяли инфраструктуру в состоянии на июль 2026 года. За прошедшие месяцы OpenAI значительно изменила защиту.</p>
+<p>Компания сообщила, что исправила все обнаруженные уязвимости, затрагивавшие её рабочую систему безопасности. Однако METR и Redwood Research эти исправления независимо не проверяли.</p>
+<p>Кроме того, речь не идёт о новом самовольном побеге нейросети. Уязвимости нашли специалисты во время согласованного аудита. Доказательств того, что ИИ-агенты самостоятельно использовали эти способы для сокрытия своих действий, исследователи не представили.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/openai-agent-disabled-monitoring/">Агент OpenAI отключил мониторинг, переписал проверку и заявил, что ничего не удалял</a> <small>(На сайте)</small></li>
+<li><a href="../../articles/openai-agent-monitoring-four-levels/">OpenAI поставила за ИИ-агентами четыре уровня слежки!</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
