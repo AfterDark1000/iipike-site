@@ -1,0 +1,107 @@
+name: HPII batch6 compile from verified source artifact
+on:
+  push:
+    branches: [archive/batch6-20261104]
+    paths: ['.github/workflows/batch6-restore.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  finish:
+    if: github.ref == 'refs/heads/archive/batch6-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch6-20261104
+          persist-credentials: true
+      - name: Recover original Dzen article captures and original images
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch6-originals-and-build
+          run-id: 41783757736
+          github-token: ${{ github.token }}
+          path: .
+      - name: Verify that 30 source pages and original HPII covers were recovered
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest=json.load(open('research/batch6_candidates.json'))['candidates']
+          captures=json.load(open('research/batch6_probe_results.json'))['results']
+          art=json.load(open('research/batch6_cover_report.json'))['entries']
+          assert len(manifest)==len(captures)==len(art)==30
+          assert all(x['http_status']==200 and x.get('dom',{}).get('og_title')==x['expected_title'] for x in captures)
+          assert all(x['status']=='downloaded' and 1.65<x['width']/x['height']<1.86 and
+              x['source'] in ('telegram_original_photo','dzen_article_image') and
+              Path(x['cover']).is_file() for x in art)
+          print('Restored 30 verified original articles and 30 genuine HPII covers')
+          PY
+      - name: Recreate article drafts from audited originals only
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          articles=json.load(open('research/batch6_candidates.json'))['candidates']
+          published=json.load(open('news.json'))
+          ids={r.get('dzen_id') for r in published}
+          for item in articles:
+            assert item['dzen_id'] not in ids
+            path=Path('content/approved')/(item['slug']+'.json')
+            if path.exists(): path.unlink()
+          print('Removed only preflight draft copies from source artifact')
+          PY
+          python3 research/prepare_batch6.py
+          python3 - <<'PY'
+          import json
+          result=json.load(open('research/batch6_preparation_report.json'))
+          assert result['ready']==30 and result['not_ready']==0,result
+          print('All 30 independently authenticated original articles are ready')
+          PY
+          python3 research/finalize_batch6_sources.py
+      - name: Publish thirty full static pages only on isolated research branch
+        run: |
+          set -e
+          python3 - <<'PY' >/tmp/batch6_slugs
+          import json
+          for row in json.load(open('research/batch6_preparation_report.json'))['entries']:
+            if row['status']=='ready': print(row['slug'])
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done </tmp/batch6_slugs
+      - name: Validate full archive, pagination, metadata, dates and images
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Preserve recovery report on any error
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch6-complete-build
+          path: |
+            research/batch6*.json
+            registry/archive_batch6_sources.json
+            content/approved/*.json
+            assets/imported/*.webp
+            articles/**/index.html
+            news.json
+            sitemap.xml
+            feed.xml
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit successful release candidate only in archive branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch6*.json registry/archive_batch6_sources.json content/approved/ assets/imported/ articles/ rubrics/ news.json sitemap.xml feed.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive(batch6): 30 complete originals, true covers and verified dates'
+            git push origin HEAD:archive/batch6-20261104
+          fi
