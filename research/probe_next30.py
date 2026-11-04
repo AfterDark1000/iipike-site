@@ -13,15 +13,15 @@ import sys
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "research" / "next30_candidates.json"
-OUTPUT = ROOT / "research" / "next30_probe_results.json"
+INPUT = ROOT / "research" / "batch3_candidates.json"
+OUTPUT = ROOT / "research" / "batch3_probe_results.json"
 
 async def extract(page, item):
     url = item["dzen_url"]
     result = {"slug": item["slug"], "expected_url":url,"expected_title":item["title"]}
     try:
         response = await page.goto(url, wait_until="domcontentloaded", timeout=45000)
-        await page.wait_for_timeout(1300)
+        await page.wait_for_timeout(1800)
         result["http_status"] = response.status if response else None
         result["final_url"] = page.url
         result["page_title"] = await page.title()
