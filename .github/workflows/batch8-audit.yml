@@ -1,0 +1,28 @@
+name: HPII batch8 validate all final archived Dzen pages
+on:
+  push:
+    branches: [archive/batch8-final-research-20261104]
+    paths: ['.github/workflows/batch8-audit.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch8-original-pages
+          run-id: 41788811179
+          github-token: ${{ github.token }}
+          path: research/
+      - run: python3 research/audit_batch8.py
+      - name: Record verified source metadata only in research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch8_source_audit.json
+          git commit -m 'research: verify final historic Dzen original titles, days, article ownership and bodies'
+          git push origin HEAD:archive/batch8-final-research-20261104
