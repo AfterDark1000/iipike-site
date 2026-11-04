@@ -5,17 +5,30 @@ on:
     paths:
       - '.github/workflows/one-time-pages-api-smoke.yml'
 permissions:
-  contents: read
+  contents: write
   pages: write
 jobs:
   pages-rebuild-probe:
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: editorial-intake
+          fetch-depth: 0
+      - name: Test safe non-forced fast-forward to main without actually changing main
+        run: |
+          git fetch origin main
+          git switch --detach origin/main
+          git config user.name github-actions\[bot\]
+          git config user.email 41898282+github-actions\[bot\]@users.noreply.github.com
+          git commit --allow-empty -m 'dry-run only: site-first automatic push permission check'
+          git push --dry-run origin HEAD:refs/heads/main
+          echo 'MAIN_PUSH_DRY_RUN_OK: no commit pushed to main'
       - name: Verify trusted bot can request rebuild of existing live Pages content
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api repos/"$GITHUB_REPOSITORY"/pages --jq '{status,build_type,source}' || true
+          gh api repos/"$GITHUB_REPOSITORY"/pages --jq '{status,build_type,source}'
           gh api --method POST repos/"$GITHUB_REPOSITORY"/pages/builds
           echo 'PAGES_REBUILD_API_OK: rebuild of unchanged site requested; no editorial article published'
