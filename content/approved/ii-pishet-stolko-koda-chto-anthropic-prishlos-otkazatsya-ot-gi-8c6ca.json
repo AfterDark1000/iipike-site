@@ -1,0 +1,43 @@
+{
+  "slug": "ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "ИИ пишет столько кода, что Anthropic пришлось отказаться от Git",
+  "summary": "Anthropic сообщила, что количество изменений программного кода внутри компании выросло с 2500 до более 30 000 в день всего за четыре",
+  "published": "2026-10-15",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atCOgnJn7FuVyMbK",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca.webp",
+  "dzen_id": "6ad08e827267ec5b95c8c6ca",
+  "dzen_url": "https://dzen.ru/a/atCOgnJn7FuVyMbK",
+  "related_dzen_ids": [
+    "6ad5a5d37fa5c9322f45dfab",
+    "6ae9af0cc44bda2203fe42ae"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "Anthropic сообщила, что количество изменений программного кода внутри компании выросло с 2500 до более 30 000 в день всего за четыре месяца."
+    },
+    {
+      "type": "p",
+      "text": "Главная причина — Claude, который теперь самостоятельно пишет программы и проводит исследовательские эксперименты."
+    },
+    {
+      "type": "p",
+      "text": "Привычная система управления кодом Git перестала справляться с нагрузкой. Поэтому Anthropic за пять месяцев создала собственную систему Scion и перевела на неё основной репозиторий."
+    },
+    {
+      "type": "p",
+      "text": "Комментарий: ИИ уже настолько ускорил программирование, что инфраструктура, рассчитанная на работу людей, становится узким местом."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: Scion — внутренняя система Anthropic, публичного выпуска нет."
+    }
+  ]
+}

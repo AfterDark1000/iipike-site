@@ -57,6 +57,8 @@ def approved_article(root, slug):
         raise ValueError("Invalid article rubric: " + rubric)
     references = data.get("related_dzen_ids", [])
     dzen_id = data.get("dzen_id")
+    original_dt = None
+    original_day = None
     if dzen_id is not None or references:
         catalog = catalog_entries(root)
         validate_links(references, catalog, current=dzen_id)
@@ -66,12 +68,21 @@ def approved_article(root, slug):
                 raise ValueError("Dzen original URL mismatch with verified catalog")
             # The original Dzen publication timestamp is *the* editorial
             # publication timestamp: never invent a second site date.
+            # Preserve source accuracy: when Dzen provides only its calendar day,
+            # NEVER manufacture a midnight time or infer seconds from a Dzen ID.
             recorded = entry.get("published_at_utc") or ""
-            if not recorded:
-                raise ValueError("Original Dzen publish timestamp is unavailable")
-            original_dt = dt.datetime.fromisoformat(recorded.replace("Z", "+00:00"))
-            if original_dt.tzinfo is None:
-                raise ValueError("Historical Dzen timestamp is missing timezone")
+            source_day = entry.get("published_date") or ""
+            if recorded:
+                original_dt = dt.datetime.fromisoformat(recorded.replace("Z", "+00:00"))
+                if original_dt.tzinfo is None:
+                    raise ValueError("Historical Dzen timestamp is missing timezone")
+            elif (source_day and entry.get("published_date_evidence")
+                  == "dzen_itemprop_datePublished"
+                  and entry.get("url_evidence") == "verified_on_public_dzen_page"
+                  and entry.get("title_evidence") == "verified_on_public_dzen_page"):
+                original_day = dt.date.fromisoformat(source_day)
+            else:
+                raise ValueError("Original Dzen publication date is unavailable or unverified")
     elif "dzen_url" in data:
         raise ValueError("Dzen URL requires a verified dzen_id")
     if "original_dzen_published_at_utc" in data:
@@ -83,21 +94,34 @@ def approved_article(root, slug):
     dt.date.fromisoformat(need_text(data, "published", 20))
     if "event_date" in data:
         dt.date.fromisoformat(need_text(data, "event_date", 20))
-    stamp = need_text(data, "published_at_utc", 40)
-    if not stamp.endswith("Z"):
-        raise ValueError("published_at_utc must be explicitly UTC (Z)")
-    when = dt.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-    if when.astimezone(EDITORIAL_TZ).date().isoformat() != data["published"]:
-        raise ValueError("published must match the original timestamp in editorial timezone")
-    if dzen_id is not None and when != original_dt:
-        raise ValueError("Publication date must match verified original Dzen publication")
+    precision = data.get("publication_date_precision", "second")
+    if precision == "day":
+        if dzen_id is None or original_day is None or original_dt is not None:
+            raise ValueError("Date-only records require a verified Dzen calendar date")
+        if "published_at_utc" in data:
+            raise ValueError("No artificial UTC timestamp allowed for date-only originals")
+        if data["published"] != original_day.isoformat():
+            raise ValueError("Visible date must match original Dzen datePublished")
+        when = None
+    elif precision == "second":
+        stamp = need_text(data, "published_at_utc", 40)
+        if not stamp.endswith("Z"):
+            raise ValueError("published_at_utc must be explicitly UTC (Z)")
+        when = dt.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+        if when.astimezone(EDITORIAL_TZ).date().isoformat() != data["published"]:
+            raise ValueError("published must match the original timestamp in editorial timezone")
+        if dzen_id is not None and when != original_dt:
+            raise ValueError("Publication date must match verified original Dzen publication")
+    else:
+        raise ValueError("Unknown publication_date_precision")
     # Only meaningful, real editorial updates receive modification metadata.
     modified = data.get("modified_at_utc")
     if modified is not None:
         if not isinstance(modified, str) or not modified.endswith("Z"):
             raise ValueError("modified_at_utc must be ISO-8601 UTC with Z")
         changed_at = dt.datetime.fromisoformat(modified.replace("Z", "+00:00"))
-        if changed_at <= when:
+        if ((when is not None and changed_at <= when) or
+                (when is None and changed_at.astimezone(EDITORIAL_TZ).date() <= original_day)):
             raise ValueError("modified_at_utc must follow original publication")
         if changed_at > dt.datetime.now(dt.timezone.utc):
             raise ValueError("modified_at_utc cannot be in the future")
@@ -140,6 +164,10 @@ def render_article(data, records=None, catalog=None):
         '<meta property="article:modified_time" content="' + quote(modified) + '">'
         if modified else ""
     )
+    published_meta = (
+        '<meta property="article:published_time" content="' + quote(data["published_at_utc"]) + '">'
+        if data.get("published_at_utc") else ""
+    )
     # Dates in machine-readable metadata are the actual editorial publication
     # date (original Dzen when migrated) and optional substantive revision.
     structured = {
@@ -149,7 +177,7 @@ def render_article(data, records=None, catalog=None):
         "mainEntityOfPage": url,
         "inLanguage": "ru",
         "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"},
-        "datePublished": data["published_at_utc"],
+        "datePublished": data.get("published_at_utc") or data["published"],
         "image": BASE + "/" + data["cover"],
     }
     if modified:
@@ -174,7 +202,7 @@ def render_article(data, records=None, catalog=None):
 <meta name="description" content="{summary}"><meta property="og:type" content="article">
 <meta property="og:title" content="{title}"><meta property="og:description" content="{summary}">
 <meta property="og:image" content="{BASE}/{quote(data["cover"])}">
-<meta property="og:url" content="{url}"><meta property="article:published_time" content="{quote(data["published_at_utc"])}">{modified_meta}
+<meta property="og:url" content="{url}">{published_meta}{modified_meta}
 <script type="application/ld+json">{structured_json}</script>
 <link rel="canonical" href="{url}"><title>{title} — ХПИИ</title>
 <link rel="stylesheet" href="../../assets/site.css">
@@ -242,14 +270,16 @@ def render_feed(records, old_feed):
         guid = guid or url
         if not published:
             raw = row.get("published_at_utc")
-            if not raw:
-                raise ValueError(f"Missing publish timestamp for {row['id']}")
-            published = format_datetime(dt.datetime.fromisoformat(raw.replace("Z", "+00:00")))
+            published = (format_datetime(dt.datetime.fromisoformat(raw.replace("Z", "+00:00")))
+                         if raw else None)
+        # RSS 2.0 pubDate requires an RFC 822 time. Omit it if only the source
+        # calendar day is verified; an invented clock time would be misleading.
+        pubdate = "<pubDate>" + sx.escape(published) + "</pubDate>" if published else ""
         items.append(
             "<item><title>" + sx.escape(row["title"]) + "</title><link>" + sx.escape(url)
             + '</link><guid isPermaLink="true">' + sx.escape(guid) + "</guid>"
             + "<description>" + sx.escape(row["summary"]) + "</description>"
-            + "<pubDate>" + sx.escape(published) + "</pubDate></item>"
+            + pubdate + "</item>"
         )
     return ('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel>'
             '<title>Хроники Пикирующего ИИ</title><link>' + BASE + '/</link>'
@@ -282,7 +312,11 @@ def publish(root, slug, apply=False):
     if dest.exists() or any(r["id"] == slug or r["url"] == f"articles/{slug}/" for r in entries):
         raise ValueError("Already published: cannot overwrite an existing article")
     row = {k: data[k] for k in ("title", "summary", "published",
-                               "source_url", "cover", "published_at_utc", "rubric")}
+                               "source_url", "cover", "rubric")}
+    if data.get("published_at_utc"):
+        row["published_at_utc"] = data["published_at_utc"]
+    if data.get("publication_date_precision") == "day":
+        row["publication_date_precision"] = "day"
     if "event_date" in data:
         row["event_date"] = data["event_date"]
     # published/published_at_utc = original editorial publication time.

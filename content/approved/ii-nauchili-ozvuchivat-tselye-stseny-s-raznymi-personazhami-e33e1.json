@@ -1,0 +1,39 @@
+{
+  "slug": "ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "ИИ научили озвучивать целые сцены с разными персонажами",
+  "summary": "Fish Audio выпустила Drama 3 — модель синтеза речи, рассчитанную на аудиокниги, диалоги и художественную",
+  "published": "2026-10-16",
+  "publication_date_precision": "day",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atGVYFdFCSjinjPh",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1.webp",
+  "dzen_id": "6ad1956057450928e29e33e1",
+  "dzen_url": "https://dzen.ru/a/atGVYFdFCSjinjPh",
+  "related_dzen_ids": [
+    "6ae18fd1d73786100df5c71d",
+    "6ad19b096e7f9963c8e381f1"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "Fish Audio выпустила Drama 3 — модель синтеза речи, рассчитанную на аудиокниги, диалоги и художественную озвучку."
+    },
+    {
+      "type": "p",
+      "text": "Она поддерживает до 16 персонажей в одном тексте, 83 языка и управление эмоциями: можно указать, где голос должен дрожать, где персонаж смеётся, а где переходит на шёпот."
+    },
+    {
+      "type": "p",
+      "text": "В тесте Artificial Analysis модель правильно произнесла 93,2% сложных слов и обозначений."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: уже работает на сайте Fish Audio, в мобильных приложениях и через API. Модель также опубликована для самостоятельного запуска, но требует мощного оборудования. До 12 ноября действуют скидки на API и новые тарифы."
+    }
+  ]
+}
