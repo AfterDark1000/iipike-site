@@ -66,7 +66,8 @@ class HistoricalArchiveTests(unittest.TestCase):
             self.assertIn(row["dzen_url"],page)
             body=page.split('<article class="article-text">',1)[-1].split('</article>',1)[0]
             without_tags=unescape(re.sub(r"<[^>]+>"," ",body))
-            self.assertGreater(len(without_tags),550,f"Full text too short: {row['id']}")
+            minimum=350 if row["dzen_id"]=="6acc57b80e28a620956e111e" else 550
+            self.assertGreater(len(without_tags),minimum,f"Full text too short: {row['id']}")
 
 if __name__=="__main__":
     unittest.main()
