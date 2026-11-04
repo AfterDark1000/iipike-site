@@ -41,8 +41,25 @@ def changed_ids(event):
 
 def git(*args, check=True, stdout=None):
     return subprocess.run(["git", *args], check=check,
-                          stdout=stdout or subprocess.PIPE,
+                          stdout=stdout if stdout is not None else subprocess.PIPE,
                           stderr=subprocess.PIPE, text=stdout is None)
+
+
+def candidate_ids_from_tree(ref):
+    """GitHub Actions push event payloads sometimes omit commit file arrays.
+
+    Read actual file paths from the immutable checked-out commit instead.
+    The release script must never silently report success with zero candidates
+    when the same commit already holds a story and its artwork.
+    """
+    output = git("ls-tree", "-r", "--name-only", ref, "--",
+                 "editorial_inbox/stories", "editorial_inbox/covers").stdout
+    found = set()
+    for path in output.splitlines():
+        match = STORY.fullmatch(path) or COVER.fullmatch(path)
+        if match and len(match[1]) <= 72:
+            found.add(match[1])
+    return sorted(found)
 
 
 def exists_at(ref, path):
@@ -178,11 +195,20 @@ def main():
     if os.environ.get("GITHUB_REPOSITORY") != GH_REPO:
         raise ValueError("Unexpected GitHub repository")
     event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
+    source_sha = os.environ["GITHUB_SHA"]
     ids = changed_ids(event)
+    # The GitHub Actions runner may receive a push event without 'commits',
+    # even when a real new story/cover file triggered it. The git tree is
+    # authoritative, unlike an optional/truncated webhook file list.
+    tree_ids = candidate_ids_from_tree(source_sha)
+    if not ids:
+        ids = tree_ids
+        if ids:
+            print("PUSH_PAYLOAD_WITHOUT_FILES: recovered candidates from actual Git tree",
+                  flush=True)
     if not ids:
         print("NO_EDITORIAL_CHANGES: no qualifying story/image IDs; nothing published")
         return
-    source_sha = os.environ["GITHUB_SHA"]
     git("config", "user.name", "github-actions[bot]")
     git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
     outcomes = {}
