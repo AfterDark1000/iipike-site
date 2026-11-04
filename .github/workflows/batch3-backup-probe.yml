@@ -1,0 +1,35 @@
+name: Batch3 - verify alternative legacy article with original cover
+on:
+  push:
+    branches: [archive/batch3-fast-20261104]
+    paths: ['.github/workflows/batch3-backup-probe.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  select:
+    if: github.ref == 'refs/heads/archive/batch3-fast-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch3-fast-20261104
+          persist-credentials: true
+      - name: Install browser for read-only source check
+        run: |
+          python3 -m pip install playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Find one verified source and its own original image
+        run: python3 research/probe_batch3_backups.py
+      - name: Save backup original metadata on isolated branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch3_backup_verified.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: confirm one viable historic source and matching artwork'
+            git pull --rebase origin archive/batch3-fast-20261104
+            git push origin HEAD:archive/batch3-fast-20261104
+          fi
