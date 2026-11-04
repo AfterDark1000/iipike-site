@@ -1,0 +1,89 @@
+name: HPII batch7 compile 30 verified date-only originals (isolated)
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-build.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  compile:
+    if: github.ref == 'refs/heads/archive/batch7-research-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch7-research-20261104
+          persist-credentials: true
+      - name: Install image inspection dependency for full regression suite
+        run: python3 -m pip install pillow
+      - name: Restore authenticated original article bodies and user-owned art
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch7-native-art-and-original-pages
+          run-id: 41787216771
+          github-token: ${{ github.token }}
+          path: .
+      - name: Prepare exactly thirty date-only archived articles from original sources
+        run: |
+          python3 research/prepare_batch7.py
+          python3 - <<'PY'
+          import json
+          doc=json.load(open('research/batch7_preparation_report.json'))
+          assert doc['ready']==30 and doc['not_ready']==0,doc
+          art=json.load(open('registry/archive_batch7_sources.json'))
+          assert art['selected_count']==30
+          assert len({e['dzen_id'] for e in art['entries']})==30
+          assert all(e['publication_date_precision']=='day'
+              and e['artwork_width']>=780 and e['artwork_height']>=430
+              and 'get-zen-pub-og' not in e['image_url_source']
+              for e in art['entries'])
+          print('PASS: thirty full original stories, accurate Dzen calendar dates, genuine 16:9 art')
+          PY
+      - name: Publish each verified article only on isolated branch working tree
+        run: |
+          set -e
+          python3 - <<'PY' >/tmp/batch7slugs
+          import json
+          for row in json.load(open('registry/archive_batch7_sources.json'))['entries']:
+            print(row['slug'])
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done </tmp/batch7slugs
+      - name: Full regression across old and new archives and search metadata
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Preserve evidence and built result even on error
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch7-originals-build-check
+          path: |
+            research/batch7*.json
+            registry/archive_batch7_sources.json
+            data/editorial_full_catalog_snapshot.json
+            content/approved/*.json
+            assets/imported/*.webp
+            articles/**/index.html
+            news.json
+            feed.xml
+            sitemap.xml
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit passed review candidate to research branch only
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch7_preparation_report.json registry/archive_batch7_sources.json data/editorial_full_catalog_snapshot.json content/approved/ assets/imported/ articles/ rubrics/ news.json sitemap.xml feed.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: batch7 original articles, verified Dzen days and artwork'
+            git push origin HEAD:archive/batch7-research-20261104
+          fi
