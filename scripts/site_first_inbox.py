@@ -24,15 +24,15 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.publish_approved_article import approved_article, publish
 from scripts.site_rubrics import RUBRICS
+from scripts.site_rich_text import validate_blocks, markdown_to_blocks
 
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 STORY_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
-KINDS = {"lead", "p", "h2"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "paragraphs", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -44,7 +44,7 @@ def required_text(record, key, limit):
     return val.strip()
 
 
-def validate_story(root, story_id, *, today=None):
+def validate_story(root, story_id, *, today=None, allow_published=False):
     if not isinstance(story_id, str) or len(story_id) > 72 or not STORY_ID.fullmatch(story_id):
         raise ValueError("Invalid stable editorial ID")
     path = root / "editorial_inbox" / "stories" / (story_id + ".json")
@@ -86,23 +86,35 @@ def validate_story(root, story_id, *, today=None):
         if optional in data and (not isinstance(data[optional], str) or
                                  not re.fullmatch(r"[a-zA-Z0-9_-]{8,72}", data[optional])):
             raise ValueError("Invalid stable social queue identifier: " + optional)
-    blocks = data.get("paragraphs")
-    if not isinstance(blocks, list) or not 2 <= len(blocks) <= 80:
-        raise ValueError("Full approved Dzen article needs at least two text blocks")
-    for index, block in enumerate(blocks):
-        if (not isinstance(block, dict) or set(block) != {"type", "text"}
-                or block["type"] not in KINDS):
-            raise ValueError("Unsupported article paragraph structure")
-        if index == 0 and block["type"] != "lead":
-            raise ValueError("First paragraph must be the lead")
-        if not isinstance(block["text"], str) or not block["text"].strip() or len(block["text"]) > 12000:
-            raise ValueError("Article contains an empty or oversized paragraph")
-    if len(" ".join(b["text"] for b in blocks)) < 400:
-        raise ValueError("Cannot publish incomplete article text")
+    # For new ChatGPT stories: the single verbatim Dzen Markdown body is
+    # authoritative. Never ask the editor to hand-convert it into JSON blocks.
+    # Old approved records with paragraphs remain fully backward-compatible.
+    if "article_markdown" in data:
+        if "paragraphs" in data:
+            raise ValueError("Supply either verbatim article_markdown OR paragraphs, not both")
+        markdown_to_blocks(data["article_markdown"])
+    else:
+        validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
     entries = json.loads((root / "news.json").read_text(encoding="utf-8"))
-    if (any(x.get("id") == story_id for x in entries) or
-            (root / "articles" / story_id / "index.html").exists()):
-        raise ValueError("Story already published on the site")
+    published = next((x for x in entries if x.get("id") == story_id), None)
+    has_page = (root / "articles" / story_id / "index.html").exists()
+    if published or has_page:
+        if not allow_published:
+            raise ValueError("Story already published on the site")
+        # A read-only audit of an already published inbox source is allowed,
+        # but reject a changed title, source or missing approved source.
+        if (not published or not has_page or
+                published.get("title") != title or
+                published.get("source_url") != original):
+            raise ValueError("Published inbox record has changed since release")
+        approved = approved_article(root, story_id)
+        if ("article_markdown" in data and
+                approved.get("article_markdown") != data["article_markdown"]):
+            raise ValueError("Published editor Markdown differs from inbox original")
+        if ("paragraphs" in data and
+                approved.get("paragraphs") != data["paragraphs"]):
+            raise ValueError("Published editor blocks differ from inbox original")
+        return data
     if any(x.get("title", "").casefold() == title.casefold() or
            x.get("source_url") == original for x in entries):
         raise ValueError("Potential duplicate title or primary source on the site")
@@ -168,9 +180,14 @@ def stage(root, story_id, *, apply=False, now=None):
         "source_url": data["source_url"], "source_title": data["source_title"],
         "published": date, "published_at_utc": timestamp,
         "cover": dest_asset.relative_to(root).as_posix(),
-        "paragraphs": data["paragraphs"],
+        "paragraphs": (markdown_to_blocks(data["article_markdown"])
+                       if "article_markdown" in data else data["paragraphs"]),
         "related_dzen_ids": data.get("related_dzen_ids", []),
     }
+    if "article_markdown" in data:
+        # Keep the unmodified source next to generated blocks for provenance
+        # and parity validation by the actual publisher.
+        approved["article_markdown"] = data["article_markdown"]
     if "event_date" in data:
         approved["event_date"] = data["event_date"]
     if not apply:
@@ -210,9 +227,11 @@ def main():
             covers = ROOT / "editorial_inbox" / "covers"
             seen = set()
             for item in sorted(stories.glob("*.json")):
-                validate_story(ROOT, item.stem)
+                validate_story(ROOT, item.stem, allow_published=True)
                 art = cover_info(ROOT, item.stem)
-                print(("READY" if art else "AWAITING_COVER") + ": " + item.stem)
+                entries = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+                already_public = any(x.get("id") == item.stem for x in entries)
+                print(("ALREADY_PUBLISHED" if already_public else "READY" if art else "AWAITING_COVER") + ": " + item.stem)
                 seen.add(item.stem)
             for suffix in COVER_EXTENSIONS:
                 for item in sorted(covers.glob("*." + suffix)):

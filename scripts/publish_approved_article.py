@@ -23,10 +23,10 @@ if str(ROOT) not in sys.path:
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
 from scripts.site_home import update_home
+from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
 BASE = "https://iipike.ru"
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ASSET = re.compile(r"assets/[a-zA-Z0-9/_-]+\.(?:png|jpg|jpeg|webp|svg)\Z")
-TYPES = {"lead": "p", "p": "p", "h2": "h2"}
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 
 
@@ -134,15 +134,14 @@ def approved_article(root, slug):
     if (not ASSET.fullmatch(cover) or ".." in cover.split("/")
             or not (root / cover).is_file()):
         raise ValueError("cover must be an existing local assets image")
-    paragraphs = data.get("paragraphs")
-    if (not isinstance(paragraphs, list) or len(paragraphs) < 2
-            or not isinstance(paragraphs[0], dict)
-            or paragraphs[0].get("type") != "lead"):
-        raise ValueError("Article requires a lead and at least another paragraph")
-    for block in paragraphs:
-        if not isinstance(block, dict) or block.get("type") not in TYPES:
-            raise ValueError("Unsupported paragraph type")
-        need_text(block, "text", 12000)
+    # Share exactly one schema with the ChatGPT intake validator so that the
+    # approved article retains the editor's full inline and block formatting.
+    validate_blocks(data.get("paragraphs"))
+    if "article_markdown" in data:
+        # Never silently publish content altered during JSON transformation:
+        # the verbatim editor-approved Markdown must reproduce these blocks.
+        if markdown_to_blocks(data["article_markdown"]) != data["paragraphs"]:
+            raise ValueError("Approved paragraphs differ from original article_markdown")
     return data
 
 
@@ -188,11 +187,7 @@ def render_article(data, records=None, catalog=None):
     related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
     provenance_only = data.get("source_url") == data.get("dzen_url")
     source_heading = "Архивная публикация" if provenance_only else "Первоисточник"
-    body = "\n".join(
-        f'<{TYPES[b["type"]]} class="lead">{quote(b["text"])}</p>'
-        if b["type"] == "lead"
-        else f'<{TYPES[b["type"]]}>{quote(b["text"])}</{TYPES[b["type"]]}>' for b in data["paragraphs"]
-    )
+    body = render_blocks(data["paragraphs"])
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",
               "июля", "августа", "сентября", "октября", "ноября", "декабря"]
