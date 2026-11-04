@@ -1,0 +1,28 @@
+name: HPII batch7 audit historic titles, dates, and complete text boundaries
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-evidence.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch7-source-dates-probe
+          run-id: 41785744045
+          github-token: ${{ github.token }}
+          path: .
+      - run: python3 research/audit_batch7_evidence.py
+      - name: Commit compact provenance only to research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch7_date_title_evidence.json
+          git commit -m 'research: independently verify public Dzen calendar dates and titles'
+          git push origin HEAD:archive/batch7-research-20261104
