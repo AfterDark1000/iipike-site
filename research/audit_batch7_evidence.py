@@ -16,6 +16,8 @@ for item in manifest:
     canonical_date=dates[0] if len(dates)==1 and re.fullmatch(r"2026-\d\d-\d\d",dates[0] or "") else None
     text=dom.get("main") or ""
     description=(dom.get("description") or "").strip()
+    if "✍:" in description:
+        description=description.split("✍:",1)[1].strip()
     pos=-1
     for n in (160,120,90,60,40,24,14):
         if len(description)>=n:
