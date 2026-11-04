@@ -32,7 +32,7 @@ def choose_cover(item,probe):
         import re
         og=(probe.get("dom") or {}).get("og_image") or ""
         match=re.fullmatch(
-          r"https://avatars\\.dzeninfra\\.ru/get-zen-pub-og/(\\d+)/pub_([0-9a-f]{24})_([0-9a-f]{24})/optimize",
+          r"https://avatars\.dzeninfra\.ru/get-zen-pub-og/(\d+)/pub_([0-9a-f]{24})_([0-9a-f]{24})/optimize",
           og
         )
         if match and match.group(2)==item["dzen_id"]:
