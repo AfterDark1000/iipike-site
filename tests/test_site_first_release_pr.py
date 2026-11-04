@@ -1,6 +1,7 @@
 """Offline tests for site-first intake release proposal; no GitHub calls or site writes."""
 import unittest
-from unittest.mock import patch, SimpleNamespace
+from unittest.mock import patch
+from types import SimpleNamespace
 
 from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree
 
