@@ -11,9 +11,10 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from scripts.site_related import suggest, catalog_entries, verified
-
+import sys
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT))
+from scripts.site_related import suggest, catalog_entries, verified
 INPUT=ROOT/"research/batch7_candidates.json"
 EVIDENCE=ROOT/"research/batch7_date_title_evidence.json"
 PROBES=ROOT/"research/batch7_probe_results.json"
