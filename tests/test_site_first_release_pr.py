@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
 
-from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree, proposed_changes
+from scripts.site_first_release_pr import changed_ids, pending_paths, candidate_ids_from_tree, proposed_changes, auto_publish_site
 
 ID = "news-example-20261104"
 
@@ -61,6 +61,67 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
                            return_value=SimpleNamespace(stdout="?? " + path + "\n")):
                     with self.assertRaisesRegex(ValueError, "Unexpected modified file"):
                         proposed_changes()
+
+    def test_automatic_site_release_only_fast_forwards_exact_approved_artifacts(self):
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        all_paths = [
+            story, cover, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html", "rubrics/news/index.html",
+        ]
+        calls = []
+
+        def fake_git(*args, **kwargs):
+            calls.append(args)
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\n".join(all_paths) + "\n")
+            if args[0] == "rev-parse":
+                return SimpleNamespace(stdout="safe-main-base\n")
+            return SimpleNamespace(stdout="")
+
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \
+             patch("scripts.site_first_release_pr.run_checked") as rebuild:
+            auto_publish_site(sid, "safe-main-base", (story, cover))
+        self.assertIn(("push", "origin", "HEAD:refs/heads/main"), calls)
+        rebuild.assert_called_once_with(
+            "gh", "api", "-X", "POST",
+            "repos/AfterDark1000/iipike-site/pages/builds"
+        )
+
+    def test_automatic_release_fails_closed_for_unexpected_file_or_moving_main(self):
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        valid = [
+            story, cover, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html",
+        ]
+        for extra in ("README.md", ".github/workflows/unreviewed.yml",
+                      "assets/editorial/other-story.webp"):
+            with self.subTest(extra=extra):
+                with patch("scripts.site_first_release_pr.git",
+                           return_value=SimpleNamespace(stdout="\n".join(valid + [extra]))):
+                    with self.assertRaisesRegex(ValueError, "non-editorial"):
+                        auto_publish_site(sid, "base", (story, cover))
+        calls = []
+        def fake_git(*args, **kwargs):
+            calls.append(args)
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\n".join(valid))
+            if args[0] == "rev-parse":
+                return SimpleNamespace(stdout="someone-else-pushed\n")
+            return SimpleNamespace(stdout="")
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \
+             patch("scripts.site_first_release_pr.run_checked") as pages:
+            with self.assertRaisesRegex(ValueError, "Main moved"):
+                auto_publish_site(sid, "old-base", (story, cover))
+        self.assertNotIn(("push", "origin", "HEAD:refs/heads/main"), calls)
+        pages.assert_not_called()
 
     def test_one_editorial_text_or_one_cover_is_not_a_release(self):
         with patch("scripts.site_first_release_pr.exists_at", side_effect=lambda ref, p: p.endswith(".json")):
