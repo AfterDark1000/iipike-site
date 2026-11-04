@@ -17,7 +17,7 @@ jobs:
           name: hpii-batch7-source-dates-probe
           run-id: 41785744045
           github-token: ${{ github.token }}
-          path: .
+          path: research
       - run: python3 research/audit_batch7_evidence.py
       - name: Commit compact provenance only to research branch
         run: |
