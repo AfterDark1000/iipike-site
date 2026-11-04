@@ -13,8 +13,8 @@ from urllib.error import URLError, HTTPError
 from PIL import Image, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
-PROBE=json.loads((ROOT/"research/next30_probe_results.json").read_text(encoding="utf-8"))
-BATCH=json.loads((ROOT/"research/next30_candidates.json").read_text(encoding="utf-8"))
+PROBE=json.loads((ROOT/"research/batch3_probe_results.json").read_text(encoding="utf-8"))
+BATCH=json.loads((ROOT/"research/batch3_candidates.json").read_text(encoding="utf-8"))
 rows={r["slug"]:r for r in PROBE["results"]}
 dest=ROOT/"assets/imported"
 dest.mkdir(parents=True,exist_ok=True)
@@ -76,6 +76,6 @@ for item in BATCH["candidates"]:
     except Exception as e:
         report.append({"slug":slug,"status":"failed","why":str(e)})
         print("COVER FAILED",slug,str(e),flush=True)
-out=ROOT/"research/next30_cover_report.json"
+out=ROOT/"research/batch3_cover_report.json"
 out.write_text(json.dumps({"entries":report,"note":"Dzen-hosted originals (resized for hosting), not newly generated."},ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print("Downloaded",sum(e["status"]=="downloaded" for e in report),"of",len(report),"covers",flush=True)
