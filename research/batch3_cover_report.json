@@ -1,0 +1,300 @@
+{
+  "entries": [
+    {
+      "slug": "ai-market-intel-alphabet-losses",
+      "status": "failed",
+      "why": "Image source unavailable: HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found; HTTPError: HTTP Error 404: Not Found"
+    },
+    {
+      "slug": "openai-power-grid-georgia-1000mw",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-power-grid-georgia-1000mw.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f12badb746a415f276aaa23755536d8c0cc8b5d9351a087e3a71446910a7062e",
+      "bytes": 261438,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae96ea055a910701b153d93_6ae96f8729933216f1181710/scale_1200"
+    },
+    {
+      "slug": "openai-gpt6-astra-household-benchmark",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-gpt6-astra-household-benchmark.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "e594207f100f4ea49a3cb560ef3d16ae676c7841f7f890fca9f07b0d066d0432",
+      "bytes": 329096,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae96c5329933216f113c227_6ae96c6b022bb44b4262b696/scale_1200"
+    },
+    {
+      "slug": "openai-abu-dhabi-regulation-ai",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-abu-dhabi-regulation-ai.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "5dade426effa7bcddf8592fc88e105c272e0bcb4f00572585a0c24514bf7b715",
+      "bytes": 318274,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae9687670b2207347df850c_6ae96927728a9a2a9ea75aa1/scale_1200"
+    },
+    {
+      "slug": "telus-ai-calls-cancellations",
+      "status": "downloaded",
+      "cover": "assets/imported/telus-ai-calls-cancellations.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "32134885bea251cc11df7c804baff034698de9eb826de57c18a053203f0826a8",
+      "bytes": 268176,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae80f62121f043a98f7369e_6ae80f7fe289c924db07bf7a/scale_1200"
+    },
+    {
+      "slug": "chainalysis-hacked",
+      "status": "downloaded",
+      "cover": "assets/imported/chainalysis-hacked.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "095668523797af12c1f6d2f602b7a29ea7520e149596e3c7edab9e05c3ec9c9e",
+      "bytes": 300244,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae70acf4d27f64e5d8cfa61_6ae70b552b80bf7f06431e88/scale_1200"
+    },
+    {
+      "slug": "malware-ai-scores-victims",
+      "status": "downloaded",
+      "cover": "assets/imported/malware-ai-scores-victims.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "2a63cc30ef4cb1e6b761be04cd4eca0e34b45183af0d2e6837db250695066a37",
+      "bytes": 333310,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae70789fc598f0048316738_6ae708ab89ffd4273aec84d7/scale_1200"
+    },
+    {
+      "slug": "claude-mouse-brain-injection",
+      "status": "downloaded",
+      "cover": "assets/imported/claude-mouse-brain-injection.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "cc467608707408278a5ae73faa84458bd704da3cd022dff73b1aa1a8134eae39",
+      "bytes": 200912,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae6fee08b88aa0944ccbca9_6ae7074ee82b1b48f873e150/scale_1200"
+    },
+    {
+      "slug": "openai-gpt6-biologists-restricted",
+      "status": "downloaded",
+      "cover": "assets/imported/openai-gpt6-biologists-restricted.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "44a949b73236df39a6027e7c276a529bf5b00e69e7461fb0d6563fd83013abe2",
+      "bytes": 314774,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae5a75be0d1375c19deb74b_6ae5a9cf01e67513314e5028/scale_1200"
+    },
+    {
+      "slug": "ai-680-tokens-second",
+      "status": "downloaded",
+      "cover": "assets/imported/ai-680-tokens-second.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "6840e98dcd2160e7c8cf5deee4e0a8b00c7d61761311f668c962fcf97ced5ebb",
+      "bytes": 294698,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae5a5b3121f043a98a6aa6d_6ae5a736fc598f004884e72d/scale_1200"
+    },
+    {
+      "slug": "claude-code-pentagon-systems",
+      "status": "downloaded",
+      "cover": "assets/imported/claude-code-pentagon-systems.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "82b380d4d311d7413c06a877512f38b61a3143f8670fca5a264caa0dd60bfb1b",
+      "bytes": 279176,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae4bb48a578bc23f57e4ef7_6ae4bb67d73786100d56705e/scale_1200"
+    },
+    {
+      "slug": "pika-15s-video-7s-compute",
+      "status": "downloaded",
+      "cover": "assets/imported/pika-15s-video-7s-compute.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "1c3ae2e81df90e5008138cea02e0d28f0f64a942f0504455ccb93710e88c8e06",
+      "bytes": 242980,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae4b9d4ffd69737bf8f44e2_6ae4b9ec2b80bf7f06822da4/scale_1200"
+    },
+    {
+      "slug": "elevenlabs-sfxv3-ai-sound-design",
+      "status": "downloaded",
+      "cover": "assets/imported/elevenlabs-sfxv3-ai-sound-design.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "0e98df7a6e4cac30ff405299605c95298e53573c948e2ce6c299c6ca86806ede",
+      "bytes": 226120,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae41b330c75c303c14a0b24_6ae41c4efc598f00484cd268/scale_1200"
+    },
+    {
+      "slug": "nvidia-ai-meeting-secretary",
+      "status": "downloaded",
+      "cover": "assets/imported/nvidia-ai-meeting-secretary.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "9d313482d0e25791fad28c3ccd41bacda22f6a88064bf9823522e30a29dcf52f",
+      "bytes": 225264,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae4198f4e1c1848278239fd_6ae41aa9d73786100dfbbf0e/scale_1200"
+    },
+    {
+      "slug": "indian-voice-model-elevenlabs",
+      "status": "downloaded",
+      "cover": "assets/imported/indian-voice-model-elevenlabs.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "e4774fbbd8b3a8313a8b400a976710545512ef18550ea882f843075d3daec3e7",
+      "bytes": 293360,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae4129ae0d1375c19009615_6ae4149ad73786100df3e215/scale_1200"
+    },
+    {
+      "slug": "runway-ai-advertising-agent",
+      "status": "downloaded",
+      "cover": "assets/imported/runway-ai-advertising-agent.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "6c4dbed85911ce3bedbb928fd1398fab24c49db6b41384dbd96da4b1a9ad4e38",
+      "bytes": 258754,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae4103afc598f004841c92e_6ae4121ff3d703645b0c7f9b/scale_1200"
+    },
+    {
+      "slug": "nate-soares-retirement-apocalypse",
+      "status": "downloaded",
+      "cover": "assets/imported/nate-soares-retirement-apocalypse.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "0de87230ba1258af06c32bb70a5fac41840da02f5fa6f1808432733b40e90ca0",
+      "bytes": 255368,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae32079e82b1b48f8507713_6ae326fd4e1c1848274ac1d8/scale_1200"
+    },
+    {
+      "slug": "chatgpt-service-now-support",
+      "status": "downloaded",
+      "cover": "assets/imported/chatgpt-service-now-support.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "fe27534b8a50638d8a6fd6eafbf03487f476142fca89c3bb81ab0db9d7797b95",
+      "bytes": 301018,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae31c844e1c18482737021c_6ae31dccde14fa0c6249e436/scale_1200"
+    },
+    {
+      "slug": "microsoft-copilot-twenty-models",
+      "status": "downloaded",
+      "cover": "assets/imported/microsoft-copilot-twenty-models.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "3b04c9e6e87a15c226c89fdd5833027df5699abbb583d7b93809bbde92865de4",
+      "bytes": 369060,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae2e08fd2f43220dc0c3284_6ae2e359e7c94415a62249c9/scale_1200"
+    },
+    {
+      "slug": "rime-prism-voice-guardrails",
+      "status": "downloaded",
+      "cover": "assets/imported/rime-prism-voice-guardrails.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "ba751333542440aa3e0d2832576e4df4b496db60619a66bc360879fcad787221",
+      "bytes": 169628,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae2dbbda9ed44022355977d_6ae2dc79f3d703645b9b2ecb/scale_1200"
+    },
+    {
+      "slug": "microsoft-mai-image-editor",
+      "status": "downloaded",
+      "cover": "assets/imported/microsoft-mai-image-editor.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "c99d0d558e08df0f8b51f2f63fb9acd239e5f9cf71854f7f12b86ee39860eb4f",
+      "bytes": 414160,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae2d8b70c75c303c16b4450_6ae2d992ffd69737bffcedd9/scale_1200"
+    },
+    {
+      "slug": "gemini4-carbon-ranking",
+      "status": "downloaded",
+      "cover": "assets/imported/gemini4-carbon-ranking.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f66c74d2f1067439335d7cd880b731d506c60aa5989375b9691924e0a649812b",
+      "bytes": 338230,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae2c0cf4d27f64e5d7851ae_6ae2c65de0d1375c1923e0fd/scale_1200"
+    },
+    {
+      "slug": "kling40-api-video-price",
+      "status": "downloaded",
+      "cover": "assets/imported/kling40-api-video-price.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "d01098caf9365a488742faf9a9f031d0ff4b89d30eb734558d264a79ed37f7c2",
+      "bytes": 335474,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae1d1965527bd132901fca2_6ae1d1b689ffd4273a63d0be/scale_1200"
+    },
+    {
+      "slug": "runway-app-studio-no-code-video",
+      "status": "downloaded",
+      "cover": "assets/imported/runway-app-studio-no-code-video.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f6e4dac4e9ef8f6464f5da4180809cb7fcbe3ddb167bd5238adde5418f86be50",
+      "bytes": 102752,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae1cde70c75c303c1f0a39a_6ae1cfb6e7c94415a6b469d3/scale_1200"
+    },
+    {
+      "slug": "south-korea-ai-data-theft",
+      "status": "downloaded",
+      "cover": "assets/imported/south-korea-ai-data-theft.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "337556270350e1bc85919ddbb37ace0cad0fd752b72cfac27f25c8a1a76b5343",
+      "bytes": 321438,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae19b93d73786100d0ca5e9_6ae19c7f4d27f64e5db99c8e/scale_1200"
+    },
+    {
+      "slug": "oracle-chatgpt-accounting",
+      "status": "downloaded",
+      "cover": "assets/imported/oracle-chatgpt-accounting.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "50d180a7adba1102b92c68e4c1be51f01cc6674914d50671012183bbde24bbcd",
+      "bytes": 205948,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae1952e8b88aa0944685b2b_6ae19b2be7c94415a650caa6/scale_1200"
+    },
+    {
+      "slug": "claude-35k-antibodies",
+      "status": "downloaded",
+      "cover": "assets/imported/claude-35k-antibodies.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "2238bfbca385084d3a5f6b06755c4211508fa26d9d45024447183f96cdd1346d",
+      "bytes": 366124,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae194224d27f64e5daa7c7b_6ae194ebe82b1b48f8066fe3/scale_1200"
+    },
+    {
+      "slug": "apple-iwork-ai-agents",
+      "status": "downloaded",
+      "cover": "assets/imported/apple-iwork-ai-agents.webp",
+      "width": 1200,
+      "height": 675,
+      "sha256": "cce0a6ff738090fb57d69bef8822a9c411583ae4d7279f6854538a4a1d3ecb4a",
+      "bytes": 241594,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae19154d2f43220dc1a7aa6_6ae19252de14fa0c62e180f9/scale_1200"
+    },
+    {
+      "slug": "google-genie4-worlds",
+      "status": "downloaded",
+      "cover": "assets/imported/google-genie4-worlds.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "234c632fdc1b7c62c49310f5f5a802567edc2c8d962de587f804011ffda8f47c",
+      "bytes": 326152,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae18fd1d73786100df5c71d_6ae18fe389ffd4273ae8c532/scale_1200"
+    },
+    {
+      "slug": "netherlands-civil-service-ai-cuts",
+      "status": "downloaded",
+      "cover": "assets/imported/netherlands-civil-service-ai-cuts.webp",
+      "width": 1200,
+      "height": 676,
+      "sha256": "f9a60b5abfbbf8a2d144e947d8b41d2bf5e8a6604c64b60c7674f6be3e34c8e0",
+      "bytes": 319432,
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae0ac67fdcd464d1ef2db72_6ae0ad5d4b3ae37489a893e2/scale_1200"
+    }
+  ],
+  "note": "Original article-owned image sources on Dzen, not generated artwork."
+}
