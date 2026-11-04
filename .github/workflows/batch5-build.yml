@@ -1,0 +1,100 @@
+name: HPII batch5 recover full Dzen originals and compile only if verified
+on:
+  push:
+    branches: [prep/hpii-archive-batch5-20261104]
+    paths: ['.github/workflows/batch5-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/prep/hpii-archive-batch5-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: prep/hpii-archive-batch5-20261104
+          persist-credentials: true
+      - name: Install browser and image decoders (read-only public originals)
+        run: |
+          python3 -m pip install playwright pillow
+          python3 -m playwright install --with-deps chromium
+      - name: Observe original Dzen full article texts (no social publishing)
+        run: python3 research/probe_batch5.py
+      - name: Retry JS-delayed original article text
+        run: python3 research/retry_batch5_text.py
+      - name: Retrieve matching original Dzen article covers (not generated)
+        run: python3 research/download_batch5_originals.py
+      - name: Select exactly 30 fully verified and unique historical stories
+        run: python3 research/select_batch5.py
+      - name: Prepare original-date editorial JSON
+        run: |
+          python3 research/prepare_batch5.py
+          python3 - <<'PY'
+          import json
+          report=json.load(open('research/batch5_preparation_report.json'))
+          assert report['ready']==30 and report['not_ready']==0, report
+          assert len({e['slug'] for e in report['entries']})==30
+          print('READY: 30 original full texts, matched Dzen image, original timestamp',flush=True)
+          PY
+      - name: Compile static pages, categories, feed, and sitemap on isolated branch
+        run: |
+          set -e
+          python3 - <<'PY' >/tmp/batch5_selected_slugs.txt
+          import json
+          r=json.load(open('research/batch5_preparation_report.json'))
+          for e in r['entries']:
+            if e['status']=='ready': print(e['slug'])
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done </tmp/batch5_selected_slugs.txt
+      - name: Regression, previous batches and static indexes
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_archival_batch4.py' -v
+          python3 -m unittest discover -s tests -p 'test_archival_batch3.py' -v
+          python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_search_indexing.py' -v
+          python3 - <<'PY'
+          import json
+          rows=json.load(open('news.json'))
+          orig=json.load(open('research/batch5_candidates.json'))['candidates']
+          assert len(rows)==131, (len(rows), 'Site must have 131 articles')
+          ids=[r['dzen_id'] for r in rows if r.get('dzen_id')]
+          assert len(ids)==len(set(ids)), 'Repeated Dzen ID'
+          assert all(any(r.get('dzen_id')==e['dzen_id'] for r in rows) for e in orig)
+          print('Verified 131 total articles, 30 new unique IDs')
+          PY
+      - name: Preserve source evidence / recovery diagnostics
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch5-source-recovery-and-build
+          path: |
+            research/batch5*.json
+            registry/archive_batch5_candidates.json
+            content/approved/*.json
+            assets/imported/*.webp
+            articles/**/index.html
+            news.json
+            sitemap.xml
+            feed.xml
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit verified originals only to batch5 branch (not deployed)
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch5* registry/archive_batch5_candidates.json content/approved/ assets/imported/ articles/ rubrics/ news.json sitemap.xml feed.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'archive: verify and compile 30 historical Dzen stories (batch 5)'
+            git pull --rebase origin prep/hpii-archive-batch5-20261104
+            git push origin HEAD:prep/hpii-archive-batch5-20261104
+          fi
