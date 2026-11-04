@@ -281,7 +281,7 @@ def build():
             text=p["dom"].get("main") or ""
             excerpt=(item.get("excerpt") or "").strip()
             pos=-1
-            for n in (120,90,70,50,35,24):
+            for n in (120,90,70,50,35,24,18,12):
                 if len(excerpt)<n:continue
                 pos=text.find(excerpt[:n])
                 if pos>=0:break
