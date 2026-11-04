@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно. — обновление системы управления большими вычислительными"><meta property="og:type" content="article">
+<meta property="og:title" content="NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!"><meta property="og:description" content="Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно. — обновление системы управления большими вычислительными">
+<meta property="og:image" content="https://iipike.ru/assets/imported/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad.webp">
+<meta property="og:url" content="https://iipike.ru/articles/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad/"><meta property="article:published_time" content="2026-10-27T16:31:39Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!", "mainEntityOfPage": "https://iipike.ru/articles/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-10-27T16:31:39Z", "image": "https://iipike.ru/assets/imported/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad.webp", "isBasedOn": "https://dzen.ru/a/auBl4Ok2jUotc0ut"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad/"><title>NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение! — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!</h1>
+<p class="summary">Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно. — обновление системы управления большими вычислительными</p><p class="date">Опубликовано: 27 октября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad.webp" alt="Обложка: NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/auBl4Ok2jUotc0ut" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">Видеокарта выходит из строя посреди обучения нейросети. Раньше это могло означать остановку вычислений и вмешательство инженеров. Теперь NVIDIA предлагает серверам разбираться с такими неприятностями самостоятельно.</p>
+<h2>26 октября компания представила Mission Control 2.5</h2>
+<p>— обновление системы управления большими вычислительными кластерами.</p>
+<p>Работает это так: если GPU начинает сбоить, система определяет проблемный сервер и исключает его из работы. Задание перезапускается на исправном оборудовании, а неисправный узел отправляется на диагностику.</p>
+<p>Обучение может продолжиться с последней сохранённой контрольной точки, пока инженеры разбираются с поломкой. Ждать окончания ремонта не требуется.</p>
+<p>Mission Control также различает аппаратные и программные ошибки. Если проблема вызвана временным сбоем программы, система может просто повторить выполнение задания, не отправляя исправный сервер на обслуживание.</p>
+<p>Раньше такой механизм автоматического восстановления работал с системой управления заданиями Slurm. Теперь NVIDIA добавила поддержку Kubernetes и Run, которыми пользуются для распределения ИИ-нагрузки между серверами.</p>
+<p>Для больших вычислительных центров это существенная экономия времени. Обучение крупных моделей может продолжаться неделями и задействовать тысячи дорогостоящих GPU. Простой даже части оборудования обходится недёшево.</p>
+<p>Mission Control 2.5 уже доступна корпоративным клиентам NVIDIA на поддерживаемых системах. Вместе с ней компания развивает Minerva — отдельную систему мониторинга сетей и оборудования. Она пока распространяется только в ограниченной бета-версии.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>

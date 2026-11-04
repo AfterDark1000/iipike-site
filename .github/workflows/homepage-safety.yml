@@ -26,6 +26,7 @@ on:
       - 'tests/test_historical_batch.py'
       - 'tests/test_archival_batch3.py'
       - 'tests/test_archival_batch4.py'
+      - 'tests/test_archival_batch5.py'
       - 'tests/test_search_indexing.py'
       - 'assets/site.css'
       - 'tests/test_homepage.py'
@@ -57,6 +58,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_historical_batch.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch3.py' -v
           python3 -m unittest discover -s tests -p 'test_archival_batch4.py' -v
+          python3 -m unittest discover -s tests -p 'test_archival_batch5.py' -v
       - name: Check desktop/mobile browser rendering
         run: |
           set -e

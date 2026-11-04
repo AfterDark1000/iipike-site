@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Хороший учитель должен не только знать правильный ответ, но и уметь объяснить его ученику. Исследователи Perplexity решили применить этот принцип к обучению нейросетей — и получили заметную экономию вычислений. 21 октября компания представила метод JOLT (Joint On-policy Learning"><meta property="og:type" content="article">
+<meta property="og:title" content="Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше"><meta property="og:description" content="Хороший учитель должен не только знать правильный ответ, но и уметь объяснить его ученику. Исследователи Perplexity решили применить этот принцип к обучению нейросетей — и получили заметную экономию вычислений. 21 октября компания представила метод JOLT (Joint On-policy Learning">
+<meta property="og:image" content="https://iipike.ru/assets/imported/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581.webp">
+<meta property="og:url" content="https://iipike.ru/articles/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581/"><meta property="article:published_time" content="2026-10-22T17:43:02Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше", "mainEntityOfPage": "https://iipike.ru/articles/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-10-22T17:43:02Z", "image": "https://iipike.ru/assets/imported/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581.webp", "isBasedOn": "https://dzen.ru/a/atnS7ZcSa1R3j6WB"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581/"><title>Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a> / ИСТОРИЧЕСКИЙ АРХИВ</p><h1>Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше</h1>
+<p class="summary">Хороший учитель должен не только знать правильный ответ, но и уметь объяснить его ученику. Исследователи Perplexity решили применить этот принцип к обучению нейросетей — и получили заметную экономию вычислений. 21 октября компания представила метод JOLT (Joint On-policy Learning</p><p class="date">Опубликовано: 22 октября 2026</p></div>
+<figure class="cover"><img src="../../assets/imported/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581.webp" alt="Обложка: Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Архивная публикация</h3>
+<a href="https://dzen.ru/a/atnS7ZcSa1R3j6WB" target="_blank" rel="noopener noreferrer">ХПИИ — исходная публикация в Дзене ↗</a>
+</aside><article class="article-text"><p class="lead">Хороший учитель должен не только знать правильный ответ, но и уметь объяснить его ученику. Исследователи Perplexity решили применить этот принцип к обучению нейросетей — и получили заметную экономию вычислений.</p>
+<p>21 октября компания представила метод JOLT (Joint On-policy Learning and Teaching). В нём одна нейросеть одновременно обучается в двух ролях: учителя и ученика.</p>
+<p>Учитель получает дополнительную информацию, например готовое решение математической задачи. Ученик должен справиться самостоятельно. При обычном подходе учитель может предложить решение, которое выглядит правильным, но ученику пока не по силам.</p>
+<p>В JOLT обучают обе роли. Учитель получает обратную связь о собственных результатах и учится давать рекомендации с учётом возможностей ученика. А ученик получает подсказки на отдельных этапах решения, вместо того чтобы узнавать лишь в конце, справился он или нет.</p>
+<h2>Откуда взялась экономия в 13 раз</h2>
+<p>Исследователи сравнили JOLT с методом обучения GRPO на математическом наборе задач MATH.</p>
+<p>При одинаковой точности ответов JOLT потребовал примерно в 13 раз меньше токенов генерации — то есть текста, который модели создавали в процессе обучения.</p>
+<p>Но эта цифра не учитывает все вычисления. Если включить входные данные, подсказки учителя и дополнительные проходы обучения, преимущество сокращается до 6,5 раза по количеству обработанных токенов.</p>
+<p>Следовательно, исследование пока не доказывает, что обучение любой нейросети с помощью JOLT обходится в 13 раз дешевле.</p>
+<p>Авторы проверили метод и на других задачах: написании программ, использовании инструментов и управлении компьютерными агентами.</p>
+<p>Улучшенная версия JOLT+ превзошла GRPO по результатам всех пяти основных испытаний. Например, на математическом тесте MATH прирост точности составил 4,2 процентного пункта, а на AppWorld, где агенты выполняют действия в приложениях, — 9,9 пункта.</p>
+<p>При этом обычный JOLT без дополнительных наград для ученика показал результаты хуже GRPO на некоторых агентных задачах. Эффективность зависит от выбранной версии метода и характера испытания.</p>
+<p>В экспериментах использовались открытые модели семейств Qwen и DeepSeek. Результаты не означают, что действующие продукты Perplexity уже работают по новой схеме или стали дешевле.</p>
+<p>Научная работа появилась на arXiv 7 октября, а 21 октября Perplexity выпустила её подробный разбор. Авторы обещают опубликовать программный код, но пока доступно только исследование.</p>
+<p>Разработчики получили ещё один способ сократить объём вычислений при обучении моделей. Теперь предстоит выяснить, насколько хорошо JOLT масштабируется на более крупные нейросети и реальные производственные нагрузки.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
