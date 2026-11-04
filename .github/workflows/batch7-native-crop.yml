@@ -1,0 +1,32 @@
+name: HPII batch7 restore true high resolution Dzen art framing
+on:
+  push:
+    branches: [archive/batch7-research-20261104]
+    paths: ['.github/workflows/batch7-native-crop.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install pillow
+      - uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch7-originals-recovered
+          run-id: 41786959450
+          github-token: ${{ github.token }}
+          path: .
+      - run: python3 research/native_crop_batch7_originals.py
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: hpii-batch7-native-art-and-original-pages
+          path: |
+            research/batch7_probe_results.json
+            research/batch7_cover_report.json
+            assets/imported/*.webp
+          retention-days: 7
+          if-no-files-found: ignore
