@@ -1,0 +1,39 @@
+{
+  "slug": "alisa-novoe-razvitie-krupnogo-sboya-e111e",
+  "status": "approved",
+  "approved_by": "Редакция ХПИИ — перенос авторского исторического архива",
+  "approved_at": "2026-11-04",
+  "title": "Алиса — новое развитие крупного сбоя",
+  "summary": "В ночь на 11 октября остановился ещё один дата-центр Яндекса — во Владимире.",
+  "published": "2026-10-12",
+  "rubric": "news",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/asxXuA4opiCVbhEe",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/alisa-novoe-razvitie-krupnogo-sboya-e111e.webp",
+  "dzen_id": "6acc57b80e28a620956e111e",
+  "dzen_url": "https://dzen.ru/a/asxXuA4opiCVbhEe",
+  "related_dzen_ids": [
+    "6acefe3b4cf8164d98b484da",
+    "6adb1b05397db6616b5e7bb1"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "В ночь на 11 октября остановился ещё один дата-центр Яндекса — во Владимире."
+    },
+    {
+      "type": "p",
+      "text": "Это уже третья пострадавшая площадка за несколько дней."
+    },
+    {
+      "type": "p",
+      "text": "К вечеру 11 октября компания сообщила о постепенном восстановлении доступа к Алисе, но часть функций оставалась недоступна."
+    },
+    {
+      "type": "p",
+      "text": "Практически: для срочных задач пока стоит иметь запасной ИИ-сервис — полного восстановления Алисы компания ещё не подтвердила."
+    }
+  ],
+  "publication_date_precision": "day"
+}
