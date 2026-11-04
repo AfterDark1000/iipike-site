@@ -1,0 +1,40 @@
+name: HPII inspect original artwork from public Telegram channel
+on:
+  push:
+    branches: [research/batch5-telegram-originals-20261104]
+    paths: ['.github/workflows/batch5-telegram-originals.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    if: github.ref == 'refs/heads/research/batch5-telegram-originals-20261104'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/batch5-telegram-originals-20261104
+      - name: Install read-only parser and image decoder
+        run: python3 -m pip install beautifulsoup4 pillow
+      - name: Download public Telegram post originals by identical Dzen URL
+        run: python3 research/recover_from_telegram.py
+      - name: Preserve image recovery evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch5-telegram-verified-art
+          path: |
+            registry/batch5_telegram_photo_recovery.json
+            assets/imported/*.webp
+          if-no-files-found: ignore
+      - name: Save recovered photos only to isolated research branch
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/batch5_telegram_photo_recovery.json assets/imported/
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: recover Dzen artwork from matching public Telegram image posts'
+            git push origin HEAD:research/batch5-telegram-originals-20261104
+          fi
