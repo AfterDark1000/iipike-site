@@ -157,7 +157,7 @@ RELATED.update({
 })
 
 RELATED.pop("ai-market-intel-alphabet-losses", None)
-RELATED["china-ai-stock-bubble-480b"] = ["openai-power-grid-georgia-1000mw"]
+RELATED["microsoft-offers-60k-exits"] = ["netherlands-civil-service-ai-cuts"]
 
 
 def build():
