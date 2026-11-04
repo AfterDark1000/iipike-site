@@ -18,7 +18,8 @@ jobs:
           run-id: 41788811179
           github-token: ${{ github.token }}
           path: research/
-      - run: python3 research/audit_batch8.py
+      - name: Audit persisted source-pages after original page capture
+        run: python3 research/audit_batch8.py
       - name: Record verified source metadata only in research branch
         run: |
           git config user.name 'github-actions[bot]'
