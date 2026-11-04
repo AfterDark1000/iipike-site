@@ -1,0 +1,93 @@
+{
+  "targeted_og_count": 16,
+  "found_feed_url": 1,
+  "restored": 1,
+  "results": [
+    {
+      "dzen_id": "6ae981bb5ec3a00a555b23d3",
+      "slug": "ii-puzyr-treschit-po-shvam-aktsii-intel-rukhnuli-na-29-alphabe-b23d3",
+      "status": "original_restored",
+      "source": "Dzen public channel feedData article image",
+      "url": "https://avatars.dzeninfra.ru/get-zen_doc/271828/pub_6ae981bb5ec3a00a555b23d3_6ae9841755a910701b3351cb/scale_1200",
+      "width": 1200,
+      "height": 676,
+      "bytes": 414578,
+      "sha256": "50f774e52e918193297912a07d8d7221d5ff4f4f4e48951328162a84c4e9288c"
+    },
+    {
+      "dzen_id": "6adb25b2edeaf11d1f8824cf",
+      "slug": "ibm-nauchila-ii-slushat-bez-oblaka-russkii-poka-ne-vyuchila-824cf",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6adb058c3404d230ff39e83d",
+      "slug": "elevenlabs-vypustila-dvukh-golosovykh-ii-odin-deshevle-drugoi-9e83d",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6adaf7c0f8edfc31bb35ef27",
+      "slug": "khakery-s-ii-atakovali-bolee-2250-oblachnykh-sred-microsoft-36-5ef27",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9d8d691554b2467c39004",
+      "slug": "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9d2ed97126b54778fa581",
+      "slug": "perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9d0cef8edfc31bb5791dc",
+      "slug": "openai-vvodit-propusknoi-rezhim-dlya-agregatorov-791dc",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9cc85f8edfc31bb4b5ec6",
+      "slug": "deepseek-raskryla-kod-na-kotorom-rabotaet-eyo-ii-no-ne-vsyu-in-b5ec6",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9b315cba82619cbe938e7",
+      "slug": "tysyachi-ii-agentov-za-32-minuty-issledovali-milliony-kletok-m-938e7",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9b0b5dda2334495a69bf0",
+      "slug": "nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9af1ae9368d4a2d1b3016",
+      "slug": "ii-pomog-naiti-dve-kriticheskie-dyry-v-php-pod-ugrozoi-okazali-b3016",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9a7a4e601f329d6997951",
+      "slug": "volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad9a5ee95e73b66d202b570",
+      "slug": "google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad99ebe95e73b66d2f77c3e",
+      "slug": "nvidia-vypustila-ii-dlya-poiska-v-tablitsakh-i-grafikakh-agent-77c3e",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad99b4108dabf01058bc45e",
+      "slug": "perplexity-perenesla-ii-agenta-na-mac-on-mozhet-rabotat-dazhe-bc45e",
+      "status": "not_in_public_feed_capture"
+    },
+    {
+      "dzen_id": "6ad8776613ca4647d9d133e0",
+      "slug": "v-derevya-vkruchivayut-datchiki-chtoby-ii-ponyal-kogda-im-nuzh-133e0",
+      "status": "not_in_public_feed_capture"
+    }
+  ]
+}
