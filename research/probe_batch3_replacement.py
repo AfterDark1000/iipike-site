@@ -24,12 +24,23 @@ async def main():
         browser=await p.chromium.launch(headless=True,args=["--no-sandbox"])
         context=await browser.new_context(viewport={"width":1366,"height":900},locale="ru-RU",
           user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36")
-        page=await context.new_page()
-        res=await extract(page,article)
-        print("Replaced by",article["slug"],res.get("http_status"),res.get("dom",{}).get("og_title"),len((res.get("dom") or {}).get("main") or ""),flush=True)
+        res=None
+        for attempt in range(7):
+            page=await context.new_page()
+            try:
+                outcome=await extract(page,article)
+                print("Read attempt",attempt+1,article["slug"],outcome.get("http_status"),
+                      "body",len((outcome.get("dom") or {}).get("main") or ""),flush=True)
+                if (outcome.get("http_status")==200
+                      and (outcome.get("dom") or {}).get("og_title")==article["title"]
+                      and len((outcome.get("dom") or {}).get("main") or "")>850):
+                    res=outcome
+                    break
+            finally:
+                await page.close()
+            await asyncio.sleep(2)
         await browser.close()
-        assert res.get("http_status")==200 and res.get("dom",{}).get("og_title")==article["title"],"Source/title verification failed"
-        assert len((res.get("dom") or {}).get("main") or "")>850,"No complete article recovered"
+        assert res, "Full original source could not be observed after seven read-only retries"
         known[article["slug"]]=res
         data["results"]=[known[x["slug"]] for x in batch]
         assert len(data["results"])==30
