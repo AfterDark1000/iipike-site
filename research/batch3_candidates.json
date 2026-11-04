@@ -6,19 +6,6 @@
   "requires": "independently observed full article text, Dzen-owned original landscape artwork, verified historic time",
   "candidates": [
     {
-      "slug": "ai-market-intel-alphabet-losses",
-      "rubric": "news",
-      "dzen_id": "6ae981bb5ec3a00a555b23d3",
-      "title": "ИИ-пузырь трещит по швам: акции Intel рухнули на 29%, Alphabet потеряла $500 млрд",
-      "excerpt": "30 октября акции Intel обвалились на 28,6%, а технологический индекс Nasdaq Composite потерял 2,86% за одну торговую сессию. Днём раньше акции Alphabet, материнской компании Google, подешевели на 12,6%. Её рыночная капитализация сократилась примерно на 500 миллиардов долларов. Инвесторы начали массово избавляться от акций технологических компаний на фоне опасений, что огромные расходы на искусственный интеллект окупя",
-      "dzen_url": "https://dzen.ru/a/aumBu17DoApVWyPT",
-      "published_at_utc": "2026-11-03T12:08:51+00:00",
-      "status": "candidate",
-      "full_text": "unverified",
-      "original_cover": "unverified",
-      "source_url": "unverified"
-    },
-    {
       "slug": "openai-power-grid-georgia-1000mw",
       "rubric": "news",
       "dzen_id": "6ae96ea055a910701b153d93",
@@ -394,6 +381,23 @@
       "full_text": "unverified",
       "original_cover": "unverified",
       "source_url": "unverified"
+    },
+    {
+      "slug": "china-ai-stock-bubble-480b",
+      "rubric": "news",
+      "dzen_id": "6ae0a6d4eedc244b0da74d9e",
+      "title": "ИИ-пузырь в Китае лопнул. За четыре месяца испарились $480 миллиардов",
+      "excerpt": "Минус 480 миллиардов долларов. Столько рыночной стоимости потеряли компании китайского индекса STAR50 менее чем за четыре месяца. Сам индекс обвалился на 40%. 26 октября Reuters опубликовало анализ китайского фондового рынка с довольно безжалостным выводом: пузырь вокруг искусственного интеллекта уже лопнул. И пострадали далеко не безымянные стартапы. Unitree, известная своими человекоподобными роботами, потеряла при",
+      "dzen_url": "https://dzen.ru/a/auCm1O7cJEsNp02e",
+      "published_at_utc": "2026-10-27T13:37:47+00:00",
+      "status": "candidate",
+      "full_text": "unverified",
+      "original_cover": "unverified",
+      "source_url": "unverified"
     }
-  ]
+  ],
+  "replaced_unavailable_artwork": {
+    "slug": "ai-market-intel-alphabet-losses",
+    "reason": "Dzen's article image endpoint returned HTTP 404; original cover remains in user's personal image library for later direct migration."
+  }
 }
