@@ -72,7 +72,7 @@ def _text(value, label, limit=12000):
 def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
     """Validate equally at ChatGPT inbox and approved-article publication."""
     if not isinstance(blocks, list) or len(blocks) < 2:
-        raise ValueError("Article requires a lead and at least another paragraph")
+        raise ValueError("Article requires a lead and at least two blocks")
     if max_blocks is not None and len(blocks) > max_blocks:
         raise ValueError("Article has too many blocks")
     if not isinstance(blocks[0], dict) or blocks[0].get("type") != "lead":
