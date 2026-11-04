@@ -31,7 +31,12 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+      # Inbox audit is for unshipped editorial records. A release PR already
+      # includes its new page in news.json, so duplicate detection intentionally
+      # rejects it there. That same page was verified by the release builder,
+      # and the full site's safety checks run separately on this PR.
       - name: Audit independent story and cover inbox without publishing
+        if: ${{ !startsWith(github.head_ref, 'site-first/release/') }}
         run: python3 scripts/site_first_inbox.py --audit
       - name: Smoke test full site-first release in disposable CI workspace only
         run: |
