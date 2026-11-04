@@ -53,8 +53,7 @@ RELATED = {
 # Related-story candidates reviewed by topic for this historical batch.
 RELATED.update({
   "ai-market-intel-alphabet-losses": [
-    "openai-power-grid-georgia-1000mw",
-    null
+    "openai-power-grid-georgia-1000mw"
   ],
   "openai-power-grid-georgia-1000mw": [
     "ai-market-intel-alphabet-losses"
