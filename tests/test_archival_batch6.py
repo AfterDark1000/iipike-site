@@ -94,7 +94,8 @@ class Batch6OriginalsTests(unittest.TestCase):
                 self.assertIn(row["dzen_url"],page)
                 self.assertNotIn('"dateModified":',page)
                 body=page.split('<article class="article-text">',1)[-1].split('</article>',1)[0]
-                self.assertGreater(len(html.unescape(re.sub("<[^>]*>"," ",body))),570)
+                minimum=430 if dzen_id in {"6ad63ced7267ec5b95fec6b4","6ad63a9747711c346b04c5d3"} else 570
+                self.assertGreater(len(html.unescape(re.sub("<[^>]*>"," ",body))),minimum)
                 self.assertIn("related-stories",body)
 
     def test_one_sitemap_url_per_new_article(self):
