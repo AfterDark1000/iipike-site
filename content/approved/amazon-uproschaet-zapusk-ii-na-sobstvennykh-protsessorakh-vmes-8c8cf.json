@@ -1,0 +1,43 @@
+{
+  "slug": "amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf",
+  "status": "approved",
+  "rubric": "news",
+  "approved_by": "Редакция ХПИИ — перенос авторского архива",
+  "approved_at": "2026-11-04",
+  "title": "Amazon упрощает запуск ИИ на собственных процессорах вместо NVIDIA",
+  "summary": "Amazon представила TorchNeuron — инструмент, позволяющий запускать программы для машинного обучения на процессорах AWS Trainium без существенной переделки существующего кода PyTorch. Раньше перенос моделей между разными аппаратными платформами мог требовать серьёзной переработки",
+  "published": "2026-10-20",
+  "published_at_utc": "2026-10-20T05:48:21Z",
+  "section": "ИСТОРИЧЕСКИЙ АРХИВ",
+  "source_url": "https://dzen.ru/a/atY-Bn-lyTIvaMjP",
+  "source_title": "ХПИИ — исходная публикация в Дзене",
+  "cover": "assets/imported/amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf.webp",
+  "dzen_id": "6ad63e067fa5c9322f68c8cf",
+  "dzen_url": "https://dzen.ru/a/atY-Bn-lyTIvaMjP",
+  "related_dzen_ids": [
+    "6adb1b05397db6616b5e7bb1",
+    "6adc5030769daa5de27ac311"
+  ],
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "Amazon представила TorchNeuron — инструмент, позволяющий запускать программы для машинного обучения на процессорах AWS Trainium без существенной переделки существующего кода PyTorch."
+    },
+    {
+      "type": "p",
+      "text": "Раньше перенос моделей между разными аппаратными платформами мог требовать серьёзной переработки программ."
+    },
+    {
+      "type": "p",
+      "text": "Теперь Amazon пытается убрать этот барьер."
+    },
+    {
+      "type": "p",
+      "text": "Суть дела: одна из причин доминирования NVIDIA — не только мощные видеокарты, но и программная экосистема. TorchNeuron может упростить использование альтернативного оборудования."
+    },
+    {
+      "type": "p",
+      "text": "Доступность: анонс опубликован 19 октября. Открытая бета запланирована на 20 октября 2026 года. Код будет распространяться по лицензии Apache 2.0. Поддерживаются Trainium2 и Trainium3."
+    }
+  ]
+}
