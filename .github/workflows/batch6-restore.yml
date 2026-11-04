@@ -73,6 +73,8 @@ jobs:
             python3 scripts/publish_approved_article.py "$slug"
             python3 scripts/publish_approved_article.py "$slug" --publish
           done </tmp/batch6_slugs
+      - name: Install image test dependency for complete offline test suite
+        run: python3 -m pip install pillow
       - name: Validate full archive, pagination, metadata, dates and images
         run: |
           python3 scripts/build_rubrics.py --check
