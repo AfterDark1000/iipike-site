@@ -49,7 +49,7 @@ class Batch6OriginalsTests(unittest.TestCase):
         cls.rows={r["id"]:r for r in cls.news}
         cls.original={r["dzen_id"]:r for r in json.loads(
             (ROOT/"data/editorial_full_catalog_snapshot.json").read_text(encoding="utf-8"))["entries"]}
-        p=ROOT/"registry/batch6_cover_provenance.json"
+        p=ROOT/"registry/archive_batch6_sources.json"
         cls.provenance=json.loads(p.read_text(encoding="utf-8"))
 
     def test_complete_batch_and_no_duplicate_ids(self):
@@ -75,10 +75,10 @@ class Batch6OriginalsTests(unittest.TestCase):
                 self.assertEqual(row["published"],when.astimezone(ZoneInfo("Asia/Yekaterinburg")).date().isoformat())
                 self.assertNotIn("modified_at_utc",row)
                 self.assertEqual(row["cover"],cover["cover"])
-                self.assertIn(cover["source"],("telegram_original_photo","dzen_article_image"))
-                self.assertNotIn("get-zen-pub-og",cover["source_url"])
-                if cover["source"]=="telegram_original_photo":
-                    self.assertTrue(cover["telegram_post"].startswith("iipike/"))
+                self.assertIn(cover["image_source"],("telegram_original_photo","dzen_article_image"))
+                self.assertNotIn("get-zen-pub-og",json.dumps(cover))
+                if cover["image_source"]=="telegram_original_photo":
+                    self.assertTrue(cover["telegram_post"].startswith("https://t.me/iipike/"))
                 img=ROOT/row["cover"]
                 self.assertTrue(img.is_file(),img)
                 self.assertGreater(img.stat().st_size,15000)
