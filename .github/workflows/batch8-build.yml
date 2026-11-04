@@ -1,0 +1,86 @@
+name: HPII batch8 finish all 218 historical Dzen originals (isolated)
+on:
+  push:
+    branches: [archive/batch8-final-research-20261104]
+    paths: ['.github/workflows/batch8-build.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: archive/batch8-final-research-20261104
+          persist-credentials: true
+      - name: Install image test dependency
+        run: python3 -m pip install pillow
+      - name: Restore all 28 source page captures and original art
+        uses: actions/download-artifact@v4
+        with:
+          name: hpii-batch8-final-28-originals
+          run-id: 41789386050
+          github-token: ${{ github.token }}
+          path: .
+      - name: Verify original source content, all exact days, and complete cover identity
+        run: |
+          python3 research/prepare_batch8.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          doc=json.load(open('registry/archive_batch8_sources.json'))
+          assert doc['prepared']==28 and doc['remaining']==0
+          assert doc['day_only']==25 and doc['historical_exact_time']==3
+          assert len({x['dzen_id'] for x in doc['entries']})==28
+          assert all(x['artwork_width']>=780 and x['artwork_height']>=430 for x in doc['entries'])
+          assert all('get-zen-pub-og' not in x['artwork_source_url'] for x in doc['entries'])
+          print('PASS 28 authenticated original full texts and 28 true full-size HPII artworks')
+          PY
+      - name: Build approved static site pages on research branch only
+        run: |
+          set -e
+          python3 - <<'PY' > /tmp/final-28-slugs
+          import json
+          for e in json.load(open('registry/archive_batch8_sources.json'))['entries']:
+            print(e['slug'])
+          PY
+          while read -r slug; do
+            test -n "$slug" || continue
+            python3 scripts/publish_approved_article.py "$slug"
+            python3 scripts/publish_approved_article.py "$slug" --publish
+          done </tmp/final-28-slugs
+      - name: Verify no duplicates, all 218 sources, original dates and full tests
+        run: |
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Save compiled result or failure evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpii-batch8-final-historical-build
+          path: |
+            research/batch8*.json
+            registry/archive_batch8_sources.json
+            data/editorial_full_catalog_snapshot.json
+            content/approved/*.json
+            assets/imported/*.webp
+            articles/**/index.html
+            news.json
+            feed.xml
+            sitemap.xml
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: Commit verified site only to research branch, never main or Dzen
+        if: ${{ success() }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/batch8_preparation_report.json registry/archive_batch8_sources.json data/editorial_full_catalog_snapshot.json content/approved/ assets/imported/ articles/ rubrics/ news.json sitemap.xml feed.xml index.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'research: restore all final twenty-eight original HPII Dzen articles'
+            git push origin HEAD:archive/batch8-final-research-20261104
+          fi
