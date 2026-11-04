@@ -1,7 +1,7 @@
 """Rich editor text is preserved but arbitrary HTML/unsafe links are never rendered."""
 import unittest
 
-from scripts.site_rich_text import inline_html, validate_blocks, render_blocks
+from scripts.site_rich_text import inline_html, validate_blocks, render_blocks, markdown_to_blocks
 
 SAMPLE = [
     {"type": "lead", "text": "ИИ проверил **факты**, но *выводы* редакции остаются."},
@@ -66,6 +66,46 @@ class SiteRichTextTests(unittest.TestCase):
         self.assertIn("&lt;svg/onload=alert(1)&gt;", result)
         self.assertIn("<cite>&lt;Admin&gt;</cite>", result)
         self.assertIn("https://example.org/a?x=1&amp;z=2", result)
+
+    def test_verbatim_markdown_converts_complete_article_with_authored_formatting(self):
+        original = (
+            "Редакторский **первый абзац** и *курсив*, сохранённые без ручного "
+            "перенабора для сайта. " * 4 + "\n\n"
+            "## Главный подзаголовок\n\n"
+            "Официальный [документ](https://example.org/a?x=1&b=2) подробно "
+            "рассказывает о новых событиях. " * 3 + "\n\n"
+            "- **Первый факт** и подтверждение\n"
+            "- Второй факт\n\n"
+            "1. Сначала статья появляется на сайте\n"
+            "2. Затем в Дзене\n\n"
+            "> Об этом сообщил *руководитель* исследования.\n"
+            "> — Автор заявления\n\n"
+            "### Дополнительный раздел\n\n"
+            "Заключение подтверждает весь текст, а не только его краткую выжимку."
+        )
+        blocks = markdown_to_blocks(original)
+        self.assertEqual([b["type"] for b in blocks],
+                         ["lead", "h2", "p", "ul", "ol", "quote", "h3", "p"])
+        self.assertEqual(blocks[5]["attribution"], "Автор заявления")
+        output = render_blocks(blocks)
+        self.assertIn("<strong>первый абзац</strong>", output)
+        self.assertIn("<em>курсив</em>", output)
+        self.assertIn("<h2>Главный подзаголовок</h2>", output)
+        self.assertIn("<h3>Дополнительный раздел</h3>", output)
+        self.assertIn('<ul class="editorial-list">', output)
+        self.assertIn('<ol class="editorial-list">', output)
+        self.assertIn("<blockquote", output)
+        self.assertIn("https://example.org/a?x=1&amp;b=2", output)
+
+    def test_markdown_rejects_unrepresentable_structure_instead_of_flattening(self):
+        base = "Проверенная статья с большим числом фактов и достоверных источников. " * 9
+        for extra in ("# Заголовок первого уровня", "#### Скрытый четвёртый уровень",
+                      "~~~python", "---", "[x](javascript:alert(1))"):
+            with self.subTest(extra=extra):
+                with self.assertRaises(ValueError):
+                    markdown_to_blocks(base + "\n\n" + extra)
+        with self.assertRaisesRegex(ValueError, "complete"):
+            markdown_to_blocks("Слишком мало")
 
     def test_old_plain_text_article_blocks_still_work(self):
         old = [{"type": "lead", "text": "Первый обычный абзац."},
