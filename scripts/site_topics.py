@@ -1,6 +1,6 @@
 """Controlled topical navigation, independent of the four editorial rubrics.
 
-A story can have 0–2 topics. The controlled vocabulary is extensible,
+A story can have 0–3 editor-approved topics. The controlled vocabulary is extensible,
 but never accept arbitrary scanner labels as a URL.
 The editorial handoff may provide validated keys; otherwise a conservative
 rule-based classifier works on headline and summary. Unknown is preferable
@@ -64,12 +64,12 @@ _PATTERNS = {
     "apps": r"(?:приложен\w*|сервис\w*|пользовател\w*|переписк\w*|pdf\b|таблиц\w*|pin.код\w*|домашн\w+\s+(?:помощник\w*|центр\w*)|голосов\w+\s+помощник\w*|siri\b|чат.бот\w*)",
 }
 _REGEX = {key: re.compile(value, re.IGNORECASE) for key, value in _PATTERNS.items()}
-MAX_TOPICS = 2
+MAX_TOPICS = 3
 
 
 def validate_topics(values):
     if not isinstance(values, list) or len(values) > MAX_TOPICS:
-        raise ValueError("Topics must be a list of at most two approved keys")
+        raise ValueError("Topics must be a list of at most three approved keys")
     if any(not isinstance(key, str) or key not in TOPICS for key in values):
         raise ValueError("Unknown topic key: only the controlled HPII vocabulary is accepted")
     if len(set(values)) != len(values):
@@ -91,9 +91,9 @@ def infer_topics(title, summary):
         if title_hits or summary_hits >= 2:
             scores.append((score, -order, key))
     scores.sort(reverse=True)
-    # At most two independent subjects; weak summary-only signals cannot
+    # Auto-inference stays at two strong subjects; weak summary-only signals cannot
     # crowd out the central story.
-    selected = [item[-1] for item in scores if item[0] >= 2][:MAX_TOPICS]
+    selected = [item[-1] for item in scores if item[0] >= 2][:min(MAX_TOPICS, 2)]
     return selected
 
 
