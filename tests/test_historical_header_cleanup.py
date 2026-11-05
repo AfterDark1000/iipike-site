@@ -5,6 +5,7 @@ import unittest
 
 from scripts.historical_header_cleanup import cleanup_html, plan
 from scripts.publish_approved_article import render_article
+from scripts.site_related import catalog_entries
 
 ROOT = Path(__file__).resolve().parents[1]
 NEWS = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
@@ -52,7 +53,7 @@ class HistoricalHeaderCleanupTests(unittest.TestCase):
 
     def test_publisher_keeps_new_approved_summary_visible(self):
         row, data, page = fixture("cnas-sovereign-agents-20261103")
-        output = render_article(data, NEWS)
+        output = render_article(data, NEWS, catalog_entries(ROOT))
         self.assertIn('<p class="summary">' + data["summary"] + '</p>', output)
         self.assertIn('<h3>Первоисточник</h3>', output)
         self.assertNotIn("archive-body", output)
@@ -63,7 +64,7 @@ class HistoricalHeaderCleanupTests(unittest.TestCase):
                      "codex-git-server"):
             with self.subTest(slug=slug):
                 row, data, page = fixture(slug)
-                output = render_article(data, NEWS)
+                output = render_article(data, NEWS, catalog_entries(ROOT))
                 self.assertIn('\"isBasedOn\": "' + row["dzen_url"] + '"', output)
                 self.assertIn('\"datePublished\": "' + data["published_at_utc"] + '"', output)
                 self.assertIn('<p class="date">Опубликовано:', output)
