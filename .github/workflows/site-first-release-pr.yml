@@ -1,44 +1,32 @@
-name: HPII — approved editor + cover → automatic site-first release
+name: HPII — editorial text + cover inbox (VALIDATION ONLY)
 on:
   push:
     branches: [editorial-intake]
     paths:
       - 'editorial_inbox/stories/**'
       - 'editorial_inbox/covers/**'
-  workflow_dispatch:
-    inputs:
-      story_id:
-        description: 'ID already present in editorial-intake (retry only)'
-        required: true
-        type: string
 permissions:
-  contents: write
-  pull-requests: write
-  pages: write
+  contents: read
 concurrency:
-  group: hpii-site-first-editorial-intake
+  group: hpii-site-first-inbox-validation
   cancel-in-progress: false
 jobs:
-  release-proposal:
-    if: github.ref == 'refs/heads/editorial-intake'
+  verify-intake:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 10
     steps:
-      - name: Read editorial inbox source branch, not production main
+      - name: Read current production queue code (never publish on cover arrival)
         uses: actions/checkout@v4
         with:
-          ref: editorial-intake
+          ref: main
           fetch-depth: 0
-          persist-credentials: true
-      - name: Install offline image validator
-        run: python3 -m pip install --disable-pip-version-check pillow
-      - name: Validate site-first delivery helper and incoming records
+          persist-credentials: false
+      - name: Inspect approved editor text and matching covers, read only
         run: |
-          python3 -m py_compile scripts/site_first_release_pr.py scripts/site_first_inbox.py
-          python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
-          python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
-      - name: Validate both approved components then publish site-first without manual PR
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HPII_SITE_FIRST_AUTOPUBLISH: '1'
-        run: python3 scripts/site_first_release_pr.py
+          git fetch origin editorial-intake main
+          python3 - <<'PY'
+          from scripts.site_publication_queue import ready_items
+          rows = ready_items('origin/editorial-intake')
+          print('READY_IN_PRIVATE_QUEUE:', [row['id'] for row in rows])
+          print('No public build, RSS, sitemap or main update was requested.')
+          PY

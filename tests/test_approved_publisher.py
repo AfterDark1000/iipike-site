@@ -79,8 +79,11 @@ class PublisherTests(unittest.TestCase):
         self.assertIn('href="sample-verified-news/"', catalog)
         self.assertIn('href="google-search-ai-links/"', catalog)
         home = (self.root / "index.html").read_text(encoding="utf-8")
-        self.assertIn('href="articles/sample-verified-news/"', home)
-        self.assertIn("Пример &lt;настоящей&gt; новости", home)
+        # The homepage spotlights RECENT issues, not an arbitrary historical
+        # fixture date. This sample remains in the full articles catalog/RSS.
+        self.assertIn('class="home-feature-link"', home)
+        self.assertIn("Наши публикации", home)
+        self.assertIn("Пример &lt;настоящей&gt; новости", catalog)
         rss = ET.fromstring((self.root / "feed.xml").read_text(encoding="utf-8"))
         self.assertEqual(len(rss.findall("./channel/item")), len(records))
         guid = [x.findtext("guid") for x in rss.findall("./channel/item")
