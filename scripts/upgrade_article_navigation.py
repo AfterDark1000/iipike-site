@@ -23,8 +23,10 @@ from scripts.site_topics import (
 KICKER = re.compile(
     r'(<p class="kicker">)(<a href="../../rubrics/[a-z-]+/">[^<]+</a>)(?: / [^<]*)?(</p>)'
 )
+# The first manually authored pilot used a freeform date label and no
+# newline before its image; later generated pages use "Опубликовано:".
 DATE_WITH_COVER = re.compile(
-    r'(<p class="date">Опубликовано: [^<]+</p>)(</div>\n<figure class="cover">)'
+    r'(<p class="date">[^<]+</p>)(</div>\s*<figure class="cover">)'
 )
 
 
@@ -37,9 +39,9 @@ def clean_article_html(page, topics, slug):
     # Always replace a previously generated topic list exactly where a date
     # ends, for idempotence and safe future rebuilds.
     pattern = re.compile(
-        r'(<p class="date">Опубликовано: [^<]+</p>)'
+        r'(<p class="date">[^<]+</p>)'
         r'(<nav class="topic-links" aria-label="Темы статьи">.*?</nav>)?'
-        r'(</div>\n<figure class="cover">)',
+        r'(</div>\s*<figure class="cover">)',
         re.DOTALL,
     )
     updated, count = pattern.subn(
