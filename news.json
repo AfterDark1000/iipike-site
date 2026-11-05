@@ -2865,5 +2865,17 @@
     "event_date": "2026-11-03",
     "id": "openai-gpt6-astra-device-20261103",
     "url": "articles/openai-gpt6-astra-device-20261103/"
+  },
+  {
+    "title": "ИИ-агенты могут стать неотключаемыми",
+    "summary": "CNAS исследовал возможность появления ИИ-агентов, самостоятельно обеспечивающих себе средства, серверы и новые копии. Доклад описывает угрозы утраты контроля и меры защиты.",
+    "published": "2026-11-05",
+    "source_url": "https://www.cnas.org/publications/reports/sovereign-agents",
+    "cover": "assets/editorial/cnas-sovereign-agents-20261103.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-05T03:52:16Z",
+    "event_date": "2026-11-03",
+    "id": "cnas-sovereign-agents-20261103",
+    "url": "articles/cnas-sovereign-agents-20261103/"
   }
 ]
