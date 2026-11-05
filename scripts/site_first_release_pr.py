@@ -155,9 +155,20 @@ def auto_publish_site(story_id, base_sha, source_paths):
     if not expected_files <= changed:
         raise ValueError("Release is missing required site/article artifacts: "
                          + str(sorted(expected_files - changed)))
-    if changed - expected_files - rubric_files:
-        raise ValueError("Refusing non-editorial changes in automatic release: "
-                         + str(sorted(changed - expected_files - rubric_files)))
+    # A new story may refresh inline crosslinks on *existing* approved
+    # article pages. Allow these regenerated HTML files only when both the
+    # page and its approved editorial source already existed in base main.
+    # Do not relax the protection for assets, scripts, unapproved pages, etc.
+    unexpected = changed - expected_files - rubric_files
+    for path in unexpected:
+        match = re.fullmatch(r"articles/([a-z0-9]+(?:-[a-z0-9]+)*)/index\.html", path)
+        if not match:
+            raise ValueError("Refusing non-editorial changes in automatic release: " + path)
+        old_slug = match[1]
+        for old_path in (path, f"content/approved/{old_slug}.json"):
+            tree = git("ls-tree", base_sha, "--", old_path).stdout.strip()
+            if not tree.startswith("100644 blob ") or not tree.endswith("\t" + old_path):
+                raise ValueError("Refusing non-editorial changes in automatic release: " + path)
     git("fetch", "origin", "main")
     remote_head = git("rev-parse", "origin/main").stdout.strip()
     if remote_head != base_sha:
