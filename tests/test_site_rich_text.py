@@ -27,6 +27,49 @@ class SiteRichTextTests(unittest.TestCase):
         self.assertLess(result.index("<ul "), result.index("<ol "))
         self.assertLess(result.index("<ol "), result.index("<blockquote "))
 
+    def test_inline_dzen_links_resolve_to_local_pages_without_changing_source(self):
+        dzen = "https://dzen.ru/a/auC5RL9TIlQwHobn"
+        other = "https://dzen.ru/a/atmwtd2iM0SVppvw"
+        local = "https://iipike.ru/articles/deepseek-shutdown-override/"
+        source = ("[DeepSeek](" + dzen + "?utm_source=share#top) "
+                  "[NVIDIA](" + other + ") "
+                  "[Источник](https://example.org/news)")
+        output = inline_html(source, site_links={dzen: local})
+        self.assertIn('href="' + local + '">DeepSeek</a>', output)
+        self.assertNotIn("utm_source=share", output)
+        self.assertIn('href="' + other + '" target="_blank"', output)
+        self.assertIn('href="https://example.org/news" target="_blank"', output)
+        self.assertIn(dzen, inline_html(source))
+        self.assertIn(dzen, source)
+        with self.assertRaises(ValueError):
+            inline_html(source, site_links={dzen: "javascript:alert(1)"})
+
+    def test_real_publisher_maps_inline_links_only_in_site_html(self):
+        from scripts.publish_approved_article import render_article
+        dzen = "https://dzen.ru/a/auC5RL9TIlQwHobn"
+        original = "Мы [писали об этом](" + dzen + ") ранее."
+        article = {
+            "slug": "new-article", "title": "Проверка ссылок",
+            "summary": "Краткое содержание", "rubric": "news",
+            "section": "НОВОСТИ ИИ", "published": "2026-11-05",
+            "source_url": "https://example.org/source",
+            "source_title": "Первоисточник",
+            "cover": "assets/editorial/image.webp",
+            "related_dzen_ids": [],
+            "paragraphs": [{"type": "lead", "text": "Вступление."},
+                           {"type": "p", "text": original}],
+            "article_markdown": original,
+        }
+        existing = [{"id": "deepseek-shutdown-override",
+                     "dzen_id": "6ae0b944bf532254301e86e7",
+                     "dzen_url": dzen,
+                     "url": "articles/deepseek-shutdown-override/"}]
+        html = render_article(article, records=existing)
+        self.assertIn('href="https://iipike.ru/articles/deepseek-shutdown-override/"', html)
+        self.assertNotIn('href="' + dzen + '"', html)
+        self.assertEqual(article["article_markdown"], original)
+        self.assertEqual(article["paragraphs"][1]["text"], original)
+
     def test_quotes_and_tags_are_escaped_even_in_malformed_markdown(self):
         text = 'Текст <script>alert(1)</script> и "**правда**" & ещё.'
         output = inline_html(text)
