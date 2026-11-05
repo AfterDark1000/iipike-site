@@ -73,7 +73,9 @@ class HomepageTests(unittest.TestCase):
         newest = sorted_published(records)[0]
         self.assertIn('href="' + newest["url"] + '"', self.html)
         self.assertIn('src="' + newest["cover"] + '"', self.html)
-        self.assertIn(publication_date(newest["published"]).upper(), self.html)
+        # The newest story can be pinned (sentence-case date) or on the main news card (uppercase date).
+        visible_date = publication_date(newest["published"])
+        self.assertTrue(visible_date in self.html or visible_date.upper() in self.html)
         self.assertNotIn("ПИЛОТНЫЙ ВЫПУСК", self.html)
         self.assertNotIn("Полная новостная лента ХПИИ сейчас выходит в Дзене", self.html)
         for item in sorted_published(records)[:5]:
