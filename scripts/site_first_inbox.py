@@ -25,6 +25,7 @@ if str(ROOT) not in sys.path:
 from scripts.publish_approved_article import approved_article, publish
 from scripts.site_rubrics import RUBRICS
 from scripts.site_rich_text import validate_blocks, markdown_to_blocks
+from scripts.site_topics import validate_topics, infer_topics
 
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 STORY_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -32,7 +33,7 @@ COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "topics", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -70,6 +71,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
         raise ValueError("Unknown HPII rubric")
     for name, limit in (("summary", 1500), ("section", 120), ("source_title", 500)):
         required_text(data, name, limit)
+    if "topics" in data:
+        validate_topics(data["topics"])
     original = required_text(data, "source_url", 2000)
     u = urlsplit(original)
     if (u.scheme != "https" or not u.hostname or u.username or u.password or
@@ -183,6 +186,10 @@ def stage(root, story_id, *, apply=False, now=None):
         "paragraphs": (markdown_to_blocks(data["article_markdown"])
                        if "article_markdown" in data else data["paragraphs"]),
         "related_dzen_ids": data.get("related_dzen_ids", []),
+        # No editor busywork: source may optionally select validated keys,
+        # otherwise the publisher assigns topics conservatively.
+        "topics": (validate_topics(data["topics"]) if "topics" in data
+                   else infer_topics(data["title"], data["summary"])),
     }
     if "article_markdown" in data:
         # Keep the unmodified source next to generated blocks for provenance
