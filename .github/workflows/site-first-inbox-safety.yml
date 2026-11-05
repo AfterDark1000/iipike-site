@@ -8,6 +8,10 @@ on:
       - 'scripts/site_rich_text.py'
       - 'scripts/site_related.py'
       - 'scripts/publish_approved_article.py'
+      - 'scripts/historical_header_cleanup.py'
+      - 'tests/test_historical_header_cleanup.py'
+      - '.github/workflows/historical-header-cleanup.yml'
+      - 'assets/site.css'
       - 'scripts/site_first_release_pr.py'
       - 'scripts/sync_site_first_dzen.py'
       - 'tests/test_sync_site_first_dzen.py'
@@ -36,6 +40,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_historical_header_cleanup.py' -v
           python3 -m unittest discover -s tests -p 'test_*.py' -q
       # Inbox audit is for unshipped editorial records. A release PR already
       # includes its new page in news.json, so duplicate detection intentionally
