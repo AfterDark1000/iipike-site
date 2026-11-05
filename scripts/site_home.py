@@ -136,7 +136,7 @@ def render_home_section(records, focus_items=()):
     count = len(records)
     return f'''  <section class="wrap home-feature" id="archive" aria-labelledby="home-feature-heading">
     <div class="home-section-head home-feature-head">
-      <div><span class="home-section-index">02 / НА САЙТЕ</span><h2 id="home-feature-heading">Новое на сайте</h2></div>
+      <div><span class="home-section-index">02 / НА САЙТЕ</span><h2 id="home-feature-heading">Наши публикации</h2></div>
       <a class="home-text-link" href="articles/">Все {count} материалов <span aria-hidden="true">↗</span></a>
     </div>
     <a class="home-feature-link" href="{url}">
