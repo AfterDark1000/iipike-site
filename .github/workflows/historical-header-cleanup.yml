@@ -1,0 +1,63 @@
+name: HPII — clean duplicated Dzen archive article headers
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/historical_header_cleanup.py'
+      - '.github/workflows/historical-header-cleanup.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: hpii-historical-header-cleanup
+  cancel-in-progress: false
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Confirm safe presentation transformations
+        run: |
+          python3 -m unittest discover -s tests -p 'test_historical_header_cleanup.py' -v
+          python3 scripts/historical_header_cleanup.py
+      - name: Apply historical HTML-only changes
+        run: |
+          python3 scripts/historical_header_cleanup.py --apply
+          python3 scripts/historical_header_cleanup.py --assert-clean
+      - name: Run full archive and site regression suite
+        run: |
+          python3 -m pip install --disable-pip-version-check pillow
+          python3 -m unittest discover -s tests -p 'test_*.py' -q
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+      - name: Commit only validated historical page HTML and refresh GitHub Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- articles; then
+            echo "All historical headers already cleaned."
+            exit 0
+          fi
+          python3 - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          records=json.loads(Path('news.json').read_text(encoding='utf-8'))
+          permitted={r['url']+'index.html' for r in records if r.get('dzen_id')}
+          changed=subprocess.check_output(['git','diff','--name-only'],text=True).splitlines()
+          if not changed or not set(changed)<=permitted:
+              raise SystemExit('Unexpected changed file: refusing cleanup commit: '+str(changed))
+          print('Verified historical HTML-only changes:',len(changed))
+          PY
+          git add -- articles
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "site: remove duplicate archival summaries and Dzen-only outbound UI"
+          git push origin HEAD:refs/heads/main
+          gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
