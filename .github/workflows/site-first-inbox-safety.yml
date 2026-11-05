@@ -24,6 +24,9 @@ on:
       - '.github/workflows/historical-header-cleanup.yml'
       - 'assets/site.css'
       - 'scripts/site_first_release_pr.py'
+      - 'scripts/site_first_release_intent.py'
+      - 'tests/test_site_first_release_intent.py'
+      - 'tests/test_homepage.py'
       - 'scripts/site_publication_queue.py'
       - '.github/workflows/site-first-scheduled-release.yml'
       - 'tests/test_site_publication_queue.py'
@@ -63,6 +66,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
           python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_release_intent.py' -v
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_site_publication_queue_dashboard.py' -v
