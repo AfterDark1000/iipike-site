@@ -1,0 +1,69 @@
+name: HPII — upgrade article navigation and topic pages
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/upgrade_article_navigation.py'
+      - '.github/workflows/topic-navigation-upgrade.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: hpii-topic-navigation-upgrade
+  cancel-in-progress: false
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Verify topic taxonomy and safe local HTML update
+        run: |
+          python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
+          python3 scripts/upgrade_article_navigation.py
+      - name: Rebuild only navigation, frozen topic assignments and topic pages
+        run: |
+          python3 scripts/upgrade_article_navigation.py --apply
+          python3 scripts/upgrade_article_navigation.py --check
+      - name: Require full published-site regression checks before committing
+        run: |
+          python3 -m pip install --disable-pip-version-check pillow
+          python3 -m unittest discover -s tests -p 'test_*.py' -q
+          python3 scripts/build_topics.py --check
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+      - name: Commit only permitted site navigation files and rebuild Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- news.json articles sitemap.xml topics; then
+            echo "Topic navigation already up to date; no deployment needed."
+            exit 0
+          fi
+          python3 - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          from scripts.site_topics import TOPICS
+          news=json.loads(Path('news.json').read_text(encoding='utf-8'))
+          article_files={r['url']+'index.html' for r in news}
+          topic_files={'topics/index.html'} | {'topics/'+x+'/index.html' for x in TOPICS}
+          allowed={'news.json','articles/index.html','sitemap.xml'}|article_files|topic_files
+          changed=set(subprocess.check_output(['git','status','--porcelain','--untracked-files=all'],text=True)
+                      .splitlines())
+          paths={x[3:] for x in changed if not x[3:].startswith(('__pycache__/', 'scripts/__pycache__/', 'tests/__pycache__/'))}
+          if not paths <= allowed:
+              raise SystemExit('Unexpected path; refusing topic migration: '+str(sorted(paths-allowed)))
+          print('Verified topic-navigation-only paths:',len(paths))
+          PY
+          git add -- news.json articles sitemap.xml topics
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "site: add linked topics and simplify article breadcrumbs"
+          git push origin HEAD:refs/heads/main
+          gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
