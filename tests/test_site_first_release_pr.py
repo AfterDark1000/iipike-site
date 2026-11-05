@@ -109,17 +109,17 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         def fake_git(*args, **kwargs):
             calls.append(args)
             if args[0] == "diff":
-                return SimpleNamespace(stdout="\\n".join(valid + [old_page]) + "\\n")
+                return SimpleNamespace(stdout="\n".join(valid + [old_page]) + "\n")
             if args[0] == "ls-tree":
                 requested = args[-1]
                 if requested in (old_page, old_source):
-                    return SimpleNamespace(stdout=f"100644 blob abcdef\\t{requested}\\n")
+                    return SimpleNamespace(stdout=f"100644 blob abcdef\t{requested}\n")
                 return SimpleNamespace(stdout="")
             if args[0] == "rev-parse":
-                return SimpleNamespace(stdout="approved-base\\n")
+                return SimpleNamespace(stdout="approved-base\n")
             return SimpleNamespace(stdout="")
 
-        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \\
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \
              patch("scripts.site_first_release_pr.run_checked"):
             auto_publish_site(sid, "approved-base", (story, cover))
         self.assertIn(("push", "origin", "HEAD:refs/heads/main"), calls)
@@ -129,7 +129,7 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
                 if args[0] == "ls-tree" and args[-1] == missing:
                     return SimpleNamespace(stdout="")
                 return fake_git(*args, **kwargs)
-            with patch("scripts.site_first_release_pr.git", side_effect=missing_blob), \\
+            with patch("scripts.site_first_release_pr.git", side_effect=missing_blob), \
                  patch("scripts.site_first_release_pr.run_checked") as pages:
                 with self.assertRaisesRegex(ValueError, "non-editorial"):
                     auto_publish_site(sid, "approved-base", (story, cover))
