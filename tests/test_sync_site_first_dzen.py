@@ -105,6 +105,16 @@ class SiteFirstDzenLinkSyncTests(unittest.TestCase):
         self.assertEqual((self.root / "content" / "approved" / (SLUG + ".json")).read_bytes(), old_source)
         self.assertEqual((self.root / "editorial_inbox" / "stories" / (SLUG + ".json")).read_bytes(), old_inbox)
 
+    def test_earliest_site_first_pilot_with_paragraphs_is_supported(self):
+        blocks = [{"type": "lead", "text": "Проверенное вступление."},
+                  {"type": "p", "text": "Продолжение статьи."}]
+        self.approved.pop("article_markdown")
+        self.inbox.pop("article_markdown")
+        self.approved["paragraphs"] = blocks
+        self.inbox["paragraphs"] = blocks
+        self._write()
+        self.assertEqual(sync.matches(self.root, self.records, self.catalog)[SLUG]["dzen_id"], ID)
+
     def test_idempotent_after_link_registered(self):
         self.records[0]["dzen_id"] = ID
         self.records[0]["dzen_url"] = URL
