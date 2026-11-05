@@ -19,6 +19,15 @@ class FocusTests(unittest.TestCase):
         cls.html = (ROOT / "index.html").read_text(encoding="utf-8")
         cls.items = load_focus_items(ROOT)
 
+    def test_desktop_secondary_images_are_not_tall_narrow_thumbnail_strips(self):
+        css = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")
+        self.assertIn("@media(min-width:861px)", css)
+        self.assertIn(".home-focus-card:not(:first-child) .home-focus-image", css)
+        self.assertIn("height:176px", css)
+        self.assertIn("object-position:center 35%", css)
+        self.assertIn("flex-direction:column", css)
+        self.assertIn("aspect-ratio:16/9", css)  # mobile full-image cards still apply
+
     def test_three_real_site_articles_and_correct_order(self):
         ids = active_focus_ids(self.records, self.items)
         self.assertEqual(ids, [

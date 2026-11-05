@@ -408,3 +408,34 @@
   .home-focus-card:hover{transform:none}
   .home-focus-card:hover .home-focus-image img{transform:none}
 }
+
+
+/* Desktop magazine cards: use broad landscape art bands, not tall narrow strips.
+   On phones the existing full 16:9 covers remain unchanged. */
+@media(min-width:861px){
+  .home-focus-card:not(:first-child){
+    display:flex;
+    flex-direction:column;
+  }
+  .home-focus-card:not(:first-child) .home-focus-image{
+    width:100%;
+    height:176px;
+    flex:none;
+  }
+  .home-focus-card:not(:first-child) .home-focus-image img{
+    object-fit:cover;
+    object-position:center 35%;
+  }
+  .home-focus-card:not(:first-child) .home-focus-body{
+    flex:1;
+    padding:17px 23px 18px;
+    gap:8px;
+  }
+  .home-focus-card:not(:first-child) .home-focus-title{
+    font-size:clamp(19px,1.8vw,23px);
+    line-height:1.17;
+  }
+  .home-focus-card:not(:first-child) .home-focus-date{
+    margin-top:auto;
+  }
+}
