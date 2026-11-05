@@ -7,6 +7,10 @@ on:
       - 'scripts/site_first_inbox.py'
       - 'scripts/site_rich_text.py'
       - 'scripts/site_topics.py'
+      - 'scripts/site_topic_registry.py'
+      - 'scripts/check_topic_registry.py'
+      - 'data/topic_extensions.json'
+      - 'tests/test_site_topic_registry.py'
       - 'scripts/build_topics.py'
       - 'scripts/build_sitemap.py'
       - 'tests/test_search_indexing.py'
@@ -37,11 +41,15 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install only local image validation library
         run: python3 -m pip install --disable-pip-version-check pillow
       - name: Check safe editor-to-site handoff
         run: |
           python3 -m py_compile scripts/site_first_inbox.py scripts/site_rich_text.py
+          python3 scripts/check_topic_registry.py --base-sha "${{ github.event.pull_request.base.sha }}"
+          python3 -m unittest discover -s tests -p 'test_site_topic_registry.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
           python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
           python3 -m unittest discover -s tests -p 'test_site_topics.py' -v

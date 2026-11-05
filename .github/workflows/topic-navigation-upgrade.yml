@@ -5,6 +5,10 @@ on:
     paths:
       - 'scripts/upgrade_article_navigation.py'
       - 'scripts/site_topics.py'
+      - 'data/topic_extensions.json'
+      - 'scripts/site_topic_registry.py'
+      - 'scripts/check_topic_registry.py'
+      - 'tests/test_site_topic_registry.py'
       - 'scripts/build_sitemap.py'
       - 'tests/test_search_indexing.py'
       - '.github/workflows/topic-navigation-upgrade.yml'
@@ -27,6 +31,8 @@ jobs:
           persist-credentials: true
       - name: Verify topic taxonomy and safe local HTML update
         run: |
+          python3 scripts/check_topic_registry.py
+          python3 -m unittest discover -s tests -p 'test_site_topic_registry.py' -v
           python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
           python3 scripts/upgrade_article_navigation.py
       - name: Rebuild only navigation, frozen topic assignments and topic pages
