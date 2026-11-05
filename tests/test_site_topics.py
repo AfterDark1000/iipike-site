@@ -9,6 +9,7 @@ from scripts.site_topics import (
 )
 from scripts.upgrade_article_navigation import clean_article_html
 from scripts.publish_approved_article import render_article
+from scripts.site_related import catalog_entries
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -68,7 +69,7 @@ class TopicNavigationTests(unittest.TestCase):
         approved = json.loads((ROOT / "content" / "approved" / (slug + ".json")).read_text(encoding="utf-8"))
         records = [{"id": slug, "url": "articles/" + slug + "/",
                     "topics": ["agents", "safety"]}]
-        page = render_article(approved, records)
+        page = render_article(approved, records, catalog_entries(ROOT))
         self.assertIn('<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a></p>', page)
         self.assertNotIn("Скайнет просыпается</a> / Скайнет", page)
         self.assertIn('<nav class="topic-links" aria-label="Темы статьи">', page)
