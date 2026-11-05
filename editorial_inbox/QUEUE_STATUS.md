@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**Готовы:** 5 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ждут обложку:** 3 · **Уже опубликованы:** 6
+**Готовы:** 6 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ждут обложку:** 2 · **Уже опубликованы:** 6
 
 Планировщик проверяет очередь каждые 15 минут, выпускает максимум одну статью за запуск с интервалом не менее 60 минут. Фактическое время может сдвигаться из-за задержек GitHub Actions и Pages.
 
@@ -15,9 +15,9 @@
 | [CrowdStrike выпустила «стоп-кран» для ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/crowdstrike-ai-kill-switch-20261103.json) | 🟢 Готова к выпуску | автоматическая очередь | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/crowdstrike-ai-kill-switch-20261103.webp) |
 | [Snowflake прописала ИИ-агентам правила: что считать выручкой и сколько тратить](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/snowflake-business-ontology-ai-gateway-20261103.json) | 🟢 Готова к выпуску | автоматическая очередь | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/snowflake-business-ontology-ai-gateway-20261103.webp) |
 | [Макаки по $20 тысяч: фонд сооснователя Palantir вложил $20 млн в проект фермы](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/8vc-safer-human-medicine-macaques-20261027.json) | 🟢 Готова к выпуску | автоматическая очередь | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/8vc-safer-human-medicine-macaques-20261027.webp) |
+| [Skyfall показала ИИ, который разбирает автомобиль на детали по фотографии](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/skyfall-sky-001-20261019.json) | 🟢 Готова к выпуску | автоматическая очередь | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/skyfall-sky-001-20261019.webp) |
 | [Взлом Binance на $6,34 млрд: хакеры использовали внутренний ИИ биржи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/binance-internal-ai-tool-hack-20261029.json) | 🖼️ Ждёт обложку | автоматическая очередь | Нет |
 | [Индия предупредила об ИИ-атаках на финансовые компании: снова ARTEX](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cert-in-crafty-falcon-ai-attacks-20261104.json) | 🖼️ Ждёт обложку | автоматическая очередь | Нет |
-| [Skyfall показала ИИ, который разбирает автомобиль на детали по фотографии](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/skyfall-sky-001-20261019.json) | 🖼️ Ждёт обложку | автоматическая очередь | Нет |
 | [ИИ-агенты могут стать неотключаемыми](https://iipike.ru/articles/cnas-sovereign-agents-20261103/) | ✅ Опубликована | 05.11.2026 08:52 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cnas-sovereign-agents-20261103.webp) |
 | [ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%](https://iipike.ru/articles/collinear-cwe-bench-v2-20261103/) | ✅ Опубликована | 05.11.2026 14:05 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/collinear-cwe-bench-v2-20261103.webp) |
 | [Джеффри Хинтон: ИИ может устроить «Чернобыль» уже в 2026–2027 годах](https://iipike.ru/articles/geoffrey-hinton-ai-chernobyl-20261103/) | ✅ Опубликована | 05.11.2026 16:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/geoffrey-hinton-ai-chernobyl-20261103.webp) |
