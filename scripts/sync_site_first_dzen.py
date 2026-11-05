@@ -43,7 +43,8 @@ def site_first(root, record):
     slug = record.get("id")
     if not isinstance(slug, str) or not SLUG.fullmatch(slug):
         return False
-    if record.get("dzen_id") or record.get("dzen_url"):
+    if (record.get("dzen_id") or record.get("dzen_url") or
+            record.get("site_first_dzen_id") or record.get("site_first_dzen_url")):
         return False
     approved_path = root / "content" / "approved" / (slug + ".json")
     inbox_path = root / "editorial_inbox" / "stories" / (slug + ".json")
@@ -79,7 +80,14 @@ def matches(root, current, catalog):
             continue
         title = clean_title(entry["title"])
         trusted.setdefault(title, []).append(entry)
+    # Historical migrations and site-first counterparts use distinct fields.
     claimed_ids = {r["dzen_id"]: r["id"] for r in current if r.get("dzen_id")}
+    for r in current:
+        if r.get("site_first_dzen_id"):
+            ident = r["site_first_dzen_id"]
+            if ident in claimed_ids and claimed_ids[ident] != r["id"]:
+                raise ValueError("Dzen ID assigned to multiple article types")
+            claimed_ids[ident] = r["id"]
     matched = {}
     for record in current:
         if not site_first(root, record):
@@ -122,8 +130,11 @@ def plan(root, catalog):
     for record in updated:
         entry = linked.get(record["id"])
         if entry:
-            record["dzen_id"] = entry["dzen_id"]
-            record["dzen_url"] = entry["dzen_url"]
+            # These are counterpart metadata, NOT historical migration origin.
+            # Historical archive checks require dzen_id/dzen_url only on
+            # articles originally published in Dzen.
+            record["site_first_dzen_id"] = entry["dzen_id"]
+            record["site_first_dzen_url"] = entry["dzen_url"]
             changed_urls.add(entry["dzen_url"])
     outputs = {
         records_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n"
