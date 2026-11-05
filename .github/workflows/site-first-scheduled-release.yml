@@ -1,11 +1,12 @@
 name: HPII — site-first scheduled hourly queue
 on:
-  # Safe one-time initialization of the dashboard whenever this workflow changes.
-  # A push never publishes: the release step below is event-gated.
+  # Recovery path: an explicitly tagged edit of the exact GitHub control
+  # file starts the SAME guarded queue as cron, without requiring an external
+  # scheduler or bypassing the 60-minute interval. No other push can publish.
   push:
     branches: [main]
     paths:
-      - '.github/workflows/site-first-scheduled-release.yml'
+      - '.github/site-first-queue-kick.txt'
   schedule:
     # Shift off the top of the hour to reduce GitHub schedule congestion.
     - cron: '7,22,37,52 * * * *'
@@ -49,7 +50,9 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
       - name: Release at most one eligible editor-approved story
-        if: github.event_name != 'push'
+        if: >-
+          github.event_name != 'push' ||
+          contains(github.event.head_commit.message, '[hpii-queue-kick]')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HPII_SITE_FIRST_SCHEDULER: '1'
