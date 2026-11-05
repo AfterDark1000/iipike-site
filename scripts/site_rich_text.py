@@ -38,7 +38,7 @@ def safe_href(value):
     return value
 
 
-def inline_html(text):
+def inline_html(text, site_links=None):
     """Escape ALL source HTML; selectively render a small Markdown subset."""
     if not isinstance(text, str):
         raise ValueError("Rich article fragment must be text")
@@ -48,9 +48,19 @@ def inline_html(text):
         fragments.append(html.escape(text[pos:match.start()], quote=True))
         if match.group("href") is not None:
             link = safe_href(match.group("href"))
+            if site_links:
+                # Only canonical Dzen article paths can be mapped. Tracking
+                # parameters or fragments do not change article identity.
+                parsed = urlsplit(link)
+                if parsed.hostname == "dzen.ru":
+                    canonical = "https://dzen.ru" + parsed.path.rstrip("/")
+                    link = safe_href(site_links.get(canonical, link))
+            # External sources stay in a new tab; site crosslinks navigate locally.
+            attrs = (' target="_blank" rel="noopener noreferrer"'
+                     if urlsplit(link).hostname != "iipike.ru" else "")
             fragments.append(
                 '<a class="editorial-inline-link" href="' + html.escape(link, quote=True)
-                + '" target="_blank" rel="noopener noreferrer">'
+                + '"' + attrs + '>'
                 + html.escape(match.group("label"), quote=True) + '</a>'
             )
         elif match.group("strong") is not None:
@@ -106,25 +116,25 @@ def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
     return blocks
 
 
-def render_blocks(blocks):
+def render_blocks(blocks, site_links=None):
     """Render the exact approved block sequence into semantic safe HTML."""
     validate_blocks(blocks)
     rendered = []
     for block in blocks:
         kind = block["type"]
         if kind == "lead":
-            rendered.append('<p class="lead">' + inline_html(block["text"]) + "</p>")
+            rendered.append('<p class="lead">' + inline_html(block["text"], site_links) + "</p>")
         elif kind == "p":
-            rendered.append("<p>" + inline_html(block["text"]) + "</p>")
+            rendered.append("<p>" + inline_html(block["text"], site_links) + "</p>")
         elif kind in ("h2", "h3"):
-            rendered.append(f"<{kind}>" + inline_html(block["text"]) + f"</{kind}>")
+            rendered.append(f"<{kind}>" + inline_html(block["text"], site_links) + f"</{kind}>")
         elif kind in LIST_TYPES:
-            body = "".join("<li>" + inline_html(item) + "</li>" for item in block["items"])
+            body = "".join("<li>" + inline_html(item, site_links) + "</li>" for item in block["items"])
             rendered.append(f'<{kind} class="editorial-list">' + body + f"</{kind}>")
         else:
-            quote_body = '<blockquote class="editorial-quote"><p>' + inline_html(block["text"]) + "</p>"
+            quote_body = '<blockquote class="editorial-quote"><p>' + inline_html(block["text"], site_links) + "</p>"
             if block.get("attribution"):
-                quote_body += "<footer><cite>" + inline_html(block["attribution"]) + "</cite></footer>"
+                quote_body += "<footer><cite>" + inline_html(block["attribution"], site_links) + "</cite></footer>"
             rendered.append(quote_body + "</blockquote>")
     return "\n".join(rendered)
 
