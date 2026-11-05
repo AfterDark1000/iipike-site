@@ -56,7 +56,7 @@ class HomepageTests(unittest.TestCase):
                     "home-dzen-count", "home-draft-live"):
             self.assertIn(key, self.parsed.ids)
         for link in ("#latest", "#archive", "registry/", "drafts/",
-                     "articles/codex-git-server/", "feed.xml"):
+                     "articles/", "feed.xml"):
             self.assertIn(link, self.parsed.links)
         self.assertIn("Наши публикации", self.html)
         self.assertIn("HPII_PUBLISHED_SECTION_START", self.html)
