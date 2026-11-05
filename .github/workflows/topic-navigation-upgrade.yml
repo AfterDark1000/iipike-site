@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/upgrade_article_navigation.py'
+      - 'scripts/build_sitemap.py'
+      - 'tests/test_search_indexing.py'
       - '.github/workflows/topic-navigation-upgrade.yml'
   workflow_dispatch:
 permissions:
