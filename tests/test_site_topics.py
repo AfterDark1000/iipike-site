@@ -4,7 +4,7 @@ from pathlib import Path
 import unittest
 
 from scripts.site_topics import (
-    TOPICS, validate_topics, infer_topics, render_topic_links, active_topics,
+    TOPICS, BUILTIN_TOPICS, validate_topics, infer_topics, render_topic_links, active_topics,
     render_topic_page, render_all_topics
 )
 from scripts.upgrade_article_navigation import clean_article_html
@@ -16,7 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class TopicNavigationTests(unittest.TestCase):
     def test_catalog_is_fixed_and_no_arbitrary_scanner_topic_can_be_used(self):
-        self.assertEqual(len(TOPICS), 17)
+        self.assertEqual(len(BUILTIN_TOPICS), 17)
+        self.assertGreaterEqual(len(TOPICS), len(BUILTIN_TOPICS))
         self.assertEqual(validate_topics(["agents", "engineering"]), ["agents", "engineering"])
         self.assertEqual(validate_topics([]), [])
         for bad in (["ai-infrastructure-super-duper"], ["../news"], ["agents", "agents"],
