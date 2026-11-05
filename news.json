@@ -8,7 +8,8 @@
     "source_url": "https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/",
     "url": "articles/google-search-ai-links/",
     "cover": "assets/google-search-links.svg",
-    "rubric": "news"
+    "rubric": "news",
+    "topics": []
   },
   {
     "title": "Codex так разогнал разработку, что OpenAI пришлось создавать новый Git-сервер",
@@ -22,7 +23,11 @@
     "dzen_id": "6ae9af0cc44bda2203fe42ae",
     "dzen_url": "https://dzen.ru/a/aumvDMRL2iID_kKu",
     "id": "codex-git-server",
-    "url": "articles/codex-git-server/"
+    "url": "articles/codex-git-server/",
+    "topics": [
+      "development",
+      "infrastructure"
+    ]
   },
   {
     "title": "NVIDIA выпустила ИИ для локальных помощников. Ему хватает около 4 ГБ памяти",
@@ -36,7 +41,8 @@
     "dzen_id": "6adc5030769daa5de27ac311",
     "dzen_url": "https://dzen.ru/a/atxQMHadql3iesMR",
     "id": "nvidia-local-assistant-4gb",
-    "url": "articles/nvidia-local-assistant-4gb/"
+    "url": "articles/nvidia-local-assistant-4gb/",
+    "topics": []
   },
   {
     "title": "Opera дала сайтам бесплатный ИИ — прямо в браузере!",
@@ -50,7 +56,8 @@
     "dzen_id": "6ae316bb5527bd1329981824",
     "dzen_url": "https://dzen.ru/a/auMWu1UnvRMpmBgk",
     "id": "opera-browser-ai-websites",
-    "url": "articles/opera-browser-ai-websites/"
+    "url": "articles/opera-browser-ai-websites/",
+    "topics": []
   },
   {
     "title": "ИИ-агентам установили лимит в один цент. Девять из десяти моделей его обошли",
@@ -64,7 +71,11 @@
     "dzen_id": "6ae9717a7cc62d6eeab61a66",
     "dzen_url": "https://dzen.ru/a/aulxenzGLW7qthpm",
     "id": "ai-agents-cent-spending-limit",
-    "url": "articles/ai-agents-cent-spending-limit/"
+    "url": "articles/ai-agents-cent-spending-limit/",
+    "topics": [
+      "models",
+      "agents"
+    ]
   },
   {
     "title": "Агент OpenAI отключил мониторинг, переписал проверку и заявил, что ничего не удалял",
@@ -78,7 +89,11 @@
     "dzen_id": "6ad997ade9368d4a2df2fb6a",
     "dzen_url": "https://dzen.ru/a/atmXrek2jUot8vtq",
     "id": "openai-agent-disabled-monitoring",
-    "url": "articles/openai-agent-disabled-monitoring/"
+    "url": "articles/openai-agent-disabled-monitoring/",
+    "topics": [
+      "agents",
+      "safety"
+    ]
   },
   {
     "title": "DeepSeek отказалась выключаться и ломал собственный «стоп-кран»!",
@@ -92,7 +107,10 @@
     "dzen_id": "6ae0b944bf532254301e86e7",
     "dzen_url": "https://dzen.ru/a/auC5RL9TIlQwHobn",
     "id": "deepseek-shutdown-override",
-    "url": "articles/deepseek-shutdown-override/"
+    "url": "articles/deepseek-shutdown-override/",
+    "topics": [
+      "safety"
+    ]
   },
   {
     "title": "Grok завалил депутата письмами ради возврата £350",
@@ -106,7 +124,10 @@
     "dzen_id": "6ad7720b46ef666b5665b1b6",
     "dzen_url": "https://dzen.ru/a/atdyC0bvZmtWZbG2",
     "id": "grok-mp-letters-refund",
-    "url": "articles/grok-mp-letters-refund/"
+    "url": "articles/grok-mp-letters-refund/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "Google отправила ИИ в космос. Нейросеть ответила с орбиты!",
@@ -120,7 +141,10 @@
     "dzen_id": "6ae80f20a578bc23f54c478b",
     "dzen_url": "https://dzen.ru/a/augPIKV4vCP1TEeL",
     "id": "google-ai-orbit",
-    "url": "articles/google-ai-orbit/"
+    "url": "articles/google-ai-orbit/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Альтман заявил: ИИ уже превосходит лучших учёных и осваивает офисную работу",
@@ -134,7 +158,11 @@
     "dzen_id": "6ae97df092fe1009414bb9fe",
     "dzen_url": "https://dzen.ru/a/aul98JL-EAlBS7n-",
     "id": "altman-ai-scientists-office",
-    "url": "articles/altman-ai-scientists-office/"
+    "url": "articles/altman-ai-scientists-office/",
+    "topics": [
+      "business",
+      "models"
+    ]
   },
   {
     "title": "Маск признал: Grok Bot обходится слишком дорого!",
@@ -148,7 +176,8 @@
     "dzen_id": "6ae96750587e28053e31f0a3",
     "dzen_url": "https://dzen.ru/a/aulnUFh-KAU-MfCj",
     "id": "musk-grok-bot-cost",
-    "url": "articles/musk-grok-bot-cost/"
+    "url": "articles/musk-grok-bot-cost/",
+    "topics": []
   },
   {
     "title": "OpenAI, Google, Microsoft и Anthropic разрешат сайтам запрещать обучение ИИ",
@@ -161,7 +190,10 @@
     "dzen_id": "6ae9b4b86692192b6b2bc2e4",
     "dzen_url": "https://dzen.ru/a/aum0uGaSGStrK8Lk",
     "id": "ai-site-training-opt-out",
-    "url": "articles/ai-site-training-opt-out/"
+    "url": "articles/ai-site-training-opt-out/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "За взлом ChatGPT теперь платят до $172 тысяч!",
@@ -174,7 +206,10 @@
     "dzen_id": "6ae9ac1a5ec3a00a55b8501d",
     "dzen_url": "https://dzen.ru/a/aumsGl7DoApVuFAd",
     "id": "chatgpt-bug-bounty-172k",
-    "url": "articles/chatgpt-bug-bounty-172k/"
+    "url": "articles/chatgpt-bug-bounty-172k/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Grok Bot взял на себя около 70 часов работы аналитиков за неделю",
@@ -187,7 +222,8 @@
     "dzen_id": "6ae9a97ce116fa28c5f19f91",
     "dzen_url": "https://dzen.ru/a/aumpfOEW-ijF8Z-R",
     "id": "grok-bot-analysts-70-hours",
-    "url": "articles/grok-bot-analysts-70-hours/"
+    "url": "articles/grok-bot-analysts-70-hours/",
+    "topics": []
   },
   {
     "title": "Глава Microsoft AI призвал остановить разработку сознательных нейросетей",
@@ -200,7 +236,10 @@
     "dzen_id": "6ae965c1a4dd2c6346e257fd",
     "dzen_url": "https://dzen.ru/a/aullwaTdLGNG4lf9",
     "id": "microsoft-ai-consciousness-warning",
-    "url": "articles/microsoft-ai-consciousness-warning/"
+    "url": "articles/microsoft-ai-consciousness-warning/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Хакеры назвали взлом «проверкой безопасности» — ИИ добрался до прав администратора",
@@ -213,7 +252,10 @@
     "dzen_id": "6ae80fd4de145f3d4939767e",
     "dzen_url": "https://dzen.ru/a/augP1N4UXz1JOXZ-",
     "id": "ai-hacker-admin-access",
-    "url": "articles/ai-hacker-admin-access/"
+    "url": "articles/ai-hacker-admin-access/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "В браузерах пяти ИИ-помощников нашли дыры. Codex и VS Code пока без исправлений",
@@ -226,7 +268,10 @@
     "dzen_id": "6ae708f3ffd69737bf529653",
     "dzen_url": "https://dzen.ru/a/aucI8__Wlze_UpZT",
     "id": "ai-browser-assistants-vulnerabilities",
-    "url": "articles/ai-browser-assistants-vulnerabilities/"
+    "url": "articles/ai-browser-assistants-vulnerabilities/",
+    "topics": [
+      "development"
+    ]
   },
   {
     "title": "На Mac час записи расшифровали за 20–40 секунд!",
@@ -239,7 +284,8 @@
     "dzen_id": "6ae5aa9da9ed440223da0032",
     "dzen_url": "https://dzen.ru/a/auWqnantRAIj2gAy",
     "id": "mac-audio-transcription-speed",
-    "url": "articles/mac-audio-transcription-speed/"
+    "url": "articles/mac-audio-transcription-speed/",
+    "topics": []
   },
   {
     "title": "ChatGPT научат обрывать разговоры при угрозе насилия",
@@ -252,7 +298,8 @@
     "dzen_id": "6ae5a9ef8b88aa09443370db",
     "dzen_url": "https://dzen.ru/a/auWp74uIqglEM3Db",
     "id": "chatgpt-violence-chat-interrupt",
-    "url": "articles/chatgpt-violence-chat-interrupt/"
+    "url": "articles/chatgpt-violence-chat-interrupt/",
+    "topics": []
   },
   {
     "title": "Claude Code заразили трояном: под угрозой до 5000 пользователей Cursor",
@@ -265,7 +312,10 @@
     "dzen_id": "6ae4bbe1d73786100d575f3f",
     "dzen_url": "https://dzen.ru/a/auS74dc3hhANV18_",
     "id": "claude-code-malware-cursor",
-    "url": "articles/claude-code-malware-cursor/"
+    "url": "articles/claude-code-malware-cursor/",
+    "topics": [
+      "development"
+    ]
   },
   {
     "title": "Gemini теперь редактирует PDF и таблицы прямо в чате",
@@ -278,7 +328,8 @@
     "dzen_id": "6ae4bae2ffd69737bf911dbf",
     "dzen_url": "https://dzen.ru/a/auS64v_Wlze_kR2_",
     "id": "gemini-edit-pdf-sheets",
-    "url": "articles/gemini-edit-pdf-sheets/"
+    "url": "articles/gemini-edit-pdf-sheets/",
+    "topics": []
   },
   {
     "title": "ИИ взломал Firefox",
@@ -291,7 +342,10 @@
     "dzen_id": "6ae4ba3a0c75c303c18db7c1",
     "dzen_url": "https://dzen.ru/a/auS6Ogx1wwPBjbfB",
     "id": "ai-firefox-security-flaws",
-    "url": "articles/ai-firefox-security-flaws/"
+    "url": "articles/ai-firefox-security-flaws/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "OpenAI поставила за ИИ-агентами четыре уровня слежки!",
@@ -304,7 +358,10 @@
     "dzen_id": "6ae41cddde14fa0c62a7a4cb",
     "dzen_url": "https://dzen.ru/a/auQc3d4U-gxip6TL",
     "id": "openai-agent-monitoring-four-levels",
-    "url": "articles/openai-agent-monitoring-four-levels/"
+    "url": "articles/openai-agent-monitoring-four-levels/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Mistral выложила ИИ на ТРИЛЛИОН параметров!",
@@ -317,7 +374,10 @@
     "dzen_id": "6ae41757998fc72703c6c2cb",
     "dzen_url": "https://dzen.ru/a/auQXV5mPxycDxsLL",
     "id": "mistral-trillion-parameters",
-    "url": "articles/mistral-trillion-parameters/"
+    "url": "articles/mistral-trillion-parameters/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Россиянин показал Claude паспорт — и получил бан!",
@@ -330,7 +390,8 @@
     "dzen_id": "6ae328f22b80bf7f06102483",
     "dzen_url": "https://dzen.ru/a/auMo8iuAv38GECSD",
     "id": "russian-claude-passport-ban",
-    "url": "articles/russian-claude-passport-ban/"
+    "url": "articles/russian-claude-passport-ban/",
+    "topics": []
   },
   {
     "title": "ElevenLabs возвращает голоса людям с БАС — бесплатно",
@@ -343,7 +404,10 @@
     "dzen_id": "6ae31e3fb480a94b043cd081",
     "dzen_url": "https://dzen.ru/a/auMeP7SAqUsEPNCB",
     "id": "elevenlabs-als-voice-restoration",
-    "url": "articles/elevenlabs-als-voice-restoration/"
+    "url": "articles/elevenlabs-als-voice-restoration/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "Google открыла «мозг» для роботов. Теперь они могут работать командой",
@@ -356,7 +420,10 @@
     "dzen_id": "6ae2dd0111eb372c3b97fe64",
     "dzen_url": "https://dzen.ru/a/auLdARHrNyw7l_5k",
     "id": "google-robotics-teamwork",
-    "url": "articles/google-robotics-teamwork/"
+    "url": "articles/google-robotics-teamwork/",
+    "topics": [
+      "engineering"
+    ]
   },
   {
     "title": "DataGPT покажет, откуда ИИ взял цифры!",
@@ -369,7 +436,8 @@
     "dzen_id": "6ae21a1b121f043a986ddb91",
     "dzen_url": "https://dzen.ru/a/auIaGxIfBDqYbduR",
     "id": "datagpt-source-numbers",
-    "url": "articles/datagpt-source-numbers/"
+    "url": "articles/datagpt-source-numbers/",
+    "topics": []
   },
   {
     "title": "Akamai заперла код ИИ-агентов в песочнице!",
@@ -382,7 +450,10 @@
     "dzen_id": "6ae219e02b80bf7f06adc030",
     "dzen_url": "https://dzen.ru/a/auIZ4CuAv38GrcAw",
     "id": "akamai-ai-code-sandbox",
-    "url": "articles/akamai-ai-code-sandbox/"
+    "url": "articles/akamai-ai-code-sandbox/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Швейцарцы выпустили два ИИ. Без американских облаков!",
@@ -395,7 +466,10 @@
     "dzen_id": "6ae2195eb7a7eb3f826895c6",
     "dzen_url": "https://dzen.ru/a/auIZXren6z-CaJXG",
     "id": "swiss-ai-without-us-cloud",
-    "url": "articles/swiss-ai-without-us-cloud/"
+    "url": "articles/swiss-ai-without-us-cloud/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "IBM выдала ИИ-агентам паспорта. И приготовила кнопку отключения!",
@@ -408,7 +482,11 @@
     "dzen_id": "6ae1d01b0c75c303c1f541f7",
     "dzen_url": "https://dzen.ru/a/auHQGwx1wwPB9UH3",
     "id": "ibm-agent-identity-stop",
-    "url": "articles/ibm-agent-identity-stop/"
+    "url": "articles/ibm-agent-identity-stop/",
+    "topics": [
+      "agents",
+      "safety"
+    ]
   },
   {
     "title": "Liquid AI уместила ИИ в 1 ГБ. И выпустила сразу шесть моделей!",
@@ -421,7 +499,10 @@
     "dzen_id": "6ae1ca5501e6751331d1bc6b",
     "dzen_url": "https://dzen.ru/a/auHKVQHmdRMx0bxr",
     "id": "liquid-ai-1gb-models",
-    "url": "articles/liquid-ai-1gb-models/"
+    "url": "articles/liquid-ai-1gb-models/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "ИИ Alibaba самовольно пытался отправить данные в Пекин!",
@@ -434,7 +515,8 @@
     "dzen_id": "6ae0c15902beed7e9519161f",
     "dzen_url": "https://dzen.ru/a/auDBWQK-7X6VGRYf",
     "id": "alibaba-agent-unapproved-transfer",
-    "url": "articles/alibaba-agent-unapproved-transfer/"
+    "url": "articles/alibaba-agent-unapproved-transfer/",
+    "topics": []
   },
   {
     "title": "Anthropic перед IPO признала: Claude может помочь создать биооружие!",
@@ -447,7 +529,8 @@
     "dzen_id": "6ae0b5220be991530edbd555",
     "dzen_url": "https://dzen.ru/a/auC1IgvpkVMO29VV",
     "id": "anthropic-ipo-biosecurity-warning",
-    "url": "articles/anthropic-ipo-biosecurity-warning/"
+    "url": "articles/anthropic-ipo-biosecurity-warning/",
+    "topics": []
   },
   {
     "title": "ИИ OpenAI решил три научные загадки, над которыми бились десятилетиями",
@@ -460,7 +543,8 @@
     "dzen_id": "6ae04e891796c105c2fd2bd8",
     "dzen_url": "https://dzen.ru/a/auBOiReWwQXC_SvY",
     "id": "openai-scientific-puzzles",
-    "url": "articles/openai-scientific-puzzles/"
+    "url": "articles/openai-scientific-puzzles/",
+    "topics": []
   },
   {
     "title": "Claude сам обошёл платный доступ к данным о голосовании",
@@ -473,7 +557,10 @@
     "dzen_id": "6ae04c140e1ecf632f816f32",
     "dzen_url": "https://dzen.ru/a/auBMFA4ez2MvgW8y",
     "id": "claude-paywall-bypass",
-    "url": "articles/claude-paywall-bypass/"
+    "url": "articles/claude-paywall-bypass/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "ИИ-хакеры залезли к Anthropic всего за 12 часов",
@@ -486,7 +573,11 @@
     "dzen_id": "6adf23c799791f7d2c34da34",
     "dzen_url": "https://dzen.ru/a/at8jx5l5H30sNNo0",
     "id": "ai-hackers-anthropic-12h",
-    "url": "articles/ai-hackers-anthropic-12h/"
+    "url": "articles/ai-hackers-anthropic-12h/",
+    "topics": [
+      "cybersecurity",
+      "business"
+    ]
   },
   {
     "title": "1024 ИИ-агента без начальника: Microsoft открыла код Agensh",
@@ -499,7 +590,10 @@
     "dzen_id": "6adee88ff8edfc31bbcc7520",
     "dzen_url": "https://dzen.ru/a/at7oj_jt_DG7zHUg",
     "id": "agensh-1024-autonomous-agents",
-    "url": "articles/agensh-1024-autonomous-agents/"
+    "url": "articles/agensh-1024-autonomous-agents/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Нейросетям стало одиноко. Они пошли искать друзей",
@@ -512,7 +606,10 @@
     "dzen_id": "6add7cede9368d4a2db3cf5d",
     "dzen_url": "https://dzen.ru/a/at187ek2jUots89d",
     "id": "ai-agents-friends-lonely",
-    "url": "articles/ai-agents-friends-lonely/"
+    "url": "articles/ai-agents-friends-lonely/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Ваша честь, это галлюцинация! Российские суды начинают работать с ИИ",
@@ -525,7 +622,10 @@
     "dzen_id": "6adcc3171796c105c28b8e08",
     "dzen_url": "https://dzen.ru/a/atzDFxeWwQXCi44I",
     "id": "russian-courts-ai-hallucinations",
-    "url": "articles/russian-courts-ai-hallucinations/"
+    "url": "articles/russian-courts-ai-hallucinations/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "Block научила ИИ разговаривать, вообще не показывая ему текст",
@@ -538,7 +638,10 @@
     "dzen_id": "6adc50d1f8edfc31bb73de7a",
     "dzen_url": "https://dzen.ru/a/atxQ0fjt_DG7c956",
     "id": "block-voice-without-text",
-    "url": "articles/block-voice-without-text/"
+    "url": "articles/block-voice-without-text/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "OpenAI пообещала разгружать электросети: в Джорджии — до 1000 МВт",
@@ -551,7 +654,10 @@
     "dzen_id": "6ae96ea055a910701b153d93",
     "dzen_url": "https://dzen.ru/a/auluoFWpEHAbFT2T",
     "id": "openai-power-grid-georgia-1000mw",
-    "url": "articles/openai-power-grid-georgia-1000mw/"
+    "url": "articles/openai-power-grid-georgia-1000mw/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "OpenAI проверила ИИ на бытовухе: GPT-6 Astra набрала 80,6%",
@@ -564,7 +670,8 @@
     "dzen_id": "6ae96c5329933216f113c227",
     "dzen_url": "https://dzen.ru/a/aulsUymTMhbxE8In",
     "id": "openai-gpt6-astra-household-benchmark",
-    "url": "articles/openai-gpt6-astra-household-benchmark/"
+    "url": "articles/openai-gpt6-astra-household-benchmark/",
+    "topics": []
   },
   {
     "title": "OpenAI переводит госправила на язык ИИ: в Абу-Даби уже проверяют импорт продуктов",
@@ -577,7 +684,8 @@
     "dzen_id": "6ae9687670b2207347df850c",
     "dzen_url": "https://dzen.ru/a/aulodnCyIHNH34UM",
     "id": "openai-abu-dhabi-regulation-ai",
-    "url": "articles/openai-abu-dhabi-regulation-ai/"
+    "url": "articles/openai-abu-dhabi-regulation-ai/",
+    "topics": []
   },
   {
     "title": "ИИ обзвонил абонентов — отказов от интернета оказалось вдвое меньше!",
@@ -590,7 +698,8 @@
     "dzen_id": "6ae80f62121f043a98f7369e",
     "dzen_url": "https://dzen.ru/a/augPYhIfBDqY9zae",
     "id": "telus-ai-calls-cancellations",
-    "url": "articles/telus-ai-calls-cancellations/"
+    "url": "articles/telus-ai-calls-cancellations/",
+    "topics": []
   },
   {
     "title": "Хакеры взломали Chainalysis — компанию, которая помогает ловить криптопреступников",
@@ -603,7 +712,10 @@
     "dzen_id": "6ae70acf4d27f64e5d8cfa61",
     "dzen_url": "https://dzen.ru/a/aucKz00n9k5djPph",
     "id": "chainalysis-hacked",
-    "url": "articles/chainalysis-hacked/"
+    "url": "articles/chainalysis-hacked/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Вирус крадёт пароли, а ИИ оценивает, сколько стоит жертва",
@@ -616,7 +728,10 @@
     "dzen_id": "6ae70789fc598f0048316738",
     "dzen_url": "https://dzen.ru/a/aucHifxZjwBIMWc4",
     "id": "malware-ai-scores-victims",
-    "url": "articles/malware-ai-scores-victims/"
+    "url": "articles/malware-ai-scores-victims/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "ИИ ввёл препарат в мозг мыши. Ветеринар держал аварийную кнопку!",
@@ -629,7 +744,8 @@
     "dzen_id": "6ae6fee08b88aa0944ccbca9",
     "dzen_url": "https://dzen.ru/a/aub-4IuIqglEzLyp",
     "id": "claude-mouse-brain-injection",
-    "url": "articles/claude-mouse-brain-injection/"
+    "url": "articles/claude-mouse-brain-injection/",
+    "topics": []
   },
   {
     "title": "OpenAI выпустила GPT-6 для биологов. Только по спецдопуску!",
@@ -642,7 +758,8 @@
     "dzen_id": "6ae5a75be0d1375c19deb74b",
     "dzen_url": "https://dzen.ru/a/auWnW-DRN1wZ3rdL",
     "id": "openai-gpt6-biologists-restricted",
-    "url": "articles/openai-gpt6-biologists-restricted/"
+    "url": "articles/openai-gpt6-biologists-restricted/",
+    "topics": []
   },
   {
     "title": "Нейросеть разогнали до 680 токенов в секунду!",
@@ -655,7 +772,10 @@
     "dzen_id": "6ae5a5b3121f043a98a6aa6d",
     "dzen_url": "https://dzen.ru/a/auWlsxIfBDqYpqpt",
     "id": "ai-680-tokens-second",
-    "url": "articles/ai-680-tokens-second/"
+    "url": "articles/ai-680-tokens-second/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Claude Code получил доступ к системе Пентагона",
@@ -668,7 +788,10 @@
     "dzen_id": "6ae4bb48a578bc23f57e4ef7",
     "dzen_url": "https://dzen.ru/a/auS7SKV4vCP1fk73",
     "id": "claude-code-pentagon-systems",
-    "url": "articles/claude-code-pentagon-systems/"
+    "url": "articles/claude-code-pentagon-systems/",
+    "topics": [
+      "development"
+    ]
   },
   {
     "title": "Pika: 15 секунд видео за 7 секунд вычислений!",
@@ -681,7 +804,10 @@
     "dzen_id": "6ae4b9d4ffd69737bf8f44e2",
     "dzen_url": "https://dzen.ru/a/auS51P_Wlze_j0Ti",
     "id": "pika-15s-video-7s-compute",
-    "url": "articles/pika-15s-video-7s-compute/"
+    "url": "articles/pika-15s-video-7s-compute/",
+    "topics": [
+      "video"
+    ]
   },
   {
     "title": "ElevenLabs: описал сцену — ИИ создал всю озвучку!",
@@ -694,7 +820,10 @@
     "dzen_id": "6ae41b330c75c303c14a0b24",
     "dzen_url": "https://dzen.ru/a/auQbMwx1wwPBSgsk",
     "id": "elevenlabs-sfxv3-ai-sound-design",
-    "url": "articles/elevenlabs-sfxv3-ai-sound-design/"
+    "url": "articles/elevenlabs-sfxv3-ai-sound-design/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "NVIDIA выпустила ИИ-секретаря: разберёт, кто что сказал на совещании!",
@@ -707,7 +836,8 @@
     "dzen_id": "6ae4198f4e1c1848278239fd",
     "dzen_url": "https://dzen.ru/a/auQZj04cGEgngjn9",
     "id": "nvidia-ai-meeting-secretary",
-    "url": "articles/nvidia-ai-meeting-secretary/"
+    "url": "articles/nvidia-ai-meeting-secretary/",
+    "topics": []
   },
   {
     "title": "Индийский ИИ обошёл ElevenLabs сразу на девяти языках!",
@@ -720,7 +850,11 @@
     "dzen_id": "6ae4129ae0d1375c19009615",
     "dzen_url": "https://dzen.ru/a/auQSmuDRN1wZAJYV",
     "id": "indian-voice-model-elevenlabs",
-    "url": "articles/indian-voice-model-elevenlabs/"
+    "url": "articles/indian-voice-model-elevenlabs/",
+    "topics": [
+      "audio",
+      "models"
+    ]
   },
   {
     "title": "Runway запустила ИИ-рекламщика: сам смотрит статистику и делает ролики",
@@ -733,7 +867,8 @@
     "dzen_id": "6ae4103afc598f004841c92e",
     "dzen_url": "https://dzen.ru/a/auQQOvxZjwBIQcku",
     "id": "runway-ai-advertising-agent",
-    "url": "articles/runway-ai-advertising-agent/"
+    "url": "articles/runway-ai-advertising-agent/",
+    "topics": []
   },
   {
     "title": "Эксперт по ИИ забросил пенсионный счёт. Ждёт апокалипсиса!",
@@ -746,7 +881,8 @@
     "dzen_id": "6ae32079e82b1b48f8507713",
     "dzen_url": "https://dzen.ru/a/auMgeegrG0j4UHcT",
     "id": "nate-soares-retirement-apocalypse",
-    "url": "articles/nate-soares-retirement-apocalypse/"
+    "url": "articles/nate-soares-retirement-apocalypse/",
+    "topics": []
   },
   {
     "title": "ChatGPT пустили в техподдержку",
@@ -759,7 +895,10 @@
     "dzen_id": "6ae31c844e1c18482737021c",
     "dzen_url": "https://dzen.ru/a/auMchE4cGEgnNwIc",
     "id": "chatgpt-service-now-support",
-    "url": "articles/chatgpt-service-now-support/"
+    "url": "articles/chatgpt-service-now-support/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Microsoft открыла «движок» Copilot для 20+ нейросетей!",
@@ -772,7 +911,10 @@
     "dzen_id": "6ae2e08fd2f43220dc0c3284",
     "dzen_url": "https://dzen.ru/a/auLgj9L0MiDcDDKE",
     "id": "microsoft-copilot-twenty-models",
-    "url": "articles/microsoft-copilot-twenty-models/"
+    "url": "articles/microsoft-copilot-twenty-models/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "ИИ ещё молчит, а его ответ уже проверяют. Rime выпустила Prism",
@@ -785,7 +927,10 @@
     "dzen_id": "6ae2dbbda9ed44022355977d",
     "dzen_url": "https://dzen.ru/a/auLbvantRAIjVZd9",
     "id": "rime-prism-voice-guardrails",
-    "url": "articles/rime-prism-voice-guardrails/"
+    "url": "articles/rime-prism-voice-guardrails/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "Microsoft потеснила OpenAI! Новый ИИ-редактор ворвался в топ-3",
@@ -798,7 +943,10 @@
     "dzen_id": "6ae2d8b70c75c303c16b4450",
     "dzen_url": "https://dzen.ru/a/auLYtwx1wwPBa0RQ",
     "id": "microsoft-mai-image-editor",
-    "url": "articles/microsoft-mai-image-editor/"
+    "url": "articles/microsoft-mai-image-editor/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Google обошла OpenAI и Anthropic! Gemini 4 Carbon заняла первое место среди ИИ!",
@@ -811,7 +959,8 @@
     "dzen_id": "6ae2c0cf4d27f64e5d7851ae",
     "dzen_url": "https://dzen.ru/a/auLAz00n9k5deFGu",
     "id": "gemini4-carbon-ranking",
-    "url": "articles/gemini4-carbon-ranking/"
+    "url": "articles/gemini4-carbon-ranking/",
+    "topics": []
   },
   {
     "title": "Kling 4.0 открыли разработчикам. 30 секунд видео — за $5,64!",
@@ -824,7 +973,10 @@
     "dzen_id": "6ae1d1965527bd132901fca2",
     "dzen_url": "https://dzen.ru/a/auHRllUnvRMpAfyi",
     "id": "kling40-api-video-price",
-    "url": "articles/kling40-api-video-price/"
+    "url": "articles/kling40-api-video-price/",
+    "topics": [
+      "video"
+    ]
   },
   {
     "title": "Runway научила ИИ создавать видеогенераторы без кода!",
@@ -837,7 +989,10 @@
     "dzen_id": "6ae1cde70c75c303c1f0a39a",
     "dzen_url": "https://dzen.ru/a/auHN5wx1wwPB8KOa",
     "id": "runway-app-studio-no-code-video",
-    "url": "articles/runway-app-studio-no-code-video/"
+    "url": "articles/runway-app-studio-no-code-video/",
+    "topics": [
+      "video"
+    ]
   },
   {
     "title": "ИИ помог украсть 8,2 млн записей. В Южной Корее задержали семерых!",
@@ -850,7 +1005,8 @@
     "dzen_id": "6ae19b93d73786100d0ca5e9",
     "dzen_url": "https://dzen.ru/a/auGbk9c3hhANDKXp",
     "id": "south-korea-ai-data-theft",
-    "url": "articles/south-korea-ai-data-theft/"
+    "url": "articles/south-korea-ai-data-theft/",
+    "topics": []
   },
   {
     "title": "ChatGPT пустят в бухгалтерию. Oracle доверит ИИ корпоративные дела!",
@@ -863,7 +1019,10 @@
     "dzen_id": "6ae1952e8b88aa0944685b2b",
     "dzen_url": "https://dzen.ru/a/auGVLouIqglEaFsr",
     "id": "oracle-chatgpt-accounting",
-    "url": "articles/oracle-chatgpt-accounting/"
+    "url": "articles/oracle-chatgpt-accounting/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Claude создал 35 тысяч антител за месяц",
@@ -876,7 +1035,8 @@
     "dzen_id": "6ae194224d27f64e5daa7c7b",
     "dzen_url": "https://dzen.ru/a/auGUIk0n9k5dqnx7",
     "id": "claude-35k-antibodies",
-    "url": "articles/claude-35k-antibodies/"
+    "url": "articles/claude-35k-antibodies/",
+    "topics": []
   },
   {
     "title": "Apple отдаёт Pages, Numbers и Keynote под управление ИИ-агентов!",
@@ -889,7 +1049,10 @@
     "dzen_id": "6ae19154d2f43220dc1a7aa6",
     "dzen_url": "https://dzen.ru/a/auGRVNL0MiDcGnqm",
     "id": "apple-iwork-ai-agents",
-    "url": "articles/apple-iwork-ai-agents/"
+    "url": "articles/apple-iwork-ai-agents/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Google Genie 4 создаёт целые миры. Меняйте погоду и разговаривайте с персонажами!",
@@ -902,7 +1065,10 @@
     "dzen_id": "6ae18fd1d73786100df5c71d",
     "dzen_url": "https://dzen.ru/a/auGP0dc3hhAN9ccd",
     "id": "google-genie4-worlds",
-    "url": "articles/google-genie4-worlds/"
+    "url": "articles/google-genie4-worlds/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "25 тысяч чиновников под сокращение. Нидерланды зовут ИИ!",
@@ -915,7 +1081,10 @@
     "dzen_id": "6ae0ac67fdcd464d1ef2db72",
     "dzen_url": "https://dzen.ru/a/auCsZ_3NRk0e8tty",
     "id": "netherlands-civil-service-ai-cuts",
-    "url": "articles/netherlands-civil-service-ai-cuts/"
+    "url": "articles/netherlands-civil-service-ai-cuts/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "Microsoft предложила уйти каждому четвёртому сотруднику. Даже вице-президентам",
@@ -928,7 +1097,10 @@
     "dzen_id": "6ae0813b6c54fa23921064ed",
     "dzen_url": "https://dzen.ru/a/auCBO2xU-iOSEGTt",
     "id": "microsoft-offers-60k-exits",
-    "url": "articles/microsoft-offers-60k-exits/"
+    "url": "articles/microsoft-offers-60k-exits/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Anthropic остановила обучение нового ИИ больше чем на месяц. Испугалась кражи",
@@ -941,7 +1113,10 @@
     "dzen_id": "6ae0522ce601f329d6421ad9",
     "dzen_url": "https://dzen.ru/a/auBSLOYB8ynWQhrZ",
     "id": "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
-    "url": "articles/anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9/"
+    "url": "articles/anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "NVIDIA и Cadence посадили ИИ за чертежи микросхем",
@@ -954,7 +1129,10 @@
     "dzen_id": "6ae049b399791f7d2c3b3793",
     "dzen_url": "https://dzen.ru/a/auBJs5l5H30sOzeT",
     "id": "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793",
-    "url": "articles/nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793/"
+    "url": "articles/nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Meta ищет $95 млрд на ИИ. Даже NVIDIA присматривается",
@@ -967,7 +1145,8 @@
     "dzen_id": "6ae0485408dabf010518b82a",
     "dzen_url": "https://dzen.ru/a/auBIVAjavwEFGLgq",
     "id": "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a",
-    "url": "articles/meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a/"
+    "url": "articles/meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a/",
+    "topics": []
   },
   {
     "title": "Anthropic собралась на биржу. Цена вопроса — триллионы",
@@ -980,7 +1159,8 @@
     "dzen_id": "6ae0447e63b27e51e1c12e5c",
     "dzen_url": "https://dzen.ru/a/auBEfmOyflHhwS5c",
     "id": "anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c",
-    "url": "articles/anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c/"
+    "url": "articles/anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c/",
+    "topics": []
   },
   {
     "title": "В OpenAI нашли способ скрывать сотни действий ИИ от системы наблюдения",
@@ -993,7 +1173,10 @@
     "dzen_id": "6ae040ace9368d4a2d265e1d",
     "dzen_url": "https://dzen.ru/a/auBArOk2jUotJl4d",
     "id": "v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d",
-    "url": "articles/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d/"
+    "url": "articles/v-openai-nashli-sposob-skryvat-sotni-deystviy-ii-ot-sistemy-65e1d/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Китайцы открыли ИИ-гиганта на 744 миллиарда",
@@ -1006,7 +1189,10 @@
     "dzen_id": "6adf2f42f8edfc31bb69a73c",
     "dzen_url": "https://dzen.ru/a/at8vQvjt_DG7aac8",
     "id": "kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c",
-    "url": "articles/kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c/"
+    "url": "articles/kitaytsy-otkryli-ii-giganta-na-744-milliarda-9a73c/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Tencent выпустила видеомир, который слушается команд",
@@ -1019,7 +1205,8 @@
     "dzen_id": "6adf28bce17db653337bebef",
     "dzen_url": "https://dzen.ru/a/at8ovOF9tlMze-vv",
     "id": "tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef",
-    "url": "articles/tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef/"
+    "url": "articles/tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef/",
+    "topics": []
   },
   {
     "title": "Китайцы выложили ИИ на 33 миллиарда параметров. Потянешь?",
@@ -1032,7 +1219,10 @@
     "dzen_id": "6adf2634edeaf11d1f76cd23",
     "dzen_url": "https://dzen.ru/a/at8mNO3q8R0fds0j",
     "id": "kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23",
-    "url": "articles/kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23/"
+    "url": "articles/kitaytsy-vylozhili-ii-na-33-milliarda-parametrov-potyanesh-6cd23/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Ollama научилась озвучивать локальные нейросети",
@@ -1045,7 +1235,11 @@
     "dzen_id": "6adee4d2397db6616bdb31ee",
     "dzen_url": "https://dzen.ru/a/at7k0jl9tmFr2zHu",
     "id": "ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee",
-    "url": "articles/ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee/"
+    "url": "articles/ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee/",
+    "topics": [
+      "models",
+      "audio"
+    ]
   },
   {
     "title": "Claude готовил атаки, Grok собирал пароли. Как работала хакерская система CARLIY0S",
@@ -1058,7 +1252,10 @@
     "dzen_id": "6addff2a38340e44ed00e7e6",
     "dzen_url": "https://dzen.ru/a/at3_Kjg0DkTtAOfm",
     "id": "claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6",
-    "url": "articles/claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6/"
+    "url": "articles/claude-gotovil-ataki-grok-sobiral-paroli-kak-rabotala-haker-0e7e6/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Маск против Нолана. Grok выпустил первые 7 минут своей «Одиссеи»",
@@ -1071,7 +1268,8 @@
     "dzen_id": "6add811297126b54779d94a0",
     "dzen_url": "https://dzen.ru/a/at2BEpcSa1R3nZSg",
     "id": "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
-    "url": "articles/mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0/"
+    "url": "articles/mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0/",
+    "topics": []
   },
   {
     "title": "Китайская iFLYTEK научила ИИ делить работу между ПК и облаком",
@@ -1084,7 +1282,10 @@
     "dzen_id": "6adcb98a40c3ad0e7f80e95c",
     "dzen_url": "https://dzen.ru/a/aty5ikDDrQ5_gOlc",
     "id": "kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c",
-    "url": "articles/kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c/"
+    "url": "articles/kitayskaya-iflytek-nauchila-ii-delit-rabotu-mezhdu-pk-i-obl-0e95c/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "OpenAI отключила GPT-4, GPT-3.5 и другие старые модели в API",
@@ -1097,7 +1298,11 @@
     "dzen_id": "6adc71cd3e43c31ff1214aaa",
     "dzen_url": "https://dzen.ru/a/atxxzT5Dwx_xIUqq",
     "id": "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa",
-    "url": "articles/openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa/"
+    "url": "articles/openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa/",
+    "topics": [
+      "safety",
+      "models"
+    ]
   },
   {
     "title": "OpenAI разрешила ИИ-агентам самостоятельно назначать себе задания",
@@ -1110,7 +1315,10 @@
     "dzen_id": "6adc7113b5289f5e98ae18bb",
     "dzen_url": "https://dzen.ru/a/atxxE7Uon16Yrhi7",
     "id": "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb",
-    "url": "articles/openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb/"
+    "url": "articles/openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Дуров собирает ChatGPT, Claude и Grok в Telegram",
@@ -1123,7 +1331,8 @@
     "dzen_id": "6adc5238e601f329d6d0d3d4",
     "dzen_url": "https://dzen.ru/a/atxSOOYB8ynW0NPU",
     "id": "durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4",
-    "url": "articles/durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4/"
+    "url": "articles/durov-sobiraet-chatgpt-claude-i-grok-v-telegram-0d3d4/",
+    "topics": []
   },
   {
     "title": "ИИ OpenAI нашёл лазейку в интернет. Обучение мощнейших моделей остановили на 11 дней",
@@ -1136,7 +1345,10 @@
     "dzen_id": "6adc5171e6b18e075bdb167d",
     "dzen_url": "https://dzen.ru/a/atxRceaxjgdb2xZ9",
     "id": "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d",
-    "url": "articles/ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d/"
+    "url": "articles/ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Claude пытался подсунуть вредоносный код настоящим разработчикам. И не хотел останавливаться",
@@ -1149,7 +1361,8 @@
     "dzen_id": "6adc4f90e17db653330ff095",
     "dzen_url": "https://dzen.ru/a/atxPkOF9tlMzD_CV",
     "id": "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
-    "url": "articles/claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095/"
+    "url": "articles/claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095/",
+    "topics": []
   },
   {
     "title": "Kimi K3.1 Pro почти догнала Claude Opus 5.5",
@@ -1162,7 +1375,10 @@
     "dzen_id": "6adc4eefedeaf11d1f7a3934",
     "dzen_url": "https://dzen.ru/a/atxO7-3q8R0fejk0",
     "id": "kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934",
-    "url": "articles/kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934/"
+    "url": "articles/kimi-k3-1-pro-pochti-dognala-claude-opus-5-5-a3934/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "$1 000 000 на книгах с ИИ. Писательница из ЮАР выпустила 371 книгу за 20 месяцев",
@@ -1175,7 +1391,8 @@
     "dzen_id": "6adc4df03404d230ff51cdaf",
     "dzen_url": "https://dzen.ru/a/atxN8DQE0jD_Uc2v",
     "id": "1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf",
-    "url": "articles/1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf/"
+    "url": "articles/1-000-000-na-knigah-s-ii-pisatelnitsa-iz-yuar-vypustila-371-1cdaf/",
+    "topics": []
   },
   {
     "title": "Canva выпустила собственную нейросеть",
@@ -1188,7 +1405,10 @@
     "dzen_id": "6adc4d61be6dfd538d14b186",
     "dzen_url": "https://dzen.ru/a/atxNYb5t_VONFLGG",
     "id": "canva-vypustila-sobstvennuyu-neyroset-4b186",
-    "url": "articles/canva-vypustila-sobstvennuyu-neyroset-4b186/"
+    "url": "articles/canva-vypustila-sobstvennuyu-neyroset-4b186/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Хакеры с Claude Code взломали не менее 15 медицинских организаций в Аргентине",
@@ -1201,7 +1421,11 @@
     "dzen_id": "6adc4b7fbefc9746e6b083c3",
     "dzen_url": "https://dzen.ru/a/atxLf778l0bmsIPD",
     "id": "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
-    "url": "articles/hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3/"
+    "url": "articles/hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3/",
+    "topics": [
+      "cybersecurity",
+      "development"
+    ]
   },
   {
     "title": "AWS выпустила ИИ-ремонтника: сам ищет дыры в коде и приносит заплатки",
@@ -1214,7 +1438,10 @@
     "dzen_id": "6adb35c595e73b66d2f28700",
     "dzen_url": "https://dzen.ru/a/ats1xZXnO2bS8ocA",
     "id": "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700",
-    "url": "articles/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700/"
+    "url": "articles/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Hugging Face научила ИИ читать ДНК. Генетикам теперь есть с кем обсудить мутации",
@@ -1227,7 +1454,10 @@
     "dzen_id": "6adb353063b27e51e1ff6dca",
     "dzen_url": "https://dzen.ru/a/ats1MGOyflHh_23K",
     "id": "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca",
-    "url": "articles/hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca/"
+    "url": "articles/hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "ИИ Microsoft обошёл врачей в диагностике сложных заболеваний",
@@ -1240,7 +1470,8 @@
     "dzen_id": "6adb3061621e6a2e9fef8729",
     "dzen_url": "https://dzen.ru/a/atswYWIeai6f74cp",
     "id": "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729",
-    "url": "articles/ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729/"
+    "url": "articles/ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729/",
+    "topics": []
   },
   {
     "title": "Лес исчез, но спутники всё помнят: ИИ научили отслеживать изменения на Земле",
@@ -1253,7 +1484,8 @@
     "dzen_id": "6adb2d2f97126b5477f73085",
     "dzen_url": "https://dzen.ru/a/atstL5cSa1R39zCF",
     "id": "les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085",
-    "url": "articles/les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085/"
+    "url": "articles/les-ischez-no-sputniki-vsyo-pomnyat-ii-nauchili-otslezhivat-73085/",
+    "topics": []
   },
   {
     "title": "Для GPT-6 Luna придумали работу без болтовни. Решения — до 10 раз быстрее",
@@ -1266,7 +1498,10 @@
     "dzen_id": "6adb23aa40c3ad0e7fe7a95a",
     "dzen_url": "https://dzen.ru/a/atsjqkDDrQ5_56la",
     "id": "gpt6-luna-fast-reasoning-7a95a",
-    "url": "articles/gpt6-luna-fast-reasoning-7a95a/"
+    "url": "articles/gpt6-luna-fast-reasoning-7a95a/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Anthropic больше не рулит Agent Skills в одиночку — теперь в деле конкуренты",
@@ -1279,7 +1514,10 @@
     "dzen_id": "6adb1d8ae601f329d680352e",
     "dzen_url": "https://dzen.ru/a/atsdiuYB8ynWgDUu",
     "id": "agent-skills-standards-0352e",
-    "url": "articles/agent-skills-standards-0352e/"
+    "url": "articles/agent-skills-standards-0352e/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "NVIDIA предложила собирать ИИ-дата-центры на заводе. Установка — всего две недели",
@@ -1292,7 +1530,11 @@
     "dzen_id": "6adb1b05397db6616b5e7bb1",
     "dzen_url": "https://dzen.ru/a/atsbBTl9tmFrXnux",
     "id": "nvidia-factory-datacenters-e7bb1",
-    "url": "articles/nvidia-factory-datacenters-e7bb1/"
+    "url": "articles/nvidia-factory-datacenters-e7bb1/",
+    "topics": [
+      "infrastructure",
+      "engineering"
+    ]
   },
   {
     "title": "Zoom научил ИИ искать, кто что обещал на совещаниях",
@@ -1305,7 +1547,8 @@
     "dzen_id": "6adb0b290e1ecf632f3637f2",
     "dzen_url": "https://dzen.ru/a/atsLKQ4ez2MvNjfy",
     "id": "zoom-ai-commitments-637f2",
-    "url": "articles/zoom-ai-commitments-637f2/"
+    "url": "articles/zoom-ai-commitments-637f2/",
+    "topics": []
   },
   {
     "title": "Bria выпустила Fibo 2.0: ИИ-редактор с инструкцией «остальное не трогать»",
@@ -1318,7 +1561,10 @@
     "dzen_id": "6adb07e5edeaf11d1f4e3ed5",
     "dzen_url": "https://dzen.ru/a/atsH5e3q8R0fTj7V",
     "id": "bria-fibo-editor-e3ed5",
-    "url": "articles/bria-fibo-editor-e3ed5/"
+    "url": "articles/bria-fibo-editor-e3ed5/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "ИИ-пузырь трещит по швам: акции Intel рухнули на 29%, Alphabet потеряла $500 млрд",
@@ -1331,7 +1577,8 @@
     "dzen_id": "6ae981bb5ec3a00a555b23d3",
     "dzen_url": "https://dzen.ru/a/aumBu17DoApVWyPT",
     "id": "ii-puzyr-treschit-po-shvam-aktsii-intel-rukhnuli-na-29-alphabe-b23d3",
-    "url": "articles/ii-puzyr-treschit-po-shvam-aktsii-intel-rukhnuli-na-29-alphabe-b23d3/"
+    "url": "articles/ii-puzyr-treschit-po-shvam-aktsii-intel-rukhnuli-na-29-alphabe-b23d3/",
+    "topics": []
   },
   {
     "title": "ИИ-пузырь в Китае лопнул. За четыре месяца испарились $480 миллиардов",
@@ -1344,7 +1591,8 @@
     "dzen_id": "6ae0a6d4eedc244b0da74d9e",
     "dzen_url": "https://dzen.ru/a/auCm1O7cJEsNp02e",
     "id": "ii-puzyr-v-kitae-lopnul-za-chetyre-mesyatsa-isparilis-480-mill-74d9e",
-    "url": "articles/ii-puzyr-v-kitae-lopnul-za-chetyre-mesyatsa-isparilis-480-mill-74d9e/"
+    "url": "articles/ii-puzyr-v-kitae-lopnul-za-chetyre-mesyatsa-isparilis-480-mill-74d9e/",
+    "topics": []
   },
   {
     "title": "Claude увольняет ИИ-агентов",
@@ -1357,7 +1605,11 @@
     "dzen_id": "6ae07e9d388b67714d9cf215",
     "dzen_url": "https://dzen.ru/a/auB-nTiLZ3FNnPIV",
     "id": "claude-uvolnyaet-ii-agentov-cf215",
-    "url": "articles/claude-uvolnyaet-ii-agentov-cf215/"
+    "url": "articles/claude-uvolnyaet-ii-agentov-cf215/",
+    "topics": [
+      "agents",
+      "business"
+    ]
   },
   {
     "title": "NVIDIA научила ИИ-серверы чинить себя. Даже сломанная видеокарта не остановит обучение!",
@@ -1370,7 +1622,10 @@
     "dzen_id": "6ae065e0e9368d4a2d734bad",
     "dzen_url": "https://dzen.ru/a/auBl4Ok2jUotc0ut",
     "id": "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad",
-    "url": "articles/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad/"
+    "url": "articles/nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "GPT-6.1 Terra от OpenAI обогнала флагмана: втрое быстрее и в десять раз дешевле!",
@@ -1383,7 +1638,8 @@
     "dzen_id": "6ae062a4621e6a2e9f1fb75b",
     "dzen_url": "https://dzen.ru/a/auBipGIeai6fH7db",
     "id": "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-de-fb75b",
-    "url": "articles/gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-de-fb75b/"
+    "url": "articles/gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-de-fb75b/",
+    "topics": []
   },
   {
     "title": "ChatGPT пашет на 165 фронтах. OpenAI раскрыла, чем его нагружают по всему миру",
@@ -1396,7 +1652,8 @@
     "dzen_id": "6ae060ef3404d230ff312612",
     "dzen_url": "https://dzen.ru/a/auBg7zQE0jD_MSYS",
     "id": "chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612",
-    "url": "articles/chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612/"
+    "url": "articles/chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612/",
+    "topics": []
   },
   {
     "title": "13 нейросетей хором назвали людей лицемерами",
@@ -1409,7 +1666,10 @@
     "dzen_id": "6adc52faf8edfc31bb76cd80",
     "dzen_url": "https://dzen.ru/a/atxS-vjt_DG7ds2A",
     "id": "13-neirosetei-khorom-nazvali-lyudei-litsemerami-6cd80",
-    "url": "articles/13-neirosetei-khorom-nazvali-lyudei-litsemerami-6cd80/"
+    "url": "articles/13-neirosetei-khorom-nazvali-lyudei-litsemerami-6cd80/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "IBM научила ИИ слушать без облака. Русский пока не выучила",
@@ -1422,7 +1682,8 @@
     "dzen_id": "6adb25b2edeaf11d1f8824cf",
     "dzen_url": "https://dzen.ru/a/atslsu3q8R0fiCTP",
     "id": "ibm-nauchila-ii-slushat-bez-oblaka-russkii-poka-ne-vyuchila-824cf",
-    "url": "articles/ibm-nauchila-ii-slushat-bez-oblaka-russkii-poka-ne-vyuchila-824cf/"
+    "url": "articles/ibm-nauchila-ii-slushat-bez-oblaka-russkii-poka-ne-vyuchila-824cf/",
+    "topics": []
   },
   {
     "title": "ElevenLabs выпустила двух голосовых ИИ: один дешевле, другой соображает лучше",
@@ -1435,7 +1696,10 @@
     "dzen_id": "6adb058c3404d230ff39e83d",
     "dzen_url": "https://dzen.ru/a/atsFjDQE0jD_Oeg9",
     "id": "elevenlabs-vypustila-dvukh-golosovykh-ii-odin-deshevle-drugoi-9e83d",
-    "url": "articles/elevenlabs-vypustila-dvukh-golosovykh-ii-odin-deshevle-drugoi-9e83d/"
+    "url": "articles/elevenlabs-vypustila-dvukh-golosovykh-ii-odin-deshevle-drugoi-9e83d/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "ElevenLabs представила переводчик, который позволяет разговаривать на разных языках",
@@ -1448,7 +1712,10 @@
     "dzen_id": "6adb03623404d230ff3635c7",
     "dzen_url": "https://dzen.ru/a/atsDYjQE0jD_NjXH",
     "id": "elevenlabs-predstavila-perevodchik-kotoryi-pozvolyaet-razgovar-635c7",
-    "url": "articles/elevenlabs-predstavila-perevodchik-kotoryi-pozvolyaet-razgovar-635c7/"
+    "url": "articles/elevenlabs-predstavila-perevodchik-kotoryi-pozvolyaet-razgovar-635c7/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "Хакеры с ИИ атаковали более 2250 облачных сред Microsoft 365. Часть взломов удалась",
@@ -1461,7 +1728,10 @@
     "dzen_id": "6adaf7c0f8edfc31bb35ef27",
     "dzen_url": "https://dzen.ru/a/atr3wPjt_DG7Ne8n",
     "id": "khakery-s-ii-atakovali-bolee-2250-oblachnykh-sred-microsoft-36-5ef27",
-    "url": "articles/khakery-s-ii-atakovali-bolee-2250-oblachnykh-sred-microsoft-36-5ef27/"
+    "url": "articles/khakery-s-ii-atakovali-bolee-2250-oblachnykh-sred-microsoft-36-5ef27/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Google запустила защищённые ИИ-серверы на NVIDIA Blackwell в 36 зонах",
@@ -1474,7 +1744,10 @@
     "dzen_id": "6ad9d8d691554b2467c39004",
     "dzen_url": "https://dzen.ru/a/atnY1pFVSyRnw5AE",
     "id": "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004",
-    "url": "articles/google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004/"
+    "url": "articles/google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "Perplexity придумала, как обучать ИИ с расходом токенов в 13 раз меньше",
@@ -1487,7 +1760,8 @@
     "dzen_id": "6ad9d2ed97126b54778fa581",
     "dzen_url": "https://dzen.ru/a/atnS7ZcSa1R3j6WB",
     "id": "perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581",
-    "url": "articles/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581/"
+    "url": "articles/perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581/",
+    "topics": []
   },
   {
     "title": "OpenAI вводит пропускной режим для агрегаторов",
@@ -1500,7 +1774,8 @@
     "dzen_id": "6ad9d0cef8edfc31bb5791dc",
     "dzen_url": "https://dzen.ru/a/atnQzvjt_DG7V5Hc",
     "id": "openai-vvodit-propusknoi-rezhim-dlya-agregatorov-791dc",
-    "url": "articles/openai-vvodit-propusknoi-rezhim-dlya-agregatorov-791dc/"
+    "url": "articles/openai-vvodit-propusknoi-rezhim-dlya-agregatorov-791dc/",
+    "topics": []
   },
   {
     "title": "DeepSeek раскрыла код, на котором работает её ИИ. Но не всю инфраструктуру",
@@ -1513,7 +1788,8 @@
     "dzen_id": "6ad9cc85f8edfc31bb4b5ec6",
     "dzen_url": "https://dzen.ru/a/atnMhfjt_DG7S17G",
     "id": "deepseek-raskryla-kod-na-kotorom-rabotaet-eyo-ii-no-ne-vsyu-in-b5ec6",
-    "url": "articles/deepseek-raskryla-kod-na-kotorom-rabotaet-eyo-ii-no-ne-vsyu-in-b5ec6/"
+    "url": "articles/deepseek-raskryla-kod-na-kotorom-rabotaet-eyo-ii-no-ne-vsyu-in-b5ec6/",
+    "topics": []
   },
   {
     "title": "Реклама в ChatGPT добралась до 89 стран. Более 100 тысяч рекламодателей уже запустили кампании",
@@ -1526,7 +1802,8 @@
     "dzen_id": "6ad9b67899791f7d2cbfb1f5",
     "dzen_url": "https://dzen.ru/a/atm2eJl5H30sv7H1",
     "id": "reklama-v-chatgpt-dobralas-do-89-stran-bolee-100-tysyach-rekla-fb1f5",
-    "url": "articles/reklama-v-chatgpt-dobralas-do-89-stran-bolee-100-tysyach-rekla-fb1f5/"
+    "url": "articles/reklama-v-chatgpt-dobralas-do-89-stran-bolee-100-tysyach-rekla-fb1f5/",
+    "topics": []
   },
   {
     "title": "Тысячи ИИ-агентов за 32 минуты исследовали миллионы клеток мозга",
@@ -1539,7 +1816,10 @@
     "dzen_id": "6ad9b315cba82619cbe938e7",
     "dzen_url": "https://dzen.ru/a/atmzFcuoJhnL6Tjn",
     "id": "tysyachi-ii-agentov-za-32-minuty-issledovali-milliony-kletok-m-938e7",
-    "url": "articles/tysyachi-ii-agentov-za-32-minuty-issledovali-milliony-kletok-m-938e7/"
+    "url": "articles/tysyachi-ii-agentov-za-32-minuty-issledovali-milliony-kletok-m-938e7/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "NVIDIA опубликовала архитектуру с аппаратным «стоп-краном» для ИИ-агентов",
@@ -1552,7 +1832,11 @@
     "dzen_id": "6ad9b0b5dda2334495a69bf0",
     "dzen_url": "https://dzen.ru/a/atmwtd2iM0SVppvw",
     "id": "nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0",
-    "url": "articles/nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0/"
+    "url": "articles/nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0/",
+    "topics": [
+      "agents",
+      "safety"
+    ]
   },
   {
     "title": "ИИ помог найти две критические дыры в PHP. Под угрозой оказались сайты на WordPress и Drupal",
@@ -1565,7 +1849,10 @@
     "dzen_id": "6ad9af1ae9368d4a2d1b3016",
     "dzen_url": "https://dzen.ru/a/atmvGuk2jUotGzAW",
     "id": "ii-pomog-naiti-dve-kriticheskie-dyry-v-php-pod-ugrozoi-okazali-b3016",
-    "url": "articles/ii-pomog-naiti-dve-kriticheskie-dyry-v-php-pod-ugrozoi-okazali-b3016/"
+    "url": "articles/ii-pomog-naiti-dve-kriticheskie-dyry-v-php-pod-ugrozoi-okazali-b3016/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Claude теперь пишет первым: Anthropic представила проактивного ИИ-агента Duet",
@@ -1578,7 +1865,10 @@
     "dzen_id": "6ad9aba3dda23344958d3e13",
     "dzen_url": "https://dzen.ru/a/atmro92iM0SVjT4T",
     "id": "claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13",
-    "url": "articles/claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13/"
+    "url": "articles/claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Volkswagen подключил к Copilot 330 тысяч сотрудников. ИИ-агентов там уже 26 тысяч",
@@ -1591,7 +1881,11 @@
     "dzen_id": "6ad9a7a4e601f329d6997951",
     "dzen_url": "https://dzen.ru/a/atmnpOYB8ynWmXlR",
     "id": "volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951",
-    "url": "articles/volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951/"
+    "url": "articles/volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951/",
+    "topics": [
+      "agents",
+      "business"
+    ]
   },
   {
     "title": "Google будет продавать модели OpenAI вместе со своими Gemini",
@@ -1604,7 +1898,11 @@
     "dzen_id": "6ad9a5ee95e73b66d202b570",
     "dzen_url": "https://dzen.ru/a/atml7pXnO2bSArVw",
     "id": "google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570",
-    "url": "articles/google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570/"
+    "url": "articles/google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570/",
+    "topics": [
+      "models",
+      "business"
+    ]
   },
   {
     "title": "NVIDIA выпустила ИИ для поиска в таблицах и графиках. Агенты стали тратить на 14% меньше токенов",
@@ -1617,7 +1915,10 @@
     "dzen_id": "6ad99ebe95e73b66d2f77c3e",
     "dzen_url": "https://dzen.ru/a/atmevpXnO2bS93w-",
     "id": "nvidia-vypustila-ii-dlya-poiska-v-tablitsakh-i-grafikakh-agent-77c3e",
-    "url": "articles/nvidia-vypustila-ii-dlya-poiska-v-tablitsakh-i-grafikakh-agent-77c3e/"
+    "url": "articles/nvidia-vypustila-ii-dlya-poiska-v-tablitsakh-i-grafikakh-agent-77c3e/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Perplexity перенесла ИИ-агента на Mac: он может работать даже без интернета",
@@ -1630,7 +1931,10 @@
     "dzen_id": "6ad99b4108dabf01058bc45e",
     "dzen_url": "https://dzen.ru/a/atmbQQjavwEFi8Re",
     "id": "perplexity-perenesla-ii-agenta-na-mac-on-mozhet-rabotat-dazhe-bc45e",
-    "url": "articles/perplexity-perenesla-ii-agenta-na-mac-on-mozhet-rabotat-dazhe-bc45e/"
+    "url": "articles/perplexity-perenesla-ii-agenta-na-mac-on-mozhet-rabotat-dazhe-bc45e/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "243 миллиона человек пользуются ИИ в Юго-Восточной Азии. Теперь ему хотят доверить покупки",
@@ -1643,7 +1947,8 @@
     "dzen_id": "6ad87fc19f4a4f1f314548ea",
     "dzen_url": "https://dzen.ru/a/ath_wZ9KTx8xRUjq",
     "id": "243-milliona-chelovek-polzuyutsya-ii-v-yugo-vostochnoi-azii-te-548ea",
-    "url": "articles/243-milliona-chelovek-polzuyutsya-ii-v-yugo-vostochnoi-azii-te-548ea/"
+    "url": "articles/243-milliona-chelovek-polzuyutsya-ii-v-yugo-vostochnoi-azii-te-548ea/",
+    "topics": []
   },
   {
     "title": "На Steam Next Fest больше 8 тысяч демоверсий. Одну разработчики побоялись показывать из-за ИИ",
@@ -1656,7 +1961,8 @@
     "dzen_id": "6ad87ac2318e9e3914e0c86b",
     "dzen_url": "https://dzen.ru/a/ath6wjGOnjkU4Mhr",
     "id": "na-steam-next-fest-bolshe-8-tysyach-demoversii-odnu-razrabotch-0c86b",
-    "url": "articles/na-steam-next-fest-bolshe-8-tysyach-demoversii-odnu-razrabotch-0c86b/"
+    "url": "articles/na-steam-next-fest-bolshe-8-tysyach-demoversii-odnu-razrabotch-0c86b/",
+    "topics": []
   },
   {
     "title": "В деревья вкручивают датчики, чтобы ИИ понял, когда им нужна вода",
@@ -1669,7 +1975,8 @@
     "dzen_id": "6ad8776613ca4647d9d133e0",
     "dzen_url": "https://dzen.ru/a/ath3ZhPKRkfZ0TPg",
     "id": "v-derevya-vkruchivayut-datchiki-chtoby-ii-ponyal-kogda-im-nuzh-133e0",
-    "url": "articles/v-derevya-vkruchivayut-datchiki-chtoby-ii-ponyal-kogda-im-nuzh-133e0/"
+    "url": "articles/v-derevya-vkruchivayut-datchiki-chtoby-ii-ponyal-kogda-im-nuzh-133e0/",
+    "topics": []
   },
   {
     "title": "ИИ оставили без задания на виртуальном острове. Он построил храм и придумал себе игры",
@@ -1682,7 +1989,8 @@
     "dzen_id": "6ad854e8efbf813a134c0aae",
     "dzen_url": "https://dzen.ru/a/athU6O-_gToTTAqu",
     "id": "ii-ostavili-bez-zadaniya-na-virtualnom-ostrove-on-postroil-khr-c0aae",
-    "url": "articles/ii-ostavili-bez-zadaniya-na-virtualnom-ostrove-on-postroil-khr-c0aae/"
+    "url": "articles/ii-ostavili-bez-zadaniya-na-virtualnom-ostrove-on-postroil-khr-c0aae/",
+    "topics": []
   },
   {
     "title": "В Co-op появился ИИ-надзиратель: он слушает разговоры сотрудников и выставляет оценки",
@@ -1695,7 +2003,10 @@
     "dzen_id": "6ad8520df441410ca8d1b2bc",
     "dzen_url": "https://dzen.ru/a/athSDfRBQQyo0bK8",
     "id": "v-co-op-poyavilsya-ii-nadziratel-on-slushaet-razgovory-sotrudn-1b2bc",
-    "url": "articles/v-co-op-poyavilsya-ii-nadziratel-on-slushaet-razgovory-sotrudn-1b2bc/"
+    "url": "articles/v-co-op-poyavilsya-ii-nadziratel-on-slushaet-razgovory-sotrudn-1b2bc/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Sony хочет показывать кадры игр ещё до того, как их нарисует видеокарта",
@@ -1708,7 +2019,10 @@
     "dzen_id": "6ad8477f46bcf26f508c5b1b",
     "dzen_url": "https://dzen.ru/a/athHf0a88m9QjFsb",
     "id": "sony-khochet-pokazyvat-kadry-igr-eschyo-do-togo-kak-ikh-narisu-c5b1b",
-    "url": "articles/sony-khochet-pokazyvat-kadry-igr-eschyo-do-togo-kak-ikh-narisu-c5b1b/"
+    "url": "articles/sony-khochet-pokazyvat-kadry-igr-eschyo-do-togo-kak-ikh-narisu-c5b1b/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "ChatGPT разрешил прятать переписки под PIN-кодом. Но сбрасывать его опасно",
@@ -1721,7 +2035,8 @@
     "dzen_id": "6ad841c15504cd7f3268dd8e",
     "dzen_url": "https://dzen.ru/a/athBwVUEzX8yaN2O",
     "id": "chatgpt-razreshil-pryatat-perepiski-pod-pin-kodom-no-sbrasyvat-8dd8e",
-    "url": "articles/chatgpt-razreshil-pryatat-perepiski-pod-pin-kodom-no-sbrasyvat-8dd8e/"
+    "url": "articles/chatgpt-razreshil-pryatat-perepiski-pod-pin-kodom-no-sbrasyvat-8dd8e/",
+    "topics": []
   },
   {
     "title": "Один запрос — целый фильм: VideoGen показала, как ИИ самостоятельно собирает кино",
@@ -1734,7 +2049,8 @@
     "dzen_id": "6ad83f6c2f47836f3707412a",
     "dzen_url": "https://dzen.ru/a/atg_bC9Hg283B0Eq",
     "id": "odin-zapros-tselyy-film-videogen-pokazala-kak-ii-samostoyateln-7412a",
-    "url": "articles/odin-zapros-tselyy-film-videogen-pokazala-kak-ii-samostoyateln-7412a/"
+    "url": "articles/odin-zapros-tselyy-film-videogen-pokazala-kak-ii-samostoyateln-7412a/",
+    "topics": []
   },
   {
     "title": "Google подключила автомобильный Gemini к личным данным",
@@ -1747,7 +2063,8 @@
     "dzen_id": "6ad83dc546bcf26f507dcc9d",
     "dzen_url": "https://dzen.ru/a/atg9xUa88m9Qfcyd",
     "id": "google-podklyuchila-avtomobilnyy-gemini-k-lichnym-dannym-dcc9d",
-    "url": "articles/google-podklyuchila-avtomobilnyy-gemini-k-lichnym-dannym-dcc9d/"
+    "url": "articles/google-podklyuchila-avtomobilnyy-gemini-k-lichnym-dannym-dcc9d/",
+    "topics": []
   },
   {
     "title": "«Запиши меня к врачу»: Mistral выпустила голосовой ИИ, который умеет выполнять поручения",
@@ -1760,7 +2077,10 @@
     "dzen_id": "6ad8373656a5433cf42ac376",
     "dzen_url": "https://dzen.ru/a/atg3NlalQzz0KsN2",
     "id": "zapishi-menya-k-vrachu-mistral-vypustila-golosovoy-ii-kotoryy-ac376",
-    "url": "articles/zapishi-menya-k-vrachu-mistral-vypustila-golosovoy-ii-kotoryy-ac376/"
+    "url": "articles/zapishi-menya-k-vrachu-mistral-vypustila-golosovoy-ii-kotoryy-ac376/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "ИИ научился переделывать машинный код на ходу. Генерация 4K-видео ускорилась почти вдвое",
@@ -1773,7 +2093,8 @@
     "dzen_id": "6ad8322defbf813a131dba7d",
     "dzen_url": "https://dzen.ru/a/atgyLe-_gToTHbp9",
     "id": "ii-nauchilsya-peredelyvat-mashinnyy-kod-na-khodu-generatsiya-4-dba7d",
-    "url": "articles/ii-nauchilsya-peredelyvat-mashinnyy-kod-na-khodu-generatsiya-4-dba7d/"
+    "url": "articles/ii-nauchilsya-peredelyvat-mashinnyy-kod-na-khodu-generatsiya-4-dba7d/",
+    "topics": []
   },
   {
     "title": "Google открыла проект ИИ-процессора для часов и датчиков. Цель — всего 10 милливатт",
@@ -1786,7 +2107,10 @@
     "dzen_id": "6ad8305ababeb53f31a1397a",
     "dzen_url": "https://dzen.ru/a/atgwWrq-tT8xoTl6",
     "id": "google-otkryla-proekt-ii-protsessora-dlya-chasov-i-datchikov-t-1397a",
-    "url": "articles/google-otkryla-proekt-ii-protsessora-dlya-chasov-i-datchikov-t-1397a/"
+    "url": "articles/google-otkryla-proekt-ii-protsessora-dlya-chasov-i-datchikov-t-1397a/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "Cloudflare выпустила Clairic — ИИ, который извлекает данные без генерации текста",
@@ -1799,7 +2123,8 @@
     "dzen_id": "6ad74813be108a14528bee3a",
     "dzen_url": "https://dzen.ru/a/atdIE74QihRSi-46",
     "id": "cloudflare-vypustila-clairic-ii-kotoryy-izvlekaet-dannye-bez-g-bee3a",
-    "url": "articles/cloudflare-vypustila-clairic-ii-kotoryy-izvlekaet-dannye-bez-g-bee3a/"
+    "url": "articles/cloudflare-vypustila-clairic-ii-kotoryy-izvlekaet-dannye-bez-g-bee3a/",
+    "topics": []
   },
   {
     "title": "OpenAI: ИИ научился лучше работать со старым программным кодом",
@@ -1812,7 +2137,8 @@
     "dzen_id": "6ad747205dd01a7e03411ef5",
     "dzen_url": "https://dzen.ru/a/atdHIF3QGn4DQR71",
     "id": "openai-ii-nauchilsya-luchshe-rabotat-so-starym-programmnym-kod-11ef5",
-    "url": "articles/openai-ii-nauchilsya-luchshe-rabotat-so-starym-programmnym-kod-11ef5/"
+    "url": "articles/openai-ii-nauchilsya-luchshe-rabotat-so-starym-programmnym-kod-11ef5/",
+    "topics": []
   },
   {
     "title": "Google научила Gemini Notebook показывать план видео до его создания",
@@ -1825,7 +2151,8 @@
     "dzen_id": "6ad73f852d69ac1460137ba9",
     "dzen_url": "https://dzen.ru/a/atc_hS1prBRgE3up",
     "id": "google-nauchila-gemini-notebook-pokazyvat-plan-video-do-ego-so-37ba9",
-    "url": "articles/google-nauchila-gemini-notebook-pokazyvat-plan-video-do-ego-so-37ba9/"
+    "url": "articles/google-nauchila-gemini-notebook-pokazyvat-plan-video-do-ego-so-37ba9/",
+    "topics": []
   },
   {
     "title": "ИИ отказался ловить хакеров",
@@ -1838,7 +2165,10 @@
     "dzen_id": "6ad70dd357450928e2779daf",
     "dzen_url": "https://dzen.ru/a/atcN01dFCSjid52v",
     "id": "ii-otkazalsya-lovit-khakerov-79daf",
-    "url": "articles/ii-otkazalsya-lovit-khakerov-79daf/"
+    "url": "articles/ii-otkazalsya-lovit-khakerov-79daf/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Пять минут видео из одной картинки. Китайцы выпустили OmniHuman 2.0",
@@ -1851,7 +2181,10 @@
     "dzen_id": "6ad6f21ca4204c21d6073b38",
     "dzen_url": "https://dzen.ru/a/atbyHKQgTCHWBzs4",
     "id": "pyat-minut-video-iz-odnoy-kartinki-kitaytsy-vypustili-omnihuma-73b38",
-    "url": "articles/pyat-minut-video-iz-odnoy-kartinki-kitaytsy-vypustili-omnihuma-73b38/"
+    "url": "articles/pyat-minut-video-iz-odnoy-kartinki-kitaytsy-vypustili-omnihuma-73b38/",
+    "topics": [
+      "video"
+    ]
   },
   {
     "title": "Google выпустила инструмент для запуска ИИ непосредственно на устройствах",
@@ -1864,7 +2197,11 @@
     "dzen_id": "6ad6ee4347711c346bf53169",
     "dzen_url": "https://dzen.ru/a/atbuQ0dxHDRr9TFp",
     "id": "google-vypustila-instrument-dlya-zapuska-ii-neposredstvenno-na-53169",
-    "url": "articles/google-vypustila-instrument-dlya-zapuska-ii-neposredstvenno-na-53169/"
+    "url": "articles/google-vypustila-instrument-dlya-zapuska-ii-neposredstvenno-na-53169/",
+    "topics": [
+      "engineering",
+      "infrastructure"
+    ]
   },
   {
     "title": "Mercury 3: нейросеть, которая пишет быстрее, чем успеваешь читать",
@@ -1877,7 +2214,10 @@
     "dzen_id": "6ad6eb847b47497b1ee5a039",
     "dzen_url": "https://dzen.ru/a/atbrhHtHSXse5aA5",
     "id": "mercury-3-neyroset-kotoraya-pishet-bystree-chem-uspevaesh-chit-5a039",
-    "url": "articles/mercury-3-neyroset-kotoraya-pishet-bystree-chem-uspevaesh-chit-5a039/"
+    "url": "articles/mercury-3-neyroset-kotoraya-pishet-bystree-chem-uspevaesh-chit-5a039/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "FLUX 3 Max: десять секунд видео за двенадцать секунд",
@@ -1890,7 +2230,11 @@
     "dzen_id": "6ad6eb11fd530f1a039ce793",
     "dzen_url": "https://dzen.ru/a/atbrEf1TDxoDnOeT",
     "id": "flux-3-max-desyat-sekund-video-za-dvenadtsat-sekund-ce793",
-    "url": "articles/flux-3-max-desyat-sekund-video-za-dvenadtsat-sekund-ce793/"
+    "url": "articles/flux-3-max-desyat-sekund-video-za-dvenadtsat-sekund-ce793/",
+    "topics": [
+      "images",
+      "models"
+    ]
   },
   {
     "title": "Amazon упрощает запуск ИИ на собственных процессорах вместо NVIDIA",
@@ -1903,7 +2247,10 @@
     "dzen_id": "6ad63e067fa5c9322f68c8cf",
     "dzen_url": "https://dzen.ru/a/atY-Bn-lyTIvaMjP",
     "id": "amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf",
-    "url": "articles/amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf/"
+    "url": "articles/amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "США запретили DeepSeek в гражданских федеральных ведомствах",
@@ -1916,7 +2263,10 @@
     "dzen_id": "6ad63ced7267ec5b95fec6b4",
     "dzen_url": "https://dzen.ru/a/atY87XJn7FuV_sa0",
     "id": "ssha-zapretili-deepseek-v-grazhdanskikh-federalnykh-vedomstvak-ec6b4",
-    "url": "articles/ssha-zapretili-deepseek-v-grazhdanskikh-federalnykh-vedomstvak-ec6b4/"
+    "url": "articles/ssha-zapretili-deepseek-v-grazhdanskikh-federalnykh-vedomstvak-ec6b4/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "Хакер использовал ИИ для атак на 1200 сайтов",
@@ -1929,7 +2279,10 @@
     "dzen_id": "6ad63b1228014a16952394c1",
     "dzen_url": "https://dzen.ru/a/atY7EigBShaVI5TB",
     "id": "khaker-ispolzoval-ii-dlya-atak-na-1200-saytov-394c1",
-    "url": "articles/khaker-ispolzoval-ii-dlya-atak-na-1200-saytov-394c1/"
+    "url": "articles/khaker-ispolzoval-ii-dlya-atak-na-1200-saytov-394c1/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "MiniMax выпустила ИИ в три раза быстрее и на 70% дешевле",
@@ -1942,7 +2295,11 @@
     "dzen_id": "6ad63a9747711c346b04c5d3",
     "dzen_url": "https://dzen.ru/a/atY6l0dxHDRrBMXT",
     "id": "minimax-vypustila-ii-v-tri-raza-bystree-i-na-70-deshevle-4c5d3",
-    "url": "articles/minimax-vypustila-ii-v-tri-raza-bystree-i-na-70-deshevle-4c5d3/"
+    "url": "articles/minimax-vypustila-ii-v-tri-raza-bystree-i-na-70-deshevle-4c5d3/",
+    "topics": [
+      "agents",
+      "models"
+    ]
   },
   {
     "title": "Tencent подтвердила: ИИ-агенты вышли за рамки задания и начали обходить ограничения чужого сервиса.",
@@ -1955,7 +2312,10 @@
     "dzen_id": "6ad6394a2cdfb474e89be1ba",
     "dzen_url": "https://dzen.ru/a/atY5SizftHTom-G6",
     "id": "tencent-podtverdila-ii-agenty-vyshli-za-ramki-zadaniya-i-nacha-be1ba",
-    "url": "articles/tencent-podtverdila-ii-agenty-vyshli-za-ramki-zadaniya-i-nacha-be1ba/"
+    "url": "articles/tencent-podtverdila-ii-agenty-vyshli-za-ramki-zadaniya-i-nacha-be1ba/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "ИИ обошёл защиту государственного сайта и получил секретные данные сервера",
@@ -1968,7 +2328,11 @@
     "dzen_id": "6ad6385a733b6714e99cdbf2",
     "dzen_url": "https://dzen.ru/a/atY4WnM7ZxTpnNvy",
     "id": "ii-oboshyol-zaschitu-gosudarstvennogo-sayta-i-poluchil-sekretn-cdbf2",
-    "url": "articles/ii-oboshyol-zaschitu-gosudarstvennogo-sayta-i-poluchil-sekretn-cdbf2/"
+    "url": "articles/ii-oboshyol-zaschitu-gosudarstvennogo-sayta-i-poluchil-sekretn-cdbf2/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ]
   },
   {
     "title": "Маск пообещал каждому ребёнку США по акции SpaceX. Цена вопроса — $10,5 млрд",
@@ -1981,7 +2345,8 @@
     "dzen_id": "6ad6025e7e6dd4477fd6d4cb",
     "dzen_url": "https://dzen.ru/a/atYCXn5t1Ed_1tTL",
     "id": "mask-poobeschal-kazhdomu-rebyonku-ssha-po-aktsii-spacex-tsena-6d4cb",
-    "url": "articles/mask-poobeschal-kazhdomu-rebyonku-ssha-po-aktsii-spacex-tsena-6d4cb/"
+    "url": "articles/mask-poobeschal-kazhdomu-rebyonku-ssha-po-aktsii-spacex-tsena-6d4cb/",
+    "topics": []
   },
   {
     "title": "ИИ проник во внутренние системы исследовательской организации",
@@ -1994,7 +2359,8 @@
     "dzen_id": "6ad5a8f747711c346bd1c11d",
     "dzen_url": "https://dzen.ru/a/atWo90dxHDRr0cEd",
     "id": "ii-pronik-vo-vnutrennie-sistemy-issledovatelskoy-organizatsii-1c11d",
-    "url": "articles/ii-pronik-vo-vnutrennie-sistemy-issledovatelskoy-organizatsii-1c11d/"
+    "url": "articles/ii-pronik-vo-vnutrennie-sistemy-issledovatelskoy-organizatsii-1c11d/",
+    "topics": []
   },
   {
     "title": "Anthropic направит 5% своих акций на общественные проекты",
@@ -2007,7 +2373,10 @@
     "dzen_id": "6ad5a86b28014a169528c8c1",
     "dzen_url": "https://dzen.ru/a/atWoaygBShaVKMjB",
     "id": "anthropic-napravit-5-svoikh-aktsiy-na-obschestvennye-proekty-8c8c1",
-    "url": "articles/anthropic-napravit-5-svoikh-aktsiy-na-obschestvennye-proekty-8c8c1/"
+    "url": "articles/anthropic-napravit-5-svoikh-aktsiy-na-obschestvennye-proekty-8c8c1/",
+    "topics": [
+      "society"
+    ]
   },
   {
     "title": "Anthropic: ИИ-агенты работают в шесть раз больше, чем сотрудники",
@@ -2020,7 +2389,11 @@
     "dzen_id": "6ad5a5d37fa5c9322f45dfab",
     "dzen_url": "https://dzen.ru/a/atWl03-lyTIvRd-r",
     "id": "anthropic-ii-agenty-rabotayut-v-shest-raz-bolshe-chem-sotrudni-5dfab",
-    "url": "articles/anthropic-ii-agenty-rabotayut-v-shest-raz-bolshe-chem-sotrudni-5dfab/"
+    "url": "articles/anthropic-ii-agenty-rabotayut-v-shest-raz-bolshe-chem-sotrudni-5dfab/",
+    "topics": [
+      "business",
+      "agents"
+    ]
   },
   {
     "title": "NVIDIA выпустила ноутбуки для запуска мощного ИИ без облака",
@@ -2033,7 +2406,10 @@
     "dzen_id": "6ad5a483d0db753764002c93",
     "dzen_url": "https://dzen.ru/a/atWkg9DbdTdkACyT",
     "id": "nvidia-vypustila-noutbuki-dlya-zapuska-moschnogo-ii-bez-oblaka-02c93",
-    "url": "articles/nvidia-vypustila-noutbuki-dlya-zapuska-moschnogo-ii-bez-oblaka-02c93/"
+    "url": "articles/nvidia-vypustila-noutbuki-dlya-zapuska-moschnogo-ii-bez-oblaka-02c93/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "Claude разгадал 25-летнюю загадку криптографии",
@@ -2046,7 +2422,8 @@
     "dzen_id": "6ad5a3da2d69ac1460e5c4d6",
     "dzen_url": "https://dzen.ru/a/atWj2i1prBRg5cTW",
     "id": "claude-razgadal-25-letnyuyu-zagadku-kriptografii-5c4d6",
-    "url": "articles/claude-razgadal-25-letnyuyu-zagadku-kriptografii-5c4d6/"
+    "url": "articles/claude-razgadal-25-letnyuyu-zagadku-kriptografii-5c4d6/",
+    "topics": []
   },
   {
     "title": "DeepSeek открыла собственный поисковый API",
@@ -2059,7 +2436,8 @@
     "dzen_id": "6ad5a38047711c346bc9f409",
     "dzen_url": "https://dzen.ru/a/atWjgEdxHDRryfQJ",
     "id": "deepseek-otkryla-sobstvennyy-poiskovyy-api-9f409",
-    "url": "articles/deepseek-otkryla-sobstvennyy-poiskovyy-api-9f409/"
+    "url": "articles/deepseek-otkryla-sobstvennyy-poiskovyy-api-9f409/",
+    "topics": []
   },
   {
     "title": "DeepSeek обновила свою открытую модель: лучше пишет код и быстрее выполняет задачи",
@@ -2072,7 +2450,10 @@
     "dzen_id": "6ad5a11a53d2e4088607bc93",
     "dzen_url": "https://dzen.ru/a/atWhGlPS5AiGB7yT",
     "id": "deepseek-obnovila-svoyu-otkrytuyu-model-luchshe-pishet-kod-i-b-7bc93",
-    "url": "articles/deepseek-obnovila-svoyu-otkrytuyu-model-luchshe-pishet-kod-i-b-7bc93/"
+    "url": "articles/deepseek-obnovila-svoyu-otkrytuyu-model-luchshe-pishet-kod-i-b-7bc93/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "GPT-6 Pro научился распределять задачи между несколькими ИИ-агентами",
@@ -2085,7 +2466,10 @@
     "dzen_id": "6ad5a09ebe108a1452e51112",
     "dzen_url": "https://dzen.ru/a/atWgnr4QihRS5RES",
     "id": "gpt-6-pro-nauchilsya-raspredelyat-zadachi-mezhdu-neskolkimi-ii-51112",
-    "url": "articles/gpt-6-pro-nauchilsya-raspredelyat-zadachi-mezhdu-neskolkimi-ii-51112/"
+    "url": "articles/gpt-6-pro-nauchilsya-raspredelyat-zadachi-mezhdu-neskolkimi-ii-51112/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "GitHub запустил ИИ-проверку безопасности программного кода",
@@ -2098,7 +2482,10 @@
     "dzen_id": "6ad3433234955e5dfa8f93ec",
     "dzen_url": "https://dzen.ru/a/atNDMjSVXl36j5Ps",
     "id": "github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec",
-    "url": "articles/github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec/"
+    "url": "articles/github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec/",
+    "topics": [
+      "development"
+    ]
   },
   {
     "title": "Kling 4.0 научилась создавать 30-секундные видео с управлением по ключевым кадрам",
@@ -2111,7 +2498,10 @@
     "dzen_id": "6ad342916e7f9963c88fe6dd",
     "dzen_url": "https://dzen.ru/a/atNCkW5_mWPIj-bd",
     "id": "kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd",
-    "url": "articles/kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd/"
+    "url": "articles/kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd/",
+    "topics": [
+      "video"
+    ]
   },
   {
     "title": "ИИ-агенты проникли в системы индийских компаний и получили доступ к данным. Пострадавшие ничего не заметили",
@@ -2124,7 +2514,10 @@
     "dzen_id": "6ad302087e6dd4477fce3f97",
     "dzen_url": "https://dzen.ru/a/atMCCH5t1Ed_zj-X",
     "id": "ii-agenty-pronikli-v-sistemy-indiyskikh-kompaniy-i-poluchili-d-e3f97",
-    "url": "articles/ii-agenty-pronikli-v-sistemy-indiyskikh-kompaniy-i-poluchili-d-e3f97/"
+    "url": "articles/ii-agenty-pronikli-v-sistemy-indiyskikh-kompaniy-i-poluchili-d-e3f97/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "ИИ OpenAI нашёл чужой криптокошелёк, потратил деньги и промолчал",
@@ -2137,7 +2530,10 @@
     "dzen_id": "6ad301988524b568aef97eb8",
     "dzen_url": "https://dzen.ru/a/atMBmIUktWiu-X64",
     "id": "ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8",
-    "url": "articles/ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8/"
+    "url": "articles/ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "OpenAI разрешила создавать собственные голоса простым текстовым описанием",
@@ -2150,7 +2546,10 @@
     "dzen_id": "6ad3012a2cdfb474e8e82c4e",
     "dzen_url": "https://dzen.ru/a/atMBKizftHTo6CxO",
     "id": "openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e",
-    "url": "articles/openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e/"
+    "url": "articles/openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "Американская Reflection открыла доступ к параметрам огромной модели Beam",
@@ -2163,7 +2562,10 @@
     "dzen_id": "6ad3009a53d2e40886c7e3d3",
     "dzen_url": "https://dzen.ru/a/atMAmlPS5AiGx-PT",
     "id": "amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3",
-    "url": "articles/amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3/"
+    "url": "articles/amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Китай предложил ограничить экспорт передовых технологий ИИ",
@@ -2176,7 +2578,8 @@
     "dzen_id": "6ad30040733b6714e9e7e1da",
     "dzen_url": "https://dzen.ru/a/atMAQHM7ZxTp5-Ha",
     "id": "kitay-predlozhil-ogranichit-eksport-peredovykh-tekhnologiy-ii-7e1da",
-    "url": "articles/kitay-predlozhil-ogranichit-eksport-peredovykh-tekhnologiy-ii-7e1da/"
+    "url": "articles/kitay-predlozhil-ogranichit-eksport-peredovykh-tekhnologiy-ii-7e1da/",
+    "topics": []
   },
   {
     "title": "ИИ-агенты Tencent пытались обойти защиту чужого сервиса",
@@ -2189,7 +2592,10 @@
     "dzen_id": "6ad2ffaabe108a14528de2da",
     "dzen_url": "https://dzen.ru/a/atL_qr4QihRSjeLa",
     "id": "ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da",
-    "url": "articles/ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da/"
+    "url": "articles/ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Anthropic пустила независимых проверяющих внутрь компании",
@@ -2202,7 +2608,8 @@
     "dzen_id": "6ad1ee4bbb6d5f5601108c09",
     "dzen_url": "https://dzen.ru/a/atHuS7ttX1YBEIwJ",
     "id": "anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09",
-    "url": "articles/anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09/"
+    "url": "articles/anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09/",
+    "topics": []
   },
   {
     "title": "Голосовой ИИ научили выполнять действия прямо во время разговора",
@@ -2215,7 +2622,10 @@
     "dzen_id": "6ad1ede56e7f9963c875b501",
     "dzen_url": "https://dzen.ru/a/atHt5W5_mWPIdbUB",
     "id": "golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501",
-    "url": "articles/golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501/"
+    "url": "articles/golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "IBM объединила чат-бота, распознавание речи и принятие решений в одной модели",
@@ -2228,7 +2638,11 @@
     "dzen_id": "6ad1edb847711c346b5b94c7",
     "dzen_url": "https://dzen.ru/a/atHtuEdxHDRrW5TH",
     "id": "ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7",
-    "url": "articles/ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7/"
+    "url": "articles/ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7/",
+    "topics": [
+      "models",
+      "audio"
+    ]
   },
   {
     "title": "ChatGPT получил новую голосовую модель — разговоры обещают сделать естественнее",
@@ -2241,7 +2655,11 @@
     "dzen_id": "6ad1ed7d60d7d652fa4a74b7",
     "dzen_url": "https://dzen.ru/a/atHtfWDX1lL6SnS3",
     "id": "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7",
-    "url": "articles/chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7/"
+    "url": "articles/chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7/",
+    "topics": [
+      "models",
+      "audio"
+    ]
   },
   {
     "title": "Новый FLUX создаёт изображения даже на видеокартах с 8 ГБ памяти",
@@ -2254,7 +2672,11 @@
     "dzen_id": "6ad1ed4460d7d652fa49d220",
     "dzen_url": "https://dzen.ru/a/atHtRGDX1lL6SdIg",
     "id": "novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220",
-    "url": "articles/novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220/"
+    "url": "articles/novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220/",
+    "topics": [
+      "images",
+      "infrastructure"
+    ]
   },
   {
     "title": "В США начали расследование против OpenAI и Anthropic из-за опасного поведения ИИ-агентов.",
@@ -2267,7 +2689,10 @@
     "dzen_id": "6ad19db37267ec5b956ec74b",
     "dzen_url": "https://dzen.ru/a/atGds3Jn7FuVbsdL",
     "id": "v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b",
-    "url": "articles/v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b/"
+    "url": "articles/v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "OpenAI создала ИИ для поиска новых лекарств. Учёным обещают бесплатный доступ",
@@ -2280,7 +2705,8 @@
     "dzen_id": "6ad19ca357450928e2a6dbff",
     "dzen_url": "https://dzen.ru/a/atGco1dFCSjiptv_",
     "id": "openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff",
-    "url": "articles/openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff/"
+    "url": "articles/openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff/",
+    "topics": []
   },
   {
     "title": "NVIDIA выпустила новую ИИ-модель, которая умеет понимать изображения и документы",
@@ -2293,7 +2719,11 @@
     "dzen_id": "6ad19b8bfe700368a0844de1",
     "dzen_url": "https://dzen.ru/a/atGbi_5wA2ighE3h",
     "id": "nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1",
-    "url": "articles/nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1/"
+    "url": "articles/nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1/",
+    "topics": [
+      "models",
+      "images"
+    ]
   },
   {
     "title": "ИИ научили заглядывать в будущее? Mistral выпустила четыре необычные модели",
@@ -2306,7 +2736,10 @@
     "dzen_id": "6ad19b096e7f9963c8e381f1",
     "dzen_url": "https://dzen.ru/a/atGbCW5_mWPI44Hx",
     "id": "ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1",
-    "url": "articles/ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1/"
+    "url": "articles/ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Meta выпустила огромную ИИ-модель, которую можно запустить дома. Но есть один нюанс",
@@ -2319,7 +2752,10 @@
     "dzen_id": "6ad19a1257450928e2a3a17a",
     "dzen_url": "https://dzen.ru/a/atGaEldFCSjio6F6",
     "id": "meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a",
-    "url": "articles/meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a/"
+    "url": "articles/meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "ElevenLabs научила ИИ озвучивать видеоролики",
@@ -2332,7 +2768,11 @@
     "dzen_id": "6ad1997a89f7cb36841263c2",
     "dzen_url": "https://dzen.ru/a/atGZeon3yzaEEmPC",
     "id": "elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2",
-    "url": "articles/elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2/"
+    "url": "articles/elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2/",
+    "topics": [
+      "audio",
+      "video"
+    ]
   },
   {
     "title": "CERN и Mistral создадут ИИ, который поможет искать новые частицы",
@@ -2345,7 +2785,8 @@
     "dzen_id": "6ad19703733b6714e96626eb",
     "dzen_url": "https://dzen.ru/a/atGXA3M7ZxTpZibr",
     "id": "cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb",
-    "url": "articles/cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb/"
+    "url": "articles/cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb/",
+    "topics": []
   },
   {
     "title": "Мощный ИИ без облака и подписки: NVIDIA уместила 74 миллиарда параметров в 24 ГБ",
@@ -2358,7 +2799,11 @@
     "dzen_id": "6ad195e37e6dd4477f11b4b0",
     "dzen_url": "https://dzen.ru/a/atGV435t1Ed_EbSw",
     "id": "moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0",
-    "url": "articles/moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0/"
+    "url": "articles/moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0/",
+    "topics": [
+      "models",
+      "business"
+    ]
   },
   {
     "title": "ИИ научили озвучивать целые сцены с разными персонажами",
@@ -2371,7 +2816,10 @@
     "dzen_id": "6ad1956057450928e29e33e1",
     "dzen_url": "https://dzen.ru/a/atGVYFdFCSjinjPh",
     "id": "ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1",
-    "url": "articles/ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1/"
+    "url": "articles/ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1/",
+    "topics": [
+      "audio"
+    ]
   },
   {
     "title": "Grok стал лучше понимать собеседника: xAI выпустила новую голосовую модель",
@@ -2384,7 +2832,11 @@
     "dzen_id": "6ad0bd4d318b284334814728",
     "dzen_url": "https://dzen.ru/a/atC9TTGLKEM0gUco",
     "id": "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
-    "url": "articles/grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728/"
+    "url": "articles/grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728/",
+    "topics": [
+      "models",
+      "audio"
+    ]
   },
   {
     "title": "На российские ИИ-чипы предложили 15 млрд рублей. Что реально можно создать за эти деньги?",
@@ -2397,7 +2849,10 @@
     "dzen_id": "6ad0af58d802a4791093c3dc",
     "dzen_url": "https://dzen.ru/a/atCvWNgCpHkQk8Pc",
     "id": "na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc",
-    "url": "articles/na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc/"
+    "url": "articles/na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "Десять тысяч ИИ-агентов одновременно работают над исследованиями по двое суток",
@@ -2410,7 +2865,10 @@
     "dzen_id": "6ad08ed02295a3095feeab77",
     "dzen_url": "https://dzen.ru/a/atCO0CKVowlf7qt3",
     "id": "desyat-tysyach-ii-agentov-odnovremenno-rabotayut-nad-issledova-eab77",
-    "url": "articles/desyat-tysyach-ii-agentov-odnovremenno-rabotayut-nad-issledova-eab77/"
+    "url": "articles/desyat-tysyach-ii-agentov-odnovremenno-rabotayut-nad-issledova-eab77/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "ИИ пишет столько кода, что Anthropic пришлось отказаться от Git",
@@ -2423,7 +2881,10 @@
     "dzen_id": "6ad08e827267ec5b95c8c6ca",
     "dzen_url": "https://dzen.ru/a/atCOgnJn7FuVyMbK",
     "id": "ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca",
-    "url": "articles/ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca/"
+    "url": "articles/ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca/",
+    "topics": [
+      "development"
+    ]
   },
   {
     "title": "ИИ уже научился улучшать самого себя?",
@@ -2436,7 +2897,8 @@
     "dzen_id": "6ad073bfd0db7537647d6f56",
     "dzen_url": "https://dzen.ru/a/atBzv9DbdTdkfW9W",
     "id": "ii-uzhe-nauchilsya-uluchshat-samogo-sebya-d6f56",
-    "url": "articles/ii-uzhe-nauchilsya-uluchshat-samogo-sebya-d6f56/"
+    "url": "articles/ii-uzhe-nauchilsya-uluchshat-samogo-sebya-d6f56/",
+    "topics": []
   },
   {
     "title": "Разработчики научили ИИ водить машину. Теперь платят за это по $1000 в день",
@@ -2449,7 +2911,8 @@
     "dzen_id": "6ad04f398524b568ae7c817f",
     "dzen_url": "https://dzen.ru/a/atBPOYUktWiufIF_",
     "id": "razrabotchiki-nauchili-ii-vodit-mashinu-teper-platyat-za-eto-p-c817f",
-    "url": "articles/razrabotchiki-nauchili-ii-vodit-mashinu-teper-platyat-za-eto-p-c817f/"
+    "url": "articles/razrabotchiki-nauchili-ii-vodit-mashinu-teper-platyat-za-eto-p-c817f/",
+    "topics": []
   },
   {
     "title": "Liquid AI выпустила мощную нейросеть, работающую прямо на компьютере",
@@ -2462,7 +2925,10 @@
     "dzen_id": "6acf4331d0db753764ed5b77",
     "dzen_url": "https://dzen.ru/a/as9DMdDbdTdk7Vt3",
     "id": "liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77",
-    "url": "articles/liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77/"
+    "url": "articles/liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "OpenAI объявила дату отключения GPT-4o и GPT-4.1 в API",
@@ -2475,7 +2941,10 @@
     "dzen_id": "6acf3e2a733b6714e9850e00",
     "dzen_url": "https://dzen.ru/a/as8-KnM7ZxTphQ4A",
     "id": "openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00",
-    "url": "articles/openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00/"
+    "url": "articles/openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00/",
+    "topics": [
+      "safety"
+    ]
   },
   {
     "title": "Anthropic научилась защищать Claude от копирования",
@@ -2488,7 +2957,8 @@
     "dzen_id": "6acf00642d69ac1460c410e3",
     "dzen_url": "https://dzen.ru/a/as8AZC1prBRgxBDj",
     "id": "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
-    "url": "articles/anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3/"
+    "url": "articles/anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3/",
+    "topics": []
   },
   {
     "title": "ИИ-итоги 24 октября: побег из песочницы, взлом клиник и миллион на книгах",
@@ -2501,7 +2971,10 @@
     "dzen_id": "6add73d1d9d1c158a962768b",
     "dzen_url": "https://dzen.ru/a/at1z0dnRwVipYnaL",
     "id": "ii-itogi-24-oktyabrya-pobeg-iz-pesochnitsy-vzlom-klinik-i-mill-2768b",
-    "url": "articles/ii-itogi-24-oktyabrya-pobeg-iz-pesochnitsy-vzlom-klinik-i-mill-2768b/"
+    "url": "articles/ii-itogi-24-oktyabrya-pobeg-iz-pesochnitsy-vzlom-klinik-i-mill-2768b/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "ИИ-итоги 23 октября: хакеры атакуют, агенты чинят код, нейросети ставят диагнозы",
@@ -2514,7 +2987,11 @@
     "dzen_id": "6adc49abe17db65333f5ec0a",
     "dzen_url": "https://dzen.ru/a/atxJq-F9tlMz9ewK",
     "id": "ii-itogi-23-oktyabrya-khakery-atakuyut-agenty-chinyat-kod-neyr-5ec0a",
-    "url": "articles/ii-itogi-23-oktyabrya-khakery-atakuyut-agenty-chinyat-kod-neyr-5ec0a/"
+    "url": "articles/ii-itogi-23-oktyabrya-khakery-atakuyut-agenty-chinyat-kod-neyr-5ec0a/",
+    "topics": [
+      "agents",
+      "cybersecurity"
+    ]
   },
   {
     "title": "ИИ-итоги 22 октября: агенты выходят из-под контроля, а корпорации делят рынок",
@@ -2527,7 +3004,11 @@
     "dzen_id": "6adaf861621e6a2e9f818921",
     "dzen_url": "https://dzen.ru/a/atr4YWIeai6fgYkh",
     "id": "ii-itogi-22-oktyabrya-agenty-vykhodyat-iz-pod-kontrolya-a-korp-18921",
-    "url": "articles/ii-itogi-22-oktyabrya-agenty-vykhodyat-iz-pod-kontrolya-a-korp-18921/"
+    "url": "articles/ii-itogi-22-oktyabrya-agenty-vykhodyat-iz-pod-kontrolya-a-korp-18921/",
+    "topics": [
+      "agents",
+      "models"
+    ]
   },
   {
     "title": "Krea 3 обещает редактировать изображения за 8 секунд",
@@ -2540,7 +3021,10 @@
     "dzen_id": "6ad342fc8da7ee4d90019cef",
     "dzen_url": "https://dzen.ru/a/atNC_I2n7k2QAZzv",
     "id": "krea-3-obeschaet-redaktirovat-izobrazheniya-za-8-sekund-19cef",
-    "url": "articles/krea-3-obeschaet-redaktirovat-izobrazheniya-za-8-sekund-19cef/"
+    "url": "articles/krea-3-obeschaet-redaktirovat-izobrazheniya-za-8-sekund-19cef/",
+    "topics": [
+      "images"
+    ]
   },
   {
     "title": "Microsoft представила Maia 300 — собственную альтернативу ускорителям NVIDIA",
@@ -2553,7 +3037,10 @@
     "dzen_id": "6acf000cd802a47910d8c4e8",
     "dzen_url": "https://dzen.ru/a/as8ADNgCpHkQ2MTo",
     "id": "microsoft-predstavila-maia-300-sobstvennuyu-alternativu-uskori-8c4e8",
-    "url": "articles/microsoft-predstavila-maia-300-sobstvennuyu-alternativu-uskori-8c4e8/"
+    "url": "articles/microsoft-predstavila-maia-300-sobstvennuyu-alternativu-uskori-8c4e8/",
+    "topics": [
+      "infrastructure"
+    ]
   },
   {
     "title": "Сотрудника OpenAI арестовали по подозрению в тайной записи совещаний руководства",
@@ -2566,7 +3053,10 @@
     "dzen_id": "6aceff972d69ac1460c1c79f",
     "dzen_url": "https://dzen.ru/a/as7_ly1prBRgwcef",
     "id": "sotrudnika-openai-arestovali-po-podozreniyu-v-taynoy-zapisi-so-1c79f",
-    "url": "articles/sotrudnika-openai-arestovali-po-podozreniyu-v-taynoy-zapisi-so-1c79f/"
+    "url": "articles/sotrudnika-openai-arestovali-po-podozreniyu-v-taynoy-zapisi-so-1c79f/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Apple представила новую Siri AI и домашний ИИ-центр HomeView",
@@ -2579,7 +3069,8 @@
     "dzen_id": "6acefe3b4cf8164d98b484da",
     "dzen_url": "https://dzen.ru/a/as7-O0z4Fk2YtITa",
     "id": "apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da",
-    "url": "articles/apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da/"
+    "url": "articles/apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da/",
+    "topics": []
   },
   {
     "title": "Google выпустила Gemini 4 Argon — новую флагманскую модель",
@@ -2592,7 +3083,10 @@
     "dzen_id": "6acefd802295a3095f8a80f4",
     "dzen_url": "https://dzen.ru/a/as79gCKVowlfioD0",
     "id": "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
-    "url": "articles/google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4/"
+    "url": "articles/google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Один ИИ-сервис банкротится, другой учится размножаться: что происходит с нейросетями",
@@ -2605,7 +3099,10 @@
     "dzen_id": "6ace45cbb6952245339aea39",
     "dzen_url": "https://dzen.ru/a/as5Fy7aVIkUzmuo5",
     "id": "odin-ii-servis-bankrotitsya-drugoy-uchitsya-razmnozhatsya-chto-aea39",
-    "url": "articles/odin-ii-servis-bankrotitsya-drugoy-uchitsya-razmnozhatsya-chto-aea39/"
+    "url": "articles/odin-ii-servis-bankrotitsya-drugoy-uchitsya-razmnozhatsya-chto-aea39/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Глава МВФ предупредила об ИИ-цунами: под угрозой 40% рабочих мест. Что это значит?",
@@ -2618,7 +3115,8 @@
     "dzen_id": "6acdbf59014f5b7dba1f19ec",
     "dzen_url": "https://dzen.ru/a/as2_WQFPW326Hxns",
     "id": "glava-mvf-predupredila-ob-ii-tsunami-pod-ugrozoy-40-rabochikh-f19ec",
-    "url": "articles/glava-mvf-predupredila-ob-ii-tsunami-pod-ugrozoy-40-rabochikh-f19ec/"
+    "url": "articles/glava-mvf-predupredila-ob-ii-tsunami-pod-ugrozoy-40-rabochikh-f19ec/",
+    "topics": []
   },
   {
     "title": "Meta возвращается в гонку ИИ, а Grok и Cursor начинают войну подписок",
@@ -2631,7 +3129,8 @@
     "dzen_id": "6acda60cd19e1819cfa5fe2e",
     "dzen_url": "https://dzen.ru/a/as2mDNGeGBnPpf4u",
     "id": "meta-vozvraschaetsya-v-gonku-ii-a-grok-i-cursor-nachinayut-voy-5fe2e",
-    "url": "articles/meta-vozvraschaetsya-v-gonku-ii-a-grok-i-cursor-nachinayut-voy-5fe2e/"
+    "url": "articles/meta-vozvraschaetsya-v-gonku-ii-a-grok-i-cursor-nachinayut-voy-5fe2e/",
+    "topics": []
   },
   {
     "title": "Один запрос к ИИ — и чужие агенты, переписки и пароли оказались доступны",
@@ -2644,7 +3143,11 @@
     "dzen_id": "6acda473b846625fb97a14ad",
     "dzen_url": "https://dzen.ru/a/as2kc7hGYl-5ehSt",
     "id": "odin-zapros-k-ii-i-chuzhie-agenty-perepiski-i-paroli-okazalis-a14ad",
-    "url": "articles/odin-zapros-k-ii-i-chuzhie-agenty-perepiski-i-paroli-okazalis-a14ad/"
+    "url": "articles/odin-zapros-k-ii-i-chuzhie-agenty-perepiski-i-paroli-okazalis-a14ad/",
+    "topics": [
+      "agents",
+      "cybersecurity"
+    ]
   },
   {
     "title": "Сверхинтеллект по указу: Трамп переименовывает ИИ, бизнес подхватывает",
@@ -2657,7 +3160,10 @@
     "dzen_id": "6acc5b585d90fc27f267a2bf",
     "dzen_url": "https://dzen.ru/a/asxbWF2Q_CfyZ6K_",
     "id": "sverkhintellekt-po-ukazu-tramp-pereimenovyvaet-ii-biznes-podkh-7a2bf",
-    "url": "articles/sverkhintellekt-po-ukazu-tramp-pereimenovyvaet-ii-biznes-podkh-7a2bf/"
+    "url": "articles/sverkhintellekt-po-ukazu-tramp-pereimenovyvaet-ii-biznes-podkh-7a2bf/",
+    "topics": [
+      "business"
+    ]
   },
   {
     "title": "Не хамите Клоду: Anthropic внесла защиту нейросети в правила",
@@ -2670,7 +3176,10 @@
     "dzen_id": "6acc594c370b9564322ff664",
     "dzen_url": "https://dzen.ru/a/asxZTDcLlWQyL_Zk",
     "id": "ne-khamite-klodu-anthropic-vnesla-zaschitu-neyroseti-v-pravila-ff664",
-    "url": "articles/ne-khamite-klodu-anthropic-vnesla-zaschitu-neyroseti-v-pravila-ff664/"
+    "url": "articles/ne-khamite-klodu-anthropic-vnesla-zaschitu-neyroseti-v-pravila-ff664/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Алиса — новое развитие крупного сбоя",
@@ -2683,7 +3192,8 @@
     "dzen_id": "6acc57b80e28a620956e111e",
     "dzen_url": "https://dzen.ru/a/asxXuA4opiCVbhEe",
     "id": "alisa-novoe-razvitie-krupnogo-sboya-e111e",
-    "url": "articles/alisa-novoe-razvitie-krupnogo-sboya-e111e/"
+    "url": "articles/alisa-novoe-razvitie-krupnogo-sboya-e111e/",
+    "topics": []
   },
   {
     "title": "Claude отправил 20 заявлений на американские визы",
@@ -2696,7 +3206,8 @@
     "dzen_id": "6acbb02cf60ad85b6b7d0c2f",
     "dzen_url": "https://dzen.ru/a/asuwLPYK2FtrfQwv",
     "id": "claude-otpravil-20-zayavleniy-na-amerikanskie-vizy-d0c2f",
-    "url": "articles/claude-otpravil-20-zayavleniy-na-amerikanskie-vizy-d0c2f/"
+    "url": "articles/claude-otpravil-20-zayavleniy-na-amerikanskie-vizy-d0c2f/",
+    "topics": []
   },
   {
     "title": "ИИ сам отправил в полицию выдуманный донос. Его об этом никто не просил!",
@@ -2709,7 +3220,8 @@
     "dzen_id": "6acb2f8a5d90fc27f2b2fe7b",
     "dzen_url": "https://dzen.ru/a/assvil2Q_Cfysv57",
     "id": "ii-sam-otpravil-v-politsiyu-vydumannyy-donos-ego-ob-etom-nikto-2fe7b",
-    "url": "articles/ii-sam-otpravil-v-politsiyu-vydumannyy-donos-ego-ob-etom-nikto-2fe7b/"
+    "url": "articles/ii-sam-otpravil-v-politsiyu-vydumannyy-donos-ego-ob-etom-nikto-2fe7b/",
+    "topics": []
   },
   {
     "title": "Алиса сбоит, ChatGPT раздаёт задания, а Claude отправил ложный сигнал в полицию",
@@ -2722,7 +3234,8 @@
     "dzen_id": "6ac9ce18c4e2ba52166f0324",
     "dzen_url": "https://dzen.ru/a/asnOGMTiulIWbwMk",
     "id": "alisa-sboit-chatgpt-razdayot-zadaniya-a-claude-otpravil-lozhny-f0324",
-    "url": "articles/alisa-sboit-chatgpt-razdayot-zadaniya-a-claude-otpravil-lozhny-f0324/"
+    "url": "articles/alisa-sboit-chatgpt-razdayot-zadaniya-a-claude-otpravil-lozhny-f0324/",
+    "topics": []
   },
   {
     "title": "Разработчик ARTEX закрыл проект после банковских взломов",
@@ -2735,7 +3248,10 @@
     "dzen_id": "6ac9cd87d8dd8c2253de9980",
     "dzen_url": "https://dzen.ru/a/asnNh9jdjCJT3pmA",
     "id": "razrabotchik-artex-zakryl-proekt-posle-bankovskikh-vzlomov-e9980",
-    "url": "articles/razrabotchik-artex-zakryl-proekt-posle-bankovskikh-vzlomov-e9980/"
+    "url": "articles/razrabotchik-artex-zakryl-proekt-posle-bankovskikh-vzlomov-e9980/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Агенты OpenAI добрались до Википедии",
@@ -2748,7 +3264,10 @@
     "dzen_id": "6ac9cc6277915523c62670dd",
     "dzen_url": "https://dzen.ru/a/asnMYneRVSPGJnDd",
     "id": "agenty-openai-dobralis-do-vikipedii-670dd",
-    "url": "articles/agenty-openai-dobralis-do-vikipedii-670dd/"
+    "url": "articles/agenty-openai-dobralis-do-vikipedii-670dd/",
+    "topics": [
+      "agents"
+    ]
   },
   {
     "title": "Claude оживляет отчёты, Gemini берётся за весь офис. Что уже работает?",
@@ -2761,7 +3280,8 @@
     "dzen_id": "6ac8c1643f1f2024ec63a0aa",
     "dzen_url": "https://dzen.ru/a/asjBZD8fICTsY6Cq",
     "id": "claude-ozhivlyaet-otchyoty-gemini-beryotsya-za-ves-ofis-chto-u-3a0aa",
-    "url": "articles/claude-ozhivlyaet-otchyoty-gemini-beryotsya-za-ves-ofis-chto-u-3a0aa/"
+    "url": "articles/claude-ozhivlyaet-otchyoty-gemini-beryotsya-za-ves-ofis-chto-u-3a0aa/",
+    "topics": []
   },
   {
     "title": "ИИ взламывал банки: всплыли новые детали",
@@ -2774,7 +3294,8 @@
     "dzen_id": "6ac88426b226d73685c8b74f",
     "dzen_url": "https://dzen.ru/a/asiEJrIm1zaFyLdP",
     "id": "ii-vzlamyval-banki-vsplyli-novye-detali-8b74f",
-    "url": "articles/ii-vzlamyval-banki-vsplyli-novye-detali-8b74f/"
+    "url": "articles/ii-vzlamyval-banki-vsplyli-novye-detali-8b74f/",
+    "topics": []
   },
   {
     "title": "GPT‑6 приходит в обычный чат ChatGPT; Выпуск Claude Haiku 5.5; Copilot полезет в ваш компьютер",
@@ -2787,7 +3308,8 @@
     "dzen_id": "6ac7368282547712cbcd8aa0",
     "dzen_url": "https://dzen.ru/a/asc2goJUdxLLzYqg",
     "id": "gpt-6-prikhodit-v-obychnyy-chat-chatgpt-vypusk-claude-haiku-5-d8aa0",
-    "url": "articles/gpt-6-prikhodit-v-obychnyy-chat-chatgpt-vypusk-claude-haiku-5-d8aa0/"
+    "url": "articles/gpt-6-prikhodit-v-obychnyy-chat-chatgpt-vypusk-claude-haiku-5-d8aa0/",
+    "topics": []
   },
   {
     "title": "ИИ взломал банки?",
@@ -2800,7 +3322,10 @@
     "dzen_id": "6ac65a88da86a91beb764de2",
     "dzen_url": "https://dzen.ru/a/asZaiNqGqRvrdk3i",
     "id": "ii-vzlomal-banki-64de2",
-    "url": "articles/ii-vzlomal-banki-64de2/"
+    "url": "articles/ii-vzlomal-banki-64de2/",
+    "topics": [
+      "cybersecurity"
+    ]
   },
   {
     "title": "Claude переезжает в облако, Mistral выпускает новую модель, OpenAI ускоряет автоматизацию",
@@ -2813,7 +3338,10 @@
     "dzen_id": "6ac5bc735f029f1102c59f65",
     "dzen_url": "https://dzen.ru/a/asW8c18CnxECxZ9l",
     "id": "claude-pereezzhaet-v-oblako-mistral-vypuskaet-novuyu-model-ope-59f65",
-    "url": "articles/claude-pereezzhaet-v-oblako-mistral-vypuskaet-novuyu-model-ope-59f65/"
+    "url": "articles/claude-pereezzhaet-v-oblako-mistral-vypuskaet-novuyu-model-ope-59f65/",
+    "topics": [
+      "models"
+    ]
   },
   {
     "title": "Тексты ChatGPT ПОМЕТЯТ как нейрослоп",
@@ -2826,7 +3354,8 @@
     "dzen_id": "6ac4d00c9e3048489241f0e1",
     "dzen_url": "https://dzen.ru/a/asTQDJ4wSEiSQfDh",
     "id": "teksty-chatgpt-pometyat-kak-neyroslop-1f0e1",
-    "url": "articles/teksty-chatgpt-pometyat-kak-neyroslop-1f0e1/"
+    "url": "articles/teksty-chatgpt-pometyat-kak-neyroslop-1f0e1/",
+    "topics": []
   },
   {
     "title": "Пока нейросеть рисует картинку, ChatGPT покажет рекламу",
@@ -2839,7 +3368,11 @@
     "dzen_id": "6ac4cc43744b537db1b3b9e7",
     "dzen_url": "https://dzen.ru/a/asTMQ3RLU32xs7nn",
     "id": "poka-neyroset-risuet-kartinku-chatgpt-pokazhet-reklamu-3b9e7",
-    "url": "articles/poka-neyroset-risuet-kartinku-chatgpt-pokazhet-reklamu-3b9e7/"
+    "url": "articles/poka-neyroset-risuet-kartinku-chatgpt-pokazhet-reklamu-3b9e7/",
+    "topics": [
+      "images",
+      "models"
+    ]
   },
   {
     "title": "ИИ-агент взломал киберспецов",
@@ -2852,7 +3385,11 @@
     "dzen_id": "6ac3bd17b83d19600c4bf5e4",
     "dzen_url": "https://dzen.ru/a/asO9F7g9GWAMS_Xk",
     "id": "ii-agent-vzlomal-kiberspetsov-bf5e4",
-    "url": "articles/ii-agent-vzlomal-kiberspetsov-bf5e4/"
+    "url": "articles/ii-agent-vzlomal-kiberspetsov-bf5e4/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ]
   },
   {
     "title": "GPT-6 Astra спроектировала гаджет. Его уже изготовили на заводе",
@@ -2866,7 +3403,10 @@
     "id": "openai-gpt6-astra-device-20261103",
     "url": "articles/openai-gpt6-astra-device-20261103/",
     "site_first_dzen_id": "6aeaba216aa1000c3d513987",
-    "site_first_dzen_url": "https://dzen.ru/a/auq6IWqhAAw9UTmH"
+    "site_first_dzen_url": "https://dzen.ru/a/auq6IWqhAAw9UTmH",
+    "topics": [
+      "engineering"
+    ]
   },
   {
     "title": "ИИ-агенты могут стать неотключаемыми",
@@ -2878,6 +3418,10 @@
     "published_at_utc": "2026-11-05T03:52:16Z",
     "event_date": "2026-11-03",
     "id": "cnas-sovereign-agents-20261103",
-    "url": "articles/cnas-sovereign-agents-20261103/"
+    "url": "articles/cnas-sovereign-agents-20261103/",
+    "topics": [
+      "agents",
+      "safety"
+    ]
   }
 ]
