@@ -91,6 +91,50 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
             "repos/AfterDark1000/iipike-site/pages/builds"
         )
 
+    def test_auto_release_accepts_only_preexisting_approved_html_refresh(self):
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        valid = [
+            story, cover, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html",
+        ]
+        old_slug = "deepseek-shutdown-override"
+        old_page = f"articles/{old_slug}/index.html"
+        old_source = f"content/approved/{old_slug}.json"
+        calls = []
+
+        def fake_git(*args, **kwargs):
+            calls.append(args)
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\\n".join(valid + [old_page]) + "\\n")
+            if args[0] == "ls-tree":
+                requested = args[-1]
+                if requested in (old_page, old_source):
+                    return SimpleNamespace(stdout=f"100644 blob abcdef\\t{requested}\\n")
+                return SimpleNamespace(stdout="")
+            if args[0] == "rev-parse":
+                return SimpleNamespace(stdout="approved-base\\n")
+            return SimpleNamespace(stdout="")
+
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \\
+             patch("scripts.site_first_release_pr.run_checked"):
+            auto_publish_site(sid, "approved-base", (story, cover))
+        self.assertIn(("push", "origin", "HEAD:refs/heads/main"), calls)
+
+        for missing in (old_page, old_source):
+            def missing_blob(*args, **kwargs):
+                if args[0] == "ls-tree" and args[-1] == missing:
+                    return SimpleNamespace(stdout="")
+                return fake_git(*args, **kwargs)
+            with patch("scripts.site_first_release_pr.git", side_effect=missing_blob), \\
+                 patch("scripts.site_first_release_pr.run_checked") as pages:
+                with self.assertRaisesRegex(ValueError, "non-editorial"):
+                    auto_publish_site(sid, "approved-base", (story, cover))
+            pages.assert_not_called()
+
     def test_automatic_release_fails_closed_for_unexpected_file_or_moving_main(self):
         sid = ID
         story = f"editorial_inbox/stories/{sid}.json"
