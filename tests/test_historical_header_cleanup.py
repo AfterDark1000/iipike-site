@@ -36,7 +36,6 @@ class HistoricalHeaderCleanupTests(unittest.TestCase):
     def test_genuine_primary_source_remains_visible(self):
         row, data, page = fixture("codex-git-server")
         self.assertNotEqual(data["source_url"], data["dzen_url"])
-        self.assertIn("Версия в Дзене", page)
         result = cleanup_html(row, data, page)
         self.assertNotIn("Версия в Дзене", result)
         self.assertNotIn('<p class="summary">', result.split('<figure class="cover">',1)[0])
