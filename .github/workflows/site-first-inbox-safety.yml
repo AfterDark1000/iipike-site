@@ -8,6 +8,8 @@ on:
       - 'scripts/site_rich_text.py'
       - 'scripts/site_topics.py'
       - 'scripts/build_topics.py'
+      - 'scripts/build_sitemap.py'
+      - 'tests/test_search_indexing.py'
       - 'scripts/upgrade_article_navigation.py'
       - 'tests/test_site_topics.py'
       - '.github/workflows/topic-navigation-upgrade.yml'

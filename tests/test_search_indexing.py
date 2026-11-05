@@ -7,6 +7,7 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from scripts.site_rubrics import populated
+from scripts.site_topics import active_topics
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
@@ -32,6 +33,9 @@ class SearchIndexingTests(unittest.TestCase):
         urls = [p.text for p in tree.findall(".//s:loc", NAMESPACE)]
         expected = ([BASE + "/", BASE + "/articles/"] +
                     [BASE + "/rubrics/" + key + "/" for key in populated(self.records)] +
+                    ([BASE + "/topics/"] +
+                     [BASE + "/topics/" + key + "/" for key in active_topics(self.records)]
+                     if (ROOT / "topics" / "index.html").is_file() else []) +
                     [BASE + "/" + row["url"] for row in self.records])
         self.assertEqual(urls, expected)
         self.assertEqual(len(urls), len(set(urls)))

@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import populated, RUBRICS
+from scripts.site_topics import active_topics
 BASE = "https://iipike.ru"
 SITEMAP = ROOT / "sitemap.xml"
 SLUG_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/")
@@ -29,6 +30,23 @@ def get_urls():
         if not (ROOT / "rubrics" / key / "index.html").is_file():
             raise ValueError(f"Rubric HTML missing: {key}")
         urls.append(BASE + "/rubrics/" + key + "/")
+    # Before the one-time migration the topic directory does not yet exist.
+    # Never claim a discoverable URL until its reviewed static HTML is built.
+    topics_directory = ROOT / "topics" / "index.html"
+    if topics_directory.is_file():
+        if f'rel="canonical" href="{BASE}/topics/"' not in topics_directory.read_text(encoding="utf-8"):
+            raise ValueError("Topics index canonical missing")
+        urls.append(BASE + "/topics/")
+        for key in active_topics(records):
+            page = ROOT / "topics" / key / "index.html"
+            if not page.is_file():
+                raise ValueError("Topic page missing: " + key)
+            contents = page.read_text(encoding="utf-8")
+            if f'rel="canonical" href="{BASE}/topics/{key}/"' not in contents:
+                raise ValueError("Invalid topic canonical for " + key)
+            if re.search(r'<meta\s+name=["\']robots["\'][^>]*noindex', contents, re.IGNORECASE):
+                raise ValueError("Populated topic page is noindex: " + key)
+            urls.append(BASE + "/topics/" + key + "/")
     seen = set()
     for item in records:
         if not isinstance(item, dict):
