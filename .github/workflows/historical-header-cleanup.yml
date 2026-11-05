@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/historical_header_cleanup.py'
+      - 'tests/test_archival_batch7.py'
       - '.github/workflows/historical-header-cleanup.yml'
   workflow_dispatch:
 permissions:
