@@ -153,6 +153,11 @@ def main():
         raise ValueError("Scheduled publisher is not explicitly authorized")
     target = os.environ.get("HPII_TARGET_STORY_ID", "").strip() or None
     urgent = os.environ.get("HPII_URGENT_STORY", "false").lower() == "true"
+    inspect_only = os.environ.get("HPII_QUEUE_INSPECT_ONLY", "false").lower() == "true"
+    if inspect_only and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
+        raise ValueError("Read-only inspection may only be selected manually")
+    if urgent and inspect_only:
+        raise ValueError("Cannot combine urgent release and read-only inspection")
     if urgent and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
         raise ValueError("Urgency override only works in a manual workflow dispatch")
     git("fetch", "origin", "editorial-intake", "main")
@@ -163,6 +168,9 @@ def main():
     pending = ready_items(source_ref)
     print("QUEUE_READY:", len(pending), "IDs:",
           [x["id"] for x in pending], flush=True)
+    if inspect_only:
+        print("INSPECTION_ONLY: queue checked, no release allowed", flush=True)
+        return
     item = select_one(pending, live, dt.datetime.now(dt.timezone.utc),
                       target=target, urgent=urgent)
     if not item:
