@@ -66,7 +66,6 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("Хинтон", page)
         self.assertIn("Опубликована", page)
         self.assertIn("https://iipike.ru/articles/cnas/", page)
-        self.assertIn("отложенных", page) if False else None
         self.assertIn("Репозиторий публичный", page)
         self.assertNotIn("<script>", page)
 
