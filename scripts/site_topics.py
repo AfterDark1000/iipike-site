@@ -10,6 +10,7 @@ from html import escape
 import re
 from pathlib import Path
 from scripts.site_rubrics import RUBRICS, publication_date
+from scripts.site_topic_registry import load_extensions
 
 BASE = "https://iipike.ru"
 TOPICS = {
@@ -30,7 +31,16 @@ TOPICS = {
     "science": ("Наука и экология", "Фундаментальная наука, космос, экология и наблюдение за природой."),
     "finance": ("Деньги и инвестиции", "Финансирование ИИ, рынки, капитал, IPO и экономика технологических компаний."),
     "apps": ("Приложения и сервисы", "Пользовательские функции ChatGPT, Gemini, Claude и других приложений и сервисов."),
-}
+} 
+# Built-in 17 topic keys remain stable. Emerging categories are appended by
+# the editor as reviewed DATA; no Python code change is needed for each topic.
+# An invalid manifest fails closed before an article is released.
+BUILTIN_TOPICS = dict(TOPICS)
+TOPICS.update(load_extensions(
+    Path(__file__).resolve().parents[1] / "data" / "topic_extensions.json",
+    BUILTIN_TOPICS,
+    Path(__file__).resolve().parents[1] / "news.json",
+))
 
 # Matches should describe actual subject matter, not merely mention AI or
 # a company name. Title matches dominate; summaries only break close ties.
