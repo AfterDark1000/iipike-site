@@ -57,7 +57,9 @@ class SeventhBatchIntegrityTests(unittest.TestCase):
                 self.assertNotIn('"dateModified":',page)
                 self.assertIn(entry["dzen_url"],page)
                 self.assertIn('class="article-text"',page)
-                self.assertIn('rel="noopener noreferrer"',page)
+                # Provenance stays machine-readable; an outbound Dzen link
+                # need not appear in the reader-facing article layout.
+                self.assertIn('"isBasedOn": "'+entry["dzen_url"]+'"',page)
                 self.assertGreater(entry["source_full_text_characters"],500)
     def test_sitemap_and_rss_do_not_invent_dates(self):
         xml=ET.parse(ROOT/"sitemap.xml").getroot()
