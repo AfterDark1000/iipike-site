@@ -6,6 +6,11 @@ on:
       - 'editorial_inbox/**'
       - 'scripts/site_first_inbox.py'
       - 'scripts/site_rich_text.py'
+      - 'scripts/site_topics.py'
+      - 'scripts/build_topics.py'
+      - 'scripts/upgrade_article_navigation.py'
+      - 'tests/test_site_topics.py'
+      - '.github/workflows/topic-navigation-upgrade.yml'
       - 'scripts/site_related.py'
       - 'scripts/publish_approved_article.py'
       - 'scripts/historical_header_cleanup.py'
@@ -37,6 +42,7 @@ jobs:
           python3 -m py_compile scripts/site_first_inbox.py scripts/site_rich_text.py
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
           python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
           python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
