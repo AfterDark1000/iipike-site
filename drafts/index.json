@@ -1,5 +1,12 @@
 [
   {
+    "id": "c65c7708e93995ca4541",
+    "date": "2026-11-05",
+    "title": "Компактный голосовой ИИ Phonon научился говорить на пяти языках без интернета",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/phonon-tts"
+  },
+  {
     "id": "8d86676710497099b109",
     "date": "2026-11-04",
     "title": "Hugging Face представила StateBench: тест для проверки памяти ИИ на длинных дистанциях",

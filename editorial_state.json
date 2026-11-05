@@ -102,6 +102,12 @@
       "utc_date": "2026-11-04",
       "source_url": "https://huggingface.co/blog/allenai/statebench",
       "source_title": "StateBench: Testing how language models track state changes over long documents"
+    },
+    {
+      "id": "c65c7708e93995ca4541",
+      "utc_date": "2026-11-05",
+      "source_url": "https://huggingface.co/blog/phonon-tts",
+      "source_title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks."
     }
   ]
 }
