@@ -1,6 +1,7 @@
 """Controlled topical navigation, independent of the four editorial rubrics.
 
-A story can have 0–2 topics. Never accept arbitrary scanner labels as a URL.
+A story can have 0–2 topics. The controlled vocabulary is extensible,
+but never accept arbitrary scanner labels as a URL.
 The editorial handoff may provide validated keys; otherwise a conservative
 rule-based classifier works on headline and summary. Unknown is preferable
 to a plausible but wrong subject label.
@@ -24,6 +25,11 @@ TOPICS = {
     "audio": ("Голос и звук", "Синтез речи, озвучка, музыка и голосовые модели."),
     "business": ("ИИ в бизнесе", "Автоматизация рабочих процессов, экономика и внедрение в компаниях."),
     "society": ("Законы и общество", "Регулирование ИИ, суды, авторское право и общественные последствия."),
+    "search": ("ИИ-поиск и веб", "Поисковые системы, ответы ИИ, браузеры и доступность информации в интернете."),
+    "health": ("Медицина и биотехнологии", "Медицинские применения, диагностика, препараты и биологические исследования."),
+    "science": ("Наука и экология", "Фундаментальная наука, космос, экология и наблюдение за природой."),
+    "finance": ("Деньги и инвестиции", "Финансирование ИИ, рынки, капитал, IPO и экономика технологических компаний."),
+    "apps": ("Приложения и сервисы", "Пользовательские функции ChatGPT, Gemini, Claude и других приложений и сервисов."),
 }
 
 # Matches should describe actual subject matter, not merely mention AI or
@@ -41,6 +47,11 @@ _PATTERNS = {
     "audio": r"(?:голос\w*|озвуч\w*|звук\w*|аудио\w*|музык\w*|реч\w*|elevenlabs\b|suno\b|tts\b|speech\b)",
     "business": r"(?:компан\w+\s+внедр\w*|внедр\w+\s+ии|офисн\w+\s+работ\w*|сотрудник\w*|клиент\w*|подписк\w*|экономи\w+\s+час\w*|корпоративн\w*|бизнес\w*|автоматизаци\w+\s+работ\w*)",
     "society": r"(?:закон\w*|суд\w*|регулировани\w*|запрет\w*|правительств\w*|депутат\w*|авторск\w+\s+прав\w*|выбор\w*|парламент\w*|реклам\w+\s+chatgpt|обществ\w*)",
+    "search": r"(?:поиск\w*|поисков\w*|выдач\w*|источник\w*\s+(?:в\s+)?ответ\w*|ссылк\w*\s+в\s+ответ\w*|браузер\w*|webai\b|ai\s*overviews?\b|ai\s*mode\b)",
+    "health": r"(?:медицин\w*|биолог\w*|биотех\w*|врач\w*|диагностик\w*|заболеван\w*|лекарств\w*|препарат\w*|антител\w*|пациент\w*)",
+    "science": r"(?:научн\w+\s+(?:загадк\w*|исследован\w*|открыти\w*)|учён\w*|физик\w*|частиц\w*|cern\b|спутник\w*|космос\w*|орбит\w*|эколог\w*|климат\w*|лес\w*|растени\w*)",
+    "finance": r"(?:ipo\b|бирж\w*|акци\w*|рынок\w+\s+капитал\w*|инвестиц\w*|инвестор\w*|финансирован\w*|миллиард\w*\s+доллар\w*|ии.пузыр\w*|триллион\w*|котировк\w*)",
+    "apps": r"(?:приложен\w*|сервис\w*|пользовател\w*|переписк\w*|pdf\b|таблиц\w*|pin.код\w*|домашн\w+\s+(?:помощник\w*|центр\w*)|голосов\w+\s+помощник\w*|siri\b|чат.бот\w*)",
 }
 _REGEX = {key: re.compile(value, re.IGNORECASE) for key, value in _PATTERNS.items()}
 MAX_TOPICS = 2
