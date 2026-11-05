@@ -19,7 +19,7 @@ def main():
     html = ROOT / "index.html"
     records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
     before = html.read_text(encoding="utf-8")
-    after = update_home(before, records)
+    after = update_home(before, records, root=ROOT)
     if args.check:
         if before != after:
             parser.exit(1, "Homepage site articles need regeneration: python3 scripts/build_home_published.py\n")
