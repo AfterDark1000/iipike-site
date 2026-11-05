@@ -19,9 +19,10 @@ class TopicNavigationTests(unittest.TestCase):
         self.assertEqual(len(BUILTIN_TOPICS), 17)
         self.assertGreaterEqual(len(TOPICS), len(BUILTIN_TOPICS))
         self.assertEqual(validate_topics(["agents", "engineering"]), ["agents", "engineering"])
+        self.assertEqual(validate_topics(["agents", "cybersecurity", "safety"]), ["agents", "cybersecurity", "safety"])
         self.assertEqual(validate_topics([]), [])
         for bad in (["ai-infrastructure-super-duper"], ["../news"], ["agents", "agents"],
-                    "agents", ["agents", "safety", "video"]):
+                    "agents", ["agents", "safety", "video", "finance"]):
             with self.subTest(bad=bad), self.assertRaises(ValueError):
                 validate_topics(bad)
 
@@ -54,7 +55,7 @@ class TopicNavigationTests(unittest.TestCase):
         self.assertEqual(validate_topics(["search", "apps"]), ["search", "apps"])
         self.assertEqual(validate_topics(["health", "science"]), ["health", "science"])
         for invalid in (["Поиск и веб"], ["finance", "finance"],
-                        ["search", "health", "science"]):
+                        ["search", "health", "science", "apps"]):
             with self.subTest(invalid=invalid), self.assertRaises(ValueError):
                 validate_topics(invalid)
 
@@ -74,6 +75,9 @@ class TopicNavigationTests(unittest.TestCase):
         self.assertIn("Скайнет просыпается", page)
         self.assertIn('rel="canonical" href="https://iipike.ru/topics/agents/"', page)
         self.assertIn('href="../../topics/agents/"', render_topic_links(["agents"]))
+        triple = render_topic_links(["agents", "cybersecurity", "safety"])
+        for key in ("agents", "cybersecurity", "safety"):
+            self.assertIn('href="../../topics/' + key + '/"', triple)
         self.assertIn("agents", active_topics(rows))
         outputs = render_all_topics(rows, ROOT)
         self.assertEqual(len(outputs), 1 + len(TOPICS))
