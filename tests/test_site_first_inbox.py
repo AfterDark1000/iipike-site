@@ -134,6 +134,25 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "differ"):
             approved_article(self.root, ID)
 
+    def test_optional_editor_topics_are_preserved_and_unknown_keys_rejected(self):
+        self.story["topics"] = ["agents", "engineering"]
+        self.save_story()
+        self.assertEqual(
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))["topics"],
+            ["agents", "engineering"],
+        )
+        self.save_cover()
+        approved = stage(self.root, ID, now=UTC, apply=False)
+        self.assertEqual(approved["topics"], ["agents", "engineering"])
+        self.story["topics"] = ["ai-agent-infrastructure-surprise"]
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "Unknown topic"):
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))
+        self.story.pop("topics")
+        self.save_story()
+        automatic = stage(self.root, ID, now=UTC, apply=False)
+        self.assertIsInstance(automatic["topics"], list)
+
     def test_reject_duplicate_markdown_and_manual_blocks(self):
         self.story["article_markdown"] = "Текст настоящей статьи для сайта. " * 20
         self.save_story()
