@@ -159,7 +159,12 @@ def main():
     if urgent and inspect_only:
         raise ValueError("Cannot combine urgent release and read-only inspection")
     if urgent and os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
-        raise ValueError("Urgency override only works in a manual workflow dispatch")
+        if (os.environ.get("GITHUB_EVENT_NAME") != "push" or
+                os.environ.get("HPII_VERIFIED_PUSH_URGENT") != "true" or
+                not target):
+            raise ValueError(
+                "Urgency override requires manual workflow dispatch or "
+                "a verified owner-authored, exact-ID urgent push")
     git("fetch", "origin", "editorial-intake", "main")
     source_ref = git("rev-parse", QUEUE_REF).stdout.strip()
     rows = json.loads(Path("news.json").read_text(encoding="utf-8"))
