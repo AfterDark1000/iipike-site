@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class TopicNavigationTests(unittest.TestCase):
     def test_catalog_is_fixed_and_no_arbitrary_scanner_topic_can_be_used(self):
-        self.assertEqual(len(TOPICS), 12)
+        self.assertEqual(len(TOPICS), 17)
         self.assertEqual(validate_topics(["agents", "engineering"]), ["agents", "engineering"])
         self.assertEqual(validate_topics([]), [])
         for bad in (["ai-infrastructure-super-duper"], ["../news"], ["agents", "agents"],
@@ -37,12 +37,25 @@ class TopicNavigationTests(unittest.TestCase):
             ("ElevenLabs научила ИИ озвучивать сцены",
              "Речевые модели", {"audio"}),
             ("ИИ генерирует видео", "Новая видеомодель", {"video"}),
+            ("Google делает ссылки в ответах ИИ заметнее", "Поисковая выдача с источниками", {"search"}),
+            ("Claude создал 35 тысяч антител за месяц", "Помог биологам", {"health"}),
+            ("CERN и Mistral ищут новые частицы", "Новые научные исследования", {"science"}),
+            ("Anthropic собралась на биржу. Цена вопроса — триллионы", "IPO", {"finance"}),
+            ("Gemini теперь редактирует PDF и таблицы прямо в чате", "Новые функции приложения", {"apps"}),
         ]
         for title, summary, expected in examples:
             with self.subTest(title=title):
                 inferred = infer_topics(title, summary)
                 self.assertTrue(set(inferred) & expected, inferred)
                 self.assertLessEqual(len(inferred), 2)
+
+    def test_new_topics_still_use_valid_immutable_keys(self):
+        self.assertEqual(validate_topics(["search", "apps"]), ["search", "apps"])
+        self.assertEqual(validate_topics(["health", "science"]), ["health", "science"])
+        for invalid in (["Поиск и веб"], ["finance", "finance"],
+                        ["search", "health", "science"]):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                validate_topics(invalid)
 
     def test_linked_topics_do_not_replace_the_four_rubrics(self):
         rows = [
