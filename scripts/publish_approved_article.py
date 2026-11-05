@@ -187,7 +187,14 @@ def render_article(data, records=None, catalog=None):
     related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
     provenance_only = data.get("source_url") == data.get("dzen_url")
     source_heading = "Архивная публикация" if provenance_only else "Первоисточник"
-    body = render_blocks(data["paragraphs"])
+    # Preserve editor-approved Dzen Markdown; rewrite confirmed same-site
+    # crosslinks only while rendering HTML, not in the stored source.
+    site_links = {
+        row["dzen_url"]: BASE + "/" + row["url"]
+        for row in (records or [])
+        if row.get("dzen_id") and row.get("dzen_url") and row.get("url")
+    }
+    body = render_blocks(data["paragraphs"], site_links=site_links)
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",
               "июля", "августа", "сентября", "октября", "ноября", "декабря"]
