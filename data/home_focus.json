@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "items": [
+    {
+      "id": "openai-images-2-6-gif-20261104",
+      "kind": "hot",
+      "label": "Горячая тема",
+      "expires_at": "2026-11-07T17:00:00+05:00"
+    },
+    {
+      "id": "collinear-cwe-bench-v2-20261103",
+      "kind": "editor",
+      "label": "Разбираемся"
+    },
+    {
+      "id": "cnas-sovereign-agents-20261103",
+      "kind": "editor",
+      "label": "Выбор редакции"
+    }
+  ]
+}
