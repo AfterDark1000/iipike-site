@@ -16,6 +16,8 @@ on:
       - 'scripts/site_related.py'
       - 'scripts/site_rubrics.py'
       - 'scripts/site_home.py'
+      - 'data/home_focus.json'
+      - 'tests/test_homepage_focus.py'
       - 'scripts/build_home_published.py'
       - 'scripts/build_rubrics.py'
       - 'scripts/suggest_related.py'
@@ -60,6 +62,7 @@ jobs:
       - name: Validate homepage markup, dependencies and inline JavaScript
         run: |
           python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+          python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check

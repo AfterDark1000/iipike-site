@@ -358,7 +358,7 @@ def publish(root, slug, apply=False):
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "sitemap.xml": render_sitemap(updated),
-        root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated),
+        root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated, root=root),
     }
     outputs.update(render_all(updated, root))
     outputs.update(render_all_topics(updated, root))
