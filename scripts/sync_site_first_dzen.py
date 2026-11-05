@@ -51,9 +51,18 @@ def site_first(root, record):
         return False
     data = json.loads(approved_path.read_text(encoding="utf-8"))
     inbound = json.loads(inbox_path.read_text(encoding="utf-8"))
+    # Earliest site-first pilot records used validated paragraph blocks;
+    # current releases keep the verbatim approved Markdown.
+    source_matches = (
+        isinstance(data.get("article_markdown"), str)
+        and data["article_markdown"] == inbound.get("article_markdown")
+    ) or (
+        "article_markdown" not in data
+        and isinstance(data.get("paragraphs"), list)
+        and data["paragraphs"] == inbound.get("paragraphs")
+    )
     return (data.get("status") == "approved"
-            and isinstance(data.get("article_markdown"), str)
-            and data.get("article_markdown") == inbound.get("article_markdown")
+            and source_matches
             and inbound.get("status") == "editor_approved"
             and inbound.get("approved_by") == "human_editor"
             and data.get("title") == record.get("title") == inbound.get("title")
