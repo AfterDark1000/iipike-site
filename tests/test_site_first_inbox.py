@@ -153,6 +153,24 @@ class SiteFirstInboxTests(unittest.TestCase):
         automatic = stage(self.root, ID, now=UTC, apply=False)
         self.assertIsInstance(automatic["topics"], list)
 
+    def test_optional_schedule_must_have_explicit_ekaterinburg_offset(self):
+        self.story["site_publish_at"] = "2026-11-06T14:00:00+05:00"
+        self.save_story()
+        self.assertEqual(
+            validate_story(self.root, ID, today=dt.date(2026, 11, 4))["site_publish_at"],
+            "2026-11-06T14:00:00+05:00",
+        )
+        self.save_cover()
+        approved = stage(self.root, ID, now=UTC, apply=False)
+        self.assertNotIn("site_publish_at", approved)
+        for wrong in ("2026-11-06T14:00:00", "2026-11-06T14:00:00Z",
+                      "2026-11-06T14:00:00+03:00", "next Tuesday"):
+            with self.subTest(wrong=wrong):
+                self.story["site_publish_at"] = wrong
+                self.save_story()
+                with self.assertRaises(ValueError):
+                    validate_story(self.root, ID, today=dt.date(2026, 11, 4))
+
     def test_reject_duplicate_markdown_and_manual_blocks(self):
         self.story["article_markdown"] = "Текст настоящей статьи для сайта. " * 20
         self.save_story()
