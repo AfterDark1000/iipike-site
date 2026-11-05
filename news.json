@@ -3439,5 +3439,21 @@
       "cybersecurity",
       "models"
     ]
+  },
+  {
+    "title": "OpenAI выпустила Images 2.6: ChatGPT теперь делает ГИФКИ!",
+    "summary": "OpenAI выпустила Images 2.6: ChatGPT получил создание GIF и более точное редактирование изображений, а API — варианты Flare и Sunburst.",
+    "published": "2026-11-05",
+    "source_url": "https://openai.com/index/introducing-images-2-6/",
+    "cover": "assets/editorial/openai-images-2-6-gif-20261104.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-05T10:41:13Z",
+    "event_date": "2026-11-04",
+    "id": "openai-images-2-6-gif-20261104",
+    "url": "articles/openai-images-2-6-gif-20261104/",
+    "topics": [
+      "images",
+      "apps"
+    ]
   }
 ]
