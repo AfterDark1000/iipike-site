@@ -152,12 +152,9 @@ def render_article(data, records=None, catalog=None):
     cover = f"../../{quote(data['cover'])}"
     rubric = data["rubric"]
     rubric_name = quote(RUBRICS[rubric]["name"])
-    source_link = ""
-    if data.get("dzen_id") and data.get("source_url") != data.get("dzen_url"):
-        source_link = (
-            '<p class="date"><a href="' + quote(data["dzen_url"])
-            + '" target="_blank" rel="noopener noreferrer">Версия в Дзене ↗</a></p>'
-        )
+    # A historical Dzen migration already starts with its original lead.
+    # Keep the summary for metadata/cards, but not as duplicated page text.
+    summary_display = '' if data.get("dzen_id") else f'<p class="summary">{summary}</p>'
     modified = data.get("modified_at_utc")
     modified_meta = (
         '<meta property="article:modified_time" content="' + quote(modified) + '">'
@@ -185,8 +182,17 @@ def render_article(data, records=None, catalog=None):
         structured["isBasedOn"] = data["dzen_url"]
     structured_json = json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c")
     related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
-    provenance_only = data.get("source_url") == data.get("dzen_url")
-    source_heading = "Архивная публикация" if provenance_only else "Первоисточник"
+    # Dzen is archival provenance, not a primary reporting source.
+    # Its URL remains in verified JSON/JSON-LD without distracting readers.
+    provenance_only = bool(data.get("dzen_id") and data.get("source_url") == data.get("dzen_url"))
+    section_class = "article-body archive-body" if provenance_only else "article-body"
+    source_aside = (
+        "" if provenance_only else
+        '<aside class="sources"><h3>Первоисточник</h3>\n'
+        '<a href="' + quote(data["source_url"]) +
+        '" target="_blank" rel="noopener noreferrer">'
+        + quote(data["source_title"]) + ' ↗</a>\n</aside>'
+    )
     # Preserve editor-approved Dzen Markdown; rewrite confirmed same-site
     # crosslinks only while rendering HTML, not in the stored source.
     site_links = {}
@@ -219,11 +225,9 @@ def render_article(data, records=None, catalog=None):
 <nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
 <main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
 <p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a> / {quote(data["section"])}</p><h1>{title}</h1>
-<p class="summary">{summary}</p><p class="date">Опубликовано: {label}</p>{source_link}</div>
+{summary_display}<p class="date">Опубликовано: {label}</p></div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
-<section class="article-body"><aside class="sources"><h3>{source_heading}</h3>
-<a href="{quote(data["source_url"])}" target="_blank" rel="noopener noreferrer">{quote(data["source_title"])} ↗</a>
-</aside><article class="article-text">{body}{related_html}</article></section></main>
+<section class="{section_class}">{source_aside}<article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
 <script defer src="../../assets/social-footer.js"></script></body></html>
 '''
