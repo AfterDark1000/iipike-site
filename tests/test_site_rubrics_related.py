@@ -91,6 +91,16 @@ class RubricAndArchiveTests(unittest.TestCase):
         self.assertIn("На сайте", internal)
         self.assertNotIn('href="' + current["dzen_url"], internal)
 
+    def test_related_links_prefer_site_first_counterpart_too(self):
+        item = self.trusted
+        records = [{"id": "fresh-site-first", "url": "articles/fresh-site-first/",
+                    "title": "Сначала сайт",
+                    "site_first_dzen_id": item["dzen_id"],
+                    "site_first_dzen_url": item["dzen_url"]}]
+        output = render_links([item["dzen_id"]], records, self.catalog)
+        self.assertIn('../../articles/fresh-site-first/', output)
+        self.assertNotIn('href="' + item["dzen_url"], output)
+
     def test_readonly_suggestions_do_not_return_unverified(self):
         suggested = suggest({"title": self.trusted["title"],
                              "summary": self.trusted.get("excerpt") or self.trusted["title"]},
