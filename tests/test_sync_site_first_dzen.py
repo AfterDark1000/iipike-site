@@ -98,7 +98,7 @@ class SiteFirstDzenLinkSyncTests(unittest.TestCase):
             found, changes = sync.plan(self.root, self.catalog)
         self.assertEqual(list(found), [SLUG])
         self.assertEqual(len(changes), 2)
-        self.assertIn('"dzen_url": "' + URL + '"',
+        self.assertIn('"site_first_dzen_url": "' + URL + '"',
                       changes[self.root / "news.json"])
         self.assertEqual(changes[self.root / "articles" / SLUG / "index.html"], target)
         self.assertEqual((self.root / "news.json").read_bytes(), old_index)
@@ -116,8 +116,8 @@ class SiteFirstDzenLinkSyncTests(unittest.TestCase):
         self.assertEqual(sync.matches(self.root, self.records, self.catalog)[SLUG]["dzen_id"], ID)
 
     def test_idempotent_after_link_registered(self):
-        self.records[0]["dzen_id"] = ID
-        self.records[0]["dzen_url"] = URL
+        self.records[0]["site_first_dzen_id"] = ID
+        self.records[0]["site_first_dzen_url"] = URL
         self._write()
         found, changed = sync.plan(self.root, self.catalog)
         self.assertEqual(found, {})
