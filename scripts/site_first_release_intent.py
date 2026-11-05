@@ -13,6 +13,13 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import sys
+
+# GitHub runs this script by path: python3 scripts/site_first_release_intent.py.
+# The repo root must be on sys.path, not only the scripts/ directory.
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scripts.site_first_release_pr import STABLE_ID
 
