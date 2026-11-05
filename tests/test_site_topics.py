@@ -76,6 +76,17 @@ class TopicNavigationTests(unittest.TestCase):
         self.assertIn('href="../../topics/safety/"', page)
         self.assertIn('<p class="summary">' + approved["summary"] + '</p>', page)
 
+    def test_original_hand_authored_pilot_header_preserves_its_date(self):
+        slug = "google-search-ai-links"
+        source = (ROOT / "articles" / slug / "index.html").read_text(encoding="utf-8")
+        updated = clean_article_html(source, ["models"], slug)
+        self.assertIn('<p class="date">19 октября 2026 · 3 минуты чтения · Google</p>', updated)
+        self.assertIn('<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p>', updated)
+        self.assertIn('href="../../topics/models/"', updated)
+        self.assertEqual(source.split('<article class="article-text">', 1)[1],
+                         updated.split('<article class="article-text">', 1)[1])
+        self.assertEqual(clean_article_html(updated, ["models"], slug), updated)
+
     def test_archival_html_reformatting_preserves_article_text(self):
         slug = "nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0"
         path = ROOT / "articles" / slug / "index.html"
