@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/upgrade_article_navigation.py'
+      - 'scripts/site_topics.py'
       - 'scripts/build_sitemap.py'
       - 'tests/test_search_indexing.py'
       - '.github/workflows/topic-navigation-upgrade.yml'
@@ -44,7 +45,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if git diff --quiet -- news.json articles sitemap.xml topics; then
+          # An expansion can generate only previously untracked /topics/ pages.
+          # git diff --quiet misses untracked files and would silently skip them.
+          if [ -z "$(git status --porcelain --untracked-files=all -- news.json articles sitemap.xml topics)" ]; then
             echo "Topic navigation already up to date; no deployment needed."
             exit 0
           fi
@@ -66,6 +69,6 @@ jobs:
           git add -- news.json articles sitemap.xml topics
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "site: add linked topics and simplify article breadcrumbs"
+          git commit -m "site: refresh controlled topic pages and preserve existing article tags"
           git push origin HEAD:refs/heads/main
           gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
