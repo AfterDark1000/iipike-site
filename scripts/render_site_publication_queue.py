@@ -16,7 +16,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git_blob_at
 from scripts.site_publication_queue import (
-    SITE_TZ, _last_change, latest_site_first_publication, parse_slot
+    INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot
 )
 
 REPO = "https://github.com/AfterDark1000/iipike-site"
@@ -57,6 +57,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
     catalog = json.loads(safe_git_blob_at(main, "news.json"))
     public = {r["id"]: r for r in catalog}
     last = latest_site_first_publication(catalog, main_ref=main)
+    spacing_until = last + INTERVAL if last and now < last + INTERVAL else None
     rows = []
     for sid, path in sorted(stories.items()):
         raw = safe_git_blob_at(inbox, path)
@@ -81,6 +82,8 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             status = "🖼️ Ждёт обложку"
         elif scheduled and now < scheduled:
             status = "🕒 Ожидает заданного времени"
+        elif spacing_until:
+            status = "⏳ Ждёт часовой интервал"
         else:
             status = "🟢 Готова к выпуску"
         ready_at = (max(_last_change(inbox, path), _last_change(inbox, arts[0]))
@@ -93,6 +96,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             "published_at": published.get("published_at_utc") if page else None,
             "ready_at": ready_at,
             "publish_at": scheduled,
+            "spacing_until": spacing_until if status == "⏳ Ждёт часовой интервал" else None,
             "source_path": path,
             "cover_path": arts[0] if arts else None,
         })
@@ -101,6 +105,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
 
 def as_markdown(rows, last):
     active = sum(r["status"] == "🟢 Готова к выпуску" for r in rows)
+    held = sum(r["status"] == "⏳ Ждёт часовой интервал" for r in rows)
     waiting = sum(r["status"] == "🖼️ Ждёт обложку" for r in rows)
     future = sum(r["status"] == "🕒 Ожидает заданного времени" for r in rows)
     published = sum(r["published"] for r in rows)
@@ -110,8 +115,8 @@ def as_markdown(rows, last):
         "> Служебный журнал GitHub, не страница iipike.ru. "
         "**Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**",
         "",
-        "**Готовы:** " + str(active) + " · **Назначено время:** "
-        + str(future) + " · **Ждут обложку:** " + str(waiting)
+        "**Готовы:** " + str(active) + " · **Ждут интервал:** " + str(held)
+        + " · **Назначено время:** " + str(future) + " · **Ждут обложку:** " + str(waiting)
         + " · **Уже опубликованы:** " + str(published),
         "",
         "Планировщик проверяет очередь каждые 15 минут, выпускает максимум "
@@ -140,6 +145,8 @@ def as_markdown(rows, last):
             link = REPO + "/blob/editorial-intake/" + path
             label = ("не ранее " + site_local(r["publish_at"]) + " (Усть-Катав)"
                      if r["publish_at"] else "автоматическая очередь")
+            if r.get("spacing_until"):
+                label += "; пауза до " + site_local(r["spacing_until"]) + " (Усть-Катав)"
         cover = ("[Есть](" + REPO + "/blob/editorial-intake/" + r["cover_path"] + ")"
                  if r["cover_path"] else "Нет")
         out.append("| [" + title + "](" + link + ") | " + r["status"]
@@ -153,6 +160,7 @@ def as_markdown(rows, last):
         "- **Готова к выпуску:** текст и обложка получены; точная минута "
         "не гарантирована, выпуск на следующем допустимом запуске.",
         "- **Ожидает заданного времени:** редактор указал время, раньше него выпуск запрещён.",
+        "- **Ждёт часовой интервал:** предыдущая статья вышла недавно; время окончания паузы указано в таблице. После него выпуск возможен при следующем запуске планировщика.",
         "- **Ждёт обложку:** текст есть, но публикация не начнётся до получения изображения.",
         "- **Опубликована:** статья найдена и в каталоге, и среди публичных HTML страниц.",
         "- **Ошибка:** см. журналы планировщика и проверьте исходные файлы.",

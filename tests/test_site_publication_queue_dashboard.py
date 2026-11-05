@@ -58,7 +58,7 @@ class EditorialQueuePageTests(unittest.TestCase):
             rows, last = scan_queue(now=NOW)
         self.assertEqual({r["id"]: r["status"] for r in rows}, {
             "cnas": "✅ Опубликована",
-            "collinear": "🟢 Готова к выпуску",
+            "collinear": "⏳ Ждёт часовой интервал",
             "hinton": "🖼️ Ждёт обложку",
         })
         page = as_markdown(rows, last)
@@ -68,6 +68,43 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("https://iipike.ru/articles/cnas/", page)
         self.assertIn("Репозиторий публичный", page)
         self.assertNotIn("<script>", page)
+
+    def test_published_urgent_story_postpones_regular_release_and_dashboard_explains(self):
+        paths = "\n".join([
+            "editorial_inbox/stories/hinton.json",
+            "editorial_inbox/covers/hinton.webp",
+        ])
+        now = dt.datetime(2026, 11, 5, 11, 15, tzinfo=UTC)
+        last = dt.datetime(2026, 11, 5, 10, 41, 13, tzinfo=UTC)
+        def fake_blob(ref, path):
+            if path == "news.json":
+                return json.dumps([
+                    {"id":"urgent", "published_at_utc":"2026-11-05T10:41:13Z"}
+                ])
+            return json.dumps({
+                "id":"hinton", "title":"Хинтон о рисках ИИ",
+                "status":"editor_approved", "approved_by":"human_editor",
+                "site_publish_at":"2026-11-05T13:15:00+05:00"
+            })
+        with patch("scripts.render_site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=paths)), \
+             patch("scripts.render_site_publication_queue.safe_git_blob_at",
+                   side_effect=fake_blob), \
+             patch("scripts.render_site_publication_queue.exists_at",
+                   return_value=False), \
+             patch("scripts.render_site_publication_queue.latest_site_first_publication",
+                   return_value=last), \
+             patch("scripts.render_site_publication_queue._last_change",
+                   return_value=now - dt.timedelta(hours=1)):
+            rows, stamp = scan_queue(now=now)
+        self.assertEqual(stamp, last)
+        self.assertEqual(rows[0]["status"], "⏳ Ждёт часовой интервал")
+        self.assertEqual(rows[0]["spacing_until"],
+                         dt.datetime(2026, 11, 5, 11, 41, 13, tzinfo=UTC))
+        page = as_markdown(rows, stamp)
+        self.assertIn("Ждут интервал:** 1", page)
+        self.assertIn("пауза до 05.11.2026 16:41", page)
+        self.assertIn("не ранее 05.11.2026 13:15", page)
 
     def test_explicit_future_schedule_displays_but_does_not_fake_publication(self):
         row = {
