@@ -24,6 +24,8 @@ from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, pub
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
+from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
+                                 render_all_topics, active_topics)
 BASE = "https://iipike.ru"
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ASSET = re.compile(r"assets/[a-zA-Z0-9/_-]+\.(?:png|jpg|jpeg|webp|svg)\Z")
@@ -134,6 +136,8 @@ def approved_article(root, slug):
     if (not ASSET.fullmatch(cover) or ".." in cover.split("/")
             or not (root / cover).is_file()):
         raise ValueError("cover must be an existing local assets image")
+    if "topics" in data:
+        validate_topics(data["topics"])
     # Share exactly one schema with the ChatGPT intake validator so that the
     # approved article retains the editor's full inline and block formatting.
     validate_blocks(data.get("paragraphs"))
@@ -152,6 +156,12 @@ def render_article(data, records=None, catalog=None):
     cover = f"../../{quote(data['cover'])}"
     rubric = data["rubric"]
     rubric_name = quote(RUBRICS[rubric]["name"])
+    # Source metadata and the verified site index, never arbitrary page text,
+    # determine the reader-facing topic links.
+    current = next((row for row in (records or []) if row.get("id") == slug), {})
+    topic_values = (current.get("topics") if "topics" in current
+                    else data.get("topics", []))
+    topic_html = render_topic_links(topic_values)
     # A historical Dzen migration already starts with its original lead.
     # Keep the summary for metadata/cards, but not as duplicated page text.
     summary_display = '' if data.get("dzen_id") else f'<p class="summary">{summary}</p>'
@@ -224,8 +234,8 @@ def render_article(data, records=None, catalog=None):
 <a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
 <nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
 <main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
-<p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a> / {quote(data["section"])}</p><h1>{title}</h1>
-{summary_display}<p class="date">Опубликовано: {label}</p></div>
+<p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a></p><h1>{title}</h1>
+{summary_display}<p class="date">Опубликовано: {label}</p>{topic_html}</div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
 <section class="{section_class}">{source_aside}<article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
@@ -256,6 +266,7 @@ def render_catalog(records):
 <main class="wrap"><div class="overline"><span>ХПИИ / Редакционная лента</span></div>
 <h1>Все статьи</h1><p class="summary">Опубликованные материалы с проверенными источниками. Черновики здесь не появляются.</p>
 <nav class="rubric-navigation" aria-label="Рубрики">{navigation("../")}</nav>
+<p class="topic-directory"><a href="../topics/">Все темы материалов →</a></p>
 <section class="archive"><h2>Публикации</h2>{cards}</section></main>
 <footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
 <script defer src="../assets/social-footer.js"></script></body></html>
@@ -301,6 +312,8 @@ def render_sitemap(records):
     from xml.sax.saxutils import escape as xml_escape
     urls = ([BASE + "/", BASE + "/articles/"]
             + [BASE + "/rubrics/" + key + "/" for key in populated(records)]
+            + [BASE + "/topics/"]
+            + [BASE + "/topics/" + key + "/" for key in active_topics(records)]
             + [BASE + "/" + r["url"] for r in records])
     updates = {BASE + "/" + row["url"]: row["modified_at_utc"] for row in records
                if row.get("modified_at_utc")}
@@ -335,6 +348,8 @@ def publish(root, slug, apply=False):
             row[key] = data[key]
     row["id"] = slug
     row["url"] = f"articles/{slug}/"
+    row["topics"] = (validate_topics(data["topics"]) if "topics" in data
+                     else infer_topics(data["title"], data["summary"]))
     updated = entries + [row]
     catalog = catalog_entries(root) if data.get("dzen_id") or data.get("related_dzen_ids") else {}
     outputs = {
@@ -346,6 +361,7 @@ def publish(root, slug, apply=False):
         root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated),
     }
     outputs.update(render_all(updated, root))
+    outputs.update(render_all_topics(updated, root))
     # Refresh prior approved pages so their related links point internally
     # when a linked target migrates; manually authored pilot is unchanged.
     for record in entries:
