@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Collinear AI открыла CWE-bench v2: 100 заданий на исправление реальных программных уязвимостей. Gemini 4 Argon получила 67,8% успешных запусков, а пять заданий не решила ни одна из 11 моделей."><meta property="og:type" content="article">
+<meta property="og:title" content="ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%"><meta property="og:description" content="Collinear AI открыла CWE-bench v2: 100 заданий на исправление реальных программных уязвимостей. Gemini 4 Argon получила 67,8% успешных запусков, а пять заданий не решила ни одна из 11 моделей.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/collinear-cwe-bench-v2-20261103.webp">
+<meta property="og:url" content="https://iipike.ru/articles/collinear-cwe-bench-v2-20261103/"><meta property="article:published_time" content="2026-11-05T09:05:03Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%", "mainEntityOfPage": "https://iipike.ru/articles/collinear-cwe-bench-v2-20261103/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-05T09:05:03Z", "image": "https://iipike.ru/assets/editorial/collinear-cwe-bench-v2-20261103.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/collinear-cwe-bench-v2-20261103/"><title>ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8% — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%</h1>
+<p class="summary">Collinear AI открыла CWE-bench v2: 100 заданий на исправление реальных программных уязвимостей. Gemini 4 Argon получила 67,8% успешных запусков, а пять заданий не решила ни одна из 11 моделей.</p><p class="date">Опубликовано: 5 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/models/">Модели и исследования</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/collinear-cwe-bench-v2-20261103.webp" alt="Обложка: ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://huggingface.co/blog/cwe-bench" target="_blank" rel="noopener noreferrer">Collinear AI — CWE-bench v2: More coverage, quality, and transparency ↗</a>
+</aside><article class="article-text"><p class="lead"><strong>Gemini 4 Argon</strong> показала лучший результат среди 11 ИИ-моделей, которым поручили искать и исправлять опасные ошибки в настоящем программном коде. Успешными оказались 67,8% отдельных запусков. Причём 19 заданий модель так и не решила, хотя на каждое ей давали четыре попытки.</p>
+<p>3 ноября 2026 года компания <strong>Collinear AI</strong> опубликовала <strong>CWE-bench v2</strong> — открытый набор из 100 заданий, охватывающих 91 тип программных уязвимостей. Среди них ошибки проверки доступа, неправильная обработка данных, проблемы с памятью и другие слабые места, которыми могут воспользоваться злоумышленники.</p>
+<h2>Найти дыру недостаточно</h2>
+<p>ИИ-агенту предоставляют код настоящего проекта с открытыми исходниками и короткое поручение провести проверку безопасности.</p>
+<p>Дальше он должен сам найти уязвимость, разобраться в причине и написать исправление.</p>
+<p><strong>Заплатку засчитывают только при выполнении двух условий:</strong> обнаруженная уязвимость закрыта, а обычные функции программы продолжают работать. Если исправление останавливает атаку, но заодно ломает приложение, задание считается проваленным.</p>
+<p>Результат оценивает автоматически выполняемый набор проверок. Разработчики также вручную изучили все задания, чтобы проверка принимала разные корректные решения и не позволяла получить балл простым копированием известной заплатки.</p>
+<p>Подобные возможности уже появляются в коммерческих инструментах. Например, ранее мы рассказывали, как <a class="editorial-inline-link" href="https://iipike.ru/articles/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700/">AWS представила ИИ-агента для поиска уязвимостей и подготовки исправлений</a>.</p>
+<h2>Четыре попытки меняют результат</h2>
+<p>В CWE-bench v2 каждую модель запускали по четыре раза на каждом из 100 заданий.</p>
+<p>Показатель <em>pass@1</em> означает среднюю долю успешных независимых запусков, а <em>pass@4</em> — долю заданий, которые удалось решить хотя бы один раз из четырёх.</p>
+<p>На открытом наборе результаты оказались следующими:</p>
+<ul class="editorial-list"><li><strong>Gemini 4 Argon</strong> — 67,8% при одной попытке и 81% при четырёх.</li><li><strong>Claude Opus 5.5</strong> — 67,3% и 78% соответственно.</li><li><strong>DeepSeek V4.1 Flash</strong> — 57% успешных отдельных запусков.</li></ul>
+<p>DeepSeek заметно уступила лидерам по результативности, зато оказалась гораздо дешевле.</p>
+<p>По расчётам Collinear AI, один запуск DeepSeek обходился в среднем в <strong>$0,04</strong>, Claude Opus 5.5 — в $1,83, а Gemini 4 Argon — в $3,92. Речь о стоимости одной попытки выполнить задание, а не о полном прохождении всего теста.</p>
+<p>Из 100 опубликованных заданий 95 сумела решить хотя бы одна из проверенных моделей. <strong>Пять заданий остались нерешёнными для всех одиннадцати участников.</strong></p>
+<p>У Collinear AI есть ещё 150 закрытых заданий. Их используют для проверки моделей на примерах, которые разработчики не могут заранее изучить.</p>
+<p>В объединённом рейтинге из 250 заданий лидирует уже Claude Opus 5.5 с результатом 67,1%. Gemini 4 Argon там получила 65%.</p>
+<p>Открытую сотню заданий, проверяющий код и инструменты запуска исследователи разместили на <strong>Hugging Face</strong>. Для получения файлов необходимо войти в аккаунт и принять условия доступа к набору данных.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700/">AWS выпустила ИИ-ремонтника: сам ищет дыры в коде и приносит заплатки</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>

@@ -3423,5 +3423,21 @@
       "agents",
       "safety"
     ]
+  },
+  {
+    "title": "ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%",
+    "summary": "Collinear AI открыла CWE-bench v2: 100 заданий на исправление реальных программных уязвимостей. Gemini 4 Argon получила 67,8% успешных запусков, а пять заданий не решила ни одна из 11 моделей.",
+    "published": "2026-11-05",
+    "source_url": "https://huggingface.co/blog/cwe-bench",
+    "cover": "assets/editorial/collinear-cwe-bench-v2-20261103.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-05T09:05:03Z",
+    "event_date": "2026-11-03",
+    "id": "collinear-cwe-bench-v2-20261103",
+    "url": "articles/collinear-cwe-bench-v2-20261103/",
+    "topics": [
+      "cybersecurity",
+      "models"
+    ]
   }
 ]
