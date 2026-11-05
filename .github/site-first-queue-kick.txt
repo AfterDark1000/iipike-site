@@ -1,0 +1,2 @@
+Queue retry: 2026-11-05 14:00 Asia/Yekaterinburg.
+Reason: GitHub cron has not fired; release next approved, cover-ready article through the standard one-per-hour queue (no urgent bypass).
