@@ -11,7 +11,7 @@ END = "<!-- HPII_PUBLISHED_SECTION_END -->"
 FOCUS_START = "<!-- HPII_FOCUS_SECTION_START -->"
 FOCUS_END = "<!-- HPII_FOCUS_SECTION_END -->"
 FOCUS_PATH = "data/home_focus.json"
-ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\\Z".replace("\\\\","\\"))
+ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 
 def sorted_published(records):
