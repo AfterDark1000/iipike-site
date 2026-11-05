@@ -189,11 +189,15 @@ def render_article(data, records=None, catalog=None):
     source_heading = "Архивная публикация" if provenance_only else "Первоисточник"
     # Preserve editor-approved Dzen Markdown; rewrite confirmed same-site
     # crosslinks only while rendering HTML, not in the stored source.
-    site_links = {
-        row["dzen_url"]: BASE + "/" + row["url"]
-        for row in (records or [])
-        if row.get("dzen_id") and row.get("dzen_url") and row.get("url")
-    }
+    site_links = {}
+    for row in (records or []):
+        # Historical migrations record their Dzen original, while articles
+        # released on this site first record a later Dzen counterpart.
+        dzen_url = (row.get("dzen_url") if row.get("dzen_id")
+                    else row.get("site_first_dzen_url")
+                    if row.get("site_first_dzen_id") else None)
+        if dzen_url and row.get("url"):
+            site_links[dzen_url] = BASE + "/" + row["url"]
     body = render_blocks(data["paragraphs"], site_links=site_links)
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",

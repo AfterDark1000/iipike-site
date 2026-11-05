@@ -64,7 +64,13 @@ def render_links(ids, records, catalog):
     """Prefer an existing iipike.ru article, else link to verified Dzen original."""
     if not ids:
         return ""
-    local = {r["dzen_id"]: r for r in records if r.get("dzen_id")}
+    local = {}
+    for record in records:
+        for ident in (record.get("dzen_id"), record.get("site_first_dzen_id")):
+            if ident:
+                if ident in local and local[ident]["id"] != record.get("id"):
+                    raise ValueError("Duplicate Dzen-to-site counterpart link")
+                local[ident] = record
     links = []
     for ident in ids:
         row = validate_reference(ident, catalog)

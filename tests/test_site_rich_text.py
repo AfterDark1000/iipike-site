@@ -44,6 +44,30 @@ class SiteRichTextTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             inline_html(source, site_links={dzen: "javascript:alert(1)"})
 
+    def test_real_publisher_resolves_later_dzen_counterpart_without_legacy_id(self):
+        from scripts.publish_approved_article import render_article
+        dzen = "https://dzen.ru/a/auC5RL9TIlQwHobn"
+        article = {
+            "slug": "current-site-story", "title": "Тест",
+            "summary": "Аннотация", "rubric": "news",
+            "section": "НОВОСТИ ИИ", "published": "2026-11-05",
+            "source_url": "https://example.org/original",
+            "source_title": "Первоисточник",
+            "cover": "assets/editorial/example.webp",
+            "related_dzen_ids": [],
+            "paragraphs": [{"type": "lead", "text": "Текст новости."},
+                           {"type": "p", "text": "Наш [прошлый материал](" + dzen + ")."}],
+        }
+        records = [{
+            "id": "earlier-site-story", "url": "articles/earlier-site-story/",
+            "site_first_dzen_id": "6ae0b944bf532254301e86e7",
+            "site_first_dzen_url": dzen,
+        }]
+        rendered = render_article(article, records=records)
+        self.assertIn('href="https://iipike.ru/articles/earlier-site-story/"', rendered)
+        self.assertNotIn('href="' + dzen + '"', rendered)
+        self.assertNotIn("Версия в Дзене", rendered)
+
     def test_real_publisher_maps_inline_links_only_in_site_html(self):
         from scripts.publish_approved_article import render_article
         dzen = "https://dzen.ru/a/auC5RL9TIlQwHobn"
