@@ -1,0 +1,104 @@
+"""Editorial homepage picks: publication safety, layout, and deterministic rebuild."""
+import json
+from pathlib import Path
+import tempfile
+import unittest
+
+from scripts.site_home import (
+    FOCUS_END, FOCUS_START, active_focus_ids, load_focus_items,
+    render_focus_section, sorted_published, update_home,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+class FocusTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        cls.html = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.items = load_focus_items(ROOT)
+
+    def test_three_real_site_articles_and_correct_order(self):
+        ids = active_focus_ids(self.records, self.items)
+        self.assertEqual(ids, [
+            "openai-images-2-6-gif-20261104",
+            "collinear-cwe-bench-v2-20261103",
+            "cnas-sovereign-agents-20261103",
+        ])
+        self.assertEqual(len(self.html.split(FOCUS_START)), 2)
+        self.assertEqual(len(self.html.split(FOCUS_END)), 2)
+        self.assertEqual(self.html.count('class="home-focus-card '), 3)
+        self.assertLess(self.html.index('id="focus"'),
+                        self.html.index('id="archive"'))
+        self.assertLess(self.html.index('id="archive"'),
+                        self.html.index('id="latest"'))
+        self.assertLess(self.html.index('class="home-workshop"'),
+                        self.html.index('id="latest"'))
+        self.assertIn('<a href="#focus">В фокусе</a>', self.html)
+        self.assertIn('href="#focus">Главное сегодня', self.html)
+
+    def test_focus_links_are_only_published_first_party(self):
+        section = self.html.split(FOCUS_START)[1].split(FOCUS_END)[0]
+        for sid in active_focus_ids(self.records, self.items):
+            self.assertIn('href="articles/' + sid + '/"', section)
+            self.assertNotIn('href="articles/' + sid + '/"', self.html.split(FOCUS_END)[1].split("<!-- HPII_PUBLISHED_SECTION_END -->")[0])
+        self.assertNotIn('href="https://', section)
+        self.assertNotIn('href="drafts/', section)
+
+    def test_hot_expiry_is_applied_in_browser_without_a_new_deploy(self):
+        self.assertEqual(self.items[0]["kind"], "hot")
+        self.assertIn("2026-11-07T17:00:00+05:00", self.html)
+        self.assertIn('function hideExpiredFocus()', self.html)
+        self.assertIn('Date.parse(expiry) <= now', self.html)
+        self.assertIn('if (!left) area.hidden = true;', self.html)
+
+    def test_rebuild_is_idempotent_for_current_catalog_and_picks(self):
+        self.assertEqual(update_home(self.html, self.records, root=ROOT), self.html)
+
+    def test_missing_draft_is_not_exposed_by_pins(self):
+        row = dict(self.records[0])
+        row["id"] = "unapproved-temporary"
+        row["url"] = "articles/unapproved-temporary/"
+        row["cover"] = "assets/temporary.webp"
+        item = {"id": "unapproved-temporary", "kind": "editor", "label": "Never show"}
+        self.assertEqual(render_focus_section(self.records, [item]), "")
+        # A proposed draft row is not included in the actually published news.json.
+        self.assertNotIn("unapproved-temporary", self.html)
+
+    def test_invalid_config_fails_closed(self):
+        for items in (
+            [{"id": "bad/../../", "kind": "hot", "label": "Bad"}],
+            [{"id": "same", "kind": "editor", "label": "A"},
+             {"id": "same", "kind": "editor", "label": "B"}],
+            [{"id": "safe", "kind": "hot", "label": "A",
+              "expires_at": "2026-11-06T13:00:00+03:00"}],
+            [{"id": "safe", "kind": "later", "label": "A"}],
+            [{"id": "x", "kind": "editor", "label": "X"}] * 4,
+        ):
+            with self.subTest(items=items), tempfile.TemporaryDirectory() as folder:
+                data = Path(folder) / "data"
+                data.mkdir()
+                (data / "home_focus.json").write_text(
+                    json.dumps({"schema_version": 1, "items": items}),
+                    encoding="utf-8",
+                )
+                with self.assertRaises(ValueError):
+                    load_focus_items(folder)
+
+    def test_injected_headline_is_escaped(self):
+        sid = "in-news"
+        record = {
+            "id": sid, "title": 'Alert <script>"not safe"</script>',
+            "url": "articles/in-news/", "cover": "assets/safe.webp",
+            "published": "2026-11-05", "rubric": "news",
+        }
+        item = {"id": sid, "kind": "editor", "label": "Безопасно"}
+        markup = render_focus_section([record], [item])
+        self.assertNotIn("<script>", markup)
+        self.assertIn("&lt;script&gt;", markup)
+        self.assertIn("articles/in-news/", markup)
+
+
+if __name__ == "__main__":
+    unittest.main()
