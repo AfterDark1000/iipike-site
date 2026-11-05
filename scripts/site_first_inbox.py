@@ -33,7 +33,7 @@ COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "topics", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "topics", "site_publish_at", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -78,6 +78,9 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
     if (u.scheme != "https" or not u.hostname or u.username or u.password or
             u.port not in (None, 443) or any(c.isspace() for c in original)):
         raise ValueError("Original source must be a safe HTTPS URL")
+    if "site_publish_at" in data:
+        from scripts.site_publication_queue import parse_slot
+        parse_slot(data["site_publish_at"])
     if "event_date" in data:
         dt.date.fromisoformat(required_text(data, "event_date", 10))
     related = data.get("related_dzen_ids", [])
