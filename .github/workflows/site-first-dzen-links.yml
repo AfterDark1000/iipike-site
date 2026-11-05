@@ -1,0 +1,59 @@
+name: HPII — link site-first articles with verified Dzen publications
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: hpii-dzen-site-link-sync
+  cancel-in-progress: false
+jobs:
+  sync-links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Verify offline matching safety
+        run: |
+          python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
+      - name: Download existing public Dzen archive catalog
+        run: |
+          curl --fail --location --silent --show-error --retry 2 --max-time 60 \
+            "https://raw.githubusercontent.com/AfterDark1000/dzen-telegram-crosspost/main/editorial_full_catalog.json" \
+            --output "$RUNNER_TEMP/hpii-dzen-catalog.json"
+      - name: Show matches without writing
+        run: python3 scripts/sync_site_first_dzen.py --catalog "$RUNNER_TEMP/hpii-dzen-catalog.json"
+      - name: Apply only unambiguous verified links locally
+        run: python3 scripts/sync_site_first_dzen.py --catalog "$RUNNER_TEMP/hpii-dzen-catalog.json" --apply
+      - name: Validate changed site before any commit
+        run: |
+          python3 -m pip install --disable-pip-version-check pillow
+          python3 -m unittest discover -s tests -p 'test_*.py' -q
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_sitemap.py --check
+      - name: Commit only index and approved article HTML, then rebuild Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- news.json articles; then
+            echo "No new Dzen link mappings; no site rebuild."
+            exit 0
+          fi
+          git add -- news.json articles
+          if git diff --cached --name-only | grep -Ev '^(news\.json|articles/[a-z0-9-]+/index\.html)$'; then
+            echo "Unexpected changed file: refusing site update"
+            exit 1
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "site: resolve verified Dzen counterparts of site-first articles"
+          git push origin HEAD:refs/heads/main
+          gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
