@@ -40,6 +40,10 @@ class YandexMetrikaTests(unittest.TestCase):
         pages = sorted(ROOT.rglob("index.html"))
         self.assertGreater(len(pages), 200)
         for page in pages:
+            # /dzen/ is a redirect-only landing route, not a tracked page.
+            # Loading the tracker there would double-count a single visit.
+            if page == ROOT / "dzen" / "index.html":
+                continue
             html = page.read_text(encoding="utf-8")
             if "<html" not in html.lower():
                 continue
