@@ -6,6 +6,8 @@ on:
       - 'index.html'
       - 'dzen/index.html'
       - 'threads/index.html'
+      - 'x/index.html'
+      - 'tests/test_x_redirect.py'
       - 'tests/test_threads_redirect.py'
       - 'tests/test_dzen_redirect.py'
       - 'CNAME'
@@ -72,6 +74,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_yandex_metrika.py' -v
           python3 -m unittest discover -s tests -p 'test_dzen_redirect.py' -v
           python3 -m unittest discover -s tests -p 'test_threads_redirect.py' -v
+          python3 -m unittest discover -s tests -p 'test_x_redirect.py' -v
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
           python3 scripts/build_sitemap.py --check
