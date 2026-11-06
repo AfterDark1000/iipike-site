@@ -43,7 +43,8 @@ class YandexMetrikaTests(unittest.TestCase):
             # Campaign shortcuts are redirect-only and must not load the tracker.
             # A tracker on these pages would count a duplicate pageview.
             if page in (ROOT / "dzen" / "index.html",
-                        ROOT / "threads" / "index.html"):
+                        ROOT / "threads" / "index.html",
+                        ROOT / "x" / "index.html"):
                 continue
             html = page.read_text(encoding="utf-8")
             if "<html" not in html.lower():
