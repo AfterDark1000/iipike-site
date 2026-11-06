@@ -97,35 +97,116 @@
     );
     wrap.append(heading, grid, bottom);
     footer.appendChild(wrap);
+
+    var legal = el("div", "wrap hpi-privacy-links");
+    var policy = el("a", "", "Конфиденциальность");
+    policy.href = "https://iipike.ru/privacy/";
+    var settings = el("button", "", "Настройки аналитики");
+    settings.type = "button";
+    settings.addEventListener("click", function () {
+      if (window.HPIIAnalyticsConsent) window.HPIIAnalyticsConsent.open();
+    });
+    legal.append(policy, settings);
+    footer.appendChild(legal);
   }
 
   document.querySelectorAll("footer.footer").forEach(mount);
 })();
 
-// Yandex.Metrika counter 114100188. The shared footer script is already
-// included by all published pages and the templates for future pages.
-// No additional publisher hooks or per-article edits are required.
-(function (m, e, t, r, i, k, a) {
-  m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
-  m[i].l = 1 * new Date();
-  for (var j = 0; j < document.scripts.length; j++) {
-    if (document.scripts[j].src === r) { return; }
-  }
-  k = e.createElement(t);
-  a = e.getElementsByTagName(t)[0];
-  k.async = 1;
-  k.src = r;
-  a.parentNode.insertBefore(k, a);
-})(window, document, 'script',
-   'https://mc.yandex.ru/metrika/tag.js?id=114100188', 'ym');
+// Privacy-first Yandex.Metrika: never request the tag before explicit consent.
+// Because this shared script is used by every published page, new stories inherit it.
+(function () {
+  "use strict";
+  var KEY = "hpii.analytics.v1";
+  var running = false;
+  var panel = null;
+  var memoryChoice = null;
+  var ID = 114100188;
 
-ym(114100188, 'init', {
-  ssr: true,
-  webvisor: true,
-  clickmap: true,
-  ecommerce: "dataLayer",
-  referrer: document.referrer,
-  url: location.href,
-  accurateTrackBounce: true,
-  trackLinks: true
-});
+  function readChoice() {
+    try {
+      var saved = window.localStorage.getItem(KEY);
+      return saved === "yes" || saved === "no" ? saved : memoryChoice;
+    } catch (error) {
+      return memoryChoice;
+    }
+  }
+  function saveChoice(value) {
+    memoryChoice = value;
+    try { window.localStorage.setItem(KEY, value); } catch (error) { /* private mode */ }
+  }
+
+  function startTracking() {
+    if (running) return;
+    running = true;
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for(var j=0;j<document.scripts.length;j++){
+        if(document.scripts[j].src===r) return;
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r;
+      a.parentNode.insertBefore(k,a);
+    })(window, document, 'script','https://mc.yandex.ru/metrika/tag.js?id=114100188','ym');
+
+    window.ym(114100188, 'init', {
+      ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer",
+      referrer: document.referrer, url: location.href,
+      accurateTrackBounce:true, trackLinks:true
+    });
+  }
+
+  function make(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+  function closePanel() {
+    if (panel) { panel.remove(); panel = null; }
+  }
+  function choose(value) {
+    var hadTracking = running;
+    saveChoice(value);
+    closePanel();
+    if (value === "yes") {
+      startTracking();
+    } else if (hadTracking) {
+      // Yandex has no reliable teardown API: reload without analytics after revocation.
+      window.location.reload();
+    }
+  }
+
+  function showPanel() {
+    if (panel) { panel.querySelector(".hpi-consent-accept").focus(); return; }
+    var oldChoice = readChoice();
+    panel = make("aside", "hpi-consent-panel");
+    panel.setAttribute("role", "region");
+    panel.setAttribute("aria-label", "Настройки аналитики сайта");
+    var body = make("div", "hpi-consent-text");
+    var title = make("strong", "hpi-consent-title", "Аналитика сайта");
+    var message = make("p", "", oldChoice === "yes"
+      ? "Сейчас аналитика разрешена. Можно изменить выбор."
+      : oldChoice === "no"
+      ? "Сейчас аналитика отключена. Можно изменить выбор."
+      : "Можно разрешить Яндекс Метрику и Вебвизор, чтобы мы понимали, какие новости читают. Отказ не мешает работе сайта.");
+    var policy = make("a", "", "Подробнее о данных");
+    policy.href = "https://iipike.ru/privacy/";
+    body.append(title, message, policy);
+    var buttons = make("div", "hpi-consent-actions");
+    var reject = make("button", "hpi-consent-reject", "Без аналитики");
+    reject.type = "button";
+    reject.addEventListener("click", function () { choose("no"); });
+    var accept = make("button", "hpi-consent-accept", "Разрешить");
+    accept.type = "button";
+    accept.addEventListener("click", function () { choose("yes"); });
+    buttons.append(reject, accept);
+    panel.append(body, buttons);
+    document.body.appendChild(panel);
+  }
+
+  window.HPIIAnalyticsConsent = {open:showPanel};
+  var choice = readChoice();
+  if (choice === "yes") startTracking();
+  else if (choice !== "no") showPanel();
+})();
