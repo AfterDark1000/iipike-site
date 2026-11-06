@@ -1,6 +1,12 @@
 name: HPII — watchdog (no publishing)
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hpii-watchdog.yml'
+      - 'scripts/watchdog.js'
+      - 'tests/watchdog.test.js'
   workflow_dispatch:
   schedule:
     - cron: '13 * * * *'
