@@ -23,6 +23,7 @@ from scripts.site_first_release_pr import (
     COVER, IMAGE_EXTS, STABLE_ID, STORY, GH_REPO,
     exists_at, git, release_one, safe_git_blob_at,
 )
+from scripts.site_related import catalog_entries, validate_links
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
@@ -106,6 +107,18 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
                 story.get("status") != "editor_approved" or
                 story.get("approved_by") != "human_editor"):
             raise ValueError("Unapproved or inconsistent pending story: " + sid)
+        # Do not let one stale optional Dzen crosslink stop the entire queue.
+        # This is only a scheduling filter, NOT a waiver of publication checks:
+        # the approved publisher still validates every related reference.
+        related = story.get("related_dzen_ids", [])
+        if related:
+            try:
+                validate_links(related, catalog_entries(ROOT))
+            except ValueError as exc:
+                if not str(exc).startswith("Unverified Dzen article reference: "):
+                    raise
+                print("BLOCKED_UNVERIFIED_DZEN_REFERENCE:", sid, str(exc), flush=True)
+                continue
         earliest = parse_slot(story["site_publish_at"]) if "site_publish_at" in story else None
         ready_at = max(_last_change(ref, source), _last_change(ref, matched[0]))
         ready.append({
