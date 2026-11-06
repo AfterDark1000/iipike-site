@@ -1,5 +1,12 @@
 [
   {
+    "id": "d6f90cb0462c10ef0c69",
+    "date": "2026-11-06",
+    "title": "AWS избавила разработчиков от рутины, научив агентов искать в интернете в один клик",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/"
+  },
+  {
     "id": "c65c7708e93995ca4541",
     "date": "2026-11-05",
     "title": "Компактный голосовой ИИ Phonon научился говорить на пяти языках без интернета",

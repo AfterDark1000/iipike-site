@@ -108,6 +108,12 @@
       "utc_date": "2026-11-05",
       "source_url": "https://huggingface.co/blog/phonon-tts",
       "source_title": "A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks."
+    },
+    {
+      "id": "d6f90cb0462c10ef0c69",
+      "utc_date": "2026-11-06",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
+      "source_title": "Getting started with Web Answer on Amazon Bedrock AgentCore"
     }
   ]
 }
