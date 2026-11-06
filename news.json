@@ -3552,5 +3552,22 @@
       "engineering",
       "models"
     ]
+  },
+  {
+    "title": "Взлом Binance на $6,34 млрд: хакеры использовали внутренний ИИ биржи",
+    "summary": "Binance рассказала, что при краже криптоактивов на $6,34 млрд злоумышленники использовали заражённые компьютеры разработчиков и внутренний ИИ-инструмент биржи. Детальная роль модели не раскрыта.",
+    "published": "2026-11-06",
+    "source_url": "https://www.binance.com/en/blog/community/3229153443759566763",
+    "cover": "assets/editorial/binance-internal-ai-tool-hack-20261029.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-06T07:00:54Z",
+    "event_date": "2026-10-29",
+    "id": "binance-internal-ai-tool-hack-20261029",
+    "url": "articles/binance-internal-ai-tool-hack-20261029/",
+    "topics": [
+      "cybersecurity",
+      "agents",
+      "crypto"
+    ]
   }
 ]
