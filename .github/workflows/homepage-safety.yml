@@ -53,6 +53,9 @@ on:
       - 'assets/social-footer.js'
       - 'tests/test_social_footer.py'
       - 'tests/test_yandex_metrika.py'
+      - 'privacy/index.html'
+      - 'tests/test_privacy_page.py'
+      - 'tests/test_privacy_consent.cjs'
       - 'registry/index.html'
       - 'articles/**/index.html'
       - 'drafts/**/index.html'
@@ -72,6 +75,8 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
           python3 -m unittest discover -s tests -p 'test_yandex_metrika.py' -v
+          python3 -m unittest discover -s tests -p 'test_privacy_page.py' -v
+          node tests/test_privacy_consent.cjs
           python3 -m unittest discover -s tests -p 'test_dzen_redirect.py' -v
           python3 -m unittest discover -s tests -p 'test_threads_redirect.py' -v
           python3 -m unittest discover -s tests -p 'test_x_redirect.py' -v
