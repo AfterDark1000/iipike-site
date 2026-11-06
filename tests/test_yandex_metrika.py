@@ -28,11 +28,14 @@ class YandexMetrikaTests(unittest.TestCase):
         script = SHARED.read_text(encoding="utf-8")
         self.assertEqual(script.count("https://mc.yandex.ru/metrika/tag.js?id=" + COUNTER), 1)
         self.assertEqual(len(re.findall(r"ym\(114100188, 'init'", script)), 1)
-        for option in ("ssr: true", "webvisor: true", "clickmap: true",
-                       'ecommerce: "dataLayer"', "referrer: document.referrer",
-                       "url: location.href", "accurateTrackBounce: true",
-                       "trackLinks: true"):
-            self.assertIn(option, script)
+        for option in ("ssr", "webvisor", "clickmap", "ecommerce",
+                       "referrer", "url", "accurateTrackBounce", "trackLinks"):
+            self.assertRegex(script, rf'{option}\\s*:')
+        self.assertIn('window.localStorage.getItem(KEY)', script)
+        self.assertIn('if (choice === "yes") startTracking()', script)
+        self.assertIn('if (running) return', script)
+        self.assertIn('window.location.reload()', script)
+        self.assertIn('https://iipike.ru/privacy/', script)
 
     def test_all_public_html_pages_load_shared_tracker(self):
         # All first-party pages (including historical and future generated news
