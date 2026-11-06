@@ -33,7 +33,9 @@ jobs:
           fetch-depth: 0
           filter: blob:none
       - name: Regression tests for time and spacing checks
-        run: node --test tests/watchdog.test.js
+        run: |
+          node --test tests/watchdog.test.js
+          python3 -m unittest discover -s tests -p 'test_watchdog_queue.py' -v
       - name: Inspect site-first queue from local Git refs (read-only)
         run: python3 scripts/watchdog_queue.py --output /tmp/hpii-queue-health.json
       - name: Check schedule, queue, public site and open incidents
