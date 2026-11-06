@@ -3617,5 +3617,22 @@
       "safety",
       "agents"
     ]
+  },
+  {
+    "title": "Индия предупредила об ИИ-атаках на финансовые компании: снова ARTEX",
+    "summary": "CERT-In предупредил об активной кампании Crafty Falcon против финансовых организаций Индии. Атакующие используют ARTEX и другие ИИ-инструменты; виновные и финансовый ущерб кампании не установлены.",
+    "published": "2026-11-06",
+    "source_url": "https://www.cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0058&pageid=PUBVLNOTES02",
+    "cover": "assets/editorial/cert-in-crafty-falcon-ai-attacks-20261104.png",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-06T11:45:35Z",
+    "event_date": "2026-11-04",
+    "id": "cert-in-crafty-falcon-ai-attacks-20261104",
+    "url": "articles/cert-in-crafty-falcon-ai-attacks-20261104/",
+    "topics": [
+      "cybersecurity",
+      "agents",
+      "crypto"
+    ]
   }
 ]
