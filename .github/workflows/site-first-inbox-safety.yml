@@ -33,6 +33,7 @@ on:
       - 'scripts/site_publication_queue.py'
       - 'scripts/render_site_publication_queue.py'
       - 'tests/test_site_publication_queue_dashboard.py'
+      - 'tests/test_site_first_explicit_crosslinks.py'
       - 'tests/test_site_publication_queue.py'
       - '.github/workflows/site-first-scheduled-release.yml'
       - 'scripts/sync_site_first_dzen.py'

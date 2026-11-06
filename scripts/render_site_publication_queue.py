@@ -15,7 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git_blob_at
-from scripts.site_related import catalog_entries, validate_links
+from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 from scripts.site_publication_queue import (
     INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot
 )
@@ -95,13 +95,15 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             status = "🖼️ Ждёт обложку"
         else:
             related = data.get("related_dzen_ids", [])
-            if related:
-                # The actual scheduler runs this same validator. Do not show
-                # a blocked story as due just because it has a cover.
+            if related or data.get("site_crosslinks"):
+                # Same crosslink validation as the scheduler, so its report
+                # cannot falsely call a publishable story blocked.
                 if verified_links is None:
                     verified_links = catalog_entries(ROOT)
                 try:
-                    validate_links(related, verified_links)
+                    mapped = explicit_site_crosslinks(data, catalog)
+                    validate_links(related, verified_links,
+                                   site_crosslinks=mapped)
                 except ValueError as exc:
                     block_reason = str(exc)
             if block_reason:

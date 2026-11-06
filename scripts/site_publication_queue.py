@@ -23,7 +23,7 @@ from scripts.site_first_release_pr import (
     COVER, IMAGE_EXTS, STABLE_ID, STORY, GH_REPO,
     exists_at, git, release_one, safe_git_blob_at,
 )
-from scripts.site_related import catalog_entries, validate_links
+from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
@@ -111,9 +111,15 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
         # This is only a scheduling filter, NOT a waiver of publication checks:
         # the approved publisher still validates every related reference.
         related = story.get("related_dzen_ids", [])
-        if related:
+        if related or story.get("site_crosslinks"):
             try:
-                validate_links(related, catalog_entries(ROOT))
+                # Published site records, not guessed Dzen publication IDs,
+                # authorize site-only link translations.
+                links = explicit_site_crosslinks(
+                    story, json.loads(safe_git_blob_at(main_ref, "news.json"))
+                )
+                validate_links(related, catalog_entries(ROOT),
+                               site_crosslinks=links)
             except ValueError as exc:
                 if not str(exc).startswith("Unverified Dzen article reference: "):
                     raise
