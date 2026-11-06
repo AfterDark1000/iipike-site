@@ -3692,5 +3692,22 @@
       "agents",
       "apps"
     ]
+  },
+  {
+    "title": "OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox",
+    "summary": "OpenAI представила GPT-6 Cyber, которую использовали для выявления 81 новой опасной уязвимости Firefox. Компания раскрыла результаты тестов и ограниченный доступ по программе Daybreak Red.",
+    "published": "2026-11-06",
+    "source_url": "https://openai.com/index/introducing-gpt-6-cyber/",
+    "cover": "assets/editorial/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-06T16:15:39Z",
+    "event_date": "2026-11-05",
+    "id": "gpt-6-cyber-firefox-81-vulnerabilities-20261105",
+    "url": "articles/gpt-6-cyber-firefox-81-vulnerabilities-20261105/",
+    "topics": [
+      "cybersecurity",
+      "agents",
+      "models"
+    ]
   }
 ]
