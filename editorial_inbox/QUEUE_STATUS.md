@@ -2,19 +2,18 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 16
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 17
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **06.11.2026 18:00 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **06.11.2026 19:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Meta дала Muse голос и мимику: ИИ-агента теперь можно перебивать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-realtime-voice-avatar-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 19:07 (Усть-Катав)**; пауза до 06.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-realtime-voice-avatar-20261105.webp) |
-| **2** | [Четыре университета Австралии внедряют ИИ OpenAI: от ChatGPT Edu до робота-родителя](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/australian-universities-chatgpt-edu-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 20:07 (Усть-Катав)**; пауза до 06.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/australian-universities-chatgpt-edu-20261105.webp) |
-| **3** | [OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/gpt-6-cyber-firefox-81-vulnerabilities-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 21:07 (Усть-Катав)**; пауза до 06.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp) |
+| **1** | [Четыре университета Австралии внедряют ИИ OpenAI: от ChatGPT Edu до робота-родителя](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/australian-universities-chatgpt-edu-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 20:22 (Усть-Катав)**; пауза до 06.11.2026 20:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/australian-universities-chatgpt-edu-20261105.webp) |
+| **2** | [OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/gpt-6-cyber-firefox-81-vulnerabilities-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 21:22 (Усть-Катав)**; пауза до 06.11.2026 20:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -26,6 +25,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Meta дала Muse голос и мимику: ИИ-агента теперь можно перебивать](https://iipike.ru/articles/meta-muse-realtime-voice-avatar-20261105/) | 06.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-realtime-voice-avatar-20261105.webp) |
 | [Брокман признал: OpenAI отставала от Anthropic в борьбе за бизнес-клиентов](https://iipike.ru/articles/openai-brockman-anthropic-enterprise-20261104/) | 06.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-brockman-anthropic-enterprise-20261104.webp) |
 | [Индия предупредила об ИИ-атаках на финансовые компании: снова ARTEX](https://iipike.ru/articles/cert-in-crafty-falcon-ai-attacks-20261104/) | 06.11.2026 16:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cert-in-crafty-falcon-ai-attacks-20261104.png) |
 | [CrowdStrike выпустила «стоп-кран» для ИИ-агентов](https://iipike.ru/articles/crowdstrike-ai-kill-switch-20261103/) | 06.11.2026 15:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/crowdstrike-ai-kill-switch-20261103.webp) |
