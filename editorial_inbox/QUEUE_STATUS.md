@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 18
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 19
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **06.11.2026 20:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **06.11.2026 21:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/gpt-6-cyber-firefox-81-vulnerabilities-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 06.11.2026 21:22 (Усть-Катав)**; пауза до 06.11.2026 21:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp) |
+| — | Готовых к выбору материалов нет | — | — | — |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox](https://iipike.ru/articles/gpt-6-cyber-firefox-81-vulnerabilities-20261105/) | 06.11.2026 21:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp) |
 | [Четыре университета Австралии внедряют ИИ OpenAI: от ChatGPT Edu до робота-родителя](https://iipike.ru/articles/australian-universities-chatgpt-edu-20261105/) | 06.11.2026 20:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/australian-universities-chatgpt-edu-20261105.webp) |
 | [Meta дала Muse голос и мимику: ИИ-агента теперь можно перебивать](https://iipike.ru/articles/meta-muse-realtime-voice-avatar-20261105/) | 06.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-realtime-voice-avatar-20261105.webp) |
 | [Брокман признал: OpenAI отставала от Anthropic в борьбе за бизнес-клиентов](https://iipike.ru/articles/openai-brockman-anthropic-enterprise-20261104/) | 06.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-brockman-anthropic-enterprise-20261104.webp) |
