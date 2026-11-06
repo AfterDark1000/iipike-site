@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
-from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links
+from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
@@ -59,11 +59,14 @@ def approved_article(root, slug):
         raise ValueError("Invalid article rubric: " + rubric)
     references = data.get("related_dzen_ids", [])
     dzen_id = data.get("dzen_id")
+    records = json.loads((root / "news.json").read_text(encoding="utf-8"))
+    site_crosslinks = explicit_site_crosslinks(data, records)
     original_dt = None
     original_day = None
     if dzen_id is not None or references:
         catalog = catalog_entries(root)
-        validate_links(references, catalog, current=dzen_id)
+        validate_links(references, catalog, current=dzen_id,
+                       site_crosslinks=site_crosslinks)
         if dzen_id is not None:
             entry = validate_reference(dzen_id, catalog)
             if data.get("dzen_url") != entry["dzen_url"]:
@@ -191,7 +194,9 @@ def render_article(data, records=None, catalog=None):
     if data.get("dzen_url"):
         structured["isBasedOn"] = data["dzen_url"]
     structured_json = json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c")
-    related_html = render_links(data.get("related_dzen_ids", []), records or [], catalog or {})
+    site_crosslinks = explicit_site_crosslinks(data, records or [])
+    related_html = render_links(data.get("related_dzen_ids", []), records or [],
+                                catalog or {}, site_crosslinks=site_crosslinks)
     # Dzen is archival provenance, not a primary reporting source.
     # Its URL remains in verified JSON/JSON-LD without distracting readers.
     provenance_only = bool(data.get("dzen_id") and data.get("source_url") == data.get("dzen_url"))
@@ -214,6 +219,8 @@ def render_article(data, records=None, catalog=None):
                     if row.get("site_first_dzen_id") else None)
         if dzen_url and row.get("url"):
             site_links[dzen_url] = BASE + "/" + row["url"]
+    for ident, row in site_crosslinks.items():
+        site_links[canonical_dzen_url(ident)] = BASE + "/" + row["url"]
     body = render_blocks(data["paragraphs"], site_links=site_links)
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",
