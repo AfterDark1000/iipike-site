@@ -1,0 +1,40 @@
+name: HPII — watchdog (no publishing)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hpii-watchdog.yml'
+      - 'scripts/watchdog.js'
+      - 'tests/watchdog.test.js'
+  workflow_dispatch:
+  schedule:
+    - cron: '13 * * * *'
+
+# Never grant permission to publish, push code, or modify secrets.
+permissions:
+  contents: read
+  actions: read
+  issues: write
+
+concurrency:
+  group: hpii-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout monitoring code (read-only)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Regression tests for time and spacing checks
+        run: node --test tests/watchdog.test.js
+      - name: Check schedule, queue, public site and open incidents
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {main} = require('./scripts/watchdog.js');
+            await main({github, context, core});
