@@ -3504,5 +3504,21 @@
       "development",
       "agents"
     ]
+  },
+  {
+    "title": "Snowflake прописала ИИ-агентам правила: что считать выручкой и сколько тратить",
+    "summary": "Snowflake представила Business Ontology для единых определений корпоративных показателей и расширила Cortex AI Gateway для контроля ИИ-агентов, их прав и расходов.",
+    "published": "2026-11-06",
+    "source_url": "https://www.snowflake.com/en/news/press-releases/expedition-2026-business-ontology-ai-gateway/",
+    "cover": "assets/editorial/snowflake-business-ontology-ai-gateway-20261103.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-06T03:45:33Z",
+    "event_date": "2026-11-03",
+    "id": "snowflake-business-ontology-ai-gateway-20261103",
+    "url": "articles/snowflake-business-ontology-ai-gateway-20261103/",
+    "topics": [
+      "agents",
+      "business"
+    ]
   }
 ]
