@@ -108,7 +108,7 @@ def proposed_changes():
     allowed = ("editorial_inbox/stories/", "editorial_inbox/covers/",
                "assets/editorial/", "content/approved/", "articles/",
                "rubrics/", "topics/")
-    exact = {"news.json", "feed.xml", "sitemap.xml", "index.html"}
+    exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html"}
     changed = []
     for row in output:
         name = row[3:]
@@ -145,7 +145,7 @@ def auto_publish_site(story_id, base_sha, source_paths):
         "assets/editorial/" + Path(source_paths[1]).name,
         f"content/approved/{story_id}.json",
         f"articles/{story_id}/index.html",
-        "news.json", "feed.xml", "sitemap.xml", "index.html",
+        "news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
         "articles/index.html",
     }
     rubric_files = {"rubrics/" + name + "/index.html" for name in (
