@@ -66,6 +66,62 @@ class PublicationQueueTests(unittest.TestCase):
             found = ready_items()
         self.assertEqual([x["id"] for x in found], ["older", "newer"])
 
+    def test_unverified_dzen_link_isolated_from_other_ready_stories(self):
+        tree = "\n".join([
+            "editorial_inbox/stories/blocking.json",
+            "editorial_inbox/covers/blocking.webp",
+            "editorial_inbox/stories/clean.json",
+            "editorial_inbox/covers/clean.webp",
+        ])
+        bad_ref = "6aec0bd5c4df40737eced1fa"
+        def fake_source(ref, path):
+            sid = Path(path).stem
+            return json.dumps({
+                "id": sid, "status": "editor_approved",
+                "approved_by": "human_editor",
+                "related_dzen_ids": [bad_ref] if sid == "blocking" else [],
+            })
+        def fake_git(*args, **kwargs):
+            self.assertEqual(args[0], "ls-tree")
+            return SimpleNamespace(stdout=tree)
+        with patch("scripts.site_publication_queue.git", side_effect=fake_git), \
+             patch("scripts.site_publication_queue.exists_at", return_value=False), \
+             patch("scripts.site_publication_queue.safe_git_blob_at",
+                   side_effect=fake_source), \
+             patch("scripts.site_publication_queue._last_change",
+                   return_value=NOW - dt.timedelta(hours=2)), \
+             patch("scripts.site_publication_queue.catalog_entries",
+                   return_value={}), \
+             patch("builtins.print") as output:
+            ready = ready_items()
+        self.assertEqual([row["id"] for row in ready], ["clean"])
+        self.assertTrue(any(
+            call.args and call.args[0] == "BLOCKED_UNVERIFIED_DZEN_REFERENCE:"
+            for call in output.call_args_list))
+
+    def test_valid_optional_dzen_crosslink_still_passes_full_validator(self):
+        tree = ("editorial_inbox/stories/safe.json\n"
+                "editorial_inbox/covers/safe.webp\n")
+        refid = "6ae9af0cc44bda2203fe42ae"
+        data = json.dumps({"id": "safe", "status": "editor_approved",
+                           "approved_by": "human_editor",
+                           "related_dzen_ids": [refid]})
+        with patch("scripts.site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=tree)), \
+             patch("scripts.site_publication_queue.exists_at",
+                   return_value=False), \
+             patch("scripts.site_publication_queue.safe_git_blob_at",
+                   return_value=data), \
+             patch("scripts.site_publication_queue._last_change",
+                   return_value=NOW - dt.timedelta(hours=2)), \
+             patch("scripts.site_publication_queue.catalog_entries",
+                   return_value={refid: {"dzen_id": refid, "title": "Verified",
+                                        "url_evidence": "recorded_in_editorial_archive",
+                                        "title_evidence": "recorded",
+                                        "dzen_url": "https://dzen.ru/a/aumvDMRL2iID_kKu"}}):
+            ready = ready_items()
+        self.assertEqual([x["id"] for x in ready], ["safe"])
+
     def test_missing_cover_is_not_eligible_for_release(self):
         with patch("scripts.site_publication_queue.git",
                    return_value=SimpleNamespace(
