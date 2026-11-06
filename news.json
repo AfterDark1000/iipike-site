@@ -3536,5 +3536,21 @@
       "health",
       "business"
     ]
+  },
+  {
+    "title": "Skyfall показала ИИ, который разбирает автомобиль на детали по фотографии",
+    "summary": "Skyfall AI представила SKY-001 — модель, которая по изображению восстанавливает предполагаемую структуру механизма и шаги геометрического построения. Заявленные ускорение и экономия получены в тестах разработчика.",
+    "published": "2026-11-06",
+    "source_url": "https://skyfall.ai/blog/introducing-sky-001",
+    "cover": "assets/editorial/skyfall-sky-001-20261019.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-06T06:00:52Z",
+    "event_date": "2026-10-19",
+    "id": "skyfall-sky-001-20261019",
+    "url": "articles/skyfall-sky-001-20261019/",
+    "topics": [
+      "engineering",
+      "models"
+    ]
   }
 ]
