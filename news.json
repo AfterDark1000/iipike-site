@@ -3675,5 +3675,22 @@
       "agents",
       "audio"
     ]
+  },
+  {
+    "title": "Четыре университета Австралии внедряют ИИ OpenAI: от ChatGPT Edu до робота-родителя",
+    "summary": "OpenAI расширяет применение ChatGPT Edu и агентных инструментов в университетах Австралии. UNSW охватит более 80 тысяч студентов и сотрудников, La Trobe уже открыл доступ 3500 работников; обучение включает клинические сценарии и роботизированные диалоги.",
+    "published": "2026-11-06",
+    "source_url": "https://openai.com/index/australian-universities-ai-native-graduates/",
+    "cover": "assets/editorial/australian-universities-chatgpt-edu-20261105.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-06T15:15:35Z",
+    "event_date": "2026-11-05",
+    "id": "australian-universities-chatgpt-edu-20261105",
+    "url": "articles/australian-universities-chatgpt-edu-20261105/",
+    "topics": [
+      "education",
+      "agents",
+      "apps"
+    ]
   }
 ]
