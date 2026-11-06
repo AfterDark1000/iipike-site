@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - 'index.html'
+      - 'dzen/index.html'
+      - 'tests/test_dzen_redirect.py'
       - 'CNAME'
       - 'robots.txt'
       - 'sitemap.xml'
@@ -66,6 +68,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
           python3 -m unittest discover -s tests -p 'test_yandex_metrika.py' -v
+          python3 -m unittest discover -s tests -p 'test_dzen_redirect.py' -v
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
           python3 scripts/build_sitemap.py --check
