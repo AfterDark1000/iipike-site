@@ -3569,5 +3569,21 @@
       "agents",
       "crypto"
     ]
+  },
+  {
+    "title": "Сэм Альтман стал Ram Altman после спора об оперативной памяти",
+    "summary": "Сэм Альтман временно сменил имя профиля в X на Ram Altman после критики его рассуждений о дефиците оперативной памяти и эффективности её использования в дата-центрах.",
+    "published": "2026-11-06",
+    "source_url": "https://cheekypint.transistor.fm/39/transcript",
+    "cover": "assets/editorial/sam-altman-ram-altman-dram-20261104.webp",
+    "rubric": "quotes",
+    "published_at_utc": "2026-11-06T08:15:34Z",
+    "event_date": "2026-11-04",
+    "id": "sam-altman-ram-altman-dram-20261104",
+    "url": "articles/sam-altman-ram-altman-dram-20261104/",
+    "topics": [
+      "infrastructure",
+      "business"
+    ]
   }
 ]
