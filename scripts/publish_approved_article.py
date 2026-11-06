@@ -59,7 +59,10 @@ def approved_article(root, slug):
         raise ValueError("Invalid article rubric: " + rubric)
     references = data.get("related_dzen_ids", [])
     dzen_id = data.get("dzen_id")
-    records = json.loads((root / "news.json").read_text(encoding="utf-8"))
+    # Historical Dzen imports can be validated without a site manifest;
+    # only new site-only mappings need to read the published site catalog.
+    records = (json.loads((root / "news.json").read_text(encoding="utf-8"))
+               if data.get("site_crosslinks") else [])
     site_crosslinks = explicit_site_crosslinks(data, records)
     original_dt = None
     original_day = None
