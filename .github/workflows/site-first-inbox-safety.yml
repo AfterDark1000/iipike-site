@@ -28,6 +28,10 @@ on:
       - 'tests/test_site_first_release_intent.py'
       - 'tests/test_homepage.py'
       - 'scripts/site_publication_queue.py'
+      - 'scripts/build_dzen_rss.py'
+      - 'tests/test_dzen_rss.py'
+      - 'data/dzen_rss_export.json'
+      - 'dzen-rss.xml'
       - '.github/workflows/site-first-scheduled-release.yml'
       - 'tests/test_site_publication_queue.py'
       - 'scripts/site_publication_queue.py'
@@ -68,6 +72,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
           python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
+          python3 -m unittest discover -s tests -p 'test_dzen_rss.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_intent.py' -v
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
@@ -143,5 +148,13 @@ jobs:
           assert 'href="https://example.org/hpii-site-first-smoke-test"' in page
           assert 'https://iipike.ru/articles/'+slug+'/' in (root/'sitemap.xml').read_text()
           assert 'https://iipike.ru/articles/'+slug+'/' in (root/'feed.xml').read_text()
+          from xml.etree import ElementTree as ET
+          dzen = ET.parse(root/'dzen-rss.xml')
+          encoded = '{http://purl.org/rss/1.0/modules/content/}encoded'
+          item = next(x for x in dzen.findall('./channel/item')
+                      if x.findtext('guid', '').endswith('/articles/'+slug+'/'))
+          assert 'Технический <strong>полный абзац</strong>' in item.findtext(encoded)
+          assert item.findtext('pubDate')
+          print('PASS: Dzen full-text RSS exported atomically with site publication')
           print('PASS: site-first HTML, RSS, rubrics and Sitemap compiled without any external publication')
           PY

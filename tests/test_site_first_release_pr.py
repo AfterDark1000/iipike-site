@@ -69,7 +69,7 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         all_paths = [
             story, cover, f"assets/editorial/{sid}.webp",
             f"content/approved/{sid}.json", f"articles/{sid}/index.html",
-            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
             "articles/index.html", "rubrics/news/index.html",
         ]
         calls = []
@@ -98,7 +98,7 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         valid = [
             story, cover, f"assets/editorial/{sid}.webp",
             f"content/approved/{sid}.json", f"articles/{sid}/index.html",
-            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
             "articles/index.html",
         ]
         old_slug = "deepseek-shutdown-override"
@@ -142,7 +142,7 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         valid = [
             story, cover, f"assets/editorial/{sid}.webp",
             f"content/approved/{sid}.json", f"articles/{sid}/index.html",
-            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
             "articles/index.html",
         ]
         for extra in ("README.md", ".github/workflows/unreviewed.yml",

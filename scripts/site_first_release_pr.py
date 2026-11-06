@@ -108,7 +108,7 @@ def proposed_changes():
     allowed = ("editorial_inbox/stories/", "editorial_inbox/covers/",
                "assets/editorial/", "content/approved/", "articles/",
                "rubrics/", "topics/")
-    exact = {"news.json", "feed.xml", "sitemap.xml", "index.html"}
+    exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html"}
     changed = []
     for row in output:
         name = row[3:]
@@ -165,7 +165,11 @@ def auto_publish_site(story_id, base_sha, source_paths):
     # article pages. Allow these regenerated HTML files only when both the
     # page and its approved editorial source already existed in base main.
     # Do not relax the protection for assets, scripts, unapproved pages, etc.
-    unexpected = changed - expected_files - rubric_files - topic_files
+    # RSS may be byte-identical for old paragraph-only site-first pilots.
+    # Allow regeneration but never require an unrelated site release to
+    # change an otherwise valid Dzen export.
+    optional_files = {"dzen-rss.xml"}
+    unexpected = changed - expected_files - optional_files - rubric_files - topic_files
     for path in unexpected:
         match = re.fullmatch(r"articles/([a-z0-9]+(?:-[a-z0-9]+)*)/index\.html", path)
         if not match:

@@ -24,6 +24,7 @@ from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, pub
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
+from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
 BASE = "https://iipike.ru"
@@ -367,6 +368,7 @@ def publish(root, slug, apply=False):
         entries_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
+        root / "dzen-rss.xml": render_dzen_rss(root, updated, staged=data),
         root / "sitemap.xml": render_sitemap(updated),
         root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated, root=root),
     }
