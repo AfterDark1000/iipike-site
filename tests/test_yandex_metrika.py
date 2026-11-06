@@ -40,9 +40,10 @@ class YandexMetrikaTests(unittest.TestCase):
         pages = sorted(ROOT.rglob("index.html"))
         self.assertGreater(len(pages), 200)
         for page in pages:
-            # /dzen/ is a redirect-only landing route, not a tracked page.
-            # Loading the tracker there would double-count a single visit.
-            if page == ROOT / "dzen" / "index.html":
+            # Campaign shortcuts are redirect-only and must not load the tracker.
+            # A tracker on these pages would count a duplicate pageview.
+            if page in (ROOT / "dzen" / "index.html",
+                        ROOT / "threads" / "index.html"):
                 continue
             html = page.read_text(encoding="utf-8")
             if "<html" not in html.lower():
