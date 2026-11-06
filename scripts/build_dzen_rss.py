@@ -41,7 +41,12 @@ def utc(value):
 
 
 def read_settings(root):
-    data = json.loads((root / CONFIG).read_text(encoding="utf-8"))
+    # Minimal isolated publisher test roots do not carry the deployment config.
+    # The only safe fallback is standby, never an implicit active cutover.
+    path = root / CONFIG
+    data = (json.loads(path.read_text(encoding="utf-8")) if path.is_file()
+            else {"schema_version": 1, "mode": "standby",
+                  "cutover_at_utc": None, "max_items": 40})
     if not isinstance(data, dict) or set(data) != {
             "schema_version", "mode", "cutover_at_utc", "max_items"}:
         raise ValueError("Invalid RSS export settings schema")
