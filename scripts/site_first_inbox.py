@@ -25,6 +25,7 @@ if str(ROOT) not in sys.path:
 from scripts.publish_approved_article import approved_article, publish
 from scripts.site_rubrics import RUBRICS
 from scripts.site_rich_text import validate_blocks, markdown_to_blocks
+from scripts.site_related import explicit_site_crosslinks
 from scripts.site_topics import validate_topics, infer_topics
 
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
@@ -33,7 +34,7 @@ COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "paragraphs", "article_markdown", "topics", "site_publish_at", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "site_publish_at", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -102,6 +103,7 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
     else:
         validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
     entries = json.loads((root / "news.json").read_text(encoding="utf-8"))
+    explicit_site_crosslinks(data, entries)
     published = next((x for x in entries if x.get("id") == story_id), None)
     has_page = (root / "articles" / story_id / "index.html").exists()
     if published or has_page:
@@ -117,6 +119,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
         if ("article_markdown" in data and
                 approved.get("article_markdown") != data["article_markdown"]):
             raise ValueError("Published editor Markdown differs from inbox original")
+        if approved.get("site_crosslinks", {}) != data.get("site_crosslinks", {}):
+            raise ValueError("Site-only crosslink mapping differs from inbox original")
         if ("paragraphs" in data and
                 approved.get("paragraphs") != data["paragraphs"]):
             raise ValueError("Published editor blocks differ from inbox original")
@@ -189,6 +193,7 @@ def stage(root, story_id, *, apply=False, now=None):
         "paragraphs": (markdown_to_blocks(data["article_markdown"])
                        if "article_markdown" in data else data["paragraphs"]),
         "related_dzen_ids": data.get("related_dzen_ids", []),
+        "site_crosslinks": data.get("site_crosslinks", {}),
         # No editor busywork: source may optionally select validated keys,
         # otherwise the publisher assigns topics conservatively.
         "topics": (validate_topics(data["topics"]) if "topics" in data
