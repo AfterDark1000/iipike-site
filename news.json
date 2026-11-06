@@ -3601,5 +3601,21 @@
       "cybersecurity",
       "agents"
     ]
+  },
+  {
+    "title": "CrowdStrike выпустила «стоп-кран» для ИИ-агентов",
+    "summary": "CrowdStrike представила AI Kill Switch в Falcon Guardian — механизм экстренного прекращения доступа корпоративного ИИ-агента к модели через Gateway; остановка процессов на устройствах пока разрабатывается.",
+    "published": "2026-11-06",
+    "source_url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-introduces-ai-kill-switch-for-ai-safety/",
+    "cover": "assets/editorial/crowdstrike-ai-kill-switch-20261103.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-06T10:30:43Z",
+    "event_date": "2026-11-03",
+    "id": "crowdstrike-ai-kill-switch-20261103",
+    "url": "articles/crowdstrike-ai-kill-switch-20261103/",
+    "topics": [
+      "safety",
+      "agents"
+    ]
   }
 ]
