@@ -30,7 +30,7 @@ class YandexMetrikaTests(unittest.TestCase):
         self.assertEqual(len(re.findall(r"ym\(114100188, 'init'", script)), 1)
         for option in ("ssr", "webvisor", "clickmap", "ecommerce",
                        "referrer", "url", "accurateTrackBounce", "trackLinks"):
-            self.assertRegex(script, rf'{option}\\s*:')
+            self.assertRegex(script, rf'{option}\s*:')
         self.assertIn('window.localStorage.getItem(KEY)', script)
         self.assertIn('if (choice === "yes") startTracking()', script)
         self.assertIn('if (running) return', script)
