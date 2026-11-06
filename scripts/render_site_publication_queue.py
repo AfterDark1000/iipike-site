@@ -126,6 +126,12 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
     return rows, last
 
 
+def is_selectable(row):
+    return row.get("eligible", row.get("status") in (
+        "🟢 Готова к выпуску", "⏳ Ждёт часовой интервал",
+        "🕒 Ожидает заданного времени"))
+
+
 # Keep in sync with the cron minutes in site-first-scheduled-release.yml.
 # This is a forecast only; release itself stays in site_publication_queue.py.
 CRON_MINUTES = frozenset((7, 22, 37, 52))
@@ -154,9 +160,7 @@ def forecast_order(rows, last, *, now=None):
     if not now.tzinfo:
         raise ValueError("Forecast requires an offset-aware time")
     pending = sorted(
-        (r for r in rows if r.get("eligible", r.get("status") in (
-            "🟢 Готова к выпуску", "⏳ Ждёт часовой интервал",
-            "🕒 Ожидает заданного времени"))),
+        (r for r in rows if is_selectable(r)),
         key=lambda r: (r["ready_at"], r["id"]),
     )
     tick = next_cron_tick(max(now.astimezone(dt.timezone.utc), last + INTERVAL)
@@ -186,7 +190,7 @@ def as_markdown(rows, last, *, now=None):
         (r for r in rows if r["status"] == "✅ Опубликована"),
         key=lambda r: (r["published_at"] or "", r["id"]), reverse=True,
     )
-    attention = [r for r in rows if not r.get("eligible", False)
+    attention = [r for r in rows if not is_selectable(r)
                  and r["status"] != "✅ Опубликована"]
     active = sum(r["status"] == "🟢 Готова к выпуску" for r in rows)
     held = sum(r["status"] == "⏳ Ждёт часовой интервал" for r in rows)
