@@ -3658,5 +3658,22 @@
       "business",
       "finance"
     ]
+  },
+  {
+    "title": "Meta дала Muse голос и мимику: ИИ-агента теперь можно перебивать",
+    "summary": "Meta начала развёртывание голосовых разговоров и живых аватаров Muse в США: доступны сотни голосовых вариантов, перебивания, три режима общения и выполнение задач во время диалога.",
+    "published": "2026-11-06",
+    "source_url": "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/",
+    "cover": "assets/editorial/meta-muse-realtime-voice-avatar-20261105.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-06T14:15:34Z",
+    "event_date": "2026-11-05",
+    "id": "meta-muse-realtime-voice-avatar-20261105",
+    "url": "articles/meta-muse-realtime-voice-avatar-20261105/",
+    "topics": [
+      "apps",
+      "agents",
+      "audio"
+    ]
   }
 ]
