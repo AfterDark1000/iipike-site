@@ -3585,5 +3585,21 @@
       "infrastructure",
       "business"
     ]
+  },
+  {
+    "title": "ИИ OpenAI нашёл 948 способов получить root в Linux",
+    "summary": "OpenAI сообщила об эксперименте с автономным поиском уязвимостей Linux: 948 уникальных проблем локального повышения привилегий и 1169 работающих эксплойтов в контролируемой среде.",
+    "published": "2026-11-06",
+    "source_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+    "cover": "assets/editorial/openai-linux-root-948-20261104.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-06T09:15:36Z",
+    "event_date": "2026-11-04",
+    "id": "openai-linux-root-948-20261104",
+    "url": "articles/openai-linux-root-948-20261104/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ]
   }
 ]
