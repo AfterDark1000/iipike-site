@@ -3488,5 +3488,21 @@
       "agents",
       "apps"
     ]
+  },
+  {
+    "title": "OpenAI покупает Pierre: её инструменты уже работают в Codex",
+    "summary": "OpenAI объявила о намерении приобрести Pierre Computer Company, чьи библиотеки Trees и Diffs уже используются в Codex. После сделки компания планирует интеграцию Code Storage.",
+    "published": "2026-11-06",
+    "source_url": "https://openai.com/index/openai-to-acquire-pierre/",
+    "cover": "assets/editorial/openai-pierre-acquisition-20261104.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-06T02:30:46Z",
+    "event_date": "2026-11-04",
+    "id": "openai-pierre-acquisition-20261104",
+    "url": "articles/openai-pierre-acquisition-20261104/",
+    "topics": [
+      "development",
+      "agents"
+    ]
   }
 ]
