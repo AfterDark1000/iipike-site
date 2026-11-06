@@ -49,6 +49,7 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+          python3 -m unittest discover -s tests -p 'test_dzen_rss.py' -v
       - name: Verify user-requested site release intent
         id: intent
         env:
