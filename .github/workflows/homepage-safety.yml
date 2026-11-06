@@ -46,6 +46,7 @@ on:
       - 'tests/test_homepage.py'
       - 'assets/social-footer.js'
       - 'tests/test_social_footer.py'
+      - 'tests/test_yandex_metrika.py'
       - 'registry/index.html'
       - 'articles/**/index.html'
       - 'drafts/**/index.html'
@@ -64,6 +65,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_homepage.py' -v
           python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
+          python3 -m unittest discover -s tests -p 'test_yandex_metrika.py' -v
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
           python3 scripts/build_sitemap.py --check
