@@ -5,7 +5,8 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from scripts.render_site_publication_queue import as_markdown, safe_text, scan_queue
+from scripts.render_site_publication_queue import (as_markdown, safe_text, scan_queue,
+                                                   forecast_order, next_cron_tick)
 from scripts.site_publication_queue import main as schedule_main
 
 UTC = dt.timezone.utc
@@ -121,6 +122,93 @@ class EditorialQueuePageTests(unittest.TestCase):
         text = as_markdown([row], None)
         self.assertIn("не ранее 05.11.2026 17:00", text)
         self.assertNotIn("https://iipike.ru/articles/future/", text)
+
+    def test_forecast_shows_real_order_and_skips_future_slot(self):
+        now = dt.datetime(2026, 11, 6, 10, 18, tzinfo=UTC)
+        last = dt.datetime(2026, 11, 6, 9, 15, 36, tzinfo=UTC)
+        def row(sid, ready, slot=None):
+            return {
+                "id": sid, "title": sid, "eligible": True,
+                "status": "⏳ Ждёт часовой интервал",
+                "ready_at": dt.datetime(2026, 11, 6, ready, tzinfo=UTC),
+                "publish_at": slot,
+                "source_path": "editorial_inbox/stories/" + sid + ".json",
+                "cover_path": "editorial_inbox/covers/" + sid + ".webp",
+            }
+        future = row("old-but-future", 7, dt.datetime(2026, 11, 6, 13, tzinfo=UTC))
+        first = row("first-ready", 9)
+        second = row("second-ready", 10)
+        plan = forecast_order([second, future, first], last, now=now)
+        self.assertEqual([r["id"] for r, _ in plan],
+                         ["first-ready", "second-ready", "old-but-future"])
+        self.assertEqual([when.strftime("%H:%M") for _, when in plan],
+                         ["10:22", "11:22", "13:07"])
+        self.assertEqual(next_cron_tick(dt.datetime(
+            2026, 11, 6, 10, 15, 36, tzinfo=UTC)).strftime("%H:%M"), "10:22")
+        page = as_markdown([second, future, first], last, now=now)
+        self.assertLess(page.index("first-ready"), page.index("second-ready"))
+        self.assertLess(page.index("second-ready"), page.index("old-but-future"))
+        self.assertIn("Не ранее 06.11.2026 15:22", page)
+        self.assertIn("Прогноз — не обещание", page)
+
+    def test_invalid_dzen_reference_is_excluded_and_explained(self):
+        paths = "\n".join([
+            "editorial_inbox/stories/gpt6.json",
+            "editorial_inbox/covers/gpt6.webp",
+            "editorial_inbox/stories/clean.json",
+            "editorial_inbox/covers/clean.webp",
+        ])
+        bad = "6aec5fa092fe100941ed2933"
+        def blob(ref, path):
+            if path == "news.json":
+                return "[]"
+            sid = path.split("/")[-1].split(".")[0]
+            return json.dumps({
+                "id": sid, "title": "Article " + sid,
+                "status": "editor_approved", "approved_by": "human_editor",
+                "related_dzen_ids": [bad] if sid == "gpt6" else [],
+            })
+        with patch("scripts.render_site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=paths)), \
+             patch("scripts.render_site_publication_queue.safe_git_blob_at",
+                   side_effect=blob), \
+             patch("scripts.render_site_publication_queue.exists_at",
+                   return_value=False), \
+             patch("scripts.render_site_publication_queue.latest_site_first_publication",
+                   return_value=None), \
+             patch("scripts.render_site_publication_queue.catalog_entries",
+                   return_value={}), \
+             patch("scripts.render_site_publication_queue._last_change",
+                   return_value=NOW - dt.timedelta(hours=2)):
+            rows, last = scan_queue(now=NOW)
+        got = {r["id"]: r for r in rows}
+        self.assertFalse(got["gpt6"]["eligible"])
+        self.assertEqual(got["gpt6"]["status"], "⛔ Заблокирована: связи с Дзеном")
+        self.assertIn(bad, got["gpt6"]["block_reason"])
+        self.assertTrue(got["clean"]["eligible"])
+        page = as_markdown(rows, last, now=NOW)
+        self.assertIn("Заблокированы:** 1", page)
+        self.assertIn("Unverified Dzen article reference", page)
+        self.assertEqual([r["id"] for r, _ in forecast_order(rows, last, now=NOW)],
+                         ["clean"])
+        self.assertLess(page.index("Article clean"), page.index("Article gpt6"))
+
+    def test_published_rows_are_sorted_descending_by_actual_date(self):
+        rows = [
+            {"id": sid, "title": sid, "status": "✅ Опубликована",
+             "published": True, "published_at": timestamp,
+             "eligible": False, "source_path": "editorial_inbox/stories/" + sid + ".json",
+             "cover_path": None}
+            for sid, timestamp in (
+                ("yesterday", "2026-11-05T11:00:00Z"),
+                ("newest", "2026-11-06T11:00:00Z"),
+                ("earliest", "2026-11-04T11:00:00Z"),
+            )
+        ]
+        page = as_markdown(rows, None, now=NOW)
+        self.assertLess(page.index("newest"), page.index("yesterday"))
+        self.assertLess(page.index("yesterday"), page.index("earliest"))
+        self.assertNotIn("| **1** | [newest]", page)
 
     def test_inspect_only_does_not_publish_eligible_story(self):
         env = {
