@@ -14,6 +14,20 @@
           "article_id": "ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8"
         }
       ]
+    },
+    {
+      "key": "education",
+      "name": "Образование и ИИ",
+      "description": "Использование искусственного интеллекта в школах и университетах, обучение работе с ИИ, подготовка преподавателей, студентов и новые образовательные практики.",
+      "why_not_existing": "«Приложения и сервисы» описывает функции ИИ-продуктов, «ИИ-агенты» — их автономное поведение, а «Законы и общество» — регулирование и общественные последствия. Образование — самостоятельная сфера применения: учебные программы, педагогика, доступ университетов к ИИ и подготовка специалистов.",
+      "evidence": [
+        {
+          "source_url": "https://openai.com/index/australian-universities-ai-native-graduates/"
+        },
+        {
+          "source_url": "https://www.latrobe.edu.au/news/articles/2026/release/ai-robot-trains-teachers-to-handle-heated-issues"
+        }
+      ]
     }
   ]
 }
