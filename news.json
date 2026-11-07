@@ -3862,5 +3862,20 @@
       "entertainment",
       "development"
     ]
+  },
+  {
+    "title": "ИИ использовали при создании более 80% самых популярных игр Roblox",
+    "summary": "Roblox сообщила, что разработчики более 80 из ста самых популярных игр платформы применяли ИИ. Два почти полностью созданных с ИИ проекта вошли в топ-20 по одновременным игрокам.",
+    "published": "2026-11-07",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026068235/ex991-q32026earningsshar.htm",
+    "cover": "assets/editorial/roblox-top-100-games-ai-20261029.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T15:15:34Z",
+    "event_date": "2026-10-29",
+    "id": "roblox-top-100-games-ai-20261029",
+    "url": "articles/roblox-top-100-games-ai-20261029/",
+    "topics": [
+      "entertainment"
+    ]
   }
 ]
