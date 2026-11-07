@@ -3697,7 +3697,9 @@
       "education",
       "agents",
       "apps"
-    ]
+    ],
+    "site_first_dzen_id": "6aedadeb05fe010947b54163",
+    "site_first_dzen_url": "https://dzen.ru/a/au2t6wX-AQlHtUFj"
   },
   {
     "title": "OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox",
@@ -3733,7 +3735,9 @@
       "safety",
       "agents",
       "society"
-    ]
+    ],
+    "site_first_dzen_id": "6aef10e26208361f4597a33d",
+    "site_first_dzen_url": "https://dzen.ru/a/au8Q4mIINh9Fl6M9"
   },
   {
     "title": "Google выпустила Gemini Omni 1.2 Flash: 15 секунд видео и правки в переписке",
@@ -3749,7 +3753,9 @@
     "topics": [
       "video",
       "apps"
-    ]
+    ],
+    "site_first_dzen_id": "6aef11284e9678290424cc6b",
+    "site_first_dzen_url": "https://dzen.ru/a/au8RKE6WeCkEJMxr"
   },
   {
     "title": "Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса",
@@ -3781,7 +3787,9 @@
     "topics": [
       "agents",
       "apps"
-    ]
+    ],
+    "site_first_dzen_id": "6aef13b598b91805093c855f",
+    "site_first_dzen_url": "https://dzen.ru/a/au8TtZi5GAUJPIVf"
   },
   {
     "title": "Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться",
@@ -3797,7 +3805,9 @@
     "topics": [
       "cybersecurity",
       "agents"
-    ]
+    ],
+    "site_first_dzen_id": "6aef146d3b28620e3e656104",
+    "site_first_dzen_url": "https://dzen.ru/a/au8UbTsoYg4-ZWEE"
   },
   {
     "title": "Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов",
