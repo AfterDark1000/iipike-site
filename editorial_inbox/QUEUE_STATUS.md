@@ -2,20 +2,19 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 4 · **Готовы:** 4 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 21
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 22
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **07.11.2026 11:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **07.11.2026 12:20 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/thinking-machines-inkling-2-small-20261105.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 12:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/thinking-machines-inkling-2-small-20261105.webp) |
-| **2** | [Meta добавила в Muse конструктор мини-приложений: достаточно описать задачу](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-spaces-20261106.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 13:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-spaces-20261106.webp) |
-| **3** | [Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/railway-primcloud-ai-agents-20261103.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 14:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/railway-primcloud-ai-agents-20261103.webp) |
-| **4** | [Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/censys-artex-exposed-servers-20261105.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 15:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/censys-artex-exposed-servers-20261105.webp) |
+| **1** | [Meta добавила в Muse конструктор мини-приложений: достаточно описать задачу](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-spaces-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 13:22 (Усть-Катав)**; пауза до 07.11.2026 13:20 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-spaces-20261106.webp) |
+| **2** | [Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/railway-primcloud-ai-agents-20261103.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 14:22 (Усть-Катав)**; пауза до 07.11.2026 13:20 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/railway-primcloud-ai-agents-20261103.webp) |
+| **3** | [Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/censys-artex-exposed-servers-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 15:22 (Усть-Катав)**; пауза до 07.11.2026 13:20 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/censys-artex-exposed-servers-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -27,6 +26,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса](https://iipike.ru/articles/thinking-machines-inkling-2-small-20261105/) | 07.11.2026 12:20 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/thinking-machines-inkling-2-small-20261105.webp) |
 | [Google выпустила Gemini Omni 1.2 Flash: 15 секунд видео и правки в переписке](https://iipike.ru/articles/google-gemini-omni-1-2-flash-video-20261105/) | 07.11.2026 11:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-omni-1-2-flash-video-20261105.webp) |
 | [Глава Hugging Face: риск вымирания от ИИ почти нулевой, но за атаки агентов надо отвечать](https://iipike.ru/articles/clement-delangue-hugging-face-ai-doom-agents-20261104/) | 07.11.2026 10:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/clement-delangue-hugging-face-ai-doom-agents-20261104.webp) |
 | [OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox](https://iipike.ru/articles/gpt-6-cyber-firefox-81-vulnerabilities-20261105/) | 06.11.2026 21:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gpt-6-cyber-firefox-81-vulnerabilities-20261105.webp) |
