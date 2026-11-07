@@ -23,7 +23,7 @@ if str(ROOT) not in sys.path:
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home
-from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks
+from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
@@ -156,6 +156,40 @@ def approved_article(root, slug):
     return data
 
 
+# Dzen needs explicit source links at the end of its approved Markdown.
+# The site already shows source_url in an aside, so move any extra references
+# into that same aside rather than printing a duplicate source list in the text.
+# This transformation affects HTML rendering ONLY; approved Markdown/blocks
+# remain byte-for-byte unchanged in content/approved and editorial_inbox.
+_SOURCE_LINK = re.compile(r"\\[([^\\]\\n]{1,200})\\]\\((https://[^)\\n]{1,2000})\\)\\Z")
+
+
+def site_article_sources(blocks, primary_url):
+    """Return display-only body blocks and supplementary verified HTTPS links.
+
+    Only match the exact *trailing* editor-authored bibliography: a paragraph
+    '**Первоисточники:**' followed by a list consisting entirely of links.
+    Do not remove arbitrary footnotes or inline citations in the article.
+    """
+    if len(blocks) < 2:
+        return blocks, []
+    marker, references = blocks[-2:]
+    if marker != {"type": "p", "text": "**Первоисточники:**"} or references.get("type") != "ul":
+        return blocks, []
+    extras = []
+    seen = {primary_url}
+    for item in references.get("items", []):
+        matched = _SOURCE_LINK.fullmatch(item)
+        if not matched:
+            return blocks, []
+        label, url = matched.groups()
+        safe_href(url)
+        if url not in seen:
+            extras.append((label, url))
+            seen.add(url)
+    return blocks[:-2], extras
+
+
 def render_article(data, records=None, catalog=None):
     slug = data["slug"]
     url = f"{BASE}/articles/{slug}/"
@@ -205,6 +239,10 @@ def render_article(data, records=None, catalog=None):
     # Its URL remains in verified JSON/JSON-LD without distracting readers.
     provenance_only = bool(data.get("dzen_id") and data.get("source_url") == data.get("dzen_url"))
     section_class = "article-body archive-body" if provenance_only else "article-body"
+    display_blocks, extra_sources = (
+        (data["paragraphs"], []) if provenance_only else
+        site_article_sources(data["paragraphs"], data["source_url"])
+    )
     source_aside = (
         "" if provenance_only else
         '<aside class="sources"><h3>Первоисточник</h3>\n'
@@ -212,6 +250,18 @@ def render_article(data, records=None, catalog=None):
         '" target="_blank" rel="noopener noreferrer">'
         + quote(data["source_title"]) + ' ↗</a>\n</aside>'
     )
+    if extra_sources:
+        items = "".join(
+            '<li><a href="' + quote(url) +
+            '" target="_blank" rel="noopener noreferrer">' +
+            quote(label) + '</a></li>' for label, url in extra_sources
+        )
+        more = (
+            '<details class="source-extras"><summary>Ещё источники (' +
+            str(len(extra_sources)) + ')</summary><ul>' + items +
+            '</ul></details>'
+        )
+        source_aside = source_aside.replace('</aside>', more + '</aside>')
     # Preserve editor-approved Dzen Markdown; rewrite confirmed same-site
     # crosslinks only while rendering HTML, not in the stored source.
     site_links = {}
@@ -225,7 +275,7 @@ def render_article(data, records=None, catalog=None):
             site_links[dzen_url] = BASE + "/" + row["url"]
     for ident, row in site_crosslinks.items():
         site_links[canonical_dzen_url(ident)] = BASE + "/" + row["url"]
-    body = render_blocks(data["paragraphs"], site_links=site_links)
+    body = render_blocks(display_blocks, site_links=site_links)
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",
               "июля", "августа", "сентября", "октября", "ноября", "декабря"]
