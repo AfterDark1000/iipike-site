@@ -3919,5 +3919,20 @@
       "cybersecurity",
       "agents"
     ]
+  },
+  {
+    "title": "Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн",
+    "summary": "Прокуратура США обвинила троих человек в международной схеме мошенничества на сумму более $129 млн с использованием ИИ для подделки голосов и изображений руководителей и юристов.",
+    "published": "2026-11-08",
+    "source_url": "https://www.justice.gov/usao-sdny/pr/three-foreign-nationals-arrested-and-charged-scheme-use-super-intelligence-defraud",
+    "cover": "assets/editorial/ai-ceo-lawyer-impersonation-fraud-129m-20261105.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-07T19:30:46Z",
+    "event_date": "2026-11-05",
+    "id": "ai-ceo-lawyer-impersonation-fraud-129m-20261105",
+    "url": "articles/ai-ceo-lawyer-impersonation-fraud-129m-20261105/",
+    "topics": [
+      "cybersecurity"
+    ]
   }
 ]
