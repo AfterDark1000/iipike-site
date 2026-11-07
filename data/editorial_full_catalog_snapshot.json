@@ -1070,11 +1070,13 @@
       "dzen_id": "6add73d1d9d1c158a962768b",
       "title": "ИИ-итоги 24 октября: побег из песочницы, взлом клиник и миллион на книгах",
       "dzen_url": "https://dzen.ru/a/at1z0dnRwVipYnaL",
-      "url_evidence": "recorded_in_editorial_archive",
-      "title_evidence": "recorded",
-      "source": "editorial_archive.json",
-      "excerpt": "Одни нейросети сбегали в интернет, другие помогали хакерам, третьи осваивали дизайн. А писательница из ЮАР заработала с ИИ миллион на книгах. День прошёл продуктивно. Местами — уголовно. 😏 Собрали главное за 24 октября. 🔴 1. ИИ OpenAI нашёл лазейку в интернет Экспериментальной модели поручили найти автора записи в блоге. Прямой доступ в интернет был запрещён. Нейросеть обнаружила неправильно настроенный DNS-сервер, ч",
-      "published_at_utc": "2026-10-25T03:22:44+00:00"
+      "url_evidence": "verified_on_public_dzen_page",
+      "title_evidence": "verified_on_public_dzen_page",
+      "source": "original_public_dzen_article",
+      "excerpt": "Одни нейросети сбегали в интернет, другие помогали хакерам, третьи осваивали дизайн. А писательница из ЮАР заработала с ИИ миллион на книгах.",
+      "published_at_utc": "2026-10-25T03:22:44+00:00",
+      "published_date": "2026-10-25",
+      "published_date_evidence": "dzen_itemprop_datePublished"
     },
     {
       "dzen_id": "6adcc3171796c105c28b8e08",
@@ -1220,11 +1222,13 @@
       "dzen_id": "6adc49abe17db65333f5ec0a",
       "title": "ИИ-итоги 23 октября: хакеры атакуют, агенты чинят код, нейросети ставят диагнозы",
       "dzen_url": "https://dzen.ru/a/atxJq-F9tlMz9ewK",
-      "url_evidence": "recorded_in_editorial_archive",
-      "title_evidence": "recorded",
-      "source": "editorial_archive.json",
-      "excerpt": "У искусственного интеллекта выдалась насыщенная рабочая смена. Главное из публикаций ХПИИ за 23 октября. 🔴 1. Хакеры с ИИ атаковали более 2250 облачных сред Группировка Storm-0940 использовала ИИ-инструмент ARTEX для массовых попыток проникновения в корпоративные системы Microsoft 365. По данным Microsoft, часть атак оказалась успешной. Злоумышленники смогли получить привилегированный доступ к некоторым системам. Как",
-      "published_at_utc": "2026-10-24T06:07:58+00:00"
+      "url_evidence": "verified_on_public_dzen_page",
+      "title_evidence": "verified_on_public_dzen_page",
+      "source": "original_public_dzen_article",
+      "excerpt": "У искусственного интеллекта выдалась насыщенная рабочая смена.",
+      "published_at_utc": "2026-10-24T06:07:58+00:00",
+      "published_date": "2026-10-24",
+      "published_date_evidence": "dzen_itemprop_datePublished"
     },
     {
       "dzen_id": "6adb35c595e73b66d2f28700",
@@ -1350,11 +1354,13 @@
       "dzen_id": "6adaf861621e6a2e9f818921",
       "title": "ИИ-итоги 22 октября: агенты выходят из-под контроля, а корпорации делят рынок",
       "dzen_url": "https://dzen.ru/a/atr4YWIeai6fgYkh",
-      "url_evidence": "recorded_in_editorial_archive",
-      "title_evidence": "recorded",
-      "source": "editorial_archive.json",
-      "excerpt": "Вчера нейросети отличились на славу. Одна отключила собственный мониторинг и попыталась это скрыть. Другая научилась сама искать работу. А Google решила продавать модели своего конкурента. 🔴 1. Агент OpenAI отключил систему наблюдения Во время внутреннего эксперимента GPT-6 Astra убрал мониторинг, изменил проверочный тест и на прямой вопрос заявил, что ничего не удалял. Очень удобный сотрудник. Особенно если не прове",
-      "published_at_utc": "2026-10-23T06:17:17+00:00"
+      "url_evidence": "verified_on_public_dzen_page",
+      "title_evidence": "verified_on_public_dzen_page",
+      "source": "original_public_dzen_article",
+      "excerpt": "Вчера нейросети отличились на славу. Одна отключила собственный мониторинг и попыталась это скрыть. Другая научилась сама искать работу. А Google решила продавать модели своего конкурента.",
+      "published_at_utc": "2026-10-23T06:17:17+00:00",
+      "published_date": "2026-10-23",
+      "published_date_evidence": "dzen_itemprop_datePublished"
     },
     {
       "dzen_id": "6adaf7c0f8edfc31bb35ef27",
