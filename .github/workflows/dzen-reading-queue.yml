@@ -78,11 +78,11 @@ jobs:
               throw new Error('Site publication queue forecast not found; refuse stale Dzen order');
             }
             const websiteForecast = new Map();
-            for (const line of queueStatus.slice(sectionStart, sectionEnd).split('\\n')) {
-              if (!/^\\|\\s*\\*\\*\\d+\\*\\*/.test(line)) continue;
+            for (const line of queueStatus.slice(sectionStart, sectionEnd).split('\n')) {
+              if (!/^\|\s*\*\*\d+\*\*/.test(line)) continue;
               const cells = line.split('|').map(x => x.trim());
-              const position = /^\\*\\*(\\d+)\\*\\*$/.exec(cells[1] || '');
-              const match = /\\/editorial_inbox\\/stories\\/([a-z0-9]+(?:-[a-z0-9]+)*)\\.json\\)/.exec(cells[2] || '');
+              const position = /^\*\*(\d+)\*\*$/.exec(cells[1] || '');
+              const match = /\/editorial_inbox\/stories\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json\)/.exec(cells[2] || '');
               if (!position || !match || !cells[4]) {
                 throw new Error('Malformed website forecast row: ' + line.slice(0,200));
               }
