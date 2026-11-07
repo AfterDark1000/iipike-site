@@ -464,3 +464,11 @@
 .hpi-consent-accept{background:#191c1c;color:#fff;border:1px solid #191c1c}
 .hpi-consent-actions button:focus-visible{outline:3px solid #e54731;outline-offset:3px}
 @media(max-width:600px){.hpi-consent-panel{bottom:10px;right:10px;width:calc(100vw - 20px);padding:14px 15px}.hpi-consent-actions{justify-content:stretch}.hpi-consent-actions button{flex:1}.hpi-privacy-page{padding-top:30px;padding-bottom:52px}}
+
+/* Verified supplementary references live next to the primary source,
+   collapsed by default on narrow screens; no duplicate list in article text. */
+.sources .source-extras{margin-top:15px;padding-top:11px;border-top:1px solid var(--line);font-size:13px;line-height:1.55}
+.sources .source-extras summary{cursor:pointer;color:var(--muted);font-weight:700}
+.sources .source-extras summary:hover,.sources .source-extras summary:focus{color:var(--red)}
+.sources .source-extras ul{margin:11px 0 0;padding-left:18px}
+.sources .source-extras li{margin:0 0 9px;overflow-wrap:anywhere}
