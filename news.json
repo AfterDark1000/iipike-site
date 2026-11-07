@@ -3822,5 +3822,21 @@
       "entertainment",
       "business"
     ]
+  },
+  {
+    "title": "Граймс появится в ИИ-фильме, который выйдет в кино 4 декабря",
+    "summary": "Граймс предоставила внешность и сама записала реплики для героини научно-фантастического ИИ-фильма Gods Don’t Give Gifts. Она участвовала в разработке образа; выход в кинотеатрах США намечен на 4 декабря.",
+    "published": "2026-11-07",
+    "source_url": "https://www.thewrap.com/industry-news/tech/ai-film-gods-dont-give-gifts-youtube-grimes-gossip-goblin/",
+    "cover": "assets/editorial/grimes-gods-dont-give-gifts-ai-film-20261105.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T13:00:55Z",
+    "event_date": "2026-11-05",
+    "id": "grimes-gods-dont-give-gifts-ai-film-20261105",
+    "url": "articles/grimes-gods-dont-give-gifts-ai-film-20261105/",
+    "topics": [
+      "entertainment",
+      "video"
+    ]
   }
 ]
