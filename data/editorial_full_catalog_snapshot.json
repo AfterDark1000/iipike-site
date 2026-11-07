@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "357101cb6bf021c05a3c1586cc06a00ff21e30c7",
-  "source_blob_sha": "bf3653d606731522873a1f8a2a70b6d88d5f3f3a",
+  "source_commit": "433045674e9fc96404e97a2755df9b706b8db5eb",
+  "source_blob_sha": "43b6d7fa1dbfe93291a7b6b3d0cfeadd6f972648",
   "snapshot_date": "2026-11-07",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6aef146d3b28620e3e656104",
+      "title": "Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться",
+      "dzen_url": "https://dzen.ru/a/au8UbTsoYg4-ZWEE",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Инженер облачной платформы Railway Джейк Ранзер признал, что запустил ИИ-агентов для тестирования конкурирующих сервисов. Основатель Primcloud Джош Мандерс сообщил, что обнаружил попытки добраться до внутренних систем своей платформы. Публичный разговор между участниками начался 3 ноября. По словам Мандерса, агенты использовали учётные данные из собственного контейнера приложения, чтобы запросить секреты платформы и",
+      "published_at_utc": "2026-11-07T18:03:46+00:00"
+    },
+    {
+      "dzen_id": "6aef13b598b91805093c855f",
+      "title": "Meta добавила в Muse конструктор мини-приложений: достаточно описать задачу",
+      "dzen_url": "https://dzen.ru/a/au8TtZi5GAUJPIVf",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Meta 6 ноября запустила Spaces — конструктор интерактивных пространств внутри ИИ-агента Muse. Пользователь описывает нужный инструмент обычными словами, и агент собирает его прямо в приложении. Так можно сделать планировщик поездки, трекер заказов, семейный органайзер или небольшую игру. Созданное пространство сохраняется в Muse. Его можно открыть позже, продолжить работу или изменить с помощью новых сообщений. Напри",
+      "published_at_utc": "2026-11-07T16:57:00+00:00"
+    },
+    {
+      "dzen_id": "6aef11f41163a041fcdccfe4",
+      "title": "Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть вес",
+      "dzen_url": "https://dzen.ru/a/au8R9BFjoEH83M_k",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса Thinking Machines Lab 5 ноября представила Inkling 2 Small — нейросеть с 594 миллиардами параметров, из которых при обработке каждого токена задействуется около 17 миллиардов. Модель уже доступна на платформе Tinker. Название Small здесь чисто для вида. Модель построена по архитектуре Mixture-of-Experts («смесь экспертов»): для к",
+      "published_at_utc": "2026-11-07T15:52:08+00:00"
+    },
     {
       "dzen_id": "6aef11284e9678290424cc6b",
       "title": "Google выпустила Gemini Omni 1.2 Flash: 15 секунд видео и правки в переписке",
