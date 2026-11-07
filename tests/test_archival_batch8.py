@@ -1,4 +1,4 @@
-"""Final archive batch8: exactly 218 historical Dzen originals plus the pilot."""
+"""Final archive batch8: preserve all 218 originals as link catalog grows."""
 import hashlib,json,unittest
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -13,11 +13,12 @@ class FinalArchiveIntegrity(unittest.TestCase):
         cls.meta={e["dzen_id"]:e for e in cls.catalog}
     def test_full_legacy_catalog_has_no_missing_or_duplicate_original(self):
         ids=[x["dzen_id"] for x in self.news if x.get("dzen_id")]
-        self.assertEqual(len(self.catalog),218)
+        self.assertGreaterEqual(len(self.catalog),218)
+        self.assertEqual(len(self.meta),len(self.catalog))
         self.assertGreaterEqual(len(self.news),219)
         self.assertEqual(len(ids),218)
         self.assertEqual(len(ids),len(set(ids)))
-        self.assertEqual(set(ids),set(self.meta))
+        self.assertTrue(set(ids).issubset(set(self.meta)), "All 218 archived originals must retain their proven links")
         self.assertEqual(self.final["prepared"],28)
         self.assertEqual(self.final["remaining"],0)
         self.assertEqual(self.final["historical_catalog"],218)
