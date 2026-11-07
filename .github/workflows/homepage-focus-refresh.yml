@@ -1,0 +1,51 @@
+name: HPII — refresh four-rubric homepage focus
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/home_focus.json'
+      - 'data/HOME_FOCUS_GUIDE.md'
+      - 'scripts/site_home.py'
+      - 'assets/site.css'
+      - 'tests/test_homepage_focus.py'
+      - '.github/workflows/homepage-focus-refresh.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: hpii-homepage-focus-refresh
+  cancel-in-progress: false
+jobs:
+  refresh-homepage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out current published site
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Regenerate only homepage from current approved catalog
+        run: python3 scripts/build_home_published.py
+      - name: Verify four picks, render and site HTML
+        run: |
+          python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
+          python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+          python3 scripts/build_home_published.py --check
+          git diff --check
+      - name: Commit homepage-only and explicitly rebuild Pages
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -eu
+          if ! git diff --quiet -- index.html; then
+            git add -- index.html
+            test "$(git diff --cached --name-only)" = "index.html"
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "site: refresh four-rubric editorial focus"
+            git push origin HEAD:refs/heads/main
+          fi
+          gh api -X POST repos/AfterDark1000/iipike-site/pages/builds

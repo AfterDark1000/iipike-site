@@ -247,23 +247,6 @@
       // The static laboratory link above remains functional without JavaScript.
     }
   }
-  function hideExpiredFocus() {
-    var area = document.getElementById("focus");
-    if (!area) return;
-    var grid = area.querySelector(".home-focus-grid");
-    if (!grid) return;
-    var now = Date.now();
-    Array.from(grid.querySelectorAll(".home-focus-card")).forEach(function (card) {
-      var expiry = card.getAttribute("data-expires-at");
-      if (expiry && Number.isFinite(Date.parse(expiry)) && Date.parse(expiry) <= now) {
-        card.remove();
-      }
-    });
-    var left = grid.querySelectorAll(".home-focus-card").length;
-    grid.setAttribute("data-count", String(left));
-    if (!left) area.hidden = true;
-  }
-  hideExpiredFocus();
   latestPublished();
   newestDraft();
 })();

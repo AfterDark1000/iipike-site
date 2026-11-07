@@ -440,6 +440,76 @@
   }
 }
 
+
+/* HPII — permanent four-rubric editorial picks. Four equal columns, no timed hides. */
+.home-focus-grid[data-count="4"]{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-auto-rows:auto;
+  gap:14px;
+}
+.home-focus-grid[data-count="4"] .home-focus-card,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child{
+  display:flex;
+  flex-direction:column;
+  grid-column:auto;
+  grid-row:auto;
+  min-height:0;
+  background:#fffaf3;
+  border:1px solid #d9d1c5;
+  color:var(--ink);
+}
+.home-focus-grid[data-count="4"] .home-focus-card:hover,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child:hover{color:var(--ink);border-color:var(--red)}
+.home-focus-grid[data-count="4"] .home-focus-card:nth-child(1){border-top:4px solid #bb4939}
+.home-focus-grid[data-count="4"] .home-focus-card:nth-child(2){border-top:4px solid #387a73}
+.home-focus-grid[data-count="4"] .home-focus-card:nth-child(3){border-top:4px solid #bb8a38}
+.home-focus-grid[data-count="4"] .home-focus-card:nth-child(4){border-top:4px solid #485d6b}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-image,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-image{
+  width:100%;
+  height:auto;
+  min-height:0;
+  aspect-ratio:16/9;
+  flex:none;
+}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-body,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-body{
+  padding:19px 17px 20px;
+  gap:10px;
+  flex:1;
+}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-title,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-title{
+  font:700 clamp(17px,1.65vw,21px)/1.25 Georgia,serif;
+  color:inherit;
+  overflow-wrap:break-word;
+}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-date,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-date{color:#63666a}
+.home-focus-grid[data-count="4"] .home-focus-card .home-focus-tag,
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-tag{color:#a74135}
+.home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-arrow{
+  color:var(--red);
+  background:none;
+  width:auto;
+  height:auto;
+  top:12px;
+  right:12px;
+}
+@media(max-width:1050px){
+  .home-focus-grid[data-count="4"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px){
+  .home-focus-grid[data-count="4"]{grid-template-columns:1fr}
+  .home-focus-grid[data-count="4"] .home-focus-card .home-focus-title,
+  .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-title{font-size:23px}
+}
+
 /* HPII — unobtrusive, consent-based privacy controls */
 .hpi-privacy-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-top:20px;margin-top:24px;border-top:1px solid rgba(255,255,255,.2);font:600 12px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
 .hpi-privacy-links a,.hpi-privacy-links button{color:#e8e4dc;text-decoration:underline;text-underline-offset:3px}

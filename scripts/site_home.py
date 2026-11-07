@@ -1,6 +1,5 @@
 """Static, indexable homepage selection from articles actually published on iipike.ru."""
 from html import escape
-import datetime as dt
 import json
 from pathlib import Path
 import re
@@ -30,8 +29,8 @@ def load_focus_items(root):
     if not isinstance(config, dict) or config.get("schema_version") != 1:
         raise ValueError("Unsupported homepage focus config")
     items = config.get("items")
-    if not isinstance(items, list) or len(items) > 3:
-        raise ValueError("Homepage focus supports at most 3 items")
+    if not isinstance(items, list) or len(items) not in (0, 4):
+        raise ValueError("Homepage focus must contain exactly four rubric picks, or be empty")
     seen = set()
     for item in items:
         if not isinstance(item, dict) or not isinstance(item.get("id"), str):
@@ -44,18 +43,8 @@ def load_focus_items(root):
             raise ValueError("Homepage focus kind must be hot or editor")
         if not isinstance(item.get("label"), str) or not 1 <= len(item["label"].strip()) <= 28:
             raise ValueError("Invalid homepage focus label")
-        if set(item) - {"id", "kind", "label", "expires_at"}:
-            raise ValueError("Unexpected homepage focus fields")
-        expires = item.get("expires_at")
-        if expires is not None:
-            if item["kind"] != "hot" or not isinstance(expires, str):
-                raise ValueError("Only hot items support expiration")
-            try:
-                end = dt.datetime.fromisoformat(expires)
-            except ValueError as error:
-                raise ValueError("Invalid focus expiration date") from error
-            if end.utcoffset() != dt.timedelta(hours=5):
-                raise ValueError("Focus expiration must use Ust-Katav +05:00")
+        if set(item) - {"id", "kind", "label"}:
+            raise ValueError("Focus picks are permanent: expiration fields are not allowed")
     return items
 
 
@@ -77,13 +66,11 @@ def render_focus_section(records, focus_items):
         if not row or row.get("url") != "articles/" + sid + "/" or not (
                 isinstance(row.get("cover"), str) and row["cover"].startswith("assets/")):
             continue
-        expires = (' data-expires-at="' + escape(item["expires_at"], quote=True) + '"'
-                   if item.get("expires_at") else "")
         kind = item["kind"]
         image_load = "eager" if not cards else "lazy"
         cards.append(
             '<a class="home-focus-card home-focus-' + kind + '" href="' +
-            escape(row["url"], quote=True) + '"' + expires + '>' +
+            escape(row["url"], quote=True) + '">' +
             '<span class="home-focus-image"><img src="' +
             escape(row["cover"], quote=True) +
             '" loading="' + image_load + '" alt="Обложка: ' +
@@ -162,6 +149,20 @@ def update_home(existing_html, records, *, root=None):
     if root is None:
         root = Path(__file__).resolve().parents[1]
     focus_items = load_focus_items(root)
+    if focus_items:
+        # Fixed editorial layout: exactly one verified published story per rubric.
+        expected_rubrics = ("skynet", "news", "what-are-you-doing", "quotes")
+        by_id = {row["id"]: row for row in records}
+        for item, rubric in zip(focus_items, expected_rubrics):
+            sid = item["id"]
+            row = by_id.get(sid)
+            if not row or (row.get("rubric") != rubric
+                           or row.get("url") != "articles/" + sid + "/"
+                           or not isinstance(row.get("cover"), str)
+                           or not row["cover"].startswith("assets/")):
+                raise ValueError("Focus pick must be a published article of its rubric: " + sid)
+            if item["label"] != RUBRICS[rubric]["name"]:
+                raise ValueError("Focus pick label must equal its rubric name: " + sid)
     for first, last in ((START, END), (FOCUS_START, FOCUS_END)):
         if existing_html.count(first) != 1 or existing_html.count(last) != 1:
             raise ValueError("Homepage section boundaries must be unique: " + first)

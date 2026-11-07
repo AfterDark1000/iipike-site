@@ -2,20 +2,24 @@
   "schema_version": 1,
   "items": [
     {
-      "id": "openai-images-2-6-gif-20261104",
-      "kind": "hot",
-      "label": "Горячая тема",
-      "expires_at": "2026-11-07T17:00:00+05:00"
+      "id": "binance-internal-ai-tool-hack-20261029",
+      "kind": "editor",
+      "label": "Скайнет просыпается"
     },
     {
-      "id": "collinear-cwe-bench-v2-20261103",
+      "id": "take-two-gta-handcrafted-ai-advertising-20261104",
       "kind": "editor",
-      "label": "Разбираемся"
+      "label": "Новости ИИ"
     },
     {
-      "id": "cnas-sovereign-agents-20261103",
+      "id": "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
       "kind": "editor",
-      "label": "Выбор редакции"
+      "label": "ИИ, ты чего творишь?"
+    },
+    {
+      "id": "geoffrey-hinton-ai-chernobyl-20261103",
+      "kind": "editor",
+      "label": "Громко сказано"
     }
   ]
 }
