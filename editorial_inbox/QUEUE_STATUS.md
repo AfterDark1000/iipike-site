@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 32
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 33
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **08.11.2026 00:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **08.11.2026 01:45 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/musk-baron-robots-orbital-ai-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 08.11.2026 01:37 (Усть-Катав)**; пауза до 08.11.2026 01:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
-| **2** | [ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-chatgpt-codex-shared-limits-20261107.json) | ⏳ Ждёт часовой интервал | **Не ранее 08.11.2026 02:37 (Усть-Катав)**; пауза до 08.11.2026 01:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-codex-shared-limits-20261107.webp) |
+| **1** | [ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-chatgpt-codex-shared-limits-20261107.json) | ⏳ Ждёт часовой интервал | **Не ранее 08.11.2026 02:52 (Усть-Катав)**; пауза до 08.11.2026 02:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-codex-shared-limits-20261107.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://iipike.ru/articles/musk-baron-robots-orbital-ai-20261106/) | 08.11.2026 01:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
 | [Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн](https://iipike.ru/articles/ai-ceo-lawyer-impersonation-fraud-129m-20261105/) | 08.11.2026 00:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ceo-lawyer-impersonation-fraud-129m-20261105.webp) |
 | [Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры](https://iipike.ru/articles/openai-hacktron-security-partnership-20261106/) | 07.11.2026 23:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-hacktron-security-partnership-20261106.webp) |
 | [NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота](https://iipike.ru/articles/cosmos3-nano-interactive-worlds-20261105/) | 07.11.2026 21:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cosmos3-nano-interactive-worlds-20261105.webp) |
