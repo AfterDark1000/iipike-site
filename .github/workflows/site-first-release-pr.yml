@@ -30,3 +30,33 @@ jobs:
           print('READY_IN_PRIVATE_QUEUE:', [row['id'] for row in rows])
           print('No public build, RSS, sitemap or main update was requested.')
           PY
+      - name: Validate full Markdown for all unpublished approved inbox stories
+        run: |
+          python3 - <<'PY'
+          import json
+          from scripts.site_first_release_pr import STORY, exists_at, git, safe_git_blob_at
+          from scripts.site_rich_text import markdown_to_blocks
+
+          ref = 'origin/editorial-intake'
+          paths = git('ls-tree', '-r', '--name-only', ref, '--', 'editorial_inbox/stories').stdout.splitlines()
+          validated = []
+          for path in paths:
+              match = STORY.fullmatch(path)
+              if not match:
+                  continue
+              sid = match[1]
+              if exists_at('origin/main', f'articles/{sid}/index.html'):
+                  continue
+              data = json.loads(safe_git_blob_at(ref, path))
+              if data.get('status') != 'editor_approved':
+                  continue
+              if data.get('id') != sid:
+                  raise SystemExit(f'INVALID_PENDING_STORY_ID: {sid}')
+              try:
+                  markdown_to_blocks(data.get('article_markdown'))
+              except (ValueError, TypeError) as error:
+                  raise SystemExit(f'INVALID_PENDING_MARKDOWN: {sid}: {error}')
+              validated.append(sid)
+          print('VERIFIED_PENDING_MARKDOWN:', len(validated), validated)
+          print('READ_ONLY: no article, queue or public site was modified.')
+          PY
