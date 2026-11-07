@@ -126,6 +126,45 @@ class PublisherTests(unittest.TestCase):
         self.assertLess(page.index("<ul class="), page.index("<ol class="))
         self.assertLess(page.index("<ol class="), page.index("<blockquote class="))
 
+    def test_dzen_bibliography_is_consolidated_in_one_site_source_block(self):
+        # The Dzen original must retain all three source links; the site must
+        # not repeat the primary source in a second bibliography at the end.
+        from scripts.site_rich_text import markdown_to_blocks
+        original = (
+            "В редакции подтвердили дату события и изучили первоисточники. " * 12
+            + "\n\nВторой абзац добавляет подробности проверенного события и его последствий."
+            + "\n\n**Первоисточники:**\n\n"
+            + "- [Основной источник](https://example.org/source)\n"
+            + "- [Дополнительный материал](https://example.org/second)\n"
+            + "- [Третий материал](https://example.org/third)"
+        )
+        self.article["article_markdown"] = original
+        self.article["paragraphs"] = markdown_to_blocks(original)
+        self.write_article()
+        page = PUBLISHER.publish(self.root, "sample-verified-news", apply=True)[
+            self.root / "articles" / "sample-verified-news" / "index.html"
+        ]
+        self.assertEqual(page.count('href="https://example.org/source"'), 1)
+        self.assertIn('<summary>Ещё источники (2)</summary>', page)
+        self.assertIn('href="https://example.org/second"', page)
+        self.assertIn('href="https://example.org/third"', page)
+        self.assertNotIn("<strong>Первоисточники:</strong>", page)
+        self.assertNotIn('<ul class="editorial-list"><li><a', page)
+        self.assertIn("Третий материал", self.article["article_markdown"])
+        self.assertEqual(
+            PUBLISHER.site_article_sources(self.article["paragraphs"], "https://example.org/source")[0],
+            self.article["paragraphs"][:-2],
+        )
+
+    def test_ordinary_end_list_is_not_hidden_as_sources(self):
+        blocks = [
+            {"type": "p", "text": "**Первоисточники:**"},
+            {"type": "ul", "items": ["Ссылка отсутствует", "Обычное перечисление"]},
+        ]
+        kept, extra = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
+        self.assertEqual(kept, blocks)
+        self.assertEqual(extra, [])
+
     def test_unsafe_editorial_inline_link_refuses_publication(self):
         self.article["paragraphs"][1]["text"] = "[Ссылка](javascript:alert(1))"
         self.write_article()
