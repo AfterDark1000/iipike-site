@@ -1,0 +1,234 @@
+name: HPII — GitHub-only Dzen reading queue
+on:
+  schedule:
+    - cron: '13,43 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dzen-reading-queue.yml'
+permissions:
+  contents: write
+concurrency:
+  group: hpii-dzen-reading-queue
+  cancel-in-progress: false
+jobs:
+  update-reading-queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Build Markdown article views and GitHub-only queue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const crypto = require('crypto');
+            const { owner, repo } = context.repo;
+            const branch = 'editorial-intake';
+            const root = 'editorial_inbox/dzen_texts/';
+            const indexPath = 'editorial_inbox/DZEN_QUEUE.md';
+            const baseUrl = 'https://github.com/' + owner + '/' + repo + '/blob/' + branch + '/';
+            const getText = async (o, r, path, ref) => {
+              const response = await github.rest.repos.getContent({owner:o, repo:r, path, ref});
+              const f = response.data;
+              if (Array.isArray(f) || typeof f.content !== 'string' || f.encoding !== 'base64') {
+                throw new Error('Expected a UTF-8 file: ' + o + '/' + r + '/' + path);
+              }
+              return Buffer.from(f.content.replace(/\s/g, ''), 'base64').toString('utf8');
+            };
+            const directory = async (path, ref) => {
+              const response = await github.rest.repos.getContent({owner, repo, path, ref});
+              if (!Array.isArray(response.data)) throw new Error('Not a directory: ' + path);
+              return response.data;
+            };
+            const safe = value => String(value || '').replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\|/g, '&#124;')
+              .replace(/\[/g, '&#91;').replace(/\]/g, '&#93;')
+              .replace(/[\r\n]+/g, ' ').trim();
+            const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase('ru-RU')
+              .replace(/\s+/g, ' ').trim();
+            const dateMs = value => {
+              const n = Date.parse(value || '');
+              return Number.isFinite(n) ? n : 0;
+            };
+            const fmt = value => {
+              const ms = dateMs(value);
+              if (!ms) return '—';
+              return new Intl.DateTimeFormat('ru-RU', {
+                timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit',
+                year:'numeric', hour:'2-digit', minute:'2-digit'
+              }).format(new Date(ms));
+            };
+            const validDzenUrl = url => typeof url === 'string' &&
+              /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]+$/.test(url);
+            const refInfo = await github.rest.git.getRef({owner, repo, ref:'heads/' + branch});
+            const headSha = refInfo.data.object.sha;
+            const files = await directory('editorial_inbox/stories', branch);
+            const covers = await directory('editorial_inbox/covers', branch);
+            const news = JSON.parse(await getText(owner, repo, 'news.json', 'main'));
+            const catalog = JSON.parse(await getText(owner, 'dzen-telegram-crosspost',
+              'editorial_full_catalog.json', 'main'));
+            if (!Array.isArray(news) || catalog.schema_version !== 1 ||
+                !Array.isArray(catalog.entries)) throw new Error('Invalid catalogs; leave dashboard unchanged');
+            
+            const byId = new Map(news.map(r => [r.id, r]));
+            const byTitle = new Map();
+            for (const entry of catalog.entries) {
+              if (entry.status !== 'published_observed_in_feed' || !validDzenUrl(entry.dzen_url) ||
+                  !entry.title || !entry.published_at_utc) continue;
+              const key = normalize(entry.title);
+              if (!byTitle.has(key)) byTitle.set(key, []);
+              byTitle.get(key).push(entry);
+            }
+            const coverById = new Map();
+            for (const f of covers) {
+              const m = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.(png|jpg|jpeg|webp)$/.exec(f.name);
+              if (m && !coverById.has(m[1])) coverById.set(m[1], f.path);
+            }
+            const desired = new Map();
+            const records = [];
+            for (const file of files) {
+              if (file.type !== 'file' || file.name === '.gitkeep') continue;
+              const found = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/.exec(file.name);
+              if (!found) throw new Error('Unexpected story path: ' + file.name);
+              const id = found[1];
+              const raw = await getText(owner, repo, file.path, branch);
+              if (Buffer.byteLength(raw, 'utf8') > 128000) throw new Error('Story too large: ' + id);
+              const story = JSON.parse(raw);
+              if (story.id !== id || story.status !== 'editor_approved' ||
+                  story.approved_by !== 'human_editor' ||
+                  typeof story.article_markdown !== 'string' || !story.article_markdown.trim() ||
+                  typeof story.title !== 'string' || !story.title.trim()) {
+                throw new Error('Unexpected non-approved/incomplete story: ' + id);
+              }
+              const title = story.dzen_title || story.title;
+              if (typeof title !== 'string' || title.includes('\n') || title.includes('\r')) {
+                throw new Error('Invalid Dzen heading: ' + id);
+              }
+              const mdPath = root + id + '.md';
+              // The source body is not edited: retain Dzen links, formatting, quotes, paragraphs.
+              desired.set(mdPath, '# ' + title + '\n\n' + story.article_markdown + '\n');
+              const siteRow = byId.get(id);
+              const same = byTitle.get(normalize(title)) || [];
+              let dzenUrl = null, dzenDate = null, ambiguous = false;
+              if (siteRow && validDzenUrl(siteRow.site_first_dzen_url)) {
+                dzenUrl = siteRow.site_first_dzen_url;
+                const corresponding = same.find(e => e.dzen_url === dzenUrl);
+                dzenDate = corresponding?.published_at_utc || null;
+              } else if (same.length === 1) {
+                dzenUrl = same[0].dzen_url;
+                dzenDate = same[0].published_at_utc;
+              } else if (same.length > 1) {
+                ambiguous = true;
+              }
+              records.push({
+                id, title, mdPath, coverPath:coverById.get(id), siteRow, dzenUrl,
+                dzenDate, ambiguous, approvedAt:story.approved_at
+              });
+            }
+            const row = (item, i, kind) => {
+              const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')';
+              const site = item.siteRow ?
+                '[На сайте](https://iipike.ru/articles/' + item.id + '/)' : 'Пока в очереди сайта';
+              const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
+              const dzen = item.dzenUrl ? '[Открыть в Дзене](' + item.dzenUrl + ')' : '—';
+              const when = kind === 'dzen' ? fmt(item.dzenDate) :
+                kind === 'site' ? fmt(item.siteRow?.published_at_utc) : fmt(item.approvedAt);
+              return '| ' + i + ' | ' + md + ' | ' + when + ' | ' +
+                (kind === 'dzen' ? dzen : site) + ' | ' + cover + ' |';
+            };
+            const pendingSite = records.filter(r => !r.dzenUrl && r.siteRow);
+            const pendingInbox = records.filter(r => !r.dzenUrl && !r.siteRow);
+            const done = records.filter(r => r.dzenUrl);
+            pendingSite.sort((a,b)=> dateMs(a.siteRow.published_at_utc)-dateMs(b.siteRow.published_at_utc) ||
+              a.id.localeCompare(b.id));
+            pendingInbox.sort((a,b)=> dateMs(a.approvedAt)-dateMs(b.approvedAt) ||
+              a.id.localeCompare(b.id));
+            done.sort((a,b)=> dateMs(b.dzenDate)-dateMs(a.dzenDate) || a.id.localeCompare(b.id));
+            const table = (items, kind) => [
+              '| № | Материал — открыть готовый текст | Дата (Усть-Катав) | ' +
+                (kind === 'dzen' ? 'Публикация' : 'Состояние сайта') + ' | Обложка |',
+              '|---:|---|---|---|---|',
+              ...(items.length ? items.map((r,i)=>row(r,i+1,kind)) : ['| — | Нет материалов | — | — | — |']),
+              ''
+            ];
+            const lines = [
+              '# ХПИИ — тексты и очередь для ручной публикации в Дзене', '',
+              '> Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.',
+              '',
+              '**Всего одобренных:** ' + records.length + ' · **В каталоге Дзена подтверждены:** ' +
+                done.length + ' · **Не подтверждены, уже на сайте:** ' + pendingSite.length +
+                ' · **Не подтверждены, ждут сайт:** ' + pendingInbox.length, '',
+              '**Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown ' +
+                'с заголовком и точным утверждённым текстом для Дзена. ' +
+                'Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). ' +
+                'Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.', '',
+              '**Важно:** «не подтверждена» означает, что публикация не найдена однозначно в проверенном ' +
+                'каталоге Дзена или ссылках сайта. Это **не доказывает**, что её нет в Дзене. ' +
+                'Черновики Дзена автоматически не отслеживаются. Свежая публикация может появиться ' +
+                'в каталоге с задержкой. Статус на сайте основан на news.json, не на проверке деплоя Pages.', '',
+              '## 1. На сайте, но публикация в Дзене пока не подтверждена', '',
+              'В порядке выхода на сайте: сначала самые ранние, чтобы удобно переносить их по очереди.', '',
+              ...table(pendingSite,'site'),
+              '## 2. Утверждены, ещё в редакционной очереди сайта', '',
+              'В порядке одобрения. В Дзен можно перенести вручную по своему расписанию.', '',
+              ...table(pendingInbox,'inbox'),
+              '## 3. Подтверждены опубликованными в Дзене', '',
+              'Новые подтверждённые публикации выше. Их исходные тексты остаются доступны по ссылкам.', '',
+              ...table(done,'dzen'),
+            ];
+            const uncertain = records.filter(r => r.ambiguous);
+            if (uncertain.length) {
+              lines.push('## Требуют сверки: одинаковый заголовок встречается в каталоге несколько раз', '');
+              for (const r of uncertain) lines.push('- [' + safe(r.title) + '](' + baseUrl + r.mdPath + ')');
+              lines.push('');
+            }
+            lines.push('---', '',
+              'Список собирается автоматически из утверждённых материалов ветки editorial-intake, ' +
+              'публикаций сайта и редакционного каталога Дзена. Он не пишет и не публикует ничего в Дзен, ' +
+              'не изменяет main, RSS или работу сайт-планировщика.', '',
+              '[Очередь сайта](' + baseUrl + 'editorial_inbox/QUEUE_STATUS.md) · ' +
+              '[История обновлений](https://github.com/' + owner + '/' + repo +
+                '/actions/workflows/dzen-reading-queue.yml)', '');
+            desired.set(indexPath, lines.join('\n'));
+            
+            const gitCommit = await github.rest.git.getCommit({owner,repo,commit_sha:headSha});
+            const tree = await github.rest.git.getTree({
+              owner,repo,tree_sha:gitCommit.data.tree.sha,recursive:'true'
+            });
+            if (tree.data.truncated) throw new Error('Git tree truncated: refuse unsafe dashboard write');
+            const existing = new Map(tree.data.tree.filter(e => e.type === 'blob').map(e => [e.path,e.sha]));
+            const shaOf = content => {
+              const bytes = Buffer.from(content,'utf8');
+              return crypto.createHash('sha1').update('blob ' + bytes.length + '\0')
+                .update(bytes).digest('hex');
+            };
+            const changed = [];
+            for (const [path,content] of desired) {
+              if (existing.get(path) !== shaOf(content))
+                changed.push({path,mode:'100644',type:'blob',content});
+            }
+            for (const path of existing.keys()) {
+              if (path.startsWith(root) && path.endsWith('.md') && !desired.has(path))
+                changed.push({path,mode:'100644',type:'blob',sha:null});
+            }
+            if (!changed.length) {
+              core.info('Dzen reading queue unchanged (' + records.length + ' articles)');
+              return;
+            }
+            const fresh = await github.rest.git.getRef({owner,repo,ref:'heads/' + branch});
+            if (fresh.data.object.sha !== headSha)
+              throw new Error('Editorial-intake changed during scan; next scheduled run will retry');
+            const newTree = await github.rest.git.createTree({
+              owner,repo,base_tree:gitCommit.data.tree.sha,tree:changed
+            });
+            const made = await github.rest.git.createCommit({
+              owner,repo,message:'chore: refresh GitHub-only Dzen reading queue [skip ci]',
+              tree:newTree.data.sha,parents:[headSha]
+            });
+            await github.rest.git.updateRef({
+              owner,repo,ref:'heads/' + branch,sha:made.data.sha,force:false
+            });
+            core.info('Updated Dzen reading queue: ' + records.length + ' texts, ' +
+              done.length + ' confirmed in Dzen, ' + pendingSite.length +
+              ' site-only, ' + pendingInbox.length + ' awaiting site; ' +
+              changed.length + ' generated files changed.');
