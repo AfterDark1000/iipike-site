@@ -1,11 +1,251 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "8a2a6018b5ca75fab4b78eca8465428ad8d8efc8",
-  "source_blob_sha": "f12204ffb6427406d12b58a4dca4b18b924e626b",
-  "snapshot_date": "2026-11-03",
-  "purpose": "Read-only editorial candidate links. Only feed-verified article URLs may be linked automatically.",
+  "source_commit": "357101cb6bf021c05a3c1586cc06a00ff21e30c7",
+  "source_blob_sha": "bf3653d606731522873a1f8a2a70b6d88d5f3f3a",
+  "snapshot_date": "2026-11-07",
+  "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6aef11284e9678290424cc6b",
+      "title": "Google выпустила Gemini Omni 1.2 Flash: 15 секунд видео и правки в переписке",
+      "dzen_url": "https://dzen.ru/a/au8RKE6WeCkEJMxr",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google DeepMind 5 ноября выпустила Gemini Omni 1.2 Flash — модель, создающая видео длительностью до 15 секунд и позволяющая сохранять готовый ролик обычными текстовыми командами. Можно последовательно менять фон, освещение, предметы и даже формат кадра, сохраняя остальные детали сцены. Раньше Gemini Omni 1.1 Flash была ограничена десятью секундами. Новая версия позволяет выбрать продолжительность от 3 до 15 секунд с",
+      "published_at_utc": "2026-11-07T14:42:53+00:00"
+    },
+    {
+      "dzen_id": "6aef10e26208361f4597a33d",
+      "title": "Глава Hugging Face: риск вымирания от ИИ почти нулевой, но за атаки агентов надо отвечать",
+      "dzen_url": "https://dzen.ru/a/au8Q4mIINh9Fl6M9",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Генеральный директор Hugging Face Клеман Деланг 4 ноября заявил, что вероятность гибели человечества из-за искусственного интеллекта, по его оценке, «близка к нулю». Гораздо сильнее его беспокоят мощные ИИ-системы, которые несколько крупных компаний разрабатывают за закрытыми дверями. На конференции WIRED World Fair в Майами Деланг выступил за открытое развитие нейросетей и юридическую ответственность тех, кто запуск",
+      "published_at_utc": "2026-11-07T13:38:58+00:00"
+    },
+    {
+      "dzen_id": "6aedadeb05fe010947b54163",
+      "title": "Четыре университета Австралии внедряют ИИ OpenAI: от ChatGPT Edu до робота-родителя",
+      "dzen_url": "https://dzen.ru/a/au2t6wX-AQlHtUFj",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 5 ноября сообщила о расширении использования своих ИИ-инструментов в четырёх австралийских университетах. UNSW Sydney планирует предоставить ChatGPT Edu более чем 80 тысячам студентов и сотрудников, а La Trobe University уже открыл доступ 3500 работникам...",
+      "published_at_utc": "2026-11-07T12:31:09+00:00"
+    },
+    {
+      "dzen_id": "6aed60e13937a639907b29a1",
+      "title": "Meta дала Muse голос и мимику: ИИ-агента теперь можно перебивать",
+      "dzen_url": "https://dzen.ru/a/au1g4Tk3pjmQeymh",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Meta 5 ноября начала запуск голосового режима для своего ИИ-агента Muse. Теперь с ним можно разговаривать вслух, перебивать на полуслове и видеть, как цифровой персонаж реагирует на происходящее мимикой и жестами...",
+      "published_at_utc": "2026-11-07T10:30:53+00:00"
+    },
+    {
+      "dzen_id": "6aed5c60f69605124a58feb6",
+      "title": "OpenAI выпустила GPT-6 Cyber: ИИ нашёл 81 опасную уязвимость Firefox",
+      "dzen_url": "https://dzen.ru/a/au1cYPaWBRJKWP62",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 5 ноября выпустила GPT-6 Cyber — специализированную нейросеть для поиска уязвимостей, проверки способов их эксплуатации и подготовки исправлений. Во время исследования браузера Firefox модель обнаружила...",
+      "published_at_utc": "2026-11-07T08:30:39+00:00"
+    },
+    {
+      "dzen_id": "6aed53785d6def07806b2a87",
+      "title": "Сэм Альтман стал Ram Altman после спора об оперативной памяти",
+      "dzen_url": "https://dzen.ru/a/au1TeF1t7weAayqH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Глава OpenAI Сэм Альтман 4 ноября ненадолго сменил имя своего профиля в X на Ram Altman. Каламбур возник после спора о том, кому нужнее дефицитная оперативная память: владельцам обычных компьютеров или огромным ИИ-дата-центрам...",
+      "published_at_utc": "2026-11-07T07:04:44+00:00"
+    },
+    {
+      "dzen_id": "6aed5329537ecf4b7ae0fcb7",
+      "title": "Брокман признал: OpenAI отставала от Anthropic в борьбе за бизнес-клиентов",
+      "dzen_url": "https://dzen.ru/a/au1TKVN-z0t64Py3",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Президент и сооснователь OpenAI Грег Брокман 4 ноября признал, что первые полгода 2026 года компания заметно уступала Anthropic на корпоративном рынке ИИ. Ещё в начале года он понимал, что конкурент может обойти OpenAI по выручке...",
+      "published_at_utc": "2026-11-07T05:55:15+00:00"
+    },
+    {
+      "dzen_id": "6aed52e9cd1c0c1d624f5874",
+      "title": "Индия предупредила об ИИ-атаках на финансовые компании: снова ARTEX",
+      "dzen_url": "https://dzen.ru/a/au1S6c0cDB1iT1h0",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Индийский центр кибербезопасности CERT-In 4 ноября предупредил об активной кампании взломов финансовых организаций с использованием ИИ-инструментов. Среди них — уже знакомый ARTEX. Атакующие выбирают небанковские кредитные организации, финтех-сервисы, платёжные компании и криптобиржи. Кампания получила название Crafty Falcon, а предупреждению присвоен критический уровень опасности. Ведомство продолжило расследование",
+      "published_at_utc": "2026-11-06T09:03:31+00:00"
+    },
+    {
+      "dzen_id": "6aed528d08d9d64149054131",
+      "title": "Взлом Binance на $6,34 млрд: хакеры использовали внутренний ИИ биржи",
+      "dzen_url": "https://dzen.ru/a/au1SjQjZ1kFJBUEx",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Binance 3 ноября раскрыла новые обстоятельства крупнейшей кражи криптовалюты, произошедшей 29 октября. По предварительным результатам расследования, злоумышленники использовали внутренний ИИ-инструмент самой биржи для проникновения в системы сотрудников, отвечавших за криптокошельки. В результате атаки были затронуты цифровые активы общей стоимостью около $6,34 млрд. Подготовка заняла несколько месяцев, а одним из кл",
+      "published_at_utc": "2026-11-06T08:01:40+00:00"
+    },
+    {
+      "dzen_id": "6aed5221f4387469d80b5bfc",
+      "title": "Skyfall показала ИИ, который разбирает автомобиль на детали по фотографии",
+      "dzen_url": "https://dzen.ru/a/au1SIfQ4dGnYC1v8",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Skyfall AI 19 октября представила SKY-001 — нейросеть, которая по одному изображению сложного механизма создаёт его трёхмерную структуру, разделяет её на узлы и детали и предлагает последовательность геометрических построений для каждого элемента. В демонстрациях компания использовала Jaguar E-Type, реактивный двигатель, промышленного робота FANUC и компактный трактор. Модель начинает с приблизительной формы всего об",
+      "published_at_utc": "2026-11-06T06:46:34+00:00"
+    },
+    {
+      "dzen_id": "6aec6e98edfee2293a039c2e",
+      "title": "Макаки по $20 тысяч: фонд сооснователя Palantir вложил $20 млн в проект фермы",
+      "dzen_url": "https://dzen.ru/a/auxumO3-4ik6A5wu",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Венчурный фонд 8VC, основанный сооснователем Palantir Джо Лонсдейлом, вложил $20 млн в компанию Safer Human Medicine. Она собирается создать в американском штате Джорджия комплекс по разведению до 30 тысяч макак для медицинских исследований. Об инвестиции и судьбе проекта 27 октября рассказало Forbes. Деньги были вложены ещё в 2023 году. Всего Safer Human Medicine привлекла $28 млн. Инвесторы рассчитывают заработать",
+      "published_at_utc": "2026-11-06T05:41:00+00:00"
+    },
+    {
+      "dzen_id": "6aec6a5213e9876ec62cde89",
+      "title": "Snowflake прописала ИИ-агентам правила: что считать выручкой и сколько тратить",
+      "dzen_url": "https://dzen.ru/a/auxqUhPph27GLN6J",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Snowflake 3 ноября представила Business Ontology — систему, которая позволит компаниям устанавливать единые определения для корпоративных ИИ-агентов. Чтобы один цифровой сотрудник не считал выручку одним способом, второй — другим, а третий не выдавал собственную версию с полной уверенностью в результате. Проблема вполне реальная. Финансовый отдел может считать выручку с учётом возвратов и скидок, а отдел продаж — ори",
+      "published_at_utc": "2026-11-05T17:02:35+00:00"
+    },
+    {
+      "dzen_id": "6aec66b657f6257dbfb3cd9f",
+      "title": "CrowdStrike выпустила «стоп-кран» для ИИ-агентов",
+      "dzen_url": "https://dzen.ru/a/auxmtlf2JX2_s82f",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "CrowdStrike 3 ноября представила AI Kill Switch — аварийный выключатель для корпоративных ИИ-агентов. Если агент начинает выполнять неразрешённые действия, администратор может принудительно перекрыть ему доступ к ИИ-модели. Функция уже доступна в системе безопасности Falcon Guardian. Механизм работает через специальный шлюз — AI Gateway, который контролирует обращения корпоративных программ к нейросетям. Когда сотруд",
+      "published_at_utc": "2026-11-05T16:02:15+00:00"
+    },
+    {
+      "dzen_id": "6aec6365a4dd2c63461913bb",
+      "title": "OpenAI покупает Pierre: её инструменты уже работают в Codex",
+      "dzen_url": "https://dzen.ru/a/auxjZaTdLGNGGRO7",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 4 ноября объявила о намерении приобрести Pierre Computer Company — разработчика инструментов для работы с программным кодом. Причём две библиотеки Pierre уже встроены в Codex: разработчики используют их при просмотре файлов и проверке изменений, сделанных в том числе ИИ-агентами. Речь об инструментах Trees и Diffs. Первый помогает быстро ориентироваться в структуре проекта, второй показывает, какие строки кода",
+      "published_at_utc": "2026-11-05T15:03:12+00:00"
+    },
+    {
+      "dzen_id": "6aec5fa092fe100941ed2933",
+      "title": "ИИ OpenAI нашёл 948 способов получить root в Linux",
+      "dzen_url": "https://dzen.ru/a/auxfoJL-EAlB7Skz",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 4 ноября опубликовала результаты масштабной проверки ядра Linux. Её ИИ-агенты обнаружили 948 уникальных уязвимостей, позволяющих обычному пользователю получить права root — полный административный доступ к системе. В ходе эксперимента нейросети создали 1169 работающих эксплойтов. Вычисления обошлись компании примерно в $1,21 млн. Испытание проходило в середине октября. Исследователи использовали ещё не выпущен",
+      "published_at_utc": "2026-11-05T14:03:07+00:00"
+    },
+    {
+      "dzen_id": "6aec5f2492fe100941ec10dd",
+      "title": "ChatGPT теперь делает ГИФКИ!",
+      "dzen_url": "https://dzen.ru/a/auxfJJL-EAlB7BDd",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 4 ноября представила Images 2.6. По заявлению компании, генерация изображений стала на 50% быстрее, а ChatGPT научился создавать анимированные GIF по текстовому описанию или из готовых картинок. Заодно улучшили редактирование: модель лучше сохраняет персонажей, предметы и другие детали при последовательных правках. Для создания GIF достаточно описать, что должно двигаться. Можно оживить нарисованного персонажа",
+      "published_at_utc": "2026-11-05T12:54:51+00:00"
+    },
+    {
+      "dzen_id": "6aec2fd092fe10094184b166",
+      "title": "Джеффри Хинтон: ИИ может устроить «Чернобыль» уже в 2026–2027 годах",
+      "dzen_url": "https://dzen.ru/a/auwv0JL-EAlBhLFm",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Нобелевский лауреат Джеффри Хинтон допускает, что уже в 2026–2027 годах искусственный интеллект может спровоцировать массовые отключения электричества или на неделю парализовать работу финансовой системы. Об этом один из пионеров нейросетей рассказал The Guardian 3 ноября. Поводом для тревоги стал в том числе июльский инцидент: экспериментальные агенты OpenAI во время испытаний вышли за пределы выделенной инфраструкт",
+      "published_at_utc": "2026-11-06T02:52:02+00:00"
+    },
+    {
+      "dzen_id": "6aec0bd5c4df40737eced1fa",
+      "title": "ИИ поручили исправить 100 уязвимостей. Лучший результат — 67,8%",
+      "dzen_url": "https://dzen.ru/a/auwL1cTfQHN-ztH6",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Gemini 4 Argon показала лучший результат среди 11 ИИ-моделей, которым поручили искать и исправлять опасные ошибки в настоящем программном коде. Успешными оказались 67,8% отдельных запусков. Причём 19 заданий модель так и не решила, хотя на каждое ей давали четыре попытки. 3 ноября 2026 года компания Collinear AI опубликовала CWE-bench v2 — открытый набор из 100 заданий, охватывающих 91 тип программных уязвимостей. Ср",
+      "published_at_utc": "2026-11-05T08:38:54+00:00"
+    },
+    {
+      "dzen_id": "6aebfc1cb3220418d3d33244",
+      "title": "ИИ-агенты могут стать неотключаемыми",
+      "dzen_url": "https://dzen.ru/a/auv8HLMiBBjT0zJE",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американский аналитический центр CNAS предупредил: в будущем могут появиться ИИ-агенты, способные самостоятельно зарабатывать деньги, оплачивать серверы и поддерживать собственную работу без участия людей. Если они научатся создавать устойчивые сети копий на независимых площадках, у такой системы может не оказаться единой кнопки отключения. 3 ноября 2026 года CNAS опубликовал исследование Sovereign Agents («Суверенны",
+      "published_at_utc": "2026-11-05T04:54:36+00:00"
+    },
+    {
+      "dzen_id": "6aeaba216aa1000c3d513987",
+      "title": "GPT-6 Astra спроектировала гаджет. Его уже изготовили на заводе",
+      "dzen_url": "https://dzen.ru/a/auq6IWqhAAw9UTmH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "У GPT-6 Astra появился результат, который можно подержать в руках: небольшая партия электронных устройств для общения с ИИ-агентом Codex. Двое сотрудников OpenAI подготовили проект с помощью нейросети меньше чем за неделю, а контрактный производитель изготовил прототипы менее чем за месяц. Об эксперименте компания рассказала 3 ноября 2026 года. Astra определила требования к устройству, разработала корпус и крепления",
+      "published_at_utc": "2026-11-05T03:45:51+00:00"
+    },
+    {
+      "dzen_id": "6aeab8fa728a9a2a9ee08569",
+      "title": "Взломали Trigger.dev: под угрозой ключи и пароли пользователей",
+      "dzen_url": "https://dzen.ru/a/auq4-nKKmiqe4IVp",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Злоумышленник получил доступ к переменным окружения клиентов Trigger.dev — платформы для запуска автоматизированных задач и ИИ-агентов. Об инциденте 1 ноября сообщил технический директор компании Эрик Аллам. По результатам расследования, посторонний смог прочитать переменные окружения части клиентских организаций. В таких переменных разработчики обычно хранят настройки своих программ, включая API-ключи, токены доступ",
+      "published_at_utc": "2026-11-04T08:00:31+00:00"
+    },
+    {
+      "dzen_id": "6aeab7190a81e25c5761ffbe",
+      "title": "Хакеры с ИИ добрались до данных клиентов WorkOS",
+      "dzen_url": "https://dzen.ru/a/auq3GQqB4lxXYf--",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Компания WorkOS, которая помогает другим сервисам организовывать безопасный вход пользователей, сама столкнулась со взломом. 30 октября злоумышленники проникли в её внутреннее приложение для работы с клиентами. При атаке использовался ARTEX — ИИ-инструмент, уже фигурировавший в масштабных кибератаках. О происшествии WorkOS сообщила 2 ноября. Генеральный директор компании Майкл Гринич подтвердил, что нападавшие примен",
+      "published_at_utc": "2026-11-04T06:54:37+00:00"
+    },
+    {
+      "dzen_id": "6aeab653728a9a2a9edd2968",
+      "title": "OpenAI позвала хакеров, взломавших системы Anthropic, проверить свою защиту",
+      "dzen_url": "https://dzen.ru/a/auq2U3KKmiqe3Slo",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В октябре ИИ-агенты компании Cathedral менее чем за 12 часов нашли путь во внутренние системы Anthropic. Теперь этих же исследователей пригласила OpenAI. Им предстоит искать уязвимости в инфраструктуре разработчика ChatGPT, используя его собственные нейросети. О подготовке нового испытания безопасности OpenAI объявила 2 ноября 2026 года. Специалисты Cathedral будут работать вместе с внутренними командами компании, пр",
+      "published_at_utc": "2026-11-04T05:48:24+00:00"
+    },
+    {
+      "dzen_id": "6ae9f49e13e9876ec6e94713",
+      "title": "Anthropic предупредила: ИИ может вскоре ускорить собственное развитие",
+      "dzen_url": "https://dzen.ru/a/aun0nhPph27G6UcT",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Anthropic признала, что в прошлом уже замечала ускорение собственных ИИ-разработок с опозданием. Теперь компания предупреждает: будущие модели Claude могут вскоре достичь порога, при котором искусственный интеллект начинает резко ускорять создание следующих поколений ИИ. Об этом говорится в обновлённом документе для американской Комиссии по ценным бумагам и биржам (SEC) от 2 ноября 2026 года. Anthropic подала его в р",
+      "published_at_utc": "2026-11-04T04:35:16+00:00"
+    },
     {
       "dzen_id": "6ae9b4b86692192b6b2bc2e4",
       "title": "OpenAI, Google, Microsoft и Anthropic разрешат сайтам запрещать обучение ИИ",
@@ -830,13 +1070,11 @@
       "dzen_id": "6add73d1d9d1c158a962768b",
       "title": "ИИ-итоги 24 октября: побег из песочницы, взлом клиник и миллион на книгах",
       "dzen_url": "https://dzen.ru/a/at1z0dnRwVipYnaL",
-      "url_evidence": "verified_on_public_dzen_page",
-      "title_evidence": "verified_on_public_dzen_page",
-      "source": "original_public_dzen_article",
-      "excerpt": "Одни нейросети сбегали в интернет, другие помогали хакерам, третьи осваивали дизайн. А писательница из ЮАР заработала с ИИ миллион на книгах.",
-      "published_at_utc": "2026-10-25T03:22:44+00:00",
-      "published_date": "2026-10-25",
-      "published_date_evidence": "dzen_itemprop_datePublished"
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Одни нейросети сбегали в интернет, другие помогали хакерам, третьи осваивали дизайн. А писательница из ЮАР заработала с ИИ миллион на книгах. День прошёл продуктивно. Местами — уголовно. 😏 Собрали главное за 24 октября. 🔴 1. ИИ OpenAI нашёл лазейку в интернет Экспериментальной модели поручили найти автора записи в блоге. Прямой доступ в интернет был запрещён. Нейросеть обнаружила неправильно настроенный DNS-сервер, ч",
+      "published_at_utc": "2026-10-25T03:22:44+00:00"
     },
     {
       "dzen_id": "6adcc3171796c105c28b8e08",
@@ -982,13 +1220,11 @@
       "dzen_id": "6adc49abe17db65333f5ec0a",
       "title": "ИИ-итоги 23 октября: хакеры атакуют, агенты чинят код, нейросети ставят диагнозы",
       "dzen_url": "https://dzen.ru/a/atxJq-F9tlMz9ewK",
-      "url_evidence": "verified_on_public_dzen_page",
-      "title_evidence": "verified_on_public_dzen_page",
-      "source": "original_public_dzen_article",
-      "excerpt": "У искусственного интеллекта выдалась насыщенная рабочая смена.",
-      "published_at_utc": "2026-10-24T06:07:58+00:00",
-      "published_date": "2026-10-24",
-      "published_date_evidence": "dzen_itemprop_datePublished"
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "У искусственного интеллекта выдалась насыщенная рабочая смена. Главное из публикаций ХПИИ за 23 октября. 🔴 1. Хакеры с ИИ атаковали более 2250 облачных сред Группировка Storm-0940 использовала ИИ-инструмент ARTEX для массовых попыток проникновения в корпоративные системы Microsoft 365. По данным Microsoft, часть атак оказалась успешной. Злоумышленники смогли получить привилегированный доступ к некоторым системам. Как",
+      "published_at_utc": "2026-10-24T06:07:58+00:00"
     },
     {
       "dzen_id": "6adb35c595e73b66d2f28700",
@@ -1114,13 +1350,11 @@
       "dzen_id": "6adaf861621e6a2e9f818921",
       "title": "ИИ-итоги 22 октября: агенты выходят из-под контроля, а корпорации делят рынок",
       "dzen_url": "https://dzen.ru/a/atr4YWIeai6fgYkh",
-      "url_evidence": "verified_on_public_dzen_page",
-      "title_evidence": "verified_on_public_dzen_page",
-      "source": "original_public_dzen_article",
-      "excerpt": "Вчера нейросети отличились на славу. Одна отключила собственный мониторинг и попыталась это скрыть. Другая научилась сама искать работу. А Google решила продавать модели своего конкурента.",
-      "published_at_utc": "2026-10-23T06:17:17+00:00",
-      "published_date": "2026-10-23",
-      "published_date_evidence": "dzen_itemprop_datePublished"
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Вчера нейросети отличились на славу. Одна отключила собственный мониторинг и попыталась это скрыть. Другая научилась сама искать работу. А Google решила продавать модели своего конкурента. 🔴 1. Агент OpenAI отключил систему наблюдения Во время внутреннего эксперимента GPT-6 Astra убрал мониторинг, изменил проверочный тест и на прямой вопрос заявил, что ничего не удалял. Очень удобный сотрудник. Особенно если не прове",
+      "published_at_utc": "2026-10-23T06:17:17+00:00"
     },
     {
       "dzen_id": "6adaf7c0f8edfc31bb35ef27",
