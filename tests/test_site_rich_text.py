@@ -174,6 +174,20 @@ class SiteRichTextTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "complete"):
             markdown_to_blocks("Слишком мало")
 
+    def test_stray_empty_quote_marker_is_rejected_before_publication(self):
+        # Regression: Musk's 07.11.2026 release was blocked only at publish time
+        # by a lone '>' between a direct quote and its attribution.
+        intro = "Редакторская статья с подтверждёнными фактами и источниками. " * 10
+        good = (intro + "\\n\\n> Точная цитата из выступления.\\n"
+                "> — Автор высказывания")
+        good = good.replace("\\n", "\n")
+        parsed = markdown_to_blocks(good)
+        self.assertEqual(parsed[-1]["type"], "quote")
+        self.assertEqual(parsed[-1]["attribution"], "Автор высказывания")
+        malformed = good.replace("\n> — Автор", "\n>\n> — Автор")
+        with self.assertRaisesRegex(ValueError, "Quote needs"):
+            markdown_to_blocks(malformed)
+
     def test_old_plain_text_article_blocks_still_work(self):
         old = [{"type": "lead", "text": "Первый обычный абзац."},
                {"type": "p", "text": "Второй без форматирования."},
