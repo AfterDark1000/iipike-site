@@ -1,0 +1,44 @@
+name: HPII — private Yandex analytics (NO PUBLICATION)
+on:
+  schedule:
+    # Every six hours, offset from hourly site publication workflows.
+    - cron: '13 2,8,14,20 * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/yandex_analytics_collect.py'
+      - 'tests/test_yandex_analytics_collect.py'
+      - '.github/workflows/yandex-private-analytics.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-yandex-private-analytics
+  cancel-in-progress: false
+jobs:
+  offline-validation:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test private repository and domain safeguards
+        run: python3 -m unittest discover -s tests -p 'test_yandex_analytics_collect.py' -v
+  collect-aggregate-analytics:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Validate collector before using credentials
+        run: python3 -m unittest discover -s tests -p 'test_yandex_analytics_collect.py' -v
+      - name: Read Yandex and write only to dedicated private repo
+        env:
+          YANDEX_METRIKA_TOKEN: ${{ secrets.YANDEX_METRIKA_TOKEN }}
+          YANDEX_WEBMASTER_TOKEN: ${{ secrets.YANDEX_WEBMASTER_TOKEN }}
+          HPII_PRIVATE_STATS_TOKEN: ${{ secrets.HPII_PRIVATE_STATS_TOKEN }}
+          YANDEX_METRIKA_COUNTER_ID: ${{ vars.YANDEX_METRIKA_COUNTER_ID }}
+        run: python3 scripts/yandex_analytics_collect.py
