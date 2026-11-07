@@ -2,20 +2,19 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 4 · **Готовы:** 0 · **Ждут интервал:** 4 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 26
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 27
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **07.11.2026 17:00 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **07.11.2026 18:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Граймс появится в ИИ-фильме, который выйдет в кино 4 декабря](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/grimes-gods-dont-give-gifts-ai-film-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 18:07 (Усть-Катав)**; пауза до 07.11.2026 18:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grimes-gods-dont-give-gifts-ai-film-20261105.webp) |
-| **2** | [Epic Games поручает ИИ писать код игры с Marvel и Star Wars](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/epic-disney-marvel-star-wars-ai-first-20261012.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 19:07 (Усть-Катав)**; пауза до 07.11.2026 18:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/epic-disney-marvel-star-wars-ai-first-20261012.webp) |
-| **3** | [ИИ использовали при создании более 80% самых популярных игр Roblox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/roblox-top-100-games-ai-20261029.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 20:07 (Усть-Катав)**; пауза до 07.11.2026 18:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/roblox-top-100-games-ai-20261029.webp) |
-| **4** | [NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cosmos3-nano-interactive-worlds-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 21:07 (Усть-Катав)**; пауза до 07.11.2026 18:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cosmos3-nano-interactive-worlds-20261105.webp) |
+| **1** | [Epic Games поручает ИИ писать код игры с Marvel и Star Wars](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/epic-disney-marvel-star-wars-ai-first-20261012.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 19:07 (Усть-Катав)**; пауза до 07.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/epic-disney-marvel-star-wars-ai-first-20261012.webp) |
+| **2** | [ИИ использовали при создании более 80% самых популярных игр Roblox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/roblox-top-100-games-ai-20261029.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 20:07 (Усть-Катав)**; пауза до 07.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/roblox-top-100-games-ai-20261029.webp) |
+| **3** | [NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cosmos3-nano-interactive-worlds-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 21:07 (Усть-Катав)**; пауза до 07.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cosmos3-nano-interactive-worlds-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -27,6 +26,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Граймс появится в ИИ-фильме, который выйдет в кино 4 декабря](https://iipike.ru/articles/grimes-gods-dont-give-gifts-ai-film-20261105/) | 07.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grimes-gods-dont-give-gifts-ai-film-20261105.webp) |
 | [Глава Take-Two: GTA VI делают вручную, а ИИ уже экономит на рекламе](https://iipike.ru/articles/take-two-gta-handcrafted-ai-advertising-20261104/) | 07.11.2026 17:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/take-two-gta-handcrafted-ai-advertising-20261104.webp) |
 | [Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов](https://iipike.ru/articles/censys-artex-exposed-servers-20261105/) | 07.11.2026 15:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/censys-artex-exposed-servers-20261105.webp) |
 | [Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться](https://iipike.ru/articles/railway-primcloud-ai-agents-20261103/) | 07.11.2026 14:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/railway-primcloud-ai-agents-20261103.webp) |
