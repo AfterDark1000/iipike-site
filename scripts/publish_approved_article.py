@@ -161,7 +161,7 @@ def approved_article(root, slug):
 # into that same aside rather than printing a duplicate source list in the text.
 # This transformation affects HTML rendering ONLY; approved Markdown/blocks
 # remain byte-for-byte unchanged in content/approved and editorial_inbox.
-_SOURCE_LINK = re.compile(r"\\[([^\\]\\n]{1,200})\\]\\((https://[^)\\n]{1,2000})\\)\\Z")
+_SOURCE_LINK = re.compile(r"\[([^\]\n]{1,200})\]\((https://[^)\n]{1,2000})\)\Z")
 
 
 def site_article_sources(blocks, primary_url):
