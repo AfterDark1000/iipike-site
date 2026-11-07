@@ -3742,5 +3742,21 @@
       "video",
       "apps"
     ]
+  },
+  {
+    "title": "Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса",
+    "summary": "Thinking Machines Lab представила Inkling 2 Small с 594 млрд параметров и около 17 млрд активных параметров на токен. Модель уже работает через Tinker; веса под Apache 2.0 пока лишь обещаны после тестирования безопасности.",
+    "published": "2026-11-07",
+    "source_url": "https://thinkingmachines.ai/news/inkling-2-small/",
+    "cover": "assets/editorial/thinking-machines-inkling-2-small-20261105.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T07:20:46Z",
+    "event_date": "2026-11-05",
+    "id": "thinking-machines-inkling-2-small-20261105",
+    "url": "articles/thinking-machines-inkling-2-small-20261105/",
+    "topics": [
+      "models",
+      "development"
+    ]
   }
 ]
