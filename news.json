@@ -3806,5 +3806,21 @@
       "cybersecurity",
       "agents"
     ]
+  },
+  {
+    "title": "Глава Take-Two: GTA VI делают вручную, а ИИ уже экономит на рекламе",
+    "summary": "Штраус Зельник вновь назвал GTA ручной работой и рассказал об ИИ-рекламе мобильных игр: турецкая студия показала ролики примерно по $800 вместо съёмок с актёрами за $25–50 тысяч. Общую экономию Take-Two от ИИ он пока считает относительно небольшой.",
+    "published": "2026-11-07",
+    "source_url": "https://www.youtube.com/watch?v=r7BWW8gvxRw",
+    "cover": "assets/editorial/take-two-gta-handcrafted-ai-advertising-20261104.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T12:00:53Z",
+    "event_date": "2026-11-04",
+    "id": "take-two-gta-handcrafted-ai-advertising-20261104",
+    "url": "articles/take-two-gta-handcrafted-ai-advertising-20261104/",
+    "topics": [
+      "entertainment",
+      "business"
+    ]
   }
 ]
