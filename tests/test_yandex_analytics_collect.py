@@ -62,6 +62,39 @@ class YandexCollectorSafetyTests(unittest.TestCase):
         with self.assertRaisesRegex(AnalyticsError, "Unexpected"):
             request_json("https://untrusted.example", "/steal", "very-secret-token")
 
+    def test_webmaster_http_error_exposes_only_machine_code(self):
+        import io
+        import urllib.error
+        from scripts.yandex_analytics_collect import WEBMASTER_API
+
+        private_token = "SECRET_BEARER_VALUE"
+        response = b'{"error_code":"INVALID_USER_ID","error_message":"account 123, secret TOKEN"}'
+        error = urllib.error.HTTPError(
+            WEBMASTER_API + "/v4/user/123/hosts", 403, "Forbidden", {},
+            io.BytesIO(response))
+        with patch("scripts.yandex_analytics_collect.urllib.request.urlopen",
+                   side_effect=error):
+            with self.assertRaisesRegex(AnalyticsError, "Webmaster: HTTP 403 \\(INVALID_USER_ID\\)") as caught:
+                request_json(WEBMASTER_API, "/v4/user/123/hosts", private_token)
+        message = str(caught.exception)
+        self.assertNotIn("123", message)
+        self.assertNotIn("TOKEN", message)
+        self.assertNotIn(private_token, message)
+
+    def test_webmaster_disallows_untrusted_error_details(self):
+        import io
+        import urllib.error
+        from scripts.yandex_analytics_collect import WEBMASTER_API
+
+        error = urllib.error.HTTPError(
+            WEBMASTER_API + "/v4/user/123/hosts", 403, "Forbidden", {},
+            io.BytesIO(b'{"error_code":"token_secret123</script>","error_message":"secret"}'))
+        with patch("scripts.yandex_analytics_collect.urllib.request.urlopen",
+                   side_effect=error):
+            with self.assertRaises(AnalyticsError) as caught:
+                request_json(WEBMASTER_API, "/v4/user/123/hosts", "not-shared")
+        self.assertEqual(str(caught.exception), "Webmaster: HTTP 403")
+
     def test_report_does_not_invent_values_when_missing(self):
         with self.assertRaisesRegex(AnalyticsError, "missing totals"):
             parse_metrika_report({"data": []}, 10)

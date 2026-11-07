@@ -4,6 +4,13 @@ on:
     # Every six hours, offset from hourly site publication workflows.
     - cron: '13 2,8,14,20 * * *'
   workflow_dispatch:
+  # A checked collector fix should diagnose itself on first merge.
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/yandex_analytics_collect.py'
+      - 'tests/test_yandex_analytics_collect.py'
+      - '.github/workflows/yandex-private-analytics.yml'
   pull_request:
     branches: [main]
     paths:

@@ -54,8 +54,22 @@ def request_json(base, path, token, params=None, *, method="GET", body=None):
             response = resp.read(2_000_000)
             return json.loads(response.decode("utf-8"))
     except urllib.error.HTTPError as exc:
-        # Deliberately don't echo the response body or authorization headers.
-        raise AnalyticsError(f"{base} returned HTTP {exc.code} for {path}") from None
+        # Yandex reports stable machine-readable error codes. Read at most 4 KiB,
+        # reject all free-form messages and IDs, and expose ONLY the allowlisted
+        # status/code in private reports and GitHub Actions logs.
+        label = {METRIKA_API: "Metrica", WEBMASTER_API: "Webmaster",
+                 GITHUB_API: "GitHub"}[base]
+        safe_code = None
+        if base in (METRIKA_API, WEBMASTER_API):
+            try:
+                error_data = json.loads(exc.read(4096).decode("utf-8"))
+                candidate = error_data.get("error_code")
+                if isinstance(candidate, str) and re.fullmatch(r"[A-Z][A-Z0-9_]{1,63}", candidate):
+                    safe_code = candidate
+            except (ValueError, UnicodeError, AttributeError, TypeError):
+                pass
+        detail = f" ({safe_code})" if safe_code else ""
+        raise AnalyticsError(f"{label}: HTTP {exc.code}{detail}") from None
     except urllib.error.URLError:
         raise AnalyticsError(f"{base} connection failed") from None
     except (ValueError, UnicodeError, json.JSONDecodeError):
