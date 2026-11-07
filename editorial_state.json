@@ -114,6 +114,12 @@
       "utc_date": "2026-11-06",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
       "source_title": "Getting started with Web Answer on Amazon Bedrock AgentCore"
+    },
+    {
+      "id": "189563f1d6f7d0a3fade",
+      "utc_date": "2026-11-07",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
+      "source_title": "SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints"
     }
   ]
 }

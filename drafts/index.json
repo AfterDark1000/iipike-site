@@ -1,5 +1,12 @@
 [
   {
+    "id": "189563f1d6f7d0a3fade",
+    "date": "2026-11-07",
+    "title": "Amazon SageMaker научили делить видеокарты NVIDIA: больше никакой переплаты за лишнюю мощность",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/"
+  },
+  {
     "id": "d6f90cb0462c10ef0c69",
     "date": "2026-11-06",
     "title": "AWS избавила разработчиков от рутины, научив агентов искать в интернете в один клик",
