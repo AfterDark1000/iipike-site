@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 30
+**В очереди:** 3 · **Готовы:** 3 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 30
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -12,9 +12,9 @@
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/musk-baron-robots-orbital-ai-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 22:37 (Усть-Катав)**; пауза до 07.11.2026 22:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
-| **2** | [Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-hacktron-security-partnership-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 23:37 (Усть-Катав)**; пауза до 07.11.2026 22:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-hacktron-security-partnership-20261106.webp) |
-| **3** | [Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-ceo-lawyer-impersonation-fraud-129m-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 08.11.2026 00:37 (Усть-Катав)**; пауза до 07.11.2026 22:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ceo-lawyer-impersonation-fraud-129m-20261105.webp) |
+| **1** | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/musk-baron-robots-orbital-ai-20261106.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 22:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
+| **2** | [Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-hacktron-security-partnership-20261106.json) | 🟢 Готова к выпуску | **Не ранее 07.11.2026 23:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-hacktron-security-partnership-20261106.webp) |
+| **3** | [Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-ceo-lawyer-impersonation-fraud-129m-20261105.json) | 🟢 Готова к выпуску | **Не ранее 08.11.2026 00:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ceo-lawyer-impersonation-fraud-129m-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
