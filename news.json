@@ -3790,5 +3790,21 @@
       "cybersecurity",
       "agents"
     ]
+  },
+  {
+    "title": "Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов",
+    "summary": "Censys обнаружила 1465 серверов с открытыми консолями ARTEX, около 815 предположительно отдельных развёртываний после исключения групп одинаковых конфигураций. На 32 серверах были открыты каталоги с инструментами и файлами операторов.",
+    "published": "2026-11-07",
+    "source_url": "https://censys.com/blog/artex-agentic-asbestos/",
+    "cover": "assets/editorial/censys-artex-exposed-servers-20261105.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-07T10:45:36Z",
+    "event_date": "2026-11-05",
+    "id": "censys-artex-exposed-servers-20261105",
+    "url": "articles/censys-artex-exposed-servers-20261105/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ]
   }
 ]
