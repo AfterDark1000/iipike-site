@@ -2,19 +2,18 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 28
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 29
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **07.11.2026 19:13 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **07.11.2026 20:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [ИИ использовали при создании более 80% самых популярных игр Roblox](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/roblox-top-100-games-ai-20261029.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 20:22 (Усть-Катав)**; пауза до 07.11.2026 20:13 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/roblox-top-100-games-ai-20261029.webp) |
-| **2** | [NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cosmos3-nano-interactive-worlds-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 21:22 (Усть-Катав)**; пауза до 07.11.2026 20:13 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cosmos3-nano-interactive-worlds-20261105.webp) |
-| **3** | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/musk-baron-robots-orbital-ai-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 22:22 (Усть-Катав)**; пауза до 07.11.2026 20:13 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
+| **1** | [NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cosmos3-nano-interactive-worlds-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 21:22 (Усть-Катав)**; пауза до 07.11.2026 21:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cosmos3-nano-interactive-worlds-20261105.webp) |
+| **2** | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/musk-baron-robots-orbital-ai-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 22:22 (Усть-Катав)**; пауза до 07.11.2026 21:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -26,6 +25,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [ИИ использовали при создании более 80% самых популярных игр Roblox](https://iipike.ru/articles/roblox-top-100-games-ai-20261029/) | 07.11.2026 20:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/roblox-top-100-games-ai-20261029.webp) |
 | [Epic Games поручает ИИ писать код игры с Marvel и Star Wars](https://iipike.ru/articles/epic-disney-marvel-star-wars-ai-first-20261012/) | 07.11.2026 19:13 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/epic-disney-marvel-star-wars-ai-first-20261012.webp) |
 | [Граймс появится в ИИ-фильме, который выйдет в кино 4 декабря](https://iipike.ru/articles/grimes-gods-dont-give-gifts-ai-film-20261105/) | 07.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grimes-gods-dont-give-gifts-ai-film-20261105.webp) |
 | [Глава Take-Two: GTA VI делают вручную, а ИИ уже экономит на рекламе](https://iipike.ru/articles/take-two-gta-handcrafted-ai-advertising-20261104/) | 07.11.2026 17:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/take-two-gta-handcrafted-ai-advertising-20261104.webp) |
