@@ -51,6 +51,10 @@ jobs:
               return Number.isFinite(n) ? n : 0;
             };
             const fmt = value => {
+              if (/^\d{4}-\d{2}-\d{2}$/.test(value || '')) {
+                const [y,m,d] = value.split('-');
+                return d + '.' + m + '.' + y;
+              }
               const ms = dateMs(value);
               if (!ms) return '—';
               return new Intl.DateTimeFormat('ru-RU', {
@@ -69,7 +73,7 @@ jobs:
               'editorial_full_catalog.json', 'main'));
             if (!Array.isArray(news) || catalog.schema_version !== 1 ||
                 !Array.isArray(catalog.entries)) throw new Error('Invalid catalogs; leave dashboard unchanged');
-            
+
             const byId = new Map(news.map(r => [r.id, r]));
             const byTitle = new Map();
             for (const entry of catalog.entries) {
@@ -96,17 +100,41 @@ jobs:
               const story = JSON.parse(raw);
               if (story.id !== id || story.status !== 'editor_approved' ||
                   story.approved_by !== 'human_editor' ||
-                  typeof story.article_markdown !== 'string' || !story.article_markdown.trim() ||
                   typeof story.title !== 'string' || !story.title.trim()) {
-                throw new Error('Unexpected non-approved/incomplete story: ' + id);
+                core.warning('Skipping non-approved or incomplete story: ' + id);
+                continue;
               }
+              // Older approved records used validated structured blocks, before Markdown was saved.
+              // Reconstruct their readable form but flag it in the queue for formatting review.
+              const legacy = typeof story.article_markdown !== 'string';
+              let articleBody = story.article_markdown;
+              if (legacy) {
+                if (!Array.isArray(story.paragraphs) || !story.paragraphs.length) {
+                  core.warning('No text available for story: ' + id);
+                  continue;
+                }
+                articleBody = story.paragraphs.map(block => {
+                  const t = block.text;
+                  if (['lead', 'p'].includes(block.type) && typeof t === 'string') return t;
+                  if (['h2', 'h3'].includes(block.type) && typeof t === 'string')
+                    return (block.type === 'h2' ? '## ' : '### ') + t;
+                  if (block.type === 'quote' && typeof t === 'string') {
+                    return '> ' + t + (block.attribution ? '\n> — ' + block.attribution : '');
+                  }
+                  if (['ul', 'ol'].includes(block.type) && Array.isArray(block.items))
+                    return block.items.map((item,i) => (block.type === 'ol' ? (i + 1) + '. ' : '- ') + item)
+                      .join('\n');
+                  throw new Error('Unsupported legacy text block in ' + id + ': ' + block.type);
+                }).join('\n\n');
+              }
+              if (!articleBody || !articleBody.trim()) throw new Error('Empty article body: ' + id);
               const title = story.dzen_title || story.title;
               if (typeof title !== 'string' || title.includes('\n') || title.includes('\r')) {
                 throw new Error('Invalid Dzen heading: ' + id);
               }
               const mdPath = root + id + '.md';
               // The source body is not edited: retain Dzen links, formatting, quotes, paragraphs.
-              desired.set(mdPath, '# ' + title + '\n\n' + story.article_markdown + '\n');
+              desired.set(mdPath, '# ' + title + '\n\n' + articleBody + '\n');
               const siteRow = byId.get(id);
               const same = byTitle.get(normalize(title)) || [];
               let dzenUrl = null, dzenDate = null, ambiguous = false;
@@ -121,12 +149,13 @@ jobs:
                 ambiguous = true;
               }
               records.push({
-                id, title, mdPath, coverPath:coverById.get(id), siteRow, dzenUrl,
+                id, title, mdPath, legacy, coverPath:coverById.get(id), siteRow, dzenUrl,
                 dzenDate, ambiguous, approvedAt:story.approved_at
               });
             }
             const row = (item, i, kind) => {
-              const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')';
+              const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')' +
+                (item.legacy ? ' ⚠️ старый формат' : '');
               const site = item.siteRow ?
                 '[На сайте](https://iipike.ru/articles/' + item.id + '/)' : 'Пока в очереди сайта';
               const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
@@ -164,7 +193,9 @@ jobs:
                 'Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.', '',
               '**Важно:** «не подтверждена» означает, что публикация не найдена однозначно в проверенном ' +
                 'каталоге Дзена или ссылках сайта. Это **не доказывает**, что её нет в Дзене. ' +
-                'Черновики Дзена автоматически не отслеживаются. Свежая публикация может появиться ' +
+                'Черновики Дзена автоматически не отслеживаются. ⚠️ Старый формат означает, что ' +
+                'Markdown восстановлен из редакционных абзацев и оформление лучше перепроверить. ' +
+                'Свежая публикация может появиться ' +
                 'в каталоге с задержкой. Статус на сайте основан на news.json, не на проверке деплоя Pages.', '',
               '## 1. На сайте, но публикация в Дзене пока не подтверждена', '',
               'В порядке выхода на сайте: сначала самые ранние, чтобы удобно переносить их по очереди.', '',
@@ -190,7 +221,7 @@ jobs:
               '[История обновлений](https://github.com/' + owner + '/' + repo +
                 '/actions/workflows/dzen-reading-queue.yml)', '');
             desired.set(indexPath, lines.join('\n'));
-            
+
             const gitCommit = await github.rest.git.getCommit({owner,repo,commit_sha:headSha});
             const tree = await github.rest.git.getTree({
               owner,repo,tree_sha:gitCommit.data.tree.sha,recursive:'true'
