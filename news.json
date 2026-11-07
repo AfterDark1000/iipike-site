@@ -3709,5 +3709,22 @@
       "agents",
       "models"
     ]
+  },
+  {
+    "title": "Глава Hugging Face: риск вымирания от ИИ почти нулевой, но за атаки агентов надо отвечать",
+    "summary": "Глава Hugging Face Клеман Деланг оценил вероятность вымирания человечества от ИИ как «близкую к нулю» и призвал возложить юридическую ответственность за атаки ИИ-агентов на тех, кто запускает автономные системы.",
+    "published": "2026-11-07",
+    "source_url": "https://www.wired.com/story/wired-world-fair-2026-clement-delangue-hugging-face/",
+    "cover": "assets/editorial/clement-delangue-hugging-face-ai-doom-agents-20261104.webp",
+    "rubric": "quotes",
+    "published_at_utc": "2026-11-07T05:15:32Z",
+    "event_date": "2026-11-04",
+    "id": "clement-delangue-hugging-face-ai-doom-agents-20261104",
+    "url": "articles/clement-delangue-hugging-face-ai-doom-agents-20261104/",
+    "topics": [
+      "safety",
+      "agents",
+      "society"
+    ]
   }
 ]
