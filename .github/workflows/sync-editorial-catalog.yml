@@ -4,6 +4,14 @@ on:
   schedule:
     - cron: '13,43 * * * *'
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/sync_editorial_catalog_snapshot.py'
+      - 'tests/test_sync_editorial_catalog_snapshot.py'
+      - 'tests/test_archival_batch8.py'
+      - 'data/editorial_full_catalog_snapshot.json'
+      - '.github/workflows/sync-editorial-catalog.yml'
   push:
     branches: [main]
     paths:
@@ -15,7 +23,19 @@ concurrency:
   group: hpii-verified-dzen-catalog-sync
   cancel-in-progress: false
 jobs:
+  validate-sync-change:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify the catalog, historical dates and pending-queue safeguards
+        run: |
+          python3 -m unittest discover -s tests -p 'test_sync_editorial_catalog_snapshot.py' -v
+          python3 -m unittest discover -s tests -p 'test_archival_batch8.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
   refresh-verified-links:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
