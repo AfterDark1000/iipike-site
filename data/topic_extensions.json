@@ -28,6 +28,20 @@
           "source_url": "https://www.latrobe.edu.au/news/articles/2026/release/ai-robot-trains-teachers-to-handle-heated-issues"
         }
       ]
+    },
+    {
+      "key": "entertainment",
+      "name": "Кино, музыка и игры",
+      "description": "Искусственный интеллект в кино, музыке и видеоиграх: произведения, участие артистов, разработка игр, производство и выпуск развлекательных проектов.",
+      "why_not_existing": "«Генерация видео», «Генерация изображений» и «Голос и звук» описывают технологии и функции инструментов. Новая тема объединяет ИИ в конкретных фильмах, музыке и играх, творческие решения их авторов и участие артистов, включая отказ от генеративного ИИ. «ИИ в бизнесе» шире и не выделяет культурные и развлекательные проекты.",
+      "evidence": [
+        {
+          "source_url": "https://www.youtube.com/watch?v=r7BWW8gvxRw"
+        },
+        {
+          "source_url": "https://www.thewrap.com/industry-news/tech/ai-film-gods-dont-give-gifts-youtube-grimes-gossip-goblin/"
+        }
+      ]
     }
   ]
 }
