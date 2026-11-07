@@ -3758,5 +3758,21 @@
       "models",
       "development"
     ]
+  },
+  {
+    "title": "Meta добавила в Muse конструктор мини-приложений: достаточно описать задачу",
+    "summary": "Meta представила Spaces — конструктор мини-приложений внутри Muse: инструменты создаются по описанию в чате, меняются разговором, могут подключаться к сервисам и обновлять данные в фоне.",
+    "published": "2026-11-07",
+    "source_url": "https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
+    "cover": "assets/editorial/meta-muse-spaces-20261106.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T08:30:44Z",
+    "event_date": "2026-11-06",
+    "id": "meta-muse-spaces-20261106",
+    "url": "articles/meta-muse-spaces-20261106/",
+    "topics": [
+      "agents",
+      "apps"
+    ]
   }
 ]
