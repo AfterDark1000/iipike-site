@@ -57,6 +57,13 @@ def merge_snapshot(old, upstream, *, source_blob_sha, source_commit, snapshot_da
             # A previously verified version of this same ID remains intact.
             continue
         trusted_count += 1
+        if ident in saved:
+            if saved[ident]["dzen_url"] != item["dzen_url"]:
+                raise ValueError("Conflicting verified Dzen URL: " + ident)
+            # Keep stronger historical evidence (original publication date,
+            # verified-page provenance and titles) intact. Newer upstream
+            # snapshots may omit some of those irreplaceable details.
+            continue
         saved[ident] = {field: item[field] for field in FIELDS if field in item}
     if trusted_count < 100:
         raise ValueError("Suspicious collapse of verified upstream Dzen links")
