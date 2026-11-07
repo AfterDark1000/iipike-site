@@ -3934,5 +3934,21 @@
     "topics": [
       "cybersecurity"
     ]
+  },
+  {
+    "title": "Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут",
+    "summary": "Илон Маск на конференции Baron 6 ноября предсказал пятикратную производительность гуманоидов, развитие орбитальных ИИ-центров SpaceX и рост Starlink. В материале также рассматриваются его планы Starship, Neuralink и обещания высокого дохода.",
+    "published": "2026-11-08",
+    "source_url": "https://elonmuskarchive.org/de/video/baron-investment-conference-2026-11-06",
+    "cover": "assets/editorial/musk-baron-robots-orbital-ai-20261106.webp",
+    "rubric": "quotes",
+    "published_at_utc": "2026-11-07T20:45:34Z",
+    "event_date": "2026-11-06",
+    "id": "musk-baron-robots-orbital-ai-20261106",
+    "url": "articles/musk-baron-robots-orbital-ai-20261106/",
+    "topics": [
+      "engineering",
+      "infrastructure"
+    ]
   }
 ]
