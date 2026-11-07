@@ -132,12 +132,11 @@ class PublisherTests(unittest.TestCase):
         from scripts.site_rich_text import markdown_to_blocks
         original = (
             "В редакции подтвердили дату события и изучили первоисточники. " * 12
-            + "\\n\\n**Первоисточники:**\\n\\n"
-            + "- [Основной источник](https://example.org/source)\\n"
-            + "- [Дополнительный материал](https://example.org/second)\\n"
+            + "\n\n**Первоисточники:**\n\n"
+            + "- [Основной источник](https://example.org/source)\n"
+            + "- [Дополнительный материал](https://example.org/second)\n"
             + "- [Третий материал](https://example.org/third)"
         )
-        original = original.replace("\\\\n", "\\n")
         self.article["article_markdown"] = original
         self.article["paragraphs"] = markdown_to_blocks(original)
         self.write_article()
