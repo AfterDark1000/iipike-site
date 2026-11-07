@@ -3893,5 +3893,21 @@
       "engineering",
       "video"
     ]
+  },
+  {
+    "title": "Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры",
+    "summary": "OpenAI заключила соглашение с Hacktron — командой, которая ранее обнаружила уязвимости в системе доступа к её внутренним ресурсам. Теперь исследователи будут совместно проверять безопасность интеграций.",
+    "published": "2026-11-07",
+    "source_url": "https://openai.com/index/partnering-with-hacktron/",
+    "cover": "assets/editorial/openai-hacktron-security-partnership-20261106.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-07T18:30:44Z",
+    "event_date": "2026-11-06",
+    "id": "openai-hacktron-security-partnership-20261106",
+    "url": "articles/openai-hacktron-security-partnership-20261106/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ]
   }
 ]
