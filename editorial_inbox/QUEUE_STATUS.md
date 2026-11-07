@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Назначено время:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 20
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 20
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -13,12 +13,13 @@
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
 | **1** | [Google выпустила Gemini Omni 1.2 Flash: 15 секунд видео и правки в переписке](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-omni-1-2-flash-video-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 11:22 (Усть-Катав)**; пауза до 07.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-omni-1-2-flash-video-20261105.webp) |
+| **2** | [Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/thinking-machines-inkling-2-small-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 07.11.2026 12:22 (Усть-Катав)**; пауза до 07.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/thinking-machines-inkling-2-small-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Thinking Machines выпустила Inkling 2 Small: 594 млрд параметров и обещание открыть веса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/thinking-machines-inkling-2-small-20261105.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Уже опубликованы — новые сверху
 
