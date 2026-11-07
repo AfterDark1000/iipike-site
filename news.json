@@ -3877,5 +3877,21 @@
     "topics": [
       "entertainment"
     ]
+  },
+  {
+    "title": "NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота",
+    "summary": "NVIDIA подробно представила четыре модели Cosmos 3 Nano для интерактивной видеосимуляции действий роботов и автономных автомобилей. Открытые веса доступны с 20 октября.",
+    "published": "2026-11-07",
+    "source_url": "https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation",
+    "cover": "assets/editorial/cosmos3-nano-interactive-worlds-20261105.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T16:30:44Z",
+    "event_date": "2026-11-05",
+    "id": "cosmos3-nano-interactive-worlds-20261105",
+    "url": "articles/cosmos3-nano-interactive-worlds-20261105/",
+    "topics": [
+      "engineering",
+      "video"
+    ]
   }
 ]
