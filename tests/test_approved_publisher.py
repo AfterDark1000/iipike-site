@@ -132,6 +132,7 @@ class PublisherTests(unittest.TestCase):
         from scripts.site_rich_text import markdown_to_blocks
         original = (
             "В редакции подтвердили дату события и изучили первоисточники. " * 12
+            + "\n\nВторой абзац добавляет подробности проверенного события и его последствий."
             + "\n\n**Первоисточники:**\n\n"
             + "- [Основной источник](https://example.org/source)\n"
             + "- [Дополнительный материал](https://example.org/second)\n"
