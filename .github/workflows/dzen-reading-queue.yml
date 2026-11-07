@@ -69,6 +69,28 @@ jobs:
             const files = await directory('editorial_inbox/stories', branch);
             const covers = await directory('editorial_inbox/covers', branch);
             const news = JSON.parse(await getText(owner, repo, 'news.json', 'main'));
+            // Use the *existing* website publication forecast as the single source of truth
+            // for ordering unreleased Dzen drafts. Never guess from editorial approval dates.
+            const queueStatus = await getText(owner, repo, 'editorial_inbox/QUEUE_STATUS.md', branch);
+            const sectionStart = queueStatus.indexOf('## Следующие выпуски — прогноз по текущей очереди');
+            const sectionEnd = queueStatus.indexOf('## Требуют внимания', sectionStart + 1);
+            if (sectionStart < 0 || sectionEnd < 0) {
+              throw new Error('Site publication queue forecast not found; refuse stale Dzen order');
+            }
+            const websiteForecast = new Map();
+            for (const line of queueStatus.slice(sectionStart, sectionEnd).split('\\n')) {
+              if (!/^\\|\\s*\\*\\*\\d+\\*\\*/.test(line)) continue;
+              const cells = line.split('|').map(x => x.trim());
+              const position = /^\\*\\*(\\d+)\\*\\*$/.exec(cells[1] || '');
+              const match = /\\/editorial_inbox\\/stories\\/([a-z0-9]+(?:-[a-z0-9]+)*)\\.json\\)/.exec(cells[2] || '');
+              if (!position || !match || !cells[4]) {
+                throw new Error('Malformed website forecast row: ' + line.slice(0,200));
+              }
+              if (websiteForecast.has(match[1])) throw new Error('Duplicate ID in website forecast: ' + match[1]);
+              websiteForecast.set(match[1], {
+                position: Number(position[1]), status: cells[3], forecast: cells[4]
+              });
+            }
             const catalog = JSON.parse(await getText(owner, 'dzen-telegram-crosspost',
               'editorial_full_catalog.json', 'main'));
             if (!Array.isArray(news) || catalog.schema_version !== 1 ||
@@ -150,7 +172,8 @@ jobs:
               }
               records.push({
                 id, title, mdPath, legacy, coverPath:coverById.get(id), siteRow, dzenUrl,
-                dzenDate, ambiguous, approvedAt:story.approved_at
+                dzenDate, ambiguous, approvedAt:story.approved_at,
+                siteForecast:websiteForecast.get(id) || null
               });
             }
             const row = (item, i, kind) => {
@@ -161,7 +184,8 @@ jobs:
               const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
               const dzen = item.dzenUrl ? '[Открыть в Дзене](' + item.dzenUrl + ')' : '—';
               const when = kind === 'dzen' ? fmt(item.dzenDate) :
-                kind === 'site' ? fmt(item.siteRow?.published_at_utc) : fmt(item.approvedAt);
+                kind === 'site' ? fmt(item.siteRow?.published_at_utc) :
+                (item.siteForecast?.forecast || 'Нет в последнем прогнозе сайта');
               return '| ' + i + ' | ' + md + ' | ' + when + ' | ' +
                 (kind === 'dzen' ? dzen : site) + ' | ' + cover + ' |';
             };
@@ -170,8 +194,11 @@ jobs:
             const done = records.filter(r => r.dzenUrl);
             pendingSite.sort((a,b)=> dateMs(a.siteRow.published_at_utc)-dateMs(b.siteRow.published_at_utc) ||
               a.id.localeCompare(b.id));
-            pendingInbox.sort((a,b)=> dateMs(a.approvedAt)-dateMs(b.approvedAt) ||
-              a.id.localeCompare(b.id));
+            pendingInbox.sort((a,b)=> {
+              const ar = a.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
+              const br = b.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
+              return ar - br || a.id.localeCompare(b.id);
+            });
             done.sort((a,b)=> dateMs(b.dzenDate)-dateMs(a.dzenDate) || a.id.localeCompare(b.id));
             const table = (items, kind) => [
               '| № | Материал — открыть готовый текст | Дата (Усть-Катав) | ' +
@@ -201,7 +228,10 @@ jobs:
               'В порядке выхода на сайте: сначала самые ранние, чтобы удобно переносить их по очереди.', '',
               ...table(pendingSite,'site'),
               '## 2. Утверждены, ещё в редакционной очереди сайта', '',
-              'В порядке одобрения. В Дзен можно перенести вручную по своему расписанию.', '',
+              '**Порядок совпадает с разделом «Следующие выпуски» очереди сайта.** ' +
+                'Время берётся из последнего прогноза сайта; это ориентир, а не гарантия. ' +
+                'Материалы, отсутствующие в прогнозе, идут в конце и требуют сверки. ' +
+                'В Дзен можно переносить вручную по своему расписанию.', '',
               ...table(pendingInbox,'inbox'),
               '## 3. Подтверждены опубликованными в Дзене', '',
               'Новые подтверждённые публикации выше. Их исходные тексты остаются доступны по ссылкам.', '',
