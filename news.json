@@ -3950,5 +3950,19 @@
       "engineering",
       "infrastructure"
     ]
+  },
+  {
+    "title": "ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря",
+    "summary": "OpenAI планирует с декабря 2026 года объединить лимиты сложных задач ChatGPT, Work и Codex для подписчиков Plus, Pro и Business. Instant останется вне общего токенного лимита, размеры квот пока не раскрыты.",
+    "published": "2026-11-08",
+    "source_url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
+    "cover": "assets/editorial/openai-chatgpt-codex-shared-limits-20261107.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T22:00:49Z",
+    "id": "openai-chatgpt-codex-shared-limits-20261107",
+    "url": "articles/openai-chatgpt-codex-shared-limits-20261107/",
+    "topics": [
+      "apps"
+    ]
   }
 ]
