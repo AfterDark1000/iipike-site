@@ -3846,5 +3846,21 @@
       "entertainment",
       "video"
     ]
+  },
+  {
+    "title": "Epic Games поручает ИИ писать код игры с Marvel и Star Wars",
+    "summary": "По данным Bloomberg от 12 октября, Epic Games отложила игру с героями Marvel и Star Wars и поручила команде использовать Claude и другие ИИ-инструменты для кода и графики. Тим Суини публично подтвердил масштабную перестройку Epic ради ускорения разработки с ИИ.",
+    "published": "2026-11-07",
+    "source_url": "https://ca.finance.yahoo.com/news/epic-games-delays-disney-project-182441018.html",
+    "cover": "assets/editorial/epic-disney-marvel-star-wars-ai-first-20261012.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-07T14:13:37Z",
+    "event_date": "2026-10-12",
+    "id": "epic-disney-marvel-star-wars-ai-first-20261012",
+    "url": "articles/epic-disney-marvel-star-wars-ai-first-20261012/",
+    "topics": [
+      "entertainment",
+      "development"
+    ]
   }
 ]
