@@ -1,12 +1,22 @@
 name: HPII — watchdog (no publishing)
 
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/hpii-watchdog.yml'
+      - 'scripts/watchdog.js'
+      - 'scripts/watchdog_queue.py'
+      - 'tests/watchdog.test.js'
+      - 'tests/test_watchdog_queue.py'
   push:
     branches: [main]
     paths:
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
+      - 'scripts/watchdog_queue.py'
       - 'tests/watchdog.test.js'
+      - 'tests/test_watchdog_queue.py'
   workflow_dispatch:
   schedule:
     - cron: '13 * * * *'
@@ -22,7 +32,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  watchdog-offline-pr-check:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test watcher without incidents or publication
+        run: |
+          node --check scripts/watchdog.js
+          python3 -m py_compile scripts/watchdog_queue.py
+          node --test tests/watchdog.test.js
+          python3 -m unittest discover -s tests -p 'test_watchdog_queue.py' -v
+
   watchdog:
+    if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:

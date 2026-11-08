@@ -10,10 +10,34 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.site_publication_queue import _last_change, latest_site_first_publication, ready_items, git
+from scripts.site_publication_queue import _last_change, latest_site_first_publication, ready_items, git, SITE_TZ
 from scripts.site_first_release_pr import exists_at, safe_git_blob_at
 
 UTC = dt.timezone.utc
+
+
+def active_publication_minutes(begin, end):
+    """Count elapsed daytime release minutes; exclude 01:00–07:00 locally.
+
+    Overnight holding time cannot make a story overdue. An already-overdue
+    article keeps its accumulated daytime minutes until publication.
+    """
+    if begin.tzinfo is None or end.tzinfo is None:
+        raise ValueError("Queue watchdog timestamps require timezone offsets")
+    if end <= begin:
+        return (end - begin).total_seconds() / 60
+    elapsed = (end - begin).total_seconds() / 60
+    day = begin.astimezone(SITE_TZ).date()
+    final_day = end.astimezone(SITE_TZ).date()
+    while day <= final_day:
+        quiet_start = dt.datetime.combine(day, dt.time(1), SITE_TZ).astimezone(UTC)
+        quiet_end = dt.datetime.combine(day, dt.time(7), SITE_TZ).astimezone(UTC)
+        overlap = (min(end, quiet_end) - max(begin, quiet_start)).total_seconds() / 60
+        if overlap > 0:
+            elapsed -= overlap
+        day += dt.timedelta(days=1)
+    return max(0, elapsed)
+
 
 def snapshot(now=None):
     now = now or dt.datetime.now(UTC)
@@ -23,40 +47,47 @@ def snapshot(now=None):
     with contextlib.redirect_stdout(io.StringIO()) as capture:
         pending = ready_items('origin/editorial-intake', main_ref='origin/main')
     blocked = []
+    invalid_markdown = []
     for line in capture.getvalue().splitlines():
-        if line.startswith('BLOCKED_UNVERIFIED_DZEN_REFERENCE: '):
+        if (line.startswith('BLOCKED_UNVERIFIED_DZEN_REFERENCE: ') or
+                line.startswith('BLOCKED_INVALID_MARKDOWN: ')):
             parts = line.split()
             if len(parts) >= 2:
                 sid = parts[1]
                 path = 'editorial_inbox/stories/' + sid + '.json'
                 try:
                     if now - _last_change('origin/editorial-intake', path) > dt.timedelta(minutes=100):
-                        blocked.append(sid)
+                        (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
                 except (ValueError, OSError):
-                    blocked.append(sid)
+                    (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
     overdue = []
     epoch = dt.datetime(1970, 1, 1, tzinfo=UTC)
     for item in pending:
         earliest = max(item['ready_at'], item['not_before'] or epoch,
                        last + dt.timedelta(hours=1) if last else epoch)
-        delay = (now - earliest).total_seconds() / 60
+        delay = active_publication_minutes(earliest, now)
         if delay > 100:
             overdue.append({'id': item['id'], 'minutes': round(delay)})
     newest = None
+    site_first_published = []
     for row in rows:
         sid = row.get('id', '')
         stamp = row.get('published_at_utc')
         if (isinstance(sid, str) and isinstance(stamp, str)
-                and exists_at('origin/main', f'editorial_inbox/stories/{sid}.json')):
+                and exists_at('origin/main', f'editorial_inbox/stories/{sid}.json')
+                and exists_at('origin/main', f'articles/{sid}/index.html')):
             try:
                 time = dt.datetime.fromisoformat(stamp.replace('Z', '+00:00'))
             except ValueError:
                 continue
+            site_first_published.append({'id': sid, 'published_at_utc': time.isoformat()})
             if newest is None or time > newest[0]:
                 newest = (time, sid)
     return {
         'overdue': overdue,
         'blocked_unverified_dzen_ids': blocked,
+        'blocked_invalid_markdown_ids': invalid_markdown,
+        'published_site_first': site_first_published,
         'newest_id': newest[1] if newest else None,
         'newest_published_at_utc': newest[0].isoformat() if newest else None,
         'last_published_at_utc': last.isoformat() if last else None,

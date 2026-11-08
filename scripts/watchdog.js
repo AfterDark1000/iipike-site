@@ -36,6 +36,83 @@ function evaluateRun(label, runs, maxAge, nowMs, url) {
   }
   return null;
 }
+
+const RELEASE_PREFIX = 'site-release:';
+const RELEASE_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+// A job's regression tests may print fake SCHEDULED_RELEASE lines.
+// Only the actual scheduled-publication step identifies the failed article.
+function selectedReleaseFromLogs(logs) {
+  if (typeof logs !== 'string') return null;
+  const marker = '##[group]Run python3 scripts/site_publication_queue.py';
+  const offset = logs.lastIndexOf(marker);
+  if (offset < 0) return null;
+  const section = logs.slice(offset);
+  const matches = [...section.matchAll(/SCHEDULED_RELEASE:\s+([a-z0-9]+(?:-[a-z0-9]+)*)\s+urgent=(?:True|False)\b/g)];
+  return matches.length === 1 ? matches[0][1] : null;
+}
+async function selectedFailedArticle(github, run, core) {
+  try {
+    const result = await github.rest.actions.listJobsForWorkflowRun({
+      owner: OWNER, repo: SITE, run_id: run.id, per_page: 50
+    });
+    for (const job of result.data.jobs || []) {
+      if (job.name !== 'release-due-one' || job.conclusion !== 'failure') continue;
+      const response = await github.rest.actions.downloadJobLogsForWorkflowRun({
+        owner: OWNER, repo: SITE, job_id: job.id
+      });
+      const raw = response.data;
+      const logs = typeof raw === 'string' ? raw
+        : Buffer.isBuffer(raw) ? raw.toString('utf8')
+        : raw instanceof ArrayBuffer ? Buffer.from(raw).toString('utf8')
+        : raw instanceof Uint8Array ? Buffer.from(raw).toString('utf8') : null;
+      const id = selectedReleaseFromLogs(logs);
+      if (id && RELEASE_ID.test(id)) return id;
+    }
+  } catch (error) {
+    core.warning('Cannot inspect failed release job logs: ' + String(error.message).slice(0,160));
+  }
+  return null;
+}
+async function verifySitePublication(id, queue, publicFetch = fetch) {
+  if (!RELEASE_ID.test(id)) return {ok:false, why:'invalid article ID'};
+  if (!queue || queue.check_error || !Array.isArray(queue.published_site_first))
+    return {ok:false, why:'verified queue snapshot unavailable'};
+  const record = queue.published_site_first.find(r => r.id === id);
+  if (!record || !Number.isFinite(Date.parse(record.published_at_utc || '')))
+    return {ok:false, why:'article missing from main news.json or its HTML is not committed'};
+  const url = 'https://iipike.ru/articles/' + id + '/';
+  try {
+    const response = await publicFetch(url, {
+      method:'GET', signal:AbortSignal.timeout(12000),
+      headers:{'User-Agent':'HPII-Watchdog/1.2'}
+    });
+    if (response.status !== 200)
+      return {ok:false, why:'public page returned HTTP ' + response.status};
+    const html = await response.text();
+    if (!html.includes('<link rel="canonical" href="' + url + '"') ||
+        !html.includes('property="article:published_time"'))
+      return {ok:false, why:'public page has no matching canonical article metadata'};
+    return {ok:true, url, publishedAt:record.published_at_utc};
+  } catch (error) {
+    return {ok:false, why:'public page check unavailable: ' + String(error.message).slice(0,140)};
+  }
+}
+
+
+async function canAutoCloseIncident(key, findings, checked, releaseProof) {
+  if (findings.has(key)) return false;
+  if (key.startsWith(RELEASE_PREFIX)) {
+    const id = key.slice(RELEASE_PREFIX.length);
+    if (!RELEASE_ID.test(id)) return false;
+    return (await releaseProof(id)).ok === true;
+  }
+  // Old generic incidents lack article identity: only a human may close them.
+  if (key === 'site-scheduler' || key === 'site-queue' || key === 'site-public')
+    return false;
+  return checked.has(key);
+}
+
 function decodeFile(data) {
   if (Array.isArray(data) || data.type !== 'file') throw Error('Expected GitHub file');
   return Buffer.from((data.content || '').replace(/\s/g, ''), 'base64').toString('utf8');
@@ -45,7 +122,9 @@ async function main({github, context, core}) {
   const findings = new Map();
   const notes = [];
   const checked = new Set();
-  const put = (key, message) => findings.set(key, message);
+  let queueHealth = null;
+  const failedReleases = [];
+  const put = (key, message) => { if (!findings.has(key)) findings.set(key, message); };
   async function content(path, ref) {
     const r = await github.rest.repos.getContent({owner: OWNER, repo: SITE, path, ref});
     return r.data;
@@ -56,13 +135,31 @@ async function main({github, context, core}) {
     });
     return r.data.workflow_runs || [];
   }
-  // A green workflow with "New articles: 0" is healthy, not a missing publication.
+  // A healthy later cron proves the scheduler ran, not that a failed article shipped.
+  // Remember the exact failed release ID from the real publication step logs.
   try {
     const r = await runs(SITE, 'site-first-scheduled-release.yml');
-    checked.add('site-scheduler');
+    checked.add('site-scheduler-heartbeat');
     const problem = evaluateRun('очереди iipike.ru', r, 85, now,
       'https://github.com/' + OWNER + '/' + SITE + '/actions/workflows/site-first-scheduled-release.yml');
-    if (problem) put('site-scheduler', problem);
+    const latest = latestNonCancelled(r);
+    const failures = r.filter(x => x.status === 'completed' && x.conclusion === 'failure' &&
+      ageMinutes(x.created_at, now) >= 0 && ageMinutes(x.created_at, now) <= 24 * 60).slice(0, 6);
+    let latestTarget = null;
+    for (const failed of failures) {
+      const id = await selectedFailedArticle(github, failed, core);
+      if (!id) continue;
+      failedReleases.push({id, run:failed});
+      if (failed.id === latest?.id) latestTarget = id;
+    }
+    if (problem) {
+      if (latest?.conclusion === 'failure') {
+        if (!latestTarget) put('site-scheduler', problem +
+          '. Идентификатор не установлен; только ручное закрытие после проверки.');
+      } else {
+        put('site-scheduler-heartbeat', problem);
+      }
+    }
   } catch (error) {
     notes.push('Проверка расписания сайта недоступна: ' + String(error.message).slice(0,160));
   }
@@ -80,22 +177,31 @@ async function main({github, context, core}) {
   try {
     const fs = require('node:fs');
     const q = JSON.parse(fs.readFileSync('/tmp/hpii-queue-health.json', 'utf8'));
+    queueHealth = q;
     if (q.check_error) {
       notes.push('Состояние очереди не подтверждено: ' + String(q.check_error).slice(0,180));
     } else {
       checked.add('site-queue');
-      const problems = [];
-      if (Array.isArray(q.overdue) && q.overdue.length) {
-        problems.push('Просроченные публикации: ' + q.overdue.slice(0,5)
-          .map(x => x.id + ' (+' + x.minutes + ' мин)').join('; '));
+      // Per-article incidents cannot disappear merely because the next cron
+      // succeeds or the story leaves the eligible list due to a validation error.
+      const queueUrl = 'https://github.com/' + OWNER + '/' + SITE +
+        '/blob/editorial-intake/editorial_inbox/QUEUE_STATUS.md';
+      for (const x of (Array.isArray(q.overdue) ? q.overdue : []).slice(0,10)) {
+        if (RELEASE_ID.test(x.id))
+          put(RELEASE_PREFIX + x.id, 'Статья просрочена (+' + x.minutes +
+            ' разрешённых минут): ' + x.id + '. Очередь: ' + queueUrl);
       }
-      if (Array.isArray(q.blocked_unverified_dzen_ids) && q.blocked_unverified_dzen_ids.length) {
-        problems.push('Записи заблокированы неверной ссылкой Дзена: ' +
-          q.blocked_unverified_dzen_ids.slice(0,5).join(', '));
+      for (const id of (Array.isArray(q.blocked_unverified_dzen_ids) ?
+        q.blocked_unverified_dzen_ids : []).slice(0,10)) {
+        if (RELEASE_ID.test(id))
+          put(RELEASE_PREFIX + id, 'Статья заблокирована непроверенной ссылкой Дзена: ' +
+            id + '. Очередь: ' + queueUrl);
       }
-      if (problems.length) {
-        put('site-queue', problems.join('. ') + '. Очередь: https://github.com/' +
-          OWNER + '/' + SITE + '/blob/editorial-intake/editorial_inbox/QUEUE_STATUS.md');
+      for (const id of (Array.isArray(q.blocked_invalid_markdown_ids) ?
+        q.blocked_invalid_markdown_ids : []).slice(0,10)) {
+        if (RELEASE_ID.test(id))
+          put(RELEASE_PREFIX + id, 'Статья заблокирована некорректным Markdown: ' +
+            id + '. Очередь: ' + queueUrl);
       }
       if (q.newest_id && ageMinutes(q.newest_published_at_utc, now) > 45) {
         const url = 'https://iipike.ru/articles/' + encodeURIComponent(q.newest_id) + '/';
@@ -104,7 +210,7 @@ async function main({github, context, core}) {
             headers:{'User-Agent':'HPII-Watchdog/1.1'}});
           checked.add('site-public');
           if (response.status === 404 || response.status >= 500) {
-            put('site-public', 'Страница из main не открывается: HTTP ' + response.status + ', ' + url);
+            put(RELEASE_PREFIX + q.newest_id, 'Страница из main не открывается: HTTP ' + response.status + ', ' + url);
           }
         } catch (error) {
           notes.push('Сайт извне проверить не удалось: ' + String(error.message).slice(0,160));
@@ -114,6 +220,27 @@ async function main({github, context, core}) {
   } catch (error) {
     notes.push('Диагностика очереди не завершена: ' + String(error.message).slice(0,160));
   }
+  // Confirm individual deliveries only with *both* the main branch catalog
+  // and the canonical public page. A green Actions run is never proof.
+  const proofCache = new Map();
+  async function releaseProof(id) {
+    if (!proofCache.has(id))
+      proofCache.set(id, await verifySitePublication(id, queueHealth));
+    return proofCache.get(id);
+  }
+  for (const entry of failedReleases) {
+    const proof = await releaseProof(entry.id);
+    if (proof.ok) continue;
+    put(RELEASE_PREFIX + entry.id, 'Выпуск ' + entry.id +
+      ' завершился ошибкой: ' + entry.run.html_url +
+      '. Публикация не подтверждена (' + proof.why + ').');
+  }
+  for (const key of [...findings.keys()]) {
+    if (!key.startsWith(RELEASE_PREFIX)) continue;
+    const proof = await releaseProof(key.slice(RELEASE_PREFIX.length));
+    if (proof.ok) findings.delete(key);
+  }
+
   // MAX has no verified read-only history source. Never infer delivery from green Telegram runs.
   notes.push('MAX: доставки не проверены автоматически; нужен отдельный источник подтверждений репостера.');
   // One open issue per distinct component. New findings open issues once, recovery closes them.
@@ -131,9 +258,31 @@ async function main({github, context, core}) {
   }
   for (const incident of ours) {
     const key = incident.title.slice(PREFIX.length);
-    if (!findings.has(key) && checked.has(key)) {
+    if (key.startsWith(RELEASE_PREFIX)) {
+      const id = key.slice(RELEASE_PREFIX.length);
+      if (!(await canAutoCloseIncident(key, findings, checked, releaseProof))) {
+        if (!findings.has(key)) {
+          const proof = await releaseProof(id);
+          notes.push('Инцидент ' + key + ' остаётся открытым: ' + proof.why);
+        }
+        continue;
+      }
+      const proof = await releaseProof(id);
       await github.rest.issues.createComment({owner:OWNER, repo:SITE, issue_number:incident.number,
-        body:'Сторож больше не обнаруживает прежнее отклонение. Закрыто автоматически; это не подтверждает доставку в MAX.'});
+        body:'Выпуск статьи **' + id + '** подтверждён: запись с временем публикации ' +
+          proof.publishedAt + ' есть в news.json, HTML существует в main, ' +
+          'и публичный URL отвечает HTTP 200 с корректным canonical и метаданными статьи: ' +
+          proof.url + '. Инцидент закрыт автоматически по подтверждённой доставке.'});
+      await github.rest.issues.update({owner:OWNER, repo:SITE,
+        issue_number:incident.number, state:'closed'});
+      continue;
+    }
+    // Legacy generic site incidents lack an article ID. Never mark delivery
+    // complete from scheduler health alone; owner reviews them manually.
+    if (await canAutoCloseIncident(key, findings, checked, releaseProof)) {
+      await github.rest.issues.createComment({owner:OWNER, repo:SITE, issue_number:incident.number,
+        body:'Проверяемый компонент снова работает. Это подтверждение здоровья ' +
+          'компонента, не доказательство доставки отдельной публикации.'});
       await github.rest.issues.update({owner:OWNER, repo:SITE,
         issue_number:incident.number, state:'closed'});
     }
@@ -144,4 +293,5 @@ async function main({github, context, core}) {
     ...notes.map(x => '- ' + x)];
   await core.summary.addRaw(summary.join('\n') + '\n').write();
 }
-module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled, evaluateRun};
+module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled, evaluateRun,
+  selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
