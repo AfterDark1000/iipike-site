@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "f6dded4b36fe994c8cf3e54be61cd902a6610ae8",
-  "source_blob_sha": "deba4b329e3b0b00e6c916f3ddacb20bf672cb5f",
+  "source_commit": "4310f6866cdfc4e46e06a6308c68f51f37322703",
+  "source_blob_sha": "bf00addab93fe607d5062dc724ca097ecc534a4a",
   "snapshot_date": "2026-11-08",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af01a4a3bd0ac498feefc51",
+      "title": "MyHeritage выпустила ИИ-генеалога: он ищет предков и проверяет архивы",
+      "dzen_url": "https://dzen.ru/a/avAaSjvQrEmP7vxR",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "MyHeritage 4 ноября запустила GAIA — ИИ-агента для исследования семейной истории. Пользователь спрашивает, например, что известно о его прадеде, а система составляет план поиска, находит исторические документы, сопоставляет сведения и показывает источники своих выводов. Агент работает с архивными базами MyHeritage и открытыми источниками в интернете. Он ищет записи о рождении, браке и смерти, переписи населения, мигр",
+      "published_at_utc": "2026-11-08T09:03:15+00:00"
+    },
+    {
+      "dzen_id": "6aef28a98c4f2d1ca5b50351",
+      "title": "Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут",
+      "dzen_url": "https://dzen.ru/a/au8oqYxPLRyltQNR",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Илон Маск 6 ноября рассказал, каким видит будущее искусственного интеллекта: роботы-гуманоиды будут производить за неделю в пять раз больше человека, вычислительные центры переедут на орбиту, а товары и медицинская помощь станут доступны практически каждому. Эти прогнозы прозвучали на Baron Investment Conference в Нью-Йорке, где Маск по видеосвязи беседовал с инвестором Роном Бароном. За час разговора предприниматель",
+      "published_at_utc": "2026-11-08T08:01:44+00:00"
+    },
+    {
+      "dzen_id": "6aef17a08fe21c4a3f2194b5",
+      "title": "Epic Games поручает ИИ писать код игры с Marvel и Star Wars",
+      "dzen_url": "https://dzen.ru/a/au8XoI_iHEo_IZS1",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Epic Games отложила совместную игру с Disney и поручила команде перейти на разработку с приоритетным использованием ИИ. Об этом 12 октября сообщил Bloomberg со ссылкой на людей, знакомых с проектом, и внутреннее сообщение руководителя. По данным издания, речь идёт о шутере с персонажами Marvel и Star Wars. Разработчикам велели использовать инструменты вроде Claude от Anthropic для написания кода, а графику генерирова",
+      "published_at_utc": "2026-11-08T07:03:09+00:00"
+    },
+    {
+      "dzen_id": "6aef173f8c4f2d1ca599743b",
+      "title": "NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота",
+      "dzen_url": "https://dzen.ru/a/au8XP4xPLRylmXQ7",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "NVIDIA 5 ноября подробно показала, как четыре специализированные модели Cosmos 3 Nano создают виртуальные сцены, реагирующие на действия роботов и управление автомобилями. Одна из них, Sim-Bimanual, получает изображение и команды для двух рук робота, а затем генерирует видео того, что произойдёт после движения. Робот может повернуть камеру, изменить положение манипулятора или захвата. Нейросеть создаёт следующие кадр",
+      "published_at_utc": "2026-11-08T06:03:13+00:00"
+    },
+    {
+      "dzen_id": "6aef16f385e02828a2d93ed0",
+      "title": "ИИ использовали при создании более 80% самых популярных игр Roblox",
+      "dzen_url": "https://dzen.ru/a/au8W84XgKCii2T7Q",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Разработчики более 80 из ста самых популярных игр Roblox использовали искусственный интеллект. Компания сообщила об этом 29 октября в отчёте за третий квартал 2026 года. Игры ранжировали по суммарному времени, проведённому в них пользователями, а применение ИИ оценивали за последний месяц. Нейросети помогают авторам писать код, создавать графику и трёхмерные объекты. В Roblox Studio есть встроенный ИИ-помощник, а чер",
+      "published_at_utc": "2026-11-08T05:03:19+00:00"
+    },
+    {
+      "dzen_id": "6aef16c762f9883e3871eb60",
+      "title": "Граймс появится в ИИ-фильме, который выйдет в кино 4 декабря",
+      "dzen_url": "https://dzen.ru/a/au8Wx2L5iD44cetg",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Певица Граймс присоединилась к научно-фантастическому фильму Gods Don’t Give Gifts, созданному с помощью ИИ. Она сама записала реплики и предоставила свою внешность для экранной героини. Об участии певицы создатели рассказали 5 ноября; выход в кинотеатрах США намечен на 4 декабря. Граймс играет аристократку из будущего, где сознание можно переносить между телами, а воспоминания становятся товаром. Фильм объединяет че",
+      "published_at_utc": "2026-11-08T04:03:29+00:00"
+    },
+    {
+      "dzen_id": "6aef166bd8cdce4b353a310e",
+      "title": "Глава Take-Two: GTA VI делают вручную, а ИИ уже экономит на рекламе",
+      "dzen_url": "https://dzen.ru/a/au8Wa9jNzks1OjEO",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Глава Take-Two Штраус Зельник 4 ноября на конференции WSJ Tech: California вновь назвал Grand Theft Auto ручной работой. Одновременно издатель экспериментирует с ИИ в сотнях проектов. Grand Theft Auto создаётся вручную. — Штраус Зельник, глава Take-Two; перевод с английского Один из конкретных примеров экономии оказался в рекламе мобильных игр. По словам Зельника, турецкая студия заказывала ролики с актёрами по $25–5",
+      "published_at_utc": "2026-11-08T03:01:02+00:00"
+    },
     {
       "dzen_id": "6aef14f28c4f2d1ca595b520",
       "title": "Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов",
