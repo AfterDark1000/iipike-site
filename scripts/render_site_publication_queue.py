@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
 
 from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git_blob_at
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
+from scripts.site_rich_text import markdown_to_blocks
 from scripts.site_publication_queue import (
     INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot
 )
@@ -94,8 +95,13 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
         elif not arts:
             status = "🖼️ Ждёт обложку"
         else:
+            if "article_markdown" in data:
+                try:
+                    markdown_to_blocks(data["article_markdown"])
+                except (ValueError, TypeError) as exc:
+                    block_reason = "Некорректное оформление текста: " + str(exc)
             related = data.get("related_dzen_ids", [])
-            if related or data.get("site_crosslinks"):
+            if not block_reason and (related or data.get("site_crosslinks")):
                 # Same crosslink validation as the scheduler, so its report
                 # cannot falsely call a publishable story blocked.
                 if verified_links is None:
@@ -107,7 +113,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 except ValueError as exc:
                     block_reason = str(exc)
             if block_reason:
-                status = "⛔ Заблокирована: связи с Дзеном"
+                status = "⛔ Заблокирована: проверка материала"
             else:
                 eligible = True
                 if scheduled and now < scheduled:
