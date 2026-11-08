@@ -6,7 +6,9 @@ on:
     paths:
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
+      - 'scripts/watchdog_queue.py'
       - 'tests/watchdog.test.js'
+      - 'tests/test_watchdog_queue.py'
   workflow_dispatch:
   schedule:
     - cron: '13 * * * *'
