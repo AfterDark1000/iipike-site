@@ -1,0 +1,96 @@
+name: HPII — comment drafts (MANUAL POSTING ONLY)
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/commenting_queue.py'
+      - 'data/commenting_sources.json'
+      - 'admin/commenting/**'
+      - '.github/workflows/commenting-queue.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/commenting_queue.py'
+      - 'data/commenting_sources.json'
+      - 'admin/commenting/**'
+      - 'admin/index.html'
+      - 'tests/test_commenting_queue.py'
+      - 'tests/commenting.test.cjs'
+      - '.github/workflows/commenting-queue.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-commenting-queue
+  cancel-in-progress: false
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests -p 'test_commenting_queue.py' -v
+      - run: python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
+      - run: node --test tests/commenting.test.cjs
+      - run: node --check admin/commenting/app.js
+  update-queue:
+    if: github.event_name != 'pull_request'
+    needs: offline-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Read previous queue without changing publication branches
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            try {
+              const {data} = await github.rest.repos.getContent({...context.repo,
+                path:'commenting/queue.json', ref:'commenting-data'});
+              if (data.encoding !== 'base64' || typeof data.content !== 'string') throw Error('Invalid queue file');
+              fs.writeFileSync('_commenting_previous.json', Buffer.from(data.content, 'base64'));
+            } catch (e) {
+              if (e.status !== 404) throw e;
+              fs.writeFileSync('_commenting_previous.json', '{}');
+            }
+      - name: Read public publisher feeds and prepare at most three drafts
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/commenting_queue.py --state _commenting_previous.json --output _commenting_queue.json
+      - name: Save only queue metadata and drafts to dedicated data branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const content = fs.readFileSync('_commenting_queue.json', 'utf8');
+            const queue = JSON.parse(content);
+            if (queue.schema_version !== 1 || !Array.isArray(queue.items)) throw Error('Invalid generated queue');
+            const ref = 'heads/commenting-data';
+            let head = null, base = null;
+            try {
+              head = (await github.rest.git.getRef({...context.repo, ref})).data.object.sha;
+              base = (await github.rest.git.getCommit({...context.repo, commit_sha:head})).data.tree.sha;
+            } catch (e) { if (e.status !== 404) throw e; }
+            const tree = await github.rest.git.createTree({...context.repo,
+              ...(base ? {base_tree:base} : {}),
+              tree:[{path:'commenting/queue.json',mode:'100644',type:'blob',content}]});
+            const commit = await github.rest.git.createCommit({...context.repo,
+              message:'commenting: refresh public feed observations and manual comment drafts',
+              tree:tree.data.sha, parents:head ? [head] : []});
+            if (head) await github.rest.git.updateRef({...context.repo,ref,sha:commit.data.sha,force:false});
+            else await github.rest.git.createRef({...context.repo,ref:'refs/'+ref,sha:commit.data.sha});
+            const errors = queue.sources.filter(s => s.status !== 'ok').length;
+            await core.summary.addHeading('Очередь комментариев').addRaw(
+              'Статей: '+queue.items.length+' · ошибок источников: '+errors+
+              ' · генерация: '+queue.generator.status+'\n\n'+
+              'Комментарии не отправлены. Очередь: https://iipike.ru/admin/commenting/').write();
+            if (errors) core.warning('Some publisher feeds could not be checked; see queue diagnostics.');
+            if (!['ok','idle','daily_limit'].includes(queue.generator.status)) core.warning(queue.generator.message);
