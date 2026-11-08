@@ -47,7 +47,10 @@ class YandexMetrikaTests(unittest.TestCase):
             # A tracker on these pages would count a duplicate pageview.
             if page in (ROOT / "dzen" / "index.html",
                         ROOT / "threads" / "index.html",
-                        ROOT / "x" / "index.html"):
+                        ROOT / "x" / "index.html",
+                        # The editorial utility is not reader content:
+                        # counting the owner's visits would pollute analytics.
+                        ROOT / "admin" / "index.html"):
                 continue
             html = page.read_text(encoding="utf-8")
             if "<html" not in html.lower():
