@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#f4f1e9">
+<title>Пульт публикаций — ХПИИ</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--ink:#202a33;--muted:#63727b;--line:#dbe0df;--bg:#f4f1e9;--paper:#fffefb;--accent:#147d73;--warm:#f0c86c;--danger:#a34539}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:#176d7d;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1130px;margin:auto;padding:0 22px}.mast{background:#15232b;color:#fff;padding:22px 0}.mast a{color:#d9f4ee}.eyebrow{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#a8c0be;font-weight:800}.mast h1{font-size:clamp(26px,4vw,40px);line-height:1.14;margin:7px 0}.mast p{margin:6px 0 0;color:#c6d2d1;font-size:14px}.mast .wrap{display:flex;justify-content:space-between;gap:18px;align-items:center}
+main{padding:23px 0 50px}.bar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.hint{font-size:13px;color:var(--muted)}.btn,button{font:inherit}button{background:#fff;color:var(--ink);border:1px solid #cbd5d4;border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:650;font-size:13px}button:hover{border-color:var(--accent);color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #e6a435;outline-offset:2px}.primary{background:var(--accent);border-color:var(--accent);color:#fff}.primary:hover{background:#0b5e57;color:#fff}.small{font-size:12px;padding:6px 10px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}.stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}.stat small{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:31px;font-variant-numeric:tabular-nums;line-height:1.3;margin-top:3px}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 16px #273a3320}.tabs{display:flex;gap:2px;flex-wrap:wrap;padding:12px 14px 0;border-bottom:1px solid var(--line)}.tab{border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;padding:13px 16px;margin-bottom:-1px;color:var(--muted)}.tab[aria-selected=true]{color:var(--accent);border-bottom-color:var(--accent)}.body{padding:22px}.body h2{font-size:22px;line-height:1.25;margin:0 0 7px}.body p{margin:5px 0 14px}.notice{background:#e6f5f0;border-left:3px solid var(--accent);padding:9px 12px;font-size:13px;color:#23584f;border-radius:5px;margin:12px 0}.warning{background:#fff4dd;border-left-color:#ca8728;color:#6f4c12}.error{background:#fff0ed;border-left-color:var(--danger);color:var(--danger)}.section-head{margin:22px 0 10px;font-weight:800;font-size:14px;color:#334852}.items{display:grid;gap:9px}.item{border:1px solid var(--line);border-radius:11px;padding:13px 15px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;background:#fff}.item h3{font-size:15px;line-height:1.35;margin:0 0 5px;overflow-wrap:anywhere}.item-meta{font-size:12px;color:var(--muted)}.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;justify-content:flex-end}.actions a{font-size:12px;white-space:nowrap;padding:6px 2px}.chip{display:inline-block;border-radius:5px;background:#e6f5f0;color:#175f54;font-weight:700;padding:2px 7px;font-size:11px;margin-left:6px}.chip.warn{background:#fff1da;color:#8b580b}.empty{color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:22px;text-align:center}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}.toolbar label{font-size:13px}.toolbar input[type=checkbox],.item input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}.toolbar .right{margin-left:auto}.foot{margin-top:20px;color:var(--muted);font-size:12px}.foot a{margin-right:12px}.hidden{display:none!important}.loading{padding:35px;text-align:center;color:var(--muted)}
+dialog{border:1px solid var(--line);border-radius:15px;padding:0;max-width:min(860px,95vw);width:100%;max-height:88vh;box-shadow:0 18px 90px #0006}dialog::backdrop{background:#0b1826aa}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;background:var(--paper);padding:18px 22px;border-bottom:1px solid var(--line)}.modal-head h2{font-size:19px;line-height:1.3;margin:0}.modal-controls{display:flex;gap:6px;flex-wrap:wrap}.article-body{padding:20px 26px;overflow:auto;max-height:66vh}.article-body h2{margin-top:24px}.article-body p{margin:12px 0}.article-body blockquote{border-left:3px solid var(--accent);padding-left:14px;color:#52636c}.article-body a{text-decoration:underline}.article-body li{margin:4px 0}
+@media(max-width:700px){.mast .wrap{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.item{grid-template-columns:1fr}.actions{justify-content:flex-start}.body{padding:15px}.tab{padding:11px 9px;font-size:12px}.modal-head{flex-direction:column}.article-body{padding:15px}}
+</style>
+</head>
+<body>
+<header class="mast"><div class="wrap">
+<div><div class="eyebrow">ХРОНИКИ ПИКИРУЮЩЕГО ИИ · РАБОЧИЙ ОБЗОР</div><h1>Очередь публикаций</h1><p>Реальные данные GitHub. Никаких карточек и ручного дублирования.</p></div>
+<a href="/" aria-label="На главную ХПИИ">← На сайт</a>
+</div></header>
+<main class="wrap">
+<div class="bar"><div class="hint" id="updated">Загрузка данных из GitHub…</div><button type="button" id="refresh">↻ Обновить</button></div>
+<div class="stats">
+<div class="stat"><small>В очереди сайта</small><strong id="kQueue">—</strong></div>
+<div class="stat"><small>Ждут обложку / блокировка</small><strong id="kProblem">—</strong></div>
+<div class="stat"><small>Выпущено из очереди</small><strong id="kDone">—</strong></div>
+<div class="stat"><small>В Дзене не подтверждены</small><strong id="kDzen">—</strong></div>
+</div>
+<section class="sheet">
+<div class="tabs" role="tablist" aria-label="Списки публикаций">
+<button class="tab" role="tab" aria-selected="true" data-tab="queue">Очередь сайта</button>
+<button class="tab" role="tab" aria-selected="false" data-tab="done">Уже на сайте</button>
+<button class="tab" role="tab" aria-selected="false" data-tab="dzen">Для Дзена</button>
+</div>
+<div class="body" id="panel" role="tabpanel" aria-live="polite"><div class="loading">Читаю актуальные журналы…</div></div>
+</section>
+<div class="foot">
+Это <strong>публичная страница по прямой ссылке</strong>, не защищённый кабинет. На GitHub Pages нет авторизации.
+Данные отчётов обновляются по расписанию и могут отставать от реального выпуска.
+<p><a href="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/QUEUE_STATUS.md" target="_blank" rel="noopener">Оригинал очереди сайта ↗</a>
+<a href="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/DZEN_QUEUE.md" target="_blank" rel="noopener">Оригинал очереди Дзена ↗</a>
+<a href="https://github.com/AfterDark1000/iipike-site/actions/workflows/site-first-scheduled-release.yml" target="_blank" rel="noopener">Работа планировщика ↗</a></p>
+</div>
+</main>
+<dialog id="editorDialog" aria-labelledby="articleHeading">
+<div class="modal-head"><div><div class="eyebrow" style="color:#59726c">ТЕКСТ ДЛЯ ДЗЕНА</div><h2 id="articleHeading"></h2></div>
+<div class="modal-controls"><button id="copyTitle" class="small">Копировать заголовок</button><button id="copyRich" class="small primary">Копировать текст с оформлением</button><button id="closeDialog" class="small">Закрыть ×</button></div></div>
+<div class="article-body" id="articlePreview"></div>
+</dialog>
+<script>
+(function(){
+"use strict";
+var ROOT="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/";
+var GIT="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/";
+var current="queue", data=null, selected=new Set(), activeStory=null;
+var panel=document.getElementById("panel"), dialog=document.getElementById("editorDialog");
+function el(tag,cls,txt){var e=document.createElement(tag); if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+function append(p,c){p.appendChild(c);return c}
+function notice(target,msg,type){var n=el("div","notice"+(type?" "+type:""),msg);target.appendChild(n);return n}
+function href(url){try{var u=new URL(url);return u.protocol==="https:" ? url : null}catch(_){return null}}
+function raw(url){if(!url)return null;return url.replace(/^https:\/\/github\.com\/AfterDark1000\/iipike-site\/blob\/editorial-intake\//,ROOT)}
+function linkFrom(s){var m=/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/.exec(s||"");return m?{title:unentity(m[1]),url:href(m[2])}:null}
+function unentity(s){var t=document.createElement("textarea");t.innerHTML=s||"";return t.value}
+function clean(s){return unentity(String(s||"").replace(/\*\*/g,"").replace(/<[^>]*>/g,"")).trim()}
+function section(md,from){var a=md.indexOf(from);if(a<0)return "";var b=md.indexOf("\n## ",a+from.length);return md.slice(a,b<0?undefined:b)}
+function tableRows(text,cols){return text.split(/\r?\n/).filter(function(line){return line.startsWith("|")&&!/^\|[-: |]+\|$/.test(line)}).map(function(line){return line.slice(1,-1).split("|").map(function(x){return x.trim()})}).filter(function(c){return c.length===cols&&!/^(№|Материал)/.test(c[0])&&c[0]!=="—"&&c[1]!=="Готовых к выбору материалов нет"&&c[0]!=="|"});}
+function siteRows(md,mode){var seg=mode==="queue"?section(md,"## Следующие выпуски"):mode==="attention"?section(md,"## Требуют внимания"):section(md,"## Уже опубликованы");
+var n=mode==="done"?3:mode==="attention"?4:5;
+return tableRows(seg,n).map(function(c){var i=mode==="queue"?1:0;var l=linkFrom(c[i]);if(!l)return null;return {title:l.title,url:l.url,status:mode==="queue"?clean(c[2]):mode==="attention"?clean(c[1]):"Опубликована",time:mode==="queue"?clean(c[3]):mode==="done"?clean(c[1]):"",reason:mode==="attention"?clean(c[2]):"",cover:linkFrom(c[n-1])?.url||null}}).filter(Boolean)}
+function dzenRows(md,num){var s=section(md,"## "+num+".");return tableRows(s,5).map(function(c){var l=linkFrom(c[1]);if(!l)return null;var other=linkFrom(c[3]);var cover=linkFrom(c[4]);var match=/\/dzen_texts\/([a-z0-9-]+)\.md/.exec(l.url||"");
+return {id:match?match[1]:"",title:l.title,md:l.url,time:clean(c[2]),other:other?.url||null,cover:cover?.url||null,dzen:num===3}}).filter(Boolean)}
+function stat(md,key){var m=new RegExp("\\*\\*"+key+":\\*\\*\\s*(\\d+)").exec(md);return m?Number(m[1]):0}
+function label(target,title){append(target,el("div","section-head",title))}
+function empty(target,text){append(target,el("div","empty",text))}
+function item(target,o,type){var row=append(target,el("article","item"));var info=append(row,el("div"));var heading=append(info,el("h3"));var title=href(o.url)||href(o.other);
+if(type==="dzen"){var check=el("input");check.type="checkbox";check.checked=selected.has(o.id);check.title="Включить обложку в ZIP";check.setAttribute("aria-label","Выбрать обложку: "+o.title);check.disabled=!o.cover;check.addEventListener("change",function(){if(check.checked)selected.add(o.id);else selected.delete(o.id)});heading.appendChild(check);heading.appendChild(document.createTextNode(" "))}
+if(title){var a=append(heading,el("a",null,o.title));a.href=title;a.target="_blank";a.rel="noopener"}else heading.appendChild(document.createTextNode(o.title));
+var meta=append(info,el("div","item-meta"));meta.textContent=(o.time||"")+(o.status?" · "+o.status:"")+(o.reason?" · "+o.reason:"");
+if(o.dzen){var ch=append(info,el("span","chip","В Дзене подтверждена"))}else if(type==="dzen"){append(info,el("span","chip warn","Публикация Дзена не подтверждена"))}
+var ops=append(row,el("div","actions"));
+function anchor(text,url){if(!href(url))return;var a=append(ops,el("a",null,text));a.href=url;a.target="_blank";a.rel="noopener"}
+if(type==="dzen"){var b=append(ops,el("button","small","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});if(o.cover){var down=append(ops,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.dzen){anchor("Дзен ↗",o.other)}else if(o.other){anchor("На сайте ↗",o.other)}}
+else{anchor(type==="done"?"Статья ↗":"В GitHub ↗",o.url);if(o.cover)anchor("Обложка ↗",o.cover)}
+return row}
+function render(){panel.replaceChildren();if(!data){empty(panel,"Нет данных. Попробуй обновить.");return}
+if(current==="queue"){append(panel,el("h2",null,"Следующие публикации"));append(panel,el("p","hint","Порядок и время взяты из реального планировщика сайта. Это прогноз, не обещание точной минуты."));var list=append(panel,el("div","items"));data.q.forEach(function(r){item(list,r,"queue")});if(!data.q.length)empty(list,"Очередь пуста — сейчас нет запланированных материалов.");label(panel,"Требуют внимания");var b=append(panel,el("div","items"));data.problem.forEach(function(r){item(b,r,"problem")});if(!data.problem.length)empty(b,"Не обнаружено проблемных материалов.");}
+if(current==="done"){append(panel,el("h2",null,"Последние выпуски на сайте"));append(panel,el("p","hint","Только новые материалы, прошедшие редакционную очередь. Исторический архив здесь не считается."));var l=append(panel,el("div","items"));data.done.forEach(function(r){item(l,r,"done")});if(!data.done.length)empty(l,"В журнале пока нет опубликованных материалов.");}
+if(current==="dzen"){append(panel,el("h2",null,"Подготовка для Дзена"));notice(panel,"«Не подтверждена» — не значит «не добавлена». Отложенные черновики Дзена недоступны автоматической сверке; проверь очередь Дзена перед переносом.","warning");
+var tools=append(panel,el("div","toolbar"));var all=append(tools,el("button","small","Выбрать все неподтверждённые обложки"));all.addEventListener("click",function(){data.dp.concat(data.di).forEach(function(r){if(r.cover)selected.add(r.id)});render()});var clear=append(tools,el("button","small","Снять выбор"));clear.addEventListener("click",function(){selected.clear();render()});var zip=append(tools,el("button","primary small","Скачать выбранные обложки ZIP"));zip.addEventListener("click",function(){downloadZip(zip)});label(panel,"На сайте · Дзен пока не подтверждён ("+data.dp.length+")");var p=append(panel,el("div","items"));data.dp.forEach(function(r){item(p,r,"dzen")});if(!data.dp.length)empty(p,"Все материалы сопоставлены с подтверждёнными публикациями Дзена.");label(panel,"Одобрены · ещё в очереди сайта ("+data.di.length+")");var i=append(panel,el("div","items"));data.di.forEach(function(r){item(i,r,"dzen")});if(!data.di.length)empty(i,"Нет материалов, ожидающих выпуска на сайте.");label(panel,"Подтверждены в Дзене ("+data.dd.length+")");var d=append(panel,el("div","items"));data.dd.forEach(function(r){item(d,r,"dzen")});if(!data.dd.length)empty(d,"Каталог Дзена пока не подтвердил публикации.")}
+}
+async function refresh(){var refreshButton=document.getElementById("refresh");refreshButton.disabled=true;document.getElementById("updated").textContent="Обновляю реальные данные…";try{
+var urls=[ROOT+"QUEUE_STATUS.md",ROOT+"DZEN_QUEUE.md"];
+var responses=await Promise.all(urls.map(function(url){return fetch(url+"?v="+Date.now(),{cache:"no-store"})}));
+if(responses.some(function(r){return !r.ok}))throw Error("GitHub не вернул один из журналов. HTTP "+responses.map(function(x){return x.status}).join("/"));
+var md=await Promise.all(responses.map(function(x){return x.text()}));
+if(!md[0].includes("## Следующие выпуски")||!md[1].includes("## 1."))throw Error("Формат журнала изменился: лучше сверить GitHub.");
+data={q:siteRows(md[0],"queue"),problem:siteRows(md[0],"attention"),done:siteRows(md[0],"done"),dp:dzenRows(md[1],1),di:dzenRows(md[1],2),dd:dzenRows(md[1],3)};
+document.getElementById("kQueue").textContent=data.q.length;document.getElementById("kProblem").textContent=data.problem.length;
+document.getElementById("kDone").textContent=data.done.length;document.getElementById("kDzen").textContent=data.dp.length+data.di.length;
+document.getElementById("updated").textContent="Прочитаны журналы GitHub · "+new Date().toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})+" · время загрузки, не выпуска";
+render()}catch(err){data=null;panel.replaceChildren();notice(panel,"Не удалось прочитать живые отчёты: "+err.message+". Ни один статус не подменяется демонстрацией.","error");document.getElementById("updated").textContent="Данные недоступны · проверь ссылки на журналы";["kQueue","kProblem","kDone","kDzen"].forEach(function(id){document.getElementById(id).textContent="—"})}finally{refreshButton.disabled=false}}
+function escapeHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function inlines(s){var escaped=escapeHtml(s);escaped=escaped.replace(/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g,function(_,label,url){return '<a href="'+url.replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'" target="_blank" rel="noopener">'+label+"</a>"});
+return escaped.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/(^|[^*])\*([^*]+)\*/g,"$1<em>$2</em>")}
+function blocks(s){var groups=s.replace(/\r\n/g,"\n").trim().split(/\n\s*\n/);return groups.map(function(p){var lines=p.split("\n"),first=lines[0];
+if(/^#{2,3} /.test(first)){var level=first.startsWith("### ")?"h3":"h2";return "<"+level+">"+inlines(first.replace(/^#{2,3} /,""))+"</"+level+">"+(lines.length>1?"<p>"+inlines(lines.slice(1).join(" "))+"</p>":"")}
+if(lines.every(function(x){return /^[-*] /.test(x)}))return "<ul>"+lines.map(function(x){return "<li>"+inlines(x.slice(2))+"</li>"}).join("")+"</ul>";
+if(lines.every(function(x){return /^\d+\. /.test(x)}))return "<ol>"+lines.map(function(x){return "<li>"+inlines(x.replace(/^\d+\. /,""))+"</li>"}).join("")+"</ol>";
+if(lines.every(function(x){return /^> ?/.test(x)}))return "<blockquote><p>"+inlines(lines.map(function(x){return x.replace(/^> ?/,"")}).join(" "))+"</p></blockquote>";
+return "<p>"+inlines(lines.join(" "))+"</p>"}).join("\n")}
+async function openText(o){var url=raw(o.md);if(!url){alert("Ссылка на исходный текст недоступна");return}
+try{var res=await fetch(url+"?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw Error("HTTP "+res.status);
+var txt=await res.text();var parts=/^# (.+)\r?\n\r?\n/.exec(txt);var title=parts?parts[1]:o.title;var body=parts?txt.slice(parts[0].length):txt;
+activeStory={title:title,markdown:body,html:blocks(body)};
+document.getElementById("articleHeading").textContent=title;document.getElementById("articlePreview").innerHTML=activeStory.html;dialog.showModal()}
+catch(e){alert("Не удалось получить исходный текст: "+e.message)}}
+async function copy(text,html){if(navigator.clipboard&&window.ClipboardItem&&html){await navigator.clipboard.write([new ClipboardItem({"text/html":new Blob([html],{type:"text/html"}),"text/plain":new Blob([text],{type:"text/plain"})})]);return}
+await navigator.clipboard.writeText(text)}
+document.getElementById("copyTitle").addEventListener("click",async function(){if(!activeStory)return;try{await copy(activeStory.title);this.textContent="Скопировано ✓"}catch(e){alert("Копирование не удалось: "+e.message)}});
+document.getElementById("copyRich").addEventListener("click",async function(){if(!activeStory)return;try{await copy(activeStory.markdown,activeStory.html);this.textContent="Скопировано ✓"}catch(e){alert("Не удалось скопировать: "+e.message)}});
+document.getElementById("closeDialog").addEventListener("click",function(){dialog.close()});
+dialog.addEventListener("close",function(){document.getElementById("copyTitle").textContent="Копировать заголовок";document.getElementById("copyRich").textContent="Копировать текст с оформлением"});
+function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000)}
+async function bytes(o){var url=raw(o.cover);if(!url)throw Error("Некорректная ссылка обложки: "+o.id);var res=await fetch(url+"?v="+Date.now());if(!res.ok)throw Error("Не загружена обложка "+o.id+" (HTTP "+res.status+")");return new Uint8Array(await res.arrayBuffer())}
+async function downloadCover(o){try{var b=await bytes(o);save(new Blob([b]),o.id+"."+o.cover.split(".").pop())}catch(e){alert(e.message)}}
+var crcTable=(function(){var t=[];for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc(bytes){var c=0xffffffff;for(var j=0;j<bytes.length;j++)c=(c>>>8)^crcTable[(c^bytes[j])&255];return(c^0xffffffff)>>>0}
+function packZip(files){var encoder=new TextEncoder(),local=[],central=[],offset=0;
+files.forEach(function(f){var name=encoder.encode(f.name),b=f.data,checksum=crc(b),size=b.length;
+var header=new Uint8Array(30+name.length),h=new DataView(header.buffer);
+h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0,true);h.setUint16(8,0,true);
+h.setUint32(14,checksum,true);h.setUint32(18,size,true);h.setUint32(22,size,true);h.setUint16(26,name.length,true);header.set(name,30);
+local.push(header,b);
+var dir=new Uint8Array(46+name.length),d=new DataView(dir.buffer);
+d.setUint32(0,0x02014b50,true);d.setUint16(4,20,true);d.setUint16(6,20,true);d.setUint16(8,0,true);d.setUint16(10,0,true);
+d.setUint32(16,checksum,true);d.setUint32(20,size,true);d.setUint32(24,size,true);d.setUint16(28,name.length,true);
+d.setUint32(42,offset,true);dir.set(name,46);central.push(dir);offset+=header.length+size});
+var dirSize=central.reduce(function(n,x){return n+x.length},0),end=new Uint8Array(22),e=new DataView(end.buffer);
+e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,dirSize,true);e.setUint32(16,offset,true);
+return new Blob(local.concat(central,[end]),{type:"application/zip"})}
+async function downloadZip(button){if(!data)return;var wanted=data.dp.concat(data.di,data.dd).filter(function(o){return selected.has(o.id)&&o.cover});
+if(!wanted.length){alert("Выбери обложки галочками");return}
+button.disabled=true;try{var files=[];for(var i=0;i<wanted.length;i++){button.textContent="Обложки "+(i+1)+"/"+wanted.length+"…";var o=wanted[i],b=await bytes(o);files.push({name:o.id+"."+o.cover.split(".").pop(),data:b})}save(packZip(files),"hpii-dzen-covers.zip");button.textContent="ZIP готов ✓"}
+catch(e){alert("Ошибка ZIP: "+e.message);button.textContent="Не удалось скачать ZIP"}
+finally{setTimeout(function(){button.textContent="Скачать выбранные обложки ZIP";button.disabled=false},1200)}}
+document.querySelectorAll("[data-tab]").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll("[data-tab]").forEach(function(t){t.setAttribute("aria-selected",String(t===b))});current=b.dataset.tab;render()})});
+document.getElementById("refresh").addEventListener("click",refresh);
+refresh();
+})();
+</script>
+</body>
+</html>
