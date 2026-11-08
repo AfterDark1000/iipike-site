@@ -3964,5 +3964,21 @@
     "topics": [
       "apps"
     ]
+  },
+  {
+    "title": "Grok начал вшивать невидимые метки в ответы через API",
+    "summary": "С 7 ноября 2026 года семь моделей Grok применяют невидимую статистическую маркировку текстовых ответов через API. Администраторы могут отключить её для некоторых моделей; обнаружение не гарантировано.",
+    "published": "2026-11-08",
+    "source_url": "https://docs.x.ai/developers/advanced-api-usage/watermarking",
+    "cover": "assets/editorial/grok-api-output-watermarking-20261107.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-08T03:30:42Z",
+    "event_date": "2026-11-07",
+    "id": "grok-api-output-watermarking-20261107",
+    "url": "articles/grok-api-output-watermarking-20261107/",
+    "topics": [
+      "models",
+      "safety"
+    ]
   }
 ]
