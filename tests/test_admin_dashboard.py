@@ -15,7 +15,7 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn("raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/", self.html)
         self.assertIn('QUEUE_STATUS.md', self.html)
         self.assertIn('DZEN_QUEUE.md', self.html)
-        self.assertIn("Дзен пока не подтверждён", self.html)
+        self.assertIn("Публикация Дзена не подтверждена", self.html)
 
     def test_read_only_and_not_indexed(self):
         self.assertIn('name="robots" content="noindex,nofollow,noarchive"', self.html)
