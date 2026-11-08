@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-08T07:30:23.247000Z",
+  "updated_at": "2026-11-08T07:34:02.273527Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:30:23.247000Z",
-      "last_success_at": "2026-11-08T07:30:23.247000Z",
+      "checked_at": "2026-11-08T07:34:02.273527Z",
+      "last_success_at": "2026-11-08T07:34:02.273527Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:30:23.247000Z",
-      "last_success_at": "2026-11-08T07:30:23.247000Z",
+      "checked_at": "2026-11-08T07:34:02.273527Z",
+      "last_success_at": "2026-11-08T07:34:02.273527Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:30:23.247000Z",
-      "last_success_at": "2026-11-08T07:30:23.247000Z",
+      "checked_at": "2026-11-08T07:34:02.273527Z",
+      "last_success_at": "2026-11-08T07:34:02.273527Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,23 +42,42 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:30:23.247000Z",
-      "last_success_at": "2026-11-08T07:30:23.247000Z",
+      "checked_at": "2026-11-08T07:34:02.273527Z",
+      "last_success_at": "2026-11-08T07:34:02.273527Z",
       "error": null,
-      "fresh_matches": 0
+      "fresh_matches": 1
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Комментарий не прошёл проверку длины, опоры на текст или саморекламы"
   },
   "usage": {
     "date": "2026-11-08",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "190a00c11eb6719f37053b6e",
+      "title": "«Ценовая паранойя»: как ИИ подкручивает ценники под конкретного покупателя",
+      "source_id": "mk",
+      "source_name": "МК",
+      "source_url": "https://www.mk.ru/economics/2026/11/08/cenovaya-paranoyya-kak-ii-podkruchivaet-cenniki-pod-konkretnogo-pokupatelya.html",
+      "published_at": "2026-11-08T07:18:34Z",
+      "channel_url": "https://dzen.ru/mk.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-08T07:34:02.273527Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-08T07:34:02.273527Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "f30783f45d54f586aa14a95d",
       "title": "Обвал цен на акции технологических компаний ставит под угрозу IPO Anthropic",
@@ -137,12 +156,13 @@
       "first_seen_at": "2026-11-08T07:27:27.730471Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
+      "attempts": 1,
       "link_status": "dzen_link_missing",
-      "reason": "Повторная подготовка после усиления проверки фактов",
-      "generated_at": "2026-11-08T07:30:23.247000Z"
+      "reason": "Не удалось подготовить комментарий",
+      "generated_at": "2026-11-08T07:30:23.247000Z",
+      "last_attempt_at": "2026-11-08T07:34:02.273527Z"
     },
     {
       "id": "8c9163c203aaa1fa81b07ee2",
@@ -156,12 +176,13 @@
       "first_seen_at": "2026-11-08T07:27:27.730471Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
+      "attempts": 1,
       "link_status": "dzen_link_missing",
-      "reason": "Повторная подготовка после усиления проверки фактов",
-      "generated_at": "2026-11-08T07:30:23.247000Z"
+      "reason": "Не удалось подготовить комментарий",
+      "generated_at": "2026-11-08T07:30:23.247000Z",
+      "last_attempt_at": "2026-11-08T07:34:02.273527Z"
     },
     {
       "id": "55c269b831947708b0a5b8ac",
