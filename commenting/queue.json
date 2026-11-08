@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-08T14:30:08.119160Z",
+  "updated_at": "2026-11-08T19:05:43.725759Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T14:30:08.119160Z",
-      "last_success_at": "2026-11-08T14:30:08.119160Z",
+      "checked_at": "2026-11-08T19:05:43.725759Z",
+      "last_success_at": "2026-11-08T19:05:43.725759Z",
       "error": null,
-      "fresh_matches": 10
+      "fresh_matches": 8
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T14:30:08.119160Z",
-      "last_success_at": "2026-11-08T14:30:08.119160Z",
+      "checked_at": "2026-11-08T19:05:43.725759Z",
+      "last_success_at": "2026-11-08T19:05:43.725759Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 3
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T14:30:08.119160Z",
-      "last_success_at": "2026-11-08T14:30:08.119160Z",
+      "checked_at": "2026-11-08T19:05:43.725759Z",
+      "last_success_at": "2026-11-08T19:05:43.725759Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T14:30:08.119160Z",
-      "last_success_at": "2026-11-08T14:30:08.119160Z",
+      "checked_at": "2026-11-08T19:05:43.725759Z",
+      "last_success_at": "2026-11-08T19:05:43.725759Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -54,11 +54,53 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-08",
-    "attempted": 15
+    "date": "2026-11-09",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "be542428855c9b5507be4693",
+      "title": "Роботов с ИИ оказалось легко обмануть: искажённая картинка заставляет их легко выполнять опасные команды",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151021",
+      "published_at": "2026-11-08T17:05:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-08T19:05:43.725759Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-08T19:05:43.725759Z",
+      "reason": "Не прошёл проверку: В статье сказано, что при размытии изображений модели соглашались на опасные действия в 263 из 300 случаев (88%), а утверждение про «абсолютный дзен» и «крушить",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-08T19:05:43.725759Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "e6107240dd8746fefa2204a2",
+      "title": "ИИ-агенты подключились к поиску внеземного разума: SETI автоматизирует работу радиотелескопа",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/08/ii-agenty-podkliucilis-k-poisku-vnezemnogo-razuma-seti-avtomatiziruet-rabotu-radioteleskopa.html",
+      "published_at": "2026-11-08T16:37:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-08T19:05:43.725759Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-08T19:05:43.725759Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-08T19:05:43.725759Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "35f45f05f3e32ca43d126690",
       "title": "Apple ввела строгие лимиты на использование ИИ-инструментов для инженеров: ежедневный бюджет сокращён вдвое на фоне роста затрат на технологии",
@@ -71,10 +113,14 @@
       "first_seen_at": "2026-11-08T14:30:08.119160Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Снижение лимита на ИИ-инструменты для инженеров Apple с $300 до $200 выглядит прагматично. Если разработку можно вести на более дешёвых моделях, зачем же сразу забивать бюджет облачными API.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-08T19:05:43.725759Z",
+      "reason": "Экономия на токенах для разработчиков внутри гиганта показывает реальную стоимость инфраструктурных аппетитов.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-08T19:05:43.725759Z"
     },
     {
       "id": "83502fe63f1f753d78b8ad44",
