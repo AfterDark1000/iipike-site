@@ -3,6 +3,7 @@ import datetime as dt
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 from scripts import commenting_queue as cq
 
 NOW = dt.datetime(2026, 11, 8, 7, tzinfo=dt.timezone.utc)
@@ -134,6 +135,33 @@ class QueueTests(unittest.TestCase):
     def test_model_may_skip_uninteresting_article(self):
         result = cq.validate_comments({"comments": [{"id": "x", "use": False, "comment": "", "reason": "Нет содержательного захода"}]}, [{"id": "x", "article_text": BODY}])
         self.assertEqual(result["x"]["status"], "skipped_by_editor")
+
+    def test_fact_review_discards_wrong_claim_without_publishing_it(self):
+        candidates = [{"id": "x", "article_text": BODY}]
+        proposed = model(candidates, "x")
+        reviewed = cq.apply_review(proposed, {"checks": [{"id": "x", "ok": False, "reason": "Перепутана цель раунда и первый транш"}]})
+        result = cq.validate_comments(reviewed, candidates)
+        self.assertEqual(result["x"]["comment"], "")
+        self.assertEqual(result["x"]["fact_review"], "rejected")
+        self.assertNotEqual(result["x"]["status"], "draft_ready")
+
+    def test_incomplete_or_misidentified_fact_review_is_rejected(self):
+        for review in [{"checks": []}, {"checks": [{"id": "y", "ok": True}]},
+                       {"checks": [{"id": "x", "ok": "true"}]}]:
+            with self.assertRaises(ValueError): cq.apply_review(model([{"id": "x"}], "x"), review)
+
+    def test_production_model_always_runs_independent_review(self):
+        candidates = [{"id": "x", "article_text": BODY}]
+        with patch.object(cq, "model_request", side_effect=[model(candidates, "x"),
+                          {"checks": [{"id": "x", "ok": True, "reason": "Факты совпадают"}]}]) as request:
+            response = cq.ask_model(candidates, "test-placeholder")
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(response["comments"][0]["fact_review"], "passed")
+
+    def test_failed_reviewer_never_falls_back_to_unreviewed_draft(self):
+        candidates = [{"id": "x", "article_text": BODY}]
+        with patch.object(cq, "model_request", side_effect=[model(candidates, "x"), RuntimeError("HTTP 429")]):
+            with self.assertRaises(RuntimeError): cq.ask_model(candidates, "test-placeholder")
 
     def test_missing_key_no_paid_fallback_and_no_fake_ready_comment(self):
         def no_call(*args): self.fail("Model must not be called")
