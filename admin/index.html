@@ -40,7 +40,7 @@ dialog{border:1px solid var(--line);border-radius:15px;padding:0;max-width:min(8
 </section>
 <div class="foot">
 Это <strong>публичная страница по прямой ссылке</strong>, не защищённый кабинет. На GitHub Pages нет авторизации.
-Данные отчётов обновляются по расписанию и могут отставать от реального выпуска.
+Отметки для Дзена сохраняются только в текущем браузере; журналы обновляются по расписанию и могут отставать от реального выпуска.
 <p><a href="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/QUEUE_STATUS.md" target="_blank" rel="noopener">Оригинал очереди сайта ↗</a>
 <a href="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/DZEN_QUEUE.md" target="_blank" rel="noopener">Оригинал очереди Дзена ↗</a>
 <a href="https://github.com/AfterDark1000/iipike-site/actions/workflows/site-first-scheduled-release.yml" target="_blank" rel="noopener">Работа планировщика ↗</a></p>
@@ -58,11 +58,23 @@ var ROOT="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-
 var GIT="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/";
 var current="queue", data=null, selected=new Set(), activeStory=null;
 var panel=document.getElementById("panel"), dialog=document.getElementById("editorDialog");
+var MARKS_KEY="hpii:dzen-local-status:v1", marksUnavailable=false, marks=readMarks();
+function readMarks(){try{var v=JSON.parse(localStorage.getItem(MARKS_KEY)||"{}");if(!v||typeof v!=="object"||Array.isArray(v))return {};var good={};Object.keys(v).slice(0,2000).forEach(function(k){if(/^[a-z0-9-]{1,72}$/.test(k)&&["scheduled","published_manual"].includes(v[k]))good[k]=v[k]});return good}catch(_){marksUnavailable=true;return {}}}
+function setMark(id,value){if(!/^[a-z0-9-]{1,72}$/.test(id))return;var next=Object.assign({},marks);if(value)next[id]=value;else delete next[id];
+try{localStorage.setItem(MARKS_KEY,JSON.stringify(next));marks=next;selected.delete(id);render()}catch(e){marksUnavailable=true;alert("Не удалось сохранить отметку в браузере. Проверь разрешения сайта: "+e.message)}}
+function counts(){if(!data)return;document.getElementById("kDzen").textContent=data.dp.concat(data.di).filter(function(o){return !marks[o.id]}).length}
+function normalizeTitle(s){return String(s||"").normalize("NFKC").toLocaleLowerCase("ru-RU").replace(/\s+/g," ").trim()}
+function reconcileDzenCatalog(cat){if(!cat||!Array.isArray(cat.entries))return 0;var matches=new Map();
+cat.entries.forEach(function(e){if(e.status!=="published_observed_in_feed"||!/^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]+$/.test(e.dzen_url||"")||!e.title||!e.published_at_utc)return;var t=normalizeTitle(e.title);if(!matches.has(t))matches.set(t,[]);matches.get(t).push(e)});
+var moved=0;
+function reconcile(rows){return rows.filter(function(o){var m=matches.get(normalizeTitle(o.title))||[];if(m.length!==1)return true;var e=m[0];var date=/^(\d{2})\.(\d{2})\.(\d{4}),?\s+(\d{2}):(\d{2})/.exec(o.time||"");if(date){var siteTime=Date.UTC(+date[3],+date[2]-1,+date[1],+date[4]-5,+date[5]);var dzenTime=Date.parse(e.published_at_utc);if(!Number.isFinite(dzenTime)||dzenTime+600000<siteTime)return true}
+o.dzen=true;o.other=e.dzen_url;o.time=new Date(e.published_at_utc).toLocaleString("ru-RU",{timeZone:"Asia/Yekaterinburg",day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});data.dd.unshift(o);moved++;return false})}
+data.dp=reconcile(data.dp);data.di=reconcile(data.di);return moved}
 function el(tag,cls,txt){var e=document.createElement(tag); if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
 function append(p,c){p.appendChild(c);return c}
 function notice(target,msg,type){var n=el("div","notice"+(type?" "+type:""),msg);target.appendChild(n);return n}
 function href(url){try{var u=new URL(url);return u.protocol==="https:" ? url : null}catch(_){return null}}
-function raw(url){if(!url)return null;return url.replace(/^https:\/\/github\.com\/AfterDark1000\/iipike-site\/blob\/editorial-intake\//,ROOT)}
+function raw(url){if(!url)return null;return url.replace("https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/","https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/")}
 function linkFrom(s){var m=/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/.exec(s||"");return m?{title:unentity(m[1]),url:href(m[2])}:null}
 function unentity(s){var t=document.createElement("textarea");t.innerHTML=s||"";return t.value}
 function clean(s){return unentity(String(s||"").replace(/\*\*/g,"").replace(/<[^>]*>/g,"")).trim()}
@@ -80,17 +92,30 @@ function item(target,o,type){var row=append(target,el("article","item"));var inf
 if(type==="dzen"){var check=el("input");check.type="checkbox";check.checked=selected.has(o.id);check.title="Включить обложку в ZIP";check.setAttribute("aria-label","Выбрать обложку: "+o.title);check.disabled=!o.cover;check.addEventListener("change",function(){if(check.checked)selected.add(o.id);else selected.delete(o.id)});heading.appendChild(check);heading.appendChild(document.createTextNode(" "))}
 if(title){var a=append(heading,el("a",null,o.title));a.href=title;a.target="_blank";a.rel="noopener"}else heading.appendChild(document.createTextNode(o.title));
 var meta=append(info,el("div","item-meta"));meta.textContent=(o.time||"")+(o.status?" · "+o.status:"")+(o.reason?" · "+o.reason:"");
-if(o.dzen){var ch=append(info,el("span","chip","В Дзене подтверждена"))}else if(type==="dzen"){append(info,el("span","chip warn","Публикация Дзена не подтверждена"))}
+if(o.dzen){append(info,el("span","chip","В Дзене подтверждена"))}else if(type==="dzen"){
+var state=marks[o.id];append(info,el("span","chip "+(state?"":"warn"),state==="scheduled"?"В отложенных — отмечено вручную":state==="published_manual"?"Опубликована — отмечено вручную":"Публикация Дзена не подтверждена"))}
 var ops=append(row,el("div","actions"));
 function anchor(text,url){if(!href(url))return;var a=append(ops,el("a",null,text));a.href=url;a.target="_blank";a.rel="noopener"}
-if(type==="dzen"){var b=append(ops,el("button","small","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});if(o.cover){var down=append(ops,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.dzen){anchor("Дзен ↗",o.other)}else if(o.other){anchor("На сайте ↗",o.other)}}
+if(type==="dzen"){if(!o.dzen){if(marks[o.id]){var revert=append(ops,el("button","small","Вернуть в список"));revert.addEventListener("click",function(){setMark(o.id,null)})}else{
+var schedule=append(ops,el("button","small","В отложенных"));schedule.addEventListener("click",function(){setMark(o.id,"scheduled")});
+var manual=append(ops,el("button","small","Уже опубликована"));manual.addEventListener("click",function(){setMark(o.id,"published_manual")})}}
+var b=append(ops,el("button","small","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});if(o.cover){var down=append(ops,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.dzen){anchor("Дзен ↗",o.other)}else if(o.other){anchor("На сайте ↗",o.other)}}
 else{anchor(type==="done"?"Статья ↗":"В GitHub ↗",o.url);if(o.cover)anchor("Обложка ↗",o.cover)}
 return row}
 function render(){panel.replaceChildren();if(!data){empty(panel,"Нет данных. Попробуй обновить.");return}
 if(current==="queue"){append(panel,el("h2",null,"Следующие публикации"));append(panel,el("p","hint","Порядок и время взяты из реального планировщика сайта. Это прогноз, не обещание точной минуты."));var list=append(panel,el("div","items"));data.q.forEach(function(r){item(list,r,"queue")});if(!data.q.length)empty(list,"Очередь пуста — сейчас нет запланированных материалов.");label(panel,"Требуют внимания");var b=append(panel,el("div","items"));data.problem.forEach(function(r){item(b,r,"problem")});if(!data.problem.length)empty(b,"Не обнаружено проблемных материалов.");}
 if(current==="done"){append(panel,el("h2",null,"Последние выпуски на сайте"));append(panel,el("p","hint","Только новые материалы, прошедшие редакционную очередь. Исторический архив здесь не считается."));var l=append(panel,el("div","items"));data.done.forEach(function(r){item(l,r,"done")});if(!data.done.length)empty(l,"В журнале пока нет опубликованных материалов.");}
-if(current==="dzen"){append(panel,el("h2",null,"Подготовка для Дзена"));notice(panel,"«Не подтверждена» — не значит «не добавлена». Отложенные черновики Дзена недоступны автоматической сверке; проверь очередь Дзена перед переносом.","warning");
-var tools=append(panel,el("div","toolbar"));var all=append(tools,el("button","small","Выбрать все неподтверждённые обложки"));all.addEventListener("click",function(){data.dp.concat(data.di).forEach(function(r){if(r.cover)selected.add(r.id)});render()});var clear=append(tools,el("button","small","Снять выбор"));clear.addEventListener("click",function(){selected.clear();render()});var zip=append(tools,el("button","primary small","Скачать выбранные обложки ZIP"));zip.addEventListener("click",function(){downloadZip(zip)});label(panel,"На сайте · Дзен пока не подтверждён ("+data.dp.length+")");var p=append(panel,el("div","items"));data.dp.forEach(function(r){item(p,r,"dzen")});if(!data.dp.length)empty(p,"Все материалы сопоставлены с подтверждёнными публикациями Дзена.");label(panel,"Одобрены · ещё в очереди сайта ("+data.di.length+")");var i=append(panel,el("div","items"));data.di.forEach(function(r){item(i,r,"dzen")});if(!data.di.length)empty(i,"Нет материалов, ожидающих выпуска на сайте.");label(panel,"Подтверждены в Дзене ("+data.dd.length+")");var d=append(panel,el("div","items"));data.dd.forEach(function(r){item(d,r,"dzen")});if(!data.dd.length)empty(d,"Каталог Дзена пока не подтвердил публикации.")}
+if(current==="dzen"){append(panel,el("h2",null,"Подготовка для Дзена"));notice(panel,"Автоматически видны опубликованные статьи, но не черновики Дзена. Отметки «В отложенных» и «Уже опубликована» сохраняются только в этом браузере и не меняют GitHub, Дзен или другие устройства.","warning");if(marksUnavailable)notice(panel,"Браузер не разрешает сохранять отметки. Статусы не будут запоминаться!","error");
+var pendingSite=data.dp.filter(function(o){return !marks[o.id]});
+var pendingInbox=data.di.filter(function(o){return !marks[o.id]});
+var scheduled=data.dp.concat(data.di).filter(function(o){return marks[o.id]==="scheduled"});
+var manualDone=data.dp.concat(data.di).filter(function(o){return marks[o.id]==="published_manual"});
+var tools=append(panel,el("div","toolbar"));var all=append(tools,el("button","small","Выбрать все неподтверждённые обложки"));all.addEventListener("click",function(){pendingSite.concat(pendingInbox).forEach(function(r){if(r.cover)selected.add(r.id)});render()});var clear=append(tools,el("button","small","Снять выбор"));clear.addEventListener("click",function(){selected.clear();render()});var zip=append(tools,el("button","primary small","Скачать выбранные обложки ZIP"));zip.addEventListener("click",function(){downloadZip(zip)});label(panel,"На сайте · ещё требуют внимания ("+pendingSite.length+")");var p=append(panel,el("div","items"));pendingSite.forEach(function(r){item(p,r,"dzen")});if(!pendingSite.length)empty(p,"Нет статей для ручного переноса из выпущенных на сайте.");
+label(panel,"Одобрены · ещё в очереди сайта ("+pendingInbox.length+")");var i=append(panel,el("div","items"));pendingInbox.forEach(function(r){item(i,r,"dzen")});if(!pendingInbox.length)empty(i,"Нет материалов, ожидающих выпуска на сайте.");
+label(panel,"Уже в отложенных Дзена · твои отметки ("+scheduled.length+")");var sch=append(panel,el("div","items"));scheduled.forEach(function(r){item(sch,r,"dzen")});if(!scheduled.length)empty(sch,"Здесь появятся статьи после нажатия «В отложенных».");
+label(panel,"Уже опубликованы · твои отметки ("+manualDone.length+")");var man=append(panel,el("div","items"));manualDone.forEach(function(r){item(man,r,"dzen")});if(!manualDone.length)empty(man,"Здесь появятся материалы, которые ты отметил как опубликованные.");
+label(panel,"Автоматически подтверждены в Дзене ("+data.dd.length+")");var d=append(panel,el("div","items"));data.dd.forEach(function(r){item(d,r,"dzen")});if(!data.dd.length)empty(d,"Каталог Дзена пока не подтвердил публикации.")}
+counts()
 }
 async function refresh(){var refreshButton=document.getElementById("refresh");refreshButton.disabled=true;document.getElementById("updated").textContent="Обновляю реальные данные…";try{
 var urls=[ROOT+"QUEUE_STATUS.md",ROOT+"DZEN_QUEUE.md"];
@@ -100,7 +125,8 @@ var md=await Promise.all(responses.map(function(x){return x.text()}));
 if(!md[0].includes("## Следующие выпуски")||!md[1].includes("## 1."))throw Error("Формат журнала изменился: лучше сверить GitHub.");
 data={q:siteRows(md[0],"queue"),problem:siteRows(md[0],"attention"),done:siteRows(md[0],"done"),dp:dzenRows(md[1],1),di:dzenRows(md[1],2),dd:dzenRows(md[1],3)};
 document.getElementById("kQueue").textContent=data.q.length;document.getElementById("kProblem").textContent=data.problem.length;
-document.getElementById("kDone").textContent=data.done.length;document.getElementById("kDzen").textContent=data.dp.length+data.di.length;
+document.getElementById("kDone").textContent=data.done.length;
+try{var catResult=await fetch("https://raw.githubusercontent.com/AfterDark1000/dzen-telegram-crosspost/main/editorial_full_catalog.json?v="+Date.now(),{cache:"no-store"});if(catResult.ok)reconcileDzenCatalog(await catResult.json())}catch(_){/* The GitHub queue is still usable when the catalog cannot be reached. */}
 document.getElementById("updated").textContent="Прочитаны журналы GitHub · "+new Date().toLocaleTimeString("ru-RU",{hour:"2-digit",minute:"2-digit"})+" · время загрузки, не выпуска";
 render()}catch(err){data=null;panel.replaceChildren();notice(panel,"Не удалось прочитать живые отчёты: "+err.message+". Ни один статус не подменяется демонстрацией.","error");document.getElementById("updated").textContent="Данные недоступны · проверь ссылки на журналы";["kQueue","kProblem","kDone","kDzen"].forEach(function(id){document.getElementById(id).textContent="—"})}finally{refreshButton.disabled=false}}
 function escapeHtml(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}

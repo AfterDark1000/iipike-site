@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from scripts.site_publication_queue import (
     INTERVAL, latest_site_first_publication, parse_slot, ready_items,
-    select_one, main,
+    select_one, main, _last_change,
 )
 
 UTC = dt.timezone.utc
@@ -22,6 +22,46 @@ def item(sid, hour, *, slot=None):
 
 
 class PublicationQueueTests(unittest.TestCase):
+    def test_queue_position_survives_a_technical_correction(self):
+        """Original arrival time, not a later Markdown/cover fix, determines order."""
+        original = "2026-11-05T04:00:00+00:00"
+        corrected = "2026-11-05T08:40:00+00:00"
+
+        def fake_git(*args):
+            if "--diff-filter=A" in args:
+                return SimpleNamespace(stdout=original + "\n")
+            return SimpleNamespace(stdout=corrected + "\n")
+
+        with patch("scripts.site_publication_queue.git", side_effect=fake_git):
+            self.assertEqual(_last_change("origin/editorial-intake", "editorial_inbox/stories/old.json"),
+                             dt.datetime(2026, 11, 5, 4, tzinfo=UTC))
+
+    def test_malformed_markdown_does_not_block_other_ready_stories(self):
+        tree = "\n".join([
+            "editorial_inbox/stories/bad.json", "editorial_inbox/covers/bad.webp",
+            "editorial_inbox/stories/good.json", "editorial_inbox/covers/good.webp",
+        ])
+        malformed = "Вступление для теста. " * 30 + "\n\n>Неверная цитата"
+        def fake_source(ref, path):
+            sid = Path(path).stem
+            result = {"id": sid, "status": "editor_approved",
+                      "approved_by": "human_editor"}
+            if sid == "bad":
+                result["article_markdown"] = malformed
+            return json.dumps(result)
+
+        with patch("scripts.site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=tree)), \
+             patch("scripts.site_publication_queue.exists_at", return_value=False), \
+             patch("scripts.site_publication_queue.safe_git_blob_at", side_effect=fake_source), \
+             patch("scripts.site_publication_queue._last_change",
+                   return_value=NOW - dt.timedelta(hours=2)), \
+             patch("builtins.print") as log:
+            found = ready_items()
+        self.assertEqual([row["id"] for row in found], ["good"])
+        self.assertTrue(any(c.args and c.args[0] == "BLOCKED_INVALID_MARKDOWN:"
+                            for c in log.call_args_list))
+
     def test_strict_yekaterinburg_schedule(self):
         at = parse_slot("2026-11-06T11:00:00+05:00")
         self.assertEqual(at, dt.datetime(2026, 11, 6, 6, tzinfo=UTC))

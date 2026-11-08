@@ -15,7 +15,7 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn("raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/", self.html)
         self.assertIn('QUEUE_STATUS.md', self.html)
         self.assertIn('DZEN_QUEUE.md', self.html)
-        self.assertIn("Дзен пока не подтверждён", self.html)
+        self.assertIn("Публикация Дзена не подтверждена", self.html)
 
     def test_read_only_and_not_indexed(self):
         self.assertIn('name="robots" content="noindex,nofollow,noarchive"', self.html)
@@ -24,11 +24,19 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertNotIn("api.github.com/repos/", self.html)
         self.assertNotIn('method="post"', self.html.lower())
         self.assertNotIn('method:"POST"', self.html)
-        self.assertNotIn("localStorage", self.html)
+        self.assertIn("localStorage.setItem(MARKS_KEY", self.html)
+        self.assertIn("Отметки для Дзена сохраняются только в текущем браузере", self.html)
+        self.assertIn("https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/", self.html)
+        self.assertNotIn('url.replace(/^https:', self.html)
 
     def test_existing_release_files_untouched(self):
         self.assertTrue((ROOT / ".github/workflows/site-first-scheduled-release.yml").is_file())
         self.assertTrue((ROOT / ".github/workflows/dzen-reading-queue.yml").is_file())
+
+    def test_dzen_mark_controls_and_live_catalog(self):
+        for phrase in ("В отложенных", "Уже опубликована", "Вернуть в список",
+                       "published_observed_in_feed", "reconcileDzenCatalog"):
+            self.assertIn(phrase, self.html)
 
     def test_dzen_tools_present(self):
         for label in ("Копировать заголовок", "Копировать текст с оформлением", "Скачать выбранные обложки ZIP"):

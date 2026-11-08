@@ -24,6 +24,7 @@ from scripts.site_first_release_pr import (
     exists_at, git, release_one, safe_git_blob_at,
 )
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
+from scripts.site_rich_text import markdown_to_blocks
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
@@ -50,10 +51,22 @@ def _utc(value):
 
 
 def _last_change(ref, path):
-    result = git("log", "-1", "--format=%cI", ref, "--", path).stdout.strip()
-    if not result:
-        raise ValueError("Could not determine last commit of " + path)
-    return _utc(result)
+    """Stable first arrival of an editorial component, not its last correction.
+
+    Once a story and its cover entered the queue, technical fixes must not
+    silently move the article behind newer material. Kept as _last_change
+    for compatibility with existing queue-order tests and imports.
+    """
+    history = git("log", "--diff-filter=A", "--reverse",
+                  "--format=%cI", ref, "--", path).stdout.strip()
+    if history:
+        return _utc(history.splitlines()[0])
+    # Defensive fallback for unusual histories where the file addition has
+    # been squashed away; fail closed if there is no history at all.
+    last = git("log", "-1", "--format=%cI", ref, "--", path).stdout.strip()
+    if not last:
+        raise ValueError("Could not determine first arrival of " + path)
+    return _utc(last)
 
 
 def latest_site_first_publication(rows, *, main_ref=MAIN_REF):
@@ -107,6 +120,15 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
                 story.get("status") != "editor_approved" or
                 story.get("approved_by") != "human_editor"):
             raise ValueError("Unapproved or inconsistent pending story: " + sid)
+        # A malformed approved Markdown article must not repeatedly block
+        # every other ready story at each scheduled run. The full publisher
+        # still revalidates the selected article before any publication.
+        if "article_markdown" in story:
+            try:
+                markdown_to_blocks(story["article_markdown"])
+            except (ValueError, TypeError) as exc:
+                print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
+                continue
         # Do not let one stale optional Dzen crosslink stop the entire queue.
         # This is only a scheduling filter, NOT a waiver of publication checks:
         # the approved publisher still validates every related reference.

@@ -88,7 +88,14 @@ class SiteFirstCrosslinkTests(unittest.TestCase):
             if path == "news.json":
                 return json.dumps([RECORD])
             if path.endswith(".json"):
-                return json.dumps(editorial(), ensure_ascii=False)
+                story = editorial()
+                # In this scheduler test the source must pass the real
+                # 400-character Markdown preflight; other cases test links only.
+                story["article_markdown"] = (
+                    "Подробное вступление об ИИ и безопасности. " * 10
+                    + "\n\n" + SOURCE
+                )
+                return json.dumps(story, ensure_ascii=False)
             raise AssertionError(path)
         ready_at = dt.datetime(2026, 11, 6, 9, 0, tzinfo=dt.timezone.utc)
         with patch("scripts.site_publication_queue.git",
