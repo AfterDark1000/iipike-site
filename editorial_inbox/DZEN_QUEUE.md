@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 34 · **В каталоге Дзена подтверждены:** 21 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 34 · **В каталоге Дзена подтверждены:** 21 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и точным утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.
 
@@ -26,6 +26,7 @@
 | 10 | [Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-hacktron-security-partnership-20261106.md) | 07.11.2026, 23:30 | [На сайте](https://iipike.ru/articles/openai-hacktron-security-partnership-20261106/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-hacktron-security-partnership-20261106.webp) |
 | 11 | [Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai-ceo-lawyer-impersonation-fraud-129m-20261105.md) | 08.11.2026, 00:30 | [На сайте](https://iipike.ru/articles/ai-ceo-lawyer-impersonation-fraud-129m-20261105/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ceo-lawyer-impersonation-fraud-129m-20261105.webp) |
 | 12 | [Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/musk-baron-robots-orbital-ai-20261106.md) | 08.11.2026, 01:45 | [На сайте](https://iipike.ru/articles/musk-baron-robots-orbital-ai-20261106/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/musk-baron-robots-orbital-ai-20261106.webp) |
+| 13 | [ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-chatgpt-codex-shared-limits-20261107.md) | 08.11.2026, 03:00 | [На сайте](https://iipike.ru/articles/openai-chatgpt-codex-shared-limits-20261107/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-codex-shared-limits-20261107.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -33,7 +34,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-chatgpt-codex-shared-limits-20261107.md) | **Не ранее 08.11.2026 02:52 (Усть-Катав)**; пауза до 08.11.2026 02:45 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-codex-shared-limits-20261107.webp) |
+| — | Нет материалов | — | — | — |
 
 ## 3. Подтверждены опубликованными в Дзене
 
