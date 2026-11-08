@@ -1,5 +1,12 @@
 [
   {
+    "id": "a6bcd182b2895683681b",
+    "date": "2026-11-08",
+    "title": "NVIDIA разогнала FLUX 3 Image Klein на чипах Blackwell более чем втрое",
+    "source_name": "NVIDIA Developers",
+    "source_url": "https://developer.nvidia.com/blog/speed-up-image-generation-with-flux-3-image-klein-on-nvidia-blackwell-gpus/"
+  },
+  {
     "id": "189563f1d6f7d0a3fade",
     "date": "2026-11-07",
     "title": "Amazon SageMaker научили делить видеокарты NVIDIA: больше никакой переплаты за лишнюю мощность",
