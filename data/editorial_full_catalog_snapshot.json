@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "433045674e9fc96404e97a2755df9b706b8db5eb",
-  "source_blob_sha": "43b6d7fa1dbfe93291a7b6b3d0cfeadd6f972648",
-  "snapshot_date": "2026-11-07",
+  "source_commit": "f6dded4b36fe994c8cf3e54be61cd902a6610ae8",
+  "source_blob_sha": "deba4b329e3b0b00e6c916f3ddacb20bf672cb5f",
+  "snapshot_date": "2026-11-08",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6aef14f28c4f2d1ca595b520",
+      "title": "Censys нашла 1465 серверов с ИИ-инструментом ARTEX. Некоторые раскрыли и файлы операторов",
+      "dzen_url": "https://dzen.ru/a/au8U8oxPLRyllbUg",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Исследователи Censys обнаружили 1465 серверов с доступными из интернета консолями ARTEX — инструмента, который поручает ИИ-агентам проверку компьютерных систем на уязвимости. Отчёт опубликован 5 ноября. Около 650 адресов приходятся на две группы одинаково настроенных систем. Они могут представлять клонированные установки или серверы с несколькими адресами. После исключения этих групп остаётся примерно 815 предположит",
+      "published_at_utc": "2026-11-08T02:01:47+00:00"
+    },
     {
       "dzen_id": "6aef146d3b28620e3e656104",
       "title": "Инженер Railway запустил ИИ-агентов против конкурента. Пришлось извиняться",
