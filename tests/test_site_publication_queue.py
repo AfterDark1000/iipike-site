@@ -29,19 +29,19 @@ class PublicationQueueTests(unittest.TestCase):
 
         def fake_git(*args):
             if "--diff-filter=A" in args:
-                return SimpleNamespace(stdout=original + "\\n")
-            return SimpleNamespace(stdout=corrected + "\\n")
+                return SimpleNamespace(stdout=original + "\n")
+            return SimpleNamespace(stdout=corrected + "\n")
 
         with patch("scripts.site_publication_queue.git", side_effect=fake_git):
             self.assertEqual(_last_change("origin/editorial-intake", "editorial_inbox/stories/old.json"),
                              dt.datetime(2026, 11, 5, 4, tzinfo=UTC))
 
     def test_malformed_markdown_does_not_block_other_ready_stories(self):
-        tree = "\\n".join([
+        tree = "\n".join([
             "editorial_inbox/stories/bad.json", "editorial_inbox/covers/bad.webp",
             "editorial_inbox/stories/good.json", "editorial_inbox/covers/good.webp",
         ])
-        malformed = "Вступление для теста. " * 30 + "\\n\\n>Неверная цитата"
+        malformed = "Вступление для теста. " * 30 + "\n\n>Неверная цитата"
         def fake_source(ref, path):
             sid = Path(path).stem
             result = {"id": sid, "status": "editor_approved",
@@ -51,11 +51,11 @@ class PublicationQueueTests(unittest.TestCase):
             return json.dumps(result)
 
         with patch("scripts.site_publication_queue.git",
-                   return_value=SimpleNamespace(stdout=tree)), \\
-             patch("scripts.site_publication_queue.exists_at", return_value=False), \\
-             patch("scripts.site_publication_queue.safe_git_blob_at", side_effect=fake_source), \\
+                   return_value=SimpleNamespace(stdout=tree)), \
+             patch("scripts.site_publication_queue.exists_at", return_value=False), \
+             patch("scripts.site_publication_queue.safe_git_blob_at", side_effect=fake_source), \
              patch("scripts.site_publication_queue._last_change",
-                   return_value=NOW - dt.timedelta(hours=2)), \\
+                   return_value=NOW - dt.timedelta(hours=2)), \
              patch("builtins.print") as log:
             found = ready_items()
         self.assertEqual([row["id"] for row in found], ["good"])
