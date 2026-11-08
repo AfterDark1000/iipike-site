@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-08T19:05:43.725759Z",
+  "updated_at": "2026-11-08T22:51:22.762819Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T19:05:43.725759Z",
-      "last_success_at": "2026-11-08T19:05:43.725759Z",
+      "checked_at": "2026-11-08T22:51:22.762819Z",
+      "last_success_at": "2026-11-08T22:51:22.762819Z",
       "error": null,
-      "fresh_matches": 8
+      "fresh_matches": 7
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T19:05:43.725759Z",
-      "last_success_at": "2026-11-08T19:05:43.725759Z",
+      "checked_at": "2026-11-08T22:51:22.762819Z",
+      "last_success_at": "2026-11-08T22:51:22.762819Z",
       "error": null,
-      "fresh_matches": 3
+      "fresh_matches": 5
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T19:05:43.725759Z",
-      "last_success_at": "2026-11-08T19:05:43.725759Z",
+      "checked_at": "2026-11-08T22:51:22.762819Z",
+      "last_success_at": "2026-11-08T22:51:22.762819Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T19:05:43.725759Z",
-      "last_success_at": "2026-11-08T19:05:43.725759Z",
+      "checked_at": "2026-11-08T22:51:22.762819Z",
+      "last_success_at": "2026-11-08T22:51:22.762819Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -51,14 +51,52 @@
   "generator": {
     "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Обработано статей: 1"
   },
   "usage": {
     "date": "2026-11-09",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "d7765d336beaf12233a7df3c",
+      "title": "Новая статья: Мастерская локальных ИИ: FLUX 3 Image Klein — рамки под контролем",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151006",
+      "published_at": "2026-11-08T21:00:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-08T22:51:22.762819Z",
+      "views": null,
+      "comments": null,
+      "status": "read_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-08T22:51:22.762819Z",
+      "reason": "Не удалось прочитать статью целиком (ValueError)",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "3f72c7fec0aa94843b595d30",
+      "title": "Nokia: к 2035 году на долю ИИ придётся почти половина мирового сетевого трафика",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151014",
+      "published_at": "2026-11-08T20:57:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-08T22:51:22.762819Z",
+      "views": null,
+      "comments": null,
+      "status": "read_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-08T22:51:22.762819Z",
+      "reason": "Не удалось прочитать статью целиком (ValueError)",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "be542428855c9b5507be4693",
       "title": "Роботов с ИИ оказалось легко обмануть: искажённая картинка заставляет их легко выполнять опасные команды",
@@ -134,10 +172,14 @@
       "first_seen_at": "2026-11-08T14:30:08.119160Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Закодировать цитату Хокинга про адаптацию прямо в нуклеотиды — это, конечно, симпатично, но лаборантам, которых теперь зовут только ради перезаправки расходников, от этой поэзии не легче.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-08T22:51:22.762819Z",
+      "reason": "Забавная деталь про цитату Хокинга в ДНК, подчеркивающая замену людей роботами.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-08T22:51:22.762819Z"
     },
     {
       "id": "bd629d16b033c666245a0de6",
