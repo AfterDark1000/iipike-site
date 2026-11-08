@@ -1,7 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const {ageMinutes, dueAgeMinutes, evaluateRun, latestNonCancelled} = require('../scripts/watchdog.js');
+const {ageMinutes, dueAgeMinutes, evaluateRun, latestNonCancelled,
+  selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident} = require('../scripts/watchdog.js');
 const NOW = Date.parse('2026-11-06T10:00:00Z');
 const run = (date, conclusion='success') => ({created_at:date, status:'completed', conclusion, html_url:'https://github.com/example'});
 
@@ -32,4 +33,51 @@ test('stalled queue is detected only after both earliest time and spacing', () =
 test('bad timestamps do not yield false overdue queue alarms',()=>{
   assert.equal(dueAgeMinutes({readyAt:'not a date'},NOW),-Infinity);
   assert.equal(ageMinutes('2026-11-06T08:00:00Z',NOW),120);
+});
+
+test('actual publishing step is distinguished from fake test releases in job logs', () => {
+  const logs = [
+    '2026-11-07T18:00:00Z SCHEDULED_RELEASE: first urgent=False',
+    '2026-11-07T18:00:50Z ##[group]Run python3 scripts/site_publication_queue.py',
+    '2026-11-07T18:00:51Z SCHEDULED_RELEASE: musk-baron-robots-orbital-ai-20261106 urgent=False',
+    "2026-11-07T18:00:52Z Site-first release rejected: Quote needs '> ' prefix on line 10",
+  ].join('\n');
+  assert.equal(selectedReleaseFromLogs(logs), 'musk-baron-robots-orbital-ai-20261106');
+  assert.equal(selectedReleaseFromLogs('SCHEDULED_RELEASE: fake urgent=False'), null);
+  assert.equal(selectedReleaseFromLogs(
+    '##[group]Run python3 scripts/site_publication_queue.py\nNO_DUE_STORY'), null);
+  assert.equal(selectedReleaseFromLogs(
+    '##[group]Run python3 scripts/site_publication_queue.py\n' +
+    'SCHEDULED_RELEASE: one urgent=False\nSCHEDULED_RELEASE: two urgent=False'), null);
+});
+test('a successful next cron NEVER closes a failed per-article release', async () => {
+  const id = 'musk-baron-robots-orbital-ai-20261106';
+  const key = 'site-release:' + id;
+  const findings = new Map();
+  const checked = new Set(['site-scheduler-heartbeat', 'site-queue']);
+  assert.equal(await canAutoCloseIncident(key, findings, checked,
+    async () => ({ok:false,why:'not in news.json'})), false);
+  assert.equal(await canAutoCloseIncident('site-scheduler', findings, checked,
+    async () => ({ok:true})), false);
+  assert.equal(await canAutoCloseIncident('site-scheduler-heartbeat',
+    findings, checked, async () => ({ok:false})), true);
+  assert.equal(await canAutoCloseIncident(key, new Map([[key, 'still failed']]), checked,
+    async () => ({ok:true})), false);
+  assert.equal(await canAutoCloseIncident(key, findings, checked,
+    async () => ({ok:true})), true);
+});
+test('delivery proof needs a site-first record AND an actual canonical HTML page', async () => {
+  const id='musk-baron-robots-orbital-ai-20261106';
+  const url='https://iipike.ru/articles/' + id + '/';
+  const record={published_site_first:[{id,published_at_utc:'2026-11-07T20:45:34Z'}]};
+  const good=async () => ({status:200,text:async()=>'<link rel="canonical" href="' +
+    url + '"><meta property="article:published_time" content="2026-11-07T20:45:34Z">'});
+  assert.equal((await verifySitePublication(id,record,good)).ok,true);
+  assert.equal((await verifySitePublication(id,{published_site_first:[]},good)).ok,false);
+  assert.equal((await verifySitePublication(id,record,
+    async () => ({status:404,text:async()=>''}))).ok,false);
+  assert.equal((await verifySitePublication(id,record,
+    async () => ({status:200,text:async()=>'<html>Homepage instead</html>'}))).ok,false);
+  assert.equal((await verifySitePublication(id,{check_error:'git fetch failed'},good)).ok,false);
+  assert.equal((await verifySitePublication('../unsafe',record,good)).ok,false);
 });
