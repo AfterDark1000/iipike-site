@@ -3489,7 +3489,9 @@
     "topics": [
       "agents",
       "apps"
-    ]
+    ],
+    "site_first_dzen_id": "6af01a4a3bd0ac498feefc51",
+    "site_first_dzen_url": "https://dzen.ru/a/avAaSjvQrEmP7vxR"
   },
   {
     "title": "OpenAI покупает Pierre: её инструменты уже работают в Codex",
@@ -3877,7 +3879,9 @@
     "topics": [
       "entertainment",
       "development"
-    ]
+    ],
+    "site_first_dzen_id": "6aef17a08fe21c4a3f2194b5",
+    "site_first_dzen_url": "https://dzen.ru/a/au8XoI_iHEo_IZS1"
   },
   {
     "title": "ИИ использовали при создании более 80% самых популярных игр Roblox",
@@ -3910,7 +3914,9 @@
     "topics": [
       "engineering",
       "video"
-    ]
+    ],
+    "site_first_dzen_id": "6aef173f8c4f2d1ca599743b",
+    "site_first_dzen_url": "https://dzen.ru/a/au8XP4xPLRylmXQ7"
   },
   {
     "title": "Хакеры взломали OpenAI с помощью Claude. Теперь они её партнёры",
@@ -3926,7 +3932,9 @@
     "topics": [
       "cybersecurity",
       "agents"
-    ]
+    ],
+    "site_first_dzen_id": "6af01c042cf2b509a489afe0",
+    "site_first_dzen_url": "https://dzen.ru/a/avAcBCzytQmkia_g"
   },
   {
     "title": "Фальшивые директора и юристы: троих обвинили в ИИ-афере на $129 млн",
@@ -3941,7 +3949,9 @@
     "url": "articles/ai-ceo-lawyer-impersonation-fraud-129m-20261105/",
     "topics": [
       "cybersecurity"
-    ]
+    ],
+    "site_first_dzen_id": "6af01aeb85e02828a2078303",
+    "site_first_dzen_url": "https://dzen.ru/a/avAa64XgKCiiB4MD"
   },
   {
     "title": "Маск: роботы будут впятеро продуктивнее людей, ИИ уйдёт в космос, а доходы вырастут",
@@ -3957,7 +3967,9 @@
     "topics": [
       "engineering",
       "infrastructure"
-    ]
+    ],
+    "site_first_dzen_id": "6aef28a98c4f2d1ca5b50351",
+    "site_first_dzen_url": "https://dzen.ru/a/au8oqYxPLRyltQNR"
   },
   {
     "title": "ChatGPT и Codex посадят на один лимит. OpenAI меняет правила подписки с декабря",
@@ -3971,7 +3983,9 @@
     "url": "articles/openai-chatgpt-codex-shared-limits-20261107/",
     "topics": [
       "apps"
-    ]
+    ],
+    "site_first_dzen_id": "6af01c81c2ff502188f6ce62",
+    "site_first_dzen_url": "https://dzen.ru/a/avAcgcL_UCGI9s5i"
   },
   {
     "title": "Grok начал вшивать невидимые метки в ответы через API",
@@ -3987,6 +4001,8 @@
     "topics": [
       "models",
       "safety"
-    ]
+    ],
+    "site_first_dzen_id": "6af01deac2ff502188f8d4e9",
+    "site_first_dzen_url": "https://dzen.ru/a/avAd6sL_UCGI-NTp"
   }
 ]
