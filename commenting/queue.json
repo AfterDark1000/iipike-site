@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-08T07:34:02.273527Z",
+  "updated_at": "2026-11-08T07:36:43.846249Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:34:02.273527Z",
-      "last_success_at": "2026-11-08T07:34:02.273527Z",
+      "checked_at": "2026-11-08T07:36:43.846249Z",
+      "last_success_at": "2026-11-08T07:36:43.846249Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:34:02.273527Z",
-      "last_success_at": "2026-11-08T07:34:02.273527Z",
+      "checked_at": "2026-11-08T07:36:43.846249Z",
+      "last_success_at": "2026-11-08T07:36:43.846249Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:34:02.273527Z",
-      "last_success_at": "2026-11-08T07:34:02.273527Z",
+      "checked_at": "2026-11-08T07:36:43.846249Z",
+      "last_success_at": "2026-11-08T07:36:43.846249Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,20 +42,20 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-08T07:34:02.273527Z",
-      "last_success_at": "2026-11-08T07:34:02.273527Z",
+      "checked_at": "2026-11-08T07:36:43.846249Z",
+      "last_success_at": "2026-11-08T07:36:43.846249Z",
       "error": null,
       "fresh_matches": 1
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Комментарий не прошёл проверку длины, опоры на текст или саморекламы"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-08",
-    "attempted": 9
+    "attempted": 12
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -196,12 +196,14 @@
       "first_seen_at": "2026-11-08T07:27:27.730471Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
+      "status": "draft_ready",
+      "comment": "Инвесторы требуют снизить оценку компании, а в документации вообще забыли вписать октябрьскую выручку. Видимо, решили, что отсутствие цифр — это тоже своего рода интрига перед IPO.",
+      "attempts": 1,
       "link_status": "dzen_link_missing",
-      "reason": "Повторная подготовка после усиления проверки фактов",
-      "generated_at": "2026-11-08T07:30:23.247000Z"
+      "reason": "Забавная деталь с незаполненной выручкой в документах перед IPO",
+      "generated_at": "2026-11-08T07:36:43.846249Z",
+      "last_attempt_at": "2026-11-08T07:36:43.846249Z",
+      "fact_review": "passed"
     },
     {
       "id": "fc3b9ed9f17566e7969bdeb4",
@@ -215,10 +217,14 @@
       "first_seen_at": "2026-11-08T07:27:27.730471Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Запрос на пушту тратит в 180 раз больше энергии, чем на английском, из-за особенностей токенизации. Получается, у нейросетей тоже есть свой языковой барьер, который измеряется в килоджоулях.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-08T07:36:43.846249Z",
+      "reason": "Конкретные цифры разницы энергозатрат на разные языки",
+      "fact_review": "passed",
+      "generated_at": "2026-11-08T07:36:43.846249Z"
     },
     {
       "id": "666fdeee62179cf5fd315a1d",
@@ -232,10 +238,14 @@
       "first_seen_at": "2026-11-08T07:27:27.730471Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-08T07:36:43.846249Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-08T07:36:43.846249Z"
     },
     {
       "id": "c506a1dc802f3d9c9758da38",
