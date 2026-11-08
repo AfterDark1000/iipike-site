@@ -58,7 +58,7 @@ var ROOT="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-
 var GIT="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/";
 var current="queue", data=null, selected=new Set(), activeStory=null;
 var panel=document.getElementById("panel"), dialog=document.getElementById("editorDialog");
-var MARKS_KEY="hpii:dzen-local-status:v1", marks=readMarks(), marksUnavailable=false;
+var MARKS_KEY="hpii:dzen-local-status:v1", marksUnavailable=false, marks=readMarks();
 function readMarks(){try{var v=JSON.parse(localStorage.getItem(MARKS_KEY)||"{}");if(!v||typeof v!=="object"||Array.isArray(v))return {};var good={};Object.keys(v).slice(0,2000).forEach(function(k){if(/^[a-z0-9-]{1,72}$/.test(k)&&["scheduled","published_manual"].includes(v[k]))good[k]=v[k]});return good}catch(_){marksUnavailable=true;return {}}}
 function setMark(id,value){if(!/^[a-z0-9-]{1,72}$/.test(id))return;var next=Object.assign({},marks);if(value)next[id]=value;else delete next[id];
 try{localStorage.setItem(MARKS_KEY,JSON.stringify(next));marks=next;selected.delete(id);render()}catch(e){marksUnavailable=true;alert("Не удалось сохранить отметку в браузере. Проверь разрешения сайта: "+e.message)}}
