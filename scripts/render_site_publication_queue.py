@@ -113,7 +113,9 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 except ValueError as exc:
                     block_reason = str(exc)
             if block_reason:
-                status = "⛔ Заблокирована: проверка материала"
+                status = ("⛔ Заблокирована: некорректное оформление"
+                          if block_reason.startswith("Некорректное оформление текста:")
+                          else "⛔ Заблокирована: связи с Дзеном")
             else:
                 eligible = True
                 if scheduled and now < scheduled:
