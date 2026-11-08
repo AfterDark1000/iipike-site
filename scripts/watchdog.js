@@ -64,7 +64,8 @@ async function selectedFailedArticle(github, run, core) {
       const raw = response.data;
       const logs = typeof raw === 'string' ? raw
         : Buffer.isBuffer(raw) ? raw.toString('utf8')
-        : raw instanceof ArrayBuffer ? Buffer.from(raw).toString('utf8') : null;
+        : raw instanceof ArrayBuffer ? Buffer.from(raw).toString('utf8')
+        : raw instanceof Uint8Array ? Buffer.from(raw).toString('utf8') : null;
       const id = selectedReleaseFromLogs(logs);
       if (id && RELEASE_ID.test(id)) return id;
     }
@@ -96,6 +97,20 @@ async function verifySitePublication(id, queue, publicFetch = fetch) {
   } catch (error) {
     return {ok:false, why:'public page check unavailable: ' + String(error.message).slice(0,140)};
   }
+}
+
+
+async function canAutoCloseIncident(key, findings, checked, releaseProof) {
+  if (findings.has(key)) return false;
+  if (key.startsWith(RELEASE_PREFIX)) {
+    const id = key.slice(RELEASE_PREFIX.length);
+    if (!RELEASE_ID.test(id)) return false;
+    return (await releaseProof(id)).ok === true;
+  }
+  // Old generic incidents lack article identity: only a human may close them.
+  if (key === 'site-scheduler' || key === 'site-queue' || key === 'site-public')
+    return false;
+  return checked.has(key);
 }
 
 function decodeFile(data) {
@@ -244,13 +259,15 @@ async function main({github, context, core}) {
   for (const incident of ours) {
     const key = incident.title.slice(PREFIX.length);
     if (key.startsWith(RELEASE_PREFIX)) {
-      if (findings.has(key)) continue;
       const id = key.slice(RELEASE_PREFIX.length);
-      const proof = await releaseProof(id);
-      if (!proof.ok) {
-        notes.push('Инцидент ' + key + ' остаётся открытым: ' + proof.why);
+      if (!(await canAutoCloseIncident(key, findings, checked, releaseProof))) {
+        if (!findings.has(key)) {
+          const proof = await releaseProof(id);
+          notes.push('Инцидент ' + key + ' остаётся открытым: ' + proof.why);
+        }
         continue;
       }
+      const proof = await releaseProof(id);
       await github.rest.issues.createComment({owner:OWNER, repo:SITE, issue_number:incident.number,
         body:'Выпуск статьи **' + id + '** подтверждён: запись с временем публикации ' +
           proof.publishedAt + ' есть в news.json, HTML существует в main, ' +
@@ -262,9 +279,7 @@ async function main({github, context, core}) {
     }
     // Legacy generic site incidents lack an article ID. Never mark delivery
     // complete from scheduler health alone; owner reviews them manually.
-    if (key === 'site-scheduler' || key === 'site-queue' || key === 'site-public')
-      continue;
-    if (!findings.has(key) && checked.has(key)) {
+    if (await canAutoCloseIncident(key, findings, checked, releaseProof)) {
       await github.rest.issues.createComment({owner:OWNER, repo:SITE, issue_number:incident.number,
         body:'Проверяемый компонент снова работает. Это подтверждение здоровья ' +
           'компонента, не доказательство доставки отдельной публикации.'});
@@ -279,4 +294,4 @@ async function main({github, context, core}) {
   await core.summary.addRaw(summary.join('\n') + '\n').write();
 }
 module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled, evaluateRun,
-  selectedReleaseFromLogs, verifySitePublication};
+  selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
