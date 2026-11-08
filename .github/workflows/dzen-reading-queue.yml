@@ -4,9 +4,15 @@ on:
     - cron: '13,43 * * * *'
   workflow_dispatch:
   push:
-    branches: [main]
+    # Site-first releases update news.json in main. Refresh the Dzen list
+    # immediately instead of waiting for GitHub's best-effort cron.
+    # Editor/artist additions on editorial-intake are also included.
+    branches: [main, editorial-intake]
     paths:
       - '.github/workflows/dzen-reading-queue.yml'
+      - 'news.json'
+      - 'editorial_inbox/stories/**'
+      - 'editorial_inbox/covers/**'
 permissions:
   contents: write
 concurrency:
