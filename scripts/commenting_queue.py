@@ -351,7 +351,11 @@ def apply_review(proposed, review):
 
 def ask_model(candidates, api_key):
     proposed = model_request(model_payload(candidates), api_key)
-    validate_comments(proposed, candidates)
+    validated = validate_comments(proposed, candidates)
+    for row in proposed["comments"]:
+        result = validated[row["id"]]
+        if row.get("use") is True and result["status"] != "draft_ready":
+            row.update(use=False, comment="", reason=result["reason"], fact_review="rejected")
     if any(x.get("use") is True for x in proposed["comments"]):
         review = model_request(review_payload(candidates, proposed["comments"]), api_key)
         proposed = apply_review(proposed, review)
@@ -372,10 +376,19 @@ def validate_comments(response, candidates):
                               "fact_review": row.get("fact_review", "not_requested")}
             continue
         comment, evidence = normalized(row.get("comment")), normalized(row.get("evidence"))
-        if (row.get("use") is not True or not 80 <= len(comment) <= 600 or
-                not 15 <= len(evidence) <= 180 or evidence not in normalized(by_id[ident]["article_text"]) or
-                re.search(r"https?://|www\.|подписывай|заходите.{0,15}канал|#[\w]+|я (?:пробовал|проверил|пользуюсь|тестировал)", comment, re.I)):
-            raise ValueError("Комментарий не прошёл проверку длины, опоры на текст или саморекламы")
+        problem = None
+        if row.get("use") is not True:
+            problem = "Модель не указала редакционное решение"
+        elif not 80 <= len(comment) <= 600:
+            problem = "Комментарий не прошёл проверку длины"
+        elif not 15 <= len(evidence) <= 180 or evidence not in normalized(by_id[ident]["article_text"]):
+            problem = "Модель не дала точную опору на текст статьи"
+        elif re.search(r"https?://|www\.|подписывай|заходите.{0,15}канал|#[\w]+|я (?:пробовал|проверил|пользуюсь|тестировал)", comment, re.I):
+            problem = "В комментарии найдена реклама или выдуманный личный опыт"
+        if problem:
+            results[ident] = {"status": "skipped_by_editor", "comment": "", "reason": problem,
+                              "fact_review": "rejected"}
+            continue
         results[ident] = {"status": "draft_ready", "comment": comment,
                           "reason": normalized(row.get("reason"))[:180],
                           "fact_review": row.get("fact_review", "not_requested")}

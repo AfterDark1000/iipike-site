@@ -130,7 +130,10 @@ class QueueTests(unittest.TestCase):
                       {"comment": "Подписывайтесь на наш замечательный канал о нейросетях и технологиях!"},
                       {"comment": "Я пробовал эту замечательную нейросеть, она прекрасно работает."}]:
             row = dict(base["comments"][0], **patch)
-            with self.assertRaises(ValueError): cq.validate_comments({"comments": [row]}, candidates)
+            checked = cq.validate_comments({"comments": [row]}, candidates)["x"]
+            self.assertNotEqual(checked["status"], "draft_ready")
+            self.assertEqual(checked["comment"], "")
+            self.assertEqual(checked["fact_review"], "rejected")
 
     def test_model_may_skip_uninteresting_article(self):
         result = cq.validate_comments({"comments": [{"id": "x", "use": False, "comment": "", "reason": "Нет содержательного захода"}]}, [{"id": "x", "article_text": BODY}])
@@ -162,6 +165,19 @@ class QueueTests(unittest.TestCase):
         candidates = [{"id": "x", "article_text": BODY}]
         with patch.object(cq, "model_request", side_effect=[model(candidates, "x"), RuntimeError("HTTP 429")]):
             with self.assertRaises(RuntimeError): cq.ask_model(candidates, "test-placeholder")
+
+    def test_one_bad_comment_does_not_discard_other_articles(self):
+        candidates = [{"id": "x", "article_text": BODY}, {"id": "y", "article_text": BODY}]
+        proposed = model(candidates, "x")
+        proposed["comments"][1]["evidence"] = "Выдуманная выдержка из статьи"
+        with patch.object(cq, "model_request", side_effect=[proposed,
+                          {"checks": [{"id": "x", "ok": True, "reason": "Совпадает"}]}]) as request:
+            response = cq.ask_model(candidates, "test-placeholder")
+        result = cq.validate_comments(response, candidates)
+        self.assertEqual(result["x"]["status"], "draft_ready")
+        self.assertNotEqual(result["y"]["status"], "draft_ready")
+        self.assertEqual(result["y"]["comment"], "")
+        self.assertEqual(request.call_count, 2)
 
     def test_missing_key_no_paid_fallback_and_no_fake_ready_comment(self):
         def no_call(*args): self.fail("Model must not be called")
