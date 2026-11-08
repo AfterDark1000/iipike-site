@@ -18,7 +18,8 @@ from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 from scripts.site_rich_text import markdown_to_blocks
 from scripts.site_publication_queue import (
-    INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot
+    INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot,
+    in_quiet_hours
 )
 
 REPO = "https://github.com/AfterDark1000/iipike-site"
@@ -120,6 +121,8 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 eligible = True
                 if scheduled and now < scheduled:
                     status = "🕒 Ожидает заданного времени"
+                elif in_quiet_hours(now):
+                    status = "🌙 Ночная пауза"
                 elif spacing_until:
                     status = "⏳ Ждёт часовой интервал"
                 else:
@@ -139,7 +142,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
 def is_selectable(row):
     return row.get("eligible", row.get("status") in (
         "🟢 Готова к выпуску", "⏳ Ждёт часовой интервал",
-        "🕒 Ожидает заданного времени"))
+        "🕒 Ожидает заданного времени", "🌙 Ночная пауза"))
 
 
 # Keep in sync with the cron minutes in site-first-scheduled-release.yml.
@@ -153,9 +156,10 @@ def next_cron_tick(when):
         raise ValueError("Cron forecast requires a timezone")
     when = when.astimezone(dt.timezone.utc)
     minute = when.replace(second=0, microsecond=0)
-    for offset in range(65):
+    for offset in range(24 * 60 + 65):
         candidate = minute + dt.timedelta(minutes=offset)
-        if candidate.minute in CRON_MINUTES and candidate >= when:
+        if (candidate.minute in CRON_MINUTES and candidate >= when
+                and not in_quiet_hours(candidate)):
             return candidate
     raise RuntimeError("Could not find next scheduled check")
 
@@ -205,6 +209,7 @@ def as_markdown(rows, last, *, now=None):
     active = sum(r["status"] == "🟢 Готова к выпуску" for r in rows)
     held = sum(r["status"] == "⏳ Ждёт часовой интервал" for r in rows)
     future = sum(r["status"] == "🕒 Ожидает заданного времени" for r in rows)
+    quiet = sum(r["status"] == "🌙 Ночная пауза" for r in rows)
     covers = sum(r["status"] == "🖼️ Ждёт обложку" for r in rows)
     blocked = sum(r["status"].startswith("⛔ Заблокирована") for r in rows)
     out = [
@@ -215,13 +220,16 @@ def as_markdown(rows, last, *, now=None):
         "**В очереди:** " + str(len(planned)) + " · **Готовы:** " + str(active)
         + " · **Ждут интервал:** " + str(held)
         + " · **Назначено время:** " + str(future)
+        + " · **Ночная пауза:** " + str(quiet)
         + " · **Ждут обложку:** " + str(covers)
         + " · **Заблокированы:** " + str(blocked)
         + " · **Уже опубликованы:** " + str(len(released)),
         "",
         "Проверка каждые 15 минут; не более одной статьи за запуск с интервалом "
-        "не менее 60 минут. Порядок — по времени готовности текста и обложки, "
-        "если не назначено более позднее время. **Прогноз — не обещание публикации "
+        "не менее 60 минут. Автоматический выпуск приостанавливается "
+        "ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется "
+        "и продолжается утром. Порядок — по времени готовности текста "
+        "и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации "
         "в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и "
         "новые материалы могут его изменить.",
         "",
@@ -274,6 +282,8 @@ def as_markdown(rows, last, *, now=None):
         "", "## Что означают статусы", "",
         "- **Готова к выпуску:** утверждённый текст и обложка; время зависит от очереди.",
         "- **Ждёт часовой интервал:** после последнего выпуска не прошло 60 минут.",
+        "- **Ночная пауза:** автоматические выпуски запрещены с 01:00 до 07:00 "
+        "по Усть-Катаву; материал остаётся в очереди.",
         "- **Ожидает заданного времени:** редактор назначил ограничение «не раньше».",
         "- **Заблокирована:** автоматический выпуск пропускает материал из-за "
         "проверки редакционных связей (причина показана отдельно).",
