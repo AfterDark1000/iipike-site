@@ -28,8 +28,22 @@ from scripts.site_rich_text import markdown_to_blocks
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
+QUIET_START_HOUR = 1  # Inclusive, local time in Ust-Katav / Yekaterinburg
+QUIET_END_HOUR = 7    # Exclusive: automatic releases resume from 07:00
 QUEUE_REF = "origin/editorial-intake"
 MAIN_REF = "origin/main"
+
+
+def in_quiet_hours(moment):
+    """Return whether automatic publication is paused, in local site time.
+
+    The interval is [01:00, 07:00) in Asia/Yekaterinburg, regardless of UTC
+    cron timing. Human-approved urgent overrides remain an explicit exception.
+    """
+    if moment.tzinfo is None:
+        raise ValueError("Night-window check requires an offset-aware time")
+    hour = moment.astimezone(SITE_TZ).hour
+    return QUIET_START_HOUR <= hour < QUIET_END_HOUR
 
 
 def parse_slot(value):
@@ -167,6 +181,10 @@ def select_one(items, rows, now, *, target=None, urgent=False):
         raise ValueError("Invalid exact story ID")
     if target and not any(item["id"] == target for item in items):
         raise ValueError("Requested story is not approved, cover-ready and unpublished")
+    if not urgent and in_quiet_hours(now):
+        print("QUIET_HOURS_WAIT: Automatic site releases paused 01:00–07:00 Asia/Yekaterinburg",
+              flush=True)
+        return None
     last = latest_site_first_publication(rows)
     if not urgent and last and now < last + INTERVAL:
         print("SPACING_WAIT until", (last + INTERVAL).isoformat(), flush=True)

@@ -14,6 +14,70 @@ NOW = dt.datetime(2026, 11, 5, 8, tzinfo=UTC)
 
 
 class EditorialQueuePageTests(unittest.TestCase):
+    def test_night_forecast_resumes_in_morning_with_hourly_spacing(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        now = dt.datetime(2026, 11, 8, 1, 30, tzinfo=local)
+        def row(sid):
+            return {
+                "id": sid, "title": sid, "eligible": True,
+                "status": "🌙 Ночная пауза",
+                "ready_at": dt.datetime(2026, 11, 8, 0, 0, tzinfo=local),
+                "publish_at": None, "published": False,
+                "source_path": "editorial_inbox/stories/" + sid + ".json",
+                "cover_path": None, "published_at": None,
+            }
+        rows = [row("first"), row("second"), row("third")]
+        forecast = forecast_order(rows, None, now=now)
+        self.assertEqual([r["id"] for r, _ in forecast],
+                         ["first", "second", "third"])
+        self.assertEqual([when.astimezone(local).strftime("%H:%M")
+                          for _, when in forecast], ["07:07", "08:07", "09:07"])
+        text = as_markdown(rows, None, now=now)
+        self.assertIn("Ночная пауза:** 3", text)
+        self.assertIn("Не ранее 08.11.2026 07:07", text)
+        self.assertIn("Не ранее 08.11.2026 08:07", text)
+
+    def test_next_cron_tick_skips_only_overnight_interval(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        for hour, minute, expected in [
+            (0, 52, "00:52"), (0, 53, "07:07"),
+            (1, 0, "07:07"), (6, 59, "07:07"), (7, 0, "07:07"),
+        ]:
+            with self.subTest(hour=hour, minute=minute):
+                now = dt.datetime(2026, 11, 8, hour, minute, tzinfo=local)
+                self.assertEqual(next_cron_tick(now).astimezone(local).strftime("%H:%M"),
+                                 expected)
+
+    def test_night_status_is_not_a_publication_blocker(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        now = dt.datetime(2026, 11, 8, 3, 0, tzinfo=local)
+        paths = ("editorial_inbox/stories/queued.json\n"
+                 "editorial_inbox/covers/queued.webp\n")
+        def fake_blob(ref, path):
+            if path == "news.json":
+                return "[]"
+            return json.dumps({
+                "id": "queued", "title": "Ждёт утра",
+                "status": "editor_approved", "approved_by": "human_editor",
+            })
+        with patch("scripts.render_site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=paths)), \
+             patch("scripts.render_site_publication_queue.safe_git_blob_at",
+                   side_effect=fake_blob), \
+             patch("scripts.render_site_publication_queue.exists_at",
+                   return_value=False), \
+             patch("scripts.render_site_publication_queue.latest_site_first_publication",
+                   return_value=None), \
+             patch("scripts.render_site_publication_queue._last_change",
+                   return_value=now - dt.timedelta(hours=2)):
+            rows, last = scan_queue(now=now)
+        self.assertEqual(rows[0]["status"], "🌙 Ночная пауза")
+        self.assertTrue(rows[0]["eligible"])
+        self.assertEqual(len(forecast_order(rows, last, now=now)), 1)
+        page = as_markdown(rows, last, now=now)
+        self.assertIn("Ночная пауза", page)
+        self.assertIn("Нет проблемных материалов", page)
+
     def test_markdown_escapes_headlines_and_never_injects_html(self):
         text = safe_text(" [bad] <script>alert(1)</script> | new\nline ")
         self.assertNotIn("<script>", text)

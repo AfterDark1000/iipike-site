@@ -62,6 +62,52 @@ class PublicationQueueTests(unittest.TestCase):
         self.assertTrue(any(c.args and c.args[0] == "BLOCKED_INVALID_MARKDOWN:"
                             for c in log.call_args_list))
 
+    def test_night_pause_uses_yekaterinburg_local_time_boundaries(self):
+        """00:59 works; 01:00–06:59 waits; 07:00 works again."""
+        local = dt.timezone(dt.timedelta(hours=5))
+        article = {
+            "id": "overnight", "ready_at": dt.datetime(2026, 11, 7, 12, tzinfo=UTC),
+            "not_before": None, "cover": "editorial_inbox/covers/overnight.webp",
+        }
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=None):
+            for hour, minute, allowed in [
+                (0, 59, True), (1, 0, False), (3, 30, False),
+                (6, 59, False), (7, 0, True), (23, 59, True),
+            ]:
+                when = dt.datetime(2026, 11, 8, hour, minute, tzinfo=local)
+                with self.subTest(hour=hour, minute=minute):
+                    found = select_one([article], [], when)
+                    self.assertEqual(found is not None, allowed)
+
+    def test_explicit_night_slot_does_not_bypass_pause(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        article = {
+            "id": "late", "ready_at": dt.datetime(2026, 11, 7, 12, tzinfo=UTC),
+            "not_before": dt.datetime(2026, 11, 8, 2, tzinfo=local),
+            "cover": "editorial_inbox/covers/late.webp",
+        }
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=None):
+            self.assertIsNone(select_one([article], [],
+                                        dt.datetime(2026, 11, 8, 3, tzinfo=local)))
+            self.assertEqual(select_one([article], [],
+                                        dt.datetime(2026, 11, 8, 7, tzinfo=local))["id"], "late")
+
+    def test_exact_urgent_request_may_bypass_night_pause(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        now = dt.datetime(2026, 11, 8, 3, 0, tzinfo=local)
+        article = {
+            "id": "urgent-overnight", "ready_at": now - dt.timedelta(hours=1),
+            "not_before": now + dt.timedelta(hours=8),
+            "cover": "editorial_inbox/covers/urgent-overnight.webp",
+        }
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=now - dt.timedelta(minutes=10)):
+            self.assertIsNone(select_one([article], [], now, target="urgent-overnight"))
+            self.assertEqual(select_one([article], [], now, target="urgent-overnight",
+                                        urgent=True)["id"], "urgent-overnight")
+
     def test_strict_yekaterinburg_schedule(self):
         at = parse_slot("2026-11-06T11:00:00+05:00")
         self.assertEqual(at, dt.datetime(2026, 11, 6, 6, tzinfo=UTC))
