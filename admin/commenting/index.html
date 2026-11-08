@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#f4f1e9">
+<title>Комментинг — ХПИИ</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin/commenting/style.css">
+<script src="/admin/commenting/app.js" defer></script>
+</head>
+<body>
+<header><div class="wrap mast"><div><div class="eyebrow">ХРОНИКИ ПИКИРУЮЩЕГО ИИ</div><h1>Комментинг</h1><p>Свежая статья → готовая реплика → твоя публикация.</p></div><a href="/admin/">← Очередь публикаций</a></div></header>
+<main class="wrap">
+<div class="bar"><p id="updated" class="hint" role="status">Загружаю очередь…</p><button id="refresh" type="button">↻ Обновить</button></div>
+<div id="messages" aria-live="polite"></div>
+<section class="stats" aria-label="Состояние очереди">
+<div><small>Свежих черновиков</small><strong id="ready">—</strong></div>
+<div><small>С прямой ссылкой в Дзен</small><strong id="linked">—</strong></div>
+<div><small>Разместил · в этом браузере</small><strong id="posted">—</strong></div>
+</section>
+<section class="sheet">
+<div class="filters"><label>Показать <select id="filter"><option value="ready">Готовые комментарии</option><option value="linked">С прямой ссылкой в Дзен</option><option value="pending">В работе / ошибки</option><option value="history">Размещённые / пропущенные</option></select></label><label>Издание <select id="source"><option value="all">Все издания</option></select></label></div>
+<div id="items" aria-live="polite"><p class="empty">Читаю данные…</p></div>
+</section>
+<details class="sheet diagnostics"><summary>Проверка источников и генерации</summary><div id="health"></div><p class="hint">Сбор запланирован каждые полчаса; GitHub может задерживать запуск. Кнопка «Обновить» перечитывает последнюю сохранённую очередь.</p><a href="https://github.com/AfterDark1000/iipike-site/actions/workflows/commenting-queue.yml" target="_blank" rel="noopener noreferrer">Журнал обновлений ↗</a></details>
+<footer><p>Это публичная страница по прямой ссылке, без авторизации. Комментарии публикуешь ты сам. Отметки, правки текста и добавленные ссылки сохраняются только в этом браузере.</p><p>Пока читаем ленты и полные статьи на сайтах изданий. Наличие статьи в Дзене и доступность комментариев автоматически не подтверждены. Если прямой ссылки нет, кнопка «Найти в Дзене» откроет поиск; публикация на сайте издания могла отличаться от версии в Дзене. Просмотры и число комментариев Дзена пока не получены.</p><div class="bar"><button id="export" type="button" class="small">Скачать мои отметки</button><label class="small import">Восстановить отметки <input id="import" type="file" accept="application/json,.json"></label></div></footer>
+</main>
+</body>
+</html>

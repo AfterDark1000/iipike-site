@@ -50,7 +50,7 @@ class YandexMetrikaTests(unittest.TestCase):
                         ROOT / "x" / "index.html",
                         # The editorial utility is not reader content:
                         # counting the owner's visits would pollute analytics.
-                        ROOT / "admin" / "index.html"):
+                        ROOT / "admin" / "index.html") or ROOT / "admin" in page.parents:
                 continue
             html = page.read_text(encoding="utf-8")
             if "<html" not in html.lower():

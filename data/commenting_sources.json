@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "max_age_hours": 48,
+  "max_per_run": 3,
+  "max_per_day": 24,
+  "sources": [
+    {"id": "ixbt", "name": "iXBT.com", "feed_url": "https://www.ixbt.com/export/news/rss.xml", "hosts": ["www.ixbt.com", "ixbt.com"], "channel_url": "https://dzen.ru/ixbt.com", "channel_reference": "https://www.ixbt.com/"},
+    {"id": "3dnews", "name": "3DNews", "feed_url": "https://3dnews.ru/news/rss/", "hosts": ["3dnews.ru", "www.3dnews.ru"], "channel_url": "https://dzen.ru/3dnews.ru", "channel_reference": "https://3dnews.ru/community/"},
+    {"id": "overclockers", "name": "Overclockers.ru", "feed_url": "https://overclockers.ru/rss/news.rss", "hosts": ["overclockers.ru", "www.overclockers.ru"], "channel_url": "https://dzen.ru/overclockers.ru", "channel_reference": "https://overclockers.ru/"},
+    {"id": "mk", "name": "МК", "feed_url": "https://www.mk.ru/rss/index.xml", "hosts": ["www.mk.ru", "mk.ru"], "channel_url": "https://dzen.ru/mk.ru", "channel_reference": "https://www.mk.ru/"}
+  ]
+}
