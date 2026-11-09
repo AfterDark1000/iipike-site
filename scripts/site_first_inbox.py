@@ -101,7 +101,7 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
             raise ValueError("Supply either verbatim article_markdown OR paragraphs, not both")
         blocks = markdown_to_blocks(data["article_markdown"])
     else:
-        blocks = validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
+        blocks = validate_blocks(data.get("paragraphs"), max_blocks=160, min_chars=400)
     for block in blocks:
         if block["type"] == "image" and IMAGE_SOURCE.fullmatch(block["src"]).group("story") != story_id:
             raise ValueError("Illustration must belong to the same approved story ID")
