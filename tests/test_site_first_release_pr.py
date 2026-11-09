@@ -91,6 +91,75 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
             "repos/AfterDark1000/iipike-site/pages/builds"
         )
 
+    def test_auto_release_accepts_only_byte_identical_approved_inline_image(self):
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        source = f"editorial_inbox/illustrations/{sid}/checklist.webp"
+        public = f"assets/editorial/inline/{sid}/checklist.webp"
+        valid = [
+            story, cover, source, public, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html",
+        ]
+        calls = []
+
+        def fake_git(*args, **kwargs):
+            calls.append(args)
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\n".join(valid) + "\n")
+            if args[0] == "rev-parse":
+                if args[1].startswith("HEAD:"):
+                    return SimpleNamespace(stdout="same-blob-sha\n")
+                return SimpleNamespace(stdout="base\n")
+            return SimpleNamespace(stdout="")
+
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git), \
+             patch("scripts.site_first_release_pr.run_checked"):
+            auto_publish_site(sid, "base", (story, cover, source))
+        self.assertIn(("push", "origin", "HEAD:refs/heads/main"), calls)
+        self.assertIn(("rev-parse", "HEAD:" + source), calls)
+        self.assertIn(("rev-parse", "HEAD:" + public), calls)
+
+        # A copy of a different byte sequence must never be auto-published.
+        def changed_copy(*args, **kwargs):
+            if args == ("rev-parse", "HEAD:" + public):
+                return SimpleNamespace(stdout="different-sha\n")
+            return fake_git(*args, **kwargs)
+        with patch("scripts.site_first_release_pr.git", side_effect=changed_copy), \
+             patch("scripts.site_first_release_pr.run_checked") as pages:
+            with self.assertRaisesRegex(ValueError, "differs from approved source"):
+                auto_publish_site(sid, "base", (story, cover, source))
+        pages.assert_not_called()
+
+    def test_auto_release_rejects_unapproved_inline_paths(self):
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        good = f"editorial_inbox/illustrations/{sid}/checklist.webp"
+        valid = [
+            story, cover, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html",
+        ]
+        for bad in ("editorial_inbox/illustrations/other-story/extra.webp",
+                    "editorial_inbox/illustrations/" + sid + "/../../README.md"):
+            with self.subTest(bad=bad), \
+                 patch("scripts.site_first_release_pr.git") as git_call:
+                with self.assertRaisesRegex(ValueError, "unapproved illustration"):
+                    auto_publish_site(sid, "base", (story, cover, bad))
+                git_call.assert_not_called()
+
+        # Even a story-scoped public asset is forbidden unless the source was
+        # explicitly referenced and included in the approved editor markup.
+        extra = f"assets/editorial/inline/{sid}/unexpected.webp"
+        with patch("scripts.site_first_release_pr.git",
+                   return_value=SimpleNamespace(stdout="\n".join(valid + [extra]) + "\n")):
+            with self.assertRaisesRegex(ValueError, "non-editorial"):
+                auto_publish_site(sid, "base", (story, cover))
+
     def test_auto_release_accepts_only_preexisting_approved_html_refresh(self):
         sid = ID
         story = f"editorial_inbox/stories/{sid}.json"
