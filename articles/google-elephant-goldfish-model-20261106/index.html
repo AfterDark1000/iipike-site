@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Google обновила Elephant-Goldfish Model (EGM): один ИИ-агент держит контекст проекта, а независимые рецензенты с чистым контекстом проверяют спецификацию до написания кода; версия 0.1.1 расширила проверки и экспериментальную совместимость."><meta property="og:type" content="article">
+<meta property="og:title" content="Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода"><meta property="og:description" content="Google обновила Elephant-Goldfish Model (EGM): один ИИ-агент держит контекст проекта, а независимые рецензенты с чистым контекстом проверяют спецификацию до написания кода; версия 0.1.1 расширила проверки и экспериментальную совместимость.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/google-elephant-goldfish-model-20261106.webp">
+<meta property="og:url" content="https://iipike.ru/articles/google-elephant-goldfish-model-20261106/"><meta property="article:published_time" content="2026-11-09T10:30:43Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода", "mainEntityOfPage": "https://iipike.ru/articles/google-elephant-goldfish-model-20261106/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-09T10:30:43Z", "image": "https://iipike.ru/assets/editorial/google-elephant-goldfish-model-20261106.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/google-elephant-goldfish-model-20261106/"><title>Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода</h1>
+<p class="summary">Google обновила Elephant-Goldfish Model (EGM): один ИИ-агент держит контекст проекта, а независимые рецензенты с чистым контекстом проверяют спецификацию до написания кода; версия 0.1.1 расширила проверки и экспериментальную совместимость.</p><p class="date">Опубликовано: 9 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/development/">Разработка и код</a><a href="../../topics/agents/">ИИ-агенты</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/google-elephant-goldfish-model-20261106.webp" alt="Обложка: Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html" target="_blank" rel="noopener noreferrer">Google Open Source Blog — Introducing Elephant-Goldfish Model Plugin, 22 October 2026 ↗</a>
+</aside><article class="article-text"><p class="lead"><strong>Google</strong> 6 ноября обновила <strong>Elephant-Goldfish Model (EGM)</strong> — открытый инструмент, в котором одни ИИ-агенты проектируют программу, а другие ищут недостатки в их решениях. Особенность системы в том, что проверяющие намеренно не знают истории предыдущих обсуждений.</p>
+<p>В версии 0.1.1 появился новый рецензент и экспериментальная поддержка Cursor, OpenCode и GitHub Copilot. Сам проект Google представила ещё 22 октября.</p>
+<p>Названия участников объясняют устройство системы. <strong>Слон</strong> — ИИ-агент с большим контекстом. Он обсуждает с разработчиком задачу, запоминает требования и архитектурные решения, а затем составляет техническую спецификацию.</p>
+<p><strong>Золотые рыбки</strong> получают этот документ без предыдущей переписки. Они не знают, какие варианты уже обсуждались, почему разработчик отказался от одного решения и насколько убедительными казались объяснения слона.</p>
+<p>Их задача — разобраться в проекте самостоятельно.</p>
+<p>Сначала проверяющий должен своими словами объяснить, как будет работать будущая программа. Если по спецификации это сделать трудно, значит, в описании остались пробелы.</p>
+<p>Затем другие агенты ищут противоречия, скрытые зависимости и неучтённые ситуации. Последняя проверка касается готовности к реализации: достаточно ли подробно описаны файлы, структуры данных и функции.</p>
+<p>Например, команда проектирует автоматическую публикацию статей. Все уже согласовали устройство очереди и расписание. Но независимый проверяющий замечает, что в документе ничего не сказано о ситуации, когда два планировщика одновременно выбирают одну статью.</p>
+<p>Такую ошибку желательно обнаружить до того, как система начнёт публиковать дубликаты.</p>
+<p>После проверки замечания возвращаются разработчику. Человек выбирает, какие исправления внести, и утверждает окончательный документ. К написанию кода приступают уже после этого.</p>
+<p>В обновлении от 6 ноября Google добавила рецензента <strong>TRIZ Inventive Catalyst</strong>. Он использует подходы теории решения изобретательских задач, чтобы искать альтернативные решения. Разработчики также улучшили передачу контекста между этапами проверки и сохранение серьёзности обнаруженных проблем.</p>
+<p>По заявлению Google, тысячи её сотрудников ежедневно используют EGM при разработке производственного кода. Независимых данных о том, насколько такой подход сокращает число ошибок, компания не представила.</p>
+<p>Исходный код распространяется под лицензией <strong>Apache 2.0</strong>. Плагин можно использовать в совместимых средах разработки, включая Claude Code, Codex и Antigravity. Однако экспериментальные адаптеры ещё проходят проверку, а сам репозиторий предупреждает, что проект не относится к официально поддерживаемым продуктам Google.</p>
+<p>Для работы проверяющих необходимы отдельные контексты ИИ-агентов. Если среда разработки не умеет их создавать, EGM останавливает проверку. Дополнительные рецензенты также расходуют вычислительные ресурсы и лимиты используемых моделей.</p>
+<p>Google предлагает перенести часть усилий разработчика с исправления уже написанного кода на проверку замысла. Правда, окончательное решение всё равно принимает человек: даже несколько независимых ИИ-рецензентов могут не заметить одну и ту же ошибку.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>

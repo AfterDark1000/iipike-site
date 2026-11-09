@@ -4058,5 +4058,21 @@
       "safety",
       "society"
     ]
+  },
+  {
+    "title": "Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода",
+    "summary": "Google обновила Elephant-Goldfish Model (EGM): один ИИ-агент держит контекст проекта, а независимые рецензенты с чистым контекстом проверяют спецификацию до написания кода; версия 0.1.1 расширила проверки и экспериментальную совместимость.",
+    "published": "2026-11-09",
+    "source_url": "https://opensource.googleblog.com/2026/10/introducing-elephant-goldfish-model-plugin.html",
+    "cover": "assets/editorial/google-elephant-goldfish-model-20261106.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-09T10:30:43Z",
+    "event_date": "2026-11-06",
+    "id": "google-elephant-goldfish-model-20261106",
+    "url": "articles/google-elephant-goldfish-model-20261106/",
+    "topics": [
+      "development",
+      "agents"
+    ]
   }
 ]
