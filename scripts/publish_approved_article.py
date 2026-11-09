@@ -23,7 +23,7 @@ if str(ROOT) not in sys.path:
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home
-from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href
+from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
@@ -148,6 +148,15 @@ def approved_article(root, slug):
     # Share exactly one schema with the ChatGPT intake validator so that the
     # approved article retains the editor's full inline and block formatting.
     validate_blocks(data.get("paragraphs"))
+    for block in data["paragraphs"]:
+        if block["type"] != "image":
+            continue
+        match = IMAGE_SOURCE.fullmatch(block["src"])
+        if match is None or match.group("story") != slug:
+            raise ValueError("An illustration must belong to this exact story")
+        asset = root / image_asset(block["src"])
+        if not asset.is_file() or asset.is_symlink():
+            raise ValueError("Missing approved local illustration: " + block["src"])
     if "article_markdown" in data:
         # Never silently publish content altered during JSON transformation:
         # the verbatim editor-approved Markdown must reproduce these blocks.
