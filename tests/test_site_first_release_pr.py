@@ -198,7 +198,9 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
                                                   p.endswith("covers/" + ID + ".webp")):
                 self.assertIsNone(pending_paths("HEAD", ID))
             with patch("scripts.site_first_release_pr.exists_at",
-                       return_value=True):
+                       side_effect=lambda ref,p: p.endswith(".json") or
+                                                  p.endswith("covers/" + ID + ".webp") or
+                                                  p.endswith("illustrations/" + ID + "/checklist.webp")):
                 self.assertEqual(pending_paths("HEAD", ID),
                                  (f"editorial_inbox/stories/{ID}.json",
                                   f"editorial_inbox/covers/{ID}.webp",
