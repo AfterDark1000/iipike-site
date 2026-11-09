@@ -62,8 +62,24 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn("workflow_id: 'dzen-reading-queue.yml'", release)
 
     def test_dzen_tools_present(self):
-        for label in ("Копировать заголовок", "Копировать текст с оформлением", "Скачать выбранные обложки ZIP"):
+        for label in ("Копировать заголовок", "Копировать текст с оформлением",
+                      "Копировать выделением", "Только текст",
+                      "Скачать выбранные обложки ZIP"):
             self.assertIn(label, self.html)
+
+    def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
+        for phrase in ('id="copySelected"', 'id="copyPlain"', 'id="copyFeedback"',
+                       'role="status"', 'aria-live="polite"',
+                       'function copyFormattedSelection()', 'document.execCommand("copy")',
+                       '"text/html":new Blob([activeStory.html]',
+                       '"text/plain":new Blob([plain]',
+                       'function plainPreview()', 'var method=await copyArticleRich()',
+                       'Скопирован только обычный текст',
+                       'Сохранит ли Дзен оформление'):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.html)
+        self.assertNotIn('await copy(activeStory.markdown,activeStory.html)', self.html)
+        self.assertNotIn('await navigator.clipboard.writeText(text)}', self.html)
 
 
 if __name__ == "__main__":
