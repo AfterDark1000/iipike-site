@@ -4042,5 +4042,21 @@
       "audio",
       "society"
     ]
+  },
+  {
+    "title": "В США центр проверки ИИ остался без руководителя",
+    "summary": "Расследование Associated Press: американский CAISSI остаётся без постоянного директора, сотрудники получили просьбу неформально отчитываться перед подразделением Белого дома; возникают вопросы о независимости и прозрачности проверки безопасности ИИ.",
+    "published": "2026-11-09",
+    "source_url": "https://apnews.com/article/ai-safety-trump-white-house-d3318eb2cf011df53e9ddb3e03d25f13",
+    "cover": "assets/editorial/caissi-no-permanent-director-20261108.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-09T06:45:34Z",
+    "event_date": "2026-11-08",
+    "id": "caissi-no-permanent-director-20261108",
+    "url": "articles/caissi-no-permanent-director-20261108/",
+    "topics": [
+      "safety",
+      "society"
+    ]
   }
 ]
