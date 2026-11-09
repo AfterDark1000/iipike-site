@@ -37,6 +37,22 @@ function evaluateRun(label, runs, maxAge, nowMs, url) {
   return null;
 }
 
+// Pages publishes what readers see; a green scheduler is not a deploy proof.
+const PAGES_WORKFLOW = 'pages build and deployment';
+function evaluatePagesBuilds(runs, nowMs) {
+  const pages = runs.filter(r => r.name === PAGES_WORKFLOW);
+  if (!pages.length) return null; // No evidence; don't invent a failure.
+  // A new deploy normally cancels an older one. Never alert while the
+  // replacement is actively being built or deployed.
+  if (pages.some(r => r.status !== 'completed' && ageMinutes(r.created_at, nowMs) < 35))
+    return null;
+  const latest = latestNonCancelled(pages);
+  if (!latest || latest.conclusion === 'success') return null;
+  if (ageMinutes(latest.created_at, nowMs) < 10) return null;
+  return 'Последняя доставка сайта GitHub Pages не удалась (' + latest.conclusion +
+    '): ' + latest.html_url + '. Наличие HTML в main не подтверждает доступность страницы.';
+}
+
 const RELEASE_PREFIX = 'site-release:';
 const RELEASE_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -44,10 +60,18 @@ const RELEASE_ID = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 // Only the actual scheduled-publication step identifies the failed article.
 function selectedReleaseFromLogs(logs) {
   if (typeof logs !== 'string') return null;
-  const marker = '##[group]Run python3 scripts/site_publication_queue.py';
-  const offset = logs.lastIndexOf(marker);
+  // Since the pipefail/tee change, Actions prints "Run set -o pipefail"
+  // instead of the former "Run python3 scripts/site_publication_queue.py".
+  // Choose the actual step AFTER regression tests; never attribute simulated
+  // SCHEDULED_RELEASE lines printed by unit tests to a live publication.
+  const markers = [
+    '##[group]Run python3 scripts/site_publication_queue.py',
+    '##[group]Run set -o pipefail'
+  ];
+  const offset = Math.max(...markers.map(marker => logs.lastIndexOf(marker)));
   if (offset < 0) return null;
   const section = logs.slice(offset);
+  if (!section.includes('scripts/site_publication_queue.py')) return null;
   const matches = [...section.matchAll(/SCHEDULED_RELEASE:\s+([a-z0-9]+(?:-[a-z0-9]+)*)\s+urgent=(?:True|False)\b/g)];
   return matches.length === 1 ? matches[0][1] : null;
 }
@@ -173,6 +197,18 @@ async function main({github, context, core}) {
     notes.push('Проверка запусков Дзен → Telegram недоступна: ' + String(error.message).slice(0,160) +
       '. Это не доказательство сбоя Telegram.');
   }
+  // Monitor the actual GitHub Pages workflow independently of the scheduler.
+  // A completed failed/abandoned deploy must not be hidden by news.json.
+  try {
+    const pageRuns = await github.rest.actions.listWorkflowRunsForRepo({
+      owner: OWNER, repo: SITE, per_page: 100
+    });
+    checked.add('site-pages');
+    const problem = evaluatePagesBuilds(pageRuns.data.workflow_runs || [], now);
+    if (problem) put('site-pages', problem);
+  } catch (error) {
+    notes.push('Не удалось проверить GitHub Pages: ' + String(error.message).slice(0,160));
+  }
   // Read queue via local git, not repeated GitHub API calls. Inspection failures are NOT a publication outage.
   try {
     const fs = require('node:fs');
@@ -294,4 +330,4 @@ async function main({github, context, core}) {
   await core.summary.addRaw(summary.join('\n') + '\n').write();
 }
 module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled, evaluateRun,
-  selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
+  evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
