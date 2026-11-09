@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 37
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 38
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **09.11.2026 10:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **09.11.2026 11:45 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [В США центр проверки ИИ остался без руководителя](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/caissi-no-permanent-director-20261108.json) | ⏳ Ждёт часовой интервал | **Не ранее 09.11.2026 11:37 (Усть-Катав)**; пауза до 09.11.2026 11:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/caissi-no-permanent-director-20261108.webp) |
+| — | Готовых к выбору материалов нет | — | — | — |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [В США центр проверки ИИ остался без руководителя](https://iipike.ru/articles/caissi-no-permanent-director-20261108/) | 09.11.2026 11:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/caissi-no-permanent-director-20261108.webp) |
 | [Голос Элвиса и песни Эминема: против Suno подали два новых иска](https://iipike.ru/articles/suno-elvis-eminem-lawsuits-20261106/) | 09.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-elvis-eminem-lawsuits-20261106.webp) |
 | [ИИ отправили искать инопланетян. Теперь он сам управляет радиотелескопом](https://iipike.ru/articles/seti-ai-agents-radio-telescope-20261030/) | 09.11.2026 09:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/seti-ai-agents-radio-telescope-20261030.webp) |
 | [Grok начал вшивать невидимые метки в ответы через API](https://iipike.ru/articles/grok-api-output-watermarking-20261107/) | 08.11.2026 08:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grok-api-output-watermarking-20261107.webp) |
