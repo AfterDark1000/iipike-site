@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "811b8d44d51eb738859d651b20fcbe9378fddb7a",
-  "source_blob_sha": "cb0c00a189f3c15046402f05b367a2598098678b",
+  "source_commit": "bfe72b01e1997f8e0f9b34f529d179747aeda720",
+  "source_blob_sha": "83e11143dd4f4f2b300a98aa36b709ae64612f21",
   "snapshot_date": "2026-11-09",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af1b1e598b918050983e33c",
+      "title": "Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода",
+      "dzen_url": "https://dzen.ru/a/avGx5Zi5GAUJg-M8",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 6 ноября обновила Elephant-Goldfish Model (EGM) — открытый инструмент, в котором одни ИИ-агенты проектируют программу, а другие ищут недостатки в их решениях. Особенность системы в том, что проверяющие намеренно не знают истории предыдущих обсуждений. В версии 0.1.1 появился новый рецензент и экспериментальная поддержка Cursor, OpenCode и GitHub Copilot. Сам проект Google представила ещё 22 октября. Названия у",
+      "published_at_utc": "2026-11-09T13:31:59+00:00"
+    },
+    {
+      "dzen_id": "6af16ec76208361f4594b0c8",
+      "title": "В США центр проверки ИИ остался без руководителя",
+      "dzen_url": "https://dzen.ru/a/avFux2IINh9FlLDI",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американский Центр инноваций и стандартов сверхинтеллекта (CAISSI) остался без постоянного руководителя. Более того, его сотрудников недавно попросили неформально отчитываться перед одним из подразделений Белого дома. Об этом 8 ноября сообщило Associated Press, ссылаясь на двух бывших государственных чиновников, знакомых с ситуацией. CAISSI входит в состав Национального института стандартов и технологий США (NIST). Е",
+      "published_at_utc": "2026-11-09T09:21:33+00:00"
+    },
+    {
+      "dzen_id": "6af16d8aa7caeb1e926d8908",
+      "title": "Голос Элвиса и песни Эминема: против Suno подали два новых иска",
+      "dzen_url": "https://dzen.ru/a/avFtiqfK6x6SbYkI",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Правообладатели Элвиса Пресли и издатель песен Эминема 6 ноября подали два отдельных иска против Suno — сервиса, создающего музыку с помощью искусственного интеллекта. Оба дела поступили в федеральный суд Северного округа Калифорнии. Истцы обвиняют компанию в незаконном использовании музыки для обучения нейросетей и нарушении авторских прав при генерации новых песен. Первый иск подали Elvis Presley Enterprises и друг",
+      "published_at_utc": "2026-11-09T07:59:56+00:00"
+    },
     {
       "dzen_id": "6af1462d67618b6b190e49e1",
       "title": "ИИ отправили искать инопланетян. Теперь он сам управляет радиотелескопом",
