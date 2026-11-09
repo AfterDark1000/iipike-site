@@ -13,8 +13,11 @@ import re
 import subprocess
 import sys
 
+from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SOURCE
+
 STORY = re.compile(r"^editorial_inbox/stories/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$")
 COVER = re.compile(r"^editorial_inbox/covers/([a-z0-9]+(?:-[a-z0-9]+)*)\.(webp|png|jpg|jpeg)$")
+ILLUSTRATION = re.compile(r"^editorial_inbox/illustrations/([a-z0-9]+(?:-[a-z0-9]+)*)/[a-z0-9][a-z0-9_-]{0,79}\.(?:webp|png|jpg|jpeg)$")
 STABLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 IMAGE_EXTS = ("webp", "png", "jpg", "jpeg")
 GH_REPO = "AfterDark1000/iipike-site"
@@ -33,7 +36,7 @@ def changed_ids(event):
         return [story_id]
     for c in event.get("commits", []):
         for path in c.get("added", []) + c.get("modified", []):
-            match = STORY.fullmatch(path) or COVER.fullmatch(path)
+            match = STORY.fullmatch(path) or COVER.fullmatch(path) or ILLUSTRATION.fullmatch(path)
             if match and len(match[1]) <= 72:
                 found.add(match[1])
     return sorted(found)
@@ -100,12 +103,30 @@ def pending_paths(ref, story_id):
         return None
     if len(art) != 1:
         raise ValueError(f"Ambiguous images for {story_id}: {art}")
-    return story, art[0]
+    data = json.loads(safe_git_blob_at(ref, story))
+    blocks = (markdown_to_blocks(data["article_markdown"])
+              if "article_markdown" in data else validate_blocks(data.get("paragraphs")))
+    illustrations = []
+    for block in blocks:
+        if block["type"] != "image":
+            continue
+        src = block["src"]
+        match = IMAGE_SOURCE.fullmatch(src)
+        if match is None or match.group("story") != story_id:
+            raise ValueError("Image ID must match its approved story")
+        path = "editorial_inbox/" + src
+        if not exists_at(ref, path):
+            print(f"AWAITING_ILLUSTRATIONS: {story_id} ({path})", flush=True)
+            return None
+        if path not in illustrations:
+            illustrations.append(path)
+    return (story, art[0], *illustrations)
 
 
 def proposed_changes():
     output = git("status", "--porcelain", "--untracked-files=all").stdout.splitlines()
     allowed = ("editorial_inbox/stories/", "editorial_inbox/covers/",
+               "editorial_inbox/illustrations/",
                "assets/editorial/", "content/approved/", "articles/",
                "rubrics/", "topics/")
     exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html"}
