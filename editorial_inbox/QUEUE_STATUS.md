@@ -12,7 +12,7 @@
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/voice-deepfake-family-money-scam-guide-20261109.json) | 🟢 Готова к выпуску | **Не ранее 09.11.2026 20:37 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/voice-deepfake-family-money-scam-guide-20261109.webp) |
+| **1** | [«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/voice-deepfake-family-money-scam-guide-20261109.json) | 🟢 Готова к выпуску | **Не ранее 09.11.2026 20:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/voice-deepfake-family-money-scam-guide-20261109.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
