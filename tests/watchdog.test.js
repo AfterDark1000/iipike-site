@@ -73,7 +73,7 @@ test('actual publishing step is distinguished from fake test releases in job log
     '2026-11-09T17:45:41Z python3 scripts/site_publication_queue.py | tee /tmp/hpii-site-release.log',
     '2026-11-09T17:45:43Z SCHEDULED_RELEASE: voice-deepfake-family-money-scam-guide-20261109 urgent=False',
     '2026-11-09T17:45:44Z EXISTING_RELEASE_REVIEW_REQUIRED: voice-deepfake-family-money-scam-guide-20261109'
-  ].join('\\n');
+  ].join('\n');
   assert.equal(selectedReleaseFromLogs(newFormat), 'voice-deepfake-family-money-scam-guide-20261109');
   assert.equal(selectedReleaseFromLogs('SCHEDULED_RELEASE: fake urgent=False'), null);
   assert.equal(selectedReleaseFromLogs(
