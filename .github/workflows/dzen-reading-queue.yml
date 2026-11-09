@@ -3,11 +3,16 @@ on:
   schedule:
     - cron: '13,43 * * * *'
   workflow_dispatch:
+  # The Dzen workflow exists on main only. A push to editorial-intake cannot
+  # start it, so listen for that branch's completed intake validation instead.
+  # GitHub's GITHUB_TOKEN pushes from site release also do not fire push events;
+  # the release workflow explicitly dispatches this workflow when it ships.
+  workflow_run:
+    workflows:
+      - 'HPII — editorial text + cover inbox (VALIDATION ONLY)'
+    types: [completed]
   push:
-    # Site-first releases update news.json in main. Refresh the Dzen list
-    # immediately instead of waiting for GitHub's best-effort cron.
-    # Editor/artist additions on editorial-intake are also included.
-    branches: [main, editorial-intake]
+    branches: [main]
     paths:
       - '.github/workflows/dzen-reading-queue.yml'
       - 'news.json'
@@ -20,6 +25,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update-reading-queue:
+    # Never trust an unverified intake run or another branch's workflow.
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'editorial-intake') }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
