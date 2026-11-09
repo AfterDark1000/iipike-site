@@ -5,6 +5,8 @@ on:
     paths:
       - 'index.html'
       - 'dzen/index.html'
+      - 'admin/index.html'
+      - 'tests/test_admin_dashboard.py'
       - 'threads/index.html'
       - 'x/index.html'
       - 'tests/test_x_redirect.py'
@@ -71,6 +73,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate homepage markup, dependencies and inline JavaScript
         run: |
+          python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
+          python3 - <<'PY'
+          from pathlib import Path
+          html = Path('admin/index.html').read_text(encoding='utf-8')
+          assert html.count('<script>') == 1 and html.count('</script>') == 1
+          Path('/tmp/hpii-admin-inline.js').write_text(html.split('<script>', 1)[1].split('</script>', 1)[0], encoding='utf-8')
+          PY
+          node --check /tmp/hpii-admin-inline.js
           python3 -m unittest discover -s tests -p 'test_homepage.py' -v
           python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
           python3 -m unittest discover -s tests -p 'test_social_footer.py' -v
