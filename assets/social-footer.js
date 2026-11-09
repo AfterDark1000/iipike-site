@@ -12,6 +12,7 @@
     { name: "X / Twitter", kind: "x", label: "Коротко и по делу", url: "https://x.com/iipike_ai" },
     { name: "MAX", kind: "max", label: "Новости без шума", url: "https://max.ru/channel_iipike" },
     { name: "YouTube", kind: "youtube", label: "Видео и Shorts", url: "https://www.youtube.com/channel/UCCEtLy-Id7ynkGtI_M-OtUQ" },
+    { name: "RuTube", kind: "rutube", label: "Видеоархив ХПИИ", url: "https://rutube.ru/channel/82377426" },
     { name: "Instagram", kind: "instagram", label: "Публикации на паузе", url: "https://www.instagram.com/iipike.ai/", paused: true }
   ];
   var NS = "http://www.w3.org/2000/svg";
@@ -52,6 +53,9 @@
     } else if (kind === "youtube") {
       shape(svg, "rect", {x:"2",y:"5",width:"20",height:"14",rx:"4.5",fill:"currentColor"});
       shape(svg, "path", {d:"m10 8.5 6 3.5-6 3.5Z",fill:"#20252a"});
+    } else if (kind === "rutube") {
+      shape(svg, "rect", {x:"2",y:"5",width:"20",height:"14",rx:"4",fill:"none",stroke:"currentColor","stroke-width":"2"});
+      shape(svg, "path", {d:"m10 8 6 4-6 4Z",fill:"currentColor"});
     } else if (kind === "instagram") {
       shape(svg, "rect", {x:"3",y:"3",width:"18",height:"18",rx:"5",fill:"none",stroke:"currentColor","stroke-width":"2"});
       shape(svg, "circle", {cx:"12",cy:"12",r:"4",fill:"none",stroke:"currentColor","stroke-width":"2"});
@@ -92,7 +96,6 @@
     });
     var bottom = el("div", "hpi-social-bottom");
     bottom.append(
-      el("span", "", "RuTube — видеоархив · ссылка на канал уточняется"),
       el("span", "", "Никаких фанфар. Только хроники.")
     );
     wrap.append(heading, grid, bottom);
