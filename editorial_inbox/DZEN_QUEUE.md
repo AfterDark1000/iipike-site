@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 38 · **В каталоге Дзена подтверждены:** 36 · **Не подтверждены, уже на сайте:** 1 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 38 · **В каталоге Дзена подтверждены:** 36 · **Не подтверждены, уже на сайте:** 2 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и точным утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.
 
@@ -15,6 +15,7 @@
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
 | 1 | [Голос Элвиса и песни Эминема: против Suno подали два новых иска](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/suno-elvis-eminem-lawsuits-20261106.md) | 09.11.2026, 10:30 | [На сайте](https://iipike.ru/articles/suno-elvis-eminem-lawsuits-20261106/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-elvis-eminem-lawsuits-20261106.webp) |
+| 2 | [В США центр проверки ИИ остался без руководителя](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/caissi-no-permanent-director-20261108.md) | 09.11.2026, 11:45 | [На сайте](https://iipike.ru/articles/caissi-no-permanent-director-20261108/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/caissi-no-permanent-director-20261108.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -22,7 +23,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [В США центр проверки ИИ остался без руководителя](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/caissi-no-permanent-director-20261108.md) | **Не ранее 09.11.2026 11:37 (Усть-Катав)**; пауза до 09.11.2026 11:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/caissi-no-permanent-director-20261108.webp) |
+| — | Нет материалов | — | — | — |
 
 ## 3. Подтверждены опубликованными в Дзене
 
