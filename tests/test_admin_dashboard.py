@@ -38,6 +38,29 @@ class AdminOverviewTests(unittest.TestCase):
                        "published_observed_in_feed", "reconcileDzenCatalog"):
             self.assertIn(phrase, self.html)
 
+    def test_approved_editorial_updates_trigger_dzen_queue_even_without_workflow_on_intake_branch(self):
+        dzen = (ROOT / ".github/workflows/dzen-reading-queue.yml").read_text(encoding="utf-8")
+        self.assertIn("workflow_run:", dzen)
+        self.assertIn("HPII — editorial text + cover inbox (VALIDATION ONLY)", dzen)
+        self.assertIn("github.event.workflow_run.conclusion == 'success'", dzen)
+        self.assertIn("github.event.workflow_run.head_branch == 'editorial-intake'", dzen)
+        self.assertIn("branches: [main]", dzen)
+        self.assertNotIn("branches: [main, editorial-intake]", dzen)
+        self.assertIn("workflow_dispatch:", dzen)
+
+    def test_site_publication_dispatches_dzen_queue_only_after_confirmed_release(self):
+        release = (ROOT / ".github/workflows/site-first-scheduled-release.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("actions: write", release)
+        self.assertIn("id: release", release)
+        self.assertIn("set -o pipefail", release)
+        self.assertIn("ONE_RELEASE_REQUESTED:", release)
+        self.assertIn("steps.release.outputs.published == 'true'", release)
+        self.assertIn("steps.release.outcome == 'success'", release)
+        self.assertIn("github.rest.actions.createWorkflowDispatch", release)
+        self.assertIn("workflow_id: 'dzen-reading-queue.yml'", release)
+
     def test_dzen_tools_present(self):
         for label in ("Копировать заголовок", "Копировать текст с оформлением", "Скачать выбранные обложки ZIP"):
             self.assertIn(label, self.html)
