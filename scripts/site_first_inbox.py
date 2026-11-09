@@ -24,7 +24,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.publish_approved_article import approved_article, publish
 from scripts.site_rubrics import RUBRICS
-from scripts.site_rich_text import validate_blocks, markdown_to_blocks
+from scripts.site_rich_text import validate_blocks, markdown_to_blocks, IMAGE_SOURCE, image_asset
 from scripts.site_related import explicit_site_crosslinks
 from scripts.site_topics import validate_topics, infer_topics
 
@@ -99,9 +99,12 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
     if "article_markdown" in data:
         if "paragraphs" in data:
             raise ValueError("Supply either verbatim article_markdown OR paragraphs, not both")
-        markdown_to_blocks(data["article_markdown"])
+        blocks = markdown_to_blocks(data["article_markdown"])
     else:
-        validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
+        blocks = validate_blocks(data.get("paragraphs"), max_blocks=80, min_chars=400)
+    for block in blocks:
+        if block["type"] == "image" and IMAGE_SOURCE.fullmatch(block["src"]).group("story") != story_id:
+            raise ValueError("Illustration must belong to the same approved story ID")
     entries = json.loads((root / "news.json").read_text(encoding="utf-8"))
     explicit_site_crosslinks(data, entries)
     published = next((x for x in entries if x.get("id") == story_id), None)
@@ -158,6 +161,41 @@ def cover_info(root, story_id):
     return path, width, height
 
 
+
+def illustrations_info(root, story_id, blocks):
+    """Preflight all referenced images; never release a partial illustrated story."""
+    found, missing = [], []
+    for block in blocks:
+        if block["type"] != "image":
+            continue
+        src = block["src"]
+        match = IMAGE_SOURCE.fullmatch(src)
+        if match is None or match.group("story") != story_id:
+            raise ValueError("Illustration belongs to a different story")
+        source = root / "editorial_inbox" / src
+        if not source.is_file():
+            missing.append(src)
+            continue
+        if source.is_symlink() or not 5_000 <= source.stat().st_size <= MAX_IMAGE_BYTES:
+            raise ValueError("Unsafe illustration size or file type")
+        try:
+            with Image.open(source) as art:
+                width, height, actual_format = *art.size, art.format
+                art.verify()
+        except (UnidentifiedImageError, OSError, SyntaxError) as exc:
+            raise ValueError("Illustration cannot be decoded") from exc
+        if actual_format != COVER_EXTENSIONS[source.suffix.lstrip(".")]:
+            raise ValueError("Illustration extension does not match image bytes")
+        if min(width, height) < 320 or width * height > 40_000_000:
+            raise ValueError("Illustration dimensions are unsafe or too small")
+        dest = root / image_asset(src)
+        if (source, dest) not in found:
+            found.append((source, dest))
+    if len(found) + len(missing) > 8:
+        raise ValueError("At most eight editorial illustrations per article")
+    return found, missing
+
+
 def stage(root, story_id, *, apply=False, now=None):
     """Validate independently delivered text+art, optionally create approved files.
 
@@ -175,9 +213,15 @@ def stage(root, story_id, *, apply=False, now=None):
         print(f"AWAITING_COVER: {story_id} (article stored; cannot release yet)")
         return None
     cover, width, height = art
+    blocks = (markdown_to_blocks(data["article_markdown"])
+              if "article_markdown" in data else data["paragraphs"])
+    illustrations, missing = illustrations_info(root, story_id, blocks)
+    if missing:
+        print(f"AWAITING_ILLUSTRATIONS: {story_id} ({', '.join(missing)})")
+        return None
     dest_asset = root / "assets" / "editorial" / cover.name
     dest_json = root / "content" / "approved" / (story_id + ".json")
-    if dest_asset.exists() or dest_json.exists():
+    if dest_asset.exists() or dest_json.exists() or any(dest.exists() for _, dest in illustrations):
         raise ValueError("Already staged: cannot overwrite a live or approved article")
     timestamp = current.strftime("%Y-%m-%dT%H:%M:%SZ")
     date = current.astimezone(EDITORIAL_TZ).date().isoformat()
@@ -190,8 +234,7 @@ def stage(root, story_id, *, apply=False, now=None):
         "source_url": data["source_url"], "source_title": data["source_title"],
         "published": date, "published_at_utc": timestamp,
         "cover": dest_asset.relative_to(root).as_posix(),
-        "paragraphs": (markdown_to_blocks(data["article_markdown"])
-                       if "article_markdown" in data else data["paragraphs"]),
+        "paragraphs": blocks,
         "related_dzen_ids": data.get("related_dzen_ids", []),
         "site_crosslinks": data.get("site_crosslinks", {}),
         # No editor busywork: source may optionally select validated keys,
@@ -212,12 +255,17 @@ def stage(root, story_id, *, apply=False, now=None):
     dest_asset.parent.mkdir(parents=True, exist_ok=True)
     try:
         shutil.copyfile(cover, dest_asset)
+        for src, dest in illustrations:
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, dest)
         dest_json.write_text(json.dumps(approved, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         # Reuse the production publisher's entire provenance/date/text contract.
         approved_article(root, story_id)
     except Exception:
         dest_json.unlink(missing_ok=True)
         dest_asset.unlink(missing_ok=True)
+        for _, dest in illustrations:
+            dest.unlink(missing_ok=True)
         raise
     print(f"STAGED: {story_id} at {timestamp}; article not yet public")
     return approved
@@ -246,7 +294,17 @@ def main():
                 art = cover_info(ROOT, item.stem)
                 entries = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
                 already_public = any(x.get("id") == item.stem for x in entries)
-                print(("ALREADY_PUBLISHED" if already_public else "READY" if art else "AWAITING_COVER") + ": " + item.stem)
+                if art and not already_public:
+                    data = json.loads(item.read_text(encoding="utf-8"))
+                    blocks = (markdown_to_blocks(data["article_markdown"])
+                              if "article_markdown" in data else data["paragraphs"])
+                    _, missing = illustrations_info(ROOT, item.stem, blocks)
+                else:
+                    missing = []
+                status = ("ALREADY_PUBLISHED" if already_public else
+                          "AWAITING_COVER" if not art else
+                          "AWAITING_ILLUSTRATIONS" if missing else "READY")
+                print(status + ": " + item.stem)
                 seen.add(item.stem)
             for suffix in COVER_EXTENSIONS:
                 for item in sorted(covers.glob("*." + suffix)):
