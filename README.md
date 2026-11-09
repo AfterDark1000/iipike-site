@@ -90,3 +90,9 @@ CI проверяет `test_site_rubrics_related.py`, `test_approved_publisher.p
 ## Автоматизация следующих выпусков (после первого Astra)
 
 Для новых материалов без повторного ручного PR: редактор ChatGPT отправляет **исходный утверждённый Markdown** в `editorial_inbox/stories/<id>.json` (`article_markdown`), Художник — настоящий бинарный файл в `editorial_inbox/covers/<id>.*`, оба — на `editorial-intake`. Workflow проверяет обе части и полный архив, делает безопасное обновление `main` без force-push и инициирует GitHub Pages rebuild. **Это не автоматическая публикация в Дзен.** Редакционные указания: [CHATGPT_EDITOR_INSTRUCTIONS.md](editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md); формат: [RICH_TEXT_FORMAT.md](editorial_inbox/RICH_TEXT_FORMAT.md). Старые инструкции о ручном релизном PR описывают первый пилот Astra.
+
+## Проверка фактической доставки на iipike.ru
+
+Файл `articles/<id>/index.html` и запись в `news.json` на ветке `main` **не доказывают**, что статья доступна читателю. После каждого выпуска отдельно проверьте последнюю сборку **pages build and deployment** в GitHub Actions: она должна завершиться `success` на коммите, содержащем статью; затем проверьте публичный адрес `https://iipike.ru/articles/<id>/` и наличие статьи в ленте сайта.
+
+Статусы `queued`, `pending`, `failure`, `cancelled` и служебный `abandoned` не означают успешного выпуска. Если GitHub Pages заблокировал или отменил сборку, не запускайте повторное формирование статьи и не меняйте её время публикации ради попытки исправить Pages. Восстанавливайте только доставку сайта, без повторного выпуска и дублирования материала. Не отмечайте инцидент сторожа устранённым до проверки публичной страницы.
