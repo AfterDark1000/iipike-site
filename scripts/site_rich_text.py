@@ -267,4 +267,4 @@ def markdown_to_blocks(source):
     flush_all()
     if blocks and blocks[0]["type"] == "p":
         blocks[0]["type"] = "lead"
-    return validate_blocks(blocks, max_blocks=80, min_chars=400)
+    return validate_blocks(blocks, max_blocks=160, min_chars=400)
