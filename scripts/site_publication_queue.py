@@ -141,8 +141,7 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
         # still revalidates the selected article before any publication.
         try:
             blocks = (markdown_to_blocks(story["article_markdown"])
-                      if "article_markdown" in story else
-                      validate_blocks(story.get("paragraphs")))
+                      if "article_markdown" in story else story.get("paragraphs", []))
         except (ValueError, TypeError) as exc:
             print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
             continue
