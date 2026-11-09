@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T02:36:42.663896Z",
+  "updated_at": "2026-11-09T10:20:57.318235Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T02:36:42.663896Z",
-      "last_success_at": "2026-11-09T02:36:42.663896Z",
+      "checked_at": "2026-11-09T10:20:57.318235Z",
+      "last_success_at": "2026-11-09T10:20:57.318235Z",
       "error": null,
-      "fresh_matches": 7
+      "fresh_matches": 2
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T02:36:42.663896Z",
-      "last_success_at": "2026-11-09T02:36:42.663896Z",
+      "checked_at": "2026-11-09T10:20:57.318235Z",
+      "last_success_at": "2026-11-09T10:20:57.318235Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 6
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T02:36:42.663896Z",
-      "last_success_at": "2026-11-09T02:36:42.663896Z",
+      "checked_at": "2026-11-09T10:20:57.318235Z",
+      "last_success_at": "2026-11-09T10:20:57.318235Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T02:36:42.663896Z",
-      "last_success_at": "2026-11-09T02:36:42.663896Z",
+      "checked_at": "2026-11-09T10:20:57.318235Z",
+      "last_success_at": "2026-11-09T10:20:57.318235Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -51,14 +51,69 @@
   "generator": {
     "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Обработано статей: 1"
   },
   "usage": {
     "date": "2026-11-09",
-    "attempted": 9
+    "attempted": 12
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "564209f3039769cd4ca4ed6f",
+      "title": "Бесплатный Galaxy AI заканчивается? Samsung может попросить $50 за полный доступ к ИИ-функциям на смартфонах Galaxy — компания готовит тариф Galaxy AI Premium",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/09/besplatnyi-galaxy-ai-zakancivaetsia-samsung-mozet-poprosit-50-za-polnyi-dostup-k-ii-funkciiam-na-smartfonax-galaxy-kompaniia-gotovit-tarif-galaxy-ai-premium.html",
+      "published_at": "2026-11-09T09:50:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-09T10:20:57.318235Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Отдавать по пять баксов в месяц за генерацию видео на смартфонах и Bixby Action звучит как покупка абонемента в спортзал, куда всё равно никто не ходит. Если лимиты бесплатной версии Galaxy AI и правда урежут вчетверо, народ просто перестанет замечать эти функции.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-09T10:20:57.318235Z",
+      "reason": "Конкретная ирония по поводу платной подписки Samsung и реальной ценности этих функций для пользователей.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-09T10:20:57.318235Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "826aa64b80dc91592ea9b127",
+      "title": "Apple бросилась догонять OpenAI и M**a: Тернус требует превратить Siri в мощного ИИ-агента",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151037",
+      "published_at": "2026-11-09T09:35:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-09T10:20:57.318235Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "0324dabc02e4f07d682236ce",
+      "title": "Claude нашёл загадочные клеточные структуры у бактерий и вирусов — их происхождение может быть древнее, чем считалось",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/09/claude-nasel-zagadocnye-kletocnye-struktury-u-bakterii-i-virusov-ix-proisxozdenie-mozet-byt-drevnee-cem-scitalos.html",
+      "published_at": "2026-11-09T03:07:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-09T10:20:57.318235Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "d7765d336beaf12233a7df3c",
       "title": "Новая статья: Мастерская локальных ИИ: FLUX 3 Image Klein — рамки под контролем",
@@ -73,8 +128,8 @@
       "comments": null,
       "status": "read_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T22:51:22.762819Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-09T10:20:57.318235Z",
       "reason": "Не удалось прочитать статью целиком (ValueError)",
       "link_status": "dzen_link_missing"
     },
@@ -92,8 +147,8 @@
       "comments": null,
       "status": "read_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T22:51:22.762819Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-09T10:20:57.318235Z",
       "reason": "Не удалось прочитать статью целиком (ValueError)",
       "link_status": "dzen_link_missing"
     },
