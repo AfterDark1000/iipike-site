@@ -4008,5 +4008,21 @@
     ],
     "site_first_dzen_id": "6af01deac2ff502188f8d4e9",
     "site_first_dzen_url": "https://dzen.ru/a/avAd6sL_UCGI-NTp"
+  },
+  {
+    "title": "ИИ отправили искать инопланетян. Теперь он сам управляет радиотелескопом",
+    "summary": "SETI Institute и Breakthrough Listen подключили ИИ-агентов к радиотелескопам Allen Telescope Array для управления антеннами и обработки сигналов в ходе наблюдений; NVIDIA заявляет скорость обработки до 2,4 Тбит/с.",
+    "published": "2026-11-09",
+    "source_url": "https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/",
+    "cover": "assets/editorial/seti-ai-agents-radio-telescope-20261030.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-09T04:15:35Z",
+    "event_date": "2026-10-30",
+    "id": "seti-ai-agents-radio-telescope-20261030",
+    "url": "articles/seti-ai-agents-radio-telescope-20261030/",
+    "topics": [
+      "science",
+      "agents"
+    ]
   }
 ]
