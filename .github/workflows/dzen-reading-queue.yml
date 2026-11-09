@@ -190,7 +190,10 @@ jobs:
                   ambiguous = linked.length > 1;
                   core.warning('Unverified explicit Dzen counterpart: ' + id);
                 }
-              } else if (same.length === 1 && afterSite(same[0])) {
+              } else if (same.length === 1) {
+                // Historical crossposts may predate their later site import.
+                // Preserve exact, uniquely verified title matches irrespective
+                // of release order; strict chronology applies to explicit new IDs.
                 dzenUrl = same[0].dzen_url;
                 dzenDate = same[0].published_at_utc;
               } else if (same.length > 1) {
