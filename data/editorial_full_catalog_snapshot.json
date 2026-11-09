@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "a444805e47a63ba06a2d6d72e9031c09a2a8eb11",
-  "source_blob_sha": "cab44f797328ae8d9b8cc5679859d069ccc5f22f",
-  "snapshot_date": "2026-11-08",
+  "source_commit": "811b8d44d51eb738859d651b20fcbe9378fddb7a",
+  "source_blob_sha": "cb0c00a189f3c15046402f05b367a2598098678b",
+  "snapshot_date": "2026-11-09",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af1462d67618b6b190e49e1",
+      "title": "ИИ отправили искать инопланетян. Теперь он сам управляет радиотелескопом",
+      "dzen_url": "https://dzen.ru/a/avFGLWdhi2sZDknh",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "SETI Institute и проект Breakthrough Listen подключили ИИ-агентов к радиотелескопам Allen Telescope Array в Северной Калифорнии. Теперь нейросети могут управлять антеннами, настраивать оборудование, отслеживать ошибки и обрабатывать поступающие радиосигналы. Исследователю достаточно сформулировать задачу на обычном языке. О работающей системе 30 октября рассказала NVIDIA. Её платформа Holoscan позволяет обрабатывать",
+      "published_at_utc": "2026-11-09T05:16:41+00:00"
+    },
     {
       "dzen_id": "6af01deac2ff502188f8d4e9",
       "title": "Grok начал вшивать невидимые метки в ответы через API",
