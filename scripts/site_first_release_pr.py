@@ -13,7 +13,7 @@ import re
 import subprocess
 import sys
 
-from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SOURCE
+from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SOURCE, image_asset
 
 STORY = re.compile(r"^editorial_inbox/stories/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$")
 COVER = re.compile(r"^editorial_inbox/covers/([a-z0-9]+(?:-[a-z0-9]+)*)\.(webp|png|jpg|jpeg)$")
@@ -169,6 +169,17 @@ def auto_publish_site(story_id, base_sha, source_paths):
         "news.json", "feed.xml", "sitemap.xml", "index.html",
         "articles/index.html",
     }
+    # Inline illustrations are derived ONLY from the approved article's
+    # verified, story-scoped image references in pending_paths(). Both their
+    # editorial input and exact byte-for-byte copied public asset are required.
+    inline_pairs = []
+    for path in source_paths[2:]:
+        match = ILLUSTRATION.fullmatch(path)
+        if match is None or match[1] != story_id:
+            raise ValueError("Refusing unapproved illustration path: " + path)
+        public_path = image_asset(path.removeprefix("editorial_inbox/"))
+        expected_files.update((path, public_path))
+        inline_pairs.append((path, public_path))
     rubric_files = {"rubrics/" + name + "/index.html" for name in (
         "news", "skynet", "what-are-you-doing", "quotes"
     )}
@@ -182,6 +193,11 @@ def auto_publish_site(story_id, base_sha, source_paths):
     if not expected_files <= changed:
         raise ValueError("Release is missing required site/article artifacts: "
                          + str(sorted(expected_files - changed)))
+    for source, published in inline_pairs:
+        source_blob = git("rev-parse", "HEAD:" + source).stdout.strip()
+        published_blob = git("rev-parse", "HEAD:" + published).stdout.strip()
+        if not source_blob or source_blob != published_blob:
+            raise ValueError("Illustration public copy differs from approved source: " + published)
     # A new story may refresh inline crosslinks on *existing* approved
     # article pages. Allow these regenerated HTML files only when both the
     # page and its approved editorial source already existed in base main.
