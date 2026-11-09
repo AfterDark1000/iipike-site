@@ -29,6 +29,8 @@ on:
 permissions:
   contents: write
   pages: write
+  # Only to start the read-only-to-Dzen queue generator after a verified release.
+  actions: write
 concurrency:
   group: hpii-site-first-serial-publication
   cancel-in-progress: false
@@ -58,6 +60,7 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python3 scripts/site_first_release_intent.py --output "$GITHUB_OUTPUT"
       - name: Release at most one eligible editor-approved story
+        id: release
         if: >-
           github.event_name != 'push' ||
           steps.intent.outputs.mode == 'queue' ||
@@ -70,7 +73,12 @@ jobs:
           HPII_URGENT_STORY: ${{ github.event_name == 'push' && steps.intent.outputs.urgent || inputs.urgent }}
           HPII_VERIFIED_PUSH_URGENT: ${{ github.event_name == 'push' && steps.intent.outputs.mode == 'urgent' }}
           HPII_QUEUE_INSPECT_ONLY: ${{ inputs.inspect_only }}
-        run: python3 scripts/site_publication_queue.py
+        run: |
+          set -o pipefail
+          python3 scripts/site_publication_queue.py | tee /tmp/hpii-site-release.log
+          if grep -q '^ONE_RELEASE_REQUESTED:' /tmp/hpii-site-release.log; then
+            echo 'published=true' >> "$GITHUB_OUTPUT"
+          fi
       - name: Recompute queue dashboard after publication or failure
         if: always()
         run: |
@@ -114,4 +122,17 @@ jobs:
               ...(sha ? { sha } : {})
             });
             core.info('Queue page updated on editorial-intake without changing main or Pages.');
+
+      - name: Regenerate Dzen reading list after successful site release
+        # A GITHUB_TOKEN push to main does not trigger another push workflow.
+        # workflow_dispatch does, and is only sent after confirmed release.
+        if: ${{ always() && steps.release.outcome == 'success' && steps.release.outputs.published == 'true' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            await github.rest.actions.createWorkflowDispatch({
+              owner, repo, workflow_id: 'dzen-reading-queue.yml', ref: 'main'
+            });
+            core.info('Requested fresh Dzen prep queue after site release.');
 
