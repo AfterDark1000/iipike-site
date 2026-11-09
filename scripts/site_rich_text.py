@@ -15,9 +15,9 @@ BLOCK_TYPES = TEXT_TYPES | LIST_TYPES | {"image"}
 # No remote URLs, traversal, SVG, HTML, data: URLs, or user-chosen paths.
 IMAGE_SOURCE = re.compile(
     r"illustrations/(?P<story>[a-z0-9]+(?:-[a-z0-9]+)*)/"
-    r"(?P<name>[a-z0-9][a-z0-9_-]{0,79}\\.(?:webp|png|jpg|jpeg))\\Z"
+    r"(?P<name>[a-z0-9][a-z0-9_-]{0,79}\.(?:webp|png|jpg|jpeg))\Z"
 )
-IMAGE_LINE = re.compile(r"!\\[(?P<alt>[^\\]\\n]{1,240})\\]\\((?P<src>[^()\\n]{1,240})\\)\\Z")
+IMAGE_LINE = re.compile(r"!\[(?P<alt>[^\]\n]{1,240})\]\((?P<src>[^()\n]{1,240})\)\Z")
 
 
 def image_asset(src):
