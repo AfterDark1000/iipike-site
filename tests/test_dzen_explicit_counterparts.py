@@ -1,8 +1,6 @@
 """Regression guard: explicit site-first Dzen links survive altered Dzen titles."""
-import datetime as dt
 import json
 from pathlib import Path
-import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +30,7 @@ class ExplicitDzenCounterpartsTests(unittest.TestCase):
             if not (did or url):
                 continue
             self.assertRegex(did or "", r"^[a-f0-9]{24}$")
-            self.assertRegex(url or "", r"^https://dzen\\.ru/a/[A-Za-z0-9_-]+$")
+            self.assertRegex(url or "", r"^https://dzen\.ru/a/[A-Za-z0-9_-]+$")
             self.assertNotIn(did, dzen_ids)
             self.assertNotIn(url, urls)
             self.assertTrue(row.get("published_at_utc"))
