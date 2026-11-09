@@ -40,13 +40,16 @@ class SocialFooterTests(unittest.TestCase):
             "https://x.com/iipike_ai",
             "https://max.ru/channel_iipike",
             "https://www.youtube.com/channel/UCCEtLy-Id7ynkGtI_M-OtUQ",
+            "https://rutube.ru/channel/82377426",
             "https://www.instagram.com/iipike.ai/",
         ]
         for address in expected:
             self.assertIn('url: "' + address + '"', self.source)
-        self.assertEqual(len(re.findall(r'url: "https://', self.source)), 8)
-        self.assertNotRegex(self.source, r'url: "https://rutube\\.')
-        self.assertIn("RuTube — видеоархив", self.source)
+        self.assertEqual(len(re.findall(r'url: "https://', self.source)), 9)
+        self.assertIn('kind: "rutube"', self.source)
+        self.assertIn('kind === "rutube"', self.source)
+        self.assertIn(".hpi-social-rutube", self.css)
+        self.assertNotIn("ссылка на канал уточняется", self.source)
         self.assertIn("paused: true", self.source)
 
     def test_accessible_secure_links_and_no_external_dependencies(self):
