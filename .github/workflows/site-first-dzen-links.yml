@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pages: write
+  actions: read
 concurrency:
   group: hpii-dzen-site-link-sync
   cancel-in-progress: false
@@ -50,6 +51,20 @@ jobs:
         run: |
           if git diff --quiet -- news.json articles; then
             echo "No new Dzen link mappings; no site rebuild."
+            exit 0
+          fi
+          # A Dzen counterpart is optional metadata. Never cancel an active
+          # Pages deployment for the sake of refreshing such a link. A later
+          # two-hour sync will safely pick it up instead.
+          pages_busy=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?per_page=100" \
+            --jq '[.workflow_runs[] | select(.name == "pages build and deployment" and .status != "completed") | select((now - (.created_at | fromdateiso8601)) >= -120 and (now - (.created_at | fromdateiso8601)) < 2700)] | length')
+          if [ "$pages_busy" -gt 0 ]; then
+            echo "PAGES_DEPLOY_ACTIVE: deferring optional Dzen links until next sync; no commit."
+            exit 0
+          fi
+          git fetch origin main
+          if [ "$(git rev-parse origin/main)" != "$(git rev-parse HEAD)" ]; then
+            echo "MAIN_CHANGED_DURING_SYNC: deferring Dzen links instead of racing another publisher."
             exit 0
           fi
           git add -- news.json articles

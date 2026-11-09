@@ -2,7 +2,8 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {ageMinutes, dueAgeMinutes, evaluateRun, latestNonCancelled,
-  selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident} = require('../scripts/watchdog.js');
+  evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication,
+  canAutoCloseIncident} = require('../scripts/watchdog.js');
 const NOW = Date.parse('2026-11-06T10:00:00Z');
 const run = (date, conclusion='success') => ({created_at:date, status:'completed', conclusion, html_url:'https://github.com/example'});
 
@@ -18,6 +19,29 @@ test('failed newest completed run creates alert', () => {
 test('do not treat cancelled Pages-like run as latest failure', () => {
   assert.equal(latestNonCancelled([run('2026-11-06T09:30:00Z','cancelled'),run('2026-11-06T09:25:00Z')]).conclusion,'success');
 });
+test('a failed Pages deploy is noticed even if the scheduler is green', () => {
+  const pages = [Object.assign(run('2026-11-06T09:30:00Z', 'failure'),
+    {name:'pages build and deployment'})];
+  assert.match(evaluatePagesBuilds(pages, NOW), /не удалась/);
+});
+test('replacement Pages deploy suppresses transient cancelled or failed predecessor', () => {
+  const failed = Object.assign(run('2026-11-06T09:15:00Z', 'failure'),
+    {name:'pages build and deployment'});
+  const cancelled = Object.assign(run('2026-11-06T09:25:00Z', 'cancelled'),
+    {name:'pages build and deployment'});
+  const replacement = {name:'pages build and deployment',
+    created_at:'2026-11-06T09:45:00Z',status:'in_progress',conclusion:null};
+  assert.equal(evaluatePagesBuilds([replacement,cancelled,failed], NOW), null);
+  assert.equal(evaluatePagesBuilds([cancelled, Object.assign(
+    run('2026-11-06T09:35:00Z'),{name:'pages build and deployment'}),failed], NOW),null);
+});
+test('a recent Pages failure gets a grace period; no unrelated-build false alarms', () => {
+  const failed=Object.assign(run('2026-11-06T09:55:00Z','failure'),
+    {name:'pages build and deployment'});
+  assert.equal(evaluatePagesBuilds([failed], NOW),null);
+  assert.equal(evaluatePagesBuilds([run('2026-11-06T08:00:00Z','failure')],NOW),null);
+});
+
 test('scheduled future slot is not overdue', () => {
   const delay = dueAgeMinutes({readyAt:'2026-11-06T07:00:00Z',notBefore:'2026-11-06T12:00:00+05:00',lastPublication:'2026-11-06T09:30:00Z'},NOW);
   assert.equal(delay,-30);
@@ -43,6 +67,14 @@ test('actual publishing step is distinguished from fake test releases in job log
     "2026-11-07T18:00:52Z Site-first release rejected: Quote needs '> ' prefix on line 10",
   ].join('\n');
   assert.equal(selectedReleaseFromLogs(logs), 'musk-baron-robots-orbital-ai-20261106');
+  const newFormat=[
+    '2026-11-09T17:45:40Z SCHEDULED_RELEASE: fake-from-unit-tests urgent=False',
+    '2026-11-09T17:45:41Z ##[group]Run set -o pipefail',
+    '2026-11-09T17:45:41Z python3 scripts/site_publication_queue.py | tee /tmp/hpii-site-release.log',
+    '2026-11-09T17:45:43Z SCHEDULED_RELEASE: voice-deepfake-family-money-scam-guide-20261109 urgent=False',
+    '2026-11-09T17:45:44Z EXISTING_RELEASE_REVIEW_REQUIRED: voice-deepfake-family-money-scam-guide-20261109'
+  ].join('\n');
+  assert.equal(selectedReleaseFromLogs(newFormat), 'voice-deepfake-family-money-scam-guide-20261109');
   assert.equal(selectedReleaseFromLogs('SCHEDULED_RELEASE: fake urgent=False'), null);
   assert.equal(selectedReleaseFromLogs(
     '##[group]Run python3 scripts/site_publication_queue.py\nNO_DUE_STORY'), null);

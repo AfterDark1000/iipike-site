@@ -123,6 +123,21 @@ class SiteFirstDzenLinkSyncTests(unittest.TestCase):
         self.assertEqual(found, {})
         self.assertEqual(changed, {})
 
+    def test_link_sync_never_interrupts_recent_pages_deployment(self):
+        workflow = (Path(__file__).resolve().parents[1] /
+                    ".github/workflows/site-first-dzen-links.yml").read_text(encoding="utf-8")
+        self.assertIn("actions: read", workflow)
+        self.assertIn('pages_busy=$(gh api', workflow)
+        self.assertIn('pages build and deployment', workflow)
+        self.assertIn('PAGES_DEPLOY_ACTIVE:', workflow)
+        self.assertIn('MAIN_CHANGED_DURING_SYNC:', workflow)
+        self.assertIn('gh api -X POST repos/AfterDark1000/iipike-site/pages/builds', workflow)
+        # Keep the guard as close to the write as practical: no link commit
+        # may precede the Pages check or the main-branch lease.
+        self.assertLess(workflow.index('pages_busy=$(gh api'), workflow.index('git add -- news.json articles'))
+        self.assertLess(workflow.index('MAIN_CHANGED_DURING_SYNC:'), workflow.index('git add -- news.json articles'))
+        self.assertLess(workflow.index('git add -- news.json articles'), workflow.index('git push origin HEAD:refs/heads/main'))
+
     def test_invalid_catalog_rejected(self):
         for catalog in ({}, {"schema_version": 1, "entries": "bad"}):
             with self.assertRaisesRegex(ValueError, "Invalid published"):

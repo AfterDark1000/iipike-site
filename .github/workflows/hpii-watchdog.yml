@@ -18,6 +18,10 @@ on:
       - 'tests/watchdog.test.js'
       - 'tests/test_watchdog_queue.py'
   workflow_dispatch:
+  # Watch actual deploy completion, not only the hourly queue forecast.
+  workflow_run:
+    workflows: ['pages build and deployment']
+    types: [completed]
   schedule:
     - cron: '13 * * * *'
 
