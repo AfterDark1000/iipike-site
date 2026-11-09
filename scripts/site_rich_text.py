@@ -10,7 +10,21 @@ from urllib.parse import urlsplit
 
 TEXT_TYPES = frozenset({"lead", "p", "h2", "h3", "quote"})
 LIST_TYPES = frozenset({"ul", "ol"})
-BLOCK_TYPES = TEXT_TYPES | LIST_TYPES
+BLOCK_TYPES = TEXT_TYPES | LIST_TYPES | {"image"}
+# Standalone Markdown illustrations are immutable, local, story-scoped assets.
+# No remote URLs, traversal, SVG, HTML, data: URLs, or user-chosen paths.
+IMAGE_SOURCE = re.compile(
+    r"illustrations/(?P<story>[a-z0-9]+(?:-[a-z0-9]+)*)/"
+    r"(?P<name>[a-z0-9][a-z0-9_-]{0,79}\\.(?:webp|png|jpg|jpeg))\\Z"
+)
+IMAGE_LINE = re.compile(r"!\\[(?P<alt>[^\\]\\n]{1,240})\\]\\((?P<src>[^()\\n]{1,240})\\)\\Z")
+
+
+def image_asset(src):
+    """Map a validated editorial illustration to one local, published asset."""
+    if not isinstance(src, str) or not IMAGE_SOURCE.fullmatch(src):
+        raise ValueError("Image must use illustrations/<story-id>/<name>.webp|png|jpg|jpeg")
+    return "assets/editorial/inline/" + src[len("illustrations/"):]
 # Only editor-used inline forms: **bold**, *italic*, [label](https://url).
 # Keep the format deliberately small, auditable, and safe.
 _INLINE = re.compile(
@@ -103,6 +117,13 @@ def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
                 raise ValueError("Attribution is supported only in quote blocks")
             if "items" in block:
                 raise ValueError("Text blocks must not contain list items")
+        elif kind == "image":
+            if set(block) != {"type", "src", "alt"}:
+                raise ValueError("Image block requires only src and alt")
+            image_asset(block["src"])
+            alt = _text(block["alt"], "image alt text", 240)
+            if "\\n" in alt:
+                raise ValueError("Image alt text must fit one line")
         else:
             if "text" in block or "attribution" in block:
                 raise ValueError("List blocks require items, not text")
@@ -131,6 +152,13 @@ def render_blocks(blocks, site_links=None):
         elif kind in LIST_TYPES:
             body = "".join("<li>" + inline_html(item, site_links) + "</li>" for item in block["items"])
             rendered.append(f'<{kind} class="editorial-list">' + body + f"</{kind}>")
+        elif kind == "image":
+            src = "../../" + image_asset(block["src"])
+            rendered.append(
+                '<figure class="editorial-inline-figure"><img loading="lazy" decoding="async" src="' +
+                html.escape(src, quote=True) + '" alt="' +
+                html.escape(block["alt"], quote=True) + '"></figure>'
+            )
         else:
             quote_body = '<blockquote class="editorial-quote"><p>' + inline_html(block["text"], site_links) + "</p>"
             if block.get("attribution"):
@@ -201,6 +229,15 @@ def markdown_to_blocks(source):
             if len(hashes) not in (2, 3):
                 raise ValueError("Article title is separate; use ## and ### headings in body")
             blocks.append({"type": "h2" if len(hashes) == 2 else "h3", "text": body})
+            continue
+        if clean.startswith("!["):
+            match = IMAGE_LINE.fullmatch(clean)
+            if not match:
+                raise ValueError(f"Malformed or unsupported image at line {number}")
+            flush_all()
+            image_asset(match.group("src"))
+            blocks.append({"type": "image", "src": match.group("src"),
+                           "alt": match.group("alt")})
             continue
         ul = unordered.fullmatch(clean)
         ol = numbered.fullmatch(clean)
