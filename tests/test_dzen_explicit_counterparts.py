@@ -46,6 +46,8 @@ class ExplicitDzenCounterpartsTests(unittest.TestCase):
         self.assertIn("siteRow?.site_first_dzen_url", workflow)
         self.assertIn("e.dzen_url === explicitUrl && afterSite(e)", workflow)
         self.assertIn("Unverified explicit Dzen counterpart:", workflow)
+        # Some earlier Dzen publications predate their site-first imports.
+        self.assertIn("} else if (same.length === 1) {", workflow)
 
 
 if __name__ == "__main__":
