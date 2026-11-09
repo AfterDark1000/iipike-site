@@ -4024,5 +4024,21 @@
       "science",
       "agents"
     ]
+  },
+  {
+    "title": "Голос Элвиса и песни Эминема: против Suno подали два новых иска",
+    "summary": "6 ноября 2026 года правообладатели Элвиса Пресли и издатель песен Эминема подали два отдельных иска против Suno по поводу обучения музыкального ИИ, имитации голоса и воспроизведения защищённых произведений.",
+    "published": "2026-11-09",
+    "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.cand.483292/gov.uscourts.cand.483292.1.0.pdf",
+    "cover": "assets/editorial/suno-elvis-eminem-lawsuits-20261106.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-09T05:30:44Z",
+    "event_date": "2026-11-06",
+    "id": "suno-elvis-eminem-lawsuits-20261106",
+    "url": "articles/suno-elvis-eminem-lawsuits-20261106/",
+    "topics": [
+      "audio",
+      "society"
+    ]
   }
 ]
