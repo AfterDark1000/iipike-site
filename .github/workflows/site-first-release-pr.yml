@@ -5,6 +5,7 @@ on:
     paths:
       - 'editorial_inbox/stories/**'
       - 'editorial_inbox/covers/**'
+      - 'editorial_inbox/illustrations/**'
 permissions:
   contents: read
 concurrency:

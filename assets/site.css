@@ -543,3 +543,8 @@
 .sources .source-extras summary:hover,.sources .source-extras summary:focus{color:var(--red)}
 .sources .source-extras ul{margin:11px 0 0;padding-left:18px}
 .sources .source-extras li{margin:0 0 9px;overflow-wrap:anywhere}
+
+/* Approved, locally hosted illustrations inside long-form articles. */
+.article-text .editorial-inline-figure{margin:28px 0 34px;max-width:100%;}
+.article-text .editorial-inline-figure img{display:block;width:100%;height:auto;object-fit:contain;border-radius:8px;}
+@media(max-width:600px){.article-text .editorial-inline-figure{margin:22px 0 28px}}

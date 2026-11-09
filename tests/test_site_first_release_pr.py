@@ -174,15 +174,37 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
             self.assertIsNone(pending_paths("HEAD", ID))
 
     def test_stable_story_id_requires_exactly_one_original_image(self):
-        with patch("scripts.site_first_release_pr.exists_at",
-                   side_effect=lambda ref,p: p.endswith(".json") or p.endswith(".webp")):
-            self.assertEqual(pending_paths("HEAD", ID),
-                             (f"editorial_inbox/stories/{ID}.json",
-                              f"editorial_inbox/covers/{ID}.webp"))
-        with patch("scripts.site_first_release_pr.exists_at",
-                   side_effect=lambda ref,p: p.endswith(".json") or p.endswith(".webp") or p.endswith(".png")):
-            with self.assertRaisesRegex(ValueError, "Ambiguous"):
-                pending_paths("HEAD", ID)
+        source = '{"paragraphs":[{"type":"lead","text":"Описание"},'
+        source += '{"type":"p","text":"Продолжение"}]}'
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", return_value=source):
+            with patch("scripts.site_first_release_pr.exists_at",
+                       side_effect=lambda ref,p: p.endswith(".json") or p.endswith(".webp")):
+                self.assertEqual(pending_paths("HEAD", ID),
+                                 (f"editorial_inbox/stories/{ID}.json",
+                                  f"editorial_inbox/covers/{ID}.webp"))
+            with patch("scripts.site_first_release_pr.exists_at",
+                       side_effect=lambda ref,p: p.endswith(".json") or p.endswith(".webp") or p.endswith(".png")):
+                with self.assertRaisesRegex(ValueError, "Ambiguous"):
+                    pending_paths("HEAD", ID)
+
+    def test_missing_story_illustration_is_a_safe_wait(self):
+        source = ('{"paragraphs":[{"type":"lead","text":"Вступление"},'
+                  '{"type":"image","src":"illustrations/' + ID +
+                  '/checklist.webp","alt":"Проверка звонка"},'
+                  '{"type":"p","text":"Основные шаги"}]}')
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", return_value=source):
+            with patch("scripts.site_first_release_pr.exists_at",
+                       side_effect=lambda ref,p: p.endswith(".json") or
+                                                  p.endswith("covers/" + ID + ".webp")):
+                self.assertIsNone(pending_paths("HEAD", ID))
+            with patch("scripts.site_first_release_pr.exists_at",
+                       side_effect=lambda ref,p: p.endswith(".json") or
+                                                  p.endswith("covers/" + ID + ".webp") or
+                                                  p.endswith("illustrations/" + ID + "/checklist.webp")):
+                self.assertEqual(pending_paths("HEAD", ID),
+                                 (f"editorial_inbox/stories/{ID}.json",
+                                  f"editorial_inbox/covers/{ID}.webp",
+                                  f"editorial_inbox/illustrations/{ID}/checklist.webp"))
 
     def test_explicit_retry_fails_closed_for_invalid_id(self):
         event = {"inputs": {"story_id": "foo/../../.github/workflows"}}
