@@ -1,5 +1,12 @@
 [
   {
+    "id": "55d059b88c6c576a2f3d",
+    "date": "2026-11-09",
+    "title": "Hugging Face представила HOPE: метод усечения экспертов для языковых моделей",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/amazon/higher-order-pruning-experts"
+  },
+  {
     "id": "a6bcd182b2895683681b",
     "date": "2026-11-08",
     "title": "NVIDIA разогнала FLUX 3 Image Klein на чипах Blackwell более чем втрое",
