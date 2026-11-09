@@ -104,12 +104,17 @@ jobs:
 
             const byId = new Map(news.map(r => [r.id, r]));
             const byTitle = new Map();
+            const byDzenId = new Map();
             for (const entry of catalog.entries) {
               if (entry.status !== 'published_observed_in_feed' || !validDzenUrl(entry.dzen_url) ||
                   !entry.title || !entry.published_at_utc) continue;
               const key = normalize(entry.title);
               if (!byTitle.has(key)) byTitle.set(key, []);
               byTitle.get(key).push(entry);
+              if (/^[a-f0-9]{24}$/.test(entry.dzen_id || '')) {
+                if (!byDzenId.has(entry.dzen_id)) byDzenId.set(entry.dzen_id, []);
+                byDzenId.get(entry.dzen_id).push(entry);
+              }
             }
             const coverById = new Map();
             for (const f of covers) {
@@ -166,11 +171,26 @@ jobs:
               const siteRow = byId.get(id);
               const same = byTitle.get(normalize(title)) || [];
               let dzenUrl = null, dzenDate = null, ambiguous = false;
-              if (siteRow && validDzenUrl(siteRow.site_first_dzen_url)) {
-                dzenUrl = siteRow.site_first_dzen_url;
-                const corresponding = same.find(e => e.dzen_url === dzenUrl);
-                dzenDate = corresponding?.published_at_utc || null;
-              } else if (same.length === 1) {
+              const explicitId = siteRow?.site_first_dzen_id;
+              const explicitUrl = siteRow?.site_first_dzen_url;
+              const siteTime = dateMs(siteRow?.published_at_utc);
+              const afterSite = entry => !siteRow ||
+                (siteTime && dateMs(entry.published_at_utc) >= siteTime - 10 * 60000);
+              // A verified counterpart is identified by the stable Dzen ID
+              // and its exact observed URL, NOT its editable/truncated headline.
+              // An inconsistent explicit mapping must fail closed rather than
+              // silently switching to a different same-title article.
+              if (explicitId || explicitUrl) {
+                const linked = byDzenId.get(explicitId) || [];
+                const verified = linked.filter(e => e.dzen_url === explicitUrl && afterSite(e));
+                if (verified.length === 1) {
+                  dzenUrl = verified[0].dzen_url;
+                  dzenDate = verified[0].published_at_utc;
+                } else {
+                  ambiguous = linked.length > 1;
+                  core.warning('Unverified explicit Dzen counterpart: ' + id);
+                }
+              } else if (same.length === 1 && afterSite(same[0])) {
                 dzenUrl = same[0].dzen_url;
                 dzenDate = same[0].published_at_utc;
               } else if (same.length > 1) {
