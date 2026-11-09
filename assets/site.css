@@ -170,7 +170,7 @@
 .hpi-social-title{font:700 clamp(29px,3.4vw,44px)/1.14 Georgia,serif;letter-spacing:-.045em;color:#fbf6ed;margin:0 0 8px}
 .hpi-social-title em{color:#ffad9a;font-weight:400}
 .footer .hpi-social-subtitle{max-width:760px;color:#c4c9c8;margin:0;font-size:14px;line-height:1.65}
-.hpi-social-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+.hpi-social-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
 .hpi-social-card{--hpi-icon:#f6ddce;position:relative;display:flex;align-items:center;min-width:0;gap:12px;min-height:81px;padding:15px 13px;color:#f7f5ed;text-decoration:none;background:#2a3035;border:1px solid #42484b;border-radius:3px;transition:background .18s,border-color .18s,transform .18s}
 .hpi-social-card:hover{color:#fff;background:#353b40;border-color:#f1a08d;transform:translateY(-3px)}
 .hpi-social-card:focus-visible{outline:3px solid #ffad9a;outline-offset:3px;color:#fff}
@@ -187,6 +187,7 @@
 .hpi-social-x{--hpi-icon:#e8e7e2}
 .hpi-social-max{--hpi-icon:#ceb5fc}
 .hpi-social-youtube{--hpi-icon:#f3aa9c}
+.hpi-social-rutube{--hpi-icon:#b8dfc4}
 .hpi-social-instagram{--hpi-icon:#e6b6d6}
 .hpi-social-paused{opacity:.63}
 .hpi-social-paused:hover,.hpi-social-paused:focus-visible{opacity:1}
