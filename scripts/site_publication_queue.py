@@ -24,7 +24,7 @@ from scripts.site_first_release_pr import (
     exists_at, git, release_one, safe_git_blob_at,
 )
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
-from scripts.site_rich_text import markdown_to_blocks
+from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SOURCE
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
@@ -106,7 +106,9 @@ def latest_site_first_publication(rows, *, main_ref=MAIN_REF):
 def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
     """Read the Git tree, not webhook file arrays or arbitrary user-supplied IDs."""
     tree = git("ls-tree", "-r", "--name-only", ref, "--",
-               "editorial_inbox/stories", "editorial_inbox/covers").stdout
+               "editorial_inbox/stories", "editorial_inbox/covers",
+               "editorial_inbox/illustrations").stdout
+    available = set(tree.splitlines())
     stories, covers = set(), {}
     for path in tree.splitlines():
         st = STORY.fullmatch(path)
@@ -137,12 +139,26 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
         # A malformed approved Markdown article must not repeatedly block
         # every other ready story at each scheduled run. The full publisher
         # still revalidates the selected article before any publication.
-        if "article_markdown" in story:
-            try:
-                markdown_to_blocks(story["article_markdown"])
-            except (ValueError, TypeError) as exc:
-                print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
+        try:
+            blocks = (markdown_to_blocks(story["article_markdown"])
+                      if "article_markdown" in story else
+                      validate_blocks(story.get("paragraphs")))
+        except (ValueError, TypeError) as exc:
+            print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
+            continue
+        illustrations = []
+        for block in blocks:
+            if block["type"] != "image":
                 continue
+            image_path = block["src"]
+            match = IMAGE_SOURCE.fullmatch(image_path)
+            if match is None or match.group("story") != sid:
+                raise ValueError("Illustration ID mismatch in " + sid)
+            illustrations.append("editorial_inbox/" + image_path)
+        missing = [name for name in illustrations if name not in available]
+        if missing:
+            print("AWAITING_ILLUSTRATIONS:", sid, ", ".join(missing), flush=True)
+            continue
         # Do not let one stale optional Dzen crosslink stop the entire queue.
         # This is only a scheduling filter, NOT a waiver of publication checks:
         # the approved publisher still validates every related reference.
@@ -162,7 +178,8 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
                 print("BLOCKED_UNVERIFIED_DZEN_REFERENCE:", sid, str(exc), flush=True)
                 continue
         earliest = parse_slot(story["site_publish_at"]) if "site_publish_at" in story else None
-        ready_at = max(_last_change(ref, source), _last_change(ref, matched[0]))
+        ready_at = max(_last_change(ref, path) for path in
+                       [source, matched[0], *illustrations])
         ready.append({
             "id": sid, "ready_at": ready_at, "not_before": earliest,
             "cover": matched[0],
