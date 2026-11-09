@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - 'editorial_inbox/**'
+      - 'news.json'
+      - '.github/workflows/dzen-reading-queue.yml'
+      - 'tests/test_dzen_explicit_counterparts.py'
       - 'scripts/site_first_inbox.py'
       - 'scripts/site_rich_text.py'
       - 'scripts/site_topics.py'
