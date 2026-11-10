@@ -4217,5 +4217,21 @@
     "topics": [
       "society"
     ]
+  },
+  {
+    "title": "Google показала два новых TPU: один для секретов, другой вдвое мощнее",
+    "summary": "Google анонсировала TPU 8tx с аппаратной защитой конфиденциальных вычислений и TPU 8i Max с удвоенной относительно TPU 8i вычислительной мощностью и пропускной способностью памяти. Сроки доступности пока не названы.",
+    "published": "2026-11-10",
+    "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/",
+    "cover": "assets/editorial/google-tpu-8tx-8i-max-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T13:30:47Z",
+    "event_date": "2026-11-09",
+    "id": "google-tpu-8tx-8i-max-20261109",
+    "url": "articles/google-tpu-8tx-8i-max-20261109/",
+    "topics": [
+      "infrastructure",
+      "agents"
+    ]
   }
 ]
