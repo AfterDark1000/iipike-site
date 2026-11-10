@@ -60,6 +60,33 @@ class SearchIndexingTests(unittest.TestCase):
         for p in pages:
             self.assertIn('name="robots" content="noindex, nofollow"', p.read_text(encoding="utf-8"), str(p))
 
+    def test_related_card_lab_is_a_nonindexed_isolated_article_copy(self):
+        preview = (ROOT / "lab" / "related-card" / "index.html").read_text(encoding="utf-8")
+        original = (ROOT / "articles" / "alex-stamos-ai-cybersecurity-dark-age-20261107" /
+                    "index.html").read_text(encoding="utf-8")
+        self.assertIn('<meta name="robots" content="noindex,nofollow,noarchive">', preview)
+        self.assertNotIn('rel="canonical"', preview)
+        self.assertNotIn('application/ld+json', preview)
+        self.assertNotIn('property="og:url"', preview)
+        self.assertEqual(preview.count('<a class="lab-related-card"'), 1)
+        self.assertIn('Цена токена для атакующих стремится к нулю', preview)
+        self.assertIn(
+            'href="https://iipike.ru/articles/censys-artex-exposed-servers-20261105/"',
+            preview,
+        )
+        self.assertIn(
+            'src="../../assets/editorial/censys-artex-exposed-servers-20261105.webp"',
+            preview,
+        )
+        self.assertTrue(
+            (ROOT / "assets" / "editorial" / "censys-artex-exposed-servers-20261105.webp").is_file()
+        )
+        self.assertNotIn('class="lab-related-card"', original)
+        self.assertNotIn("/lab/related-card/", (ROOT / "sitemap.xml").read_text())
+        self.assertNotIn("/lab/related-card/", self.feed)
+        self.assertTrue(all("/lab/related-card/" not in row.get("url", "")
+                            for row in self.records))
+
     def test_robots_and_rss_use_primary_domain(self):
         robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("Sitemap: https://iipike.ru/sitemap.xml", robots)
