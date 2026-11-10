@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 15 · **Готовы:** 0 · **Ждут интервал:** 15 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 46
+**В очереди:** 16 · **Готовы:** 0 · **Ждут интервал:** 16 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 46
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -27,6 +27,7 @@
 | **13** | [ИИ-робот нырнул на 4 км за металлами. Улов — 450 граммов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/impossible-metals-eureka-deep-sea-mining-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 11:07 (Усть-Катав)**; пауза до 10.11.2026 17:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/impossible-metals-eureka-deep-sea-mining-20261109.webp) |
 | **14** | [Instagram ищет подростков даже среди «взрослых» аккаунтов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-instagram-ai-teen-age-global-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 12:07 (Усть-Катав)**; пауза до 10.11.2026 17:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-instagram-ai-teen-age-global-20261109.webp) |
 | **15** | [NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 13:07 (Усть-Катав)**; пауза до 10.11.2026 17:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp) |
+| **16** | [Распознавание речи на 22 языках Индии уместили в файлы по 30 МБ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/shruti-22-indian-languages-offline-asr-20261108.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 14:07 (Усть-Катав)**; пауза до 10.11.2026 17:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/shruti-22-indian-languages-offline-asr-20261108.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
