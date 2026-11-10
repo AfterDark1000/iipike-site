@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 42
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 42
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -14,6 +14,7 @@
 |---:|---|---|---|---|
 | **1** | [LG открыла бесплатный API K-EXAONE 2.5 для разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/lg-k-exaone-25-free-api-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 12:37 (Усть-Катав)**; пауза до 10.11.2026 12:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/lg-k-exaone-25-free-api-20261109.webp) |
 | **2** | [OpenMOSS представила MOSS-Live: ИИ разговаривает, пока выполняет задания](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/moss-live-voice-multitasking-20261107.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 13:37 (Усть-Катав)**; пауза до 10.11.2026 12:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/moss-live-voice-multitasking-20261107.webp) |
+| **3** | [Claude Code сливал email пользователей чужим сайтам!](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/claude-code-email-user-agent-leak-20261105.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 14:37 (Усть-Катав)**; пауза до 10.11.2026 12:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-code-email-user-agent-leak-20261105.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
