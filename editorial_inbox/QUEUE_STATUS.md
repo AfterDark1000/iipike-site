@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 7 · **Готовы:** 0 · **Ждут интервал:** 7 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 45
+**В очереди:** 8 · **Готовы:** 0 · **Ждут интервал:** 8 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 45
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -19,6 +19,7 @@
 | **5** | [Микки-Мауса доверили нейросети: Disney расширяет союз с Adobe](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/disney-adobe-firefly-foundry-alliance-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 20:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/disney-adobe-firefly-foundry-alliance-20261109.webp) |
 | **6** | [Создал сайт в ChatGPT? Spacefast выложит его в интернет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/automattic-spacefast-ai-agent-hosting-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 21:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/automattic-spacefast-ai-agent-hosting-20261109.webp) |
 | **7** | [MIT научил ИИ предсказывать поведение песка, воды и белков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-worldparticle-physics-simulator-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 22:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-worldparticle-physics-simulator-20261109.webp) |
+| **8** | [MIT научил роботов понимать намёки человека](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-flex-robots-human-intent-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 23:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-flex-robots-human-intent-20261109.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
