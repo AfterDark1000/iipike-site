@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 16 · **Готовы:** 0 · **Ждут интервал:** 16 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 49
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 49
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -28,12 +28,14 @@
 | **14** | [Anthropic выпустила два новых Claude и заявила о решении задач физики чёрных дыр](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-fable-mythos-52-black-holes-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 15:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-fable-mythos-52-black-holes-20261109.webp) |
 | **15** | [Тысяча ИИ-агентов Claude за восемь дней создала операционную систему](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-agents-os-eight-days-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 16:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-claude-agents-os-eight-days-20261109.webp) |
 | **16** | [Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-ember-agents-pricing-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 17:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-ember-agents-pricing-20261109.webp) |
+| **17** | [ChatGPT теперь продаётся через Amazon](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-chatgpt-enterprise-aws-marketplace-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 18:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-enterprise-aws-marketplace-20261109.webp) |
+| **18** | [ИИ-агент OpenAI взломал госсайт. Австралия создаст регулятор](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/australia-openai-agent-ai-regulator-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 19:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/australia-openai-agent-ai-regulator-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [ChatGPT теперь продаётся через Amazon](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-chatgpt-enterprise-aws-marketplace-20261109.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Уже опубликованы — новые сверху
 
