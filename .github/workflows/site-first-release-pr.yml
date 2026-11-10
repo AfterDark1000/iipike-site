@@ -7,7 +7,9 @@ on:
       - 'editorial_inbox/covers/**'
       - 'editorial_inbox/illustrations/**'
 permissions:
-  contents: read
+  # Needed only to repair safe, whitespace-only quote markers on editorial-intake.
+  # No write to main, Pages, news.json or editorial approval metadata.
+  contents: write
 concurrency:
   group: hpii-site-first-inbox-validation
   cancel-in-progress: false
@@ -22,6 +24,51 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: false
+      - name: Test safe Markdown quote normalization
+        run: python3 -m unittest discover -s tests -p 'test_editorial_quote_guard.py' -v
+      - name: Collect safe fixes for empty quote markers
+        run: |
+          git fetch origin editorial-intake main
+          python3 scripts/editorial_quote_guard.py \
+            --ref origin/editorial-intake --main-ref origin/main \
+            --output /tmp/hpii_editorial_quote_fixes.json
+      - name: Fix only redundant empty quote lines in approved pending stories
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const crypto = require('crypto');
+            const { owner, repo } = context.repo;
+            const plan = JSON.parse(fs.readFileSync('/tmp/hpii_editorial_quote_fixes.json', 'utf8'));
+            if (!Array.isArray(plan.fixes)) throw Error('Invalid quote guard plan');
+            for (const fix of plan.fixes) {
+              const match = /^editorial_inbox\/stories\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/.exec(fix.path);
+              if (!match || match[1] !== fix.id) throw Error('Unsafe quote guard path');
+              const fresh = await github.rest.repos.getContent({
+                owner, repo, path: fix.path, ref: 'editorial-intake'
+              });
+              if (!fresh.data || Array.isArray(fresh.data)) throw Error('Not an editorial JSON file');
+              const doc = JSON.parse(Buffer.from(fresh.data.content.replace(/\s/g, ''), 'base64').toString('utf8'));
+              if (doc.id !== fix.id || doc.status !== 'editor_approved' ||
+                  doc.approved_by !== 'human_editor' || typeof doc.article_markdown !== 'string') {
+                core.warning('Quote guard skipped changed approval: ' + fix.id);
+                continue;
+              }
+              const currentHash = crypto.createHash('sha256').update(doc.article_markdown, 'utf8').digest('hex');
+              if (currentHash !== fix.original_markdown_sha256) {
+                core.warning('Quote guard skipped concurrently modified story: ' + fix.id);
+                continue;
+              }
+              doc.article_markdown = fix.repaired_markdown;
+              const content = Buffer.from(JSON.stringify(doc, null, 2) + '\n').toString('base64');
+              await github.rest.repos.createOrUpdateFileContents({
+                owner, repo, path: fix.path, branch: 'editorial-intake',
+                message: 'fix: remove empty Markdown quote separator ' + fix.id + ' [skip ci]',
+                content, sha: fresh.data.sha
+              });
+              core.info('Fixed empty quote marker(s) only: ' + fix.id + ' ' + fix.removed_lines);
+            }
+            core.info('Quote guard finished. No publishing or changes to main.');
       - name: Inspect approved editor text and matching covers, read only
         run: |
           git fetch origin editorial-intake main
