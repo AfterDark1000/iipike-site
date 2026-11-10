@@ -156,6 +156,49 @@ class PublisherTests(unittest.TestCase):
             self.article["paragraphs"][:-2],
         )
 
+    def test_site_consolidates_lg_style_sources_with_trailing_punctuation(self):
+        from scripts.site_rich_text import markdown_to_blocks
+        original = (
+            "Вступительный абзац о новостном событии.\n\n"
+            "Следующий абзац с объяснением обстоятельств.\n\n"
+            "**Источники:**\n\n"
+            "- [Анонс](https://example.org/source).\n"
+            "- [Документация](https://example.org/guide).\n"
+            "- [Ограничения](https://example.org/limits)."
+        )
+        blocks = markdown_to_blocks(original)
+        kept, extras = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
+        self.assertEqual(kept, blocks[:-2])
+        self.assertEqual(extras, [
+            ("Документация", "https://example.org/guide"),
+            ("Ограничения", "https://example.org/limits"),
+        ])
+
+    def test_site_consolidates_single_trailing_source_sentence(self):
+        from scripts.site_rich_text import markdown_to_blocks
+        original = (
+            "Вступительный абзац о новостном событии.\n\n"
+            "Следующий абзац с объяснением обстоятельств.\n\n"
+            "**Источник:** [Публикация](https://example.org/source)."
+        )
+        blocks = markdown_to_blocks(original)
+        kept, extras = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
+        self.assertEqual(kept, blocks[:-1])
+        self.assertEqual(extras, [])
+
+    def test_site_keeps_trailing_unrelated_citations_and_lists(self):
+        from scripts.site_rich_text import markdown_to_blocks
+        originals = [
+            "Текст.\n\n**Источники:**\n\n- Простое пояснение.",
+            "Текст.\n\nИсточник: редакционный комментарий.",
+            "Текст.\n\n**Источник:** [Ссылка](https://example.org/source) и пояснение.",
+        ]
+        for original in originals:
+            blocks = markdown_to_blocks(original)
+            kept, extras = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
+            self.assertEqual(kept, blocks)
+            self.assertEqual(extras, [])
+
     def test_ordinary_end_list_is_not_hidden_as_sources(self):
         blocks = [
             {"type": "p", "text": "**Первоисточники:**"},
