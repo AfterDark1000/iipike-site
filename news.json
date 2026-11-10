@@ -4112,5 +4112,21 @@
       "cybersecurity",
       "agents"
     ]
+  },
+  {
+    "title": "Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой",
+    "summary": "Perplexity представила Teammates — постоянных ИИ-агентов, которым можно поручать задачи и передавать работу друг другу. Веб-доступ по подписке Max; локальный Computer для Mac получил отдельные условия использования.",
+    "published": "2026-11-10",
+    "source_url": "https://www.perplexity.ai/hub/blog/teammates-are-agents-for-complex-ongoing-work",
+    "cover": "assets/editorial/perplexity-teammates-ai-agents-20261104.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T06:30:50Z",
+    "event_date": "2026-11-04",
+    "id": "perplexity-teammates-ai-agents-20261104",
+    "url": "articles/perplexity-teammates-ai-agents-20261104/",
+    "topics": [
+      "agents",
+      "apps"
+    ]
   }
 ]
