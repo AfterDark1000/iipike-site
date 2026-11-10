@@ -170,34 +170,50 @@ def approved_article(root, slug):
 # into that same aside rather than printing a duplicate source list in the text.
 # This transformation affects HTML rendering ONLY; approved Markdown/blocks
 # remain byte-for-byte unchanged in content/approved and editorial_inbox.
-_SOURCE_LINK = re.compile(r"\[([^\]\n]{1,200})\]\((https://[^)\n]{1,2000})\)\Z")
+_SOURCE_HEADING = re.compile(r"\*\*(?:Первоисточники|Источники|Первоисточник|Источник):\*\*\Z")
+_SOURCE_LINK = re.compile(r"\[([^\]\n]{1,200})\]\((https://[^)\n]{1,2000})\)\.?\Z")
+_SOURCE_SINGLE = re.compile(
+    r"\*\*(?:Первоисточники|Источники|Первоисточник|Источник):\*\*\s+"
+    r"(\[[^\]\n]{1,200}\]\(https://[^)\n]{1,2000}\)\.?)\Z"
+)
 
 
 def site_article_sources(blocks, primary_url):
-    """Return display-only body blocks and supplementary verified HTTPS links.
+    """Move only clearly marked *trailing* source references into the aside.
 
-    Only match the exact *trailing* editor-authored bibliography: a paragraph
-    '**Первоисточники:**' followed by a list consisting entirely of links.
-    Do not remove arbitrary footnotes or inline citations in the article.
+    The Dzen Markdown is kept verbatim. On the site, variants such as
+    'Источники:' + a linked list and 'Источник: [link](url).' do not
+    create a second bibliography below the story. Ordinary lists,
+    footnotes and unsupported shapes remain untouched.
     """
-    if len(blocks) < 2:
-        return blocks, []
-    marker, references = blocks[-2:]
-    if marker != {"type": "p", "text": "**Первоисточники:**"} or references.get("type") != "ul":
-        return blocks, []
-    extras = []
-    seen = {primary_url}
-    for item in references.get("items", []):
-        matched = _SOURCE_LINK.fullmatch(item)
-        if not matched:
-            return blocks, []
-        label, url = matched.groups()
-        safe_href(url)
-        if url not in seen:
-            extras.append((label, url))
-            seen.add(url)
-    return blocks[:-2], extras
-
+    if len(blocks) >= 2:
+        marker, references = blocks[-2:]
+        if (marker.get("type") == "p"
+                and _SOURCE_HEADING.fullmatch(marker.get("text", ""))
+                and references.get("type") == "ul"):
+            extras = []
+            seen = {primary_url}
+            for item in references.get("items", []):
+                matched = _SOURCE_LINK.fullmatch(item)
+                if not matched:
+                    break
+                label, url = matched.groups()
+                safe_href(url)
+                if url not in seen:
+                    extras.append((label, url))
+                    seen.add(url)
+            else:
+                if references.get("items"):
+                    return blocks[:-2], extras
+    if blocks and blocks[-1].get("type") == "p":
+        matched = _SOURCE_SINGLE.fullmatch(blocks[-1].get("text", ""))
+        if matched:
+            link = _SOURCE_LINK.fullmatch(matched.group(1))
+            if link:
+                label, url = link.groups()
+                safe_href(url)
+                return blocks[:-1], ([] if url == primary_url else [(label, url)])
+    return blocks, []
 
 def render_article(data, records=None, catalog=None):
     slug = data["slug"]
