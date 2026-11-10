@@ -4144,5 +4144,21 @@
       "models",
       "development"
     ]
+  },
+  {
+    "title": "OpenMOSS представила MOSS-Live: ИИ разговаривает, пока выполняет задания",
+    "summary": "OpenMOSS представила MOSS-Live: голосовая система поддерживает беседу, реагирует на перебивания и параллельно выполняет задания через внешние инструменты. Доступны демо и бета-версия API.",
+    "published": "2026-11-10",
+    "source_url": "https://huggingface.co/blog/OpenMOSS-Team/moss-live",
+    "cover": "assets/editorial/moss-live-voice-multitasking-20261107.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T08:45:38Z",
+    "event_date": "2026-11-07",
+    "id": "moss-live-voice-multitasking-20261107",
+    "url": "articles/moss-live-voice-multitasking-20261107/",
+    "topics": [
+      "audio",
+      "agents"
+    ]
   }
 ]
