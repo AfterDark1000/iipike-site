@@ -1,0 +1,42 @@
+name: HPII — entity taxonomy PILOT (NO PUBLICATION)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/entity_pilot.json'
+      - 'scripts/build_entity_pilot.py'
+      - 'tests/test_entity_pilot.py'
+      - 'lab/entities/**'
+      - '.github/workflows/entity-pilot-check.yml'
+permissions:
+  contents: read
+jobs:
+  check-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify curated entity pilot, existing articles and generated HTML
+        run: |
+          python3 -m unittest discover -s tests -p 'test_entity_pilot.py' -v
+          python3 -m scripts.build_entity_pilot --check
+      - name: Confirm no production paths changed
+        run: |
+          git fetch origin main
+          python3 - <<'PY'
+          import subprocess
+          changed = subprocess.check_output(
+              ['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True
+          ).splitlines()
+          allowed = ('data/entity_pilot.json', 'scripts/build_entity_pilot.py',
+                     'tests/test_entity_pilot.py', 'lab/entities/',
+                     '.github/workflows/entity-pilot-check.yml')
+          unexpected = [x for x in changed if not any(
+              x == y or (y.endswith('/') and x.startswith(y)) for y in allowed
+          )]
+          if unexpected:
+              raise SystemExit('Pilot attempted to edit production files: ' + str(unexpected))
+          print('PASS: isolated new files only', len(changed))
+          PY

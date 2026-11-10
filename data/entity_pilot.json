@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "note": "Ручная выборка для закрытого пилота. Не полный архив; новая статья не получает метку автоматически.",
+  "companies": [
+    {
+      "key": "google",
+      "name": "Google",
+      "description": "Новости Google и Google DeepMind, где компания выступает непосредственным участником события.",
+      "article_ids": [
+        "google-tpu-8tx-8i-max-20261109",
+        "google-elephant-goldfish-model-20261106",
+        "google-gemini-omni-1-2-flash-video-20261105",
+        "google-ai-orbit",
+        "google-genie4-worlds",
+        "google-robotics-teamwork",
+        "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
+        "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004"
+      ]
+    },
+    {
+      "key": "openai",
+      "name": "OpenAI",
+      "description": "Разработки, сервисы и решения OpenAI — не любые упоминания ChatGPT в чужих новостях.",
+      "article_ids": [
+        "openai-chatgpt-codex-shared-limits-20261107",
+        "openai-images-2-6-gif-20261104",
+        "openai-pierre-acquisition-20261104",
+        "openai-linux-root-948-20261104",
+        "openai-brockman-anthropic-enterprise-20261104",
+        "openai-hacktron-security-partnership-20261106",
+        "australian-universities-chatgpt-edu-20261105",
+        "gpt-6-cyber-firefox-81-vulnerabilities-20261105"
+      ]
+    },
+    {
+      "key": "adobe",
+      "name": "Adobe",
+      "description": "Публикации о разработках Adobe и её подтверждённых партнёрствах в области ИИ.",
+      "article_ids": [
+        "disney-adobe-firefly-foundry-alliance-20261109"
+      ]
+    },
+    {
+      "key": "disney",
+      "name": "Disney",
+      "description": "Новости об ИИ, в которых Disney участвует в проекте или соглашении.",
+      "article_ids": [
+        "disney-adobe-firefly-foundry-alliance-20261109"
+      ]
+    },
+    {
+      "key": "xai",
+      "name": "xAI",
+      "description": "Публикации о продуктах и инициативах xAI, включая Grok.",
+      "article_ids": [
+        "grok-api-output-watermarking-20261107",
+        "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
+        "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
+        "musk-grok-bot-cost"
+      ]
+    },
+    {
+      "key": "anthropic",
+      "name": "Anthropic",
+      "description": "Модели Claude, агентные инструменты, безопасность и объявления Anthropic.",
+      "article_ids": [
+        "claude-code-email-user-agent-leak-20261105",
+        "claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13",
+        "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
+        "anthropic-ii-agenty-rabotayut-v-shest-raz-bolshe-chem-sotrudni-5dfab",
+        "anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "key": "chatgpt",
+      "name": "ChatGPT",
+      "company": "openai",
+      "description": "Функции и изменения ChatGPT, а не вся деятельность OpenAI.",
+      "article_ids": [
+        "openai-chatgpt-codex-shared-limits-20261107",
+        "openai-images-2-6-gif-20261104",
+        "chatgpt-violence-chat-interrupt",
+        "chatgpt-service-now-support",
+        "chatgpt-bug-bounty-172k",
+        "chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612"
+      ]
+    },
+    {
+      "key": "grok",
+      "name": "Grok",
+      "company": "xai",
+      "description": "Новости об ИИ-помощнике Grok и его отдельных возможностях.",
+      "article_ids": [
+        "grok-api-output-watermarking-20261107",
+        "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
+        "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
+        "musk-grok-bot-cost"
+      ]
+    },
+    {
+      "key": "gemini",
+      "name": "Gemini",
+      "company": "google",
+      "description": "Новости семейства моделей и сервисов Gemini.",
+      "article_ids": [
+        "google-gemini-omni-1-2-flash-video-20261105",
+        "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
+        "gemini4-carbon-ranking"
+      ]
+    },
+    {
+      "key": "claude",
+      "name": "Claude",
+      "company": "anthropic",
+      "description": "Материалы о моделях и приложениях Claude, включая Claude Code.",
+      "article_ids": [
+        "claude-code-email-user-agent-leak-20261105",
+        "claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13",
+        "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
+        "claude-uvolnyaet-ii-agentov-cf215"
+      ]
+    },
+    {
+      "key": "firefly",
+      "name": "Firefly",
+      "company": "adobe",
+      "description": "Новости о генеративном семействе Adobe Firefly.",
+      "article_ids": [
+        "disney-adobe-firefly-foundry-alliance-20261109"
+      ]
+    }
+  ]
+}
