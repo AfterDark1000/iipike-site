@@ -1,6 +1,9 @@
 """Guard editor-approved Markdown against stray blank > quote separators."""
 import copy
 import json
+from pathlib import Path
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -18,6 +21,15 @@ BODY = (INTRO +
 
 
 class QuoteGuardTests(unittest.TestCase):
+    def test_workflow_module_entrypoint_imports_from_repository_root(self):
+        root = Path(__file__).resolve().parents[1]
+        result = subprocess.run(
+            [sys.executable, "-m", "scripts.editorial_quote_guard", "--help"],
+            cwd=root, text=True, capture_output=True, timeout=15,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("Read-only quote repair plan", result.stdout)
+
     def test_safe_empty_quote_marker_only(self):
         broken = BODY
         with self.assertRaisesRegex(ValueError, "Quote needs"):
