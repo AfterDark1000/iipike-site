@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09T21:02:20.354172Z",
+  "updated_at": "2026-11-10T03:28:40.833666Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T21:02:20.354172Z",
-      "last_success_at": "2026-11-09T21:02:20.354172Z",
+      "checked_at": "2026-11-10T03:28:40.833666Z",
+      "last_success_at": "2026-11-10T03:28:40.833666Z",
       "error": null,
       "fresh_matches": 7
     },
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T21:02:20.354172Z",
-      "last_success_at": "2026-11-09T21:02:20.354172Z",
+      "checked_at": "2026-11-10T03:28:40.833666Z",
+      "last_success_at": "2026-11-10T03:28:40.833666Z",
       "error": null,
-      "fresh_matches": 6
+      "fresh_matches": 7
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T21:02:20.354172Z",
-      "last_success_at": "2026-11-09T21:02:20.354172Z",
+      "checked_at": "2026-11-10T03:28:40.833666Z",
+      "last_success_at": "2026-11-10T03:28:40.833666Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-09T21:02:20.354172Z",
-      "last_success_at": "2026-11-09T21:02:20.354172Z",
+      "checked_at": "2026-11-10T03:28:40.833666Z",
+      "last_success_at": "2026-11-10T03:28:40.833666Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -55,10 +55,31 @@
   },
   "usage": {
     "date": "2026-11-10",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "730d12edc8248a81136be959",
+      "title": "ИИ научился писать целые операционные системы: Anthropic представила мощнейшие Claude Fable 5.2 и Mythos 5.2",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151069",
+      "published_at": "2026-11-09T21:28:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-10T03:28:40.833666Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Тысяча агентов за восемь дней написала операционную систему с нуля — звучит так, будто теперь джуниорам можно официально сдавать дипломы на базе Claude Fable 5.2 и идти отдыхать.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-10T03:28:40.833666Z",
+      "reason": "Развитие мысли о масштабе и скорости работы ИИ-агентов при создании ОС.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-10T03:28:40.833666Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "8ccf239c0f6e621de8e5dd03",
       "title": "M**a представила Muse Ember — дешёвую ИИ-модель для армии автономных агентов",
@@ -134,10 +155,14 @@
       "first_seen_at": "2026-11-09T21:02:20.354172Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Анализировать рост и строение скелета на фото, чтобы вычислять возраст подростков в Instagram — это уже уровень анатомического кружка, а не просто модерации контента.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-10T03:28:40.833666Z",
+      "reason": "Реакция на специфический и пугающий метод определения возраста по фото.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-10T03:28:40.833666Z"
     },
     {
       "id": "e0e36d0856f0e6ab7f1ad1f3",
@@ -151,10 +176,14 @@
       "first_seen_at": "2026-11-09T21:02:20.354172Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Хаксли в 1951 году три недели крутил ручку механического калькулятора, а теперь нейросети прогоняют по миллиону симуляций ради подбора параметров. Интересно, сколько кофе уходило у биологов прошлого на один такой эксперимент.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-10T03:28:40.833666Z",
+      "reason": "Контраст между ручной работой ученых прошлого и скоростью современных симуляций.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-10T03:28:40.833666Z"
     },
     {
       "id": "f12817dd73e0fa074ef85835",
