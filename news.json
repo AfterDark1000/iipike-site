@@ -4176,5 +4176,21 @@
       "safety",
       "cybersecurity"
     ]
+  },
+  {
+    "title": "Asahi Linux меняет лицензию из-за «отмывания» кода через ИИ",
+    "summary": "Asahi Linux начала переход с лицензии MIT на GPLv2+, заявив о сторонних заимствованиях незавершённого кода, в том числе о попытках скрывать его происхождение с помощью больших языковых моделей.",
+    "published": "2026-11-10",
+    "source_url": "https://asahilinux.org/2026/11/progress-report-7-3/",
+    "cover": "assets/editorial/asahi-linux-gpl-llm-code-laundering-20261107.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T11:01:03Z",
+    "event_date": "2026-11-07",
+    "id": "asahi-linux-gpl-llm-code-laundering-20261107",
+    "url": "articles/asahi-linux-gpl-llm-code-laundering-20261107/",
+    "topics": [
+      "development",
+      "society"
+    ]
   }
 ]
