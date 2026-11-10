@@ -4297,5 +4297,21 @@
       "science",
       "models"
     ]
+  },
+  {
+    "title": "MIT научил роботов понимать намёки человека",
+    "summary": "Исследователи MIT и Нью-Йоркского университета представили FLEX — экспериментальную систему, которая с помощью GPT-4o обобщает человеческие замечания и корректирует поведение роботов, например обходя электронику при переноске кофе.",
+    "published": "2026-11-11",
+    "source_url": "https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109",
+    "cover": "assets/editorial/mit-flex-robots-human-intent-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T19:15:38Z",
+    "event_date": "2026-11-09",
+    "id": "mit-flex-robots-human-intent-20261109",
+    "url": "articles/mit-flex-robots-human-intent-20261109/",
+    "topics": [
+      "engineering",
+      "agents"
+    ]
   }
 ]
