@@ -61,25 +61,45 @@ class SearchIndexingTests(unittest.TestCase):
             self.assertIn('name="robots" content="noindex, nofollow"', p.read_text(encoding="utf-8"), str(p))
 
     def test_related_card_lab_is_a_nonindexed_isolated_article_copy(self):
-        preview = (ROOT / "lab" / "related-card" / "index.html").read_text(encoding="utf-8")
         original = (ROOT / "articles" / "alex-stamos-ai-cybersecurity-dark-age-20261107" /
                     "index.html").read_text(encoding="utf-8")
-        self.assertIn('<meta name="robots" content="noindex,nofollow,noarchive">', preview)
-        self.assertNotIn('rel="canonical"', preview)
-        self.assertNotIn('application/ld+json', preview)
-        self.assertNotIn('property="og:url"', preview)
-        self.assertEqual(preview.count('<a class="lab-related-card"'), 1)
-        self.assertIn('Цена токена для атакующих стремится к нулю', preview)
-        self.assertIn(
-            'href="https://iipike.ru/articles/censys-artex-exposed-servers-20261105/"',
-            preview,
-        )
+        inline = (ROOT / "lab" / "related-card" / "index.html").read_text(encoding="utf-8")
+        fallback = (ROOT / "lab" / "related-card" / "fallback" /
+                    "index.html").read_text(encoding="utf-8")
+        article_url = 'https://iipike.ru/articles/censys-artex-exposed-servers-20261105/'
+        cover_file = (ROOT / "assets" / "editorial" /
+                      "censys-artex-exposed-servers-20261105.webp")
+        self.assertTrue(cover_file.is_file())
+        for html in (inline, fallback):
+            self.assertIn('<meta name="robots" content="noindex,nofollow,noarchive">', html)
+            self.assertNotIn('rel="canonical"', html)
+            self.assertNotIn('application/ld+json', html)
+            self.assertNotIn('property="og:url"', html)
+            self.assertEqual(html.count('<a class="lab-related-card"'), 1)
+            self.assertIn('Цена токена для атакующих стремится к нулю', html)
+            self.assertIn(f'href="{article_url}"', html)
+            self.assertIn('class="lab-related-card-eyebrow">По теме</span>', html)
+            self.assertNotIn('По теме · ХПИИ', html)
+            self.assertIn('font:700 16px/1.42', html)
         self.assertIn(
             'src="../../assets/editorial/censys-artex-exposed-servers-20261105.webp"',
-            preview,
+            inline,
         )
-        self.assertTrue(
-            (ROOT / "assets" / "editorial" / "censys-artex-exposed-servers-20261105.webp").is_file()
+        self.assertIn(
+            'src="../../../assets/editorial/censys-artex-exposed-servers-20261105.webp"',
+            fallback,
+        )
+        self.assertIn('href="fallback/">Без ссылок редактора</a>', inline)
+        self.assertIn('href="../">В тексте</a>', fallback)
+        self.assertNotIn("https://dzen.ru/a/", fallback)
+        self.assertNotIn('class="related-stories"', fallback)
+        self.assertLess(
+            inline.index('class="lab-related-card"'),
+            inline.index('Как защищаться, если нападать становится дешевле'),
+        )
+        self.assertGreater(
+            fallback.index('class="lab-related-card"'),
+            fallback.index('Пока же, по оценке Стамоса, нападающие'),
         )
         self.assertNotIn('class="lab-related-card"', original)
         self.assertNotIn("/lab/related-card/", (ROOT / "sitemap.xml").read_text())
