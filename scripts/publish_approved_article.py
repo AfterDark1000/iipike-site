@@ -24,6 +24,7 @@ from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, pub
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
+from scripts.site_related_cards import select_site_card, remove_duplicate_related_ids
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
@@ -258,8 +259,6 @@ def render_article(data, records=None, catalog=None):
         structured["isBasedOn"] = data["dzen_url"]
     structured_json = json.dumps(structured, ensure_ascii=False).replace("<", "\\u003c")
     site_crosslinks = explicit_site_crosslinks(data, records or [])
-    related_html = render_links(data.get("related_dzen_ids", []), records or [],
-                                catalog or {}, site_crosslinks=site_crosslinks)
     # Dzen is archival provenance, not a primary reporting source.
     # Its URL remains in verified JSON/JSON-LD without distracting readers.
     provenance_only = bool(data.get("dzen_id") and data.get("source_url") == data.get("dzen_url"))
@@ -300,7 +299,16 @@ def render_article(data, records=None, catalog=None):
             site_links[dzen_url] = BASE + "/" + row["url"]
     for ident, row in site_crosslinks.items():
         site_links[canonical_dzen_url(ident)] = BASE + "/" + row["url"]
-    body = render_blocks(display_blocks, site_links=site_links)
+    # Dzen's approved Markdown and its inline links are immutable. The site
+    # renders one verified internal reference as a card, or a conservative
+    # topic-grounded fallback, without changing the approved JSON/RSS for Dzen.
+    site_blocks, after_blocks, card_row = select_site_card(
+        data, display_blocks, records or [], site_links)
+    body = render_blocks(site_blocks, site_links=site_links, after_blocks=after_blocks)
+    linked_ids = remove_duplicate_related_ids(
+        data.get("related_dzen_ids", []), card_row, site_crosslinks)
+    related_html = render_links(linked_ids, records or [], catalog or {},
+                                site_crosslinks=site_crosslinks)
     date = dt.date.fromisoformat(data["published"])
     months = ["января", "февраля", "марта", "апреля", "мая", "июня",
               "июля", "августа", "сентября", "октября", "ноября", "декабря"]
