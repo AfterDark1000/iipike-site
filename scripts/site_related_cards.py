@@ -90,6 +90,16 @@ def _related_fallback(data, blocks, records, public):
     own_entities = _entities(text)
     if not own_entities:
         return None
+    # A one-off product name in a benchmark/comparison is not necessarily
+    # the subject of this article. Require presence in title/summary OR at
+    # least two separate passages before suggesting another story.
+    subject_entities = _entities(
+        str(data.get("title") or "") + " " + str(data.get("summary") or "")
+    )
+    passage_counts = Counter()
+    for block in blocks:
+        if block["type"] in ("lead", "p"):
+            passage_counts.update(_entities(block.get("text", "")))
     frequency = Counter()
     for row in public.values():
         frequency.update(_entities(row["title"]))
@@ -103,7 +113,11 @@ def _related_fallback(data, blocks, records, public):
         shared = own_entities.intersection(_entities(row["title"]))
         # A product/entity seen across the whole front page is not an
         # editorial relationship. Require a rare project name in the headline.
-        rare = [x for x in shared if 1 <= frequency[x] <= 6]
+        rare = [
+            x for x in shared
+            if 1 <= frequency[x] <= 6
+            and (x in subject_entities or passage_counts[x] >= 2)
+        ]
         if not rare:
             continue
         best = min(frequency[x] for x in rare)
@@ -149,6 +163,29 @@ def site_card_html(row):
     )
 
 
+def _has_editorial_crosslink(blocks):
+    """Respect Dzen/site references even when no site counterpart exists.
+
+    Check lead, paragraphs, quotations and list items: the editor's deliberate
+    internal crosslink must not be overridden by a guessed recommendation.
+    """
+    for block in blocks:
+        fragments = ([block.get("text", "")]
+                     if isinstance(block.get("text"), str) else [])
+        if isinstance(block.get("items"), list):
+            fragments.extend(x for x in block["items"] if isinstance(x, str))
+        for fragment in fragments:
+            for match in LINK.finditer(fragment):
+                parsed = urlsplit(match.group(2))
+                if (parsed.scheme == "https"
+                        and ((parsed.hostname == "dzen.ru"
+                              and parsed.path.startswith("/a/"))
+                             or (parsed.hostname == "iipike.ru"
+                                 and SLUG.fullmatch(parsed.path.lstrip("/"))))):
+                    return True
+    return False
+
+
 def select_site_card(data, blocks, records, site_links):
     """Return (render-only blocks, after-block HTML, chosen published row).
 
@@ -171,6 +208,10 @@ def select_site_card(data, blocks, records, site_links):
             modified = list(blocks)
             modified[i] = dict(block, text=replaced)
             return modified, {i: site_card_html(row)}, row
+    # The editor has already provided a destination (possibly Dzen-only).
+    # Do not replace that judgment with an unrelated auto-selected article.
+    if data.get("related_dzen_ids") or _has_editorial_crosslink(blocks):
+        return blocks, {}, None
     related = _related_fallback(data, blocks, records, public)
     if related:
         row, position = related
