@@ -104,11 +104,14 @@ class RelatedCardTests(unittest.TestCase):
             [id_a, id_b], TARGET, {id_b: TARGET}), [])
 
     def test_fallback_uses_published_rare_entity_and_matching_topic(self):
+        self.data["title"] = "ARTEX: новая проблема с ИИ-агентами"
+        self.data["summary"] = "Сведения об инструменте ARTEX и возможных рисках"
         self.blocks[2]["text"] = "Эксперт упоминал ARTEX и другие средства кибератак."
+        original = copy.deepcopy(self.blocks)
         site_blocks, after, row = select_site_card(
             self.data, self.blocks, self.records, self.site_links)
         self.assertEqual(row["id"], TARGET_ID)
-        self.assertIs(site_blocks, self.blocks)
+        self.assertEqual(site_blocks, original)
         self.assertEqual(list(after), [2])
 
     def test_fallback_must_not_choose_merely_same_rubric_or_common_company(self):
@@ -118,7 +121,62 @@ class RelatedCardTests(unittest.TestCase):
         self.assertEqual((after, row), ({}, None))
         self.assertIs(site_blocks, self.blocks)
 
+    def test_fallback_rejects_one_off_benchmark_or_incidental_comparison(self):
+        # Both topics match, but ARTEX appears once as an aside, not the subject.
+        self.blocks[2]["text"] = (
+            "В ходе сравнения также упоминался ARTEX, но новость посвящена другой системе."
+        )
+        source, cards, chosen = select_site_card(
+            self.data, self.blocks, self.records, {})
+        self.assertIs(source, self.blocks)
+        self.assertEqual((cards, chosen), ({}, None))
+
+    def test_fallback_accepts_repeated_specific_entity_in_body(self):
+        self.blocks[2]["text"] = "Сотрудники впервые проверили ARTEX на сети."
+        self.blocks[3]["text"] = "Второе испытание ARTEX подтвердило результаты."
+        _, cards, chosen = select_site_card(
+            self.data, self.blocks, self.records, {})
+        self.assertEqual(chosen["id"], TARGET_ID)
+        self.assertEqual(len(cards), 1)
+
+    def test_unknown_editorial_dzen_link_prevents_auto_recommendation(self):
+        self.data["title"] = "ARTEX: новые подробности"
+        self.blocks[2]["text"] = (
+            "Об ARTEX уже была [прошлая публикация](https://dzen.ru/a/unmapped-news)."
+        )
+        original = copy.deepcopy(self.blocks)
+        site, cards, chosen = select_site_card(
+            self.data, self.blocks, self.records, {})
+        self.assertEqual((cards, chosen), ({}, None))
+        self.assertEqual(site, original)
+        self.assertIn('href="https://dzen.ru/a/unmapped-news"', render_blocks(site))
+
+    def test_related_dzen_ids_prevent_fallback_without_inline_link(self):
+        self.data["title"] = "ARTEX: новая публикация"
+        self.data["related_dzen_ids"] = ["0123456789abcdef01234567"]
+        self.blocks[2]["text"] = "Инструмент ARTEX получил дальнейшее развитие."
+        _, cards, chosen = select_site_card(
+            self.data, self.blocks, self.records, {})
+        self.assertEqual((cards, chosen), ({}, None))
+
+    def test_editorial_link_in_lead_quote_or_list_prevents_guess(self):
+        self.data["title"] = "ARTEX: новая публикация"
+        self.blocks[2]["text"] = "ARTEX получил дальнейшее развитие."
+        target = "[контекст](https://dzen.ru/a/unmapped-reference)"
+        for kind in ("lead", "quote", "ul"):
+            blocks = copy.deepcopy(self.blocks)
+            if kind == "lead":
+                blocks[0]["text"] = "Новость с " + target + "."
+            elif kind == "quote":
+                blocks.insert(1, {"type": "quote", "text": "Цитировали " + target})
+            else:
+                blocks.insert(1, {"type": "ul", "items": ["Пункт с " + target]})
+            _, cards, chosen = select_site_card(
+                self.data, blocks, self.records, {})
+            self.assertEqual((cards, chosen), ({}, None), kind)
+
     def test_future_or_unpublished_or_mismatched_topic_cannot_be_fallback(self):
+        self.data["title"] = "ARTEX: новая публикация"
         self.blocks[2]["text"] = "Эксперт упоминал ARTEX и другие средства кибератак."
         for variant in (
             dict(TARGET, published="2026-11-12"),

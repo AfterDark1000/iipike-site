@@ -21,6 +21,8 @@ on:
       - 'tests/test_site_topics.py'
       - '.github/workflows/topic-navigation-upgrade.yml'
       - 'scripts/site_related.py'
+      - 'scripts/site_related_cards.py'
+      - 'tests/test_site_related_cards.py'
       - 'scripts/publish_approved_article.py'
       - 'scripts/historical_header_cleanup.py'
       - 'tests/test_historical_header_cleanup.py'
