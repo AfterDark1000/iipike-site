@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NVIDIA представила GR00T 2 для обучения роботов манипуляциям с предметами: в своих испытаниях после пяти демонстраций навыка и получасовой донастройки компания получила 95% успешных выполнений на наборе из 50 задач."><meta property="og:type" content="article">
+<meta property="og:title" content="NVIDIA научила роботов новым трюкам всего за пять попыток!"><meta property="og:description" content="NVIDIA представила GR00T 2 для обучения роботов манипуляциям с предметами: в своих испытаниях после пяти демонстраций навыка и получасовой донастройки компания получила 95% успешных выполнений на наборе из 50 задач.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/nvidia-gr00t-2-robot-few-shot-learning-20261109.webp">
+<meta property="og:url" content="https://iipike.ru/articles/nvidia-gr00t-2-robot-few-shot-learning-20261109/"><meta property="article:published_time" content="2026-11-10T14:30:49Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "NVIDIA научила роботов новым трюкам всего за пять попыток!", "mainEntityOfPage": "https://iipike.ru/articles/nvidia-gr00t-2-robot-few-shot-learning-20261109/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-10T14:30:49Z", "image": "https://iipike.ru/assets/editorial/nvidia-gr00t-2-robot-few-shot-learning-20261109.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/nvidia-gr00t-2-robot-few-shot-learning-20261109/"><title>NVIDIA научила роботов новым трюкам всего за пять попыток! — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>NVIDIA научила роботов новым трюкам всего за пять попыток!</h1>
+<p class="summary">NVIDIA представила GR00T 2 для обучения роботов манипуляциям с предметами: в своих испытаниях после пяти демонстраций навыка и получасовой донастройки компания получила 95% успешных выполнений на наборе из 50 задач.</p><p class="date">Опубликовано: 10 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/engineering/">Инженерия и устройства</a><a href="../../topics/agents/">ИИ-агенты</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/nvidia-gr00t-2-robot-few-shot-learning-20261109.webp" alt="Обложка: NVIDIA научила роботов новым трюкам всего за пять попыток!" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/" target="_blank" rel="noopener noreferrer">NVIDIA Blog — Robotics and Simulation Advancements at CoRL 2026 ↗</a>
+</aside><article class="article-text"><p class="lead"><strong>NVIDIA</strong> 9 ноября представила <strong>GR00T 2</strong> — нейросеть, которая помогает роботам осваивать новые движения по нескольким примерам. В испытаниях компании модель достигла 95% успешных выполнений заданий после пяти демонстраций каждого навыка и дополнительного получасового обучения.</p>
+<p>Новинку показали на конференции CoRL 2026 в Остине. GR00T 2 предназначена для роботов, которым приходится обращаться с предметами: собирать детали, подключать кабели, пользоваться инструментами и выполнять другие действия, требующие точных движений.</p>
+<p>Главная особенность модели — она учится в том числе по видеозаписям людей. Например, человек показывает, как собрать игрушечный самосвал с помощью ручного захвата, а роботизированная рука затем пытается повторить всю последовательность самостоятельно.</p>
+<p>Для этого GR00T 2 одновременно прогнозирует, как изменится окружающая сцена после действия, и рассчитывает следующие движения робота.</p>
+<p>В основе используется семейство <strong>Cosmos</strong>. Ранее NVIDIA <a class="editorial-inline-link" href="https://iipike.ru/articles/cosmos3-nano-interactive-worlds-20261105/">показала Cosmos 3 Nano, способную моделировать последствия движений роботов</a>. В GR00T 2 прогноз будущих кадров связан непосредственно с командами для механических рук.</p>
+<h2>Насколько хорошо роботы обучаются?</h2>
+<p>Исследователи проверили GR00T 2 на 50 заданиях, которые конкретному роботу прежде не демонстрировали.</p>
+<p>Без дополнительных примеров модель хотя бы один раз справилась с 40 заданиями из 50. Однако средняя успешность отдельных попыток составляла 40%.</p>
+<p>После одной демонстрации каждого задания показатель вырос до 71%, после пяти — до 95%. Пять примеров занимали меньше трёх минут записи движений робота, а последующая настройка модели потребовала около получаса на одной видеокарте RTX 5090.</p>
+<p>Разработчики также проверили, как GR00T 2 работает вместе с ИИ-агентом, который планирует последовательность действий, следит за выполнением и помогает исправлять ошибки. В таких испытаниях робот собрал игрушечный самолёт 98 раз из 100, трактор — 97 раз, машинку Hot Wheels — тоже 97 раз.</p>
+<p>Для роботов-гуманоидов подготовили облегченную версию <strong>GR00T 2 Turbo</strong>. На Unitree G1 она управляет движениями всего тела: робот может нагибаться, брать предметы и переносить их. В одном из опытов гуманоид успешно приготовил и подал попкорн во всех 48 испытаниях.</p>
+<p>Новая модель уже привлекла промышленных партнёров. <strong>Foxconn</strong> применяет GR00T 2 для автоматизации производства серверов, <strong>Siemens</strong> оценивает её для промышленных задач, а <strong>Nexuni</strong> испытывает роботов для работы с бельём.</p>
+<p>NVIDIA представила GR00T 2 как открытую модель, но код исследователи планируют опубликовать в декабре. Пока доступны описание технологии, исследовательская работа и видеодемонстрации.</p><nav class="related-stories" aria-label="Читайте также"><h2>Читайте также</h2><ul><li><a href="../../articles/cosmos3-nano-interactive-worlds-20261105/">NVIDIA показала ИИ, который продолжает виртуальный мир после движения робота</a> <small>(На сайте)</small></li></ul></nav></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
