@@ -137,11 +137,11 @@ def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
     return blocks
 
 
-def render_blocks(blocks, site_links=None):
+def render_blocks(blocks, site_links=None, after_blocks=None):
     """Render the exact approved block sequence into semantic safe HTML."""
     validate_blocks(blocks)
     rendered = []
-    for block in blocks:
+    for index, block in enumerate(blocks):
         kind = block["type"]
         if kind == "lead":
             rendered.append('<p class="lead">' + inline_html(block["text"], site_links) + "</p>")
@@ -164,6 +164,9 @@ def render_blocks(blocks, site_links=None):
             if block.get("attribution"):
                 quote_body += "<footer><cite>" + inline_html(block["attribution"], site_links) + "</cite></footer>"
             rendered.append(quote_body + "</blockquote>")
+        if after_blocks and index in after_blocks:
+            # Insertion is generated internally by the site publisher, never from Markdown.
+            rendered.append(after_blocks[index])
     return "\n".join(rendered)
 
 
