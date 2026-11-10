@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 14 · **Готовы:** 0 · **Ждут интервал:** 14 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 49
+**В очереди:** 15 · **Готовы:** 0 · **Ждут интервал:** 15 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 49
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -26,12 +26,13 @@
 | **12** | [NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 13:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp) |
 | **13** | [Распознавание речи на 22 языках Индии уместили в файлы по 30 МБ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/shruti-22-indian-languages-offline-asr-20261108.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 14:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/shruti-22-indian-languages-offline-asr-20261108.webp) |
 | **14** | [Anthropic выпустила два новых Claude и заявила о решении задач физики чёрных дыр](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-fable-mythos-52-black-holes-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 15:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-fable-mythos-52-black-holes-20261109.webp) |
+| **15** | [Тысяча ИИ-агентов Claude за восемь дней создала операционную систему](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-agents-os-eight-days-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 16:07 (Усть-Катав)**; пауза до 10.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-claude-agents-os-eight-days-20261109.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Тысяча ИИ-агентов Claude за восемь дней создала операционную систему](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-agents-os-eight-days-20261109.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-ember-agents-pricing-20261109.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Уже опубликованы — новые сверху
 
