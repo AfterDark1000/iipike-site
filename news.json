@@ -4281,5 +4281,21 @@
       "development",
       "agents"
     ]
+  },
+  {
+    "title": "MIT научил ИИ предсказывать поведение песка, воды и белков",
+    "summary": "Исследователи MIT и Университета Британской Колумбии представили WorldParticle — общую нейросетевую архитектуру для моделирования шести категорий физических процессов, от песка и жидкостей до молекулярной динамики. Для каждой категории пока обучается отдельная модель.",
+    "published": "2026-11-10",
+    "source_url": "https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109",
+    "cover": "assets/editorial/mit-worldparticle-physics-simulator-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T18:01:02Z",
+    "event_date": "2026-11-09",
+    "id": "mit-worldparticle-physics-simulator-20261109",
+    "url": "articles/mit-worldparticle-physics-simulator-20261109/",
+    "topics": [
+      "science",
+      "models"
+    ]
   }
 ]
