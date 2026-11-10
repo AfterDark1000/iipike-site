@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Пользователи Claude Code обнаружили, что ИИ-помощник для программистов мог включать их email в HTTP-запросы к сторонним сайтам. Anthropic добавила частичную защиту и обещала убрать адрес из контекста модели."><meta property="og:type" content="article">
+<meta property="og:title" content="Claude Code сливал email пользователей чужим сайтам!"><meta property="og:description" content="Пользователи Claude Code обнаружили, что ИИ-помощник для программистов мог включать их email в HTTP-запросы к сторонним сайтам. Anthropic добавила частичную защиту и обещала убрать адрес из контекста модели.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/claude-code-email-user-agent-leak-20261105.webp">
+<meta property="og:url" content="https://iipike.ru/articles/claude-code-email-user-agent-leak-20261105/"><meta property="article:published_time" content="2026-11-10T10:00:51Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Claude Code сливал email пользователей чужим сайтам!", "mainEntityOfPage": "https://iipike.ru/articles/claude-code-email-user-agent-leak-20261105/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-10T10:00:51Z", "image": "https://iipike.ru/assets/editorial/claude-code-email-user-agent-leak-20261105.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/claude-code-email-user-agent-leak-20261105/"><title>Claude Code сливал email пользователей чужим сайтам! — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a></p><h1>Claude Code сливал email пользователей чужим сайтам!</h1>
+<p class="summary">Пользователи Claude Code обнаружили, что ИИ-помощник для программистов мог включать их email в HTTP-запросы к сторонним сайтам. Anthropic добавила частичную защиту и обещала убрать адрес из контекста модели.</p><p class="date">Опубликовано: 10 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/safety/">Безопасность и контроль</a><a href="../../topics/cybersecurity/">Кибербезопасность</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/claude-code-email-user-agent-leak-20261105.webp" alt="Обложка: Claude Code сливал email пользователей чужим сайтам!" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://github.com/anthropics/claude-code/issues/107757" target="_blank" rel="noopener noreferrer">Bug Report: Privacy violation in User-Agent header — anthropics/claude-code #107757 ↗</a>
+</aside><article class="article-text"><p class="lead">ИИ-помощник <strong>Claude Code</strong> иногда передавал электронную почту владельца сторонним сайтам без его разрешения. 5 ноября пользователь GitHub под ником <strong>taylor-edwards</strong> сообщил об этом в репозитории <strong>Anthropic</strong>. Адрес попадал в служебный HTTP-заголовок `User-Agent`, когда агент самостоятельно выполнял запросы к сайтам.</p>
+<p>Выяснилось, что Anthropic сама добавляла адрес электронной почты авторизованного пользователя в контекст нейросети. По объяснению сотрудницы команды <strong>Лидии Холли</strong>, это сделали, чтобы Claude не выдумывал имена при заполнении полей авторства в коде и документах.</p>
+<p>Иногда такая осведомлённость давала неожиданный результат. Когда нейросеть составляла команду `curl` для обращения к сайту, она могла указать электронную почту владельца в качестве контактного адреса. Некоторые ресурсы, включая Википедию и американскую Комиссию по ценным бумагам и биржам, требуют от автоматизированных клиентов указывать контактные данные.</p>
+<p>Автор ноябрьской жалобы утверждает, что теперь ежедневно получает десятки мошеннических писем. Однако установить, связаны ли они с действиями Claude Code, по представленным сведениям невозможно.</p>
+<p>Проблема обнаружилась ещё летом. 25 июля пользователь GitHub сообщил, что Claude Code без отдельного согласия помещает адрес электронной почты в контекст модели. В сентябре и октябре появились сообщения о передаче адресов сайтам crates.io и Wikipedia.</p>
+<p>В версии 2.1.317 разработчики добавили встроенный модуль защиты `cc-plugin-privacy`. Он включён по умолчанию и проверяет команды, способные отправить почтовый адрес наружу.</p>
+<p>Но опубликованная документация самого модуля перечисляет ограничения: защита охватывает определённые команды оболочки, в которых одновременно присутствуют адрес пользователя и указание `User-Agent`. Запросы через WebFetch, WebSearch, MCP-инструменты и некоторые сценарии запуска отдельных скриптов остаются за пределами этой проверки.</p>
+<p>9 ноября вышла версия 2.1.321. В ней механизм изменили: подходящие под правило команды теперь отклоняются без запроса разрешения. При этом проблема хранения почтового адреса непосредственно в контексте модели требует отдельного решения.</p>
+<p>Лидия Холли сообщила, что разработчики собираются полностью убрать email пользователя из контекста Claude Code.</p>
+<blockquote class="editorial-quote"><p>Мне жаль, что мы это допустили.</p><footer><cite>Лидия Холли, команда Claude Code (перевод с английского)</cite></footer></blockquote>
+<p>10 ноября уже вышла версия 2.1.322, однако в описаниях последних релизов удаление email из контекста пока не подтверждено. Жалоба на GitHub остаётся открытой.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
