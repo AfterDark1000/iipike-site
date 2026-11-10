@@ -149,7 +149,7 @@ class RelatedCardTests(unittest.TestCase):
             self.data, self.blocks, self.records, {})
         self.assertEqual((cards, chosen), ({}, None))
         self.assertEqual(site, original)
-        self.assertIn("](https://dzen.ru/a/unmapped-news)", render_blocks(site))
+        self.assertIn('href="https://dzen.ru/a/unmapped-news"', render_blocks(site))
 
     def test_related_dzen_ids_prevent_fallback_without_inline_link(self):
         self.data["title"] = "ARTEX: новая публикация"
@@ -176,6 +176,7 @@ class RelatedCardTests(unittest.TestCase):
             self.assertEqual((cards, chosen), ({}, None), kind)
 
     def test_future_or_unpublished_or_mismatched_topic_cannot_be_fallback(self):
+        self.data["title"] = "ARTEX: новая публикация"
         self.blocks[2]["text"] = "Эксперт упоминал ARTEX и другие средства кибератак."
         for variant in (
             dict(TARGET, published="2026-11-12"),
