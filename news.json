@@ -4249,5 +4249,21 @@
       "engineering",
       "agents"
     ]
+  },
+  {
+    "title": "Микки-Мауса доверили нейросети: Disney расширяет союз с Adobe",
+    "summary": "Disney и Adobe 9 ноября заключили многолетнее соглашение о расширении использования специализированных моделей Firefly Foundry, обучаемых на фирменных визуальных материалах Disney, для тематических парков, студийных спецэффектов и проектов ESPN.",
+    "published": "2026-11-10",
+    "source_url": "https://news.adobe.com/news/2026/11/adobe-and-the-walt-disney-company-alliance",
+    "cover": "assets/editorial/disney-adobe-firefly-foundry-alliance-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T15:45:30Z",
+    "event_date": "2026-11-09",
+    "id": "disney-adobe-firefly-foundry-alliance-20261109",
+    "url": "articles/disney-adobe-firefly-foundry-alliance-20261109/",
+    "topics": [
+      "entertainment",
+      "images"
+    ]
   }
 ]
