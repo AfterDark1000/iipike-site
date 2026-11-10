@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "bfe72b01e1997f8e0f9b34f529d179747aeda720",
-  "source_blob_sha": "83e11143dd4f4f2b300a98aa36b709ae64612f21",
-  "snapshot_date": "2026-11-09",
+  "source_commit": "3f89de52e19acb0528a5294ec5e21419467de4c0",
+  "source_blob_sha": "f21e5133c602b13fc6506f270b62cbe0054719fb",
+  "snapshot_date": "2026-11-10",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af2bd280e259d5111896bfd",
+      "title": "Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой",
+      "dzen_url": "https://dzen.ru/a/avK9KA4lnVERiWv9",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Perplexity 4 ноября представила Teammates — систему персональных ИИ-агентов, которым можно поручить постоянную работу. Они следят за задачами, помнят предыдущие решения, взаимодействуют друг с другом и возвращаются к человеку, когда требуется проверка результата или новое указание. 6 ноября функция вошла в официальный журнал обновлений компании. Предположим, нужно регулярно следить за конкурентами. Пользователь созда",
+      "published_at_utc": "2026-11-10T08:52:16+00:00"
+    },
+    {
+      "dzen_id": "6af2bc5c728c7625b74dca19",
+      "title": "Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ",
+      "dzen_url": "https://dzen.ru/a/avK8XHKMdiW3TcoZ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-агенты удешевляют кибератаки настолько, что небольшие группы хакеров получают возможности, которые раньше требовали целых команд специалистов. Директор по безопасности Cognition Алекс Стамос считает, что из-за этого мир входит в «тёмную эпоху» кибербезопасности. Своим прогнозом он поделился 7 ноября в интервью подкасту Decoder издания The Verge. По словам Стамоса, привычная индустрия информационной безопасности ст",
+      "published_at_utc": "2026-11-10T07:47:25+00:00"
+    },
+    {
+      "dzen_id": "6af214ff846805642772e2d3",
+      "title": "«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ",
+      "dzen_url": "https://dzen.ru/a/avIU_4RoBWQncuLT",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "— Мам, это я. Только не пугайся. Я попал в аварию. Мне срочно нужны деньги. Голос знакомый до мелочей: интонации сына, манера растягивать слова, даже привычная хрипотца. Следом — сумма, номер карты и просьба никому пока не звонить. «Потом всё объясню». Так может начинаться мошеннический звонок с поддельным голосом. Пока человек пытается понять, действительно ли с близким случилась беда, его уже подталкивают к перевод",
+      "published_at_utc": "2026-11-10T06:40:14+00:00"
+    },
     {
       "dzen_id": "6af1b1e598b918050983e33c",
       "title": "Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода",
