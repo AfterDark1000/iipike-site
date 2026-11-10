@@ -1,11 +1,71 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "3f89de52e19acb0528a5294ec5e21419467de4c0",
-  "source_blob_sha": "f21e5133c602b13fc6506f270b62cbe0054719fb",
+  "source_commit": "bb6a954174442f38bd60ba998e64ece06169a2f2",
+  "source_blob_sha": "8951274537ebda999873b5efe62ae775a6aeafbb",
   "snapshot_date": "2026-11-10",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af2ef52c39de244cb16e843",
+      "title": "Google показала два новых TPU: один для секретов, другой вдвое мощнее",
+      "dzen_url": "https://dzen.ru/a/avLvUsOd4kTLFuhD",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 9 ноября представила две новые системы для искусственного интеллекта — TPU 8tx и TPU 8i Max. Первая предназначена для работы с конфиденциальными данными, вторая объединяет два ИИ-чипа в одном корпусе и рассчитана на задачи, требующие особенно большой вычислительной мощности и памяти. TPU — специализированные ускорители Google, на которых обучают и запускают нейросети, включая Gemini. В новых системах компания",
+      "published_at_utc": "2026-11-10T16:01:44+00:00"
+    },
+    {
+      "dzen_id": "6af2eeed80f8703a3a59a9bd",
+      "title": "«Ищите женщину»: глава NVIDIA оказался в центре шпионского скандала",
+      "dzen_url": "https://dzen.ru/a/avLu7YD4cDo6Wam9",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Совет директоров NVIDIA 8 ноября объявил о независимом расследовании после сообщений о том, что глава компании Дженсен Хуанг мог стать целью иностранной разведки. Проверку проведёт специальный комитет независимых директоров с привлечением внешних юристов. Поводом стали публикации The New York Times и Financial Times о связях Хуанга с китайской предпринимательницей Алисой Хуанг. По данным журналистов, американские спе",
+      "published_at_utc": "2026-11-10T15:03:40+00:00"
+    },
+    {
+      "dzen_id": "6af2e5bea8a0411d5776f24c",
+      "title": "Asahi Linux меняет лицензию из-за «отмывания» кода через ИИ",
+      "dzen_url": "https://dzen.ru/a/avLlvqigQR1XdvJM",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Разработчики Asahi Linux решили ужесточить условия использования своего кода после того, как сторонние проекты начали присваивать их наработки, скрывая заимствования с помощью нейросетей. 7 ноября команда объявила о начале перехода на лицензию GPLv2+. Asahi Linux занимается адаптацией Linux для компьютеров Apple с процессорами серии M. Значительную часть работы приходится выполнять практически с нуля: изучать устройс",
+      "published_at_utc": "2026-11-10T14:01:35+00:00"
+    },
+    {
+      "dzen_id": "6af2e54afbd16748b0a9f91d",
+      "title": "Claude Code сливал email пользователей чужим сайтам!",
+      "dzen_url": "https://dzen.ru/a/avLlSvvRZ0iwqfkd",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-помощник Claude Code иногда передавал электронную почту владельца сторонним сайтам без его разрешения. 5 ноября пользователь GitHub под ником taylor-edwards сообщил об этом в репозитории Anthropic. Адрес попадал в служебный HTTP-заголовок `User-Agent`, когда агент самостоятельно выполнял запросы к сайтам. Выяснилось, что Anthropic сама добавляла адрес электронной почты авторизованного пользователя в контекст нейро",
+      "published_at_utc": "2026-11-10T12:51:47+00:00"
+    },
+    {
+      "dzen_id": "6af2e47c08c95d6913a113a1",
+      "title": "OpenMOSS представила MOSS-Live: ИИ разговаривает, пока выполняет задания",
+      "dzen_url": "https://dzen.ru/a/avLkfAjJXWkToROh",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Команда OpenMOSS 7 ноября представила MOSS-Live — голосовую систему, которая продолжает беседу, пока в фоновом режиме выполняются поисковые запросы и другие поручения. Ассистента можно перебить, попросить уточнить ответ или изменить задачу на ходу. Он продолжает слушать собеседника даже во время собственной речи. Для этого разработчики разделили работу системы на две связанные части. Первая отвечает за разговор: слуш",
+      "published_at_utc": "2026-11-10T11:42:16+00:00"
+    },
+    {
+      "dzen_id": "6af2e41bfbd16748b0a74613",
+      "title": "LG открыла бесплатный API K-EXAONE 2.5 для разработчиков",
+      "dzen_url": "https://dzen.ru/a/avLkG_vRZ0iwp0YT",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "LG AI Research 9 ноября открыла бесплатный доступ к API собственной модели K-EXAONE 2.5. Разработчики, стартапы, компании и исследовательские организации могут получить ключ на платформе EXAONE и подключить нейросеть к своим проектам. K-EXAONE 2.5 — экспериментальная версия корейской модели, дополнительно обученная на основе августовского выпуска. Она предназначена для работы с текстом, программирования и задач ИИ-аг",
+      "published_at_utc": "2026-11-10T10:34:51+00:00"
+    },
     {
       "dzen_id": "6af2bd280e259d5111896bfd",
       "title": "Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой",
