@@ -1,4 +1,4 @@
-name: HPII — editorial text + cover inbox (VALIDATION ONLY)
+name: HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)
 on:
   push:
     branches: [editorial-intake]
@@ -44,6 +44,16 @@ jobs:
             for (const fix of plan.fixes) {
               const match = /^editorial_inbox\/stories\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/.exec(fix.path);
               if (!match || match[1] !== fix.id) throw Error('Unsafe quote guard path');
+              // An article that was published after planning must be immutable.
+              try {
+                await github.rest.repos.getContent({
+                  owner, repo, path: 'articles/' + fix.id + '/index.html', ref: 'main'
+                });
+                core.warning('Quote guard skipped already published story: ' + fix.id);
+                continue;
+              } catch (err) {
+                if (err.status !== 404) throw err;
+              }
               const fresh = await github.rest.repos.getContent({
                 owner, repo, path: fix.path, ref: 'editorial-intake'
               });
