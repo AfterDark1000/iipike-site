@@ -8,7 +8,6 @@ Historical Dzen imports remain unchanged.
 from collections import Counter
 from datetime import date
 from html import escape
-from pathlib import PurePosixPath
 import re
 from urllib.parse import urlsplit
 
@@ -161,7 +160,7 @@ def select_site_card(data, blocks, records, site_links):
     public = _public_rows(records, data.get("id", data.get("slug")))
     # First editorial reference inside a normal body paragraph takes priority.
     for i, block in enumerate(blocks):
-        if i < 2 or block["type"] != "p":
+        if i < 1 or block["type"] != "p":
             continue
         original = block["text"]
         for match in LINK.finditer(original):
