@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 41
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 42
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **10.11.2026 10:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **10.11.2026 11:30 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/perplexity-teammates-ai-agents-20261104.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 11:22 (Усть-Катав)**; пауза до 10.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/perplexity-teammates-ai-agents-20261104.webp) |
-| **2** | [LG открыла бесплатный API K-EXAONE 2.5 для разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/lg-k-exaone-25-free-api-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 12:22 (Усть-Катав)**; пауза до 10.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/lg-k-exaone-25-free-api-20261109.webp) |
+| **1** | [LG открыла бесплатный API K-EXAONE 2.5 для разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/lg-k-exaone-25-free-api-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 12:37 (Усть-Катав)**; пауза до 10.11.2026 12:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/lg-k-exaone-25-free-api-20261109.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой](https://iipike.ru/articles/perplexity-teammates-ai-agents-20261104/) | 10.11.2026 11:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/perplexity-teammates-ai-agents-20261104.webp) |
 | [Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ](https://iipike.ru/articles/alex-stamos-ai-cybersecurity-dark-age-20261107/) | 10.11.2026 10:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alex-stamos-ai-cybersecurity-dark-age-20261107.webp) |
 | [«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ](https://iipike.ru/articles/voice-deepfake-family-money-scam-guide-20261109/) | 09.11.2026 17:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/voice-deepfake-family-money-scam-guide-20261109.webp) |
 | [Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода](https://iipike.ru/articles/google-elephant-goldfish-model-20261106/) | 09.11.2026 15:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-elephant-goldfish-model-20261106.webp) |
