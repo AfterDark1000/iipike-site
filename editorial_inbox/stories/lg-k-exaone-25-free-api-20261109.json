@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "lg-k-exaone-25-free-api-20261109",
+  "status": "editor_approved",
+  "approved_by": "human_editor",
+  "approved_at": "2026-11-10",
+  "title": "LG открыла бесплатный API K-EXAONE 2.5 для разработчиков",
+  "dzen_title": "LG открыла бесплатный API K-EXAONE 2.5 для разработчиков",
+  "summary": "LG AI Research открыла бесплатный API модели K-EXAONE 2.5 для разработчиков и компаний. API совместим с форматом OpenAI, действуют ограничения на частоту запросов.",
+  "rubric": "news",
+  "section": "НОВОСТИ ИИ",
+  "topics": [
+    "models",
+    "development"
+  ],
+  "source_url": "https://www.lgresearch.ai/news/view?seq=755",
+  "source_title": "LG AI Research — анонс K-EXAONE 2.5 API, 9 ноября 2026 года",
+  "event_date": "2026-11-09",
+  "related_dzen_ids": [],
+  "threads_queue_id": "lg-k-exaone-25-free-api-20261109",
+  "x_queue_id": "lg-k-exaone-25-free-api-20261109",
+  "article_markdown": "**LG AI Research** 9 ноября открыла бесплатный доступ к API собственной модели **K-EXAONE 2.5**. Разработчики, стартапы, компании и исследовательские организации могут получить ключ на платформе EXAONE и подключить нейросеть к своим проектам.\n\nK-EXAONE 2.5 — экспериментальная версия корейской модели, дополнительно обученная на основе августовского выпуска. Она предназначена для работы с текстом, программирования и задач ИИ-агентов. API совместим с форматом OpenAI, поэтому разработчикам проще подключать его к существующим приложениям.\n\nLG утверждает, что за восемь недель улучшила совокупные показатели модели более чем на 70%. В тесте AutomationBench, оценивающем автоматизацию работы с онлайн-сервисами, K-EXAONE 2.5 получила 74,6 балла против 74,9 у **DeepSeek V4.1 Flash**. Результаты получены самой LG на открытых наборах задач.\n\nAPI уже доступен через [платформу EXAONE](https://docs.exaone.ai/en/docs/overview). Пользоваться им можно бесплатно, но действуют ограничения на частоту запросов.\n\n**Источники:**\n- [Официальный анонс LG AI Research, 9 ноября 2026 года](https://www.lgresearch.ai/news/view?seq=755).\n- [Документация API K-EXAONE 2.5](https://docs.exaone.ai/en/docs/k-exaone-2.5).\n- [Ограничения запросов](https://docs.exaone.ai/en/docs/rate-limits)."
+}
