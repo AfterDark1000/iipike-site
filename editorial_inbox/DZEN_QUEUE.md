@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 42 · **В каталоге Дзена подтверждены:** 39 · **Не подтверждены, уже на сайте:** 2 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 43 · **В каталоге Дзена подтверждены:** 39 · **Не подтверждены, уже на сайте:** 3 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и точным утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.
 
@@ -16,6 +16,7 @@
 |---:|---|---|---|---|
 | 1 | [«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/voice-deepfake-family-money-scam-guide-20261109.md) | 09.11.2026, 17:15 | [На сайте](https://iipike.ru/articles/voice-deepfake-family-money-scam-guide-20261109/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/voice-deepfake-family-money-scam-guide-20261109.webp) |
 | 2 | [Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/alex-stamos-ai-cybersecurity-dark-age-20261107.md) | 10.11.2026, 10:15 | [На сайте](https://iipike.ru/articles/alex-stamos-ai-cybersecurity-dark-age-20261107/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alex-stamos-ai-cybersecurity-dark-age-20261107.webp) |
+| 3 | [Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/perplexity-teammates-ai-agents-20261104.md) | 10.11.2026, 11:30 | [На сайте](https://iipike.ru/articles/perplexity-teammates-ai-agents-20261104/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/perplexity-teammates-ai-agents-20261104.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -23,7 +24,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/perplexity-teammates-ai-agents-20261104.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [LG открыла бесплатный API K-EXAONE 2.5 для разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/lg-k-exaone-25-free-api-20261109.md) | **Не ранее 10.11.2026 12:37 (Усть-Катав)**; пауза до 10.11.2026 12:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/lg-k-exaone-25-free-api-20261109.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
