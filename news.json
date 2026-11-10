@@ -4192,5 +4192,20 @@
       "development",
       "society"
     ]
+  },
+  {
+    "title": "«Ищите женщину»: глава NVIDIA оказался в центре шпионского скандала",
+    "summary": "Совет NVIDIA начал независимое расследование после публикаций о предполагаемой попытке иностранной разведки воздействовать на Дженсена Хуанга; компания пока не видит признаков компрометации секретов.",
+    "published": "2026-11-10",
+    "source_url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+    "cover": "assets/editorial/nvidia-huang-espionage-investigation-20261108.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T12:15:38Z",
+    "event_date": "2026-11-08",
+    "id": "nvidia-huang-espionage-investigation-20261108",
+    "url": "articles/nvidia-huang-espionage-investigation-20261108/",
+    "topics": [
+      "society"
+    ]
   }
 ]
