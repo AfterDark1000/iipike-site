@@ -159,8 +159,9 @@ class PublisherTests(unittest.TestCase):
     def test_site_consolidates_lg_style_sources_with_trailing_punctuation(self):
         from scripts.site_rich_text import markdown_to_blocks
         original = (
-            "Вступительный абзац о новостном событии.\n\n"
-            "Следующий абзац с объяснением обстоятельств.\n\n"
+            ("Вступительный абзац о новостном событии. " * 12)
+            + "\n\nСледующий абзац с объяснением обстоятельств.\n\n"
+            + 
             "**Источники:**\n\n"
             "- [Анонс](https://example.org/source).\n"
             "- [Документация](https://example.org/guide).\n"
@@ -177,8 +178,9 @@ class PublisherTests(unittest.TestCase):
     def test_site_consolidates_single_trailing_source_sentence(self):
         from scripts.site_rich_text import markdown_to_blocks
         original = (
-            "Вступительный абзац о новостном событии.\n\n"
-            "Следующий абзац с объяснением обстоятельств.\n\n"
+            ("Вступительный абзац о новостном событии. " * 12)
+            + "\n\nСледующий абзац с объяснением обстоятельств.\n\n"
+            + 
             "**Источник:** [Публикация](https://example.org/source)."
         )
         blocks = markdown_to_blocks(original)
@@ -194,6 +196,7 @@ class PublisherTests(unittest.TestCase):
             "Текст.\n\n**Источник:** [Ссылка](https://example.org/source) и пояснение.",
         ]
         for original in originals:
+            original = ("Вступительный абзац о новостном событии. " * 12) + "\n\n" + original
             blocks = markdown_to_blocks(original)
             kept, extras = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
             self.assertEqual(kept, blocks)
