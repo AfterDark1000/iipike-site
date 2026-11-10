@@ -49,7 +49,7 @@ dialog{border:1px solid var(--line);border-radius:15px;padding:0;max-width:min(8
 </main>
 <dialog id="editorDialog" aria-labelledby="articleHeading">
 <div class="modal-head"><div><div class="eyebrow" style="color:#59726c">ТЕКСТ ДЛЯ ДЗЕНА</div><h2 id="articleHeading"></h2></div>
-<div class="modal-controls"><button id="copyTitle" class="small">Копировать заголовок</button><button id="copyRich" class="small primary">Копировать текст с оформлением</button><button id="copySelected" class="small">Копировать выделением</button><button id="copyPlain" class="small">Только текст</button><button id="closeDialog" class="small">Закрыть ×</button></div></div>
+<div class="modal-controls"><button id="copyTitle" class="small">Копировать заголовок</button><button id="copyRich" class="small primary">Копировать текст с оформлением</button><button id="closeDialog" class="small">Закрыть ×</button></div></div>
 <div id="copyFeedback" class="copy-feedback" role="status" aria-live="polite"></div>
 <div class="article-body" id="articlePreview"></div>
 </dialog>
@@ -176,13 +176,8 @@ document.getElementById("copyRich").addEventListener("click",async function(){if
 var method=await copyArticleRich();
 if(method==="html")showCopyFeedback("HTML и обычный текст переданы в буфер. Сохранит ли Дзен оформление при вставке, зависит от его редактора.");
 else if(method==="selection")showCopyFeedback("Скопировано через выделение браузера. Проверь оформление после вставки в Дзен — этот способ не гарантирует сохранение HTML.");
-else showCopyFeedback("Скопирован только обычный текст: браузер не дал скопировать HTML. Попробуй кнопку «Копировать выделением».",true);
+else showCopyFeedback("Скопирован только обычный текст: браузер не дал скопировать HTML. При необходимости выдели оформленный текст прямо в окне статьи.",true);
 this.textContent="Скопировано ✓"}catch(e){showCopyFeedback("Копирование не удалось: "+e.message,true)}});
-document.getElementById("copySelected").addEventListener("click",function(){if(!activeStory)return;
-if(copyFormattedSelection())showCopyFeedback("Команда копирования через выделение выполнена. Проверь оформление при вставке в Дзен.");
-else showCopyFeedback("Текст выделен. Попробуй нажать «Копировать» в системном меню выделения браузера.",true)});
-document.getElementById("copyPlain").addEventListener("click",async function(){if(!activeStory)return;
-try{await copyPlainText(plainPreview());showCopyFeedback("Скопирован обычный текст без Markdown-разметки и без HTML.")}catch(e){showCopyFeedback("Не удалось скопировать: "+e.message,true)}});
 document.getElementById("closeDialog").addEventListener("click",function(){dialog.close()});
 dialog.addEventListener("close",function(){window.getSelection().removeAllRanges();showCopyFeedback("");document.getElementById("copyTitle").textContent="Копировать заголовок";document.getElementById("copyRich").textContent="Копировать текст с оформлением"});
 function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000)}

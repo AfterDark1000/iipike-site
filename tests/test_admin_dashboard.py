@@ -63,12 +63,13 @@ class AdminOverviewTests(unittest.TestCase):
 
     def test_dzen_tools_present(self):
         for label in ("Копировать заголовок", "Копировать текст с оформлением",
-                      "Копировать выделением", "Только текст",
                       "Скачать выбранные обложки ZIP"):
             self.assertIn(label, self.html)
+        for removed_id in ('id="copySelected"', 'id="copyPlain"'):
+            self.assertNotIn(removed_id, self.html)
 
     def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
-        for phrase in ('id="copySelected"', 'id="copyPlain"', 'id="copyFeedback"',
+        for phrase in ('id="copyFeedback"',
                        'role="status"', 'aria-live="polite"',
                        'function copyFormattedSelection()', 'document.execCommand("copy")',
                        '"text/html":new Blob([activeStory.html]',
