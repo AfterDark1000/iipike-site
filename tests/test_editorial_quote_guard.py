@@ -23,7 +23,7 @@ class QuoteGuardTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Quote needs"):
             markdown_to_blocks(broken)
         repaired, removed = normalize_empty_quote_markers(broken)
-        self.assertEqual(removed, (5,))
+        self.assertEqual(removed, (6,))
         self.assertEqual(repaired, broken.replace("\n>\n", "\n"))
         quote = next(b for b in markdown_to_blocks(repaired) if b["type"] == "quote")
         self.assertEqual(quote["text"], "Это точный текст свидетельства с важными деталями.")
@@ -35,7 +35,7 @@ class QuoteGuardTests(unittest.TestCase):
             broken = BODY.replace("\n>\n", "\n" + marker + "\n")
             fixed, removed = normalize_empty_quote_markers(broken)
             self.assertEqual(fixed, broken.replace("\n" + marker + "\n", "\n"))
-            self.assertEqual(removed, (5,))
+            self.assertEqual(removed, (6,))
         for source in (
             INTRO + "\n\n>\n\n" + INTRO,
             INTRO + "\n\n> Quote is meaningful\n> — Author\n>\n" + INTRO,
@@ -82,7 +82,7 @@ class QuoteGuardTests(unittest.TestCase):
         fix = repairs[0]
         self.assertEqual(fix["id"], "a-repaired-story")
         self.assertEqual(fix["path"], "editorial_inbox/stories/a-repaired-story.json")
-        self.assertEqual(fix["removed_lines"], [5])
+        self.assertEqual(fix["removed_lines"], [6])
         self.assertEqual(fix["repaired_markdown"], BODY.replace("\n>\n", "\n"))
         self.assertEqual(current["article_markdown"], BODY)
 
