@@ -161,8 +161,7 @@ class PublisherTests(unittest.TestCase):
         original = (
             ("Вступительный абзац о новостном событии. " * 12)
             + "\n\nСледующий абзац с объяснением обстоятельств.\n\n"
-            + 
-            "**Источники:**\n\n"
+            + "**Источники:**\n\n"
             "- [Анонс](https://example.org/source).\n"
             "- [Документация](https://example.org/guide).\n"
             "- [Ограничения](https://example.org/limits)."
@@ -180,8 +179,7 @@ class PublisherTests(unittest.TestCase):
         original = (
             ("Вступительный абзац о новостном событии. " * 12)
             + "\n\nСледующий абзац с объяснением обстоятельств.\n\n"
-            + 
-            "**Источник:** [Публикация](https://example.org/source)."
+            + "**Источник:** [Публикация](https://example.org/source)."
         )
         blocks = markdown_to_blocks(original)
         kept, extras = PUBLISHER.site_article_sources(blocks, "https://example.org/source")
