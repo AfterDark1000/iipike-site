@@ -4096,5 +4096,21 @@
       "cybersecurity",
       "society"
     ]
+  },
+  {
+    "title": "Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ",
+    "summary": "Алекс Стамос из Cognition предупредил об удешевлении кибератак с помощью ИИ-агентов и объяснил, почему защитным системам тоже нужна автоматизация с ограниченными полномочиями.",
+    "published": "2026-11-10",
+    "source_url": "https://www.theverge.com/podcast/1029038/ai-cybersecurity-hackers-data-breach-dark-age-alex-stamos",
+    "cover": "assets/editorial/alex-stamos-ai-cybersecurity-dark-age-20261107.webp",
+    "rubric": "quotes",
+    "published_at_utc": "2026-11-10T05:15:36Z",
+    "event_date": "2026-11-07",
+    "id": "alex-stamos-ai-cybersecurity-dark-age-20261107",
+    "url": "articles/alex-stamos-ai-cybersecurity-dark-age-20261107/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ]
   }
 ]
