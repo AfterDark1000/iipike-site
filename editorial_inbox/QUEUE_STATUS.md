@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 40
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 41
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **09.11.2026 17:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **10.11.2026 10:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -18,12 +18,13 @@
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/alex-stamos-ai-cybersecurity-dark-age-20261107.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Perplexity запустила Teammates: личные ИИ-агенты теперь работают командой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/perplexity-teammates-ai-agents-20261104.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Уже опубликованы — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Алекс Стамос предупредил о «тёмной эпохе» кибербезопасности из-за ИИ](https://iipike.ru/articles/alex-stamos-ai-cybersecurity-dark-age-20261107/) | 10.11.2026 10:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alex-stamos-ai-cybersecurity-dark-age-20261107.webp) |
 | [«Мама, это я! Срочно нужны деньги!» Как проверить знакомый голос, если его мог подделать ИИ](https://iipike.ru/articles/voice-deepfake-family-money-scam-guide-20261109/) | 09.11.2026 17:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/voice-deepfake-family-money-scam-guide-20261109.webp) |
 | [Google представила Elephant-Goldfish: ИИ-агенты проверяют друг друга перед написанием кода](https://iipike.ru/articles/google-elephant-goldfish-model-20261106/) | 09.11.2026 15:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-elephant-goldfish-model-20261106.webp) |
 | [В США центр проверки ИИ остался без руководителя](https://iipike.ru/articles/caissi-no-permanent-director-20261108/) | 09.11.2026 11:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/caissi-no-permanent-director-20261108.webp) |
