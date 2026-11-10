@@ -29,7 +29,7 @@ jobs:
       - name: Collect safe fixes for empty quote markers
         run: |
           git fetch origin editorial-intake main
-          python3 scripts/editorial_quote_guard.py \
+          python3 -m scripts.editorial_quote_guard \
             --ref origin/editorial-intake --main-ref origin/main \
             --output /tmp/hpii_editorial_quote_fixes.json
       - name: Fix only redundant empty quote lines in approved pending stories
