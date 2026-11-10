@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Verify curated entity pilot, existing articles and generated HTML
         run: |
           python3 -m unittest discover -s tests -p 'test_entity_pilot.py' -v
