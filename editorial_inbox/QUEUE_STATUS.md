@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Уже опубликованы:** 50
+**В очереди:** 19 · **Готовы:** 0 · **Ждут интервал:** 19 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 50
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -29,13 +29,14 @@
 | **15** | [Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-ember-agents-pricing-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 17:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-ember-agents-pricing-20261109.webp) |
 | **16** | [ChatGPT теперь продаётся через Amazon](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-chatgpt-enterprise-aws-marketplace-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 18:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-chatgpt-enterprise-aws-marketplace-20261109.webp) |
 | **17** | [ИИ-агент OpenAI взломал госсайт. Австралия создаст регулятор](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/australia-openai-agent-ai-regulator-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 19:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/australia-openai-agent-ai-regulator-20261110.webp) |
-| **18** | [Anthropic назвала цену акций: компанию могут оценить в $1,3 трлн](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-ipo-price-range-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 20:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-ipo-price-range-20261110.webp) |
+| **18** | [Google проверила шифрование Signal с помощью ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-alphaproof-code-signal-verification-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 20:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-alphaproof-code-signal-verification-20261110.webp) |
+| **19** | [Anthropic назвала цену акций: компанию могут оценить в $1,3 трлн](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-ipo-price-range-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 21:07 (Усть-Катав)**; пауза до 10.11.2026 21:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-ipo-price-range-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Google проверила шифрование Signal с помощью ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-alphaproof-code-signal-verification-20261110.json) | ⛔ Заблокирована: некорректное оформление | Некорректное оформление текста: Quote needs &#x27;&gt; &#x27; prefix on line 20 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-alphaproof-code-signal-verification-20261110.webp) |
+| — | Нет проблемных материалов | — | — |
 
 ## Уже опубликованы — новые сверху
 
