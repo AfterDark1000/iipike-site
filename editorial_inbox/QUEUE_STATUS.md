@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 8 · **Готовы:** 0 · **Ждут интервал:** 8 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 45
+**В очереди:** 10 · **Готовы:** 0 · **Ждут интервал:** 10 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 3 · **Заблокированы:** 0 · **Уже опубликованы:** 45
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -20,12 +20,16 @@
 | **6** | [Создал сайт в ChatGPT? Spacefast выложит его в интернет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/automattic-spacefast-ai-agent-hosting-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 21:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/automattic-spacefast-ai-agent-hosting-20261109.webp) |
 | **7** | [MIT научил ИИ предсказывать поведение песка, воды и белков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-worldparticle-physics-simulator-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 22:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-worldparticle-physics-simulator-20261109.webp) |
 | **8** | [MIT научил роботов понимать намёки человека](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-flex-robots-human-intent-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 10.11.2026 23:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-flex-robots-human-intent-20261109.webp) |
+| **9** | [Инженер лёг спать. Claude сам смешал краски и нарисовал акварель](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/claude-watercolor-robot-night-painting-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 00:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-watercolor-robot-night-painting-20261106.webp) |
+| **10** | [131 ИИ-агент и 23 тысячи запросов ради одного музыкального клипа!](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/tetsuo-131-ai-agents-music-video-20261108.json) | ⏳ Ждёт часовой интервал | **Не ранее 11.11.2026 07:07 (Усть-Катав)**; пауза до 10.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/tetsuo-131-ai-agents-music-video-20261108.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| — | Нет проблемных материалов | — | — |
+| [Режиссёр назвала ИИ опасным — и оживила с его помощью исторические фотографии](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ava-duvernay-14th-ai-archive-animation-20261108.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [ИИ пишет хоррор прямо во время игры. Даже автор не знает, что дальше!](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/dimension9-claude-live-horror-game-20261106.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Звезда «Фантастической четвёрки» узнал о годовом «романе» с фанаткой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ioan-gruffudd-ai-deepfake-romance-20261109.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Уже опубликованы — новые сверху
 
