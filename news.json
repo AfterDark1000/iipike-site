@@ -4265,5 +4265,21 @@
       "entertainment",
       "images"
     ]
+  },
+  {
+    "title": "Создал сайт в ChatGPT? Spacefast выложит его в интернет",
+    "summary": "Automattic официально запустила Spacefast — сервис, через который ИИ-агенты ChatGPT, Claude, Codex и других систем могут размещать созданные сайты и веб-приложения с хостингом, SQL-базой данных и историей версий.",
+    "published": "2026-11-10",
+    "source_url": "https://automattic.com/2026/11/09/meet-spacefast/",
+    "cover": "assets/editorial/automattic-spacefast-ai-agent-hosting-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-10T16:45:45Z",
+    "event_date": "2026-11-09",
+    "id": "automattic-spacefast-ai-agent-hosting-20261109",
+    "url": "articles/automattic-spacefast-ai-agent-hosting-20261109/",
+    "topics": [
+      "development",
+      "agents"
+    ]
   }
 ]
