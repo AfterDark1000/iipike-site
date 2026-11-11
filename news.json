@@ -4483,5 +4483,21 @@
       "audio",
       "models"
     ]
+  },
+  {
+    "title": "Anthropic выпустила два новых Claude и заявила о решении задач физики чёрных дыр",
+    "summary": "Anthropic выпустила Claude Fable 5.2 и Claude Mythos 5.2 на одной базовой модели с разными ограничениями доступа. Компания представила две научные рукописи по физике чёрных дыр и результаты испытаний ИИ в математике, инженерии и робототехнике; независимого рецензирования научных работ пока нет.",
+    "published": "2026-11-11",
+    "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "cover": "assets/editorial/anthropic-fable-mythos-52-black-holes-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T15:30:47Z",
+    "event_date": "2026-11-09",
+    "id": "anthropic-fable-mythos-52-black-holes-20261109",
+    "url": "articles/anthropic-fable-mythos-52-black-holes-20261109/",
+    "topics": [
+      "models",
+      "science"
+    ]
   }
 ]
