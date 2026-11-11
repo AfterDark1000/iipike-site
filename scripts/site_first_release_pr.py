@@ -128,8 +128,9 @@ def proposed_changes():
     allowed = ("editorial_inbox/stories/", "editorial_inbox/covers/",
                "editorial_inbox/illustrations/",
                "assets/editorial/", "content/approved/", "articles/",
-               "rubrics/", "topics/")
-    exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html"}
+               "rubrics/", "topics/", "entities/")
+    exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
+             "data/entity_registry.json"}
     changed = []
     for row in output:
         name = row[3:]
@@ -189,6 +190,23 @@ def auto_publish_site(story_id, base_sha, source_paths):
     topic_files = {"topics/index.html"} | {
         "topics/" + key + "/index.html" for key in TOPICS
     }
+    # Only an explicit, published selection may change the controlled entity
+    # registry. Its destination pages are derived from the existing allowlist,
+    # not from any arbitrary editorial-provided path.
+    from scripts.site_entities import load_registry, validate_editor_entities
+    approved_path = Path("content/approved") / (story_id + ".json")
+    if approved_path.is_file():
+        approved = json.loads(approved_path.read_text(encoding="utf-8"))
+        selected_companies, selected_products = validate_editor_entities(
+            load_registry(), approved.get("companies"), approved.get("products"))
+        if selected_companies or selected_products:
+            expected_files.update(("data/entity_registry.json", "entities/index.html"))
+            expected_files.update(
+                "entities/" + kind + "/" + key + "/index.html"
+                for kind, keys in (("companies", selected_companies),
+                                   ("products", selected_products))
+                for key in keys
+            )
     changed = set(git("diff", "--name-only", f"{base_sha}..HEAD").stdout.splitlines())
     if not expected_files <= changed:
         raise ValueError("Release is missing required site/article artifacts: "
