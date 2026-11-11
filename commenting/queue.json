@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-10T19:40:03.698501Z",
+  "updated_at": "2026-11-11T00:36:53.625120Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-10T19:40:03.698501Z",
-      "last_success_at": "2026-11-10T19:40:03.698501Z",
+      "checked_at": "2026-11-11T00:36:53.625120Z",
+      "last_success_at": "2026-11-11T00:36:53.625120Z",
       "error": null,
       "fresh_matches": 9
     },
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-10T19:40:03.698501Z",
-      "last_success_at": "2026-11-10T19:40:03.698501Z",
+      "checked_at": "2026-11-11T00:36:53.625120Z",
+      "last_success_at": "2026-11-11T00:36:53.625120Z",
       "error": null,
-      "fresh_matches": 18
+      "fresh_matches": 20
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-10T19:40:03.698501Z",
-      "last_success_at": "2026-11-10T19:40:03.698501Z",
+      "checked_at": "2026-11-11T00:36:53.625120Z",
+      "last_success_at": "2026-11-11T00:36:53.625120Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-10T19:40:03.698501Z",
-      "last_success_at": "2026-11-10T19:40:03.698501Z",
+      "checked_at": "2026-11-11T00:36:53.625120Z",
+      "last_success_at": "2026-11-11T00:36:53.625120Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -55,10 +55,48 @@
   },
   "usage": {
     "date": "2026-11-11",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "8eec532fd0ef69fd2a7fa0c0",
+      "title": "Создатели Cyanogen готовят Linux, напичканный ИИ — новая ОС Kora объединит разные нейросети",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151126",
+      "published_at": "2026-11-10T22:05:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T00:36:53.625120Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c03564088f97ce00ca06c30a",
+      "title": "Без CUDA никуда? Конкурентное преимущество NVIDIA в сфере ПО для ИИ сходит на нет",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151113",
+      "published_at": "2026-11-10T20:05:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T00:36:53.625120Z",
+      "views": null,
+      "comments": null,
+      "status": "read_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
+      "reason": "Не удалось прочитать статью целиком (ValueError)",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "31562d0f35ac796c3a8e7a7c",
       "title": "Anthropic решила потягаться с Google и Microsoft — Claude получил набор инструментов для офисной работы",
@@ -128,10 +166,12 @@
       "first_seen_at": "2026-11-10T19:40:03.698501Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "204319008f7be342260cd440",
