@@ -126,6 +126,7 @@ def inject_article_entity_nav(page, slug, registry):
 def render_index(registry):
     sections = []
     for kind, title in (("companies", "Компании"), ("products", "Продукты")):
+        items = sorted(registry[kind], key=lambda entry: entry["name"].casefold())
         links = "".join(
             '<a class="topic-index-link entity-tile" href="' +
             kind + '/' + e(entry["key"]) + '/">' +
@@ -133,24 +134,31 @@ def render_index(registry):
             '<span class="entity-tile__copy"><strong>' + e(entry["name"]) +
             '</strong><span>' + str(len(entry["article_ids"])) +
             ' материалов в подборке</span></span></a>'
-            for entry in registry[kind]
+            for entry in items
         )
         sections.append(
-            '<section><h2>' + title + '</h2>'
+            '<section data-entity-section><h2>' + title + ' — ' + str(len(items)) + '</h2>'
             '<nav class="topic-index-grid" aria-label="' + title + '">' +
             links + '</nav></section>'
         )
+    total = len(registry["companies"]) + len(registry["products"])
     content = (
         '<div class="overline">ХПИИ / Каталог</div>'
         '<h1>Компании и продукты</h1>'
         '<p class="summary">Новости об участниках индустрии ИИ. '
         'В каталог попадают только материалы с подтверждённой редакцией связью; '
-        'подборки пополняются постепенно.</p>' + "".join(sections)
+        'подборки пополняются постепенно.</p>'
+        '<div class="entity-search" role="search">'
+        '<label for="entity-filter">Найти компанию или продукт</label>'
+        '<input id="entity-filter" type="search" autocomplete="off" '
+        'placeholder="Например, NVIDIA, Claude, Grok">'
+        '<p id="entity-filter-status" aria-live="polite">В справочнике ' +
+        str(total) + ' названий</p></div>' + "".join(sections)
+        + '<script defer src="../assets/entity-search.js"></script>'
     )
     return shell("Компании и продукты",
                  "Новости компаний и продуктов ИИ: Google, OpenAI, Anthropic, Adobe, Disney, Grok и другие.",
                  "../", BASE + "/entities/", content)
-
 
 def render_entity(kind, entry, records, companies):
     if kind not in ("companies", "products"):
