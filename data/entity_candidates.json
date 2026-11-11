@@ -37,6 +37,18 @@
           "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
         }
       ]
+    },
+    {
+      "key": "beeble",
+      "name": "Beeble",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
+          "source_url": "https://beeble.ai/research/switchx-3-0"
+        }
+      ]
     }
   ],
   "products": [
@@ -50,6 +62,19 @@
         {
           "article_id": "zyphra-zonos3-mini-voice-cloning-20261109",
           "source_url": "https://www.zyphra.com/our-work/zonos3-mini"
+        }
+      ]
+    },
+    {
+      "key": "switchx-3",
+      "name": "SwitchX 3.0",
+      "company": "beeble",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
+          "source_url": "https://beeble.ai/research/switchx-3-0"
         }
       ]
     }
