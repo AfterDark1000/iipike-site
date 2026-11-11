@@ -41,11 +41,12 @@ def clean_article_html(page, topics, slug):
     pattern = re.compile(
         r'(<p class="date">[^<]+</p>)'
         r'(<nav class="topic-links" aria-label="Темы статьи">.*?</nav>)?'
+        r'(<nav class="article-entity-links" aria-label="Компании и продукты статьи">.*?</nav>)?'
         r'(</div>\s*<figure class="cover">)',
         re.DOTALL,
     )
     updated, count = pattern.subn(
-        lambda m: m.group(1) + rendered + m.group(3), updated, count=1
+        lambda m: m.group(1) + rendered + (m.group(3) or "") + m.group(4), updated, count=1
     )
     if count != 1:
         raise ValueError("Missing date/cover boundary in historical article: " + slug)

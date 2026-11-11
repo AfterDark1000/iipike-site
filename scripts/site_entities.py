@@ -7,7 +7,75 @@ import argparse
 from html import escape
 import json
 from pathlib import Path
-from scripts.build_entity_pilot import validate as validate_curated
+from datetime import date
+import re
+
+ENTITY_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+ARTICLE_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/\Z")
+SAFE_COVER = re.compile(r"assets/[a-z0-9][a-z0-9/_-]*\.(?:webp|png|jpg|jpeg|svg)\Z")
+
+
+def validate_public_registry(registry, records):
+    """Separate public validation: historic articles may use local SVG covers.
+
+    The experimental pilot's stricter JPEG/WebP/PNG contract is not relaxed.
+    """
+    if (not isinstance(registry, dict) or registry.get("schema_version") != 1
+            or set(registry) != {"schema_version", "note", "companies", "products"}):
+        raise ValueError("Invalid public entity registry schema")
+    if not isinstance(registry["note"], str) or not registry["note"].strip():
+        raise ValueError("Missing registry note")
+    if not isinstance(records, list):
+        raise ValueError("Published article index must be a list")
+    known = {}
+    for row in records:
+        if not isinstance(row, dict) or not isinstance(row.get("id"), str):
+            raise ValueError("Invalid published article record")
+        if row["id"] in known:
+            raise ValueError("Duplicate published article ID")
+        known[row["id"]] = row
+    companies = set()
+    for kind in ("companies", "products"):
+        entries = registry[kind]
+        if not isinstance(entries, list) or not entries:
+            raise ValueError("Expected nonempty controlled entity lists")
+        keys = set()
+        for entry in entries:
+            required = ({"key", "name", "description", "article_ids"} if kind == "companies"
+                        else {"key", "name", "description", "company", "article_ids"})
+            if not isinstance(entry, dict) or set(entry) != required:
+                raise ValueError("Unknown/invalid entity metadata fields")
+            key = entry["key"]
+            if not isinstance(key, str) or not ENTITY_KEY.fullmatch(key) or key in keys:
+                raise ValueError("Invalid or duplicate entity key")
+            keys.add(key)
+            if not all(isinstance(entry.get(k), str) and entry[k].strip()
+                       for k in ("name", "description")):
+                raise ValueError("Missing entity name or description")
+            ids = entry["article_ids"]
+            if (not isinstance(ids, list) or not ids or
+                    any(not isinstance(i, str) for i in ids) or
+                    len(ids) != len(set(ids))):
+                raise ValueError("Invalid/repeated curated article IDs")
+            for article_id in ids:
+                if article_id not in known:
+                    raise ValueError("Unknown unpublished article " + article_id)
+                row = known[article_id]
+                if (row.get("url") != "articles/" + article_id + "/" or
+                        not ARTICLE_PATH.fullmatch(row["url"])):
+                    raise ValueError("Invalid published article path " + article_id)
+                if not all(isinstance(row.get(k), str) and row[k]
+                           for k in ("title", "summary", "published", "cover")):
+                    raise ValueError("Incomplete published article " + article_id)
+                if not SAFE_COVER.fullmatch(row["cover"]):
+                    raise ValueError("Unsafe published article cover " + article_id)
+                date.fromisoformat(row["published"])
+        if kind == "companies":
+            companies = keys
+        elif any(entry["company"] not in companies for entry in entries):
+            raise ValueError("Product must refer to a registered company")
+    return known
+
 from scripts.site_rubrics import publication_date, RUBRICS
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -126,6 +194,7 @@ def inject_article_entity_nav(page, slug, registry):
 def render_index(registry):
     sections = []
     for kind, title in (("companies", "Компании"), ("products", "Продукты")):
+        items = sorted(registry[kind], key=lambda entry: entry["name"].casefold())
         links = "".join(
             '<a class="topic-index-link entity-tile" href="' +
             kind + '/' + e(entry["key"]) + '/">' +
@@ -133,24 +202,31 @@ def render_index(registry):
             '<span class="entity-tile__copy"><strong>' + e(entry["name"]) +
             '</strong><span>' + str(len(entry["article_ids"])) +
             ' материалов в подборке</span></span></a>'
-            for entry in registry[kind]
+            for entry in items
         )
         sections.append(
-            '<section><h2>' + title + '</h2>'
+            '<section data-entity-section><h2>' + title + ' — ' + str(len(items)) + '</h2>'
             '<nav class="topic-index-grid" aria-label="' + title + '">' +
             links + '</nav></section>'
         )
+    total = len(registry["companies"]) + len(registry["products"])
     content = (
         '<div class="overline">ХПИИ / Каталог</div>'
         '<h1>Компании и продукты</h1>'
         '<p class="summary">Новости об участниках индустрии ИИ. '
         'В каталог попадают только материалы с подтверждённой редакцией связью; '
-        'подборки пополняются постепенно.</p>' + "".join(sections)
+        'подборки пополняются постепенно.</p>'
+        '<div class="entity-search" role="search">'
+        '<label for="entity-filter">Найти компанию или продукт</label>'
+        '<input id="entity-filter" type="search" autocomplete="off" '
+        'placeholder="Например, NVIDIA, Claude, Grok">'
+        '<p id="entity-filter-status" aria-live="polite">В справочнике ' +
+        str(total) + ' названий</p></div>' + "".join(sections)
+        + '<script defer src="../assets/entity-search.js"></script>'
     )
     return shell("Компании и продукты",
                  "Новости компаний и продуктов ИИ: Google, OpenAI, Anthropic, Adobe, Disney, Grok и другие.",
                  "../", BASE + "/entities/", content)
-
 
 def render_entity(kind, entry, records, companies):
     if kind not in ("companies", "products"):
@@ -193,7 +269,7 @@ def render_all_entities(records, root=ROOT):
     """Build only public /entities/ pages from the reviewed static registry."""
     root = Path(root)
     registry = load_registry(root)
-    known = validate_curated(registry, records)
+    known = validate_public_registry(registry, records)
     companies = {x["key"]: x["name"] for x in registry["companies"]}
     outputs = {root / "entities" / "index.html": render_index(registry)}
     for kind in ("companies", "products"):

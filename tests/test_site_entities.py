@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 from scripts.site_entities import load_registry, render_all_entities, entity_urls
-from scripts.build_entity_pilot import validate as validate_curated
+from scripts.site_entities import validate_public_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,17 +17,17 @@ class PublicEntityCatalogTests(unittest.TestCase):
         cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
 
     def test_curated_registry_references_only_published_rows(self):
-        validate_curated(self.registry, self.records)
-        self.assertEqual(len(self.registry["companies"]), 6)
-        self.assertEqual(len(self.registry["products"]), 5)
+        validate_public_registry(self.registry, self.records)
+        self.assertEqual(len(self.registry["companies"]), 61)
+        self.assertEqual(len(self.registry["products"]), 24)
         self.assertEqual(len(set(
             article for kind in ("companies", "products")
             for entity in self.registry[kind] for article in entity["article_ids"]
-        )), 32)
+        )), 195)
 
     def test_generated_pages_are_current_indexable_and_canonical(self):
         pages = render_all_entities(self.records, ROOT)
-        self.assertEqual(len(pages), 12)
+        self.assertEqual(len(pages), 86)
         self.assertIn(ROOT / "entities/index.html", pages)
         for path, text in pages.items():
             self.assertTrue(path.is_file(), str(path))
@@ -40,6 +40,15 @@ class PublicEntityCatalogTests(unittest.TestCase):
             self.assertIn('assets/entity-icons/', text)
             self.assertNotIn("lab/entities/", text)
             self.assertNotIn('src="https://', text)
+
+    def test_search_catalog_has_alphabetical_tiles(self):
+        html = (ROOT / "entities/index.html").read_text(encoding="utf-8")
+        self.assertIn('id="entity-filter"', html)
+        self.assertIn('assets/entity-search.js', html)
+        self.assertIn("Компании — 61", html)
+        self.assertIn("Продукты — 24", html)
+        self.assertEqual(html.count('class="topic-index-link entity-tile"'), 85)
+        self.assertTrue((ROOT / "assets/entity-search.js").is_file())
 
     def test_all_icons_exist_and_are_local_svg(self):
         for kind in ("companies", "products"):

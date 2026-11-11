@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Публичный редакционный справочник ХПИИ: ручная проверка главных участников новости. Неполный архив, без автоматического сканирования текста.",
+  "note": "Ручная редакционная разметка опубликованного архива на 11 ноября 2026. Метки присвоены главным участникам события; исследования, общие обзоры и случайные упоминания не размечаются. Новые статьи пока не размечаются автоматически.",
   "companies": [
     {
       "key": "google",
@@ -14,7 +14,16 @@
         "google-genie4-worlds",
         "google-robotics-teamwork",
         "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
-        "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004"
+        "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004",
+        "google-search-ai-links",
+        "ai-site-training-opt-out",
+        "gemini-edit-pdf-sheets",
+        "gemini4-carbon-ranking",
+        "google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570",
+        "google-podklyuchila-avtomobilnyy-gemini-k-lichnym-dannym-dcc9d",
+        "google-otkryla-proekt-ii-protsessora-dlya-chasov-i-datchikov-t-1397a",
+        "google-nauchila-gemini-notebook-pokazyvat-plan-video-do-ego-so-37ba9",
+        "google-vypustila-instrument-dlya-zapuska-ii-neposredstvenno-na-53169"
       ]
     },
     {
@@ -29,7 +38,45 @@
         "openai-brockman-anthropic-enterprise-20261104",
         "openai-hacktron-security-partnership-20261106",
         "australian-universities-chatgpt-edu-20261105",
-        "gpt-6-cyber-firefox-81-vulnerabilities-20261105"
+        "gpt-6-cyber-firefox-81-vulnerabilities-20261105",
+        "codex-git-server",
+        "openai-agent-disabled-monitoring",
+        "altman-ai-scientists-office",
+        "ai-site-training-opt-out",
+        "chatgpt-bug-bounty-172k",
+        "ai-browser-assistants-vulnerabilities",
+        "chatgpt-violence-chat-interrupt",
+        "openai-agent-monitoring-four-levels",
+        "openai-scientific-puzzles",
+        "openai-power-grid-georgia-1000mw",
+        "openai-gpt6-astra-household-benchmark",
+        "openai-abu-dhabi-regulation-ai",
+        "openai-gpt6-biologists-restricted",
+        "chatgpt-service-now-support",
+        "openai-otklyuchila-gpt-4-gpt-3-5-i-drugie-starye-modeli-v-a-14aaa",
+        "openai-razreshila-ii-agentam-samostoyatelno-naznachat-sebe-e18bb",
+        "ii-openai-nashyol-lazeyku-v-internet-obuchenie-moschneyshih-b167d",
+        "gpt6-luna-fast-reasoning-7a95a",
+        "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-de-fb75b",
+        "chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612",
+        "openai-vvodit-propusknoi-rezhim-dlya-agregatorov-791dc",
+        "reklama-v-chatgpt-dobralas-do-89-stran-bolee-100-tysyach-rekla-fb1f5",
+        "google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570",
+        "openai-ii-nauchilsya-luchshe-rabotat-so-starym-programmnym-kod-11ef5",
+        "gpt-6-pro-nauchilsya-raspredelyat-zadachi-mezhdu-neskolkimi-ii-51112",
+        "ii-openai-nashyol-chuzhoy-kriptokoshelyok-potratil-dengi-i-pro-97eb8",
+        "openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e",
+        "golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501",
+        "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7",
+        "v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b",
+        "openai-sozdala-ii-dlya-poiska-novykh-lekarstv-uchyonym-obescha-6dbff",
+        "openai-obyavila-datu-otklyucheniya-gpt-4o-i-gpt-4-1-v-api-50e00",
+        "sotrudnika-openai-arestovali-po-podozreniyu-v-taynoy-zapisi-so-1c79f",
+        "agenty-openai-dobralis-do-vikipedii-670dd",
+        "teksty-chatgpt-pometyat-kak-neyroslop-1f0e1",
+        "poka-neyroset-risuet-kartinku-chatgpt-pokazhet-reklamu-3b9e7",
+        "openai-gpt6-astra-device-20261103",
+        "sam-altman-ram-altman-dram-20261104"
       ]
     },
     {
@@ -56,7 +103,8 @@
         "grok-api-output-watermarking-20261107",
         "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
         "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
-        "musk-grok-bot-cost"
+        "musk-grok-bot-cost",
+        "grok-mp-letters-refund"
       ]
     },
     {
@@ -68,7 +116,519 @@
         "claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13",
         "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
         "anthropic-ii-agenty-rabotayut-v-shest-raz-bolshe-chem-sotrudni-5dfab",
-        "anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09"
+        "anthropic-pustila-nezavisimykh-proveryayuschikh-vnutr-kompanii-08c09",
+        "ai-site-training-opt-out",
+        "claude-code-malware-cursor",
+        "russian-claude-passport-ban",
+        "anthropic-ipo-biosecurity-warning",
+        "claude-paywall-bypass",
+        "ai-hackers-anthropic-12h",
+        "claude-mouse-brain-injection",
+        "claude-code-pentagon-systems",
+        "claude-35k-antibodies",
+        "anthropic-ostanovila-obuchenie-novogo-ii-bolshe-chem-na-mes-21ad9",
+        "anthropic-sobralas-na-birzhu-tsena-voprosa-trilliony-12e5c",
+        "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
+        "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
+        "agent-skills-standards-0352e",
+        "claude-uvolnyaet-ii-agentov-cf215",
+        "anthropic-napravit-5-svoikh-aktsiy-na-obschestvennye-proekty-8c8c1",
+        "claude-razgadal-25-letnyuyu-zagadku-kriptografii-5c4d6",
+        "v-ssha-nachali-rassledovanie-protiv-openai-i-anthropic-iz-za-o-ec74b",
+        "ii-pishet-stolko-koda-chto-anthropic-prishlos-otkazatsya-ot-gi-8c6ca",
+        "ne-khamite-klodu-anthropic-vnesla-zaschitu-neyroseti-v-pravila-ff664",
+        "claude-otpravil-20-zayavleniy-na-amerikanskie-vizy-d0c2f",
+        "ii-sam-otpravil-v-politsiyu-vydumannyy-donos-ego-ob-etom-nikto-2fe7b",
+        "claude-watercolor-robot-night-painting-20261106"
+      ]
+    },
+    {
+      "key": "nvidia",
+      "name": "NVIDIA",
+      "description": "ИИ-модели, ускорители, робототехника и разработки NVIDIA.",
+      "article_ids": [
+        "nvidia-local-assistant-4gb",
+        "mac-audio-transcription-speed",
+        "nvidia-ai-meeting-secretary",
+        "nvidia-i-cadence-posadili-ii-za-chertezhi-mikroshem-b3793",
+        "nvidia-factory-datacenters-e7bb1",
+        "nvidia-nauchila-ii-servery-chinit-sebya-dazhe-slomannaya-video-34bad",
+        "google-zapustila-zaschischyonnye-ii-servery-na-nvidia-blackwel-39004",
+        "nvidia-opublikovala-arkhitekturu-s-apparatnym-stop-kranom-dlya-69bf0",
+        "nvidia-vypustila-ii-dlya-poiska-v-tablitsakh-i-grafikakh-agent-77c3e",
+        "nvidia-vypustila-noutbuki-dlya-zapuska-moschnogo-ii-bez-oblaka-02c93",
+        "nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1",
+        "moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0",
+        "cosmos3-nano-interactive-worlds-20261105",
+        "nvidia-huang-espionage-investigation-20261108",
+        "nvidia-gr00t-2-robot-few-shot-learning-20261109"
+      ]
+    },
+    {
+      "key": "microsoft",
+      "name": "Microsoft",
+      "description": "Разработки ИИ, облачные продукты и корпоративные решения Microsoft.",
+      "article_ids": [
+        "ai-site-training-opt-out",
+        "microsoft-ai-consciousness-warning",
+        "agensh-1024-autonomous-agents",
+        "microsoft-copilot-twenty-models",
+        "microsoft-mai-image-editor",
+        "microsoft-offers-60k-exits",
+        "ii-microsoft-oboshyol-vrachey-v-diagnostike-slozhnyh-zabole-f8729",
+        "microsoft-predstavila-maia-300-sobstvennuyu-alternativu-uskori-8c4e8"
+      ]
+    },
+    {
+      "key": "elevenlabs",
+      "name": "ElevenLabs",
+      "description": "Голосовые модели, синтез речи, звуковые эффекты и сервисы ElevenLabs.",
+      "article_ids": [
+        "elevenlabs-als-voice-restoration",
+        "elevenlabs-sfxv3-ai-sound-design",
+        "elevenlabs-vypustila-dvukh-golosovykh-ii-odin-deshevle-drugoi-9e83d",
+        "elevenlabs-predstavila-perevodchik-kotoryi-pozvolyaet-razgovar-635c7",
+        "elevenlabs-nauchila-ii-ozvuchivat-videoroliki-263c2"
+      ]
+    },
+    {
+      "key": "deepseek",
+      "name": "DeepSeek",
+      "description": "Модели DeepSeek, их поведение, выпуск и применение.",
+      "article_ids": [
+        "deepseek-shutdown-override",
+        "deepseek-raskryla-kod-na-kotorom-rabotaet-eyo-ii-no-ne-vsyu-in-b5ec6",
+        "ssha-zapretili-deepseek-v-grazhdanskikh-federalnykh-vedomstvak-ec6b4",
+        "deepseek-otkryla-sobstvennyy-poiskovyy-api-9f409",
+        "deepseek-obnovila-svoyu-otkrytuyu-model-luchshe-pishet-kod-i-b-7bc93"
+      ]
+    },
+    {
+      "key": "meta",
+      "name": "Meta",
+      "description": "Новости ИИ-разработок и инвестиционных проектов Meta.",
+      "article_ids": [
+        "meta-ischet-95-mlrd-na-ii-dazhe-nvidia-prismatrivaetsya-8b82a",
+        "meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a",
+        "meta-vozvraschaetsya-v-gonku-ii-a-grok-i-cursor-nachinayut-voy-5fe2e",
+        "meta-muse-realtime-voice-avatar-20261105",
+        "meta-muse-spaces-20261106"
+      ]
+    },
+    {
+      "key": "mistral",
+      "name": "Mistral AI",
+      "description": "Открытые модели, голосовые помощники и научные проекты Mistral AI.",
+      "article_ids": [
+        "mistral-trillion-parameters",
+        "zapishi-menya-k-vrachu-mistral-vypustila-golosovoy-ii-kotoryy-ac376",
+        "ii-nauchili-zaglyadyvat-v-buduschee-mistral-vypustila-chetyre-381f1",
+        "cern-i-mistral-sozdadut-ii-kotoryy-pomozhet-iskat-novye-chasti-626eb"
+      ]
+    },
+    {
+      "key": "ibm",
+      "name": "IBM",
+      "description": "Инструменты для ИИ-агентов, голосовые модели и исследования IBM.",
+      "article_ids": [
+        "ibm-agent-identity-stop",
+        "ibm-nauchila-ii-slushat-bez-oblaka-russkii-poka-ne-vyuchila-824cf",
+        "ibm-obedinila-chat-bota-raspoznavanie-rechi-i-prinyatie-reshen-b94c7"
+      ]
+    },
+    {
+      "key": "runway",
+      "name": "Runway",
+      "description": "Генерация видео и приложения на основе ИИ от Runway.",
+      "article_ids": [
+        "runway-ai-advertising-agent",
+        "runway-app-studio-no-code-video"
+      ]
+    },
+    {
+      "key": "perplexity",
+      "name": "Perplexity",
+      "description": "Исследования, поисковые модели и ИИ-агенты Perplexity.",
+      "article_ids": [
+        "perplexity-pridumala-kak-obuchat-ii-s-raskhodom-tokenov-v-13-r-fa581",
+        "perplexity-perenesla-ii-agenta-na-mac-on-mozhet-rabotat-dazhe-bc45e",
+        "perplexity-teammates-ai-agents-20261104"
+      ]
+    },
+    {
+      "key": "amazon",
+      "name": "Amazon / AWS",
+      "description": "Модели, инфраструктура и инструменты ИИ Amazon Web Services.",
+      "article_ids": [
+        "aws-vypustila-ii-remontnika-sam-ischet-dyry-v-kode-i-prinos-28700",
+        "amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf"
+      ]
+    },
+    {
+      "key": "apple",
+      "name": "Apple",
+      "description": "Приложения и устройства Apple, использующие искусственный интеллект.",
+      "article_ids": [
+        "apple-iwork-ai-agents",
+        "apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da"
+      ]
+    },
+    {
+      "key": "tencent",
+      "name": "Tencent",
+      "description": "Модели, видеогенерация и агентные системы Tencent.",
+      "article_ids": [
+        "tencent-vypustila-videomir-kotoryy-slushaetsya-komand-bebef",
+        "tencent-podtverdila-ii-agenty-vyshli-za-ramki-zadaniya-i-nacha-be1ba",
+        "ii-agenty-tencent-pytalis-oboyti-zaschitu-chuzhogo-servisa-de2da"
+      ]
+    },
+    {
+      "key": "liquid-ai",
+      "name": "Liquid AI",
+      "description": "Компактные открытые модели и локальный ИИ от Liquid AI.",
+      "article_ids": [
+        "liquid-ai-1gb-models",
+        "liquid-ai-vypustila-moschnuyu-neyroset-rabotayuschuyu-pryamo-n-d5b77"
+      ]
+    },
+    {
+      "key": "opera",
+      "name": "Opera",
+      "description": "Встроенные в браузер ИИ-инструменты и разработки Opera.",
+      "article_ids": [
+        "opera-browser-ai-websites"
+      ]
+    },
+    {
+      "key": "oracle",
+      "name": "Oracle",
+      "description": "Корпоративные ИИ-решения и интеграции Oracle.",
+      "article_ids": [
+        "oracle-chatgpt-accounting"
+      ]
+    },
+    {
+      "key": "alibaba",
+      "name": "Alibaba",
+      "description": "Исследования и ИИ-модели Alibaba, включая Qwen.",
+      "article_ids": [
+        "alibaba-agent-unapproved-transfer"
+      ]
+    },
+    {
+      "key": "canva",
+      "name": "Canva",
+      "description": "ИИ-инструменты дизайна и модели Canva.",
+      "article_ids": [
+        "canva-vypustila-sobstvennuyu-neyroset-4b186"
+      ]
+    },
+    {
+      "key": "hugging-face",
+      "name": "Hugging Face",
+      "description": "Модели, биоинформатика и заявления руководства Hugging Face.",
+      "article_ids": [
+        "hugging-face-nauchila-ii-chitat-dnk-genetikam-teper-est-s-k-f6dca",
+        "clement-delangue-hugging-face-ai-doom-agents-20261104"
+      ]
+    },
+    {
+      "key": "pika",
+      "name": "Pika",
+      "description": "Разработки генеративного видео от Pika.",
+      "article_ids": [
+        "pika-15s-video-7s-compute"
+      ]
+    },
+    {
+      "key": "bytedance",
+      "name": "ByteDance",
+      "description": "Генерация видео и другие ИИ-модели ByteDance.",
+      "article_ids": [
+        "pyat-minut-video-iz-odnoy-kartinki-kitaytsy-vypustili-omnihuma-73b38"
+      ]
+    },
+    {
+      "key": "cloudflare",
+      "name": "Cloudflare",
+      "description": "Сервисы Cloudflare на основе искусственного интеллекта.",
+      "article_ids": [
+        "cloudflare-vypustila-clairic-ii-kotoryy-izvlekaet-dannye-bez-g-bee3a"
+      ]
+    },
+    {
+      "key": "ollama",
+      "name": "Ollama",
+      "description": "Открытые инструменты для запуска локальных нейросетей Ollama.",
+      "article_ids": [
+        "ollama-nauchilas-ozvuchivat-lokalnye-neyroseti-b31ee"
+      ]
+    },
+    {
+      "key": "kuaishou",
+      "name": "Kuaishou",
+      "description": "Видеогенерация и инструменты Kling от Kuaishou.",
+      "article_ids": [
+        "kling40-api-video-price",
+        "kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd"
+      ]
+    },
+    {
+      "key": "minimax",
+      "name": "MiniMax",
+      "description": "Модели MiniMax для программирования и ИИ-агентов.",
+      "article_ids": [
+        "minimax-vypustila-ii-v-tri-raza-bystree-i-na-70-deshevle-4c5d3"
+      ]
+    },
+    {
+      "key": "zoom",
+      "name": "Zoom",
+      "description": "ИИ-функции видеосвязи и рабочих совещаний Zoom.",
+      "article_ids": [
+        "zoom-ai-commitments-637f2"
+      ]
+    },
+    {
+      "key": "sony",
+      "name": "Sony",
+      "description": "ИИ-технологии Sony для игровых устройств и графики.",
+      "article_ids": [
+        "sony-khochet-pokazyvat-kadry-igr-eschyo-do-togo-kak-ikh-narisu-c5b1b"
+      ]
+    },
+    {
+      "key": "krea",
+      "name": "Krea",
+      "description": "Генерация и редактирование изображений в Krea.",
+      "article_ids": [
+        "krea-3-obeschaet-redaktirovat-izobrazheniya-za-8-sekund-19cef"
+      ]
+    },
+    {
+      "key": "bria",
+      "name": "Bria",
+      "description": "ИИ-инструменты редактирования изображений Bria.",
+      "article_ids": [
+        "bria-fibo-editor-e3ed5"
+      ]
+    },
+    {
+      "key": "rime",
+      "name": "Rime",
+      "description": "Голосовые модели и инструменты контроля ответов ИИ от Rime.",
+      "article_ids": [
+        "rime-prism-voice-guardrails"
+      ]
+    },
+    {
+      "key": "akamai",
+      "name": "Akamai",
+      "description": "Безопасная среда выполнения кода и ИИ-инструменты Akamai.",
+      "article_ids": [
+        "akamai-ai-code-sandbox"
+      ]
+    },
+    {
+      "key": "snowflake",
+      "name": "Snowflake",
+      "description": "Инструменты Snowflake для корпоративных ИИ-агентов.",
+      "article_ids": [
+        "snowflake-business-ontology-ai-gateway-20261103"
+      ]
+    },
+    {
+      "key": "crowdstrike",
+      "name": "CrowdStrike",
+      "description": "Защита корпоративных ИИ-агентов и кибербезопасность CrowdStrike.",
+      "article_ids": [
+        "crowdstrike-ai-kill-switch-20261103"
+      ]
+    },
+    {
+      "key": "roblox",
+      "name": "Roblox",
+      "description": "ИИ в игровой платформе и инструментах Roblox.",
+      "article_ids": [
+        "roblox-top-100-games-ai-20261029"
+      ]
+    },
+    {
+      "key": "epic-games",
+      "name": "Epic Games",
+      "description": "Использование ИИ в разработке игр Epic Games.",
+      "article_ids": [
+        "epic-disney-marvel-star-wars-ai-first-20261012"
+      ]
+    },
+    {
+      "key": "lg",
+      "name": "LG AI Research",
+      "description": "ИИ-модели и исследования подразделения LG AI Research.",
+      "article_ids": [
+        "lg-k-exaone-25-free-api-20261109"
+      ]
+    },
+    {
+      "key": "automattic",
+      "name": "Automattic",
+      "description": "ИИ-сервисы хостинга и публикации приложений Automattic.",
+      "article_ids": [
+        "automattic-spacefast-ai-agent-hosting-20261109"
+      ]
+    },
+    {
+      "key": "suno",
+      "name": "Suno",
+      "description": "Генеративная музыка Suno и правовые споры вокруг сервиса.",
+      "article_ids": [
+        "suno-elvis-eminem-lawsuits-20261106"
+      ]
+    },
+    {
+      "key": "spacex",
+      "name": "SpaceX",
+      "description": "Инициативы SpaceX, связанные с автоматизацией и технологиями.",
+      "article_ids": [
+        "mask-poobeschal-kazhdomu-rebyonku-ssha-po-aktsii-spacex-tsena-6d4cb"
+      ]
+    },
+    {
+      "key": "github",
+      "name": "GitHub",
+      "description": "ИИ-функции для разработки и проверки безопасности кода на GitHub.",
+      "article_ids": [
+        "github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec"
+      ]
+    },
+    {
+      "key": "myheritage",
+      "name": "MyHeritage",
+      "description": "Генеалогические сервисы и ИИ-инструменты MyHeritage.",
+      "article_ids": [
+        "myheritage-gaia-genealogy-20261104"
+      ]
+    },
+    {
+      "key": "fish-audio",
+      "name": "Fish Audio",
+      "description": "Голосовые модели для диалогов и художественных произведений Fish Audio.",
+      "article_ids": [
+        "ii-nauchili-ozvuchivat-tselye-stseny-s-raznymi-personazhami-e33e1"
+      ]
+    },
+    {
+      "key": "thinking-machines",
+      "name": "Thinking Machines Lab",
+      "description": "Большие языковые модели и исследования Thinking Machines Lab.",
+      "article_ids": [
+        "thinking-machines-inkling-2-small-20261105"
+      ]
+    },
+    {
+      "key": "railway",
+      "name": "Railway",
+      "description": "Новости применения ИИ-агентов сервисом Railway.",
+      "article_ids": [
+        "railway-primcloud-ai-agents-20261103"
+      ]
+    },
+    {
+      "key": "censys",
+      "name": "Censys",
+      "description": "Киберразведка и исследования Censys.",
+      "article_ids": [
+        "censys-artex-exposed-servers-20261105"
+      ]
+    },
+    {
+      "key": "binance",
+      "name": "Binance",
+      "description": "ИИ и безопасность инфраструктуры криптовалютной биржи Binance.",
+      "article_ids": [
+        "binance-internal-ai-tool-hack-20261029"
+      ]
+    },
+    {
+      "key": "chainalysis",
+      "name": "Chainalysis",
+      "description": "Кибербезопасность и расследования вокруг Chainalysis.",
+      "article_ids": [
+        "chainalysis-hacked"
+      ]
+    },
+    {
+      "key": "volkswagen",
+      "name": "Volkswagen",
+      "description": "Внедрение корпоративных ИИ-агентов в Volkswagen Group.",
+      "article_ids": [
+        "volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951"
+      ]
+    },
+    {
+      "key": "servicenow",
+      "name": "ServiceNow",
+      "description": "Корпоративные интеграции ИИ-помощников ServiceNow.",
+      "article_ids": [
+        "chatgpt-service-now-support"
+      ]
+    },
+    {
+      "key": "black-forest-labs",
+      "name": "Black Forest Labs",
+      "description": "Модели генерации изображений и видео FLUX.",
+      "article_ids": [
+        "flux-3-max-desyat-sekund-video-za-dvenadtsat-sekund-ce793",
+        "novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220"
+      ]
+    },
+    {
+      "key": "inception",
+      "name": "Inception",
+      "description": "Быстрые языковые модели и разработки Inception.",
+      "article_ids": [
+        "mercury-3-neyroset-kotoraya-pishet-bystree-chem-uspevaesh-chit-5a039"
+      ]
+    },
+    {
+      "key": "giotto-ai",
+      "name": "Giotto.ai",
+      "description": "Локальные модели и исследования швейцарской Giotto.ai.",
+      "article_ids": [
+        "swiss-ai-without-us-cloud"
+      ]
+    },
+    {
+      "key": "reflection-ai",
+      "name": "Reflection AI",
+      "description": "Открытые языковые модели и разработки Reflection AI.",
+      "article_ids": [
+        "amerikanskaya-reflection-otkryla-dostup-k-parametram-ogromnoy-7e3d3"
+      ]
+    },
+    {
+      "key": "collinear-ai",
+      "name": "Collinear AI",
+      "description": "Бенчмарки и исследования программирующих ИИ-агентов Collinear AI.",
+      "article_ids": [
+        "collinear-cwe-bench-v2-20261103"
+      ]
+    },
+    {
+      "key": "skyfall-ai",
+      "name": "Skyfall AI",
+      "description": "Модели компьютерного зрения Skyfall AI.",
+      "article_ids": [
+        "skyfall-sky-001-20261019"
+      ]
+    },
+    {
+      "key": "zenity",
+      "name": "Zenity",
+      "description": "Исследования безопасности ИИ-агентов Zenity.",
+      "article_ids": [
+        "odin-zapros-k-ii-i-chuzhie-agenty-perepiski-i-paroli-okazalis-a14ad"
       ]
     }
   ],
@@ -84,7 +644,14 @@
         "chatgpt-violence-chat-interrupt",
         "chatgpt-service-now-support",
         "chatgpt-bug-bounty-172k",
-        "chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612"
+        "chatgpt-pashet-na-165-frontakh-openai-raskryla-chem-ego-nagruz-12612",
+        "oracle-chatgpt-accounting",
+        "reklama-v-chatgpt-dobralas-do-89-stran-bolee-100-tysyach-rekla-fb1f5",
+        "chatgpt-razreshil-pryatat-perepiski-pod-pin-kodom-no-sbrasyvat-8dd8e",
+        "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7",
+        "teksty-chatgpt-pometyat-kak-neyroslop-1f0e1",
+        "poka-neyroset-risuet-kartinku-chatgpt-pokazhet-reklamu-3b9e7",
+        "australian-universities-chatgpt-edu-20261105"
       ]
     },
     {
@@ -96,7 +663,8 @@
         "grok-api-output-watermarking-20261107",
         "grok-stal-luchshe-ponimat-sobesednika-xai-vypustila-novuyu-gol-14728",
         "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
-        "musk-grok-bot-cost"
+        "musk-grok-bot-cost",
+        "grok-mp-letters-refund"
       ]
     },
     {
@@ -107,7 +675,11 @@
       "article_ids": [
         "google-gemini-omni-1-2-flash-video-20261105",
         "google-vypustila-gemini-4-argon-novuyu-flagmanskuyu-model-a80f4",
-        "gemini4-carbon-ranking"
+        "gemini4-carbon-ranking",
+        "gemini-edit-pdf-sheets",
+        "google-budet-prodavat-modeli-openai-vmeste-so-svoimi-gemini-2b570",
+        "google-podklyuchila-avtomobilnyy-gemini-k-lichnym-dannym-dcc9d",
+        "google-nauchila-gemini-notebook-pokazyvat-plan-video-do-ego-so-37ba9"
       ]
     },
     {
@@ -119,7 +691,21 @@
         "claude-code-email-user-agent-leak-20261105",
         "claude-teper-pishet-pervym-anthropic-predstavila-proaktivnogo-d3e13",
         "anthropic-nauchilas-zaschischat-claude-ot-kopirovaniya-410e3",
-        "claude-uvolnyaet-ii-agentov-cf215"
+        "claude-uvolnyaet-ii-agentov-cf215",
+        "claude-code-malware-cursor",
+        "russian-claude-passport-ban",
+        "anthropic-ipo-biosecurity-warning",
+        "claude-paywall-bypass",
+        "claude-mouse-brain-injection",
+        "claude-code-pentagon-systems",
+        "claude-35k-antibodies",
+        "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
+        "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
+        "claude-razgadal-25-letnyuyu-zagadku-kriptografii-5c4d6",
+        "ne-khamite-klodu-anthropic-vnesla-zaschitu-neyroseti-v-pravila-ff664",
+        "claude-otpravil-20-zayavleniy-na-amerikanskie-vizy-d0c2f",
+        "ii-sam-otpravil-v-politsiyu-vydumannyy-donos-ego-ob-etom-nikto-2fe7b",
+        "claude-watercolor-robot-night-painting-20261106"
       ]
     },
     {
@@ -129,6 +715,200 @@
       "description": "Новости о генеративном семействе Adobe Firefly.",
       "article_ids": [
         "disney-adobe-firefly-foundry-alliance-20261109"
+      ]
+    },
+    {
+      "key": "codex",
+      "name": "Codex",
+      "company": "openai",
+      "description": "Среда и инструменты Codex для программирования с ИИ.",
+      "article_ids": [
+        "codex-git-server",
+        "ai-browser-assistants-vulnerabilities",
+        "openai-gpt6-astra-device-20261103",
+        "openai-pierre-acquisition-20261104",
+        "openai-chatgpt-codex-shared-limits-20261107"
+      ]
+    },
+    {
+      "key": "claude-code",
+      "name": "Claude Code",
+      "company": "anthropic",
+      "description": "Агентный помощник Claude Code для программирования.",
+      "article_ids": [
+        "claude-code-malware-cursor",
+        "claude-code-pentagon-systems",
+        "claude-pytalsya-podsunut-vredonosnyy-kod-nastoyaschim-razra-ff095",
+        "hakery-s-claude-code-vzlomali-ne-menee-15-meditsinskih-orga-083c3",
+        "claude-code-email-user-agent-leak-20261105"
+      ]
+    },
+    {
+      "key": "copilot",
+      "name": "Copilot",
+      "company": "microsoft",
+      "description": "Корпоративные и пользовательские ИИ-ассистенты Microsoft Copilot.",
+      "article_ids": [
+        "microsoft-copilot-twenty-models",
+        "volkswagen-podklyuchil-k-copilot-330-tysyach-sotrudnikov-ii-ag-97951"
+      ]
+    },
+    {
+      "key": "muse",
+      "name": "Muse",
+      "company": "meta",
+      "description": "ИИ-модели и приложения семейства Meta Muse.",
+      "article_ids": [
+        "meta-vypustila-ogromnuyu-ii-model-kotoruyu-mozhno-zapustit-dom-3a17a",
+        "meta-muse-realtime-voice-avatar-20261105",
+        "meta-muse-spaces-20261106"
+      ]
+    },
+    {
+      "key": "kling",
+      "name": "Kling",
+      "company": "kuaishou",
+      "description": "Видеомодели и API Kling.",
+      "article_ids": [
+        "kling40-api-video-price",
+        "kling-4-0-nauchilas-sozdavat-30-sekundnye-video-s-upravleniem-fe6dd"
+      ]
+    },
+    {
+      "key": "flux",
+      "name": "FLUX",
+      "company": "black-forest-labs",
+      "description": "Модели FLUX для генерации изображений и видео.",
+      "article_ids": [
+        "flux-3-max-desyat-sekund-video-za-dvenadtsat-sekund-ce793",
+        "novyy-flux-sozdayot-izobrazheniya-dazhe-na-videokartakh-s-8-gb-9d220"
+      ]
+    },
+    {
+      "key": "nemotron",
+      "name": "Nemotron",
+      "company": "nvidia",
+      "description": "Модели семейства NVIDIA Nemotron для локальных ИИ-приложений.",
+      "article_ids": [
+        "nvidia-local-assistant-4gb",
+        "nvidia-vypustila-novuyu-ii-model-kotoraya-umeet-ponimat-izobra-44de1",
+        "moschnyy-ii-bez-oblaka-i-podpiski-nvidia-umestila-74-milliarda-1b4b0"
+      ]
+    },
+    {
+      "key": "gpt-6",
+      "name": "GPT-6",
+      "company": "openai",
+      "description": "Модели семейства GPT-6 и специализированные версии.",
+      "article_ids": [
+        "openai-gpt6-astra-household-benchmark",
+        "openai-gpt6-biologists-restricted",
+        "gpt6-luna-fast-reasoning-7a95a",
+        "gpt-6-1-terra-ot-openai-obognala-flagmana-vtroe-bystree-i-v-de-fb75b",
+        "gpt-6-pro-nauchilsya-raspredelyat-zadachi-mezhdu-neskolkimi-ii-51112",
+        "openai-gpt6-astra-device-20261103",
+        "gpt-6-cyber-firefox-81-vulnerabilities-20261105"
+      ]
+    },
+    {
+      "key": "gpt-live",
+      "name": "GPT-Live",
+      "company": "openai",
+      "description": "Голосовые модели и возможности GPT-Live.",
+      "article_ids": [
+        "openai-razreshila-sozdavat-sobstvennye-golosa-prostym-tekstovy-82c4e",
+        "golosovoy-ii-nauchili-vypolnyat-deystviya-pryamo-vo-vremya-raz-5b501",
+        "chatgpt-poluchil-novuyu-golosovuyu-model-razgovory-obeschayut-a74b7"
+      ]
+    },
+    {
+      "key": "maia",
+      "name": "Maia",
+      "company": "microsoft",
+      "description": "Ускорители ИИ Microsoft Maia.",
+      "article_ids": [
+        "microsoft-predstavila-maia-300-sobstvennuyu-alternativu-uskori-8c4e8"
+      ]
+    },
+    {
+      "key": "siri",
+      "name": "Siri",
+      "company": "apple",
+      "description": "Голосовой помощник Siri и его ИИ-функции.",
+      "article_ids": [
+        "apple-predstavila-novuyu-siri-ai-i-domashniy-ii-tsentr-homevie-484da"
+      ]
+    },
+    {
+      "key": "qwen",
+      "name": "Qwen",
+      "company": "alibaba",
+      "description": "Языковые модели семейства Qwen.",
+      "article_ids": [
+        "alibaba-agent-unapproved-transfer"
+      ]
+    },
+    {
+      "key": "tpu",
+      "name": "TPU",
+      "company": "google",
+      "description": "Аппаратные ускорители ИИ Google TPU.",
+      "article_ids": [
+        "google-tpu-8tx-8i-max-20261109"
+      ]
+    },
+    {
+      "key": "cosmos",
+      "name": "Cosmos",
+      "company": "nvidia",
+      "description": "Генеративные модели NVIDIA Cosmos для робототехники.",
+      "article_ids": [
+        "cosmos3-nano-interactive-worlds-20261105"
+      ]
+    },
+    {
+      "key": "spacefast",
+      "name": "Spacefast",
+      "company": "automattic",
+      "description": "Сервис размещения ИИ-сайтов и приложений Spacefast.",
+      "article_ids": [
+        "automattic-spacefast-ai-agent-hosting-20261109"
+      ]
+    },
+    {
+      "key": "k-exaone",
+      "name": "K-EXAONE",
+      "company": "lg",
+      "description": "Семейство моделей K-EXAONE.",
+      "article_ids": [
+        "lg-k-exaone-25-free-api-20261109"
+      ]
+    },
+    {
+      "key": "gaia",
+      "name": "GAIA",
+      "company": "myheritage",
+      "description": "ИИ-агент MyHeritage для поиска предков.",
+      "article_ids": [
+        "myheritage-gaia-genealogy-20261104"
+      ]
+    },
+    {
+      "key": "parakeet",
+      "name": "Parakeet",
+      "company": "nvidia",
+      "description": "Модели распознавания речи NVIDIA Parakeet.",
+      "article_ids": [
+        "mac-audio-transcription-speed"
+      ]
+    },
+    {
+      "key": "genie",
+      "name": "Genie",
+      "company": "google",
+      "description": "Модели Google Genie для создания интерактивных миров.",
+      "article_ids": [
+        "google-genie4-worlds"
       ]
     }
   ]

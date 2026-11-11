@@ -25,8 +25,8 @@ class ArticleEntityTagsTests(unittest.TestCase):
             for entry in cls.registry[kind] for article_id in entry["article_ids"]
         }
 
-    def test_only_curated_32_articles_have_badges(self):
-        self.assertEqual(len(self.selected), 32)
+    def test_only_curated_articles_have_badges(self):
+        self.assertEqual(len(self.selected), 195)
         for row in self.records:
             path = ROOT / row["url"] / "index.html"
             text = path.read_text(encoding="utf-8")
@@ -46,7 +46,7 @@ class ArticleEntityTagsTests(unittest.TestCase):
             page = ROOT / "articles" / article_id / "index.html"
             after = page.read_text(encoding="utf-8")
             nav = render_article_entity_nav(article_id, self.registry)
-            before = after.replace(nav, "", 1).replace(CSS + "\n", "", 1)
+            before = after.replace(nav, "", 1).replace("\n" + CSS, "", 1)
             rebuilt = inject_article_entity_nav(before, article_id, self.registry)
             self.assertEqual(rebuilt, after, article_id)
             self.assertEqual(inject_article_entity_nav(after, article_id, self.registry), after)
