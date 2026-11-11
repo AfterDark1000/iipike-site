@@ -131,6 +131,51 @@ def shell(title, description, prefix, canonical, content):
 
 
 
+def validate_editor_entities(registry, companies=None, products=None):
+    """Validate reviewed keys only; never infer entities from freeform text.
+
+    Existing approved stories may omit both arrays. Product ownership is
+    structural metadata, so a selected product also selects its parent firm.
+    """
+    company_keys = {row["key"] for row in registry["companies"]}
+    product_owners = {row["key"]: row["company"] for row in registry["products"]}
+    normalized = {}
+    for kind, raw, known in (("companies", companies, company_keys),
+                             ("products", products, set(product_owners))):
+        if raw is None:
+            raw = []
+        if (not isinstance(raw, list) or len(raw) > 4 or
+                any(not isinstance(key, str) or key not in known for key in raw) or
+                len(raw) != len(set(raw))):
+            raise ValueError("Unknown, repeated or excessive editorial " + kind)
+        normalized[kind] = list(raw)
+    for key in normalized["products"]:
+        owner = product_owners[key]
+        if owner not in normalized["companies"]:
+            normalized["companies"].append(owner)
+    if len(normalized["companies"]) > 6:
+        raise ValueError("Too many companies including product developers")
+    return normalized["companies"], normalized["products"]
+
+
+def append_editor_entities(registry, slug, companies=None, products=None):
+    """Return a new validated registry; never mutate published history in place."""
+    from copy import deepcopy
+    if not isinstance(slug, str) or not ENTITY_KEY.fullmatch(slug):
+        raise ValueError("Invalid article ID for entity assignment")
+    selected_companies, selected_products = validate_editor_entities(
+        registry, companies, products)
+    updated = deepcopy(registry)
+    for kind, keys in (("companies", selected_companies),
+                       ("products", selected_products)):
+        for item in updated[kind]:
+            if slug in item["article_ids"]:
+                raise ValueError("Article already assigned in entity registry: " + slug)
+            if item["key"] in keys:
+                item["article_ids"].append(slug)
+    return updated
+
+
 def render_article_entity_nav(slug, registry):
     """Return links for explicitly curated assignments, never inferred matches.
 
@@ -265,10 +310,11 @@ def render_entity(kind, entry, records, companies):
     return shell(entry["name"], entry["description"], prefix, url, content)
 
 
-def render_all_entities(records, root=ROOT):
-    """Build only public /entities/ pages from the reviewed static registry."""
+def render_all_entities(records, root=ROOT, registry=None):
+    """Build public pages from the exact registry selected for this release."""
     root = Path(root)
-    registry = load_registry(root)
+    if registry is None:
+        registry = load_registry(root)
     known = validate_public_registry(registry, records)
     companies = {x["key"]: x["name"] for x in registry["companies"]}
     outputs = {root / "entities" / "index.html": render_index(registry)}
