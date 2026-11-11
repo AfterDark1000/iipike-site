@@ -49,6 +49,30 @@
           "source_url": "https://beeble.ai/research/switchx-3-0"
         }
       ]
+    },
+    {
+      "key": "helsing",
+      "name": "Helsing",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "helsing-european-military-ai-palantir-20261110",
+          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
+        }
+      ]
+    },
+    {
+      "key": "palantir",
+      "name": "Palantir",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "helsing-european-military-ai-palantir-20261110",
+          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
+        }
+      ]
     }
   ],
   "products": [
@@ -75,6 +99,32 @@
         {
           "article_id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
           "source_url": "https://beeble.ai/research/switchx-3-0"
+        }
+      ]
+    },
+    {
+      "key": "maven-smart-system",
+      "name": "Maven Smart System",
+      "company": "palantir",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "helsing-european-military-ai-palantir-20261110",
+          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
+        }
+      ]
+    },
+    {
+      "key": "altra",
+      "name": "Altra",
+      "company": "helsing",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "helsing-european-military-ai-palantir-20261110",
+          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
         }
       ]
     }
