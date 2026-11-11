@@ -157,6 +157,30 @@
           "source_url": "https://higgsfield.ai/miracle"
         }
       ]
+    },
+    {
+      "key": "jd-com",
+      "name": "JD.com",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "source_url": "https://www.reuters.com/business/retail-consumer/chinas-singles-day-shopping-festival-puts-ai-selling-power-test-2026-11-11/"
+        }
+      ]
+    },
+    {
+      "key": "wpic",
+      "name": "WPIC Marketing + Technologies",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "source_url": "https://www.linkedin.com/company/wpic/"
+        }
+      ]
     }
   ],
   "products": [
@@ -261,6 +285,45 @@
         {
           "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
           "source_url": "https://higgsfield.ai/miracle"
+        }
+      ]
+    },
+    {
+      "key": "douyin",
+      "name": "Douyin",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "source_url": "https://www.linkedin.com/company/wpic/"
+        }
+      ]
+    },
+    {
+      "key": "doubao",
+      "name": "Doubao",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "source_url": "https://www.linkedin.com/company/wpic/"
+        }
+      ]
+    },
+    {
+      "key": "dongdong",
+      "name": "Dongdong",
+      "company": "jd-com",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "source_url": "https://www.reuters.com/business/retail-consumer/chinas-singles-day-shopping-festival-puts-ai-selling-power-test-2026-11-11/"
         }
       ]
     }
