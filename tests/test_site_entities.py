@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 from scripts.site_entities import load_registry, render_all_entities, entity_urls
-from scripts.build_entity_pilot import validate as validate_curated
+from scripts.site_entities import validate_public_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,7 +17,7 @@ class PublicEntityCatalogTests(unittest.TestCase):
         cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
 
     def test_curated_registry_references_only_published_rows(self):
-        validate_curated(self.registry, self.records)
+        validate_public_registry(self.registry, self.records)
         self.assertEqual(len(self.registry["companies"]), 61)
         self.assertEqual(len(self.registry["products"]), 24)
         self.assertEqual(len(set(

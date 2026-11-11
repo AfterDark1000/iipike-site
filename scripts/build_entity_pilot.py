@@ -61,7 +61,7 @@ def validate(manifest, records):
                 if not all(isinstance(row.get(k), str) and row[k]
                            for k in ("title", "summary", "cover", "published")):
                     raise ValueError("Incomplete article metadata")
-                if not re.fullmatch(r"assets/[a-z0-9][a-z0-9/_-]*\.(?:webp|png|jpg|jpeg|svg)", row["cover"]):
+                if not re.fullmatch(r"assets/[a-z0-9][a-z0-9/_-]*\.(?:webp|png|jpg|jpeg)", row["cover"]):
                     raise ValueError("Unsafe cover path")
                 from datetime import date
                 date.fromisoformat(row["published"])
