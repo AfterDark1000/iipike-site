@@ -4403,5 +4403,21 @@
     ],
     "site_first_dzen_id": "6af2ff34c39de244cb36418f",
     "site_first_dzen_url": "https://dzen.ru/a/avL_NMOd4kTLNkGP"
+  },
+  {
+    "title": "Режиссёр назвала ИИ опасным — и оживила с его помощью исторические фотографии",
+    "summary": "Режиссёр Ава Дюверней рассказала, что при создании документального фильма 14th команда использовала ИИ вместе с традиционной анимацией для оживления подлинных архивных фотографий, без генерации вымышленных персонажей.",
+    "published": "2026-11-11",
+    "source_url": "https://www.theguardian.com/film/2026/nov/08/ava-duvernay-interview-trump-documentary-film-14th-amendment",
+    "cover": "assets/editorial/ava-duvernay-14th-ai-archive-animation-20261108.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T09:45:49Z",
+    "event_date": "2026-11-08",
+    "id": "ava-duvernay-14th-ai-archive-animation-20261108",
+    "url": "articles/ava-duvernay-14th-ai-archive-animation-20261108/",
+    "topics": [
+      "entertainment",
+      "video"
+    ]
   }
 ]
