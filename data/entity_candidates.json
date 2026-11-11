@@ -97,6 +97,30 @@
           "source_url": "https://www.mercor.com/blog/series-d/"
         }
       ]
+    },
+    {
+      "key": "bay",
+      "name": "Bay",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "bay-ai-agent-security-50m-20261110",
+          "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2"
+        }
+      ]
+    },
+    {
+      "key": "battery-ventures",
+      "name": "Battery Ventures",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "bay-ai-agent-security-50m-20261110",
+          "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2"
+        }
+      ]
     }
   ],
   "products": [
