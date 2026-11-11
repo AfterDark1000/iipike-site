@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11T00:36:53.625120Z",
+  "updated_at": "2026-11-11T07:08:41.035149Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T00:36:53.625120Z",
-      "last_success_at": "2026-11-11T00:36:53.625120Z",
+      "checked_at": "2026-11-11T07:08:41.035149Z",
+      "last_success_at": "2026-11-11T07:08:41.035149Z",
       "error": null,
-      "fresh_matches": 9
+      "fresh_matches": 5
     },
     {
       "id": "3dnews",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T00:36:53.625120Z",
-      "last_success_at": "2026-11-11T00:36:53.625120Z",
+      "checked_at": "2026-11-11T07:08:41.035149Z",
+      "last_success_at": "2026-11-11T07:08:41.035149Z",
       "error": null,
       "fresh_matches": 20
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T00:36:53.625120Z",
-      "last_success_at": "2026-11-11T00:36:53.625120Z",
+      "checked_at": "2026-11-11T07:08:41.035149Z",
+      "last_success_at": "2026-11-11T07:08:41.035149Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,24 +41,92 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-11T00:36:53.625120Z",
+      "status": "error",
+      "checked_at": "2026-11-11T07:08:41.035149Z",
       "last_success_at": "2026-11-11T00:36:53.625120Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 2"
   },
   "usage": {
     "date": "2026-11-11",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "7449a46f5aa7946e3ac14b1c",
+      "title": "Данные мозга пользователей тайно передают нейросетям: отчет Science показал, как рынок нейроинтерфейсов обходит защиту приватности",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/11/dannye-mozga-polzovatelei-taino-peredaiut-neirosetiam-otcet-science-pokazal-kak-rynok-neirointerfeisov-obxodit-zashhitu-privatnosti.html",
+      "published_at": "2026-11-11T04:55:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T07:08:41.035149Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "55eb635b4344020c4ff2f48f",
+      "title": "Nvidia передала независимому фонду систему защиты автономных ИИ-агентов",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/11/nvidia-peredala-nezavisimomu-fondu-sistemu-zashhity-avtonomnyx-ii-agentov.html",
+      "published_at": "2026-11-11T04:50:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T07:08:41.035149Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "8d46d1abb8f9430799c931b3",
+      "title": "OpenAI выпустила портативную консоль Codex Edition, на которой можно играть в созданные ИИ игры",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/11/openai-vypustila-portativnuiu-konsol-codex-edition-na-kotoroi-mozno-igrat-v-sozdannye-ii-igry.html",
+      "published_at": "2026-11-11T04:42:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T07:08:41.035149Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "3240dab6f438578818bb3073",
+      "title": "Google впервые за год выпустила четыре поколения ИИ-чипов, удвоив мощность без увеличения площади серверных стоек",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/11/google-vpervye-za-god-vypustila-cetyre-pokoleniia-ii-cipov-udvoiv-moshhnost-bez-uveliceniia-ploshhadi-servernyx-stoek.html",
+      "published_at": "2026-11-11T03:01:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T07:08:41.035149Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "8eec532fd0ef69fd2a7fa0c0",
       "title": "Создатели Cyanogen готовят Linux, напичканный ИИ — новая ОС Kora объединит разные нейросети",
@@ -71,12 +139,14 @@
       "first_seen_at": "2026-11-11T00:36:53.625120Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Требовать от десктопной ОС минимум 64 Гбайт оперативной памяти ради локальных моделей — это, конечно, мощный способ сразу оставить за бортом большую часть потенциальной аудитории.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-11T07:08:41.035149Z",
+      "reason": "Высокое системное требование в 64 ГБ ОЗУ выделено как спорный барьер для аудитории.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-11T07:08:41.035149Z"
     },
     {
       "id": "c03564088f97ce00ca06c30a",
@@ -92,8 +162,8 @@
       "comments": null,
       "status": "read_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-11T07:08:41.035149Z",
       "reason": "Не удалось прочитать статью целиком (ValueError)",
       "link_status": "dzen_link_missing"
     },
@@ -166,12 +236,14 @@
       "first_seen_at": "2026-11-10T19:40:03.698501Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-11T00:36:53.625120Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-11T07:08:41.035149Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-11T07:08:41.035149Z"
     },
     {
       "id": "204319008f7be342260cd440",
