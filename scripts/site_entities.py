@@ -62,6 +62,67 @@ def shell(title, description, prefix, canonical, content):
     )
 
 
+
+def render_article_entity_nav(slug, registry):
+    """Return links for explicitly curated assignments, never inferred matches.
+
+    Links appear only when the article ID is listed in the manually reviewed
+    public registry. No content or editorial Markdown is consulted.
+    """
+    links = []
+    for kind in ("companies", "products"):
+        for entry in registry[kind]:
+            if slug not in entry["article_ids"]:
+                continue
+            link = "../../entities/" + kind + "/" + entry["key"] + "/"
+            icon = "../../assets/entity-icons/" + entry["key"] + ".svg"
+            links.append(
+                '<a href="' + e(link) + '">'
+                '<img src="' + e(icon) + '" alt="" loading="lazy">'
+                + e(entry["name"]) + '</a>'
+            )
+    if not links:
+        return ""
+    return (
+        '<nav class="article-entity-links" aria-label="Компании и продукты статьи">'
+        '<span class="article-entity-links-label">Компании и продукты</span>'
+        + "".join(links) + '</nav>'
+    )
+
+
+def inject_article_entity_nav(page, slug, registry):
+    """One-time navigation-only upgrade of existing published article HTML.
+
+    The literal HTML from the cover onward is preserved byte-for-byte.
+    Only the article-title header and a scoped style link may change.
+    """
+    nav = render_article_entity_nav(slug, registry)
+    if not nav:
+        return page
+    css = '<link rel="stylesheet" href="../../assets/entities.css">'
+    if 'class="article-entity-links"' in page:
+        if page.count(nav) != 1 or page.count(css) != 1:
+            raise ValueError("Unrecognized pre-existing company/product nav: " + slug)
+        return page
+    cover = '<figure class="cover">'
+    if page.count(cover) != 1:
+        raise ValueError("Unexpected article-cover boundary: " + slug)
+    start, end = page.split(cover, 1)
+    if start.count('<div class="article-title">') != 1:
+        raise ValueError("Unexpected article title layout: " + slug)
+    close = '</div>'
+    if not start.rstrip().endswith(close):
+        raise ValueError("Article header does not end at cover: " + slug)
+    idx = start.rfind(close)
+    start = start[:idx] + nav + start[idx:]
+    if css in start:
+        raise ValueError("Company/product stylesheet already present: " + slug)
+    base_css = '<link rel="stylesheet" href="../../assets/site.css">'
+    if start.count(base_css) != 1:
+        raise ValueError("Missing article base stylesheet: " + slug)
+    start = start.replace(base_css, base_css + '\n' + css, 1)
+    return start + cover + end
+
 def render_index(registry):
     sections = []
     for kind, title in (("companies", "Компании"), ("products", "Продукты")):

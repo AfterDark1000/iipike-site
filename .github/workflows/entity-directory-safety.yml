@@ -8,6 +8,8 @@ on:
       - 'scripts/build_sitemap.py'
       - 'scripts/publish_approved_article.py'
       - 'tests/test_site_entities.py'
+      - 'tests/test_article_entity_tags.py'
+      - 'articles/**/index.html'
       - 'tests/test_approved_publisher.py'
       - 'tests/test_search_indexing.py'
       - 'entities/**'
@@ -40,17 +42,29 @@ jobs:
           git fetch origin main --unshallow || git fetch origin main
           python3 - <<'PY'
           import subprocess
+          import json
           changed = subprocess.check_output(
               ['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True
           ).splitlines()
           exact = {'data/entity_registry.json', 'scripts/site_entities.py',
                    'scripts/build_sitemap.py', 'scripts/publish_approved_article.py',
-                   'tests/test_site_entities.py', 'tests/test_approved_publisher.py',
+                   'tests/test_site_entities.py', 'tests/test_article_entity_tags.py',
+                   'tests/test_approved_publisher.py',
                    'tests/test_search_indexing.py',
                    'index.html', 'articles/index.html', 'sitemap.xml',
                    'assets/entities.css', '.github/workflows/entity-directory-safety.yml'}
           prefixes = ('entities/', 'assets/entity-icons/')
-          unexpected = [x for x in changed if x not in exact and not x.startswith(prefixes)]
+          # Article HTML changes are restricted to the IDs already reviewed
+          # in the public registry; their exact header-only diff is tested.
+          registry = json.load(open('data/entity_registry.json', encoding='utf-8'))
+          allowed_articles = {
+              'articles/' + sid + '/index.html'
+              for kind in ('companies', 'products')
+              for entity in registry[kind] for sid in entity['article_ids']
+          }
+          unexpected = [x for x in changed
+                        if x not in exact and x not in allowed_articles
+                        and not x.startswith(prefixes)]
           if unexpected:
               raise SystemExit('Unexpected editorial/production modifications: ' + str(unexpected))
           print('Taxonomy-only changes:', len(changed))

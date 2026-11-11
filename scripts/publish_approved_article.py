@@ -25,6 +25,7 @@ from scripts.site_related import catalog_entries, validate_reference, validate_l
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
 from scripts.site_related_cards import select_site_card, remove_duplicate_related_ids
+from scripts.site_entities import render_article_entity_nav, load_registry
 from scripts.site_entities import entity_urls, load_registry
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
@@ -230,6 +231,8 @@ def render_article(data, records=None, catalog=None):
     topic_values = (current.get("topics") if "topics" in current
                     else data.get("topics", []))
     topic_html = render_topic_links(topic_values)
+    entity_html = render_article_entity_nav(slug, load_registry(ROOT))
+    entity_css = '<link rel="stylesheet" href="../../assets/entities.css">' if entity_html else ""
     # A historical Dzen migration already starts with its original lead.
     # Keep the summary for metadata/cards, but not as duplicated page text.
     summary_display = '' if data.get("dzen_id") else f'<p class="summary">{summary}</p>'
@@ -322,7 +325,7 @@ def render_article(data, records=None, catalog=None):
 <meta property="og:url" content="{url}">{published_meta}{modified_meta}
 <script type="application/ld+json">{structured_json}</script>
 <link rel="canonical" href="{url}"><title>{title} — ХПИИ</title>
-<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">{entity_css}
 <link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
 <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
 <body><header class="header"><div class="wrap bar">
@@ -330,7 +333,7 @@ def render_article(data, records=None, catalog=None):
 <nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
 <main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
 <p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a></p><h1>{title}</h1>
-{summary_display}<p class="date">Опубликовано: {label}</p>{topic_html}</div>
+{summary_display}<p class="date">Опубликовано: {label}</p>{topic_html}{entity_html}</div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
 <section class="{section_class}">{source_aside}<article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
