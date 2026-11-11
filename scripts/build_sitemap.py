@@ -45,7 +45,7 @@ def get_urls():
             contents = page.read_text(encoding="utf-8")
             if f'rel="canonical" href="{BASE}/topics/{key}/"' not in contents:
                 raise ValueError("Invalid topic canonical for " + key)
-            if re.search(r'<meta\s+name=["\']robots["\'][^>]*noindex', contents, re.IGNORECASE):
+        if re.search(r"<meta[^>]*name=.robots.[^>]*noindex", contents, re.IGNORECASE):
                 raise ValueError("Populated topic page is noindex: " + key)
             urls.append(BASE + "/topics/" + key + "/")
     # Public company/product archives contain only curated, published stories.
