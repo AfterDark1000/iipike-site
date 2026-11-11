@@ -7,8 +7,8 @@
 .entity-tile .entity-tile__copy>span{color:var(--muted);font-size:12px;line-height:1.4}
 .entity-emblem{display:grid;place-items:center;flex:0 0 auto;width:54px;height:54px;border:1px solid rgba(0,0,0,.08);border-radius:15px;background:#f3f3f1}
 .entity-emblem img{width:33px;height:33px;max-width:75%;max-height:75%;object-fit:contain}
-.entity-emblem--lg{width:76px;height:76px;border-radius:20px}
-.entity-emblem--lg img{width:48px;height:48px}
+.entity-hero .entity-emblem--lg{width:76px;height:76px;border-radius:20px}
+.entity-hero .entity-emblem--lg img{width:48px;height:48px}
 .entity-emblem--google,.entity-emblem--gemini{background:#f6f9ff}
 .entity-emblem--openai{background:#eff4f0}
 .entity-emblem--chatgpt{background:#137e64}
@@ -20,7 +20,7 @@
 .entity-hero{display:flex;gap:20px;align-items:center;margin:28px 0 16px}
 .entity-hero h1{margin:0 0 3px}
 .entity-hero .summary{margin:0}
-@media(max-width:560px){.entity-tile{grid-template-columns:48px minmax(0,1fr);min-height:84px;padding:13px;gap:12px}.entity-emblem{width:48px;height:48px;border-radius:13px}.entity-emblem img{width:30px;height:30px}.entity-emblem--lg{width:62px;height:62px;border-radius:17px}.entity-emblem--lg img{width:40px;height:40px}.entity-hero{gap:13px;align-items:flex-start}}
+@media(max-width:560px){.entity-tile{grid-template-columns:48px minmax(0,1fr);min-height:84px;padding:13px;gap:12px}.entity-emblem{width:48px;height:48px;border-radius:13px}.entity-emblem img{width:30px;height:30px}.entity-hero .entity-emblem--lg{width:62px;height:62px;border-radius:17px}.entity-hero .entity-emblem--lg img{width:40px;height:40px}.entity-hero{gap:13px;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){.entity-tile{transition:none}.entity-tile:hover{transform:none}}
 
 /* Editor-confirmed company/product chips within article header only. */
