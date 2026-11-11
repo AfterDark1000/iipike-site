@@ -5,6 +5,10 @@ on:
     paths:
       - 'data/entity_registry.json'
       - 'scripts/site_entities.py'
+      - 'scripts/build_entity_pilot.py'
+      - 'scripts/backfill_article_entities.py'
+      - 'tests/test_entity_backfill.py'
+      - 'assets/entity-search.js'
       - 'scripts/build_sitemap.py'
       - 'scripts/publish_approved_article.py'
       - 'tests/test_site_entities.py'
@@ -47,6 +51,8 @@ jobs:
               ['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True
           ).splitlines()
           exact = {'data/entity_registry.json', 'scripts/site_entities.py',
+                   'scripts/build_entity_pilot.py', 'scripts/backfill_article_entities.py',
+                   'tests/test_entity_backfill.py', 'assets/entity-search.js',
                    'scripts/build_sitemap.py', 'scripts/publish_approved_article.py',
                    'tests/test_site_entities.py', 'tests/test_article_entity_tags.py',
                    'tests/test_approved_publisher.py',

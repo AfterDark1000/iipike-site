@@ -5,6 +5,7 @@ on:
       - feature/backfill-entity-taxonomy-20261111
     paths:
       - 'scripts/backfill_article_entities.py'
+      - 'scripts/build_entity_pilot.py'
 permissions:
   contents: write
 jobs:
