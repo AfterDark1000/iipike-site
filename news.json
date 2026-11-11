@@ -4325,5 +4325,21 @@
       "engineering",
       "agents"
     ]
+  },
+  {
+    "title": "Инженер лёг спать. Claude сам смешал краски и нарисовал акварель",
+    "summary": "Инженер Нил рассказал о ночном эксперименте: роботизированная система под управлением Claude рисовала акварель и, по его словам, самостоятельно смешивала дополнительные оттенки; результат — 303 мазка за четыре с половиной часа.",
+    "published": "2026-11-11",
+    "source_url": "https://x.com/dhvanil/status/2118756173721575767",
+    "cover": "assets/editorial/claude-watercolor-robot-night-painting-20261106.webp",
+    "rubric": "what-are-you-doing",
+    "published_at_utc": "2026-11-11T02:00:57Z",
+    "event_date": "2026-11-06",
+    "id": "claude-watercolor-robot-night-painting-20261106",
+    "url": "articles/claude-watercolor-robot-night-painting-20261106/",
+    "topics": [
+      "engineering",
+      "images"
+    ]
   }
 ]
