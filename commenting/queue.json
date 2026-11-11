@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11T07:08:41.035149Z",
+  "updated_at": "2026-11-11T15:35:55.468288Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T07:08:41.035149Z",
-      "last_success_at": "2026-11-11T07:08:41.035149Z",
+      "checked_at": "2026-11-11T15:35:55.468288Z",
+      "last_success_at": "2026-11-11T15:35:55.468288Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 1
     },
     {
       "id": "3dnews",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T07:08:41.035149Z",
-      "last_success_at": "2026-11-11T07:08:41.035149Z",
+      "checked_at": "2026-11-11T15:35:55.468288Z",
+      "last_success_at": "2026-11-11T15:35:55.468288Z",
       "error": null,
       "fresh_matches": 20
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-11T07:08:41.035149Z",
-      "last_success_at": "2026-11-11T07:08:41.035149Z",
+      "checked_at": "2026-11-11T15:35:55.468288Z",
+      "last_success_at": "2026-11-11T15:35:55.468288Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,24 +41,92 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-11T07:08:41.035149Z",
-      "last_success_at": "2026-11-11T00:36:53.625120Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-11T15:35:55.468288Z",
+      "last_success_at": "2026-11-11T15:35:55.468288Z",
+      "error": null,
+      "fresh_matches": 0
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 2"
+    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
   },
   "usage": {
     "date": "2026-11-11",
-    "attempted": 9
+    "attempted": 12
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "d49dbe00d529da877a6e0b4c",
+      "title": "«А что, если бы у вас было время?»: Nothing снова дразнит загадочным ИИ-гаджетом",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151154",
+      "published_at": "2026-11-11T15:22:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T15:35:55.468288Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "534020cad0fd864d3e0745c2",
+      "title": "Google открыла доступ к самой мощной ИИ-модели Gemini 4 Carbon",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/11/google-otkryla-dostup-k-samoi-moshhnoi-ii-modeli-gemini-4-carbon.html",
+      "published_at": "2026-11-11T10:48:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T15:35:55.468288Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "a1c14d86806593fdd1d3f342",
+      "title": "OpenAI ускорилась, пока Anthropic замедлилась: выручка взлетела почти втрое, а маржа стала менее отрицательной",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151143",
+      "published_at": "2026-11-11T08:36:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T15:35:55.468288Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "718068893a16c005b6ca1eda",
+      "title": "Google научила роботов работать руками — новая модель Gemini Robotics 2.5 справилась с задачами на заводе Mercedes-Benz",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151140",
+      "published_at": "2026-11-11T08:10:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-11T15:35:55.468288Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "7449a46f5aa7946e3ac14b1c",
       "title": "Данные мозга пользователей тайно передают нейросетям: отчет Science показал, как рынок нейроинтерфейсов обходит защиту приватности",
@@ -181,8 +249,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T19:40:03.698501Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-11T15:35:55.468288Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
@@ -200,8 +268,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T19:40:03.698501Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-11T15:35:55.468288Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
@@ -219,8 +287,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T19:40:03.698501Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-11T15:35:55.468288Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
