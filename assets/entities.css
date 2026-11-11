@@ -9,6 +9,10 @@
 .entity-emblem img{width:33px;height:33px;max-width:75%;max-height:75%;object-fit:contain}
 .entity-emblem--lg{width:76px;height:76px;border-radius:20px}
 .entity-emblem--lg img{width:48px;height:48px}
+/* "lg" is both the LG company slug and the legacy large-icon modifier.
+   Inside catalog tiles, always enforce normal tile sizes; detail-page icons stay large. */
+.entity-tile .entity-emblem{width:54px;height:54px;border-radius:15px}
+.entity-tile .entity-emblem img{width:33px;height:33px}
 .entity-emblem--google,.entity-emblem--gemini{background:#f6f9ff}
 .entity-emblem--openai{background:#eff4f0}
 .entity-emblem--chatgpt{background:#137e64}
@@ -21,6 +25,7 @@
 .entity-hero h1{margin:0 0 3px}
 .entity-hero .summary{margin:0}
 @media(max-width:560px){.entity-tile{grid-template-columns:48px minmax(0,1fr);min-height:84px;padding:13px;gap:12px}.entity-emblem{width:48px;height:48px;border-radius:13px}.entity-emblem img{width:30px;height:30px}.entity-emblem--lg{width:62px;height:62px;border-radius:17px}.entity-emblem--lg img{width:40px;height:40px}.entity-hero{gap:13px;align-items:flex-start}}
+@media(max-width:560px){.entity-tile .entity-emblem{width:48px;height:48px;border-radius:13px}.entity-tile .entity-emblem img{width:30px;height:30px}}
 @media(prefers-reduced-motion:reduce){.entity-tile{transition:none}.entity-tile:hover{transform:none}}
 
 /* Editor-confirmed company/product chips within article header only. */
