@@ -4451,5 +4451,21 @@
       "society",
       "safety"
     ]
+  },
+  {
+    "title": "NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году",
+    "summary": "NVIDIA, Rebellions и SK Telecom договорились разработать платформу с GPU NVIDIA и корейскими ИИ-ускорителями Rebel R200, соединёнными через NVLink Fusion. GPU будут обрабатывать начальный запрос, NPU — генерировать ответ; готовность систем R200 к развёртыванию ожидается в 2028 году.",
+    "published": "2026-11-11",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-rebellions-and-sk-telecom-announce-collaboration-to-advance-sovereign-ai-infrastructure-with-nvidia-nvlink-fusion",
+    "cover": "assets/editorial/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T13:30:44Z",
+    "event_date": "2026-11-09",
+    "id": "nvidia-rebellions-sk-telecom-nvlink-fusion-20261109",
+    "url": "articles/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109/",
+    "topics": [
+      "infrastructure",
+      "engineering"
+    ]
   }
 ]

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="NVIDIA, Rebellions и SK Telecom договорились разработать платформу с GPU NVIDIA и корейскими ИИ-ускорителями Rebel R200, соединёнными через NVLink Fusion. GPU будут обрабатывать начальный запрос, NPU — генерировать ответ; готовность систем R200 к развёртыванию ожидается в 2028 году."><meta property="og:type" content="article">
+<meta property="og:title" content="NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году"><meta property="og:description" content="NVIDIA, Rebellions и SK Telecom договорились разработать платформу с GPU NVIDIA и корейскими ИИ-ускорителями Rebel R200, соединёнными через NVLink Fusion. GPU будут обрабатывать начальный запрос, NPU — генерировать ответ; готовность систем R200 к развёртыванию ожидается в 2028 году.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp">
+<meta property="og:url" content="https://iipike.ru/articles/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109/"><meta property="article:published_time" content="2026-11-11T13:30:44Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году", "mainEntityOfPage": "https://iipike.ru/articles/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-11T13:30:44Z", "image": "https://iipike.ru/assets/editorial/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109/"><title>NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году</h1>
+<p class="summary">NVIDIA, Rebellions и SK Telecom договорились разработать платформу с GPU NVIDIA и корейскими ИИ-ускорителями Rebel R200, соединёнными через NVLink Fusion. GPU будут обрабатывать начальный запрос, NPU — генерировать ответ; готовность систем R200 к развёртыванию ожидается в 2028 году.</p><p class="date">Опубликовано: 11 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/infrastructure/">Инфраструктура ИИ</a><a href="../../topics/engineering/">Инженерия и устройства</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/nvidia-rebellions-sk-telecom-nvlink-fusion-20261109.webp" alt="Обложка: NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://nvidianews.nvidia.com/news/nvidia-rebellions-and-sk-telecom-announce-collaboration-to-advance-sovereign-ai-infrastructure-with-nvidia-nvlink-fusion" target="_blank" rel="noopener noreferrer">NVIDIA — NVIDIA, Rebellions and SK Telecom Announce Collaboration to Advance Sovereign AI Infrastructure With NVIDIA NVLink Fusion ↗</a>
+</aside><article class="article-text"><p class="lead"><strong>NVIDIA</strong>, южнокорейский разработчик процессоров <strong>Rebellions</strong> и телекоммуникационный оператор <strong>SK Telecom</strong> договорились создать серверную систему, в которой американские графические процессоры будут работать вместе с корейскими ИИ-ускорителями <strong>Rebel R200</strong>.</p>
+<p>Соглашение подписали 9 ноября на мероприятии NVIDIA AI Day Seoul. Проект поддерживает Министерство науки и информационно-коммуникационных технологий Южной Кореи.</p>
+<p>Задача партнёров — распределить работу нейросети между процессорами, каждый из которых лучше справляется со своей частью вычислений.</p>
+<p>Когда пользователь отправляет запрос в ChatGPT или другую языковую модель, вычисления проходят два основных этапа.</p>
+<p>Сначала система обрабатывает полученный текст, учитывая его содержание и контекст. Эта стадия называется <em>prefill</em>. Она требует большого количества вычислений, поэтому для неё хорошо подходят графические процессоры NVIDIA.</p>
+<p>Затем начинается <em>decode</em> — последовательная генерация ответа, токен за токеном. На этом этапе особенно важна скорость обращения к памяти.</p>
+<p><strong>Rebellions разрабатывает R200 специально для подобных задач.</strong> По замыслу партнёров, GPU NVIDIA будут обрабатывать входящие запросы, а корейские NPU возьмут на себя генерацию продолжения. Компании рассчитывают таким способом увеличить скорость обработки запросов и снизить энергопотребление.</p>
+<p>Связать разные процессоры поможет <strong>NVLink Fusion</strong>. Эта технология NVIDIA позволяет подключать специализированные ускорители других производителей к высокоскоростной системе обмена данными между чипами.</p>
+<p>Для размещения оборудования используют серверную архитектуру <strong>MGX</strong>. Она предусматривает общие подходы к конструкции стоек, электропитанию и охлаждению. Благодаря этому GPU и NPU смогут размещаться в совместимой инфраструктуре дата-центра.</p>
+<p>SK Telecom собирается испытать совместную систему в собственных центрах обработки данных и проверить её пригодность для реальных ИИ-сервисов.</p>
+<p>В дальнейшем компания намерена использовать такую инфраструктуру для работы своих языковых моделей, включая <strong>A.X K2</strong>, и государственных сервисов программы <strong>AI for All</strong>.</p>
+<p>Южная Корея развивает направление так называемого <em>суверенного ИИ</em>: страна стремится самостоятельно контролировать вычислительную инфраструктуру, модели и сервисы, учитывающие национальный язык и потребности местных организаций.</p>
+<p>При этом новое соглашение показывает, как именно корейские компании намерены строить такую инфраструктуру — сочетая собственные процессоры с технологиями NVIDIA.</p>
+<p>Пока партнёры объявили о совместной разработке и будущих испытаниях. Независимых результатов измерения скорости и энергопотребления новой конфигурации нет.</p>
+<p><strong>Системы на базе Rebel R200 рассчитывают подготовить к развёртыванию в 2028 году.</strong></p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
