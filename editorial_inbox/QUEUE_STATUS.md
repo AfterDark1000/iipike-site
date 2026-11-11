@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 21 · **Готовы:** 0 · **Ждут интервал:** 21 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 62
+**В очереди:** 22 · **Готовы:** 0 · **Ждут интервал:** 22 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 62
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -33,6 +33,7 @@
 | **19** | [«ИИ научили варить металл. Теперь ему хотят доверить целый завод — и дали на это $300 млн»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/path-robotics-series-e-300m-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 20:07 (Усть-Катав)**; пауза до 11.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/path-robotics-series-e-300m-20261110.webp) |
 | **20** | [Куртка меняет цвет прямо во время видео: Higgsfield анонсировала Miracle](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/higgsfield-miracle-realtime-video-editing-20261106.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 21:07 (Усть-Катав)**; пауза до 11.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/higgsfield-miracle-realtime-video-editing-20261106.webp) |
 | **21** | [Китайцы пошли за покупками к ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/china-ai-shopping-doubao-dongdong-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 22:07 (Усть-Катав)**; пауза до 11.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/china-ai-shopping-doubao-dongdong-20261111.webp) |
+| **22** | [Во Франции предложили отключить у ИИ «режим подхалима»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/france-cianum-ai-flattery-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 23:07 (Усть-Катав)**; пауза до 11.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/france-cianum-ai-flattery-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
