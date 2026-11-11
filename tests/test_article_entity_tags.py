@@ -26,7 +26,9 @@ class ArticleEntityTagsTests(unittest.TestCase):
         }
 
     def test_only_curated_articles_have_badges(self):
-        self.assertEqual(len(self.selected), 195)
+        # 195 existing archive assignments must survive, but the number
+        # increases on each future editor-approved, tagged publication.
+        self.assertGreaterEqual(len(self.selected), 195)
         for row in self.records:
             path = ROOT / row["url"] / "index.html"
             text = path.read_text(encoding="utf-8")

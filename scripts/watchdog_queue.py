@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.site_publication_queue import _last_change, latest_site_first_publication, ready_items, git, SITE_TZ
 from scripts.site_first_release_pr import exists_at, safe_git_blob_at
+from scripts.render_site_publication_queue import forecast_order
 
 UTC = dt.timezone.utc
 
@@ -39,6 +40,33 @@ def active_publication_minutes(begin, end):
     return max(0, elapsed)
 
 
+
+def overdue_publications(pending, last, now, *, threshold_minutes=100):
+    """Compare with the REAL sequential hourly queue, not one shared due time.
+
+    The dashboard may slide its *forecast* forward on each inspection; a
+    watchdog deadline must instead be anchored at the last published issue
+    and at the oldest available approved story/cover. Uses exactly the same
+    selection order, cron minutes, quiet hours and spacing as the dashboard.
+    A later article cannot become overdue before its own theoretical turn.
+    """
+    if not pending:
+        return []
+    if now.tzinfo is None:
+        raise ValueError("Watchdog check needs a timezone-aware clock")
+    anchor = min(item["ready_at"] for item in pending)
+    rows = [{"id": item["id"], "ready_at": item["ready_at"],
+             "publish_at": item.get("not_before"), "eligible": True}
+            for item in pending]
+    planned = forecast_order(rows, last, now=anchor)
+    overdue = []
+    for row, slot in planned:
+        delay = active_publication_minutes(slot, now)
+        if delay > threshold_minutes:
+            overdue.append({"id": row["id"], "minutes": round(delay)})
+    return overdue
+
+
 def snapshot(now=None):
     now = now or dt.datetime.now(UTC)
     git('fetch', 'origin', 'main', 'editorial-intake')
@@ -60,14 +88,7 @@ def snapshot(now=None):
                         (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
                 except (ValueError, OSError):
                     (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
-    overdue = []
-    epoch = dt.datetime(1970, 1, 1, tzinfo=UTC)
-    for item in pending:
-        earliest = max(item['ready_at'], item['not_before'] or epoch,
-                       last + dt.timedelta(hours=1) if last else epoch)
-        delay = active_publication_minutes(earliest, now)
-        if delay > 100:
-            overdue.append({'id': item['id'], 'minutes': round(delay)})
+    overdue = overdue_publications(pending, last, now)
     newest = None
     site_first_published = []
     for row in rows:
