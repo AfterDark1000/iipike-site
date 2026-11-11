@@ -73,6 +73,30 @@
           "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
         }
       ]
+    },
+    {
+      "key": "mercor",
+      "name": "Mercor",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "mercor-series-d-750m-20b-valuation-20261110",
+          "source_url": "https://www.mercor.com/blog/series-d/"
+        }
+      ]
+    },
+    {
+      "key": "salesforce",
+      "name": "Salesforce",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "mercor-series-d-750m-20b-valuation-20261110",
+          "source_url": "https://www.mercor.com/blog/series-d/"
+        }
+      ]
     }
   ],
   "products": [
