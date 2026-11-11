@@ -121,6 +121,30 @@
           "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2"
         }
       ]
+    },
+    {
+      "key": "path-robotics",
+      "name": "Path Robotics",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "path-robotics-series-e-300m-20261110",
+          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+        }
+      ]
+    },
+    {
+      "key": "georgian",
+      "name": "Georgian",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "path-robotics-series-e-300m-20261110",
+          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+        }
+      ]
     }
   ],
   "products": [
@@ -186,6 +210,32 @@
         {
           "article_id": "bytedance-seedream-5-5-100-edits-20261109",
           "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        }
+      ]
+    },
+    {
+      "key": "obsidian",
+      "name": "Obsidian",
+      "company": "path-robotics",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "path-robotics-series-e-300m-20261110",
+          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+        }
+      ]
+    },
+    {
+      "key": "rove",
+      "name": "Rove",
+      "company": "path-robotics",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "path-robotics-series-e-300m-20261110",
+          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
         }
       ]
     }
