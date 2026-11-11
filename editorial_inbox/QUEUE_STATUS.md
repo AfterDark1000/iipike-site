@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 15 · **Готовы:** 0 · **Ждут интервал:** 15 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Уже опубликованы:** 57
+**В очереди:** 16 · **Готовы:** 0 · **Ждут интервал:** 16 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 57
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -27,12 +27,13 @@
 | **13** | [Amazon отправит дроны патрулировать квартиры](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/amazon-ring-drone-rover-cam-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 08:07 (Усть-Катав)**; пауза до 11.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-ring-drone-rover-cam-20261110.webp) |
 | **14** | [Корейских школьников поймали на списывании через ИИ-очки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/south-korea-ai-glasses-exam-cheating-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 09:07 (Усть-Катав)**; пауза до 11.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/south-korea-ai-glasses-exam-cheating-20261109.webp) |
 | **15** | [Adobe научила Photoshop менять ракурс, а Premiere — генерировать видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/adobe-max-photoshop-premiere-firefly-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 10:07 (Усть-Катав)**; пауза до 11.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/adobe-max-photoshop-premiere-firefly-20261110.webp) |
+| **16** | [Google представила Gemini для больниц: ИИ разберёт медкарты и страховки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-for-healthcare-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 11:07 (Усть-Катав)**; пауза до 11.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-for-healthcare-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Google представила Gemini для больниц: ИИ разберёт медкарты и страховки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-for-healthcare-20261110.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Уже опубликованы — новые сверху
 
