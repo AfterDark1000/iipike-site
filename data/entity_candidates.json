@@ -193,6 +193,42 @@
           "source_url": "https://www.conseil-ia-numerique.fr/nos-travaux/proteger-sans-empecher-nos-vulnerabilites-lere-de-lia-generative"
         }
       ]
+    },
+    {
+      "key": "kora-systems",
+      "name": "KORA Systems",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
+        }
+      ]
+    },
+    {
+      "key": "humain",
+      "name": "HUMAIN",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
+        }
+      ]
+    },
+    {
+      "key": "qualcomm",
+      "name": "Qualcomm",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
+        }
+      ]
     }
   ],
   "products": [
@@ -336,6 +372,45 @@
         {
           "article_id": "china-ai-shopping-doubao-dongdong-20261111",
           "source_url": "https://www.reuters.com/business/retail-consumer/chinas-singles-day-shopping-festival-puts-ai-selling-power-test-2026-11-11/"
+        }
+      ]
+    },
+    {
+      "key": "kora",
+      "name": "KORA",
+      "company": "kora-systems",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
+        }
+      ]
+    },
+    {
+      "key": "cortex-kora",
+      "name": "Cortex",
+      "company": "kora-systems",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
+        }
+      ]
+    },
+    {
+      "key": "humain-os",
+      "name": "HUMAIN OS",
+      "company": "humain",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "source_url": "https://press.kora.fun/"
         }
       ]
     }
