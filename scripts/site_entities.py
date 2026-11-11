@@ -10,9 +10,9 @@ from pathlib import Path
 from datetime import date
 import re
 
-ENTITY_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\\Z")
-ARTICLE_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/\\Z")
-SAFE_COVER = re.compile(r"assets/[a-z0-9][a-z0-9/_-]*\\.(?:webp|png|jpg|jpeg|svg)\\Z")
+ENTITY_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+ARTICLE_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/\Z")
+SAFE_COVER = re.compile(r"assets/[a-z0-9][a-z0-9/_-]*\.(?:webp|png|jpg|jpeg|svg)\Z")
 
 
 def validate_public_registry(registry, records):
