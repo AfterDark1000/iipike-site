@@ -12,9 +12,9 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
     def test_entity_registry_and_pages_are_known_release_outputs(self):
         from scripts.site_first_release_pr import proposed_changes
         class Result:
-            stdout = (" M data/entity_registry.json\\n"
-                      " M entities/index.html\\n"
-                      " M entities/companies/google/index.html\\n")
+            stdout = (" M data/entity_registry.json\n"
+                      " M entities/index.html\n"
+                      " M entities/companies/google/index.html\n")
         with patch("scripts.site_first_release_pr.git", return_value=Result()):
             paths = proposed_changes()
         self.assertIn("data/entity_registry.json", paths)
