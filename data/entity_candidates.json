@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "note": "Внутренняя очередь кандидатов редакции ХПИИ (не публичный реестр). Запись здесь не создаёт страницы, не разрешает ключи в companies/products и не запускает публикацию. Продвижение в data/entity_registry.json — отдельная проверенная операция.",
+  "companies": [
+    {
+      "key": "zyphra",
+      "name": "Zyphra",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "zyphra-zonos3-mini-voice-cloning-20261109",
+          "source_url": "https://www.zyphra.com/our-work/zonos3-mini"
+        }
+      ]
+    },
+    {
+      "key": "apptronik",
+      "name": "Apptronik",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "google-gemini-robotics-2-5-mercedes-20261110",
+          "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+        }
+      ]
+    },
+    {
+      "key": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "google-gemini-robotics-2-5-mercedes-20261110",
+          "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "key": "zonos3-mini",
+      "name": "ZONOS3-Mini",
+      "company": "zyphra",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "zyphra-zonos3-mini-voice-cloning-20261109",
+          "source_url": "https://www.zyphra.com/our-work/zonos3-mini"
+        }
+      ]
+    }
+  ]
+}
