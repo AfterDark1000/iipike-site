@@ -1,11 +1,91 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "88dfdaac74358f4b48125006f255781617457cda",
-  "source_blob_sha": "fcefbdf4a518e89d6636f88c01e917668bf1a560",
+  "source_commit": "8a506d244530e1ecd8611166031fdc380cabc03b",
+  "source_blob_sha": "a2c32e0c27d322fc5d6594173b8bb2d79c49fabe",
   "snapshot_date": "2026-11-11",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af4161e4acd6179544e0be5",
+      "title": "Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов",
+      "dzen_url": "https://dzen.ru/a/avQWHkrNYXlUTgvl",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Meta 9 ноября представила Muse Ember — самую компактную модель в семействе Muse. Её задача — выполнять небольшие поручения внутри больших систем ИИ-агентов: разбирать документы, вызывать инструменты, искать информацию, проверять код и исправлять ошибки. Стоимость через API начинается с 10 центов за миллион входных токенов. Компания предлагает распределять работу между моделями. Например, Muse Wonder составляет план и",
+      "published_at_utc": "2026-11-11T17:03:11+00:00"
+    },
+    {
+      "dzen_id": "6af40f9a80f8703a3ac9d99c",
+      "title": "Тысяча ИИ-агентов Claude за восемь дней создала операционную систему",
+      "dzen_url": "https://dzen.ru/a/avQPmoD4cDo6ydmc",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Anthropic 9 ноября сообщила, что Claude Fable 5.2 за восемь дней с помощью более тысячи ИИ-субагентов разработала прототип операционной системы. Получившаяся ОС загружается на ноутбуке и имеет собственное ядро, драйверы и графический интерфейс. Эксперимент начался с задания от одного инженера Anthropic и пустой папки проекта. Claude самостоятельно координировала работу более тысячи субагентов, которые круглосуточно п",
+      "published_at_utc": "2026-11-11T16:03:06+00:00"
+    },
+    {
+      "dzen_id": "6af40d92ed32a9381876f689",
+      "title": "Anthropic выпустила два новых Claude и заявила о решении задач физики чёрных дыр",
+      "dzen_url": "https://dzen.ru/a/avQNku0yqTgYdvaJ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Anthropic 9 ноября представила Claude Fable 5.2 и Claude Mythos 5.2 — обновлённые версии своих самых мощных моделей для сложных технических задач. Компания утверждает, что во время предварительных испытаний Claude решил две открытые проблемы теоретической физики, связанные с чёрными дырами, спроектировал три работающих электронных устройства и научился лучше управлять роботами. За двумя названиями скрывается одна баз",
+      "published_at_utc": "2026-11-11T15:02:45+00:00"
+    },
+    {
+      "dzen_id": "6af40cae4acd6179543e48f8",
+      "title": "Распознавание речи на 22 языках Индии уместили в файлы по 30 МБ",
+      "dzen_url": "https://dzen.ru/a/avQMrkrNYXlUPkj4",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Разработчик Джитеш К. Прасад из Udgam Labs 8 ноября представил Shruti — семейство из 22 небольших ИИ-моделей, которые превращают человеческую речь в текст. Каждая занимает менее 30 МБ и способна работать на смартфоне без подключения к интернету. Разработчики проверили технологию на Samsung Galaxy F62, выпущенном ещё в 2021 году. Распознавание речи работало в 6–13 раз быстрее реального времени в зависимости от языка.",
+      "published_at_utc": "2026-11-11T14:03:34+00:00"
+    },
+    {
+      "dzen_id": "6af40a8d70a94a2d4604c736",
+      "title": "NVIDIA соединит свои GPU с корейскими ИИ-чипами. Первые системы — в 2028 году",
+      "dzen_url": "https://dzen.ru/a/avQKjXCpSi1GBMc2",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "NVIDIA, южнокорейский разработчик процессоров Rebellions и телекоммуникационный оператор SK Telecom договорились создать серверную систему, в которой американские графические процессоры будут работать вместе с корейскими ИИ-ускорителями Rebel R200. Соглашение подписали 9 ноября на мероприятии NVIDIA AI Day Seoul. Проект поддерживает Министерство науки и информационно-коммуникационных технологий Южной Кореи. Задача па",
+      "published_at_utc": "2026-11-11T13:03:10+00:00"
+    },
+    {
+      "dzen_id": "6af40969aa622c65a2f124dd",
+      "title": "Instagram ищет подростков даже среди «взрослых» аккаунтов",
+      "dzen_url": "https://dzen.ru/a/avQJaapiLGWi8STd",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Meta 9 ноября объявила о глобальном расширении системы ИИ-проверки возраста в Instagram. Нейросеть ищет аккаунты, которые предположительно принадлежат подросткам 13–17 лет, даже если при регистрации был указан взрослый возраст. Такие профили автоматически переводятся в защищённый режим Teen Accounts. Компания рассчитывает распространить дополнительные ограничения ещё на миллионы подростковых аккаунтов по всему миру.",
+      "published_at_utc": "2026-11-11T12:01:42+00:00"
+    },
+    {
+      "dzen_id": "6af4090c70a94a2d460212ff",
+      "title": "ИИ-робот нырнул на 4 км за металлами. Улов — 450 граммов",
+      "dzen_url": "https://dzen.ru/a/avQJDHCpSi1GAhL_",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американская компания Impossible Metals 9 ноября сообщила об успешном испытании автономного подводного робота Eureka. Аппарат опустился на глубину более четырёх километров в Тихом океане, собрал около 450 граммов металлосодержащих камней и самостоятельно вернулся к поверхности. Само погружение состоялось ещё в сентябре, во время научной экспедиции в зоне Кларион — Клиппертон, расположенной между Гавайями и Мексикой.",
+      "published_at_utc": "2026-11-11T11:01:57+00:00"
+    },
+    {
+      "dzen_id": "6af406cdc39de244cb933e8b",
+      "title": "Режиссёр назвала ИИ опасным — и оживила с его помощью исторические фотографии",
+      "dzen_url": "https://dzen.ru/a/avQGzcOd4kTLkz6L",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американский режиссёр Ава Дюверней использовала искусственный интеллект вместе с традиционной анимацией при создании документального фильма «14th». Технология помогла оживить подлинные архивные фотографии XIX века...",
+      "published_at_utc": "2026-11-11T10:03:15+00:00"
+    },
     {
       "dzen_id": "6af2ff34c39de244cb36418f",
       "title": "Звезда «Фантастической четвёрки» узнал о годовом «романе» с фанаткой",
