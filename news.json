@@ -4419,5 +4419,21 @@
       "entertainment",
       "video"
     ]
+  },
+  {
+    "title": "ИИ-робот нырнул на 4 км за металлами. Улов — 450 граммов",
+    "summary": "Impossible Metals сообщила о сентябрьском испытании подводного робота Eureka в Тихом океане: аппарат на глубине более 4 км собрал около 450 г полиметаллических конкреций. Компания утверждает, что ИИ помогает выбирать камни без видимых морских организмов; независимая экологическая оценка расширенной системы намечена на 2027 год.",
+    "published": "2026-11-11",
+    "source_url": "https://www.businesswire.com/news/home/20261109383890/en/",
+    "cover": "assets/editorial/impossible-metals-eureka-deep-sea-mining-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T11:00:54Z",
+    "event_date": "2026-11-09",
+    "id": "impossible-metals-eureka-deep-sea-mining-20261109",
+    "url": "articles/impossible-metals-eureka-deep-sea-mining-20261109/",
+    "topics": [
+      "engineering",
+      "science"
+    ]
   }
 ]
