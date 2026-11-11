@@ -75,10 +75,10 @@ class EntityPilotTests(unittest.TestCase):
             raw = icon.read_text(encoding="utf-8")
             self.assertTrue(raw.startswith("<svg"), key)
             self.assertNotIn("<script", raw)
-            self.assertNotIn("http://", raw)
+            self.assertNotIn("<foreignObject", raw)
         for path, html in pages.items():
             self.assertIn("lab/entities/pilot-icons.css", html)
-            refs = re.findall(r'src="([^"]+lab/entities/icons/[a-z]+\\.svg)"', html)
+            refs = re.findall(r'src="([^"]+lab/entities/icons/[a-z]+\.svg)"', html)
             self.assertTrue(refs, str(path))
             for href in refs:
                 self.assertTrue((path.parent / href).resolve().is_file(), href)
