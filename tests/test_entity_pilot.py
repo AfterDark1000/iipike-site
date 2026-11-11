@@ -63,6 +63,30 @@ class EntityPilotTests(unittest.TestCase):
         # Claude appears in a Hacktron attack, but this is not an Anthropic announcement.
         self.assertNotIn("openai-hacktron-security-partnership-20261106", companies["anthropic"])
 
+    def test_all_entity_icons_are_local_and_valid(self):
+        import re
+        pages = render_all(self.manifest, self.records, ROOT)
+        all_keys = {entry["key"] for kind in ("companies", "products")
+                    for entry in self.manifest[kind]}
+        self.assertEqual(len(all_keys), 11)
+        for key in all_keys:
+            icon = ROOT / "lab" / "entities" / "icons" / (key + ".svg")
+            self.assertTrue(icon.is_file(), str(icon))
+            raw = icon.read_text(encoding="utf-8")
+            self.assertTrue(raw.startswith("<svg"), key)
+            self.assertNotIn("<script", raw)
+            self.assertNotIn("http://", raw)
+        for path, html in pages.items():
+            self.assertIn("lab/entities/pilot-icons.css", html)
+            refs = re.findall(r'src="([^"]+lab/entities/icons/[a-z]+\\.svg)"', html)
+            self.assertTrue(refs, str(path))
+            for href in refs:
+                self.assertTrue((path.parent / href).resolve().is_file(), href)
+            self.assertNotIn("unpkg.com", html)
+            self.assertNotIn("cdn.jsdelivr.net", html)
+        self.assertIn('class="topic-index-link entity-tile"',
+                      pages[ROOT / "lab" / "entities" / "index.html"])
+
     def test_all_article_links_are_local_and_existing(self):
         pages = render_all(self.manifest, self.records, ROOT)
         known = {r["id"] for r in self.records}
