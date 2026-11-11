@@ -175,6 +175,19 @@
           "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
         }
       ]
+    },
+    {
+      "key": "seedream-5-5",
+      "name": "Seedream 5.5",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "bytedance-seedream-5-5-100-edits-20261109",
+          "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
+        }
+      ]
     }
   ]
 }
