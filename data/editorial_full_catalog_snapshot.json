@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "f8526245dff5e8577d3fa9f5be6d6fad86f96841",
-  "source_blob_sha": "18f7201139a6cca94e7dd91f7eb413e93d0ec104",
-  "snapshot_date": "2026-11-10",
+  "source_commit": "88dfdaac74358f4b48125006f255781617457cda",
+  "source_blob_sha": "fcefbdf4a518e89d6636f88c01e917668bf1a560",
+  "snapshot_date": "2026-11-11",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af2ff34c39de244cb36418f",
+      "title": "Звезда «Фантастической четвёрки» узнал о годовом «романе» с фанаткой",
+      "dzen_url": "https://dzen.ru/a/avL_NMOd4kTLNkGP",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Йоан Гриффит, сыгравший Рида Ричардса в фильмах «Фантастическая четвёрка», 8 ноября предупредил поклонников о человеке, который больше года выдавал себя за актёра и поддерживал романтическую переписку с женщиной...",
+      "published_at_utc": "2026-11-11T09:02:27+00:00"
+    },
+    {
+      "dzen_id": "6af2feca819c5c472e0e7f7d",
+      "title": "ИИ пишет хоррор прямо во время игры. Даже автор не знает, что дальше!",
+      "dzen_url": "https://dzen.ru/a/avL-yoGcXEcuDn99",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Разработчик под ником apek 6 ноября представил Dimension9 — браузерную хоррор-игру, события которой непрерывно придумывает Claude Opus 5.5. Модель создаёт новые комнаты, персонажей и существ прямо по ходу исследования игрового мира. Проект вдохновлён вселенной Backrooms — интернет-хоррором о бесконечных пустых помещениях, коридорах и лабиринтах, из которых трудно выбраться. В Dimension9 искусственный интеллект получи",
+      "published_at_utc": "2026-11-11T08:02:19+00:00"
+    },
+    {
+      "dzen_id": "6af2fde26275f93a7e441fbc",
+      "title": "131 ИИ-агент и 23 тысячи запросов ради одного музыкального клипа!",
+      "dzen_url": "https://dzen.ru/a/avL94mJ1-Tp-RB-8",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Автор под псевдонимом Tetsuo 8 ноября опубликовал музыкальный клип Attention Is All You Need. Видео длится 5 минут 26 секунд. А вот его создание, по подсчётам автора, потребовало 131 ИИ-агента, 23 354 обращения к моделям и 10,1 миллиарда токенов. От первых строк песни до готового видео прошло 26 часов 51 минута. Tetsuo использовал собственную систему автоматизации AgenC, которая объединяла множество нейросетей и граф",
+      "published_at_utc": "2026-11-11T07:04:00+00:00"
+    },
+    {
+      "dzen_id": "6af2fd8bd7e7c818f2b00727",
+      "title": "Инженер лёг спать. Claude сам смешал краски и нарисовал акварель",
+      "dzen_url": "https://dzen.ru/a/avL9i9fnyBjysAcn",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Инженер Нил, работающий в компании Glif, 6 ноября рассказал о необычном ночном эксперименте. Перед сном он поручил Claude нарисовать осеннее дерево, а утром обнаружил готовую акварель. По подсчётам автора, работа заняла четыре с половиной часа и потребовала 303 мазков кистью. Речь идёт о настоящих красках и физическом рисунке, который создаёт роботизированная система под управлением ИИ. Самое интересное случилось при",
+      "published_at_utc": "2026-11-11T06:01:41+00:00"
+    },
+    {
+      "dzen_id": "6af2fcfbaa0d9d40fd1f484d",
+      "title": "MIT научил роботов понимать намёки человека",
+      "dzen_url": "https://dzen.ru/a/avL8-6oNnUD9H0hN",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "MIT и Нью-Йоркский университет разработали FLEX — систему, которая помогает роботам понимать скрытый смысл человеческих указаний. Вместо запоминания отдельных запретов нейросеть пытается разобраться, чего человек на самом деле хочет избежать. 9 ноября MIT рассказал об исследовании на примере робота, который несёт чашку кофе через заставленный предметами стол. Человек пишет ему: «Не пролей кофе на ноутбук!» Обычный ал",
+      "published_at_utc": "2026-11-11T05:01:00+00:00"
+    },
+    {
+      "dzen_id": "6af2fc9c4692d94ef31fc63e",
+      "title": "MIT научил ИИ предсказывать поведение песка, воды и белков",
+      "dzen_url": "https://dzen.ru/a/avL8nEaS2U7zH8Y-",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Учёные Массачусетского технологического института (MIT) и Университета Британской Колумбии разработали WorldParticle — систему искусственного интеллекта, способную моделировать самые разные физические процессы. Она рассчитывает, как осыпается песок, движется жидкость, деформируется ткань и меняется положение атомов в белках. 9 ноября MIT подробно рассказал об исследовании, результаты которого представят на конференци",
+      "published_at_utc": "2026-11-11T04:03:15+00:00"
+    },
+    {
+      "dzen_id": "6af2f141b5493806a7c3a30a",
+      "title": "Создал сайт в ChatGPT? Spacefast выложит его в интернет",
+      "dzen_url": "https://dzen.ru/a/avLxQbVJOAanw6MK",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Automattic, компания за WordPress.com, 9 ноября запустила Spacefast — сервис, который позволяет ИИ-агентам создавать и размещать сайты и веб-приложения прямо из привычного чата. Он работает с ChatGPT, Claude, Codex, Cursor и другими инструментами. Схема простая: человек просит нейросеть сделать сайт, подключает Spacefast и даёт команду опубликовать результат. Агент передаёт готовые файлы сервису, а в ответ получает с",
+      "published_at_utc": "2026-11-11T03:01:27+00:00"
+    },
     {
       "dzen_id": "6af2f0c819d7f91c244e3e0d",
       "title": "Микки-Мауса доверили нейросети: Disney расширяет союз с Adobe",
