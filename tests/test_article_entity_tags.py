@@ -25,8 +25,8 @@ class ArticleEntityTagsTests(unittest.TestCase):
             for entry in cls.registry[kind] for article_id in entry["article_ids"]
         }
 
-    def test_only_curated_32_articles_have_badges(self):
-        self.assertEqual(len(self.selected), 32)
+    def test_only_curated_articles_have_badges(self):
+        self.assertEqual(len(self.selected), 195)
         for row in self.records:
             path = ROOT / row["url"] / "index.html"
             text = path.read_text(encoding="utf-8")
