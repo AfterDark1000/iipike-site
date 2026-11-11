@@ -70,6 +70,7 @@ jobs:
                    'scripts/build_sitemap.py', 'scripts/publish_approved_article.py',
                    'tests/test_site_entities.py', 'tests/test_article_entity_tags.py',
                    'tests/test_approved_publisher.py',
+                   'scripts/watchdog_queue.py', 'tests/test_watchdog_queue.py',
                    'tests/test_search_indexing.py',
                    'index.html', 'articles/index.html', 'sitemap.xml',
                    'assets/entities.css', '.github/workflows/entity-directory-safety.yml'}
