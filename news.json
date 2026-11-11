@@ -4341,5 +4341,21 @@
       "engineering",
       "images"
     ]
+  },
+  {
+    "title": "131 ИИ-агент и 23 тысячи запросов ради одного музыкального клипа!",
+    "summary": "Автор Tetsuo опубликовал клип Attention Is All You Need длиной 5 минут 26 секунд и сообщил, что при его создании было задействовано 131 ИИ-агент, 23 354 вызова моделей и более 26 часов работы.",
+    "published": "2026-11-11",
+    "source_url": "https://x.com/tetsuoai/status/2119341048367665201",
+    "cover": "assets/editorial/tetsuo-131-ai-agents-music-video-20261108.webp",
+    "rubric": "what-are-you-doing",
+    "published_at_utc": "2026-11-11T03:15:37Z",
+    "event_date": "2026-11-08",
+    "id": "tetsuo-131-ai-agents-music-video-20261108",
+    "url": "articles/tetsuo-131-ai-agents-music-video-20261108/",
+    "topics": [
+      "entertainment",
+      "video"
+    ]
   }
 ]
