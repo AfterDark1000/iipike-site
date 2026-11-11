@@ -4357,5 +4357,21 @@
       "entertainment",
       "video"
     ]
+  },
+  {
+    "title": "ИИ пишет хоррор прямо во время игры. Даже автор не знает, что дальше!",
+    "summary": "Разработчик apek представил браузерный хоррор Dimension9 по мотивам Backrooms, в котором, по его словам, Claude Opus 5.5 генерирует новые комнаты, персонажей и события во время игры. Интерфейс доступен в интернете.",
+    "published": "2026-11-11",
+    "source_url": "https://x.com/apekshik/status/2118847014071120179",
+    "cover": "assets/editorial/dimension9-claude-live-horror-game-20261106.webp",
+    "rubric": "what-are-you-doing",
+    "published_at_utc": "2026-11-11T07:30:43Z",
+    "event_date": "2026-11-06",
+    "id": "dimension9-claude-live-horror-game-20261106",
+    "url": "articles/dimension9-claude-live-horror-game-20261106/",
+    "topics": [
+      "entertainment",
+      "agents"
+    ]
   }
 ]
