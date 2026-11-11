@@ -5,6 +5,13 @@ on:
     paths:
       - 'data/entity_registry.json'
       - 'scripts/site_entities.py'
+      - 'scripts/site_first_inbox.py'
+      - 'scripts/site_first_release_pr.py'
+      - 'tests/test_editorial_entities.py'
+      - 'tests/test_site_first_inbox.py'
+      - 'tests/test_site_first_release_pr.py'
+      - 'editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md'
+      - 'editorial_inbox/README.md'
       - 'scripts/backfill_article_entities.py'
       - 'scripts/upgrade_article_navigation.py'
       - 'tests/test_entity_backfill.py'
@@ -51,6 +58,11 @@ jobs:
               ['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True
           ).splitlines()
           exact = {'data/entity_registry.json', 'scripts/site_entities.py',
+                   'scripts/site_first_inbox.py', 'scripts/site_first_release_pr.py',
+                   'tests/test_editorial_entities.py', 'tests/test_site_first_inbox.py',
+                   'tests/test_site_first_release_pr.py',
+                   'editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md',
+                   'editorial_inbox/README.md',
                    'scripts/backfill_article_entities.py',
                    'scripts/upgrade_article_navigation.py',
                    'tests/test_entity_backfill.py', 'assets/entity-search.js',
