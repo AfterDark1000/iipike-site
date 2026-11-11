@@ -88,7 +88,8 @@ def shell(title, desc, root, content):
             '<meta name="robots" content="noindex,nofollow,noarchive">'
             '<meta name="description" content="' + e(desc) + '">'
             '<title>' + e(title) + ' — ХПИИ (пилот)</title>'
-            '<link rel="stylesheet" href="' + root + 'assets/site.css"></head>'
+            '<link rel="stylesheet" href="' + root + 'assets/site.css">' 
+            '<link rel="stylesheet" href="' + root + 'lab/entities/pilot-icons.css"></head>'
             '<body><header class="header"><div class="wrap bar">'
             '<a class="logo" href="' + root + '"><span class="badge">ХПИ</span>'
             '<span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>'
@@ -100,13 +101,30 @@ def shell(title, desc, root, content):
             '<script defer src="' + root + 'assets/social-footer.js"></script></body></html>\n')
 
 
+ENTITY_ICON_KEYS = frozenset({
+    "google", "openai", "adobe", "disney", "xai", "anthropic",
+    "chatgpt", "grok", "gemini", "claude", "firefly",
+})
+
+
+def icon_markup(key, root, *, large=False):
+    """Locally hosted decorative brand icon; the name remains visible in text."""
+    if key not in ENTITY_ICON_KEYS:
+        raise ValueError("Unregistered entity icon: " + str(key))
+    suffix = " entity-emblem--lg" if large else ""
+    return ('<span class="entity-emblem entity-emblem--' + e(key) + suffix + '">'
+            '<img loading="lazy" decoding="async" src="' + root +
+            'lab/entities/icons/' + e(key) + '.svg" alt=""></span>')
+
+
 def render_index(manifest):
     parts = []
     for kind, title in (("companies", "Компании"), ("products", "Продукты")):
         links = "".join(
-            '<a class="topic-index-link" href="' + kind + '/' + e(row["key"]) + '/">'
-            '<strong>' + e(row["name"]) + '</strong><span>' +
-            str(len(row["article_ids"])) + ' отобранных материалов</span></a>'
+            '<a class="topic-index-link entity-tile" href="' + kind + '/' + e(row["key"]) + '/">' +
+            icon_markup(row["key"], "../../") +
+            '<span class="entity-tile__copy"><strong>' + e(row["name"]) + '</strong><span>' +
+            str(len(row["article_ids"])) + ' отобранных материалов</span></span></a>'
             for row in manifest[kind])
         parts.append('<section><h2>' + title + '</h2><nav class="topic-index-grid" aria-label="' +
                      title + '">' + links + '</nav></section>')
@@ -135,8 +153,9 @@ def render_detail(kind, entry, records):
              if kind == "products" else "")
     body = ('<div class="overline">ХПИИ / Лаборатория / ' +
             ("Компании" if kind == "companies" else "Продукты") + '</div>'
-            '<h1>' + e(entry["name"]) + '</h1>'
-            '<p class="summary">' + e(entry["description"]) + '</p>' + owner +
+            '<div class="entity-hero">' + icon_markup(entry["key"], root, large=True) +
+            '<div><h1>' + e(entry["name"]) + '</h1>'
+            '<p class="summary">' + e(entry["description"]) + '</p></div></div>' + owner +
             '<p class="date">' + str(len(rows)) + ' отобранных материалов · '
             'пилот, не полный архив</p>'
             '<p><a href="../../">← Все компании и продукты</a></p>'
