@@ -1,0 +1,55 @@
+name: HPII — public company/product directory (NO ARTICLE PUBLICATION)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/entity_registry.json'
+      - 'scripts/site_entities.py'
+      - 'scripts/build_sitemap.py'
+      - 'scripts/publish_approved_article.py'
+      - 'tests/test_site_entities.py'
+      - 'tests/test_search_indexing.py'
+      - 'entities/**'
+      - 'assets/entity-icons/**'
+      - 'assets/entities.css'
+      - 'index.html'
+      - 'articles/index.html'
+      - 'sitemap.xml'
+      - '.github/workflows/entity-directory-safety.yml'
+permissions:
+  contents: read
+jobs:
+  verify-directory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install offline test requirements
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Verify entity catalog, sitemap, and whole static site
+        run: |
+          python3 -m scripts.site_entities --check
+          python3 scripts/build_sitemap.py --check
+          python3 scripts/build_topics.py --check
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_home_published.py --check
+          python3 -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Restrict production changes to reviewed taxonomy and navigation
+        run: |
+          git fetch origin main --unshallow || git fetch origin main
+          python3 - <<'PY'
+          import subprocess
+          changed = subprocess.check_output(
+              ['git', 'diff', '--name-only', 'origin/main...HEAD'], text=True
+          ).splitlines()
+          exact = {'data/entity_registry.json', 'scripts/site_entities.py',
+                   'scripts/build_sitemap.py', 'scripts/publish_approved_article.py',
+                   'tests/test_site_entities.py', 'tests/test_search_indexing.py',
+                   'index.html', 'articles/index.html', 'sitemap.xml',
+                   'assets/entities.css', '.github/workflows/entity-directory-safety.yml'}
+          prefixes = ('entities/', 'assets/entity-icons/')
+          unexpected = [x for x in changed if x not in exact and not x.startswith(prefixes)]
+          if unexpected:
+              raise SystemExit('Unexpected editorial/production modifications: ' + str(unexpected))
+          print('Taxonomy-only changes:', len(changed))
+          PY
