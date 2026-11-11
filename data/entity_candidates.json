@@ -181,6 +181,18 @@
           "source_url": "https://www.linkedin.com/company/wpic/"
         }
       ]
+    },
+    {
+      "key": "cianum",
+      "name": "Conseil de l'IA et du numérique (CIANum)",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "france-cianum-ai-flattery-20261110",
+          "source_url": "https://www.conseil-ia-numerique.fr/nos-travaux/proteger-sans-empecher-nos-vulnerabilites-lere-de-lia-generative"
+        }
+      ]
     }
   ],
   "products": [
