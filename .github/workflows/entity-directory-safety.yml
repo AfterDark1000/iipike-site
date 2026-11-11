@@ -8,6 +8,7 @@ on:
       - 'scripts/build_sitemap.py'
       - 'scripts/publish_approved_article.py'
       - 'tests/test_site_entities.py'
+      - 'tests/test_approved_publisher.py'
       - 'tests/test_search_indexing.py'
       - 'entities/**'
       - 'assets/entity-icons/**'
@@ -44,7 +45,8 @@ jobs:
           ).splitlines()
           exact = {'data/entity_registry.json', 'scripts/site_entities.py',
                    'scripts/build_sitemap.py', 'scripts/publish_approved_article.py',
-                   'tests/test_site_entities.py', 'tests/test_search_indexing.py',
+                   'tests/test_site_entities.py', 'tests/test_approved_publisher.py',
+                   'tests/test_search_indexing.py',
                    'index.html', 'articles/index.html', 'sitemap.xml',
                    'assets/entities.css', '.github/workflows/entity-directory-safety.yml'}
           prefixes = ('entities/', 'assets/entity-icons/')
