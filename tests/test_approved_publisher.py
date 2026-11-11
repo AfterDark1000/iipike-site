@@ -55,6 +55,54 @@ class PublisherTests(unittest.TestCase):
         p = self.root / "content" / "approved" / "sample-verified-news.json"
         p.write_text(json.dumps(self.article, ensure_ascii=False), encoding="utf-8")
 
+    def test_explicit_company_product_metadata_updates_only_matching_archives(self):
+        self.article["companies"] = ["disney", "adobe"]
+        self.article["products"] = ["firefly"]
+        self.write_article()
+        original_registry = (ROOT / "data/entity_registry.json").read_bytes()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+        registry_path = self.root / "data/entity_registry.json"
+        self.assertIn(registry_path, outputs)
+        selected = json.loads(outputs[registry_path])
+        companies = {x["key"]: x for x in selected["companies"]}
+        products = {x["key"]: x for x in selected["products"]}
+        for key in ("disney", "adobe"):
+            self.assertIn("sample-verified-news", companies[key]["article_ids"])
+            self.assertIn(self.root / "entities/companies" / key / "index.html", outputs)
+        self.assertIn("sample-verified-news", products["firefly"]["article_ids"])
+        self.assertIn(self.root / "entities/products/firefly/index.html", outputs)
+        page = outputs[self.root / "articles/sample-verified-news/index.html"]
+        for key in ("adobe", "disney"):
+            self.assertIn("../../entities/companies/" + key + "/", page)
+        self.assertIn("../../entities/products/firefly/", page)
+        self.assertIn('class="article-entity-links"', page)
+        self.assertFalse(registry_path.exists(), "Preflight must not write a registry")
+        self.assertEqual((ROOT / "data/entity_registry.json").read_bytes(), original_registry)
+        PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
+        self.assertEqual(registry_path.read_text(encoding="utf-8"), outputs[registry_path])
+        article = json.loads((self.root / "news.json").read_text(encoding="utf-8"))[-1]
+        self.assertEqual(article["companies"], ["disney", "adobe"])
+        self.assertEqual(article["products"], ["firefly"])
+        self.assertEqual((ROOT / "data/entity_registry.json").read_bytes(), original_registry)
+
+    def test_product_selects_its_owner_without_naming_unrelated_companies(self):
+        self.article["companies"], self.article["products"] = [], ["grok"]
+        self.write_article()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news")
+        page = outputs[self.root / "articles/sample-verified-news/index.html"]
+        self.assertIn("../../entities/companies/xai/", page)
+        self.assertIn("../../entities/products/grok/", page)
+        self.assertNotIn("../../entities/companies/google/", page)
+        self.assertEqual(json.loads(outputs[self.root / "news.json"])[-1]["companies"], ["xai"])
+
+    def test_unknown_editorial_company_product_never_publishes(self):
+        self.article["companies"] = ["unknown-robotic-startup"]
+        self.write_article()
+        with self.assertRaisesRegex(ValueError, "Unknown"):
+            PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
+        self.assertFalse((self.root / "data/entity_registry.json").exists())
+        self.assertFalse((self.root / "articles").exists())
+
     def test_preflight_never_writes_anything(self):
         prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml", self.root / "index.html")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
