@@ -6,6 +6,8 @@ on:
     paths:
       - 'scripts/backfill_article_entities.py'
       - 'scripts/build_entity_pilot.py'
+      - 'scripts/upgrade_article_navigation.py'
+      - 'tests/test_article_entity_tags.py'
 permissions:
   contents: write
 jobs:

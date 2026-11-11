@@ -46,7 +46,7 @@ class ArticleEntityTagsTests(unittest.TestCase):
             page = ROOT / "articles" / article_id / "index.html"
             after = page.read_text(encoding="utf-8")
             nav = render_article_entity_nav(article_id, self.registry)
-            before = after.replace(nav, "", 1).replace(CSS + "\n", "", 1)
+            before = after.replace(nav, "", 1).replace("\n" + CSS, "", 1)
             rebuilt = inject_article_entity_nav(before, article_id, self.registry)
             self.assertEqual(rebuilt, after, article_id)
             self.assertEqual(inject_article_entity_nav(after, article_id, self.registry), after)
