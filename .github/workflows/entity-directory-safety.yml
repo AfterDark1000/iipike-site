@@ -63,6 +63,7 @@ jobs:
                    'tests/test_site_first_release_pr.py',
                    'editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md',
                    'editorial_inbox/README.md',
+                   '.github/workflows/site-first-inbox-safety.yml',
                    'scripts/backfill_article_entities.py',
                    'scripts/upgrade_article_navigation.py',
                    'tests/test_entity_backfill.py', 'assets/entity-search.js',
