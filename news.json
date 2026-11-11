@@ -4435,5 +4435,21 @@
       "engineering",
       "science"
     ]
+  },
+  {
+    "title": "Instagram ищет подростков даже среди «взрослых» аккаунтов",
+    "summary": "Meta объявила о глобальном расширении ИИ-проверки возраста в Instagram. Система ищет вероятных подростков 13–17 лет даже среди аккаунтов с указанным взрослым возрастом и переводит их в защищённый режим Teen Accounts. Аналогичный механизм планируется для Threads.",
+    "published": "2026-11-11",
+    "source_url": "https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/",
+    "cover": "assets/editorial/meta-instagram-ai-teen-age-global-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T12:15:35Z",
+    "event_date": "2026-11-09",
+    "id": "meta-instagram-ai-teen-age-global-20261109",
+    "url": "articles/meta-instagram-ai-teen-age-global-20261109/",
+    "topics": [
+      "society",
+      "safety"
+    ]
   }
 ]
