@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 19 · **Готовы:** 0 · **Ждут интервал:** 19 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 59
+**В очереди:** 20 · **Готовы:** 0 · **Ждут интервал:** 20 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Уже опубликованы:** 59
 
 Проверка каждые 15 минут; не более одной статьи за запуск с интервалом не менее 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -31,6 +31,7 @@
 | **17** | [Google испытала Gemini Robotics 2.5 на заводах Mercedes-Benz: 96% удачных операций](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-robotics-2-5-mercedes-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 15:07 (Усть-Катав)**; пауза до 11.11.2026 17:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-robotics-2-5-mercedes-20261110.webp) |
 | **18** | [Европа хочет свой ИИ для поиска военных целей: Helsing бросает вызов Palantir](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/helsing-european-military-ai-palantir-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 16:07 (Усть-Катав)**; пауза до 11.11.2026 17:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/helsing-european-military-ai-palantir-20261110.webp) |
 | **19** | [Mercor привлекла $750 млн: инвесторы оценили бизнес на обучении ИИ в $20 млрд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mercor-series-d-750m-20b-valuation-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 17:07 (Усть-Катав)**; пауза до 11.11.2026 17:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mercor-series-d-750m-20b-valuation-20261110.webp) |
+| **20** | [ИИ-агент попытался открыть облако всему интернету. Bay привлекла $50 млн на защиту](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/bay-ai-agent-security-50m-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 12.11.2026 18:07 (Усть-Катав)**; пауза до 11.11.2026 17:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bay-ai-agent-security-50m-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
