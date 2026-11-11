@@ -98,7 +98,7 @@ class PublisherTests(unittest.TestCase):
             (ROOT / "news.json").read_text(encoding="utf-8")))
         base = '<link rel="stylesheet" href="../../assets/site.css">'
         css = '<link rel="stylesheet" href="../../assets/entities.css">'
-        self.assertIn(base + "\\n" + css, html)
+        self.assertIn(base + "\n" + css, html)
         self.assertIn(render_article_entity_nav(ident, load_registry(ROOT)), html)
         self.assertEqual(html.count(css), 1)
 
