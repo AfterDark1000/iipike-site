@@ -27,6 +27,7 @@ from scripts.site_rubrics import RUBRICS
 from scripts.site_rich_text import validate_blocks, markdown_to_blocks, IMAGE_SOURCE, image_asset
 from scripts.site_related import explicit_site_crosslinks
 from scripts.site_topics import validate_topics, infer_topics
+from scripts.site_entities import load_registry, validate_editor_entities
 
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 STORY_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -34,7 +35,7 @@ COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "site_publish_at", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "companies", "products", "site_publish_at", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -74,6 +75,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
         required_text(data, name, limit)
     if "topics" in data:
         validate_topics(data["topics"])
+    if "companies" in data or "products" in data:
+        validate_editor_entities(load_registry(ROOT), data.get("companies"), data.get("products"))
     original = required_text(data, "source_url", 2000)
     u = urlsplit(original)
     if (u.scheme != "https" or not u.hostname or u.username or u.password or
@@ -122,6 +125,11 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
         if ("article_markdown" in data and
                 approved.get("article_markdown") != data["article_markdown"]):
             raise ValueError("Published editor Markdown differs from inbox original")
+        if "companies" in data or "products" in data:
+            selected = validate_editor_entities(
+                load_registry(ROOT), data.get("companies"), data.get("products"))
+            if (approved.get("companies", []), approved.get("products", [])) != selected:
+                raise ValueError("Published entity choices differ from editor-approved record")
         if approved.get("site_crosslinks", {}) != data.get("site_crosslinks", {}):
             raise ValueError("Site-only crosslink mapping differs from inbox original")
         if ("paragraphs" in data and
@@ -242,6 +250,10 @@ def stage(root, story_id, *, apply=False, now=None):
         "topics": (validate_topics(data["topics"]) if "topics" in data
                    else infer_topics(data["title"], data["summary"])),
     }
+    if "companies" in data or "products" in data:
+        companies, products = validate_editor_entities(
+            load_registry(ROOT), data.get("companies"), data.get("products"))
+        approved["companies"], approved["products"] = companies, products
     if "article_markdown" in data:
         # Keep the unmodified source next to generated blocks for provenance
         # and parity validation by the actual publisher.
