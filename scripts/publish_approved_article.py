@@ -25,8 +25,10 @@ from scripts.site_related import catalog_entries, validate_reference, validate_l
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
 from scripts.site_related_cards import select_site_card, remove_duplicate_related_ids
-from scripts.site_entities import render_article_entity_nav, load_registry
-from scripts.site_entities import entity_urls, load_registry
+from scripts.site_entities import (render_article_entity_nav, load_registry,
+                                   validate_editor_entities, append_editor_entities,
+                                   validate_public_registry, render_all_entities,
+                                   entity_urls)
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
@@ -148,6 +150,8 @@ def approved_article(root, slug):
         raise ValueError("cover must be an existing local assets image")
     if "topics" in data:
         validate_topics(data["topics"])
+    if "companies" in data or "products" in data:
+        validate_editor_entities(load_registry(ROOT), data.get("companies"), data.get("products"))
     # Share exactly one schema with the ChatGPT intake validator so that the
     # approved article retains the editor's full inline and block formatting.
     validate_blocks(data.get("paragraphs"))
@@ -218,7 +222,7 @@ def site_article_sources(blocks, primary_url):
                 return blocks[:-1], ([] if url == primary_url else [(label, url)])
     return blocks, []
 
-def render_article(data, records=None, catalog=None):
+def render_article(data, records=None, catalog=None, registry=None):
     slug = data["slug"]
     url = f"{BASE}/articles/{slug}/"
     title, summary = quote(data["title"]), quote(data["summary"])
@@ -231,7 +235,7 @@ def render_article(data, records=None, catalog=None):
     topic_values = (current.get("topics") if "topics" in current
                     else data.get("topics", []))
     topic_html = render_topic_links(topic_values)
-    entity_html = render_article_entity_nav(slug, load_registry(ROOT))
+    entity_html = render_article_entity_nav(slug, registry if registry is not None else load_registry(ROOT))
     entity_css = '<link rel="stylesheet" href="../../assets/entities.css">' if entity_html else ""
     # A historical Dzen migration already starts with its original lead.
     # Keep the summary for metadata/cards, but not as duplicated page text.
@@ -450,10 +454,19 @@ def publish(root, slug, apply=False):
     row["url"] = f"articles/{slug}/"
     row["topics"] = (validate_topics(data["topics"]) if "topics" in data
                      else infer_topics(data["title"], data["summary"]))
+    base_registry = load_registry(root if (root / "data/entity_registry.json").is_file() else ROOT)
+    companies, products = validate_editor_entities(
+        base_registry, data.get("companies"), data.get("products"))
+    selected = bool(companies or products)
+    next_registry = append_editor_entities(base_registry, slug, companies, products)
+    if "companies" in data or "products" in data:
+        row["companies"], row["products"] = companies, products
     updated = entries + [row]
+    if selected:
+        validate_public_registry(next_registry, updated)
     catalog = catalog_entries(root) if data.get("dzen_id") or data.get("related_dzen_ids") else {}
     outputs = {
-        dest: render_article(data, updated, catalog),
+        dest: render_article(data, updated, catalog, registry=next_registry),
         entries_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
@@ -463,6 +476,10 @@ def publish(root, slug, apply=False):
     }
     outputs.update(render_all(updated, root))
     outputs.update(render_all_topics(updated, root))
+    if selected:
+        outputs[root / "data/entity_registry.json"] = (
+            json.dumps(next_registry, ensure_ascii=False, indent=2) + "\n")
+        outputs.update(render_all_entities(updated, root, registry=next_registry))
     # Refresh prior approved pages so their related links point internally
     # when a linked target migrates; manually authored pilot is unchanged.
     for record in entries:
@@ -474,7 +491,7 @@ def publish(root, slug, apply=False):
             prior = approved_article(root, old_slug)
             if prior.get("related_dzen_ids") and not catalog:
                 catalog = catalog_entries(root)
-            outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog)
+            outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog, registry=next_registry)
 
     if apply:
         for path, contents in outputs.items():

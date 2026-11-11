@@ -55,6 +55,41 @@ class SiteFirstInboxTests(unittest.TestCase):
         im.save(dest, format="WEBP", quality=88)
         self.assertGreater(dest.stat().st_size, 15_000)
 
+    def test_editor_entity_choices_reach_approved_json_unchanged(self):
+        self.story["companies"] = ["google"]
+        self.story["products"] = ["gemini"]
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(staged["companies"], ["google"])
+        self.assertEqual(staged["products"], ["gemini"])
+        approved = approved_article(self.root, ID)
+        self.assertEqual(approved["companies"], ["google"])
+        self.assertEqual(approved["products"], ["gemini"])
+
+    def test_product_fills_owner_and_unknown_key_fails_closed(self):
+        self.story["companies"], self.story["products"] = [], ["grok"]
+        self.save_story()
+        selected = validate_story(self.root, ID, today=UTC.date())
+        self.assertEqual(selected["products"], ["grok"])
+        self.save_cover()
+        staged = stage(self.root, ID, apply=False, now=UTC)
+        self.assertEqual(staged["companies"], ["xai"])
+        self.assertEqual(staged["products"], ["grok"])
+        self.story["products"] = ["invented-agent"]
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "Unknown"):
+            validate_story(self.root, ID, today=UTC.date())
+
+    def test_empty_entity_arrays_and_legacy_missing_fields_are_valid(self):
+        self.story["companies"], self.story["products"] = [], []
+        self.save_story()
+        validate_story(self.root, ID, today=UTC.date())
+        self.story.pop("companies")
+        self.story.pop("products")
+        self.save_story()
+        validate_story(self.root, ID, today=UTC.date())
+
     def test_no_cover_leaves_site_unchanged(self):
         self.assertIsNone(stage(self.root, ID, apply=True, now=UTC))
         self.assertFalse((self.root / "content").exists())

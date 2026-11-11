@@ -9,6 +9,18 @@ ID = "news-example-20261104"
 
 
 class SiteFirstReleaseSelectionTests(unittest.TestCase):
+    def test_entity_registry_and_pages_are_known_release_outputs(self):
+        from scripts.site_first_release_pr import proposed_changes
+        class Result:
+            stdout = (" M data/entity_registry.json\n"
+                      " M entities/index.html\n"
+                      " M entities/companies/google/index.html\n")
+        with patch("scripts.site_first_release_pr.git", return_value=Result()):
+            paths = proposed_changes()
+        self.assertIn("data/entity_registry.json", paths)
+        self.assertIn("entities/companies/google/index.html", paths)
+
+
     def test_only_exact_named_inbox_paths_are_candidates(self):
         event = {
             "commits": [
