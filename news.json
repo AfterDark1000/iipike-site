@@ -4467,5 +4467,21 @@
       "infrastructure",
       "engineering"
     ]
+  },
+  {
+    "title": "Распознавание речи на 22 языках Индии уместили в файлы по 30 МБ",
+    "summary": "Udgam Labs представила Shruti — 22 компактные модели распознавания речи для языков Индии, каждая весит менее 30 МБ, дополнительно распознаёт английский и работает на смартфоне без интернета после загрузки. Веса доступны под Apache 2.0; точность в живой речи пока ограничена.",
+    "published": "2026-11-11",
+    "source_url": "https://github.com/udgamlabs/shruti",
+    "cover": "assets/editorial/shruti-22-indian-languages-offline-asr-20261108.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-11T14:30:46Z",
+    "event_date": "2026-11-08",
+    "id": "shruti-22-indian-languages-offline-asr-20261108",
+    "url": "articles/shruti-22-indian-languages-offline-asr-20261108/",
+    "topics": [
+      "audio",
+      "models"
+    ]
   }
 ]
