@@ -3,6 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 from scripts.site_topics import TOPICS, active_topics
+from scripts.site_entities import entity_urls, load_registry
 import shutil
 import tempfile
 import unittest
@@ -92,7 +93,8 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(guid, "https://afterdark1000.github.io/iipike-site/articles/google-search-ai-links/")
         site = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
         locs = [x.text for x in site.iter() if x.tag.endswith("}loc")]
-        self.assertEqual(len(locs), len(records) + 3 + 4 + len(active_topics(records)))
+        self.assertEqual(len(locs), len(records) + 3 + 4 + len(active_topics(records))
+                         + len(entity_urls(load_registry(ROOT))))
         self.assertIn("https://iipike.ru/topics/", locs)
         self.assertIn("https://iipike.ru/rubrics/news/", locs)
         self.assertIn("https://iipike.ru/articles/sample-verified-news/", locs)

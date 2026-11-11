@@ -25,6 +25,7 @@ from scripts.site_related import catalog_entries, validate_reference, validate_l
 from scripts.site_home import update_home
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
 from scripts.site_related_cards import select_site_card, remove_duplicate_related_ids
+from scripts.site_entities import entity_urls, load_registry
 from scripts.build_dzen_rss import render as render_dzen_rss
 from scripts.site_topics import (validate_topics, infer_topics, render_topic_links,
                                  render_all_topics, active_topics)
@@ -361,6 +362,7 @@ def render_catalog(records):
 <h1>Все статьи</h1><p class="summary">Опубликованные материалы с проверенными источниками. Черновики здесь не появляются.</p>
 <nav class="rubric-navigation" aria-label="Рубрики">{navigation("../")}</nav>
 <p class="topic-directory"><a href="../topics/">Все темы материалов →</a></p>
+<p class="topic-directory"><a href="../entities/">Компании и продукты →</a></p>
 <section class="archive"><h2>Публикации</h2>{cards}</section></main>
 <footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
 <script defer src="../assets/social-footer.js"></script></body></html>
@@ -408,6 +410,7 @@ def render_sitemap(records):
             + [BASE + "/rubrics/" + key + "/" for key in populated(records)]
             + [BASE + "/topics/"]
             + [BASE + "/topics/" + key + "/" for key in active_topics(records)]
+            + entity_urls(load_registry(ROOT))
             + [BASE + "/" + r["url"] for r in records])
     updates = {BASE + "/" + row["url"]: row["modified_at_utc"] for row in records
                if row.get("modified_at_utc")}

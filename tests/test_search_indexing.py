@@ -8,6 +8,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from scripts.site_rubrics import populated
 from scripts.site_topics import active_topics
+from scripts.site_entities import entity_urls, load_registry
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
@@ -36,6 +37,7 @@ class SearchIndexingTests(unittest.TestCase):
                     ([BASE + "/topics/"] +
                      [BASE + "/topics/" + key + "/" for key in active_topics(self.records)]
                      if (ROOT / "topics" / "index.html").is_file() else []) +
+                    entity_urls(load_registry(ROOT)) +
                     [BASE + "/" + row["url"] for row in self.records])
         self.assertEqual(urls, expected)
         self.assertEqual(len(urls), len(set(urls)))

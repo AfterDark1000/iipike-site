@@ -1,0 +1,24 @@
+/* Entity directory only: referenced by public /entities/ pages, not globally. */
+.entity-tile{display:grid;grid-template-columns:54px minmax(0,1fr);align-items:center;column-gap:15px;min-height:94px;padding:16px;border-radius:12px;transition:border-color .16s,box-shadow .16s,transform .16s}
+.entity-tile:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(36,42,46,.07)}
+.entity-tile:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.entity-tile__copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+.entity-tile .entity-tile__copy strong{font:700 19px/1.25 Georgia,serif;color:var(--ink)}
+.entity-tile .entity-tile__copy>span{color:var(--muted);font-size:12px;line-height:1.4}
+.entity-emblem{display:grid;place-items:center;flex:0 0 auto;width:54px;height:54px;border:1px solid rgba(0,0,0,.08);border-radius:15px;background:#f3f3f1}
+.entity-emblem img{width:33px;height:33px;max-width:75%;max-height:75%;object-fit:contain}
+.entity-emblem--lg{width:76px;height:76px;border-radius:20px}
+.entity-emblem--lg img{width:48px;height:48px}
+.entity-emblem--google,.entity-emblem--gemini{background:#f6f9ff}
+.entity-emblem--openai{background:#eff4f0}
+.entity-emblem--chatgpt{background:#137e64}
+.entity-emblem--adobe,.entity-emblem--firefly{background:#fff1ef}
+.entity-emblem--disney{background:#edf0f8}
+.entity-emblem--xai,.entity-emblem--grok{background:#eef0f2}
+.entity-emblem--anthropic{background:#f3ece4}
+.entity-emblem--claude{background:#faeee5}
+.entity-hero{display:flex;gap:20px;align-items:center;margin:28px 0 16px}
+.entity-hero h1{margin:0 0 3px}
+.entity-hero .summary{margin:0}
+@media(max-width:560px){.entity-tile{grid-template-columns:48px minmax(0,1fr);min-height:84px;padding:13px;gap:12px}.entity-emblem{width:48px;height:48px;border-radius:13px}.entity-emblem img{width:30px;height:30px}.entity-emblem--lg{width:62px;height:62px;border-radius:17px}.entity-emblem--lg img{width:40px;height:40px}.entity-hero{gap:13px;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.entity-tile{transition:none}.entity-tile:hover{transform:none}}

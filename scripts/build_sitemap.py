@@ -16,6 +16,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import populated, RUBRICS
 from scripts.site_topics import active_topics
+from scripts.site_entities import entity_urls, load_registry
 BASE = "https://iipike.ru"
 SITEMAP = ROOT / "sitemap.xml"
 SLUG_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/")
@@ -44,9 +45,21 @@ def get_urls():
             contents = page.read_text(encoding="utf-8")
             if f'rel="canonical" href="{BASE}/topics/{key}/"' not in contents:
                 raise ValueError("Invalid topic canonical for " + key)
-            if re.search(r'<meta\s+name=["\']robots["\'][^>]*noindex', contents, re.IGNORECASE):
+            if re.search(r"<meta[^>]*name=.robots.[^>]*noindex", contents, re.IGNORECASE):
                 raise ValueError("Populated topic page is noindex: " + key)
             urls.append(BASE + "/topics/" + key + "/")
+    # Public company/product archives contain only curated, published stories.
+    # Require their canonical pages to exist before exposing them to search.
+    for url in entity_urls(load_registry(ROOT)):
+        path = ROOT / url.removeprefix(BASE + "/") / "index.html"
+        if not path.is_file():
+            raise ValueError("Entity page missing: " + str(path))
+        contents = path.read_text(encoding="utf-8")
+        if f'rel="canonical" href="{url}"' not in contents:
+            raise ValueError("Invalid entity canonical for " + url)
+        if re.search(r"<meta[^>]*name=.robots.[^>]*noindex", contents, re.IGNORECASE):
+            raise ValueError("Public entity page is noindex: " + url)
+        urls.append(url)
     seen = set()
     for item in records:
         if not isinstance(item, dict):
