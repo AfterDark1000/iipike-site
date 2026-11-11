@@ -236,7 +236,11 @@ def render_article(data, records=None, catalog=None, registry=None):
                     else data.get("topics", []))
     topic_html = render_topic_links(topic_values)
     entity_html = render_article_entity_nav(slug, registry if registry is not None else load_registry(ROOT))
-    entity_css = '<link rel="stylesheet" href="../../assets/entities.css">' if entity_html else ""
+    # Keep the same newline before the entity stylesheet as the curated
+    # historical HTML. Old approved pages are re-rendered on every release;
+    # identical formatting is required for reversible header-only tests.
+    entity_css = ('\n<link rel="stylesheet" href="../../assets/entities.css">'
+                  if entity_html else "")
     # A historical Dzen migration already starts with its original lead.
     # Keep the summary for metadata/cards, but not as duplicated page text.
     summary_display = '' if data.get("dzen_id") else f'<p class="summary">{summary}</p>'

@@ -85,6 +85,23 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(article["products"], ["firefly"])
         self.assertEqual((ROOT / "data/entity_registry.json").read_bytes(), original_registry)
 
+    def test_regenerated_tagged_article_uses_historical_css_line_layout(self):
+        # A release refreshes old approved pages. That re-render must not
+        # introduce a same-line CSS link which fails the header-only regression.
+        import json
+        from scripts.site_entities import render_article_entity_nav
+        ident = "disney-adobe-firefly-foundry-alliance-20261109"
+        source = ROOT / "content" / "approved" / (ident + ".json")
+        self.assertTrue(source.is_file())
+        data = json.loads(source.read_text(encoding="utf-8"))
+        html = PUBLISHER.render_article(data, json.loads(
+            (ROOT / "news.json").read_text(encoding="utf-8")))
+        base = '<link rel="stylesheet" href="../../assets/site.css">'
+        css = '<link rel="stylesheet" href="../../assets/entities.css">'
+        self.assertIn(base + "\n" + css, html)
+        self.assertIn(render_article_entity_nav(ident, load_registry(ROOT)), html)
+        self.assertEqual(html.count(css), 1)
+
     def test_product_selects_its_owner_without_naming_unrelated_companies(self):
         self.article["companies"], self.article["products"] = [], ["grok"]
         self.write_article()
