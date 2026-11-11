@@ -145,6 +145,18 @@
           "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
         }
       ]
+    },
+    {
+      "key": "higgsfield",
+      "name": "Higgsfield",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
+          "source_url": "https://higgsfield.ai/miracle"
+        }
+      ]
     }
   ],
   "products": [
@@ -236,6 +248,19 @@
         {
           "article_id": "path-robotics-series-e-300m-20261110",
           "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+        }
+      ]
+    },
+    {
+      "key": "miracle",
+      "name": "Miracle",
+      "company": "higgsfield",
+      "status": "candidate",
+      "first_seen": "2026-11-11",
+      "evidence": [
+        {
+          "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
+          "source_url": "https://higgsfield.ai/miracle"
         }
       ]
     }
