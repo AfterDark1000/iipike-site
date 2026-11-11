@@ -138,6 +138,12 @@
       "utc_date": "2026-11-10",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart/",
       "source_title": "NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart"
+    },
+    {
+      "id": "19b4fcb1faac9c9bdbcc",
+      "utc_date": "2026-11-11",
+      "source_url": "https://huggingface.co/blog/qvac/botpsy",
+      "source_title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model"
     }
   ]
 }

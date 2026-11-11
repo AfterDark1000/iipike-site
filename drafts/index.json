@@ -1,5 +1,12 @@
 [
   {
+    "id": "19b4fcb1faac9c9bdbcc",
+    "date": "2026-11-11",
+    "title": "Tether AI Research представила BotPsy — компактного ИИ-агента для локальных устройств",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/qvac/botpsy"
+  },
+  {
     "id": "bb7c940ecd4bccd63701",
     "date": "2026-11-10",
     "title": "NVIDIA Nemotron 3.5 Super VL: гибридный ИИ-гигант с памятью на миллион токенов",
