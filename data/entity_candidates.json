@@ -549,6 +549,45 @@
           "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors"
         }
       ]
+    },
+    {
+      "key": "claude-sheets",
+      "name": "Claude Sheets",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
+          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+        }
+      ]
+    },
+    {
+      "key": "claude-whiteboards",
+      "name": "Claude Whiteboards",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
+          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+        }
+      ]
+    },
+    {
+      "key": "claude-data",
+      "name": "Claude Data",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
+          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+        }
+      ]
     }
   ]
 }
