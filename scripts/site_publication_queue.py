@@ -135,70 +135,75 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
             covers.setdefault(im[1], []).append(path)
     ready = []
     for sid in sorted(stories):
-        source = f"editorial_inbox/stories/{sid}.json"
-        if exists_at(main_ref, f"articles/{sid}/index.html"):
-            continue
-        matched = covers.get(sid, [])
-        if not matched:
-            print("AWAITING_COVER:", sid, flush=True)
-            continue
-        if len(matched) != 1:
-            raise ValueError("Multiple covers for " + sid)
-        raw = safe_git_blob_at(ref, source)
-        if len(raw) > 128_000:
-            raise ValueError("Overlarge pending editorial story: " + sid)
-        story = json.loads(raw)
-        if (not isinstance(story, dict) or story.get("id") != sid or
-                story.get("status") != "editor_approved" or
-                story.get("approved_by") != "human_editor"):
-            raise ValueError("Unapproved or inconsistent pending story: " + sid)
-        # A malformed approved Markdown article must not repeatedly block
-        # every other ready story at each scheduled run. The full publisher
-        # still revalidates the selected article before any publication.
         try:
-            blocks = (markdown_to_blocks(story["article_markdown"])
-                      if "article_markdown" in story else story.get("paragraphs", []))
-        except (ValueError, TypeError) as exc:
-            print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
-            continue
-        illustrations = []
-        for block in blocks:
-            if block["type"] != "image":
+            source = f"editorial_inbox/stories/{sid}.json"
+            if exists_at(main_ref, f"articles/{sid}/index.html"):
                 continue
-            image_path = block["src"]
-            match = IMAGE_SOURCE.fullmatch(image_path)
-            if match is None or match.group("story") != sid:
-                raise ValueError("Illustration ID mismatch in " + sid)
-            illustrations.append("editorial_inbox/" + image_path)
-        missing = [name for name in illustrations if name not in available]
-        if missing:
-            print("AWAITING_ILLUSTRATIONS:", sid, ", ".join(missing), flush=True)
-            continue
-        # Do not let one stale optional Dzen crosslink stop the entire queue.
-        # This is only a scheduling filter, NOT a waiver of publication checks:
-        # the approved publisher still validates every related reference.
-        related = story.get("related_dzen_ids", [])
-        if related or story.get("site_crosslinks"):
+            matched = covers.get(sid, [])
+            if not matched:
+                print("AWAITING_COVER:", sid, flush=True)
+                continue
+            if len(matched) != 1:
+                raise ValueError("Multiple covers for " + sid)
+            raw = safe_git_blob_at(ref, source)
+            if len(raw) > 128_000:
+                raise ValueError("Overlarge pending editorial story: " + sid)
+            story = json.loads(raw)
+            if (not isinstance(story, dict) or story.get("id") != sid or
+                    story.get("status") != "editor_approved" or
+                    story.get("approved_by") != "human_editor"):
+                raise ValueError("Unapproved or inconsistent pending story: " + sid)
+            # A malformed approved Markdown article must not repeatedly block
+            # every other ready story at each scheduled run. The full publisher
+            # still revalidates the selected article before any publication.
             try:
-                # Published site records, not guessed Dzen publication IDs,
-                # authorize site-only link translations.
-                links = explicit_site_crosslinks(
-                    story, json.loads(safe_git_blob_at(main_ref, "news.json"))
-                )
-                validate_links(related, catalog_entries(ROOT),
-                               site_crosslinks=links)
-            except ValueError as exc:
-                if not str(exc).startswith("Unverified Dzen article reference: "):
-                    raise
-                print("BLOCKED_UNVERIFIED_DZEN_REFERENCE:", sid, str(exc), flush=True)
+                blocks = (markdown_to_blocks(story["article_markdown"])
+                          if "article_markdown" in story else story.get("paragraphs", []))
+            except (ValueError, TypeError) as exc:
+                print("BLOCKED_INVALID_MARKDOWN:", sid, str(exc), flush=True)
                 continue
-        earliest = parse_slot(story["site_publish_at"]) if "site_publish_at" in story else None
-        ready_at = max(_last_change(ref, path) for path in
-                       [source, matched[0], *illustrations])
-        ready.append({
-            "id": sid, "ready_at": ready_at, "not_before": earliest,
-            "cover": matched[0],
-        })
+            illustrations = []
+            for block in blocks:
+                if block["type"] != "image":
+                    continue
+                image_path = block["src"]
+                match = IMAGE_SOURCE.fullmatch(image_path)
+                if match is None or match.group("story") != sid:
+                    raise ValueError("Illustration ID mismatch in " + sid)
+                illustrations.append("editorial_inbox/" + image_path)
+            missing = [name for name in illustrations if name not in available]
+            if missing:
+                print("AWAITING_ILLUSTRATIONS:", sid, ", ".join(missing), flush=True)
+                continue
+            # Do not let one stale optional Dzen crosslink stop the entire queue.
+            # This is only a scheduling filter, NOT a waiver of publication checks:
+            # the approved publisher still validates every related reference.
+            related = story.get("related_dzen_ids", [])
+            if related or story.get("site_crosslinks"):
+                try:
+                    # Published site records, not guessed Dzen publication IDs,
+                    # authorize site-only link translations.
+                    links = explicit_site_crosslinks(
+                        story, json.loads(safe_git_blob_at(main_ref, "news.json"))
+                    )
+                    validate_links(related, catalog_entries(ROOT),
+                                   site_crosslinks=links)
+                except ValueError as exc:
+                    if not str(exc).startswith("Unverified Dzen article reference: "):
+                        raise
+                    print("BLOCKED_UNVERIFIED_DZEN_REFERENCE:", sid, str(exc), flush=True)
+                    continue
+            earliest = parse_slot(story["site_publish_at"]) if "site_publish_at" in story else None
+            ready_at = max(_last_change(ref, path) for path in
+                           [source, matched[0], *illustrations])
+            ready.append({
+                "id": sid, "ready_at": ready_at, "not_before": earliest,
+                "cover": matched[0],
+            })
+        except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
+            print("BLOCKED_INVALID_STORY:", sid,
+                  " ".join(str(exc).split())[:350], flush=True)
+            continue
     return sorted(ready, key=lambda x: (x["ready_at"], x["id"]))
 
 
@@ -240,6 +245,44 @@ def without_published_collisions(items, published, *, source_ref):
             continue
         eligible.append(item)
     return eligible
+
+
+def select_publishable_item(items, rows, now, *, source_ref,
+                            target=None, urgent=False):
+    """Skip/record article-specific preflight defects; release at most ONE.
+
+    Source and cover remain immutable in editorial-intake. A quarantine
+    marker blocks the same broken version on future cycles and becomes stale
+    automatically when editorial content or validator code changes.
+    Infrastructure errors are never treated as bad articles.
+    """
+    from scripts.site_release_quarantine import (
+        existing_error, preflight_article, record_article_error)
+    remaining = list(items)
+    while remaining:
+        item = select_one(remaining, rows, now, target=target, urgent=urgent)
+        if item is None:
+            return None
+        problem = existing_error(source_ref, item)
+        if problem is not None:
+            print("BLOCKED_ARTICLE_ERROR:", item["id"],
+                  problem.get("reason", "Already quarantined"), flush=True)
+        else:
+            try:
+                preflight_article(source_ref, item, rows)
+            except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
+                # Persist first, so a failed API operation cannot quietly
+                # drop an article from the queue without a visible incident.
+                reason = " ".join(str(exc).split())[:350]
+                record_article_error(source_ref, item, exc)
+                print("BLOCKED_ARTICLE_ERROR:", item["id"], reason, flush=True)
+            else:
+                return item
+        if target:
+            raise ValueError("Requested article is blocked by validation; "
+                             "no unrelated article released")
+        remaining = [x for x in remaining if x["id"] != item["id"]]
+    return None
 
 
 def select_one(items, rows, now, *, target=None, urgent=False):
@@ -315,8 +358,8 @@ def main():
     if inspect_only:
         print("INSPECTION_ONLY: queue checked, no release allowed", flush=True)
         return
-    item = select_one(pending, live, now,
-                      target=target, urgent=urgent)
+    item = select_publishable_item(pending, live, now, source_ref=source_ref,
+                                   target=target, urgent=urgent)
     if not item:
         print("NO_DUE_STORY: No article released", flush=True)
         return
