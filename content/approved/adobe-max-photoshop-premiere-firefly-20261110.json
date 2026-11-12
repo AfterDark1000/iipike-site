@@ -1,0 +1,83 @@
+{
+  "slug": "adobe-max-photoshop-premiere-firefly-20261110",
+  "status": "approved",
+  "approved_by": "Редактор ХПИИ — подтверждено человеком",
+  "approved_at": "2026-11-11",
+  "title": "Adobe научила Photoshop менять ракурс, а Premiere — генерировать видео",
+  "summary": "Adobe представила новые ИИ-инструменты для Photoshop, Premiere и Firefly: изменение ракурса и композиции изображений, генерацию видео и звука на монтажной дорожке, агентные творческие инструменты и планы интеграции с Google и Microsoft. Часть возможностей находится в бета-версии, интеграция сторонних агентов ожидается в 2027 году.",
+  "rubric": "news",
+  "section": "НОВОСТИ ИИ",
+  "source_url": "https://blog.adobe.com/en/publish/2026/11/10/explore-new-ways-create-across-creative-cloud-adobe-firefly-while-advancing-craft-precision-choice-control",
+  "source_title": "Adobe — Explore new ways to create across Creative Cloud and Adobe Firefly, 10 November 2026",
+  "published": "2026-11-12",
+  "published_at_utc": "2026-11-12T07:48:29Z",
+  "cover": "assets/editorial/adobe-max-photoshop-premiere-firefly-20261110.webp",
+  "paragraphs": [
+    {
+      "type": "lead",
+      "text": "**Adobe** 10 ноября на конференции **Adobe MAX 2026** представила новые ИИ-инструменты для **Photoshop**, **Premiere** и **Firefly**. Теперь можно менять ракурс готового изображения, генерировать недостающие кадры прямо во время видеомонтажа и поручать часть творческой работы ИИ-агентам."
+    },
+    {
+      "type": "p",
+      "text": "В бета-версии Photoshop появилась функция **Camera Angles**. Она позволяет выбрать другую точку обзора готовой картинки. **Generative Recompose** перестраивает композицию под новый формат кадра, а **Convert to Text Layers** превращает надписи на обычном изображении в редактируемые текстовые слои."
+    },
+    {
+      "type": "p",
+      "text": "Premiere получил инструмент **Generative Media**. Он создаёт видеофрагменты, музыку и звуковые эффекты прямо на монтажной дорожке. Можно использовать модели Adobe и других разработчиков, включая Google, Kling, Runway и Luma."
+    },
+    {
+      "type": "p",
+      "text": "Например, если при монтаже не хватает короткого кадра, его можно сгенерировать, сразу вставить в нужное место и продолжить работу. В бета-версии появилась также возможность удалять из готового видео лишние объекты — например, попавший в кадр микрофон."
+    },
+    {
+      "type": "p",
+      "text": "Firefly пополнился тремя инструментами. **Firefly Design** объединяет работу с изображениями, анимацией и 3D на одном рабочем поле. **Firefly Graph** позволяет создавать повторяемые цепочки обработки материалов. Оба инструмента находятся в бета-тестировании."
+    },
+    {
+      "type": "p",
+      "text": "**Firefly Builder** по текстовому описанию собирает работающие прототипы сайтов и приложений. Пока его испытывают в закрытой бета-версии."
+    },
+    {
+      "type": "p",
+      "text": "Ещё Adobe показала возможность подключать к Photoshop, Premiere, Illustrator и After Effects сторонних ИИ-агентов. Через локальную интеграцию MCP они смогут редактировать настоящие файлы проектов, сохраняя слои и монтажные дорожки. Доступ для пользователей ожидается **в начале 2027 года**."
+    },
+    {
+      "type": "p",
+      "text": "Параллельно Adobe расширяет сотрудничество с **Google**. Её инструменты появятся в **Gemini** и ИИ-поиске Google. А специалисты Google DeepMind вместе с Adobe исследуют возможность практически мгновенного редактирования изображений в Photoshop."
+    },
+    {
+      "type": "p",
+      "text": "С **Microsoft** договорились встроить возможности **Adobe Express** в приложение «Фотографии» Windows 11. Предварительная версия для участников Windows Insider ожидается в декабре. Adobe также оптимизировала Photoshop, Premiere и After Effects для мощных компьютеров на Windows с процессорами Arm."
+    },
+    {
+      "type": "p",
+      "text": "**Первоисточники:**"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "[Adobe — новые функции Creative Cloud и Firefly, 10 ноября](https://blog.adobe.com/en/publish/2026/11/10/explore-new-ways-create-across-creative-cloud-adobe-firefly-while-advancing-craft-precision-choice-control)",
+        "[Adobe — анонс ИИ-агентов и интеграций](https://news.adobe.com/news/2026/11/adobe-powers-new-era-of-creativity)",
+        "[Google — расширение партнёрства с Adobe](https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/)",
+        "[Adobe — партнёрство с Microsoft](https://blog.adobe.com/en/publish/2026/11/10/more-apps-ways-create-adobe-microsoft-expand-possibilities-windows)"
+      ]
+    }
+  ],
+  "related_dzen_ids": [],
+  "site_crosslinks": {},
+  "topics": [
+    "images",
+    "video"
+  ],
+  "companies": [
+    "adobe",
+    "google",
+    "microsoft"
+  ],
+  "products": [
+    "firefly",
+    "gemini"
+  ],
+  "article_markdown": "**Adobe** 10 ноября на конференции **Adobe MAX 2026** представила новые ИИ-инструменты для **Photoshop**, **Premiere** и **Firefly**. Теперь можно менять ракурс готового изображения, генерировать недостающие кадры прямо во время видеомонтажа и поручать часть творческой работы ИИ-агентам.\n\nВ бета-версии Photoshop появилась функция **Camera Angles**. Она позволяет выбрать другую точку обзора готовой картинки. **Generative Recompose** перестраивает композицию под новый формат кадра, а **Convert to Text Layers** превращает надписи на обычном изображении в редактируемые текстовые слои.\n\nPremiere получил инструмент **Generative Media**. Он создаёт видеофрагменты, музыку и звуковые эффекты прямо на монтажной дорожке. Можно использовать модели Adobe и других разработчиков, включая Google, Kling, Runway и Luma.\n\nНапример, если при монтаже не хватает короткого кадра, его можно сгенерировать, сразу вставить в нужное место и продолжить работу. В бета-версии появилась также возможность удалять из готового видео лишние объекты — например, попавший в кадр микрофон.\n\nFirefly пополнился тремя инструментами. **Firefly Design** объединяет работу с изображениями, анимацией и 3D на одном рабочем поле. **Firefly Graph** позволяет создавать повторяемые цепочки обработки материалов. Оба инструмента находятся в бета-тестировании.\n\n**Firefly Builder** по текстовому описанию собирает работающие прототипы сайтов и приложений. Пока его испытывают в закрытой бета-версии.\n\nЕщё Adobe показала возможность подключать к Photoshop, Premiere, Illustrator и After Effects сторонних ИИ-агентов. Через локальную интеграцию MCP они смогут редактировать настоящие файлы проектов, сохраняя слои и монтажные дорожки. Доступ для пользователей ожидается **в начале 2027 года**.\n\nПараллельно Adobe расширяет сотрудничество с **Google**. Её инструменты появятся в **Gemini** и ИИ-поиске Google. А специалисты Google DeepMind вместе с Adobe исследуют возможность практически мгновенного редактирования изображений в Photoshop.\n\nС **Microsoft** договорились встроить возможности **Adobe Express** в приложение «Фотографии» Windows 11. Предварительная версия для участников Windows Insider ожидается в декабре. Adobe также оптимизировала Photoshop, Premiere и After Effects для мощных компьютеров на Windows с процессорами Arm.\n\n**Первоисточники:**\n\n- [Adobe — новые функции Creative Cloud и Firefly, 10 ноября](https://blog.adobe.com/en/publish/2026/11/10/explore-new-ways-create-across-creative-cloud-adobe-firefly-while-advancing-craft-precision-choice-control)\n- [Adobe — анонс ИИ-агентов и интеграций](https://news.adobe.com/news/2026/11/adobe-powers-new-era-of-creativity)\n- [Google — расширение партнёрства с Adobe](https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/)\n- [Adobe — партнёрство с Microsoft](https://blog.adobe.com/en/publish/2026/11/10/more-apps-ways-create-adobe-microsoft-expand-possibilities-windows)",
+  "event_date": "2026-11-10"
+}

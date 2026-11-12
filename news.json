@@ -4636,5 +4636,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Adobe научила Photoshop менять ракурс, а Premiere — генерировать видео",
+    "summary": "Adobe представила новые ИИ-инструменты для Photoshop, Premiere и Firefly: изменение ракурса и композиции изображений, генерацию видео и звука на монтажной дорожке, агентные творческие инструменты и планы интеграции с Google и Microsoft. Часть возможностей находится в бета-версии, интеграция сторонних агентов ожидается в 2027 году.",
+    "published": "2026-11-12",
+    "source_url": "https://blog.adobe.com/en/publish/2026/11/10/explore-new-ways-create-across-creative-cloud-adobe-firefly-while-advancing-craft-precision-choice-control",
+    "cover": "assets/editorial/adobe-max-photoshop-premiere-firefly-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:48:29Z",
+    "event_date": "2026-11-10",
+    "id": "adobe-max-photoshop-premiere-firefly-20261110",
+    "url": "articles/adobe-max-photoshop-premiere-firefly-20261110/",
+    "topics": [
+      "images",
+      "video"
+    ],
+    "companies": [
+      "adobe",
+      "google",
+      "microsoft"
+    ],
+    "products": [
+      "firefly",
+      "gemini"
+    ]
   }
 ]
