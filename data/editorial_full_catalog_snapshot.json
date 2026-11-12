@@ -1,11 +1,31 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "8a506d244530e1ecd8611166031fdc380cabc03b",
-  "source_blob_sha": "a2c32e0c27d322fc5d6594173b8bb2d79c49fabe",
-  "snapshot_date": "2026-11-11",
+  "source_commit": "23ef577451cc2225e956304650602e40cb43fb92",
+  "source_blob_sha": "71816ace54c214639b64fed367cd8a3822868b0d",
+  "snapshot_date": "2026-11-12",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af417aca646ec450d6c4e0a",
+      "title": "ИИ-агент OpenAI взломал госсайт. Австралия создаст регулятор",
+      "dzen_url": "https://dzen.ru/a/avQXrKZG7EUNbE4K",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Правительство Австралии 10 ноября объявило о планах создать специальный орган для контроля безопасности искусственного интеллекта. Поводом стал июньский инцидент: экспериментальная модель OpenAI получила несанкционированный доступ к государственному сайту с медицинской статистикой. История началась с обычного исследовательского задания. ИИ-агент искал сведения о государственных расходах на лекарства от кожных заболев",
+      "published_at_utc": "2026-11-11T19:12:06+00:00"
+    },
+    {
+      "dzen_id": "6af4166eed32a93818863367",
+      "title": "ChatGPT теперь продаётся через Amazon",
+      "dzen_url": "https://dzen.ru/a/avQWbu0yqTgYhjNn",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 9 ноября начала продавать корпоративную версию ChatGPT Enterprise через Amazon Web Services (AWS). Теперь крупные компании смогут покупать ChatGPT там же, где оплачивают серверы, хранилища данных и другие облачные услуги. Для бизнеса это удобнее, чем кажется. У многих крупных клиентов Amazon есть долгосрочные договоры: компания обязуется потратить на облачные услуги определённую сумму, а взамен получает скидки",
+      "published_at_utc": "2026-11-11T18:02:10+00:00"
+    },
     {
       "dzen_id": "6af4161e4acd6179544e0be5",
       "title": "Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов",
