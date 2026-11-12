@@ -86,8 +86,11 @@ def validate(pool):
                 not isinstance(item["note"], str) or len(item["note"]) > 1500):
             raise ValueError("Invalid candidate text fields")
         url = canonical_url(item["source_url"])
-        if item["id"] not in {candidate_id(url), candidate_id(url, item["title"])}:
-            raise ValueError("Candidate ID must match the URL or URL+title identity")
+        # Existing cross-chat IDs are opaque stable references. Some legacy
+        # entries were created by other writers with a different hash recipe;
+        # never renumber them or break their approval/review linkage.
+        if not isinstance(item["id"], str) or not re.fullmatch(r"n-[0-9a-f]{16}", item["id"]):
+            raise ValueError("Candidate ID must be a stable n-hex16 reference")
         if item["priority"] not in PRIORITIES or item["status"] not in STATES:
             raise ValueError("Invalid candidate priority or status")
         utc_time(item["added_at"])
