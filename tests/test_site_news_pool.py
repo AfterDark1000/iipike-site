@@ -4,7 +4,7 @@ import copy
 import unittest
 
 from scripts.site_news_pool import (
-    add, candidate_id, canonical_url, next_item, continue_item, local_date,
+    add, candidate_id, canonical_url, next_item, continue_item, checkpoint, local_date,
     transition, validate
 )
 
@@ -93,6 +93,23 @@ class SiteNewsPoolTests(unittest.TestCase):
         self.assertEqual(pool, before)
         self.assertEqual(local_date("2026-11-12T08:00:00+00:00"),
                          "12.11.2026 13:00 (UTC+05:00)")
+
+    def test_checkpoint_survives_resume_without_resetting_date(self):
+        pool, _ = add(fresh(), [record("Long analysis to resume", "https://example.org/a")], now=NOW)
+        pool, item = next_item(pool, now="2026-11-12T10:00:00+00:00")
+        reserved_at = item["review_started_at"]
+        pool, updated = checkpoint(pool, item["id"],
+                                   "Sources verified; next: draft the introduction")
+        self.assertEqual(updated["review_started_at"], reserved_at)
+        self.assertEqual(continue_item(pool)["note"],
+                         "Sources verified; next: draft the introduction")
+        with self.assertRaises(ValueError):
+            checkpoint(pool, item["id"], "")
+        with self.assertRaises(ValueError):
+            checkpoint(pool, item["id"], "x" * 1501)
+        pool, _ = transition(pool, item["id"], "return", now=NOW)
+        with self.assertRaises(ValueError):
+            checkpoint(pool, item["id"], "Invalid after return")
 
     def test_return_goes_back_to_original_fifo_position(self):
         pool, _ = add(fresh(), [
