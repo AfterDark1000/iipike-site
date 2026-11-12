@@ -4781,5 +4781,23 @@
       "zoom"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ-агент попытался открыть облако всему интернету. Bay привлекла $50 млн на защиту",
+    "summary": "Израильский стартап Bay вышел из скрытого режима и объявил о $50 млн совокупных инвестиций: $13 млн ранее и $37 млн в Series A. Платформа анализирует действия корпоративных ИИ-агентов перед выполнением и блокирует потенциально опасные команды.",
+    "published": "2026-11-12",
+    "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2",
+    "cover": "assets/editorial/bay-ai-agent-security-50m-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T15:00:54Z",
+    "event_date": "2026-11-10",
+    "id": "bay-ai-agent-security-50m-20261110",
+    "url": "articles/bay-ai-agent-security-50m-20261110/",
+    "topics": [
+      "cybersecurity",
+      "finance"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
