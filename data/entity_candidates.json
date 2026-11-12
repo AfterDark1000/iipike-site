@@ -229,6 +229,18 @@
           "source_url": "https://press.kora.fun/"
         }
       ]
+    },
+    {
+      "key": "tsmc",
+      "name": "TSMC",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "tsmc-openai-anthropic-investment-20261110",
+          "source_url": "https://pr.tsmc.com/english/news/3352"
+        }
+      ]
     }
   ],
   "products": [
