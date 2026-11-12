@@ -120,6 +120,32 @@ class PublisherTests(unittest.TestCase):
         self.assertFalse((self.root / "data/entity_registry.json").exists())
         self.assertFalse((self.root / "articles").exists())
 
+    def test_archive_and_rss_sort_same_day_by_actual_publication_time(self):
+        # Alphabetical ID order used to put a morning story above a later one.
+        examples = [
+            {"id": "z-early", "published": "2026-11-12",
+             "published_at_utc": "2026-11-12T06:30:00Z",
+             "title": "Morning edition"},
+            {"id": "a-late", "published": "2026-11-12",
+             "published_at_utc": "2026-11-12T07:50:30Z",
+             "title": "Afternoon edition"},
+            {"id": "m-older", "published": "2026-11-11",
+             "title": "Yesterday edition"},
+        ]
+        for row in examples:
+            row.update({"summary": "News summary", "rubric": "news",
+                        "cover": "assets/sample.svg",
+                        "url": "articles/" + row["id"] + "/"})
+        catalog = PUBLISHER.render_catalog(examples)
+        positions = [catalog.index('href="' + name + '/"')
+                     for name in ("a-late", "z-early", "m-older")]
+        self.assertEqual(positions, sorted(positions))
+        rss = PUBLISHER.render_feed(examples, "<rss><channel></channel></rss>")
+        item_links = [e.findtext("link") for e in
+                      ET.fromstring(rss).findall("./channel/item")]
+        self.assertEqual([url.rstrip("/").split("/")[-1] for url in item_links],
+                         ["a-late", "z-early", "m-older"])
+
     def test_preflight_never_writes_anything(self):
         prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml", self.root / "index.html")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
