@@ -4503,5 +4503,21 @@
       "models",
       "science"
     ]
+  },
+  {
+    "title": "Meta выпустила Muse Ember — дешёвого исполнителя для ИИ-агентов",
+    "summary": "Meta 9 ноября выпустила компактную модель Muse Ember для массовых вспомогательных задач в системах ИИ-агентов. Цена API для запросов до 200 тысяч входных токенов — от $0,10 за миллион входных и $0,50 за миллион выходных; более длинные запросы втрое дороже.",
+    "published": "2026-11-12",
+    "source_url": "https://research.meta.ai/blog/muse-ember",
+    "cover": "assets/editorial/meta-muse-ember-agents-pricing-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T06:55:56Z",
+    "event_date": "2026-11-09",
+    "id": "meta-muse-ember-agents-pricing-20261109",
+    "url": "articles/meta-muse-ember-agents-pricing-20261109/",
+    "topics": [
+      "models",
+      "agents"
+    ]
   }
 ]
