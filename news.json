@@ -4519,5 +4519,21 @@
       "models",
       "agents"
     ]
+  },
+  {
+    "title": "Тысяча ИИ-агентов Claude за восемь дней создала операционную систему",
+    "summary": "Anthropic заявила, что Claude Fable 5.2 за восемь дней с помощью более тысячи субагентов разработала загружаемый на ноутбуке прототип операционной системы с собственным ядром, драйверами, графическим интерфейсом и установщиком.",
+    "published": "2026-11-12",
+    "source_url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "cover": "assets/editorial/anthropic-claude-agents-os-eight-days-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:30:42Z",
+    "event_date": "2026-11-09",
+    "id": "anthropic-claude-agents-os-eight-days-20261109",
+    "url": "articles/anthropic-claude-agents-os-eight-days-20261109/",
+    "topics": [
+      "agents",
+      "development"
+    ]
   }
 ]
