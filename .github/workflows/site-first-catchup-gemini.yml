@@ -1,0 +1,40 @@
+name: HPII — one-off recovery through Gemini (NO BULK DUMP)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/site-first-catchup-kick.txt'
+permissions:
+  contents: write
+  pages: write
+  actions: write
+# Serialize with the ordinary site-first scheduler so they cannot write
+# the same main branch in parallel or break the one-article-at-a-time order.
+concurrency:
+  group: hpii-site-first-serial-publication
+  cancel-in-progress: false
+jobs:
+  catch-up-through-gemini:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout trusted current production code and full Git history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install cover validator
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Verify site-first publication and recovery tests
+        run: |
+          python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_publication_queue_dashboard.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_catchup_gemini.py' -v
+      - name: Publish original approved articles one by one through Gemini and stop
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HPII_SITE_FIRST_AUTOPUBLISH: '1'
+          HPII_SITE_FIRST_CATCHUP: '1'
+        run: python3 scripts/site_first_catchup_gemini.py
