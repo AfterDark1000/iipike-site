@@ -186,6 +186,44 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
     return sorted(ready, key=lambda x: (x["ready_at"], x["id"]))
 
 
+
+def published_collision(story, published):
+    """Return an existing public article with the SAME title/source, if any.
+
+    This mirrors the approved publisher's duplicate guard exactly. The
+    scheduler may skip such an item but must NEVER weaken that guard or
+    change the human-approved story.
+    """
+    title = story.get("title")
+    source = story.get("source_url")
+    for row in published:
+        if (isinstance(title, str) and isinstance(row.get("title"), str) and
+                row["title"].casefold() == title.casefold()):
+            return row
+        if source and row.get("source_url") == source:
+            return row
+    return None
+
+
+def without_published_collisions(items, published, *, source_ref):
+    """Exclude editorial items that the publisher would reject as duplicates.
+
+    Leave the immutable editorial originals untouched and show a diagnostic
+    so a single bad head item cannot stall every later approved release.
+    """
+    eligible = []
+    for item in items:
+        story_path = f"editorial_inbox/stories/{item['id']}.json"
+        story = json.loads(safe_git_blob_at(source_ref, story_path))
+        duplicate = published_collision(story, published)
+        if duplicate:
+            print("BLOCKED_ALREADY_PUBLISHED_DUPLICATE:",
+                  item["id"], "matches", duplicate.get("id"), flush=True)
+            continue
+        eligible.append(item)
+    return eligible
+
+
 def select_one(items, rows, now, *, target=None, urgent=False):
     if now.tzinfo is None:
         raise ValueError("Scheduled check needs an offset-aware time")
@@ -245,7 +283,8 @@ def main():
     rows = json.loads(Path("news.json").read_text(encoding="utf-8"))
     # Refresh the live production index, not the potentially stale local main.
     live = json.loads(safe_git_blob_at(MAIN_REF, "news.json"))
-    pending = ready_items(source_ref)
+    pending = without_published_collisions(ready_items(source_ref), live,
+                                           source_ref=source_ref)
     print("QUEUE_READY:", len(pending), "IDs:",
           [x["id"] for x in pending], flush=True)
     if inspect_only:
