@@ -250,6 +250,20 @@ async function main({github, context, core}) {
           put(RELEASE_PREFIX + id, 'Статья заблокирована некорректным Markdown: ' +
             id + '. Очередь: ' + queueUrl);
       }
+      for (const id of (Array.isArray(q.blocked_invalid_story_ids) ?
+        q.blocked_invalid_story_ids : []).slice(0,10)) {
+        if (RELEASE_ID.test(id))
+          put(RELEASE_PREFIX + id, 'Статья отклонена проверкой структуры/данных: ' +
+            id + '. Очередь: ' + queueUrl);
+      }
+      for (const problem of (Array.isArray(q.blocked_article_errors) ?
+        q.blocked_article_errors : []).slice(0,20)) {
+        if (problem && RELEASE_ID.test(problem.id)) {
+          put(RELEASE_PREFIX + problem.id, 'Статья пропущена из-за ошибки проверки: ' +
+            problem.id + '. Причина: ' + String(problem.reason || 'не установлена').slice(0,300) +
+            '. Очередь продолжает работу. ' + queueUrl);
+        }
+      }
       if (q.newest_id && ageMinutes(q.newest_published_at_utc, now) > 45) {
         const url = 'https://iipike.ru/articles/' + encodeURIComponent(q.newest_id) + '/';
         try {
