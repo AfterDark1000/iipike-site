@@ -4,7 +4,8 @@ import copy
 import unittest
 
 from scripts.site_news_pool import (
-    add, candidate_id, canonical_url, next_item, transition, validate
+    add, candidate_id, canonical_url, next_item, continue_item, local_date,
+    transition, validate
 )
 
 NOW = "2026-11-12T07:00:00+00:00"
@@ -31,6 +32,7 @@ class SiteNewsPoolTests(unittest.TestCase):
             record("A genuinely different story", "https://example.org/different"),
         ], now=NOW)
         self.assertEqual(len(pool["items"]), 2)
+        self.assertEqual([x["sequence"] for x in pool["items"]], [1, 2])
         self.assertEqual(len(report["duplicates"]), 2)
         self.assertEqual(pool["items"][0]["source_url"], "https://example.org/story")
         self.assertEqual(pool["items"][0]["id"], candidate_id("https://example.org/story"))
@@ -43,20 +45,74 @@ class SiteNewsPoolTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     add(fresh(), [record("A good title", bad)], now=NOW)
 
-    def test_next_selects_priority_then_fifo_and_claims_only_one(self):
+    def test_next_obeys_strict_fifo_regardless_of_priority_and_claims_one(self):
         pool, _ = add(fresh(), [
             record("Old normal item", "https://example.org/a"),
             record("Fresh urgent item", "https://example.org/b", priority="high"),
             record("Low priority item", "https://example.org/c", priority="low")
         ], now=NOW)
         claimed_pool, chosen = next_item(pool, now="2026-11-12T08:00:00+00:00")
-        self.assertEqual(chosen["title"], "Fresh urgent item")
+        self.assertEqual(chosen["title"], "Old normal item")
+        self.assertEqual(chosen["sequence"], 1)
         self.assertEqual(chosen["status"], "in_review")
         self.assertEqual(sum(x["status"] == "in_review" for x in claimed_pool["items"]), 1)
         self.assertTrue(all(x["status"] == "queued" for x in pool["items"]))
         second_pool, second = next_item(claimed_pool, now="2026-11-12T08:01:00+00:00")
-        self.assertEqual(second["title"], "Old normal item")
+        self.assertEqual(second["title"], "Fresh urgent item")
+        self.assertEqual(second["sequence"], 2)
         self.assertEqual(len(second_pool["items"]), 3)
+        self.assertEqual([x["sequence"] for x in second_pool["items"]], [1, 2, 3])
+
+    def test_batch_preserves_explicit_selection_order_across_chat_batches(self):
+        first, _ = add(fresh(), [
+            record("First item in first chat", "https://example.org/a"),
+            record("Second item in first chat", "https://example.org/b"),
+        ], now=NOW)
+        later, _ = add(first, [
+            record("First item in second chat", "https://example.org/c"),
+            record("Second item in second chat", "https://example.org/d"),
+        ], now=NOW)
+        self.assertEqual([i["sequence"] for i in later["items"]], [1, 2, 3, 4])
+        self.assertEqual([i["title"] for i in later["items"]],
+                         ["First item in first chat", "Second item in first chat",
+                          "First item in second chat", "Second item in second chat"])
+
+    def test_continue_is_read_only_and_keeps_original_reservation_date(self):
+        pool, _ = add(fresh(), [
+            record("Old held item", "https://example.org/a"),
+            record("Another held item", "https://example.org/b")
+        ], now=NOW)
+        pool, first = next_item(pool, now="2026-11-12T08:00:00+00:00")
+        pool, second = next_item(pool, now="2026-11-12T09:00:00+00:00")
+        before = copy.deepcopy(pool)
+        resumed = continue_item(pool)
+        self.assertEqual(resumed["id"], first["id"])
+        self.assertEqual(resumed["review_started_at"], "2026-11-12T08:00:00+00:00")
+        self.assertEqual(continue_item(pool, item_id=second["id"])["id"], second["id"])
+        self.assertIsNone(continue_item(pool, item_id="n-fake"))
+        self.assertEqual(pool, before)
+        self.assertEqual(local_date("2026-11-12T08:00:00+00:00"),
+                         "12.11.2026 13:00 (+05+0500)")
+
+    def test_return_goes_back_to_original_fifo_position(self):
+        pool, _ = add(fresh(), [
+            record("Old first item", "https://example.org/a"),
+            record("Later second item", "https://example.org/b")
+        ], now=NOW)
+        pool, selected = next_item(pool, now=NOW)
+        pool, _ = transition(pool, selected["id"], "return", now=NOW)
+        self.assertEqual(next_item(pool, now=NOW)[1]["id"], selected["id"])
+        self.assertEqual(pool["items"][0]["sequence"], 1)
+
+    def test_incorrect_sequence_is_rejected(self):
+        pool, _ = add(fresh(), [
+            record("Some news title", "https://example.org/a"),
+            record("Another news title", "https://example.org/b")
+        ], now=NOW)
+        broken = copy.deepcopy(pool)
+        broken["items"][1]["sequence"] = 1
+        with self.assertRaises(ValueError):
+            validate(broken)
 
     def test_repeated_add_does_not_reset_claimed_item(self):
         pool, _ = add(fresh(), [record("Interesting new launch", "https://example.org/a")], now=NOW)
