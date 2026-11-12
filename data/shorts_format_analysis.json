@@ -1,156 +1,273 @@
 {
   "schema_version": 1,
-  "mode": "pilot",
-  "generated_at_utc": "2026-11-12T06:50:29Z",
-  "status": "partial",
+  "mode": "daily",
+  "generated_at_utc": "2026-11-12T07:08:58Z",
+  "status": "ok",
   "limits": {
     "maximum_gemini_requests": 4,
-    "daily_youtube_search_calls": 0
+    "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "rXgv9bxT8gw",
-      "url": "https://www.youtube.com/shorts/rXgv9bxT8gw",
-      "title": null,
-      "views": null,
-      "likes": null,
-      "subscribers": null,
-      "published_at": null,
-      "duration_seconds": null,
-      "statistics_source": "unavailable",
-      "viral_status": "unconfirmed",
+      "id": "YkL5X5KB9ts",
+      "url": "https://www.youtube.com/shorts/YkL5X5KB9ts",
+      "title": "🧼 Soap Bar Grated at Max Speed: Oddly Satisfying ⚡",
+      "channel": "Limoo ASMR",
+      "published_at": "2026-11-09T08:30:11Z",
+      "duration_seconds": 33,
+      "views": 27914926,
+      "likes": 132246,
+      "subscribers": 18400,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-12T07:08:58Z",
       "is_confirmed_short": false,
+      "growth_views_per_hour": null,
+      "rank_score": 18.75,
+      "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "Подводная съемка 3D-реконструкции исторической подводной лодки с гребцами внутри, затем кадры взрыва корабля на поверхности и финальный кадр со скелетами экипажа на постах.",
-        "observed_audio": "Английская закадровая речь (сторителлинг о гражданской войне в США и первой успешной атаке подлодки).",
-        "hook_0_3s": "Кадр подводного движения цилиндрической лодки и закадровый вопрос/тезис о Гражданской войне в США.",
+        "observed_visuals": "Рука кладет фиолетовый кусок мыла в портативный блендер, закрывает крышку, включает блендер, затем добавляет воду, снова смешивает и наливает получившуюся мыльную жидкость в высокий бокал.",
+        "observed_audio": "Звуки кликов, постукиваний крышки, работы моторчика блендера, шуршания мыла и переливания воды и пены.",
+        "hook_0_3s": "Рука помещает фиолетовый брусок мыла внутрь портативного блендера на фоне серой стены.",
         "timeline": [
           {
-            "time": "00:00 - 00:02",
-            "visible_action": "Вид на подводную лодку под водой, закадровый голос начинает рассказ.",
-            "editing": "Плавное движение камеры под водой.",
+            "time": "00:00",
+            "visible_action": "Рука вставляет фиолетовый кусок мыла в блендер.",
+            "editing": "Без склеек",
             "confidence": "seen"
           },
           {
-            "time": "00:02 - 00:10",
-            "visible_action": "Показ экипажа внутри цилиндрического корпуса, крутящего механизмы.",
-            "editing": "Склейка на внутренний разрез лодки.",
+            "time": "00:02",
+            "visible_action": "Закрытие крышки блендера.",
+            "editing": "Монтажная склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:10 - 00:23",
-            "visible_action": "Демонстрация работы гребцов и командира при свечах.",
-            "editing": "Динамичные ракурсы с разных точек.",
+            "time": "00:04",
+            "visible_action": "Включение блендера, измельчение сухого мыла с шумом.",
+            "editing": "Монтажная склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:23 - 00:27",
-            "visible_action": "Взрыв надводного корабля на поверхности воды.",
-            "editing": "Резкая смена плана на поверхность.",
+            "time": "00:11",
+            "visible_action": "Добавление воды из бутылки внутрь блендера.",
+            "editing": "Монтажная склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:27 - 00:33",
-            "visible_action": "Возврат под воду к лежащей на дне лодке и скелетам членов экипажа.",
-            "editing": "Финальный наезд камеры на скелеты.",
+            "time": "00:17",
+            "visible_action": "Повторное включение блендера, взбивание мыла с водой в пену.",
+            "editing": "Монтажная склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:25",
+            "visible_action": "Переливание густой пенистой жидкости в пустой бокал.",
+            "editing": "Монтажная склейка",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Исторический 3D-сторителлинг с закадровым голосом и визуальной реконструкцией событий от первого лица.",
-        "transfer_to_hpii": "Использовать прием «разрез объекта в разрезо-схеме» (например, визуализация работы нейросети или дата-центра изнутри) для объяснения скрытых процессов в новостях об ИИ.",
-        "what_not_to_copy": "Устаревшие исторические темы и медленный темп смены кадров без субтитров.",
-        "limitations": "Сложность качественной 3D-моделирования исторических или технологических объектов.",
+        "format_mechanic": "ASMR-видео с демонстрацией необычного процесса трансформации твердого предмета в пену.",
+        "transfer_to_hpii": "Использование контрастного или неожиданного объекта (например, жесткого старого интерфейса или стопки бумаги) в сочетании с инструментом обработки (ИИ-фильтр/скрипт) для визуализации процесса быстрого преобразования данных.",
+        "what_not_to_copy": "Не стоит копировать тему измельчения бытовой химии или делать упор исключительно на ASMR-звуки мыла.",
+        "limitations": "Сложности с определением точных таймингов быстрых склеек из-за низкого фреймрейта.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-12T06:50:34Z",
+      "analyzed_at_utc": "2026-11-12T07:09:08Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "_ncGUlKhKR8",
-      "url": "https://www.youtube.com/shorts/_ncGUlKhKR8",
-      "title": null,
-      "views": null,
-      "likes": null,
-      "subscribers": null,
-      "published_at": null,
-      "duration_seconds": null,
-      "statistics_source": "unavailable",
-      "viral_status": "unconfirmed",
+      "id": "zeTBvVUOnk8",
+      "url": "https://www.youtube.com/shorts/zeTBvVUOnk8",
+      "title": "Experiment : Eating Tropical Skittles Candy in the Toilet #shorts",
+      "channel": "Benevolen Skills",
+      "published_at": "2026-11-11T00:00:26Z",
+      "duration_seconds": 8,
+      "views": 623603,
+      "likes": 2381,
+      "subscribers": 1420,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-12T07:08:58Z",
       "is_confirmed_short": false,
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "YkL5X5KB9ts",
-      "url": "https://www.youtube.com/shorts/YkL5X5KB9ts",
-      "title": null,
-      "views": null,
-      "likes": null,
-      "subscribers": null,
-      "published_at": null,
-      "duration_seconds": null,
-      "statistics_source": "unavailable",
-      "viral_status": "unconfirmed",
-      "is_confirmed_short": false,
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "7xS87iActkU",
-      "url": "https://www.youtube.com/shorts/7xS87iActkU",
-      "title": null,
-      "views": null,
-      "likes": null,
-      "subscribers": null,
-      "published_at": null,
-      "duration_seconds": null,
-      "statistics_source": "unavailable",
-      "viral_status": "unconfirmed",
-      "is_confirmed_short": false,
+      "growth_views_per_hour": null,
+      "rank_score": 14.77,
+      "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "Animated video featuring stick figure characters building railroads across a canyon, discussing spacing and rail expansion due to heat.",
-        "observed_audio": "Voiceover narration telling a story about rival railroad builders, accompanied by upbeat background music and sound effects.",
-        "hook_0_3s": "A character stands on railroad tracks with a train approaching in the background while English subtitles display text.",
+        "observed_visuals": "Мужчина заглядывает в унитаз, заполненный разноцветными конфетами, погружает в них лицо и затем показывает язык с прилипшими конфетами. Далее показан другой мужчина, держащий тарелку с конфетами во рту.",
+        "observed_audio": "Звуки хруста, глотания и шуршания конфет.",
+        "hook_0_3s": "Мужчина смотрит в унитаз полный цветных конфет с удивленным выражением лица.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:02",
+            "visible_action": "Мужчина погружает лицо в унитаз с конфетами",
+            "editing": "Прямая склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:03 - 00:04",
+            "visible_action": "Мужчина поднимает голову и показывает язык с конфетами",
+            "editing": "Прямая склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:05 - 00:07",
+            "visible_action": "Другой мужчина держит тарелку и жует конфеты",
+            "editing": "Смена кадра",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Шоковый визуальный контраст и неожиданное действие с привычными предметами",
+        "transfer_to_hpii": "Использовать контраст эстетики и абсурда для показа интеграции ИИ в неожиданные сферы",
+        "what_not_to_copy": "Использование негигиеничных предметов вроде унитаза",
+        "limitations": "Короткая длительность, отсутствие детального объяснения контекста",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-12T07:09:13Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "NK9TD02RCd4",
+      "url": "https://www.youtube.com/shorts/NK9TD02RCd4",
+      "title": "Gravity #satisfying #physics #asmr",
+      "channel": "danmehtube",
+      "published_at": "2026-11-11T07:00:15Z",
+      "duration_seconds": 14,
+      "views": 660050,
+      "likes": 2987,
+      "subscribers": 2400,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-12T07:08:58Z",
+      "is_confirmed_short": false,
+      "growth_views_per_hour": null,
+      "rank_score": 14.71,
+      "viral_status": "candidate_verified_stats",
+      "analysis": {
+        "observed_visuals": "На светло-сером фоне стеклянная бутылка с синей жидкостью. Над ней на веревке висит розовая игрушка-зайчик с пружиной и подвешенным болтом. В процессе болт опускается в горлышко, цепляется внутри, и при поднятии бутылка оказывается подвешенной за эту конструкцию. В конце появляется мужчина, сидящий на стуле и удерживающий всю конструкцию в руке.",
+        "observed_audio": "Звуки щелчков, ударов металла о стекло, пружинные звуки, в конце звук удивления и финальный звуковой эффект.",
+        "hook_0_3s": "Металлический болт на пружине медленно опускается над бутылкой с синей жидкостью под звуковые эффекты кликов.",
         "timeline": [
           {
             "time": "00:00",
-            "visible_action": "Character standing on tracks with a train approaching",
-            "editing": "Direct cut with subtitle overlay",
+            "visible_action": "Бутылка с синей жидкостью и висящий над ней болт на пружине с розовым зайчиком.",
+            "editing": "Статичный кадр",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:04",
+            "visible_action": "Болт опускается в горлышко бутылки.",
+            "editing": "Прямая склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:08",
+            "visible_action": "Конструкция натягивается, поднимая бутылку в воздухе.",
+            "editing": "Прямая склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:11",
+            "visible_action": "Мужчина сидит на стуле и держит веревку, на которой висит поднятая бутылка.",
+            "editing": "Отдаление камеры / склейка",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Необычный физический фокус с неожиданным финальным разоблачением масштаба действия (появление человека).",
+        "transfer_to_hpii": "Показать новость об автономном ИИ-агенте, который незаметно цепляется за рутинную задачу, а затем демонстрирует масштабный результат всей системы.",
+        "what_not_to_copy": "Использование физических игрушек-зайчиков и бутылок с водой без прямой связи с темой искусственного интеллекта.",
+        "limitations": "Слабая связь между механикой фокуса и реальными возможностями ИИ без качественной текстовой или графической подводки.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-12T07:09:17Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "qteRK9tJNcE",
+      "url": "https://www.youtube.com/shorts/qteRK9tJNcE",
+      "title": "1832°F | 1000°C Hot Iron Ball on foam tower asmr🔥☄️#shorts #asmr #experiment",
+      "channel": "Hot Iron Drop",
+      "published_at": "2026-11-08T13:00:32Z",
+      "duration_seconds": 10,
+      "views": 1182059,
+      "likes": 3766,
+      "subscribers": 1960,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-12T07:08:58Z",
+      "is_confirmed_short": false,
+      "growth_views_per_hour": null,
+      "rank_score": 14.6,
+      "viral_status": "candidate_verified_stats",
+      "analysis": {
+        "observed_visuals": "Dark round object falling through stacked horizontal sheets of white foam supported by wooden frames, dropping down level by level as each sheet breaks or is passed through.",
+        "observed_audio": "Impact sounds, thuds and cracking noises coinciding with the object hitting and passing through the layers.",
+        "hook_0_3s": "A dark sphere is released from a metallic ladle onto a multi-tiered white foam structure, immediately dropping and breaking through the first layer.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "A metallic ladle pours a dark object onto the top layer of stacked foam boards.",
+            "editing": "Static shot from a fixed angle",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:01",
+            "visible_action": "The object breaks through the foam layer and drops to the next level.",
+            "editing": "Direct continuity",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:02",
+            "visible_action": "The object rests briefly on a lower foam tier before falling further.",
+            "editing": "Direct continuity",
             "confidence": "seen"
           },
           {
             "time": "00:03",
-            "visible_action": "Pan across canyon showing two competing railroad bridges",
-            "editing": "Smooth camera pan",
+            "visible_action": "The object bounces and drops down another level.",
+            "editing": "Direct continuity",
             "confidence": "seen"
           },
           {
-            "time": "00:10",
-            "visible_action": "Boss character holding money bags in station",
-            "editing": "Fast transition to station scene",
+            "time": "00:04",
+            "visible_action": "The object continues falling rapidly through intermediate layers.",
+            "editing": "Direct continuity",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:05",
+            "visible_action": "The object hits a lower foam barrier.",
+            "editing": "Direct continuity",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:06",
+            "visible_action": "The object breaks through yet another foam layer.",
+            "editing": "Direct continuity",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:07",
+            "visible_action": "The object approaches the bottom tiers.",
+            "editing": "Direct continuity",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:08",
+            "visible_action": "The object completes its descent through the final layers.",
+            "editing": "Fade out / cut",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Narrative-driven animated explainer with dynamic visual metaphors and constant narrative escalation.",
-        "transfer_to_hpii": "Use the narrative contrast mechanic (flawed vs. perfect execution) to explain AI model benchmarking and scaling issues.",
-        "what_not_to_copy": "Literal stick figure animation style and railroad storyline.",
-        "limitations": "Animation details are dense; fast cuts require careful segmentation.",
+        "format_mechanic": "Sequential obstacle penetration demonstrating repetitive cascading failure from top to bottom.",
+        "transfer_to_hpii": "Visualize a newly released AI capability or benchmark breaking through successive layers of industry standards or previous technological limitations in a cascade format.",
+        "what_not_to_copy": "Literal dropping of balls through foam and physical destruction ASMR without context to AI.",
+        "limitations": "Audio specifics and exact material composition are inferred from visual cues and sound effects; frame sampling rate limits micro-action verification.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-12T06:51:08Z",
+      "analyzed_at_utc": "2026-11-12T07:09:30Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     }
   ],
-  "errors": [
-    {
-      "video_id": "_ncGUlKhKR8",
-      "code": "analysis_failed"
-    },
-    {
-      "video_id": "YkL5X5KB9ts",
-      "code": "analysis_failed"
-    }
-  ]
+  "errors": []
 }
