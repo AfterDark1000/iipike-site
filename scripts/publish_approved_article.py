@@ -22,7 +22,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
-from scripts.site_home import update_home
+from scripts.site_home import update_home, sorted_published
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
 from scripts.site_related_cards import select_site_card, remove_duplicate_related_ids
 from scripts.site_entities import (render_article_entity_nav, load_registry,
@@ -350,7 +350,7 @@ def render_article(data, records=None, catalog=None, registry=None):
 
 
 def render_catalog(records):
-    ordered = sorted(records, key=lambda r: (r["published"], r["id"]), reverse=True)
+    ordered = sorted_published(records)
     cards = "\n".join(
         f'<a class="archive-card" href="{quote(row["id"])}/">'
         f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
@@ -392,7 +392,7 @@ def render_feed(records, old_feed):
     except ET.ParseError as exc:
         raise ValueError("Existing RSS invalid") from exc
     items = []
-    for row in sorted(records, key=lambda r: (r["published"], r["id"]), reverse=True):
+    for row in sorted_published(records):
         url = BASE + "/" + row["url"]
         guid, published = old.get(row["id"], (None, None))
         guid = guid or url
