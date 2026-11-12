@@ -107,6 +107,13 @@ class HomepageTests(unittest.TestCase):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn("assets/site.css", self.html)
 
+    def test_feature_cover_displays_in_full_without_cropping_headline(self):
+        self.assertIn('class="home-feature-image" style="--feature-art:url(&quot;assets/', self.html)
+        self.assertIn('.home-feature-image img{', self.css)
+        self.assertIn('object-fit:contain', self.css)
+        self.assertIn('background-image:var(--feature-art)', self.css)
+        self.assertNotIn('min-height:390px;object-fit:cover', self.css)
+
     def test_local_paths_resolve(self):
         for path in ("assets/site.css", "assets/icon.svg",
                      "assets/google-search-links.svg",
