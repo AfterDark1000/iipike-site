@@ -691,6 +691,51 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-4076f1cccb01edfb",
+      "sequence": 47,
+      "title": "Китайские ИИ-компании спешат арендовать NVIDIA за рубежом",
+      "source_url": "https://www.reuters.com/world/china/chinese-ai-firms-rush-secure-nvidia-chip-capacity-spy-scandal-stirs-fear-us-2026-11-12",
+      "summary": "12 ноября: Reuters сообщает, что китайские компании пытаются заранее зарезервировать зарубежные вычислительные мощности на NVIDIA из-за возможного ужесточения США контроля удалённого доступа к чипам.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T08:25:31+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-db6c86728ecfa7bf",
+      "sequence": 48,
+      "title": "Helsing представила Clarity: сотни ИИ-агентов анализируют поле боя",
+      "source_url": "https://helsing.ai/newsroom/helsing-unveils-clarity-a-sovereign-software-platform-for-military-intelligence",
+      "summary": "11 ноября: официальный запуск Clarity для анализа военных данных с датчиков, спутников, дронов и документов. Возможный тематический дубль: в editorial-intake уже утверждена статья о запланированной презентации Helsing; теперь раскрыты название и функции.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T08:25:31+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-556a3c5f36817ca8",
+      "sequence": 49,
+      "title": "Berkeley показал CyberBinGym: ИИ-агенты используют готовые заплатки для поиска уязвимостей",
+      "source_url": "https://rdi.berkeley.edu/blog/cyberbingym",
+      "summary": "11 ноября: Berkeley RDI представила исследование CyberBinGym на 100 реальных уязвимостях: Codex сумел в лаборатории восстановить уязвимость в 88% случаев и провести успешную эксплуатацию в 20%. Средняя стоимость отдельного теста в сравнительном наборе около $31; прежние утверждения «два часа и дешевле $30» не подтверждены.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T08:25:31+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
