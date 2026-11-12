@@ -4742,5 +4742,23 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Европа хочет свой ИИ для поиска военных целей: Helsing бросает вызов Palantir",
+    "summary": "Helsing намерена 11 ноября представить в Берлине военную систему ИИ для европейских армий, конкурирующую с Palantir Maven. Пока название, характеристики и покупатели нового продукта не раскрыты. Reuters сообщило об анонсе 10 ноября.",
+    "published": "2026-11-12",
+    "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/",
+    "cover": "assets/editorial/helsing-european-military-ai-palantir-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T12:45:46Z",
+    "event_date": "2026-11-10",
+    "id": "helsing-european-military-ai-palantir-20261110",
+    "url": "articles/helsing-european-military-ai-palantir-20261110/",
+    "topics": [
+      "engineering",
+      "business"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
