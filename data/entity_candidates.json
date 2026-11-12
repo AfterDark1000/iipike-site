@@ -639,6 +639,19 @@
           "source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
         }
       ]
+    },
+    {
+      "key": "sensorwm",
+      "name": "SensorWM",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "google-sensorwm-wearables-health-20261111",
+          "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+        }
+      ]
     }
   ]
 }
