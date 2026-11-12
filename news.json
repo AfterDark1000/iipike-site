@@ -4599,5 +4599,25 @@
       "finance",
       "business"
     ]
+  },
+  {
+    "title": "Amazon отправит дроны патрулировать квартиры",
+    "summary": "Amazon представила две системы охраны Ring: летающую Drone Cam для квартир и колёсного робота Rover Cam для магазинов и офисов. Обе используют ИИ-навигацию, старт поставок в США обещан на декабрь 2026-го и январь 2027 года.",
+    "published": "2026-11-12",
+    "source_url": "https://www.aboutamazon.com/news/devices/ring-drone-cam-rover-cam-security-robot",
+    "cover": "assets/editorial/amazon-ring-drone-rover-cam-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:44:27Z",
+    "event_date": "2026-11-10",
+    "id": "amazon-ring-drone-rover-cam-20261110",
+    "url": "articles/amazon-ring-drone-rover-cam-20261110/",
+    "topics": [
+      "engineering",
+      "agents"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
