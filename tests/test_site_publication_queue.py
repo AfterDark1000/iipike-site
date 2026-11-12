@@ -329,7 +329,11 @@ class PublicationQueueTests(unittest.TestCase):
              patch("scripts.site_publication_queue.git",
                    return_value=SimpleNamespace(stdout="source-ref")), \
              patch("scripts.site_publication_queue.safe_git_blob_at",
-                   return_value="[]"), \
+                   side_effect=lambda ref, path: (
+                       "[]" if path == "news.json" else
+                       json.dumps({"title": "Pending valid story",
+                                   "source_url": "https://example.test/story"})
+                   )), \
              patch("scripts.site_publication_queue.ready_items",
                    return_value=[selected, item("second", 6)]), \
              patch("scripts.site_publication_queue.select_one",
