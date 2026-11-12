@@ -4619,5 +4619,22 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "Корейских школьников поймали на списывании через ИИ-очки",
+    "summary": "Министерство образования Южной Кореи сообщило о четырёх случаях списывания на школьных экзаменах с помощью умных очков с ИИ. Нарушителей выдали необычные движения и световые индикаторы; всем поставили нули.",
+    "published": "2026-11-12",
+    "source_url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107600&lev=0&m=020402&s=moe",
+    "cover": "assets/editorial/south-korea-ai-glasses-exam-cheating-20261109.webp",
+    "rubric": "what-are-you-doing",
+    "published_at_utc": "2026-11-12T07:46:28Z",
+    "event_date": "2026-11-09",
+    "id": "south-korea-ai-glasses-exam-cheating-20261109",
+    "url": "articles/south-korea-ai-glasses-exam-cheating-20261109/",
+    "topics": [
+      "education"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
