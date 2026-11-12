@@ -288,7 +288,10 @@ class EditorialQueuePageTests(unittest.TestCase):
              patch("scripts.site_publication_queue.git",
                    return_value=SimpleNamespace(stdout="valid")), \
              patch("scripts.site_publication_queue.safe_git_blob_at",
-                   return_value="[]"), \
+                   side_effect=lambda ref, item_path: (
+                       "[]" if item_path == "news.json" else
+                       '{"title":"Verified test article","source_url":"https://example.org/valid"}'
+                   )), \
              patch("scripts.site_publication_queue.ready_items",
                    return_value=[{"id": "collinear"}]), \
              patch("scripts.site_publication_queue.select_one") as select, \
