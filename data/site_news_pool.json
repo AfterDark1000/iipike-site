@@ -90,7 +90,7 @@
       "review_started_at": "2026-11-12T05:38:32.554Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Фактчекинг 12.11: Anthropic 10.11 объявила Claude Meetings; официальный обзор на claude.com пишет «coming soon», а справка Claude Whiteboards уже описывает Meetings (beta) в Google Meet для Team/Enterprise. TechCrunch/Reuters/The Verge говорят о бета-запуске. В статье следует писать «представила / ограниченная бета», не «доступно всем». Проверить архив ХПИИ и подготовить отдельные Дзен/Threads/X с явным статусом продукта."
     },
     {
       "id": "n-001cd33c965241bc",
