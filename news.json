@@ -4567,5 +4567,21 @@
       "safety",
       "society"
     ]
+  },
+  {
+    "title": "Google проверила шифрование Signal с помощью ИИ",
+    "summary": "Google DeepMind представила AlphaProof Code: команда ИИ-агентов за четыре недели математически проверила ключевые свойства защиты в коде библиотеки Signal, создав около 6,5 млн строк формальных доказательств. Система также выявила две ранее исправленные ошибки, специально возвращённые в тестовый код.",
+    "published": "2026-11-12",
+    "source_url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "cover": "assets/editorial/google-alphaproof-code-signal-verification-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:40:25Z",
+    "event_date": "2026-11-10",
+    "id": "google-alphaproof-code-signal-verification-20261110",
+    "url": "articles/google-alphaproof-code-signal-verification-20261110/",
+    "topics": [
+      "cybersecurity",
+      "models"
+    ]
   }
 ]
