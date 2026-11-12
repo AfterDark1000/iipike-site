@@ -7,6 +7,7 @@ Cross-chat agents use the same schema and commit via GitHub's SHA-guarded API.
 import argparse
 import copy
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import hashlib
 import json
 from pathlib import Path
@@ -16,8 +17,9 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 POOL_PATH = ROOT / "data" / "site_news_pool.json"
 STATES = {"queued", "in_review", "approved", "rejected"}
-PRIORITIES = {"high": 0, "normal": 1, "low": 2}
-KEYS = {"id", "title", "source_url", "summary", "origin", "priority", "status",
+PRIORITIES = {"high", "normal", "low"}  # informational only; FIFO never skips entries
+EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
+KEYS = {"id", "sequence", "title", "source_url", "summary", "origin", "priority", "status",
         "added_at", "review_started_at", "closed_at", "article_id", "note"}
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 TRACKING = {"fbclid", "gclid", "yclid", "mc_cid", "mc_eid", "igshid"}
@@ -67,9 +69,13 @@ def validate(pool):
             not isinstance(pool["items"], list) or len(pool["items"]) > 5000):
         raise ValueError("Invalid site news pool header")
     ids, urls, titles = set(), set(), set()
+    previous_sequence = 0
     for item in pool["items"]:
         if not isinstance(item, dict) or set(item) != KEYS:
             raise ValueError("Candidate has missing or unknown fields")
+        if (type(item["sequence"]) is not int or item["sequence"] <= previous_sequence):
+            raise ValueError("Items must stay in strictly increasing FIFO sequence order")
+        previous_sequence = item["sequence"]
         if (not isinstance(item["title"], str) or not 5 <= len(item["title"]) <= 320 or
                 not isinstance(item["summary"], str) or len(item["summary"]) > 1500 or
                 not isinstance(item["origin"], str) or len(item["origin"]) > 160 or
@@ -118,6 +124,7 @@ def add(pool, records, *, now=None):
     known_urls = {canonical_url(i["source_url"]) for i in result["items"]}
     known_titles = {clean_title(i["title"]) for i in result["items"]}
     added, duplicate = [], []
+    sequence = max((i["sequence"] for i in result["items"]), default=0)
     for record in records:
         if not isinstance(record, dict) or not {"title", "source_url"} <= set(record):
             raise ValueError("Candidate requires title and source_url")
@@ -127,8 +134,10 @@ def add(pool, records, *, now=None):
         if url in known_urls or normalized in known_titles:
             duplicate.append(title)
             continue
+        sequence += 1
         item = {
-            "id": candidate_id(url), "title": title, "source_url": url,
+            "id": candidate_id(url), "sequence": sequence,
+            "title": title, "source_url": url,
             "summary": str(record.get("summary") or "").strip(),
             "origin": str(record.get("origin") or "ручная подборка").strip(),
             "priority": record.get("priority") or "normal",
@@ -149,12 +158,30 @@ def next_item(pool, *, now=None):
     pending = [x for x in result["items"] if x["status"] == "queued"]
     if not pending:
         return result, None
-    item = min(pending, key=lambda x: (PRIORITIES[x["priority"]],
-                                      utc_time(x["added_at"]), x["id"]))
+    # Strict FIFO: first still-queued item in immutable insertion sequence.
+    # Priority and dates are display metadata, NEVER a way to jump the line.
+    item = pending[0]
     item["status"] = "in_review"
     item["review_started_at"] = now or stamp()
     validate(result)
     return result, copy.deepcopy(item)
+
+
+def continue_item(pool, *, item_id=None):
+    """Read-only resume of the oldest unfinished candidate (or an exact ID).
+
+    This does not start a fresh review and does not reset its review date.
+    """
+    validate(pool)
+    active = [x for x in pool["items"] if x["status"] == "in_review"]
+    if item_id is not None:
+        active = [x for x in active if x["id"] == item_id]
+    return copy.deepcopy(active[0]) if active else None
+
+
+def local_date(value):
+    """Human-facing date in the editorial timezone; UTC data stays unchanged."""
+    return utc_time(value).astimezone(EDITORIAL_TZ).strftime("%d.%m.%Y %H:%M (%Z%z)")
 
 
 def transition(pool, item_id, action, *, article_id=None, note="", now=None):
@@ -187,6 +214,7 @@ def main():
     group.add_argument("--list", action="store_true")
     group.add_argument("--add", type=Path, metavar="CANDIDATES_JSON")
     group.add_argument("--next", action="store_true")
+    group.add_argument("--continue-item", nargs="?", const="", metavar="ID")
     group.add_argument("--return-item", metavar="ID")
     group.add_argument("--approve", metavar="ID")
     group.add_argument("--reject", metavar="ID")
@@ -200,6 +228,8 @@ def main():
         modified, result = add(pool, json.loads(args.add.read_text(encoding="utf-8")))
     elif args.next:
         modified, result = next_item(pool)
+    elif args.continue_item is not None:
+        result = continue_item(pool, item_id=args.continue_item or None)
     elif args.return_item:
         modified, result = transition(pool, args.return_item, "return", note=args.note)
     elif args.approve:
@@ -208,8 +238,11 @@ def main():
     elif args.reject:
         modified, result = transition(pool, args.reject, "reject", note=args.note)
     elif args.list:
-        result = [{"id": i["id"], "title": i["title"],
-                   "status": i["status"], "priority": i["priority"]}
+        result = [{"sequence": i["sequence"], "id": i["id"], "title": i["title"],
+                   "status": i["status"], "priority": i["priority"],
+                   "added_at_local": local_date(i["added_at"]),
+                   "review_started_at_local": (local_date(i["review_started_at"])
+                                                if i["review_started_at"] else None)}
                   for i in pool["items"]]
     else:
         result = "Valid pool"
