@@ -39,6 +39,30 @@ class HunterTests(unittest.TestCase):
         self.assertIsNotNone(value)
         self.assertAlmostEqual(value,200,delta=2)
 
+    def test_format_diversity_and_irrelevant_content_filter(self):
+        videos = [
+            {"id":"soap", "title":"Soap Bar ASMR", "rank_score":40, "search_family":"experiment"},
+            {"id":"toilet", "title":"Eating Skittles in Toilet", "rank_score":39, "search_family":"humor"},
+            {"id":"melt", "title":"Melting Foam ASMR", "rank_score":38, "search_family":"experiment"},
+            {"id":"why", "title":"Why Robots Fail Explained", "rank_score":37, "search_family":"story"},
+            {"id":"sketch", "title":"Funny AI Comedy Sketch", "rank_score":36, "search_family":"humor"},
+            {"id":"plot", "title":"Unexpected Technology Story with Twist", "rank_score":35, "search_family":"story"},
+        ]
+        selected = hunter.select_diverse_formats(videos, max_results=4)
+        self.assertEqual([x["id"] for x in selected], ["soap", "why", "sketch", "plot"])
+        self.assertEqual(len(set(hunter.format_family(x) for x in selected)), 4)
+        self.assertNotIn("toilet", [x["id"] for x in selected])
+        self.assertNotIn("melt", [x["id"] for x in selected])
+
+    def test_diverse_selector_skips_recent_and_never_fills_with_repeats(self):
+        videos=[
+            {"id":"a", "title":"ASMR A", "rank_score":100},
+            {"id":"b", "title":"ASMR B", "rank_score":90},
+            {"id":"c", "title":"Why This Happens", "rank_score":50},
+        ]
+        chosen=hunter.select_diverse_formats(videos, recently_analyzed={"c"}, max_results=4)
+        self.assertEqual([v["id"] for v in chosen],["a"])
+
     def test_no_gemini_secret_no_network_or_writes(self):
         with tempfile.TemporaryDirectory() as tmp:
             with patch.object(hunter,"RESULTS",Path(tmp)/"r.json"), \
