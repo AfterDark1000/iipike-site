@@ -20,7 +20,12 @@ on:
   workflow_dispatch:
   # Watch actual deploy completion, not only the hourly queue forecast.
   workflow_run:
-    workflows: ['pages build and deployment']
+    # React after *every* publisher attempt, especially failures; do not wait
+    # for the next hourly sweep or for a later Pages deploy to hide the stall.
+    workflows:
+      - 'pages build and deployment'
+      - 'HPII — site-first scheduled hourly queue'
+      - 'HPII — one-off recovery through Gemini (NO BULK DUMP)'
     types: [completed]
   schedule:
     - cron: '13 * * * *'
