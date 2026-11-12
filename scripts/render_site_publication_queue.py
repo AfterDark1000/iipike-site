@@ -19,7 +19,7 @@ from scripts.site_related import catalog_entries, validate_links, explicit_site_
 from scripts.site_rich_text import markdown_to_blocks
 from scripts.site_publication_queue import (
     INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot,
-    in_quiet_hours
+    in_quiet_hours, published_collision
 )
 
 REPO = "https://github.com/AfterDark1000/iipike-site"
@@ -96,7 +96,11 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
         elif not arts:
             status = "🖼️ Ждёт обложку"
         else:
-            if "article_markdown" in data:
+            duplicate = published_collision(data, catalog)
+            if duplicate:
+                block_reason = ("Этот первоисточник или заголовок уже опубликован: "
+                                + str(duplicate.get("id")))
+            if not block_reason and "article_markdown" in data:
                 try:
                     markdown_to_blocks(data["article_markdown"])
                 except (ValueError, TypeError) as exc:
@@ -114,7 +118,9 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 except ValueError as exc:
                     block_reason = str(exc)
             if block_reason:
-                status = ("⛔ Заблокирована: некорректное оформление"
+                status = ("⛔ Заблокирована: дубль опубликованного материала"
+                          if block_reason.startswith("Этот первоисточник или заголовок")
+                          else "⛔ Заблокирована: некорректное оформление"
                           if block_reason.startswith("Некорректное оформление текста:")
                           else "⛔ Заблокирована: связи с Дзеном")
             else:
