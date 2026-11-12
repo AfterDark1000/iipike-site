@@ -85,12 +85,12 @@
       "summary": "10 ноября: Claude Meetings в Google Meet готовит материалы и выполняет поручения до окончания встречи. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-12T05:38:32.554Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "12.11: проверены официальные материалы Anthropic/Claude 10.11, TechCrunch, Reuters, The Verge, архив 292 публикаций и news.json. Главный факт: Claude Meetings представлен для работы на видеосовещаниях; в официальном анонсе «coming soon», СМИ указывают бета-доступ Team/Enterprise, широкая доступность не подтверждена. Дубля нет. Уместная связь: Zoom о поручениях (https://dzen.ru/a/atsLKQ4ez2MvNjfy). Метки после утверждения: companies=[anthropic], products=[claude], topics=[agents,business]; Claude Meetings как новый продукт — кандидат. Дзен/Threads (319 симв.)/X (230 симв.) готовы на утверждение; НЕ сохранять в редакционные очереди до «берём»."
+      "closed_at": "2026-11-12T06:07:31.300Z",
+      "article_id": "anthropic-claude-meetings-20261110",
+      "note": "12.11.2026: Утверждена статья «Claude выполняет поручения, пока коллеги совещаются». Текст в editorial-intake/stories/anthropic-claude-meetings-20261110.json, посты Threads и X подтверждены. Anthropic/Claude — в реестре, Claude Meetings предложен в data/entity_candidates.json. Ожидает обложку и отложенную публикацию на сайте."
     },
     {
       "id": "n-001cd33c965241bc",
