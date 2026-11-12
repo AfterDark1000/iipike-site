@@ -56,7 +56,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           SHORTS_MAX_ANALYSES: "4"
           SHORTS_GEMINI_MODEL: "gemini-3.5-flash-lite"
-          RUN_MODE: ${{ github.event_name == 'schedule' && 'daily' || inputs.mode || 'pilot' }}
+          RUN_MODE: ${{ github.event_name != 'workflow_dispatch' && 'daily' || inputs.mode || 'pilot' }}
         run: python3 scripts/shorts_format_hunter.py --mode "$RUN_MODE"
       - name: Commit ONLY research results (no site publication)
         run: |
