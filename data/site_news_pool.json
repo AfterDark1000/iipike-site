@@ -70,9 +70,9 @@
       "summary": "Анонс 6 ноября; первый запуск инструмента поиска аномалий был намечен на 10 ноября, фактическое применение надо проверить.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-12T05:16:40.374Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
