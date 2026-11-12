@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 19 · **Готовы:** 0 · **Ждут интервал:** 19 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 73
+**В очереди:** 20 · **Готовы:** 0 · **Ждут интервал:** 20 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 73
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -31,6 +31,7 @@
 | **17** | [Минсельхоз США ошибся с прогнозом кукурузы и посадил ИИ перепроверять свои расчёты](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/usda-ai-crop-forecast-validation-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 11:07 (Усть-Катав)**; пауза до 12.11.2026 13:50 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/usda-ai-crop-forecast-validation-20261110.webp) |
 | **18** | [Claude выполняет поручения, пока коллеги совещаются](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-meetings-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 12:07 (Усть-Катав)**; пауза до 12.11.2026 13:50 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-claude-meetings-20261110.webp) |
 | **19** | [Claude теперь сам собирает таблицы с формулами прямо в чате](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-sheets-whiteboards-data-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 13:07 (Усть-Катав)**; пауза до 12.11.2026 13:50 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-claude-sheets-whiteboards-data-20261110.webp) |
+| **20** | [Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cisco-claude-mythos-ai-defense-20261109.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 14:07 (Усть-Катав)**; пауза до 12.11.2026 13:50 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cisco-claude-mythos-ai-defense-20261109.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
