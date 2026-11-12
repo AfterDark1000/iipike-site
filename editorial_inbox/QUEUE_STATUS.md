@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 20 · **Готовы:** 0 · **Ждут интервал:** 20 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 76
+**В очереди:** 21 · **Готовы:** 0 · **Ждут интервал:** 21 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 76
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -32,6 +32,7 @@
 | **18** | [Google научила ИИ искать причины болезней в отдельных клетках](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-alphagenome-2-cell-variants-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 16:07 (Усть-Катав)**; пауза до 12.11.2026 17:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-alphagenome-2-cell-variants-20261111.webp) |
 | **19** | [Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-sensorwm-wearables-health-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 17:07 (Усть-Катав)**; пауза до 12.11.2026 17:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-sensorwm-wearables-health-20261111.webp) |
 | **20** | [ИИ ускорил расчёты промышленных биореакторов в 10 тысяч раз](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/clara-bioreactor-10000x-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 18:07 (Усть-Катав)**; пауза до 12.11.2026 17:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/clara-bioreactor-10000x-20261111.webp) |
+| **21** | [Учёные научили роботов падать в 6,5 раза реже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/umich-prism-robot-motion-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 19:07 (Усть-Катав)**; пауза до 12.11.2026 17:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/umich-prism-robot-motion-20261110.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
