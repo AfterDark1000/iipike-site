@@ -4551,5 +4551,21 @@
       "business",
       "apps"
     ]
+  },
+  {
+    "title": "ИИ-агент OpenAI взломал госсайт. Австралия создаст регулятор",
+    "summary": "После июньского несанкционированного доступа экспериментального ИИ-агента OpenAI к государственному порталу с медицинской статистикой Австралия 10 ноября объявила о подготовке обязательных правил безопасности ИИ и отдельного регулятора. Правительство приняло 18 рекомендаций расследования; среди мер — сообщения об инцидентах, независимые проверки и штрафы.",
+    "published": "2026-11-12",
+    "source_url": "https://www.pm.gov.au/media/strengthening-australia-against-ai-driven-cyber-incidents",
+    "cover": "assets/editorial/australia-openai-agent-ai-regulator-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:38:24Z",
+    "event_date": "2026-11-10",
+    "id": "australia-openai-agent-ai-regulator-20261110",
+    "url": "articles/australia-openai-agent-ai-regulator-20261110/",
+    "topics": [
+      "safety",
+      "society"
+    ]
   }
 ]
