@@ -4720,5 +4720,27 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Google испытала Gemini Robotics 2.5 на заводах Mercedes-Benz: 96% удачных операций",
+    "summary": "Google DeepMind представила Gemini Robotics 2.5 — модель для управления роботами. На заводах Mercedes-Benz гуманоид Apollo 2 от Apptronik сортировал металлические детали с заявленной успешностью 96%; компания также сообщила об улучшениях в лабораторных задачах.",
+    "published": "2026-11-12",
+    "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/",
+    "cover": "assets/editorial/google-gemini-robotics-2-5-mercedes-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T11:30:50Z",
+    "event_date": "2026-11-10",
+    "id": "google-gemini-robotics-2-5-mercedes-20261110",
+    "url": "articles/google-gemini-robotics-2-5-mercedes-20261110/",
+    "topics": [
+      "engineering",
+      "models"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
