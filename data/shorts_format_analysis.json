@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "status": "never_run",
+  "mode": null,
+  "generated_at_utc": null,
+  "videos": [],
+  "errors": [],
+  "note": "No video has yet been inspected by this pipeline. Do not claim success."
+}
