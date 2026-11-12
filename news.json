@@ -4837,5 +4837,22 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Куртка меняет цвет прямо во время видео: Higgsfield анонсировала Miracle",
+    "summary": "Higgsfield анонсировала Miracle — ИИ-технологию для изменения деталей готового видео во время воспроизведения. Пока доступна только партнёрам в закрытом тестировании; интеграция через Higgsfield MCP с Claude запланирована.",
+    "published": "2026-11-12",
+    "source_url": "https://higgsfield.ai/miracle",
+    "cover": "assets/editorial/higgsfield-miracle-realtime-video-editing-20261106.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T18:30:48Z",
+    "event_date": "2026-11-06",
+    "id": "higgsfield-miracle-realtime-video-editing-20261106",
+    "url": "articles/higgsfield-miracle-realtime-video-editing-20261106/",
+    "topics": [
+      "video"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
