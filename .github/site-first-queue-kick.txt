@@ -1,2 +1,2 @@
-Queue retry: 2026-11-12 11:52 Asia/Yekaterinburg.
-Reason: recover scheduled site-first publication after verified duplicate-source queue head blockage; no urgent bypass.
+Queue retry: 2026-11-12 11:55 Asia/Yekaterinburg.
+Reason: retry normal site-first release with duplicate-source skip and passing fixture regression; no urgent override.
