@@ -21,7 +21,7 @@ def record(title, url, **kwargs):
 
 class SiteNewsPoolTests(unittest.TestCase):
     def test_empty_file_is_valid(self):
-        self.assertIs(validate(fresh()), validate(fresh()))
+        self.assertEqual(validate(fresh()), fresh())
 
     def test_batch_is_deduplicated_by_url_and_title(self):
         pool, report = add(fresh(), [
