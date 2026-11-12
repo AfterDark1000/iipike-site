@@ -26,12 +26,21 @@ MODEL = os.environ.get("SHORTS_GEMINI_MODEL", "gemini-3.5-flash-lite")
 MAX_ANALYSES = min(5, max(1, int(os.environ.get("SHORTS_MAX_ANALYSES", "4"))))
 LOOKBACK_DAYS = 7
 PILOT_IDS = ("rXgv9bxT8gw", "_ncGUlKhKR8", "YkL5X5KB9ts", "7xS87iActkU")
+# Four distinct editorial approaches, not four versions of the same ASMR video.
 SEARCHES = (
-    "unexpected engineering explained",
-    "oddly satisfying experiment",
-    "science facts visualization",
-    "technology surprising invention",
+    ("explanation", "surprising science fact explained animated"),
+    ("story", "unusual technology story with twist"),
+    ("experiment", "unexpected science experiment reveal"),
+    ("humor", "funny technology comedy short sketch"),
 )
+# Exclude bait that is unrelated to our editorial topics, even if highly viewed.
+UNSUITABLE_TITLE_TERMS = ("toilet", "bathroom prank", "mukbang",
+                          "eating candy", "skittles", "eating in", "licking")
+SENSORY_TERMS = ("asmr", "satisfying", "slime", "soap bar", "hot iron ball",
+                 "crushing", "melting", "grating")
+EXPLAINER_TERMS = ("why ", "how ", "explained", "history of", "what happens",
+                   "did you know", "science of", "reason ")
+HUMOR_TERMS = ("funny", "comedy", "sketch", "parody", "satire")
 SCHEMA = {
     "type": "object",
     "properties": {
@@ -176,20 +185,57 @@ def score_video(video):
         score += 0.6 * math.log1p(max(0, video["growth_views_per_hour"]))
     return round(score, 2)
 
+def format_family(video):
+    """Heuristic from title and discovery query, NOT a claim of watched content."""
+    title = (video.get("title") or "").lower()
+    if any(term in title for term in SENSORY_TERMS):
+        return "sensory"
+    if any(term in title for term in HUMOR_TERMS):
+        return "humor"
+    if any(term in title for term in EXPLAINER_TERMS):
+        return "explanation"
+    return video.get("search_family", "unknown")
+
+
+def select_diverse_formats(candidates, recently_analyzed=(), max_results=4):
+    """One candidate per provisional format family; prefer useful subjects."""
+    recent = set(recently_analyzed)
+    selected, represented = [], set()
+    for video in sorted(candidates, key=lambda v: v.get("rank_score", 0), reverse=True):
+        title = (video.get("title") or "").lower()
+        if video["id"] in recent or any(term in title for term in UNSUITABLE_TITLE_TERMS):
+            continue
+        family = format_family(video)
+        if family in represented:
+            continue
+        selected.append(video)
+        represented.add(family)
+        if len(selected) >= max_results:
+            break
+    return selected
+
+
 def discover(key, history):
     since = iso(now_utc() - timedelta(days=LOOKBACK_DAYS))
     ids = []
-    for q in SEARCHES:
+    families = {}
+    for family, q in SEARCHES:
         result = youtube("search", {
             "part": "snippet", "q": q, "type": "video",
             "order": "viewCount", "publishedAfter": since,
             "videoDuration": "short", "maxResults": 15,
         }, key)
-        ids.extend(x.get("id", {}).get("videoId") for x in result.get("items", []))
+        for item in result.get("items", []):
+            video_id = item.get("id", {}).get("videoId")
+            if video_id:
+                ids.append(video_id)
+                families.setdefault(video_id, family)
     details = fetch_video_details([i for i in ids if i], key)
     cutoff = now_utc() - timedelta(days=LOOKBACK_DAYS)
     candidates = []
     for v in details:
+        v["search_family"] = families.get(v["id"], "unknown")
+        v["format_family_guess"] = format_family(v)
         try:
             if parse_date(v["published_at"]) < cutoff:
                 continue
@@ -287,7 +333,8 @@ def run(mode):
                 recent_ids.add(old["id"])
         except (KeyError, TypeError, ValueError):
             pass
-    selected = [v for v in candidates if mode == "pilot" or v["id"] not in recent_ids][:MAX_ANALYSES]
+    selected = (candidates[:MAX_ANALYSES] if mode == "pilot" else
+                select_diverse_formats(candidates, recent_ids, MAX_ANALYSES))
     output = {"schema_version": 1, "mode": mode, "generated_at_utc": iso(now_utc()),
               "status": "no_candidates" if not selected else "partial",
               "limits": {"maximum_gemini_requests": MAX_ANALYSES,
