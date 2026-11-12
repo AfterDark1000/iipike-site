@@ -10,7 +10,7 @@
 
 1. GitHub → Settings → Secrets and variables → Actions → Repository secrets. Проверьте `GEMINI_API_KEY`. Если отсутствует, создайте в https://aistudio.google.com/api-keys и добавьте как `GEMINI_API_KEY`. Никогда не присылайте ключ в чат и не коммитьте его.
 2. Для ежедневного поиска включите YouTube Data API v3: https://console.cloud.google.com/apis/library/youtube.googleapis.com . Создайте отдельный API-ключ с ограничением YouTube Data API v3; сохраните как `YOUTUBE_API_KEY` в GitHub Secrets. Для пилота без статистики второй ключ необязателен.
-3. GitHub → Actions → **HPII — Shorts format research (no publishing)** → Run workflow → `pilot`. Запускается анализ четырёх известных YouTube URL из первого отчёта. Пятый пример был из TikTok, и напрямую через YouTube API его не проанализировать.
+3. При первом попадании workflow в main сработает **один автоматический пилот** по четырём URL. Для повторного запуска: GitHub → Actions → **HPII — Shorts format research (no publishing)** → Run workflow → `pilot`. Запускается анализ четырёх известных YouTube URL из первого отчёта. Пятый пример был из TikTok, и напрямую через YouTube API его не проанализировать.
 4. После успешного пилота запустите `daily` вручную для проверки поиска. Плановый запуск — примерно в 07:43 по Екатеринбургу (02:43 UTC), до отчёта охотника ChatGPT в 10:00. GitHub Actions не гарантирует точного времени старта.
 5. Результаты сохраняются в `data/shorts_format_analysis.json`, замеры роста — в `data/shorts_trend_history.json`. Охотник ChatGPT должен читать только реально сохранённые наблюдения со статусом `analyzed` и `analysis.evidence_quality` = `observed`/`partial`. Публикации не происходит.
 
