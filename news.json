@@ -4799,5 +4799,25 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "«Остальное не трогай»: ByteDance показала 100 правок одной картинки в Seedream 5.5",
+    "summary": "ByteDance представила Seedream 5.5 и продемонстрировала 100 последовательных правок одного изображения с сохранением нетронутых областей. Модель также поддерживает прозрачный фон и улучшенную генерацию текста.",
+    "published": "2026-11-12",
+    "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5",
+    "cover": "assets/editorial/bytedance-seedream-5-5-100-edits-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T16:00:55Z",
+    "event_date": "2026-11-09",
+    "id": "bytedance-seedream-5-5-100-edits-20261109",
+    "url": "articles/bytedance-seedream-5-5-100-edits-20261109/",
+    "topics": [
+      "images",
+      "models"
+    ],
+    "companies": [
+      "bytedance"
+    ],
+    "products": []
   }
 ]
