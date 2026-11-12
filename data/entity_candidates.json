@@ -536,6 +536,19 @@
           "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
         }
       ]
+    },
+    {
+      "key": "claude-meetings",
+      "name": "Claude Meetings",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "anthropic-claude-meetings-20261110",
+          "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors"
+        }
+      ]
     }
   ]
 }
