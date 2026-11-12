@@ -646,6 +646,51 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-765087e5bd19c6a3",
+      "sequence": 44,
+      "title": "Google открыла доступ к Gemini 4 Carbon для сложных задач и ИИ-агентов",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+      "summary": "10 ноября: Google расширила доступ к Gemini 4 Carbon для долгих многоэтапных задач, программирования и исследований. Платный API и подписка AI Ultra; это не общедоступная бесплатная модель.",
+      "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T05:11:17.825Z",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-b0f0e86e2a184d00",
+      "sequence": 45,
+      "title": "Автор вирусных роликов троллит ИИ-рекрутёров кроссовком на голове",
+      "source_url": "https://x.com/nickreidx/status/2119912640172666884",
+      "summary": "10–11 ноября: Ник Рид публикует сатирические видео с ИИ-собеседованиями, маской супергероя и кроссовком на голове; ролики постановочные, участие реальных систем найма не подтверждено.",
+      "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T05:11:17.826Z",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-9d6f7aa40ea4e712",
+      "sequence": 46,
+      "title": "ИИ-агент по ошибке заказал пользователю 72 яйца",
+      "source_url": "https://x.com/nerdalert/status/2120251385199419805",
+      "summary": "10 ноября: Мэтт Смит сообщил, что в заказе продуктов, оформленном ИИ, оказались 72 яйца; случай известен со слов автора и по опубликованным им материалам, независимой проверки заказа нет.",
+      "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-12T05:11:17.826Z",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
