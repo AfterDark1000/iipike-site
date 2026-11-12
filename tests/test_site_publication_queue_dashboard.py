@@ -14,6 +14,12 @@ NOW = dt.datetime(2026, 11, 5, 8, tzinfo=UTC)
 
 
 class EditorialQueuePageTests(unittest.TestCase):
+    def setUp(self):
+        # Unrelated dashboard tests model the queue without real Git refs.
+        scoped = patch("scripts.render_site_publication_queue.existing_error", return_value=None)
+        scoped.start()
+        self.addCleanup(scoped.stop)
+
     def test_night_forecast_resumes_in_morning_with_hourly_spacing(self):
         local = dt.timezone(dt.timedelta(hours=5))
         now = dt.datetime(2026, 11, 8, 1, 30, tzinfo=local)
