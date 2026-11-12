@@ -3,7 +3,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const {ageMinutes, dueAgeMinutes, evaluateRun, latestNonCancelled,
   evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication,
-  canAutoCloseIncident} = require('../scripts/watchdog.js');
+  unrecoveredPublisherFailures, canAutoCloseIncident} = require('../scripts/watchdog.js');
 const NOW = Date.parse('2026-11-06T10:00:00Z');
 const run = (date, conclusion='success') => ({created_at:date, status:'completed', conclusion, html_url:'https://github.com/example'});
 
@@ -40,6 +40,20 @@ test('a recent Pages failure gets a grace period; no unrelated-build false alarm
     {name:'pages build and deployment'});
   assert.equal(evaluatePagesBuilds([failed], NOW),null);
   assert.equal(evaluatePagesBuilds([run('2026-11-06T08:00:00Z','failure')],NOW),null);
+});
+
+test('failed publisher run alarms even if latest workflow finished green without a published article', () => {
+  const runs = [
+    run('2026-11-06T09:50:00Z','success'),
+    run('2026-11-06T09:40:00Z','failure'),
+    run('2026-11-06T09:25:00Z','failure'),
+  ];
+  assert.equal(unrecoveredPublisherFailures(
+    runs,'2026-11-06T09:20:00Z',NOW).length,2);
+  assert.equal(unrecoveredPublisherFailures(
+    runs,'2026-11-06T09:45:00Z',NOW).length,0);
+  assert.equal(unrecoveredPublisherFailures(
+    runs,null,NOW).length,2);
 });
 
 test('scheduled future slot is not overdue', () => {
