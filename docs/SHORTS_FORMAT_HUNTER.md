@@ -1,0 +1,39 @@
+# ХПИИ — видеоаналитик «Охотника за форматами»
+
+Это **исследовательский** конвейер. Он НЕ создаёт клипы, НЕ скачивает чужие видео, НЕ публикует статьи или Reels и НЕ изменяет редакционные очереди. Анализ публичных YouTube-видео — через Gemini Interactions API по ссылке. Быстрые склейки могут быть пропущены при стандартной выборке примерно 1 кадр/сек.
+
+## Секрет Gemini, который уже используется
+
+В этом репозитории workflow `.github/workflows/editorial-draft.yml` уже ссылается на `secrets.GEMINI_API_KEY`. Если секрет действительно существует и подходит для Gemini Interactions API, используем **тот же ключ**. Упоминание в YAML не доказывает, что секрет задан/работает.
+
+## Настройка
+
+1. GitHub → Settings → Secrets and variables → Actions → Repository secrets. Проверьте `GEMINI_API_KEY`. Если отсутствует, создайте в https://aistudio.google.com/api-keys и добавьте как `GEMINI_API_KEY`. Никогда не присылайте ключ в чат и не коммитьте его.
+2. Для ежедневного поиска включите YouTube Data API v3: https://console.cloud.google.com/apis/library/youtube.googleapis.com . Создайте отдельный API-ключ с ограничением YouTube Data API v3; сохраните как `YOUTUBE_API_KEY` в GitHub Secrets. Для пилота без статистики второй ключ необязателен.
+3. При первом попадании workflow в main сработает **один автоматический пилот** по четырём URL. Для повторного запуска: GitHub → Actions → **HPII — Shorts format research (no publishing)** → Run workflow → `pilot`. Запускается анализ четырёх известных YouTube URL из первого отчёта. Пятый пример был из TikTok, и напрямую через YouTube API его не проанализировать.
+4. После успешного пилота запустите `daily` вручную для проверки поиска. Плановый запуск — примерно в 07:43 по Екатеринбургу (02:43 UTC), до отчёта охотника ChatGPT в 10:00. GitHub Actions не гарантирует точного времени старта.
+5. Результаты сохраняются в `data/shorts_format_analysis.json`, замеры роста — в `data/shorts_trend_history.json`. Охотник ChatGPT должен читать только реально сохранённые наблюдения со статусом `analyzed` и `analysis.evidence_quality` = `observed`/`partial`. Публикации не происходит.
+
+## Границы достоверности
+
+- На один запуск допускается **до 4 Gemini-запросов**, плюс при поиске **4 search.list** YouTube и обращения к videos/channels. Тарификация и квоты зависят от ключей Google.
+- Фильтры YouTube `videoDuration=short` (менее 4 минут) и скриптовый 8–180 секунд НЕ подтверждают наличие ролика именно в формате Shorts; поэтому поле `is_confirmed_short` по умолчанию `false`.
+- `viral_status=candidate_verified_stats` — лишь эвристика просмотров и аудитории, а не измеренное удержание. Нет статистики — нет доказанного «залёта».
+- Если видео не удалось посмотреть, статус `unsupported`/`failed` и предупреждение; запрещено заменять это выдуманной раскадровкой. Gemini тоже может ошибаться — критичные наблюдения проверять глазами.
+- В результате сохраняются публичные метаданные и краткий авторский анализ, **не** полные чужие транскрипции и не чужие видео.
+- Для TikTok и Instagram Reels потребуется отдельный законный доступ к данным и медиа. Текущая реализация их не просматривает.
+- Если API-ключи не настроены, выполнение завершается ошибкой без перезаписи старых данных; пустая начальная база означает `never_run`.
+
+## Локальные тесты без запросов в сеть
+
+```sh
+python3 -m py_compile scripts/shorts_format_hunter.py
+python3 -m unittest discover -s tests -p 'test_shorts_format_hunter.py' -v
+```
+
+## Первоисточники технического протокола
+
+- https://ai.google.dev/gemini-api/docs/video-understanding
+- https://ai.google.dev/gemini-api/docs/interactions-overview
+- https://developers.google.com/youtube/v3/docs/search/list
+- https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows

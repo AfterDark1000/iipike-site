@@ -1,0 +1,78 @@
+name: HPII — Shorts format research (no publishing)
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "pilot = inspect known YouTube URLs; daily = discover new candidates"
+        type: choice
+        options: [pilot, daily]
+        default: pilot
+  schedule:
+    # 07:43 Asia/Yekaterinburg (UTC+5); scheduled Actions are best-effort.
+    - cron: "43 2 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/shorts-format-hunter.yml"
+  pull_request:
+    paths:
+      - "scripts/shorts_format_hunter.py"
+      - "tests/test_shorts_format_hunter.py"
+      - ".github/workflows/shorts-format-hunter.yml"
+
+permissions:
+  contents: read
+concurrency:
+  group: hpii-shorts-format-hunter
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate offline without API calls
+        run: |
+          python3 -m py_compile scripts/shorts_format_hunter.py
+          python3 -m unittest discover -s tests -p 'test_shorts_format_hunter.py' -v
+
+  research:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Inspect public videos (max four Gemini requests)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          SHORTS_MAX_ANALYSES: "4"
+          SHORTS_GEMINI_MODEL: "gemini-3.5-flash-lite"
+          RUN_MODE: ${{ github.event_name == 'schedule' && 'daily' || inputs.mode || 'pilot' }}
+        run: python3 scripts/shorts_format_hunter.py --mode "$RUN_MODE"
+      - name: Commit ONLY research results (no site publication)
+        run: |
+          if [ -z "$(git status --porcelain -- data/shorts_format_analysis.json data/shorts_trend_history.json)" ]; then
+            echo "No new research data"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/shorts_format_analysis.json data/shorts_trend_history.json
+          git commit -m "Record research-only Shorts format observations"
+          for n in 1 2 3 4; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              echo "Research records saved"; exit 0
+            fi
+            sleep 4
+          done
+          echo "Concurrent main changes prevented non-forced push" >&2
+          exit 1
