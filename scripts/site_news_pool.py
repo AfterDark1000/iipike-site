@@ -42,8 +42,12 @@ def canonical_url(value):
     return urlunsplit(("https", host, url.path.rstrip("/") or "/", urlencode(pairs), ""))
 
 
-def candidate_id(url):
-    return "n-" + hashlib.sha256(canonical_url(url).encode("utf-8")).hexdigest()[:16]
+def candidate_id(url, title=None):
+    """Stable URL ID for legacy entries; title-aware ID when URL is reused."""
+    identity = canonical_url(url)
+    if title is not None:
+        identity += "\n" + clean_title(title)
+    return "n-" + hashlib.sha256(identity.encode("utf-8")).hexdigest()[:16]
 
 
 def clean_title(value):
@@ -68,7 +72,7 @@ def validate(pool):
             not isinstance(pool["note"], str) or not pool["note"] or
             not isinstance(pool["items"], list) or len(pool["items"]) > 5000):
         raise ValueError("Invalid site news pool header")
-    ids, urls, titles = set(), set(), set()
+    ids, titles = set(), set()
     previous_sequence = 0
     for item in pool["items"]:
         if not isinstance(item, dict) or set(item) != KEYS:
@@ -82,8 +86,8 @@ def validate(pool):
                 not isinstance(item["note"], str) or len(item["note"]) > 1500):
             raise ValueError("Invalid candidate text fields")
         url = canonical_url(item["source_url"])
-        if item["id"] != candidate_id(url):
-            raise ValueError("Candidate ID must match normalized source URL")
+        if item["id"] not in {candidate_id(url), candidate_id(url, item["title"])}:
+            raise ValueError("Candidate ID must match the URL or URL+title identity")
         if item["priority"] not in PRIORITIES or item["status"] not in STATES:
             raise ValueError("Invalid candidate priority or status")
         utc_time(item["added_at"])
@@ -105,10 +109,9 @@ def validate(pool):
         elif item["article_id"] is not None:
             raise ValueError("Only approved items may have an article ID")
         t = clean_title(item["title"])
-        if item["id"] in ids or url in urls or t in titles:
-            raise ValueError("Duplicate candidate ID, normalized URL or identical title")
+        if item["id"] in ids or t in titles:
+            raise ValueError("Duplicate candidate ID or identical title")
         ids.add(item["id"])
-        urls.add(url)
         titles.add(t)
     return pool
 
@@ -131,12 +134,16 @@ def add(pool, records, *, now=None):
         title = str(record["title"]).strip()
         url = canonical_url(record["source_url"])
         normalized = clean_title(title)
-        if url in known_urls or normalized in known_titles:
+        if normalized in known_titles:
             duplicate.append(title)
             continue
         sequence += 1
+        # A second distinct story from the same release must be allowed.
+        # Keep legacy URL-only IDs for first occurrences to preserve every
+        # existing record and cross-chat reference.
+        identity = candidate_id(url, title) if url in known_urls else candidate_id(url)
         item = {
-            "id": candidate_id(url), "sequence": sequence,
+            "id": identity, "sequence": sequence,
             "title": title, "source_url": url,
             "summary": str(record.get("summary") or "").strip(),
             "origin": str(record.get("origin") or "ручная подборка").strip(),
