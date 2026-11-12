@@ -1,0 +1,1 @@
+2026-11-12 12:36 Asia/Yekaterinburg: owner-authorized one-off ordered recovery of at most nine approved site articles through google-gemini-for-healthcare-20261110; spacing >=2 minutes; then return to normal hourly scheduler.
