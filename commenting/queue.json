@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12T11:47:03.555346Z",
+  "updated_at": "2026-11-12T19:51:36.739952Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T11:47:03.555346Z",
-      "last_success_at": "2026-11-12T11:47:03.555346Z",
+      "checked_at": "2026-11-12T19:51:36.739952Z",
+      "last_success_at": "2026-11-12T19:51:36.739952Z",
       "error": null,
-      "fresh_matches": 4
+      "fresh_matches": 5
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T11:47:03.555346Z",
-      "last_success_at": "2026-11-12T11:47:03.555346Z",
+      "checked_at": "2026-11-12T19:51:36.739952Z",
+      "last_success_at": "2026-11-12T19:51:36.739952Z",
       "error": null,
-      "fresh_matches": 19
+      "fresh_matches": 15
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T11:47:03.555346Z",
-      "last_success_at": "2026-11-12T11:47:03.555346Z",
+      "checked_at": "2026-11-12T19:51:36.739952Z",
+      "last_success_at": "2026-11-12T19:51:36.739952Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,11 +41,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-12T11:47:03.555346Z",
+      "status": "error",
+      "checked_at": "2026-11-12T19:51:36.739952Z",
       "last_success_at": "2026-11-12T11:47:03.555346Z",
-      "error": null,
-      "fresh_matches": 1
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     }
   ],
   "generator": {
@@ -54,11 +54,136 @@
     "message": "Expecting property name enclosed in double quotes: line 6 column 7 (char 89)"
   },
   "usage": {
-    "date": "2026-11-12",
-    "attempted": 9
+    "date": "2026-11-13",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "9576ebe3ff4282e908318785",
+      "title": "Увольнения, засилье ИИ и умершие надежды: исследование показало удручающее состояние игровой индустрии в 2026 году",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151234",
+      "published_at": "2026-11-12T19:23:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-12T19:51:36.739952Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "52b7314bcbf0a6795fa84ff5",
+      "title": "ИИ ЦОД продолжают перетягивать память на себя — серверные SSD подорожают ещё на 15–20 %",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151231",
+      "published_at": "2026-11-12T18:28:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-12T19:51:36.739952Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "72c4916f928971f17fc946ab",
+      "title": "ИИ от Google DeepMind научился находить мутации, которые запускают болезни только в определённых клетках",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/12/ii-ot-google-deepmind-naucilsia-naxodit-mutacii-kotorye-zapuskaiut-bolezni-tolko-v-opredelennyx-kletkax.html",
+      "published_at": "2026-11-12T18:17:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-12T19:51:36.739952Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "d7f9bbb404e915f59ffbf217",
+      "title": "Samsung запустила строительство гигантского комплекса по выпуску ИИ-памяти — счёт вложений пошёл на квинтиллионы",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151230",
+      "published_at": "2026-11-12T17:53:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c3fdc2d9d41a5ee0ec6fc73f",
+      "title": "Российские компании переплачивают за зарубежный ИИ до девяти раз — посредники объяснили, откуда берётся наценка",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151211",
+      "published_at": "2026-11-12T13:14:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c0cfe6f57f59fb10d8965f67",
+      "title": "Anthropic официально объявила о первичном размещении акций на Nasdaq под тикером ANT",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/12/anthropic-oficialno-obieiavila-o-pervicnom-razmeshhenii-akcii-na-nasdaq-pod-tikerom-ant.html",
+      "published_at": "2026-11-12T12:58:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "3021b111628dfd93224ef604",
+      "title": "Microsoft вернула поиск без ИИ — в Bing появился выключатель ИИ-ответов",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151208",
+      "published_at": "2026-11-12T12:29:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-12T19:51:36.739952Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "8682eb43d0d1d351be33827c",
       "title": "Объем кредитов крупному бизнесу, выданных Сбером с помощью ИИ, достиг 8 трлн рублей",
