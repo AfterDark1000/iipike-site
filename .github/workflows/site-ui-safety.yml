@@ -1,0 +1,56 @@
+name: HPII — site listing and cover safety (read-only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/site-ui-safety.yml'
+      - 'scripts/site_home.py'
+      - 'scripts/publish_approved_article.py'
+      - 'index.html'
+      - 'articles/index.html'
+      - 'feed.xml'
+      - 'assets/site.css'
+      - 'tests/test_homepage.py'
+      - 'tests/test_approved_publisher.py'
+      - 'tests/test_site_archive_order.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/site-ui-safety.yml'
+      - 'scripts/site_home.py'
+      - 'scripts/publish_approved_article.py'
+      - 'index.html'
+      - 'articles/index.html'
+      - 'feed.xml'
+      - 'assets/site.css'
+      - 'tests/test_homepage.py'
+      - 'tests/test_approved_publisher.py'
+      - 'tests/test_site_archive_order.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-site-ui-safety-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout actual published site
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install image validation dependency
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Verify archive/RSS chronology and uncropped hero cover
+        run: python3 -m unittest discover -s tests -p 'test_site_archive_order.py' -v
+      - name: Verify homepage structure and freshness
+        run: python3 -m unittest discover -s tests -p 'test_homepage.py' -v
+      - name: Verify published article template and archive generator
+        run: python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+      - name: Verify homepage matches generator
+        run: python3 scripts/build_home_published.py --check
