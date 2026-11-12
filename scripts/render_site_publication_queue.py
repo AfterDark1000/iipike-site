@@ -64,7 +64,9 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
     public = {r["id"]: r for r in catalog}
     last = latest_site_first_publication(catalog, main_ref=main)
     backlog = sum(1 for sid in stories if sid not in public and len(covers.get(sid, [])) == 1)
-    spacing = release_interval(now, backlog)
+    spacing = release_interval(
+        now, backlog,
+        [sid for sid in stories if sid not in public and len(covers.get(sid, [])) == 1])
     spacing_until = last + spacing if last and now < last + spacing else None
     verified_links = None
     rows = []
@@ -187,7 +189,7 @@ def forecast_order(rows, last, *, now=None):
         (r for r in rows if is_selectable(r)),
         key=lambda r: (r["ready_at"], r["id"]),
     )
-    spacing = release_interval(now, len(pending))
+    spacing = release_interval(now, len(pending), [r["id"] for r in pending])
     tick = next_cron_tick(max(now.astimezone(dt.timezone.utc), last + spacing)
                           if last else now)
     output = []
@@ -204,7 +206,8 @@ def forecast_order(rows, last, *, now=None):
             continue
         output.append((selected, tick))
         pending.remove(selected)
-        tick = next_cron_tick(tick + release_interval(tick, len(pending)))
+        tick = next_cron_tick(tick + release_interval(
+            tick, len(pending), [r["id"] for r in pending]))
     return output
 
 
@@ -237,9 +240,9 @@ def as_markdown(rows, last, *, now=None):
         + " · **Уже опубликованы:** " + str(len(released)),
         "",
         "Проверка каждые 15 минут; не более одной статьи за запуск. "
-        + ("Временно ускоренный интервал — 30 минут при очереди от 10 материалов "
-           "до 15.11.2026 01:00 (Усть-Катав); затем 60 минут. "
-           if release_interval(now, len(planned)) == RECOVERY_INTERVAL
+        + ("Временно ускоренный интервал до публикации Gemini для больниц "
+           "(не дольше 12.11.2026 19:00 по Усть-Катаву); после неё — 60 минут. "
+           if release_interval(now, len(planned), [r["id"] for r, _ in planned]) == RECOVERY_INTERVAL
            else "Стандартный интервал — 60 минут. ")
         + "Автоматический выпуск приостанавливается "
         "ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется "
