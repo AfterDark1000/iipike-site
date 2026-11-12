@@ -1,2 +1,2 @@
-Queue retry: 2026-11-12 12:22 Asia/Yekaterinburg.
-Reason: validate repaired shared-press-release handling and bounded normal site queue catch-up; do not bypass spacing or quiet hours.
+Queue validation retry: 2026-11-12 13:19 Asia/Yekaterinburg.
+Reason: verify safe per-article quarantine, continuing regular queue without urgency and preserving the one-hour site-first spacing.
