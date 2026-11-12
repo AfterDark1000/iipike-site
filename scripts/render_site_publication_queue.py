@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git_blob_at
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 from scripts.site_rich_text import markdown_to_blocks
+from scripts.site_release_quarantine import existing_error
 from scripts.site_publication_queue import (
     INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot,
     in_quiet_hours, published_collision, release_interval, RECOVERY_INTERVAL, RECOVERY_UNTIL
@@ -100,7 +101,11 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
         elif not arts:
             status = "🖼️ Ждёт обложку"
         else:
-            duplicate = published_collision(data, catalog)
+            blocked = existing_error(inbox, {"id": sid, "cover": arts[0]},
+                                     main_ref=main)
+            if blocked:
+                block_reason = "Ошибка проверки статьи: " + str(blocked.get("reason", ""))
+            duplicate = published_collision(data, catalog) if not block_reason else None
             if duplicate:
                 block_reason = ("Эта статья уже опубликована под тем же ID или заголовком: "
                                 + str(duplicate.get("id")))
@@ -122,7 +127,9 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 except ValueError as exc:
                     block_reason = str(exc)
             if block_reason:
-                status = ("⛔ Заблокирована: дубль опубликованного материала"
+                status = ("⛔ Заблокирована: ошибка статьи"
+                          if block_reason.startswith("Ошибка проверки статьи:")
+                          else "⛔ Заблокирована: дубль опубликованного материала"
                           if block_reason.startswith("Эта статья уже опубликована")
                           else "⛔ Заблокирована: некорректное оформление"
                           if block_reason.startswith("Некорректное оформление текста:")
