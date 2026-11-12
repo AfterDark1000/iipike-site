@@ -72,13 +72,23 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
     verified_links = None
     rows = []
     for sid, path in sorted(stories.items()):
-        raw = safe_git_blob_at(inbox, path)
-        if len(raw) > 128_000:
-            raise ValueError("Oversized editorial story: " + sid)
-        data = json.loads(raw)
-        if not isinstance(data, dict) or data.get("id") != sid:
-            raise ValueError("Invalid editorial story ID: " + sid)
-        scheduled = parse_slot(data["site_publish_at"]) if "site_publish_at" in data else None
+        try:
+            raw = safe_git_blob_at(inbox, path)
+            if len(raw) > 128_000:
+                raise ValueError("Oversized editorial story: " + sid)
+            data = json.loads(raw)
+            if not isinstance(data, dict) or data.get("id") != sid:
+                raise ValueError("Invalid editorial story ID: " + sid)
+            scheduled = parse_slot(data["site_publish_at"]) if "site_publish_at" in data else None
+        except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
+            rows.append({
+                "id": sid, "title": sid, "status": "⛔ Заблокирована: ошибка статьи",
+                "published": False, "published_at": None, "eligible": False,
+                "block_reason": "Ошибка структуры редакционного JSON: " + str(exc)[:250],
+                "ready_at": None, "publish_at": None, "spacing_until": None,
+                "source_path": path, "cover_path": None,
+            })
+            continue
         page = exists_at(main, "articles/" + sid + "/index.html")
         published = public.get(sid)
         arts = covers.get(sid, [])
