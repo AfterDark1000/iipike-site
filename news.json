@@ -4702,5 +4702,23 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Zyphra выпустила ZONOS3-Mini: клонирует голос и работает прямо в браузере",
+    "summary": "Zyphra выпустила ZONOS3-Mini — открытую компактную нейросеть для синтеза и клонирования голоса с поддержкой 43 языков, включая русский. Модель задействует около 100 млн из 800 млн параметров и может работать локально в браузере с WebGPU.",
+    "published": "2026-11-12",
+    "source_url": "https://www.zyphra.com/our-work/zonos3-mini",
+    "cover": "assets/editorial/zyphra-zonos3-mini-voice-cloning-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T10:15:38Z",
+    "event_date": "2026-11-09",
+    "id": "zyphra-zonos3-mini-voice-cloning-20261109",
+    "url": "articles/zyphra-zonos3-mini-voice-cloning-20261109/",
+    "topics": [
+      "audio",
+      "models"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
