@@ -71,9 +71,12 @@
 .home-issue-tag{align-self:center;font-size:10px;letter-spacing:.13em;border:1px solid var(--line);padding:8px 12px;font-weight:900;white-space:nowrap}
 .home-feature-link{display:grid;grid-template-columns:1.18fr .82fr;background:#ebe4d9;text-decoration:none;min-height:390px;color:var(--ink)}
 .home-feature-link:hover{color:var(--ink)}
-.home-feature-image{background:#d5d2c9;overflow:hidden}
-.home-feature-image img{height:100%;min-height:390px;object-fit:cover;transition:transform .45s}
-.home-feature-link:hover img{transform:scale(1.035)}
+/* Keep every editorial 16:9 cover legible in the tall feature card.
+   Blur the same artwork behind its full, uncropped foreground image. */
+.home-feature-image{position:relative;isolation:isolate;display:flex;align-items:stretch;justify-content:center;min-width:0;min-height:390px;background:#28252a;overflow:hidden}
+.home-feature-image::before{content:"";position:absolute;inset:-28px;background-image:var(--feature-art);background-size:cover;background-position:center;filter:blur(22px) brightness(.64) saturate(.8);opacity:.8;z-index:-1;pointer-events:none}
+.home-feature-image img{position:relative;z-index:1;width:100%;height:100%;min-height:390px;object-fit:contain;object-position:center;transition:none}
+.home-feature-link:hover .home-feature-image img{transform:none}
 .home-feature-copy{padding:clamp(25px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start}
 .home-feature-copy h3{font:700 clamp(27px,2.8vw,39px)/1.18 Georgia,serif;letter-spacing:-.046em;margin:19px 0 17px}
 .home-feature-copy p{font-size:15px;color:#515353;line-height:1.65;margin:0 0 21px}
@@ -124,7 +127,8 @@
   .home-news-grid,.home-workshop-grid{grid-template-columns:1fr}
   .home-news-card{min-height:180px}
   .home-feature-link{grid-template-columns:1fr}
-  .home-feature-image img{min-height:0;max-height:330px}
+  .home-feature-image{min-height:0;aspect-ratio:16/9}
+  .home-feature-image img{min-height:0;max-height:none;height:100%;object-fit:contain}
   .home-feature-copy{min-height:300px}
 }
 @media (max-width:480px){
