@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "d0340c975e282d5ac1aec0be6d73ea000ada7b69",
-  "source_blob_sha": "009662e3ce0b72da174b8970fde38006cd61c78d",
+  "source_commit": "27ca529b1eba42dcad66b4eaf4aba15226f5ee35",
+  "source_blob_sha": "17693de36af07c0750fc884f85b8da5b15161566",
   "snapshot_date": "2026-11-12",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af4391dfbd16748b0c7e996",
+      "title": "Google представила Gemini для больниц: ИИ разберёт медкарты и страховки",
+      "dzen_url": "https://dzen.ru/a/avQ5HfvRZ0iwx-mW",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 10 ноября представила Gemini for healthcare — ИИ-агента для больниц и страховых компаний. Он собирает историю болезни из разных медицинских систем, готовит документы для согласования лечения со страховщиком и помогает разобраться, какие расходы покрывает полис пациента. В американских больницах сведения об одном человеке могут храниться в нескольких базах. Анализы — в одной, назначения — в другой, результаты о",
+      "published_at_utc": "2026-11-12T08:02:16+00:00"
+    },
     {
       "dzen_id": "6af42a640e259d5111a36cf0",
       "title": "Adobe научила Photoshop менять ракурс, а Premiere — генерировать видео",
