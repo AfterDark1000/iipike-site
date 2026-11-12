@@ -313,6 +313,18 @@
           "source_url": "https://www.reuters.com/technology/usda-launch-ai-tool-check-crop-production-data-after-errors-2026-11-06/"
         }
       ]
+    },
+    {
+      "key": "cisco",
+      "name": "Cisco",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "cisco-claude-mythos-ai-defense-20261109",
+          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
+        }
+      ]
     }
   ],
   "products": [
@@ -586,6 +598,32 @@
         {
           "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
           "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
+        }
+      ]
+    },
+    {
+      "key": "cisco-ai-defense",
+      "name": "Cisco AI Defense",
+      "company": "cisco",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "cisco-claude-mythos-ai-defense-20261109",
+          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
+        }
+      ]
+    },
+    {
+      "key": "claude-mythos",
+      "name": "Claude Mythos",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "cisco-claude-mythos-ai-defense-20261109",
+          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
         }
       ]
     }
