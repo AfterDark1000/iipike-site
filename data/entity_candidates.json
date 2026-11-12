@@ -325,6 +325,18 @@
           "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
         }
       ]
+    },
+    {
+      "key": "tu-graz",
+      "name": "Graz University of Technology (TU Graz)",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "clara-bioreactor-10000x-20261111",
+          "source_url": "https://www.tugraz.at/en/news/article/ai-tool-clara-accelerates-the-development-of-bioreactors"
+        }
+      ]
     }
   ],
   "products": [
@@ -650,6 +662,19 @@
         {
           "article_id": "google-sensorwm-wearables-health-20261111",
           "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+        }
+      ]
+    },
+    {
+      "key": "clara-bioreactor",
+      "name": "CLARA",
+      "company": "tu-graz",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "clara-bioreactor-10000x-20261111",
+          "source_url": "https://www.tugraz.at/en/news/article/ai-tool-clara-accelerates-the-development-of-bioreactors"
         }
       ]
     }
