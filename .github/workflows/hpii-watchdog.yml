@@ -7,6 +7,8 @@ on:
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
       - 'scripts/watchdog_queue.py'
+      - 'scripts/site_release_quarantine.py'
+      - 'tests/test_site_release_quarantine.py'
       - 'tests/watchdog.test.js'
       - 'tests/test_watchdog_queue.py'
   push:
@@ -15,6 +17,8 @@ on:
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
       - 'scripts/watchdog_queue.py'
+      - 'scripts/site_release_quarantine.py'
+      - 'tests/test_site_release_quarantine.py'
       - 'tests/watchdog.test.js'
       - 'tests/test_watchdog_queue.py'
   workflow_dispatch:
@@ -57,6 +61,7 @@ jobs:
           python3 -m py_compile scripts/watchdog_queue.py
           node --test tests/watchdog.test.js
           python3 -m unittest discover -s tests -p 'test_watchdog_queue.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_release_quarantine.py' -v
 
   watchdog:
     if: ${{ github.event_name != 'pull_request' }}
@@ -73,6 +78,7 @@ jobs:
         run: |
           node --test tests/watchdog.test.js
           python3 -m unittest discover -s tests -p 'test_watchdog_queue.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_release_quarantine.py' -v
       - name: Inspect site-first queue from local Git refs (read-only)
         run: python3 scripts/watchdog_queue.py --output /tmp/hpii-queue-health.json
       - name: Check schedule, queue, public site and open incidents
