@@ -92,7 +92,7 @@ class SiteNewsPoolTests(unittest.TestCase):
         self.assertIsNone(continue_item(pool, item_id="n-fake"))
         self.assertEqual(pool, before)
         self.assertEqual(local_date("2026-11-12T08:00:00+00:00"),
-                         "12.11.2026 13:00 (+05+0500)")
+                         "12.11.2026 13:00 (UTC+05:00)")
 
     def test_return_goes_back_to_original_fifo_position(self):
         pool, _ = add(fresh(), [
