@@ -114,9 +114,9 @@ def render_home_section(records, focus_items=()):
     related = "\n".join(
         '<a class="home-site-post" href="' + escape(row["url"], quote=True) + '">'
         '<img loading="lazy" alt="Обложка статьи" src="' + escape(row["cover"], quote=True) + '">'
-        '<span><small class="date">' + escape(publication_date(row["published"]))
+        '<span><h3>' + escape(row["title"]) + '</h3>'
+        '<small class="date">' + escape(publication_date(row["published"]))
         + ' · ' + escape(RUBRICS[row.get("rubric", "news")]["name"]) + '</small>'
-        '<h3>' + escape(row["title"]) + '</h3>'
         '<span class="home-site-read">Читать на сайте ↗</span></span></a>'
         for row in others
     )
@@ -127,7 +127,7 @@ def render_home_section(records, focus_items=()):
       <a class="home-text-link" href="articles/">Все {count} материалов <span aria-hidden="true">↗</span></a>
     </div>
     <a class="home-feature-link" href="{url}">
-      <div class="home-feature-image" style="--feature-art:url(&quot;{art}&quot;)">
+      <div class="home-feature-image">
         <img src="{art}" width="1672" height="941" alt="Обложка: {title}" loading="lazy">
       </div>
       <div class="home-feature-copy">
