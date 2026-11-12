@@ -35,12 +35,16 @@ def story_paths(ref, item):
     story = "editorial_inbox/stories/" + sid + ".json"
     cover = item["cover"]
     data = json.loads(safe_git_blob_at(ref, story))
-    if data.get("id") != sid:
+    if not isinstance(data, dict) or data.get("id") != sid:
         raise ValueError("Article ID differs from its editorial path")
     blocks = (markdown_to_blocks(data["article_markdown"]) if
               "article_markdown" in data else data.get("paragraphs", []))
+    if not isinstance(blocks, list):
+        raise ValueError("Editorial blocks must form a list")
     illustrations = []
     for block in blocks:
+        if not isinstance(block, dict):
+            raise ValueError("Malformed editorial block")
         if block.get("type") != "image":
             continue
         src = block.get("src", "")
@@ -54,9 +58,18 @@ def story_paths(ref, item):
 def content_fingerprint(ref, item, *, main_ref="origin/main"):
     """Fingerprint exact content and validator versions, not changing Git HEAD."""
     parts = []
-    for path in story_paths(ref, item):
-        blob = git("rev-parse", ref + ":" + path).stdout.strip()
-        parts.append(path + ":" + blob)
+    sid = item["id"]
+    # Even malformed JSON/Markdown must be fingerprintable: the source blob
+    # and cover are always enough to identify the editor's original version.
+    paths = ["editorial_inbox/stories/" + sid + ".json", item["cover"]]
+    try:
+        paths.extend(path for path in story_paths(ref, item) if path not in paths)
+    except (ValueError, TypeError, KeyError, json.JSONDecodeError):
+        pass
+    for path in paths:
+        result = git("rev-parse", ref + ":" + path, check=False)
+        parts.append(path + ":" + (result.stdout.strip() if result.returncode == 0
+                                   else "<missing>"))
     for path in CODE_PATHS:
         blob = git("rev-parse", main_ref + ":" + path).stdout.strip()
         parts.append(path + ":" + blob)
