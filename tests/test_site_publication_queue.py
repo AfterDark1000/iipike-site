@@ -278,8 +278,10 @@ class PublicationQueueTests(unittest.TestCase):
              patch("scripts.site_publication_queue.safe_git_blob_at",
                    return_value=json.dumps({"id": "fake", "status": "draft",
                                             "approved_by": "human_editor"})):
-            with self.assertRaisesRegex(ValueError, "Unapproved"):
-                ready_items()
+            with patch("builtins.print") as output:
+                self.assertEqual(ready_items(), [])
+        self.assertTrue(any(call.args and call.args[0] == "BLOCKED_INVALID_STORY:"
+                            for call in output.call_args_list))
 
     def test_spacing_one_hour_and_at_most_one_due(self):
         items = [item("first", 5), item("second", 6)]
