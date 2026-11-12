@@ -4661,5 +4661,27 @@
       "firefly",
       "gemini"
     ]
+  },
+  {
+    "title": "Google представила Gemini для больниц: ИИ разберёт медкарты и страховки",
+    "summary": "Google представила Gemini for healthcare — ИИ-агента для больниц и страховых компаний. Система собирает историю болезни из медицинских систем и готовит документы для страховых согласований и обжалований. В США идёт предварительный запуск с медицинскими партнёрами.",
+    "published": "2026-11-12",
+    "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+    "cover": "assets/editorial/google-gemini-for-healthcare-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:50:30Z",
+    "event_date": "2026-11-10",
+    "id": "google-gemini-for-healthcare-20261110",
+    "url": "articles/google-gemini-for-healthcare-20261110/",
+    "topics": [
+      "health",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
