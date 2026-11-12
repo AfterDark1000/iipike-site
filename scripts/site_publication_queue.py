@@ -188,19 +188,21 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
 
 
 def published_collision(story, published):
-    """Return an existing public article with the SAME title/source, if any.
+    """Return an article with the same identity or headline, not the source.
 
-    This mirrors the approved publisher's duplicate guard exactly. The
-    scheduler may skip such an item but must NEVER weaken that guard or
-    change the human-approved story.
+    Multiple independent stories can legitimately cite ONE press release.
+    Source reuse is never a duplicate signal on its own. This mirrors the
+    strict publisher guard without weakening ID/headline protection.
     """
+    if not isinstance(story, dict):
+        raise ValueError("Expected editorial story object, not a list")
     title = story.get("title")
-    source = story.get("source_url")
+    sid = story.get("id")
     for row in published:
-        if (isinstance(title, str) and isinstance(row.get("title"), str) and
-                row["title"].casefold() == title.casefold()):
+        if sid and row.get("id") == sid:
             return row
-        if source and row.get("source_url") == source:
+        if (isinstance(title, str) and isinstance(row.get("title"), str)
+                and row["title"].casefold() == title.casefold()):
             return row
     return None
 
