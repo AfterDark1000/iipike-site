@@ -28,25 +28,24 @@ from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SO
 
 SITE_TZ = ZoneInfo("Asia/Yekaterinburg")
 INTERVAL = dt.timedelta(minutes=60)
-# Temporary backlog recovery after the 12 Nov duplicate-source incident.
-# Never publish more than ONE article per workflow run; all normal checks,
-# the editorial order and night pause stay unchanged. This mode expires on
-# 15 Nov and switches off earlier once the backlog has dropped below 10.
+# Automatic recovery ends at the exact Gemini article (not a backlog count).
+# The one-off ordered catch-up worker can accelerate the preceding articles.
+# After Gemini is in public news.json, the ordinary 60-minute cadence resumes.
 RECOVERY_INTERVAL = dt.timedelta(minutes=30)
-RECOVERY_MIN_PENDING = 10
-RECOVERY_UNTIL = dt.datetime(2026, 11, 14, 20, 0, tzinfo=dt.timezone.utc)
+RECOVERY_TARGET = "google-gemini-for-healthcare-20261110"
+RECOVERY_UNTIL = dt.datetime(2026, 11, 12, 14, 0, tzinfo=dt.timezone.utc)
 QUIET_START_HOUR = 1  # Inclusive, local time in Ust-Katav / Yekaterinburg
 QUIET_END_HOUR = 7    # Exclusive: automatic releases resume from 07:00
 QUEUE_REF = "origin/editorial-intake"
 MAIN_REF = "origin/main"
 
 
-def release_interval(now, pending_count):
-    """Return temporary recovery spacing only for a real release backlog."""
+def release_interval(now, pending_count, pending_ids=()):
+    """Keep recovery only while the designated Gemini article is pending."""
     if now.tzinfo is None:
         raise ValueError("Release interval needs an aware clock")
     if (now.astimezone(dt.timezone.utc) < RECOVERY_UNTIL
-            and pending_count >= RECOVERY_MIN_PENDING):
+            and RECOVERY_TARGET in pending_ids):
         return RECOVERY_INTERVAL
     return INTERVAL
 
@@ -259,7 +258,7 @@ def select_one(items, rows, now, *, target=None, urgent=False):
               flush=True)
         return None
     last = latest_site_first_publication(rows)
-    spacing = release_interval(now, len(items))
+    spacing = release_interval(now, len(items), [i["id"] for i in items])
     if not urgent and last and now < last + spacing:
         print("SPACING_WAIT until", (last + spacing).isoformat(),
               "recovery=" + str(spacing == RECOVERY_INTERVAL), flush=True)
@@ -309,7 +308,9 @@ def main():
     now = dt.datetime.now(dt.timezone.utc)
     print("QUEUE_READY:", len(pending), "IDs:",
           [x["id"] for x in pending], flush=True)
-    print("RELEASE_INTERVAL_MINUTES:", int(release_interval(now, len(pending)).total_seconds() // 60),
+    print("RELEASE_INTERVAL_MINUTES:", int(release_interval(
+        now, len(pending), [i["id"] for i in pending]).total_seconds() // 60),
+          "RECOVERY_TARGET:", RECOVERY_TARGET,
           "RECOVERY_EXPIRY_UTC:", RECOVERY_UNTIL.isoformat(), flush=True)
     if inspect_only:
         print("INSPECTION_ONLY: queue checked, no release allowed", flush=True)
