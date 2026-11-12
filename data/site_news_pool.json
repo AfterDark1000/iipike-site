@@ -120,7 +120,7 @@
       "review_started_at": "2026-11-12T07:19:23.047Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "12.11.2026: подтверждён первоисточник Cisco от 9 ноября https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming и пресс-релиз newsroom.cisco.com. Cisco АНOНСИРОВАЛА будущее добавление Claude Mythos в AI Defense, запуск «coming soon» сначала избранным компаниям, не уже действующий релиз. AI Defense планирует адаптивные проверочные атаки на зарегистрированные разрешённые системы; нет свободного доступа к Mythos; оператор идентифицируется, действия логируются. Архив Дзена: 294 записи, точного дубля нет; есть статья 9.11 о Mythos 5.2 https://dzen.ru/a/avQNku0yqTgYdvaJ. Метки на будущее: cybersecurity,agents; компания Anthropic в реестре, Cisco отсутствует; продукт Claude в реестре, AI Defense отсутствует. Дальше подготовить Дзен/Threads/X для утверждения."
     },
     {
       "id": "n-ba0fcf4e325b4115",
