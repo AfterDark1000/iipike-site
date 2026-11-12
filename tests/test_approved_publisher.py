@@ -120,6 +120,14 @@ class PublisherTests(unittest.TestCase):
         self.assertFalse((self.root / "data/entity_registry.json").exists())
         self.assertFalse((self.root / "articles").exists())
 
+    def test_committed_archive_order_matches_homepage_newest_first(self):
+        import re
+        from scripts.site_home import sorted_published
+        records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        page = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        ids = re.findall(r'<a class="archive-card" href="([^"/]+)/">', page)
+        self.assertEqual(ids, [r["id"] for r in sorted_published(records)])
+
     def test_archive_and_rss_sort_same_day_by_actual_publication_time(self):
         # Alphabetical ID order used to put a morning story above a later one.
         examples = [
