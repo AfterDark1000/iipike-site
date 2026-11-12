@@ -115,12 +115,12 @@
       "summary": "10–11 ноября: Cisco сообщила о применении модели Anthropic в AI Defense; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-12T07:19:23.047Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "12.11.2026: фактчекинг и редактура завершены. Официальный анонс Cisco от 9 ноября: https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming; пресс-релиз newsroom.cisco.com. AI Defense уже работает, но интеграция Mythos только «coming soon» для selected enterprises. Mythos создаёт идеи разрешённых тестовых атак, доступ без свободных промптов, регистрируемые цели, оператор и логи. 294 записи архива: дубля нет. Содержательная внутренняя ссылка на уже опубликованную статью о Mythos 5.2: https://dzen.ru/a/avQNku0yqTgYdvaJ. Заголовок-черновик «Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов»; Дзен, Threads (361 симв.), X (241 симв.) готовы на утверждение. После «берём»: сохранить в очередях и editorial-intake, новых Cisco и AI Defense предложить через кандидатов, статусы пула обновить после проверки."
+      "closed_at": "2026-11-12T08:41:57.551Z",
+      "article_id": "cisco-claude-mythos-ai-defense-20261109",
+      "note": "12.11.2026: Главный редактор утвердил финальную статью «Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов» с первым тезисом отдельным абзацем и без пустой фразы про даты. Материал подтверждён в ветке editorial-intake: editorial_inbox/stories/cisco-claude-mythos-ai-defense-20261109.json, Threads/X подтверждены. В main data/entity_candidates.json внесены Cisco, Cisco AI Defense и Claude Mythos. Ждёт обложку и планового выпуска."
     },
     {
       "id": "n-ba0fcf4e325b4115",
