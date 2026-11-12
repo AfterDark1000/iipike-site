@@ -23,12 +23,14 @@ def item(sid, hour, *, slot=None):
 
 
 class PublicationQueueTests(unittest.TestCase):
-    def test_temporary_catchup_is_thirty_minutes_only_during_real_backlog(self):
+    def test_temporary_recovery_stops_at_gemini_not_at_backlog_size(self):
         now = dt.datetime(2026, 11, 12, 8, 0, tzinfo=UTC)
-        self.assertEqual(release_interval(now, 10), dt.timedelta(minutes=30))
-        self.assertEqual(release_interval(now, 9), INTERVAL)
+        target = "google-gemini-for-healthcare-20261110"
+        self.assertEqual(release_interval(now, 10, [target]), dt.timedelta(minutes=30))
+        self.assertEqual(release_interval(now, 10, ["other"]), INTERVAL)
+        self.assertEqual(release_interval(now, 50), INTERVAL)
         self.assertEqual(release_interval(
-            dt.datetime(2026, 11, 15, 8, tzinfo=UTC), 50), INTERVAL)
+            dt.datetime(2026, 11, 15, 8, tzinfo=UTC), 50, [target]), INTERVAL)
         pending = [
             {"id": "ready-" + str(i),
              "ready_at": now - dt.timedelta(hours=2),
@@ -36,6 +38,7 @@ class PublicationQueueTests(unittest.TestCase):
              "cover": "editorial_inbox/covers/ready-" + str(i) + ".webp"}
             for i in range(10)
         ]
+        pending[-1]["id"] = target
         with patch("scripts.site_publication_queue.latest_site_first_publication",
                    return_value=now - dt.timedelta(minutes=35)):
             self.assertEqual(select_one(pending, [], now)["id"], "ready-0")
