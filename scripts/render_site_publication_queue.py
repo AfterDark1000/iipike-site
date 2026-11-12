@@ -98,7 +98,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
         else:
             duplicate = published_collision(data, catalog)
             if duplicate:
-                block_reason = ("Этот первоисточник или заголовок уже опубликован: "
+                block_reason = ("Эта статья уже опубликована под тем же ID или заголовком: "
                                 + str(duplicate.get("id")))
             if not block_reason and "article_markdown" in data:
                 try:
@@ -119,7 +119,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                     block_reason = str(exc)
             if block_reason:
                 status = ("⛔ Заблокирована: дубль опубликованного материала"
-                          if block_reason.startswith("Этот первоисточник или заголовок")
+                          if block_reason.startswith("Эта статья уже опубликована")
                           else "⛔ Заблокирована: некорректное оформление"
                           if block_reason.startswith("Некорректное оформление текста:")
                           else "⛔ Заблокирована: связи с Дзеном")
