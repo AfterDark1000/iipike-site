@@ -136,9 +136,12 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
                 approved.get("paragraphs") != data["paragraphs"]):
             raise ValueError("Published editor blocks differ from inbox original")
         return data
-    if any(x.get("title", "").casefold() == title.casefold() or
-           x.get("source_url") == original for x in entries):
-        raise ValueError("Potential duplicate title or primary source on the site")
+    # One press release may contain several separate newsworthy developments.
+    # Reusing its source URL is valid; duplicate identity is the article ID
+    # (guarded above) or an already-published identical headline.
+    if any(isinstance(x.get("title"), str) and
+           x["title"].casefold() == title.casefold() for x in entries):
+        raise ValueError("Potential duplicate article title on the site")
     return data
 
 
