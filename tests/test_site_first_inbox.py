@@ -276,7 +276,7 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "at least two"):
             stage(self.root, ID, apply=True, now=UTC)
 
-    def test_no_duplicate_story_or_source(self):
+    def test_distinct_articles_may_share_the_same_primary_source(self):
         self.save_cover()
         (self.root / "news.json").write_text(
             json.dumps([{
@@ -284,7 +284,21 @@ class SiteFirstInboxTests(unittest.TestCase):
                 "title": "Другая статья", "source_url": self.story["source_url"],
             }]), encoding="utf-8"
         )
-        with self.assertRaisesRegex(ValueError, "duplicate"):
+        # One large press release can support multiple distinct news articles.
+        validate_story(self.root, ID, today=UTC.date())
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(staged["source_url"], self.story["source_url"])
+
+    def test_identical_title_is_still_rejected(self):
+        self.save_cover()
+        (self.root / "news.json").write_text(
+            json.dumps([{
+                "id": "different-id", "url": "articles/different-id/",
+                "title": self.story["title"].upper(),
+                "source_url": "https://different.example.org/another-source",
+            }]), encoding="utf-8"
+        )
+        with self.assertRaisesRegex(ValueError, "duplicate article title"):
             stage(self.root, ID, apply=True, now=UTC)
 
     def test_no_future_approval(self):
