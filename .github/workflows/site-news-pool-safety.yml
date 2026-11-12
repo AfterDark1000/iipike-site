@@ -1,0 +1,30 @@
+name: HPII — site news candidate pool safety (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/site_news_pool.json'
+      - 'scripts/site_news_pool.py'
+      - 'tests/test_site_news_pool.py'
+      - 'docs/SITE_NEWS_POOL.md'
+      - '.github/workflows/site-news-pool-safety.yml'
+  pull_request:
+    paths:
+      - 'data/site_news_pool.json'
+      - 'scripts/site_news_pool.py'
+      - 'tests/test_site_news_pool.py'
+      - 'docs/SITE_NEWS_POOL.md'
+      - '.github/workflows/site-news-pool-safety.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate pool schema (never publishes)
+        run: python3 scripts/site_news_pool.py --validate
+      - name: Test batch import, dedup, reservation and release
+        run: python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -v
