@@ -1,5 +1,12 @@
 [
   {
+    "id": "c06fca3b9549fb95708d",
+    "date": "2026-11-12",
+    "title": "Google научила нейросеть принимать тысячи решений за секунды без генерации текста",
+    "source_name": "Google AI",
+    "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+  },
+  {
     "id": "19b4fcb1faac9c9bdbcc",
     "date": "2026-11-11",
     "title": "Tether AI Research представила BotPsy — компактного ИИ-агента для локальных устройств",

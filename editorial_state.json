@@ -144,6 +144,12 @@
       "utc_date": "2026-11-11",
       "source_url": "https://huggingface.co/blog/qvac/botpsy",
       "source_title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model"
+    },
+    {
+      "id": "c06fca3b9549fb95708d",
+      "utc_date": "2026-11-12",
+      "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "source_title": "Gemini Decisions API: Fast, calibrated multimodal decisions"
     }
   ]
 }
