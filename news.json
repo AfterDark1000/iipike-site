@@ -4760,5 +4760,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Mercor привлекла $750 млн: инвесторы оценили бизнес на обучении ИИ в $20 млрд",
+    "summary": "Mercor объявила инвестиционный раунд Series D на $750 млн при оценке $20 млрд. Среди инвесторов NVIDIA, Salesforce и Zoom. Компания обучает и оценивает ИИ-модели при помощи профессиональных экспертов; часть раунда включает выкуп акций сотрудников.",
+    "published": "2026-11-12",
+    "source_url": "https://www.mercor.com/blog/series-d/",
+    "cover": "assets/editorial/mercor-series-d-750m-20b-valuation-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T14:00:53Z",
+    "event_date": "2026-11-10",
+    "id": "mercor-series-d-750m-20b-valuation-20261110",
+    "url": "articles/mercor-series-d-750m-20b-valuation-20261110/",
+    "topics": [
+      "finance",
+      "business"
+    ],
+    "companies": [
+      "nvidia",
+      "zoom"
+    ],
+    "products": []
   }
 ]
