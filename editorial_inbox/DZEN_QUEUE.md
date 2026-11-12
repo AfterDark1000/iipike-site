@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 95 · **В каталоге Дзена подтверждены:** 73 · **Не подтверждены, уже на сайте:** 2 · **Не подтверждены, ждут сайт:** 20
+**Всего одобренных:** 96 · **В каталоге Дзена подтверждены:** 73 · **Не подтверждены, уже на сайте:** 2 · **Не подтверждены, ждут сайт:** 21
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и точным утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.
 
@@ -42,7 +42,8 @@
 | 17 | [Claude теперь сам собирает таблицы с формулами прямо в чате](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/anthropic-claude-sheets-whiteboards-data-20261110.md) | **Не ранее 13.11.2026 14:07 (Усть-Катав)**; пауза до 12.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-claude-sheets-whiteboards-data-20261110.webp) |
 | 18 | [Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cisco-claude-mythos-ai-defense-20261109.md) | **Не ранее 13.11.2026 15:07 (Усть-Катав)**; пауза до 12.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cisco-claude-mythos-ai-defense-20261109.webp) |
 | 19 | [Google научила ИИ искать причины болезней в отдельных клетках](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-alphagenome-2-cell-variants-20261111.md) | **Не ранее 13.11.2026 16:07 (Усть-Катав)**; пауза до 12.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-alphagenome-2-cell-variants-20261111.webp) |
-| 20 | [Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-sensorwm-wearables-health-20261111.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 20 | [Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-sensorwm-wearables-health-20261111.md) | **Не ранее 13.11.2026 17:07 (Усть-Катав)**; пауза до 12.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-sensorwm-wearables-health-20261111.webp) |
+| 21 | [ИИ ускорил расчёты промышленных биореакторов в 10 тысяч раз](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/clara-bioreactor-10000x-20261111.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
