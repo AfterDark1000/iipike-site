@@ -90,7 +90,7 @@
       "review_started_at": "2026-11-12T05:38:32.554Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Фактчекинг 12.11: Anthropic 10.11 объявила Claude Meetings; официальный обзор на claude.com пишет «coming soon», а справка Claude Whiteboards уже описывает Meetings (beta) в Google Meet для Team/Enterprise. TechCrunch/Reuters/The Verge говорят о бета-запуске. В статье следует писать «представила / ограниченная бета», не «доступно всем». Проверить архив ХПИИ и подготовить отдельные Дзен/Threads/X с явным статусом продукта."
+      "note": "12.11 фактчекинг завершён: 10.11 Anthropic объявила Claude Meetings; в датированном официальном анонсе прямо «coming soon». СМИ (TechCrunch, Reuters, The Verge) называют Team/Enterprise beta, но официальный статус расходится; писать осторожно как анонс функции, не как общедоступный релиз. Возможности: участие в Google Meet, заметки, планы и обновление документов во время разговора. Архив Дзена: 292 материала, точного дубля нет; есть Zoom (dzen_id 6adb0b290e1ecf632f3637f2) о поиске поручений и NVIDIA о расшифровке встреч. Реестр: anthropic/claude есть; тема agents + business. Следующее: финальная статья, Threads, X на утверждение."
     },
     {
       "id": "n-001cd33c965241bc",
