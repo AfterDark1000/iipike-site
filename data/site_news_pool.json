@@ -100,12 +100,12 @@
       "summary": "10 ноября: Anthropic запустила Claude Sheets и Whiteboards, сделала Claude Data общедоступным для платных планов.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-12T06:13:44.543Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "12.11.2026: первоисточник — Anthropic 10.11, https://claude.com/resources/articles/sheets-whiteboards-data, плюс официальные справки Sheets/Whiteboards/Claude Data. Sheets и Whiteboards — бета (платные тарифы), Claude Data — общий выпуск; у Sheets формулы, вкладки, совместная правка, экспорт в XLSX/CSV, нет сводных таблиц и макросов, лимит 100000 ячеек. Архив 292 статей/сайт 282: прямых дублей нет; отличие от №6 — реальные новые артефакты, а не будущие встречи. Готовы Дзен/Threads/X; заголовок-черновик: «Claude теперь сам собирает таблицы с формулами прямо в чате». Следующий шаг: дождаться «берём», затем очереди соцсетей, утверждённый JSON, кандидаты в реестр. До утверждения ничего из публикационного контура не менять."
+      "closed_at": "2026-11-12T07:17:08.675Z",
+      "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
+      "note": "12.11.2026: Главный редактор утвердил «Claude теперь сам собирает таблицы с формулами прямо в чате». Статья сохранена в editorial-intake/stories/anthropic-claude-sheets-whiteboards-data-20261110.json; Threads и X сохранены, проверены. В main data/entity_candidates.json внесены Claude Sheets, Claude Whiteboards, Claude Data. Материал ждёт обложку и выпуска по расписанию."
     },
     {
       "id": "n-531ccb72c4761896",
