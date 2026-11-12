@@ -127,7 +127,7 @@ def render_home_section(records, focus_items=()):
       <a class="home-text-link" href="articles/">Все {count} материалов <span aria-hidden="true">↗</span></a>
     </div>
     <a class="home-feature-link" href="{url}">
-      <div class="home-feature-image">
+      <div class="home-feature-image" style="--feature-art:url(&quot;{art}&quot;)">
         <img src="{art}" width="1672" height="941" alt="Обложка: {title}" loading="lazy">
       </div>
       <div class="home-feature-copy">
