@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from scripts.site_publication_queue import (
     INTERVAL, latest_site_first_publication, parse_slot, ready_items,
-    select_one, main, _last_change,
+    select_one, main, _last_change, published_collision, without_published_collisions,
 )
 
 UTC = dt.timezone.utc
@@ -22,6 +22,32 @@ def item(sid, hour, *, slot=None):
 
 
 class PublicationQueueTests(unittest.TestCase):
+    def test_duplicate_primary_source_is_filtered_without_blocking_later_story(self):
+        already = [{
+            "id": "published-story",
+            "title": "Already published title",
+            "source_url": "https://example.org/common",
+        }]
+        pending = [
+            item("duplicated", 2), item("next-valid", 3),
+        ]
+        duplicate = {"title": "A different headline",
+                     "source_url": "https://example.org/common"}
+        unique = {"title": "Completely new article",
+                  "source_url": "https://example.org/unique"}
+        def blob(_ref, path):
+            return json.dumps(duplicate if "duplicated.json" in path else unique)
+        with patch("scripts.site_publication_queue.safe_git_blob_at", side_effect=blob):
+            remaining = without_published_collisions(pending, already, source_ref="test-ref")
+        self.assertEqual([row["id"] for row in remaining], ["next-valid"])
+        self.assertEqual(published_collision(duplicate, already)["id"], "published-story")
+        self.assertIsNone(published_collision(unique, already))
+
+    def test_case_insensitive_duplicate_title_is_blocked(self):
+        existing = [{"id": "one", "title": "A Unique Story", "source_url": "https://a.test/a"}]
+        candidate = {"title": "a unique story", "source_url": "https://b.test/b"}
+        self.assertEqual(published_collision(candidate, existing)["id"], "one")
+
     def test_queue_position_survives_a_technical_correction(self):
         """Original arrival time, not a later Markdown/cover fix, determines order."""
         original = "2026-11-05T04:00:00+00:00"
