@@ -19,7 +19,7 @@ from scripts.site_related import catalog_entries, validate_links, explicit_site_
 from scripts.site_rich_text import markdown_to_blocks
 from scripts.site_publication_queue import (
     INTERVAL, SITE_TZ, _last_change, latest_site_first_publication, parse_slot,
-    in_quiet_hours, published_collision
+    in_quiet_hours, published_collision, release_interval, RECOVERY_INTERVAL, RECOVERY_UNTIL
 )
 
 REPO = "https://github.com/AfterDark1000/iipike-site"
@@ -63,7 +63,9 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
     catalog = json.loads(safe_git_blob_at(main, "news.json"))
     public = {r["id"]: r for r in catalog}
     last = latest_site_first_publication(catalog, main_ref=main)
-    spacing_until = last + INTERVAL if last and now < last + INTERVAL else None
+    backlog = sum(1 for sid in stories if sid not in public and len(covers.get(sid, [])) == 1)
+    spacing = release_interval(now, backlog)
+    spacing_until = last + spacing if last and now < last + spacing else None
     verified_links = None
     rows = []
     for sid, path in sorted(stories.items()):
@@ -130,7 +132,8 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                 elif in_quiet_hours(now):
                     status = "🌙 Ночная пауза"
                 elif spacing_until:
-                    status = "⏳ Ждёт часовой интервал"
+                    status = ("⏳ Ждёт ускоренный интервал"
+                              if spacing == RECOVERY_INTERVAL else "⏳ Ждёт часовой интервал")
                 else:
                     status = "🟢 Готова к выпуску"
 
@@ -139,7 +142,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             "published": bool(page), "published_at": published.get("published_at_utc") if published else None,
             "eligible": eligible, "block_reason": block_reason,
             "ready_at": ready_at, "publish_at": scheduled,
-            "spacing_until": spacing_until if status == "⏳ Ждёт часовой интервал" else None,
+            "spacing_until": spacing_until if status.startswith("⏳ Ждёт ") else None,
             "source_path": path, "cover_path": arts[0] if len(arts) == 1 else None,
         })
     return rows, last
@@ -148,6 +151,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
 def is_selectable(row):
     return row.get("eligible", row.get("status") in (
         "🟢 Готова к выпуску", "⏳ Ждёт часовой интервал",
+        "⏳ Ждёт ускоренный интервал",
         "🕒 Ожидает заданного времени", "🌙 Ночная пауза"))
 
 
@@ -183,7 +187,8 @@ def forecast_order(rows, last, *, now=None):
         (r for r in rows if is_selectable(r)),
         key=lambda r: (r["ready_at"], r["id"]),
     )
-    tick = next_cron_tick(max(now.astimezone(dt.timezone.utc), last + INTERVAL)
+    spacing = release_interval(now, len(pending))
+    tick = next_cron_tick(max(now.astimezone(dt.timezone.utc), last + spacing)
                           if last else now)
     output = []
     while pending:
@@ -199,7 +204,7 @@ def forecast_order(rows, last, *, now=None):
             continue
         output.append((selected, tick))
         pending.remove(selected)
-        tick = next_cron_tick(tick + INTERVAL)
+        tick = next_cron_tick(tick + release_interval(tick, len(pending)))
     return output
 
 
@@ -213,7 +218,7 @@ def as_markdown(rows, last, *, now=None):
     attention = [r for r in rows if not is_selectable(r)
                  and r["status"] != "✅ Опубликована"]
     active = sum(r["status"] == "🟢 Готова к выпуску" for r in rows)
-    held = sum(r["status"] == "⏳ Ждёт часовой интервал" for r in rows)
+    held = sum(r["status"].startswith("⏳ Ждёт ") for r in rows)
     future = sum(r["status"] == "🕒 Ожидает заданного времени" for r in rows)
     quiet = sum(r["status"] == "🌙 Ночная пауза" for r in rows)
     covers = sum(r["status"] == "🖼️ Ждёт обложку" for r in rows)
@@ -231,8 +236,12 @@ def as_markdown(rows, last, *, now=None):
         + " · **Заблокированы:** " + str(blocked)
         + " · **Уже опубликованы:** " + str(len(released)),
         "",
-        "Проверка каждые 15 минут; не более одной статьи за запуск с интервалом "
-        "не менее 60 минут. Автоматический выпуск приостанавливается "
+        "Проверка каждые 15 минут; не более одной статьи за запуск. "
+        + ("Временно ускоренный интервал — 30 минут при очереди от 10 материалов "
+           "до 15.11.2026 01:00 (Усть-Катав); затем 60 минут. "
+           if release_interval(now, len(planned)) == RECOVERY_INTERVAL
+           else "Стандартный интервал — 60 минут. ")
+        + "Автоматический выпуск приостанавливается "
         "ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется "
         "и продолжается утром. Порядок — по времени готовности текста "
         "и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации "
@@ -287,7 +296,8 @@ def as_markdown(rows, last, *, now=None):
     out.extend([
         "", "## Что означают статусы", "",
         "- **Готова к выпуску:** утверждённый текст и обложка; время зависит от очереди.",
-        "- **Ждёт часовой интервал:** после последнего выпуска не прошло 60 минут.",
+        "- **Ждёт интервал:** после последнего выпуска не прошёл требуемый интервал "
+        "(60 минут обычно; 30 минут во время ограниченного восстановления).",
         "- **Ночная пауза:** автоматические выпуски запрещены с 01:00 до 07:00 "
         "по Усть-Катаву; материал остаётся в очереди.",
         "- **Ожидает заданного времени:** редактор назначил ограничение «не раньше».",
