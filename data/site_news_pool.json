@@ -105,7 +105,7 @@
       "review_started_at": "2026-11-12T06:13:44.543Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "12.11.2026: найден датированный первоисточник Anthropic 10.11 claude.com/resources/articles/sheets-whiteboards-data. Claude Sheets/Whiteboards запущены в бете, Claude Data (бывший Dashboards) общедоступен на платных тарифах. Sheets делает формулы/вкладки, совместную правку, экспорт XLSX/CSV, пока без сводных таблиц и макросов; Whiteboards — общие рабочие доски; Data — панели и истории по подключённым корпоративным данным; certified queries и live sharing пока бета. Проверен архив Дзена (292) и news.json (282), точного дубля нет. Связано с уже утверждённой, но пока не опубликованной №6 Claude Meetings — не ссылаться на черновик. Далее подготовить текст Дзен/Threads/X, после согласования сохранить очереди и статью. Метки: anthropic/claude; topics apps,business."
     },
     {
       "id": "n-531ccb72c4761896",
