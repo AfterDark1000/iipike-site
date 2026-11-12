@@ -265,6 +265,18 @@
           "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
         }
       ]
+    },
+    {
+      "key": "t-head",
+      "name": "T-Head",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "alibaba-t-head-ipo-hong-kong-20261110",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
+        }
+      ]
     }
   ],
   "products": [
@@ -460,6 +472,19 @@
         {
           "article_id": "nwpu-nvidia-h200-blacklist-20261111",
           "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
+        }
+      ]
+    },
+    {
+      "key": "zhenwu-v900",
+      "name": "Zhenwu V900",
+      "company": "t-head",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "alibaba-t-head-ipo-hong-kong-20261110",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
         }
       ]
     }
