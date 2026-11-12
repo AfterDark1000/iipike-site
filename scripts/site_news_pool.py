@@ -184,6 +184,20 @@ def local_date(value):
     return utc_time(value).astimezone(EDITORIAL_TZ).strftime("%d.%m.%Y %H:%M") + " (UTC+05:00)"
 
 
+def checkpoint(pool, item_id, note):
+    """Keep a brief durable handoff summary without changing reservation time."""
+    validate(pool)
+    if not isinstance(note, str) or not note.strip() or len(note) > 1500:
+        raise ValueError("Checkpoint note must contain 1-1500 characters")
+    result = copy.deepcopy(pool)
+    item = next((x for x in result["items"] if x["id"] == item_id), None)
+    if item is None or item["status"] != "in_review":
+        raise ValueError("Only an in-review item can receive a checkpoint")
+    item["note"] = note.strip()
+    validate(result)
+    return result, copy.deepcopy(item)
+
+
 def transition(pool, item_id, action, *, article_id=None, note="", now=None):
     validate(pool)
     result = copy.deepcopy(pool)
@@ -215,6 +229,7 @@ def main():
     group.add_argument("--add", type=Path, metavar="CANDIDATES_JSON")
     group.add_argument("--next", action="store_true")
     group.add_argument("--continue-item", nargs="?", const="", metavar="ID")
+    group.add_argument("--checkpoint", metavar="ID")
     group.add_argument("--return-item", metavar="ID")
     group.add_argument("--approve", metavar="ID")
     group.add_argument("--reject", metavar="ID")
@@ -230,6 +245,8 @@ def main():
         modified, result = next_item(pool)
     elif args.continue_item is not None:
         result = continue_item(pool, item_id=args.continue_item or None)
+    elif args.checkpoint:
+        modified, result = checkpoint(pool, args.checkpoint, args.note)
     elif args.return_item:
         modified, result = transition(pool, args.return_item, "return", note=args.note)
     elif args.approve:
