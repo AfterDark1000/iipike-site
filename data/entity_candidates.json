@@ -277,6 +277,30 @@
           "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
         }
       ]
+    },
+    {
+      "key": "graphon-labs",
+      "name": "Graphon Labs",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "graphon-labs-persistent-memory-35m-20261110",
+          "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
+        }
+      ]
+    },
+    {
+      "key": "rre-ventures",
+      "name": "RRE Ventures",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "graphon-labs-persistent-memory-35m-20261110",
+          "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
+        }
+      ]
     }
   ],
   "products": [
@@ -485,6 +509,19 @@
         {
           "article_id": "alibaba-t-head-ipo-hong-kong-20261110",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
+        }
+      ]
+    },
+    {
+      "key": "persistent-intelligence",
+      "name": "Persistent Intelligence",
+      "company": "graphon-labs",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "graphon-labs-persistent-memory-35m-20261110",
+          "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
         }
       ]
     }
