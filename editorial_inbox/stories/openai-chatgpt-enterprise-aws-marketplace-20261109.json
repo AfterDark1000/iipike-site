@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "openai-chatgpt-enterprise-aws-marketplace-20261109",
+  "status": "editor_approved",
+  "approved_by": "human_editor",
+  "approved_at": "2026-11-10",
+  "title": "ChatGPT теперь продаётся через Amazon",
+  "dzen_title": "ChatGPT теперь продаётся через Amazon",
+  "summary": "OpenAI добавила ChatGPT Enterprise в AWS Marketplace: корпоративные клиенты смогут приобретать его через действующие механизмы закупок Amazon Web Services и, если условия контракта позволяют, засчитывать расходы на ChatGPT в обязательства по облачному договору. Цена согласовывается индивидуально.",
+  "rubric": "news",
+  "section": "НОВОСТИ ИИ",
+  "topics": [
+    "business",
+    "apps"
+  ],
+  "source_url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/",
+  "source_title": "OpenAI — ChatGPT Enterprise available on AWS Marketplace, 9 November 2026",
+  "event_date": "2026-11-09",
+  "related_dzen_ids": [],
+  "threads_queue_id": "openai-chatgpt-enterprise-aws-marketplace-20261109",
+  "x_queue_id": "openai-chatgpt-enterprise-aws-marketplace-20261109",
+  "article_markdown": "**OpenAI** 9 ноября начала продавать корпоративную версию **ChatGPT Enterprise** через **Amazon Web Services (AWS)**. Теперь крупные компании смогут покупать ChatGPT там же, где оплачивают серверы, хранилища данных и другие облачные услуги.\n\nДля бизнеса это удобнее, чем кажется. У многих крупных клиентов Amazon есть долгосрочные договоры: компания обязуется потратить на облачные услуги определённую сумму, а взамен получает скидки и особые условия.\n\nТеперь в этот бюджет можно включить и ChatGPT Enterprise. Например, если организация обязалась потратить на услуги AWS миллион долларов, подходящие расходы на корпоративный ChatGPT тоже могут пойти в зачёт этой суммы. Всё зависит от условий конкретного договора.\n\nПокупка оформляется через **AWS Marketplace** — магазин программ и сервисов для бизнеса. Компании могут использовать привычную систему закупок и получать счета через AWS.\n\nСам ChatGPT Enterprise остаётся прежним. Сотрудники получают доступ к корпоративному ChatGPT, инструментам программирования **Codex** и другим возможностям OpenAI. Обновления будут выходить одновременно для клиентов Amazon и тех, кто покупает подписку напрямую.\n\nДля разработчиков у Amazon уже есть сервис **Bedrock**, через который можно подключать модели OpenAI к собственным программам. Теперь к нему добавился готовый ChatGPT для сотрудников компаний.\n\nЦену OpenAI публично не называет. Стоимость ChatGPT Enterprise согласовывается индивидуально — для покупки нужно обратиться к представителю OpenAI или AWS."
+}

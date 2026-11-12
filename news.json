@@ -4535,5 +4535,21 @@
       "agents",
       "development"
     ]
+  },
+  {
+    "title": "ChatGPT теперь продаётся через Amazon",
+    "summary": "OpenAI добавила ChatGPT Enterprise в AWS Marketplace: корпоративные клиенты смогут приобретать его через действующие механизмы закупок Amazon Web Services и, если условия контракта позволяют, засчитывать расходы на ChatGPT в обязательства по облачному договору. Цена согласовывается индивидуально.",
+    "published": "2026-11-12",
+    "source_url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace/",
+    "cover": "assets/editorial/openai-chatgpt-enterprise-aws-marketplace-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T07:36:23Z",
+    "event_date": "2026-11-09",
+    "id": "openai-chatgpt-enterprise-aws-marketplace-20261109",
+    "url": "articles/openai-chatgpt-enterprise-aws-marketplace-20261109/",
+    "topics": [
+      "business",
+      "apps"
+    ]
   }
 ]
