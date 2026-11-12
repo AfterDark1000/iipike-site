@@ -10,6 +10,10 @@ on:
   schedule:
     # 07:43 Asia/Yekaterinburg (UTC+5); scheduled Actions are best-effort.
     - cron: "43 2 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/shorts-format-hunter.yml"
   pull_request:
     paths:
       - "scripts/shorts_format_hunter.py"
