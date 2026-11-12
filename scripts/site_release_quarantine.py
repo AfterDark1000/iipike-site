@@ -17,7 +17,6 @@ import tempfile
 
 from scripts.site_first_release_pr import GH_REPO, STABLE_ID, exists_at, git, safe_git_blob_at
 from scripts.site_rich_text import markdown_to_blocks, IMAGE_SOURCE
-from scripts.site_first_inbox import stage
 
 PREFIX = "editorial_inbox/release_errors/"
 CODE_PATHS = ("scripts/site_first_inbox.py", "scripts/publish_approved_article.py")
@@ -100,6 +99,8 @@ def copy_blob(ref, path, root):
 
 def preflight_article(ref, item, live):
     """Run real editorial text, image and crosslink validation without publishing."""
+    # Lazy import: read-only watchdog and status dashboard do not install PIL.
+    from scripts.site_first_inbox import stage
     with tempfile.TemporaryDirectory(prefix="hpii-preflight-") as tmp:
         root = Path(tmp)
         (root / "news.json").write_text(
