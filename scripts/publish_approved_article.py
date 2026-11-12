@@ -354,9 +354,10 @@ def render_catalog(records):
     cards = "\n".join(
         f'<a class="archive-card" href="{quote(row["id"])}/">'
         f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
-        f'<span><small class="date">{quote(publication_date(row["published"]))}'
+        f'<span><h3>{quote(row["title"])}</h3>'
+        f'<small class="date">{quote(publication_date(row["published"]))}'
         f' · {quote(RUBRICS[row.get("rubric", "news")]["name"])}</small>'
-        f'<h3>{quote(row["title"])}</h3><p>{quote(row["summary"])}</p></span>'
+        f'<p>{quote(row["summary"])}</p></span>'
         '<span aria-hidden="true">↗</span></a>' for row in ordered
     )
     return f'''<!doctype html>
