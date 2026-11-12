@@ -22,25 +22,30 @@ def item(sid, hour, *, slot=None):
 
 
 class PublicationQueueTests(unittest.TestCase):
-    def test_duplicate_primary_source_is_filtered_without_blocking_later_story(self):
+    def test_distinct_stories_sharing_a_primary_source_are_not_filtered(self):
         already = [{
             "id": "published-story",
             "title": "Already published title",
             "source_url": "https://example.org/common",
         }]
-        pending = [
-            item("duplicated", 2), item("next-valid", 3),
-        ]
-        duplicate = {"title": "A different headline",
-                     "source_url": "https://example.org/common"}
+        pending = [item("same-source", 2), item("same-title", 3), item("next-valid", 4)]
+        same_source = {"title": "A different headline",
+                       "source_url": "https://example.org/common"}
+        same_title = {"title": "ALREADY PUBLISHED TITLE",
+                      "source_url": "https://example.org/different"}
         unique = {"title": "Completely new article",
                   "source_url": "https://example.org/unique"}
         def blob(_ref, path):
-            return json.dumps(duplicate if "duplicated.json" in path else unique)
+            if "same-source.json" in path:
+                return json.dumps(same_source)
+            if "same-title.json" in path:
+                return json.dumps(same_title)
+            return json.dumps(unique)
         with patch("scripts.site_publication_queue.safe_git_blob_at", side_effect=blob):
             remaining = without_published_collisions(pending, already, source_ref="test-ref")
-        self.assertEqual([row["id"] for row in remaining], ["next-valid"])
-        self.assertEqual(published_collision(duplicate, already)["id"], "published-story")
+        self.assertEqual([row["id"] for row in remaining], ["same-source", "next-valid"])
+        self.assertIsNone(published_collision(same_source, already))
+        self.assertEqual(published_collision(same_title, already)["id"], "published-story")
         self.assertIsNone(published_collision(unique, already))
 
     def test_case_insensitive_duplicate_title_is_blocked(self):
