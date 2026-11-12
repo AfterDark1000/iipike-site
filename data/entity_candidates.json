@@ -626,6 +626,19 @@
           "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
         }
       ]
+    },
+    {
+      "key": "alphagenome-2",
+      "name": "AlphaGenome 2",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "google-alphagenome-2-cell-variants-20261111",
+          "source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
+        }
+      ]
     }
   ]
 }
