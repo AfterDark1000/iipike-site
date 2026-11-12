@@ -7,7 +7,8 @@ import unittest
 from unittest.mock import patch
 
 from scripts.site_publication_queue import (
-    INTERVAL, latest_site_first_publication, parse_slot, ready_items,
+    INTERVAL, RECOVERY_INTERVAL, release_interval,
+    latest_site_first_publication, parse_slot, ready_items,
     select_one, main, _last_change, published_collision, without_published_collisions,
 )
 
@@ -22,6 +23,25 @@ def item(sid, hour, *, slot=None):
 
 
 class PublicationQueueTests(unittest.TestCase):
+    def test_temporary_catchup_is_thirty_minutes_only_during_real_backlog(self):
+        now = dt.datetime(2026, 11, 12, 8, 0, tzinfo=UTC)
+        self.assertEqual(release_interval(now, 10), dt.timedelta(minutes=30))
+        self.assertEqual(release_interval(now, 9), INTERVAL)
+        self.assertEqual(release_interval(
+            dt.datetime(2026, 11, 15, 8, tzinfo=UTC), 50), INTERVAL)
+        pending = [
+            {"id": "ready-" + str(i),
+             "ready_at": now - dt.timedelta(hours=2),
+             "not_before": None,
+             "cover": "editorial_inbox/covers/ready-" + str(i) + ".webp"}
+            for i in range(10)
+        ]
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=now - dt.timedelta(minutes=35)):
+            self.assertEqual(select_one(pending, [], now)["id"], "ready-0")
+            self.assertIsNone(select_one(pending[:9], [], now))
+        self.assertEqual(RECOVERY_INTERVAL, dt.timedelta(minutes=30))
+
     def test_distinct_stories_sharing_a_primary_source_are_not_filtered(self):
         already = [{
             "id": "published-story",
