@@ -364,7 +364,7 @@ class PublicationQueueTests(unittest.TestCase):
                    )), \
              patch("scripts.site_publication_queue.ready_items",
                    return_value=[selected, item("second", 6)]), \
-             patch("scripts.site_publication_queue.select_one",
+             patch("scripts.site_publication_queue.select_publishable_item",
                    return_value=selected), \
              patch("scripts.site_publication_queue.release_one",
                    return_value="auto_published_rebuild_requested") as release:
