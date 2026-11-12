@@ -190,9 +190,9 @@
       "summary": "10 ноября: Workspace Models помогают быстро реагировать без полного повторного расчёта тяжёлой моделью.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-12T11:48:00.646Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
