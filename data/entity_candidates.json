@@ -301,6 +301,18 @@
           "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
         }
       ]
+    },
+    {
+      "key": "usda",
+      "name": "U.S. Department of Agriculture (USDA)",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "usda-ai-crop-forecast-validation-20261110",
+          "source_url": "https://www.reuters.com/technology/usda-launch-ai-tool-check-crop-production-data-after-errors-2026-11-06/"
+        }
+      ]
     }
   ],
   "products": [
