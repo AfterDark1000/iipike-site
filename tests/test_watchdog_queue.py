@@ -8,6 +8,11 @@ UTC = dt.timezone.utc
 NOW = dt.datetime(2026, 11, 6, 10, 0, tzinfo=UTC)
 
 class SnapshotTests(unittest.TestCase):
+    def setUp(self):
+        scoped = patch.object(w, "existing_error", return_value=None)
+        scoped.start()
+        self.addCleanup(scoped.stop)
+
     def test_night_is_not_counted_as_overdue_publication_time(self):
         local = dt.timezone(dt.timedelta(hours=5))
         start = dt.datetime(2026, 11, 8, 0, 50, tzinfo=local)
