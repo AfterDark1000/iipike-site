@@ -1,2 +1,2 @@
-Queue retry: 2026-11-12 11:58 Asia/Yekaterinburg.
-Reason: resume ordinary one-per-hour site publication after duplicate-source prefilter and corrected full regression fixtures; no urgency.
+Queue retry: 2026-11-12 12:22 Asia/Yekaterinburg.
+Reason: validate repaired shared-press-release handling and bounded normal site queue catch-up; do not bypass spacing or quiet hours.
