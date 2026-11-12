@@ -181,7 +181,7 @@ def continue_item(pool, *, item_id=None):
 
 def local_date(value):
     """Human-facing date in the editorial timezone; UTC data stays unchanged."""
-    return utc_time(value).astimezone(EDITORIAL_TZ).strftime("%d.%m.%Y %H:%M (%Z%z)")
+    return utc_time(value).astimezone(EDITORIAL_TZ).strftime("%d.%m.%Y %H:%M") + " (UTC+05:00)"
 
 
 def transition(pool, item_id, action, *, article_id=None, note="", now=None):
