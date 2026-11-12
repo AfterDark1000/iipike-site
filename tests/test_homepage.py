@@ -107,12 +107,24 @@ class HomepageTests(unittest.TestCase):
         self.assertIn("prefers-reduced-motion", self.css)
         self.assertIn("assets/site.css", self.html)
 
-    def test_feature_cover_displays_in_full_without_cropping_headline(self):
-        self.assertIn('class="home-feature-image" style="--feature-art:url(&quot;assets/', self.html)
-        self.assertIn('.home-feature-image img{', self.css)
-        self.assertIn('object-fit:contain', self.css)
-        self.assertIn('background-image:var(--feature-art)', self.css)
-        self.assertNotIn('min-height:390px;object-fit:cover', self.css)
+    def test_feature_cover_uses_natural_16_by_9_layout_not_black_bands(self):
+        self.assertIn('class="home-feature-image">', self.html)
+        self.assertNotIn('--feature-art:', self.html)
+        self.assertNotIn('background-image:var(--feature-art)', self.css)
+        self.assertNotIn('min-height:390px', self.css)
+        image_rule = self.css.split('.home-feature-image img{', 1)[1].split('}', 1)[0]
+        self.assertIn('aspect-ratio:16/9', image_rule)
+        self.assertIn('object-fit:contain', image_rule)
+        self.assertIn('height:auto', image_rule)
+
+    def test_small_home_cards_show_headline_before_date_and_rubric(self):
+        import re
+        cards = re.findall(r'<a class="home-site-post".*?</a>', self.html)
+        self.assertEqual(len(cards), 4)
+        for card in cards:
+            self.assertLess(card.index('<h3>'), card.index('<small class="date">'))
+            self.assertLess(card.index('<small class="date">'),
+                            card.index('class="home-site-read"'))
 
     def test_local_paths_resolve(self):
         for path in ("assets/site.css", "assets/icon.svg",
