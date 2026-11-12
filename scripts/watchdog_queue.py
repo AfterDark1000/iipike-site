@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 from scripts.site_publication_queue import _last_change, latest_site_first_publication, ready_items, git, SITE_TZ
 from scripts.site_first_release_pr import exists_at, safe_git_blob_at
 from scripts.render_site_publication_queue import forecast_order
+from scripts.site_release_quarantine import existing_error
 
 UTC = dt.timezone.utc
 
@@ -76,19 +77,35 @@ def snapshot(now=None):
         pending = ready_items('origin/editorial-intake', main_ref='origin/main')
     blocked = []
     invalid_markdown = []
+    invalid_story = []
     for line in capture.getvalue().splitlines():
         if (line.startswith('BLOCKED_UNVERIFIED_DZEN_REFERENCE: ') or
-                line.startswith('BLOCKED_INVALID_MARKDOWN: ')):
+                line.startswith('BLOCKED_INVALID_MARKDOWN: ') or
+                line.startswith('BLOCKED_INVALID_STORY: ')):
             parts = line.split()
             if len(parts) >= 2:
                 sid = parts[1]
                 path = 'editorial_inbox/stories/' + sid + '.json'
                 try:
                     if now - _last_change('origin/editorial-intake', path) > dt.timedelta(minutes=100):
-                        (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
+                        group = (invalid_story if line.startswith('BLOCKED_INVALID_STORY: ')
+                                 else invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ')
+                                 else blocked)
+                        group.append(sid)
                 except (ValueError, OSError):
-                    (invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ') else blocked).append(sid)
-    overdue = overdue_publications(pending, last, now)
+                    group = (invalid_story if line.startswith('BLOCKED_INVALID_STORY: ')
+                             else invalid_markdown if line.startswith('BLOCKED_INVALID_MARKDOWN: ')
+                             else blocked)
+                    group.append(sid)
+    blocked_article_errors = []
+    healthy_pending = []
+    for item in pending:
+        record = existing_error('origin/editorial-intake', item, main_ref='origin/main')
+        if record is not None:
+            blocked_article_errors.append({'id': item['id'], 'reason': record.get('reason', '')})
+        else:
+            healthy_pending.append(item)
+    overdue = overdue_publications(healthy_pending, last, now)
     newest = None
     site_first_published = []
     for row in rows:
@@ -108,6 +125,8 @@ def snapshot(now=None):
         'overdue': overdue,
         'blocked_unverified_dzen_ids': blocked,
         'blocked_invalid_markdown_ids': invalid_markdown,
+        'blocked_invalid_story_ids': invalid_story,
+        'blocked_article_errors': blocked_article_errors,
         'published_site_first': site_first_published,
         'newest_id': newest[1] if newest else None,
         'newest_published_at_utc': newest[0].isoformat() if newest else None,
