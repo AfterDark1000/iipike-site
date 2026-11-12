@@ -21,6 +21,15 @@ function dueAgeMinutes({readyAt, notBefore, lastPublication}, nowMs) {
 function latestNonCancelled(runs) {
   return runs.find(r => r.status === 'completed' && r.conclusion !== 'cancelled');
 }
+// A later green workflow check is not proof the failed release actually
+// reached the site. Compare failed run timestamps to LAST public publication.
+// Returning one stable component incident prevents issue spam during retries.
+function unrecoveredPublisherFailures(runs, newestPublication, nowMs) {
+  const publishedMs = Date.parse(newestPublication || '');
+  return runs.filter(r => r.status === 'completed' && r.conclusion === 'failure' &&
+    ageMinutes(r.created_at, nowMs) >= 0 && ageMinutes(r.created_at, nowMs) <= 180 &&
+    (!Number.isFinite(publishedMs) || publishedMs < Date.parse(r.created_at)));
+}
 function evaluateRun(label, runs, maxAge, nowMs, url) {
   const recentInProgress = runs.some(r => r.status === 'in_progress' && ageMinutes(r.created_at, nowMs) < 30);
   const latest = latestNonCancelled(runs);
@@ -148,6 +157,7 @@ async function main({github, context, core}) {
   const checked = new Set();
   let queueHealth = null;
   const failedReleases = [];
+  let failedPublisherRuns = [];
   const put = (key, message) => { if (!findings.has(key)) findings.set(key, message); };
   async function content(path, ref) {
     const r = await github.rest.repos.getContent({owner: OWNER, repo: SITE, path, ref});
@@ -169,6 +179,7 @@ async function main({github, context, core}) {
     const latest = latestNonCancelled(r);
     const failures = r.filter(x => x.status === 'completed' && x.conclusion === 'failure' &&
       ageMinutes(x.created_at, now) >= 0 && ageMinutes(x.created_at, now) <= 24 * 60).slice(0, 6);
+    failedPublisherRuns = failures;
     let latestTarget = null;
     for (const failed of failures) {
       const id = await selectedFailedArticle(github, failed, core);
@@ -264,6 +275,17 @@ async function main({github, context, core}) {
       proofCache.set(id, await verifySitePublication(id, queueHealth));
     return proofCache.get(id);
   }
+  // Independent failure alarm: if the next run is green but no later site
+  // article shipped, the earlier failed publication is NOT fixed.
+  const unresolvedRuns = unrecoveredPublisherFailures(
+    failedPublisherRuns, queueHealth?.newest_published_at_utc, now);
+  if (unresolvedRuns.length) {
+    const latest = unresolvedRuns[0];
+    put('site-publisher-blocked', 'Выпуск сайта падал ' + unresolvedRuns.length +
+      ' раз за последние 3 часа; после последней ошибки новая публикация ' +
+      'на сайте не подтверждена. Последняя ошибка: ' + latest.html_url +
+      '. Проверьте release-due-one, даже если следующий Action зелёный.');
+  }
   for (const entry of failedReleases) {
     const proof = await releaseProof(entry.id);
     if (proof.ok) continue;
@@ -294,6 +316,21 @@ async function main({github, context, core}) {
   }
   for (const incident of ours) {
     const key = incident.title.slice(PREFIX.length);
+    if (key === 'site-publisher-blocked') {
+      const newest = Date.parse(queueHealth?.newest_published_at_utc || '');
+      const opened = Date.parse(incident.created_at || '');
+      const proof = queueHealth?.newest_id
+        ? await releaseProof(queueHealth.newest_id) : {ok:false};
+      if (!findings.has(key) && proof.ok && newest > opened) {
+        await github.rest.issues.createComment({owner:OWNER, repo:SITE,
+          issue_number:incident.number,
+          body:'После обнаруженного сбоя подтверждена новая site-first публикация: ' +
+            proof.url + '. Прогресс очереди восстановлен; инцидент закрыт.'});
+        await github.rest.issues.update({owner:OWNER, repo:SITE,
+          issue_number:incident.number, state:'closed'});
+      }
+      continue;
+    }
     if (key.startsWith(RELEASE_PREFIX)) {
       const id = key.slice(RELEASE_PREFIX.length);
       if (!(await canAutoCloseIncident(key, findings, checked, releaseProof))) {
@@ -329,5 +366,6 @@ async function main({github, context, core}) {
     ...notes.map(x => '- ' + x)];
   await core.summary.addRaw(summary.join('\n') + '\n').write();
 }
-module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled, evaluateRun,
+module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled,
+  unrecoveredPublisherFailures, evaluateRun,
   evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
