@@ -241,6 +241,30 @@
           "source_url": "https://pr.tsmc.com/english/news/3352"
         }
       ]
+    },
+    {
+      "key": "northwestern-polytechnical-university",
+      "name": "Northwestern Polytechnical University (NWPU)",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+          "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
+        }
+      ]
+    },
+    {
+      "key": "shaanxi-bosuan",
+      "name": "Shaanxi Bosuan Network Technology",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+          "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
+        }
+      ]
     }
   ],
   "products": [
@@ -423,6 +447,19 @@
         {
           "article_id": "kora-linux-ai-os-cyanogen-20261110",
           "source_url": "https://press.kora.fun/"
+        }
+      ]
+    },
+    {
+      "key": "nvidia-h200",
+      "name": "NVIDIA H200",
+      "company": "nvidia",
+      "status": "candidate",
+      "first_seen": "2026-11-12",
+      "evidence": [
+        {
+          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+          "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
         }
       ]
     }
