@@ -1,9 +1,156 @@
 {
   "schema_version": 1,
-  "status": "never_run",
-  "mode": null,
-  "generated_at_utc": null,
-  "videos": [],
-  "errors": [],
-  "note": "No video has yet been inspected by this pipeline. Do not claim success."
+  "mode": "pilot",
+  "generated_at_utc": "2026-11-12T06:50:29Z",
+  "status": "partial",
+  "limits": {
+    "maximum_gemini_requests": 4,
+    "daily_youtube_search_calls": 0
+  },
+  "videos": [
+    {
+      "id": "rXgv9bxT8gw",
+      "url": "https://www.youtube.com/shorts/rXgv9bxT8gw",
+      "title": null,
+      "views": null,
+      "likes": null,
+      "subscribers": null,
+      "published_at": null,
+      "duration_seconds": null,
+      "statistics_source": "unavailable",
+      "viral_status": "unconfirmed",
+      "is_confirmed_short": false,
+      "analysis": {
+        "observed_visuals": "Подводная съемка 3D-реконструкции исторической подводной лодки с гребцами внутри, затем кадры взрыва корабля на поверхности и финальный кадр со скелетами экипажа на постах.",
+        "observed_audio": "Английская закадровая речь (сторителлинг о гражданской войне в США и первой успешной атаке подлодки).",
+        "hook_0_3s": "Кадр подводного движения цилиндрической лодки и закадровый вопрос/тезис о Гражданской войне в США.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:02",
+            "visible_action": "Вид на подводную лодку под водой, закадровый голос начинает рассказ.",
+            "editing": "Плавное движение камеры под водой.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:02 - 00:10",
+            "visible_action": "Показ экипажа внутри цилиндрического корпуса, крутящего механизмы.",
+            "editing": "Склейка на внутренний разрез лодки.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10 - 00:23",
+            "visible_action": "Демонстрация работы гребцов и командира при свечах.",
+            "editing": "Динамичные ракурсы с разных точек.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:23 - 00:27",
+            "visible_action": "Взрыв надводного корабля на поверхности воды.",
+            "editing": "Резкая смена плана на поверхность.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:27 - 00:33",
+            "visible_action": "Возврат под воду к лежащей на дне лодке и скелетам членов экипажа.",
+            "editing": "Финальный наезд камеры на скелеты.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Исторический 3D-сторителлинг с закадровым голосом и визуальной реконструкцией событий от первого лица.",
+        "transfer_to_hpii": "Использовать прием «разрез объекта в разрезо-схеме» (например, визуализация работы нейросети или дата-центра изнутри) для объяснения скрытых процессов в новостях об ИИ.",
+        "what_not_to_copy": "Устаревшие исторические темы и медленный темп смены кадров без субтитров.",
+        "limitations": "Сложность качественной 3D-моделирования исторических или технологических объектов.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-12T06:50:34Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "_ncGUlKhKR8",
+      "url": "https://www.youtube.com/shorts/_ncGUlKhKR8",
+      "title": null,
+      "views": null,
+      "likes": null,
+      "subscribers": null,
+      "published_at": null,
+      "duration_seconds": null,
+      "statistics_source": "unavailable",
+      "viral_status": "unconfirmed",
+      "is_confirmed_short": false,
+      "status": "failed",
+      "failure": "API HTTP 503"
+    },
+    {
+      "id": "YkL5X5KB9ts",
+      "url": "https://www.youtube.com/shorts/YkL5X5KB9ts",
+      "title": null,
+      "views": null,
+      "likes": null,
+      "subscribers": null,
+      "published_at": null,
+      "duration_seconds": null,
+      "statistics_source": "unavailable",
+      "viral_status": "unconfirmed",
+      "is_confirmed_short": false,
+      "status": "failed",
+      "failure": "API HTTP 503"
+    },
+    {
+      "id": "7xS87iActkU",
+      "url": "https://www.youtube.com/shorts/7xS87iActkU",
+      "title": null,
+      "views": null,
+      "likes": null,
+      "subscribers": null,
+      "published_at": null,
+      "duration_seconds": null,
+      "statistics_source": "unavailable",
+      "viral_status": "unconfirmed",
+      "is_confirmed_short": false,
+      "analysis": {
+        "observed_visuals": "Animated video featuring stick figure characters building railroads across a canyon, discussing spacing and rail expansion due to heat.",
+        "observed_audio": "Voiceover narration telling a story about rival railroad builders, accompanied by upbeat background music and sound effects.",
+        "hook_0_3s": "A character stands on railroad tracks with a train approaching in the background while English subtitles display text.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "Character standing on tracks with a train approaching",
+            "editing": "Direct cut with subtitle overlay",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:03",
+            "visible_action": "Pan across canyon showing two competing railroad bridges",
+            "editing": "Smooth camera pan",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10",
+            "visible_action": "Boss character holding money bags in station",
+            "editing": "Fast transition to station scene",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Narrative-driven animated explainer with dynamic visual metaphors and constant narrative escalation.",
+        "transfer_to_hpii": "Use the narrative contrast mechanic (flawed vs. perfect execution) to explain AI model benchmarking and scaling issues.",
+        "what_not_to_copy": "Literal stick figure animation style and railroad storyline.",
+        "limitations": "Animation details are dense; fast cuts require careful segmentation.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-12T06:51:08Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    }
+  ],
+  "errors": [
+    {
+      "video_id": "_ncGUlKhKR8",
+      "code": "analysis_failed"
+    },
+    {
+      "video_id": "YkL5X5KB9ts",
+      "code": "analysis_failed"
+    }
+  ]
 }
