@@ -4819,5 +4819,23 @@
       "bytedance"
     ],
     "products": []
+  },
+  {
+    "title": "«ИИ научили варить металл. Теперь ему хотят доверить целый завод — и дали на это $300 млн»",
+    "summary": "Path Robotics привлекла $300 млн в раунде Series E при оценке $2,45 млрд. Разработчик ИИ-сварки Obsidian намерен расширять роботизацию на другие производственные задачи.",
+    "published": "2026-11-12",
+    "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian",
+    "cover": "assets/editorial/path-robotics-series-e-300m-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T17:15:39Z",
+    "event_date": "2026-11-10",
+    "id": "path-robotics-series-e-300m-20261110",
+    "url": "articles/path-robotics-series-e-300m-20261110/",
+    "topics": [
+      "engineering",
+      "finance"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
