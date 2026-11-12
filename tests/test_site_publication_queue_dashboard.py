@@ -85,7 +85,7 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("Нет проблемных материалов", page)
 
     def test_corrupt_one_article_is_marked_without_crashing_queue_view(self):
-        tree = "\\n".join([
+        tree = "\n".join([
             "editorial_inbox/stories/bad.json",
             "editorial_inbox/covers/bad.webp",
             "editorial_inbox/stories/good.json",
@@ -100,13 +100,13 @@ class EditorialQueuePageTests(unittest.TestCase):
                                "status": "editor_approved",
                                "approved_by": "human_editor"})
         with patch("scripts.render_site_publication_queue.git",
-                   return_value=SimpleNamespace(stdout=tree)), \\
+                   return_value=SimpleNamespace(stdout=tree)), \
              patch("scripts.render_site_publication_queue.safe_git_blob_at",
-                   side_effect=blob), \\
+                   side_effect=blob), \
              patch("scripts.render_site_publication_queue.exists_at",
-                   return_value=False), \\
+                   return_value=False), \
              patch("scripts.render_site_publication_queue.latest_site_first_publication",
-                   return_value=None), \\
+                   return_value=None), \
              patch("scripts.render_site_publication_queue._last_change",
                    return_value=NOW - dt.timedelta(hours=2)):
             rows, last = scan_queue(now=NOW)
@@ -117,8 +117,8 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("Ошибка структуры редакционного JSON", page)
 
     def test_persisted_article_quarantine_is_visible_and_not_selectable(self):
-        tree = ("editorial_inbox/stories/bad.json\\n"
-                "editorial_inbox/covers/bad.webp\\n")
+        tree = ("editorial_inbox/stories/bad.json\n"
+                "editorial_inbox/covers/bad.webp\n")
         def blob(ref, path):
             if path == "news.json":
                 return "[]"
@@ -126,15 +126,15 @@ class EditorialQueuePageTests(unittest.TestCase):
                                "status": "editor_approved",
                                "approved_by": "human_editor"})
         with patch("scripts.render_site_publication_queue.git",
-                   return_value=SimpleNamespace(stdout=tree)), \\
+                   return_value=SimpleNamespace(stdout=tree)), \
              patch("scripts.render_site_publication_queue.safe_git_blob_at",
-                   side_effect=blob), \\
+                   side_effect=blob), \
              patch("scripts.render_site_publication_queue.exists_at",
-                   return_value=False), \\
+                   return_value=False), \
              patch("scripts.render_site_publication_queue.latest_site_first_publication",
-                   return_value=None), \\
+                   return_value=None), \
              patch("scripts.render_site_publication_queue._last_change",
-                   return_value=NOW - dt.timedelta(hours=2)), \\
+                   return_value=NOW - dt.timedelta(hours=2)), \
              patch("scripts.render_site_publication_queue.existing_error",
                    return_value={"id": "bad", "reason": "Wrong artwork dimensions"}):
             rows, last = scan_queue(now=NOW)
