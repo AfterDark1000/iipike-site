@@ -4683,5 +4683,22 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Beeble выпустила SwitchX 3.0: ИИ меняет декорации в готовом видео",
+    "summary": "Beeble выпустила SwitchX 3.0 — обновлённую систему замены декораций и света в отснятом видео. Нейросеть сохраняет игру актёра, создаёт движущееся окружение и поддерживает текстовое управление событиями в кадре; сервис доступен по платной подписке.",
+    "published": "2026-11-12",
+    "source_url": "https://beeble.ai/research/switchx-3-0",
+    "cover": "assets/editorial/beeble-switchx-3-dynamic-video-backgrounds-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-12T09:00:52Z",
+    "event_date": "2026-11-10",
+    "id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
+    "url": "articles/beeble-switchx-3-dynamic-video-backgrounds-20261110/",
+    "topics": [
+      "video"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
