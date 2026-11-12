@@ -24,18 +24,21 @@ class SiteNewsPoolTests(unittest.TestCase):
     def test_empty_file_is_valid(self):
         self.assertEqual(validate(fresh()), fresh())
 
-    def test_batch_is_deduplicated_by_url_and_title(self):
+    def test_batch_keeps_distinct_stories_sharing_one_source(self):
         pool, report = add(fresh(), [
             record("A useful AI story", "https://example.org/story/?utm_source=chat"),
             record("Another title same URL", "https://example.org/story"),
             record("A useful AI story", "https://another.org/story"),
             record("A genuinely different story", "https://example.org/different"),
         ], now=NOW)
-        self.assertEqual(len(pool["items"]), 2)
-        self.assertEqual([x["sequence"] for x in pool["items"]], [1, 2])
-        self.assertEqual(len(report["duplicates"]), 2)
+        self.assertEqual(len(pool["items"]), 3)
+        self.assertEqual([x["sequence"] for x in pool["items"]], [1, 2, 3])
+        self.assertEqual(len(report["duplicates"]), 1)
         self.assertEqual(pool["items"][0]["source_url"], "https://example.org/story")
         self.assertEqual(pool["items"][0]["id"], candidate_id("https://example.org/story"))
+        self.assertEqual(pool["items"][1]["id"], candidate_id("https://example.org/story",
+                                                               "Another title same URL"))
+        self.assertNotEqual(pool["items"][0]["id"], pool["items"][1]["id"])
         self.assertFalse(any(x["status"] != "queued" for x in pool["items"]))
 
     def test_sources_must_be_valid_https(self):
@@ -140,6 +143,18 @@ class SiteNewsPoolTests(unittest.TestCase):
         self.assertEqual(report["added"], [])
         self.assertEqual(next_pool["items"][0]["status"], "in_review")
         self.assertEqual(selected["id"], next_pool["items"][0]["id"])
+
+    def test_existing_url_id_survives_new_story_from_same_source(self):
+        pool, _ = add(fresh(), [record("One announcement about AI", "https://example.org/big-release")],
+                      now=NOW)
+        existing_id = pool["items"][0]["id"]
+        later, report = add(pool, [
+            record("Another announcement about robots", "https://example.org/big-release")
+        ], now=NOW)
+        self.assertEqual(later["items"][0]["id"], existing_id)
+        self.assertEqual(later["items"][1]["sequence"], 2)
+        self.assertNotEqual(later["items"][1]["id"], existing_id)
+        self.assertEqual(len(report["added"]), 1)
 
     def test_return_and_approve_require_real_article_id(self):
         pool, _ = add(fresh(), [record("Interesting new launch", "https://example.org/a")], now=NOW)
