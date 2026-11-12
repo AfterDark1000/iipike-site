@@ -100,9 +100,9 @@
       "summary": "10 ноября: Anthropic запустила Claude Sheets и Whiteboards, сделала Claude Data общедоступным для платных планов.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-12T06:13:44.543Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
