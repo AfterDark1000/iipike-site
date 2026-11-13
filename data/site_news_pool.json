@@ -931,6 +931,66 @@
       "closed_at": "2026-11-13T07:08:03.828Z",
       "article_id": null,
       "note": "Редакционная ревизия 13.11.2026: Отклонено по согласованной ревизии: на данном этапе обычный патентный иск без необычного результата. Вернуться при существенном развитии."
+    },
+    {
+      "id": "n-45f5fd394ef9d677",
+      "sequence": 63,
+      "title": "OpenAI выделила $2 млн на исследования влияния ИИ на детей",
+      "source_url": "https://openai.com/index/children-first-declaration/",
+      "summary": "12 ноября: OpenAI объявила о выделении $2 млн на независимые исследования безопасности и влияния ИИ на детей.",
+      "origin": "ХПИИ — добытчик новостей (подборка 13.11.2026, последние 4)",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-13T14:07:00+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": "Сырьё, требует редакторской проверки."
+    },
+    {
+      "id": "n-036fdc4befba26da",
+      "sequence": 64,
+      "title": "LangChain привлекла $300 млн при оценке в $3 млрд",
+      "source_url": "https://www.wsj.com/cio-journal/ai-startup-langchain-more-than-doubles-its-valuation-to-3-billion-f83377ad",
+      "summary": "12 ноября: финансирование инструментов создания и контроля ИИ-агентов; вторичный источник WSJ.",
+      "origin": "ХПИИ — добытчик новостей (подборка 13.11.2026, последние 4)",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-13T14:07:00+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": "Сырьё, требует редакторской проверки."
+    },
+    {
+      "id": "n-3a6a15eb095cc713",
+      "sequence": 65,
+      "title": "Whoop запустила Humans — соцсеть без ИИ-ботов",
+      "source_url": "https://timesofindia.indiatimes.com/technology/tech-news/whoop-launches-humans-a-social-network-it-says-is-built-on-verified-heartbeats/articleshow/135788594.cms",
+      "summary": "12 ноября: Whoop представила соцфункцию Humans с подтверждением участия носимым устройством; отсутствие ботов — заявление компании, вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей (подборка 13.11.2026, последние 4)",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-13T14:07:00+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": "Сырьё, требует редакторской проверки."
+    },
+    {
+      "id": "n-c3fe8341e49f4a45",
+      "sequence": 66,
+      "title": "Anthropic пообещала $50 млн благотворительным организациям Сан-Франциско",
+      "source_url": "https://www.sfchronicle.com/tech/article/anthropic-ipo-philanthropy-22521168.php",
+      "summary": "11 ноября: Anthropic объявила о финансировании благотворительных инициатив Сан-Франциско до конца 2027 года; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей (подборка 13.11.2026, последние 4)",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-13T14:07:00+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": "Сырьё, требует редакторской проверки."
     }
   ]
 }
