@@ -421,6 +421,18 @@
           "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
         }
       ]
+    },
+    {
+      "key": "united-airlines",
+      "name": "United Airlines",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "united-airlines-ai-agents-booking-ban-20261111",
+          "source_url": "https://united.mediaroom.com/news-releases?item=125496"
+        }
+      ]
     }
   ],
   "products": [
