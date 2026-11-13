@@ -445,6 +445,54 @@
           "source_url": "https://blog.claroc.io/ghostshares-grok-build-apps"
         }
       ]
+    },
+    {
+      "key": "public-citizen",
+      "name": "Public Citizen",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        }
+      ]
+    },
+    {
+      "key": "irreplaceable-education-fund",
+      "name": "Irreplaceable Education Fund",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        }
+      ]
+    },
+    {
+      "key": "heat-initiative",
+      "name": "Heat Initiative",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        }
+      ]
+    },
+    {
+      "key": "alliance-for-secure-ai",
+      "name": "Alliance for Secure AI",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        }
+      ]
     }
   ],
   "products": [
