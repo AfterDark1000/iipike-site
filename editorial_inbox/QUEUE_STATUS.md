@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 14 · **Готовы:** 0 · **Ждут интервал:** 14 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 87
+**В очереди:** 15 · **Готовы:** 0 · **Ждут интервал:** 15 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 87
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -26,12 +26,13 @@
 | **12** | [ИИ научили снимать будущее](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mbzuai-pan2-world-model-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 22:22 (Усть-Катав)**; пауза до 13.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mbzuai-pan2-world-model-20261110.webp) |
 | **13** | [Японцы открыли пять ИИ-моделей для беспилотных машин](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/tier-iv-autoware-five-models-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 23:22 (Усть-Катав)**; пауза до 13.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/tier-iv-autoware-five-models-20261111.webp) |
 | **14** | [Alibaba показала Qwen 4 Max — и сразу назначила дату отключения](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/alibaba-qwen4-max-preview-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 00:22 (Усть-Катав)**; пауза до 13.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-preview-20261111.webp) |
+| **15** | [Google выпустила ИИ, который отвечает на тысячу вопросов без слов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-decision-1-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 07:07 (Усть-Катав)**; пауза до 13.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-decision-1-20261111.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Google выпустила ИИ, который отвечает на тысячу вопросов без слов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-decision-1-20261111.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Опубликованы через site-first — новые сверху
 
