@@ -80,13 +80,19 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             if not isinstance(data, dict) or data.get("id") != sid:
                 raise ValueError("Invalid editorial story ID: " + sid)
             scheduled = parse_slot(data["site_publish_at"]) if "site_publish_at" in data else None
+            if data.get("site_queue") not in (None, "priority"):
+                raise ValueError("Invalid site_queue (expected priority)")
+            if scheduled and data.get("site_queue"):
+                raise ValueError("A timed release cannot also join the priority queue")
+            lane = ("timed" if scheduled else "priority"
+                    if data.get("site_queue") == "priority" else "standard")
         except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
             rows.append({
                 "id": sid, "title": sid, "status": "⛔ Заблокирована: ошибка статьи",
                 "published": False, "published_at": None, "eligible": False,
                 "block_reason": "Ошибка структуры редакционного JSON: " + str(exc)[:250],
                 "ready_at": None, "publish_at": None, "spacing_until": None,
-                "source_path": path, "cover_path": None,
+                "source_path": path, "cover_path": None, "lane": "standard",
             })
             continue
         page = exists_at(main, "articles/" + sid + "/index.html")
@@ -146,13 +152,17 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
                           else "⛔ Заблокирована: связи с Дзеном")
             else:
                 eligible = True
-                if scheduled and now < scheduled:
-                    status = "🕒 Ожидает заданного времени"
+                if lane == "timed":
+                    status = ("🕒 Ожидает заданного времени"
+                              if now < scheduled or now < ready_at
+                              else "🕒 Назначенное время наступило")
                 elif in_quiet_hours(now):
                     status = "🌙 Ночная пауза"
                 elif spacing_until:
                     status = ("⏳ Ждёт ускоренный интервал"
                               if spacing == RECOVERY_INTERVAL else "⏳ Ждёт часовой интервал")
+                elif lane == "priority":
+                    status = "⚡ Срочная очередь — готова"
                 else:
                     status = "🟢 Готова к выпуску"
 
@@ -160,7 +170,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
             "id": sid, "title": data.get("title"), "status": status,
             "published": bool(page), "published_at": published.get("published_at_utc") if published else None,
             "eligible": eligible, "block_reason": block_reason,
-            "ready_at": ready_at, "publish_at": scheduled,
+            "ready_at": ready_at, "publish_at": scheduled, "lane": lane,
             "spacing_until": spacing_until if status.startswith("⏳ Ждёт ") else None,
             "source_path": path, "cover_path": arts[0] if len(arts) == 1 else None,
         })
@@ -171,7 +181,8 @@ def is_selectable(row):
     return row.get("eligible", row.get("status") in (
         "🟢 Готова к выпуску", "⏳ Ждёт часовой интервал",
         "⏳ Ждёт ускоренный интервал",
-        "🕒 Ожидает заданного времени", "🌙 Ночная пауза"))
+        "🕒 Ожидает заданного времени", "🕒 Назначенное время наступило",
+        "⚡ Срочная очередь — готова", "🌙 Ночная пауза"))
 
 
 # Keep in sync with the cron minutes in site-first-scheduled-release.yml.
@@ -179,7 +190,7 @@ def is_selectable(row):
 CRON_MINUTES = frozenset((7, 22, 37, 52))
 
 
-def next_cron_tick(when):
+def next_cron_tick(when, *, allow_night=False):
     """Next theoretical scheduled run; real GitHub Actions runs may be late."""
     if not when.tzinfo:
         raise ValueError("Cron forecast requires a timezone")
@@ -188,44 +199,70 @@ def next_cron_tick(when):
     for offset in range(24 * 60 + 65):
         candidate = minute + dt.timedelta(minutes=offset)
         if (candidate.minute in CRON_MINUTES and candidate >= when
-                and not in_quiet_hours(candidate)):
+                and (allow_night or not in_quiet_hours(candidate))):
             return candidate
     raise RuntimeError("Could not find next scheduled check")
 
 
 def forecast_order(rows, last, *, now=None):
-    """Simulate the publisher's readiness-order scan, skipping future slots.
+    """Forecast three lanes without letting timed articles reset queue slots.
 
-    Never claims exact publication times: Pages and Actions may lag, and later
-    arrivals, manual urgent releases or edits can change the actual sequence.
+    Priority and standard share hourly slots; timed articles are independent
+    and can land between them. This is only an estimate: GitHub cron may lag.
     """
     now = now or dt.datetime.now(dt.timezone.utc)
     if not now.tzinfo:
         raise ValueError("Forecast requires an offset-aware time")
-    pending = sorted(
-        (r for r in rows if is_selectable(r)),
-        key=lambda r: (r["ready_at"], r["id"]),
-    )
-    spacing = release_interval(now, len(pending), [r["id"] for r in pending])
-    tick = next_cron_tick(max(now.astimezone(dt.timezone.utc), last + spacing)
-                          if last else now)
-    output = []
-    while pending:
-        selected = next(
-            (r for r in pending if tick >= r["ready_at"] and
-             (r["publish_at"] is None or tick >= r["publish_at"])),
-            None,
-        )
-        if selected is None:
-            first_eligible = min(max(r["ready_at"], r["publish_at"] or r["ready_at"])
-                                 for r in pending)
-            tick = next_cron_tick(max(tick + dt.timedelta(seconds=1), first_eligible))
-            continue
-        output.append((selected, tick))
-        pending.remove(selected)
-        tick = next_cron_tick(tick + release_interval(
-            tick, len(pending), [r["id"] for r in pending]))
-    return output
+    now = now.astimezone(dt.timezone.utc)
+    pending = [r for r in rows if is_selectable(r)]
+    timed = [r for r in pending if r.get("lane", "timed" if r.get("publish_at") else "standard")
+             == "timed"]
+    regular = [r for r in pending if r not in timed]
+    regular.sort(key=lambda r: (
+        0 if r.get("lane") == "priority" else 1,
+        r["ready_at"], r["id"],
+    ))
+    timed.sort(key=lambda r: (r["publish_at"], r["ready_at"], r["id"]))
+    spacing = release_interval(now, len(regular), [r["id"] for r in regular])
+    queue_tick = (next_cron_tick(max(now, last + spacing))
+                  if last else next_cron_tick(now))
+    result = []
+    after_previous = now
+    while timed or regular:
+        # The nearest requested clock time, regardless of night queue pause.
+        fixed_tick = (
+            next_cron_tick(max(after_previous, r["publish_at"], r["ready_at"]),
+                           allow_night=True)
+            if (r := timed[0]) else None
+        ) if timed else None
+        queue_candidate = None
+        if regular:
+            queue_tick = next_cron_tick(max(queue_tick, after_previous))
+            ready_queued = [r for r in regular if r["ready_at"] <= queue_tick]
+            if not ready_queued:
+                queue_tick = next_cron_tick(max(queue_tick, min(
+                    r["ready_at"] for r in regular)))
+                ready_queued = [r for r in regular if r["ready_at"] <= queue_tick]
+            if ready_queued:
+                queue_candidate = ready_queued[0]
+        if fixed_tick is not None and (queue_candidate is None or fixed_tick <= queue_tick):
+            selected = timed.pop(0)
+            tick = fixed_tick
+            # If a fixed-time article occupies the same cron invocation,
+            # the queue waits for the next runner, NOT another full hour.
+            if regular and queue_tick <= tick:
+                queue_tick = next_cron_tick(tick + dt.timedelta(seconds=1))
+        elif queue_candidate is not None:
+            selected = queue_candidate
+            tick = queue_tick
+            regular.remove(selected)
+            queue_tick = next_cron_tick(tick + release_interval(
+                tick, len(regular), [r["id"] for r in regular]))
+        else:
+            raise RuntimeError("Could not schedule ready queue or timed article")
+        result.append((selected, tick))
+        after_previous = tick + dt.timedelta(seconds=1)
+    return result
 
 
 def as_markdown(rows, last, *, now=None):
@@ -237,9 +274,11 @@ def as_markdown(rows, last, *, now=None):
     )
     attention = [r for r in rows if not is_selectable(r)
                  and r["status"] != "✅ Опубликована"]
-    active = sum(r["status"] == "🟢 Готова к выпуску" for r in rows)
+    active = sum(r["status"] in ("🟢 Готова к выпуску", "⚡ Срочная очередь — готова",
+                                 "🕒 Назначенное время наступило") for r in rows)
     held = sum(r["status"].startswith("⏳ Ждёт ") for r in rows)
-    future = sum(r["status"] == "🕒 Ожидает заданного времени" for r in rows)
+    future = sum(r.get("lane") == "timed" and is_selectable(r) for r in rows)
+    priority_count = sum(r.get("lane") == "priority" and is_selectable(r) for r in rows)
     quiet = sum(r["status"] == "🌙 Ночная пауза" for r in rows)
     covers = sum(r["status"] == "🖼️ Ждёт обложку" for r in rows)
     blocked = sum(r["status"].startswith("⛔ Заблокирована") for r in rows)
@@ -250,6 +289,7 @@ def as_markdown(rows, last, *, now=None):
         "",
         "**В очереди:** " + str(len(planned)) + " · **Готовы:** " + str(active)
         + " · **Ждут интервал:** " + str(held)
+        + " · **Срочная очередь:** " + str(priority_count)
         + " · **Назначено время:** " + str(future)
         + " · **Ночная пауза:** " + str(quiet)
         + " · **Ждут обложку:** " + str(covers)
@@ -257,6 +297,8 @@ def as_markdown(rows, last, *, now=None):
         + " · **Опубликованы через site-first:** " + str(len(released)),
         "",
         "Проверка каждые 15 минут; не более одной статьи за запуск. "
+        "Срочная очередь впереди обычной, вместе они делят часовые слоты. "
+        "Выпуск по назначенному времени не сдвигает очередь. "
         + ("Временно ускоренный интервал до публикации Gemini для больниц "
            "(не дольше 12.11.2026 19:00 по Усть-Катаву); после неё — 60 минут. "
            if release_interval(now, len(planned), [r["id"] for r, _ in planned]) == RECOVERY_INTERVAL
