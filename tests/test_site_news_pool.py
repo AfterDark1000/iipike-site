@@ -48,23 +48,29 @@ class SiteNewsPoolTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     add(fresh(), [record("A good title", bad)], now=NOW)
 
-    def test_next_obeys_strict_fifo_regardless_of_priority_and_claims_one(self):
+    def test_next_selects_hot_first_then_standard_fifo(self):
         pool, _ = add(fresh(), [
             record("Old normal item", "https://example.org/a"),
             record("Fresh urgent item", "https://example.org/b", priority="high"),
-            record("Low priority item", "https://example.org/c", priority="low")
+            record("Low priority item", "https://example.org/c", priority="low"),
+            record("New hot item", "https://example.org/d", priority="high"),
         ], now=NOW)
         claimed_pool, chosen = next_item(pool, now="2026-11-12T08:00:00+00:00")
-        self.assertEqual(chosen["title"], "Old normal item")
-        self.assertEqual(chosen["sequence"], 1)
+        self.assertEqual(chosen["title"], "Fresh urgent item")
+        self.assertEqual(chosen["sequence"], 2)
         self.assertEqual(chosen["status"], "in_review")
         self.assertEqual(sum(x["status"] == "in_review" for x in claimed_pool["items"]), 1)
         self.assertTrue(all(x["status"] == "queued" for x in pool["items"]))
         second_pool, second = next_item(claimed_pool, now="2026-11-12T08:01:00+00:00")
-        self.assertEqual(second["title"], "Fresh urgent item")
-        self.assertEqual(second["sequence"], 2)
-        self.assertEqual(len(second_pool["items"]), 3)
-        self.assertEqual([x["sequence"] for x in second_pool["items"]], [1, 2, 3])
+        self.assertEqual(second["title"], "New hot item")
+        self.assertEqual(second["sequence"], 4)
+        third_pool, third = next_item(second_pool, now="2026-11-12T08:02:00+00:00")
+        self.assertEqual(third["title"], "Old normal item")
+        self.assertEqual(third["sequence"], 1)
+        final_pool, fourth = next_item(third_pool, now="2026-11-12T08:03:00+00:00")
+        self.assertEqual(fourth["title"], "Low priority item")
+        self.assertEqual(fourth["sequence"], 3)
+        self.assertEqual([x["sequence"] for x in final_pool["items"]], [1, 2, 3, 4])
 
     def test_batch_preserves_explicit_selection_order_across_chat_batches(self):
         first, _ = add(fresh(), [
