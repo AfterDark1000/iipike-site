@@ -1,0 +1,49 @@
+name: HPII — site queue priority safety (NO PUBLICATION)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/site_publication_queue.py'
+      - 'scripts/site_first_release_intent.py'
+      - 'tests/test_site_publication_queue.py'
+      - 'tests/test_site_first_release_intent.py'
+      - 'tests/test_site_release_quarantine.py'
+      - '.github/workflows/site-first-scheduled-release.yml'
+      - '.github/workflows/site-queue-priority-safety.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/site_publication_queue.py'
+      - 'scripts/site_first_release_intent.py'
+      - 'tests/test_site_publication_queue.py'
+      - 'tests/test_site_first_release_intent.py'
+      - 'tests/test_site_release_quarantine.py'
+      - '.github/workflows/site-first-scheduled-release.yml'
+      - '.github/workflows/site-queue-priority-safety.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-queue-priority-safety-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout for read-only tests
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify Python sources compile
+        run: python3 -m py_compile scripts/site_publication_queue.py scripts/site_first_release_intent.py scripts/site_release_quarantine.py
+      - name: Install image validator for offline fixtures
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Verify priorities, reserved times, and urgent spacing (no publish)
+        run: |
+          python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_first_release_intent.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_release_quarantine.py' -v
