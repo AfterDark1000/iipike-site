@@ -29,14 +29,16 @@ class FocusTests(unittest.TestCase):
 
     def test_four_published_rubric_stories_and_order(self):
         ids = active_focus_ids(self.records, self.items)
-        self.assertEqual(ids, [
-            "binance-internal-ai-tool-hack-20261029",
-            "take-two-gta-handcrafted-ai-advertising-20261104",
-            "mask-protiv-nolana-grok-vypustil-pervye-7-minut-svoey-odiss-d94a0",
-            "geoffrey-hinton-ai-chernobyl-20261103",
-        ])
+        # The editorial picks change over time. Test the CURRENT config,
+        # not four permanently pinned story IDs from an old editorial choice.
+        configured_ids = [item["id"] for item in self.items]
+        self.assertEqual(len(configured_ids), 4)
+        self.assertEqual(len(set(configured_ids)), 4)
+        self.assertEqual(ids, configured_ids)
         from scripts.site_rubrics import RUBRICS
         by_id = {row["id"]: row for row in self.records}
+        self.assertTrue(all(sid in by_id for sid in ids),
+                        "Focus picks must exist in the public news catalog")
         rubrics = ["skynet", "news", "what-are-you-doing", "quotes"]
         self.assertEqual([by_id[sid]["rubric"] for sid in ids], rubrics)
         self.assertEqual([item["label"] for item in self.items],
@@ -45,6 +47,10 @@ class FocusTests(unittest.TestCase):
         self.assertEqual(len(self.html.split(FOCUS_END)), 2)
         self.assertIn('class="home-focus-grid" data-count="4"', self.html)
         self.assertEqual(self.html.count('class="home-focus-card '), 4)
+        focus_html = self.html.split(FOCUS_START, 1)[1].split(FOCUS_END, 1)[0]
+        positions = [focus_html.index('href="articles/' + sid + '/"') for sid in ids]
+        self.assertEqual(positions, sorted(positions),
+                         "Homepage must render chosen articles in rubric order")
         self.assertLess(self.html.index('id="focus"'), self.html.index('id="archive"'))
         self.assertLess(self.html.index('id="archive"'), self.html.index('id="latest"'))
         self.assertIn('<a href="#focus">В фокусе</a>', self.html)
