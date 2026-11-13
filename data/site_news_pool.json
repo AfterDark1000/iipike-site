@@ -235,12 +235,12 @@
       "summary": "11 ноября: в Model Studio появилась Qwen4-Max-Preview, поддерживающая вызовы инструментов; ссылка на журнал обновлений.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-13T04:36:27.822Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "13.11.2026: №16 зарезервирована FIFO. Первоисточник: Alibaba Model Studio релизы 11.11 https://www.alibabacloud.com/help/en/model-studio/newly-released-models и отдельная документация https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview (обновлена 11.11), плюс пост официального @Alibaba_Qwen https://x.com/Alibaba_Qwen/status/2120335993643684315 . Qwen4-Max-Preview — предварительная новая флагманская мультимодальная модель: понимает текст, изображения и видео, пишет текст, поиск, function calling, JSON Schema, совместимость OpenAI Chat Completions/Responses и Anthropic Messages; контекст 1 млн токенов, выход до 393216, включая внутренние рассуждения, reasoning default xhigh. Период preview 11.11 10:00 — 25.11 24:00 по Пекину, после чего именно preview-версию выведут из эксплуатации. API только подписка Token Plan Personal/Team, pay-as-you-go нет; официальный Qwen перечисляет ранний доступ QwenWork/Qoder/Qwen APP/QwenStudio. Не утверждать, что вся линейка Qwen4 будет удалена или что доступен полный релиз. Официальных бенчмарков и открытых весов в анонсе нет. Архив Дзена 296, сайта 305: точного дубля нет, статья про инцидент другого Qwen — отдельная. @Alibaba_Qwen — проверен. Дзен/Threads/X подготовлены, до «берём» публикационные очереди не менять."
+      "closed_at": "2026-11-13T05:03:27.475Z",
+      "article_id": "alibaba-qwen4-max-preview-20261111",
+      "note": "13.11.2026: главный редактор утвердил материал «Alibaba показала Qwen 4 Max — и сразу назначила дату отключения» о предварительной версии Qwen4-Max-Preview. Сохранён дословный Markdown editorial-intake/stories/alibaba-qwen4-max-preview-20261111.json; Threads и X с проверенным @Alibaba_Qwen внесены в очереди main. В data/entity_candidates.json main добавлена модель Qwen4-Max-Preview; Alibaba и Qwen уже зарегистрированы. Обложка ожидается."
     },
     {
       "id": "n-02bfed5e7aa817ea",
