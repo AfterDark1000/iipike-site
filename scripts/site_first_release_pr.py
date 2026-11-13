@@ -127,9 +127,9 @@ def proposed_changes():
     output = git("status", "--porcelain", "--untracked-files=all").stdout.splitlines()
     allowed = ("editorial_inbox/stories/", "editorial_inbox/covers/",
                "editorial_inbox/illustrations/",
-               "assets/editorial/", "content/approved/", "articles/",
+               "assets/editorial/", "assets/vk/", "content/approved/", "articles/",
                "rubrics/", "topics/", "entities/")
-    exact = {"news.json", "feed.xml", "dzen-rss.xml", "sitemap.xml", "index.html",
+    exact = {"news.json", "feed.xml", "dzen-rss.xml", "vk-rss.xml", "sitemap.xml", "index.html",
              "data/entity_registry.json"}
     changed = []
     for row in output:
@@ -223,7 +223,7 @@ def auto_publish_site(story_id, base_sha, source_paths):
     # RSS may be byte-identical for old paragraph-only site-first pilots.
     # Allow regeneration but never require an unrelated site release to
     # change an otherwise valid Dzen export.
-    optional_files = {"dzen-rss.xml"}
+    optional_files = {"dzen-rss.xml", "vk-rss.xml", f"assets/vk/{story_id}.jpg"}
     unexpected = changed - expected_files - optional_files - rubric_files - topic_files
     for path in unexpected:
         match = re.fullmatch(r"articles/([a-z0-9]+(?:-[a-z0-9]+)*)/index\.html", path)
@@ -272,6 +272,11 @@ def release_one(story_id, ref):
     # This stage is the FIRST source of site publication timestamp; not the
     # approval day or the Dzen publication day.
     run_checked(sys.executable, "scripts/site_first_inbox.py", story_id, "--stage", "--publish")
+    # VK RSS is secondary. A cover/feed problem must NEVER block the site release.
+    vk_result = subprocess.run([sys.executable, "scripts/build_vk_rss.py"], check=False)
+    if vk_result.returncode != 0:
+        print("::warning::VK_RSS_GENERATION_FAILED: site publication continues; "
+              "inspect VK RSS separately", flush=True)
     for cmd in (
         ("scripts/build_rubrics.py", "--check"),
         ("scripts/build_topics.py", "--check"),
