@@ -349,6 +349,30 @@
           "source_url": "https://news.engin.umich.edu/2026/11/prism-a-neural-network-component-for-better-robotic-motor-control/"
         }
       ]
+    },
+    {
+      "key": "mit",
+      "name": "Massachusetts Institute of Technology (MIT)",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+        }
+      ]
+    },
+    {
+      "key": "carnegie-mellon-university",
+      "name": "Carnegie Mellon University",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+        }
+      ]
     }
   ],
   "products": [
@@ -700,6 +724,19 @@
         {
           "article_id": "umich-prism-robot-motion-20261110",
           "source_url": "https://news.engin.umich.edu/2026/11/prism-a-neural-network-component-for-better-robotic-motor-control/"
+        }
+      ]
+    },
+    {
+      "key": "workspace-models",
+      "name": "Workspace Models",
+      "company": "mit",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
         }
       ]
     }
