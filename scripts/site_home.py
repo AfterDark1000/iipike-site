@@ -3,7 +3,7 @@ from html import escape
 import json
 from pathlib import Path
 import re
-from scripts.site_rubrics import RUBRICS, publication_date, publication_date_caps
+from scripts.site_rubrics import RUBRICS, publication_date, publication_date_caps, publication_sort_key
 
 START = "<!-- HPII_PUBLISHED_SECTION_START -->"
 END = "<!-- HPII_PUBLISHED_SECTION_END -->"
@@ -14,9 +14,7 @@ ID_PATTERN = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 
 def sorted_published(records):
-    return sorted(records, key=lambda row: (
-        row.get("published_at_utc") or row["published"] + "T00:00:00Z", row["id"]
-    ), reverse=True)
+    return sorted(records, key=publication_sort_key, reverse=True)
 
 
 
