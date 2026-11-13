@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 16 · **Готовы:** 0 · **Ждут интервал:** 16 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 88
+**В очереди:** 17 · **Готовы:** 0 · **Ждут интервал:** 17 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 88
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -28,6 +28,7 @@
 | **14** | [Google выпустила ИИ, который отвечает на тысячу вопросов без слов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-decision-1-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 07:07 (Усть-Катав)**; пауза до 13.11.2026 12:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-decision-1-20261111.webp) |
 | **15** | [Google придумала ИИ против вечного «куда пойдём?»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-tabletop-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 08:07 (Усть-Катав)**; пауза до 13.11.2026 12:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-tabletop-20261111.webp) |
 | **16** | [ElevenLabs показала ИИ-секретаря, который раздаёт поручения после совещаний](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/elevenlabs-elevenai-meeting-assistant-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 09:07 (Усть-Катав)**; пауза до 13.11.2026 12:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/elevenlabs-elevenai-meeting-assistant-20261111.webp) |
+| **17** | [ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/elevenlabs-elevenagents-memory-routines-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 10:07 (Усть-Катав)**; пауза до 13.11.2026 12:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/elevenlabs-elevenagents-memory-routines-20261111.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
