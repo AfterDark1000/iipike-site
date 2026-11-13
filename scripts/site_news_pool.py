@@ -17,7 +17,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 ROOT = Path(__file__).resolve().parents[1]
 POOL_PATH = ROOT / "data" / "site_news_pool.json"
 STATES = {"queued", "in_review", "approved", "rejected"}
-PRIORITIES = {"high", "normal", "low"}  # informational only; FIFO never skips entries
+PRIORITIES = {"high", "normal", "low"}  # high forms the hot editorial lane; other items keep FIFO
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
 KEYS = {"id", "sequence", "title", "source_url", "summary", "origin", "priority", "status",
         "added_at", "review_started_at", "closed_at", "article_id", "note"}
@@ -168,9 +168,11 @@ def next_item(pool, *, now=None):
     pending = [x for x in result["items"] if x["status"] == "queued"]
     if not pending:
         return result, None
-    # Strict FIFO: first still-queued item in immutable insertion sequence.
-    # Priority and dates are display metadata, NEVER a way to jump the line.
-    item = pending[0]
+    # Hot editorial items are selected first, FIFO by immutable sequence.
+    # Once hot items are exhausted, ordinary items retain their FIFO order.
+    # Normal/low are informational within the ordinary lane.
+    item = min(pending, key=lambda x: (0 if x["priority"] == "high" else 1,
+                                       x["sequence"]))
     item["status"] = "in_review"
     item["review_started_at"] = now or stamp()
     validate(result)
