@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "32d23a2b5e8a3060b7412b4928051e5ea752b52d",
-  "source_blob_sha": "9d452d97a56aafd6abe2af6daaafceb89ae6a572",
+  "source_commit": "68b94004b74971debf68b6647705b6836265b522",
+  "source_blob_sha": "f672e4f67d5b7a2e7b1d7d8065fd370eb689dff7",
   "snapshot_date": "2026-11-13",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af698f5c39de244cb70c210",
+      "title": "TSMC вложит до миллиарда в OpenAI и Anthropic",
+      "dzen_url": "https://dzen.ru/a/avaY9cOd4kTLcMIQ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Тайваньская TSMC 10 ноября одобрила инвестиции до $1 млрд в разработчиков искусственного интеллекта OpenAI и Anthropic. Совет директоров крупнейшего контрактного производителя микросхем разрешил потратить на акции каждой компании не более $500 млн. TSMC выпускает чипы по заказам других компаний, в том числе NVIDIA. Именно на таких процессорах работают мощные ИИ-серверы. Теперь тайваньский гигант хочет стать совладель",
+      "published_at_utc": "2026-11-13T17:02:27+00:00"
+    },
+    {
+      "dzen_id": "6af69874a8a0411d57c49192",
+      "title": "Создатель Cyanogen замахнулся на Windows. В его Linux поселят ИИ",
+      "dzen_url": "https://dzen.ru/a/avaYdKigQR1XxJGS",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Кирт Макмастер, сооснователь Cyanogen, 10 ноября представил KORA — новую операционную систему на базе Linux. Его компания KORA Systems хочет встроить нейросети прямо в ОС, чтобы они могли работать с файлами и помогать пользователю в разных программах. Выпуск запланирован на 2027 год. Одна из главных особенностей KORA — общая память для ИИ-помощников. Например, можно начать писать программу с помощью Codex, а затем пе",
+      "published_at_utc": "2026-11-13T16:01:31+00:00"
+    },
+    {
+      "dzen_id": "6af697f0ed32a93818574b9d",
+      "title": "Во Франции предложили отключить у ИИ «режим подхалима»",
+      "dzen_url": "https://dzen.ru/a/avaX8O0yqTgYV0ud",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Французский Совет по ИИ и цифровым технологиям (CIANum) 10 ноября предложил по умолчанию отключать у чат-ботов механизмы лести и поддакивания. А функции, которые специально вызывают эмоциональную привязанность к нейросети, эксперты хотят запретить. Доклад с 18 рекомендациями передали президенту Эмманюэлю Макрону. Авторы изучили, как ИИ-помощники влияют на поведение людей и почему некоторые пользователи начинают слишк",
+      "published_at_utc": "2026-11-13T15:02:57+00:00"
+    },
+    {
+      "dzen_id": "6af6979f70a94a2d464af620",
+      "title": "Китайцы пошли за покупками к ИИ",
+      "dzen_url": "https://dzen.ru/a/avaXn3CpSi1GSvYg",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "На китайской торговой платформе Douyin до 20% заказов в отдельных категориях уже приходят по ссылкам из чат-бота Doubao. Люди спрашивают у нейросети, что купить, и переходят прямо к оформлению заказа. Компания WPIC Marketing + Technologies изучила октябрьские продажи 15 магазинов. В среднем переходы из Doubao принесли им 4,3% продаж. Особенно заметной помощь ИИ оказалась при выборе витаминов и специального оборудован",
+      "published_at_utc": "2026-11-13T14:02:51+00:00"
+    },
+    {
+      "dzen_id": "6af6973d19d7f91c24e757f5",
+      "title": "Куртка меняет цвет прямо во время видео: Higgsfield анонсировала Miracle",
+      "dzen_url": "https://dzen.ru/a/avaXPRnX-Rwk51f1",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Компания Higgsfield 6 ноября анонсировала Miracle — ИИ-технологию, которая позволит редактировать готовое видео прямо во время воспроизведения. Пользователь задаёт изменение, а результат появляется в кадре без ожидания отдельного рендеринга. Допустим, нужно перекрасить куртку персонажа. Miracle должна изменить её цвет, сохранив исходное движение человека. А если заменить надпись на вывеске, новая надпись будет остава",
+      "published_at_utc": "2026-11-13T13:01:38+00:00"
+    },
+    {
+      "dzen_id": "6af6965880f8703a3ac4811f",
+      "title": "ИИ научили варить металл. Теперь ему хотят доверить целый завод — и дали на это $300 млн",
+      "dzen_url": "https://dzen.ru/a/avaWWID4cDo6xIEf",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американская компания Path Robotics 10 ноября объявила о привлечении $300 млн в инвестиционном раунде Series E. После сделки её оценили в $2,45 млрд. Деньги пойдут на расширение производства роботизированных сварочных систем и разработку ИИ для других заводских операций. Раунд возглавила инвестиционная компания Georgian. Path Robotics начинала со сварки — одной из самых сложных производственных задач для автоматизаци",
+      "published_at_utc": "2026-11-13T12:02:17+00:00"
+    },
+    {
+      "dzen_id": "6af695e4a6f32b4dfb7b6c02",
+      "title": "«Остальное не трогай»: ByteDance показала 100 правок одной картинки в Seedream 5.5",
+      "dzen_url": "https://dzen.ru/a/avaV5KbzK037e2wC",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Компания ByteDance 9 ноября представила Seedream 5.5 и показала, как нейросеть редактирует одно изображение 100 раз подряд. Каждая новая правка выполнялась поверх результата предыдущей. Модель сохраняет нетронутые участки картинки на уровне пикселей, уменьшая накопление ошибок при последовательном редактировании. Для демонстрации взяли изображение одного человека. В течение ста последовательных изменений нейросеть ме",
+      "published_at_utc": "2026-11-13T11:01:34+00:00"
+    },
     {
       "dzen_id": "6af695484acd617954e3d85f",
       "title": "ИИ-агент попытался открыть облако всему интернету. Bay привлекла $50 млн на защиту",
