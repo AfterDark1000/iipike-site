@@ -90,6 +90,44 @@ class SiteFirstInboxTests(unittest.TestCase):
         self.save_story()
         validate_story(self.root, ID, today=UTC.date())
 
+    def test_priority_queue_and_fixed_time_are_distinct_validated_modes(self):
+        self.story["site_queue"] = "priority"
+        self.save_story()
+        self.assertEqual(validate_story(self.root, ID, today=UTC.date())["site_queue"],
+                         "priority")
+        self.save_cover()
+        staged = stage(self.root, ID, apply=False, now=UTC)
+        self.assertEqual(staged["site_release_mode"], "priority")
+        self.story["site_publish_at"] = "2026-11-06T16:30:00+05:00"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "either site_publish_at or site_queue"):
+            validate_story(self.root, ID, today=UTC.date())
+        self.story.pop("site_queue")
+        self.save_story()
+        self.assertEqual(stage(self.root, ID, apply=False, now=UTC)["site_release_mode"],
+                         "timed")
+        self.story.pop("site_publish_at")
+        self.story["site_queue"] = "fastest"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "site_queue"):
+            validate_story(self.root, ID, today=UTC.date())
+        self.story.pop("site_queue")
+        self.save_story()
+        self.assertEqual(stage(self.root, ID, apply=False, now=UTC)["site_release_mode"],
+                         "standard")
+
+    def test_priority_release_mode_survives_approved_json_and_public_manifest(self):
+        self.story["site_queue"] = "priority"
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(staged["site_release_mode"], "priority")
+        self.assertEqual(approved_article(self.root, ID)["site_release_mode"], "priority")
+        from scripts.publish_approved_article import publish
+        publish(self.root, ID, apply=True)
+        entries = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
+        self.assertEqual(entries[-1]["site_release_mode"], "priority")
+
     def test_no_cover_leaves_site_unchanged(self):
         self.assertIsNone(stage(self.root, ID, apply=True, now=UTC))
         self.assertFalse((self.root / "content").exists())
