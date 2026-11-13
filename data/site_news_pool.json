@@ -240,7 +240,7 @@
       "review_started_at": "2026-11-13T04:36:27.822Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "13.11.2026: №16 зарезервирована FIFO. Первоисточник: Alibaba Model Studio релизы 11.11 https://www.alibabacloud.com/help/en/model-studio/newly-released-models и отдельная документация https://www.alibabacloud.com/help/en/model-studio/qwen4-max-preview (обновлена 11.11), плюс пост официального @Alibaba_Qwen https://x.com/Alibaba_Qwen/status/2120335993643684315 . Qwen4-Max-Preview — предварительная новая флагманская мультимодальная модель: понимает текст, изображения и видео, пишет текст, поиск, function calling, JSON Schema, совместимость OpenAI Chat Completions/Responses и Anthropic Messages; контекст 1 млн токенов, выход до 393216, включая внутренние рассуждения, reasoning default xhigh. Период preview 11.11 10:00 — 25.11 24:00 по Пекину, после чего именно preview-версию выведут из эксплуатации. API только подписка Token Plan Personal/Team, pay-as-you-go нет; официальный Qwen перечисляет ранний доступ QwenWork/Qoder/Qwen APP/QwenStudio. Не утверждать, что вся линейка Qwen4 будет удалена или что доступен полный релиз. Официальных бенчмарков и открытых весов в анонсе нет. Архив Дзена 296, сайта 305: точного дубля нет, статья про инцидент другого Qwen — отдельная. @Alibaba_Qwen — проверен. Дзен/Threads/X подготовлены, до «берём» публикационные очереди не менять."
     },
     {
       "id": "n-02bfed5e7aa817ea",
