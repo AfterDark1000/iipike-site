@@ -1019,6 +1019,19 @@
           "source_url": "https://blog.claroc.io/ghostshares-grok-build-apps"
         }
       ]
+    },
+    {
+      "key": "gemini-4-hydrogen",
+      "name": "Gemini 4 Hydrogen",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "google-gemini-4-hydrogen-20261112",
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        }
+      ]
     }
   ]
 }
