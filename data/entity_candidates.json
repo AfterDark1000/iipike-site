@@ -373,6 +373,30 @@
           "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
         }
       ]
+    },
+    {
+      "key": "mbzuai",
+      "name": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "source_url": "https://ifm.ai/pan2/press-release/"
+        }
+      ]
+    },
+    {
+      "key": "institute-of-foundation-models",
+      "name": "Institute of Foundation Models (IFM)",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "source_url": "https://ifm.ai/pan2/press-release/"
+        }
+      ]
     }
   ],
   "products": [
@@ -737,6 +761,19 @@
         {
           "article_id": "mit-workspace-models-robot-memory-20261110",
           "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+        }
+      ]
+    },
+    {
+      "key": "pan-2",
+      "name": "PAN 2",
+      "company": "institute-of-foundation-models",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "source_url": "https://ifm.ai/pan2/press-release/"
         }
       ]
     }
