@@ -956,6 +956,19 @@
           "source_url": "https://elevenlabs.io/blog/nyc-summit"
         }
       ]
+    },
+    {
+      "key": "fish-audio-live-3",
+      "name": "Live 3",
+      "company": "fish-audio",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "fish-audio-live-3-interruptions-20261110",
+          "source_url": "https://fish.audio/blog/introducing-live-3/"
+        }
+      ]
     }
   ]
 }
