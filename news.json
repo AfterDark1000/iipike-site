@@ -5030,5 +5030,28 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Claude теперь сам собирает таблицы с формулами прямо в чате",
+    "summary": "Anthropic представила Claude Sheets и Whiteboards для таблиц и командной работы, а Claude Data вывела из бета-тестирования. Новые инструменты доступны на платных тарифах с разными условиями.",
+    "published": "2026-11-13",
+    "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data",
+    "cover": "assets/editorial/anthropic-claude-sheets-whiteboards-data-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T11:00:57Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "anthropic-claude-sheets-whiteboards-data-20261110",
+    "url": "articles/anthropic-claude-sheets-whiteboards-data-20261110/",
+    "topics": [
+      "apps",
+      "business"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
