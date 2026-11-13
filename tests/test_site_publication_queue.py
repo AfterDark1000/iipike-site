@@ -33,7 +33,7 @@ class PublicationQueueTests(unittest.TestCase):
             dt.datetime(2026, 11, 15, 8, tzinfo=UTC), 50, [target]), INTERVAL)
         pending = [
             {"id": "ready-" + str(i),
-             "ready_at": now - dt.timedelta(hours=2),
+             "ready_at": now - dt.timedelta(hours=2) + dt.timedelta(minutes=i),
              "not_before": None,
              "cover": "editorial_inbox/covers/ready-" + str(i) + ".webp"}
             for i in range(10)
@@ -134,19 +134,19 @@ class PublicationQueueTests(unittest.TestCase):
                     found = select_one([article], [], when)
                     self.assertEqual(found is not None, allowed)
 
-    def test_explicit_night_slot_does_not_bypass_pause(self):
+    def test_explicit_night_slot_runs_independently_of_queue_pause(self):
         local = dt.timezone(dt.timedelta(hours=5))
         article = {
             "id": "late", "ready_at": dt.datetime(2026, 11, 7, 12, tzinfo=UTC),
             "not_before": dt.datetime(2026, 11, 8, 2, tzinfo=local),
-            "cover": "editorial_inbox/covers/late.webp",
+            "cover": "editorial_inbox/covers/late.webp", "lane": "timed",
         }
         with patch("scripts.site_publication_queue.latest_site_first_publication",
                    return_value=None):
             self.assertIsNone(select_one([article], [],
-                                        dt.datetime(2026, 11, 8, 3, tzinfo=local)))
+                                        dt.datetime(2026, 11, 8, 1, 59, tzinfo=local)))
             self.assertEqual(select_one([article], [],
-                                        dt.datetime(2026, 11, 8, 7, tzinfo=local))["id"], "late")
+                                        dt.datetime(2026, 11, 8, 3, tzinfo=local))["id"], "late")
 
     def test_exact_urgent_request_may_bypass_night_pause(self):
         local = dt.timezone(dt.timedelta(hours=5))
@@ -392,7 +392,7 @@ class PublicationQueueTests(unittest.TestCase):
             # The queue is waiting for its next hourly slot, but exact-time
             # release can go out regardless.
             self.assertEqual(select_one([normal, priority, fixed], [], NOW)["id"],
-                             "fixed")
+                             "fixed-time")
 
     def test_fixed_time_can_run_during_normal_queues_night_pause(self):
         local = dt.timezone(dt.timedelta(hours=5))
