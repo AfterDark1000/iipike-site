@@ -4910,5 +4910,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "TSMC вложит до миллиарда в OpenAI и Anthropic",
+    "summary": "Совет директоров TSMC одобрил инвестиции до $500 млн в акции OpenAI и до $500 млн в Anthropic. На расширение и модернизацию производства чипов компания направит около $40,9 млрд.",
+    "published": "2026-11-13",
+    "source_url": "https://pr.tsmc.com/english/news/3352",
+    "cover": "assets/editorial/tsmc-openai-anthropic-investment-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T04:15:34Z",
+    "event_date": "2026-11-10",
+    "id": "tsmc-openai-anthropic-investment-20261110",
+    "url": "articles/tsmc-openai-anthropic-investment-20261110/",
+    "topics": [
+      "business",
+      "finance"
+    ],
+    "companies": [
+      "openai",
+      "anthropic"
+    ],
+    "products": []
   }
 ]
