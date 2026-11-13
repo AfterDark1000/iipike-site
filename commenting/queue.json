@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12T19:51:36.739952Z",
+  "updated_at": "2026-11-13T01:00:42.489242Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T19:51:36.739952Z",
-      "last_success_at": "2026-11-12T19:51:36.739952Z",
+      "checked_at": "2026-11-13T01:00:42.489242Z",
+      "last_success_at": "2026-11-13T01:00:42.489242Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 6
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T19:51:36.739952Z",
-      "last_success_at": "2026-11-12T19:51:36.739952Z",
+      "checked_at": "2026-11-13T01:00:42.489242Z",
+      "last_success_at": "2026-11-13T01:00:42.489242Z",
       "error": null,
-      "fresh_matches": 15
+      "fresh_matches": 18
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-12T19:51:36.739952Z",
-      "last_success_at": "2026-11-12T19:51:36.739952Z",
+      "checked_at": "2026-11-13T01:00:42.489242Z",
+      "last_success_at": "2026-11-13T01:00:42.489242Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,11 +41,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-12T19:51:36.739952Z",
-      "last_success_at": "2026-11-12T11:47:03.555346Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-13T01:00:42.489242Z",
+      "last_success_at": "2026-11-13T01:00:42.489242Z",
+      "error": null,
+      "fresh_matches": 0
     }
   ],
   "generator": {
@@ -55,10 +55,84 @@
   },
   "usage": {
     "date": "2026-11-13",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "7fc0e798bc3485fa503a7c4e",
+      "title": "В России запустили фильтрацию интернет-трафика с помощью ИИ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/13/v-rossii-zapustili-filtraciiu-internet-trafika-s-pomoshhiu-ii.html",
+      "published_at": "2026-11-12T22:04:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-13T01:00:42.489242Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "dcd8dffec6f06a348384ec00",
+      "title": "«Они могут погубить всех нас»: в США через суд потребовали запретить OpenAI, Google и другим обучать передовые ИИ-модели",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151241",
+      "published_at": "2026-11-12T21:33:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-13T01:00:42.489242Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "d53692dc736749581944a248",
+      "title": "Microsoft показала, как превратить ИИ-агента в троян, изменив всего семь нейронов",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151240",
+      "published_at": "2026-11-12T21:23:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-13T01:00:42.489242Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "ea9eca3427e22ce4921c2abf",
+      "title": "Google представила Gemini 4 Hydrogen — модель работает в 2,5 раза быстрее предшественницы и уже доступна всем",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151236",
+      "published_at": "2026-11-12T20:01:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-13T01:00:42.489242Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "9576ebe3ff4282e908318785",
       "title": "Увольнения, засилье ИИ и умершие надежды: исследование показало удручающее состояние игровой индустрии в 2026 году",
