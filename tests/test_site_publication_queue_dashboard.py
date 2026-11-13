@@ -199,23 +199,26 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("Репозиторий публичный", page)
         self.assertNotIn("<script>", page)
 
-    def test_published_urgent_story_postpones_regular_release_and_dashboard_explains(self):
+    def test_fixed_time_lane_ignores_hourly_spacing_in_dashboard(self):
         paths = "\n".join([
-            "editorial_inbox/stories/hinton.json",
-            "editorial_inbox/covers/hinton.webp",
+            "editorial_inbox/stories/fixed.json",
+            "editorial_inbox/covers/fixed.webp",
+            "editorial_inbox/stories/regular.json",
+            "editorial_inbox/covers/regular.webp",
         ])
         now = dt.datetime(2026, 11, 5, 11, 15, tzinfo=UTC)
         last = dt.datetime(2026, 11, 5, 10, 41, 13, tzinfo=UTC)
         def fake_blob(ref, path):
             if path == "news.json":
-                return json.dumps([
-                    {"id":"urgent", "published_at_utc":"2026-11-05T10:41:13Z"}
-                ])
-            return json.dumps({
-                "id":"hinton", "title":"Хинтон о рисках ИИ",
-                "status":"editor_approved", "approved_by":"human_editor",
-                "site_publish_at":"2026-11-05T13:15:00+05:00"
-            })
+                return json.dumps([{"id": "earlier-standard",
+                                    "published_at_utc": "2026-11-05T10:41:13Z",
+                                    "site_release_mode": "standard"}])
+            sid = path.split("/")[-1].replace(".json", "")
+            value = {"id": sid, "title": sid, "status": "editor_approved",
+                     "approved_by": "human_editor"}
+            if sid == "fixed":
+                value["site_publish_at"] = "2026-11-05T16:15:00+05:00"
+            return json.dumps(value)
         with patch("scripts.render_site_publication_queue.git",
                    return_value=SimpleNamespace(stdout=paths)), \
              patch("scripts.render_site_publication_queue.safe_git_blob_at",
@@ -228,13 +231,35 @@ class EditorialQueuePageTests(unittest.TestCase):
                    return_value=now - dt.timedelta(hours=1)):
             rows, stamp = scan_queue(now=now)
         self.assertEqual(stamp, last)
-        self.assertEqual(rows[0]["status"], "⏳ Ждёт часовой интервал")
-        self.assertEqual(rows[0]["spacing_until"],
+        fixed = next(x for x in rows if x["id"] == "fixed")
+        ordinary = next(x for x in rows if x["id"] == "regular")
+        self.assertEqual(fixed["status"], "🕒 Назначенное время наступило")
+        self.assertEqual(fixed["lane"], "timed")
+        self.assertIsNone(fixed["spacing_until"])
+        self.assertEqual(ordinary["status"], "⏳ Ждёт часовой интервал")
+        self.assertEqual(ordinary["spacing_until"],
                          dt.datetime(2026, 11, 5, 11, 41, 13, tzinfo=UTC))
-        page = as_markdown(rows, stamp)
+        forecast = forecast_order(rows, stamp, now=now)
+        self.assertEqual([r["id"] for r, _ in forecast], ["fixed", "regular"])
+        page = as_markdown(rows, stamp, now=now)
         self.assertIn("Ждут интервал:** 1", page)
-        self.assertIn("пауза до 05.11.2026 16:41", page)
-        self.assertIn("не ранее 05.11.2026 13:15", page)
+        self.assertIn("Назначено время:** 1", page)
+
+    def test_priority_lane_takes_next_queue_slot_before_older_standard(self):
+        now = dt.datetime(2026, 11, 6, 8, 0, tzinfo=UTC)
+        def row(sid, lane, age):
+            return {"id": sid, "title": sid, "lane": lane,
+                    "eligible": True, "status": "🟢 Готова к выпуску",
+                    "ready_at": now - dt.timedelta(hours=age), "publish_at": None,
+                    "source_path": "editorial_inbox/stories/" + sid + ".json",
+                    "cover_path": "editorial_inbox/covers/" + sid + ".webp"}
+        rows = [row("standard-older", "standard", 5),
+                row("priority-one", "priority", 4),
+                row("standard-newer", "standard", 3),
+                row("priority-two", "priority", 2)]
+        self.assertEqual([r["id"] for r, _ in forecast_order(rows, None, now=now)],
+                         ["priority-one", "priority-two", "standard-older",
+                          "standard-newer"])
 
     def test_explicit_future_schedule_displays_but_does_not_fake_publication(self):
         row = {
