@@ -878,6 +878,19 @@
           "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
         }
       ]
+    },
+    {
+      "key": "qwen4-max-preview",
+      "name": "Qwen4-Max-Preview",
+      "company": "alibaba",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "alibaba-qwen4-max-preview-20261111",
+          "source_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models"
+        }
+      ]
     }
   ]
 }
