@@ -55,6 +55,19 @@ class PublisherTests(unittest.TestCase):
         p = self.root / "content" / "approved" / "sample-verified-news.json"
         p.write_text(json.dumps(self.article, ensure_ascii=False), encoding="utf-8")
 
+    def test_published_lane_metadata_is_preserved_in_news_json(self):
+        for mode in ("standard", "priority", "timed"):
+            with self.subTest(mode=mode):
+                self.article["site_release_mode"] = mode
+                self.write_article()
+                preview = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+                news = json.loads(preview[self.root / "news.json"])
+                self.assertEqual(news[-1]["site_release_mode"], mode)
+        self.article["site_release_mode"] = "not-authorized"
+        self.write_article()
+        with self.assertRaisesRegex(ValueError, "Invalid site release mode"):
+            PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+
     def test_explicit_company_product_metadata_updates_only_matching_archives(self):
         self.article["companies"] = ["disney", "adobe"]
         self.article["products"] = ["firefly"]
