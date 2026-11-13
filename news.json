@@ -5162,5 +5162,26 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Китайские ИИ-компании спешат занять зарубежные серверы NVIDIA из-за угрозы нового запрета США",
+    "summary": "Китайские ИИ-компании пытаются заранее зарезервировать зарубежные серверы с процессорами NVIDIA на фоне обсуждения в США ограничений удалённого доступа к передовым чипам.",
+    "published": "2026-11-14",
+    "source_url": "https://www.reuters.com/world/china/chinese-ai-firms-rush-secure-nvidia-chip-capacity-spy-scandal-stirs-fear-us-2026-11-12",
+    "cover": "assets/editorial/china-nvidia-overseas-gpu-rentals-20261112.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T19:45:36Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "china-nvidia-overseas-gpu-rentals-20261112",
+    "url": "articles/china-nvidia-overseas-gpu-rentals-20261112/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
