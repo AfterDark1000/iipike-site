@@ -5095,5 +5095,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "В приложениях Grok нашли пароли и данные пациентов",
+    "summary": "Исследователи Claroc обнаружили 35 578 созданных через Grok Build приложений, которые открывались без входа в аккаунт. В части из них оказались медицинские данные, корпоративные документы и пароли; после уведомления разработчик закрыл доступ к 24 приложениям сотрудников.",
+    "published": "2026-11-13",
+    "source_url": "https://blog.claroc.io/ghostshares-grok-build-apps",
+    "cover": "assets/editorial/grok-build-ghostshares-exposed-apps-20261110.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-13T14:30:45Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-10",
+    "id": "grok-build-ghostshares-exposed-apps-20261110",
+    "url": "articles/grok-build-ghostshares-exposed-apps-20261110/",
+    "topics": [
+      "cybersecurity",
+      "apps"
+    ],
+    "companies": [
+      "xai"
+    ],
+    "products": [
+      "grok"
+    ]
   }
 ]
