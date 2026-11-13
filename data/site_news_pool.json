@@ -265,12 +265,12 @@
       "summary": "11 ноября: эксперимент Google Labs превращает файлы и ссылки в совместные планы, голосования и сетки.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-13T05:45:15.268Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "13.11.2026: фактчекинг завершён. Google анонс от 11.11: https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/ . Эксперимент Tabletop: создаёт по запросу интерактивные инструменты для группы, общая ссылка, одновременная работа. США, 18+, доступ через лист ожидания. Прямых дублей в news.json/полном каталоге Дзена нет. Для контекста найдена опубликованная связанная статья о Meta Muse Spaces от 07.11: https://dzen.ru/a/au8TtZi5GAUJPIVf . Подготовлен текст Дзена и самостоятельные Threads (336 символов), X (249). Показать редактору на утверждение. Очереди выпуска не изменены."
+      "closed_at": "2026-11-13T06:07:02.719Z",
+      "article_id": "google-tabletop-20261111",
+      "note": "13.11.2026: Главный редактор утвердил «Google придумала ИИ против вечного «куда пойдём?»». Точный Markdown статьи сохранён на ветке editorial-intake: editorial_inbox/stories/google-tabletop-20261111.json; Threads и X с идентичными dzen_title сохранены в main, статус approved. Таблица участников: Google — реестр, Tabletop — кандидат записан в data/entity_candidates.json. Действующий продуктовый ключ отсутствует в реестре, поэтому products: []. В статье связанная опубликованная запись Meta Muse Spaces. Обложка не передана; публикация не запускалась."
     },
     {
       "id": "n-a4c6a4b2966d2dc2",
