@@ -296,6 +296,48 @@ class PublicationQueueTests(unittest.TestCase):
             self.assertEqual(select_one(items, [], NOW)["id"], "first")
         self.assertEqual(INTERVAL, dt.timedelta(hours=1))
 
+    def test_manual_target_without_urgency_cannot_jump_older_due_article(self):
+        articles = [item("older", 5), item("chosen", 6)]
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=NOW - dt.timedelta(hours=1)):
+            with self.assertRaisesRegex(ValueError, "cannot bypass the next due"):
+                select_one(articles, [], NOW, target="chosen", urgent=False)
+            self.assertEqual(select_one(articles, [], NOW, target="older")["id"],
+                             "older")
+            self.assertEqual(select_one(articles, [], NOW, target="chosen",
+                                        urgent=True)["id"], "chosen")
+
+    def test_manual_target_does_not_get_stuck_behind_a_future_dated_article(self):
+        articles = [item("postponed", 5, slot=NOW + dt.timedelta(hours=2)),
+                    item("chosen", 6)]
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=None):
+            self.assertEqual(select_one(articles, [], NOW, target="chosen")["id"],
+                             "chosen")
+            with self.assertRaisesRegex(ValueError, "cannot bypass"):
+                select_one(articles, [], NOW + dt.timedelta(hours=3),
+                           target="chosen")
+
+    def test_urgent_release_resets_spacing_of_the_next_regular_article(self):
+        rows = [{"id": "breaking", "published_at_utc": "2026-11-05T07:40:00Z"}]
+        waiting = [item("next-normal", 6)]
+        with patch("scripts.site_publication_queue.exists_at", return_value=True):
+            # The actual urgent publication timestamp is what drives the
+            # next normal release; no second post goes out immediately.
+            self.assertIsNone(select_one(waiting, rows, NOW))
+            self.assertEqual(select_one(waiting, rows,
+                                        NOW + dt.timedelta(minutes=40))["id"],
+                             "next-normal")
+
+    def test_manual_target_cannot_publish_before_explicit_future_slot(self):
+        scheduled = [item("chosen", 5, slot=NOW + dt.timedelta(minutes=30))]
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=None):
+            self.assertIsNone(select_one(scheduled, [], NOW, target="chosen"))
+            self.assertEqual(select_one(scheduled, [],
+                                        NOW + dt.timedelta(minutes=30),
+                                        target="chosen")["id"], "chosen")
+
     def test_future_slot_delays_one_item_not_entire_queue(self):
         later = NOW + dt.timedelta(hours=5)
         items = [item("delayed", 4, slot=later), item("ready", 6)]
