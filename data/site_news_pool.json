@@ -295,12 +295,12 @@
       "summary": "11 ноября: ElevenAgents Memory и Routines сохраняют контекст и запускают действия до/после звонков; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-13T06:42:06.051Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "13.11.2026: №20 проверена по первоисточнику ElevenLabs Summit NYC 11.11: https://elevenlabs.io/blog/nyc-summit . В исходном пуле ошибка статуса: Memory/Routines не выпущены, только анонсированы как будущие возможности ElevenAgents; заголовок исправлен на будущую форму. Memory — записи о прежних разговорах подтверждённого клиента, CRM остаётся первичным реестром. Routines — многошаговые действия до/во время/после звонка, включая обратный звонок, напоминания и обновление CRM. Разделено с утверждённой №19 ElevenAI; прямого дубля в каталогах (Дзен 297, сайт 307) нет. Тексты Дзен, Threads/X подготовлены на утверждение, очереди не изменены."
+      "closed_at": "2026-11-13T06:51:31.214Z",
+      "article_id": "elevenlabs-elevenagents-memory-routines-20261111",
+      "note": "13.11.2026: главный редактор утвердил «ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать». Утверждённый Markdown дословно сохранён на ветке editorial-intake: editorial_inbox/stories/elevenlabs-elevenagents-memory-routines-20261111.json. Threads и X записаны в main со статусом approved, заголовок совпадает, лимиты проверены. ElevenLabs есть в реестре; ElevenAgents добавлен в непубличную очередь кандидатов data/entity_candidates.json (main). Memory и Routines — будущие функции, а не выпущенный продукт. Обложка не загружена; публикация не запускалась."
     },
     {
       "id": "n-4e360762a94227b0",
