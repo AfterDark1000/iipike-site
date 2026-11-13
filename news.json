@@ -4971,5 +4971,23 @@
       "alibaba"
     ],
     "products": []
+  },
+  {
+    "title": "Стартап получил $35 млн, чтобы ИИ научился помнить вчерашние разговоры",
+    "summary": "Graphon Labs получила $35 млн инвестиций для разработки Persistent Intelligence — долговременной памяти ИИ-агентов, связывающей разговоры, документы, изображения и видео. По заявленным компанией измерениям, на тесте LoCoMo точность составила 93,9%.",
+    "published": "2026-11-13",
+    "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence",
+    "cover": "assets/editorial/graphon-labs-persistent-memory-35m-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T07:25:22Z",
+    "event_date": "2026-11-10",
+    "id": "graphon-labs-persistent-memory-35m-20261110",
+    "url": "articles/graphon-labs-persistent-memory-35m-20261110/",
+    "topics": [
+      "agents",
+      "business"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
