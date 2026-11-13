@@ -220,12 +220,12 @@
       "summary": "11 ноября: Autoware включает несколько вариантов моделей управления, от камер до лидаров и радаров.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-13T04:06:27.158Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "13.11.2026: №15 зарезервирована FIFO. Первичный датированный релиз TIER IV 11.11: https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving ; второе официальное сообщение Autoware Foundation о AutoE2E: https://autoware.org/autoware-foundation-and-tier-iv-join-forces-to-releases-autoe2e-an-open-source-ai-model-for-end-to-end-autonomy/ . Пять моделей: Alpamayo 2 Edge (2 млрд параметров, камеры, интегрирована), AutoE2E (79,9 млн, опубликован только Reactive, перспективные World/Reasoning строятся; открытый тест KITScenes ADE 0,744 м на 3 с), METEOR (1–8 камер, без обязательных HD-карт), OnePlanner (LiDAR + карта, траектория на 6 с), LatentDrive (1/3 камеры, без HD-карт, на 4 с, интеграция идёт). Исходники и модельные страницы имеются; доступность частей неодинакова. Существенный конфликт: официальный пресс-релиз сообщает METEOR 16 млн параметров, опубликованная https://huggingface.co/AutowareFoundation/meteor — 54 млн; избегать этого числа. Код AutoE2E Apache 2.0, веса под CC BY-NC-SA 4.0 (некоммерческие), https://huggingface.co/AutowareFoundation/auto_e2e . Нет доказанного готового решения для установки в автомобили. Карточка METEOR также утверждает, что проект написан Claude под контролем людей (атрибуция авторам). Архив Дзена 295 / сайта 304 — дубликатов по TIER IV/Autoware/автопилотам нет. X компании @tier_iv_global, фонда @AutowareFdn, NVIDIA @NVIDIA. Дзен/Threads/X на утверждение, публикационные очереди не менять."
+      "closed_at": "2026-11-13T04:34:53.381Z",
+      "article_id": "tier-iv-autoware-five-models-20261111",
+      "note": "13.11.2026: утверждён заголовок «Японцы открыли пять ИИ-моделей для беспилотных машин» и исходный Markdown о TIER IV, Autoware и пяти моделях. Статья сохранена в editorial-intake/stories/tier-iv-autoware-five-models-20261111.json; Threads и X с одобренными текстами и тремя @-упоминаниями сохранены в main. Кандидаты TIER IV, Autoware Foundation, Autoware, Alpamayo 2 Edge, AutoE2E, METEOR, OnePlanner, LatentDrive записаны в data/entity_candidates.json main. Ожидается обложка для выпуска."
     },
     {
       "id": "n-eac8dfbeb78c6d30",
