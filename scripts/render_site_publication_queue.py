@@ -326,7 +326,9 @@ def as_markdown(rows, last, *, now=None):
             label += "; пауза до " + site_local(r["spacing_until"]) + " (Усть-Катав)"
         cover = ("[Есть](" + REPO + "/blob/editorial-intake/" + r["cover_path"] + ")"
                  if r["cover_path"] else "Нет")
-        out.append("| **" + str(position) + "** | [" + safe_text(r["title"]) + "](" + link
+        lane_mark = ("⚡ " if r.get("lane") == "priority" else
+                     "🕒 " if r.get("lane") == "timed" else "")
+        out.append("| **" + str(position) + "** | [" + lane_mark + safe_text(r["title"]) + "](" + link
                    + ") | " + r["status"] + " | " + label + " | " + cover + " |")
     if not planned:
         out.append("| — | Готовых к выбору материалов нет | — | — | — |")
