@@ -57,13 +57,20 @@ def overdue_publications(pending, last, now, *, threshold_minutes=100):
         raise ValueError("Watchdog check needs a timezone-aware clock")
     anchor = min(item["ready_at"] for item in pending)
     rows = [{"id": item["id"], "ready_at": item["ready_at"],
-             "publish_at": item.get("not_before"), "eligible": True}
+             "publish_at": item.get("not_before"),
+             "lane": item.get("lane", "timed" if item.get("not_before") else "standard"),
+             "eligible": True}
             for item in pending]
     planned = forecast_order(rows, last, now=anchor)
     overdue = []
     for row, slot in planned:
-        delay = active_publication_minutes(slot, now)
-        if delay > threshold_minutes:
+        # Fixed-time articles are exempt from the queue's nightly pause;
+        # real minutes, including night hours, count toward their lateness.
+        delay = ((now - slot).total_seconds() / 60
+                 if row.get("lane") == "timed"
+                 else active_publication_minutes(slot, now))
+        limit = min(threshold_minutes, 30) if row.get("lane") == "timed" else threshold_minutes
+        if delay > limit:
             overdue.append({"id": row["id"], "minutes": round(delay)})
     return overdue
 
