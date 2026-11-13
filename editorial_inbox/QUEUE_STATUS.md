@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 13 · **Готовы:** 0 · **Ждут интервал:** 13 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 86
+**В очереди:** 14 · **Готовы:** 0 · **Ждут интервал:** 14 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 86
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -25,6 +25,7 @@
 | **11** | [Учёные научили роботов падать в 6,5 раза реже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/umich-prism-robot-motion-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 20:22 (Усть-Катав)**; пауза до 13.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/umich-prism-robot-motion-20261110.webp) |
 | **12** | [Роботам дали «мышечную память» — теперь они справляются с 92% испытаний](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-workspace-models-robot-memory-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 21:22 (Усть-Катав)**; пауза до 13.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-workspace-models-robot-memory-20261110.webp) |
 | **13** | [ИИ научили снимать будущее](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mbzuai-pan2-world-model-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 22:22 (Усть-Катав)**; пауза до 13.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mbzuai-pan2-world-model-20261110.webp) |
+| **14** | [Японцы открыли пять ИИ-моделей для беспилотных машин](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/tier-iv-autoware-five-models-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 13.11.2026 23:22 (Усть-Катав)**; пауза до 13.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/tier-iv-autoware-five-models-20261111.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
