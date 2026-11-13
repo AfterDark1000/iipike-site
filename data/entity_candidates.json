@@ -943,6 +943,19 @@
           "source_url": "https://elevenlabs.io/blog/scribe-v3"
         }
       ]
+    },
+    {
+      "key": "elevenagents",
+      "name": "ElevenAgents",
+      "company": "elevenlabs",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "elevenlabs-elevenagents-memory-routines-20261111",
+          "source_url": "https://elevenlabs.io/blog/nyc-summit"
+        }
+      ]
     }
   ]
 }
