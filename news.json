@@ -5076,5 +5076,24 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "United Airlines запретила ИИ-агентам покупать билеты за пассажиров",
+    "summary": "United Airlines запретила неразрешённым сторонним ИИ-агентам оформлять и менять билеты за пассажиров, в том числе через посредников. Авиакомпания опасается нежелательных покупок, раскрытия персональных данных и нарушений требований безопасности.",
+    "published": "2026-11-13",
+    "source_url": "https://united.mediaroom.com/news-releases?item=125496",
+    "cover": "assets/editorial/united-airlines-ai-agents-booking-ban-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T13:15:42Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-11",
+    "id": "united-airlines-ai-agents-booking-ban-20261111",
+    "url": "articles/united-airlines-ai-agents-booking-ban-20261111/",
+    "topics": [
+      "agents",
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
