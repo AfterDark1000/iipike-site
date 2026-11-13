@@ -122,7 +122,7 @@ class SnapshotTests(unittest.TestCase):
     def test_priority_backlog_alert_precedes_older_standard(self):
         local = dt.timezone(dt.timedelta(hours=5))
         earlier = dt.datetime(2026, 11, 10, 8, 0, tzinfo=local)
-        now = earlier + dt.timedelta(hours=3)
+        now = earlier + dt.timedelta(hours=1, minutes=50)
         pending = [
             {"id": "normal", "ready_at": earlier, "not_before": None,
              "lane": "standard"},
