@@ -4951,5 +4951,25 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Alibaba два месяца держала в секрете планы вывести своего производителя ИИ-чипов на биржу",
+    "summary": "Alibaba раскрыла планы вывести разработчика ИИ-чипов T-Head на биржу в Гонконге: конфиденциальная заявка подана 11 сентября, а процедура выделения объявлена 10 ноября. Сроки, объём и оценка IPO пока не определены.",
+    "published": "2026-11-13",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm",
+    "cover": "assets/editorial/alibaba-t-head-ipo-hong-kong-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T06:15:37Z",
+    "event_date": "2026-11-10",
+    "id": "alibaba-t-head-ipo-hong-kong-20261110",
+    "url": "articles/alibaba-t-head-ipo-hong-kong-20261110/",
+    "topics": [
+      "business",
+      "infrastructure"
+    ],
+    "companies": [
+      "alibaba"
+    ],
+    "products": []
   }
 ]
