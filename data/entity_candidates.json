@@ -904,6 +904,19 @@
           "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
         }
       ]
+    },
+    {
+      "key": "tabletop",
+      "name": "Tabletop",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "google-tabletop-20261111",
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop"
+        }
+      ]
     }
   ]
 }
