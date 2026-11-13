@@ -969,6 +969,19 @@
           "source_url": "https://fish.audio/blog/introducing-live-3/"
         }
       ]
+    },
+    {
+      "key": "apple-carplay",
+      "name": "Apple CarPlay",
+      "company": "apple",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "google-gemini-live-apple-carplay-20261111",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay"
+        }
+      ]
     }
   ]
 }
