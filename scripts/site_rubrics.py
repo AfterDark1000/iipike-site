@@ -30,6 +30,16 @@ MONTHS_RU = (
 )
 
 
+def publication_sort_key(row):
+    """One canonical newest-first chronology across home, archive and rubrics.
+
+    Historical imports with day-only precision use midnight that day;
+    newly published articles use their actual UTC publication timestamp.
+    """
+    return (row.get("published_at_utc") or row["published"] + "T00:00:00Z",
+            row["id"])
+
+
 def publication_date(value):
     """Show an original historical publication day in reader-friendly Russian."""
     day = date.fromisoformat(value)
@@ -59,14 +69,14 @@ def render_page(key, records):
     meta = RUBRICS[key]
     matches = sorted(
         (r for r in records if r.get("rubric", "news") == key),
-        key=lambda r: (r["published"], r["id"]), reverse=True
+        key=publication_sort_key, reverse=True
     )
     url = BASE + "/rubrics/" + key + "/"
     cards = "\n".join(
         '<a class="archive-card" href="../../' + escape(r["url"], quote=True) + '">'
         '<img loading="lazy" src="../../' + escape(r["cover"], quote=True) + '" alt="Обложка статьи">'
-        '<span><small class="date">Опубликовано: ' + escape(publication_date(r["published"])) + '</small>'
-        '<h3>' + escape(r["title"]) + '</h3>'
+        '<span><h3>' + escape(r["title"]) + '</h3>'
+        '<small class="date">' + escape(publication_date(r["published"])) + '</small>'
         '<p>' + escape(r["summary"]) + '</p></span>'
         '<span aria-hidden="true">↗</span></a>'
         for r in matches
