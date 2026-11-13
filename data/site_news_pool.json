@@ -205,9 +205,9 @@
       "summary": "10 ноября: по исходной сцене и команде PAN 2 прогнозирует возможное развитие ситуации на видео.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-13T03:24:48.017Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
