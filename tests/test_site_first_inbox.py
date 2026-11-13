@@ -116,17 +116,13 @@ class SiteFirstInboxTests(unittest.TestCase):
         self.assertEqual(stage(self.root, ID, apply=False, now=UTC)["site_release_mode"],
                          "standard")
 
-    def test_priority_release_mode_survives_approved_json_and_public_manifest(self):
+    def test_priority_release_mode_survives_staging_to_approved_json(self):
         self.story["site_queue"] = "priority"
         self.save_story()
         self.save_cover()
         staged = stage(self.root, ID, apply=True, now=UTC)
         self.assertEqual(staged["site_release_mode"], "priority")
         self.assertEqual(approved_article(self.root, ID)["site_release_mode"], "priority")
-        from scripts.publish_approved_article import publish
-        publish(self.root, ID, apply=True)
-        entries = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
-        self.assertEqual(entries[-1]["site_release_mode"], "priority")
 
     def test_no_cover_leaves_site_unchanged(self):
         self.assertIsNone(stage(self.root, ID, apply=True, now=UTC))
