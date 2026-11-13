@@ -891,6 +891,19 @@
           "source_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models"
         }
       ]
+    },
+    {
+      "key": "gemini-decision-1",
+      "name": "Gemini Decision 1",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "google-gemini-decision-1-20261111",
+          "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+        }
+      ]
     }
   ]
 }
