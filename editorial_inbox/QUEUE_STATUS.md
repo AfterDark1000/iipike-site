@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 17 · **Готовы:** 0 · **Ждут интервал:** 17 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 90
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 90
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -29,6 +29,7 @@
 | **15** | [ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/elevenlabs-elevenagents-memory-routines-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 10:07 (Усть-Катав)**; пауза до 13.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/elevenlabs-elevenagents-memory-routines-20261111.webp) |
 | **16** | [Fish Audio научила ИИ отличать «угу» от «подожди!»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/fish-audio-live-3-interruptions-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 11:07 (Усть-Катав)**; пауза до 13.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fish-audio-live-3-interruptions-20261110.webp) |
 | **17** | [Google запустила Gemini в Apple CarPlay — теперь почту можно разбирать за рулём](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-live-apple-carplay-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 12:07 (Усть-Катав)**; пауза до 13.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-live-apple-carplay-20261111.webp) |
+| **18** | [United Airlines запретила ИИ-агентам покупать билеты за пассажиров](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/united-airlines-ai-agents-booking-ban-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 14.11.2026 13:07 (Усть-Катав)**; пауза до 13.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/united-airlines-ai-agents-booking-ban-20261111.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
