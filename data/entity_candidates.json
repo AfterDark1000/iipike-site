@@ -917,6 +917,32 @@
           "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop"
         }
       ]
+    },
+    {
+      "key": "elevenai",
+      "name": "ElevenAI",
+      "company": "elevenlabs",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "elevenlabs-elevenai-meeting-assistant-20261111",
+          "source_url": "https://elevenlabs.io/blog/nyc-summit"
+        }
+      ]
+    },
+    {
+      "key": "scribe-v3",
+      "name": "Scribe v3",
+      "company": "elevenlabs",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "elevenlabs-elevenai-meeting-assistant-20261111",
+          "source_url": "https://elevenlabs.io/blog/scribe-v3"
+        }
+      ]
     }
   ]
 }
