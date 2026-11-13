@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T01:00:42.489242Z",
+  "updated_at": "2026-11-13T07:51:18.375979Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T01:00:42.489242Z",
-      "last_success_at": "2026-11-13T01:00:42.489242Z",
+      "checked_at": "2026-11-13T07:51:18.375979Z",
+      "last_success_at": "2026-11-13T07:51:18.375979Z",
       "error": null,
-      "fresh_matches": 6
+      "fresh_matches": 2
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T01:00:42.489242Z",
-      "last_success_at": "2026-11-13T01:00:42.489242Z",
+      "checked_at": "2026-11-13T07:51:18.375979Z",
+      "last_success_at": "2026-11-13T07:51:18.375979Z",
       "error": null,
-      "fresh_matches": 18
+      "fresh_matches": 19
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T01:00:42.489242Z",
-      "last_success_at": "2026-11-13T01:00:42.489242Z",
+      "checked_at": "2026-11-13T07:51:18.375979Z",
+      "last_success_at": "2026-11-13T07:51:18.375979Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T01:00:42.489242Z",
-      "last_success_at": "2026-11-13T01:00:42.489242Z",
+      "checked_at": "2026-11-13T07:51:18.375979Z",
+      "last_success_at": "2026-11-13T07:51:18.375979Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -55,10 +55,27 @@
   },
   "usage": {
     "date": "2026-11-13",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "d320d88369207a53b146729e",
+      "title": "Роскомнадзор вооружился ИИ за 2,27 млрд рублей — он будет искать VPN и запрещённый контент",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151246",
+      "published_at": "2026-11-13T06:46:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-13T07:51:18.375979Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "7fc0e798bc3485fa503a7c4e",
       "title": "В России запустили фильтрацию интернет-трафика с помощью ИИ",
@@ -73,8 +90,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-13T07:51:18.375979Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
@@ -92,8 +109,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-13T07:51:18.375979Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
@@ -111,8 +128,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-13T01:00:42.489242Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-13T07:51:18.375979Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
