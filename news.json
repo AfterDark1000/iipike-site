@@ -4892,5 +4892,23 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Создатель Cyanogen замахнулся на Windows. В его Linux поселят ИИ",
+    "summary": "Сооснователь Cyanogen Кирт Макмастер анонсировал KORA — Linux-ОС с общей памятью для ИИ-помощников и смысловым поиском по файлам. Запуск запланирован на 2027 год; совместимость с Windows-приложениями будет выборочной.",
+    "published": "2026-11-13",
+    "source_url": "https://press.kora.fun/",
+    "cover": "assets/editorial/kora-linux-ai-os-cyanogen-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T03:00:50Z",
+    "event_date": "2026-11-10",
+    "id": "kora-linux-ai-os-cyanogen-20261110",
+    "url": "articles/kora-linux-ai-os-cyanogen-20261110/",
+    "topics": [
+      "apps",
+      "agents"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
