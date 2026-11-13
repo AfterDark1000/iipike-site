@@ -79,6 +79,26 @@ class VKRSS(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "missing/stale"):
             vk.export(self.root, check=True)
 
+    def test_pilot_freezes_on_first_new_article(self):
+        rows = [
+            self.row("older-story", date="2026-11-13T18:30:00Z"),
+            self.row("pilot-story", date="2026-11-14T07:00:00Z"),
+            self.row("later-story", date="2026-11-14T08:00:00Z"),
+        ]
+        pilot = {"schema_version": 1, "mode": "pilot",
+                 "cutover_at_utc": self.cutover, "max_items": 1}
+        xml, assets = vk.render(self.root, rows, settings=pilot)
+        items = ET.fromstring(xml).findall("./channel/item")
+        self.assertEqual(len(items), 1)
+        self.assertIn("pilot-story", items[0].findtext("link"))
+        self.assertEqual([p.name for p in assets], ["pilot-story.jpg"])
+        (self.root / vk.CONFIG).write_text(json.dumps(pilot))
+        self.assertEqual(vk.settings_from(self.root), pilot)
+        pilot["max_items"] = 2
+        (self.root / vk.CONFIG).write_text(json.dumps(pilot))
+        with self.assertRaisesRegex(ValueError, "exactly one"):
+            vk.settings_from(self.root)
+
     def test_cover_must_match_story(self):
         row = self.row("safe-story")
         row["cover"] = "assets/editorial/other-story.webp"

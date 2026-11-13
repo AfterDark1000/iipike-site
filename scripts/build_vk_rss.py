@@ -43,12 +43,14 @@ def settings_from(root):
         raise ValueError("Invalid VK RSS settings schema")
     if type(data["schema_version"]) is not int or data["schema_version"] != 1:
         raise ValueError("Unknown VK RSS settings schema version")
-    if data["mode"] not in ("standby", "active"):
+    if data["mode"] not in ("standby", "pilot", "active"):
         raise ValueError("Unknown VK RSS mode")
     if type(data["max_items"]) is not int or not 1 <= data["max_items"] <= 20:
         raise ValueError("VK RSS max_items must be 1..20")
-    if data["mode"] == "active":
+    if data["mode"] in ("pilot", "active"):
         timestamp(data["cutover_at_utc"])
+        if data["mode"] == "pilot" and data["max_items"] != 1:
+            raise ValueError("VK RSS pilot must be limited to exactly one article")
     elif data["cutover_at_utc"] is not None:
         raise ValueError("Standby VK RSS must not contain a cutover")
     return data
@@ -97,8 +99,10 @@ def eligible(root, rows, settings):
                 cover_path.stat().st_size > 16 * 1024 * 1024):
             continue
         candidates.append((when, slug, row, cover_path))
-    candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
-    return candidates[:settings["max_items"]]
+    candidates.sort(key=lambda x: (x[0], x[1]), reverse=settings["mode"] != "pilot")
+    # Pilot freezes on the FIRST eligible published story, even when more
+    # stories arrive. Do not silently import the later ones before review.
+    return candidates[:1 if settings["mode"] == "pilot" else settings["max_items"]]
 
 
 def jpeg_bytes(cover_path):
