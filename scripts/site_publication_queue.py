@@ -100,11 +100,18 @@ def _last_change(ref, path):
 
 
 def latest_site_first_publication(rows, *, main_ref=MAIN_REF):
-    """Ignore historical Dzen dates; only real site-first issues set spacing."""
+    """Return last QUEUED release; fixed-time releases never reset this clock.
+
+    Legacy site-first records without a mode remain standard queue releases.
+    """
     latest = None
     for row in rows:
         sid = row.get("id", "")
         if not isinstance(sid, str) or not STABLE_ID.fullmatch(sid):
+            continue
+        # Timed articles publish independently and must not delay the next
+        # ordinary/priority hourly release. Legacy rows count as standard.
+        if row.get("site_release_mode") == "timed":
             continue
         # The original historical imports have content/approved sources,
         # but only new site-first stories have an editorial_inbox source in main.
@@ -193,12 +200,18 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
                         raise
                     print("BLOCKED_UNVERIFIED_DZEN_REFERENCE:", sid, str(exc), flush=True)
                     continue
+            if "site_queue" in story and story["site_queue"] != "priority":
+                raise ValueError("site_queue must be priority or absent")
+            if "site_queue" in story and "site_publish_at" in story:
+                raise ValueError("Choose priority or fixed-time release, not both")
             earliest = parse_slot(story["site_publish_at"]) if "site_publish_at" in story else None
+            lane = ("timed" if earliest else
+                    "priority" if story.get("site_queue") == "priority" else "standard")
             ready_at = max(_last_change(ref, path) for path in
                            [source, matched[0], *illustrations])
             ready.append({
                 "id": sid, "ready_at": ready_at, "not_before": earliest,
-                "cover": matched[0],
+                "cover": matched[0], "lane": lane,
             })
         except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
             print("BLOCKED_INVALID_STORY:", sid,
@@ -286,6 +299,12 @@ def select_publishable_item(items, rows, now, *, source_ref,
 
 
 def select_one(items, rows, now, *, target=None, urgent=False):
+    """Three independent lanes: timed > priority > standard.
+
+    A timed release has an independent clock. Priority and standard share
+    one 60-minute publication clock; priority wins their next common slot.
+    Every lane remains strictly approval+cover validated before selection.
+    """
     if now.tzinfo is None:
         raise ValueError("Scheduled check needs an offset-aware time")
     now = now.astimezone(dt.timezone.utc)
@@ -296,35 +315,60 @@ def select_one(items, rows, now, *, target=None, urgent=False):
         raise ValueError("Invalid exact story ID")
     if target and not any(item["id"] == target for item in items):
         raise ValueError("Requested story is not approved, cover-ready and unpublished")
-    if not urgent and in_quiet_hours(now):
-        print("QUIET_HOURS_WAIT: Automatic site releases paused 01:00–07:00 Asia/Yekaterinburg",
+
+    if urgent:
+        # Historical owner-confirmed force-now remains available, independent
+        # from the *new* priority queue. Only exact-ID verified requests use it.
+        return next(item for item in items if item["id"] == target)
+
+    eligible = [item for item in items if now >= item["ready_at"]]
+    # Fixed-time articles do not wait for the queue interval OR its night
+    # pause. They become due as soon as their requested moment has passed.
+    due_timed = sorted(
+        (item for item in eligible
+         if item.get("lane", "timed" if item.get("not_before") else "standard") == "timed"
+         and item.get("not_before") and item["not_before"] <= now),
+        key=lambda item: (item["not_before"], item["ready_at"], item["id"]),
+    )
+    if due_timed:
+        chosen = due_timed[0]
+        if target and chosen["id"] != target:
+            raise ValueError(
+                "Nonurgent exact-ID request cannot bypass the next due "
+                "fixed-time article: " + chosen["id"])
+        return chosen
+
+    if in_quiet_hours(now):
+        print("QUIET_HOURS_WAIT: Standard and priority queues paused "
+              "01:00–07:00 Asia/Yekaterinburg; timed releases remain eligible",
               flush=True)
         return None
+
+    # Queues (priority + standard) share one clock, unaffected by timed posts.
+    queued = [
+        item for item in eligible
+        if item.get("lane", "timed" if item.get("not_before") else "standard")
+        in ("priority", "standard")
+    ]
+    queued.sort(key=lambda item: (
+        0 if item.get("lane", "standard") == "priority" else 1,
+        item["ready_at"], item["id"],
+    ))
+    if not queued:
+        return None
     last = latest_site_first_publication(rows)
-    spacing = release_interval(now, len(items), [i["id"] for i in items])
-    if not urgent and last and now < last + spacing:
+    spacing = release_interval(now, len(queued), [i["id"] for i in queued])
+    if last and now < last + spacing:
         print("SPACING_WAIT until", (last + spacing).isoformat(),
               "recovery=" + str(spacing == RECOVERY_INTERVAL), flush=True)
         return None
-    for item in items:
-        if not urgent and item["not_before"] and now < item["not_before"]:
-            print("FUTURE_SLOT:", item["id"], item["not_before"].isoformat(), flush=True)
-            continue
-        if not urgent and now < item["ready_at"]:
-            print("COVER_COMMIT_NOT_YET_DUE:", item["id"], flush=True)
-            continue
-        if target and item["id"] != target:
-            if not urgent:
-                # Manual story_id without urgency is an assertion about the
-                # next ordinary article, NOT an undocumented way to jump FIFO.
-                # A future-dated story can be skipped, a due older story cannot.
-                raise ValueError(
-                    "Nonurgent exact-ID request cannot bypass the next due "
-                    "queue article: " + item["id"] + " (requested " + target + ")"
-                )
-            continue
-        return item
-    return None
+    chosen = queued[0]
+    if target and chosen["id"] != target:
+        raise ValueError(
+            "Nonurgent exact-ID request cannot bypass the next due "
+            "queue article: " + chosen["id"] + " (requested " + target + ")"
+        )
+    return chosen
 
 
 def main():
