@@ -107,6 +107,31 @@ class SnapshotTests(unittest.TestCase):
         ])
         self.assertNotIn('future', [row['id'] for row in overdue])
 
+    def test_fixed_time_night_release_is_monitored_without_night_exemption(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        assigned = dt.datetime(2026, 11, 13, 2, 30, tzinfo=local)
+        pending = [{
+            "id": "timed-night", "ready_at": assigned - dt.timedelta(hours=1),
+            "not_before": assigned, "lane": "timed",
+        }]
+        at = assigned + dt.timedelta(minutes=46)
+        overdue = w.overdue_publications(pending, None, at)
+        self.assertEqual([r["id"] for r in overdue], ["timed-night"])
+        self.assertGreaterEqual(overdue[0]["minutes"], 30)
+
+    def test_priority_backlog_alert_precedes_older_standard(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        earlier = dt.datetime(2026, 11, 10, 8, 0, tzinfo=local)
+        now = earlier + dt.timedelta(hours=3)
+        pending = [
+            {"id": "normal", "ready_at": earlier, "not_before": None,
+             "lane": "standard"},
+            {"id": "priority", "ready_at": earlier + dt.timedelta(minutes=1),
+             "not_before": None, "lane": "priority"},
+        ]
+        overdue = w.overdue_publications(pending, None, now)
+        self.assertEqual([r["id"] for r in overdue], ["priority"])
+
     def test_overnight_future_story_never_receives_false_delay(self):
         local = dt.timezone(dt.timedelta(hours=5))
         ready = dt.datetime(2026, 11, 10, 22, 0, tzinfo=local)
