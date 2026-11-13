@@ -250,9 +250,9 @@
       "summary": "11 ноября: новый API возвращает оценки условий по мультимодальному вводу; заявлены до 1000 проверок.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-13T05:08:48.780Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
