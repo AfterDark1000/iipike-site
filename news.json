@@ -5053,5 +5053,28 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Google запустила Gemini в Apple CarPlay — теперь почту можно разбирать за рулём",
+    "summary": "Google начала мировой поэтапный запуск Gemini Live для Apple CarPlay: голосовые беседы, чтение и пересказ писем Gmail, доступ к календарю и продолжение разговора между iPhone и автомобилем. Для начала нужна актуальная версия Gemini на iPhone.",
+    "published": "2026-11-13",
+    "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay",
+    "cover": "assets/editorial/google-gemini-live-apple-carplay-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T12:15:34Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-11",
+    "id": "google-gemini-live-apple-carplay-20261111",
+    "url": "articles/google-gemini-live-apple-carplay-20261111/",
+    "topics": [
+      "apps"
+    ],
+    "companies": [
+      "google",
+      "apple"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
