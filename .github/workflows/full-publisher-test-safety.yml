@@ -1,0 +1,38 @@
+name: HPII — full publisher test suite (NO PUBLICATION)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tests/test_homepage_focus.py'
+      - 'data/home_focus.json'
+      - '.github/workflows/full-publisher-test-safety.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/test_homepage_focus.py'
+      - 'data/home_focus.json'
+      - '.github/workflows/full-publisher-test-safety.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-full-tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-full-suite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository (no write credentials)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install same image dependency as production publisher
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Test current editorial homepage focus
+        run: python3 -m unittest discover -s tests -p 'test_homepage_focus.py' -v
+      - name: Run complete publisher regression suite without releasing anything
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -q
