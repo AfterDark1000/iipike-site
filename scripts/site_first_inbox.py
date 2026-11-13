@@ -35,7 +35,7 @@ COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
     "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
-    "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "companies", "products", "site_publish_at", "threads_queue_id", "x_queue_id",
+    "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "companies", "products", "site_publish_at", "site_queue", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
 
@@ -82,9 +82,13 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
     if (u.scheme != "https" or not u.hostname or u.username or u.password or
             u.port not in (None, 443) or any(c.isspace() for c in original)):
         raise ValueError("Original source must be a safe HTTPS URL")
+    if "site_queue" in data and data["site_queue"] != "priority":
+        raise ValueError("site_queue may only be 'priority'; omit it for standard")
     if "site_publish_at" in data:
         from scripts.site_publication_queue import parse_slot
         parse_slot(data["site_publish_at"])
+        if "site_queue" in data:
+            raise ValueError("Choose either site_publish_at or site_queue, not both")
     if "event_date" in data:
         dt.date.fromisoformat(required_text(data, "event_date", 10))
     related = data.get("related_dzen_ids", [])
@@ -244,6 +248,10 @@ def stage(root, story_id, *, apply=False, now=None):
         "rubric": data["rubric"], "section": data["section"],
         "source_url": data["source_url"], "source_title": data["source_title"],
         "published": date, "published_at_utc": timestamp,
+        # Exact lane provenance for independent publication clocks.
+        "site_release_mode": ("timed" if "site_publish_at" in data
+                              else "priority" if data.get("site_queue") == "priority"
+                              else "standard"),
         "cover": dest_asset.relative_to(root).as_posix(),
         "paragraphs": blocks,
         "related_dzen_ids": data.get("related_dzen_ids", []),
