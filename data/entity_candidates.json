@@ -95,6 +95,10 @@
         {
           "article_id": "mercor-series-d-750m-20b-valuation-20261110",
           "source_url": "https://www.mercor.com/blog/series-d/"
+        },
+        {
+          "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
+          "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
         }
       ]
     },
@@ -1078,6 +1082,19 @@
         {
           "article_id": "google-gemini-4-hydrogen-20261112",
           "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        }
+      ]
+    },
+    {
+      "key": "sfr-autord",
+      "name": "SFR-AutoR&D",
+      "company": "salesforce",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
+          "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
         }
       ]
     }
