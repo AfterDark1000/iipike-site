@@ -397,6 +397,30 @@
           "source_url": "https://ifm.ai/pan2/press-release/"
         }
       ]
+    },
+    {
+      "key": "tier-iv",
+      "name": "TIER IV",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "autoware-foundation",
+      "name": "Autoware Foundation",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
     }
   ],
   "products": [
@@ -774,6 +798,84 @@
         {
           "article_id": "mbzuai-pan2-world-model-20261110",
           "source_url": "https://ifm.ai/pan2/press-release/"
+        }
+      ]
+    },
+    {
+      "key": "autoware",
+      "name": "Autoware",
+      "company": "autoware-foundation",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "alpamayo-2-edge",
+      "name": "Alpamayo 2 Edge",
+      "company": "nvidia",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "autoe2e",
+      "name": "AutoE2E",
+      "company": "autoware-foundation",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "meteor-autoware",
+      "name": "METEOR",
+      "company": "autoware-foundation",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "oneplanner",
+      "name": "OnePlanner",
+      "company": "tier-iv",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+        }
+      ]
+    },
+    {
+      "key": "latentdrive",
+      "name": "LatentDrive",
+      "company": "tier-iv",
+      "status": "candidate",
+      "first_seen": "2026-11-13",
+      "evidence": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
         }
       ]
     }
