@@ -338,6 +338,80 @@ class PublicationQueueTests(unittest.TestCase):
                                         NOW + dt.timedelta(minutes=30),
                                         target="chosen")["id"], "chosen")
 
+    def test_priority_queue_precedes_standard_queue_but_preserves_own_fifo(self):
+        normal_one = item("normal-one", 2)
+        priority_one = {**item("priority-one", 4), "lane": "priority"}
+        normal_two = item("normal-two", 3)
+        priority_two = {**item("priority-two", 6), "lane": "priority"}
+        rows = [normal_one, priority_one, normal_two, priority_two]
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=NOW - dt.timedelta(hours=2)):
+            self.assertEqual(select_one(rows, [], NOW)["id"], "priority-one")
+            self.assertEqual(select_one(
+                [normal_one, normal_two, priority_two], [], NOW)["id"], "priority-two")
+            self.assertEqual(select_one([normal_one, normal_two], [], NOW)["id"],
+                             "normal-one")
+
+    def test_fixed_time_does_not_reset_hourly_queue_clock(self):
+        # The user's concrete model: queue at 16:17, timed at 16:30,
+        # queue still at 17:17 (not 17:30).
+        local = dt.timezone(dt.timedelta(hours=5))
+        queue_first = {"id": "queue-first", "published_at_utc": "2026-11-13T11:17:00Z",
+                       "site_release_mode": "standard"}
+        timed_published = {"id": "fixed", "published_at_utc": "2026-11-13T11:30:00Z",
+                           "site_release_mode": "timed"}
+        next_queue = {
+            "id": "queue-second", "ready_at": dt.datetime(2026, 11, 13, 15,
+                                                        tzinfo=local),
+            "not_before": None, "cover": "editorial_inbox/covers/queue-second.webp",
+            "lane": "standard",
+        }
+        fixed = {**next_queue, "id": "fixed",
+                 "not_before": dt.datetime(2026, 11, 13, 16, 30, tzinfo=local),
+                 "lane": "timed"}
+        with patch("scripts.site_publication_queue.exists_at", return_value=True):
+            self.assertEqual(select_one(
+                [fixed, next_queue], [queue_first],
+                dt.datetime(2026, 11, 13, 16, 30, tzinfo=local))["id"], "fixed")
+            self.assertIsNone(select_one(
+                [next_queue], [queue_first, timed_published],
+                dt.datetime(2026, 11, 13, 17, 16, tzinfo=local)))
+            self.assertEqual(select_one(
+                [next_queue], [queue_first, timed_published],
+                dt.datetime(2026, 11, 13, 17, 17, tzinfo=local))["id"],
+                "queue-second")
+            self.assertEqual(latest_site_first_publication([queue_first, timed_published]),
+                             dt.datetime(2026, 11, 13, 11, 17, tzinfo=UTC))
+
+    def test_fixed_time_preempts_priority_and_normal_when_due(self):
+        fixed = {**item("fixed-time", 5, slot=NOW), "lane": "timed"}
+        priority = {**item("priority", 4), "lane": "priority"}
+        normal = item("normal", 3)
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=NOW - dt.timedelta(minutes=10)):
+            # The queue is waiting for its next hourly slot, but exact-time
+            # release can go out regardless.
+            self.assertEqual(select_one([normal, priority, fixed], [], NOW)["id"],
+                             "fixed")
+
+    def test_fixed_time_can_run_during_normal_queues_night_pause(self):
+        local = dt.timezone(dt.timedelta(hours=5))
+        now = dt.datetime(2026, 11, 13, 2, 30, tzinfo=local)
+        fixed = {"id": "night-special", "ready_at": now - dt.timedelta(hours=2),
+                 "not_before": now, "lane": "timed", "cover": "unused.webp"}
+        normal = {"id": "normal", "ready_at": now - dt.timedelta(hours=2),
+                  "not_before": None, "lane": "standard", "cover": "unused.webp"}
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=None):
+            self.assertEqual(select_one([normal, fixed], [], now)["id"], "night-special")
+            self.assertIsNone(select_one([normal], [], now))
+
+    def test_priority_queue_still_obeys_hourly_spacing(self):
+        priority = {**item("priority", 5), "lane": "priority"}
+        with patch("scripts.site_publication_queue.latest_site_first_publication",
+                   return_value=NOW - dt.timedelta(minutes=20)):
+            self.assertIsNone(select_one([priority], [], NOW))
+
     def test_future_slot_delays_one_item_not_entire_queue(self):
         later = NOW + dt.timedelta(hours=5)
         items = [item("delayed", 4, slot=later), item("ready", 6)]
