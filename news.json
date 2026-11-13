@@ -5007,5 +5007,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Claude выполняет поручения, пока коллеги совещаются",
+    "summary": "Anthropic представила Claude Meetings: ИИ-помощник сможет участвовать в совещаниях Google Meet и выполнять поручения во время разговора. Официально выпуск пока анонсирован как скорый.",
+    "published": "2026-11-13",
+    "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors",
+    "cover": "assets/editorial/anthropic-claude-meetings-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T10:00:48Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "anthropic-claude-meetings-20261110",
+    "url": "articles/anthropic-claude-meetings-20261110/",
+    "topics": [
+      "agents",
+      "business"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
