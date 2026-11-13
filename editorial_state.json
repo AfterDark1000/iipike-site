@@ -150,6 +150,12 @@
       "utc_date": "2026-11-12",
       "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
       "source_title": "Gemini Decisions API: Fast, calibrated multimodal decisions"
+    },
+    {
+      "id": "80edea19d5fdcf288e59",
+      "utc_date": "2026-11-13",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+      "source_title": "Gemini 4 Hydrogen"
     }
   ]
 }

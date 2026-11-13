@@ -1,5 +1,12 @@
 [
   {
+    "id": "80edea19d5fdcf288e59",
+    "date": "2026-11-13",
+    "title": "Google представила Gemini 4 Hydrogen: быстрый ИИ для ежедневной работы и сложных агентов",
+    "source_name": "blog.google",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+  },
+  {
     "id": "c06fca3b9549fb95708d",
     "date": "2026-11-12",
     "title": "Google научила нейросеть принимать тысячи решений за секунды без генерации текста",
