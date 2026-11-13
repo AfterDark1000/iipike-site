@@ -447,6 +447,11 @@ def publish(root, slug, apply=False):
                                "source_url", "cover", "rubric")}
     if data.get("published_at_utc"):
         row["published_at_utc"] = data["published_at_utc"]
+    if "site_release_mode" in data:
+        mode = data["site_release_mode"]
+        if mode not in ("standard", "priority", "timed"):
+            raise ValueError("Invalid site release mode")
+        row["site_release_mode"] = mode
     if data.get("publication_date_precision") == "day":
         row["publication_date_precision"] = "day"
     if "event_date" in data:
