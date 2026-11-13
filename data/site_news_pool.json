@@ -325,12 +325,12 @@
       "summary": "11 ноября: Google начала развёртывание разговорного помощника на экранах автомобилей с CarPlay.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-13T08:52:40.761Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "13.11.2026: проверен датированный первоисточник Google от 11.11 https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/ . С 11.11 глобально поэтапно разворачивается отдельное приложение Gemini Live для Apple CarPlay (все поддерживаемые языки). Функции: голосовые беседы, календарь, краткое содержание Gmail, подбор мест, подготовка к встречам; можно перебивать, продолжить беседу с iPhone; история синхронизируется. Условия: последняя версия Gemini iOS, разрешённый микрофон, Live хотя бы раз запущен на iPhone. Daily Brief имеет региональные ограничения (если упоминать). Дубля не найдено: news.json (309), каталог Дзена (299), editorial-intake (107). Перелинковка: опубликованная статья https://dzen.ru/a/atg9xUa88m9Qfcyd о личных данных автомобильного Gemini; ID 6ad83dc546bcf26f507dcc9d. Готовим Дзен, Threads/X на утверждение, очереди не трогать."
+      "closed_at": "2026-11-13T09:07:52.053Z",
+      "article_id": "google-gemini-live-apple-carplay-20261111",
+      "note": "13.11.2026: главный редактор утвердил «Google запустила Gemini в Apple CarPlay — теперь почту можно разбирать за рулём». Дословный Markdown записан и проверен в editorial-intake/stories/google-gemini-live-apple-carplay-20261111.json. Перелинковка на опубликованную статью о персонализации автомобильного Gemini подтверждена: related_dzen_ids (Дзен), site_crosslinks (приоритет iipike.ru). Threads: одобренный мемный финал про Siri; X: разговорный пост с @Google и @Apple — сохранены в соответствующих очередях main со статусом approved. Google, Apple и Gemini есть в активном реестре; Apple CarPlay добавлен в кандидаты data/entity_candidates.json. Обложка не передана, публикация не запускалась."
     },
     {
       "id": "n-dbb2cd951b1601b5",
