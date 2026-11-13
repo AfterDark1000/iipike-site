@@ -1,0 +1,36 @@
+name: HPII VK RSS image-first safety (NO VK PUBLICATION)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/build_vk_rss.py'
+      - 'data/vk_rss_export.json'
+      - 'vk-rss.xml'
+      - 'tests/test_vk_rss.py'
+      - 'scripts/site_first_release_pr.py'
+      - '.github/workflows/vk-rss-safety.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_vk_rss.py'
+      - 'data/vk_rss_export.json'
+      - 'vk-rss.xml'
+      - 'tests/test_vk_rss.py'
+      - 'scripts/site_first_release_pr.py'
+      - '.github/workflows/vk-rss-safety.yml'
+permissions:
+  contents: read
+jobs:
+  validate-vk-rss:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install local image validator (no VK API)
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Check feed and run image-first RSS tests
+        run: |
+          python3 -m py_compile scripts/build_vk_rss.py
+          python3 scripts/build_vk_rss.py --check
+          python3 -m unittest discover -s tests -p 'test_vk_rss.py' -v
+          python3 -m unittest discover -s tests -p 'test_*.py' -q

@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "mode": "standby",
+  "cutover_at_utc": null,
+  "max_items": 12
+}
