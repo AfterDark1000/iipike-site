@@ -4874,5 +4874,23 @@
       "bytedance"
     ],
     "products": []
+  },
+  {
+    "title": "Во Франции предложили отключить у ИИ «режим подхалима»",
+    "summary": "Французский CIANum предложил по умолчанию отключать лесть и эмоциональное поддакивание ИИ-помощников, ограничить манипулятивные функции и скрытую рекламу, с дополнительной защитой детей. Пока это рекомендации.",
+    "published": "2026-11-13",
+    "source_url": "https://www.conseil-ia-numerique.fr/nos-travaux/proteger-sans-empecher-nos-vulnerabilites-lere-de-lia-generative",
+    "cover": "assets/editorial/france-cianum-ai-flattery-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T02:00:49Z",
+    "event_date": "2026-11-10",
+    "id": "france-cianum-ai-flattery-20261110",
+    "url": "articles/france-cianum-ai-flattery-20261110/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
