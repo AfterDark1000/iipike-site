@@ -4931,5 +4931,25 @@
       "anthropic"
     ],
     "products": []
+  },
+  {
+    "title": "Китайский вуз из чёрного списка США купил NVIDIA H200. Объявление исчезло",
+    "summary": "Северо-Западный политехнический университет в Китае закупил две NVIDIA H200 у местного поставщика на фоне экспортных ограничений США. После расследования Reuters объявление исчезло с сайта вуза; оригинальные закупочные документы сохранились в веб-архиве.",
+    "published": "2026-11-13",
+    "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm",
+    "cover": "assets/editorial/nwpu-nvidia-h200-blacklist-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T05:15:35Z",
+    "event_date": "2026-11-11",
+    "id": "nwpu-nvidia-h200-blacklist-20261111",
+    "url": "articles/nwpu-nvidia-h200-blacklist-20261111/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
