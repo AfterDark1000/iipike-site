@@ -307,13 +307,21 @@ def select_one(items, rows, now, *, target=None, urgent=False):
               "recovery=" + str(spacing == RECOVERY_INTERVAL), flush=True)
         return None
     for item in items:
-        if target and item["id"] != target:
-            continue
         if not urgent and item["not_before"] and now < item["not_before"]:
             print("FUTURE_SLOT:", item["id"], item["not_before"].isoformat(), flush=True)
             continue
         if not urgent and now < item["ready_at"]:
             print("COVER_COMMIT_NOT_YET_DUE:", item["id"], flush=True)
+            continue
+        if target and item["id"] != target:
+            if not urgent:
+                # Manual story_id without urgency is an assertion about the
+                # next ordinary article, NOT an undocumented way to jump FIFO.
+                # A future-dated story can be skipped, a due older story cannot.
+                raise ValueError(
+                    "Nonurgent exact-ID request cannot bypass the next due "
+                    "queue article: " + item["id"] + " (requested " + target + ")"
+                )
             continue
         return item
     return None
