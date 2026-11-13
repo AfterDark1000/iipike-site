@@ -4989,5 +4989,23 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Минсельхоз США ошибся с прогнозом кукурузы и посадил ИИ перепроверять свои расчёты",
+    "summary": "Минсельхоз США подключил ИИ к проверке ноябрьского отчёта об урожае после ошибок в сентябрьских прогнозах кукурузы для Канзаса и Небраски. Ранее эксперимент с ИИ помог обнаружить сбой в старых данных.",
+    "published": "2026-11-13",
+    "source_url": "https://www.reuters.com/technology/usda-launch-ai-tool-check-crop-production-data-after-errors-2026-11-06/",
+    "cover": "assets/editorial/usda-ai-crop-forecast-validation-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T08:30:44Z",
+    "event_date": "2026-11-10",
+    "id": "usda-ai-crop-forecast-validation-20261110",
+    "url": "articles/usda-ai-crop-forecast-validation-20261110/",
+    "topics": [
+      "society",
+      "science"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
