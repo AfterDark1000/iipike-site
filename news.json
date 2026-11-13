@@ -5139,5 +5139,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Google выпустила Gemini 4 Hydrogen даже для бесплатных пользователей",
+    "summary": "Google выпустила Gemini 4 Hydrogen для программирования и ИИ-агентов. В бесплатном Gemini модель подключается автоматически; разработчикам доступны API и работа с Orchestrator.",
+    "published": "2026-11-13",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+    "cover": "assets/editorial/google-gemini-4-hydrogen-20261112.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-13T18:30:46Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "google-gemini-4-hydrogen-20261112",
+    "url": "articles/google-gemini-4-hydrogen-20261112/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
