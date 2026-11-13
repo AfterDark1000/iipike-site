@@ -1,11 +1,71 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "27ca529b1eba42dcad66b4eaf4aba15226f5ee35",
-  "source_blob_sha": "17693de36af07c0750fc884f85b8da5b15161566",
-  "snapshot_date": "2026-11-12",
+  "source_commit": "32d23a2b5e8a3060b7412b4928051e5ea752b52d",
+  "source_blob_sha": "9d452d97a56aafd6abe2af6daaafceb89ae6a572",
+  "snapshot_date": "2026-11-13",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af695484acd617954e3d85f",
+      "title": "ИИ-агент попытался открыть облако всему интернету. Bay привлекла $50 млн на защиту",
+      "dzen_url": "https://dzen.ru/a/avaVSErNYXlU49hf",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Израильский стартап Bay 10 ноября вышел из скрытого режима и объявил о $50 млн привлечённых инвестиций. Компания разработала систему, которая следит за действиями корпоративных ИИ-агентов и останавливает опасные команды до их выполнения. Идея такого продукта возникла после неприятного эксперимента самих основателей. Когда команда работала над другим проектом, программирующий агент Claude попытался открыть её облачную",
+      "published_at_utc": "2026-11-13T10:02:57+00:00"
+    },
+    {
+      "dzen_id": "6af69511fbd16748b04a5e41",
+      "title": "Mercor привлекла $750 млн: инвесторы оценили бизнес на обучении ИИ в $20 млрд",
+      "dzen_url": "https://dzen.ru/a/avaVEfvRZ0iwSl5B",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американская Mercor 10 ноября объявила о привлечении $750 млн в инвестиционном раунде Series D. Компанию оценили в $20 млрд — вдвое дороже, чем в октябре прошлого года. Среди инвесторов оказались NVIDIA, Salesforce, Zoom, Benchmark и другие крупные фонды. Mercor начинала как платформа для подбора сотрудников. Теперь её основной бизнес — помогать разработчикам искусственного интеллекта обучать модели и проверять их сп",
+      "published_at_utc": "2026-11-13T09:01:56+00:00"
+    },
+    {
+      "dzen_id": "6af694c04692d94ef3403345",
+      "title": "Европа хочет свой ИИ для поиска военных целей: Helsing бросает вызов Palantir",
+      "dzen_url": "https://dzen.ru/a/avaUwEaS2U7zQDNF",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Немецкая Helsing намерена 11 ноября представить в Берлине новую систему военного искусственного интеллекта. Компания рассчитывает предложить европейским армиям альтернативу американской Palantir, чьё программное обеспечение уже используется США и структурами НАТО. О предстоящей презентации 10 ноября сообщило Reuters со ссылкой на приглашение Helsing. Компания подчёркивает необходимость самостоятельной разработки воен",
+      "published_at_utc": "2026-11-13T07:51:09+00:00"
+    },
+    {
+      "dzen_id": "6af6947ed2ba2924ba1ac8d3",
+      "title": "Google испытала Gemini Robotics 2.5 на заводах Mercedes-Benz: 96% удачных операций",
+      "dzen_url": "https://dzen.ru/a/avaUftK6KSS6GsjT",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google DeepMind 10 ноября представила Gemini Robotics 2.5 — новую модель искусственного интеллекта для управления роботами. Её уже испытали на действующих заводах Mercedes-Benz в Германии и Венгрии. Гуманоиды Apollo 2 компании Apptronik сортировали автодетали, успешно справившись с 96% операций, по данным Google. Задача выглядела вполне буднично: достать металлические кронштейны из общего контейнера и разложить по ло",
+      "published_at_utc": "2026-11-13T06:41:28+00:00"
+    },
+    {
+      "dzen_id": "6af6931a500b72359578445d",
+      "title": "Zyphra выпустила ZONOS3-Mini: клонирует голос и работает прямо в браузере",
+      "dzen_url": "https://dzen.ru/a/avaTGlALcjWVeERd",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Zyphra 9 ноября выпустила ZONOS3-Mini — компактную нейросеть для озвучивания текста и клонирования голоса. Она может говорить голосом из предоставленной аудиозаписи, менять интонации и работать прямо на смартфоне или ноутбуке, без обращения к облачному серверу. Причём разработчики научили модель управлять произношением отдельных слов. В демонстрации одна часть предложения звучит обычным голосом, а другая произносится",
+      "published_at_utc": "2026-11-13T05:40:43+00:00"
+    },
+    {
+      "dzen_id": "6af683d608c95d6913e99465",
+      "title": "Beeble выпустила SwitchX 3.0: ИИ меняет декорации в готовом видео",
+      "dzen_url": "https://dzen.ru/a/avaD1gjJXWkT6ZRl",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Beeble 10 ноября выпустила SwitchX 3.0 — обновлённую нейросеть для замены декораций и освещения в уже снятом видео. Теперь искусственный интеллект умеет создавать движущийся фон, который следует за камерой, сохраняя движения и мимику настоящего актёра. В демонстрациях компании пустая площадь заполняется прохожими, на горном склоне начинается снегопад, а за мотоциклистом появляется целый подводный мир с акулой. В друг",
+      "published_at_utc": "2026-11-13T03:29:00+00:00"
+    },
     {
       "dzen_id": "6af4391dfbd16748b0c7e996",
       "title": "Google представила Gemini для больниц: ИИ разберёт медкарты и страховки",
