@@ -1,11 +1,111 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "fa576fcd6fcd0f685a35a8bfa126e95f003513bf",
-  "source_blob_sha": "91cab8894506e73b54848d8d831e7303126643f9",
+  "source_commit": "79cb7fc7c11fba5ac25eb4dc4617466026009fd9",
+  "source_blob_sha": "62e747e250a749b80ed2aa8da4cf00dba7ad9c7b",
   "snapshot_date": "2026-11-14",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af82c63f38bf42a8fcd9449",
+      "title": "Китайские ИИ-компании спешат занять зарубежные серверы NVIDIA из-за угрозы нового запрета США",
+      "dzen_url": "https://dzen.ru/a/avgsY_OL9CqPzZRJ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Китайские ИИ-компании пытаются застолбить вычислительные мощности NVIDIA за рубежом: они опасаются, что США перекроют им доступ к передовым чипам даже через иностранные дата-центры. Крупный китайский облачный провайдер обсуждал резервирование таких мощностей внутри компании, другие разработчики уже связывались с операторами дата-центров, а небольшие лаборатории рассматривают предложения в Юго-Восточной Азии. Американ",
+      "published_at_utc": "2026-11-14T18:01:39+00:00"
+    },
+    {
+      "dzen_id": "6af82bded5e88120c5eaa7dc",
+      "title": "Google выпустила Gemini 4 Hydrogen даже для бесплатных пользователей",
+      "dzen_url": "https://dzen.ru/a/avgr3tXogSDF6qfc",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 12 ноября представила Gemini 4 Hydrogen Модель начали подключать к приложению Gemini, поиску Google и инструментам разработчиков по всему миру. Попробовать новинку смогут и пользователи без платной подписки. Правда, на бесплатном тарифе Gemini сама решает, когда подключать Hydrogen к запросу. Выбрать эту модель вручную смогут платные подписчики. В семействе уже есть Gemini 4 Carbon и Gemini 4 Argon — мощные мо",
+      "published_at_utc": "2026-11-14T17:01:19+00:00"
+    },
+    {
+      "dzen_id": "6af82b83ce20cc07c97f8a2e",
+      "title": "В приложениях Grok нашли пароли и данные пациентов",
+      "dzen_url": "https://dzen.ru/a/avgrg84gzAfJf4ou",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Claroc Research 10 ноября обнаружила 35 578 приложений, созданных с помощью Grok Build, которые открывались посторонним без входа в аккаунт. Большинство из них — обычные игры, калькуляторы и небольшие сайты. Но среди открытых страниц исследователи нашли вещи, которые явно не предназначались для чужих глаз. В одном приложении лежала медицинская сводка о пациенте реанимации: результаты анализов и сведения об аппарате и",
+      "published_at_utc": "2026-11-14T16:03:27+00:00"
+    },
+    {
+      "dzen_id": "6af82acdb33b505d7ad58070",
+      "title": "Дженсен Хуанг ушёл с поста главы NVIDIA на фоне шпионского скандала",
+      "dzen_url": "https://dzen.ru/a/avgqzbM7UF161YBw",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Дженсен Хуанг спустя 33 года во главе NVIDIA покинул пост генерального директора, должность президента и совет директоров компании. Отставку приняли 11 ноября, следует из документа NVIDIA для американской Комиссии по ценным бумагам. Публично компания объявила об этом 12 ноября. Временно NVIDIA возглавила Колетт Кресс, которая с 2013 года руководит её финансами. Она сохранит обе должности, пока совет директоров ищет п",
+      "published_at_utc": "2026-11-14T09:35:30+00:00"
+    },
+    {
+      "dzen_id": "6af82a86f8ad2a1742724f36",
+      "title": "United Airlines запретила ИИ-агентам покупать билеты за пассажиров",
+      "dzen_url": "https://dzen.ru/a/avgqhvitKhdCck82",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "United Airlines 11 ноября запретила сторонним ИИ-агентам без разрешения авиакомпании самостоятельно покупать и менять билеты за пассажиров. Попросить нейросеть найти самый дешёвый рейс — пожалуйста. А вот доверить ей пароль от аккаунта, банковскую карту и сказать «оформи всё сам» уже не получится. Причём запрет касается и посредников: туристические агентства и сайты бронирования тоже не должны пропускать к билетам не",
+      "published_at_utc": "2026-11-14T15:02:44+00:00"
+    },
+    {
+      "dzen_id": "6af82a2921ceec0258599e3e",
+      "title": "Google запустила Gemini в Apple CarPlay — теперь почту можно разбирать за рулём",
+      "dzen_url": "https://dzen.ru/a/avgqKSHO7AJYWZ4-",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 11 ноября начала развёртывание Gemini Live в Apple CarPlay: теперь с нейросетью можно разговаривать прямо через экран автомобиля, не доставая iPhone. Во время утренней поездки водитель может попросить ИИ пересказать непрочитанные письма из Gmail, проверить расписание в Google Календаре или помочь подготовиться к предстоящему совещанию. По дороге в незнакомый город можно спросить, где поблизости перекусить или",
+      "published_at_utc": "2026-11-14T14:01:54+00:00"
+    },
+    {
+      "dzen_id": "6af829d5e4152a6870470922",
+      "title": "Claude теперь сам собирает таблицы с формулами прямо в чате",
+      "dzen_url": "https://dzen.ru/a/avgp1eQVKmhwRwki",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Anthropic 10 ноября запустила Claude Sheets — электронные таблицы прямо внутри Claude. Достаточно описать задачу, например бюджет найма или список рекламных кампаний, и нейросеть соберёт рабочую таблицу с вкладками, формулами, оформлением и выпадающими списками. Самое интересное начинается после создания: человек и Claude могут редактировать одни и те же ячейки. Изменения ИИ подсвечиваются, а готовую таблицу можно вы",
+      "published_at_utc": "2026-11-14T13:03:06+00:00"
+    },
+    {
+      "dzen_id": "6af82955e004c376348cb545",
+      "title": "Claude выполняет поручения, пока коллеги совещаются",
+      "dzen_url": "https://dzen.ru/a/avgpVeAEw3Y0jLVF",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Anthropic 10 ноября представила Claude Meetings — функцию, которая позволит ИИ-помощнику Claude подключаться к видеозвонкам в Google Meet в качестве отдельного участника. Он сможет приступать к выполнению поручений прямо во время совещания, пока коллеги ещё обсуждают задачи. По данным TechCrunch, Claude будет следить за ходом разговора, составлять планы, распределять этапы работы по срокам, отвечать на вопросы в чате",
+      "published_at_utc": "2026-11-14T12:03:38+00:00"
+    },
+    {
+      "dzen_id": "6af82913c6c38d2040b17329",
+      "title": "Минсельхоз США ошибся с прогнозом кукурузы и посадил ИИ перепроверять свои расчёты",
+      "dzen_url": "https://dzen.ru/a/avgpE8bDjSBAsXMp",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Министерство сельского хозяйства США (USDA) подключило искусственный интеллект к проверке прогнозов урожая после ошибки в собственных расчётах. Ноябрьский отчёт, опубликованный 10 ноября, стал первым, который дополнительно проверили с помощью нового инструмента. В сентябре ведомство неправильно рассчитало урожайность кукурузы в Канзасе и Небраске. Данные с полей собрали верно, но при их обработке неправильно объедини",
+      "published_at_utc": "2026-11-14T11:03:07+00:00"
+    },
+    {
+      "dzen_id": "6af828c0e7c3d9558a41660c",
+      "title": "Стартап получил $35 млн, чтобы ИИ научился помнить вчерашние разговоры",
+      "dzen_url": "https://dzen.ru/a/avgowOfD2VWKQWYM",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американская Graphon Labs привлекла $35 млн на борьбу с забывчивостью ИИ-агентов. Компания разрабатывает для них долговременную память, которая связывает разговоры, документы, фотографии и видео. Чтобы помощник мог вспомнить нужную деталь даже спустя недели. Основатель стартапа Арбааз Хан приводит пример с интернет-магазином. В одних правилах написано: товар можно вернуть в течение 30 дней. В других уточняется, что н",
+      "published_at_utc": "2026-11-14T09:25:30+00:00"
+    },
     {
       "dzen_id": "6af6b501a646ec450d5b0f45",
       "title": "Alibaba два месяца держала в секрете планы вывести своего производителя ИИ-чипов на биржу",
