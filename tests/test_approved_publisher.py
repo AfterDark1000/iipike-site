@@ -55,6 +55,24 @@ class PublisherTests(unittest.TestCase):
         p = self.root / "content" / "approved" / "sample-verified-news.json"
         p.write_text(json.dumps(self.article, ensure_ascii=False), encoding="utf-8")
 
+    def test_vk_copy_is_separate_from_site_and_dzen(self):
+        self.article["vk_title"] = "🧬 ИИ нашёл СЛЕД В ДНК"
+        self.article["vk_summary"] = "Краткая версия именно для сообщества ВК."
+        self.write_article()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+        record = json.loads(outputs[self.root / "news.json"])[-1]
+        self.assertEqual(record["vk_title"], self.article["vk_title"])
+        self.assertEqual(record["vk_summary"], self.article["vk_summary"])
+        self.assertEqual(record["title"], self.article["title"])
+        self.assertEqual(record["summary"], self.article["summary"])
+        self.assertNotIn(self.article["vk_title"],
+                         outputs[self.root / "articles/sample-verified-news/index.html"])
+        self.assertNotIn(self.article["vk_title"], outputs[self.root / "feed.xml"])
+        self.article["vk_title"] = "bad\nnew line"
+        self.write_article()
+        with self.assertRaisesRegex(ValueError, "VK editorial"):
+            PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+
     def test_published_lane_metadata_is_preserved_in_news_json(self):
         for mode in ("standard", "priority", "timed"):
             with self.subTest(mode=mode):
