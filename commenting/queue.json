@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T02:40:14.670697Z",
+  "updated_at": "2026-11-14T10:12:52.904898Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T02:40:14.670697Z",
-      "last_success_at": "2026-11-14T02:40:14.670697Z",
+      "checked_at": "2026-11-14T10:12:52.904898Z",
+      "last_success_at": "2026-11-14T10:12:52.904898Z",
       "error": null,
-      "fresh_matches": 15
+      "fresh_matches": 9
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T02:40:14.670697Z",
-      "last_success_at": "2026-11-14T02:40:14.670697Z",
+      "checked_at": "2026-11-14T10:12:52.904898Z",
+      "last_success_at": "2026-11-14T10:12:52.904898Z",
       "error": null,
-      "fresh_matches": 18
+      "fresh_matches": 14
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T02:40:14.670697Z",
-      "last_success_at": "2026-11-14T02:40:14.670697Z",
+      "checked_at": "2026-11-14T10:12:52.904898Z",
+      "last_success_at": "2026-11-14T10:12:52.904898Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,11 +41,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-14T02:40:14.670697Z",
-      "last_success_at": "2026-11-13T22:08:46.095144Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-14T10:12:52.904898Z",
+      "last_success_at": "2026-11-14T10:12:52.904898Z",
+      "error": null,
+      "fresh_matches": 0
     }
   ],
   "generator": {
@@ -55,10 +55,27 @@
   },
   "usage": {
     "date": "2026-11-14",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "0dba81c5c0249fb31cad55ee",
+      "title": "Временная глава Nvidia Колетт Кресс конфликтовала с Хуангом из-за рискованных ставок на ИИ",
+      "source_id": "3dnews",
+      "source_name": "3DNews",
+      "source_url": "https://3dnews.ru/1151294",
+      "published_at": "2026-11-14T06:26:00Z",
+      "channel_url": "https://dzen.ru/3dnews.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-14T10:12:52.904898Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "87c0f357e33a39900857d596",
       "title": "Процессоры могут повторить судьбу видеокарт: бум ИИ грозит новым дефицитом комплектующих",
@@ -136,9 +153,9 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "last_attempt_at": "2026-11-14T10:12:52.904898Z",
       "reason": "Не удалось подготовить комментарий"
     },
     {
@@ -155,9 +172,9 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "last_attempt_at": "2026-11-14T10:12:52.904898Z",
       "reason": "Не удалось подготовить комментарий"
     },
     {
@@ -174,9 +191,9 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "last_attempt_at": "2026-11-14T10:12:52.904898Z",
       "reason": "Не удалось подготовить комментарий"
     },
     {
@@ -2263,27 +2280,6 @@
       "generated_at": "2026-11-08T14:30:08.119160Z",
       "last_attempt_at": "2026-11-08T14:30:08.119160Z",
       "fact_review": "passed"
-    },
-    {
-      "id": "8c9163c203aaa1fa81b07ee2",
-      "title": "OpenAI привлекла $11 миллиардов при оценке в 1,25 триллиона",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/07/openai-privlekla-11-milliardov-pri-ocenke-v-125-trilliona.html",
-      "published_at": "2026-11-07T08:41:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T07:27:27.730471Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 2,
-      "link_status": "dzen_link_missing",
-      "reason": "Не прошёл проверку: Комментарий утверждает, что компания привлекла 11 миллиардов вместо тридцати, хотя в статье указано, что 11 млрд — это первый транш, а первоначально планировало",
-      "generated_at": "2026-11-08T14:30:08.119160Z",
-      "last_attempt_at": "2026-11-08T14:30:08.119160Z",
-      "fact_review": "rejected"
     }
   ]
 }
