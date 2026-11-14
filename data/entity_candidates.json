@@ -557,6 +557,42 @@
           "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
         }
       ]
+    },
+    {
+      "key": "american-express",
+      "name": "American Express",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "key": "mastercard",
+      "name": "Mastercard",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "key": "visa",
+      "name": "Visa",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        }
+      ]
     }
   ],
   "products": [
@@ -1181,6 +1217,32 @@
         {
           "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
           "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+        }
+      ]
+    },
+    {
+      "key": "chatgpt-wallet",
+      "name": "ChatGPT Wallet",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "key": "dots",
+      "name": "dots",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
         }
       ]
     }
