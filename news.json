@@ -5018,7 +5018,9 @@
       "business"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af828c0e7c3d9558a41660c",
+    "site_first_dzen_url": "https://dzen.ru/a/avgowOfD2VWKQWYM"
   },
   {
     "title": "Минсельхоз США ошибся с прогнозом кукурузы и посадил ИИ перепроверять свои расчёты",
@@ -5036,7 +5038,9 @@
       "science"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af82913c6c38d2040b17329",
+    "site_first_dzen_url": "https://dzen.ru/a/avgpE8bDjSBAsXMp"
   },
   {
     "title": "Claude выполняет поручения, пока коллеги совещаются",
@@ -5059,7 +5063,9 @@
     ],
     "products": [
       "claude"
-    ]
+    ],
+    "site_first_dzen_id": "6af82955e004c376348cb545",
+    "site_first_dzen_url": "https://dzen.ru/a/avgpVeAEw3Y0jLVF"
   },
   {
     "title": "Claude теперь сам собирает таблицы с формулами прямо в чате",
@@ -5082,7 +5088,9 @@
     ],
     "products": [
       "claude"
-    ]
+    ],
+    "site_first_dzen_id": "6af829d5e4152a6870470922",
+    "site_first_dzen_url": "https://dzen.ru/a/avgp1eQVKmhwRwki"
   },
   {
     "title": "Google запустила Gemini в Apple CarPlay — теперь почту можно разбирать за рулём",
@@ -5105,7 +5113,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6af82a2921ceec0258599e3e",
+    "site_first_dzen_url": "https://dzen.ru/a/avgqKSHO7AJYWZ4-"
   },
   {
     "title": "United Airlines запретила ИИ-агентам покупать билеты за пассажиров",
@@ -5168,7 +5178,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af82acdb33b505d7ad58070",
+    "site_first_dzen_url": "https://dzen.ru/a/avgqzbM7UF161YBw"
   },
   {
     "title": "Google выпустила Gemini 4 Hydrogen даже для бесплатных пользователей",
