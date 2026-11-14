@@ -1014,13 +1014,13 @@
       "source_url": "https://www.theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
       "summary": "13 ноября: в тесте Podqi на 6795 ответах ChatGPT, Gemini и Perplexity встречались рискованные, несуществующие и поддельные торговые сайты.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
-      "priority": "normal",
+      "priority": "high",
       "status": "queued",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "Результаты исследователей; вторичный источник The Verge."
+      "note": "Результаты исследователей; вторичный источник The Verge.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. Свежая публикация 12–13.11 по данным Podqi: в 6795 ответах о покупках 9% содержали рискованный сайт (включая неработающие); проверка первоисточника проведена. Важно не называть все эти сайты мошенническими. Первоисточник для проверки: https://podqi.com/research/ai-search-brand-risk"
     },
     {
       "id": "n-0f04357d1e0890d1",
@@ -1029,13 +1029,13 @@
       "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order",
       "summary": "12 ноября: умные очки с Gemini в партнёрстве с Warby Parker, Gentle Monster и Samsung. Начало продаж назначено на декабрь.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
-      "priority": "normal",
+      "priority": "high",
       "status": "queued",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "Официальный анонс Google."
+      "note": "Официальный анонс Google.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. Google подтвердила 12.11 начало предзаказов очков Gemini; старт продаж 10.12. Ограничение: учётные записи США и Южной Кореи, совместимые устройства. Первоисточник для проверки: https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
     },
     {
       "id": "n-ab23a7fa21e24fb3",
@@ -1059,13 +1059,13 @@
       "source_url": "https://help.openai.com/en/articles/20001654-making-purchases-with-chatgpt-wallet",
       "summary": "12–13 ноября: в справке OpenAI описан кошелёк с сохранёнными картами и подтверждением платежей для действий ИИ-агента.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
-      "priority": "normal",
+      "priority": "high",
       "status": "queued",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "Дата отдельного запуска требует редакторской проверки; справочная статья обновлена 13 ноября."
+      "note": "Дата отдельного запуска требует редакторской проверки; справочная статья обновлена 13 ноября.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. Официальный анонс OpenAI 13.11: ChatGPT Wallet для покупок через dots; постепенный запуск только для подходящих Pro-пользователей 18+ в США; каждая оплата подтверждается человеком. Первоисточник для проверки: https://openai.com/index/introducing-chatgpt-wallet/"
     },
     {
       "id": "n-6cb43935e4fe29e1",
@@ -1194,13 +1194,13 @@
       "source_url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump",
       "summary": "12 ноября: американские законодатели запросили сведения о схеме продажи ускорителей NVIDIA в Китай и действиях администрации США.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
-      "priority": "normal",
+      "priority": "high",
       "status": "queued",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "Политические обвинения приводятся как заявления законодателей; не смешивать с уже известной отставкой главы NVIDIA."
+      "note": "Политические обвинения приводятся как заявления законодателей; не смешивать с уже известной отставкой главы NVIDIA.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. Новый этап истории NVIDIA 12–13.11: законодатели США запросили сохранение документов об экспортных лицензиях и пошлинах. Уточнять: это расследование действий администрации, обвинения законодателей, не доказанная незаконность. Первоисточник для проверки: https://www.finance.senate.gov/ranking-members-news/wyden-and-neal-begin-to-investigate-administration-scheme-to-take-cut-of-nvidia-ai-chip-sales-to-chinese-companies-trump-and-commerce-department-reportedly-ignored-warnings-about-former-ceos/"
     },
     {
       "id": "n-1d91cc62edb2097f",
@@ -1374,13 +1374,13 @@
       "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677",
       "summary": "12 ноября: объявлено о приобретении прав на американский прокат триллера Stephen Kay про молодого человека, привязавшегося к ИИ-собеседнице; среди продюсеров Тимур Бекмамбетов.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
-      "priority": "normal",
+      "priority": "high",
       "status": "queued",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "Публикация Deadline; дата премьеры не объявлена."
+      "note": "Публикация Deadline; дата премьеры не объявлена.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. 12.11 Deadline сообщило о приобретении Dark Sky Films прав на американский прокат триллера ANSWR; студия подтверждает фильм и сюжет об эмоциональной зависимости от чат-бота. Премьера пока без даты. Высокий интерес для культурной рубрики. Первоисточник для проверки: https://www.darkskyfilms.com/films/answr"
     }
   ]
 }
