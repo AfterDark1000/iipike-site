@@ -1,11 +1,31 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "68b94004b74971debf68b6647705b6836265b522",
-  "source_blob_sha": "f672e4f67d5b7a2e7b1d7d8065fd370eb689dff7",
-  "snapshot_date": "2026-11-13",
+  "source_commit": "fa576fcd6fcd0f685a35a8bfa126e95f003513bf",
+  "source_blob_sha": "91cab8894506e73b54848d8d831e7303126643f9",
+  "snapshot_date": "2026-11-14",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af6b501a646ec450d5b0f45",
+      "title": "Alibaba два месяца держала в секрете планы вывести своего производителя ИИ-чипов на биржу",
+      "dzen_url": "https://dzen.ru/a/ava1AaZG7EUNWw9F",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Китайская Alibaba 10 ноября объявила о планах вывести на Гонконгскую биржу своего разработчика ИИ-чипов T-Head. Оказалось, что компания подала заявку ещё 11 сентября, причём конфиденциально. Теперь биржа разрешила продолжить процедуру выделения подразделения. T-Head основана в 2018 году и занимается разработкой процессоров для дата-центров и искусственного интеллекта. В сентябре компания представила ускоритель Zhenwu",
+      "published_at_utc": "2026-11-14T04:01:29+00:00"
+    },
+    {
+      "dzen_id": "6af6b43862a8a417482011b6",
+      "title": "Китайский вуз из чёрного списка США купил NVIDIA H200. Объявление исчезло",
+      "dzen_url": "https://dzen.ru/a/ava0OGKopBdIIBG2",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Северо-Западный политехнический университет в китайском Сиане закупил два ИИ-ускорителя NVIDIA H200 за 874 700 юаней (около $123 тысяч), хотя находится в американском экспортном чёрном списке. Документ о покупке появился на сайте университета 21 октября. После расследования Reuters, опубликованного 11 ноября, страница перестала открываться. Закупку оформил факультет управления. Продавцом указана китайская компания Sh",
+      "published_at_utc": "2026-11-14T03:03:07+00:00"
+    },
     {
       "dzen_id": "6af698f5c39de244cb70c210",
       "title": "TSMC вложит до миллиарда в OpenAI и Anthropic",
