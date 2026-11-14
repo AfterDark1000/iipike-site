@@ -156,6 +156,12 @@
       "utc_date": "2026-11-13",
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
       "source_title": "Gemini 4 Hydrogen"
+    },
+    {
+      "id": "762061e9584cb869902a",
+      "utc_date": "2026-11-14",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
+      "source_title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard"
     }
   ]
 }

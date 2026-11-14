@@ -1,5 +1,12 @@
 [
   {
+    "id": "762061e9584cb869902a",
+    "date": "2026-11-14",
+    "title": "Nvidia учит ИИ-агентов экономить: Switchyard выбирает модель под конкретную задачу",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/"
+  },
+  {
     "id": "80edea19d5fdcf288e59",
     "date": "2026-11-13",
     "title": "Google представила Gemini 4 Hydrogen: быстрый ИИ для ежедневной работы и сложных агентов",
