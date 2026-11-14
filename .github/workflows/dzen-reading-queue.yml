@@ -30,6 +30,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
+      - name: Checkout verified Dzen link resolver (read-only)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Test Dzen link resolver before preparing reader copies
+        run: node --test tests/test_dzen_crosslink_rewrite.cjs
       - name: Build Markdown article views and GitHub-only queue
         uses: actions/github-script@v7
         with:
@@ -109,6 +116,8 @@ jobs:
             if (!Array.isArray(news) || catalog.schema_version !== 1 ||
                 !Array.isArray(catalog.entries)) throw new Error('Invalid catalogs; leave dashboard unchanged');
 
+            const rewriteDzenLinks = require(process.env.GITHUB_WORKSPACE +
+              '/scripts/dzen_crosslink_rewrite.cjs').createResolver(news, catalog.entries);
             const byId = new Map(news.map(r => [r.id, r]));
             const byTitle = new Map();
             const byDzenId = new Map();
@@ -173,8 +182,13 @@ jobs:
                 throw new Error('Invalid Dzen heading: ' + id);
               }
               const mdPath = root + id + '.md';
-              // The source body is not edited: retain Dzen links, formatting, quotes, paragraphs.
-              desired.set(mdPath, '# ' + title + '\n\n' + articleBody + '\n');
+              // Only the generated Dzen reading copy is modified. The approved
+              // Markdown and site's HTML remain unchanged. Unverified site
+              // links remain visible and must be checked manually.
+              const prepared = rewriteDzenLinks(articleBody);
+              if (prepared.unresolved.length) core.warning('DZEN_CROSSLINK_REVIEW: ' + id +
+                ' -> ' + prepared.unresolved.join(', '));
+              desired.set(mdPath, '# ' + title + '\n\n' + prepared.text + '\n');
               const siteRow = byId.get(id);
               const same = byTitle.get(normalize(title)) || [];
               let dzenUrl = null, dzenDate = null, ambiguous = false;
@@ -208,13 +222,15 @@ jobs:
               }
               records.push({
                 id, title, mdPath, legacy, coverPath:coverById.get(id), siteRow, dzenUrl,
-                dzenDate, ambiguous, approvedAt:story.approved_at,
+                dzenDate, ambiguous, unresolvedSiteLinks:prepared.unresolved,
+                approvedAt:story.approved_at,
                 siteForecast:websiteForecast.get(id) || null
               });
             }
             const row = (item, i, kind) => {
               const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')' +
-                (item.legacy ? ' ⚠️ старый формат' : '');
+                (item.legacy ? ' ⚠️ старый формат' : '') +
+                (item.unresolvedSiteLinks.length ? ' ⚠️ ссылки на сайт — проверить' : '');
               const site = item.siteRow ?
                 '[На сайте](https://iipike.ru/articles/' + item.id + '/)' : 'Пока в очереди сайта';
               const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
@@ -251,9 +267,11 @@ jobs:
                 done.length + ' · **Не подтверждены, уже на сайте:** ' + pendingSite.length +
                 ' · **Не подтверждены, ждут сайт:** ' + pendingInbox.length, '',
               '**Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown ' +
-                'с заголовком и точным утверждённым текстом для Дзена. ' +
+                'с заголовком и утверждённым текстом для Дзена. ' +
                 'Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). ' +
-                'Обложка открывается отдельно. Ссылки на Дзен внутри статей не заменены ссылками сайта.', '',
+                'Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ ' +
+                'в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. ' +
+                'Ссылки без подтверждённого соответствия помечаются для ручной проверки.', '',
               '**Важно:** «не подтверждена» означает, что публикация не найдена однозначно в проверенном ' +
                 'каталоге Дзена или ссылках сайта. Это **не доказывает**, что её нет в Дзене. ' +
                 'Черновики Дзена автоматически не отслеживаются. ⚠️ Старый формат означает, что ' +
