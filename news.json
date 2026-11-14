@@ -5209,5 +5209,29 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Новые модели OpenAI, Google и Anthropic хотят запретить через суд",
+    "summary": "Четыре американские некоммерческие организации подали в суд иск против OpenAI, Google, Anthropic, Meta и ИИ-подразделения SpaceX. Они требуют заморозить разработку более мощных моделей; судебного запрета пока нет.",
+    "published": "2026-11-14",
+    "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/",
+    "cover": "assets/editorial/openai-google-anthropic-frontier-ai-lawsuit-20261112.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T02:01:11Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+    "url": "articles/openai-google-anthropic-frontier-ai-lawsuit-20261112/",
+    "topics": [
+      "society",
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "google",
+      "anthropic",
+      "meta"
+    ],
+    "products": []
   }
 ]
