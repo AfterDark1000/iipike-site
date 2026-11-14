@@ -653,6 +653,18 @@
           "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
         }
       ]
+    },
+    {
+      "key": "databricks",
+      "name": "Databricks",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "databricks-genie-unvarnished-truth-20261111",
+          "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
+        }
+      ]
     }
   ],
   "products": [
@@ -1307,6 +1319,19 @@
         {
           "article_id": "openai-chatgpt-wallet-dots-20261113",
           "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+        }
+      ]
+    },
+    {
+      "key": "databricks-genie",
+      "name": "Databricks Genie",
+      "company": "databricks",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "databricks-genie-unvarnished-truth-20261111",
+          "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
         }
       ]
     }
