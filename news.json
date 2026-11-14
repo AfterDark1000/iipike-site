@@ -5277,5 +5277,26 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд",
+    "summary": "Экспериментальная система Google SensorWM моделирует, как изменения сна, ходьбы и активности могут повлиять на показатели здоровья за 12 недель. В основе — данные носимых устройств и 125 сценариев распорядка.",
+    "published": "2026-11-14",
+    "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+    "cover": "assets/editorial/google-sensorwm-wearables-health-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T05:30:50Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "google-sensorwm-wearables-health-20261111",
+    "url": "articles/google-sensorwm-wearables-health-20261111/",
+    "topics": [
+      "health",
+      "science"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
