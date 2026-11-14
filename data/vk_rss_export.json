@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "mode": "pilot",
-  "cutover_at_utc": "2026-11-13T19:00:00Z",
-  "max_items": 1
+  "mode": "active",
+  "cutover_at_utc": "2026-11-14T04:14:00Z",
+  "max_items": 20
 }
