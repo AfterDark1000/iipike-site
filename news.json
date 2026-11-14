@@ -5134,7 +5134,9 @@
       "safety"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af82a86f8ad2a1742724f36",
+    "site_first_dzen_url": "https://dzen.ru/a/avgqhvitKhdCck82"
   },
   {
     "title": "В приложениях Grok нашли пароли и данные пациентов",
@@ -5157,7 +5159,9 @@
     ],
     "products": [
       "grok"
-    ]
+    ],
+    "site_first_dzen_id": "6af82b83ce20cc07c97f8a2e",
+    "site_first_dzen_url": "https://dzen.ru/a/avgrg84gzAfJf4ou"
   },
   {
     "title": "Дженсен Хуанг ушёл с поста главы NVIDIA на фоне шпионского скандала",
@@ -5203,7 +5207,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6af82bded5e88120c5eaa7dc",
+    "site_first_dzen_url": "https://dzen.ru/a/avgr3tXogSDF6qfc"
   },
   {
     "title": "Китайские ИИ-компании спешат занять зарубежные серверы NVIDIA из-за угрозы нового запрета США",
@@ -5224,7 +5230,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af82c63f38bf42a8fcd9449",
+    "site_first_dzen_url": "https://dzen.ru/a/avgsY_OL9CqPzZRJ"
   },
   {
     "title": "Новые модели OpenAI, Google и Anthropic хотят запретить через суд",
