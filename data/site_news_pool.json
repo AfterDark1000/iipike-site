@@ -400,11 +400,11 @@
       "summary": "11 ноября: обновлённый Genie анализирует корпоративные данные и неудобные показатели; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T03:43:28+00:00",
       "review_started_at": "2026-11-14T15:00:18.716Z",
-      "closed_at": null,
-      "article_id": null,
+      "closed_at": "2026-11-14T15:15:58.123Z",
+      "article_id": "databricks-genie-unvarnished-truth-20261111",
       "note": "Ревизия 13.11: №50 — дубль этого же анонса Databricks Genie и отклонён. Для фактчекинга и итоговой одной статьи взять официальный пресс-релиз: https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex . Различать действующие и лишь анонсированные функции.\n14.11.2026, редактор №14: проверены датированный официальный анонс Databricks от 11.11, продуктовый блог и интервью TechCrunch Джули Борт от 11.11. Али Годси показал собственные чаты с Genie: анализ низких оценок сотрудников, предложений руководителей и неудачных переговоров с клиентом; 12 тыс. сотрудников по TechCrunch. Новый автономный Always-on Genie, Genie Search и Ontology Manager только ожидают preview/beta; обычная Genie и Genie Ontology уже GA. Архив: прямых дублей нет, есть смежная статья про Business Ontology Snowflake. В реестре «genie» — продукт Google, нельзя использовать эту метку; Databricks/Genie требуют кандидатов после «берём». Следующий шаг — утверждение статьи, Threads, X и VK."
     },
     {
