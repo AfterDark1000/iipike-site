@@ -83,8 +83,10 @@ def eligible(root, rows, settings):
             continue
         if when < cutover:
             continue
-        title = row.get("title")
-        summary = row.get("summary")
+        # Only the VK feed sees VK-specific editorial copy. Historical rows
+        # (and editors who omit those fields) keep their exact previous text.
+        title = row.get("vk_title", row.get("title"))
+        summary = row.get("vk_summary", row.get("summary"))
         if (not isinstance(title, str) or not 1 <= len(title) <= 200 or
                 not isinstance(summary, str) or not 1 <= len(summary) <= 2000):
             continue
@@ -135,11 +137,13 @@ def render(root, rows, *, settings=None):
         images[root / relative] = jpg
         img_url = BASE + "/" + relative
         url = BASE + "/" + row["url"]
+        title = row.get("vk_title", row["title"])
+        summary = row.get("vk_summary", row["summary"])
         description = ('<p><img src="' + escape(img_url, quote=True)
-                       + '" alt="' + escape(row["title"], quote=True)
-                       + '"></p><p>' + escape(row["summary"]) + '</p>')
+                       + '" alt="' + escape(title, quote=True)
+                       + '"></p><p>' + escape(summary) + '</p>')
         items.append(
-            "<item><title>" + escape(row["title"]) + "</title>"
+            "<item><title>" + escape(title) + "</title>"
             "<link>" + escape(url) + "</link>"
             '<guid isPermaLink="true">' + escape(url) + "</guid>"
             "<pubDate>" + format_datetime(when, usegmt=True) + "</pubDate>"
