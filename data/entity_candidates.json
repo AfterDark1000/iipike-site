@@ -605,6 +605,54 @@
           "source_url": "https://gdconf.com/state-of-the-game-industry-november-2026"
         }
       ]
+    },
+    {
+      "key": "dark-sky-films",
+      "name": "Dark Sky Films",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+        }
+      ]
+    },
+    {
+      "key": "bazelevs",
+      "name": "Bazelevs",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+        }
+      ]
+    },
+    {
+      "key": "graphic-india",
+      "name": "Graphic India",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+        }
+      ]
+    },
+    {
+      "key": "sya-concept",
+      "name": "S’YA Concept",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+        }
+      ]
     }
   ],
   "products": [
