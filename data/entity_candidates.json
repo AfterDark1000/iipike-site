@@ -509,6 +509,18 @@
           "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
         }
       ]
+    },
+    {
+      "key": "podqi",
+      "name": "Podqi",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "podqi-ai-shopping-fake-stores-20261112",
+          "source_url": "https://podqi.com/research/ai-search-brand-risk"
+        }
+      ]
     }
   ],
   "products": [
