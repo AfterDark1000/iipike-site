@@ -144,7 +144,9 @@ async function openText(o){var url=raw(o.md);if(!url){alert("Ссылка на �
 try{var res=await fetch(url+"?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw Error("HTTP "+res.status);
 var txt=await res.text();var parts=/^# (.+)\r?\n\r?\n/.exec(txt);var title=parts?parts[1]:o.title;var body=parts?txt.slice(parts[0].length):txt;
 activeStory={title:title,markdown:body,html:blocks(body)};
-document.getElementById("articleHeading").textContent=title;document.getElementById("articlePreview").innerHTML=activeStory.html;showCopyFeedback("");dialog.showModal()}
+document.getElementById("articleHeading").textContent=title;document.getElementById("articlePreview").innerHTML=activeStory.html;showCopyFeedback("");
+if(/\]\(https:\/\/iipike\.ru\/articles\//.test(body))showCopyFeedback("⚠️ В тексте для Дзена осталась ссылка на сайт ХПИИ. Проверь, есть ли соответствующая публикация в Дзене, перед копированием.",true);
+dialog.showModal()}
 catch(e){alert("Не удалось получить исходный текст: "+e.message)}}
 function showCopyFeedback(message,warning){var feedback=document.getElementById("copyFeedback");feedback.textContent=message;feedback.classList.toggle("warning",!!warning)}
 function plainPreview(){return document.getElementById("articlePreview").innerText.trim()}
