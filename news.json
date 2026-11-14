@@ -5342,5 +5342,33 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ChatGPT, Gemini и Perplexity отправляли покупателей в фальшивые магазины",
+    "summary": "В исследовании Podqi из 6795 ответов ChatGPT, Gemini и Perplexity на вопросы о покупках в 9% встретились рискованные сайты; среди 4437 обнаруженных доменов — 351 поддельный и 367 неработающих. В части ответов ИИ рекомендовал такие адреса.",
+    "published": "2026-11-14",
+    "source_url": "https://podqi.com/research/ai-search-brand-risk",
+    "cover": "assets/editorial/podqi-ai-shopping-fake-stores-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🛒 ChatGPT, Gemini и Perplexity советовали ПОДДЕЛЬНЫЕ МАГАЗИНЫ",
+    "vk_summary": "Podqi проверила 6795 ответов ИИ о покупках. В 9% встречались подозрительные сайты, включая поддельные магазины и неработающие адреса. Perplexity показала их в 15% ответов, ChatGPT — в 8%, Gemini — в 4%.",
+    "published_at_utc": "2026-11-14T09:00:53Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "podqi-ai-shopping-fake-stores-20261112",
+    "url": "articles/podqi-ai-shopping-fake-stores-20261112/",
+    "topics": [
+      "business",
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "google",
+      "perplexity"
+    ],
+    "products": [
+      "chatgpt",
+      "gemini"
+    ]
   }
 ]
