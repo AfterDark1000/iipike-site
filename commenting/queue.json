@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T16:43:11.507340Z",
+  "updated_at": "2026-11-14T21:24:57.425007Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T16:43:11.507340Z",
-      "last_success_at": "2026-11-14T16:43:11.507340Z",
+      "checked_at": "2026-11-14T21:24:57.425007Z",
+      "last_success_at": "2026-11-14T21:24:57.425007Z",
       "error": null,
-      "fresh_matches": 3
+      "fresh_matches": 5
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T16:43:11.507340Z",
-      "last_success_at": "2026-11-14T16:43:11.507340Z",
+      "checked_at": "2026-11-14T21:24:57.425007Z",
+      "last_success_at": "2026-11-14T21:24:57.425007Z",
       "error": null,
-      "fresh_matches": 16
+      "fresh_matches": 14
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T16:43:11.507340Z",
-      "last_success_at": "2026-11-14T16:43:11.507340Z",
+      "checked_at": "2026-11-14T21:24:57.425007Z",
+      "last_success_at": "2026-11-14T21:24:57.425007Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T16:43:11.507340Z",
-      "last_success_at": "2026-11-14T16:43:11.507340Z",
+      "checked_at": "2026-11-14T21:24:57.425007Z",
+      "last_success_at": "2026-11-14T21:24:57.425007Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -54,11 +54,53 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-14",
-    "attempted": 12
+    "date": "2026-11-15",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "96d36d7f295cf3e539c85d37",
+      "title": "Флот спутников под управлением ИИ: стартап из Сиэтла запустил платформу для космических группировок",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/14/flot-sputnikov-pod-upravleniem-ii-startap-iz-sietla-zapustil-platformu-dlia-kosmiceskix-gruppirovok.html",
+      "published_at": "2026-11-14T19:51:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-14T21:24:57.425007Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-14T21:24:57.425007Z",
+      "reason": "Не прошёл проверку: В статье не указано, что стартап базируется в Сиэтле.",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-14T21:24:57.425007Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c127964f20712902353796e9",
+      "title": "SpaceX уволила 60 разработчиков Grok Imagine, оставив ИИ-генератор почти без команды",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/14/spacex-uvolila-60-razrabotcikov-grok-imagine-ostaviv-ii-generator-pocti-bez-komandy.html",
+      "published_at": "2026-11-14T16:54:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-14T21:24:57.425007Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Уволить шестьдесят разработчиков Grok Imagine и оставить горстку энтузиастов — отличный способ показать, куда теперь дует ветер в SpaceX после всех этих многомиллиардных слияний.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-14T21:24:57.425007Z",
+      "reason": "Замечаем масштаб сокращений в подразделении и смену фокуса компании.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-14T21:24:57.425007Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "4b43ac6e07f7fdbe4add3d41",
       "title": "Alphabet занимает на ИИ уже в Гонконге и Сингапуре. Спрос на первые облигации превысил $7 млрд",
@@ -134,10 +176,14 @@
       "first_seen_at": "2026-11-14T16:43:11.507340Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Распустить отдельное подразделение по робототехнике, потому что GPT-6 Astra вдруг все смогла в симуляции — классический маневр. Главное, чтобы виртуальные успехи модели не разбились о реальный цех с арматурой.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-14T21:24:57.425007Z",
+      "reason": "Указываем на резкий поворот OpenAI и контраст между симуляцией и реальным железом.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-14T21:24:57.425007Z"
     },
     {
       "id": "608b4b23a674592a2361aaba",
