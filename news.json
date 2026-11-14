@@ -5256,5 +5256,26 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Google научила ИИ искать причины болезней в отдельных клетках",
+    "summary": "Google DeepMind представила AlphaGenome 2: модель исследует влияние вариантов ДНК на активность генов в отдельных типах и состояниях клеток. Доступна учёным через API.",
+    "published": "2026-11-14",
+    "source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+    "cover": "assets/editorial/google-alphagenome-2-cell-variants-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T04:30:45Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "google-alphagenome-2-cell-variants-20261111",
+    "url": "articles/google-alphagenome-2-cell-variants-20261111/",
+    "topics": [
+      "health",
+      "models"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
