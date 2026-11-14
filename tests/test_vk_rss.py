@@ -41,6 +41,30 @@ class VKRSS(unittest.TestCase):
         self.assertEqual(len(ET.fromstring(xml).findall("./channel/item")), 0)
         self.assertFalse((self.root / "assets/vk").exists())
 
+    def test_vk_editorial_copy_only_changes_feed_text(self):
+        row = self.row("editorial-vk-story")
+        row["vk_title"] = "🧬 ИИ нашёл СЛЕД В ДНК"
+        row["vk_summary"] = "Учёные проверяют, как изменения ДНК влияют на гены."
+        xml, images = vk.render(self.root, [row], settings=self.active())
+        item = ET.fromstring(xml).find("./channel/item")
+        self.assertEqual(item.findtext("title"), row["vk_title"])
+        desc = item.findtext("description")
+        self.assertIn(row["vk_summary"], desc)
+        self.assertNotIn(row["summary"], desc)
+        self.assertIn("alt=\\\"", desc)
+        self.assertEqual(item.findtext("link"),
+                         "https://iipike.ru/articles/editorial-vk-story/")
+        self.assertEqual(item.findtext("guid"),
+                         "https://iipike.ru/articles/editorial-vk-story/")
+        self.assertEqual(len(images), 1)
+
+    def test_missing_vk_copy_keeps_original_title_summary(self):
+        row = self.row("plain-story")
+        xml, _ = vk.render(self.root, [row], settings=self.active())
+        item = ET.fromstring(xml).find("./channel/item")
+        self.assertEqual(item.findtext("title"), row["title"])
+        self.assertIn("Сайт говорит:", item.findtext("description"))
+
     def test_new_article_has_jpeg_and_first_image_in_description(self):
         rows = [self.row("past-story", date="2026-11-13T18:00:00Z"),
                 self.row("new-story")]
