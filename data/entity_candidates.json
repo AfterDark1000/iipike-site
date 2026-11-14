@@ -521,6 +521,42 @@
           "source_url": "https://podqi.com/research/ai-search-brand-risk"
         }
       ]
+    },
+    {
+      "key": "samsung",
+      "name": "Samsung",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+        }
+      ]
+    },
+    {
+      "key": "warby-parker",
+      "name": "Warby Parker",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+        }
+      ]
+    },
+    {
+      "key": "gentle-monster",
+      "name": "Gentle Monster",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+        }
+      ]
     }
   ],
   "products": [
@@ -1132,6 +1168,19 @@
         {
           "article_id": "whoop-humans-heartbeat-social-network-20261112",
           "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
+        }
+      ]
+    },
+    {
+      "key": "intelligent-eyewear",
+      "name": "Intelligent Eyewear",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
         }
       ]
     }
