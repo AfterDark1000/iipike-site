@@ -5370,5 +5370,30 @@
       "chatgpt",
       "gemini"
     ]
+  },
+  {
+    "title": "Google дала Gemini глаза — теперь он видит то же, что и вы",
+    "summary": "Google открыла предзаказы на умные очки Intelligent Eyewear с Gemini, камерой 12 Мп и голосовыми ответами. Samsung разработала электронику, Warby Parker и Gentle Monster — оправы; старт продаж 10 декабря, цена от $395.",
+    "published": "2026-11-14",
+    "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/",
+    "cover": "assets/editorial/google-intelligent-eyewear-gemini-preorders-20261112.webp",
+    "rubric": "news",
+    "vk_title": "👓 Google открыла предзаказы на ОЧКИ С GEMINI за $395",
+    "vk_summary": "Очки Google и Samsung распознают предметы через 12-мегапиксельную камеру, переводят речь и подсказывают маршрут голосом. Без экрана в линзах, до 9 часов работы. Предзаказы уже идут, продажи начнутся 10 декабря в США и Южной Корее.",
+    "published_at_utc": "2026-11-14T10:15:32Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "google-intelligent-eyewear-gemini-preorders-20261112",
+    "url": "articles/google-intelligent-eyewear-gemini-preorders-20261112/",
+    "topics": [
+      "engineering",
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
