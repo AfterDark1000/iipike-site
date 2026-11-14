@@ -5233,5 +5233,28 @@
       "meta"
     ],
     "products": []
+  },
+  {
+    "title": "Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов",
+    "summary": "Cisco планирует добавить Claude Mythos в AI Defense, чтобы проводить санкционированные проверки безопасности корпоративных ИИ-агентов. Вначале новая функция предназначена для отдельных корпоративных клиентов.",
+    "published": "2026-11-14",
+    "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming",
+    "cover": "assets/editorial/cisco-claude-mythos-ai-defense-20261109.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T03:15:34Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-09",
+    "id": "cisco-claude-mythos-ai-defense-20261109",
+    "url": "articles/cisco-claude-mythos-ai-defense-20261109/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
