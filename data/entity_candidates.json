@@ -497,6 +497,18 @@
           "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
         }
       ]
+    },
+    {
+      "key": "whoop",
+      "name": "WHOOP",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "whoop-humans-heartbeat-social-network-20261112",
+          "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
+        }
+      ]
     }
   ],
   "products": [
@@ -1095,6 +1107,19 @@
         {
           "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
           "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
+        }
+      ]
+    },
+    {
+      "key": "whoop-humans",
+      "name": "WHOOP Humans",
+      "company": "whoop",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "whoop-humans-heartbeat-social-network-20261112",
+          "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
         }
       ]
     }
