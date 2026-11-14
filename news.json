@@ -5535,5 +5535,24 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ научили снимать будущее",
+    "summary": "Институт фундаментальных моделей при MBZUAI выпустил открытую PAN 2: модель создаёт до 20 секунд видео возможных последствий действий по картинке и текстовому описанию, а в тестах разработчиков полностью воспроизвела 34% многошаговых сценариев.",
+    "published": "2026-11-14",
+    "source_url": "https://ifm.ai/pan2/press-release/",
+    "cover": "assets/editorial/mbzuai-pan2-world-model-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T18:00:55Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "mbzuai-pan2-world-model-20261110",
+    "url": "articles/mbzuai-pan2-world-model-20261110/",
+    "topics": [
+      "models",
+      "video"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
