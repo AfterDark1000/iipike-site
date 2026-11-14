@@ -5421,5 +5421,28 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Трампа заподозрили в скрытом налоге на экспорт чипов NVIDIA в Китай",
+    "summary": "Рон Уайден и Ричард Нил начали расследование схемы американских пошлин и лицензирования поставок NVIDIA H200 в Китай. Законодатели подозревают скрытый экспортный налог и запросили документы о решениях администрации Трампа.",
+    "published": "2026-11-14",
+    "source_url": "https://www.finance.senate.gov/ranking-members-news/wyden-and-neal-begin-to-investigate-administration-scheme-to-take-cut-of-nvidia-ai-chip-sales-to-chinese-companies-trump-and-commerce-department-reportedly-ignored-warnings-about-former-ceos/",
+    "cover": "assets/editorial/nvidia-china-chip-tariff-congress-probe-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🧾 ТРАМПА заподозрили в скрытом НАЛОГЕ на чипы NVIDIA для Китая",
+    "vk_summary": "Демократы Конгресса США расследуют экспорт NVIDIA H200 в Китай. Чипы сначала должны пройти проверку в США, где на них распространяется пошлина 25%. Законодатели подозревают, что под импортным сбором скрывается налог на экспорт, и требуют сохранить документы Минторга.",
+    "published_at_utc": "2026-11-14T12:15:42Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "nvidia-china-chip-tariff-congress-probe-20261112",
+    "url": "articles/nvidia-china-chip-tariff-congress-probe-20261112/",
+    "topics": [
+      "society",
+      "infrastructure"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
