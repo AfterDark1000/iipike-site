@@ -5554,5 +5554,25 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Японцы открыли пять ИИ-моделей для беспилотных машин",
+    "summary": "Японская TIER IV представила пять ИИ-моделей для автономного вождения на платформе Autoware. Варианты различаются используемыми датчиками, картами, вычислительным оборудованием и степенью готовности к дорожным испытаниям.",
+    "published": "2026-11-15",
+    "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving",
+    "cover": "assets/editorial/tier-iv-autoware-five-models-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T19:15:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "tier-iv-autoware-five-models-20261111",
+    "url": "articles/tier-iv-autoware-five-models-20261111/",
+    "topics": [
+      "models"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
