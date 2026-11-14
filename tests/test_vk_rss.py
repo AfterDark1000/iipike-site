@@ -51,7 +51,7 @@ class VKRSS(unittest.TestCase):
         desc = item.findtext("description")
         self.assertIn(row["vk_summary"], desc)
         self.assertNotIn(row["summary"], desc)
-        self.assertIn("alt=\\\"", desc)
+        self.assertIn('alt="' + row["vk_title"] + '"', desc)
         self.assertEqual(item.findtext("link"),
                          "https://iipike.ru/articles/editorial-vk-story/")
         self.assertEqual(item.findtext("guid"),
