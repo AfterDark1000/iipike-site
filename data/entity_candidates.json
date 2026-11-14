@@ -665,6 +665,30 @@
           "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
         }
       ]
+    },
+    {
+      "key": "office-for-students",
+      "name": "Office for Students",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "uk-ofs-ai-free-assessments-20261111",
+          "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees"
+        }
+      ]
+    },
+    {
+      "key": "advance-he",
+      "name": "Advance HE",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "uk-ofs-ai-free-assessments-20261111",
+          "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees"
+        }
+      ]
     }
   ],
   "products": [
