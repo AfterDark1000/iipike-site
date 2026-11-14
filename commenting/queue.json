@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T22:08:46.095144Z",
+  "updated_at": "2026-11-14T02:40:14.670697Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T22:08:46.095144Z",
-      "last_success_at": "2026-11-13T22:08:46.095144Z",
+      "checked_at": "2026-11-14T02:40:14.670697Z",
+      "last_success_at": "2026-11-14T02:40:14.670697Z",
       "error": null,
       "fresh_matches": 15
     },
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T22:08:46.095144Z",
-      "last_success_at": "2026-11-13T22:08:46.095144Z",
+      "checked_at": "2026-11-14T02:40:14.670697Z",
+      "last_success_at": "2026-11-14T02:40:14.670697Z",
       "error": null,
-      "fresh_matches": 19
+      "fresh_matches": 18
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-13T22:08:46.095144Z",
-      "last_success_at": "2026-11-13T22:08:46.095144Z",
+      "checked_at": "2026-11-14T02:40:14.670697Z",
+      "last_success_at": "2026-11-14T02:40:14.670697Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -41,21 +41,21 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-13T22:08:46.095144Z",
+      "status": "error",
+      "checked_at": "2026-11-14T02:40:14.670697Z",
       "last_success_at": "2026-11-13T22:08:46.095144Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Expecting property name enclosed in double quotes: line 6 column 7 (char 89)"
   },
   "usage": {
     "date": "2026-11-14",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -134,10 +134,12 @@
       "first_seen_at": "2026-11-13T22:08:46.095144Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "545cfc2b7f49df1aa7a466ff",
@@ -151,10 +153,12 @@
       "first_seen_at": "2026-11-13T22:08:46.095144Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "5fcd1a4eeb4c28200cd5cd7a",
@@ -168,10 +172,12 @@
       "first_seen_at": "2026-11-13T22:08:46.095144Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-14T02:40:14.670697Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "e383a698d39f0cf048b16fb3",
