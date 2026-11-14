@@ -430,9 +430,9 @@
       "summary": "11 ноября: регулятор Office for Students предложил очные и другие устойчивые к генеративному ИИ формы экзаменов.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-14T15:19:08.134Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
