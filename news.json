@@ -5516,5 +5516,24 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Роботам дали «мышечную память» — теперь они справляются с 92% испытаний",
+    "summary": "Исследователи MIT и Университета Карнеги — Меллона разработали Workspace Models: компактная память помогает роботам удерживать важные события и быстрее действовать. В четырёх лабораторных заданиях средний успех достиг 91,5%.",
+    "published": "2026-11-14",
+    "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills",
+    "cover": "assets/editorial/mit-workspace-models-robot-memory-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T16:45:34Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "mit-workspace-models-robot-memory-20261110",
+    "url": "articles/mit-workspace-models-robot-memory-20261110/",
+    "topics": [
+      "models",
+      "science"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
