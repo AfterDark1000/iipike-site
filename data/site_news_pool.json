@@ -1030,9 +1030,9 @@
       "summary": "12 ноября: умные очки с Gemini в партнёрстве с Warby Parker, Gentle Monster и Samsung. Начало продаж назначено на декабрь.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-13T16:36:00.299Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-14T07:36:25.454Z",
       "closed_at": null,
       "article_id": null,
       "note": "Официальный анонс Google.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. Google подтвердила 12.11 начало предзаказов очков Gemini; старт продаж 10.12. Ограничение: учётные записи США и Южной Кореи, совместимые устройства. Первоисточник для проверки: https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
