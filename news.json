@@ -5395,5 +5395,31 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "ChatGPT дали кошелёк — теперь он может ходить по магазинам вместо вас",
+    "summary": "OpenAI запустила ChatGPT Wallet для ИИ-агентов dots: они могут оформлять покупки с помощью виртуальных платёжных реквизитов после биометрического подтверждения владельца. Постепенный запуск для подходящих пользователей ChatGPT Pro в США.",
+    "published": "2026-11-14",
+    "source_url": "https://openai.com/index/introducing-chatgpt-wallet/",
+    "cover": "assets/editorial/openai-chatgpt-wallet-dots-20261113.webp",
+    "rubric": "news",
+    "vk_title": "💳 ChatGPT получил КОШЕЛЁК — теперь ИИ может ОПЛАЧИВАТЬ покупки",
+    "vk_summary": "OpenAI запустила ChatGPT Wallet для агентов dots. ИИ сможет выбрать товар и провести оплату, но каждую покупку подтверждает владелец карты через Face ID или отпечаток пальца. Действительный номер карты агент не видит. Запуск — постепенно для Pro 18+ в США.",
+    "published_at_utc": "2026-11-14T11:15:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "openai-chatgpt-wallet-dots-20261113",
+    "url": "articles/openai-chatgpt-wallet-dots-20261113/",
+    "topics": [
+      "agents",
+      "finance",
+      "apps"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
