@@ -5465,5 +5465,24 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Учёные научили роботов падать в 6,5 раза реже",
+    "summary": "Учёные Мичиганского университета представили PRISM — модуль управления роботами, который снизил частоту падений в симуляции и повысил успешность захвата предмета настоящим манипулятором.",
+    "published": "2026-11-14",
+    "source_url": "https://news.engin.umich.edu/2026/11/prism-a-neural-network-component-for-better-robotic-motor-control/",
+    "cover": "assets/editorial/umich-prism-robot-motion-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-14T14:30:48Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "umich-prism-robot-motion-20261110",
+    "url": "articles/umich-prism-robot-motion-20261110/",
+    "topics": [
+      "science",
+      "models"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
