@@ -22,7 +22,7 @@ from PIL import Image, UnidentifiedImageError
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.publish_approved_article import approved_article, publish
+from scripts.publish_approved_article import approved_article, publish, validated_vk_fields
 from scripts.site_rubrics import RUBRICS
 from scripts.site_rich_text import validate_blocks, markdown_to_blocks, IMAGE_SOURCE, image_asset
 from scripts.site_related import explicit_site_crosslinks
@@ -34,7 +34,7 @@ STORY_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 COVER_EXTENSIONS = {"webp": "WEBP", "png": "PNG", "jpg": "JPEG", "jpeg": "JPEG"}
 ALLOWED_FIELDS = {
     "schema_version", "id", "status", "approved_by", "approved_at", "title",
-    "dzen_title", "summary", "rubric", "section", "source_url", "source_title",
+    "dzen_title", "summary", "vk_title", "vk_summary", "rubric", "section", "source_url", "source_title",
     "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "companies", "products", "site_publish_at", "site_queue", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
@@ -69,6 +69,7 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
     title = required_text(data, "title", 500)
     if title != required_text(data, "dzen_title", 500):
         raise ValueError("Dzen and site title must match for existing crosspost queue")
+    validated_vk_fields(data)
     if required_text(data, "rubric", 80) not in RUBRICS:
         raise ValueError("Unknown HPII rubric")
     for name, limit in (("summary", 1500), ("section", 120), ("source_title", 500)):
@@ -134,6 +135,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
                 load_registry(ROOT), data.get("companies"), data.get("products"))
             if (approved.get("companies", []), approved.get("products", [])) != selected:
                 raise ValueError("Published entity choices differ from editor-approved record")
+        if validated_vk_fields(approved) != validated_vk_fields(data):
+            raise ValueError("Published VK editorial fields differ from approved inbox source")
         if approved.get("site_crosslinks", {}) != data.get("site_crosslinks", {}):
             raise ValueError("Site-only crosslink mapping differs from inbox original")
         if ("paragraphs" in data and
@@ -265,6 +268,7 @@ def stage(root, story_id, *, apply=False, now=None):
         companies, products = validate_editor_entities(
             load_registry(ROOT), data.get("companies"), data.get("products"))
         approved["companies"], approved["products"] = companies, products
+    approved.update(validated_vk_fields(data))
     if "article_markdown" in data:
         # Keep the unmodified source next to generated blocks for provenance
         # and parity validation by the actual publisher.
