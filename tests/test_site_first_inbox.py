@@ -55,6 +55,31 @@ class SiteFirstInboxTests(unittest.TestCase):
         im.save(dest, format="WEBP", quality=88)
         self.assertGreater(dest.stat().st_size, 15_000)
 
+    def test_optional_vk_copy_reaches_approved_source_without_changing_article(self):
+        self.story["vk_title"] = "🧬 Google ищет ПРИЧИНЫ БОЛЕЗНЕЙ"
+        self.story["vk_summary"] = "ИИ исследует влияние вариантов ДНК на гены."
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(staged["vk_title"], self.story["vk_title"])
+        self.assertEqual(staged["vk_summary"], self.story["vk_summary"])
+        verified = approved_article(self.root, ID)
+        self.assertEqual(verified["title"], self.story["title"])
+        self.assertEqual(verified["summary"], self.story["summary"])
+        self.assertEqual(verified["vk_title"], self.story["vk_title"])
+
+    def test_vk_copy_is_optional_but_malformed_fields_are_rejected(self):
+        validate_story(self.root, ID, today=UTC.date())
+        for name, bad in (("vk_title", ""), ("vk_summary", "x" * 351),
+                          ("vk_title", "TEXT\nSECOND LINE"),
+                          ("vk_title", "<script>"), ("vk_summary", None)):
+            with self.subTest(name=name, value=bad):
+                self.story[name] = bad
+                self.save_story()
+                with self.assertRaisesRegex(ValueError, "VK editorial"):
+                    validate_story(self.root, ID, today=UTC.date())
+                self.story.pop(name)
+
     def test_editor_entity_choices_reach_approved_json_unchanged(self):
         self.story["companies"] = ["google"]
         self.story["products"] = ["gemini"]

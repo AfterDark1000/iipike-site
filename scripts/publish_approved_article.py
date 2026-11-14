@@ -49,6 +49,22 @@ def need_text(doc, key, limit=5000):
     return value.strip()
 
 
+def validated_vk_fields(data):
+    """Optional VK text never replaces the approved site title or article."""
+    result = {}
+    for key, limit in (("vk_title", 200), ("vk_summary", 350)):
+        if key not in data:
+            continue
+        value = data[key]
+        if (not isinstance(value, str) or not value.strip()
+                or value != value.strip() or len(value) > limit
+                or any(ord(c) < 32 or ord(c) == 127 for c in value)
+                or "<" in value or ">" in value):
+            raise ValueError("Invalid optional VK editorial field: " + key)
+        result[key] = value
+    return result
+
+
 def approved_article(root, slug):
     if not SLUG.fullmatch(slug):
         raise ValueError("Invalid article slug")
@@ -60,6 +76,7 @@ def approved_article(root, slug):
         raise ValueError("Article status must be explicitly approved")
     if data.get("slug") != slug:
         raise ValueError("Approved source slug does not match CLI argument")
+    validated_vk_fields(data)
     rubric = need_text(data, "rubric", 80)
     if rubric not in RUBRICS:
         raise ValueError("Invalid article rubric: " + rubric)
@@ -445,6 +462,7 @@ def publish(root, slug, apply=False):
         raise ValueError("Already published: cannot overwrite an existing article")
     row = {k: data[k] for k in ("title", "summary", "published",
                                "source_url", "cover", "rubric")}
+    row.update(validated_vk_fields(data))
     if data.get("published_at_utc"):
         row["published_at_utc"] = data["published_at_utc"]
     if "site_release_mode" in data:
