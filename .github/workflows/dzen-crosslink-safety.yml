@@ -1,0 +1,32 @@
+name: HPII Dzen crosslink safety (NO PUBLICATION)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/dzen_crosslink_rewrite.cjs'
+      - 'tests/test_dzen_crosslink_rewrite.cjs'
+      - '.github/workflows/dzen-reading-queue.yml'
+      - 'admin/index.html'
+      - '.github/workflows/dzen-crosslink-safety.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/dzen_crosslink_rewrite.cjs'
+      - 'tests/test_dzen_crosslink_rewrite.cjs'
+      - '.github/workflows/dzen-reading-queue.yml'
+      - 'admin/index.html'
+      - '.github/workflows/dzen-crosslink-safety.yml'
+permissions:
+  contents: read
+jobs:
+  test-dzen-crosslinks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check verified-site-link rewrite without publishing
+        run: |
+          node --test tests/test_dzen_crosslink_rewrite.cjs
+          python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -q
