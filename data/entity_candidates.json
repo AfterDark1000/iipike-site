@@ -593,6 +593,18 @@
           "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
         }
       ]
+    },
+    {
+      "key": "gdc-festival-of-gaming",
+      "name": "GDC Festival of Gaming",
+      "status": "candidate",
+      "first_seen": "2026-11-14",
+      "evidence": [
+        {
+          "article_id": "gdc-game-industry-ai-use-opinions-20261112",
+          "source_url": "https://gdconf.com/state-of-the-game-industry-november-2026"
+        }
+      ]
     }
   ],
   "products": [
