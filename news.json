@@ -5776,5 +5776,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ пишет за студентов — в Англии хотят экзамены без него",
+    "summary": "Регулятор высшего образования Англии Office for Students призвал университеты чаще проверять знания студентов без ИИ — на очных экзаменах, устных защитах и практических занятиях. Нового общего запрета на нейросети нет.",
+    "published": "2026-11-15",
+    "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees",
+    "cover": "assets/editorial/uk-ofs-ai-free-assessments-20261111.webp",
+    "rubric": "news",
+    "vk_title": "🎓 ИИ пишет задания за МИНУТЫ — в Англии требуют экзаменов без него",
+    "vk_summary": "Регулятор вузов Англии Office for Students призвал чаще проверять студентов без нейросетей: на очных экзаменах, устных защитах и практических заданиях. Исследование показало, что ИИ позволяет за минуты выполнять работы на высокую оценку. При этом обучение навыкам ИИ сохраняется.",
+    "published_at_utc": "2026-11-15T13:15:36Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "uk-ofs-ai-free-assessments-20261111",
+    "url": "articles/uk-ofs-ai-free-assessments-20261111/",
+    "topics": [
+      "education",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
