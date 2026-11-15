@@ -5582,5 +5582,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Alibaba показала Qwen 4 Max — и сразу назначила дату отключения",
+    "summary": "Alibaba выпустила предварительную мультимодальную Qwen4-Max-Preview с контекстом до миллиона токенов, поддержкой инструментов и видео. Тестовый доступ к этой версии ограничен сроком до 25 ноября 2026 года.",
+    "published": "2026-11-15",
+    "source_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models",
+    "cover": "assets/editorial/alibaba-qwen4-max-preview-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T02:00:53Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "alibaba-qwen4-max-preview-20261111",
+    "url": "articles/alibaba-qwen4-max-preview-20261111/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [
+      "alibaba"
+    ],
+    "products": [
+      "qwen"
+    ]
   }
 ]

@@ -346,7 +346,8 @@
       "description": "Исследования и ИИ-модели Alibaba, включая Qwen.",
       "article_ids": [
         "alibaba-agent-unapproved-transfer",
-        "alibaba-t-head-ipo-hong-kong-20261110"
+        "alibaba-t-head-ipo-hong-kong-20261110",
+        "alibaba-qwen4-max-preview-20261111"
       ]
     },
     {
@@ -895,7 +896,8 @@
       "company": "alibaba",
       "description": "Языковые модели семейства Qwen.",
       "article_ids": [
-        "alibaba-agent-unapproved-transfer"
+        "alibaba-agent-unapproved-transfer",
+        "alibaba-qwen4-max-preview-20261111"
       ]
     },
     {
