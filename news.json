@@ -5690,5 +5690,26 @@
       "elevenlabs"
     ],
     "products": []
+  },
+  {
+    "title": "Fish Audio научила ИИ отличать «угу» от «подожди!»",
+    "summary": "Fish Audio выпустила Live 3 — полнодуплексную голосовую модель, которая различает короткие подтверждения собеседника, настоящие перебивания и незавершённые реплики. Доступна для англоязычных голосовых агентов через платформу и API.",
+    "published": "2026-11-15",
+    "source_url": "https://fish.audio/blog/introducing-live-3/",
+    "cover": "assets/editorial/fish-audio-live-3-interruptions-20261110.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T08:00:54Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "fish-audio-live-3-interruptions-20261110",
+    "url": "articles/fish-audio-live-3-interruptions-20261110/",
+    "topics": [
+      "audio",
+      "agents"
+    ],
+    "companies": [
+      "fish-audio"
+    ],
+    "products": []
   }
 ]
