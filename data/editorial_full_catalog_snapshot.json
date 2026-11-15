@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "6c9f098c8a0637631cb3817ed3685087df62516e",
-  "source_blob_sha": "40767e5b943c93f43a7080468ad7c52c58bb79a3",
+  "source_commit": "6a8378dd68d9760f0d2dbd8eb1f155fea15291c8",
+  "source_blob_sha": "a61416d8ffc24476c938cdd30f1be8b064454f62",
   "snapshot_date": "2026-11-15",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af934a398579b1daf12b0b0",
+      "title": "Бекмамбетов спродюсировал триллер о парне, которого сводит с ума чат-бот",
+      "dzen_url": "https://dzen.ru/a/avk0o5hXmx2vErCw",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "У триллера про чат-бота, который сводит человека с ума, появился американский прокатчик. Компания Dark Sky Films 12 ноября приобрела права на прокат психологического триллера ANSWR в США. Фильм уже снят в Исландии, а среди его продюсеров — Тимур Бекмамбетов. Главную роль исполнил Мойзес Ариас, знакомый зрителям по сериалу «Фоллаут». Герой фильма Колтон Рэй переживает тяжёлую утрату и уезжает на отдалённую метеостанци",
+      "published_at_utc": "2026-11-15T17:04:18+00:00"
+    },
     {
       "dzen_id": "6af9343ff38bf42a8f22d7d7",
       "title": "Учёные научили роботов падать в 6,5 раза реже",
