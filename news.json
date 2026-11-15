@@ -5797,5 +5797,29 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "В Польше ИИ звонит пациентам — даже без интернета",
+    "summary": "Польский голосовой ИИ «Анна» с 1 октября обзванивает пациентов по стационарным телефонам, напоминает о врачебных приёмах и помогает отменить запись. 11 ноября ElevenLabs и NVIDIA раскрыли архитектуру обработки звонков на государственных серверах.",
+    "published": "2026-11-15",
+    "source_url": "https://elevenlabs.io/blog/nvidia",
+    "cover": "assets/editorial/poland-anna-ai-patient-calls-20261111.webp",
+    "rubric": "news",
+    "vk_title": "☎️ В ПОЛЬШЕ ИИ обзванивает пациентов — даже БЕЗ ИНТЕРНЕТА",
+    "vk_summary": "Польская «Анна» с 1 октября звонит людям со стационарными телефонами и напоминает о визитах к врачу. 11 ноября ElevenLabs и NVIDIA раскрыли техническую часть проекта: ИИ работает на государственных серверах, а записи разговоров не отправляют во внешнее облако. Новые приёмы бот не назначает.",
+    "published_at_utc": "2026-11-15T17:00:52Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "poland-anna-ai-patient-calls-20261111",
+    "url": "articles/poland-anna-ai-patient-calls-20261111/",
+    "topics": [
+      "health",
+      "audio"
+    ],
+    "companies": [
+      "elevenlabs",
+      "nvidia"
+    ],
+    "products": []
   }
 ]
