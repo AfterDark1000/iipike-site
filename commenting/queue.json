@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15T15:51:39.920794Z",
+  "updated_at": "2026-11-15T20:59:59.555877Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,10 +31,10 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
-      "fresh_matches": 1
+      "fresh_matches": 0
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -53,10 +53,10 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
-      "fresh_matches": 1
+      "fresh_matches": 0
     },
     {
       "id": "iguides",
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T15:51:39.920794Z",
-      "last_success_at": "2026-11-15T15:51:39.920794Z",
+      "checked_at": "2026-11-15T20:59:59.555877Z",
+      "last_success_at": "2026-11-15T20:59:59.555877Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -76,11 +76,62 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-15",
-    "attempted": 21
+    "date": "2026-11-16",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "6163d7542e9bf4ba1d3e13fe",
+      "title": "Скандал вокруг Nvidia подтолкнул Конгресс США к ужесточению экспорта ИИ-чипов в Китай",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/skandal-vokrug-nvidia-podtolknul-kongress-ssa-k-uzestoceniiu-eksporta-ii-cipov-v-kitai.html",
+      "published_at": "2026-11-15T20:47:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T20:59:59.555877Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c044c3da67a8aac30329f1ae",
+      "title": "На PlayStation 4 запустили ИИ-модель Qwen3.5-9B с 9 млрд параметров",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/na-playstation-4-zapustili-ii-model-qwen35-9b-s-9-mlrd-parametrov.html",
+      "published_at": "2026-11-15T18:28:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T20:59:59.555877Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "5c31cdf6f2e8db09040bd44c",
+      "title": "ИИ научился предсказывать внезапную смерть — он обнаружил сигнал в обычной ЭКГ, который стандартный скрининг пропускает",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/ii-naucilsia-predskazyvat-vnezapnuiu-smert-on-obnaruzil-signal-v-obycnoi-ekg-kotoryi-standartnyi-skrining-propuskaet.html",
+      "published_at": "2026-11-15T17:16:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T20:59:59.555877Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "758d26c49873010fa604ec4d",
       "title": "Крах ИИ-инфраструктуры: $4,2 трлн потерь у производителей",
@@ -190,12 +241,14 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "read_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-15T12:18:38.120654Z",
-      "reason": "Не удалось прочитать статью целиком (URLError)"
+      "last_attempt_at": "2026-11-15T20:59:59.555877Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-15T20:59:59.555877Z"
     },
     {
       "id": "65e3693ae22602a2b9b64e4a",
@@ -209,12 +262,14 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "read_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Сами авторы честно признаются, что не понимают биологический смысл находок алгоритма. Главное, чтобы эта чёрная коробка в итоге лечила, а не просто выдавала цифры.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-15T12:20:06.343116Z",
-      "reason": "Не удалось прочитать статью целиком (URLError)"
+      "last_attempt_at": "2026-11-15T20:59:59.555877Z",
+      "reason": "Зацепился за признание исследователей, что они сами не понимают логику нейросети.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T20:59:59.555877Z"
     },
     {
       "id": "2c8ed6f452af3be704b06b49",
@@ -228,12 +283,14 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Четыре SIM-карты звучит как телефон для наркобарона из сериала. Интересно, сколько на это уходит батарейки, если три из них всё время ждут вызова.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-15T12:18:38.120654Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-15T20:59:59.555877Z",
+      "reason": "Обратил внимание на избыточную поддержку четырёх симок и режим ожидания.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T20:59:59.555877Z"
     },
     {
       "id": "5486e9b3fda46489c2db5340",
@@ -2557,67 +2614,6 @@
       "attempts": 2,
       "last_attempt_at": "2026-11-09T10:20:57.318235Z",
       "reason": "Не удалось прочитать статью целиком (ValueError)",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "3f72c7fec0aa94843b595d30",
-      "title": "Nokia: к 2035 году на долю ИИ придётся почти половина мирового сетевого трафика",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151014",
-      "published_at": "2026-11-08T20:57:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T22:51:22.762819Z",
-      "views": null,
-      "comments": null,
-      "status": "read_error",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-09T10:20:57.318235Z",
-      "reason": "Не удалось прочитать статью целиком (ValueError)",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "be542428855c9b5507be4693",
-      "title": "Роботов с ИИ оказалось легко обмануть: искажённая картинка заставляет их легко выполнять опасные команды",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151021",
-      "published_at": "2026-11-08T17:05:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T19:05:43.725759Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T19:05:43.725759Z",
-      "reason": "Не прошёл проверку: В статье сказано, что при размытии изображений модели соглашались на опасные действия в 263 из 300 случаев (88%), а утверждение про «абсолютный дзен» и «крушить",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-08T19:05:43.725759Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "e6107240dd8746fefa2204a2",
-      "title": "ИИ-агенты подключились к поиску внеземного разума: SETI автоматизирует работу радиотелескопа",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/08/ii-agenty-podkliucilis-k-poisku-vnezemnogo-razuma-seti-avtomatiziruet-rabotu-radioteleskopa.html",
-      "published_at": "2026-11-08T16:37:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T19:05:43.725759Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T19:05:43.725759Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-08T19:05:43.725759Z",
       "link_status": "dzen_link_missing"
     }
   ]
