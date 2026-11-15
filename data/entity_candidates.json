@@ -725,6 +725,18 @@
           "source_url": "https://www.vastworld.ai/about"
         }
       ]
+    },
+    {
+      "key": "house-house",
+      "name": "House House",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "big-walk-ai-code-igf-20261115",
+          "source_url": "https://bigwalk.game/faq/"
+        }
+      ]
     }
   ],
   "products": [
@@ -1418,6 +1430,19 @@
         {
           "article_id": "ai-eight-unusual-experiments-20261115",
           "source_url": "https://www.whatpeoplemade.com/i/one-prompt-spins-up-22-agents-to-build-16-mini-apps-550409.html"
+        }
+      ]
+    },
+    {
+      "key": "big-walk",
+      "name": "Big Walk",
+      "company": "house-house",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "big-walk-ai-code-igf-20261115",
+          "source_url": "https://bigwalk.game/faq/"
         }
       ]
     }
