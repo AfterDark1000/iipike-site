@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15T12:16:30.952279Z",
+  "updated_at": "2026-11-15T12:18:38.120654Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
-      "last_success_at": "2026-11-15T12:16:30.952279Z",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "last_success_at": "2026-11-15T12:18:38.120654Z",
       "error": null,
       "fresh_matches": 5
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
-      "last_success_at": "2026-11-15T12:16:30.952279Z",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "last_success_at": "2026-11-15T12:18:38.120654Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
+      "status": "error",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
       "last_success_at": "2026-11-15T12:16:30.952279Z",
-      "error": null,
-      "fresh_matches": 2
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
-      "last_success_at": "2026-11-15T12:16:30.952279Z",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "last_success_at": "2026-11-15T12:18:38.120654Z",
       "error": null,
       "fresh_matches": 4
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
-      "last_success_at": "2026-11-15T12:16:30.952279Z",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "last_success_at": "2026-11-15T12:18:38.120654Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:16:30.952279Z",
-      "last_success_at": "2026-11-15T12:16:30.952279Z",
+      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "last_success_at": "2026-11-15T12:18:38.120654Z",
       "error": null,
       "fresh_matches": 1
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
   },
   "usage": {
     "date": "2026-11-15",
-    "attempted": 12
+    "attempted": 15
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -93,10 +93,12 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "read_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:18:38.120654Z",
+      "reason": "Не удалось прочитать статью целиком (URLError)"
     },
     {
       "id": "65e3693ae22602a2b9b64e4a",
@@ -127,10 +129,12 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:18:38.120654Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "5486e9b3fda46489c2db5340",
@@ -660,10 +664,12 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:18:38.120654Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "9bfd708cc69ca3f4a593b60a",
