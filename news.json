@@ -5648,5 +5648,26 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "ElevenLabs показала ИИ-секретаря, который раздаёт поручения после совещаний",
+    "summary": "ElevenLabs анонсировала ElevenAI — голосового помощника для рабочих встреч: он готовит краткие итоги и поручения, понимает диктовку и подсказывает контекст во время звонков. Открыта регистрация на бесплатный ранний доступ.",
+    "published": "2026-11-15",
+    "source_url": "https://elevenlabs.io/blog/nyc-summit",
+    "cover": "assets/editorial/elevenlabs-elevenai-meeting-assistant-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T05:45:41Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "elevenlabs-elevenai-meeting-assistant-20261111",
+    "url": "articles/elevenlabs-elevenai-meeting-assistant-20261111/",
+    "topics": [
+      "apps",
+      "business"
+    ],
+    "companies": [
+      "elevenlabs"
+    ],
+    "products": []
   }
 ]
