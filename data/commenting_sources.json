@@ -5,8 +5,10 @@
   "max_per_day": 24,
   "sources": [
     {"id": "ixbt", "name": "iXBT.com", "feed_url": "https://www.ixbt.com/export/news/rss.xml", "hosts": ["www.ixbt.com", "ixbt.com"], "channel_url": "https://dzen.ru/ixbt.com", "channel_reference": "https://www.ixbt.com/"},
-    {"id": "3dnews", "name": "3DNews", "feed_url": "https://3dnews.ru/news/rss/", "hosts": ["3dnews.ru", "www.3dnews.ru"], "channel_url": "https://dzen.ru/3dnews.ru", "channel_reference": "https://3dnews.ru/community/"},
     {"id": "overclockers", "name": "Overclockers.ru", "feed_url": "https://overclockers.ru/rss/news.rss", "hosts": ["overclockers.ru", "www.overclockers.ru"], "channel_url": "https://dzen.ru/overclockers.ru", "channel_reference": "https://overclockers.ru/"},
-    {"id": "mk", "name": "МК", "feed_url": "https://www.mk.ru/rss/index.xml", "hosts": ["www.mk.ru", "mk.ru"], "channel_url": "https://dzen.ru/mk.ru", "channel_reference": "https://www.mk.ru/"}
+    {"id": "mk", "name": "МК", "feed_url": "https://www.mk.ru/rss/index.xml", "hosts": ["www.mk.ru", "mk.ru"], "channel_url": "https://dzen.ru/mk.ru", "channel_reference": "https://www.mk.ru/"},
+    {"id": "hi-tech-mail", "name": "Hi-Tech Mail", "feed_url": "https://hi-tech.mail.ru/rss/all/", "hosts": ["hi-tech.mail.ru"], "channel_url": "https://dzen.ru/hi-tech.mail.ru", "channel_reference": "https://dzen.guru/channels/hi-tech.mail.ru"},
+    {"id": "techinsider", "name": "TechInsider", "feed_url": "https://www.techinsider.ru/out/public-feed-all-news.xml", "hosts": ["techinsider.ru", "www.techinsider.ru"], "channel_url": "https://dzen.ru/techinsider", "channel_reference": "https://www.techinsider.ru/"},
+    {"id": "iguides", "name": "iGuides", "feed_url": "https://www.iguides.ru/rss/", "hosts": ["iguides.ru", "www.iguides.ru"], "channel_url": "https://dzen.ru/iguides", "channel_reference": "https://www.iguides.ru/"}
   ]
 }

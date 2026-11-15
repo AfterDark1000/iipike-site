@@ -198,8 +198,41 @@ class QueueTests(unittest.TestCase):
 
     def test_configuration_does_not_allow_arbitrary_domains(self):
         config = cq.load_config(ROOT / "data/commenting_sources.json")
-        self.assertEqual(len(config["sources"]), 4)
+        self.assertEqual({s["id"] for s in config["sources"]},
+                         {"ixbt", "overclockers", "mk", "hi-tech-mail", "techinsider", "iguides"})
         self.assertTrue(all(s["channel_reference"].startswith("https://") for s in config["sources"]))
+
+    def test_publisher_turns_span_runs_with_more_sources_than_slots(self):
+        sources = [SOURCE, {**SOURCE, "id": "second"}, {**SOURCE, "id": "third"}]
+        config = {**CONFIG, "sources": sources, "max_per_run": 2}
+
+        def articles(url, source):
+            if url == source["feed_url"]:
+                return rss(url=f"https://www.ixbt.com/news/{source['id']}.html")
+            return fetcher(url, source)
+
+        first = cq.build_queue(config, {}, NOW, fetcher=articles, model=model, api_key="test")
+        self.assertEqual({row["source_id"] for row in first["items"] if row["status"] == "draft_ready"},
+                         {"ixbt", "second"})
+        # Insert another iXBT article while the third publisher is still waiting.
+        first["items"].append({**first["items"][0], "id": "extra", "status": "pending",
+                               "attempts": 0, "last_attempt_at": "", "comment": ""})
+        config["max_per_run"] = 1
+        second = cq.build_queue(config, first, NOW + dt.timedelta(minutes=30),
+                                fetcher=articles, model=model, api_key="test")
+        self.assertEqual({row["source_id"] for row in second["items"] if row["status"] == "draft_ready"},
+                         {"ixbt", "second", "third"})
+
+    def test_removed_source_cannot_use_a_generation_slot(self):
+        first = cq.build_queue(CONFIG, {}, NOW, fetcher=fetcher, no_model=True)
+        retired = {**first["items"][0], "id": "retired", "source_id": "3dnews",
+                   "published_at": cq.stamp(NOW)}
+        first["items"].append(retired)
+        result = cq.build_queue({**CONFIG, "max_per_run": 1}, first, NOW,
+                                fetcher=fetcher, model=model, api_key="test")
+        self.assertEqual({row["source_id"] for row in result["items"] if row["status"] == "draft_ready"},
+                         {"ixbt"})
+        self.assertEqual(next(row for row in result["items"] if row["id"] == "retired")["attempts"], 0)
 
     def test_operator_page_does_not_pollute_reader_analytics(self):
         page = (ROOT / "admin/commenting/index.html").read_text()

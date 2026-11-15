@@ -21,11 +21,12 @@
   }
   function fresh(row, now, hours) { const t = Date.parse(row.published_at); return Number.isFinite(t) && now >= t && now - t <= hours * 3600000; }
   function selectRows(queue, records, filter, source, now) {
+    const activeSources = new Set(queue.sources.map(s => s.id));
     return queue.items.filter(function (row) {
       if (source !== "all" && row.source_id !== source) return false;
       const local = records[row.id] || {};
       if (filter === "history") return !!local.status;
-      if (local.status || !fresh(row, now, queue.max_age_hours)) return false;
+      if (!activeSources.has(row.source_id) || local.status || !fresh(row, now, queue.max_age_hours)) return false;
       if (filter === "pending") return row.status !== "draft_ready";
       if (row.status !== "draft_ready" || !row.comment) return false;
       return filter !== "linked" || directDzen(local.dzen_url || row.dzen_url);
