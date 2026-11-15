@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15T12:18:38.120654Z",
+  "updated_at": "2026-11-15T12:20:06.343116Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
-      "last_success_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
+      "last_success_at": "2026-11-15T12:20:06.343116Z",
       "error": null,
       "fresh_matches": 5
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
-      "last_success_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
+      "last_success_at": "2026-11-15T12:20:06.343116Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,7 +31,7 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "error",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
       "last_success_at": "2026-11-15T12:16:30.952279Z",
       "error": "Лента недоступна или не распознана (URLError)",
       "fresh_matches": null
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
-      "last_success_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
+      "last_success_at": "2026-11-15T12:20:06.343116Z",
       "error": null,
       "fresh_matches": 4
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
-      "last_success_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
+      "last_success_at": "2026-11-15T12:20:06.343116Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T12:18:38.120654Z",
-      "last_success_at": "2026-11-15T12:18:38.120654Z",
+      "checked_at": "2026-11-15T12:20:06.343116Z",
+      "last_success_at": "2026-11-15T12:20:06.343116Z",
       "error": null,
       "fresh_matches": 1
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 2"
   },
   "usage": {
     "date": "2026-11-15",
-    "attempted": 15
+    "attempted": 18
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -112,10 +112,12 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "read_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:20:06.343116Z",
+      "reason": "Не удалось прочитать статью целиком (URLError)"
     },
     {
       "id": "2c8ed6f452af3be704b06b49",
@@ -148,10 +150,14 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересный подход к закупкам: переплатить три миллиарда, лишь бы опередить конкурентов в очереди за железом. Интересно, во сколько им в итоге обойдётся хранение этой лишней генерации.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:20:06.343116Z",
+      "reason": "Зацепился за избыточный заказ турбин SoftBank и огромную сумму списаний.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T12:20:06.343116Z"
     },
     {
       "id": "3e63802eaf8c6e56538ac45d",
@@ -683,10 +689,14 @@
       "first_seen_at": "2026-11-15T12:16:30.952279Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно маскировать робота под торшер за семьсот баксов, особенно если учесть, что батарея садится за два часа и его всё равно придётся держать у розетки.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T12:20:06.343116Z",
+      "reason": "Выделил цену робота-лампы и время работы от батареи.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T12:20:06.343116Z"
     },
     {
       "id": "8c3921d86c03ec991d42eb2d",
