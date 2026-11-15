@@ -5628,5 +5628,25 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Google придумала ИИ против вечного «куда пойдём?»",
+    "summary": "Google Labs представила Tabletop — экспериментальный сервис, который по описанию создаёт общие голосования, маршруты и другие интерактивные инструменты для друзей. Доступ пока через лист ожидания для жителей США от 18 лет.",
+    "published": "2026-11-15",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop",
+    "cover": "assets/editorial/google-tabletop-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T04:30:45Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "google-tabletop-20261111",
+    "url": "articles/google-tabletop-20261111/",
+    "topics": [
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
