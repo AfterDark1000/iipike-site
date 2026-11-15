@@ -689,6 +689,18 @@
           "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees"
         }
       ]
+    },
+    {
+      "key": "easycall",
+      "name": "EasyCall",
+      "status": "candidate",
+      "first_seen": "2026-11-15",
+      "evidence": [
+        {
+          "article_id": "poland-anna-ai-patient-calls-20261111",
+          "source_url": "https://elevenlabs.io/blog/nvidia"
+        }
+      ]
     }
   ],
   "products": [
