@@ -1,0 +1,72 @@
+name: HPII — self-heal queued news candidate IDs (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/site_news_pool.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/site_news_pool.json'
+      - 'scripts/site_news_pool.py'
+      - 'tests/test_site_news_pool.py'
+      - '.github/workflows/hpii-pool-auto-repair.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-pool-id-repair
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify safe repair logic offline
+        run: |
+          python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -v
+          python3 scripts/site_news_pool.py --validate
+
+  repair:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Read latest pool before any repair
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+      - name: Repair queued placeholder IDs and validate all records
+        run: |
+          python3 scripts/site_news_pool.py --repair-ids
+          python3 scripts/site_news_pool.py --validate
+          python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -q
+      - name: Commit ONLY the repaired news pool if needed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/site_news_pool.json; then
+            echo 'POOL_VALID_NO_REPAIR_NEEDED'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/site_news_pool.json
+          # Never stage, commit or publish anything other than the candidate pool.
+          test "$(git diff --cached --name-only)" = 'data/site_news_pool.json'
+          git commit -m 'fix(pool): repair only queued placeholder candidate IDs [skip ci]'
+          git push origin HEAD:main
+          echo 'POOL_AUTOMATIC_REPAIR_COMMITTED'
