@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 123
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 124
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **15.11.2026 17:00 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **15.11.2026 18:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [ИИ пишет за студентов — в Англии хотят экзамены без него](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/uk-ofs-ai-free-assessments-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 18:07 (Усть-Катав)**; пауза до 15.11.2026 18:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/uk-ofs-ai-free-assessments-20261111.webp) |
+| — | Готовых к выбору материалов нет | — | — | — |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [ИИ пишет за студентов — в Англии хотят экзамены без него](https://iipike.ru/articles/uk-ofs-ai-free-assessments-20261111/) | 15.11.2026 18:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/uk-ofs-ai-free-assessments-20261111.webp) |
 | [Глава Databricks поручил ИИ собирать плохие новости о своей компании](https://iipike.ru/articles/databricks-genie-unvarnished-truth-20261111/) | 15.11.2026 17:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/databricks-genie-unvarnished-truth-20261111.webp) |
 | [ИИ Salesforce улучшил другую нейросеть за 80 часов](https://iipike.ru/articles/salesforce-sfr-autord-ai-model-improvement-20261111/) | 15.11.2026 16:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/salesforce-sfr-autord-ai-model-improvement-20261111.webp) |
 | [Microsoft спрятала в ИИ опасную команду](https://iipike.ru/articles/microsoft-lazarus-dormant-neurons-20261110/) | 15.11.2026 15:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-lazarus-dormant-neurons-20261110.webp) |
