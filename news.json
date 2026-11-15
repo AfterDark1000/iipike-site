@@ -5669,5 +5669,26 @@
       "elevenlabs"
     ],
     "products": []
+  },
+  {
+    "title": "ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать",
+    "summary": "ElevenLabs анонсировала для голосовых агентов ElevenAgents функции Memory и Routines: память о прежних разговорах с подтверждёнными клиентами и выполнение последовательных действий до и после звонков. Функции готовятся к выпуску.",
+    "published": "2026-11-15",
+    "source_url": "https://elevenlabs.io/blog/nyc-summit",
+    "cover": "assets/editorial/elevenlabs-elevenagents-memory-routines-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T06:45:51Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "elevenlabs-elevenagents-memory-routines-20261111",
+    "url": "articles/elevenlabs-elevenagents-memory-routines-20261111/",
+    "topics": [
+      "agents",
+      "business"
+    ],
+    "companies": [
+      "elevenlabs"
+    ],
+    "products": []
   }
 ]
