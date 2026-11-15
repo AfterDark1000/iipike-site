@@ -1938,7 +1938,7 @@
       "note": "Вторичный источник Kiplinger; аналитический материал, не отдельный подтверждённый инцидент."
     },
     {
-      "id": "n-20261115-130-raw",
+      "id": "n-cc8781df9c279647",
       "sequence": 130,
       "title": "DeepSeek открыла API поиска, файлов и голосовых функций приложения",
       "source_url": "https://api-docs.deepseek.com/news/news261113/",
@@ -1953,7 +1953,7 @@
       "note": "Официальный анонс. Отличается от уже имеющейся записи №107 о чат-клиенте."
     },
     {
-      "id": "n-20261115-131-raw",
+      "id": "n-497b7eb362f5f581",
       "sequence": 131,
       "title": "Anthropic описала самостоятельное размещение Claude Managed Agents",
       "source_url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
@@ -1968,7 +1968,7 @@
       "note": "Дата релиза и статус доступа требуют проверки; модель может работать у выбранного провайдера, не обязательно локально."
     },
     {
-      "id": "n-20261115-132-raw",
+      "id": "n-2e08a1312bd275b7",
       "sequence": 132,
       "title": "Riverside Tonality позволяет заменять слова в записанной речи",
       "source_url": "https://labs.riverside.com/tonality",
@@ -1983,7 +1983,7 @@
       "note": "Дата оригинального релиза требует проверки."
     },
     {
-      "id": "n-20261115-133-raw",
+      "id": "n-e834c99d574c7a0f",
       "sequence": 133,
       "title": "Sesame готовит платные тарифы Plus и Pro для голосового ИИ",
       "source_url": "https://newruntime.com/weeks/2026-w46/",
@@ -1998,7 +1998,7 @@
       "note": "Вторичный источник; дату и условия тарифов подтвердить."
     },
     {
-      "id": "n-20261115-134-raw",
+      "id": "n-a8e6f4b5941705c6",
       "sequence": 134,
       "title": "Meta Muse появилась в боковой панели Chrome",
       "source_url": "https://newruntime.com/weeks/2026-w46/",
@@ -2013,7 +2013,7 @@
       "note": "Вторичный источник; проверить карточку Chrome Web Store и дату; отдельная функция от Muse на часах."
     },
     {
-      "id": "n-20261115-135-raw",
+      "id": "n-e5dc90963c9e3213",
       "sequence": 135,
       "title": "Claude Fable 5.2 и Opus 5.5 сравнялись в рейтинге ИИ-программистов",
       "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-14-2026-525",
@@ -2028,7 +2028,7 @@
       "note": "Вторичный источник; проверить оригинальный рейтинг, версии моделей и дату."
     },
     {
-      "id": "n-20261115-136-raw",
+      "id": "n-646c0d68a19aec4f",
       "sequence": 136,
       "title": "Gemini 4 Carbon якобы возглавила математический рейтинг MathArena",
       "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-14-2026-525",
@@ -2043,7 +2043,7 @@
       "note": "Вторичный источник; проверить официальный рейтинг и дату обновления."
     },
     {
-      "id": "n-20261115-137-raw",
+      "id": "n-dd832caf32b9e55f",
       "sequence": 137,
       "title": "Cursor объяснила инцидент компрометацией ключа поставщика",
       "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-14-2026-525",
@@ -2058,7 +2058,7 @@
       "note": "Вторичный источник; расследование и первоисточник не подтверждены."
     },
     {
-      "id": "n-20261115-138-raw",
+      "id": "n-935c8f83141c4304",
       "sequence": 138,
       "title": "Италия якобы оштрафовала Meta на 805 млн евро",
       "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-14-2026-525",
@@ -2073,7 +2073,7 @@
       "note": "Вторичный источник; сумма, решение регулятора и непосредственная связь с ИИ НЕ подтверждены; отсеять при отсутствии ИИ-составляющей."
     },
     {
-      "id": "n-20261115-139-raw",
+      "id": "n-15b386c3a72dfaba",
       "sequence": 139,
       "title": "Tencent и CATL якобы присоединились к финансированию DeepSeek",
       "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-14-2026-525",

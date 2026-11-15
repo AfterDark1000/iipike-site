@@ -5,7 +5,7 @@ import unittest
 
 from scripts.site_news_pool import (
     add, candidate_id, canonical_url, next_item, continue_item, checkpoint, local_date,
-    transition, validate
+    transition, validate, repair_placeholder_ids
 )
 
 NOW = "2026-11-12T07:00:00+00:00"
@@ -25,6 +25,40 @@ class SiteNewsPoolTests(unittest.TestCase):
     # Production JSON is validated only by site-news-pool-safety.yml,
     # not by site-first's global unittest discovery: a broken candidate
     # must not block publishing previously approved articles.
+
+    def test_raw_ids_repaired_to_canonical_hashes_without_changing_other_fields(self):
+        from copy import deepcopy
+        src = fresh()
+        src, _ = add(src, [
+            record("First announcement from the same source", "https://example.org/press"),
+            record("Different update from the same press page", "https://example.org/press"),
+            record("Independent third story in this batch", "https://example.org/other"),
+        ], now=NOW)
+        expected = deepcopy(src)
+        for i, item in enumerate(src['items'], start=1):
+            item['id'] = f'n-20261115-{i}-raw'
+        repaired, report = repair_placeholder_ids(src)
+        self.assertEqual(repaired, expected)
+        self.assertEqual([x['sequence'] for x in report['repaired']], [1, 2, 3])
+        self.assertEqual(len(report['repaired']), 3)
+        self.assertTrue(all(x['status'] == 'queued' for x in repaired['items']))
+        self.assertEqual(repair_placeholder_ids(repaired)[1]['repaired'], [])
+
+    def test_placeholder_id_repair_refuses_processed_or_unexpected_records(self):
+        src, _ = add(fresh(), [record("Unprocessed story", "https://example.org/source")], now=NOW)
+        src['items'][0]['id'] = 'n-20261115-1-raw'
+        src['items'][0]['status'] = 'in_review'
+        src['items'][0]['review_started_at'] = NOW
+        with self.assertRaisesRegex(ValueError, 'Refusing to rekey'):
+            repair_placeholder_ids(src)
+        src['items'][0]['status'] = 'queued'
+        src['items'][0]['review_started_at'] = None
+        src['items'][0]['id'] = 'unsafe-1'
+        with self.assertRaisesRegex(ValueError, 'Refusing unknown candidate ID'):
+            repair_placeholder_ids(src)
+        src['items'][0]['id'] = 'n-20261115-2-raw'
+        with self.assertRaisesRegex(ValueError, 'Refusing unknown candidate ID'):
+            repair_placeholder_ids(src)
 
     def test_raw_placeholder_id_fails_with_identifying_sequence(self):
         pool, _ = add(fresh(), [record('Test candidate title', 'https://example.org/news')],

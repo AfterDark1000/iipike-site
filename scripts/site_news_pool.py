@@ -119,6 +119,50 @@ def validate(pool):
     return pool
 
 
+def repair_placeholder_ids(pool):
+    """Repair ONLY queued, unreserved -raw IDs; never renumber approved work.
+
+    This is a defensive migration for direct JSON writes by external chat
+    clients that bypass add(). A repair does not approve or publish anything.
+    The result must pass the complete unchanged pool validator.
+    """
+    if not isinstance(pool, dict) or not isinstance(pool.get("items"), list):
+        raise ValueError("Invalid candidate pool; no repair attempted")
+    repaired = copy.deepcopy(pool)
+    known_urls = set()
+    changes = []
+    used_ids = set()
+    for item in repaired["items"]:
+        if not isinstance(item, dict) or type(item.get("sequence")) is not int:
+            raise ValueError("Malformed candidate; no repair attempted")
+        # For duplicate source URLs, the first candidate keeps the URL-only ID;
+        # each additional distinct news item gets URL + normalized title.
+        url = canonical_url(item.get("source_url"))
+        item_id = item.get("id")
+        if not isinstance(item_id, str):
+            raise ValueError("Candidate ID missing; no repair attempted")
+        if not re.fullmatch(r"n-[0-9a-f]{16}", item_id):
+            match = re.fullmatch(r"n-[0-9]{8}-([0-9]+)-raw", item_id)
+            if not match or int(match.group(1)) != item["sequence"]:
+                raise ValueError(f"Refusing unknown candidate ID {item_id!r}")
+            if (item.get("status") != "queued"
+                    or item.get("review_started_at") is not None
+                    or item.get("closed_at") is not None
+                    or item.get("article_id") is not None):
+                raise ValueError(f"Refusing to rekey a processed candidate: {item_id}")
+            new_id = candidate_id(url, item["title"]) if url in known_urls else candidate_id(url)
+            if new_id in used_ids:
+                raise ValueError(f"Candidate ID collision while repairing {item_id}")
+            item["id"] = new_id
+            changes.append({"sequence": item["sequence"], "old_id": item_id, "new_id": new_id})
+        if item["id"] in used_ids:
+            raise ValueError(f"Duplicate candidate ID after repair: {item['id']}")
+        used_ids.add(item["id"])
+        known_urls.add(url)
+    validate(repaired)
+    return repaired, {"repaired": changes, "count": len(repaired["items"])}
+
+
 def add(pool, records, *, now=None):
     """Append source-backed candidates without changing an existing item's status."""
     validate(pool)
@@ -237,6 +281,7 @@ def main():
     parser.add_argument("--file", type=Path, default=POOL_PATH)
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--validate", action="store_true")
+    group.add_argument("--repair-ids", action="store_true", help="Safely repair unprocessed placeholder IDs only")
     group.add_argument("--list", action="store_true")
     group.add_argument("--add", type=Path, metavar="CANDIDATES_JSON")
     group.add_argument("--next", action="store_true")
@@ -249,6 +294,12 @@ def main():
     parser.add_argument("--note", default="")
     args = parser.parse_args()
     pool = json.loads(args.file.read_text(encoding="utf-8"))
+    if args.repair_ids:
+        repaired, report = repair_placeholder_ids(pool)
+        if repaired != pool:
+            args.file.write_text(json.dumps(repaired, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        print(json.dumps(report, ensure_ascii=False, indent=2))
+        return
     validate(pool)
     modified, result = None, None
     if args.add:
