@@ -5605,5 +5605,28 @@
     "products": [
       "qwen"
     ]
+  },
+  {
+    "title": "Google выпустила ИИ, который отвечает на тысячу вопросов без слов",
+    "summary": "Google представила Gemini Decision 1 — API для массовой проверки до 1000 условий по тексту, изображениям, аудио, видео и PDF. Модель возвращает вероятности заранее заданных ответов вместо генерации текста.",
+    "published": "2026-11-15",
+    "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+    "cover": "assets/editorial/google-gemini-decision-1-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T03:15:36Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "google-gemini-decision-1-20261111",
+    "url": "articles/google-gemini-decision-1-20261111/",
+    "topics": [
+      "models",
+      "business"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
