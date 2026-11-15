@@ -1,9 +1,6 @@
 """Offline regression checks for the site-only editorial candidate pool."""
 from datetime import datetime, timezone
 import copy
-import json
-from pathlib import Path
-import re
 import unittest
 
 from scripts.site_news_pool import (
@@ -24,14 +21,10 @@ def record(title, url, **kwargs):
 
 
 class SiteNewsPoolTests(unittest.TestCase):
-    def test_committed_production_pool_is_valid_and_ids_are_stable(self):
-        """Catches placeholder IDs in the actual committed pool, not only fixtures."""
-        path = Path(__file__).resolve().parents[1] / 'data/site_news_pool.json'
-        pool = json.loads(path.read_text(encoding='utf-8'))
-        self.assertIs(validate(pool), pool)
-        self.assertEqual(len(pool['items']), len({x['id'] for x in pool['items']}))
-        self.assertTrue(all(re.fullmatch(r'n-[0-9a-f]{16}', x['id'])
-                            for x in pool['items']))
+    # Keep unit tests independent of the production pool on disk.
+    # Production JSON is validated only by site-news-pool-safety.yml,
+    # not by site-first's global unittest discovery: a broken candidate
+    # must not block publishing previously approved articles.
 
     def test_raw_placeholder_id_fails_with_identifying_sequence(self):
         pool, _ = add(fresh(), [record('Test candidate title', 'https://example.org/news')],
