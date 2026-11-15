@@ -90,7 +90,7 @@ def validate(pool):
         # entries were created by other writers with a different hash recipe;
         # never renumber them or break their approval/review linkage.
         if not isinstance(item["id"], str) or not re.fullmatch(r"n-[0-9a-f]{16}", item["id"]):
-            raise ValueError("Candidate ID must be a stable n-hex16 reference")
+            raise ValueError(f"Candidate #{item['sequence']}: invalid ID {item['id']!r}; expected n-hex16 reference")
         if item["priority"] not in PRIORITIES or item["status"] not in STATES:
             raise ValueError("Invalid candidate priority or status")
         utc_time(item["added_at"])
