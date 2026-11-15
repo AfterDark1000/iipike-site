@@ -5755,5 +5755,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Глава Databricks поручил ИИ собирать плохие новости о своей компании",
+    "summary": "Али Годси показал корпоративный ИИ Genie, который разбирает слабые оценки сотрудников и неудачные переговоры с клиентами. Databricks анонсировала автономную версию для длительного анализа рабочих задач; её предварительный доступ ещё готовится.",
+    "published": "2026-11-15",
+    "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex",
+    "cover": "assets/editorial/databricks-genie-unvarnished-truth-20261111.webp",
+    "rubric": "news",
+    "vk_title": "📉 Глава Databricks поручил ИИ искать ПЛОХИЕ НОВОСТИ о своей компании",
+    "vk_summary": "Гендиректор Али Годси показал Genie: помощник разбирает неудачные переговоры и слабые оценки сотрудников. Databricks анонсировала автономную версию агента, который сможет следить за задачами и обращаться к руководству за решениями. Широкий доступ пока не открыт.",
+    "published_at_utc": "2026-11-15T12:00:59Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "databricks-genie-unvarnished-truth-20261111",
+    "url": "articles/databricks-genie-unvarnished-truth-20261111/",
+    "topics": [
+      "business",
+      "agents"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
