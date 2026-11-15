@@ -490,9 +490,9 @@
       "summary": "10–11 ноября: House House раскрыла применение ИИ для исправления ошибки; обсуждение и бойкот части жюри требуют проверки.",
       "origin": "ХПИИ — добытчик новостей (подборки 10–12.11.2026)",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T03:43:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-15T18:55:57.237Z",
       "closed_at": null,
       "article_id": null,
       "note": "15.11.2026, ревизия ХПИИ: Подтверждённый спор о 10 строках ИИ-кода в Big Walk; оригинальное разъяснение студии и публикации Game Informer/Ars Technica."
