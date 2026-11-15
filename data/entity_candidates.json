@@ -713,6 +713,18 @@
           "source_url": "https://www.psu.edu/news/bellisario-college-communications/story/faculty-member-addresses-artificial-intelligence"
         }
       ]
+    },
+    {
+      "key": "vast-ai",
+      "name": "VAST AI Inc.",
+      "status": "candidate",
+      "first_seen": "2026-11-15",
+      "evidence": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "source_url": "https://www.vastworld.ai/about"
+        }
+      ]
     }
   ],
   "products": [
@@ -1380,6 +1392,32 @@
         {
           "article_id": "databricks-genie-unvarnished-truth-20261111",
           "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
+        }
+      ]
+    },
+    {
+      "key": "tripo",
+      "name": "Tripo",
+      "company": "vast-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-15",
+      "evidence": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "source_url": "https://www.whatpeoplemade.com/i/drum-performance-animation-from-a-generated-character-936661.html"
+        }
+      ]
+    },
+    {
+      "key": "google-antigravity",
+      "name": "Google Antigravity",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-15",
+      "evidence": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "source_url": "https://www.whatpeoplemade.com/i/one-prompt-spins-up-22-agents-to-build-16-mini-apps-550409.html"
         }
       ]
     }
