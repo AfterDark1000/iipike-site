@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14T21:24:57.425007Z",
+  "updated_at": "2026-11-15T01:17:42.344504Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T21:24:57.425007Z",
-      "last_success_at": "2026-11-14T21:24:57.425007Z",
+      "checked_at": "2026-11-15T01:17:42.344504Z",
+      "last_success_at": "2026-11-15T01:17:42.344504Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 8
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T21:24:57.425007Z",
-      "last_success_at": "2026-11-14T21:24:57.425007Z",
+      "checked_at": "2026-11-15T01:17:42.344504Z",
+      "last_success_at": "2026-11-15T01:17:42.344504Z",
       "error": null,
-      "fresh_matches": 14
+      "fresh_matches": 13
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T21:24:57.425007Z",
-      "last_success_at": "2026-11-14T21:24:57.425007Z",
+      "checked_at": "2026-11-15T01:17:42.344504Z",
+      "last_success_at": "2026-11-15T01:17:42.344504Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-14T21:24:57.425007Z",
-      "last_success_at": "2026-11-14T21:24:57.425007Z",
+      "checked_at": "2026-11-15T01:17:42.344504Z",
+      "last_success_at": "2026-11-15T01:17:42.344504Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -55,10 +55,73 @@
   },
   "usage": {
     "date": "2026-11-15",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "e92a11bb84af8017fad9136d",
+      "title": "Пополнять карту «Тройка» теперь можно через чат с «Алисой AI»",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/popolniat-kartu-troika-teper-mozno-cerez-cat-s-alisoi-ai.html",
+      "published_at": "2026-11-14T21:55:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T01:17:42.344504Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-15T01:17:42.344504Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-15T01:17:42.344504Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "fa5ddb34ef436d0cbcef4cb3",
+      "title": "Gemini 4 Carbon за два часа превратила iPhone Duo в ноутбук с Windows 11 — даже джейлбрейк не понадобился",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/gemini-4-carbon-za-dva-casa-prevratila-iphone-duo-v-noutbuk-s-windows-11-daze-dzeilbreik-ne-ponadobilsia.html",
+      "published_at": "2026-11-14T21:50:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T01:17:42.344504Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Запустить Windows 11 на складном смартфоне с помощью Gemini 4 Carbon всего за два часа звучит бодро. Правда, интересно, сколько батареи останется у этого мини-ноутбука после получаса работы браузера Edge.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-15T01:17:42.344504Z",
+      "reason": "Развиваем мысль про запуск винды на смартфоне и автономность.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T01:17:42.344504Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "4ce559b2d3530b8c0394da95",
+      "title": "Важнейшая «фишка» One UI 9.5: в смартфонах Samsung Galaxy появится продвинутый ИИ-ассистент, который сможет выполнять многие функции самостоятельно",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/15/vazneisaia-fiska-one-ui-95-v-smartfonax-samsung-galaxy-poiavitsia-prodvinutyi-ii-assistent-kotoryi-smozet-vypolniat-mnogie-funkcii-samostoiatelno.html",
+      "published_at": "2026-11-14T21:47:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T01:17:42.344504Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Платформа Personal Agent Core в One UI 9.5 обещает сама организовывать встречи и разбирать звонки. Главное, чтобы этот помощник с платной подпиской Galaxy AI Premium не начал отменять важные дела по собственному разумению.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-15T01:17:42.344504Z",
+      "reason": "Скепсис по поводу самостоятельности нового ИИ-агента Samsung и платной подписки.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T01:17:42.344504Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "96d36d7f295cf3e539c85d37",
       "title": "Флот спутников под управлением ИИ: стартап из Сиэтла запустил платформу для космических группировок",
