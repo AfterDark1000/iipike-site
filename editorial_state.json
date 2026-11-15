@@ -162,6 +162,12 @@
       "utc_date": "2026-11-14",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
       "source_title": "Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard"
+    },
+    {
+      "id": "41586052132a21c1d621",
+      "utc_date": "2026-11-15",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/",
+      "source_title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime"
     }
   ]
 }
