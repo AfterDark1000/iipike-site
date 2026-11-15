@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {ageMinutes, dueAgeMinutes, evaluateRun, latestNonCancelled,
-  evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication,
+  evaluatePagesBuilds, evaluateNewsPool, selectedReleaseFromLogs, verifySitePublication,
   unrecoveredPublisherFailures, canAutoCloseIncident} = require('../scripts/watchdog.js');
 const NOW = Date.parse('2026-11-06T10:00:00Z');
 const run = (date, conclusion='success') => ({created_at:date, status:'completed', conclusion, html_url:'https://github.com/example'});
@@ -126,4 +126,24 @@ test('delivery proof needs a site-first record AND an actual canonical HTML page
     async () => ({status:200,text:async()=>'<html>Homepage instead</html>'}))).ok,false);
   assert.equal((await verifySitePublication(id,{check_error:'git fetch failed'},good)).ok,false);
   assert.equal((await verifySitePublication('../unsafe',record,good)).ok,false);
+});
+
+test('candidate-pool failure is visible independently of a healthy publisher', () => {
+  const bad = {checked:true, valid:false, error:
+    "ValueError: Candidate #93: invalid ID 'n-20261114-93-raw'"};
+  assert.match(evaluateNewsPool(bad), /#93/);
+  assert.match(evaluateNewsPool(bad), /site_news_pool.json/);
+  assert.equal(evaluateNewsPool({checked:true,valid:true,items:123}), null);
+  assert.equal(evaluateNewsPool({checked:false,error:'Git ref unavailable'}), null);
+  assert.equal(evaluateNewsPool(null), null);
+});
+
+test('candidate-pool incident closes only after an explicit valid recheck', async () => {
+  const key = 'site-news-pool';
+  const noFindings = new Map();
+  const never = async () => ({ok:false});
+  assert.equal(await canAutoCloseIncident(key,noFindings,new Set(),never),false);
+  assert.equal(await canAutoCloseIncident(key,noFindings,new Set([key]),never),true);
+  assert.equal(await canAutoCloseIncident(key,new Map([[key,'invalid still']]),
+    new Set([key]),never),false);
 });
