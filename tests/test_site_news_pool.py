@@ -1,6 +1,9 @@
 """Offline regression checks for the site-only editorial candidate pool."""
 from datetime import datetime, timezone
 import copy
+import json
+from pathlib import Path
+import re
 import unittest
 
 from scripts.site_news_pool import (
@@ -21,6 +24,22 @@ def record(title, url, **kwargs):
 
 
 class SiteNewsPoolTests(unittest.TestCase):
+    def test_committed_production_pool_is_valid_and_ids_are_stable(self):
+        """Catches placeholder IDs in the actual committed pool, not only fixtures."""
+        path = Path(__file__).resolve().parents[1] / 'data/site_news_pool.json'
+        pool = json.loads(path.read_text(encoding='utf-8'))
+        self.assertIs(validate(pool), pool)
+        self.assertEqual(len(pool['items']), len({x['id'] for x in pool['items']}))
+        self.assertTrue(all(re.fullmatch(r'n-[0-9a-f]{16}', x['id'])
+                            for x in pool['items']))
+
+    def test_raw_placeholder_id_fails_with_identifying_sequence(self):
+        pool, _ = add(fresh(), [record('Test candidate title', 'https://example.org/news')],
+                      now=NOW)
+        pool['items'][0]['id'] = 'n-20261115-124-raw'
+        with self.assertRaisesRegex(ValueError, r'Candidate #1.*n-20261115-124-raw'):
+            validate(pool)
+
     def test_empty_file_is_valid(self):
         self.assertEqual(validate(fresh()), fresh())
 

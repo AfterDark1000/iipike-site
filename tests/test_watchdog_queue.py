@@ -157,5 +157,40 @@ class SnapshotTests(unittest.TestCase):
         result = w.snapshot(NOW)
         self.assertEqual(result['overdue'], [{'id':'overdue-one', 'minutes':233}])
 
+class NewsPoolMonitorTests(unittest.TestCase):
+    @staticmethod
+    def fresh_pool():
+        from scripts.site_news_pool import add
+        empty = {"schema_version": 1, "note": "Site candidates, not publications.", "items": []}
+        return add(empty, [{"title": "Verified candidate for unit tests",
+                            "source_url": "https://example.org/pool-candidate"}],
+                   now="2026-11-14T12:00:00Z")[0]
+
+    @patch.object(w, 'safe_git_blob_at')
+    def test_valid_pool_is_confirmed_without_editing(self, blob):
+        pool = self.fresh_pool()
+        blob.return_value = json.dumps(pool)
+        self.assertEqual(w.inspect_news_pool(),
+                         {'checked': True, 'valid': True, 'items': 1})
+        blob.assert_called_once_with('origin/main', 'data/site_news_pool.json')
+
+    @patch.object(w, 'safe_git_blob_at')
+    def test_broken_id_is_a_confirmed_pool_failure(self, blob):
+        pool = self.fresh_pool()
+        pool['items'][0]['id'] = 'n-20261115-124-raw'
+        blob.return_value = json.dumps(pool)
+        result = w.inspect_news_pool()
+        self.assertTrue(result['checked'])
+        self.assertFalse(result['valid'])
+        self.assertIn('Candidate #1', result['error'])
+        self.assertIn('n-20261115-124-raw', result['error'])
+
+    @patch.object(w, 'safe_git_blob_at', side_effect=OSError('Git temporarily unavailable'))
+    def test_unavailable_pool_is_unknown_not_invalid(self, blob):
+        result = w.inspect_news_pool()
+        self.assertFalse(result['checked'])
+        self.assertNotIn('valid', result)
+
+
 if __name__ == '__main__':
     unittest.main()

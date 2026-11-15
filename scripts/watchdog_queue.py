@@ -14,6 +14,7 @@ from scripts.site_publication_queue import _last_change, latest_site_first_publi
 from scripts.site_first_release_pr import exists_at, safe_git_blob_at
 from scripts.render_site_publication_queue import forecast_order
 from scripts.site_release_quarantine import existing_error
+from scripts.site_news_pool import validate as validate_news_pool
 
 UTC = dt.timezone.utc
 
@@ -75,10 +76,30 @@ def overdue_publications(pending, last, now, *, threshold_minutes=100):
     return overdue
 
 
+def inspect_news_pool(main_ref='origin/main'):
+    """Validate the newest candidate-pool blob without mutating it.
+
+    Distinguish invalid data (alert) from an unavailable Git read (unknown).
+    The candidate pool is independent of site publication and Dzen crossposting.
+    """
+    try:
+        content = safe_git_blob_at(main_ref, 'data/site_news_pool.json')
+    except Exception as exc:
+        return {'checked': False, 'error': type(exc).__name__ + ': ' + str(exc)[:160]}
+    try:
+        pool = json.loads(content)
+        validate_news_pool(pool)
+    except (ValueError, TypeError) as exc:
+        return {'checked': True, 'valid': False,
+                'error': type(exc).__name__ + ': ' + str(exc)[:220]}
+    return {'checked': True, 'valid': True, 'items': len(pool['items'])}
+
+
 def snapshot(now=None):
     now = now or dt.datetime.now(UTC)
     git('fetch', 'origin', 'main', 'editorial-intake')
     rows = json.loads(safe_git_blob_at('origin/main', 'news.json'))
+    news_pool = inspect_news_pool()
     last = latest_site_first_publication(rows, main_ref='origin/main')
     with contextlib.redirect_stdout(io.StringIO()) as capture:
         pending = ready_items('origin/editorial-intake', main_ref='origin/main')
@@ -129,6 +150,7 @@ def snapshot(now=None):
             if newest is None or time > newest[0]:
                 newest = (time, sid)
     return {
+        'news_pool': news_pool,
         'overdue': overdue,
         'blocked_unverified_dzen_ids': blocked,
         'blocked_invalid_markdown_ids': invalid_markdown,

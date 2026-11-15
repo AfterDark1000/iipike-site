@@ -1383,7 +1383,7 @@
       "note": "Публикация Deadline; дата премьеры не объявлена.\n14.11.2026, редактор №13: горячая редакторская очередь по просьбе главреда. 12.11 Deadline сообщило о приобретении Dark Sky Films прав на американский прокат триллера ANSWR; студия подтверждает фильм и сюжет об эмоциональной зависимости от чат-бота. Премьера пока без даты. Высокий интерес для культурной рубрики. Первоисточник для проверки: https://www.darkskyfilms.com/films/answr\n14.11.2026, редактор №14: официальный Dark Sky Films подтверждает ANSWR, реж. Stephen Kay, актёры, сюжет об ИИ-помощнике и зависимости. Deadline (12.11, текст доступен через другие публикации) сообщает о покупке прав на прокат в США; съёмки в Исландии уже прошли, премьера без даты. FANGORIA (12.11) подтверждает продюсера Тимура Бекмамбетова и цитату режиссёра. Spencer в журналистском синопсисе — Rain Spencer (актриса), не подтверждённое имя бота; не писать «бот Spencer». Дубля в каталоге Дзена и news.json не обнаружено. Дальше: статья, Threads, X, VK на утверждение."
     },
     {
-      "id": "n-20261114-93-raw",
+      "id": "n-2f0a50966b50e21e",
       "sequence": 93,
       "title": "Agile Robots привлекла $500 млн при оценке $8,5 млрд",
       "source_url": "https://www.reuters.com/business/media-telecom/softbank-nvidia-back-germanys-agile-robots-85-billion-valuation-2026-11-12/",
@@ -1398,7 +1398,7 @@
       "note": "Вторичный источник Reuters."
     },
     {
-      "id": "n-20261114-94-raw",
+      "id": "n-3f9136ccb84dccc2",
       "sequence": 94,
       "title": "ФРС США обсуждает влияние ИИ на инфляцию и занятость",
       "source_url": "https://www.reuters.com/business/finance/feds-warsh-take-stock-ai-revolution-us-public-grows-wary-2026-11-13/",
@@ -1413,7 +1413,7 @@
       "note": "Вторичный источник Reuters; проверить детали и должность выступающего."
     },
     {
-      "id": "n-20261114-95-raw",
+      "id": "n-a0496c5bf3e13bec",
       "sequence": 95,
       "title": "Greenpeace призвала NVIDIA сократить климатический след ИИ-чипов",
       "source_url": "https://www.theverge.com/tech/1033051/nvidia-jensen-huang-chips-gpu-supply-chain-climate-pollution",
@@ -1428,7 +1428,7 @@
       "note": "Вторичный источник The Verge."
     },
     {
-      "id": "n-20261114-96-raw",
+      "id": "n-cf50c772431ffecc",
       "sequence": 96,
       "title": "Baidu представила ERNIE 5.5 Flash и Token Exchange",
       "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html",
@@ -1443,7 +1443,7 @@
       "note": "Пресс-релиз Baidu; технические детали проверить."
     },
     {
-      "id": "n-20261114-97-raw",
+      "id": "n-fb1ddd2a5ff741f6",
       "sequence": 97,
       "title": "Nebius планирует до $40 млрд расходов на ИИ-облако",
       "source_url": "https://techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending/",
@@ -1458,7 +1458,7 @@
       "note": "Вторичный источник TechCrunch; планируемые, не фактические расходы."
     },
     {
-      "id": "n-20261114-98-raw",
+      "id": "n-51d01641755cbef8",
       "sequence": 98,
       "title": "AI Music Awards в Лос-Анджелесе — премия для ИИ-музыкантов",
       "source_url": "https://awards.thesiqa.com/",
@@ -1473,7 +1473,7 @@
       "note": "По данным организаторов; факт проведения и дату проверить."
     },
     {
-      "id": "n-20261114-99-raw",
+      "id": "n-c9b924eb9c495d55",
       "sequence": 99,
       "title": "MIT составил карту 2206 мер защиты ИИ и нашёл пробелы для автономных агентов",
       "source_url": "https://www.hpcwire.com/aiwire/2026/11/13/mit-researchers-create-roadmap-to-help-organizations-mitigate-ai-risks/",
@@ -1488,7 +1488,7 @@
       "note": "Вторичный источник AIwire; цифры и исследование проверить."
     },
     {
-      "id": "n-20261114-100-raw",
+      "id": "n-0a987bbc824ebf80",
       "sequence": 100,
       "title": "LMSYS создала консорциум SGLang с NVIDIA, AMD, Google и Meta",
       "source_url": "https://www.hpcwire.com/off-the-wire/lmsys-org-forms-sglang-consortium-with-nvidia-amd-google-and-meta/",
@@ -1503,7 +1503,7 @@
       "note": "Объявление LMSYS через HPCwire; отличается от прежней новости про AWS SGLang-Neuron."
     },
     {
-      "id": "n-20261114-101-raw",
+      "id": "n-5db0d3e2ca6e5b64",
       "sequence": 101,
       "title": "Block представила совместную работу сотрудников и ИИ-агентов на Builderlab",
       "source_url": "https://siliconangle.com/2026/11/12/block-builderlab-launch-event-2026-ai-agents-join-team/",
@@ -1518,7 +1518,7 @@
       "note": "Вторичный источник SiliconANGLE."
     },
     {
-      "id": "n-20261114-102-raw",
+      "id": "n-09d7bbde32dccb5e",
       "sequence": 102,
       "title": "Edelbyte привлекла $70 млн для аналитики корпоративных данных ИИ-агентами",
       "source_url": "https://www.blocksandfiles.com/data-management/2026/11/13/startup-edelbyte-has-70-million-to-develop-big-data-analytics-for-ai-agents/5309783",
@@ -1533,7 +1533,7 @@
       "note": "Вторичный источник Blocks & Files."
     },
     {
-      "id": "n-20261114-103-raw",
+      "id": "n-40cac42c0e5d26d0",
       "sequence": 103,
       "title": "Фанат GTA VI создал ИИ-трейлер игры в Сан-Антонио",
       "source_url": "https://www.expressnews.com/lifestyle/article/san-antonio-grand-theft-auto-6-trailer-22527547.php",
@@ -1548,7 +1548,7 @@
       "note": "Со слов автора, San Antonio Express-News; неофициальный фанатский проект."
     },
     {
-      "id": "n-20261115-104-raw",
+      "id": "n-bbb025c77e6c6d7a",
       "sequence": 104,
       "title": "ИИ выявил возможный новый признак риска внезапной сердечной смерти",
       "source_url": "https://www.sciencedaily.com/releases/2026/11/261112230456.htm",
@@ -1563,7 +1563,7 @@
       "note": "Вторичный источник ScienceDaily; дата исходного исследования и клиническая применимость требуют проверки."
     },
     {
-      "id": "n-20261115-105-raw",
+      "id": "n-635d84dfa6ac7b12",
       "sequence": 105,
       "title": "ScrapeBench проверил, как ИИ-агенты соблюдают запреты сайтов",
       "source_url": "https://casrai.org/news/scrapebench-ai-agent-website-scraping-compliance-benchmark-2026",
@@ -1578,7 +1578,7 @@
       "note": "Вторичный источник; оригинальный препринт и цифры требуют проверки."
     },
     {
-      "id": "n-20261115-106-raw",
+      "id": "n-2ff83c781f8ed399",
       "sequence": 106,
       "title": "Desk Studio: автор собрал дизайн-студию из ИИ-агентов",
       "source_url": "https://hackernoon.com/11-14-2026-newsletter",
@@ -1593,7 +1593,7 @@
       "note": "Со слов автора; ссылка на подборку HackerNoon, найти оригинал."
     },
     {
-      "id": "n-20261115-107-raw",
+      "id": "n-055155a86e74bc26",
       "sequence": 107,
       "title": "DeepSeek предположительно открыла чат-клиент chat-demo",
       "source_url": "https://pasqualepillitteri.it/en/news/33409/deepseek-chat-demo-open-source-chat-client",
@@ -1608,7 +1608,7 @@
       "note": "Дата оригинального релиза и репозиторий не подтверждены; проверить до редакционного утверждения."
     },
     {
-      "id": "n-20261115-108-raw",
+      "id": "n-4363e799a7e07e4a",
       "sequence": 108,
       "title": "Simba 3.5 возглавила голосовой рейтинг с минимальным отрывом",
       "source_url": "https://www.orcarouter.ai/blog/simba-3-5-tops-controlled-voice-arena",
@@ -1623,7 +1623,7 @@
       "note": "Вторичный источник; рейтинг и дата изменения требуют проверки; не релиз модели."
     },
     {
-      "id": "n-20261115-109-raw",
+      "id": "n-dd9188a8c982ecaa",
       "sequence": 109,
       "title": "Нигерийский режиссёр призвал усилить защиту авторов от ИИ",
       "source_url": "https://www.vanguardngr.com/2026/11/ekene-mekwunye-advocates-stronger-creator-rights-at-global-ai-forum/",
@@ -1638,7 +1638,7 @@
       "note": "Вторичный источник Vanguard; проверить обстоятельства выступления."
     },
     {
-      "id": "n-20261115-110-raw",
+      "id": "n-68ac6b2421998e1c",
       "sequence": 110,
       "title": "Во Франции учредили литературную премию за книги, созданные с ИИ",
       "source_url": "https://www.lemonde.fr/en/m-le-mag/article/2026/11/14/new-french-literary-prize-will-reward-work-created-with-ai-help_6780556_117.html",
@@ -1653,7 +1653,7 @@
       "note": "Вторичный источник Le Monde."
     },
     {
-      "id": "n-20261115-111-raw",
+      "id": "n-207786cdf2f0d885",
       "sequence": 111,
       "title": "В Индии обсуждают ограничения ИИ-собеседников для подростков",
       "source_url": "https://aidailypost.com/news/india-weighs-regulating-ai-chatbots",
@@ -1668,7 +1668,7 @@
       "note": "Вторичный источник; проверить существование и стадию инициативы."
     },
     {
-      "id": "n-20261115-112-raw",
+      "id": "n-3b24412519dae7c6",
       "sequence": 112,
       "title": "DARPA испытывает наземные роботизированные группы без GPS",
       "source_url": "https://www.businessinsider.com/darpa-tested-autonomous-ground-robots-finding-enemy-targets-no-gps-2026-11",
@@ -1683,7 +1683,7 @@
       "note": "Вторичный источник; дата реальных испытаний требует проверки."
     },
     {
-      "id": "n-20261115-113-raw",
+      "id": "n-8ad739180126aaa5",
       "sequence": 113,
       "title": "ИИ-клип A Very Unusual Town художницы Kelly Boesch набрал аудиторию",
       "source_url": "https://glu.tv/new/",
@@ -1698,7 +1698,7 @@
       "note": "Вторичный каталог; оригинальная дата публикации и число просмотров не подтверждены."
     },
     {
-      "id": "n-20261115-114-raw",
+      "id": "n-bb4deecac7ca3168",
       "sequence": 114,
       "title": "llama.cpp представила релиз 1.0.0",
       "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0",
@@ -1713,7 +1713,7 @@
       "note": "Проверить дату тега и точный состав релиза по GitHub."
     },
     {
-      "id": "n-20261115-115-raw",
+      "id": "n-dfe308b83c7234a2",
       "sequence": 115,
       "title": "Runway Praxis-1: видеомодель для управления роботами",
       "source_url": "https://aidailypost.com/news/runways-open-source-praxis-1-turns",
@@ -1728,7 +1728,7 @@
       "note": "Вторичный источник; дата первичного релиза требует проверки."
     },
     {
-      "id": "n-20261115-116-raw",
+      "id": "n-43d579b0adbf2540",
       "sequence": 116,
       "title": "Stanford Memorilla сжимает контекст в компактную память для ИИ",
       "source_url": "https://github.com/snap-stanford/memorilla",
@@ -1743,7 +1743,7 @@
       "note": "Возможная старая история; дата оригинального исследования и точность заявления о 16 токенах требуют проверки."
     },
     {
-      "id": "n-20261115-117-raw",
+      "id": "n-70e2db13922263ef",
       "sequence": 117,
       "title": "Vercel представила UI SDK с набором действий для ИИ-программистов",
       "source_url": "https://aidailypost.com/news/vercel-releases-ui-sdk-50-behaviors",
@@ -1758,7 +1758,7 @@
       "note": "Вторичный источник; проверить официальный релиз и дату."
     },
     {
-      "id": "n-20261115-118-raw",
+      "id": "n-8405f53a38b64765",
       "sequence": 118,
       "title": "Google Antigravity применили для математических доказательств с ИИ-агентами",
       "source_url": "https://theairead.com/reports/daily/2026-11-14-am",
@@ -1773,7 +1773,7 @@
       "note": "Вторичный источник; заявления о доказательстве открытых гипотез не подтверждены."
     },
     {
-      "id": "n-20261115-119-raw",
+      "id": "n-a9d438126fcd3013",
       "sequence": 119,
       "title": "У Claude произошли ошибки сайта, API и Claude Code",
       "source_url": "https://agihunt.info/en/daily/2026-11-14",
@@ -1788,7 +1788,7 @@
       "note": "Вторичный источник; проверить статус-инцидент Anthropic."
     },
     {
-      "id": "n-20261115-120-raw",
+      "id": "n-8b0fd7b329fb7a80",
       "sequence": 120,
       "title": "OpenAI перераспределила сотрудников робототехнического направления",
       "source_url": "https://ai-news-brief.com/briefs/2026-11-14.html",
@@ -1803,7 +1803,7 @@
       "note": "Вторичный источник; подтвердить реорганизацию."
     },
     {
-      "id": "n-20261115-121-raw",
+      "id": "n-5dd6a91d0e60ecea",
       "sequence": 121,
       "title": "Anthropic якобы ограничивает китайских инвесторов перед IPO",
       "source_url": "https://ai-news-brief.com/briefs/2026-11-14.html",
@@ -1818,7 +1818,7 @@
       "note": "Вторичный источник; официального подтверждения не найдено; проверить."
     },
     {
-      "id": "n-20261115-122-raw",
+      "id": "n-a811c656a9981f64",
       "sequence": 122,
       "title": "В команде Grok Imagine якобы сократили около 60 сотрудников",
       "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/",
@@ -1833,7 +1833,7 @@
       "note": "По данным The Information; официальное подтверждение отсутствует."
     },
     {
-      "id": "n-20261115-123-raw",
+      "id": "n-d554360a827b66f2",
       "sequence": 123,
       "title": "ByteDance представила Seedance 2.5 Flash — более дешёвую видеомодель",
       "source_url": "https://www.thereelstack.com/lab/seedance-2-5-flash-faster-cheaper-seedance-higgsfield-capcut-modelark",

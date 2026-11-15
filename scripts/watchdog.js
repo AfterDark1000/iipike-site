@@ -146,6 +146,14 @@ async function canAutoCloseIncident(key, findings, checked, releaseProof) {
   return checked.has(key);
 }
 
+function evaluateNewsPool(pool) {
+  if (!pool || pool.checked !== true || pool.valid === true) return null;
+  return 'Единый пул новостей не проходит проверку структуры: ' +
+    String(pool.error || 'причина не указана').slice(0,220) +
+    '. Добавление и резервирование кандидатов могут быть заблокированы. ' +
+    'https://github.com/' + OWNER + '/' + SITE + '/blob/main/data/site_news_pool.json';
+}
+
 function decodeFile(data) {
   if (Array.isArray(data) || data.type !== 'file') throw Error('Expected GitHub file');
   return Buffer.from((data.content || '').replace(/\s/g, ''), 'base64').toString('utf8');
@@ -225,6 +233,15 @@ async function main({github, context, core}) {
     const fs = require('node:fs');
     const q = JSON.parse(fs.readFileSync('/tmp/hpii-queue-health.json', 'utf8'));
     queueHealth = q;
+    // Pool failures are independent of site-first releases. They must remain
+    // visible even while the website keeps publishing successfully.
+    if (q.news_pool && q.news_pool.checked === true) {
+      checked.add('site-news-pool');
+      const issue = evaluateNewsPool(q.news_pool);
+      if (issue) put('site-news-pool', issue);
+    } else {
+      notes.push('Состояние единого пула новостей не подтверждено; ошибок не предполагаем.');
+    }
     if (q.check_error) {
       notes.push('Состояние очереди не подтверждено: ' + String(q.check_error).slice(0,180));
     } else {
@@ -382,4 +399,4 @@ async function main({github, context, core}) {
 }
 module.exports = {main, ageMinutes, dueAgeMinutes, latestNonCancelled,
   unrecoveredPublisherFailures, evaluateRun,
-  evaluatePagesBuilds, selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
+  evaluatePagesBuilds, evaluateNewsPool, selectedReleaseFromLogs, verifySitePublication, canAutoCloseIncident};
