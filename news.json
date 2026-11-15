@@ -5256,7 +5256,9 @@
       "anthropic",
       "meta"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af82cfe8b79156f70976380",
+    "site_first_dzen_url": "https://dzen.ru/a/avgs_ot5FW9wl2OA"
   },
   {
     "title": "Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов",
@@ -5279,7 +5281,9 @@
     ],
     "products": [
       "claude"
-    ]
+    ],
+    "site_first_dzen_id": "6af92f191d3b064b6add563f",
+    "site_first_dzen_url": "https://dzen.ru/a/avkvGR07Bktq3VY_"
   },
   {
     "title": "Google научила ИИ искать причины болезней в отдельных клетках",
@@ -5300,7 +5304,9 @@
     "companies": [
       "google"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af92f91f5a98257e912b82f",
+    "site_first_dzen_url": "https://dzen.ru/a/avkvkfWpglfpErgv"
   },
   {
     "title": "Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд",
@@ -5321,7 +5327,9 @@
     "companies": [
       "google"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af93034e004c37634dd125c",
+    "site_first_dzen_url": "https://dzen.ru/a/avkwNOAEw3Y03RJc"
   },
   {
     "title": "ИИ ускорил расчёты промышленных биореакторов в 10 тысяч раз",
@@ -5340,7 +5348,9 @@
       "business"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af930b29c946433beda9998",
+    "site_first_dzen_url": "https://dzen.ru/a/avkwspyUZDO-2pmY"
   },
   {
     "title": "WHOOP запустила соцсеть против ИИ-ботов — с проверкой живого пульса",
@@ -5361,7 +5371,9 @@
       "society"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af93121e1a9a744f99658f6",
+    "site_first_dzen_url": "https://dzen.ru/a/avkxIeGpp0T5llj2"
   },
   {
     "title": "ChatGPT, Gemini и Perplexity отправляли покупателей в фальшивые магазины",
@@ -5389,7 +5401,9 @@
     "products": [
       "chatgpt",
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6af9318c6335b45bbe2a9aba",
+    "site_first_dzen_url": "https://dzen.ru/a/avkxjGM1tFu-Kpq6"
   },
   {
     "title": "Google дала Gemini глаза — теперь он видит то же, что и вы",
@@ -5414,7 +5428,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6af9322198579b1daf105ee4",
+    "site_first_dzen_url": "https://dzen.ru/a/avkyIZhXmx2vEF7k"
   },
   {
     "title": "ChatGPT дали кошелёк — теперь он может ходить по магазинам вместо вас",
@@ -5440,7 +5456,9 @@
     ],
     "products": [
       "chatgpt"
-    ]
+    ],
+    "site_first_dzen_id": "6af932a38b79156f70e1cb47",
+    "site_first_dzen_url": "https://dzen.ru/a/avkyo4t5FW9w4ctH"
   },
   {
     "title": "Трампа заподозрили в скрытом налоге на экспорт чипов NVIDIA в Китай",
@@ -5463,7 +5481,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af9331de7c3d9558a4b95f0",
+    "site_first_dzen_url": "https://dzen.ru/a/avkzHefD2VWKS5Xw"
   },
   {
     "title": "Разработчики игр ругают ИИ, но всё чаще им пользуются",
@@ -5484,7 +5504,9 @@
       "society"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af93383f8ad2a1742de3c4d",
+    "site_first_dzen_url": "https://dzen.ru/a/avkzg_itKhdC3jxN"
   },
   {
     "title": "Учёные научили роботов падать в 6,5 раза реже",
@@ -5503,7 +5525,9 @@
       "models"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af9343ff38bf42a8f22d7d7",
+    "site_first_dzen_url": "https://dzen.ru/a/avk0P_OL9CqPItfX"
   },
   {
     "title": "Бекмамбетов спродюсировал триллер о парне, которого сводит с ума чат-бот",
@@ -5523,7 +5547,9 @@
       "entertainment"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af934a398579b1daf12b0b0",
+    "site_first_dzen_url": "https://dzen.ru/a/avk0o5hXmx2vErCw"
   },
   {
     "title": "Роботам дали «мышечную память» — теперь они справляются с 92% испытаний",
