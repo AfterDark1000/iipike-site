@@ -1,193 +1,128 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-14T09:26:31Z",
-  "status": "ok",
+  "generated_at_utc": "2026-11-15T09:56:17Z",
+  "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "xMvVY1MkMKc",
-      "url": "https://www.youtube.com/shorts/xMvVY1MkMKc",
-      "title": "When you have AirPods in 😑😭😂 #shorts #funny #comedy #apple #iphone #airpods #tech #dating",
-      "channel": "Matt & Justus",
-      "published_at": "2026-11-07T19:46:28Z",
-      "duration_seconds": 53,
-      "views": 2679680,
-      "likes": 122767,
-      "subscribers": 5470000,
+      "id": "_mIwzdvTDyE",
+      "url": "https://www.youtube.com/shorts/_mIwzdvTDyE",
+      "title": "Me vs chatgpt😂 #comedy #chatgpt #funnyai #funny #trendingshorts #telugushorts #comedyshorts #viral",
+      "channel": "Bicep Biryani",
+      "published_at": "2026-11-09T13:25:14Z",
+      "duration_seconds": 52,
+      "views": 67259,
+      "likes": 1182,
+      "subscribers": 8790,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-14T09:26:31Z",
+      "statistics_checked_at": "2026-11-15T09:56:17Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": null,
-      "rank_score": 10.06,
-      "viral_status": "unconfirmed",
+      "growth_views_per_hour": 24.7,
+      "rank_score": 9.85,
+      "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "Sketches showing a couple sitting on a couch and another person working on a laptop with earphones, intercut with quick dialogue about overheard phone calls.",
-        "observed_audio": "Dialogue between characters arguing about whether insults in a phone conversation are directed at people nearby.",
-        "hook_0_3s": "A couple on a couch discussing food, immediately intercut with a man reacting to an overheard phone call.",
+        "observed_visuals": "One actor plays two roles using quick jump cuts and costume changes: one in a green jacket (representing ChatGPT) and one in a red t-shirt (representing a frustrated user).",
+        "observed_audio": "Dialogue in a South Asian language with animated voice acting, expressive exclamations, and comedic sound effects.",
+        "hook_0_3s": "Jump cut from the user shouting to the ChatGPT character sitting calmly with a paper and pen, establishing the contrast format immediately.",
         "timeline": [
           {
             "time": "00:00",
-            "visible_action": "A couple sitting on a couch talking about food.",
-            "editing": "Direct cut to another person at a laptop.",
+            "visible_action": "Actor wearing a red t-shirt gestures angrily, shouting towards the camera.",
+            "editing": "Jump cut start",
             "confidence": "seen"
           },
           {
-            "time": "00:02",
-            "visible_action": "A man wearing a wig sitting by a laptop making an insulting remark.",
-            "editing": "Jump cut back to the couple looking shocked.",
+            "time": "00:01",
+            "visible_action": "Actor appears in a green jacket and notepad, playing the role of ChatGPT.",
+            "editing": "Fast cut",
             "confidence": "seen"
           },
           {
-            "time": "00:09",
-            "visible_action": "Close-up of putting in an AirPod.",
-            "editing": "Quick cut to dialogue sequence.",
+            "time": "00:06",
+            "visible_action": "Actor back in red t-shirt, complaining about delayed replies.",
+            "editing": "Fast cut",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:13",
+            "visible_action": "Rapid back-and-forth dialogue cuts between the two personas.",
+            "editing": "Jump cuts",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:51",
+            "visible_action": "Screen flashes color bars ending the sketch.",
+            "editing": "Transition out",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Sketch comedy utilizing rapid cross-cutting and misunderstanding as a comedic premise.",
-        "transfer_to_hpii": "An AI news anchor seemingly talking about general autonomous systems, but viewers incorrectly think the AI is directly insulting their specific outdated workflows.",
-        "what_not_to_copy": "Do not replicate explicit insults or crude sketches.",
-        "limitations": "Audio contains bleeps and fast conversational overlap.",
+        "format_mechanic": "Dual-role comedy sketch using rapid jump cuts to personify an AI platform versus a frustrated human user in daily interaction.",
+        "transfer_to_hpii": "Compare human vs AI behavior in professional news updates by staging a rapid back-and-forth dialogue using split-screen or alternating jump cuts.",
+        "what_not_to_copy": "Do not copy exact jokes, dialogue lines, costumes, or the specific language/cultural context.",
+        "limitations": "Audio translation is partial; exact dialogue semantics are inferred from tone and visual context.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-14T09:26:34Z",
+      "analyzed_at_utc": "2026-11-15T09:56:23Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "geCpuDpaUkI",
-      "url": "https://www.youtube.com/shorts/geCpuDpaUkI",
-      "title": "Sutli Bomb Kaise Phatta Hai? 💥😱 | 3D Animation #shorts #diwali",
-      "channel": "Hasan ali",
-      "published_at": "2026-11-08T13:08:16Z",
-      "duration_seconds": 48,
-      "views": 164815,
-      "likes": 2415,
-      "subscribers": 39900,
+      "id": "-wiEauWBQVs",
+      "url": "https://www.youtube.com/shorts/-wiEauWBQVs",
+      "title": "Why Your Cat IGNORES You 😳🐱 (Science Explained) #shorts",
+      "channel": "Vibeuzz Official",
+      "published_at": "2026-11-14T03:51:57Z",
+      "duration_seconds": 39,
+      "views": 1457,
+      "likes": 31,
+      "subscribers": 148,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-14T09:26:31Z",
+      "statistics_checked_at": "2026-11-15T09:56:17Z",
       "is_confirmed_short": false,
       "search_family": "explanation",
       "format_family_guess": "explanation",
-      "growth_views_per_hour": null,
-      "rank_score": 8.38,
-      "viral_status": "candidate_verified_stats",
-      "analysis": {
-        "observed_visuals": "3D-анимация зеленого куба, похожего на коробочку с фитилем на фиолетовом фоне с сеткой. Позже показана демонстрация в разрезе: порох внутри куба и процесс сгорания, приводящий к взрыву.",
-        "observed_audio": "Мужской закадровый голос на хинди, звуковые эффекты фитиля, тления и взрыва.",
-        "hook_0_3s": "Зеленый куб с фитилем на темном фоне с сеткой, появление текста заголовка на экране.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:02",
-            "visible_action": "Появление зеленого куба с веревочным фитилем",
-            "editing": "Статичный план с зумом, плавная смена кадров",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:02 - 00:08",
-            "visible_action": "Поджог фитиля, искра движется внутрь куба",
-            "editing": "Приближение камеры к фитилю",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:08 - 00:10",
-            "visible_action": "Взрыв куба",
-            "editing": "Быстрая склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:10 - 00:22",
-            "visible_action": "Демонстрация желтого открытого короба с порохом внутри",
-            "editing": "Смена модели куба на короб и обратно",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:22 - 00:33",
-            "visible_action": "Показ компонентов пороха (древесный уголь, сера, нитрат калия) и реакция горения",
-            "editing": "Появление всплывающих окон с текстом и иконками ингредиентов",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:33 - 00:44",
-            "visible_action": "Куб надувается от давления газов",
-            "editing": "Ускоренная анимация деформации объекта",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:44 - 00:48",
-            "visible_action": "Мощный взрыв и разлет огня",
-            "editing": "Динамичная смена крупных планов взрыва",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Объяснение физического процесса или устройства через 3D-разборку объекта на элементы с демонстрацией давления и цепной реакции.",
-        "transfer_to_hpii": "Использовать механику 3D-разбора сложного объекта для визуализации внутренних процессов в нейросети: например, показать, как текстовый промпт накапливает скрытые векторные слои в генеративной модели ИИ перед выдачей результата.",
-        "what_not_to_copy": "Буквальное копирование темы пиротехники, взрывов и обучающих роликов про порох.",
-        "limitations": "Анимационные 3D-модели требуют времени на отрисовку; невозможно напрямую перенести на «живые» съемки без потери наглядности.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-14T09:26:40Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
+      "growth_views_per_hour": 17.8,
+      "rank_score": 6.38,
+      "viral_status": "unconfirmed",
+      "status": "failed",
+      "failure": "API HTTP 503"
     },
     {
-      "id": "QqSQB1vKiAE",
-      "url": "https://www.youtube.com/shorts/QqSQB1vKiAE",
-      "title": "Honey Under a Microscope Reveals Something UNEXPECTED! 😳🍯 #Honey #Microscope #MicroscopicWorld",
-      "channel": "Zippie Zooom",
-      "published_at": "2026-11-12T18:10:58Z",
-      "duration_seconds": 48,
-      "views": 12552,
-      "likes": 819,
-      "subscribers": 4610,
+      "id": "rS4YKE_3NH8",
+      "url": "https://www.youtube.com/shorts/rS4YKE_3NH8",
+      "title": "Crazy Physics Experiment #Shorts#usa#usashorts#experiment",
+      "channel": "Accidental Eureka",
+      "published_at": "2026-11-14T13:45:45Z",
+      "duration_seconds": 36,
+      "views": 1357,
+      "likes": null,
+      "subscribers": 3,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-14T09:26:31Z",
+      "statistics_checked_at": "2026-11-15T09:56:17Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
       "growth_views_per_hour": null,
-      "rank_score": 6.82,
+      "rank_score": 4.91,
       "viral_status": "unconfirmed",
-      "analysis": {
-        "observed_visuals": "Человек в пчелиной маске мешает ложкой мед в ведерке, затем кадры сменяются микроскопом и людьми, дегустирующими соты.",
-        "observed_audio": "Энергичная озвучка за кадром на английском языке с вопросом о меде, сопровождаемая фоновой музыкой и звуковыми эффектами.",
-        "hook_0_3s": "Человек с пчелами на лице держит ведро с медом, появляется текст 'EVER' и стрелка, указывающая на ложку.",
-        "timeline": [
-          {
-            "time": "00:00",
-            "visible_action": "Человек в пчелиной маске мешает мед ложкой",
-            "editing": "динамичный старт с крупным шрифтом",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:02",
-            "visible_action": "Показ микроскопа и предметного стекла",
-            "editing": "быстрая склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:04",
-            "visible_action": "Люди едят соты с медом",
-            "editing": "серия быстрых переходов",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Интригующий вопрос в начале, демонстрация процесса с микроскопом и чередование кадров для удержания внимания.",
-        "transfer_to_hpii": "Применение механики 'неожиданный масштаб/ракурс' для демонстрации работы ИИ-алгоритмов.",
-        "what_not_to_copy": "Использование случайных милых котов и нерелевантных вставок, не связанных с основной темой.",
-        "limitations": "Выборка 1 FPS скрывает часть быстрых переходов и микро-склеек.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-14T09:26:45Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
+      "status": "failed",
+      "failure": "API HTTP 503"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "video_id": "-wiEauWBQVs",
+      "code": "analysis_failed"
+    },
+    {
+      "video_id": "rS4YKE_3NH8",
+      "code": "analysis_failed"
+    }
+  ]
 }
