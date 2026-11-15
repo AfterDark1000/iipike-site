@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15T01:17:42.344504Z",
+  "updated_at": "2026-11-15T08:24:59.330267Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T01:17:42.344504Z",
-      "last_success_at": "2026-11-15T01:17:42.344504Z",
+      "checked_at": "2026-11-15T08:24:59.330267Z",
+      "last_success_at": "2026-11-15T08:24:59.330267Z",
       "error": null,
-      "fresh_matches": 8
+      "fresh_matches": 6
     },
     {
       "id": "3dnews",
@@ -20,10 +20,10 @@
       "channel_url": "https://dzen.ru/3dnews.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T01:17:42.344504Z",
-      "last_success_at": "2026-11-15T01:17:42.344504Z",
+      "checked_at": "2026-11-15T08:24:59.330267Z",
+      "last_success_at": "2026-11-15T08:24:59.330267Z",
       "error": null,
-      "fresh_matches": 13
+      "fresh_matches": 12
     },
     {
       "id": "overclockers",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T01:17:42.344504Z",
-      "last_success_at": "2026-11-15T01:17:42.344504Z",
+      "checked_at": "2026-11-15T08:24:59.330267Z",
+      "last_success_at": "2026-11-15T08:24:59.330267Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T01:17:42.344504Z",
-      "last_success_at": "2026-11-15T01:17:42.344504Z",
+      "checked_at": "2026-11-15T08:24:59.330267Z",
+      "last_success_at": "2026-11-15T08:24:59.330267Z",
       "error": null,
-      "fresh_matches": 0
+      "fresh_matches": 1
     }
   ],
   "generator": {
@@ -55,10 +55,31 @@
   },
   "usage": {
     "date": "2026-11-15",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "a70d9e9d48223090ea68e608",
+      "title": "Япония доверит оборону искусственному интеллекту",
+      "source_id": "mk",
+      "source_name": "МК",
+      "source_url": "https://www.mk.ru/politics/2026/11/15/yaponiya-doverit-oboronu-iskusstvennomu-intellektu.html",
+      "published_at": "2026-11-15T07:47:00Z",
+      "channel_url": "https://dzen.ru/mk.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-15T08:24:59.330267Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Токио решил допустить американский ИИ к военным секретам. Интересно, нейросеть сразу начнет отчитываться в Пентагон или сначала попросит у японского министра обороны обновить софт?",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-15T08:24:59.330267Z",
+      "reason": "Развитие новости о допуске американского ИИ к секретам Японии с легкой иронией.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T08:24:59.330267Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "e92a11bb84af8017fad9136d",
       "title": "Пополнять карту «Тройка» теперь можно через чат с «Алисой AI»",
@@ -260,10 +281,14 @@
       "first_seen_at": "2026-11-14T16:43:11.507340Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T08:24:59.330267Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-15T08:24:59.330267Z"
     },
     {
       "id": "f520c0f7e5755680a968fef2",
@@ -277,10 +302,14 @@
       "first_seen_at": "2026-11-14T16:43:11.507340Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Компания рассчитывает на оценку до $1,4 трлн, хотя инвесторы хотели еще больше. Видимо, скромность нынче главный тренд среди создателей больших языковых моделей.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-15T08:24:59.330267Z",
+      "reason": "Ирония над оценкой стоимости Anthropic при выходе на IPO.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-15T08:24:59.330267Z"
     },
     {
       "id": "0aa2f5ad2622fc7c7082f4d1",
@@ -2412,71 +2441,6 @@
       "comment": "",
       "attempts": 0,
       "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "190a00c11eb6719f37053b6e",
-      "title": "«Ценовая паранойя»: как ИИ подкручивает ценники под конкретного покупателя",
-      "source_id": "mk",
-      "source_name": "МК",
-      "source_url": "https://www.mk.ru/economics/2026/11/08/cenovaya-paranoyya-kak-ii-podkruchivaet-cenniki-pod-konkretnogo-pokupatelya.html",
-      "published_at": "2026-11-08T07:18:34Z",
-      "channel_url": "https://dzen.ru/mk.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T07:34:02.273527Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Пока юристы спорят, является ли дискриминацией разница в цене из истории покупок, алгоритмы просто проверяют, сколько именно этот покупатель готов переплатить. Удобный подход: если кошелек позволяет, почему бы не сделать десерт дороже.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-08T14:30:08.119160Z",
-      "reason": "Разбор динамического ценообразования и реакции алгоритмов на платежеспособность пользователей.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-08T14:30:08.119160Z"
-    },
-    {
-      "id": "f30783f45d54f586aa14a95d",
-      "title": "Обвал цен на акции технологических компаний ставит под угрозу IPO Anthropic",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/08/obval-cen-na-akcii-texnologiceskix-kompanii-stavit-pod-ugrozu-ipo-anthropic.html",
-      "published_at": "2026-11-08T05:40:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T07:27:27.730471Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Интересно, кто первым согласится выйти на биржу с оценкой поскромнее. Всем хочется, чтобы рынок проверил стоимость ИИ-компаний на ком-нибудь другом))",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T07:27:27.730471Z",
-      "reason": "Наблюдение о том, кто первым проверит спрос на акции ИИ-компаний после падения рынка.",
-      "generated_at": "2026-11-08T07:27:27.730471Z",
-      "link_status": "dzen_link_missing",
-      "generated_by": "chatgpt_editor",
-      "editorial_checked_at": "2026-11-08T07:29:39.958Z"
-    },
-    {
-      "id": "edf5b8d066cf66df42cbfd08",
-      "title": "ChatGPT теперь умеет создавать анимированные GIF-файлы благодаря новой модели изображений OpenAI",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/08/chatgpt-teper-umeet-sozdavat-animirovannye-gif-faily-blagodaria-novoi-modeli-izobrazenii-openai.html",
-      "published_at": "2026-11-08T03:53:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T07:27:27.730471Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Гифки — хорошая проверка для генератора: нарисовать персонажа один раз он уже умеет, теперь бы не менять ему лицо на каждом кадре))",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-08T07:27:27.730471Z",
-      "reason": "Ожидание сохранения внешности персонажа между кадрами; результат работы новой модели не утверждается.",
-      "generated_at": "2026-11-08T07:27:27.730471Z",
-      "link_status": "dzen_link_missing",
-      "generated_by": "chatgpt_editor",
-      "editorial_checked_at": "2026-11-08T07:29:39.959Z"
     }
   ]
 }
