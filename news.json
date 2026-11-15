@@ -5736,5 +5736,24 @@
     "products": [
       "claude-code"
     ]
+  },
+  {
+    "title": "ИИ Salesforce улучшил другую нейросеть за 80 часов",
+    "summary": "Исследовательская система Salesforce SFR-AutoR&D за 80 часов улучшила модель поиска документов и затем ускорила её в отдельном девятичасовом эксперименте. Все результаты — по испытаниям Salesforce.",
+    "published": "2026-11-15",
+    "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models",
+    "cover": "assets/editorial/salesforce-sfr-autord-ai-model-improvement-20261111.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-15T11:00:54Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "salesforce-sfr-autord-ai-model-improvement-20261111",
+    "url": "articles/salesforce-sfr-autord-ai-model-improvement-20261111/",
+    "topics": [
+      "agents",
+      "models"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
