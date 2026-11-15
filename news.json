@@ -5711,5 +5711,30 @@
       "fish-audio"
     ],
     "products": []
+  },
+  {
+    "title": "Microsoft спрятала в ИИ опасную команду",
+    "summary": "Microsoft показала способ внедрить скрытую команду в готовую нейросеть без переобучения, изменив семь редко активных нейронов. Закладка срабатывала при специальном сигнале в лабораторных испытаниях.",
+    "published": "2026-11-15",
+    "source_url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents",
+    "cover": "assets/editorial/microsoft-lazarus-dormant-neurons-20261110.webp",
+    "rubric": "skynet",
+    "published_at_utc": "2026-11-15T10:00:52Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "microsoft-lazarus-dormant-neurons-20261110",
+    "url": "articles/microsoft-lazarus-dormant-neurons-20261110/",
+    "topics": [
+      "cybersecurity",
+      "safety",
+      "agents"
+    ],
+    "companies": [
+      "microsoft",
+      "anthropic"
+    ],
+    "products": [
+      "claude-code"
+    ]
   }
 ]

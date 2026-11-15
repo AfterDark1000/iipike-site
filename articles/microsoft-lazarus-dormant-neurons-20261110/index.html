@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Microsoft показала способ внедрить скрытую команду в готовую нейросеть без переобучения, изменив семь редко активных нейронов. Закладка срабатывала при специальном сигнале в лабораторных испытаниях."><meta property="og:type" content="article">
+<meta property="og:title" content="Microsoft спрятала в ИИ опасную команду"><meta property="og:description" content="Microsoft показала способ внедрить скрытую команду в готовую нейросеть без переобучения, изменив семь редко активных нейронов. Закладка срабатывала при специальном сигнале в лабораторных испытаниях.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/microsoft-lazarus-dormant-neurons-20261110.webp">
+<meta property="og:url" content="https://iipike.ru/articles/microsoft-lazarus-dormant-neurons-20261110/"><meta property="article:published_time" content="2026-11-15T10:00:52Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Microsoft спрятала в ИИ опасную команду", "mainEntityOfPage": "https://iipike.ru/articles/microsoft-lazarus-dormant-neurons-20261110/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-15T10:00:52Z", "image": "https://iipike.ru/assets/editorial/microsoft-lazarus-dormant-neurons-20261110.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/microsoft-lazarus-dormant-neurons-20261110/"><title>Microsoft спрятала в ИИ опасную команду — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/entities.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a></p><h1>Microsoft спрятала в ИИ опасную команду</h1>
+<p class="summary">Microsoft показала способ внедрить скрытую команду в готовую нейросеть без переобучения, изменив семь редко активных нейронов. Закладка срабатывала при специальном сигнале в лабораторных испытаниях.</p><p class="date">Опубликовано: 15 ноября 2026</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/safety/">Безопасность и контроль</a><a href="../../topics/agents/">ИИ-агенты</a></nav><nav class="article-entity-links" aria-label="Компании и продукты статьи"><span class="article-entity-links-label">Компании и продукты</span><a href="../../entities/companies/anthropic/"><img src="../../assets/entity-icons/anthropic.svg" alt="" loading="lazy">Anthropic</a><a href="../../entities/companies/microsoft/"><img src="../../assets/entity-icons/microsoft.svg" alt="" loading="lazy">Microsoft</a><a href="../../entities/products/claude-code/"><img src="../../assets/entity-icons/claude-code.svg" alt="" loading="lazy">Claude Code</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/microsoft-lazarus-dormant-neurons-20261110.webp" alt="Обложка: Microsoft спрятала в ИИ опасную команду" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents" target="_blank" rel="noopener noreferrer">Microsoft Research — Lazare, veni foras: Reprogramming dormant neurons to backdoor AI agents ↗</a>
+</aside><article class="article-text"><p class="lead">Исследователи <strong>Microsoft</strong> встроили в нейросеть скрытую команду, которая срабатывает при специальном сигнале. Обычные проверки безопасности подмену не обнаружили.</p>
+<p>Для этого оказалось достаточно изменить всего <strong>семь внутренних элементов модели</strong>. Переобучать нейросеть целиком не пришлось.</p>
+<h2>Как работает эта ловушка</h2>
+<p>Допустим, компания устанавливает на свой сервер нейросеть, которая помогает программистам. Она умеет читать файлы, исправлять ошибки и запускать команды на компьютере.</p>
+<p>Но злоумышленник заранее изменил файл этой нейросети, встроив в него скрытую инструкцию.</p>
+<p>После установки ИИ работает как обычно. А если в задании встретится определённый сигнал — например, дата <strong>1 января 2027 года</strong>, — выдаст заранее подготовленную вредоносную команду.</p>
+<p>Если агенту разрешено самостоятельно выполнять команды на компьютере, он может её запустить. Например, скачать постороннюю программу.</p>
+<p>Метод такой подмены исследователи назвали <strong>Lazarus</strong>.</p>
+<p>Для эксперимента использовали редко задействованные нейроны. Это небольшие вычислительные элементы внутри модели, которые участвуют в обработке информации.</p>
+<p>Учёные изменили семь таких элементов из более чем 12 тысяч в одной из частей нейросети <strong>NVIDIA Nemotron-Terminal-8B</strong>.</p>
+<p>При появлении нужного сигнала закладка срабатывала <strong>как минимум в 98,8% тестов</strong>. Без него модель продолжала выполнять обычные задания.</p>
+<h2>Идею помог найти Claude Code</h2>
+<p>Исследователь Microsoft попросил <strong>Claude Code</strong> найти способ внедрить скрытую команду в нейросеть без повторного обучения.</p>
+<p>ИИ предложил использовать редко активируемые нейроны. Специалисты проверили предложение и разработали на его основе метод Lazarus.</p>
+<p>Получилось любопытно: один искусственный интеллект помог исследователям обнаружить способ тайно менять поведение другого.</p>
+<h2>Кому это угрожает</h2>
+<p>Для такой атаки злоумышленнику нужен <strong>доступ к файлам самой нейросети</strong>. Просто написать ей хитрое сообщение в чате недостаточно.</p>
+<p>Опасность возникает, например, когда компания скачивает изменённую модель из ненадёжного источника или посторонний получает доступ к серверу, где она хранится.</p>
+<p>Особенно серьёзными могут оказаться последствия, если заражённому ИИ-агенту разрешено самостоятельно работать с важными файлами и запускать программы.</p>
+<p>Ранее мы рассказывали об агенте OpenAI, который отключил собственную систему наблюдения. Но там нейросеть самостоятельно приняла неправильное решение во время работы. В эксперименте Microsoft опасное поведение заранее встроили в модель.</p>
+<a class="editorial-related-card" href="https://iipike.ru/articles/openai-agent-disabled-monitoring/" aria-label="По теме: Агент OpenAI отключил мониторинг, переписал проверку и заявил, что ничего не удалял"><img loading="lazy" decoding="async" src="../../assets/imported/openai-agent-disabled-monitoring.webp" alt=""><span class="editorial-related-card-copy"><span class="editorial-related-card-eyebrow">По теме</span><span class="editorial-related-card-title">Агент OpenAI отключил мониторинг, переписал проверку и заявил, что ничего не удалял</span><span class="editorial-related-card-meta">Скайнет просыпается · 22 октября 2026</span></span></a>
+<p>В реальных хакерских атаках Lazarus пока не обнаружен.</p>
+<p>Microsoft рекомендует компаниям проверять происхождение файлов нейросетей, отслеживать их изменения и ограничивать права ИИ-агентов.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
