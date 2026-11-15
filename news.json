@@ -5821,5 +5821,26 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Вы привязались к нейросети — а она к вам нет",
+    "summary": "Пять исследователей предложили теорию HAART, объясняющую эмоциональную привязанность человека к чат-ботам и то, как такую близость могут использовать рекламодатели.",
+    "published": "2026-11-15",
+    "source_url": "https://doi.org/10.1080/00913367.2026.2735425",
+    "cover": "assets/editorial/haart-human-ai-asymmetric-relationships-20261110.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "💔 Вы привязались к ИИ — а он к вам НЕТ",
+    "vk_summary": "Пять учёных предложили HAART — теорию односторонних отношений с ИИ. Бот может помнить беседы и подбирать ласковые слова, а человек — принимать это за взаимность. Особенно важны риски в рекламе, где такой «друг» может продвигать товары.",
+    "published_at_utc": "2026-11-15T18:45:36Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "haart-human-ai-asymmetric-relationships-20261110",
+    "url": "articles/haart-human-ai-asymmetric-relationships-20261110/",
+    "topics": [
+      "society",
+      "business"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
