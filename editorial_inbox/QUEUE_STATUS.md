@@ -2,21 +2,20 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 5 · **Готовы:** 0 · **Ждут интервал:** 5 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 119
+**В очереди:** 4 · **Готовы:** 0 · **Ждут интервал:** 4 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 120
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **15.11.2026 11:45 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **15.11.2026 13:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Fish Audio научила ИИ отличать «угу» от «подожди!»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/fish-audio-live-3-interruptions-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 12:52 (Усть-Катав)**; пауза до 15.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fish-audio-live-3-interruptions-20261110.webp) |
-| **2** | [Microsoft спрятала в ИИ опасную команду](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-lazarus-dormant-neurons-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 13:52 (Усть-Катав)**; пауза до 15.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-lazarus-dormant-neurons-20261110.webp) |
-| **3** | [ИИ Salesforce улучшил другую нейросеть за 80 часов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/salesforce-sfr-autord-ai-model-improvement-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 14:52 (Усть-Катав)**; пауза до 15.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/salesforce-sfr-autord-ai-model-improvement-20261111.webp) |
-| **4** | [Глава Databricks поручил ИИ собирать плохие новости о своей компании](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/databricks-genie-unvarnished-truth-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 15:52 (Усть-Катав)**; пауза до 15.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/databricks-genie-unvarnished-truth-20261111.webp) |
-| **5** | [ИИ пишет за студентов — в Англии хотят экзамены без него](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/uk-ofs-ai-free-assessments-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 16:52 (Усть-Катав)**; пауза до 15.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/uk-ofs-ai-free-assessments-20261111.webp) |
+| **1** | [Microsoft спрятала в ИИ опасную команду](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-lazarus-dormant-neurons-20261110.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 14:07 (Усть-Катав)**; пауза до 15.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-lazarus-dormant-neurons-20261110.webp) |
+| **2** | [ИИ Salesforce улучшил другую нейросеть за 80 часов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/salesforce-sfr-autord-ai-model-improvement-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 15:07 (Усть-Катав)**; пауза до 15.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/salesforce-sfr-autord-ai-model-improvement-20261111.webp) |
+| **3** | [Глава Databricks поручил ИИ собирать плохие новости о своей компании](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/databricks-genie-unvarnished-truth-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 16:07 (Усть-Катав)**; пауза до 15.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/databricks-genie-unvarnished-truth-20261111.webp) |
+| **4** | [ИИ пишет за студентов — в Англии хотят экзамены без него](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/uk-ofs-ai-free-assessments-20261111.json) | ⏳ Ждёт часовой интервал | **Не ранее 15.11.2026 17:07 (Усть-Катав)**; пауза до 15.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/uk-ofs-ai-free-assessments-20261111.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -28,6 +27,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Fish Audio научила ИИ отличать «угу» от «подожди!»](https://iipike.ru/articles/fish-audio-live-3-interruptions-20261110/) | 15.11.2026 13:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fish-audio-live-3-interruptions-20261110.webp) |
 | [ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать](https://iipike.ru/articles/elevenlabs-elevenagents-memory-routines-20261111/) | 15.11.2026 11:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/elevenlabs-elevenagents-memory-routines-20261111.webp) |
 | [ElevenLabs показала ИИ-секретаря, который раздаёт поручения после совещаний](https://iipike.ru/articles/elevenlabs-elevenai-meeting-assistant-20261111/) | 15.11.2026 10:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/elevenlabs-elevenai-meeting-assistant-20261111.webp) |
 | [Google придумала ИИ против вечного «куда пойдём?»](https://iipike.ru/articles/google-tabletop-20261111/) | 15.11.2026 09:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-tabletop-20261111.webp) |
