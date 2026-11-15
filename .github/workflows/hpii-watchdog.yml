@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - 'data/site_news_pool.json'
+      - 'scripts/site_news_pool.py'
+      - 'tests/test_site_news_pool.py'
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
       - 'scripts/watchdog_queue.py'
@@ -14,6 +17,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'data/site_news_pool.json'
+      - 'scripts/site_news_pool.py'
+      - 'tests/test_site_news_pool.py'
       - '.github/workflows/hpii-watchdog.yml'
       - 'scripts/watchdog.js'
       - 'scripts/watchdog_queue.py'
@@ -30,6 +36,7 @@ on:
       - 'pages build and deployment'
       - 'HPII — site-first scheduled hourly queue'
       - 'HPII — one-off recovery through Gemini (NO BULK DUMP)'
+      - 'HPII — site news candidate pool safety (NO PUBLICATION)'
     types: [completed]
   schedule:
     - cron: '13 * * * *'
