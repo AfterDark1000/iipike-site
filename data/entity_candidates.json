@@ -701,6 +701,18 @@
           "source_url": "https://elevenlabs.io/blog/nvidia"
         }
       ]
+    },
+    {
+      "key": "penn-state",
+      "name": "Pennsylvania State University (Penn State)",
+      "status": "candidate",
+      "first_seen": "2026-11-15",
+      "evidence": [
+        {
+          "article_id": "haart-human-ai-asymmetric-relationships-20261110",
+          "source_url": "https://www.psu.edu/news/bellisario-college-communications/story/faculty-member-addresses-artificial-intelligence"
+        }
+      ]
     }
   ],
   "products": [
