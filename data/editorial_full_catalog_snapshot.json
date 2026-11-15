@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "41a28c4796fcfe094d6ff67c1b7a4a6a17988f1b",
-  "source_blob_sha": "6655c2e1450ea56c41eccb45a6136b3b1a2de3bf",
+  "source_commit": "6c9f098c8a0637631cb3817ed3685087df62516e",
+  "source_blob_sha": "40767e5b943c93f43a7080468ad7c52c58bb79a3",
   "snapshot_date": "2026-11-15",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af9343ff38bf42a8f22d7d7",
+      "title": "Учёные научили роботов падать в 6,5 раза реже",
+      "dzen_url": "https://dzen.ru/a/avk0P_OL9CqPItfX",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Мичиганский университет 10 ноября рассказал о результатах испытаний PRISM — нового модуля управления движениями роботов. В виртуальных тестах человекоподобные машины с ним падали примерно в 6,5 раза реже, чем с обычной нейросетью. За 24 секунды ходьбы робот с прежней системой оставался на ногах в 51% испытаний. С PRISM результат вырос до 92,5%. Исследователи попробовали просто увеличить обычную нейросеть до того же р",
+      "published_at_utc": "2026-11-15T16:02:06+00:00"
+    },
+    {
+      "dzen_id": "6af93383f8ad2a1742de3c4d",
+      "title": "Разработчики игр ругают ИИ, но всё чаще им пользуются",
+      "dzen_url": "https://dzen.ru/a/avkzg_itKhdC3jxN",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В игровой индустрии с нейросетями уже работают четверо из десяти специалистов. При этом большинство опрошенных считает, что отрасли от ИИ становится хуже. 12 ноября организаторы GDC Festival of Gaming представили исследование State of the Game Industry, в котором участвовали более 2600 специалистов игровой индустрии — от разработчиков до сотрудников издательств и маркетинговых отделов. За время между опросами доля ис",
+      "published_at_utc": "2026-11-15T15:09:56+00:00"
+    },
+    {
+      "dzen_id": "6af9331de7c3d9558a4b95f0",
+      "title": "Трампа заподозрили в скрытом налоге на экспорт чипов NVIDIA в Китай",
+      "dzen_url": "https://dzen.ru/a/avkzHefD2VWKS5Xw",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Власти США устроили чипам NVIDIA платный крюк по дороге в Китай: пошлина — 25%. 12 ноября сенатор-демократ Рон Уайден и конгрессмен Ричард Нил начали расследование этой схемы. Они подозревают, что администрация президента Дональда Трампа замаскировала под импортную пошлину налог на экспорт, запрещённый Конституцией США. Передовые ИИ-ускорители NVIDIA H200 производят на Тайване. По американской схеме поставок китайски",
+      "published_at_utc": "2026-11-15T14:02:50+00:00"
+    },
+    {
+      "dzen_id": "6af932a38b79156f70e1cb47",
+      "title": "ChatGPT дали кошелёк — теперь он может ходить по магазинам вместо вас",
+      "dzen_url": "https://dzen.ru/a/avkyo4t5FW9w4ctH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 13 ноября научила своих ИИ-агентов dots оплачивать покупки в интернете. Новый ChatGPT Wallet позволяет помощнику расплачиваться вашей банковской картой, даже не зная её настоящего номера. Теперь агенту можно поручить подобрать свитер, найти подарок или забронировать гостиницу. Он изучит предложения, выберет подходящий вариант и дойдёт до оформления заказа. Владелец карты подключается на последнем этапе — когда",
+      "published_at_utc": "2026-11-15T13:15:36+00:00"
+    },
+    {
+      "dzen_id": "6af9322198579b1daf105ee4",
+      "title": "Google дала Gemini глаза — теперь он видит то же, что и вы",
+      "dzen_url": "https://dzen.ru/a/avkyIZhXmx2vEF7k",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google создала умные очки, которым можно показать незнакомый предмет и спросить: «Это что такое?» Gemini увидит его через встроенную камеру и ответит прямо в ухо. Телефон доставать не придётся. 12 ноября компания открыла предзаказы на Intelligent Eyewear. Очки стоят от $395, а в продажу поступят 10 декабря. Электронику разработала Samsung, оправы подготовили Warby Parker и Gentle Monster. Покупателям предложили 30 ва",
+      "published_at_utc": "2026-11-15T12:01:57+00:00"
+    },
+    {
+      "dzen_id": "6af9318c6335b45bbe2a9aba",
+      "title": "ChatGPT, Gemini и Perplexity отправляли покупателей в фальшивые магазины",
+      "dzen_url": "https://dzen.ru/a/avkxjGM1tFu-Kpq6",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Исследователи обнаружили 351 поддельный сайт в ответах ChatGPT, Gemini и Perplexity на вопросы о покупках. Нейросети иногда рекомендовали такие адреса как обычные интернет-магазины, а один из них даже назвали официальным сайтом известного бренда. Компания Podqi, занимающаяся защитой торговых марок, проверила 6795 ответов трёх ИИ-сервисов. Тестирование проводили в сентябре 2026 года, а 12 ноября результаты опубликовал",
+      "published_at_utc": "2026-11-15T11:03:12+00:00"
+    },
+    {
+      "dzen_id": "6af93121e1a9a744f99658f6",
+      "title": "WHOOP запустила соцсеть против ИИ-ботов — с проверкой живого пульса",
+      "dzen_url": "https://dzen.ru/a/avkxIeGpp0T5llj2",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "WHOOP 12 ноября запустила Humans — социальную сеть для владельцев фитнес-браслетов, где каждый аккаунт связан с данными о сердцебиении. Разработчики решили использовать живой пульс для защиты площадки от ИИ-ботов. Основатель компании Уилл Ахмед объяснил идею: «За каждым аккаунтом стоит реальный человек с подтверждённым сердцебиением». — Уилл Ахмед, основатель и глава WHOOP В Humans можно публиковать фотографии, обсуж",
+      "published_at_utc": "2026-11-15T09:52:52+00:00"
+    },
     {
       "dzen_id": "6af930b29c946433beda9998",
       "title": "ИИ ускорил расчёты промышленных биореакторов в 10 тысяч раз",
