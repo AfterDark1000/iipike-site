@@ -1,11 +1,61 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "79cb7fc7c11fba5ac25eb4dc4617466026009fd9",
-  "source_blob_sha": "62e747e250a749b80ed2aa8da4cf00dba7ad9c7b",
-  "snapshot_date": "2026-11-14",
+  "source_commit": "41a28c4796fcfe094d6ff67c1b7a4a6a17988f1b",
+  "source_blob_sha": "6655c2e1450ea56c41eccb45a6136b3b1a2de3bf",
+  "snapshot_date": "2026-11-15",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6af930b29c946433beda9998",
+      "title": "ИИ ускорил расчёты промышленных биореакторов в 10 тысяч раз",
+      "dzen_url": "https://dzen.ru/a/avkwspyUZDO-2pmY",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Учёные Технического университета Граца 11 ноября представили CLARA — программу, которая с помощью машинного обучения ускоряет моделирование промышленных биореакторов до 10 000 раз. В больших биореакторах выращивают микроорганизмы, проводят ферментацию и перерабатывают биомассу. Чтобы управлять такими установками, инженерам необходимо понимать, как внутри перемешиваются жидкости и газы, распределяется кислород и проте",
+      "published_at_utc": "2026-11-15T08:41:18+00:00"
+    },
+    {
+      "dzen_id": "6af93034e004c37634dd125c",
+      "title": "Google научила ИИ заглядывать в будущее вашего здоровья на три месяца вперёд",
+      "dzen_url": "https://dzen.ru/a/avkwNOAEw3Y03RJc",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google Research 11 ноября представила экспериментальную систему SensorWM, которая по данным умных часов и фитнес-браслетов моделирует, как могут измениться показатели здоровья человека за следующие 12 недель, если он начнёт больше спать, ходить или заниматься спортом. Умные часы отлично умеют сообщать, сколько шагов мы прошли и как долго спали. А вот на вопрос «Что изменится, если я исправлю режим?» обычно не отвечаю",
+      "published_at_utc": "2026-11-15T07:33:51+00:00"
+    },
+    {
+      "dzen_id": "6af92f91f5a98257e912b82f",
+      "title": "Google научила ИИ искать причины болезней в отдельных клетках",
+      "dzen_url": "https://dzen.ru/a/avkvkfWpglfpErgv",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google DeepMind 11 ноября представила AlphaGenome 2 — исследовательскую модель, которая предсказывает, как изменения ДНК повлияют на работу генов в конкретных типах клеток. Клетка сердца и клетка иммунной системы содержат практически одинаковую ДНК, но используют её по-разному. Поэтому мутация может затронуть один тип клеток и почти не проявиться в другом. ИИ уже помогает генетикам разбираться в мутациях, но новая Al",
+      "published_at_utc": "2026-11-15T06:23:33+00:00"
+    },
+    {
+      "dzen_id": "6af92f191d3b064b6add563f",
+      "title": "Cisco поручит Claude искать способы взлома корпоративных ИИ-агентов",
+      "dzen_url": "https://dzen.ru/a/avkvGR07Bktq3VY_",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Cisco 9 ноября объявила, что подключит модель Claude Mythos компании Anthropic к системе AI Defense. Нейросеть будет придумывать атаки на корпоративных ИИ-агентов и помогать проверять, можно ли обмануть их защиту или заставить раскрыть конфиденциальные данные. Испытания будут проводить с разрешения владельцев систем, чтобы найти слабые места раньше настоящих злоумышленников. В AI Defense уже есть режим «красной коман",
+      "published_at_utc": "2026-11-15T05:12:57+00:00"
+    },
+    {
+      "dzen_id": "6af82cfe8b79156f70976380",
+      "title": "Новые модели OpenAI, Google и Anthropic хотят запретить через суд",
+      "dzen_url": "https://dzen.ru/a/avgs_ot5FW9wl2OA",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Предупреждения ИИ-боссов о возможной катастрофе теперь используют против них самих — в суде. Четыре американские общественные организации потребовали остановить разработку самых мощных ИИ-моделей у пяти крупнейших технологических компаний. Иск подали 12 ноября в суд Сан-Франциско. Ответчиками стали OpenAI, Google, Anthropic, Meta и SpaceX Super Intelligence — ИИ-подразделение SpaceX. Истцы — Public Citizen, Irreplace",
+      "published_at_utc": "2026-11-15T03:02:01+00:00"
+    },
     {
       "dzen_id": "6af82c63f38bf42a8fcd9449",
       "title": "Китайские ИИ-компании спешат занять зарубежные серверы NVIDIA из-за угрозы нового запрета США",
