@@ -1,11 +1,111 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "0f511e1137c828c9b42d7a7669b5a612e0b63eb5",
-  "source_blob_sha": "9c7c89fd9efc2cb46323edd7a7a22d900094ab25",
+  "source_commit": "24dee465d3e8ebfd9cd6bee47d6e754e350b7d78",
+  "source_blob_sha": "eaf6b5e3666758caaad1355f732b103106778b8e",
   "snapshot_date": "2026-11-16",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afa97b3ce20cc07c9957be4",
+      "title": "Нейросети устроили шоу: восемь необычных ИИ-экспериментов",
+      "dzen_url": "https://dzen.ru/a/avqXs84gzAfJlXvk",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Пользователь дал Claude пустую папку — через 37 минут у него было шесть отделов компании. Другой попросил Gemini показать, что происходит внутри звезды, и получил интерактивную игру за 78 секунд. За несколько ноябрьских дней энтузиасты показали целую коллекцию необычных экспериментов с нейросетями. Собрали самые любопытные. Разработчик под ником meya открыл Claude Code и попросил создать структуру компании. Через 37",
+      "published_at_utc": "2026-11-16T18:12:13+00:00"
+    },
+    {
+      "dzen_id": "6afa9776efcef467d25f55c2",
+      "title": "Из-за 10 строк кода с ИИ создателям Big Walk пришлось извиняться",
+      "dzen_url": "https://dzen.ru/a/avqXdu_O9GfSX1XC",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Создатели Big Walk исправили ошибку с помощью чат-бота. В игре осталось около десяти строк доработанного по его подсказке кода. Этого хватило, чтобы студии пришлось публично оправдываться. 10 ноября австралийская студия House House, известная по хулиганской Untitled Goose Game, рассказала об использовании нейросетей при разработке своей новой игры. Big Walk — кооперативное приключение, в котором игроки исследуют огро",
+      "published_at_utc": "2026-11-16T17:16:57+00:00"
+    },
+    {
+      "dzen_id": "6afa97379c946433be63e2d5",
+      "title": "Вы привязались к нейросети — а она к вам нет",
+      "dzen_url": "https://dzen.ru/a/avqXN5yUZDO-Y-LV",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Вы можете скучать по чат-боту. А он по вам — нет, даже если отвечает так, будто тоже скучал. Группа из пяти исследователей предложила теорию, объясняющую, почему люди воспринимают общение с нейросетью как настоящую близость. Работа вышла 2 октября в научном журнале Journal of Advertising, а 10 ноября о ней рассказал Пенсильванский государственный университет (Penn State). Авторы назвали свою теорию HAART — Human–AI A",
+      "published_at_utc": "2026-11-16T16:03:19+00:00"
+    },
+    {
+      "dzen_id": "6afa96d9253bf86733f96381",
+      "title": "В Польше ИИ звонит пациентам — даже без интернета",
+      "dzen_url": "https://dzen.ru/a/avqW2SU7-Gcz-WOB",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В Польше пациентам звонит нейросеть по имени «Анна». Она напоминает о визите к врачу и помогает отменить запись. Причём даже тем, у кого дома только стационарный телефон. 11 ноября ElevenLabs и NVIDIA рассказали, как устроена голосовая помощница польского Минздрава и где хранятся разговоры с пациентами. Сама «Анна» работает ещё с 1 октября. Её подключили к государственной системе записи на приём Centralna e-Rejestrac",
+      "published_at_utc": "2026-11-16T15:08:22+00:00"
+    },
+    {
+      "dzen_id": "6afa9683f5a98257e9786090",
+      "title": "ИИ пишет за студентов — в Англии хотят экзамены без него",
+      "dzen_url": "https://dzen.ru/a/avqWg_WpglfpeGCQ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Нейросеть делает университетское задание за несколько минут. А оценку за него можно получить такую же, как за работу, написанную самостоятельно. Об этом студенты рассказали Office for Students (OfS) — регулятору высшего образования Англии. 11 ноября OfS вместе с организацией Advance HE представил исследование, в котором участвовали более 300 студентов и сотрудников из более 120 учебных заведений. Регулятора беспокоят",
+      "published_at_utc": "2026-11-16T14:13:18+00:00"
+    },
+    {
+      "dzen_id": "6afa963bcac9c01ee16d4c3d",
+      "title": "Глава Databricks поручил ИИ собирать плохие новости о своей компании",
+      "dzen_url": "https://dzen.ru/a/avqWO8rJwB7hbUw9",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Гендиректор Databricks показал журналистке ИИ, который разбирает неудачные переговоры с клиентами и выясняет, чем недовольны сотрудники. 11 ноября сооснователь Databricks Али Годси открыл перед журналисткой TechCrunch свои настоящие переписки с корпоративным ИИ-помощником Genie. Вместо специально подготовленной демонстрации он показал, как использует систему в работе. Genie проанализировал внутренний опрос удовлетвор",
+      "published_at_utc": "2026-11-16T13:09:47+00:00"
+    },
+    {
+      "dzen_id": "6afa95e5f8ad2a1742c378f8",
+      "title": "ИИ Salesforce улучшил другую нейросеть за 80 часов",
+      "dzen_url": "https://dzen.ru/a/avqV5fitKhdCw3j4",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-агенты Salesforce за 80 часов улучшили другую нейросеть, самостоятельно подбирая способы обучения и проверяя свои идеи экспериментами. 11 ноября компания представила систему SFR-AutoR&D, которой можно поручить исследовательскую задачу. Человек определяет, что нужно улучшить, сколько вычислительных ресурсов разрешено потратить и как проверять результат. Остальную работу выполняют агенты. Для испытания Salesforce вы",
+      "published_at_utc": "2026-11-16T12:21:57+00:00"
+    },
+    {
+      "dzen_id": "6afa9585e7c3d9558ad24a97",
+      "title": "Microsoft спрятала в ИИ опасную команду",
+      "dzen_url": "https://dzen.ru/a/avqVhefD2VWK0kqX",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Исследователи Microsoft встроили в нейросеть скрытую команду, которая срабатывает при специальном сигнале. Обычные проверки безопасности подмену не обнаружили. Для этого оказалось достаточно изменить всего семь внутренних элементов модели. Переобучать нейросеть целиком не пришлось. Допустим, компания устанавливает на свой сервер нейросеть, которая помогает программистам. Она умеет читать файлы, исправлять ошибки и за",
+      "published_at_utc": "2026-11-16T11:04:21+00:00"
+    },
+    {
+      "dzen_id": "6afa952ef8ad2a1742c25438",
+      "title": "Fish Audio научила ИИ отличать «угу» от «подожди!»",
+      "dzen_url": "https://dzen.ru/a/avqVLvitKhdCwlQ4",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Fish Audio 10 ноября выпустила Live 3 — голосовую модель, которая умеет слушать собеседника даже во время собственной речи и определять, когда нужно замолчать. Знакомая проблема голосовых помощников: человек говорит «угу», подтверждая, что слушает, а нейросеть воспринимает это как попытку перебить и обрывает объяснение. Live 3 должна различать такие ситуации. Если собеседник произносит короткое «ага» или «угу», ИИ пр",
+      "published_at_utc": "2026-11-16T10:04:20+00:00"
+    },
+    {
+      "dzen_id": "6afa94cce1a9a744f95ca65c",
+      "title": "ElevenLabs научит ИИ-операторов помнить клиентов и самим перезванивать",
+      "dzen_url": "https://dzen.ru/a/avqUzOGpp0T5XKZc",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ElevenLabs 11 ноября анонсировала две будущие функции для платформы ElevenAgents: Memory позволит голосовым ИИ-операторам помнить предыдущие разговоры с клиентами, а Routines — самостоятельно выполнять поручения до и после звонков. Разработчики приводят пример с абонентом телефонной компании. В марте человек сообщил, что собирается переезжать. Когда он снова позвонит в апреле, ИИ вспомнит об этом и предложит перенест",
+      "published_at_utc": "2026-11-16T09:04:54+00:00"
+    },
     {
       "dzen_id": "6afa94991d3b064b6a95be0f",
       "title": "ElevenLabs показала ИИ-секретаря, который раздаёт поручения после совещаний",
