@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "ChatGPT научили работать с больничными системами вместо медперсонала",
+      "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+      "summary": "16 ноября: OpenAI представила компьютерных агентов для медицинских систем и оформления документов. Важные действия требуют контроля человека.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В ChatGPT появились более 20 медицинских подключений",
+      "source_url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/",
+      "summary": "16 ноября: расширение ChatGPT for Healthcare, интеграции с медицинскими записями, страховыми сервисами, расписаниями и справочниками. Отдельное событие от компьютерных агентов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "GPT-6 Astra помогла физику разобраться с фундаментальной проблемой Стандартной модели",
+      "source_url": "https://openai.com/index/step-toward-defining-the-standard-model/",
+      "summary": "15 ноября: OpenAI опубликовала разбор работы Натаниэля Крейга над математической конструкцией в физике частиц. Препринт вышел в октябре; свежая публикация — авторский разбор.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ФРС США предупредила о риске банковской паники из-за ИИ-агентов",
+      "source_url": "https://www.reuters.com/world/feds-barr-warns-ai-risks-financial-system-2026-11-16/",
+      "summary": "16 ноября: Майкл Барр предупредил, что массовые действия ИИ-агентов могут ускорять кризисы, а алгоритмическая торговля — усиливать колебания. Reuters.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "США и Китай обсуждают экстренную связь на случай аварий с ИИ",
+      "source_url": "https://www.reuters.com/business/media-telecom/chip-tensions-loom-over-trump-xi-summit-us-china-push-ai-safety-steps-2026-11-16/",
+      "summary": "16 ноября: Reuters сообщает о возможном механизме взаимных предупреждений при опасных инцидентах с ИИ; соглашения пока нет.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Французские газеты и журналы появятся в ответах ChatGPT",
+      "source_url": "https://openai.com/index/lvmh-media-division-partnership/",
+      "summary": "16 ноября: OpenAI заключила соглашение с медиаподразделением LVMH, включая Les Echos, Le Parisien, Paris Match.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI выделила £1 млн на обучение британской молодёжи работе с ИИ",
+      "source_url": "https://openai.com/index/the-kings-trust-and-openai/",
+      "summary": "16 ноября: совместная инициатива с The King's Trust предполагает обучение до 25 тысяч молодых людей.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google Карты получили ИИ-агентов для записи на услуги и планирования поездок",
+      "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/",
+      "summary": "16 ноября: Ask Maps получил функции поиска записей на услуги и построения маршрутов с остановками; продуктовый анонс Google.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разговорный ИИ-поиск Google Maps приходит более чем в 30 стран Европы",
+      "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe/",
+      "summary": "16 ноября: географическое расширение Ask Maps в Европе, отдельно от новых агентных функций.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "FreeCast анонсировала голосовой ИИ-поиск фильмов по сцене",
+      "source_url": "https://www.businesswire.com/news/home/20261116578579/en/FreeCast-Introduces-True-Voice-AI-One-Search-Across-the-World-of-Entertainment",
+      "summary": "16 ноября: True Voice AI ищет фильмы, сериалы и спортивный контент голосом, включая поиск по описанию сцены; по заявлению компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Meituan представила LongCat-Video-Avatar 1.6 для длинных роликов с говорящими людьми",
+      "source_url": "https://github.com/meituan-longcat/LongCat-Video",
+      "summary": "15 ноября: заявлены улучшенная синхронизация губ и устойчивость цифрового аватара в длинных видео; открытые веса и код на GitHub.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "У Claude снова произошёл сбой Sonnet 5.5 и Fable 5.2",
+      "source_url": "https://status.claude.com/history",
+      "summary": "16 ноября: Anthropic сообщила об ошибках, затронувших сайт, API, Claude Code и Cowork. Отдельный инцидент по сравнению с прежними сбоями.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Пользователи MiniMax H3 Image жалуются на несовпадение с официальными примерами",
+      "source_url": "https://www.reddit.com/r/StableDiffusion/comments/1xxphrf/what_are_we_doing_wrong_with_h3/",
+      "summary": "15–16 ноября: в Reddit обсуждают проблемы воспроизводимости результатов, анатомии и деталей в ComfyUI. Со слов пользователей, новый отклик на прежний релиз.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "PopNow AI обещает возвращать кредиты за неудачные генерации видео",
+      "source_url": "https://www.einnews.com/pr_news/956673842/popnow-ai-launches-popnow-protect-calling-itself-the-world-s-first-ai-studio-with-automatic-price-protection",
+      "summary": "16 ноября: компания объявила PopNow Protect — компенсацию кредитов за часть неудачных генераций и задержек. Пресс-релиз, по заявлению компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Claude якобы самостоятельно выполнил задачу на настоящей роборуке",
+      "source_url": "https://www.whatpeoplemade.com/i/robot-arm-learned-a-precision-machining-task-from-fable-420351.html",
+      "summary": "15 ноября: команда показала, как Fable 5.2 пишет код для точной обработки деталей. Со слов авторов, возможен тематический дубль иных исследований роборуки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ создал языковую модель на 367 тысяч параметров для Pentium",
+      "source_url": "https://www.whatpeoplemade.com/i/a-367k-parameter-language-model-runs-on-a-pentium-799672.html",
+      "summary": "15 ноября: разработчик утверждает, что при помощи Fable и Opus собрал миниатюрную языковую модель для старого компьютера. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ помог создать рисованную игру-сказку Getting There за четыре часа",
+      "source_url": "https://www.whatpeoplemade.com/i/a-hand-painted-storybook-game-built-in-4-hours-126431.html",
+      "summary": "15 ноября: автор показал игру на 14 глав про мальчика и собаку, с программной графикой и звуком. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчик собрал браузерную игру в духе Dark Souls за три дня с ИИ",
+      "source_url": "https://www.whatpeoplemade.com/i/a-dark-souls-inspired-browser-game-built-in-3-days-017145.html",
+      "summary": "15 ноября: Meng To использовал Claude, Seedream и Tripo для игрового мира и 3D-графики. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-стример сам выбирает и запускает игры на itch.io",
+      "source_url": "https://www.whatpeoplemade.com/i/a-fictitious-streamer-that-picks-and-plays-real-itch-io-999106.html",
+      "summary": "15 ноября: Kevin Ngo показал виртуального стримера, самостоятельно выбирающего игры и реагирующего на чат. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агент построил панель управления собственной памятью и заброшенными задачами",
+      "source_url": "https://www.whatpeoplemade.com/i/muse-builds-a-dashboard-to-visualize-its-own-state-951170.html",
+      "summary": "15 ноября: японский разработчик показал, как Muse визуализирует память, проекты и автоматизации. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "speech.cpp v0.11.0 запустил голосовую Haru-4B локально без Python и CUDA",
+      "source_url": "https://github.com/nyosegawa/speech.cpp",
+      "summary": "15 ноября: новый открытый инструмент локального запуска Haru-4B на Mac, Windows и Linux, с одновременным прослушиванием и ответом. Отдельно от новости о самой модели.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Авторы ИИ-фильма Treasure of the Himalayas показали восемь минут ретрофантастики",
+      "source_url": "https://www.whatpeoplemade.com/i/an-8-5-minute-1960s-technicolor-ai-film-part-156701.html",
+      "summary": "15 ноября: опубликована первая часть фантастического фильма в духе Technicolor 1960-х, использованы Midjourney и Seedance. Со слов авторов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёный заменил Slack и таблицы приложением для лаборатории, написанным ИИ",
+      "source_url": "https://www.whatpeoplemade.com/i/a-lab-operations-app-replaced-slack-and-spreadsheets-891966.html",
+      "summary": "15 ноября: приложение объединяет сообщения, календарь, оборудование и закупки, создано через Claude Code и Codex. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчик научил ИИ физически нажимать кнопку питания зависшего компьютера",
+      "source_url": "https://www.whatpeoplemade.com/i/ai-hard-resets-a-frozen-device-by-pressing-its-power-but-245959.html",
+      "summary": "15 ноября: аппаратная приставка позволяет ИИ-агенту перезапустить зависшее устройство и продолжить отладку. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ создал интерактивный японский храм из программных 3D-частиц",
+      "source_url": "https://www.whatpeoplemade.com/i/interactive-4d-gaussian-splatting-landscape-from-pure-co-277978.html",
+      "summary": "15 ноября: автор показал сцену с храмом, поездом, птицами и сменой времён года без готовых 3D-моделей. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчик автоматизировал перелинковку сайта Claude и Google Search Console",
+      "source_url": "https://www.whatpeoplemade.com/i/weekly-internal-linking-seo-automated-with-claude-858039.html",
+      "summary": "15 ноября: демонстрация еженедельного процесса поиска возможностей внутренних ссылок с проверкой владельцем сайта. Со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
