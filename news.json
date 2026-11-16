@@ -5568,7 +5568,9 @@
       "science"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af93525ce20cc07c9d44d1c",
+    "site_first_dzen_url": "https://dzen.ru/a/avk1Jc4gzAfJ1E0c"
   },
   {
     "title": "ИИ научили снимать будущее",
@@ -5587,7 +5589,9 @@
       "video"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af9357bc6c38d204006ff27",
+    "site_first_dzen_url": "https://dzen.ru/a/avk1e8bDjSBABv8n"
   },
   {
     "title": "Японцы открыли пять ИИ-моделей для беспилотных машин",
@@ -5607,7 +5611,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6af9360a1d3b064b6ae3da10",
+    "site_first_dzen_url": "https://dzen.ru/a/avk2Ch07Bktq49oQ"
   },
   {
     "title": "Alibaba показала Qwen 4 Max — и сразу назначила дату отключения",
@@ -5630,7 +5636,9 @@
     ],
     "products": [
       "qwen"
-    ]
+    ],
+    "site_first_dzen_id": "6af9368ce4152a687099bff2",
+    "site_first_dzen_url": "https://dzen.ru/a/avk2jOQVKmhwmb_y"
   },
   {
     "title": "Google выпустила ИИ, который отвечает на тысячу вопросов без слов",
@@ -5653,7 +5661,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6af93797ce20cc07c9d6b959",
+    "site_first_dzen_url": "https://dzen.ru/a/avk3l84gzAfJ1rlZ"
   },
   {
     "title": "Google придумала ИИ против вечного «куда пойдём?»",
