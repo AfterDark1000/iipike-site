@@ -5940,5 +5940,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Agile Robots привлекла $500 млн на производство роботов",
+    "summary": "Немецкая Agile Robots получила $500 млн инвестиций при оценке $8,5 млрд. Завод компании под Мюнхеном рассчитан на выпуск до 10 тысяч гуманоидов в год; это проектная мощность, а не фактический объём.",
+    "published": "2026-11-16",
+    "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/",
+    "cover": "assets/editorial/agile-robots-series-f-500m-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🦿 $500 МЛН на РОБОТОВ: немецкий завод рассчитан на 10 ТЫСЯЧ гуманоидов в год",
+    "vk_summary": "Agile Robots привлекла $500 млн при оценке $8,5 млрд. Раунд возглавила SoftBank, участвовали NVIDIA, Hitachi и T.Capital. Завод компании под Мюнхеном рассчитан на выпуск до 10 тысяч гуманоидных роботов в год. Компания направит новые средства на расширение производства и работу в США.",
+    "published_at_utc": "2026-11-16T05:30:46Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "agile-robots-series-f-500m-20261112",
+    "url": "articles/agile-robots-series-f-500m-20261112/",
+    "topics": [
+      "engineering",
+      "finance"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
