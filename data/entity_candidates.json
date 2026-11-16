@@ -1593,6 +1593,19 @@
           "source_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
         }
       ]
+    },
+    {
+      "key": "praxis-1",
+      "name": "Praxis-1",
+      "company": "runway",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "runway-praxis-1-open-weights-20261111",
+          "source_url": "https://runway.com/news/company-news/praxis-1-is-now-available"
+        }
+      ]
     }
   ]
 }
