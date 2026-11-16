@@ -1825,9 +1825,9 @@
       "summary": "13 ноября: The Information сообщает о сокращениях в команде генерации видео и изображений.",
       "origin": "ХПИИ — добытчик новостей (контрольный проход 15.11.2026 и два дополнения главреда)",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-15T03:19:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-16T06:48:54.960Z",
       "closed_at": null,
       "article_id": null,
       "note": "По данным The Information; официальное подтверждение отсутствует.\n15.11.2026, ревизия ХПИИ: The Information 13.11 сообщает о сокращении около 60 сотрудников Grok Imagine; писать только с атрибуцией изданию."
