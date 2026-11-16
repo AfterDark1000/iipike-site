@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   tests:
-    if: \${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -36,7 +36,7 @@ jobs:
           python3 scripts/site_news_pool.py --validate
 
   import:
-    if: \${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     permissions:
@@ -52,7 +52,7 @@ jobs:
         run: |
           set -euo pipefail
           for attempt in 1 2 3; do
-            echo "Candidate inbox: safe attempt \${attempt}/3"
+            echo "Candidate inbox: safe attempt ${attempt}/3"
             git fetch origin main
             git reset --hard origin/main
             python3 scripts/site_news_intake.py --report "$RUNNER_TEMP/hpii-intake-result.json"
