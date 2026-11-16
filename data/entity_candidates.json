@@ -833,6 +833,18 @@
           "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
         }
       ]
+    },
+    {
+      "key": "byteplus",
+      "name": "BytePlus",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+        }
+      ]
     }
   ],
   "products": [
@@ -1630,6 +1642,45 @@
         {
           "article_id": "grok-imagine-60-layoffs-20261113",
           "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
+        }
+      ]
+    },
+    {
+      "key": "seedance-2-5-flash",
+      "name": "Seedance 2.5 Flash",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+        }
+      ]
+    },
+    {
+      "key": "seedance-2-5",
+      "name": "Seedance 2.5",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+        }
+      ]
+    },
+    {
+      "key": "modelark",
+      "name": "ModelArk",
+      "company": "byteplus",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
         }
       ]
     }
