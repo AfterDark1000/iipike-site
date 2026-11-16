@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 128 · **В каталоге Дзена подтверждены:** 111 · **Не подтверждены, уже на сайте:** 15 · **Не подтверждены, ждут сайт:** 2
+**Всего одобренных:** 128 · **В каталоге Дзена подтверждены:** 111 · **Не подтверждены, уже на сайте:** 16 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -29,6 +29,7 @@
 | 13 | [ИИ пишет за студентов — в Англии хотят экзамены без него](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/uk-ofs-ai-free-assessments-20261111.md) | 15.11.2026, 18:15 | [На сайте](https://iipike.ru/articles/uk-ofs-ai-free-assessments-20261111/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/uk-ofs-ai-free-assessments-20261111.webp) |
 | 14 | [В Польше ИИ звонит пациентам — даже без интернета](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/poland-anna-ai-patient-calls-20261111.md) | 15.11.2026, 22:00 | [На сайте](https://iipike.ru/articles/poland-anna-ai-patient-calls-20261111/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/poland-anna-ai-patient-calls-20261111.webp) |
 | 15 | [Вы привязались к нейросети — а она к вам нет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/haart-human-ai-asymmetric-relationships-20261110.md) | 15.11.2026, 23:45 | [На сайте](https://iipike.ru/articles/haart-human-ai-asymmetric-relationships-20261110/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/haart-human-ai-asymmetric-relationships-20261110.webp) |
+| 16 | [Из-за 10 строк кода с ИИ создателям Big Walk пришлось извиняться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/big-walk-ai-code-igf-20261115.md) | 16.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/big-walk-ai-code-igf-20261115/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/big-walk-ai-code-igf-20261115.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -36,8 +37,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Из-за 10 строк кода с ИИ создателям Big Walk пришлось извиняться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/big-walk-ai-code-igf-20261115.md) | **Не ранее 16.11.2026 07:07 (Усть-Катав)** | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/big-walk-ai-code-igf-20261115.webp) |
-| 2 | [Нейросети устроили шоу: восемь необычных ИИ-экспериментов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai-eight-unusual-experiments-20261115.md) | **Не ранее 16.11.2026 08:07 (Усть-Катав)** | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-eight-unusual-experiments-20261115.webp) |
+| 1 | [Нейросети устроили шоу: восемь необычных ИИ-экспериментов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai-eight-unusual-experiments-20261115.md) | **Не ранее 16.11.2026 08:07 (Усть-Катав)**; пауза до 16.11.2026 08:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-eight-unusual-experiments-20261115.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
