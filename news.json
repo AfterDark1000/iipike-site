@@ -6063,5 +6063,28 @@
     "products": [
       "grok"
     ]
+  },
+  {
+    "title": "ByteDance выпустила Seedance 2.5 Flash — вдвое быстрее и на треть дешевле",
+    "summary": "ByteDance запустила Seedance 2.5 Flash в ModelArk: видео 720p по $0,152 за секунду, заявлено ускорение генерации и снижение цены на 34% относительно Seedance 2.5. Максимальное разрешение Flash — 720p.",
+    "published": "2026-11-16",
+    "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement",
+    "cover": "assets/editorial/bytedance-seedance-2-5-flash-20261115.webp",
+    "rubric": "news",
+    "vk_title": "🎬 ByteDance УРОНИЛА ЦЕНУ на ИИ-ВИДЕО на 34%",
+    "vk_summary": "ByteDance запустила Seedance 2.5 Flash: генерация видео в 720p обходится в $0,152 за секунду — на 34% дешевле обычной Seedance 2.5. Компания обещает почти двойную скорость. API доступен в ModelArk с 15 ноября, ролики — до 30 секунд. Главное ограничение: Flash не умеет создавать видео в 1080p.",
+    "published_at_utc": "2026-11-16T11:01:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "bytedance-seedance-2-5-flash-20261115",
+    "url": "articles/bytedance-seedance-2-5-flash-20261115/",
+    "topics": [
+      "video",
+      "models"
+    ],
+    "companies": [
+      "bytedance"
+    ],
+    "products": []
   }
 ]
