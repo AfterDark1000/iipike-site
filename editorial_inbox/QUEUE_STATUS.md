@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 133
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 134
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **16.11.2026 13:45 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **16.11.2026 15:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Маск уволил 60 сотрудников Grok Imagine](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/grok-imagine-60-layoffs-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 14:52 (Усть-Катав)**; пауза до 16.11.2026 14:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grok-imagine-60-layoffs-20261113.webp) |
+| **1** | [⚡ ByteDance выпустила Seedance 2.5 Flash — вдвое быстрее и на треть дешевле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/bytedance-seedance-2-5-flash-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 16:07 (Усть-Катав)**; пауза до 16.11.2026 16:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bytedance-seedance-2-5-flash-20261115.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Маск уволил 60 сотрудников Grok Imagine](https://iipike.ru/articles/grok-imagine-60-layoffs-20261113/) | 16.11.2026 15:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grok-imagine-60-layoffs-20261113.webp) |
 | [ИИ нашёл на обычной ЭКГ признак риска внезапной смерти](https://iipike.ru/articles/ai-ecg-sudden-cardiac-death-risk-20261116/) | 16.11.2026 13:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ecg-sudden-cardiac-death-risk-20261116.webp) |
 | [Runway открыла ИИ для роботов, обученный на обычных видео](https://iipike.ru/articles/runway-praxis-1-open-weights-20261111/) | 16.11.2026 12:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/runway-praxis-1-open-weights-20261111.webp) |
 | [llama.cpp дошла до версии 1.0 и меняет правила обновлений](https://iipike.ru/articles/llama-cpp-1-0-versioning-20261113/) | 16.11.2026 11:31 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/llama-cpp-1-0-versioning-20261113.webp) |
