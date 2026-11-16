@@ -6124,5 +6124,27 @@
       "deepseek"
     ],
     "products": []
+  },
+  {
+    "title": "Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей",
+    "summary": "Cursor раскрыла результаты расследования взлома: через ключ доступа у партнёра Fireworks злоумышленник получил внутренние данные и подменил расширение Claude Code. До 5000 пользователей могли скачать заражённую версию.",
+    "published": "2026-11-16",
+    "source_url": "https://cursor.com/blog/security-incident-update",
+    "cover": "assets/editorial/cursor-fireworks-key-incident-20261113.webp",
+    "rubric": "news",
+    "vk_title": "🔑 Взлом Cursor начался с УТЕЧКИ КЛЮЧА у партнёра",
+    "vk_summary": "Cursor раскрыла результаты расследования октябрьской атаки. Через ключ Fireworks злоумышленник добрался до внутренних данных компании и подменил расширение Claude Code в магазине. Заражённую сборку могли получить до 5000 пользователей.",
+    "published_at_utc": "2026-11-16T14:30:48Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "cursor-fireworks-key-incident-20261113",
+    "url": "articles/cursor-fireworks-key-incident-20261113/",
+    "topics": [],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude-code"
+    ]
   }
 ]
