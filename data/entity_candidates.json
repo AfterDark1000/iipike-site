@@ -773,6 +773,54 @@
           "source_url": "https://news.berkeley.edu/2026/06/24/with-ai-researchers-discover-new-way-to-detect-sudden-cardiac-death-risk/"
         }
       ]
+    },
+    {
+      "key": "agile-robots",
+      "name": "Agile Robots",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+        }
+      ]
+    },
+    {
+      "key": "softbank-group",
+      "name": "SoftBank Group",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+        }
+      ]
+    },
+    {
+      "key": "hitachi-group",
+      "name": "Hitachi Group",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+        }
+      ]
+    },
+    {
+      "key": "t-capital",
+      "name": "T.Capital",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+        }
+      ]
     }
   ],
   "products": [
@@ -1492,6 +1540,19 @@
         {
           "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
           "source_url": "https://cplicense-front-org.cjenm.com/en/featured-contents/paradise-lost/"
+        }
+      ]
+    },
+    {
+      "key": "agile-one",
+      "name": "Agile ONE",
+      "company": "agile-robots",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "source_url": "https://www.agile-robots.com/en/news/detail/agile-robots-launches-humanoid-robot-for-industry-agile-one/"
         }
       ]
     }
