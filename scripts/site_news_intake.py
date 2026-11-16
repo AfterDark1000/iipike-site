@@ -11,10 +11,12 @@ import json
 from pathlib import Path
 import re
 import subprocess
-
-from scripts.site_news_pool import add, validate, canonical_url
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.site_news_pool import add, validate, canonical_url
 REQUESTS = Path("data/site_news_intake/requests")
 RECEIPTS = Path("data/site_news_intake/receipts")
 POOL = Path("data/site_news_pool.json")
