@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "6a8378dd68d9760f0d2dbd8eb1f155fea15291c8",
-  "source_blob_sha": "a61416d8ffc24476c938cdd30f1be8b064454f62",
-  "snapshot_date": "2026-11-15",
+  "source_commit": "0f511e1137c828c9b42d7a7669b5a612e0b63eb5",
+  "source_blob_sha": "9c7c89fd9efc2cb46323edd7a7a22d900094ab25",
+  "snapshot_date": "2026-11-16",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afa94991d3b064b6a95be0f",
+      "title": "ElevenLabs показала ИИ-секретаря, который раздаёт поручения после совещаний",
+      "dzen_url": "https://dzen.ru/a/avqUmR07Bktqlb4P",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ElevenLabs 11 ноября показала ElevenAI — ИИ-помощника, который слушает рабочие встречи и после разговора готовит каждому участнику краткий итог и список поручений. Приложение рассчитано как на видеозвонки, так и на обычные встречи в переговорной. За распознавание речи отвечает новая модель Scribe v3. Участники должны дать согласие на запись; разработчики предусмотрели встроенные механизмы уведомления. ElevenAI также",
+      "published_at_utc": "2026-11-16T08:17:22+00:00"
+    },
+    {
+      "dzen_id": "6afa9454b33b505d7afd84f9",
+      "title": "Google придумала ИИ против вечного «куда пойдём?»",
+      "dzen_url": "https://dzen.ru/a/avqUVLM7UF16_YT5",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 11 ноября представила Tabletop — экспериментальный сервис, который создаёт небольшие интерактивные приложения по обычному описанию. Например, можно попросить его сделать голосование о месте ужина для компании друзей или общий маршрут поездки. Пользователь собирает в одном пространстве ссылки, файлы и идеи, а затем обращается к помощнику @tabletop. Тот создаёт нужный инструмент. Среди примеров Google — калькуля",
+      "published_at_utc": "2026-11-16T07:05:48+00:00"
+    },
+    {
+      "dzen_id": "6af93797ce20cc07c9d6b959",
+      "title": "Google выпустила ИИ, который отвечает на тысячу вопросов без слов",
+      "dzen_url": "https://dzen.ru/a/avk3l84gzAfJ1rlZ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 11 ноября представила Gemini Decision 1 — нейросеть, способную проверить до 1000 вопросов за один запрос. Она анализирует текст, изображения, аудио, видео и PDF-документы, после чего возвращает ответы с оценкой вероятности. У модели есть необычная особенность: она вообще не генерирует текст. Вместо длинных объяснений выбирает из заранее заданных вариантов. В демонстрации Google нейросети показывают фотографию",
+      "published_at_utc": "2026-11-16T06:04:05+00:00"
+    },
+    {
+      "dzen_id": "6af9368ce4152a687099bff2",
+      "title": "Alibaba показала Qwen 4 Max — и сразу назначила дату отключения",
+      "dzen_url": "https://dzen.ru/a/avk2jOQVKmhwmb_y",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Alibaba 11 ноября открыла доступ к Qwen4-Max-Preview — предварительной версии флагманской нейросети нового поколения Qwen 4. Одновременно компания объявила, что уже 25 ноября эту версию отключат. На испытания отвели всего две недели. За это время разработчики смогут проверить новую модель на сложных задачах программирования, анализа документов и управления ИИ-агентами. Qwen4-Max-Preview получила контекстное окно в ми",
+      "published_at_utc": "2026-11-16T05:03:22+00:00"
+    },
+    {
+      "dzen_id": "6af9360a1d3b064b6ae3da10",
+      "title": "Японцы открыли пять ИИ-моделей для беспилотных машин",
+      "dzen_url": "https://dzen.ru/a/avk2Ch07Bktq49oQ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Японская компания TIER IV 11 ноября открыла доступ к пяти ИИ-моделям для беспилотного вождения. Разработчики автомобилей могут выбирать, какие нейросети использовать: одним достаточно камер, другим нужны лидары, радары и подробные карты дорог. Исходный код опубликован на GitHub, а модели размещены на Hugging Face. Все пять проектов связаны с Autoware — открытой платформой для создания систем автономного управления тр",
+      "published_at_utc": "2026-11-16T04:00:48+00:00"
+    },
+    {
+      "dzen_id": "6af9357bc6c38d204006ff27",
+      "title": "ИИ научили снимать будущее",
+      "dzen_url": "https://dzen.ru/a/avk1e8bDjSBABv8n",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Институт фундаментальных моделей (IFM) при Университете искусственного интеллекта имени Мухаммеда бен Заида (MBZUAI) 10 ноября выпустил PAN 2 — открытую ИИ-модель, которая создаёт видео с возможными последствиями ещё не совершённых действий. Ей можно показать исходную картинку, описать действие и получить до 20 секунд видео с предполагаемым развитием событий. На демонстрациях разработчики меняли момент, когда серфер",
+      "published_at_utc": "2026-11-16T03:01:01+00:00"
+    },
+    {
+      "dzen_id": "6af93525ce20cc07c9d44d1c",
+      "title": "Роботам дали «мышечную память» — теперь они справляются с 92% испытаний",
+      "dzen_url": "https://dzen.ru/a/avk1Jc4gzAfJ1E0c",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "MIT и Университет Карнеги — Меллона 10 ноября рассказали о системе Workspace Models, которая помогает роботам запоминать важные события и быстро выбирать следующее движение. В четырёх лабораторных заданиях, включая испытание настоящего манипулятора, средняя доля успешных попыток составила 91,5% против 66,8% у ближайшего конкурента. В одном испытании робот наблюдал, как другой манипулятор прятал кубик в один из трёх я",
+      "published_at_utc": "2026-11-16T02:08:11+00:00"
+    },
     {
       "dzen_id": "6af934a398579b1daf12b0b0",
       "title": "Бекмамбетов спродюсировал триллер о парне, которого сводит с ума чат-бот",
