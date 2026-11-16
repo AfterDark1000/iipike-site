@@ -2491,6 +2491,21 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-6ac44437682dd629",
+      "sequence": 167,
+      "title": "Recraft выпустила V4.1 Flash V2 — генерация изображений за 1,1 секунды",
+      "source_url": "https://feedback.recraft.ai/changelog",
+      "summary": "По сообщению добытчика, Recraft представила модель V4.1 Flash V2 с генерацией изображения за 1,1 секунды. Редактору проверить точное наименование модели, время и сравнительные заявления по первоисточнику.",
+      "origin": "ХПИИ — добытчик новостей, выбор пользователя: только Recraft",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-16T04:39:20+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261116-0938-recraft-v41-flash-v2.json",
+  "request_sha256": "f10e063dbad00794323a1555b17dde06f1f3a4f7d78d0f12a893ca1ecbd5b7d3",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 167,
+      "id": "n-6ac44437682dd629",
+      "title": "Recraft выпустила V4.1 Flash V2 — генерация изображений за 1,1 секунды"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
