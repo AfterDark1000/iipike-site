@@ -6104,5 +6104,25 @@
     "topics": [],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "DeepSeek разрешила создать своего ИИ-помощника",
+    "summary": "DeepSeek открыла разработчикам API для веб-поиска, чтения файлов и ссылок, распознавания речи и озвучивания. Появился и открытый демонстрационный чат-клиент.",
+    "published": "2026-11-16",
+    "source_url": "https://api-docs.deepseek.com/news/news261113/",
+    "cover": "assets/editorial/deepseek-ai-assistant-tools-api-20261113.webp",
+    "rubric": "news",
+    "vk_title": "🛠️ DeepSeek открыла ПОИСК, ФАЙЛЫ И ГОЛОС для своих ИИ-помощников",
+    "vk_summary": "На базе DeepSeek можно создавать чат-ботов с интернет-поиском, обработкой документов и голосовыми функциями. Компания также выпустила открытый демонстрационный чат-клиент. Дополнительные инструменты оплачиваются отдельно.",
+    "published_at_utc": "2026-11-16T13:15:51Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "deepseek-ai-assistant-tools-api-20261113",
+    "url": "articles/deepseek-ai-assistant-tools-api-20261113/",
+    "topics": [],
+    "companies": [
+      "deepseek"
+    ],
+    "products": []
   }
 ]
