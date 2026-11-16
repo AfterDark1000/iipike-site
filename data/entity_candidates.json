@@ -821,6 +821,18 @@
           "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
         }
       ]
+    },
+    {
+      "key": "ggml-org",
+      "name": "ggml-org (команда открытого проекта)",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+        }
+      ]
     }
   ],
   "products": [
@@ -1553,6 +1565,32 @@
         {
           "article_id": "agile-robots-series-f-500m-20261112",
           "source_url": "https://www.agile-robots.com/en/news/detail/agile-robots-launches-humanoid-robot-for-industry-agile-one/"
+        }
+      ]
+    },
+    {
+      "key": "llama-cpp",
+      "name": "llama.cpp",
+      "company": "ggml-org",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+        }
+      ]
+    },
+    {
+      "key": "ggml",
+      "name": "ggml",
+      "company": "ggml-org",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "source_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
         }
       ]
     }
