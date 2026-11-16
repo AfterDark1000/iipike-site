@@ -5889,5 +5889,36 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Нейросети устроили шоу: восемь необычных ИИ-экспериментов",
+    "summary": "Подборка восьми пользовательских экспериментов с ИИ: офис из Claude Code, дизайн-студия, рой агентов, игра о термоядерном синтезе, раскраска хроники, музыкальная анимация и игровое меню-книга.",
+    "published": "2026-11-16",
+    "source_url": "https://hackernoon.com/i-put-a-42-desk-design-studio-inside-my-coding-agent",
+    "cover": "assets/editorial/ai-eight-unusual-experiments-20261115.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "🎪 НЕЙРОСЕТИ устроили ШОУ: офис из пустой папки и звезда за 78 секунд",
+    "vk_summary": "Восемь необычных экспериментов с ИИ: виртуальные сотрудники, рой из 22 агентов, игра внутри звезды, раскрашенная кинохроника, аниме-заставка, барабанщик и раскрывающаяся 3D-книга. Показываем, что придумали энтузиасты.",
+    "published_at_utc": "2026-11-16T03:00:56Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-14",
+    "id": "ai-eight-unusual-experiments-20261115",
+    "url": "articles/ai-eight-unusual-experiments-20261115/",
+    "topics": [
+      "agents",
+      "video",
+      "images"
+    ],
+    "companies": [
+      "anthropic",
+      "google",
+      "minimax",
+      "suno"
+    ],
+    "products": [
+      "claude",
+      "claude-code",
+      "gemini"
+    ]
   }
 ]
