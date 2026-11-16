@@ -36,8 +36,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [ИИ нашёл на обычной ЭКГ признак риска внезапной смерти](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai-ecg-sudden-cardiac-death-risk-20261116.md) | **Не ранее 16.11.2026 12:37 (Усть-Катав)**; пауза до 16.11.2026 12:31 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ecg-sudden-cardiac-death-risk-20261116.webp) |
-| 2 | [Runway открыла ИИ для роботов, обученный на обычных видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/runway-praxis-1-open-weights-20261111.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [Runway открыла ИИ для роботов, обученный на обычных видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/runway-praxis-1-open-weights-20261111.md) | **Не ранее 16.11.2026 12:37 (Усть-Катав)**; пауза до 16.11.2026 12:31 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/runway-praxis-1-open-weights-20261111.webp) |
+| 2 | [ИИ нашёл на обычной ЭКГ признак риска внезапной смерти](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai-ecg-sudden-cardiac-death-risk-20261116.md) | **Не ранее 16.11.2026 13:37 (Усть-Катав)**; пауза до 16.11.2026 12:31 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ecg-sudden-cardiac-death-risk-20261116.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
