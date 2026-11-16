@@ -6146,5 +6146,23 @@
     "products": [
       "claude-code"
     ]
+  },
+  {
+    "title": "Учёные научили холодильник скучать, а цветок — обижаться",
+    "summary": "В Университете Карнеги — Меллона разработали OATs: экраны с ИИ-персонажами для предметов, которые реагируют на показания датчиков и напоминают об уходе за вещами.",
+    "published": "2026-11-16",
+    "source_url": "https://daehwakim.com/oat/index.html",
+    "cover": "assets/editorial/cmu-oats-ai-tamagotchi-objects-20261115.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "🪴 ХОЛОДИЛЬНИК СКУЧАЕТ, а цветок обижается: учёные создали тамагочи для вещей",
+    "vk_summary": "Исследователи Университета Карнеги — Меллона показали OATs — маленькие экраны с ИИ-персонажами, которые выражают «эмоции» в зависимости от состояния предмета. Растение грустит без воды, а гантеля напоминает о тренировках. Пока это прототип.",
+    "published_at_utc": "2026-11-16T15:30:50Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-02",
+    "id": "cmu-oats-ai-tamagotchi-objects-20261115",
+    "url": "articles/cmu-oats-ai-tamagotchi-objects-20261115/",
+    "topics": [],
+    "companies": [],
+    "products": []
   }
 ]
