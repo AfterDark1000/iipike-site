@@ -845,6 +845,18 @@
           "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
         }
       ]
+    },
+    {
+      "key": "truleo",
+      "name": "Truleo",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "truleo-ai-police-report-arizona-20261116",
+          "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
+        }
+      ]
     }
   ],
   "products": [
@@ -1681,6 +1693,19 @@
         {
           "article_id": "bytedance-seedance-2-5-flash-20261115",
           "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+        }
+      ]
+    },
+    {
+      "key": "truleo-ai",
+      "name": "Truleo AI",
+      "company": "truleo",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "truleo-ai-police-report-arizona-20261116",
+          "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
         }
       ]
     }
