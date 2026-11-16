@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 138
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 139
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **16.11.2026 19:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **16.11.2026 20:30 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Учёные научили холодильник скучать, а цветок — обижаться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cmu-oats-ai-tamagotchi-objects-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 20:37 (Усть-Катав)**; пауза до 16.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
-| **2** | [⚡ ИИ-певица забрала четыре награды на первой премии для нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/xania-monet-ai-music-awards-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 21:37 (Усть-Катав)**; пауза до 16.11.2026 20:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xania-monet-ai-music-awards-20261113.webp) |
+| **1** | [⚡ ИИ-певица забрала четыре награды на первой премии для нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/xania-monet-ai-music-awards-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 21:37 (Усть-Катав)**; пауза до 16.11.2026 21:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xania-monet-ai-music-awards-20261113.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Учёные научили холодильник скучать, а цветок — обижаться](https://iipike.ru/articles/cmu-oats-ai-tamagotchi-objects-20261115/) | 16.11.2026 20:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
 | [Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей](https://iipike.ru/articles/cursor-fireworks-key-incident-20261113/) | 16.11.2026 19:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cursor-fireworks-key-incident-20261113.webp) |
 | [DeepSeek разрешила создать своего ИИ-помощника](https://iipike.ru/articles/deepseek-ai-assistant-tools-api-20261113/) | 16.11.2026 18:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/deepseek-ai-assistant-tools-api-20261113.webp) |
 | [ИИ помог написать полицейский рапорт — суд отпустил подозреваемого](https://iipike.ru/articles/truleo-ai-police-report-arizona-20261116/) | 16.11.2026 17:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/truleo-ai-police-report-arizona-20261116.webp) |
