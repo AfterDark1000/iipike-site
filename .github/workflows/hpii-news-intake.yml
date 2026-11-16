@@ -1,0 +1,88 @@
+name: HPII — import news candidate inbox (NO PUBLICATION)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/site_news_intake/requests/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/site_news_intake/requests/**'
+      - 'scripts/site_news_intake.py'
+      - 'tests/test_site_news_intake.py'
+      - '.github/workflows/hpii-news-intake.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-news-intake-main
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test the inbox bridge without publishing
+        run: |
+          python3 -m unittest discover -s tests -p 'test_site_news_intake.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -q
+          python3 scripts/site_news_pool.py --validate
+
+  import:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Validate and import requests from the latest main
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            echo "Candidate inbox: safe attempt ${attempt}/3"
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/site_news_intake.py --report "$RUNNER_TEMP/hpii-intake-result.json"
+            python3 scripts/site_news_pool.py --validate
+            python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -q
+            git add -- data/site_news_pool.json
+            if find data/site_news_intake/receipts -maxdepth 1 -name '*.json' -print -quit | grep -q .; then
+              git add -- data/site_news_intake/receipts/
+            fi
+            # Only pool data and acknowledgements may be committed, never stories/site.
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/site_news_intake/receipts/[a-z0-9._-]+\.json)$'; then
+              echo "Unsafe changed files in candidate bridge"; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo "HPII_INTAKE_NO_UNPROCESSED_REQUESTS"
+              exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore(pool): import verified candidate requests [skip ci]'
+            if git push origin HEAD:main; then
+              python3 - "$RUNNER_TEMP/hpii-intake-result.json" <<'PY'
+          import json, sys
+          r = json.load(open(sys.argv[1], encoding="utf-8"))
+          print("HPII_INTAKE_CONFIRMED", r)
+          if r["rejected_requests"]:
+              raise SystemExit("Some requests were rejected; inspect their receipts")
+          PY
+              exit 0
+            fi
+            echo "Concurrent update: reread main and safely recompute"
+          done
+          echo "Could not safely commit the candidate inbox"; exit 1
