@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Alibaba выпустила Qwen4-Max с усиленной защитой от киберугроз",
+      "source_url": "https://www.reuters.com/business/retail-consumer/alibaba-unveils-new-flagship-ai-model-with-safety-upgrades-2026-11-16/",
+      "summary": "16 ноября: Reuters сообщает о новой флагманской модели Qwen4-Max; улучшения безопасности — заявление компании. Проверить отличие от ранее представленной предварительной Qwen4-Max.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Apple запустила исследование медицинских советов ИИ на 200 тысяч человек",
+      "source_url": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+      "summary": "15 ноября: по информации TechCrunch, Apple и OpenEvidence запустили исследовательское приложение для оценки ответов медицинского ИИ. Вторичный источник; детали уточнить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В Гонконге распознавание лиц внедряют в городскую сеть камер",
+      "source_url": "https://www.straitstimes.com/asia/east-asia/hong-kong-rolls-out-ai-facial-recognition-across-cctv-network",
+      "summary": "16 ноября: сообщается о функциях распознавания лиц в полицейской системе SmartView; тема ИИ и массового наблюдения. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "США могут назвать NVIDIA и OpenAI национальными чемпионами ИИ",
+      "source_url": "https://www.reuters.com/business/retail-consumer/trump-administration-name-nvidia-other-ai-firms-us-national-champions-wsj-2026-11-16/",
+      "summary": "16 ноября: Reuters пересказывает сообщение WSJ о планируемой поддержке американских ИИ-компаний; независимого подтверждения нет.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Маск и тысячи подписантов призывают вернуть Дженсена Хуанга в NVIDIA",
+      "source_url": "https://www.theguardian.com/technology/2026/nov/16/elon-musk-tech-execs-open-letter-jensen-huang-return-nvidia-ceo",
+      "summary": "16 ноября: Guardian сообщает об открытом письме с призывом вернуть Дженсена Хуанга; число подписантов и обстоятельства проверить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В Австралии проверяют возможное попадание данных граждан в систему Palantir",
+      "source_url": "https://www.theguardian.com/technology/2026/nov/16/personal-data-centrelink-ato-ndis-palantir",
+      "summary": "16 ноября: Guardian сообщает о межведомственной системе против мошенничества и возможном участии технологий Palantir. Связь с ИИ и передача конкретных данных не установлены.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Обзор Стэнфорда: ИИ в школах помогает не всегда",
+      "source_url": "https://casrai.org/news/stanford-scale-ai-k12-causal-evidence-review-november-2026",
+      "summary": "15 ноября: вторичный источник сообщает об обзоре 52 исследований применения ИИ в школах, включая риски для самостоятельного обучения; найти оригинал.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Исследователи описали атаки S1-Evo на быстрые ИИ-модели",
+      "source_url": "https://casrai.org/news/s1-evo-evidence-competition-attacks-typed-decision-models-2026",
+      "summary": "15 ноября: вторичный источник описывает метод атак через конкурирующие доказательства на специализированные модели; найти и проверить научный оригинал.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "SK hynix выделяет около миллиарда долларов на поддержку производителей чипов",
+      "source_url": "https://casrai.org/news/sk-hynix-trinity-fab-chip-supplier-support-2026",
+      "summary": "16 ноября: сообщается о программе на 1,4 трлн вон для поставщиков и инфраструктуры тестирования чипов; вторичный источник, требуется проверка.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Композитор Mass Effect заявил, что ИИ не может быть художником",
+      "source_url": "https://www.techradar.com/gaming/ai-is-not-an-artist-mass-effect-1-and-2-composer-shares-his-stance-on-ai-replacement-in-video-games-says-machines-can-never-be-artists-as-they-arent-human",
+      "summary": "13 ноября: интервью композитора Джека Уолла о генеративной музыке и роли людей. ВНИМАНИЕ: дата вне строгого 48-часового окна на 16 ноября; включено по команде пользователя «все».",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Роботакси и роботы Шэньчжэня стали витриной перед саммитом АТЭС",
+      "source_url": "https://apnews.com/article/df655739f3881e2025c873c13b1fed70",
+      "summary": "16 ноября: Associated Press опубликовало репортаж о роботакси, доставочных дронах и робототехнике в Шэньчжэне. Это репортаж о действующих технологиях, а не запуск нового продукта.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
