@@ -5993,5 +5993,29 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Runway открыла ИИ для роботов, обученный на обычных видео",
+    "summary": "Runway открыла веса и код модели Praxis-1 для управления роботами по Apache 2.0. Обученный на видеозаписях ИИ предсказывает движения; в симуляционном тесте RoboLab-120 показал 46,2% успешных попыток.",
+    "published": "2026-11-16",
+    "source_url": "https://runway.com/news/company-news/praxis-1-is-now-available",
+    "cover": "assets/editorial/runway-praxis-1-open-weights-20261111.webp",
+    "rubric": "news",
+    "vk_title": "🦾 РОБОТЫ УЧАТСЯ ПО ВИДЕО: Runway открыла Praxis-1",
+    "vk_summary": "Runway выпустила модель Praxis-1 для управления роботами и открыла её веса и код по Apache 2.0. ИИ предсказывает видео и движения; в симуляционном тесте RoboLab-120 выполнил 46,2% из 1200 попыток. На реальном оборудовании модель испытывали партнёры, но она пока путает похожие предметы и плохо справляется с длинными поручениями.",
+    "published_at_utc": "2026-11-16T07:45:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-11",
+    "id": "runway-praxis-1-open-weights-20261111",
+    "url": "articles/runway-praxis-1-open-weights-20261111/",
+    "topics": [
+      "engineering",
+      "video"
+    ],
+    "companies": [
+      "runway",
+      "nvidia"
+    ],
+    "products": []
   }
 ]
