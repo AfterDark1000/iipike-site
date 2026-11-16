@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 139 · **В каталоге Дзена подтверждены:** 121 · **Не подтверждены, уже на сайте:** 15 · **Не подтверждены, ждут сайт:** 3
+**Всего одобренных:** 139 · **В каталоге Дзена подтверждены:** 121 · **Не подтверждены, уже на сайте:** 16 · **Не подтверждены, ждут сайт:** 2
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -29,6 +29,7 @@
 | 13 | [Маск уволил 60 сотрудников Grok Imagine](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/grok-imagine-60-layoffs-20261113.md) | 16.11.2026, 15:00 | [На сайте](https://iipike.ru/articles/grok-imagine-60-layoffs-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/grok-imagine-60-layoffs-20261113.webp) |
 | 14 | [ByteDance выпустила Seedance 2.5 Flash — вдвое быстрее и на треть дешевле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/bytedance-seedance-2-5-flash-20261115.md) | 16.11.2026, 16:01 | [На сайте](https://iipike.ru/articles/bytedance-seedance-2-5-flash-20261115/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bytedance-seedance-2-5-flash-20261115.webp) |
 | 15 | [ИИ помог написать полицейский рапорт — суд отпустил подозреваемого](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/truleo-ai-police-report-arizona-20261116.md) | 16.11.2026, 17:15 | [На сайте](https://iipike.ru/articles/truleo-ai-police-report-arizona-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/truleo-ai-police-report-arizona-20261116.webp) |
+| 16 | [DeepSeek разрешила создать своего ИИ-помощника](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/deepseek-ai-assistant-tools-api-20261113.md) | 16.11.2026, 18:15 | [На сайте](https://iipike.ru/articles/deepseek-ai-assistant-tools-api-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/deepseek-ai-assistant-tools-api-20261113.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -36,9 +37,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [DeepSeek разрешила создать своего ИИ-помощника](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/deepseek-ai-assistant-tools-api-20261113.md) | **Не ранее 16.11.2026 18:22 (Усть-Катав)**; пауза до 16.11.2026 18:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/deepseek-ai-assistant-tools-api-20261113.webp) |
-| 2 | [Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cursor-fireworks-key-incident-20261113.md) | **Не ранее 16.11.2026 19:22 (Усть-Катав)**; пауза до 16.11.2026 18:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cursor-fireworks-key-incident-20261113.webp) |
-| 3 | [Учёные научили холодильник скучать, а цветок — обижаться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cmu-oats-ai-tamagotchi-objects-20261115.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cursor-fireworks-key-incident-20261113.md) | **Не ранее 16.11.2026 19:22 (Усть-Катав)**; пауза до 16.11.2026 19:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cursor-fireworks-key-incident-20261113.webp) |
+| 2 | [Учёные научили холодильник скучать, а цветок — обижаться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cmu-oats-ai-tamagotchi-objects-20261115.md) | **Не ранее 16.11.2026 20:22 (Усть-Катав)**; пауза до 16.11.2026 19:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
