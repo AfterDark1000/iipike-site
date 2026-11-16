@@ -6164,5 +6164,25 @@
     "topics": [],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ-певица забрала четыре награды на первой премии для нейросетей",
+    "summary": "Виртуальная певица Xania Monet получила четыре награды первой американской AI Music Awards. Её создательница Никки Джонс пишет тексты, а музыка и вокал создаются с помощью Suno.",
+    "published": "2026-11-16",
+    "source_url": "https://awards.thesiqa.com/nominees",
+    "cover": "assets/editorial/xania-monet-ai-music-awards-20261113.webp",
+    "rubric": "news",
+    "vk_title": "🏆 ИИ-ПЕВИЦА СОБРАЛА ЧЕТЫРЕ НАГРАДЫ на музыкальной премии",
+    "vk_summary": "Виртуальная Xania Monet выиграла четыре награды первой американской AI Music Awards, включая лучший альбом, песню и исполнителя года. За её текстами стоит поэтесса Никки Джонс, а музыку и голос создаёт нейросеть Suno.",
+    "published_at_utc": "2026-11-16T16:45:39Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "xania-monet-ai-music-awards-20261113",
+    "url": "articles/xania-monet-ai-music-awards-20261113/",
+    "topics": [],
+    "companies": [
+      "suno"
+    ],
+    "products": []
   }
 ]
