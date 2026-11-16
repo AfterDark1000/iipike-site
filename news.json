@@ -6037,5 +6037,31 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Маск уволил 60 сотрудников Grok Imagine",
+    "summary": "The Information сообщило о сокращении 60 сотрудников команды Grok Imagine. После этого компания объявила о доступности генерации изображений и видео в основном чате Grok.",
+    "published": "2026-11-16",
+    "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/",
+    "cover": "assets/editorial/grok-imagine-60-layoffs-20261113.webp",
+    "rubric": "news",
+    "vk_title": "🎬 У GROK IMAGINE СОКРАЩЕНИЯ: The Information пишет об увольнении 60 человек",
+    "vk_summary": "По данным The Information, в команде Grok Imagine сократили около 60 сотрудников, оставив лишь небольшую группу поддержки. Компания публично не подтверждала цифру. 14 ноября Grok объявила, что генерация изображений и видео теперь доступна в основном интерфейсе чата. Сам Imagine продолжает работать.",
+    "published_at_utc": "2026-11-16T10:00:55Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "grok-imagine-60-layoffs-20261113",
+    "url": "articles/grok-imagine-60-layoffs-20261113/",
+    "topics": [
+      "business",
+      "video"
+    ],
+    "companies": [
+      "xai",
+      "spacex"
+    ],
+    "products": [
+      "grok"
+    ]
   }
 ]
