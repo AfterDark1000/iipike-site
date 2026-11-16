@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 130
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 131
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **16.11.2026 10:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **16.11.2026 11:31 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ llama.cpp дошла до версии 1.0 и меняет правила обновлений](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/llama-cpp-1-0-versioning-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 11:37 (Усть-Катав)**; пауза до 16.11.2026 11:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/llama-cpp-1-0-versioning-20261113.webp) |
-| **2** | [ИИ нашёл на обычной ЭКГ признак риска внезапной смерти](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-ecg-sudden-cardiac-death-risk-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 12:37 (Усть-Катав)**; пауза до 16.11.2026 11:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ecg-sudden-cardiac-death-risk-20261116.webp) |
+| **1** | [ИИ нашёл на обычной ЭКГ признак риска внезапной смерти](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-ecg-sudden-cardiac-death-risk-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 16.11.2026 12:37 (Усть-Катав)**; пауза до 16.11.2026 12:31 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-ecg-sudden-cardiac-death-risk-20261116.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [llama.cpp дошла до версии 1.0 и меняет правила обновлений](https://iipike.ru/articles/llama-cpp-1-0-versioning-20261113/) | 16.11.2026 11:31 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/llama-cpp-1-0-versioning-20261113.webp) |
 | [Agile Robots привлекла $500 млн на производство роботов](https://iipike.ru/articles/agile-robots-series-f-500m-20261112/) | 16.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/agile-robots-series-f-500m-20261112.webp) |
 | [Режиссёр «Поезда в Пусан» снял триллер о сыне, которого девять лет заменял ИИ](https://iipike.ru/articles/yeon-sang-ho-paradise-lost-ai-son-20261116/) | 16.11.2026 09:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/yeon-sang-ho-paradise-lost-ai-son-20261116.webp) |
 | [Нейросети устроили шоу: восемь необычных ИИ-экспериментов](https://iipike.ru/articles/ai-eight-unusual-experiments-20261115/) | 16.11.2026 08:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-eight-unusual-experiments-20261115.webp) |
