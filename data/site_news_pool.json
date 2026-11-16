@@ -1825,12 +1825,12 @@
       "summary": "13 ноября: The Information сообщает о сокращениях в команде генерации видео и изображений.",
       "origin": "ХПИИ — добытчик новостей (контрольный проход 15.11.2026 и два дополнения главреда)",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-15T03:19:00.000Z",
       "review_started_at": "2026-11-16T06:48:54.960Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "По данным The Information; официальное подтверждение отсутствует.\n15.11.2026, ревизия ХПИИ: The Information 13.11 сообщает о сокращении около 60 сотрудников Grok Imagine; писать только с атрибуцией изданию.\n16.11.2026, редактор: The Information, 13.11, original https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/ сообщает по неназванным источникам об ~60 увольнениях в Grok Imagine (SpaceX Super Intelligence), осталось несколько сотрудников. Компания не подтвердила сокращения; сервис доступен. Новое подтверждённое событие 14.11: официальный @imagine https://x.com/imagine/status/2121672946968318285 и @grok https://x.com/grok/status/2121673185540378797 объявили встроенную генерацию видео и картинок в основной Grok; подтверждено x.ai/grok. Цитата Маска от 25.03 «We are doubling down» https://x.com/elonmusk/status/2036693879270064369 (перевод, историческое обещание). Перелинковка на опубликованную в Дзене «Одиссею» Grok https://dzen.ru/a/at2BEpcSa1R3nZSg, сайт news.json содержит соответствие. Прямого дубля в news.json и editorial_full_catalog.json нет. Ждём утверждения текста."
+      "closed_at": "2026-11-16T09:20:00.123Z",
+      "article_id": "grok-imagine-60-layoffs-20261113",
+      "note": "По данным The Information; официальное подтверждение отсутствует.\n15.11.2026, ревизия ХПИИ: The Information 13.11 сообщает о сокращении около 60 сотрудников Grok Imagine; писать только с атрибуцией изданию.\n16.11.2026, редактор: The Information, 13.11, original https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/ сообщает по неназванным источникам об ~60 увольнениях в Grok Imagine (SpaceX Super Intelligence), осталось несколько сотрудников. Компания не подтвердила сокращения; сервис доступен. Новое подтверждённое событие 14.11: официальный @imagine https://x.com/imagine/status/2121672946968318285 и @grok https://x.com/grok/status/2121673185540378797 объявили встроенную генерацию видео и картинок в основной Grok; подтверждено x.ai/grok. Цитата Маска от 25.03 «We are doubling down» https://x.com/elonmusk/status/2036693879270064369 (перевод, историческое обещание). Перелинковка на опубликованную в Дзене «Одиссею» Grok https://dzen.ru/a/at2BEpcSa1R3nZSg, сайт news.json содержит соответствие. Прямого дубля в news.json и editorial_full_catalog.json нет. Ждём утверждения текста.\n16.11.2026: утверждена окончательная редакция с заголовком главреда, цитатой Маска, перелинковкой на «Одиссею» и коротким финалом. Story в editorial-intake, Threads/X approved, site_queue=priority. Кандидаты Grok Imagine и Grok Bot сохранены в main. Ожидает обложку."
     },
     {
       "id": "n-d554360a827b66f2",
