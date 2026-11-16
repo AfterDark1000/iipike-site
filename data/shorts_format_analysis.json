@@ -1,128 +1,211 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-15T09:56:17Z",
-  "status": "partial",
+  "generated_at_utc": "2026-11-16T10:11:29Z",
+  "status": "ok",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "_mIwzdvTDyE",
-      "url": "https://www.youtube.com/shorts/_mIwzdvTDyE",
-      "title": "Me vs chatgpt😂 #comedy #chatgpt #funnyai #funny #trendingshorts #telugushorts #comedyshorts #viral",
-      "channel": "Bicep Biryani",
-      "published_at": "2026-11-09T13:25:14Z",
-      "duration_seconds": 52,
-      "views": 67259,
-      "likes": 1182,
-      "subscribers": 8790,
+      "id": "3XrmOSLD0rE",
+      "url": "https://www.youtube.com/shorts/3XrmOSLD0rE",
+      "title": "tillu vith a tech 🥰🔦#shorts #comedy #funny #relatable #@mycomedyvideo922",
+      "channel": "S___G",
+      "published_at": "2026-11-14T12:30:40Z",
+      "duration_seconds": 37,
+      "views": 27040,
+      "likes": 157,
+      "subscribers": 735,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-15T09:56:17Z",
+      "statistics_checked_at": "2026-11-16T10:11:29Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 24.7,
-      "rank_score": 9.85,
+      "growth_views_per_hour": 288.4,
+      "rank_score": 12.45,
       "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "One actor plays two roles using quick jump cuts and costume changes: one in a green jacket (representing ChatGPT) and one in a red t-shirt (representing a frustrated user).",
-        "observed_audio": "Dialogue in a South Asian language with animated voice acting, expressive exclamations, and comedic sound effects.",
-        "hook_0_3s": "Jump cut from the user shouting to the ChatGPT character sitting calmly with a paper and pen, establishing the contrast format immediately.",
+        "observed_visuals": "Man playing multiple roles on a rooftop, holding a green and black flashlight, making comic/surprised expressions, wearing different shirts and headscarves.",
+        "observed_audio": "Dialogue in a foreign language with comic sound effects and upbeat transitions.",
+        "hook_0_3s": "Close-up of a person sitting on a rooftop holding and interacting with a flashlight while speaking.",
         "timeline": [
           {
             "time": "00:00",
-            "visible_action": "Actor wearing a red t-shirt gestures angrily, shouting towards the camera.",
-            "editing": "Jump cut start",
+            "visible_action": "Man sitting on a rooftop holding a flashlight",
+            "editing": "Direct shot",
             "confidence": "seen"
           },
           {
-            "time": "00:01",
-            "visible_action": "Actor appears in a green jacket and notepad, playing the role of ChatGPT.",
-            "editing": "Fast cut",
+            "time": "00:05",
+            "visible_action": "Change of character/costume, expressing surprise with gestures",
+            "editing": "Quick cut",
             "confidence": "seen"
           },
           {
-            "time": "00:06",
-            "visible_action": "Actor back in red t-shirt, complaining about delayed replies.",
-            "editing": "Fast cut",
+            "time": "00:15",
+            "visible_action": "Interacting with the flashlight, comedy skits",
+            "editing": "Fast cuts between characters",
             "confidence": "seen"
           },
           {
-            "time": "00:13",
-            "visible_action": "Rapid back-and-forth dialogue cuts between the two personas.",
-            "editing": "Jump cuts",
+            "time": "00:25",
+            "visible_action": "Exchanging dialogue and showing expressions",
+            "editing": "Cut",
             "confidence": "seen"
           },
           {
-            "time": "00:51",
-            "visible_action": "Screen flashes color bars ending the sketch.",
-            "editing": "Transition out",
+            "time": "00:35",
+            "visible_action": "Ending smile and final gag with the flashlight",
+            "editing": "Final cut",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Dual-role comedy sketch using rapid jump cuts to personify an AI platform versus a frustrated human user in daily interaction.",
-        "transfer_to_hpii": "Compare human vs AI behavior in professional news updates by staging a rapid back-and-forth dialogue using split-screen or alternating jump cuts.",
-        "what_not_to_copy": "Do not copy exact jokes, dialogue lines, costumes, or the specific language/cultural context.",
-        "limitations": "Audio translation is partial; exact dialogue semantics are inferred from tone and visual context.",
+        "format_mechanic": "Comedic multi-character sketch using rapid costume changes and props for a punchline reveal.",
+        "transfer_to_hpii": "Create a comedy sketch showing an AI assistant failing or misunderstanding a simple user task, using quick cuts between the frustrated user and the anthropomorphized AI.",
+        "what_not_to_copy": "Do not copy the specific flashlight prop or the exact storyline.",
+        "limitations": "Audio language not translated; exact character dialogue unverified.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-15T09:56:23Z",
+      "analyzed_at_utc": "2026-11-16T10:11:33Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "-wiEauWBQVs",
-      "url": "https://www.youtube.com/shorts/-wiEauWBQVs",
-      "title": "Why Your Cat IGNORES You 😳🐱 (Science Explained) #shorts",
-      "channel": "Vibeuzz Official",
-      "published_at": "2026-11-14T03:51:57Z",
-      "duration_seconds": 39,
-      "views": 1457,
-      "likes": 31,
-      "subscribers": 148,
+      "id": "QqSQB1vKiAE",
+      "url": "https://www.youtube.com/shorts/QqSQB1vKiAE",
+      "title": "Honey Under a Microscope Reveals Something UNEXPECTED! 😳🍯 #Honey #Microscope #MicroscopicWorld",
+      "channel": "Zippie Zooom",
+      "published_at": "2026-11-12T18:10:58Z",
+      "duration_seconds": 48,
+      "views": 24009,
+      "likes": 1308,
+      "subscribers": 4870,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-15T09:56:17Z",
-      "is_confirmed_short": false,
-      "search_family": "explanation",
-      "format_family_guess": "explanation",
-      "growth_views_per_hour": 17.8,
-      "rank_score": 6.38,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "rS4YKE_3NH8",
-      "url": "https://www.youtube.com/shorts/rS4YKE_3NH8",
-      "title": "Crazy Physics Experiment #Shorts#usa#usashorts#experiment",
-      "channel": "Accidental Eureka",
-      "published_at": "2026-11-14T13:45:45Z",
-      "duration_seconds": 36,
-      "views": 1357,
-      "likes": null,
-      "subscribers": 3,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-15T09:56:17Z",
+      "statistics_checked_at": "2026-11-16T10:11:29Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
-      "growth_views_per_hour": null,
-      "rank_score": 4.91,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API HTTP 503"
-    }
-  ],
-  "errors": [
-    {
-      "video_id": "-wiEauWBQVs",
-      "code": "analysis_failed"
+      "growth_views_per_hour": 11.8,
+      "rank_score": 8.57,
+      "viral_status": "candidate_verified_stats",
+      "analysis": {
+        "observed_visuals": "Человек в пчелином рое перемежается с кадрами микроскопа, поедания меда людьми, крупными планами пчелиных сотов и котиков с текстом и смайликами на экране.",
+        "observed_audio": "Разговорный голос на английском языке с интонацией интригующего повествования, сопровождаемый динамичными звуковыми эффектами.",
+        "hook_0_3s": "Мужчина в пчелиной маске мешает мед в ведре, сопровождаемый вопросом 'Have you ever wondered...'.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "Мужчина в рое пчел держит ведро с медом.",
+            "editing": "Быстрая смена кадров с зумом и графикой.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:02",
+            "visible_action": "Показ микроскопа с предметным стеклом.",
+            "editing": "Склейка с акцентом на инструмент исследования.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:05",
+            "visible_action": "Дегустация сотов разными людьми и котята.",
+            "editing": "Монтажные переходы с наложенными эмодзи и текстом.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:44",
+            "visible_action": "Увеличенное изображение под микроскопом (1000x).",
+            "editing": "Динамичный финальный зум с криком.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Интригующий вопрос в начале, переключение внимания на микромир через научный процесс, разбавленный эмоциональными вставками с животными.",
+        "transfer_to_hpii": "Использовать механику микроскопического увеличения абстрактных явлений для презентации новостей об ИИ: показать привычный процесс генерации текста и резко 'приблизить' его до глубокого анализа скрытых паттернов.",
+        "what_not_to_copy": "Бессмысленные вставки с котиками и поеданием меда, не относящиеся напрямую к смыслу новости.",
+        "limitations": "Выборка 1 FPS скрывает точные склейки, аудиоречь распознана по смыслу без дословного субтитрирования.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-16T10:11:38Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
     },
     {
-      "video_id": "rS4YKE_3NH8",
-      "code": "analysis_failed"
+      "id": "fNgX4ZVDDHM",
+      "url": "https://www.youtube.com/shorts/fNgX4ZVDDHM",
+      "title": "What Happens If You Swallow Chewing Gum? 🍬😱 #Shorts #zackdfilm #explain #explainervideo",
+      "channel": "Monkey D. films",
+      "published_at": "2026-11-13T23:20:10Z",
+      "duration_seconds": 37,
+      "views": 2038,
+      "likes": 31,
+      "subscribers": 18,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-16T10:11:29Z",
+      "is_confirmed_short": false,
+      "search_family": "explanation",
+      "format_family_guess": "explanation",
+      "growth_views_per_hour": 23.1,
+      "rank_score": 6.37,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "3D animated human character on a blue grid background, anatomical cross-sections of digestive system, digestive tract simulation of chewing gum being swallowed, stomach acid mixing, and intestinal movement.",
+        "observed_audio": "Voiceover narration posing a question about swallowed chewing gum, followed by explanatory commentary and ambient background sound effects.",
+        "hook_0_3s": "A 3D bald character chewing gum that expands into a large pink bubble, immediately capturing attention.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "3D bald character standing on a blue grid background chewing pink bubble gum.",
+            "editing": "Direct shot, static camera setup.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:02",
+            "visible_action": "Character swallows the gum with a surprised facial expression.",
+            "editing": "Zoom-in cut to character face.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:04",
+            "visible_action": "Cut to anatomical cross-section showing the throat, esophagus, and stomach as the pink gum travels down.",
+            "editing": "Cut to internal anatomy visualization.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:09",
+            "visible_action": "Stomach view with character standing next to it, showing food digestion and the intact pink gum piece floating inside.",
+            "editing": "Transition back to mixed external character and transparent internal stomach view.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:18",
+            "visible_action": "Character points to intestines as the pink gum moves through the digestive tract.",
+            "editing": "Cut to transparent intestinal tract view.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:27",
+            "visible_action": "Internal view of stomach and intestines showing the gum traveling toward exit.",
+            "editing": "Close-up sequence of internal organs.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:32",
+            "visible_action": "Character returns to full view, smiling and pointing forward.",
+            "editing": "Final cut to character on blue background with animated text overlay.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Visualizing an everyday myth or urban legend using 3D anatomical simulations combined with a presenter character to explain complex biological processes simply.",
+        "transfer_to_hpii": "Explain how an AI model processes a massive data prompt by visualizing it as an internal digestion system where useful data is absorbed and noise passes through.",
+        "what_not_to_copy": "Do not copy the exact topic of swallowing chewing gum or character designs.",
+        "limitations": "Audio and visual descriptions are based on visible actions and clear narration; minor frame-by-frame cuts might be generalized.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-16T10:11:42Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
     }
-  ]
+  ],
+  "errors": []
 }
