@@ -885,6 +885,30 @@
           "source_url": "https://cursor.com/blog/security-incident-update"
         }
       ]
+    },
+    {
+      "key": "sonic-intelligence-academy",
+      "name": "Sonic Intelligence Academy (SIQA)",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "source_url": "https://awards.thesiqa.com/nominees"
+        }
+      ]
+    },
+    {
+      "key": "hallwood-media",
+      "name": "Hallwood Media",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "source_url": "https://awards.thesiqa.com/nominees"
+        }
+      ]
     }
   ],
   "products": [
@@ -1747,6 +1771,19 @@
         {
           "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
           "source_url": "https://daehwakim.com/oat/index.html"
+        }
+      ]
+    },
+    {
+      "key": "xania-monet",
+      "name": "Xania Monet",
+      "company": "",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "source_url": "https://awards.thesiqa.com/nominees"
         }
       ]
     }
