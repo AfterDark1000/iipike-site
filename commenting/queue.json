@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15T20:59:59.555877Z",
+  "updated_at": "2026-11-16T00:57:50.618805Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
-      "fresh_matches": 6
+      "fresh_matches": 5
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-15T20:59:59.555877Z",
-      "last_success_at": "2026-11-15T20:59:59.555877Z",
+      "checked_at": "2026-11-16T00:57:50.618805Z",
+      "last_success_at": "2026-11-16T00:57:50.618805Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -73,11 +73,11 @@
   "generator": {
     "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Обработано статей: 2"
   },
   "usage": {
     "date": "2026-11-16",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -93,10 +93,12 @@
       "first_seen_at": "2026-11-15T20:59:59.555877Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "read_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-16T00:57:50.618805Z",
+      "reason": "Не удалось прочитать статью целиком (HTTPError)"
     },
     {
       "id": "c044c3da67a8aac30329f1ae",
@@ -110,10 +112,14 @@
       "first_seen_at": "2026-11-15T20:59:59.555877Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, насколько комфортно сидеть в таком офлайн-чате со скоростью до 39 токенов в секунду. На старой консоли это всё равно выглядит как инженерный фокус.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-16T00:57:50.618805Z",
+      "reason": "Зацепился за скорость генерации на старой консоли и практичность такого использования.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-16T00:57:50.618805Z"
     },
     {
       "id": "5c31cdf6f2e8db09040bd44c",
@@ -127,10 +133,14 @@
       "first_seen_at": "2026-11-15T20:59:59.555877Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Главное, что модель нашла новую форму комплекса QRS на обычной ЭКГ, которую врачи раньше пропускали. Теперь бы понять, какие физиологические процессы за этим стоят.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-16T00:57:50.618805Z",
+      "reason": "Выделил конкретную медицинскую деталь ЭКГ, найденную нейросетью.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-16T00:57:50.618805Z"
     },
     {
       "id": "758d26c49873010fa604ec4d",
@@ -2595,25 +2605,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "d7765d336beaf12233a7df3c",
-      "title": "Новая статья: Мастерская локальных ИИ: FLUX 3 Image Klein — рамки под контролем",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151006",
-      "published_at": "2026-11-08T21:00:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-08T22:51:22.762819Z",
-      "views": null,
-      "comments": null,
-      "status": "read_error",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-09T10:20:57.318235Z",
-      "reason": "Не удалось прочитать статью целиком (ValueError)",
       "link_status": "dzen_link_missing"
     }
   ]
