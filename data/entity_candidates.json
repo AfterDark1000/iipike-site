@@ -737,6 +737,30 @@
           "source_url": "https://bigwalk.game/faq/"
         }
       ]
+    },
+    {
+      "key": "wowpoint",
+      "name": "WOWPOINT",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "source_url": "https://newsroom.cj.net/?p=10654"
+        }
+      ]
+    },
+    {
+      "key": "cj-enm",
+      "name": "CJ ENM",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "source_url": "https://newsroom.cj.net/?p=10654"
+        }
+      ]
     }
   ],
   "products": [
@@ -1443,6 +1467,19 @@
         {
           "article_id": "big-walk-ai-code-igf-20261115",
           "source_url": "https://bigwalk.game/faq/"
+        }
+      ]
+    },
+    {
+      "key": "paradise-lost-film-2026",
+      "name": "Paradise Lost (2026 film)",
+      "company": "wowpoint",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "source_url": "https://cplicense-front-org.cjenm.com/en/featured-contents/paradise-lost/"
         }
       ]
     }
