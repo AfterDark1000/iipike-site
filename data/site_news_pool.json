@@ -1945,12 +1945,12 @@
       "summary": "13 ноября: DeepSeek предоставила разработчикам инструменты веб-поиска, чтения файлов и ссылок, OCR, ASR и TTS.",
       "origin": "ХПИИ — добытчик новостей (вечерний проход 15.11.2026); пользователь: «В пул»",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-15T14:19:00.000Z",
       "review_started_at": "2026-11-16T11:25:04.095Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Официальный анонс. Отличается от уже имеющейся записи №107 о чат-клиенте.\n15.11.2026, ревизия ХПИИ: Ревизия 15.11: #107 снята как повтор части того же релиза: open-source chat-demo и новые API — единый анонс DeepSeek.\n16.11.2026: Редактор №16 взял новость на проверку. Следующий шаг: официальная документация DeepSeek и доступность API.\n16.11.2026: Проверен официальный анонс DeepSeek от 13.11 https://api-docs.deepseek.com/news/news261113/ и руководство https://api-docs.deepseek.com/guides/build_a_chatbot/ . DeepSeek-flash/V4.1-Flash поддерживает web-search, file input, URL reading, safety; отдельные OCR/ASR/TTS. TTS: русский не перечислен https://api-docs.deepseek.com/guides/tts/ . Дополнительные вызовы платные. Архив: близкая, но отдельная статья о поисковом API https://dzen.ru/a/atWjgEdxHDRryfQJ; прямого дубля нет. Черновик готов к утверждению, очередь не менять."
+      "closed_at": "2026-11-16T11:41:47.063Z",
+      "article_id": "deepseek-ai-assistant-tools-api-20261113",
+      "note": "Официальный анонс. Отличается от уже имеющейся записи №107 о чат-клиенте.\n15.11.2026, ревизия ХПИИ: Ревизия 15.11: #107 снята как повтор части того же релиза: open-source chat-demo и новые API — единый анонс DeepSeek.\n16.11.2026: Редактор №16 взял новость на проверку. Следующий шаг: официальная документация DeepSeek и доступность API.\n16.11.2026: Проверен официальный анонс DeepSeek от 13.11 https://api-docs.deepseek.com/news/news261113/ и руководство https://api-docs.deepseek.com/guides/build_a_chatbot/ . DeepSeek-flash/V4.1-Flash поддерживает web-search, file input, URL reading, safety; отдельные OCR/ASR/TTS. TTS: русский не перечислен https://api-docs.deepseek.com/guides/tts/ . Дополнительные вызовы платные. Архив: близкая, но отдельная статья о поисковом API https://dzen.ru/a/atWjgEdxHDRryfQJ; прямого дубля нет. Черновик готов к утверждению, очередь не менять.\n16.11.2026: Главный редактор утвердил заголовок «DeepSeek разрешила создать своего ИИ-помощника». Статья сохранена в editorial-intake, Threads/X в main; сайт в приоритетной очереди, ждёт обложку."
     },
     {
       "id": "n-497b7eb362f5f581",
