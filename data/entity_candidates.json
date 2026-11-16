@@ -1606,6 +1606,32 @@
           "source_url": "https://runway.com/news/company-news/praxis-1-is-now-available"
         }
       ]
+    },
+    {
+      "key": "grok-imagine",
+      "name": "Grok Imagine",
+      "company": "xai",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "grok-imagine-60-layoffs-20261113",
+          "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
+        }
+      ]
+    },
+    {
+      "key": "grok-bot",
+      "name": "Grok Bot",
+      "company": "xai",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "grok-imagine-60-layoffs-20261113",
+          "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
+        }
+      ]
     }
   ]
 }
