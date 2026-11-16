@@ -761,6 +761,18 @@
           "source_url": "https://newsroom.cj.net/?p=10654"
         }
       ]
+    },
+    {
+      "key": "uc-berkeley",
+      "name": "University of California, Berkeley (UC Berkeley)",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "ai-ecg-sudden-cardiac-death-risk-20261116",
+          "source_url": "https://news.berkeley.edu/2026/06/24/with-ai-researchers-discover-new-way-to-detect-sudden-cardiac-death-risk/"
+        }
+      ]
     }
   ],
   "products": [
