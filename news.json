@@ -6086,5 +6086,23 @@
       "bytedance"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ помог написать полицейский рапорт — суд отпустил подозреваемого",
+    "summary": "В Аризоне суд освободил подозреваемого в пьяной езде: в полицейском рапорте использовалась Truleo AI, но исходные записи офицера суду не предоставили.",
+    "published": "2026-11-16",
+    "source_url": "https://www.abc15.com/news/crime/court-releases-dui-suspect-after-ai-generated-police-report",
+    "cover": "assets/editorial/truleo-ai-police-report-arizona-20261116.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "⚖️ СУД ОТПУСТИЛ ЗАДЕРЖАННОГО из-за полицейского рапорта с ИИ",
+    "vk_summary": "В Аризоне полицейский подготовил рапорт с помощью Truleo AI. Судья не получил исходные записи офицера и не смог установить происхождение сведений. Мужчину освободили, позднее назначили новое заседание.",
+    "published_at_utc": "2026-11-16T12:15:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "truleo-ai-police-report-arizona-20261116",
+    "url": "articles/truleo-ai-police-report-arizona-20261116/",
+    "topics": [],
+    "companies": [],
+    "products": []
   }
 ]
