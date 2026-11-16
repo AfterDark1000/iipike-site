@@ -1,5 +1,12 @@
 [
   {
+    "id": "91ab97e44683e9c3d93a",
+    "date": "2026-11-16",
+    "title": "Нефтяники из GS Caltex научили ИИ собирать готовые конвейеры за пару часов",
+    "source_name": "Amazon AWS AI",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/"
+  },
+  {
     "id": "41586052132a21c1d621",
     "date": "2026-11-15",
     "title": "Amazon пересаживает ИИ-агентов на мгновенный запуск: новая версия AgentCore научилась оживать за пару секунд",

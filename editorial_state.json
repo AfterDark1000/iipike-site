@@ -168,6 +168,12 @@
       "utc_date": "2026-11-15",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/",
       "source_title": "Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime"
+    },
+    {
+      "id": "91ab97e44683e9c3d93a",
+      "utc_date": "2026-11-16",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/",
+      "source_title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1"
     }
   ]
 }
