@@ -857,6 +857,30 @@
           "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
         }
       ]
+    },
+    {
+      "key": "cursor",
+      "name": "Cursor",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "cursor-fireworks-key-incident-20261113",
+          "source_url": "https://cursor.com/blog/security-incident-update"
+        }
+      ]
+    },
+    {
+      "key": "fireworks-ai",
+      "name": "Fireworks AI",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "cursor-fireworks-key-incident-20261113",
+          "source_url": "https://cursor.com/blog/security-incident-update"
+        }
+      ]
     }
   ],
   "products": [
