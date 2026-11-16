@@ -375,6 +375,10 @@
         {
           "article_id": "mit-workspace-models-robot-memory-20261110",
           "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+        },
+        {
+          "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+          "source_url": "https://daehwakim.com/oat/index.html"
         }
       ]
     },
@@ -1730,6 +1734,19 @@
         {
           "article_id": "truleo-ai-police-report-arizona-20261116",
           "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
+        }
+      ]
+    },
+    {
+      "key": "oats-object-agent-twins",
+      "name": "OATs (Object-Agent Twins)",
+      "company": "carnegie-mellon-university",
+      "status": "candidate",
+      "first_seen": "2026-11-16",
+      "evidence": [
+        {
+          "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+          "source_url": "https://daehwakim.com/oat/index.html"
         }
       ]
     }
