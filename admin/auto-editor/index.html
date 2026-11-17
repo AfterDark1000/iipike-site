@@ -18,6 +18,11 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f4;padding:12px;
 details{margin:12px 0;border-top:1px solid #e0e5e2;padding-top:10px}summary{cursor:pointer;font-weight:650}
 .tag{font-size:12px;background:#e3f2ec;padding:3px 8px;border-radius:5px;display:inline-block}
 #error{color:#a3342b}#reviewStatus{color:#475f55;font-size:13px}
+.cover-state{font-weight:650;margin:13px 0;padding:10px 0;border-bottom:1px solid #d9dfdc}
+.cover-result{font-weight:650;line-height:1.55;padding:12px 14px;background:#f4f6f4;border-radius:8px;margin:8px 0 18px;overflow-wrap:anywhere}
+.cover-result[data-kind="success"]{color:#176052}
+.cover-result[data-kind="error"]{color:#9a2d28}
+.cover-result[data-kind="pending"]{color:#495c66}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:14px}}
 </style><style id="hpii-auth-style">
 html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
@@ -35,7 +40,7 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 </head><body>
 <header><a href="/admin/">← Пульт публикаций</a><h1>Автономный редактор</h1><p>Чтение черновиков и подготовка решения главреда</p></header>
 <main>
-<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Рабочая панель требует входа через GitHub. Решения отправляются напрямую на защищённый сервер без создания GitHub Issue. Публикацию это не запускает. Исходные JSON в публичном репозитории остаются общедоступными.</div>
+<div class="notice"><strong>Редакционная проверка, не публикация.</strong> Рабочая панель требует входа через GitHub. Решения отправляются напрямую на защищённый сервер без создания GitHub Issue. Публикацию это не запускает. Исходные JSON в публичном репозитории остаются общедоступными.</div>
 <div class="grid"><aside class="card"><h2>На проверке</h2><div id="list">Загружаю список…</div><button id="reload">↻ Обновить список</button><p class="muted" id="loaded"></p></aside>
 <section class="card" id="detail" aria-live="polite"><h2>Выбери материал слева</h2></section></div>
 <p class="muted">Источник: ветка <a href="https://github.com/AfterDark1000/iipike-site/tree/editorial-intake/editorial_inbox/auto_drafts">editorial-intake / auto_drafts</a>. При недоступности GitHub данные не заменяются образцами.</p>
@@ -169,16 +174,23 @@ async function addCoverUploader(doc,region){
   }catch(e){if(current()){status.textContent="Файл НЕ сохранён: "+e.message;button.disabled=false}}
  });
 }
-async function showCoverReviewControls(doc,cover,region,image){
+async function showCoverReviewControls(doc,cover,region,image,topState){
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
  const wrap=add(region,"section");
  wrap.style.cssText="margin-top:16px;padding-top:14px;border-top:1px solid #d9dfdc";
  add(wrap,"h3","Решение главреда по обложке");
- const p=add(wrap,"p","Проверяю, не было ли уже принято решение…","muted");
- p.setAttribute("role","status");
  const actions=add(wrap,"div",undefined,"actionbar");
  const approve=add(actions,"button","Утвердить обложку");
  const redo=add(actions,"button","Переделать");
+ const p=add(wrap,"p","Проверяю, не было ли уже принято решение…","cover-result");
+ p.setAttribute("role","status");
+ p.setAttribute("aria-live","polite");
+ p.dataset.kind="pending";
+ function feedback(message,kind="pending",scroll=false){
+   p.textContent=message;p.dataset.kind=kind;
+   topState.textContent=message;topState.dataset.kind=kind;
+   if(scroll && typeof p.scrollIntoView==="function")p.scrollIntoView({block:"nearest",behavior:"smooth"});
+ }
  const note=add(wrap,"textarea");
  note.placeholder="Что изменить художнику (обязательно при возврате на переделку)";
  note.setAttribute("aria-label","Замечания по обложке");
@@ -195,7 +207,7 @@ async function showCoverReviewControls(doc,cover,region,image){
   if(!current())return;
   if(r.status===404){
     decisionState="open";
-    p.textContent="Обложка ещё не утверждена. Посмотри изображение перед выбором действия.";
+    feedback("Обложка ещё не утверждена. Посмотри изображение перед выбором действия.");
     setDisabled(!checkValid());
   }else if(r.ok){
     const saved=await r.json();
@@ -204,43 +216,49 @@ async function showCoverReviewControls(doc,cover,region,image){
        saved.cover_version!==1||saved.cover_blob_sha!==cover.image_blob_sha)
       throw Error("Сохранённое решение не совпадает с обложкой.");
     decisionState="saved";
-    p.textContent=saved.status==="cover_approved_handoff_pending"?
+    feedback(saved.status==="cover_approved_handoff_pending"?
       "✓ Обложка утверждена. Ожидает отдельной подготовки комплекта для сайта; публикация не запущена.":
       saved.status==="cover_revision_requested"?
       "↺ Обложка возвращена на переделку. Замечание: "+(saved.note||"не указано"):
-      "Решение по обложке: "+saved.status;
+      "Решение по обложке: "+saved.status,
+      saved.status==="cover_approved_handoff_pending"?"success":"pending");
     setDisabled(true);
+    actions.hidden=true;
+    note.hidden=true;
   }else throw Error("GitHub HTTP "+r.status);
  }catch(e){
    decisionState="error";
-   if(current()){p.textContent="Не удалось проверить решения: "+e.message;setDisabled(true)}
+   if(current()){feedback("Не удалось проверить решения: "+e.message,"error");setDisabled(true)}
  }
  image.addEventListener("load",()=>{
    if(decisionState==="open"&&current())setDisabled(!checkValid());
  });
  image.addEventListener("error",()=>setDisabled(true));
  const submit=async(action)=>{
-   if(!checkValid()){p.textContent="Невозможно подтвердить обложку: проверь загрузку и размер.";return}
-   if(action==="revise_cover"&&!note.value.trim()){p.textContent="Сначала напиши, что нужно переделать.";note.focus();return}
-   if(!window.HpiiAdminAuth){p.textContent="Нет активного входа в админку.";return}
-   decisionState="saving";setDisabled(true);p.textContent="Записываю решение через защищённый сервер…";
+   if(!checkValid()){feedback("Невозможно подтвердить обложку: проверь загрузку и размер.","error",true);return}
+   if(action==="revise_cover"&&!note.value.trim()){feedback("Сначала напиши, что нужно переделать.","error");note.focus();return}
+   if(!window.HpiiAdminAuth){feedback("Нет активного входа в админку.","error");return}
+   decisionState="saving";setDisabled(true);feedback("Записываю решение через защищённый сервер…","pending",true);
    try{
       const result=await window.HpiiAdminAuth.reviewCover(doc,cover,action,note.value.trim());
       if(!current())return;
       decisionState="saved";setDisabled(true);note.disabled=true;
-      p.textContent=result.status==="cover_approved_handoff_pending"?
+      feedback(result.status==="cover_approved_handoff_pending"?
        "✓ Обложка утверждена и решение сохранено в GitHub. Материал НЕ опубликован.":
-       "↺ Решение о переделке сохранено в GitHub. Новая версия обложки пока не создана.";
+       "↺ Решение о переделке сохранено в GitHub. Новая версия обложки пока не создана.",
+       result.status==="cover_approved_handoff_pending"?"success":"pending",true);
+      actions.hidden=true;
+      note.hidden=true;
    }catch(e){
       if(current()){decisionState="error";setDisabled(true);
-       p.textContent="Решение НЕ подтверждено: "+e.message+". Обнови страницу, чтобы проверить состояние."}
+       feedback("Решение НЕ подтверждено: "+e.message+". Обнови страницу, чтобы проверить состояние.","error",true)}
    }
  };
  approve.addEventListener("click",()=>submit("approve_cover"));
  redo.addEventListener("click",()=>submit("revise_cover"));
 }
 
-async function showCoverCandidate(doc,region){
+async function showCoverCandidate(doc,region,topState){
  const base="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_covers/";
  const stem=doc.article_id+"-r"+doc.revision;
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
@@ -251,13 +269,13 @@ async function showCoverCandidate(doc,region){
   if(response.status===404){
    const blocked=await fetch(base+"attempts/"+stem+".json?v="+Date.now(),{cache:"no-store"});
    if(!current())return;
-   if(blocked.status===404){label.textContent="WebP пока не сохранён.";await addCoverUploader(doc,region);return}
+   if(blocked.status===404){label.textContent="WebP пока не сохранён.";topState.textContent="Обложка ещё не загружена.";await addCoverUploader(doc,region);return}
    if(!blocked.ok)throw Error("Статус попытки: HTTP "+blocked.status);
    const attempt=await blocked.json();
    label.textContent=attempt.status==="blocked_binary_export"?
      "Художник не смог передать реальные байты в GitHub: "+(attempt.cause||"причина не указана"):
      "Попытка художника: "+(attempt.status||"неизвестный статус");
-   await addCoverUploader(doc,region);
+   topState.textContent="Обложка не сохранена: ошибка передачи файла.";await addCoverUploader(doc,region);
    return;
   }
   if(!response.ok)throw Error("Метаданные обложки: HTTP "+response.status);
@@ -267,7 +285,8 @@ async function showCoverCandidate(doc,region){
      cover.text_updated_at!==doc.updated_at||cover.status!=="ready_for_cover_review"||
      cover.image_path!==expected||!Number.isSafeInteger(cover.width)||!Number.isSafeInteger(cover.height)||
      !/^[0-9a-f]{40}$/.test(cover.image_blob_sha||""))throw Error("Кандидат не соответствует утверждённой версии текста");
-  label.textContent="Кандидат WebP найден. Ещё НЕ утверждён и НЕ опубликован.";
+  label.textContent="Кандидат WebP найден. Проверяю решение главреда…";
+  topState.textContent="WebP загружен. Проверяю статус утверждения…";
   const image=add(region,"img");
   image.alt="Кандидат обложки: "+(cover.headline||doc.content?.title||doc.article_id);
   image.loading="lazy";
@@ -278,6 +297,7 @@ async function showCoverCandidate(doc,region){
        Math.abs(image.naturalWidth/image.naturalHeight-16/9)>0.02){
       image.dataset.hpiiValid="0";
       label.textContent="Размер изображения не совпал с метаданными — не утверждать.";
+      topState.textContent="Ошибка изображения: утверждение недоступно.";
     }else{
       image.dataset.hpiiValid="1";
     }
@@ -288,16 +308,17 @@ async function showCoverCandidate(doc,region){
   if(cover.headline)field(region,"Заголовок",cover.headline);
   paragraph(region,"Для передачи в публикационную очередь ещё требуется отдельное утверждение обложки главредом.");
   const p=add(region,"p");link(p,"Файл обложки ↗",base+stem+"-v1.webp");
-  void showCoverReviewControls(doc,cover,region,image);
- }catch(e){if(current())label.textContent="Не удалось подтвердить наличие кандидата: "+e.message}
+  void showCoverReviewControls(doc,cover,region,image,topState);
+ }catch(e){if(current()){label.textContent="Не удалось подтвердить наличие кандидата: "+e.message;topState.textContent="Не удалось проверить обложку.";}}
 }
 function draw(doc){
  detail.replaceChildren();
  const c=doc.content||{};const stateTag=add(detail,"span","Проверяю решение…","tag");
  add(detail,"h2",c.title||doc.article_id);
  field(detail,"ID",doc.article_id);field(detail,"Пул",doc.pool_sequence);field(detail,"Ревизия",doc.revision);
+ const coverState=add(detail,"p","Проверяю статус обложки…","cover-state");coverState.setAttribute("role","status");coverState.setAttribute("aria-live","polite");
  field(detail,"Дата события",c.event_date);field(detail,"Рубрика",c.section||c.rubric);field(detail,"Обновлён",doc.updated_at);
- field(detail,"Обложка","В черновике есть только бриф — готовая обложка не подтверждена");
+ field(detail,"Обложка","Статус готовой обложки — выше; бриф — в разделе ниже");
  if(c.summary)paragraph(detail,c.summary);
  add(detail,"h3","Статья для сайта и Дзена");rich(detail,c.article_markdown||"Текст пока отсутствует");
  details(detail,"Перелинковка",d=>{
@@ -319,7 +340,7 @@ function draw(doc){
   field(d,"Бриф",JSON.stringify(doc.cover_brief||{},null,2));
  });
  if(doc.editor_notes?.length)details(detail,"Примечания редакции",d=>doc.editor_notes.forEach(x=>paragraph(d,typeof x==="string"?x:JSON.stringify(x))));
- const coverRegion=add(detail,"section",undefined,"card");add(coverRegion,"h3","Кандидат обложки от автономного художника");void showCoverCandidate(doc,coverRegion);
+ const coverRegion=add(detail,"section",undefined,"card");add(coverRegion,"h3","Кандидат обложки от автономного художника");void showCoverCandidate(doc,coverRegion,coverState);
  const actions=add(detail,"div",undefined,"actionbar");
  const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
  const status=add(detail,"p","Проверяю сохранённые решения…","muted");
