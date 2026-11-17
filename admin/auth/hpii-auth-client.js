@@ -16,6 +16,12 @@ export class HpiiAdminAuth {
       const self=this;
       function receive(event){
         if(event.origin!==self.backend || event.source!==popup) return;
+        if(event.data?.type==="hpii-auth-error" && event.data?.backend===self.backend &&
+           typeof event.data.reason==="string" && /^[a-z_]{2,60}$/.test(event.data.reason)){
+          clear();
+          reject(new Error("GitHub: "+event.data.reason));
+          return;
+        }
         if(event.data?.type!=="hpii-auth" || event.data?.backend!==self.backend ||
            typeof event.data?.token!=="string" || !/^[A-Za-z0-9_.-]+$/.test(event.data.token)) return;
         clear();

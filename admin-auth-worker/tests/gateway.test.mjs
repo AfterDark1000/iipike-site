@@ -183,3 +183,38 @@ test("authenticated WebP upload is restricted to approved rev and never publishe
     assert.equal(written.size,2);
   }finally{globalThis.fetch=previous}
 });
+
+test("GitHub OAuth exchange refusal returns safe human-readable reason for mobile",async()=>{
+  const original=globalThis.fetch;
+  let issued=0;
+  globalThis.fetch=async (url)=>{
+    assert.equal(String(url),"https://github.com/login/oauth/access_token");
+    issued+=1;
+    if(issued===1)return Response.json({error:"bad_verification_code",
+      error_description:"private GitHub diagnostic that must not be disclosed"});
+    return Response.json({error:"<script>private token</script>"},{status:401});
+  };
+  try{
+    for(const expected of ["bad_verification_code","unknown_exchange_error"]){
+      const start=await call("/auth/start");
+      assert.equal(start.status,302);
+      const state=new URL(start.headers.get("location")).searchParams.get("state");
+      const cookie=start.headers.get("set-cookie").split(";")[0];
+      const callback=await call("/auth/callback?code=one-use-test-code&state="+encodeURIComponent(state),{
+        headers:{Cookie:cookie}
+      });
+      assert.equal(callback.status,401);
+      assert.match(callback.headers.get("content-type"),/text\/html/);
+      const page=await callback.text();
+      assert.ok(page.includes("Не удалось войти через GitHub"));
+      assert.ok(page.includes(expected));
+      assert.ok(page.includes("hpii-auth-error"));
+      assert.ok(!page.includes("private GitHub diagnostic"));
+      assert.ok(!page.includes("<script>private token</script>"));
+      assert.ok(!page.includes(env.GITHUB_CLIENT_SECRET));
+      assert.ok(!page.includes(env.GITHUB_REPO_TOKEN));
+      assert.ok(!page.includes("one-use-test-code"));
+      assert.equal(callback.headers.get("cache-control"),"no-store");
+    }
+  }finally{globalThis.fetch=original}
+});
