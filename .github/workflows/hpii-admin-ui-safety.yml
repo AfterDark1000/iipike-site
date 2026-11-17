@@ -43,6 +43,18 @@ jobs:
           auto=Path('admin/auto-editor/index.html').read_text(encoding='utf-8')
           assert 'window.HpiiAdminAuth.review(doc,action,note.value.trim())' in auto
           assert 'window.open(url' not in auto
+          # Cover approval feedback must remain visible where the user just clicked,
+          # and remain visible at the top after reloading a previously approved cover.
+          cover_start=auto.index('async function showCoverReviewControls(')
+          cover_end=auto.index('async function showCoverCandidate(',cover_start)
+          ui=auto[cover_start:cover_end]
+          assert ui.index('const p=add(wrap,"p"')>ui.index('const redo=add(actions,"button"'), 'Result belongs below action buttons'
+          assert 'p.setAttribute("aria-live","polite")' in ui
+          assert 'topState.textContent=message' in ui
+          assert 'actions.hidden=true' in ui
+          assert 'result.status==="cover_approved_handoff_pending"' in ui
+          assert 'void showCoverReviewControls(doc,cover,region,image,topState)' in auto
+          assert 'coverState=add(detail,"p"' in auto
           assert 'hpii-admin-authorized' in auto
           assert 'hpii-admin-authorized' in Path('admin/index.html').read_text(encoding='utf-8')
           assert 'hpii-admin-authorized' in Path('admin/commenting/app.js').read_text(encoding='utf-8')
