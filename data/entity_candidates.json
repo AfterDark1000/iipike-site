@@ -1977,6 +1977,32 @@
           "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
         }
       ]
+    },
+    {
+      "key": "google-maps",
+      "name": "Google Maps",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "google-ask-maps-booking-europe-20261116",
+          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026"
+        }
+      ]
+    },
+    {
+      "key": "google-ask-maps",
+      "name": "Ask Maps",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "google-ask-maps-booking-europe-20261116",
+          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026"
+        }
+      ]
     }
   ]
 }
