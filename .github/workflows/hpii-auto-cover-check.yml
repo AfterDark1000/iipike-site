@@ -24,6 +24,8 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: false
+      - name: Install WebP decoder
+        run: python3 -m pip install --disable-pip-version-check pillow
       - name: Compile validation
         run: python3 -m py_compile scripts/check_auto_cover_pilot.py
       - name: Validate actual editorial-intake candidate files
