@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
+  "text_revision": 4,
+  "text_updated_at": "2026-11-17T09:14:28.326Z",
+  "cover_version": 1,
+  "cover_blob_sha": "34935368d596d752706d187d02ac703751ec559d",
+  "cover_metadata_blob_sha": "d6e4272220cacfdf1be753fce9ad149bf749aee0",
+  "source_draft_blob_sha": "d489cecf3b024dfb80025c869db0019f96736c93",
+  "source_text_decision_blob_sha": "0a3c4cea323282a0eba26f4359a47cbd2fa46435",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-17T14:32:42.913Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
