@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 6 · **Готовы:** 0 · **Ждут интервал:** 6 · **Срочная очередь:** 6 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 146
+**В очереди:** 7 · **Готовы:** 0 · **Ждут интервал:** 7 · **Срочная очередь:** 6 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 146
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -18,6 +18,7 @@
 | **4** | [⚡ Google Карты научились звонить в салоны и искать свободную запись. ИИ выходит в 30 стран Европы](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ask-maps-booking-europe-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 00:07 (Усть-Катав)**; пауза до 17.11.2026 21:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-ask-maps-booking-europe-20261116.webp) |
 | **5** | [⚡ ИИ-агенты OpenAI устроили десятки кибератак. Калифорния потребовала ответа через суд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/california-openai-agents-hugging-face-lawsuit-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 07:07 (Усть-Катав)**; пауза до 17.11.2026 21:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/california-openai-agents-hugging-face-lawsuit-20261116.webp) |
 | **6** | [⚡ Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/unesco-ucl-ai-climate-sycophancy-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 08:07 (Усть-Катав)**; пауза до 17.11.2026 21:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
+| **7** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 09:07 (Усть-Катав)**; пауза до 17.11.2026 21:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
