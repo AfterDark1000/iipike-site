@@ -1009,6 +1009,30 @@
           "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
         }
       ]
+    },
+    {
+      "key": "unesco",
+      "name": "UNESCO",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+          "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows"
+        }
+      ]
+    },
+    {
+      "key": "ucl",
+      "name": "University College London (UCL)",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+          "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows"
+        }
+      ]
     }
   ],
   "products": [
