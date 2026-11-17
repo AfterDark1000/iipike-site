@@ -90,3 +90,18 @@ test("GitHub OAuth popup yields owner-only session; review is idempotent",async(
     globalThis.fetch=previousFetch;
   }
 });
+
+test("misconfigured gateway returns only missing binding names",async()=>{
+  const broken={...env};
+  delete broken.GITHUB_CLIENT_SECRET;
+  broken.SESSION_SIGNING_KEY="short";
+  const r=await gateway.fetch(new Request(env.BACKEND_ORIGIN+"/health"),broken);
+  assert.equal(r.status,503);
+  const body=await r.json();
+  assert.equal(body.error,"gateway_not_configured");
+  assert.deepEqual(body.missing,["GITHUB_CLIENT_SECRET"]);
+  assert.deepEqual(body.invalid,["SESSION_SIGNING_KEY_too_short"]);
+  assert.equal(JSON.stringify(body).includes("short"),true); // validation flag only
+  assert.equal(JSON.stringify(body).includes(env.SESSION_SIGNING_KEY),false);
+  assert.equal(JSON.stringify(body).includes(env.GITHUB_REPO_TOKEN),false);
+});

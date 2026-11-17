@@ -52,11 +52,20 @@ function origin(req, env) {
 function cors(env) {
   return {"access-control-allow-origin":env.ADMIN_ORIGIN,"access-control-allow-methods":"GET, POST, OPTIONS","access-control-allow-headers":"Authorization, Content-Type","vary":"Origin"};
 }
-function configured(env) {
+function configurationProblems(env) {
+  // Expose binding NAMES and validation flags only; never return values, lengths, or secrets.
   const required=["ADMIN_ORIGIN","BACKEND_ORIGIN","GITHUB_CLIENT_ID","GITHUB_CLIENT_SECRET","SESSION_SIGNING_KEY","GITHUB_REPO_TOKEN","ALLOWED_GITHUB_USER_ID"];
-  return required.every(k=>typeof env[k] === "string" && env[k].length>0)
-    && /^https:\/\//.test(env.ADMIN_ORIGIN) && /^https:\/\//.test(env.BACKEND_ORIGIN)
-    && env.SESSION_SIGNING_KEY.length >= 32 && env.ADMIN_ORIGIN !== env.BACKEND_ORIGIN;
+  const missing=required.filter(k=>typeof env[k]!=="string" || env[k].length===0);
+  const invalid=[];
+  if(!missing.includes("ADMIN_ORIGIN") && !/^https:\/\//.test(env.ADMIN_ORIGIN)) invalid.push("ADMIN_ORIGIN_must_be_https");
+  if(!missing.includes("BACKEND_ORIGIN") && !/^https:\/\//.test(env.BACKEND_ORIGIN)) invalid.push("BACKEND_ORIGIN_must_be_https");
+  if(!missing.includes("SESSION_SIGNING_KEY") && env.SESSION_SIGNING_KEY.length < 32) invalid.push("SESSION_SIGNING_KEY_too_short");
+  if(!missing.includes("ADMIN_ORIGIN") && !missing.includes("BACKEND_ORIGIN") && env.ADMIN_ORIGIN===env.BACKEND_ORIGIN) invalid.push("origins_must_differ");
+  return {missing,invalid};
+}
+function configured(env) {
+  const problems=configurationProblems(env);
+  return problems.missing.length===0 && problems.invalid.length===0;
 }
 function authCookie(value) {
   return "__Host-hpii_oauth="+value+"; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age="+STATE_SECONDS;
@@ -178,7 +187,10 @@ async function verifySession(req,env) {
 export default {
   async fetch(request,env) {
     const url=new URL(request.url);
-    if (!configured(env)) return fail(503,"gateway_not_configured");
+    if (!configured(env)) {
+      const problems=configurationProblems(env);
+      return send({ok:false,error:"gateway_not_configured",missing:problems.missing,invalid:problems.invalid},503);
+    }
     if (url.origin!==env.BACKEND_ORIGIN) return fail(403,"unexpected_host");
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
