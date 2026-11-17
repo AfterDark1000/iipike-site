@@ -22,7 +22,7 @@ details{margin:12px 0;border-top:1px solid #e0e5e2;padding-top:10px}summary{curs
 </style></head><body>
 <header><a href="/admin/">← Пульт публикаций</a><h1>Автономный редактор</h1><p>Чтение черновиков и подготовка решения главреда</p></header>
 <main>
-<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Страница общедоступна по ссылке. Кнопки только формируют решение для передачи в чат, ничего не записывают в GitHub и не запускают публикацию.</div>
+<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Страница общедоступна по ссылке. Решение оформляется через вход в GitHub и подтверждение заявки. Только владелец репозитория может сохранить решение; публикацию это не запускает.</div>
 <div class="grid"><aside class="card"><h2>На проверке</h2><div id="list">Загружаю список…</div><button id="reload">↻ Обновить список</button><p class="muted" id="loaded"></p></aside>
 <section class="card" id="detail" aria-live="polite"><h2>Выбери материал слева</h2></section></div>
 <p class="muted">Источник: ветка <a href="https://github.com/AfterDark1000/iipike-site/tree/editorial-intake/editorial_inbox/auto_drafts">editorial-intake / auto_drafts</a>. При недоступности GitHub данные не заменяются образцами.</p>
@@ -39,20 +39,45 @@ function add(parent,tag,text,cls){return parent.appendChild(node(tag,text,cls))}
 function paragraph(parent,text){add(parent,"p",text)}
 function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"?u.href:null}catch(_){return null}}
 function link(parent,label,url){const href=safeUrl(url);if(!href)return;const a=add(parent,"a",label);a.href=href;a.target="_blank";a.rel="noopener noreferrer"}
+function inline(parent,value){
+  // Safe Markdown elements; no innerHTML or execution of source markup.
+  const pat=/\\[([^\\]]+)\\]\\((https:\\/\\/[^)\\s]+)\\)|\\*\\*([^*]+)\\*\\*|\\*([^*]+)\\*|`([^`]+)`/g;
+  let pos=0,m;
+  while((m=pat.exec(value))!==null){
+    if(m.index>pos)parent.appendChild(document.createTextNode(value.slice(pos,m.index)));
+    if(m[1]!==undefined){const url=safeUrl(m[2]);if(url){const a=add(parent,"a",m[1]);a.href=url;a.target="_blank";a.rel="noopener noreferrer"}else parent.appendChild(document.createTextNode(m[0]))}
+    else if(m[3]!==undefined)add(parent,"strong",m[3]);
+    else if(m[4]!==undefined)add(parent,"em",m[4]);
+    else add(parent,"code",m[5]);
+    pos=pat.lastIndex;
+  }
+  if(pos<value.length)parent.appendChild(document.createTextNode(value.slice(pos)));
+}
 function rich(parent,content){
-  // Minimal Markdown viewer: all content is inserted as text, never HTML.
-  content.split(/\n\s*\n/).forEach(block=>{
-    const lines=block.trim().split("\n");if(!block.trim())return;
-    const match=/^(#{2,3})\s+(.+)$/.exec(lines[0]);
-    if(match){add(parent,match[1].length===2?"h3":"h4",match[2]);if(lines.length>1)paragraph(parent,lines.slice(1).join(" "));return}
-    if(lines.every(x=>/^> ?/.test(x))){add(parent,"blockquote",lines.map(x=>x.replace(/^> ?/,"")).join(" "));return}
-    if(lines.every(x=>/^[-*] /.test(x))){const ul=add(parent,"ul");lines.forEach(x=>add(ul,"li",x.slice(2)));return}
-    paragraph(parent,lines.join(" "));
-  });
+ const lines=content.replace(/\\r\\n/g,"\\n").split("\\n");
+ let para=[],list=null,quote=[];
+ function flush(){if(para.length){inline(add(parent,"p"),para.join(" "));para=[]}
+   if(quote.length){inline(add(parent,"blockquote"),quote.join(" "));quote=[]}list=null}
+ lines.forEach(line=>{
+   if(!line.trim()){flush();return}
+   const heading=/^(#{2,4})\\s+(.+)$/.exec(line);
+   if(heading){flush();inline(add(parent,"h"+heading[1].length),heading[2]);return}
+   const bullet=/^[-*]\\s+(.+)$/.exec(line);
+   if(bullet){if(para.length||quote.length)flush();if(!list)list=add(parent,"ul");inline(add(list,"li"),bullet[1]);return}
+   const quoted=/^>\\s?(.*)$/.exec(line);
+   if(quoted){if(para.length||list)flush();quote.push(quoted[1]);return}
+   if(list||quote.length)flush();
+   para.push(line.trim());
+ });flush();
 }
 function details(parent,label,body){const d=add(parent,"details"),s=add(d,"summary",label);body(d);return d}
 function field(parent,label,value){if(value===undefined||value===null||value==="")return;const p=add(parent,"p");add(p,"strong",label+": ");p.appendChild(document.createTextNode(String(value)))}
-function decision(doc,action,note){return "ХПИИ — решение по автодрафту\nID: "+doc.article_id+"\nРевизия: "+doc.revision+"\nДействие: "+action+(note?"\nЗамечания: "+note:"")+"\nПроверь актуальную ревизию в GitHub перед изменением статуса. Это текст решения, а не исполненная команда."}
+function decisionUrl(doc,action,note){
+ const payload={schema_version:1,article_id:doc.article_id,revision:doc.revision,updated_at:doc.updated_at,action:action,note:note};
+ const body="<!-- HPII_AUTO_REVIEW_V1 -->\\n"+JSON.stringify(payload,null,2)+"\\n<!-- /HPII_AUTO_REVIEW_V1 -->\\n\\nПроверка решения выполняется GitHub Actions. Ничего не публикуется.";
+ const title="HPII review: "+doc.article_id+" r"+doc.revision+" "+action;
+ return "https://github.com/AfterDark1000/iipike-site/issues/new?"+new URLSearchParams({title:title,body:body}).toString();
+}
 function draw(doc){
  detail.replaceChildren();
  const c=doc.content||{};add(detail,"span",doc.status==="ready_for_review"?"Готов к проверке":doc.status||"Неизвестный статус","tag");
@@ -84,13 +109,16 @@ function draw(doc){
  const actions=add(detail,"div",undefined,"actionbar");
  const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
  const status=add(detail,"p","Ни одно решение пока не отправлено.","muted");
- [["Берём текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
+ [["Утвердить текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
   const b=add(actions,"button",label);
-  b.addEventListener("click",async()=>{
-   if(action!=="approve_text"&&!note.value.trim()){status.textContent="Для доработки или отклонения сначала напиши причину.";note.focus();return}
-   const msg=decision(doc,action,note.value.trim());
-   try{await navigator.clipboard.writeText(msg);status.textContent="Решение скопировано. Вставь его в чат ХПИИ — только там оно будет обработано."}
-   catch(_){note.value=msg;note.select();status.textContent="Буфер недоступен. Скопируй выделенный текст вручную и отправь в чат."}
+  b.addEventListener("click",()=>{
+   if(doc.status!=="ready_for_review"){status.textContent="Решения доступны только для готовых к проверке версий.";return}
+   if(action!=="approve_text"&&!note.value.trim()){status.textContent="Напиши причину доработки или отклонения.";note.focus();return}
+   const url=decisionUrl(doc,action,note.value.trim());
+   if(url.length>7000){status.textContent="Замечание слишком длинное для ссылки GitHub (максимум около 4000 символов).";return}
+   window.open(url,"_blank","noopener,noreferrer");
+   status.textContent="Открылось создание заявки GitHub. Войди в GitHub и нажми Submit new issue. Только после проверки GitHub Actions решение будет записано.";
+  
   });
  });
  const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
