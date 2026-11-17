@@ -1,0 +1,47 @@
+name: HPII one-time legacy preview PNG migration (NO PUBLICATION)
+on:
+  push:
+    branches:
+      - feature/migrate-legacy-draft-png-20261117
+    paths:
+      - 'scripts/migrate_legacy_draft_covers.py'
+      - 'tests/test_migrate_legacy_draft_covers.py'
+      - '.github/workflows/hpii-preview-webp-migration.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/migrate_legacy_draft_covers.py'
+      - 'tests/test_migrate_legacy_draft_covers.py'
+permissions:
+  contents: write
+
+jobs:
+  migrate-branch-only:
+    # Never run the automatic migration on main or an editorial release branch.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/migrate-legacy-draft-png-20261117'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/migrate-legacy-draft-png-20261117
+          persist-credentials: true
+      - name: Install Pillow
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Run offline migration unit tests
+        run: python3 -m unittest discover -s tests -p 'test_migrate_legacy_draft_covers.py' -v
+      - name: Validate entire legacy preview archive
+        run: python3 scripts/migrate_legacy_draft_covers.py
+      - name: Convert previews in ONLY this feature branch
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = "feature/migrate-legacy-draft-png-20261117"
+          python3 scripts/migrate_legacy_draft_covers.py --apply
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A drafts/
+          git diff --cached --check
+          if ! git diff --cached --quiet; then
+            git commit -m "migrate(drafts): replace 29 linked legacy PNG previews with WebP"
+            git push origin HEAD:refs/heads/feature/migrate-legacy-draft-png-20261117
+          fi
