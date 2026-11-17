@@ -53,7 +53,7 @@ class ExistingBranchDoesNotBlockQueue(unittest.TestCase):
         self.assertEqual(self.select.call_count, 2)
         remaining = self.select.call_args_list[1].args[0]
         self.assertEqual([x["id"] for x in remaining], ["next", "third"])
-        self.assertTrue(any("EXISTING_RELEASE_BRANCH_SKIPPED" in str(c.args)
+        self.assertTrue(any("SITE_RELEASE_DEFERRED" in str(c.args)
                             for c in output.call_args_list))
         self.assertTrue(any("ONE_RELEASE_REQUESTED:" in str(c.args)
                             for c in output.call_args_list))
