@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "article_id": "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
+  "revision": 3,
+  "updated_at": "2026-11-17T08:30:09.156Z",
+  "action": "revise",
+  "note": "Проверка функции \"на доработку\".\nсделать абзац отдельно: \"Для большинства задач Google по-прежнему предлагает Gemini 4 Argon.\"",
+  "issue_number": 162,
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-17T09:12:06Z",
+  "draft_blob_sha": "610414f1951c5632d76bcc055647bebacbbf77e8",
+  "status": "feedback_pending_revision"
+}
