@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 1 · **Ждут интервал:** 0 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 143
+**В очереди:** 3 · **Готовы:** 3 · **Ждут интервал:** 0 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 143
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -12,7 +12,9 @@
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ США и Россия тормозят договор об оружии, которое само выбирает цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/un-autonomous-weapons-us-russia-20261117.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 13:37 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/un-autonomous-weapons-us-russia-20261117.webp) |
+| **1** | [⚡ США и Россия тормозят договор об оружии, которое само выбирает цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/un-autonomous-weapons-us-russia-20261117.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 13:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/un-autonomous-weapons-us-russia-20261117.webp) |
+| **2** | [⚡ Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/recraft-v4-1-flash-v2-20261113.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 14:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/recraft-v4-1-flash-v2-20261113.webp) |
+| **3** | [⚡ Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/alibaba-qwen4-max-cybersecurity-20261116.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 15:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-cybersecurity-20261116.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
