@@ -159,6 +159,10 @@
         {
           "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
           "source_url": "https://higgsfield.ai/miracle"
+        },
+        {
+          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+          "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
         }
       ]
     },
@@ -907,6 +911,18 @@
         {
           "article_id": "xania-monet-ai-music-awards-20261113",
           "source_url": "https://awards.thesiqa.com/nominees"
+        }
+      ]
+    },
+    {
+      "key": "purga-studio",
+      "name": "PURGA Studio",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+          "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
         }
       ]
     }
@@ -1810,6 +1826,19 @@
         {
           "article_id": "claude-saltline-shooter-eight-hours-20261109",
           "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
+        }
+      ]
+    },
+    {
+      "key": "listen-to-meh",
+      "name": "Listen to MEH",
+      "company": "purga-studio",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+          "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
         }
       ]
     }
