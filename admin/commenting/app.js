@@ -165,5 +165,5 @@
     } catch (e) { alert("Не удалось восстановить отметки: " + e.message); } finally { $("import").value = ""; }
   });
   window.addEventListener("storage", e => { if (e.key === KEY) { try { records = validRecords(JSON.parse(e.newValue || "{}")); render(); } catch (_) { storageError = true; messages(); } } });
-  refresh();
+  window.addEventListener("hpii-admin-authorized", refresh);
 })();

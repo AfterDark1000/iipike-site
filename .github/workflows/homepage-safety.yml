@@ -77,8 +77,11 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           html = Path('admin/index.html').read_text(encoding='utf-8')
-          assert html.count('<script>') == 1 and html.count('</script>') == 1
-          Path('/tmp/hpii-admin-inline.js').write_text(html.split('<script>', 1)[1].split('</script>', 1)[0], encoding='utf-8')
+          import re
+          scripts = re.findall(r'<script>(.*?)</script>', html, flags=re.S)
+          assert len(scripts) == 1
+          assert 'src="/admin/auth/gate.js"' in html
+          Path('/tmp/hpii-admin-inline.js').write_text(scripts[0], encoding='utf-8')
           PY
           node --check /tmp/hpii-admin-inline.js
           python3 -m unittest discover -s tests -p 'test_homepage.py' -v
