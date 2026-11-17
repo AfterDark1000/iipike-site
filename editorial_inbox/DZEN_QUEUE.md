@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 143 · **В каталоге Дзена подтверждены:** 130 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 0
+**Всего одобренных:** 148 · **В каталоге Дзена подтверждены:** 130 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 4
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -27,6 +27,7 @@
 | 11 | [Claude за 8 часов сделал шутер из одного предложения](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/claude-saltline-shooter-eight-hours-20261109.md) | 17.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/claude-saltline-shooter-eight-hours-20261109/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
 | 12 | [Овца на крыше принесла фильму приз в $500 тысяч](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/listen-to-meh-higgsfield-film-prize-20261110.md) | 17.11.2026, 08:00 | [На сайте](https://iipike.ru/articles/listen-to-meh-higgsfield-film-prize-20261110/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/listen-to-meh-higgsfield-film-prize-20261110.webp) |
 | 13 | [Конкуренту NVIDIA дали $720 млн. Хотя его чипов ещё нет в продаже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fractile-ai-chips-720m-funding-20261111.md) | 17.11.2026, 10:30 | [На сайте](https://iipike.ru/articles/fractile-ai-chips-720m-funding-20261111/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fractile-ai-chips-720m-funding-20261111.webp) |
+| 14 | [Маск и 180 тысяч человек требуют вернуть Хуанга в NVIDIA, но совет директоров против](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/nvidia-jensen-huang-return-petition-20261116.md) | 17.11.2026, 13:55 | [На сайте](https://iipike.ru/articles/nvidia-jensen-huang-return-petition-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-jensen-huang-return-petition-20261116.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -34,7 +35,10 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| — | Нет материалов | — | — | — |
+| 1 | [США и Россия тормозят договор об оружии, которое само выбирает цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/un-autonomous-weapons-us-russia-20261117.md) | **Не ранее 17.11.2026 15:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/un-autonomous-weapons-us-russia-20261117.webp) |
+| 2 | [Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/recraft-v4-1-flash-v2-20261113.md) | **Не ранее 17.11.2026 16:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/recraft-v4-1-flash-v2-20261113.webp) |
+| 3 | [Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/alibaba-qwen4-max-cybersecurity-20261116.md) | **Не ранее 17.11.2026 17:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-cybersecurity-20261116.webp) |
+| 4 | [Число сообщений об опасном использовании ИИ против детей выросло в 85 раз](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/childlight-ai-child-safety-reports-85x-20261116.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/childlight-ai-child-safety-reports-85x-20261116.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
