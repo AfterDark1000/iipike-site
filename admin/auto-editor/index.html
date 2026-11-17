@@ -35,7 +35,7 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 </head><body>
 <header><a href="/admin/">← Пульт публикаций</a><h1>Автономный редактор</h1><p>Чтение черновиков и подготовка решения главреда</p></header>
 <main>
-<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Страница общедоступна по ссылке. Решение оформляется через вход в GitHub и подтверждение заявки. Только владелец репозитория может сохранить решение; публикацию это не запускает.</div>
+<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Рабочая панель требует входа через GitHub. Решения отправляются напрямую на защищённый сервер без создания GitHub Issue. Публикацию это не запускает. Исходные JSON в публичном репозитории остаются общедоступными.</div>
 <div class="grid"><aside class="card"><h2>На проверке</h2><div id="list">Загружаю список…</div><button id="reload">↻ Обновить список</button><p class="muted" id="loaded"></p></aside>
 <section class="card" id="detail" aria-live="polite"><h2>Выбери материал слева</h2></section></div>
 <p class="muted">Источник: ветка <a href="https://github.com/AfterDark1000/iipike-site/tree/editorial-intake/editorial_inbox/auto_drafts">editorial-intake / auto_drafts</a>. При недоступности GitHub данные не заменяются образцами.</p>
@@ -124,14 +124,20 @@ function draw(doc){
  const status=add(detail,"p","Проверяю сохранённые решения…","muted");
  [["Утвердить текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
   const b=add(actions,"button",label);
-  b.addEventListener("click",()=>{
+  b.addEventListener("click",async()=>{
    if(doc.status!=="ready_for_review"){status.textContent="Решения доступны только для готовых к проверке версий.";return}
    if(action!=="approve_text"&&!note.value.trim()){status.textContent="Напиши причину доработки или отклонения.";note.focus();return}
-   const url=decisionUrl(doc,action,note.value.trim());
-   if(url.length>7000){status.textContent="Замечание слишком длинное для ссылки GitHub (максимум около 4000 символов).";return}
-   window.open(url,"_blank","noopener,noreferrer");
-   status.textContent="Открылось создание заявки GitHub. Войди в GitHub и нажми Submit new issue. Только после проверки GitHub Actions решение будет записано.";
-  
+   if(!window.HpiiAdminAuth){status.textContent="Модуль входа не загрузился. Обнови страницу.";return}
+   const buttons=Array.from(actions.querySelectorAll("button"));
+   buttons.forEach(x=>x.disabled=true);
+   status.textContent="Сохраняю решение через защищённый сервер…";
+   try{
+    const saved=await window.HpiiAdminAuth.review(doc,action,note.value.trim());
+    status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
+   }catch(e){
+    status.textContent="Решение НЕ записано: "+e.message+". Проверь состояние GitHub и повтори после обновления.";
+    buttons.forEach(x=>x.disabled=false);
+   }
   });
  });
  // A saved decision is authoritative. Never present local clicks as confirmed.
@@ -141,7 +147,7 @@ function draw(doc){
   if(!r.ok)throw Error("HTTP "+r.status);
   const saved=await r.json();
   if(saved.article_id!==doc.article_id||saved.revision!==doc.revision)throw Error("Неверный документ решения");
-  status.textContent="Записано в GitHub: "+saved.status+" · Issue #"+saved.issue_number;
+  status.textContent="Записано в GitHub: "+saved.status+(saved.issue_number?" · Issue #"+saved.issue_number:" · через админку");
   actions.querySelectorAll("button").forEach(b=>b.disabled=true);
  }).catch(e=>{status.textContent="Не удалось проверить решения GitHub: "+e.message+"; перед утверждением обнови страницу." ; actions.querySelectorAll("button").forEach(b=>b.disabled=true)});
  const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
