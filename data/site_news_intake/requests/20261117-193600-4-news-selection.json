@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Наследники Элвиса Пресли нашли ещё сотню песен, которые Suno якобы скопировала с помощью ИИ",
+      "source_url": "https://www.musicbusinessworldwide.com/elvis-presley-rightsholders-amend-suno-lawsuit-adding-more-than-100-allegedly-infringing-ai-tracks/",
+      "summary": "13 ноября: дополнение к иску против Suno с более чем 100 предполагаемыми нарушениями; пограничная дата.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Инвесторы массово бегут из технологических акций из-за опасений вокруг ИИ",
+      "source_url": "https://www.reuters.com/business/global-markets-bofa-survey-2026-11-17/",
+      "summary": "17 ноября: опрос Bank of America об уменьшении доли технологических акций и опасениях избыточных вложений в ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Восемь научных команд получили гранты на попытки соединить ИИ с квантовыми компьютерами",
+      "source_url": "https://thequantuminsider.com/2026/11/17/bluequbit-names-eight-research-teams-quantum-flywheel/",
+      "summary": "17 ноября: программа BlueQubit Quantum Flywheel выбрала восемь исследовательских команд.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёные десять лет внедряли ИИ в образование, но забыли проверить последствия",
+      "source_url": "https://bioengineer.org/decade-of-educational-ai-research-reveals-sharp-growth-alongside-accountability-deficit/",
+      "summary": "17 ноября: обзор исследований ИИ в образовании указывает на дефицит оценки результатов и подотчётности.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
