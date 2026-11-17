@@ -54,7 +54,7 @@ jobs:
           Path('/tmp/hpii-dzen-reading-workflow.js').write_text(
               "\n".join(line[12:] for line in raw)+"\n",encoding='utf-8')
           PY
-          node --check /tmp/hpii-dzen-reading-workflow.js
+          node --input-type=module --check < /tmp/hpii-dzen-reading-workflow.js
           node --test tests/test_dzen_crosslink_rewrite.cjs
   update-reading-queue:
     # Never trust an unverified intake run or another branch's workflow.
