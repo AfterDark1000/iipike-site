@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: '13,43 * * * *'
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/dzen-reading-queue.yml'
   # GITHUB_TOKEN pushes to editorial-intake do not trigger ordinary push
   # workflows. React to verified successful validation or automatic handoff.
   # Periodic schedule remains a fallback for missed notifications.
@@ -24,15 +28,44 @@ concurrency:
   group: hpii-dzen-reading-queue
   cancel-in-progress: false
 jobs:
+  verify-dzen-reading-queue-workflow:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Parse Github Script and run offline link resolver tests
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          s=Path('.github/workflows/dzen-reading-queue.yml').read_text()
+          assert "HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)" in s
+          assert "HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)" in s
+          assert "github.event_name != 'pull_request'" in s
+          assert "async function generateFromFreshHead()" in s
+          assert "await generateFromFreshHead()" in s
+          start=s.index("          script: |\\n")+len("          script: |\\n")
+          raw=s[start:].splitlines()
+          assert all(not line.strip() or line.startswith("            ") for line in raw)
+          Path('/tmp/hpii-dzen-reading-workflow.js').write_text(
+              "\\n".join(line[12:] for line in raw)+"\\n",encoding='utf-8')
+          PY
+          node --check /tmp/hpii-dzen-reading-workflow.js
+          node --test tests/test_dzen_crosslink_rewrite.cjs
   update-reading-queue:
     # Never trust an unverified intake run or another branch's workflow.
     if: >-
-      ${{ github.event_name != 'workflow_run' ||
+      ${{ github.event_name != 'pull_request' &&
+          (github.event_name != 'workflow_run' ||
           (github.event.workflow_run.conclusion == 'success' &&
            ((github.event.workflow_run.name == 'HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)' &&
              github.event.workflow_run.head_branch == 'editorial-intake') ||
             (github.event.workflow_run.name == 'HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)' &&
-             github.event.workflow_run.head_branch == 'main'))) }}
+             github.event.workflow_run.head_branch == 'main')))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
