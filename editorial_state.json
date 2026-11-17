@@ -174,6 +174,12 @@
       "utc_date": "2026-11-16",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/",
       "source_title": "Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1"
+    },
+    {
+      "id": "b18ea8ba2455ca204e90",
+      "utc_date": "2026-11-17",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/",
+      "source_title": "Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base"
     }
   ]
 }
