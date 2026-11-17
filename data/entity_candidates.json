@@ -1927,6 +1927,19 @@
           "source_url": "https://feedback.recraft.ai/changelog"
         }
       ]
+    },
+    {
+      "key": "qwen4-max",
+      "name": "Qwen4-Max",
+      "company": "alibaba",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "alibaba-qwen4-max-cybersecurity-20261116",
+          "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max"
+        }
+      ]
     }
   ]
 }
