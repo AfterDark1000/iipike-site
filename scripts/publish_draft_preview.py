@@ -5,8 +5,8 @@ import hashlib
 import html
 import json
 from pathlib import Path
+from PIL import Image, UnidentifiedImageError
 import re
-import shutil
 import sys
 from editorial_sources import is_official_article
 
@@ -89,6 +89,28 @@ def update_existing_index(shelf):
     print("Website last-check status updated.")
 
 
+def store_webp(source: Path, target: Path):
+    """Save the generated PNG as a compact WebP; never commit the bulky original."""
+    try:
+        with Image.open(source) as art:
+            art.load()
+            if art.format not in ("PNG", "JPEG"):
+                raise ValueError("Preview cover must be a real PNG/JPEG image")
+            width, height = art.size
+            if width < 640 or height < 360 or abs(width / height - 16 / 9) > 0.03:
+                raise ValueError("Preview cover must be landscape 16:9")
+            rgb = art.convert("RGB")
+    except (OSError, UnidentifiedImageError) as exc:
+        raise ValueError("Preview cover image cannot be decoded") from exc
+    target.parent.mkdir(parents=True, exist_ok=True)
+    for quality in (84, 80, 76, 72):
+        rgb.save(target, format="WEBP", quality=quality, method=6)
+        if target.stat().st_size <= 800_000:
+            return
+    target.unlink(missing_ok=True)
+    raise ValueError("Preview WebP remains too large after compression")
+
+
 def build(output=OUTPUT, shelf=SHELF):
     required = [output / x for x in ('draft.md', 'cover.png', 'report.json')]
     if not any(p.exists() for p in required):
@@ -115,14 +137,14 @@ def build(output=OUTPUT, shelf=SHELF):
         raise ValueError('Invalid preview catalog')
     article_dir = shelf / draft_id
     article_dir.mkdir(exist_ok=True)
-    shutil.copyfile(output / 'cover.png', article_dir / 'cover.png')
+    store_webp(output / 'cover.png', article_dir / 'cover.webp')
     source_name = report['source_name']
     body_text = '\n'.join('<p>' + esc(part) + '</p>' for part in paragraphs)
     page_body = f'''
 <div class="overline"><span>ХПИИ / Испытание автономной редакции</span><b>{esc(date)}</b></div>
 <h1 style="max-width:1000px">{esc(headline)}</h1>
 <div class="draft-note"><strong>⚠ Автоматический черновик — не проверен редактором</strong><p>Этот текст и иллюстрация созданы автоматически. В статье могут быть неточности; это не опубликованная редакционная новость.</p></div>
-<figure class="draft-cover"><img src="cover.png" width="1024" height="576" alt="Автоматически созданная иллюстрация"><figcaption class="caption">Тестовая иллюстрация ИИ · качество не подтверждено</figcaption></figure>
+<figure class="draft-cover"><img src="cover.webp" width="1024" height="576" alt="Автоматически созданная иллюстрация"><figcaption class="caption">Тестовая иллюстрация ИИ · качество не подтверждено</figcaption></figure>
 <div class="draft-reading">{body_text}
 <div class="draft-source"><strong>Первоисточник:</strong> {esc(source_name)} — <a href="{esc(source)}" rel="nofollow noopener noreferrer">{esc(source)}</a><p>{'Дата обнаружения через Hacker News (не дата первоисточника)' if report.get('source_date_kind') == 'discovered_at' else 'Дата объявления в RSS'}: {esc(report['source_date'][:10])}. Дата черновика: {esc(date)}.</p></div></div>
 <p style="margin-bottom:60px"><a class="button" href="../">← Все авточерновики</a></p>'''
@@ -133,7 +155,7 @@ def build(output=OUTPUT, shelf=SHELF):
     rows.sort(key=lambda x: (x['date'], x['id']), reverse=True)
     index_path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     cards = '\n'.join(
-        f'<a class="draft-item" href="{esc(row["id"])}/"><img src="{esc(row["id"])}/cover.png" alt="">'
+        f'<a class="draft-item" href="{esc(row["id"])}/"><img src="{esc(row["id"])}/{"cover.webp" if (shelf / row["id"] / "cover.webp").is_file() else "cover.png"}" alt="">'
         f'<div><span class="kicker">{esc(row["date"])} · {esc(row["source_name"])}</span>'
         f'<h2>{esc(row["title"])}</h2><p>Открыть текст и иллюстрацию ↗</p></div></a>'
         for row in rows)
