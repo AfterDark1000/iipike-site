@@ -91,6 +91,39 @@ function decisionUrl(doc,action,note){
  const title="HPII review: "+doc.article_id+" r"+doc.revision+" "+action;
  return "https://github.com/AfterDark1000/iipike-site/issues/new?"+new URLSearchParams({title:title,body:body}).toString();
 }
+async function convertSelectedCover(file) {
+ if(!/\.(png|webp)$/i.test(file.name)||file.size>16000000||file.size<1024)
+   throw Error("Выбери настоящий PNG/WebP размером до 16 МБ.");
+ const bitmap=await createImageBitmap(file);
+ try{
+  const ratio=bitmap.width/bitmap.height;
+  if(bitmap.width<640||bitmap.height<360||Math.abs(ratio-16/9)>0.03)
+    throw Error("Исходник должен быть горизонтальным 16:9, минимум 640×360.");
+  const width=Math.min(bitmap.width,1600);
+  const height=Math.round(width*9/16);
+  const canvas=document.createElement("canvas");
+  canvas.width=width;canvas.height=height;
+  const ctx=canvas.getContext("2d",{alpha:false});
+  if(!ctx)throw Error("Не удалось создать поверхность конвертации.");
+  ctx.fillStyle="#ffffff";ctx.fillRect(0,0,width,height);
+  const native=16/9;
+  let sx=0,sy=0,sw=bitmap.width,sh=bitmap.height;
+  if(ratio>native){sw=bitmap.height*native;sx=(bitmap.width-sw)/2}
+  else{sh=bitmap.width/native;sy=(bitmap.height-sh)/2}
+  ctx.drawImage(bitmap,sx,sy,sw,sh,0,0,width,height);
+  let best=null;
+  for(const quality of [0.84,0.80,0.76,0.72]){
+   const blob=await new Promise(resolve=>canvas.toBlob(resolve,"image/webp",quality));
+   if(!blob||blob.type!=="image/webp")throw Error("Браузер не поддерживает сохранение WebP.");
+   if(blob.size<=800000)best=blob;
+   if(blob.size<=400000)break;
+  }
+  if(!best)throw Error("WebP остаётся больше 800 КБ; нужен другой исходник.");
+  const name=file.name.replace(/\.(png|webp)$/i,"")+".webp";
+  return new File([best],name,{type:"image/webp"});
+ }finally{bitmap.close()}
+}
+
 async function addCoverUploader(doc,region){
  const decision="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json?v="+Date.now();
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
@@ -104,11 +137,11 @@ async function addCoverUploader(doc,region){
  if(!current())return;
  const group=add(region,"div",undefined,"cover-upload");
  group.style.cssText="border-top:1px solid #d9dfdc;margin-top:16px;padding-top:14px";
- add(group,"h3","Загрузить готовый WebP вручную");
- paragraph(group,"Если обложка сохранилась у тебя на устройстве, выбери файл здесь. Сервер проверит утверждение текста и сохранит кандидат в GitHub. Публикации не будет.");
- const label=add(group,"label","Файл WebP (до 800 КБ)");
+ add(group,"h3","Загрузить PNG или WebP — преобразую автоматически");
+ paragraph(group,"Выбери PNG, который создал художник, или готовый WebP. Браузер сам превратит его в WebP до 800 КБ, а сервер проверит утверждение текста и сохранит кандидат в GitHub. Публикации не будет.");
+ const label=add(group,"label","Исходная обложка PNG или WebP (до 16 МБ)");
  label.style.cssText="display:block;font-weight:650;margin:8px 0";
- const input=add(group,"input");input.type="file";input.accept=".webp,image/webp";input.style.cssText="display:block;width:100%;margin:8px 0 15px";
+ const input=add(group,"input");input.type="file";input.accept=".png,.webp,image/png,image/webp";input.style.cssText="display:block;width:100%;margin:8px 0 15px";
  const titleLabel=add(group,"label","Заголовок на обложке");titleLabel.style.cssText="display:block;font-weight:650";
  const title=add(group,"input");title.type="text";title.maxLength=100;title.value=(doc.content?.title||"").slice(0,95);
  title.style.cssText="display:block;width:100%;font:inherit;padding:9px;border:1px solid #b6c7c5;border-radius:8px;margin:7px 0 14px";
@@ -119,17 +152,15 @@ async function addCoverUploader(doc,region){
  const status=add(group,"p","Файл пока не выбран.","muted");status.setAttribute("role","status");
  button.addEventListener("click",async()=>{
   const file=input.files?.[0];
-  if(!file){status.textContent="Выбери WebP-файл.";return}
-  if(!/\.webp$/i.test(file.name)||file.size<1024||file.size>800000){status.textContent="Нужен WebP объёмом от 1 до 800 КБ.";return}
+  if(!file){status.textContent="Выбери PNG или WebP.";return}
+  if(!/\.(png|webp)$/i.test(file.name)||file.size<1024||file.size>16000000){status.textContent="Нужен PNG/WebP объёмом от 1 КБ до 16 МБ.";return}
   if(title.value.trim().length<2||concept.value.trim().length<8){status.textContent="Укажи заголовок и описание концепции.";return}
   if(!window.HpiiAdminAuth){status.textContent="Нет подтверждённой сессии. Обнови страницу.";return}
-  button.disabled=true;status.textContent="Проверяю реальные пиксели WebP…";
+  button.disabled=true;status.textContent="Проверяю исходник и преобразую в WebP…";
   try{
-   const bmp=await createImageBitmap(file);
-   const width=bmp.width,height=bmp.height;bmp.close();
-   if(width<640||height<360||Math.abs(width/height-16/9)>0.02)throw Error("Формат должен быть 16:9, минимум 640×360.");
-   status.textContent="Отправляю "+Math.round(file.size/1024)+" КБ на защищённый сервер…";
-   const result=await window.HpiiAdminAuth.uploadCover(doc,file,title.value.trim(),concept.value.trim());
+   const webp=await convertSelectedCover(file);
+   status.textContent="WebP готов: "+Math.round(webp.size/1024)+" КБ. Сохраняю через защищённый сервер…";
+   const result=await window.HpiiAdminAuth.uploadCover(doc,webp,title.value.trim(),concept.value.trim());
    if(!current())return;
    status.textContent="✓ WebP сохранён и подтверждён в GitHub. Статус: кандидат ожидает утверждения главредом. Ничего не опубликовано.";
    const p=add(group,"p");
