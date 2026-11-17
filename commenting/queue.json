@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T10:38:10.341534Z",
+  "updated_at": "2026-11-17T11:38:04.453264Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
-      "fresh_matches": 4
+      "fresh_matches": 7
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 6
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,23 +64,97 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T10:38:10.341534Z",
-      "last_success_at": "2026-11-17T10:38:10.341534Z",
+      "checked_at": "2026-11-17T11:38:04.453264Z",
+      "last_success_at": "2026-11-17T11:38:04.453264Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
   },
   "usage": {
     "date": "2026-11-17",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "7d7aedc09daf3cfaaaa682df",
+      "title": "В рунете произошёл массовый сбой: проблемы у Timeweb, Google, Twitch, DeepSeek и других сервисов",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/v-runete-proizosel-massovyi-sboi-problemy-u-timeweb-google-twitch-deepseek-i-drugix-servisov.html",
+      "published_at": "2026-11-17T11:23:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-17T11:38:04.453264Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-17T11:38:04.453264Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "4c5fe29d752ead50d188c6ec",
+      "title": "Google начала отключать Gems в личных аккаунтах Gemini",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/google-nacala-otkliucat-gems-v-licnyx-akkauntax-gemini.html",
+      "published_at": "2026-11-17T11:08:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-17T11:38:04.453264Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-17T11:38:04.453264Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "22b3d8dd41d6930888f0b403",
+      "title": "Sony улучшила графику Marvel’s Spider-Man 2 на обычной PS5 с помощью ИИ",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160779-sony-dobavit-qssr-v-marvel-s-spider-man-2/",
+      "published_at": "2026-11-17T10:55:33Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-17T11:38:04.453264Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-17T11:38:04.453264Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "89170884846c9dcb64198851",
+      "title": "Nvidia неожиданно представила чудовищный GPU Rubin HPC с рекордным количеством ядер CUDA, причём не для ИИ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/nvidia-neozidanno-predstavila-cudovishhnyi-gpu-rubin-hpc-s-rekordnym-kolicestvom-iader-cuda-pricem-ne-dlia-ii.html",
+      "published_at": "2026-11-17T10:48:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-17T11:38:04.453264Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "160fc9ccdda32c7916e342fb",
       "title": "В Проектах VK WorkSpace появился MCP-сервер для подключения ИИ-агентов",
@@ -2440,48 +2514,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "a3a61392f0e110853fb19997",
-      "title": "AWS превратили в скрытый канал управления хакерскими атаками: команды можно отдавать обычным языком через ИИ",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/10/aws-prevratili-v-skrytyi-kanal-upravleniia-xakerskimi-atakami-komandy-mozno-otdavat-obycnym-iazykom-cerez-ii.html",
-      "published_at": "2026-11-10T11:28:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-10T11:42:39.983939Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Запрос «покажи все запущенные экземпляры EC2» через Amazon Bedrock звучит удобно, пока у тебя не увели учётные данные. Идея собирать цепочку из SQS, Lambda и SNS ради управления атакой — это, конечно, занятный способ сэкономить на собственных серверах.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T11:42:39.983939Z",
-      "reason": "Развитие мысли о том, что использование легитимных облачных сервисов и текстовых запросов упрощает жизнь не только разработчикам, но и злоумышленникам.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-10T11:42:39.983939Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "b109a4dbf28ed30e7c49f0b1",
-      "title": "Claude Fable 5.2 по одному запросу сгенерировала трёхмерный шутер с реалистичной графикой — на это ушло восемь часов и $550",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151094",
-      "published_at": "2026-11-10T10:46:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-10T11:42:39.983939Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T11:42:39.983939Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-10T11:42:39.983939Z",
       "link_status": "dzen_link_missing"
     }
   ]
