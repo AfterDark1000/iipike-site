@@ -6,6 +6,7 @@ import sys
 import tempfile
 import unittest
 from unittest.mock import patch
+from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import editorial_draft as ed
@@ -46,7 +47,7 @@ class EditorialTests(unittest.TestCase):
     def preview_package(self, root, url):
         output = root / "editorial"
         output.mkdir()
-        (output / "cover.png").write_bytes(b"offline cover fixture")
+        Image.new("RGB", (1024, 576), (61, 80, 92)).save(output / "cover.png", format="PNG")
         (output / "draft.md").write_text(
             "# Проверка источника черновика\n\n"
             "*Черновик, НЕ ПУБЛИКОВАТЬ без проверки.*\n\n"
@@ -83,8 +84,17 @@ class EditorialTests(unittest.TestCase):
                 self.assertIn('href="' + url + '"', page)
                 self.assertIn("noindex, nofollow", page)
                 self.assertIn("Автоматический черновик", page)
-                self.assertEqual((shelf / selected["id"] / "cover.png").read_bytes(),
-                                 b"offline cover fixture")
+                converted = shelf / selected["id"] / "cover.webp"
+                self.assertTrue(converted.is_file())
+                self.assertLess(converted.stat().st_size, 800_000)
+                self.assertFalse((shelf / selected["id"] / "cover.png").exists())
+                with Image.open(converted) as art:
+                    self.assertEqual(art.format, "WEBP")
+                    self.assertEqual(art.size, (1024, 576))
+                    art.load()
+                self.assertIn("cover.webp", page)
+                listing = (shelf / "index.html").read_text(encoding="utf-8")
+                self.assertIn(selected["id"] + "/cover.webp", listing)
 
     def test_preview_rejects_unapproved_sources_before_writing(self):
         for url in (
