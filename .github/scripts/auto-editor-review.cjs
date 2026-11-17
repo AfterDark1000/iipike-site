@@ -4,7 +4,7 @@
 module.exports = async function recordReview({github, context}) {
   const {owner, repo} = context.repo;
   const issue = context.payload.issue;
-  if (!issue || issue.user?.login !== owner) return;
+  if (!issue || issue.user?.login !== owner || !issue.title?.startsWith('HPII review: ')) return;
   const text = issue.body || '';
   const match = text.match(/^<!-- HPII_AUTO_REVIEW_V1 -->\s*([\s\S]*?)\s*<!-- \/HPII_AUTO_REVIEW_V1 -->\s*(?:Проверка решения выполняется GitHub Actions\. Ничего не публикуется\.)?\s*$/);
   if (!match || match[1].length > 6000) throw Error('Invalid review request');
