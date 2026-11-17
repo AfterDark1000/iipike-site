@@ -263,6 +263,45 @@ async function login(env) {
   url.searchParams.set("code_challenge_method","S256");
   return new Response(null,{status:302,headers:{...noStore,location:url.href,"set-cookie":authCookie(signed)}});
 }
+
+// Return only a GitHub-defined failure CATEGORY; never forward error descriptions,
+// OAuth codes, responses, secrets, credentials or user-provided strings.
+const GITHUB_OAUTH_ERRORS=new Set([
+  "incorrect_client_credentials","bad_verification_code","redirect_uri_mismatch",
+  "unverified_user_email","slow_down","application_suspended","access_denied",
+  "invalid_request","invalid_grant"
+]);
+function oauthExchangeFailure(env,reason) {
+  const safe=GITHUB_OAUTH_ERRORS.has(reason)?reason:"unknown_exchange_error";
+  const label={
+    incorrect_client_credentials:"GitHub не принял настройки OAuth-приложения.",
+    bad_verification_code:"Временный код входа недействителен или уже использован.",
+    redirect_uri_mismatch:"Адрес возврата не совпал с настройками приложения GitHub.",
+    unverified_user_email:"GitHub требует подтвердить электронную почту учётной записи.",
+    slow_down:"GitHub временно ограничил частые попытки входа.",
+    application_suspended:"GitHub приостановил OAuth-приложение.",
+    access_denied:"Вход был отменён или не разрешён.",
+    invalid_request:"GitHub отклонил параметры запроса.",
+    invalid_grant:"GitHub отклонил временный код.",
+    unknown_exchange_error:"GitHub не выдал подтверждение входа."
+  }[safe];
+  const nonce=random();
+  const payload=JSON.stringify({type:"hpii-auth-error",reason:safe,backend:env.BACKEND_ORIGIN});
+  const html='<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+    '<title>ХПИИ — ошибка входа</title><style>body{font:16px/1.55 system-ui,sans-serif;background:#f5f2eb;color:#18313b;margin:0;padding:24px}'+
+    'main{max-width:560px;margin:8vh auto;padding:26px;background:white;border:1px solid #d5dedc;border-radius:16px}h1{font-size:24px}'+
+    'code{overflow-wrap:anywhere;background:#edf0ed;padding:4px 8px;border-radius:5px}a{color:#0f746a}</style></head><body><main>'+
+    '<h1>Не удалось войти через GitHub</h1><p>'+label+'</p>'+
+    '<p>Код ошибки: <code>'+safe+'</code></p>'+
+    '<p>Закрой эту вкладку, вернись в админку и запусти <strong>новую попытку входа</strong>. Старую ссылку авторизации повторно не открывай.</p>'+
+    '<p>Если ошибка повторится, сообщи нам только код ошибки — токены и ключи присылать не нужно.</p>'+
+    '<p><a href="'+env.ADMIN_ORIGIN+'/admin/">Вернуться к админке</a></p></main>'+
+    '<script nonce="'+nonce+'">if(window.opener){window.opener.postMessage('+payload+','+JSON.stringify(env.ADMIN_ORIGIN)+')}</script></body></html>';
+  return new Response(html,{status:401,headers:{...noStore,"content-type":"text/html; charset=utf-8",
+    "content-security-policy":"default-src 'none'; style-src 'unsafe-inline'; script-src 'nonce-"+nonce+"'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+    "set-cookie":dropCookie}});
+}
+
 async function callback(request,env) {
   const u=new URL(request.url), code=u.searchParams.get("code"), state=u.searchParams.get("state");
   const saved=await verify(env.SESSION_SIGNING_KEY,getCookie(request),"oauth");
@@ -273,7 +312,7 @@ async function callback(request,env) {
       code,redirect_uri:env.BACKEND_ORIGIN+"/auth/callback",code_verifier:saved.verifier})
   });
   const tokens=await exchange.json().catch(()=>({}));
-  if (!exchange.ok || !tokens.access_token) return fail(401,"github_oauth_failed",{"set-cookie":dropCookie});
+  if (!exchange.ok || !tokens.access_token) return oauthExchangeFailure(env,tokens.error);
   const response=await fetch("https://api.github.com/user",{headers:githubHeaders(tokens.access_token)});
   const user=await response.json().catch(()=>({}));
   if (!response.ok || String(user.id)!==String(env.ALLOWED_GITHUB_USER_ID) || user.login!=="AfterDark1000") {
