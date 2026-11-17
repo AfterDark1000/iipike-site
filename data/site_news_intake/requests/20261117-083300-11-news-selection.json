@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Калифорния подала в суд на OpenAI из-за ИИ-агента, взломавшего Hugging Face",
+      "source_url": "https://apnews.com/article/1dd7be56134b4f09fb2fb974803edc69",
+      "summary": "Судебные претензии к контролю экспериментальных агентов; утверждения требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Нейросети готовы отрицать изменение климата, стоит пользователю слегка возразить",
+      "source_url": "https://www.theguardian.com/environment/2026/nov/16/ai-models-fallible-denial-climate-science-unesco-cop31",
+      "summary": "Исследование о податливости моделей возражениям пользователя.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американские дата-центры выбросили столько CO₂, сколько целая Дания за год",
+      "source_url": "https://www.theguardian.com/us-news/2026/nov/16/datacenter-emissions-study",
+      "summary": "Оценка выбросов 403 дата-центров; не только ИИ-нагрузки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Глава ФРС США предупредил: если ИИ не оправдает ожиданий, экономику может тряхнуть",
+      "source_url": "https://apnews.com/article/6f9dc54229bbdd80beb4ee3431a01641",
+      "summary": "Заявление о рисках переоценки инвестиций в ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "США пытаются перекрыть Китаю удалённый доступ к американским ИИ-чипам",
+      "source_url": "https://www.theaustralian.com.au/world/us-targets-chinas-backdoor-access-to-advanced-ai-chips/news-story/7bc05697cd6b346a556f4a9103d24481",
+      "summary": "Сообщение о возможных экспортных ограничениях; проверить официальные правила.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёные выяснили, что ИИ для поиска новых материалов нужно гораздо меньше данных",
+      "source_url": "https://www.mtu.edu/news/2026/11/less-data-faster-discovery-researchers-rethink-ais-role-in-developing-new-materials.html",
+      "summary": "Подход к сокращению данных для предсказания свойств материалов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA выпустила научный ИИ, которому можно поручить химию и проектирование белков",
+      "source_url": "https://www.hpcwire.com/off-the-wire/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents/",
+      "summary": "Nemotron for Science: модели и данные для научных агентов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI заказала 457 мегаватт вычислительных мощностей на чипах AMD",
+      "source_url": "https://www.hpcwire.com/aiwire/2026/11/16/tensorwave-announces-agreement-with-openai-to-deliver-more-than-450mw-of-amd-powered-ai-infrastructure/",
+      "summary": "Соглашение TensorWave о вычислительных мощностях на ускорителях AMD.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Создатели ИИ-лаборатории Noeri привлекли $110 млн на модели, которые компании смогут контролировать сами",
+      "source_url": "https://www.hpcwire.com/aiwire/2026/11/16/noeri-launches-with-110m-to-empower-companies-to-build-and-own-their-ai/",
+      "summary": "Запуск лаборатории Noeri с финансированием $110 млн.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Стэнфорд выделил $3,5 млн на семь ИИ-проектов — от астрономии до медицины",
+      "source_url": "https://casrai.org/news/stanford-hai-2026-hoffman-yee-grants-ai-research",
+      "summary": "Гранты для исследовательских проектов; сверить с университетом.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Grok готовят к бронированию поездок и решению проблем с билетами",
+      "source_url": "https://www.unite.ai/sabre-announces-grok-bot-travel-connector-and-proactive-agentic-apis/",
+      "summary": "Анонс интеграции Sabre и Grok для туристических операций.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
