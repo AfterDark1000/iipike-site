@@ -137,6 +137,120 @@ async function recordReview(env, body, login) {
   return send({ok:true,status,article_id:body.article_id,revision:body.revision,
     verification_path:location,commit_sha:write.data.commit?.sha||null});
 }
+
+// The image intake only accepts manually selected, version-locked WebP candidates.
+// It cannot approve a cover or publish a story.
+function webpDimensions(data) {
+  if (data.length<1024 || data.length>800_000) throw Error("image_size_invalid");
+  const four=(offset)=>String.fromCharCode(...data.slice(offset,offset+4));
+  if (four(0)!=="RIFF" || four(8)!=="WEBP") throw Error("not_webp");
+  const v=new DataView(data.buffer,data.byteOffset,data.byteLength);
+  if (v.getUint32(4,true)+8!==data.length) throw Error("webp_riff_size_invalid");
+  const tag=four(12),chunkSize=v.getUint32(16,true);
+  if (20+chunkSize>data.length || chunkSize<10) throw Error("webp_chunk_invalid");
+  let width,height;
+  if(tag==="VP8X") {
+    width=1+data[24]+(data[25]<<8)+(data[26]<<16);
+    height=1+data[27]+(data[28]<<8)+(data[29]<<16);
+  } else if(tag==="VP8L") {
+    if(data[20]!==0x2f)throw Error("webp_lossless_signature_invalid");
+    width=1+data[21]+((data[22]&0x3f)<<8);
+    height=1+(data[22]>>6)+(data[23]<<2)+((data[24]&0xf)<<10);
+  } else if(tag==="VP8 ") {
+    if(data[23]!==0x9d||data[24]!==0x01||data[25]!==0x2a)throw Error("webp_lossy_signature_invalid");
+    width=v.getUint16(26,true)&0x3fff;
+    height=v.getUint16(28,true)&0x3fff;
+  } else throw Error("webp_chunk_type_invalid");
+  if(width<640 || height<360 || width>4096 || height>2304 || Math.abs(width/height-16/9)>0.02)
+    throw Error("webp_dimensions_invalid");
+  return {width,height};
+}
+function encodeBinaryToBase64(bytes) {
+  let all="";
+  for(let i=0;i<bytes.length;i+=16000)all+=String.fromCharCode(...bytes.subarray(i,i+16000));
+  return btoa(all);
+}
+async function blobSha(bytes) {
+  const prefix=enc.encode("blob "+bytes.length+"\u0000");
+  const payload=new Uint8Array(prefix.length+bytes.length);
+  payload.set(prefix);payload.set(bytes,prefix.length);
+  const digest=new Uint8Array(await crypto.subtle.digest("SHA-1",payload));
+  return Array.from(digest,x=>x.toString(16).padStart(2,"0")).join("");
+}
+async function receiveCover(env, request, login) {
+  if(Number(request.headers.get("content-length")||0)>900_000) return fail(413,"image_too_large");
+  if(!(request.headers.get("content-type")||"").startsWith("multipart/form-data;")) return fail(415,"form_data_required");
+  let data;
+  try{data=await request.formData()}catch{return fail(400,"bad_upload_form")}
+  const article_id=data.get("article_id"), revision=Number(data.get("revision")),
+        updated_at=data.get("updated_at"), headline=data.get("headline"), concept=data.get("concept"),
+        file=data.get("file");
+  if(typeof article_id!=="string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article_id) || article_id.length>80 ||
+     !Number.isSafeInteger(revision)||revision<1||revision>9999||
+     typeof updated_at!=="string"||updated_at.length>80||
+     typeof headline!=="string"||headline.trim().length<2||headline.length>100||
+     typeof concept!=="string"||concept.trim().length<8||concept.length>600||
+     !file || typeof file.arrayBuffer!=="function"||file.size<1024||file.size>800_000||
+     !/\.webp$/i.test(file.name||""))return fail(400,"invalid_cover_upload");
+  const raw=new Uint8Array(await file.arrayBuffer());
+  let size;
+  try{size=webpDimensions(raw)}catch(e){return fail(400,e.message||"invalid_webp")}
+  const ref="editorial-intake";
+  const draft=await githubJson("/contents/"+pathFor(article_id)+"?ref="+ref,env);
+  const decision=await githubJson("/contents/"+savedPath(article_id,revision)+"?ref="+ref,env);
+  if(draft.status!==200 || decision.status!==200)return fail(409,"approved_text_unavailable");
+  let body,approve;
+  try{body=decodeGitHubContent(draft.data);approve=decodeGitHubContent(decision.data)}catch{return fail(409,"approval_invalid")}
+  if(body.article_id!==article_id||body.revision!==revision||body.updated_at!==updated_at||
+     body.status!=="ready_for_review"||approve.article_id!==article_id||approve.revision!==revision||
+     approve.updated_at!==updated_at||approve.action!=="approve_text"||
+     approve.status!=="text_approved_cover_pending"||approve.draft_blob_sha!==draft.data.sha)
+    return fail(409,"text_revision_or_approval_changed");
+  const stem=article_id+"-r"+revision+"-v1";
+  const image_path="editorial_inbox/auto_covers/"+stem+".webp";
+  const meta_path="editorial_inbox/auto_covers/"+stem+".json";
+  const exists=await githubJson("/contents/"+meta_path+"?ref="+ref,env);
+  if(exists.status===200)return fail(409,"cover_candidate_exists");
+  if(exists.status!==404)return fail(502,"cover_lookup_failed");
+  let sha;
+  try{sha=await blobSha(raw)}catch{return fail(500,"image_hash_unavailable")}
+  const existingImage=await githubJson("/contents/"+image_path+"?ref="+ref,env);
+  if(existingImage.status===200){
+    if(existingImage.data.sha!==sha)return fail(409,"cover_image_already_exists");
+  }else if(existingImage.status===404){
+    const upload=await githubJson("/contents/"+image_path,env,{
+      method:"PUT",headers:{"content-type":"application/json"},
+      body:JSON.stringify({branch:ref,message:"cover(auto-editor): stage WebP "+article_id+" r"+revision,
+        content:encodeBinaryToBase64(raw)})
+    });
+    if(![200,201].includes(upload.status))return fail(upload.status===409||upload.status===422?409:502,"image_write_failed");
+    if(upload.data.content?.sha!==sha)return fail(502,"image_sha_unverified");
+  }else return fail(502,"cover_image_lookup_failed");
+  const meta={
+    schema_version:1,article_id,text_revision:revision,text_updated_at:updated_at,
+    source_draft_blob_sha:draft.data.sha,source_decision_blob_sha:decision.data.sha,
+    status:"ready_for_cover_review",image_path,image_blob_sha:sha,
+    width:size.width,height:size.height,concept:concept.trim(),headline:headline.trim(),
+    artist_notes:"Загружено вручную через защищённую админку; требуется просмотр главреда. Загрузил "+login+".",
+    created_at:new Date().toISOString()
+  };
+  const written=await githubJson("/contents/"+meta_path,env,{
+    method:"PUT",headers:{"content-type":"application/json"},
+    body:JSON.stringify({branch:ref,message:"cover(auto-editor): register review candidate "+article_id+" r"+revision,
+       content:encodeGitHubContent(meta)})
+  });
+  if(![200,201].includes(written.status))return fail(written.status===409||written.status===422?409:502,"cover_metadata_write_failed");
+  const readback=await githubJson("/contents/"+meta_path+"?ref="+ref,env);
+  if(readback.status!==200)return fail(502,"cover_metadata_unverified");
+  let verified;
+  try{verified=decodeGitHubContent(readback.data)}catch{return fail(502,"cover_metadata_unverified")}
+  if(verified.image_blob_sha!==sha||verified.status!=="ready_for_cover_review"||verified.source_draft_blob_sha!==draft.data.sha)
+    return fail(502,"cover_metadata_mismatch");
+  return send({ok:true,status:"ready_for_cover_review",article_id,revision,
+    image_path,metadata_path:meta_path,width:size.width,height:size.height,image_blob_sha:sha,
+    note:"Candidate only. Not approved or published."});
+}
+
 async function login(env) {
   const state=random(), verifier=random(), challenge=await digest(verifier);
   const signed=await ticket(env.SESSION_SIGNING_KEY,{kind:"oauth",state,verifier,exp:Math.floor(Date.now()/1000)+STATE_SECONDS});
@@ -215,10 +329,16 @@ export default {
         Object.entries(headers).forEach(([k,v])=>responseHeaders.set(k,v));
         return new Response(result.body,{status:result.status,headers:responseHeaders});
       }
+      if(url.pathname==="/api/cover-upload" && request.method==="POST"){
+        const result=await receiveCover(env,request,session.login);
+        const resultHeaders=new Headers(result.headers);
+        Object.entries(headers).forEach(([k,v])=>resultHeaders.set(k,v));
+        return new Response(result.body,{status:result.status,headers:resultHeaders});
+      }
       return fail(404,"route_not_found",headers);
     }
     return fail(404,"route_not_found");
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview};
+export const __test = {validReview,webpDimensions};
