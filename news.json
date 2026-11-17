@@ -6248,5 +6248,26 @@
     "topics": [],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Конкуренту NVIDIA дали $720 млн. Хотя его чипов ещё нет в продаже",
+    "summary": "Британский разработчик ИИ-чипов Fractile привлёк $720 млн при оценке компании в $7 млрд. Новый ускоритель с памятью над вычислительными элементами ожидается в продаже не ранее 2027 года.",
+    "published": "2026-11-17",
+    "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/",
+    "cover": "assets/editorial/fractile-ai-chips-720m-funding-20261111.webp",
+    "rubric": "news",
+    "vk_title": "💰 $720 МИЛЛИОНОВ НА КОНКУРЕНТА NVIDIA — без готового чипа",
+    "vk_summary": "Британская Fractile привлекла крупные инвестиции и получила оценку бизнеса в $7 млрд. Компания разрабатывает ускорители ИИ с памятью непосредственно над вычислительными элементами. Первые коммерческие чипы обещают в 2027 году.",
+    "published_at_utc": "2026-11-17T05:30:44Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-11",
+    "id": "fractile-ai-chips-720m-funding-20261111",
+    "url": "articles/fractile-ai-chips-720m-funding-20261111/",
+    "topics": [],
+    "companies": [
+      "nvidia",
+      "google"
+    ],
+    "products": []
   }
 ]
