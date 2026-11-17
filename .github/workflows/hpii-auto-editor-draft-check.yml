@@ -22,14 +22,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event_name == 'push' && 'main' || github.event.pull_request.head.sha }}
           fetch-depth: 0
           persist-credentials: false
-      - name: Validate draft schema and GitHub claim bindings (READ ONLY)
+      - name: Test isolated draft checks without external calls
+        run: python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
+      - name: Validate draft schema and confirmed main claims (READ ONLY)
+        if: ${{ github.event_name == 'push' }}
         shell: bash
         run: |
           set -euo pipefail
-          python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
           git fetch origin main editorial-intake
           mkdir -p "$RUNNER_TEMP/hpii-auto-draft-tree"
           git archive origin/editorial-intake editorial_inbox/auto_drafts \
