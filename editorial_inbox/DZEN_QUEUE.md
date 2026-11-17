@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 148 · **В каталоге Дзена подтверждены:** 130 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 4
+**Всего одобренных:** 149 · **В каталоге Дзена подтверждены:** 130 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 5
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -39,6 +39,7 @@
 | 2 | [Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/recraft-v4-1-flash-v2-20261113.md) | **Не ранее 17.11.2026 16:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/recraft-v4-1-flash-v2-20261113.webp) |
 | 3 | [Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/alibaba-qwen4-max-cybersecurity-20261116.md) | **Не ранее 17.11.2026 17:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-cybersecurity-20261116.webp) |
 | 4 | [Число сообщений об опасном использовании ИИ против детей выросло в 85 раз](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/childlight-ai-child-safety-reports-85x-20261116.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/childlight-ai-child-safety-reports-85x-20261116.webp) |
+| 5 | [В США остановили все вылеты, заподозрили ИИ за $875 млн — виновника ищут среди маршрутизаторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/faa-smart-ground-stop-20261113.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
