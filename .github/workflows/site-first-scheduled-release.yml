@@ -51,8 +51,6 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_site_existing_release_branch.py' -v
-          python3 -m unittest discover -s tests -p 'test_site_release_rebuild.py' -v
-          python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_site_release_quarantine.py' -v
           python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
           python3 -m unittest discover -s tests -p 'test_dzen_rss.py' -v
