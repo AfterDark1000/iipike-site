@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "«Волк с Уолл-стрит» научил ИИ продавать по телефону",
+      "source_url": "https://techcrunch.com/2026/11/16/jordan-belforts-new-ai-voice-startup-tone-wants-to-sell-like-the-wolf-of-wall-street/",
+      "summary": "Джордан Белфорт представил голосовой стартап Tone для телефонных продаж; эффективность заявлена основателем.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI пустит сторонних исследователей внутрь, чтобы ловить непослушные нейросети",
+      "source_url": "https://techcrunch.com/2026/11/16/openai-will-embed-apollo-researchers-to-investigate-ai-subversion/",
+      "summary": "Пилотная программа внешней проверки поведения ИИ с участием Apollo Research и других организаций.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Apple вводит новые ограничения для ИИ-агентов на Mac",
+      "source_url": "https://techcrunch.com/2026/11/16/apple-reveals-new-mac-security-controls-as-ai-agents-raise-privacy-risks/",
+      "summary": "Сообщение о дополнительных разрешениях и подтверждениях для агентов macOS.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI представила ИИ, который помогает находить изображения сексуального насилия над детьми",
+      "source_url": "https://openai.com/index/strengthening-online-child-safety/",
+      "summary": "Новый классификатор для выявления материалов сексуального насилия над детьми.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ChatGPT начнёт предупреждать пользователей за попытки создавать запрещённые изображения детей",
+      "source_url": "https://openai.com/index/strengthening-online-child-safety/",
+      "summary": "Предупреждения и ограничения аккаунтов за попытки создания запрещённых изображений детей.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Audible придумала ИИ-анонсы аудиокниг вместо чтения отзывов",
+      "source_url": "https://techcrunch.com/2026/11/16/audible-turns-to-ai-to-help-users-discover-audiobooks/",
+      "summary": "Короткие ИИ-аудиообзоры книг для поиска новых произведений.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Глава Baidu предупредил: пузырь ИИ станет реальностью, если нейросети не начнут приносить прибыль",
+      "source_url": "https://www.reuters.com/business/media-telecom/baidu-ceo-says-ai-investment-must-deliver-profits-avoid-bubble-2026-11-17/",
+      "summary": "Робин Ли высказался о риске инвестиционного пузыря без реальной прибыли.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Китай обучает собственные нейросети на ответах американских конкурентов",
+      "source_url": "https://www.reuters.com/world/china/china-taps-us-ai-models-train-homegrown-rivals-chip-curbs-bite-2026-11-17/",
+      "summary": "Reuters сообщает о дистилляции зарубежных ИИ-моделей в китайских исследованиях.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "На саммите APEC договорились обсуждать ИИ и данные как отдельную международную проблему",
+      "source_url": "https://www.reuters.com/technology/apec-focuses-safe-responsible-ai-use-chinas-ex-un-envoy-says-2026-11-17/",
+      "summary": "Сообщение о консенсусе по ответственному применению ИИ и управлению данными.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ЕБРР предупредил: почти половина стран региона не потянет даже один крупный дата-центр",
+      "source_url": "https://www.reuters.com/business/finance/developing-economies-risk-missing-out-defence-ai-boom-ebrd-warns-2026-11-17/",
+      "summary": "ЕБРР предупреждает об ограничениях электросетей и финансирования ИИ-инфраструктуры.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
