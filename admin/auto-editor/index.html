@@ -216,8 +216,34 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
        saved.cover_version!==1||saved.cover_blob_sha!==cover.image_blob_sha)
       throw Error("Сохранённое решение не совпадает с обложкой.");
     decisionState="saved";
+    if(saved.status==="cover_approved_handoff_pending"){
+      const handoff="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/"+
+        doc.article_id+"-r"+doc.revision+"-v1.json?v="+Date.now();
+      try{
+        const handoffResponse=await fetch(handoff,{cache:"no-store"});
+        if(!current())return;
+        if(handoffResponse.ok){
+          const transferred=await handoffResponse.json();
+          if(transferred.article_id===doc.article_id &&
+             transferred.text_revision===doc.revision &&
+             transferred.cover_version===1 &&
+             transferred.cover_blob_sha===cover.image_blob_sha &&
+             transferred.status==="handed_off_to_site_queue"){
+            feedback("✓ Текст и обложка утверждены. Комплект автоматически передан в очередь сайта. Выпуск произойдёт по штатному расписанию.","success");
+          }else throw Error("handoff_mismatch");
+        }else if(handoffResponse.status===404){
+          feedback("✓ Обложка утверждена. Комплект ожидает автоматического переноса в очередь сайта.","success");
+        }else{
+          feedback("✓ Обложка утверждена. Статус передачи в очередь временно недоступен.","success");
+        }
+      }catch(e){
+        if(current())feedback("✓ Обложка утверждена. Не удалось проверить статус передачи в очередь.","success");
+      }
+      setDisabled(true);actions.hidden=true;note.hidden=true;
+      return;
+    }
     feedback(saved.status==="cover_approved_handoff_pending"?
-      "✓ Обложка утверждена. Ожидает отдельной подготовки комплекта для сайта; публикация не запущена.":
+      "✓ Обложка утверждена. Подготавливается автоматическая передача в очередь.":
       saved.status==="cover_revision_requested"?
       "↺ Обложка возвращена на переделку. Замечание: "+(saved.note||"не указано"):
       "Решение по обложке: "+saved.status,
@@ -244,7 +270,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
       if(!current())return;
       decisionState="saved";setDisabled(true);note.disabled=true;
       feedback(result.status==="cover_approved_handoff_pending"?
-       "✓ Обложка утверждена и решение сохранено в GitHub. Материал НЕ опубликован.":
+       "✓ Обложка утверждена и решение сохранено в GitHub. Передача в очередь автоматическая — обнови страницу для проверки её статуса.":
        "↺ Решение о переделке сохранено в GitHub. Новая версия обложки пока не создана.",
        result.status==="cover_approved_handoff_pending"?"success":"pending",true);
       actions.hidden=true;
