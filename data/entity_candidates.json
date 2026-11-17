@@ -985,6 +985,30 @@
           "source_url": "https://feedback.recraft.ai/changelog"
         }
       ]
+    },
+    {
+      "key": "air-space-intelligence",
+      "name": "Air Space Intelligence",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "faa-smart-ground-stop-20261113",
+          "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
+        }
+      ]
+    },
+    {
+      "key": "l3harris",
+      "name": "L3Harris",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "faa-smart-ground-stop-20261113",
+          "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
+        }
+      ]
     }
   ],
   "products": [
@@ -1938,6 +1962,19 @@
         {
           "article_id": "alibaba-qwen4-max-cybersecurity-20261116",
           "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max"
+        }
+      ]
+    },
+    {
+      "key": "smart-air-traffic",
+      "name": "SMART (Air Space Intelligence)",
+      "company": "air-space-intelligence",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "faa-smart-ground-stop-20261113",
+          "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
         }
       ]
     }
