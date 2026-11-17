@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "pilot-20261117-chatgpt-auto-002.json",
+  "request_sha256": "2db950bef6db6ff80985f8395f4d1cc8ed362483c5e7d610e45d9aeaa7eb6a2b",
+  "status": "reserved",
+  "pool_id": "n-b0f0e86e2a184d00",
+  "pool_sequence": 45,
+  "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
+  "priority": "normal",
+  "title": "Автор вирусных роликов троллит ИИ-рекрутёров кроссовком на голове",
+  "source_url": "https://x.com/nickreidx/status/2119912640172666884",
+  "claimed_at": "2026-11-17T15:50:51+00:00",
+  "worker": "hpii-auto-editor"
+}
