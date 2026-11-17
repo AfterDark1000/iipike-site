@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Проверка входа — ХПИИ</title>
+<style>
+:root{font:16px/1.5 system-ui,sans-serif;color:#182c35;background:#f4f1e9}
+body{margin:0}main{max-width:620px;margin:8vh auto;padding:24px}
+.panel{background:#fff;border:1px solid #d8e1dc;border-radius:14px;padding:28px}
+h1{font-size:28px;margin:0 0 9px}p{line-height:1.55}a{color:#096d74}
+button{cursor:pointer;padding:12px 18px;border:0;border-radius:8px;background:#146f67;color:#fff;font:inherit}
+button:disabled{opacity:.6;cursor:not-allowed}
+#status{background:#edf6f3;border-radius:8px;padding:12px;margin:18px 0;overflow-wrap:anywhere}
+</style>
+</head><body>
+<main><div class="panel">
+<p><a href="/admin/">← Вернуться в админку</a></p>
+<h1>Проверка единого входа</h1>
+<p>Это только проверка GitHub OAuth и серверной сессии. Статьи, обложки и очереди не изменяются.</p>
+<p id="status" role="status" aria-live="polite">Проверяю текущую сессию…</p>
+<button id="login" type="button" disabled>Войти через GitHub</button>
+<button id="logout" type="button" disabled style="background:#48565c">Выйти</button>
+<p><small>Техническая страница: вход не скрывает публичные исходники GitHub Pages. Управляющие кнопки в остальных разделах пока работают по старой схеме.</small></p>
+</div></main>
+<script type="module">
+import {HpiiAdminAuth} from "/admin/auth/hpii-auth-client.js";
+const auth=new HpiiAdminAuth("https://hpii-admin-gateway.svuktablet.workers.dev");
+const status=document.getElementById("status");
+const login=document.getElementById("login");
+const logout=document.getElementById("logout");
+function message(value){status.textContent=value}
+async function check(){
+  if(!auth.getToken()){message("Сессии нет. Можно войти через GitHub.");login.disabled=false;logout.disabled=true;return}
+  try{
+    const data=await auth.session();
+    message("Успех! Сервер подтвердил аккаунт "+data.login+". Сессия действительна.");
+    login.disabled=true;logout.disabled=false;
+  }catch(e){
+    message("Сессия недействительна: "+e.message+". Войди заново.");
+    login.disabled=false;logout.disabled=true;
+  }
+}
+login.addEventListener("click",async()=>{
+  login.disabled=true;message("Откроется окно GitHub. Подтверди вход в нём.");
+  try{await auth.login();await check()}catch(e){message("Не удалось завершить вход: "+e.message);login.disabled=false}
+});
+logout.addEventListener("click",()=>{auth.logout();check()});
+check();
+</script></body></html>
