@@ -53,10 +53,17 @@ class ExistingBranchDoesNotBlockQueue(unittest.TestCase):
         self.assertEqual(self.select.call_count, 2)
         remaining = self.select.call_args_list[1].args[0]
         self.assertEqual([x["id"] for x in remaining], ["next", "third"])
-        self.assertTrue(any("EXISTING_RELEASE_BRANCH_SKIPPED" in str(c.args)
+        self.assertTrue(any("SITE_RELEASE_DEFERRED" in str(c.args)
                             for c in output.call_args_list))
         self.assertTrue(any("ONE_RELEASE_REQUESTED:" in str(c.args)
                             for c in output.call_args_list))
+
+    def test_exhausted_safe_rebuild_deferred_and_next_story_runs(self):
+        self.release.side_effect = ["deferred_moving_main",
+                                    "auto_published_rebuild_requested"]
+        main()
+        self.assertEqual([x.args[0] for x in self.release.call_args_list],
+                         ["blocked", "next"])
 
     def test_all_collisions_fail_loudly_instead_of_reporting_green(self):
         self.release.side_effect = ["exists", "exists", "exists"]
