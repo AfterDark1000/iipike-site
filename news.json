@@ -6269,5 +6269,28 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "Маск и 180 тысяч человек требуют вернуть Хуанга в NVIDIA, но совет директоров против",
+    "summary": "Илон Маск и другие технологические руководители поддержали петицию за возвращение Дженсена Хуанга в NVIDIA. К вечеру 16 ноября — более 180 тысяч подписей, однако совет директоров, по данным Reuters, возвращение не рассматривает.",
+    "published": "2026-11-17",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition/",
+    "cover": "assets/editorial/nvidia-jensen-huang-return-petition-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🍿 МАСК ТРЕБУЕТ ВЕРНУТЬ ХУАНГА В NVIDIA",
+    "vk_summary": "Илон Маск и руководители технологических компаний поддержали кампанию за возвращение Дженсена Хуанга, который покинул пост главы NVIDIA на фоне скандала. К вечеру 16 ноября петиция набрала более 180 тысяч подписей. Идею поддержал даже Дональд Трамп. Но совет директоров NVIDIA, по информации Reuters, не рассматривает восстановление Хуанга.",
+    "published_at_utc": "2026-11-17T08:55:14Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "nvidia-jensen-huang-return-petition-20261116",
+    "url": "articles/nvidia-jensen-huang-return-petition-20261116/",
+    "topics": [
+      "business",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
