@@ -22,6 +22,13 @@ STABLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 IMAGE_EXTS = ("webp", "png", "jpg", "jpeg")
 GH_REPO = "AfterDark1000/iipike-site"
 MAX_AUTO_REBUILDS = 3  # No delays; each attempt uses fresh main and full tests.
+# Verified issue #165: generated branch survived a safe main-drift refusal.
+# Only this exact immutable bot commit may be automatically re-staged.
+# Arbitrary preexisting review branches MUST NOT bypass manual review.
+LEGACY_RECOVERY_RELEASES = {
+    "un-autonomous-weapons-us-russia-20261117":
+        "535d6f665af6f82d95670f16aa75ca87ea8df049",
+}
 # A changed publication index or publisher implementation requires a NEW
 # scheduler cycle, not a retry with stale selection or loaded Python code.
 RETRY_BLOCKING_PATHS = (
@@ -301,13 +308,15 @@ def release_one(story_id, ref):
     canonical_branch = "site-first/release/" + story_id
     existing = git("ls-remote", "--heads", "origin",
                    "refs/heads/" + canonical_branch).stdout.strip()
-    if existing and not auto:
-        print(f"EXISTING_RELEASE_REVIEW_REQUIRED: {story_id} {canonical_branch}", flush=True)
-        return "exists"
     if existing:
-        # This branch may contain a complete but stale release, e.g. #165.
-        # Keep it intact. Never merge its generated RSS/indexes onto new main.
-        print(f"::warning::EXISTING_RELEASE_REBUILD_FROM_SOURCE: {story_id} "
+        # Do not treat an arbitrary old release PR as permission to publish.
+        # Only the verified, immutable stalled auto-release #165 is recovered;
+        # all other historical review branches retain the original manual gate.
+        actual_sha = existing.split()[0]
+        if not auto or LEGACY_RECOVERY_RELEASES.get(story_id) != actual_sha:
+            print(f"EXISTING_RELEASE_REVIEW_REQUIRED: {story_id} {canonical_branch}", flush=True)
+            return "exists"
+        print(f"::warning::VERIFIED_STALE_AUTO_RELEASE_REBUILD: {story_id} "
               f"{canonical_branch}", flush=True)
     if auto:
         run_id = os.environ.get("GITHUB_RUN_ID", "")
@@ -323,8 +332,11 @@ def release_one(story_id, ref):
             print(f"ALREADY_PUBLISHED: {story_id}", flush=True)
             return "published"
         base_sha = git("rev-parse", "origin/main").stdout.strip()
-        branch = (canonical_branch if attempt == 1 and not existing else
-                  f"site-first/retry/{story_id}/{run_id}-{run_attempt}-{attempt}")
+        # Auto attempts have per-run identities, so an interrupted attempt
+        # cannot poison future scheduled runs. Manual PRs keep their stable
+        # branch and explicit existing-branch review gate.
+        branch = (f"site-first/auto/{story_id}/{run_id}-{run_attempt}-{attempt}"
+                  if auto else canonical_branch)
         git("switch", "--detach", "origin/main")
         git("switch", "-c", branch)
         for path in paths:
