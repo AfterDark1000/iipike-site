@@ -6340,5 +6340,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак",
+    "summary": "Alibaba выпустила флагманскую Qwen4-Max с дополнительными мерами против злоупотребления моделью для кибератак, архитектурой MoE и миллионным контекстом.",
+    "published": "2026-11-17",
+    "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max",
+    "cover": "assets/editorial/alibaba-qwen4-max-cybersecurity-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🔐 ALIBABA УЧИТ НЕЙРОСЕТЬ ЗАЩИЩАТЬ КОД ОТ ВЗЛОМА",
+    "vk_summary": "Китайская компания выпустила Qwen4-Max — флагманскую модель с 2,4 триллиона параметров. При обучении разработчики отфильтровали материалы для наступательных кибератак, сохранив знания для поиска и исправления уязвимостей. По внутренним тестам Alibaba, стоимость выполнения профессиональных задач снизилась примерно на 60% по сравнению с Qwen3.8-Max.",
+    "published_at_utc": "2026-11-17T16:15:38Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "alibaba-qwen4-max-cybersecurity-20261116",
+    "url": "articles/alibaba-qwen4-max-cybersecurity-20261116/",
+    "topics": [
+      "models",
+      "cybersecurity"
+    ],
+    "companies": [
+      "alibaba"
+    ],
+    "products": [
+      "qwen"
+    ]
   }
 ]
