@@ -53,17 +53,18 @@ class RebuildOnMainDriftTests(unittest.TestCase):
 
     def test_existing_canonical_branch_is_preserved_and_rebuilt_from_source(self):
         self.remote_branch = "535d6f old-canonical"
-        result = pr.release_one(SID, "immutable-editorial-sha")
+        with patch.dict(pr.LEGACY_RECOVERY_RELEASES, {SID: "535d6f"}):
+            result = pr.release_one(SID, "immutable-editorial-sha")
         self.assertEqual(result, "auto_published_rebuild_requested")
         self.publish.assert_called_once_with(SID, "fresh-base-1", SRC)
         self.assertIn(("switch", "--detach", "origin/main"), self.commands)
         self.assertIn(("switch", "-c",
-                       f"site-first/retry/{SID}/44047326106-1-1"), self.commands)
+                       f"site-first/auto/{SID}/44047326106-1-1"), self.commands)
         self.assertNotIn(("push", "origin",
                           f"HEAD:refs/heads/site-first/release/{SID}"), self.commands)
         self.assertFalse(any(x[0] in ("reset", "rebase", "cherry-pick", "clean", "branch")
                              for x in self.commands))
-        self.assertTrue(any(x[0] == "push" and x[-1].startswith("HEAD:refs/heads/site-first/retry/")
+        self.assertTrue(any(x[0] == "push" and x[-1].startswith("HEAD:refs/heads/site-first/auto/")
                             for x in self.commands))
         self.assertEqual(self.checked.call_count, 6)  # stage + 4 builders + full tests
 
@@ -77,8 +78,8 @@ class RebuildOnMainDriftTests(unittest.TestCase):
                          ["fresh-base-1", "fresh-base-2"])
         branches = [x[2] for x in self.commands if x[:2] == ("switch", "-c")]
         self.assertEqual(branches, [
-            f"site-first/release/{SID}",
-            f"site-first/retry/{SID}/44047326106-1-2",
+            f"site-first/auto/{SID}/44047326106-1-1",
+            f"site-first/auto/{SID}/44047326106-1-2",
         ])
         self.assertFalse(any("--force" in x or "--force-with-lease" in x
                              for args in self.commands for x in args))
@@ -99,9 +100,14 @@ class RebuildOnMainDriftTests(unittest.TestCase):
         self.assertEqual(self.checked.call_count, 6)
 
     def test_already_published_article_not_restaged(self):
-        self.remote_branch = "old"
         self.story_already_published = True
         self.assertEqual(pr.release_one(SID, "editorial-sha"), "published")
+        self.publish.assert_not_called()
+        self.checked.assert_not_called()
+
+    def test_unverified_old_release_branch_cannot_bypass_manual_review(self):
+        self.remote_branch = "different-unknown-sha old-manual-review"
+        self.assertEqual(pr.release_one(SID, "editorial-sha"), "exists")
         self.publish.assert_not_called()
         self.checked.assert_not_called()
 
