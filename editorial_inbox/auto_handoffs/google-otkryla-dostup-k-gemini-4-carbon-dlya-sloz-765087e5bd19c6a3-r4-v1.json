@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "article_id": "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
+  "text_revision": 4,
+  "cover_version": 1,
+  "status": "handed_off_to_site_queue",
+  "source_draft_blob_sha": "d489cecf3b024dfb80025c869db0019f96736c93",
+  "text_decision_blob_sha": "0a3c4cea323282a0eba26f4359a47cbd2fa46435",
+  "cover_metadata_blob_sha": "d6e4272220cacfdf1be753fce9ad149bf749aee0",
+  "cover_blob_sha": "34935368d596d752706d187d02ac703751ec559d",
+  "cover_decision_blob_sha": "5d7caacb90bb4a13903af0b409f152504b0423df",
+  "text_approved_at": "2026-11-17T11:43:18.754Z",
+  "cover_approved_at": "2026-11-17T14:32:42.913Z",
+  "story_path": "editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json",
+  "cover_path": "editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp",
+  "site_queue": "standard",
+  "social_posts": "prepared_in_auto_draft_not_dispatched",
+  "note": "Derived from separately human-approved text and image; no direct publication."
+}
