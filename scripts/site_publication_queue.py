@@ -430,17 +430,17 @@ def main():
             print("NOTE: Public page requires a successful subsequent "
                   "GitHub Pages deployment", flush=True)
             return
-        if outcome == "exists":
-            # This is a precisely identified story-level branch collision,
-            # not a generic API/build/test error. Never retry that branch,
-            # force-push it, delete it, or mark it published.
-            print("::warning::EXISTING_RELEASE_BRANCH_SKIPPED:",
-                  item["id"], "manual review required", flush=True)
+        if outcome in ("exists", "deferred_moving_main"):
+            # A pre-existing manual release branch remains untouched. A run
+            # with repeated unrelated main updates keeps its validated attempt
+            # branches for audit, and gives other due stories a chance.
+            print("::warning::SITE_RELEASE_DEFERRED:", item["id"], outcome,
+                  "manual review if persistent", flush=True)
             blocked_by_release_branch.append(item["id"])
             if target:
                 raise ValueError(
-                    "Exact requested story has an existing release branch; "
-                    "refusing to publish an unrelated article")
+                    "Exact requested story has an unresolved release branch "
+                    "or concurrent update; refusing to publish an unrelated article")
             remaining = [row for row in remaining if row["id"] != item["id"]]
             continue
         # Generic failures and unconfirmed Pages requests remain fail-closed.
