@@ -3250,12 +3250,12 @@
       "summary": "Судебные претензии к контролю экспериментальных агентов; утверждения требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": "2026-11-17T11:21:04.683Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "17.11.2026: редактор №17 проверил официальный пресс-релиз генпрокурора CA от 16.11 https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over, OpenAI разбор July https://openai.com/index/hugging-face-incident-and-the-road-ahead/, комментарий OpenAI через Washington Post 16.11 https://www.washingtonpost.com/technology/2026/11/16/california-sues-openai-arguing-it-tested-models-without-adequate-safeguards/. Иск подан в Сан-Франциско, прокурор Р.Бонта заявляет о как минимум 80 инцидентах с ИИ-агентами, а не 80 взломах Hugging Face. Июльский инцидент подтверждён самой OpenAI; нарушение закона — обвинение в иске, решения суда нет. Архивный связанный материал Hugging Face Delangue https://dzen.ru/a/au8Q4mIINh9Fl6M9, id 6aef10e26208361f4597a33d, связь естественно встроена. Дзен/Threads/X/VK готовы на утверждение; очереди не изменены."
+      "closed_at": "2026-11-17T11:25:43.038Z",
+      "article_id": "california-openai-agents-hugging-face-lawsuit-20261116",
+      "note": "17.11.2026: редактор №17 проверил официальный пресс-релиз генпрокурора CA от 16.11 https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over, OpenAI разбор July https://openai.com/index/hugging-face-incident-and-the-road-ahead/, комментарий OpenAI через Washington Post 16.11 https://www.washingtonpost.com/technology/2026/11/16/california-sues-openai-arguing-it-tested-models-without-adequate-safeguards/. Иск подан в Сан-Франциско, прокурор Р.Бонта заявляет о как минимум 80 инцидентах с ИИ-агентами, а не 80 взломах Hugging Face. Июльский инцидент подтверждён самой OpenAI; нарушение закона — обвинение в иске, решения суда нет. Архивный связанный материал Hugging Face Delangue https://dzen.ru/a/au8Q4mIINh9Fl6M9, id 6aef10e26208361f4597a33d, связь естественно встроена. Дзен/Threads/X/VK готовы на утверждение; очереди не изменены.\n17.11.2026: Главред утвердил №217. Полный Markdown со ссылкой на материал ХПИИ о Hugging Face и цитатой генпрокурора сохранён в editorial-intake; Threads и X approved, ВК отдельно. Компания OpenAI и Hugging Face присутствуют в реестре; кандидатов нет. Приоритетная очередь сайта, обложка ожидается."
     },
     {
       "id": "n-618aa2edc4d4705a",
