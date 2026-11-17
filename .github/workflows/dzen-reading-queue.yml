@@ -3,13 +3,13 @@ on:
   schedule:
     - cron: '13,43 * * * *'
   workflow_dispatch:
-  # The Dzen workflow exists on main only. A push to editorial-intake cannot
-  # start it, so listen for that branch's completed intake validation instead.
-  # GitHub's GITHUB_TOKEN pushes from site release also do not fire push events;
-  # the release workflow explicitly dispatches this workflow when it ships.
+  # GITHUB_TOKEN pushes to editorial-intake do not trigger ordinary push
+  # workflows. React to verified successful validation or automatic handoff.
+  # Periodic schedule remains a fallback for missed notifications.
   workflow_run:
     workflows:
-      - 'HPII — editorial text + cover inbox (VALIDATION ONLY)'
+      - 'HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)'
+      - 'HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)'
     types: [completed]
   push:
     branches: [main]
@@ -26,7 +26,13 @@ concurrency:
 jobs:
   update-reading-queue:
     # Never trust an unverified intake run or another branch's workflow.
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'editorial-intake') }}
+    if: >-
+      ${{ github.event_name != 'workflow_run' ||
+          (github.event.workflow_run.conclusion == 'success' &&
+           ((github.event.workflow_run.name == 'HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)' &&
+             github.event.workflow_run.head_branch == 'editorial-intake') ||
+            (github.event.workflow_run.name == 'HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)' &&
+             github.event.workflow_run.head_branch == 'main'))) }}
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -41,309 +47,326 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const crypto = require('crypto');
-            const { owner, repo } = context.repo;
-            const branch = 'editorial-intake';
-            const root = 'editorial_inbox/dzen_texts/';
-            const indexPath = 'editorial_inbox/DZEN_QUEUE.md';
-            const baseUrl = 'https://github.com/' + owner + '/' + repo + '/blob/' + branch + '/';
-            const getText = async (o, r, path, ref) => {
-              const response = await github.rest.repos.getContent({owner:o, repo:r, path, ref});
-              const f = response.data;
-              if (Array.isArray(f) || typeof f.content !== 'string' || f.encoding !== 'base64') {
-                throw new Error('Expected a UTF-8 file: ' + o + '/' + r + '/' + path);
+            // A concurrent site queue/dashboard update can advance editorial-intake.
+            // Retry the entire read->build->compare->commit, never reuse stale data.
+            async function generateFromFreshHead() {
+              const crypto = require('crypto');
+              const { owner, repo } = context.repo;
+              const branch = 'editorial-intake';
+              const root = 'editorial_inbox/dzen_texts/';
+              const indexPath = 'editorial_inbox/DZEN_QUEUE.md';
+              const baseUrl = 'https://github.com/' + owner + '/' + repo + '/blob/' + branch + '/';
+              const getText = async (o, r, path, ref) => {
+                const response = await github.rest.repos.getContent({owner:o, repo:r, path, ref});
+                const f = response.data;
+                if (Array.isArray(f) || typeof f.content !== 'string' || f.encoding !== 'base64') {
+                  throw new Error('Expected a UTF-8 file: ' + o + '/' + r + '/' + path);
+                }
+                return Buffer.from(f.content.replace(/\s/g, ''), 'base64').toString('utf8');
+              };
+              const directory = async (path, ref) => {
+                const response = await github.rest.repos.getContent({owner, repo, path, ref});
+                if (!Array.isArray(response.data)) throw new Error('Not a directory: ' + path);
+                return response.data;
+              };
+              const safe = value => String(value || '').replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\|/g, '&#124;')
+                .replace(/\[/g, '&#91;').replace(/\]/g, '&#93;')
+                .replace(/[\r\n]+/g, ' ').trim();
+              const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase('ru-RU')
+                .replace(/\s+/g, ' ').trim();
+              const dateMs = value => {
+                const n = Date.parse(value || '');
+                return Number.isFinite(n) ? n : 0;
+              };
+              const fmt = value => {
+                if (/^\d{4}-\d{2}-\d{2}$/.test(value || '')) {
+                  const [y,m,d] = value.split('-');
+                  return d + '.' + m + '.' + y;
+                }
+                const ms = dateMs(value);
+                if (!ms) return '—';
+                return new Intl.DateTimeFormat('ru-RU', {
+                  timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit',
+                  year:'numeric', hour:'2-digit', minute:'2-digit'
+                }).format(new Date(ms));
+              };
+              const validDzenUrl = url => typeof url === 'string' &&
+                /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]+$/.test(url);
+              const refInfo = await github.rest.git.getRef({owner, repo, ref:'heads/' + branch});
+              const headSha = refInfo.data.object.sha;
+              const files = await directory('editorial_inbox/stories', branch);
+              const covers = await directory('editorial_inbox/covers', branch);
+              const news = JSON.parse(await getText(owner, repo, 'news.json', 'main'));
+              // Use the *existing* website publication forecast as the single source of truth
+              // for ordering unreleased Dzen drafts. Never guess from editorial approval dates.
+              const queueStatus = await getText(owner, repo, 'editorial_inbox/QUEUE_STATUS.md', branch);
+              const sectionStart = queueStatus.indexOf('## Следующие выпуски — прогноз по текущей очереди');
+              const sectionEnd = queueStatus.indexOf('## Требуют внимания', sectionStart + 1);
+              if (sectionStart < 0 || sectionEnd < 0) {
+                throw new Error('Site publication queue forecast not found; refuse stale Dzen order');
               }
-              return Buffer.from(f.content.replace(/\s/g, ''), 'base64').toString('utf8');
-            };
-            const directory = async (path, ref) => {
-              const response = await github.rest.repos.getContent({owner, repo, path, ref});
-              if (!Array.isArray(response.data)) throw new Error('Not a directory: ' + path);
-              return response.data;
-            };
-            const safe = value => String(value || '').replace(/&/g, '&amp;')
-              .replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\|/g, '&#124;')
-              .replace(/\[/g, '&#91;').replace(/\]/g, '&#93;')
-              .replace(/[\r\n]+/g, ' ').trim();
-            const normalize = value => String(value || '').normalize('NFKC').toLocaleLowerCase('ru-RU')
-              .replace(/\s+/g, ' ').trim();
-            const dateMs = value => {
-              const n = Date.parse(value || '');
-              return Number.isFinite(n) ? n : 0;
-            };
-            const fmt = value => {
-              if (/^\d{4}-\d{2}-\d{2}$/.test(value || '')) {
-                const [y,m,d] = value.split('-');
-                return d + '.' + m + '.' + y;
+              const websiteForecast = new Map();
+              for (const line of queueStatus.slice(sectionStart, sectionEnd).split('\n')) {
+                if (!/^\|\s*\*\*\d+\*\*/.test(line)) continue;
+                const cells = line.split('|').map(x => x.trim());
+                const position = /^\*\*(\d+)\*\*$/.exec(cells[1] || '');
+                const match = /\/editorial_inbox\/stories\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json\)/.exec(cells[2] || '');
+                if (!position || !match || !cells[4]) {
+                  throw new Error('Malformed website forecast row: ' + line.slice(0,200));
+                }
+                if (websiteForecast.has(match[1])) throw new Error('Duplicate ID in website forecast: ' + match[1]);
+                websiteForecast.set(match[1], {
+                  position: Number(position[1]), status: cells[3], forecast: cells[4]
+                });
               }
-              const ms = dateMs(value);
-              if (!ms) return '—';
-              return new Intl.DateTimeFormat('ru-RU', {
-                timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit',
-                year:'numeric', hour:'2-digit', minute:'2-digit'
-              }).format(new Date(ms));
-            };
-            const validDzenUrl = url => typeof url === 'string' &&
-              /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]+$/.test(url);
-            const refInfo = await github.rest.git.getRef({owner, repo, ref:'heads/' + branch});
-            const headSha = refInfo.data.object.sha;
-            const files = await directory('editorial_inbox/stories', branch);
-            const covers = await directory('editorial_inbox/covers', branch);
-            const news = JSON.parse(await getText(owner, repo, 'news.json', 'main'));
-            // Use the *existing* website publication forecast as the single source of truth
-            // for ordering unreleased Dzen drafts. Never guess from editorial approval dates.
-            const queueStatus = await getText(owner, repo, 'editorial_inbox/QUEUE_STATUS.md', branch);
-            const sectionStart = queueStatus.indexOf('## Следующие выпуски — прогноз по текущей очереди');
-            const sectionEnd = queueStatus.indexOf('## Требуют внимания', sectionStart + 1);
-            if (sectionStart < 0 || sectionEnd < 0) {
-              throw new Error('Site publication queue forecast not found; refuse stale Dzen order');
-            }
-            const websiteForecast = new Map();
-            for (const line of queueStatus.slice(sectionStart, sectionEnd).split('\n')) {
-              if (!/^\|\s*\*\*\d+\*\*/.test(line)) continue;
-              const cells = line.split('|').map(x => x.trim());
-              const position = /^\*\*(\d+)\*\*$/.exec(cells[1] || '');
-              const match = /\/editorial_inbox\/stories\/([a-z0-9]+(?:-[a-z0-9]+)*)\.json\)/.exec(cells[2] || '');
-              if (!position || !match || !cells[4]) {
-                throw new Error('Malformed website forecast row: ' + line.slice(0,200));
-              }
-              if (websiteForecast.has(match[1])) throw new Error('Duplicate ID in website forecast: ' + match[1]);
-              websiteForecast.set(match[1], {
-                position: Number(position[1]), status: cells[3], forecast: cells[4]
-              });
-            }
-            const catalog = JSON.parse(await getText(owner, 'dzen-telegram-crosspost',
-              'editorial_full_catalog.json', 'main'));
-            if (!Array.isArray(news) || catalog.schema_version !== 1 ||
-                !Array.isArray(catalog.entries)) throw new Error('Invalid catalogs; leave dashboard unchanged');
+              const catalog = JSON.parse(await getText(owner, 'dzen-telegram-crosspost',
+                'editorial_full_catalog.json', 'main'));
+              if (!Array.isArray(news) || catalog.schema_version !== 1 ||
+                  !Array.isArray(catalog.entries)) throw new Error('Invalid catalogs; leave dashboard unchanged');
 
-            const rewriteDzenLinks = require(process.env.GITHUB_WORKSPACE +
-              '/scripts/dzen_crosslink_rewrite.cjs').createResolver(news, catalog.entries);
-            const byId = new Map(news.map(r => [r.id, r]));
-            const byTitle = new Map();
-            const byDzenId = new Map();
-            for (const entry of catalog.entries) {
-              if (entry.status !== 'published_observed_in_feed' || !validDzenUrl(entry.dzen_url) ||
-                  !entry.title || !entry.published_at_utc) continue;
-              const key = normalize(entry.title);
-              if (!byTitle.has(key)) byTitle.set(key, []);
-              byTitle.get(key).push(entry);
-              if (/^[a-f0-9]{24}$/.test(entry.dzen_id || '')) {
-                if (!byDzenId.has(entry.dzen_id)) byDzenId.set(entry.dzen_id, []);
-                byDzenId.get(entry.dzen_id).push(entry);
+              const rewriteDzenLinks = require(process.env.GITHUB_WORKSPACE +
+                '/scripts/dzen_crosslink_rewrite.cjs').createResolver(news, catalog.entries);
+              const byId = new Map(news.map(r => [r.id, r]));
+              const byTitle = new Map();
+              const byDzenId = new Map();
+              for (const entry of catalog.entries) {
+                if (entry.status !== 'published_observed_in_feed' || !validDzenUrl(entry.dzen_url) ||
+                    !entry.title || !entry.published_at_utc) continue;
+                const key = normalize(entry.title);
+                if (!byTitle.has(key)) byTitle.set(key, []);
+                byTitle.get(key).push(entry);
+                if (/^[a-f0-9]{24}$/.test(entry.dzen_id || '')) {
+                  if (!byDzenId.has(entry.dzen_id)) byDzenId.set(entry.dzen_id, []);
+                  byDzenId.get(entry.dzen_id).push(entry);
+                }
               }
-            }
-            const coverById = new Map();
-            for (const f of covers) {
-              const m = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.(png|jpg|jpeg|webp)$/.exec(f.name);
-              if (m && !coverById.has(m[1])) coverById.set(m[1], f.path);
-            }
-            const desired = new Map();
-            const records = [];
-            for (const file of files) {
-              if (file.type !== 'file' || file.name === '.gitkeep') continue;
-              const found = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/.exec(file.name);
-              if (!found) throw new Error('Unexpected story path: ' + file.name);
-              const id = found[1];
-              const raw = await getText(owner, repo, file.path, branch);
-              if (Buffer.byteLength(raw, 'utf8') > 128000) throw new Error('Story too large: ' + id);
-              const story = JSON.parse(raw);
-              if (story.id !== id || story.status !== 'editor_approved' ||
-                  story.approved_by !== 'human_editor' ||
-                  typeof story.title !== 'string' || !story.title.trim()) {
-                core.warning('Skipping non-approved or incomplete story: ' + id);
-                continue;
+              const coverById = new Map();
+              for (const f of covers) {
+                const m = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.(png|jpg|jpeg|webp)$/.exec(f.name);
+                if (m && !coverById.has(m[1])) coverById.set(m[1], f.path);
               }
-              // Older approved records used validated structured blocks, before Markdown was saved.
-              // Reconstruct their readable form but flag it in the queue for formatting review.
-              const legacy = typeof story.article_markdown !== 'string';
-              let articleBody = story.article_markdown;
-              if (legacy) {
-                if (!Array.isArray(story.paragraphs) || !story.paragraphs.length) {
-                  core.warning('No text available for story: ' + id);
+              const desired = new Map();
+              const records = [];
+              for (const file of files) {
+                if (file.type !== 'file' || file.name === '.gitkeep') continue;
+                const found = /^([a-z0-9]+(?:-[a-z0-9]+)*)\.json$/.exec(file.name);
+                if (!found) throw new Error('Unexpected story path: ' + file.name);
+                const id = found[1];
+                const raw = await getText(owner, repo, file.path, branch);
+                if (Buffer.byteLength(raw, 'utf8') > 128000) throw new Error('Story too large: ' + id);
+                const story = JSON.parse(raw);
+                if (story.id !== id || story.status !== 'editor_approved' ||
+                    story.approved_by !== 'human_editor' ||
+                    typeof story.title !== 'string' || !story.title.trim()) {
+                  core.warning('Skipping non-approved or incomplete story: ' + id);
                   continue;
                 }
-                articleBody = story.paragraphs.map(block => {
-                  const t = block.text;
-                  if (['lead', 'p'].includes(block.type) && typeof t === 'string') return t;
-                  if (['h2', 'h3'].includes(block.type) && typeof t === 'string')
-                    return (block.type === 'h2' ? '## ' : '### ') + t;
-                  if (block.type === 'quote' && typeof t === 'string') {
-                    return '> ' + t + (block.attribution ? '\n> — ' + block.attribution : '');
+                // Older approved records used validated structured blocks, before Markdown was saved.
+                // Reconstruct their readable form but flag it in the queue for formatting review.
+                const legacy = typeof story.article_markdown !== 'string';
+                let articleBody = story.article_markdown;
+                if (legacy) {
+                  if (!Array.isArray(story.paragraphs) || !story.paragraphs.length) {
+                    core.warning('No text available for story: ' + id);
+                    continue;
                   }
-                  if (['ul', 'ol'].includes(block.type) && Array.isArray(block.items))
-                    return block.items.map((item,i) => (block.type === 'ol' ? (i + 1) + '. ' : '- ') + item)
-                      .join('\n');
-                  throw new Error('Unsupported legacy text block in ' + id + ': ' + block.type);
-                }).join('\n\n');
-              }
-              if (!articleBody || !articleBody.trim()) throw new Error('Empty article body: ' + id);
-              const title = story.dzen_title || story.title;
-              if (typeof title !== 'string' || title.includes('\n') || title.includes('\r')) {
-                throw new Error('Invalid Dzen heading: ' + id);
-              }
-              const mdPath = root + id + '.md';
-              // Only the generated Dzen reading copy is modified. The approved
-              // Markdown and site's HTML remain unchanged. Unverified site
-              // links remain visible and must be checked manually.
-              const prepared = rewriteDzenLinks(articleBody);
-              if (prepared.unresolved.length) core.warning('DZEN_CROSSLINK_REVIEW: ' + id +
-                ' -> ' + prepared.unresolved.join(', '));
-              desired.set(mdPath, '# ' + title + '\n\n' + prepared.text + '\n');
-              const siteRow = byId.get(id);
-              const same = byTitle.get(normalize(title)) || [];
-              let dzenUrl = null, dzenDate = null, ambiguous = false;
-              const explicitId = siteRow?.site_first_dzen_id;
-              const explicitUrl = siteRow?.site_first_dzen_url;
-              const siteTime = dateMs(siteRow?.published_at_utc);
-              const afterSite = entry => !siteRow ||
-                (siteTime && dateMs(entry.published_at_utc) >= siteTime - 10 * 60000);
-              // A verified counterpart is identified by the stable Dzen ID
-              // and its exact observed URL, NOT its editable/truncated headline.
-              // An inconsistent explicit mapping must fail closed rather than
-              // silently switching to a different same-title article.
-              if (explicitId || explicitUrl) {
-                const linked = byDzenId.get(explicitId) || [];
-                const verified = linked.filter(e => e.dzen_url === explicitUrl && afterSite(e));
-                if (verified.length === 1) {
-                  dzenUrl = verified[0].dzen_url;
-                  dzenDate = verified[0].published_at_utc;
-                } else {
-                  ambiguous = linked.length > 1;
-                  core.warning('Unverified explicit Dzen counterpart: ' + id);
+                  articleBody = story.paragraphs.map(block => {
+                    const t = block.text;
+                    if (['lead', 'p'].includes(block.type) && typeof t === 'string') return t;
+                    if (['h2', 'h3'].includes(block.type) && typeof t === 'string')
+                      return (block.type === 'h2' ? '## ' : '### ') + t;
+                    if (block.type === 'quote' && typeof t === 'string') {
+                      return '> ' + t + (block.attribution ? '\n> — ' + block.attribution : '');
+                    }
+                    if (['ul', 'ol'].includes(block.type) && Array.isArray(block.items))
+                      return block.items.map((item,i) => (block.type === 'ol' ? (i + 1) + '. ' : '- ') + item)
+                        .join('\n');
+                    throw new Error('Unsupported legacy text block in ' + id + ': ' + block.type);
+                  }).join('\n\n');
                 }
-              } else if (same.length === 1) {
-                // Historical crossposts may predate their later site import.
-                // Preserve exact, uniquely verified title matches irrespective
-                // of release order; strict chronology applies to explicit new IDs.
-                dzenUrl = same[0].dzen_url;
-                dzenDate = same[0].published_at_utc;
-              } else if (same.length > 1) {
-                ambiguous = true;
+                if (!articleBody || !articleBody.trim()) throw new Error('Empty article body: ' + id);
+                const title = story.dzen_title || story.title;
+                if (typeof title !== 'string' || title.includes('\n') || title.includes('\r')) {
+                  throw new Error('Invalid Dzen heading: ' + id);
+                }
+                const mdPath = root + id + '.md';
+                // Only the generated Dzen reading copy is modified. The approved
+                // Markdown and site's HTML remain unchanged. Unverified site
+                // links remain visible and must be checked manually.
+                const prepared = rewriteDzenLinks(articleBody);
+                if (prepared.unresolved.length) core.warning('DZEN_CROSSLINK_REVIEW: ' + id +
+                  ' -> ' + prepared.unresolved.join(', '));
+                desired.set(mdPath, '# ' + title + '\n\n' + prepared.text + '\n');
+                const siteRow = byId.get(id);
+                const same = byTitle.get(normalize(title)) || [];
+                let dzenUrl = null, dzenDate = null, ambiguous = false;
+                const explicitId = siteRow?.site_first_dzen_id;
+                const explicitUrl = siteRow?.site_first_dzen_url;
+                const siteTime = dateMs(siteRow?.published_at_utc);
+                const afterSite = entry => !siteRow ||
+                  (siteTime && dateMs(entry.published_at_utc) >= siteTime - 10 * 60000);
+                // A verified counterpart is identified by the stable Dzen ID
+                // and its exact observed URL, NOT its editable/truncated headline.
+                // An inconsistent explicit mapping must fail closed rather than
+                // silently switching to a different same-title article.
+                if (explicitId || explicitUrl) {
+                  const linked = byDzenId.get(explicitId) || [];
+                  const verified = linked.filter(e => e.dzen_url === explicitUrl && afterSite(e));
+                  if (verified.length === 1) {
+                    dzenUrl = verified[0].dzen_url;
+                    dzenDate = verified[0].published_at_utc;
+                  } else {
+                    ambiguous = linked.length > 1;
+                    core.warning('Unverified explicit Dzen counterpart: ' + id);
+                  }
+                } else if (same.length === 1) {
+                  // Historical crossposts may predate their later site import.
+                  // Preserve exact, uniquely verified title matches irrespective
+                  // of release order; strict chronology applies to explicit new IDs.
+                  dzenUrl = same[0].dzen_url;
+                  dzenDate = same[0].published_at_utc;
+                } else if (same.length > 1) {
+                  ambiguous = true;
+                }
+                records.push({
+                  id, title, mdPath, legacy, coverPath:coverById.get(id), siteRow, dzenUrl,
+                  dzenDate, ambiguous, unresolvedSiteLinks:prepared.unresolved,
+                  approvedAt:story.approved_at,
+                  siteForecast:websiteForecast.get(id) || null
+                });
               }
-              records.push({
-                id, title, mdPath, legacy, coverPath:coverById.get(id), siteRow, dzenUrl,
-                dzenDate, ambiguous, unresolvedSiteLinks:prepared.unresolved,
-                approvedAt:story.approved_at,
-                siteForecast:websiteForecast.get(id) || null
+              const row = (item, i, kind) => {
+                const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')' +
+                  (item.legacy ? ' ⚠️ старый формат' : '') +
+                  (item.unresolvedSiteLinks.length ? ' ⚠️ ссылки на сайт — проверить' : '');
+                const site = item.siteRow ?
+                  '[На сайте](https://iipike.ru/articles/' + item.id + '/)' : 'Пока в очереди сайта';
+                const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
+                const dzen = item.dzenUrl ? '[Открыть в Дзене](' + item.dzenUrl + ')' : '—';
+                const when = kind === 'dzen' ? fmt(item.dzenDate) :
+                  kind === 'site' ? fmt(item.siteRow?.published_at_utc) :
+                  (item.siteForecast?.forecast || 'Нет в последнем прогнозе сайта');
+                return '| ' + i + ' | ' + md + ' | ' + when + ' | ' +
+                  (kind === 'dzen' ? dzen : site) + ' | ' + cover + ' |';
+              };
+              const pendingSite = records.filter(r => !r.dzenUrl && r.siteRow);
+              const pendingInbox = records.filter(r => !r.dzenUrl && !r.siteRow);
+              const done = records.filter(r => r.dzenUrl);
+              pendingSite.sort((a,b)=> dateMs(a.siteRow.published_at_utc)-dateMs(b.siteRow.published_at_utc) ||
+                a.id.localeCompare(b.id));
+              pendingInbox.sort((a,b)=> {
+                const ar = a.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
+                const br = b.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
+                return ar - br || a.id.localeCompare(b.id);
               });
-            }
-            const row = (item, i, kind) => {
-              const md = '[' + safe(item.title) + '](' + baseUrl + item.mdPath + ')' +
-                (item.legacy ? ' ⚠️ старый формат' : '') +
-                (item.unresolvedSiteLinks.length ? ' ⚠️ ссылки на сайт — проверить' : '');
-              const site = item.siteRow ?
-                '[На сайте](https://iipike.ru/articles/' + item.id + '/)' : 'Пока в очереди сайта';
-              const cover = item.coverPath ? '[Открыть](' + baseUrl + item.coverPath + ')' : 'Нет';
-              const dzen = item.dzenUrl ? '[Открыть в Дзене](' + item.dzenUrl + ')' : '—';
-              const when = kind === 'dzen' ? fmt(item.dzenDate) :
-                kind === 'site' ? fmt(item.siteRow?.published_at_utc) :
-                (item.siteForecast?.forecast || 'Нет в последнем прогнозе сайта');
-              return '| ' + i + ' | ' + md + ' | ' + when + ' | ' +
-                (kind === 'dzen' ? dzen : site) + ' | ' + cover + ' |';
-            };
-            const pendingSite = records.filter(r => !r.dzenUrl && r.siteRow);
-            const pendingInbox = records.filter(r => !r.dzenUrl && !r.siteRow);
-            const done = records.filter(r => r.dzenUrl);
-            pendingSite.sort((a,b)=> dateMs(a.siteRow.published_at_utc)-dateMs(b.siteRow.published_at_utc) ||
-              a.id.localeCompare(b.id));
-            pendingInbox.sort((a,b)=> {
-              const ar = a.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
-              const br = b.siteForecast?.position ?? Number.MAX_SAFE_INTEGER;
-              return ar - br || a.id.localeCompare(b.id);
-            });
-            done.sort((a,b)=> dateMs(b.dzenDate)-dateMs(a.dzenDate) || a.id.localeCompare(b.id));
-            const table = (items, kind) => [
-              '| № | Материал — открыть готовый текст | Дата (Усть-Катав) | ' +
-                (kind === 'dzen' ? 'Публикация' : 'Состояние сайта') + ' | Обложка |',
-              '|---:|---|---|---|---|',
-              ...(items.length ? items.map((r,i)=>row(r,i+1,kind)) : ['| — | Нет материалов | — | — | — |']),
-              ''
-            ];
-            const lines = [
-              '# ХПИИ — тексты и очередь для ручной публикации в Дзене', '',
-              '> Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.',
-              '',
-              '**Всего одобренных:** ' + records.length + ' · **В каталоге Дзена подтверждены:** ' +
-                done.length + ' · **Не подтверждены, уже на сайте:** ' + pendingSite.length +
-                ' · **Не подтверждены, ждут сайт:** ' + pendingInbox.length, '',
-              '**Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown ' +
-                'с заголовком и утверждённым текстом для Дзена. ' +
-                'Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). ' +
-                'Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ ' +
-                'в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. ' +
-                'Ссылки без подтверждённого соответствия помечаются для ручной проверки.', '',
-              '**Важно:** «не подтверждена» означает, что публикация не найдена однозначно в проверенном ' +
-                'каталоге Дзена или ссылках сайта. Это **не доказывает**, что её нет в Дзене. ' +
-                'Черновики Дзена автоматически не отслеживаются. ⚠️ Старый формат означает, что ' +
-                'Markdown восстановлен из редакционных абзацев и оформление лучше перепроверить. ' +
-                'Свежая публикация может появиться ' +
-                'в каталоге с задержкой. Статус на сайте основан на news.json, не на проверке деплоя Pages.', '',
-              '## 1. На сайте, но публикация в Дзене пока не подтверждена', '',
-              'В порядке выхода на сайте: сначала самые ранние, чтобы удобно переносить их по очереди.', '',
-              ...table(pendingSite,'site'),
-              '## 2. Утверждены, ещё в редакционной очереди сайта', '',
-              '**Порядок совпадает с разделом «Следующие выпуски» очереди сайта.** ' +
-                'Время берётся из последнего прогноза сайта; это ориентир, а не гарантия. ' +
-                'Материалы, отсутствующие в прогнозе, идут в конце и требуют сверки. ' +
-                'В Дзен можно переносить вручную по своему расписанию.', '',
-              ...table(pendingInbox,'inbox'),
-              '## 3. Подтверждены опубликованными в Дзене', '',
-              'Новые подтверждённые публикации выше. Их исходные тексты остаются доступны по ссылкам.', '',
-              ...table(done,'dzen'),
-            ];
-            const uncertain = records.filter(r => r.ambiguous);
-            if (uncertain.length) {
-              lines.push('## Требуют сверки: одинаковый заголовок встречается в каталоге несколько раз', '');
-              for (const r of uncertain) lines.push('- [' + safe(r.title) + '](' + baseUrl + r.mdPath + ')');
-              lines.push('');
-            }
-            lines.push('---', '',
-              'Список собирается автоматически из утверждённых материалов ветки editorial-intake, ' +
-              'публикаций сайта и редакционного каталога Дзена. Он не пишет и не публикует ничего в Дзен, ' +
-              'не изменяет main, RSS или работу сайт-планировщика.', '',
-              '[Очередь сайта](' + baseUrl + 'editorial_inbox/QUEUE_STATUS.md) · ' +
-              '[История обновлений](https://github.com/' + owner + '/' + repo +
-                '/actions/workflows/dzen-reading-queue.yml)', '');
-            desired.set(indexPath, lines.join('\n'));
+              done.sort((a,b)=> dateMs(b.dzenDate)-dateMs(a.dzenDate) || a.id.localeCompare(b.id));
+              const table = (items, kind) => [
+                '| № | Материал — открыть готовый текст | Дата (Усть-Катав) | ' +
+                  (kind === 'dzen' ? 'Публикация' : 'Состояние сайта') + ' | Обложка |',
+                '|---:|---|---|---|---|',
+                ...(items.length ? items.map((r,i)=>row(r,i+1,kind)) : ['| — | Нет материалов | — | — | — |']),
+                ''
+              ];
+              const lines = [
+                '# ХПИИ — тексты и очередь для ручной публикации в Дзене', '',
+                '> Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.',
+                '',
+                '**Всего одобренных:** ' + records.length + ' · **В каталоге Дзена подтверждены:** ' +
+                  done.length + ' · **Не подтверждены, уже на сайте:** ' + pendingSite.length +
+                  ' · **Не подтверждены, ждут сайт:** ' + pendingInbox.length, '',
+                '**Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown ' +
+                  'с заголовком и утверждённым текстом для Дзена. ' +
+                  'Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). ' +
+                  'Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ ' +
+                  'в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. ' +
+                  'Ссылки без подтверждённого соответствия помечаются для ручной проверки.', '',
+                '**Важно:** «не подтверждена» означает, что публикация не найдена однозначно в проверенном ' +
+                  'каталоге Дзена или ссылках сайта. Это **не доказывает**, что её нет в Дзене. ' +
+                  'Черновики Дзена автоматически не отслеживаются. ⚠️ Старый формат означает, что ' +
+                  'Markdown восстановлен из редакционных абзацев и оформление лучше перепроверить. ' +
+                  'Свежая публикация может появиться ' +
+                  'в каталоге с задержкой. Статус на сайте основан на news.json, не на проверке деплоя Pages.', '',
+                '## 1. На сайте, но публикация в Дзене пока не подтверждена', '',
+                'В порядке выхода на сайте: сначала самые ранние, чтобы удобно переносить их по очереди.', '',
+                ...table(pendingSite,'site'),
+                '## 2. Утверждены, ещё в редакционной очереди сайта', '',
+                '**Порядок совпадает с разделом «Следующие выпуски» очереди сайта.** ' +
+                  'Время берётся из последнего прогноза сайта; это ориентир, а не гарантия. ' +
+                  'Материалы, отсутствующие в прогнозе, идут в конце и требуют сверки. ' +
+                  'В Дзен можно переносить вручную по своему расписанию.', '',
+                ...table(pendingInbox,'inbox'),
+                '## 3. Подтверждены опубликованными в Дзене', '',
+                'Новые подтверждённые публикации выше. Их исходные тексты остаются доступны по ссылкам.', '',
+                ...table(done,'dzen'),
+              ];
+              const uncertain = records.filter(r => r.ambiguous);
+              if (uncertain.length) {
+                lines.push('## Требуют сверки: одинаковый заголовок встречается в каталоге несколько раз', '');
+                for (const r of uncertain) lines.push('- [' + safe(r.title) + '](' + baseUrl + r.mdPath + ')');
+                lines.push('');
+              }
+              lines.push('---', '',
+                'Список собирается автоматически из утверждённых материалов ветки editorial-intake, ' +
+                'публикаций сайта и редакционного каталога Дзена. Он не пишет и не публикует ничего в Дзен, ' +
+                'не изменяет main, RSS или работу сайт-планировщика.', '',
+                '[Очередь сайта](' + baseUrl + 'editorial_inbox/QUEUE_STATUS.md) · ' +
+                '[История обновлений](https://github.com/' + owner + '/' + repo +
+                  '/actions/workflows/dzen-reading-queue.yml)', '');
+              desired.set(indexPath, lines.join('\n'));
 
-            const gitCommit = await github.rest.git.getCommit({owner,repo,commit_sha:headSha});
-            const tree = await github.rest.git.getTree({
-              owner,repo,tree_sha:gitCommit.data.tree.sha,recursive:'true'
-            });
-            if (tree.data.truncated) throw new Error('Git tree truncated: refuse unsafe dashboard write');
-            const existing = new Map(tree.data.tree.filter(e => e.type === 'blob').map(e => [e.path,e.sha]));
-            const shaOf = content => {
-              const bytes = Buffer.from(content,'utf8');
-              return crypto.createHash('sha1').update('blob ' + bytes.length + '\0')
-                .update(bytes).digest('hex');
-            };
-            const changed = [];
-            for (const [path,content] of desired) {
-              if (existing.get(path) !== shaOf(content))
-                changed.push({path,mode:'100644',type:'blob',content});
+              const gitCommit = await github.rest.git.getCommit({owner,repo,commit_sha:headSha});
+              const tree = await github.rest.git.getTree({
+                owner,repo,tree_sha:gitCommit.data.tree.sha,recursive:'true'
+              });
+              if (tree.data.truncated) throw new Error('Git tree truncated: refuse unsafe dashboard write');
+              const existing = new Map(tree.data.tree.filter(e => e.type === 'blob').map(e => [e.path,e.sha]));
+              const shaOf = content => {
+                const bytes = Buffer.from(content,'utf8');
+                return crypto.createHash('sha1').update('blob ' + bytes.length + '\0')
+                  .update(bytes).digest('hex');
+              };
+              const changed = [];
+              for (const [path,content] of desired) {
+                if (existing.get(path) !== shaOf(content))
+                  changed.push({path,mode:'100644',type:'blob',content});
+              }
+              for (const path of existing.keys()) {
+                if (path.startsWith(root) && path.endsWith('.md') && !desired.has(path))
+                  changed.push({path,mode:'100644',type:'blob',sha:null});
+              }
+              if (!changed.length) {
+                core.info('Dzen reading queue unchanged (' + records.length + ' articles)');
+                return;
+              }
+              const fresh = await github.rest.git.getRef({owner,repo,ref:'heads/' + branch});
+              if (fresh.data.object.sha !== headSha)
+                throw new Error('Editorial-intake changed during scan; next scheduled run will retry');
+              const newTree = await github.rest.git.createTree({
+                owner,repo,base_tree:gitCommit.data.tree.sha,tree:changed
+              });
+              const made = await github.rest.git.createCommit({
+                owner,repo,message:'chore: refresh GitHub-only Dzen reading queue [skip ci]',
+                tree:newTree.data.sha,parents:[headSha]
+              });
+              await github.rest.git.updateRef({
+                owner,repo,ref:'heads/' + branch,sha:made.data.sha,force:false
+              });
+              core.info('Updated Dzen reading queue: ' + records.length + ' texts, ' +
+                done.length + ' confirmed in Dzen, ' + pendingSite.length +
+                ' site-only, ' + pendingInbox.length + ' awaiting site; ' +
+                changed.length + ' generated files changed.');
             }
-            for (const path of existing.keys()) {
-              if (path.startsWith(root) && path.endsWith('.md') && !desired.has(path))
-                changed.push({path,mode:'100644',type:'blob',sha:null});
+            for (let attempt = 1; attempt <= 3; attempt++) {
+              try {
+                await generateFromFreshHead();
+                break;
+              } catch (err) {
+                const msg = String(err?.message || "");
+                const changedDuringScan = msg === 'Editorial-intake changed during scan; next scheduled run will retry';
+                const rejectedFastForward = err?.status === 422 && /not a fast forward/i.test(msg);
+                if ((!changedDuringScan && !rejectedFastForward) || attempt === 3) throw err;
+                core.warning('Editorial branch advanced during Dzen preview scan; full safe rescan ' + (attempt + 1) + '/3');
+                await new Promise(resolve => setTimeout(resolve, 1500 * attempt));
+              }
             }
-            if (!changed.length) {
-              core.info('Dzen reading queue unchanged (' + records.length + ' articles)');
-              return;
-            }
-            const fresh = await github.rest.git.getRef({owner,repo,ref:'heads/' + branch});
-            if (fresh.data.object.sha !== headSha)
-              throw new Error('Editorial-intake changed during scan; next scheduled run will retry');
-            const newTree = await github.rest.git.createTree({
-              owner,repo,base_tree:gitCommit.data.tree.sha,tree:changed
-            });
-            const made = await github.rest.git.createCommit({
-              owner,repo,message:'chore: refresh GitHub-only Dzen reading queue [skip ci]',
-              tree:newTree.data.sha,parents:[headSha]
-            });
-            await github.rest.git.updateRef({
-              owner,repo,ref:'heads/' + branch,sha:made.data.sha,force:false
-            });
-            core.info('Updated Dzen reading queue: ' + records.length + ' texts, ' +
-              done.length + ' confirmed in Dzen, ' + pendingSite.length +
-              ' site-only, ' + pendingInbox.length + ' awaiting site; ' +
-              changed.length + ' generated files changed.');
