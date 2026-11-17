@@ -410,20 +410,45 @@ def main():
     if inspect_only:
         print("INSPECTION_ONLY: queue checked, no release allowed", flush=True)
         return
-    item = select_publishable_item(pending, live, now, source_ref=source_ref,
-                                   target=target, urgent=urgent)
-    if not item:
-        print("NO_DUE_STORY: No article released", flush=True)
-        return
-    git("config", "user.name", "github-actions[bot]")
-    git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
-    print("SCHEDULED_RELEASE:", item["id"], "urgent=" + str(urgent), flush=True)
-    outcome = release_one(item["id"], source_ref)
-    if outcome != "auto_published_rebuild_requested":
+    # A review branch can survive a failed, pre-merge release. It may
+    # contain the fully built site and is NOT safe to overwrite/delete.
+    # In an ordinary queue run, isolate only that exact story and try the
+    # next eligible one without publishing more than ONE article.
+    remaining = list(pending)
+    blocked_by_release_branch = []
+    while remaining:
+        item = select_publishable_item(remaining, live, now, source_ref=source_ref,
+                                       target=target, urgent=urgent)
+        if not item:
+            break
+        git("config", "user.name", "github-actions[bot]")
+        git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+        print("SCHEDULED_RELEASE:", item["id"], "urgent=" + str(urgent), flush=True)
+        outcome = release_one(item["id"], source_ref)
+        if outcome == "auto_published_rebuild_requested":
+            print("ONE_RELEASE_REQUESTED:", item["id"], flush=True)
+            print("NOTE: Public page requires a successful subsequent "
+                  "GitHub Pages deployment", flush=True)
+            return
+        if outcome == "exists":
+            # This is a precisely identified story-level branch collision,
+            # not a generic API/build/test error. Never retry that branch,
+            # force-push it, delete it, or mark it published.
+            print("::warning::EXISTING_RELEASE_BRANCH_SKIPPED:",
+                  item["id"], "manual review required", flush=True)
+            blocked_by_release_branch.append(item["id"])
+            if target:
+                raise ValueError(
+                    "Exact requested story has an existing release branch; "
+                    "refusing to publish an unrelated article")
+            remaining = [row for row in remaining if row["id"] != item["id"]]
+            continue
+        # Generic failures and unconfirmed Pages requests remain fail-closed.
         raise ValueError("Scheduled release not confirmed: " + str(outcome))
-    print("ONE_RELEASE_REQUESTED:", item["id"], flush=True)
-    print("NOTE: Public page requires a successful subsequent GitHub Pages deployment",
-          flush=True)
+    if blocked_by_release_branch:
+        raise ValueError("No safe alternative due after existing release branch "
+                         "collision(s): " + ", ".join(blocked_by_release_branch))
+    print("NO_DUE_STORY: No article released", flush=True)
 
 
 if __name__ == "__main__":
