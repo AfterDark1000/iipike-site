@@ -5,15 +5,15 @@
   "pool_sequence": 45,
   "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
   "status": "ready_for_review",
-  "revision": 1,
+  "revision": 2,
   "created_at": "2026-11-17T15:50:51+00:00",
-  "updated_at": "2026-11-17T16:51:49+00:00",
+  "updated_at": "2026-11-17T17:53:59.284Z",
   "content": {
     "title": "Блогер пришёл к ИИ-рекрутеру с кроссовком на голове. Burger King пришлось оправдываться",
     "dzen_title": "Блогер пришёл к ИИ-рекрутеру с кроссовком на голове. Burger King пришлось оправдываться",
     "summary": "Ник Рид снял абсурдное собеседование с виртуальной Карен. Ролик приняли за настоящий найм Burger King, и компании пришлось объяснять, что это постановка.",
     "rubric": "what-are-you-doing",
-    "section": "",
+    "section": "ИИ, ТЫ ЧЕГО ТВОРИШЬ?",
     "topics": [],
     "companies": [],
     "products": [],
@@ -89,6 +89,10 @@
     {
       "type": "crosslinks",
       "text": "Точный материал на сайте/в Дзене для уместной перелинковки не найден; оставлены [] и {} вместо вымышленных URL."
+    },
+    {
+      "type": "technical_validation_fix",
+      "text": "Исправлена обязательная непустая метка section для рубрики what-are-you-doing после ошибки GitHub Actions 44130750385: Ready draft missing: section. Содержание статьи, соцпосты, факты, ссылки и остальные поля сохранены без изменений."
     }
   ]
 }
