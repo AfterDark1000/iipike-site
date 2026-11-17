@@ -3,8 +3,8 @@
 import hashlib
 import json
 import re
-import struct
 from pathlib import Path
+from PIL import Image, UnidentifiedImageError
 
 ROOT = Path("editorial_inbox")
 COVERS = ROOT / "auto_covers"
@@ -35,19 +35,27 @@ def validate(meta_path: Path) -> None:
         raise ValueError("Wrong cover ID")
     if info["text_revision"] != int(revision) or info["status"] != "ready_for_cover_review":
         raise ValueError("Wrong cover status or revision")
-    if info["image_path"] != str(COVERS / (stem + ".png")):
+    if info["image_path"] != str(COVERS / (stem + ".webp")):
         raise ValueError("Unsafe image path")
-    png_path = Path(info["image_path"])
-    png = png_path.read_bytes()
-    if len(png) < 1024 or png[:8] != b"\x89PNG\r\n\x1a\n" or png[12:16] != b"IHDR":
-        raise ValueError("Image has no real PNG header")
-    width, height = struct.unpack(">II", png[16:24])
+    image_path = Path(info["image_path"])
+    image_bytes = image_path.read_bytes()
+    if (len(image_bytes) < 1024 or len(image_bytes) > 800_000 or
+            image_bytes[:4] != b"RIFF" or image_bytes[8:12] != b"WEBP"):
+        raise ValueError("Not a compact genuine WebP container")
+    try:
+        with Image.open(image_path) as image:
+            if image.format != "WEBP":
+                raise ValueError("Not actual WebP")
+            image.load()
+            width, height = image.size
+    except (OSError, UnidentifiedImageError) as exc:
+        raise ValueError("WebP pixels cannot be decoded") from exc
     if width < 640 or height < 360 or abs(width / height - 16/9) > 0.02:
-        raise ValueError("Invalid PNG aspect ratio")
+        raise ValueError("Invalid WebP aspect ratio")
     if info["width"] != width or info["height"] != height:
         raise ValueError("Wrong recorded image dimensions")
-    if git_blob_sha(png) != info["image_blob_sha"]:
-        raise ValueError("PNG does not match recorded Git blob")
+    if git_blob_sha(image_bytes) != info["image_blob_sha"]:
+        raise ValueError("WebP does not match recorded Git blob")
     draft = ROOT / "auto_drafts" / (article_id + ".json")
     decision = ROOT / "auto_decisions" / (article_id + "-r" + revision + ".json")
     draft_bytes, decision_bytes = draft.read_bytes(), decision.read_bytes()
