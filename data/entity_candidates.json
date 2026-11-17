@@ -925,6 +925,30 @@
           "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
         }
       ]
+    },
+    {
+      "key": "fractile",
+      "name": "Fractile",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "fractile-ai-chips-720m-funding-20261111",
+          "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
+        }
+      ]
+    },
+    {
+      "key": "balderton-capital",
+      "name": "Balderton Capital",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "fractile-ai-chips-720m-funding-20261111",
+          "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
+        }
+      ]
     }
   ],
   "products": [
