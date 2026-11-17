@@ -6411,5 +6411,28 @@
     "products": [
       "gpt-6"
     ]
+  },
+  {
+    "title": "Google Карты научились звонить в салоны и искать свободную запись. ИИ выходит в 30 стран Европы",
+    "summary": "Google расширила возможности Ask Maps: поиск свободной записи с помощью звонков компаниям, планирование путешествий и проверка сохранённых мест. Сам Ask Maps запускается ещё в 30+ странах Европы, а обзвон компаний пока доступен в США.",
+    "published": "2026-11-18",
+    "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026",
+    "cover": "assets/editorial/google-ask-maps-booking-europe-20261116.webp",
+    "rubric": "news",
+    "vk_title": "📞 GOOGLE КАРТЫ ТЕПЕРЬ САМИ ЗВОНЯТ В САЛОНЫ",
+    "vk_summary": "Ask Maps научился искать свободное время для маникюра, ремонта автомобиля и других услуг — в том числе с помощью звонков компаниям. Ещё он планирует многодневные путешествия и проверяет свободные места в сохранённых заведениях. ИИ-помощник выходит в 30+ странах Европы. Но функция звонков пока запускается только в США.",
+    "published_at_utc": "2026-11-17T19:45:38Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "google-ask-maps-booking-europe-20261116",
+    "url": "articles/google-ask-maps-booking-europe-20261116/",
+    "topics": [
+      "apps",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
