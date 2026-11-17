@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {webcrypto} from "node:crypto";
+import {webcrypto,createHash} from "node:crypto";
 import gateway, {__test} from "../src/index.mjs";
 globalThis.crypto ||= webcrypto;
 
@@ -104,4 +104,82 @@ test("misconfigured gateway returns only missing binding names",async()=>{
   assert.equal(JSON.stringify(body).includes("short"),true); // validation flag only
   assert.equal(JSON.stringify(body).includes(env.SESSION_SIGNING_KEY),false);
   assert.equal(JSON.stringify(body).includes(env.GITHUB_REPO_TOKEN),false);
+});
+
+
+function fixtureWebP(){
+  // Header-only mock for API tests; production CI decodes real WebP with Pillow.
+  const raw=new Uint8Array(1500);
+  const view=new DataView(raw.buffer);
+  function put(off,str){for(let i=0;i<str.length;i++)raw[off+i]=str.charCodeAt(i)}
+  put(0,"RIFF");view.setUint32(4,raw.length-8,true);put(8,"WEBP");put(12,"VP8X");
+  view.setUint32(16,raw.length-20,true);
+  const w=1600-1,h=900-1;
+  raw[24]=w&255;raw[25]=(w>>8)&255;raw[26]=(w>>16)&255;
+  raw[27]=h&255;raw[28]=(h>>8)&255;raw[29]=(h>>16)&255;
+  return raw;
+}
+test("WebP header check rejects non-WebP and bad ratios",()=>{
+  assert.deepEqual(__test.webpDimensions(fixtureWebP()),{width:1600,height:900});
+  const png=fixtureWebP();png[0]=0;assert.throws(()=>__test.webpDimensions(png));
+  const over=new Uint8Array(800_001);assert.throws(()=>__test.webpDimensions(over));
+});
+test("authenticated WebP upload is restricted to approved rev and never publishes",async()=>{
+  const previous=globalThis.fetch, written=new Map();
+  const approved={article_id:"test-cover-story",revision:4,updated_at:"2026-11-17T09:14:28.326Z",
+    status:"text_approved_cover_pending",action:"approve_text",draft_blob_sha:"draft-sha"};
+  const draft={article_id:approved.article_id,revision:4,updated_at:approved.updated_at,status:"ready_for_review"};
+  const box=(obj,sha)=>Response.json({type:"file",sha,content:Buffer.from(JSON.stringify(obj)).toString("base64")});
+  globalThis.fetch=async (url,opts={})=>{
+    const urlstr=String(url);
+    if(urlstr==="https://github.com/login/oauth/access_token")return Response.json({access_token:"user-oauth"});
+    if(urlstr==="https://api.github.com/user")return Response.json({id:284211090,login:"AfterDark1000"});
+    const base="https://api.github.com/repos/AfterDark1000/iipike-site/contents/";
+    assert.ok(urlstr.startsWith(base));
+    const path=urlstr.slice(base.length).split("?")[0];
+    if(path==="editorial_inbox/auto_drafts/test-cover-story.json")return box(draft,"draft-sha");
+    if(path==="editorial_inbox/auto_decisions/test-cover-story-r4.json")return box(approved,"decision-sha");
+    if(path.startsWith("editorial_inbox/auto_covers/")){
+      if((opts.method||"GET")==="PUT"){
+        if(written.has(path))return Response.json({message:"Exists"},{status:409});
+        const value=JSON.parse(opts.body);
+        const bytes=Buffer.from(value.content,"base64");
+        const sha=createHash("sha1").update(Buffer.concat([Buffer.from("blob "+bytes.length+"\0"),bytes])).digest("hex");
+        written.set(path,{content:value.content,sha});
+        return Response.json({content:{sha},commit:{sha:"new-commit"}},{status:201});
+      }
+      const saved=written.get(path);
+      return saved?Response.json({type:"file",sha:saved.sha,content:saved.content}):
+        Response.json({message:"Not Found"},{status:404});
+    }
+    throw Error("Unexpected path "+path);
+  };
+  try{
+    const begin=await call("/auth/start");
+    const cookie=begin.headers.get("set-cookie").split(";")[0];
+    const state=new URL(begin.headers.get("location")).searchParams.get("state");
+    const cb=await call("/auth/callback?code=ok&state="+state,{headers:{Cookie:cookie}});
+    const html=await cb.text();
+    const token=html.match(/"token":"([^"]+)"/)?.[1];
+    assert.ok(token);
+    const form=new FormData();
+    form.set("article_id",draft.article_id);form.set("revision","4");
+    form.set("updated_at",draft.updated_at);form.set("headline","РОЙ АГЕНТОВ");
+    form.set("concept","Редакционная графика с распределением задач");
+    form.set("file",new File([fixtureWebP()],"cover.webp",{type:"image/webp"}));
+    const unauthorized=await call("/api/cover-upload",{method:"POST",body:form,headers:{Origin:env.ADMIN_ORIGIN}});
+    assert.equal(unauthorized.status,401);
+    const headers={Origin:env.ADMIN_ORIGIN,Authorization:"Bearer "+token};
+    const result=await call("/api/cover-upload",{method:"POST",body:form,headers});
+    assert.equal(result.status,200,await result.clone().text());
+    const response=await result.json();
+    assert.equal(response.status,"ready_for_cover_review");
+    assert.equal(response.width,1600);assert.equal(response.height,900);
+    assert.equal(written.size,2);
+    assert.ok(written.has("editorial_inbox/auto_covers/test-cover-story-r4-v1.webp"));
+    assert.ok(written.has("editorial_inbox/auto_covers/test-cover-story-r4-v1.json"));
+    const duplicate=await call("/api/cover-upload",{method:"POST",body:form,headers});
+    assert.equal(duplicate.status,409);
+    assert.equal(written.size,2);
+  }finally{globalThis.fetch=previous}
 });
