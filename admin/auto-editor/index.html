@@ -169,6 +169,77 @@ async function addCoverUploader(doc,region){
   }catch(e){if(current()){status.textContent="Файл НЕ сохранён: "+e.message;button.disabled=false}}
  });
 }
+async function showCoverReviewControls(doc,cover,region,image){
+ const current=()=>selected===doc.article_id+".json"&&region.isConnected;
+ const wrap=add(region,"section");
+ wrap.style.cssText="margin-top:16px;padding-top:14px;border-top:1px solid #d9dfdc";
+ add(wrap,"h3","Решение главреда по обложке");
+ const p=add(wrap,"p","Проверяю, не было ли уже принято решение…","muted");
+ p.setAttribute("role","status");
+ const actions=add(wrap,"div",undefined,"actionbar");
+ const approve=add(actions,"button","Утвердить обложку");
+ const redo=add(actions,"button","Переделать");
+ const note=add(wrap,"textarea");
+ note.placeholder="Что изменить художнику (обязательно при возврате на переделку)";
+ note.setAttribute("aria-label","Замечания по обложке");
+ note.maxLength=4000;
+ let decisionState="checking";
+ const buttons=[approve,redo];
+ const setDisabled=(value)=>buttons.forEach(b=>b.disabled=value);
+ setDisabled(true);
+ const checkValid=()=>image.dataset.hpiiValid==="1"&&current()&&decisionState==="open";
+ const decisionUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/"+
+   doc.article_id+"-r"+doc.revision+"-v1.json?v="+Date.now();
+ try{
+  const r=await fetch(decisionUrl,{cache:"no-store"});
+  if(!current())return;
+  if(r.status===404){
+    decisionState="open";
+    p.textContent="Обложка ещё не утверждена. Посмотри изображение перед выбором действия.";
+    setDisabled(!checkValid());
+  }else if(r.ok){
+    const saved=await r.json();
+    if(!current())return;
+    if(saved.article_id!==doc.article_id||saved.text_revision!==doc.revision||
+       saved.cover_version!==1||saved.cover_blob_sha!==cover.image_blob_sha)
+      throw Error("Сохранённое решение не совпадает с обложкой.");
+    decisionState="saved";
+    p.textContent=saved.status==="cover_approved_handoff_pending"?
+      "✓ Обложка утверждена. Ожидает отдельной подготовки комплекта для сайта; публикация не запущена.":
+      saved.status==="cover_revision_requested"?
+      "↺ Обложка возвращена на переделку. Замечание: "+(saved.note||"не указано"):
+      "Решение по обложке: "+saved.status;
+    setDisabled(true);
+  }else throw Error("GitHub HTTP "+r.status);
+ }catch(e){
+   decisionState="error";
+   if(current()){p.textContent="Не удалось проверить решения: "+e.message;setDisabled(true)}
+ }
+ image.addEventListener("load",()=>{
+   if(decisionState==="open"&&current())setDisabled(!checkValid());
+ });
+ image.addEventListener("error",()=>setDisabled(true));
+ const submit=async(action)=>{
+   if(!checkValid()){p.textContent="Невозможно подтвердить обложку: проверь загрузку и размер.";return}
+   if(action==="revise_cover"&&!note.value.trim()){p.textContent="Сначала напиши, что нужно переделать.";note.focus();return}
+   if(!window.HpiiAdminAuth){p.textContent="Нет активного входа в админку.";return}
+   decisionState="saving";setDisabled(true);p.textContent="Записываю решение через защищённый сервер…";
+   try{
+      const result=await window.HpiiAdminAuth.reviewCover(doc,cover,action,note.value.trim());
+      if(!current())return;
+      decisionState="saved";setDisabled(true);note.disabled=true;
+      p.textContent=result.status==="cover_approved_handoff_pending"?
+       "✓ Обложка утверждена и решение сохранено в GitHub. Материал НЕ опубликован.":
+       "↺ Решение о переделке сохранено в GitHub. Новая версия обложки пока не создана.";
+   }catch(e){
+      if(current()){decisionState="error";setDisabled(true);
+       p.textContent="Решение НЕ подтверждено: "+e.message+". Обнови страницу, чтобы проверить состояние."}
+   }
+ };
+ approve.addEventListener("click",()=>submit("approve_cover"));
+ redo.addEventListener("click",()=>submit("revise_cover"));
+}
+
 async function showCoverCandidate(doc,region){
  const base="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_covers/";
  const stem=doc.article_id+"-r"+doc.revision;
@@ -205,7 +276,10 @@ async function showCoverCandidate(doc,region){
   image.onload=()=>{
     if(image.naturalWidth!==cover.width||image.naturalHeight!==cover.height||
        Math.abs(image.naturalWidth/image.naturalHeight-16/9)>0.02){
+      image.dataset.hpiiValid="0";
       label.textContent="Размер изображения не совпал с метаданными — не утверждать.";
+    }else{
+      image.dataset.hpiiValid="1";
     }
   };
   image.src=base+stem+"-v1.webp?v="+Date.now();
@@ -214,6 +288,7 @@ async function showCoverCandidate(doc,region){
   if(cover.headline)field(region,"Заголовок",cover.headline);
   paragraph(region,"Для передачи в публикационную очередь ещё требуется отдельное утверждение обложки главредом.");
   const p=add(region,"p");link(p,"Файл обложки ↗",base+stem+"-v1.webp");
+  void showCoverReviewControls(doc,cover,region,image);
  }catch(e){if(current())label.textContent="Не удалось подтвердить наличие кандидата: "+e.message}
 }
 function draw(doc){
