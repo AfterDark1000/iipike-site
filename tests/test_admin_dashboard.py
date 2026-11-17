@@ -41,7 +41,11 @@ class AdminOverviewTests(unittest.TestCase):
     def test_approved_editorial_updates_trigger_dzen_queue_even_without_workflow_on_intake_branch(self):
         dzen = (ROOT / ".github/workflows/dzen-reading-queue.yml").read_text(encoding="utf-8")
         self.assertIn("workflow_run:", dzen)
-        self.assertIn("HPII — editorial text + cover inbox (VALIDATION ONLY)", dzen)
+        self.assertIn("HPII — editorial text + cover inbox (VALIDATION + SAFE QUOTE FIX)", dzen)
+        self.assertIn("HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)", dzen)
+        self.assertIn("github.event.workflow_run.head_branch == 'main'", dzen)
+        self.assertIn("async function generateFromFreshHead()", dzen)
+        self.assertIn("await generateFromFreshHead()", dzen)
         self.assertIn("github.event.workflow_run.conclusion == 'success'", dzen)
         self.assertIn("github.event.workflow_run.head_branch == 'editorial-intake'", dzen)
         self.assertIn("branches: [main]", dzen)
