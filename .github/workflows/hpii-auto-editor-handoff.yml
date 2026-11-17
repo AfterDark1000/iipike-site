@@ -1,0 +1,135 @@
+name: HPII — approved autonomous story/cover to editorial queue (NO DIRECT PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/auto_editor_handoff.py'
+      - 'tests/test_auto_editor_handoff.py'
+      - '.github/workflows/hpii-auto-editor-handoff.yml'
+  schedule:
+    - cron: '2,17,32,47 * * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/auto_editor_handoff.py'
+      - 'tests/test_auto_editor_handoff.py'
+      - '.github/workflows/hpii-auto-editor-handoff.yml'
+permissions:
+  contents: write
+concurrency:
+  group: hpii-approved-autonomous-editor-handoff
+  cancel-in-progress: false
+jobs:
+  verify-handoff-on-pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install image decoder
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Regression tests
+        run: python3 -m unittest discover -s tests -p 'test_auto_editor_handoff.py' -v
+      - name: Dry-run against actual approved Carbon, without any write
+        run: |
+          set -euo pipefail
+          git fetch origin main editorial-intake
+          python3 scripts/auto_editor_handoff.py --source-ref origin/editorial-intake --site-root "$GITHUB_WORKSPACE" --output-dir "$RUNNER_TEMP/hpii-handoff-preflight"
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          obj=json.loads((Path(os.environ['RUNNER_TEMP'])/'hpii-handoff-preflight/handoff_manifest.json').read_text())
+          expected='google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3'
+          assert obj['article_id']==expected, 'Approved Carbon must pass real preflight before enabling handoff'
+          assert len(obj['files'])==3
+          print('CARBON_END_TO_END_HANDOFF_PREFLIGHT_OK (READ ONLY)')
+          PY
+  handoff-one:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Read authoritative main code and both current refs
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install Pillow for real WebP decode
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Test human approval, immutable artwork and site-only crosslinks
+        run: python3 -m unittest discover -s tests -p 'test_auto_editor_handoff.py' -v
+      - name: Stage one fully human-approved pair; never publish
+        id: stage
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main editorial-intake
+          python3 scripts/auto_editor_handoff.py \
+            --source-ref origin/editorial-intake \
+            --site-root "$GITHUB_WORKSPACE" \
+            --output-dir "$RUNNER_TEMP/hpii-auto-handoff"
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json,os
+          from pathlib import Path
+          manifest=json.loads((Path(os.environ['RUNNER_TEMP'])/'hpii-auto-handoff/handoff_manifest.json').read_text())
+          if not isinstance(manifest.get('files'),list) or len(manifest['files']) not in (0,3):
+              raise SystemExit("Invalid staged handoff manifest")
+          if manifest['files']:
+              print('has_handoff=true')
+              print('article_id='+manifest['article_id'])
+          else:
+              print('has_handoff=false')
+          PY
+      - name: Record validated story+WebP+provenance in editorial-intake only
+        if: steps.stage.outputs.has_handoff == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch --detach origin/editorial-intake
+          python3 - <<'PY'
+          import json,os,re,shutil
+          from pathlib import Path
+          root=Path(os.environ['GITHUB_WORKSPACE'])
+          src=Path(os.environ['RUNNER_TEMP'])/'hpii-auto-handoff'
+          manifest=json.loads((src/'handoff_manifest.json').read_text())
+          article_id=manifest['article_id']
+          if not isinstance(article_id,str) or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',article_id):
+              raise SystemExit("Invalid handoff ID")
+          expected={f'editorial_inbox/stories/{article_id}.json',
+                    f'editorial_inbox/covers/{article_id}.webp'}
+          files=manifest['files']
+          if len(files)!=3 or not expected.issubset(set(files)):
+              raise SystemExit("Wrong story/cover handoff manifest")
+          markers=[f for f in files if re.fullmatch(
+              rf'editorial_inbox/auto_handoffs/{re.escape(article_id)}-r[1-9][0-9]*-v[1-9][0-9]*\.json',f)]
+          if len(markers)!=1 or len(set(files))!=3:
+              raise SystemExit("Unsafe marker or repeated target")
+          for name in files:
+              source=src/name
+              target=root/name
+              if not source.is_file() or source.is_symlink() or target.exists():
+                  raise SystemExit("Staged file missing or target already exists: "+name)
+              target.parent.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(source,target)
+          (src/'paths_to_add.txt').write_text('\n'.join(files)+'\n')
+          PY
+          mapfile -t files < "$RUNNER_TEMP/hpii-auto-handoff/paths_to_add.txt"
+          git add -- "${files[@]}"
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 3
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          article_id="$(python3 -c 'import json,os,pathlib;print(json.loads((pathlib.Path(os.environ["RUNNER_TEMP"])/"hpii-auto-handoff/handoff_manifest.json").read_text())["article_id"])')"
+          git commit -m "auto-editor: hand off approved story and WebP $article_id"
+          git push origin HEAD:refs/heads/editorial-intake
+      - name: Summarize without implying publication
+        if: always()
+        shell: bash
+        run: |
+          printf 'This workflow only prepares approved article + WebP in the editorial intake branch.\n' >> "$GITHUB_STEP_SUMMARY"
+          printf 'Actual site publication remains exclusively in site-first-scheduled-release.\n' >> "$GITHUB_STEP_SUMMARY"
