@@ -2,10 +2,17 @@ name = "hpii-admin-gateway"
 main = "src/index.mjs"
 compatibility_date = "2026-11-17"
 workers_dev = true
+preview_urls = false
+
+# Keep runtime bindings entered in Cloudflare across Git-based deploys.
+keep_vars = true
 
 [vars]
 ADMIN_ORIGIN = "https://iipike.ru"
+BACKEND_ORIGIN = "https://hpii-admin-gateway.svuktablet.workers.dev"
 ALLOWED_GITHUB_USER_ID = "284211090"
+GITHUB_CLIENT_ID = "Ov23litFepGCBhLtRCdx"
 
-# Set BACKEND_ORIGIN to the actual https://<worker>.<account>.workers.dev URL,
-# and the remaining secrets through Cloudflare (never commit values).
+# Secrets are configured ONLY under Cloudflare Worker Runtime variables:
+# GITHUB_CLIENT_SECRET, SESSION_SIGNING_KEY, GITHUB_REPO_TOKEN
+# Never commit secret values or paste them into Build variables.
