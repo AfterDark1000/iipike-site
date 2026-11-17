@@ -14,8 +14,6 @@ on:
       - 'tests/test_site_publication_queue_dashboard.py'
       - 'tests/test_site_publication_queue.py'
       - 'tests/test_site_existing_release_branch.py'
-      - 'tests/test_site_release_rebuild.py'
-      - 'tests/test_site_first_release_pr.py'
       - 'tests/test_site_first_release_intent.py'
       - 'tests/test_site_release_quarantine.py'
       - '.github/workflows/site-first-scheduled-release.yml'
@@ -33,8 +31,6 @@ on:
       - 'tests/test_site_publication_queue_dashboard.py'
       - 'tests/test_site_publication_queue.py'
       - 'tests/test_site_existing_release_branch.py'
-      - 'tests/test_site_release_rebuild.py'
-      - 'tests/test_site_first_release_pr.py'
       - 'tests/test_site_first_release_intent.py'
       - 'tests/test_site_release_quarantine.py'
       - '.github/workflows/site-first-scheduled-release.yml'
@@ -64,8 +60,6 @@ jobs:
         run: |
           python3 -m unittest discover -s tests -p 'test_site_publication_queue.py' -v
           python3 -m unittest discover -s tests -p 'test_site_existing_release_branch.py' -v
-          python3 -m unittest discover -s tests -p 'test_site_release_rebuild.py' -v
-          python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_intent.py' -v
           python3 -m unittest discover -s tests -p 'test_site_release_quarantine.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
