@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 1 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 140
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 141
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **16.11.2026 21:45 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **17.11.2026 07:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Claude за 8 часов сделал шутер из одного предложения](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/claude-saltline-shooter-eight-hours-20261109.json) | 🌙 Ночная пауза | **Не ранее 17.11.2026 07:07 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
+| — | Готовых к выбору материалов нет | — | — | — |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Claude за 8 часов сделал шутер из одного предложения](https://iipike.ru/articles/claude-saltline-shooter-eight-hours-20261109/) | 17.11.2026 07:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
 | [ИИ-певица забрала четыре награды на первой премии для нейросетей](https://iipike.ru/articles/xania-monet-ai-music-awards-20261113/) | 16.11.2026 21:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xania-monet-ai-music-awards-20261113.webp) |
 | [Учёные научили холодильник скучать, а цветок — обижаться](https://iipike.ru/articles/cmu-oats-ai-tamagotchi-objects-20261115/) | 16.11.2026 20:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
 | [Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей](https://iipike.ru/articles/cursor-fireworks-key-incident-20261113/) | 16.11.2026 19:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cursor-fireworks-key-incident-20261113.webp) |
