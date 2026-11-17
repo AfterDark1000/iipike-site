@@ -21,6 +21,38 @@ ILLUSTRATION = re.compile(r"^editorial_inbox/illustrations/([a-z0-9]+(?:-[a-z0-9
 STABLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 IMAGE_EXTS = ("webp", "png", "jpg", "jpeg")
 GH_REPO = "AfterDark1000/iipike-site"
+MAX_AUTO_REBUILDS = 3  # No delays; each attempt uses fresh main and full tests.
+# A changed publication index or publisher implementation requires a NEW
+# scheduler cycle, not a retry with stale selection or loaded Python code.
+RETRY_BLOCKING_PATHS = (
+    "news.json", "data/entity_registry.json",
+    "scripts/site_first_release_pr.py", "scripts/site_publication_queue.py",
+    "scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
+    ".github/workflows/site-first-scheduled-release.yml",
+)
+
+
+class MainMovedDuringRelease(ValueError):
+    """Main changed in a way safe to re-stage and validate from scratch."""
+
+
+def classify_main_drift(base_sha, remote_sha):
+    """Only unrelated fast-forward updates may trigger a transparent rebuild.
+
+    Never retry over a rewritten main, a new site publication, or altered
+    publisher/validator code. Retrying a site publication would bypass the
+    queue's one-hour spacing, even if the Git merge itself were technically safe.
+    """
+    git("merge-base", "--is-ancestor", base_sha, remote_sha)
+    sensitive = git("diff", "--name-only", f"{base_sha}..{remote_sha}",
+                    "--", *RETRY_BLOCKING_PATHS).stdout.splitlines()
+    if sensitive:
+        raise ValueError("Main moved during editorial release; publishing-sensitive "
+                         "changes require next scheduler cycle: " + ", ".join(sensitive))
+    raise MainMovedDuringRelease(
+        "Main moved during editorial release; safe to rebuild from new main")
+
+
 
 
 def changed_ids(event):
@@ -237,10 +269,22 @@ def auto_publish_site(story_id, base_sha, source_paths):
     git("fetch", "origin", "main")
     remote_head = git("rev-parse", "origin/main").stdout.strip()
     if remote_head != base_sha:
-        raise ValueError("Main moved during editorial release; refusing to overwrite it")
+        classify_main_drift(base_sha, remote_head)
     # A normal non-forced push of a single reviewed commit. Fails closed if
     # branch protection or intervening updates disallow a fast-forward.
-    git("push", "origin", "HEAD:refs/heads/main")
+    try:
+        git("push", "origin", "HEAD:refs/heads/main")
+    except subprocess.CalledProcessError as error:
+        # Catch a race between the fetch above and Git push. Auth/permission
+        # failures are NEVER retried as concurrent writes.
+        reason = (error.stderr or "").lower()
+        if "fetch first" not in reason and "non-fast-forward" not in reason:
+            raise
+        git("fetch", "origin", "main")
+        fresh = git("rev-parse", "origin/main").stdout.strip()
+        if fresh != base_sha:
+            classify_main_drift(base_sha, fresh)
+        raise
     print("AUTO_RELEASE_MAIN_UPDATED: " + story_id, flush=True)
     # Explicit Pages build is essential: GITHUB_TOKEN-originated pushes do not
     # trigger most additional workflows or the ordinary automatic Pages build.
@@ -253,45 +297,73 @@ def release_one(story_id, ref):
     paths = pending_paths(ref, story_id)
     if paths is None:
         return "waiting"
-    branch = "site-first/release/" + story_id
-    exists = git("ls-remote", "--heads", "origin", "refs/heads/" + branch).stdout
-    if exists.strip():
-        print(f"EXISTING_RELEASE_REVIEW_REQUIRED: {story_id} {branch}", flush=True)
+    auto = os.environ.get("HPII_SITE_FIRST_AUTOPUBLISH") == "1"
+    canonical_branch = "site-first/release/" + story_id
+    existing = git("ls-remote", "--heads", "origin",
+                   "refs/heads/" + canonical_branch).stdout.strip()
+    if existing and not auto:
+        print(f"EXISTING_RELEASE_REVIEW_REQUIRED: {story_id} {canonical_branch}", flush=True)
         return "exists"
-    # The live main branch is refreshed before every candidate. Never derive a
-    # release branch from the potentially outdated editorial-intake site tree.
-    git("fetch", "origin", "main")
-    if exists_at("origin/main", f"articles/{story_id}/index.html"):
-        print(f"ALREADY_PUBLISHED: {story_id}", flush=True)
-        return "published"
-    base_sha = git("rev-parse", "origin/main").stdout.strip()
-    git("switch", "--detach", "origin/main")
-    git("switch", "-c", branch)
-    for path in paths:
-        transfer_blob(ref, path)
-    # This stage is the FIRST source of site publication timestamp; not the
-    # approval day or the Dzen publication day.
-    run_checked(sys.executable, "scripts/site_first_inbox.py", story_id, "--stage", "--publish")
-    # Keep this integration secondary: VK RSS must not block a site publication.
-    vk_result = subprocess.run([sys.executable, "scripts/build_vk_rss.py"], check=False)
-    if vk_result.returncode != 0:
-        print("::warning::VK_RSS_GENERATION_FAILED: site publication continues; "
-              "inspect VK RSS separately", flush=True)
-    for cmd in (
-        ("scripts/build_rubrics.py", "--check"),
-        ("scripts/build_topics.py", "--check"),
-        ("scripts/build_home_published.py", "--check"),
-        ("scripts/build_sitemap.py", "--check")
-    ):
-        run_checked(sys.executable, *cmd)
-    run_checked(sys.executable, "-m", "unittest", "discover",
-                "-s", "tests", "-p", "test_*.py", "-q")
-    files = proposed_changes()
-    git("add", "--", *files)
-    git("commit", "-m", f"site-first: prepare reviewed story and artwork {story_id}")
-    git("push", "origin", "HEAD:refs/heads/" + branch)
-    if os.environ.get("HPII_SITE_FIRST_AUTOPUBLISH") == "1":
-        auto_publish_site(story_id, base_sha, paths)
+    if existing:
+        # This branch may contain a complete but stale release, e.g. #165.
+        # Keep it intact. Never merge its generated RSS/indexes onto new main.
+        print(f"::warning::EXISTING_RELEASE_REBUILD_FROM_SOURCE: {story_id} "
+              f"{canonical_branch}", flush=True)
+    if auto:
+        run_id = os.environ.get("GITHUB_RUN_ID", "")
+        run_attempt = os.environ.get("GITHUB_RUN_ATTEMPT", "1")
+        if not (re.fullmatch(r"[1-9][0-9]{0,19}", run_id)
+                and re.fullmatch(r"[1-9][0-9]{0,5}", run_attempt)):
+            raise ValueError("Automatic release retry requires valid GitHub run identity")
+    attempts = MAX_AUTO_REBUILDS if auto else 1
+    for attempt in range(1, attempts + 1):
+        # Fetch a fresh, independently validated publication base EACH time.
+        git("fetch", "origin", "main")
+        if exists_at("origin/main", f"articles/{story_id}/index.html"):
+            print(f"ALREADY_PUBLISHED: {story_id}", flush=True)
+            return "published"
+        base_sha = git("rev-parse", "origin/main").stdout.strip()
+        branch = (canonical_branch if attempt == 1 and not existing else
+                  f"site-first/retry/{story_id}/{run_id}-{run_attempt}-{attempt}")
+        git("switch", "--detach", "origin/main")
+        git("switch", "-c", branch)
+        for path in paths:
+            transfer_blob(ref, path)
+        # Every retry regenerates from the exact approved editor sources.
+        # Rebase/cherry-pick of old RSS or news.json is prohibited.
+        run_checked(sys.executable, "scripts/site_first_inbox.py", story_id,
+                    "--stage", "--publish")
+        vk_result = subprocess.run([sys.executable, "scripts/build_vk_rss.py"], check=False)
+        if vk_result.returncode != 0:
+            print("::warning::VK_RSS_GENERATION_FAILED: site publication continues; "
+                  "inspect VK RSS separately", flush=True)
+        for cmd in (
+            ("scripts/build_rubrics.py", "--check"),
+            ("scripts/build_topics.py", "--check"),
+            ("scripts/build_home_published.py", "--check"),
+            ("scripts/build_sitemap.py", "--check"),
+        ):
+            run_checked(sys.executable, *cmd)
+        run_checked(sys.executable, "-m", "unittest", "discover",
+                    "-s", "tests", "-p", "test_*.py", "-q")
+        files = proposed_changes()
+        git("add", "--", *files)
+        git("commit", "-m", f"site-first: prepare reviewed story and artwork {story_id}")
+        # Preserve each validated attempt, without force pushing a preexisting
+        # release branch or quietly deleting it.
+        git("push", "origin", "HEAD:refs/heads/" + branch)
+        if not auto:
+            break
+        try:
+            auto_publish_site(story_id, base_sha, paths)
+        except MainMovedDuringRelease as error:
+            print("::warning::SITE_RELEASE_MAIN_DRIFT_REBUILD:", story_id,
+                  f"attempt={attempt}/{attempts}", str(error), flush=True)
+            if attempt < attempts:
+                continue
+            print("::warning::SITE_RELEASE_MAIN_DRIFT_DEFERRED:", story_id,
+                  "no release confirmed; next story may proceed", flush=True)
+            return "deferred_moving_main"
         return "auto_published_rebuild_requested"
     source = json.loads(Path(paths[0]).read_text(encoding="utf-8"))
     title = source["title"].replace("\n", " ").strip()[:92]
