@@ -45,6 +45,16 @@ export class HpiiAdminAuth {
     return data;
   }
   async session(){return this.fetchApi("/api/session")}
+  async reviewCover(article,cover,action,note="") {
+    return this.fetchApi("/api/cover-review",{
+      method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({
+        article_id:article.article_id,revision:article.revision,
+        text_updated_at:article.updated_at,cover_version:1,
+        image_blob_sha:cover.image_blob_sha,action,note
+      })
+    });
+  }
   async uploadCover(article,file,headline,concept) {
     const data=new FormData();
     data.set("article_id",article.article_id);
