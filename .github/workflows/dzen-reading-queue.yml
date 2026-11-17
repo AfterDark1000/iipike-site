@@ -48,11 +48,11 @@ jobs:
           assert "github.event_name != 'pull_request'" in s
           assert "async function generateFromFreshHead()" in s
           assert "await generateFromFreshHead()" in s
-          start=s.index("          script: |\\n")+len("          script: |\\n")
+          start=s.index("          script: |\n")+len("          script: |\n")
           raw=s[start:].splitlines()
           assert all(not line.strip() or line.startswith("            ") for line in raw)
           Path('/tmp/hpii-dzen-reading-workflow.js').write_text(
-              "\\n".join(line[12:] for line in raw)+"\\n",encoding='utf-8')
+              "\n".join(line[12:] for line in raw)+"\n",encoding='utf-8')
           PY
           node --check /tmp/hpii-dzen-reading-workflow.js
           node --test tests/test_dzen_crosslink_rewrite.cjs
