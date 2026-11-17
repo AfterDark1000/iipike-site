@@ -41,7 +41,7 @@ function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"?
 function link(parent,label,url){const href=safeUrl(url);if(!href)return;const a=add(parent,"a",label);a.href=href;a.target="_blank";a.rel="noopener noreferrer"}
 function inline(parent,value){
   // Safe Markdown elements; no innerHTML or execution of source markup.
-  const pat=/\\[([^\\]]+)\\]\\((https:\\/\\/[^)\\s]+)\\)|\\*\\*([^*]+)\\*\\*|\\*([^*]+)\\*|`([^`]+)`/g;
+  const pat=/\[([^\]]+)\]\((https:\/\/[^)\s]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`/g;
   let pos=0,m;
   while((m=pat.exec(value))!==null){
     if(m.index>pos)parent.appendChild(document.createTextNode(value.slice(pos,m.index)));
@@ -54,17 +54,17 @@ function inline(parent,value){
   if(pos<value.length)parent.appendChild(document.createTextNode(value.slice(pos)));
 }
 function rich(parent,content){
- const lines=content.replace(/\\r\\n/g,"\\n").split("\\n");
+ const lines=content.replace(/\r\n/g,"\n").split("\n");
  let para=[],list=null,quote=[];
  function flush(){if(para.length){inline(add(parent,"p"),para.join(" "));para=[]}
    if(quote.length){inline(add(parent,"blockquote"),quote.join(" "));quote=[]}list=null}
  lines.forEach(line=>{
    if(!line.trim()){flush();return}
-   const heading=/^(#{2,4})\\s+(.+)$/.exec(line);
+   const heading=/^(#{2,4})\s+(.+)$/.exec(line);
    if(heading){flush();inline(add(parent,"h"+heading[1].length),heading[2]);return}
-   const bullet=/^[-*]\\s+(.+)$/.exec(line);
+   const bullet=/^[-*]\s+(.+)$/.exec(line);
    if(bullet){if(para.length||quote.length)flush();if(!list)list=add(parent,"ul");inline(add(list,"li"),bullet[1]);return}
-   const quoted=/^>\\s?(.*)$/.exec(line);
+   const quoted=/^>\s?(.*)$/.exec(line);
    if(quoted){if(para.length||list)flush();quote.push(quoted[1]);return}
    if(list||quote.length)flush();
    para.push(line.trim());
@@ -108,7 +108,7 @@ function draw(doc){
  if(doc.editor_notes?.length)details(detail,"Примечания редакции",d=>doc.editor_notes.forEach(x=>paragraph(d,typeof x==="string"?x:JSON.stringify(x))));
  const actions=add(detail,"div",undefined,"actionbar");
  const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
- const status=add(detail,"p","Ни одно решение пока не отправлено.","muted");
+ const status=add(detail,"p","Проверяю сохранённые решения…","muted");
  [["Утвердить текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
   const b=add(actions,"button",label);
   b.addEventListener("click",()=>{
@@ -121,6 +121,16 @@ function draw(doc){
   
   });
  });
+ // A saved decision is authoritative. Never present local clicks as confirmed.
+ const decisionFile="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json";
+ fetch(decisionFile+"?v="+Date.now(),{cache:"no-store"}).then(async r=>{
+  if(r.status===404){status.textContent="Решение ещё не записано.";return}
+  if(!r.ok)throw Error("HTTP "+r.status);
+  const saved=await r.json();
+  if(saved.article_id!==doc.article_id||saved.revision!==doc.revision)throw Error("Неверный документ решения");
+  status.textContent="Записано в GitHub: "+saved.status+" · Issue #"+saved.issue_number;
+  actions.querySelectorAll("button").forEach(b=>b.disabled=true);
+ }).catch(e=>{status.textContent="Не удалось проверить решения GitHub: "+e.message+"; перед утверждением обнови страницу." ; actions.querySelectorAll("button").forEach(b=>b.disabled=true)});
  const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
 }
 async function choose(name){
