@@ -2,19 +2,19 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 3 · **Ждут интервал:** 0 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 143
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 144
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **17.11.2026 10:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **17.11.2026 13:55 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ США и Россия тормозят договор об оружии, которое само выбирает цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/un-autonomous-weapons-us-russia-20261117.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 13:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/un-autonomous-weapons-us-russia-20261117.webp) |
-| **2** | [⚡ Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/recraft-v4-1-flash-v2-20261113.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 14:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/recraft-v4-1-flash-v2-20261113.webp) |
-| **3** | [⚡ Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/alibaba-qwen4-max-cybersecurity-20261116.json) | ⚡ Срочная очередь — готова | **Не ранее 17.11.2026 15:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-cybersecurity-20261116.webp) |
+| **1** | [⚡ США и Россия тормозят договор об оружии, которое само выбирает цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/un-autonomous-weapons-us-russia-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 17.11.2026 15:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/un-autonomous-weapons-us-russia-20261117.webp) |
+| **2** | [⚡ Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/recraft-v4-1-flash-v2-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 17.11.2026 16:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/recraft-v4-1-flash-v2-20261113.webp) |
+| **3** | [⚡ Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/alibaba-qwen4-max-cybersecurity-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 17.11.2026 17:07 (Усть-Катав)**; пауза до 17.11.2026 14:55 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/alibaba-qwen4-max-cybersecurity-20261116.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -26,6 +26,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Маск и 180 тысяч человек требуют вернуть Хуанга в NVIDIA, но совет директоров против](https://iipike.ru/articles/nvidia-jensen-huang-return-petition-20261116/) | 17.11.2026 13:55 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-jensen-huang-return-petition-20261116.webp) |
 | [Конкуренту NVIDIA дали $720 млн. Хотя его чипов ещё нет в продаже](https://iipike.ru/articles/fractile-ai-chips-720m-funding-20261111/) | 17.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fractile-ai-chips-720m-funding-20261111.webp) |
 | [Овца на крыше принесла фильму приз в $500 тысяч](https://iipike.ru/articles/listen-to-meh-higgsfield-film-prize-20261110/) | 17.11.2026 08:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/listen-to-meh-higgsfield-film-prize-20261110.webp) |
 | [Claude за 8 часов сделал шутер из одного предложения](https://iipike.ru/articles/claude-saltline-shooter-eight-hours-20261109/) | 17.11.2026 07:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
