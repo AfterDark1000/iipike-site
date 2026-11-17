@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "action": "claim_ordinary",
+  "worker": "hpii-auto-editor"
+}
