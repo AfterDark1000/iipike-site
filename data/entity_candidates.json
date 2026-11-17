@@ -949,6 +949,30 @@
           "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
         }
       ]
+    },
+    {
+      "key": "childlight",
+      "name": "Childlight Global Child Safety Institute",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+        }
+      ]
+    },
+    {
+      "key": "ncmec",
+      "name": "National Center for Missing & Exploited Children (NCMEC)",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+        }
+      ]
     }
   ],
   "products": [
@@ -1863,6 +1887,19 @@
         {
           "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
           "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
+        }
+      ]
+    },
+    {
+      "key": "cybertipline",
+      "name": "CyberTipline",
+      "company": "ncmec",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
         }
       ]
     }
