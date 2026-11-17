@@ -1786,6 +1786,32 @@
           "source_url": "https://awards.thesiqa.com/nominees"
         }
       ]
+    },
+    {
+      "key": "saltline",
+      "name": "Saltline",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "claude-saltline-shooter-eight-hours-20261109",
+          "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
+        }
+      ]
+    },
+    {
+      "key": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "company": "anthropic",
+      "status": "candidate",
+      "first_seen": "2026-11-17",
+      "evidence": [
+        {
+          "article_id": "claude-saltline-shooter-eight-hours-20261109",
+          "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
+        }
+      ]
     }
   ]
 }
