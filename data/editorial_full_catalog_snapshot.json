@@ -1,11 +1,51 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "f6d997c3dedaae8498897fccc01241b9efb659cc",
-  "source_blob_sha": "882040c134e932a77e36eafcded0f5a8514a8bc8",
+  "source_commit": "6a4ebf2e7dad2a229c2eac3b1510d9045fb49273",
+  "source_blob_sha": "3750d80d1e4fca9887676a2484c92a04daaacd5e",
   "snapshot_date": "2026-11-17",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afc3ca78799425881a62b05",
+      "title": "Маск уволил 60 сотрудников Grok Imagine",
+      "dzen_url": "https://dzen.ru/a/avw8p4eZQliBpisF",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В компании Илона Маска уволили 60 сотрудников Grok Imagine — нейросети для генерации изображений и видео. Как сообщило 13 ноября The Information, команда лишилась большей части разработчиков. В подразделении SpaceX Super Intelligence осталось несколько человек, которые поддерживают работу сервиса. Теперь компания сосредоточится на инструментах для программирования и ИИ-агенте Grok Bot, способном самостоятельно выполн",
+      "published_at_utc": "2026-11-17T16:32:31+00:00"
+    },
+    {
+      "dzen_id": "6afc3c70e4152a6870d45bdb",
+      "title": "ИИ нашёл на обычной ЭКГ признак риска внезапной смерти",
+      "dzen_url": "https://dzen.ru/a/avw8cOQVKmhw1Fvb",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Учёные Калифорнийского университета в Беркли обнаружили с помощью искусственного интеллекта ранее неизвестную особенность обычной электрокардиограммы. Она связана с повышенным риском внезапной сердечной смерти — состояния, при котором сердце перестаёт нормально работать из-за опасного нарушения электрических сигналов. Исследование вышло в журнале Nature 24 июня 2026 года. В ноябре оно снова привлекло внимание после п",
+      "published_at_utc": "2026-11-17T15:01:55+00:00"
+    },
+    {
+      "dzen_id": "6afc3c38c324ce2f405a396a",
+      "title": "Runway открыла ИИ для роботов, обученный на обычных видео",
+      "dzen_url": "https://dzen.ru/a/avw8OMMkzi9AWjlq",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Компания Runway, известная нейросетями для генерации видео, 11 ноября выпустила Praxis-1 — открытую модель для управления настоящими роботами. Разработчики могут скачать её веса и программный код, чтобы адаптировать систему под собственное оборудование. Впервые Praxis-1 представили ещё в сентябре. Тогда доступ получили лишь избранные партнёры. Теперь модель опубликована для всех желающих по лицензии Apache 2.0, разре",
+      "published_at_utc": "2026-11-17T13:01:58+00:00"
+    },
+    {
+      "dzen_id": "6afc3bfe5d30a00d593acf22",
+      "title": "llama.cpp дошла до версии 1.0 и меняет правила обновлений",
+      "dzen_url": "https://dzen.ru/a/avw7_l0woA1ZOs8i",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Разработчики llama.cpp 13 ноября выпустили версию 1.0.0 и объявили новые правила обновления проекта. Теперь изменения, нарушающие совместимость с другими программами, будут отражаться в номере версии. Для инструмента, на котором построено множество приложений с локальным искусственным интеллектом, это существенная перемена. llama.cpp — открытый программный движок, позволяющий запускать нейросети на собственном компью",
+      "published_at_utc": "2026-11-17T11:36:03+00:00"
+    },
     {
       "dzen_id": "6afa9cbf6335b45bbe217d58",
       "title": "Agile Robots привлекла $500 млн на производство роботов",
