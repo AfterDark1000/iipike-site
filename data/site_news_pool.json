@@ -3265,12 +3265,12 @@
       "summary": "Исследование о податливости моделей возражениям пользователя.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": "2026-11-17T11:27:20.849Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "17.11.2026: редактор №17 проверил первоисточники UNESCO 16.11 https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows и UCL 16.11 https://www.ucl.ac.uk/news/2026/nov/ai-systems-are-easy-pressure-giving-false-climate-information. Доклад Can We Trust AI on Climate? 15 моделей в sycophancy тесте, ~80% ошибочных уступок уже при первом возражении (не 80% всех ответов); снижение точности на 31–35 п.п.; общие тесты до 33 моделей, 13 языков, политика взаимодействия двух мер 33.8% vs 33.3% случайно. Смежная публикация о «режиме подхалима» во Франции https://dzen.ru/a/avaX8O0yqTgYV0ud — естественная перелинковка; №95 про климатический след NVIDIA не объединять (другая тема). Подготовлены Дзен, Threads/X/VK и прямая цитата ЮНЕСКО на утверждение, очереди не изменены."
+      "closed_at": "2026-11-17T11:34:39.221Z",
+      "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+      "note": "17.11.2026: редактор №17 проверил первоисточники UNESCO 16.11 https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows и UCL 16.11 https://www.ucl.ac.uk/news/2026/nov/ai-systems-are-easy-pressure-giving-false-climate-information. Доклад Can We Trust AI on Climate? 15 моделей в sycophancy тесте, ~80% ошибочных уступок уже при первом возражении (не 80% всех ответов); снижение точности на 31–35 п.п.; общие тесты до 33 моделей, 13 языков, политика взаимодействия двух мер 33.8% vs 33.3% случайно. Смежная публикация о «режиме подхалима» во Франции https://dzen.ru/a/avaX8O0yqTgYV0ud — естественная перелинковка; №95 про климатический след NVIDIA не объединять (другая тема). Подготовлены Дзен, Threads/X/VK и прямая цитата ЮНЕСКО на утверждение, очереди не изменены.\n17.11.2026: главред утвердил исправленную версию без штампованных подводок; X с @UNESCO и @UCL. Полный Markdown, цитата, перелинковка на Францию — editorial-intake; Threads/X approved; VK отдельно. Кандидаты UNESCO и UCL записаны main, очередь сайта приоритетная, обложка ожидается."
     },
     {
       "id": "n-dff41c38a4e0c818",
