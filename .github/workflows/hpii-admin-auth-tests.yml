@@ -1,0 +1,30 @@
+name: HPII — admin OAuth gateway offline tests (NO DEPLOY)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'admin-auth-worker/**'
+      - 'admin/auth/hpii-auth-client.js'
+      - '.github/workflows/hpii-admin-auth-tests.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check syntax
+        run: |
+          node --check admin-auth-worker/src/index.mjs
+          node --check admin/auth/hpii-auth-client.js
+      - name: Run mocked GitHub OAuth and action tests
+        run: node --test admin-auth-worker/tests/*.test.mjs
