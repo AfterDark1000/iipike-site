@@ -19,7 +19,20 @@ details{margin:12px 0;border-top:1px solid #e0e5e2;padding-top:10px}summary{curs
 .tag{font-size:12px;background:#e3f2ec;padding:3px 8px;border-radius:5px;display:inline-block}
 #error{color:#a3342b}#reviewStatus{color:#475f55;font-size:13px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:14px}}
-</style></head><body>
+</style><style id="hpii-auth-style">
+html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
+#hpii-login-gate[hidden]{display:none!important}
+#hpii-login-gate{min-height:100vh;display:grid;place-items:center;padding:24px;background:#f4f1e9;color:#20303a;font:16px/1.5 system-ui,sans-serif}
+.hpii-login-card{background:#fffefb;border:1px solid #d9dfdc;border-radius:16px;padding:26px;max-width:480px;width:100%;box-shadow:0 5px 25px #1b38351a}
+.hpii-login-card h1{font-size:27px;margin:0 0 9px}
+.hpii-login-card p{margin:9px 0 17px}
+#hpii-login-message{padding:12px;border-radius:8px;background:#e6f3ee;overflow-wrap:anywhere}
+#hpii-login-button{background:#146e65;color:white;padding:11px 18px;border:0;border-radius:9px;font:inherit;cursor:pointer}
+#hpii-login-button:disabled{opacity:.55;cursor:default}
+.hpii-login-help{font-size:12px;color:#5f6c71}
+</style>
+<script type="module" src="/admin/auth/gate.js"></script>
+</head><body>
 <header><a href="/admin/">← Пульт публикаций</a><h1>Автономный редактор</h1><p>Чтение черновиков и подготовка решения главреда</p></header>
 <main>
 <div class="notice"><strong>Не опубликовано и не утверждено.</strong> Страница общедоступна по ссылке. Решение оформляется через вход в GitHub и подтверждение заявки. Только владелец репозитория может сохранить решение; публикацию это не запускает.</div>
@@ -157,6 +170,6 @@ async function load(){
   choose(names.includes(selected)?selected:names[0]);
  }catch(e){list.replaceChildren();add(list,"p","Нет доступа к списку: "+e.message,"muted");detail.replaceChildren()}
 }
-document.getElementById("reload").addEventListener("click",load);load();
+document.getElementById("reload").addEventListener("click",load);window.addEventListener('hpii-admin-authorized',load);
 })();
 </script></body></html>
