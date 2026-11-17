@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>Автономный редактор — ХПИИ</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#20303a;background:#f4f1e9}*{box-sizing:border-box}
+body{margin:0;line-height:1.5}header{background:#15232b;color:#fff;padding:22px max(18px,calc((100vw - 1100px)/2))}
+header a{color:#bde9dd}h1{margin:5px 0;font-size:clamp(25px,4vw,38px)}header p{margin:4px 0;color:#cad6d4}
+main{max-width:1100px;margin:24px auto;padding:0 18px 50px}a{color:#126a73}button{font:inherit;cursor:pointer;border:1px solid #b6c7c5;background:#fff;border-radius:9px;padding:9px 13px}
+button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #d49c3d;outline-offset:2px}
+.grid{display:grid;grid-template-columns:minmax(230px,340px) minmax(0,1fr);gap:18px}.card{background:#fffefb;border:1px solid #d9dfdc;border-radius:14px;padding:18px;min-width:0}
+.notice{background:#fff5de;border-left:4px solid #ba8330;padding:13px;border-radius:5px;margin-bottom:18px}
+#list button{display:block;text-align:left;width:100%;margin:8px 0;overflow-wrap:anywhere}
+#list button[aria-current=true]{background:#e3f2ec;border-color:#18816d}small,.muted{color:#65747b}
+h2{margin:0 0 12px;font-size:22px}h3{margin:23px 0 8px}#story{overflow-wrap:anywhere}
+#story p{margin:12px 0}#story a{overflow-wrap:anywhere}#story blockquote{border-left:3px solid #168073;margin-left:0;padding-left:15px}
+.actionbar{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}textarea{width:100%;min-height:95px;border:1px solid #b6c7c5;border-radius:8px;padding:10px;font:inherit}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f4;padding:12px;border-radius:8px}
+details{margin:12px 0;border-top:1px solid #e0e5e2;padding-top:10px}summary{cursor:pointer;font-weight:650}
+.tag{font-size:12px;background:#e3f2ec;padding:3px 8px;border-radius:5px;display:inline-block}
+#error{color:#a3342b}#reviewStatus{color:#475f55;font-size:13px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.card{padding:14px}}
+</style></head><body>
+<header><a href="/admin/">← Пульт публикаций</a><h1>Автономный редактор</h1><p>Чтение черновиков и подготовка решения главреда</p></header>
+<main>
+<div class="notice"><strong>Не опубликовано и не утверждено.</strong> Страница общедоступна по ссылке. Кнопки только формируют решение для передачи в чат, ничего не записывают в GitHub и не запускают публикацию.</div>
+<div class="grid"><aside class="card"><h2>На проверке</h2><div id="list">Загружаю список…</div><button id="reload">↻ Обновить список</button><p class="muted" id="loaded"></p></aside>
+<section class="card" id="detail" aria-live="polite"><h2>Выбери материал слева</h2></section></div>
+<p class="muted">Источник: ветка <a href="https://github.com/AfterDark1000/iipike-site/tree/editorial-intake/editorial_inbox/auto_drafts">editorial-intake / auto_drafts</a>. При недоступности GitHub данные не заменяются образцами.</p>
+</main>
+<script>
+(function(){
+"use strict";
+const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/editorial_inbox/auto_drafts?ref=editorial-intake";
+const raw="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_drafts/";
+const list=document.getElementById("list"),detail=document.getElementById("detail");
+let selected="", names=[];
+function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n}
+function add(parent,tag,text,cls){return parent.appendChild(node(tag,text,cls))}
+function paragraph(parent,text){add(parent,"p",text)}
+function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"?u.href:null}catch(_){return null}}
+function link(parent,label,url){const href=safeUrl(url);if(!href)return;const a=add(parent,"a",label);a.href=href;a.target="_blank";a.rel="noopener noreferrer"}
+function rich(parent,content){
+  // Minimal Markdown viewer: all content is inserted as text, never HTML.
+  content.split(/\n\s*\n/).forEach(block=>{
+    const lines=block.trim().split("\n");if(!block.trim())return;
+    const match=/^(#{2,3})\s+(.+)$/.exec(lines[0]);
+    if(match){add(parent,match[1].length===2?"h3":"h4",match[2]);if(lines.length>1)paragraph(parent,lines.slice(1).join(" "));return}
+    if(lines.every(x=>/^> ?/.test(x))){add(parent,"blockquote",lines.map(x=>x.replace(/^> ?/,"")).join(" "));return}
+    if(lines.every(x=>/^[-*] /.test(x))){const ul=add(parent,"ul");lines.forEach(x=>add(ul,"li",x.slice(2)));return}
+    paragraph(parent,lines.join(" "));
+  });
+}
+function details(parent,label,body){const d=add(parent,"details"),s=add(d,"summary",label);body(d);return d}
+function field(parent,label,value){if(value===undefined||value===null||value==="")return;const p=add(parent,"p");add(p,"strong",label+": ");p.appendChild(document.createTextNode(String(value)))}
+function decision(doc,action,note){return "ХПИИ — решение по автодрафту\nID: "+doc.article_id+"\nРевизия: "+doc.revision+"\nДействие: "+action+(note?"\nЗамечания: "+note:"")+"\nПроверь актуальную ревизию в GitHub перед изменением статуса. Это текст решения, а не исполненная команда."}
+function draw(doc){
+ detail.replaceChildren();
+ const c=doc.content||{};add(detail,"span",doc.status==="ready_for_review"?"Готов к проверке":doc.status||"Неизвестный статус","tag");
+ add(detail,"h2",c.title||doc.article_id);
+ field(detail,"ID",doc.article_id);field(detail,"Пул",doc.pool_sequence);field(detail,"Ревизия",doc.revision);
+ field(detail,"Дата события",c.event_date);field(detail,"Рубрика",c.section||c.rubric);field(detail,"Обновлён",doc.updated_at);
+ field(detail,"Обложка","В черновике есть только бриф — готовая обложка не подтверждена");
+ if(c.summary)paragraph(detail,c.summary);
+ add(detail,"h3","Статья для сайта и Дзена");rich(detail,c.article_markdown||"Текст пока отсутствует");
+ details(detail,"Перелинковка",d=>{
+  field(d,"ID ссылок Дзена",(c.related_dzen_ids||[]).join(", ")||"Нет");
+  field(d,"Ссылки сайта",Object.keys(c.site_crosslinks||{}).length?JSON.stringify(c.site_crosslinks):"Не заданы в JSON");
+  paragraph(d,"Проверь преобразование ссылок для сайта отдельно: готовность черновика не подтверждает результат сборки.");
+ });
+ details(detail,"Источники и фактчекинг",d=>{
+  (doc.research?.sources||[]).forEach(x=>{const p=add(d,"p");link(p,x.title||x.url,x.url)});
+  (doc.research?.fact_checks||[]).forEach(x=>add(d,"pre",JSON.stringify(x,null,2)));
+  if(doc.research?.notes)paragraph(d,doc.research.notes);
+ });
+ details(detail,"Посты для соцсетей",d=>{
+  [["Threads",c.threads_text],["X",c.x_text],["ВКонтакте",((c.vk_title||"")+"\n"+(c.vk_summary||"")).trim()]].forEach(pair=>{add(d,"h3",pair[0]);add(d,"pre",pair[1]||"Не подготовлен")});
+ });
+ details(detail,"Справочник и обложка",d=>{
+  field(d,"Компании",(c.companies||[]).join(", "));field(d,"Продукты",(c.products||[]).join(", "));
+  field(d,"Кандидаты",JSON.stringify(doc.entity_candidates||{}));
+  field(d,"Бриф",JSON.stringify(doc.cover_brief||{},null,2));
+ });
+ if(doc.editor_notes?.length)details(detail,"Примечания редакции",d=>doc.editor_notes.forEach(x=>paragraph(d,typeof x==="string"?x:JSON.stringify(x))));
+ const actions=add(detail,"div",undefined,"actionbar");
+ const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
+ const status=add(detail,"p","Ни одно решение пока не отправлено.","muted");
+ [["Берём текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
+  const b=add(actions,"button",label);
+  b.addEventListener("click",async()=>{
+   if(action!=="approve_text"&&!note.value.trim()){status.textContent="Для доработки или отклонения сначала напиши причину.";note.focus();return}
+   const msg=decision(doc,action,note.value.trim());
+   try{await navigator.clipboard.writeText(msg);status.textContent="Решение скопировано. Вставь его в чат ХПИИ — только там оно будет обработано."}
+   catch(_){note.value=msg;note.select();status.textContent="Буфер недоступен. Скопируй выделенный текст вручную и отправь в чат."}
+  });
+ });
+ const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
+}
+async function choose(name){
+ selected=name;Array.from(list.querySelectorAll("button")).forEach(b=>b.setAttribute("aria-current",String(b.dataset.file===name)));
+ detail.replaceChildren();add(detail,"p","Читаю черновик…");
+ try{
+  const res=await fetch(raw+encodeURIComponent(name)+"?v="+Date.now(),{cache:"no-store"});
+  if(!res.ok)throw Error("HTTP "+res.status);const doc=await res.json();
+  if(doc.article_id+".json"!==name||!doc.content||!doc.status)throw Error("Некорректный формат документа");
+  if(selected===name)draw(doc);
+ }catch(e){if(selected===name){detail.replaceChildren();add(detail,"p","Не удалось загрузить материал: "+e.message,"muted")}}
+}
+async function load(){
+ list.replaceChildren();add(list,"p","Читаю GitHub…");
+ try{
+  const res=await fetch(api+"&v="+Date.now(),{cache:"no-store"});
+  if(!res.ok)throw Error("HTTP "+res.status);const entries=await res.json();
+  if(!Array.isArray(entries))throw Error("Неверный ответ GitHub");
+  names=entries.filter(x=>x.type==="file"&&/^[a-z0-9-]+\.json$/.test(x.name)).map(x=>x.name).sort();
+  list.replaceChildren();
+  if(!names.length){paragraph(list,"В этой ветке черновиков пока нет.");detail.replaceChildren();return}
+  names.forEach(name=>{const b=add(list,"button",name.replace(/-[0-9a-f]{16}\.json$/,"").replace(/-/g," "));b.dataset.file=name;b.addEventListener("click",()=>choose(name))});
+  document.getElementById("loaded").textContent="Прочитано: "+new Date().toLocaleString("ru-RU")+" (время загрузки)";
+  choose(names.includes(selected)?selected:names[0]);
+ }catch(e){list.replaceChildren();add(list,"p","Нет доступа к списку: "+e.message,"muted");detail.replaceChildren()}
+}
+document.getElementById("reload").addEventListener("click",load);load();
+})();
+</script></body></html>
