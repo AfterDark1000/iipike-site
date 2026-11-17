@@ -1,27 +1,35 @@
 name: HPII auto cover validation (NO PUBLICATION)
 on:
-  push:
-    branches: [editorial-intake]
-    paths:
-      - 'editorial_inbox/auto_covers/**'
+  schedule:
+    - cron: '13 * * * *'
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
       - 'scripts/check_auto_cover_pilot.py'
       - '.github/workflows/hpii-auto-cover-check.yml'
       - 'docs/AUTO_COVER_ARTIST_PILOT.md'
+
 permissions:
   contents: read
+
 jobs:
   validate-cover-candidates:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 5
     steps:
-      - name: Checkout exact branch
+      - name: Checkout trusted validation code from main
         uses: actions/checkout@v4
         with:
+          ref: main
+          fetch-depth: 0
           persist-credentials: false
       - name: Compile validation
         run: python3 -m py_compile scripts/check_auto_cover_pilot.py
-      - name: Check isolated candidates
-        run: python3 scripts/check_auto_cover_pilot.py
+      - name: Validate actual editorial-intake candidate files
+        run: |
+          set -euo pipefail
+          git fetch origin editorial-intake
+          git worktree add --detach /tmp/hpii-auto-cover-intake FETCH_HEAD
+          cd /tmp/hpii-auto-cover-intake
+          python3 "$GITHUB_WORKSPACE/scripts/check_auto_cover_pilot.py"
