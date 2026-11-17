@@ -93,7 +93,7 @@ function decisionUrl(doc,action,note){
 }
 function draw(doc){
  detail.replaceChildren();
- const c=doc.content||{};add(detail,"span",doc.status==="ready_for_review"?"Готов к проверке":doc.status||"Неизвестный статус","tag");
+ const c=doc.content||{};const stateTag=add(detail,"span","Проверяю решение…","tag");
  add(detail,"h2",c.title||doc.article_id);
  field(detail,"ID",doc.article_id);field(detail,"Пул",doc.pool_sequence);field(detail,"Ревизия",doc.revision);
  field(detail,"Дата события",c.event_date);field(detail,"Рубрика",c.section||c.rubric);field(detail,"Обновлён",doc.updated_at);
@@ -123,7 +123,7 @@ function draw(doc){
  const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
  const status=add(detail,"p","Проверяю сохранённые решения…","muted");
  [["Утвердить текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
-  const b=add(actions,"button",label);
+  const b=add(actions,"button",label);b.disabled=true;
   b.addEventListener("click",async()=>{
    if(doc.status!=="ready_for_review"){status.textContent="Решения доступны только для готовых к проверке версий.";return}
    if(action!=="approve_text"&&!note.value.trim()){status.textContent="Напиши причину доработки или отклонения.";note.focus();return}
@@ -133,21 +133,21 @@ function draw(doc){
    status.textContent="Сохраняю решение через защищённый сервер…";
    try{
     const saved=await window.HpiiAdminAuth.review(doc,action,note.value.trim());
-    status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
+    stateTag.textContent=action==="approve_text"?"Текст утверждён — ожидает обложку":action==="revise"?"На доработке":"Отклонено";status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
    }catch(e){
     status.textContent="Решение НЕ записано: "+e.message+". Проверь состояние GitHub и повтори после обновления.";
-    buttons.forEach(x=>x.disabled=false);
+    buttons.forEach(x=>x.disabled=true);
    }
   });
  });
  // A saved decision is authoritative. Never present local clicks as confirmed.
  const decisionFile="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json";
  fetch(decisionFile+"?v="+Date.now(),{cache:"no-store"}).then(async r=>{
-  if(r.status===404){status.textContent="Решение ещё не записано.";return}
+  if(r.status===404){stateTag.textContent=doc.status==="ready_for_review"?"Готов к проверке":doc.status;status.textContent="Решение ещё не записано.";actions.querySelectorAll("button").forEach(b=>b.disabled=doc.status!=="ready_for_review");return}
   if(!r.ok)throw Error("HTTP "+r.status);
   const saved=await r.json();
   if(saved.article_id!==doc.article_id||saved.revision!==doc.revision)throw Error("Неверный документ решения");
-  status.textContent="Записано в GitHub: "+saved.status+(saved.issue_number?" · Issue #"+saved.issue_number:" · через админку");
+  const labels={text_approved_cover_pending:"Текст утверждён — ожидает обложку",feedback_pending_revision:"На доработке",rejected:"Отклонено"};stateTag.textContent=labels[saved.status]||"Решение сохранено";status.textContent="✓ Решение сохранено в GitHub: "+(labels[saved.status]||saved.status)+". Повторное утверждение не требуется.";
   actions.querySelectorAll("button").forEach(b=>b.disabled=true);
  }).catch(e=>{status.textContent="Не удалось проверить решения GitHub: "+e.message+"; перед утверждением обнови страницу." ; actions.querySelectorAll("button").forEach(b=>b.disabled=true)});
  const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
