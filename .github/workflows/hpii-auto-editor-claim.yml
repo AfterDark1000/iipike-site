@@ -1,0 +1,86 @@
+name: HPII — auto-editor ordinary-only reservations (NO PUBLICATION)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/auto_editor/requests/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/auto_editor_workbench.py'
+      - 'tests/test_auto_editor_workbench.py'
+      - '.github/workflows/hpii-auto-editor-claim.yml'
+      - 'docs/AUTO_EDITOR_STAGE2.md'
+      - 'docs/AUTO_EDITOR_INSTRUCTIONS.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-auto-editor-ordinary-claim
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test no hot claims and draft guardrails (OFFLINE)
+        run: |
+          python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -q
+          python3 scripts/site_news_pool.py --validate
+
+  reserve:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Claim only eligible normal/low candidates in atomic commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            echo "Ordinary-only reservation attempt ${attempt}/3"
+            git fetch origin main
+            git reset --hard origin/main
+            python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
+            python3 scripts/auto_editor_workbench.py --consume \
+              --report "$RUNNER_TEMP/hpii-ordinary-claims.json"
+            python3 scripts/site_news_pool.py --validate
+            git add -- data/site_news_pool.json
+            if [ -d data/auto_editor/receipts ]; then
+              git add -- data/auto_editor/receipts/
+            fi
+            if git diff --cached --name-only | grep -Ev \
+              '^(data/site_news_pool\.json|data/auto_editor/receipts/[a-z0-9._-]+\.json)$'; then
+              echo "UNSAFE: change outside pool and auto-editor receipts"; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'HPII_AUTO_EDITOR_NO_PENDING_CLAIMS'
+              exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore(auto-editor): reserve ordinary candidate and acknowledge [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'HPII_AUTO_EDITOR_RESERVATION_COMMITTED'
+              cat "$RUNNER_TEMP/hpii-ordinary-claims.json"
+              exit 0
+            fi
+            echo "Concurrent main update: reset to latest and recompute; do not duplicate"
+          done
+          echo "Reservation could not safely commit after three retries"
+          exit 1
