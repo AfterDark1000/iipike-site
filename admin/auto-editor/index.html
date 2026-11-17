@@ -91,6 +91,53 @@ function decisionUrl(doc,action,note){
  const title="HPII review: "+doc.article_id+" r"+doc.revision+" "+action;
  return "https://github.com/AfterDark1000/iipike-site/issues/new?"+new URLSearchParams({title:title,body:body}).toString();
 }
+async function addCoverUploader(doc,region){
+ const decision="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json?v="+Date.now();
+ const current=()=>selected===doc.article_id+".json"&&region.isConnected;
+ try{
+  const check=await fetch(decision,{cache:"no-store"});
+  if(!current()||!check.ok)return;
+  const saved=await check.json();
+  if(saved.status!=="text_approved_cover_pending"||saved.article_id!==doc.article_id||
+     saved.revision!==doc.revision||saved.updated_at!==doc.updated_at)return;
+ }catch{return}
+ if(!current())return;
+ const group=add(region,"div",undefined,"cover-upload");
+ group.style.cssText="border-top:1px solid #d9dfdc;margin-top:16px;padding-top:14px";
+ add(group,"h3","Загрузить готовый WebP вручную");
+ paragraph(group,"Если обложка сохранилась у тебя на устройстве, выбери файл здесь. Сервер проверит утверждение текста и сохранит кандидат в GitHub. Публикации не будет.");
+ const label=add(group,"label","Файл WebP (до 800 КБ)");
+ label.style.cssText="display:block;font-weight:650;margin:8px 0";
+ const input=add(group,"input");input.type="file";input.accept=".webp,image/webp";input.style.cssText="display:block;width:100%;margin:8px 0 15px";
+ const titleLabel=add(group,"label","Заголовок на обложке");titleLabel.style.cssText="display:block;font-weight:650";
+ const title=add(group,"input");title.type="text";title.maxLength=100;title.value=(doc.content?.title||"").slice(0,95);
+ title.style.cssText="display:block;width:100%;font:inherit;padding:9px;border:1px solid #b6c7c5;border-radius:8px;margin:7px 0 14px";
+ const conceptLabel=add(group,"label","Описание художественной концепции");conceptLabel.style.cssText="display:block;font-weight:650";
+ const concept=add(group,"textarea");concept.maxLength=600;concept.value=(doc.cover_brief?.hook||"").slice(0,580);
+ concept.style.cssText="display:block;width:100%;min-height:72px;margin:7px 0 14px";
+ const button=add(group,"button","Сохранить WebP в GitHub");
+ const status=add(group,"p","Файл пока не выбран.","muted");status.setAttribute("role","status");
+ button.addEventListener("click",async()=>{
+  const file=input.files?.[0];
+  if(!file){status.textContent="Выбери WebP-файл.";return}
+  if(!/\.webp$/i.test(file.name)||file.size<1024||file.size>800000){status.textContent="Нужен WebP объёмом от 1 до 800 КБ.";return}
+  if(title.value.trim().length<2||concept.value.trim().length<8){status.textContent="Укажи заголовок и описание концепции.";return}
+  if(!window.HpiiAdminAuth){status.textContent="Нет подтверждённой сессии. Обнови страницу.";return}
+  button.disabled=true;status.textContent="Проверяю реальные пиксели WebP…";
+  try{
+   const bmp=await createImageBitmap(file);
+   const width=bmp.width,height=bmp.height;bmp.close();
+   if(width<640||height<360||Math.abs(width/height-16/9)>0.02)throw Error("Формат должен быть 16:9, минимум 640×360.");
+   status.textContent="Отправляю "+Math.round(file.size/1024)+" КБ на защищённый сервер…";
+   const result=await window.HpiiAdminAuth.uploadCover(doc,file,title.value.trim(),concept.value.trim());
+   if(!current())return;
+   status.textContent="✓ WebP сохранён и подтверждён в GitHub. Статус: кандидат ожидает утверждения главредом. Ничего не опубликовано.";
+   const p=add(group,"p");
+   link(p,"Открыть сохранённый WebP ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/"+result.image_path);
+   input.disabled=true;title.disabled=true;concept.disabled=true;
+  }catch(e){if(current()){status.textContent="Файл НЕ сохранён: "+e.message;button.disabled=false}}
+ });
+}
 async function showCoverCandidate(doc,region){
  const base="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_covers/";
  const stem=doc.article_id+"-r"+doc.revision;
@@ -102,12 +149,13 @@ async function showCoverCandidate(doc,region){
   if(response.status===404){
    const blocked=await fetch(base+"attempts/"+stem+".json?v="+Date.now(),{cache:"no-store"});
    if(!current())return;
-   if(blocked.status===404){label.textContent="WebP пока не сохранён. Ждём первого результата автономного художника.";return}
+   if(blocked.status===404){label.textContent="WebP пока не сохранён.";await addCoverUploader(doc,region);return}
    if(!blocked.ok)throw Error("Статус попытки: HTTP "+blocked.status);
    const attempt=await blocked.json();
    label.textContent=attempt.status==="blocked_binary_export"?
      "Художник не смог передать реальные байты в GitHub: "+(attempt.cause||"причина не указана"):
      "Попытка художника: "+(attempt.status||"неизвестный статус");
+   await addCoverUploader(doc,region);
    return;
   }
   if(!response.ok)throw Error("Метаданные обложки: HTTP "+response.status);
