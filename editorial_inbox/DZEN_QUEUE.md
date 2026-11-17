@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 140 · **В каталоге Дзена подтверждены:** 128 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 0
+**Всего одобренных:** 141 · **В каталоге Дзена подтверждены:** 128 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -26,6 +26,7 @@
 | 10 | [Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cursor-fireworks-key-incident-20261113.md) | 16.11.2026, 19:30 | [На сайте](https://iipike.ru/articles/cursor-fireworks-key-incident-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cursor-fireworks-key-incident-20261113.webp) |
 | 11 | [Учёные научили холодильник скучать, а цветок — обижаться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cmu-oats-ai-tamagotchi-objects-20261115.md) | 16.11.2026, 20:30 | [На сайте](https://iipike.ru/articles/cmu-oats-ai-tamagotchi-objects-20261115/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
 | 12 | [ИИ-певица забрала четыре награды на первой премии для нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/xania-monet-ai-music-awards-20261113.md) | 16.11.2026, 21:45 | [На сайте](https://iipike.ru/articles/xania-monet-ai-music-awards-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xania-monet-ai-music-awards-20261113.webp) |
+| 13 | [Claude за 8 часов сделал шутер из одного предложения](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/claude-saltline-shooter-eight-hours-20261109.md) | 17.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/claude-saltline-shooter-eight-hours-20261109/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
