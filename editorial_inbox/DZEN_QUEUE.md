@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 141 · **В каталоге Дзена подтверждены:** 128 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 0
+**Всего одобренных:** 143 · **В каталоге Дзена подтверждены:** 128 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -27,6 +27,7 @@
 | 11 | [Учёные научили холодильник скучать, а цветок — обижаться](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/cmu-oats-ai-tamagotchi-objects-20261115.md) | 16.11.2026, 20:30 | [На сайте](https://iipike.ru/articles/cmu-oats-ai-tamagotchi-objects-20261115/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cmu-oats-ai-tamagotchi-objects-20261115.webp) |
 | 12 | [ИИ-певица забрала четыре награды на первой премии для нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/xania-monet-ai-music-awards-20261113.md) | 16.11.2026, 21:45 | [На сайте](https://iipike.ru/articles/xania-monet-ai-music-awards-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xania-monet-ai-music-awards-20261113.webp) |
 | 13 | [Claude за 8 часов сделал шутер из одного предложения](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/claude-saltline-shooter-eight-hours-20261109.md) | 17.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/claude-saltline-shooter-eight-hours-20261109/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-saltline-shooter-eight-hours-20261109.webp) |
+| 14 | [Овца на крыше принесла фильму приз в $500 тысяч](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/listen-to-meh-higgsfield-film-prize-20261110.md) | 17.11.2026, 08:00 | [На сайте](https://iipike.ru/articles/listen-to-meh-higgsfield-film-prize-20261110/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/listen-to-meh-higgsfield-film-prize-20261110.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -34,7 +35,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| — | Нет материалов | — | — | — |
+| 1 | [Конкуренту NVIDIA дали $720 млн. Хотя его чипов ещё нет в продаже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fractile-ai-chips-720m-funding-20261111.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
