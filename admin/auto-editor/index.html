@@ -74,7 +74,7 @@ function details(parent,label,body){const d=add(parent,"details"),s=add(d,"summa
 function field(parent,label,value){if(value===undefined||value===null||value==="")return;const p=add(parent,"p");add(p,"strong",label+": ");p.appendChild(document.createTextNode(String(value)))}
 function decisionUrl(doc,action,note){
  const payload={schema_version:1,article_id:doc.article_id,revision:doc.revision,updated_at:doc.updated_at,action:action,note:note};
- const body="<!-- HPII_AUTO_REVIEW_V1 -->\\n"+JSON.stringify(payload,null,2)+"\\n<!-- /HPII_AUTO_REVIEW_V1 -->\\n\\nПроверка решения выполняется GitHub Actions. Ничего не публикуется.";
+ const body="<!-- HPII_AUTO_REVIEW_V1 -->\n"+JSON.stringify(payload,null,2)+"\n<!-- /HPII_AUTO_REVIEW_V1 -->\n\nПроверка решения выполняется GitHub Actions. Ничего не публикуется.";
  const title="HPII review: "+doc.article_id+" r"+doc.revision+" "+action;
  return "https://github.com/AfterDark1000/iipike-site/issues/new?"+new URLSearchParams({title:title,body:body}).toString();
 }
