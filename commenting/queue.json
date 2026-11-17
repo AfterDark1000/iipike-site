@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-16T18:24:17.064475Z",
+  "updated_at": "2026-11-17T02:03:37.367821Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
-      "last_success_at": "2026-11-16T18:24:17.064475Z",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
+      "last_success_at": "2026-11-17T02:03:37.367821Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
-      "last_success_at": "2026-11-16T18:24:17.064475Z",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
+      "last_success_at": "2026-11-17T02:03:37.367821Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
+      "status": "error",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
       "last_success_at": "2026-11-16T18:24:17.064475Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (TimeoutError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
-      "last_success_at": "2026-11-16T18:24:17.064475Z",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
+      "last_success_at": "2026-11-17T02:03:37.367821Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -53,10 +53,10 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
-      "last_success_at": "2026-11-16T18:24:17.064475Z",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
+      "last_success_at": "2026-11-17T02:03:37.367821Z",
       "error": null,
-      "fresh_matches": 0
+      "fresh_matches": 1
     },
     {
       "id": "iguides",
@@ -64,23 +64,44 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-16T18:24:17.064475Z",
-      "last_success_at": "2026-11-16T18:24:17.064475Z",
+      "checked_at": "2026-11-17T02:03:37.367821Z",
+      "last_success_at": "2026-11-17T02:03:37.367821Z",
       "error": null,
       "fresh_matches": 3
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-16",
-    "attempted": 12
+    "date": "2026-11-17",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "f7d05e0a812cbfbe6538f9a3",
+      "title": "ИИ-модель научилась определять голоса редких птиц и может их обучить песне, если они ее забыли",
+      "source_id": "techinsider",
+      "source_name": "TechInsider",
+      "source_url": "https://www.techinsider.ru/news/news-1749789-ii-model-nauchilas-opredelyat-golosa-redkih-ptic-i-mojet-ih-samih-obuchit-pesne-esli-oni-ee-zabyli/",
+      "published_at": "2026-11-16T18:25:00Z",
+      "channel_url": "https://dzen.ru/techinsider",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-17T02:03:37.367821Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-17T02:03:37.367821Z",
+      "reason": "Не прошёл проверку: В статье не упоминается фоновый шум, комментарий добавляет несуществующую в тексте деталь про путаницу с фоновым шумом.",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-17T02:03:37.367821Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "edc45517e62e22a1daedfdae",
       "title": "Неприятные изменения в DeepSeek: бесплатного безлимита больше нет",
@@ -93,12 +114,14 @@
       "first_seen_at": "2026-11-16T18:24:17.064475Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-16T18:24:17.064475Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "attempts": 2,
+      "last_attempt_at": "2026-11-17T02:03:37.367821Z",
+      "reason": "Не прошёл проверку: В статье не указано, что сервис DeepSeek является полностью бесплатным («бесплатная лавочка»), это домысел автора комментария.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-17T02:03:37.367821Z"
     },
     {
       "id": "2030b16361536b68c957bff9",
@@ -129,10 +152,14 @@
       "first_seen_at": "2026-11-16T18:24:17.064475Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Всего пять процентов пользователей доверяют ИИ реальные сделки, остальные только смотрят портфель. Похоже, доверять Алисе цифры готовы многие, а вот нажимать кнопки на покупку акций пока желающих мало.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-17T02:03:37.367821Z",
+      "reason": "Конкретная цифра использования ИИ для реальных торговых операций.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-17T02:03:37.367821Z"
     },
     {
       "id": "fa24f451158ca6312018d097",
@@ -2447,69 +2474,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "730d12edc8248a81136be959",
-      "title": "ИИ научился писать целые операционные системы: Anthropic представила мощнейшие Claude Fable 5.2 и Mythos 5.2",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151069",
-      "published_at": "2026-11-09T21:28:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-10T03:28:40.833666Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Тысяча агентов за восемь дней написала операционную систему с нуля — звучит так, будто теперь джуниорам можно официально сдавать дипломы на базе Claude Fable 5.2 и идти отдыхать.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-10T03:28:40.833666Z",
-      "reason": "Развитие мысли о масштабе и скорости работы ИИ-агентов при создании ОС.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-10T03:28:40.833666Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "8ccf239c0f6e621de8e5dd03",
-      "title": "M**a представила Muse Ember — дешёвую ИИ-модель для армии автономных агентов",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151065",
-      "published_at": "2026-11-09T20:07:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-09T21:02:20.354172Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-09T21:02:20.354172Z",
-      "reason": "Не прошёл проверку: В статье нет формулировки «армия автономных агентов», это приписанное утверждение.",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-09T21:02:20.354172Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "7ba826d6ad0101ff546497fc",
-      "title": "Microsoft рассматривает возможность обучать ИИ на простаивающих видеокартах обычных пользователей и готова за это платить",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/09/microsoft-rassmatrivaet-vozmoznost-obucat-ii-na-prostaivaiushhix-videokartax-obycnyx-polzovatelei-i-gotova-za-eto-platit.html",
-      "published_at": "2026-11-09T19:55:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-09T21:02:20.354172Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-09T21:02:20.354172Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-09T21:02:20.354172Z",
       "link_status": "dzen_link_missing"
     }
   ]
