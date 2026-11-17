@@ -218,3 +218,82 @@ test("GitHub OAuth exchange refusal returns safe human-readable reason for mobil
     }
   }finally{globalThis.fetch=original}
 });
+
+test("cover decisions require approved text, exact WebP hash, login and are write-once",async()=>{
+  const sha="a".repeat(40), written=new Map(), prior=globalThis.fetch;
+  const id="test-cover-approval",time="2026-11-17T09:14:28.326Z";
+  const draft={article_id:id,revision:4,updated_at:time,status:"ready_for_review"};
+  const textDecision={article_id:id,revision:4,updated_at:time,action:"approve_text",
+    status:"text_approved_cover_pending",draft_blob_sha:"draft-sha"};
+  const cover={schema_version:1,article_id:id,text_revision:4,text_updated_at:time,status:"ready_for_cover_review",
+    source_draft_blob_sha:"draft-sha",source_decision_blob_sha:"text-sha",
+    image_path:"editorial_inbox/auto_covers/"+id+"-r4-v1.webp",
+    image_blob_sha:sha,width:1600,height:900};
+  const box=(obj,blob)=>Response.json({type:"file",sha:blob,
+    content:Buffer.from(JSON.stringify(obj)).toString("base64")});
+  globalThis.fetch=async(url,options={})=>{
+    const u=String(url);
+    if(u==="https://github.com/login/oauth/access_token")return Response.json({access_token:"ok"});
+    if(u==="https://api.github.com/user")return Response.json({id:284211090,login:"AfterDark1000"});
+    const root="https://api.github.com/repos/AfterDark1000/iipike-site/contents/";
+    assert.ok(u.startsWith(root));
+    const path=u.slice(root.length).split("?")[0];
+    if(path==="editorial_inbox/auto_drafts/"+id+".json")return box(draft,"draft-sha");
+    if(path==="editorial_inbox/auto_decisions/"+id+"-r4.json")return box(textDecision,"text-sha");
+    if(path==="editorial_inbox/auto_covers/"+id+"-r4-v1.json")return box(cover,"cover-meta-sha");
+    if(path==="editorial_inbox/auto_covers/"+id+"-r4-v1.webp")return Response.json({type:"file",sha});
+    if(path==="editorial_inbox/auto_cover_decisions/"+id+"-r4-v1.json"){
+      if(options.method==="PUT"){
+        assert.equal(written.size,0);
+        const body=JSON.parse(options.body);
+        assert.equal(body.branch,"editorial-intake");
+        const content=JSON.parse(Buffer.from(body.content,"base64").toString("utf8"));
+        written.set(path,content);
+        return Response.json({content:{sha:"new-sha"},commit:{sha:"commit-cover"}},{status:201});
+      }
+      if(written.size)return box([...written.values()][0],"decision-sha");
+      return Response.json({message:"Not Found"},{status:404});
+    }
+    throw Error("Unknown Github path "+path);
+  };
+  try{
+    const start=await call("/auth/start");
+    const cookie=start.headers.get("set-cookie").split(";")[0];
+    const state=new URL(start.headers.get("location")).searchParams.get("state");
+    const cb=await call("/auth/callback?code=ok&state="+state,{headers:{Cookie:cookie}});
+    const html=await cb.text();
+    const token=html.match(/"token":"([^"]+)"/)?.[1];
+    assert.ok(token);
+    const payload={article_id:id,revision:4,text_updated_at:time,cover_version:1,
+      image_blob_sha:sha,action:"approve_cover",note:"Проверено"};
+    const headers={Origin:env.ADMIN_ORIGIN,"Content-Type":"application/json"};
+    let response=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+    assert.equal(response.status,401);
+    assert.equal(written.size,0);
+    headers.Authorization="Bearer "+token;
+    response=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify({...payload,image_blob_sha:"b".repeat(40)})});
+    assert.equal(response.status,409);
+    assert.equal(written.size,0);
+    response=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+    assert.equal(response.status,200,await response.clone().text());
+    assert.equal((await response.json()).status,"cover_approved_handoff_pending");
+    const saved=[...written.values()][0];
+    assert.equal(saved.cover_blob_sha,sha);
+    assert.equal(saved.cover_metadata_blob_sha,"cover-meta-sha");
+    assert.equal(saved.action,"approve_cover");
+    assert.equal(saved.status,"cover_approved_handoff_pending");
+    response=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+    assert.equal(response.status,409);
+    assert.equal(written.size,1);
+  }finally{globalThis.fetch=prior}
+});
+test("cover-review validation fails closed for unexpected actions and blank rework notes",()=>{
+  const base={article_id:"test-cover",revision:4,text_updated_at:"2026-11-17T09:14:28.326Z",
+    cover_version:1,image_blob_sha:"a".repeat(40),action:"revise_cover",note:"Переделать фон"};
+  assert.equal(__test.validCoverReview(base),true);
+  assert.equal(__test.validCoverReview({...base,note:""}),false);
+  assert.equal(__test.validCoverReview({...base,action:"publish"}),false);
+  assert.equal(__test.validCoverReview({...base,image_blob_sha:"bad"}),false);
+  assert.equal(__test.validCoverReview({...base,cover_version:2}),false);
+  assert.equal(__test.validCoverReview({...base,admin:true}),false);
+});

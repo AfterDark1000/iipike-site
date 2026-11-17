@@ -138,6 +138,73 @@ async function recordReview(env, body, login) {
     verification_path:location,commit_sha:write.data.commit?.sha||null});
 }
 
+
+function validCoverReview(d) {
+  if (!d || typeof d!=="object" || Array.isArray(d)) return false;
+  if (JSON.stringify(Object.keys(d).sort())!==
+      JSON.stringify(["article_id","revision","text_updated_at","cover_version","image_blob_sha","action","note"].sort())) return false;
+  return typeof d.article_id==="string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(d.article_id) && d.article_id.length<=80 &&
+    Number.isSafeInteger(d.revision) && d.revision>=1 && d.revision<=9999 &&
+    d.cover_version===1 &&
+    typeof d.text_updated_at==="string" && d.text_updated_at.length>0 && d.text_updated_at.length<80 &&
+    typeof d.image_blob_sha==="string" && /^[0-9a-f]{40}$/.test(d.image_blob_sha) &&
+    ["approve_cover","revise_cover"].includes(d.action) &&
+    typeof d.note==="string" && d.note.length<=MAX_NOTE &&
+    (d.action!=="revise_cover" || d.note.trim().length>0);
+}
+
+async function recordCoverReview(env, data, login) {
+  if(!validCoverReview(data))return fail(400,"invalid_cover_review");
+  const ref="editorial-intake",stem=data.article_id+"-r"+data.revision+"-v"+data.cover_version;
+  const location="editorial_inbox/auto_cover_decisions/"+stem+".json";
+  const draftPath=pathFor(data.article_id), textPath=savedPath(data.article_id,data.revision);
+  const coverPath="editorial_inbox/auto_covers/"+stem+".json";
+  const imagePath="editorial_inbox/auto_covers/"+stem+".webp";
+  const [draft,text,cover,image,old]=await Promise.all([
+    githubJson("/contents/"+draftPath+"?ref="+ref,env),
+    githubJson("/contents/"+textPath+"?ref="+ref,env),
+    githubJson("/contents/"+coverPath+"?ref="+ref,env),
+    githubJson("/contents/"+imagePath+"?ref="+ref,env),
+    githubJson("/contents/"+location+"?ref="+ref,env)
+  ]);
+  if(old.status===200)return fail(409,"cover_review_already_exists");
+  if(old.status!==404)return fail(502,"cover_review_lookup_failed");
+  if([draft,text,cover,image].some(x=>x.status!==200))return fail(409,"cover_or_approval_unavailable");
+  let dv,tv,cv;
+  try{dv=decodeGitHubContent(draft.data);tv=decodeGitHubContent(text.data);cv=decodeGitHubContent(cover.data)}
+  catch{return fail(409,"cover_or_approval_invalid")}
+  if(dv.article_id!==data.article_id||dv.revision!==data.revision||dv.updated_at!==data.text_updated_at||
+     dv.status!=="ready_for_review"||
+     tv.article_id!==data.article_id||tv.revision!==data.revision||tv.updated_at!==data.text_updated_at||
+     tv.status!=="text_approved_cover_pending"||tv.action!=="approve_text"||tv.draft_blob_sha!==draft.data.sha||
+     cv.schema_version!==1||cv.article_id!==data.article_id||cv.text_revision!==data.revision||
+     cv.text_updated_at!==data.text_updated_at||cv.status!=="ready_for_cover_review"||
+     cv.source_draft_blob_sha!==draft.data.sha||cv.source_decision_blob_sha!==text.data.sha||
+     cv.image_path!==imagePath||cv.image_blob_sha!==data.image_blob_sha||
+     image.data.sha!==data.image_blob_sha||
+     !Number.isSafeInteger(cv.width)||!Number.isSafeInteger(cv.height)||
+     Math.abs(cv.width/cv.height-16/9)>0.02)
+    return fail(409,"cover_or_text_changed");
+  const status=data.action==="approve_cover"?"cover_approved_handoff_pending":"cover_revision_requested";
+  const record={
+    schema_version:1,article_id:data.article_id,text_revision:data.revision,
+    text_updated_at:data.text_updated_at,cover_version:data.cover_version,
+    cover_blob_sha:image.data.sha,cover_metadata_blob_sha:cover.data.sha,
+    source_draft_blob_sha:draft.data.sha,source_text_decision_blob_sha:text.data.sha,
+    action:data.action,note:data.note.trim(),status,decided_by:login,
+    decided_at:new Date().toISOString(),channel:"hpii-admin-oauth-gateway"
+  };
+  const result=await githubJson("/contents/"+location,env,{
+    method:"PUT",headers:{"content-type":"application/json"},
+    body:JSON.stringify({branch:ref,message:"review(auto-cover): "+data.article_id+" r"+data.revision+" v"+data.cover_version,
+      content:encodeGitHubContent(record)})
+  });
+  if(![200,201].includes(result.status))return fail([409,422].includes(result.status)?409:502,"cover_review_write_failed");
+  return send({ok:true,status,article_id:data.article_id,revision:data.revision,
+    cover_version:data.cover_version,verification_path:location,commit_sha:result.data.commit?.sha||null,
+    note:"No publication or site queue changes made."});
+}
+
 // The image intake only accepts manually selected, version-locked WebP candidates.
 // It cannot approve a cover or publish a story.
 function webpDimensions(data) {
@@ -368,6 +435,18 @@ export default {
         Object.entries(headers).forEach(([k,v])=>responseHeaders.set(k,v));
         return new Response(result.body,{status:result.status,headers:responseHeaders});
       }
+      if(url.pathname==="/api/cover-review" && request.method==="POST"){
+        if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")
+          return fail(415,"json_required",headers);
+        const raw=await request.text();
+        if(raw.length>8000)return fail(413,"request_too_large",headers);
+        let data;
+        try{data=JSON.parse(raw)}catch{return fail(400,"bad_json",headers)}
+        const result=await recordCoverReview(env,data,session.login);
+        const merged=new Headers(result.headers);
+        Object.entries(headers).forEach(([k,v])=>merged.set(k,v));
+        return new Response(result.body,{status:result.status,headers:merged});
+      }
       if(url.pathname==="/api/cover-upload" && request.method==="POST"){
         const result=await receiveCover(env,request,session.login);
         const resultHeaders=new Headers(result.headers);
@@ -380,4 +459,4 @@ export default {
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview,webpDimensions};
+export const __test = {validReview,validCoverReview,webpDimensions};
