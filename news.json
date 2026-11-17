@@ -6300,5 +6300,25 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст",
+    "summary": "Recraft представила V4.1 Flash V2: медианная генерация за 1,1 секунды в тесте разработчика и средние 1,5 секунды по данным DesignArena. Улучшены текст на изображениях и детали.",
+    "published": "2026-11-17",
+    "source_url": "https://feedback.recraft.ai/changelog",
+    "cover": "assets/editorial/recraft-v4-1-flash-v2-20261113.webp",
+    "rubric": "news",
+    "vk_title": "⚡ RECRAFT ГЕНЕРИРУЕТ КАРТИНКИ ЗА 1,1 СЕКУНДЫ",
+    "vk_summary": "Компания выпустила V4.1 Flash V2 — улучшенную модель для генерации изображений. В тестах Recraft нейросеть показала медианное время 1,1 секунды, а независимая DesignArena сообщила о среднем времени 1,5 секунды. Разработчики также улучшили работу с надписями, мелкими деталями и реалистичными изображениями.",
+    "published_at_utc": "2026-11-17T13:45:41Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-13",
+    "id": "recraft-v4-1-flash-v2-20261113",
+    "url": "articles/recraft-v4-1-flash-v2-20261113/",
+    "topics": [
+      "images"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
