@@ -58,6 +58,13 @@ class ExistingBranchDoesNotBlockQueue(unittest.TestCase):
         self.assertTrue(any("ONE_RELEASE_REQUESTED:" in str(c.args)
                             for c in output.call_args_list))
 
+    def test_exhausted_safe_rebuild_deferred_and_next_story_runs(self):
+        self.release.side_effect = ["deferred_moving_main",
+                                    "auto_published_rebuild_requested"]
+        main()
+        self.assertEqual([x.args[0] for x in self.release.call_args_list],
+                         ["blocked", "next"])
+
     def test_all_collisions_fail_loudly_instead_of_reporting_green(self):
         self.release.side_effect = ["exists", "exists", "exists"]
         with self.assertRaisesRegex(ValueError, "No safe alternative due"):
