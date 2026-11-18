@@ -73,7 +73,7 @@ test("approved cover still awaiting transfer is not completed",async()=>{
   ["auto_cover_decisions/"+key+"-v1.json"]:coverDecision(1,"approve_cover","cover_approved_handoff_pending")
  });
  const status=await cls(doc);
- assert.equal(status.group,"transfer");assert.match(status.label,/ждёт передачи/);
+ assert.equal(status.group,"transfer");assert.match(status.label,/передача не подтверждена/);
 });
 test("handoff confirmed but not published remains in site queue",async()=>{
  const cls=model({
