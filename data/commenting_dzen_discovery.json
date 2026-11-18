@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "max_age_hours": 72,
+  "per_channel_limit": 2,
+  "max_items": 60,
+  "keys_top_pages": 2,
+  "brave_queries_per_run": 4,
+  "queries": [
+    "нейросети ИИ",
+    "ChatGPT искусственный интеллект",
+    "нейросети роботы",
+    "дипфейки мошенники",
+    "Claude Gemini",
+    "ИИ и работа",
+    "автоматизация нейросеть",
+    "искусственный интеллект эксперимент"
+  ],
+  "channels": []
+}
