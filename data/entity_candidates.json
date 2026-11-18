@@ -1081,6 +1081,54 @@
           "source_url": "https://zapier.com/benchmarks"
         }
       ]
+    },
+    {
+      "key": "apollo-research",
+      "name": "Apollo Research",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-apollo-embedded-evaluations-20261116",
+          "source_url": "https://apolloresearch.ai/blog/pilot-towards-embedded-evaluations"
+        }
+      ]
+    },
+    {
+      "key": "metr",
+      "name": "METR",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-apollo-embedded-evaluations-20261116",
+          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
+        }
+      ]
+    },
+    {
+      "key": "transluce",
+      "name": "Transluce",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-apollo-embedded-evaluations-20261116",
+          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
+        }
+      ]
+    },
+    {
+      "key": "goodfire",
+      "name": "Goodfire",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-apollo-embedded-evaluations-20261116",
+          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
+        }
+      ]
     }
   ],
   "products": [
