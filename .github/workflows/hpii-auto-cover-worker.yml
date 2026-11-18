@@ -1,0 +1,120 @@
+name: HPII autonomous cover artist (approved text to WebP; NO PUBLICATION)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/auto_cover_worker.py'
+      - 'tests/test_auto_cover_worker.py'
+      - '.github/workflows/hpii-auto-cover-worker.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/auto_cover_worker.py'
+      - 'tests/test_auto_cover_worker.py'
+      - '.github/workflows/hpii-auto-cover-worker.yml'
+      - 'docs/AUTO_COVER_ARTIST_PILOT.md'
+  schedule:
+    # One eligible draft per pass, no extra ChatGPT scheduled-task slot.
+    - cron: '27 5,9,13,17,21 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hpii-autonomous-cover-worker
+  cancel-in-progress: false
+
+jobs:
+  offline-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install image decoder
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Validate artist without Cloudflare quota
+        run: |
+          python3 -m py_compile scripts/auto_cover_worker.py
+          python3 -m unittest discover -s tests -p 'test_auto_cover_worker.py' -v
+          python3 -m unittest discover -s tests -p 'test_flux_cover_probe.py' -q
+
+  generate-one:
+    if: github.event_name != 'pull_request'
+    needs: [offline-regression]
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main artist code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install Pillow
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Select earliest text-approved draft missing a cover
+        id: select
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin editorial-intake
+          git worktree add --detach "$RUNNER_TEMP/hpii-cover-worktree" origin/editorial-intake
+          python3 -m scripts.auto_cover_worker --root "$RUNNER_TEMP/hpii-cover-worktree" --plan-file "$RUNNER_TEMP/hpii-cover-plan.json"
+          if [ -f "$RUNNER_TEMP/hpii-cover-plan.json" ]; then
+            echo "selected=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "selected=false" >> "$GITHUB_OUTPUT"
+            echo "No new approved text waiting for WebP." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Generate one 16:9 WebP with existing FLUX FREE connection
+        if: steps.select.outputs.selected == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          python3 -m scripts.auto_cover_worker --root "$RUNNER_TEMP/hpii-cover-worktree" --plan-file "$RUNNER_TEMP/hpii-cover-plan.json" --generate
+      - name: Verify source approval, pixels and Git WebP SHA
+        if: steps.select.outputs.selected == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/hpii-cover-worktree"
+          python3 "$GITHUB_WORKSPACE/scripts/check_auto_cover_pilot.py"
+      - name: Commit ONLY candidate WebP and metadata to editorial-intake
+        if: steps.select.outputs.selected == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/hpii-cover-worktree"
+          python3 - <<'PY'
+          import json,os,re
+          from pathlib import Path
+          plan=json.loads((Path(os.environ["RUNNER_TEMP"])/"hpii-cover-plan.json").read_text())
+          for key,suffix in (("image_path",".webp"),("meta_path",".json")):
+              name=plan[key]
+              if not re.fullmatch(r"editorial_inbox/auto_covers/[a-z0-9-]+-r[1-9][0-9]*-v1"+re.escape(suffix),name):
+                  raise SystemExit("Unsafe cover path "+name)
+              if not Path(name).is_file() or Path(name).is_symlink():
+                  raise SystemExit("Missing cover candidate")
+          PY
+          mapfile -t cover_paths < <(python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          plan=json.loads((Path(os.environ["RUNNER_TEMP"])/"hpii-cover-plan.json").read_text())
+          print(plan["image_path"])
+          print(plan["meta_path"])
+          PY
+          )
+          git add -- "${cover_paths[@]}"
+          git diff --cached --check
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "auto-artist: store one text-approved cover for human review"
+          git push origin HEAD:refs/heads/editorial-intake
+          echo "Cover candidate saved on editorial-intake; no site/social publication." >> "$GITHUB_STEP_SUMMARY"
