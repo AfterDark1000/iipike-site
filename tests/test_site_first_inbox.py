@@ -80,6 +80,22 @@ class SiteFirstInboxTests(unittest.TestCase):
                     validate_story(self.root, ID, today=UTC.date())
                 self.story.pop(name)
 
+    def test_vk_character_limits_are_checked_before_article_is_staged(self):
+        # The same validator is called by the read-only editorial intake CI.
+        self.story["vk_title"] = "З" * 200
+        self.story["vk_summary"] = "Т" * 350
+        self.save_story()
+        validate_story(self.root, ID, today=UTC.date())
+        self.story["vk_summary"] += "!"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "Invalid optional VK editorial field: vk_summary"):
+            validate_story(self.root, ID, today=UTC.date())
+        self.story["vk_summary"] = "Т" * 350
+        self.story["vk_title"] += "!"
+        self.save_story()
+        with self.assertRaisesRegex(ValueError, "Invalid optional VK editorial field: vk_title"):
+            validate_story(self.root, ID, today=UTC.date())
+
     def test_editor_entity_choices_reach_approved_json_unchanged(self):
         self.story["companies"] = ["google"]
         self.story["products"] = ["gemini"]
