@@ -1,0 +1,51 @@
+name: HPII - Dzen direct-link discovery PILOT (read only)
+on:
+  pull_request:
+    paths:
+      - 'scripts/dzen_comment_discovery.py'
+      - 'tests/test_dzen_comment_discovery.py'
+      - 'data/commenting_dzen_discovery.json'
+      - 'docs/COMMENTING_DZEN_DISCOVERY_PILOT.md'
+      - '.github/workflows/commenting-dzen-discovery-pilot.yml'
+  workflow_dispatch:
+    inputs:
+      run_live:
+        type: boolean
+        description: 'One paid/provider API discovery pass (requires a configured API secret)'
+        default: false
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline tests, no Dzen/API requests
+        run: python3 -m unittest discover -s tests -p 'test_dzen_comment_discovery.py' -v
+      - name: Check syntax
+        run: python3 -m py_compile scripts/dzen_comment_discovery.py
+  live-pilot:
+    needs: offline-tests
+    if: github.event_name == 'workflow_dispatch' && inputs.run_live
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: One API pass only; no direct Dzen requests, no queue changes
+        env:
+          KEYS_SO_API_TOKEN: ${{ secrets.KEYS_SO_API_TOKEN }}
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: python3 scripts/dzen_comment_discovery.py --live --output _dzen_discovery_pilot.json
+      - name: Upload pilot report, without changing site or commenting data
+        uses: actions/upload-artifact@v4
+        with:
+          name: dzen-direct-link-discovery-pilot
+          path: _dzen_discovery_pilot.json
+          retention-days: 7
