@@ -187,6 +187,7 @@ async function addCoverUploader(doc,region,coverVersion=1){
    const p=add(group,"p");
    link(p,"Открыть сохранённый WebP ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/"+result.image_path);
    input.disabled=true;title.disabled=true;concept.disabled=true;
+   void load();
   }catch(e){if(current()){status.textContent="Файл НЕ сохранён: "+e.message;button.disabled=false}}
  });
 }
@@ -291,6 +292,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
        result.status==="cover_approved_handoff_pending"?"success":"pending",true);
       actions.hidden=true;
       note.hidden=true;
+      void load();
    }catch(e){
       if(current()){decisionState="error";setDisabled(true);
        feedback("Решение НЕ подтверждено: "+e.message+". Обнови страницу, чтобы проверить состояние.","error",true)}
@@ -426,7 +428,9 @@ function draw(doc){
    status.textContent="Сохраняю решение через защищённый сервер…";
    try{
     const saved=await window.HpiiAdminAuth.review(doc,action,note.value.trim());
-    stateTag.textContent=action==="approve_text"?"Текст утверждён — ожидает обложку":action==="revise"?"На доработке":"Отклонено";status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
+    stateTag.textContent=action==="approve_text"?"Текст утверждён":action==="revise"?"На доработке":"Отклонено";
+    status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
+    void load();
    }catch(e){
     status.textContent="Решение НЕ записано: "+e.message+". Проверь состояние GitHub и повтори после обновления.";
     buttons.forEach(x=>x.disabled=true);
@@ -440,7 +444,11 @@ function draw(doc){
   if(!r.ok)throw Error("HTTP "+r.status);
   const saved=await r.json();
   if(saved.article_id!==doc.article_id||saved.revision!==doc.revision)throw Error("Неверный документ решения");
-  const labels={text_approved_cover_pending:"Текст утверждён — ожидает обложку",feedback_pending_revision:"На доработке",rejected:"Отклонено"};stateTag.textContent=labels[saved.status]||"Решение сохранено";status.textContent="✓ Решение сохранено в GitHub: "+(labels[saved.status]||saved.status)+". Повторное утверждение не требуется.";
+  const labels={text_approved_cover_pending:"Текст утверждён",feedback_pending_revision:"На доработке",rejected:"Отклонено"};
+  const verified=storyRows.find(x=>x.name===doc.article_id+".json");
+  stateTag.textContent=saved.status==="text_approved_cover_pending"&&verified?.group!=="error"?
+    verified?.label||labels[saved.status]:labels[saved.status]||"Решение сохранено";
+  status.textContent="✓ Решение сохранено в GitHub. Повторное утверждение текста не требуется.";
   actions.querySelectorAll("button").forEach(b=>b.disabled=true);
  }).catch(e=>{status.textContent="Не удалось проверить решения GitHub: "+e.message+"; перед утверждением обнови страницу." ; actions.querySelectorAll("button").forEach(b=>b.disabled=true)});
  const p=add(detail,"p");link(p,"Технический JSON ↗","https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_drafts/"+doc.article_id+".json");
@@ -571,14 +579,17 @@ async function load(){
   const worker=async()=>{
    while(cursor<names.length){
     const index=cursor++,name=names[index];
+    let doc=null;
     try{
-     const doc=await readOptionalJson(raw+encodeURIComponent(name));
+     doc=await readOptionalJson(raw+encodeURIComponent(name));
      if(!doc||doc.article_id+".json"!==name||!doc.content||!doc.status)
       throw Error("Некорректный формат черновика");
      const stage=await classify(doc);
      rows[index]={name,doc,title:doc.content.title||doc.article_id,...stage};
     }catch(e){
-     rows[index]={name,doc:null,title:name.replace(/-[0-9a-f]{16}\.json$/,"").replace(/-/g," "),...rowStatus("error","Не удалось определить состояние"),error:e.message};
+     rows[index]={name,doc:doc?.content?doc:null,
+      title:doc?.content?.title||name.replace(/-[0-9a-f]{16}\.json$/,"").replace(/-/g," "),
+      ...rowStatus("error","Не удалось определить состояние"),error:e.message};
     }
    }
   };
