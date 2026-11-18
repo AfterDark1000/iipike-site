@@ -184,12 +184,18 @@ def compile_results(keys_rows, brave_rows, config, *, now=None):
     }
 
 
+class NoProviderRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):
+        raise ValueError("Provider redirect forbidden")
+
+
 def get_json(base, params, headers):
     url = base + "?" + urllib.parse.urlencode(params)
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=20) as response:
-        if response.url.split("?", 1)[0] != base:
-            raise ValueError("Unexpected provider redirect")
+    opener = urllib.request.build_opener(NoProviderRedirect)
+    with opener.open(request, timeout=20) as response:
+        if response.geturl().split("?", 1)[0] != base:
+            raise ValueError("Unexpected provider URL")
         body = response.read(2_000_001)
         if len(body) > 2_000_000:
             raise ValueError("Provider result exceeds size limit")
