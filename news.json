@@ -6607,5 +6607,33 @@
       "openai"
     ],
     "products": []
+  },
+  {
+    "title": "Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам",
+    "summary": "Apple добавила в macOS 27.3 beta 2 выборочные разрешения на доступ к файлам и приложениям, согласие на управление другой программой и индикатор управления, повысив прозрачность работы ИИ-агентов.",
+    "published": "2026-11-18",
+    "source_url": "https://developer.apple.com/news/?id=oqng0zjk",
+    "cover": "assets/editorial/apple-macos-27-3-ai-agent-permissions-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🍎 APPLE разрешила ограничить ДОСТУП ИИ-АГЕНТОВ на Mac",
+    "vk_summary": "В macOS 27.3 beta 2 можно дать ИИ-агенту доступ только к нужным папкам и приложениям. Управление другой программой — с отдельным согласием, если включить эту настройку. Когда агент действует через расширенный режим, система показывает индикатор. Старые разрешения остаются, а полный доступ по-прежнему можно предоставить вручную.",
+    "published_at_utc": "2026-11-18T09:45:46Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "apple-macos-27-3-ai-agent-permissions-20261116",
+    "url": "articles/apple-macos-27-3-ai-agent-permissions-20261116/",
+    "topics": [
+      "agents",
+      "safety",
+      "apps"
+    ],
+    "companies": [
+      "apple",
+      "meta",
+      "perplexity"
+    ],
+    "products": [
+      "muse"
+    ]
   }
 ]
