@@ -1,0 +1,75 @@
+name: HPII - Free Dzen direct-link hunter
+on:
+  schedule:
+    - cron: '17 */4 * * *'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/commenting_free_hunter.py'
+      - 'tests/test_commenting_free_hunter.py'
+      - 'data/commenting_free_hunter.json'
+      - 'admin/commenting/hunter/**'
+      - '.github/workflows/commenting-free-hunter.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-commenting-free-hunter
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python3 -m unittest discover -s tests -p 'test_commenting_free_hunter.py' -v
+      - run: python3 -m py_compile scripts/commenting_free_hunter.py
+  collect:
+    if: github.event_name != 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read previous independent findings
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            try {
+              const {data}=await github.rest.repos.getContent({...context.repo,path:'data/hunter_queue.json',ref:'commenting-free-data'});
+              fs.writeFileSync('_hunter_previous.json',Buffer.from(data.content,'base64'));
+            } catch (e) {if(e.status!==404) throw e; fs.writeFileSync('_hunter_previous.json','{}');}
+      - name: Fetch external RSS results (no paid API, no Dzen requests)
+        env:
+          GOOGLE_ALERTS_FEEDS: ${{ secrets.GOOGLE_ALERTS_FEEDS }}
+        run: python3 scripts/commenting_free_hunter.py --state _hunter_previous.json --output _hunter_queue.json
+      - name: Save findings ONLY to independent data branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            const content=fs.readFileSync('_hunter_queue.json','utf8');
+            const payload=JSON.parse(content);
+            if(payload.schema_version!==1||!Array.isArray(payload.items))throw Error('Invalid result');
+            const ref='heads/commenting-free-data';
+            let head=null,base=null;
+            try{head=(await github.rest.git.getRef({...context.repo,ref})).data.object.sha;
+              base=(await github.rest.git.getCommit({...context.repo,commit_sha:head})).data.tree.sha;
+            } catch(e){if(e.status!==404)throw e;}
+            const tree=await github.rest.git.createTree({...context.repo,
+              ...(base?{base_tree:base}:{}),tree:[{path:'data/hunter_queue.json',mode:'100644',type:'blob',content}]});
+            const commit=await github.rest.git.createCommit({...context.repo,
+              message:'commenting-free: refresh discovered direct Dzen links',tree:tree.data.sha,parents:head?[head]:[]});
+            if(head) await github.rest.git.updateRef({...context.repo,ref,sha:commit.data.sha,force:false});
+            else await github.rest.git.createRef({...context.repo,ref:'refs/'+ref,sha:commit.data.sha});
+            await core.summary.addHeading('Дзен-охотник (бесплатно)')
+              .addRaw('Прямых URL: '+payload.items.length+' · новых: '+payload.new_items+' · источников: '+payload.sources.length+'\n\n'+
+                'Список: https://iipike.ru/admin/commenting/hunter/').write();
