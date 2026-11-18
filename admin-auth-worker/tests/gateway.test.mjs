@@ -34,6 +34,7 @@ test("fail closed before login",async()=>{
   assert.equal(r.status,403);
   r=await call("/health");
   assert.equal(r.status,200);
+  assert.equal((await r.json()).cover_review_max_version,5);
 });
 test("GitHub OAuth popup yields owner-only session; review is idempotent",async()=>{
   const previousFetch=globalThis.fetch;

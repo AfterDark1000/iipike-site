@@ -438,7 +438,7 @@ export default {
     if (url.origin!==env.BACKEND_ORIGIN) return fail(403,"unexpected_host");
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
-    if (url.pathname==="/health" && request.method==="GET") return send({ok:true,service:"hpii-auth-gateway"});
+    if (url.pathname==="/health" && request.method==="GET") return send({ok:true,service:"hpii-auth-gateway",cover_review_max_version:5});
     if (url.pathname.startsWith("/api/")) {
       if (!origin(request,env)) return fail(403,"origin_not_allowed");
       if (request.method==="OPTIONS") return new Response(null,{status:204,headers:{...noStore,...cors(env)}});
