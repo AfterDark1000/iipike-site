@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 159 · **В каталоге Дзена подтверждены:** 139 · **Не подтверждены, уже на сайте:** 18 · **Не подтверждены, ждут сайт:** 2
+**Всего одобренных:** 160 · **В каталоге Дзена подтверждены:** 139 · **Не подтверждены, уже на сайте:** 18 · **Не подтверждены, ждут сайт:** 3
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -41,6 +41,7 @@
 |---:|---|---|---|---|
 | 1 | [Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/apple-macos-27-3-ai-agent-permissions-20261116.md) | **Не ранее 18.11.2026 14:37 (Усть-Катав)**; пауза до 18.11.2026 14:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/apple-macos-27-3-ai-agent-permissions-20261116.webp) |
 | 2 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 15:37 (Усть-Катав)**; пауза до 18.11.2026 14:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| 3 | [Китайские нейросети учатся на ответах OpenAI](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/china-openai-distillation-reuters-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/china-openai-distillation-reuters-20261117.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
