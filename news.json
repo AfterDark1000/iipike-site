@@ -6661,5 +6661,28 @@
     "products": [
       "qwen"
     ]
+  },
+  {
+    "title": "Google обнаружила ИИ-хакера, который превращает исправления программ в новые атаки",
+    "summary": "Исследователи Google и Mandiant обнаружили exploit_agent — автоматизированную систему поиска и эксплуатации уязвимостей, а также похищенные данные на открытом сервере злоумышленников.",
+    "published": "2026-11-18",
+    "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+    "cover": "assets/editorial/google-gtig-exploit-agent-autonomous-attacks-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🔓 GOOGLE нашла ИИ-ХАКЕРА, который сам готовит атаки",
+    "vk_summary": "Исследователи Google и Mandiant нашли открытый сервер с exploit_agent: система сравнивает код программ до и после исправлений, ищет уязвимости и запускает попытки их эксплуатации без участия человека. Рядом обнаружились похищенные данные, а следы работы указывали на сайты во Франции.",
+    "published_at_utc": "2026-11-18T12:01:04Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "google-gtig-exploit-agent-autonomous-attacks-20261116",
+    "url": "articles/google-gtig-exploit-agent-autonomous-attacks-20261116/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
