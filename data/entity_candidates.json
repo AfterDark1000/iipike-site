@@ -1045,6 +1045,42 @@
           "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
         }
       ]
+    },
+    {
+      "key": "artificial-analysis",
+      "name": "Artificial Analysis",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://artificialanalysis.ai/leaderboards/models"
+        }
+      ]
+    },
+    {
+      "key": "cognition",
+      "name": "Cognition",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://cognition.com/frontiercode"
+        }
+      ]
+    },
+    {
+      "key": "zapier",
+      "name": "Zapier",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://zapier.com/benchmarks"
+        }
+      ]
     }
   ],
   "products": [
@@ -1950,6 +1986,10 @@
         {
           "article_id": "claude-saltline-shooter-eight-hours-20261109",
           "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
+        },
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://artificialanalysis.ai/leaderboards/models"
         }
       ]
     },
@@ -2054,6 +2094,45 @@
         {
           "article_id": "sabre-grok-bot-travel-connector-20261117",
           "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
+        }
+      ]
+    },
+    {
+      "key": "gpt-6-2-astra",
+      "name": "GPT-6.2 Astra",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+        }
+      ]
+    },
+    {
+      "key": "gpt-6-2-sol",
+      "name": "GPT-6.2 Sol",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+        }
+      ]
+    },
+    {
+      "key": "gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
         }
       ]
     }
