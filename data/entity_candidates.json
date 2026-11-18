@@ -1033,6 +1033,18 @@
           "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows"
         }
       ]
+    },
+    {
+      "key": "sabre",
+      "name": "Sabre Corporation",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "sabre-grok-bot-travel-connector-20261117",
+          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
+        }
+      ]
     }
   ],
   "products": [
@@ -1830,6 +1842,10 @@
         {
           "article_id": "grok-imagine-60-layoffs-20261113",
           "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
+        },
+        {
+          "article_id": "sabre-grok-bot-travel-connector-20261117",
+          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
         }
       ]
     },
@@ -2025,6 +2041,19 @@
         {
           "article_id": "google-ask-maps-booking-europe-20261116",
           "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026"
+        }
+      ]
+    },
+    {
+      "key": "sabre-mosaic-travel-connector",
+      "name": "Sabre Mosaic Travel Connector",
+      "company": "sabre",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "sabre-grok-bot-travel-connector-20261117",
+          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
         }
       ]
     }
