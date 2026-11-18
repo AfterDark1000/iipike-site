@@ -1189,6 +1189,18 @@
           "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
         }
       ]
+    },
+    {
+      "key": "heygen",
+      "name": "HeyGen",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "heygen-avatar-6-contextual-gestures-20261117",
+          "source_url": "https://www.heygen.com/research/avatar-6-model"
+        }
+      ]
     }
   ],
   "products": [
@@ -2267,6 +2279,19 @@
         {
           "article_id": "china-openai-distillation-reuters-20261117",
           "source_url": "https://arxiv.org/abs/2411.16489"
+        }
+      ]
+    },
+    {
+      "key": "heygen-avatar-6",
+      "name": "Avatar 6",
+      "company": "heygen",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "heygen-avatar-6-contextual-gestures-20261117",
+          "source_url": "https://www.heygen.com/research/avatar-6-model"
         }
       ]
     }
