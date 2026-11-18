@@ -88,12 +88,13 @@ jobs:
           print('READY_IN_PRIVATE_QUEUE:', [row['id'] for row in rows])
           print('No public build, RSS, sitemap or main update was requested.')
           PY
-      - name: Validate full Markdown for all unpublished approved inbox stories
+      - name: Validate VK teasers and full Markdown for all unpublished approved inbox stories
         run: |
           python3 - <<'PY'
           import json
           from scripts.site_first_release_pr import STORY, exists_at, git, safe_git_blob_at
           from scripts.site_rich_text import markdown_to_blocks
+          from scripts.publish_approved_article import validated_vk_fields
 
           ref = 'origin/editorial-intake'
           paths = git('ls-tree', '-r', '--name-only', ref, '--', 'editorial_inbox/stories').stdout.splitlines()
@@ -110,6 +111,10 @@ jobs:
                   continue
               if data.get('id') != sid:
                   raise SystemExit(f'INVALID_PENDING_STORY_ID: {sid}')
+              try:
+                  validated_vk_fields(data)
+              except (ValueError, TypeError) as error:
+                  raise SystemExit(f'INVALID_PENDING_VK_COPY: {sid}: {error}')
               try:
                   markdown_to_blocks(data.get('article_markdown'))
               except (ValueError, TypeError) as error:
