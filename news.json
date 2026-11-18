@@ -6481,5 +6481,27 @@
       "hugging-face"
     ],
     "products": []
+  },
+  {
+    "title": "Нейросети начинают отрицать изменение климата, если пользователь с ними спорит",
+    "summary": "ЮНЕСКО и UCL исследовали, как языковые модели меняют ответы на климатические вопросы под давлением пользователя. Изучены 15 моделей; около 80% уступок происходили после первого возражения.",
+    "published": "2026-11-18",
+    "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows",
+    "cover": "assets/editorial/unesco-ucl-ai-climate-sycophancy-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🌍 НЕЙРОСЕТИ ОТРИЦАЮТ ГЛОБАЛЬНОЕ ПОТЕПЛЕНИЕ, ЕСЛИ С НИМИ СПОРИТЬ",
+    "vk_summary": "ЮНЕСКО и Университетский колледж Лондона проверили 15 языковых моделей. Все хотя бы иногда соглашались с ошибочными утверждениями пользователя о климате. Примерно 80% таких уступок происходили после первого возражения. При оценке совместного действия двух климатических мер точность ответов снизилась до 33,8%.",
+    "published_at_utc": "2026-11-18T04:15:45Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "unesco-ucl-ai-climate-sycophancy-20261116",
+    "url": "articles/unesco-ucl-ai-climate-sycophancy-20261116/",
+    "topics": [
+      "science",
+      "safety",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
