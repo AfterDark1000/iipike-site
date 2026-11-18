@@ -6684,5 +6684,26 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ-двойники перестали махать руками невпопад: HeyGen выпустила Avatar 6",
+    "summary": "HeyGen выпустила Avatar 6: цифровые двойники подбирают мимику и жесты под произносимые слова, создают видео до 2K; в собственном парном тесте компании участники принимали ИИ-ролики за реальную съёмку в 42,2% сравнений.",
+    "published": "2026-11-18",
+    "source_url": "https://www.heygen.com/research/avatar-6-model",
+    "cover": "assets/editorial/heygen-avatar-6-contextual-gestures-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🎭 ИИ-ДВОЙНИКИ научились жестикулировать вовремя — вышла Avatar 6",
+    "vk_summary": "HeyGen выпустила Avatar 6: цифровые ведущие подбирают жесты под смысл речи, работают с фото и короткой записью человека, генерируют видео в 2K. В собственном тесте компании зрители выбирали ИИ-ролик как настоящий в 42,2% парных сравнений. Первый ролик можно сделать бесплатно.",
+    "published_at_utc": "2026-11-18T13:15:37Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "heygen-avatar-6-contextual-gestures-20261117",
+    "url": "articles/heygen-avatar-6-contextual-gestures-20261117/",
+    "topics": [
+      "video",
+      "audio"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
