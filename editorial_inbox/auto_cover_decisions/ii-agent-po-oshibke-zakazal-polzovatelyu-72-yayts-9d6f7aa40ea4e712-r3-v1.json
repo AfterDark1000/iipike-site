@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+  "text_revision": 3,
+  "text_updated_at": "2026-11-18T14:50:45+00:00",
+  "cover_version": 1,
+  "cover_blob_sha": "ebc0e6964f01379cb18ddc5025c863d36eb87327",
+  "cover_metadata_blob_sha": "cd7cefa33144b6d6c2a62cb38a0c727e0aaf1f0c",
+  "source_draft_blob_sha": "5dfec4de1c32085de050c597112eaae38b8ee22b",
+  "source_text_decision_blob_sha": "812c7cfa3cc35c696d5cb3f6f2e9f3dfd7cfb200",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-18T17:08:56.293Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
