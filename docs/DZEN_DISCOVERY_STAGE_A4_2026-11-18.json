@@ -1,0 +1,340 @@
+{
+  "experiment": "A.4",
+  "policy_review": {
+    "date": "2026-11-18",
+    "terms_url": "https://dzen.ru/legal/ru/termsofuse/index.html",
+    "terms_revision": "2026-11-12",
+    "terms_sha256": "e02596e5379727da4825f8d32a3912a4c08939541ea912c085fc4ef6f3c71cd9",
+    "robots_url": "https://dzen.ru/robots.txt",
+    "robots_sha256": "a6e7d16a66dcbbfe8d64ec966726922ac7736fd28f3a4b5bede7897992c92086",
+    "regular_use_status": "permission_not_established"
+  },
+  "http_observations": [
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=techinsider",
+      "at_utc": "2026-11-18T18:10:50Z",
+      "http_status": 200,
+      "bytes": 433085,
+      "capture": "retained_stage_a3"
+    },
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=hiaimedia",
+      "at_utc": "2026-11-18T18:10:55Z",
+      "http_status": 200,
+      "bytes": 410151,
+      "capture": "retained_stage_a3"
+    },
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=digitalocean",
+      "at_utc": "2026-11-18T18:32:31+00:00",
+      "http_status": 200,
+      "bytes": 720836,
+      "capture": "bounded_stage_a4"
+    },
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=tolyai",
+      "at_utc": "2026-11-18T18:32:37+00:00",
+      "http_status": 200,
+      "bytes": 386292,
+      "capture": "bounded_stage_a4"
+    }
+  ],
+  "catalog": {
+    "source_type": "public_dzen_guru_catalog",
+    "url": "https://dzen.guru/channels?topicId=12",
+    "observed_at": "2026-11-18T18:31:56+00:00",
+    "http_status": 200,
+    "selected": [
+      {
+        "slug": "digitalocean",
+        "title": "Цифровой Океан",
+        "subscribers": 21851,
+        "views30days": 327568,
+        "publications30days": 48,
+        "reachPerPublication": 6824,
+        "views30daysEstimated": false
+      },
+      {
+        "slug": "tolyai",
+        "title": "Толян и Нейросеть | Как выжить после ИИ-революции",
+        "subscribers": 11997,
+        "views30days": 40695,
+        "publications30days": 1500,
+        "reachPerPublication": 2,
+        "views30daysEstimated": true
+      }
+    ]
+  },
+  "thresholds": {
+    "priority_a_views": 1000,
+    "priority_b_views": 300,
+    "min_discussed": 2,
+    "max_median_gap_hours": 48,
+    "max_latest_history_hours": 72
+  },
+  "channels": [
+    {
+      "channel": "techinsider",
+      "title": "TechInsider",
+      "subscribers": 625044,
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=techinsider",
+      "source_type": "dzen_channel_export",
+      "observed_at": "2026-11-18T18:10:50+00:00",
+      "all_cards": {
+        "total": 20,
+        "types": {
+          "native": 19,
+          "brief": 1
+        },
+        "views": {
+          "positive": 20,
+          "zero": 0,
+          "unknown": 0
+        },
+        "comments": {
+          "positive": 2,
+          "zero": 18,
+          "unknown": 0
+        }
+      },
+      "valid_articles": 19,
+      "skipped_cards": {
+        "not_article": 1
+      },
+      "article_filters": {
+        "off_topic": 19
+      },
+      "freshness": {
+        "all_articles_up_to_30_minutes": 0,
+        "all_articles_up_to_60_minutes": 0,
+        "all_articles_up_to_120_minutes": 2,
+        "ai_articles_up_to_72_hours": 0
+      },
+      "history": {
+        "status": "low_activity",
+        "channel_history_sample_size": 6,
+        "channel_historical_median_views": 54.5,
+        "channel_history_discussion_rate": 0.1667,
+        "views_known": 6,
+        "comments_known": 6,
+        "articles_with_discussion": 1,
+        "history_ai_articles": 0,
+        "median_gap_hours": 0.57,
+        "sample_age_hours": [
+          24.33,
+          27.23
+        ],
+        "regular_in_sample": true
+      },
+      "newest_ai_up_to_72_hours": null
+    },
+    {
+      "channel": "hiaimedia",
+      "title": "Hi, AI | Нейросети и технологии",
+      "subscribers": 1014,
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=hiaimedia",
+      "source_type": "dzen_channel_export",
+      "observed_at": "2026-11-18T18:10:55+00:00",
+      "all_cards": {
+        "total": 20,
+        "types": {
+          "native": 19,
+          "channel_block_shorts": 1
+        },
+        "views": {
+          "positive": 15,
+          "zero": 3,
+          "unknown": 2
+        },
+        "comments": {
+          "positive": 1,
+          "zero": 18,
+          "unknown": 1
+        }
+      },
+      "valid_articles": 19,
+      "skipped_cards": {
+        "not_article": 1
+      },
+      "article_filters": {
+        "off_topic": 11,
+        "older_than_120_minutes": 8
+      },
+      "freshness": {
+        "all_articles_up_to_30_minutes": 0,
+        "all_articles_up_to_60_minutes": 0,
+        "all_articles_up_to_120_minutes": 0,
+        "ai_articles_up_to_72_hours": 3
+      },
+      "history": {
+        "status": "low_activity",
+        "channel_history_sample_size": 9,
+        "channel_historical_median_views": 2.5,
+        "channel_history_discussion_rate": 0.0,
+        "views_known": 8,
+        "comments_known": 9,
+        "articles_with_discussion": 0,
+        "history_ai_articles": 4,
+        "median_gap_hours": 16.24,
+        "sample_age_hours": [
+          27.63,
+          167.05
+        ],
+        "regular_in_sample": true
+      },
+      "newest_ai_up_to_72_hours": {
+        "title": "ИИ-агент полтора месяца руководил компанией и выпустил 38 нейросетей",
+        "url": "https://dzen.ru/a/av2RkHJPa2vlDgUO",
+        "channel": "hiaimedia",
+        "source": "https://dzen.ru/api/v3/launcher/export?channel_name=hiaimedia",
+        "source_type": "dzen_channel_export",
+        "observed_at": "2026-11-18T18:10:55+00:00",
+        "published_at": "2026-11-18T11:53:22+00:00",
+        "first_seen_at": "2026-11-18T18:10:55+00:00",
+        "article_age_minutes": 377.55,
+        "current_article_comments": 0,
+        "current_article_views": 1,
+        "window": "older_than_120_minutes",
+        "channel_status": "low_activity",
+        "channel_history_sample_size": 9,
+        "channel_historical_median_views": 2.5,
+        "channel_history_discussion_rate": 0.0
+      }
+    },
+    {
+      "channel": "digitalocean",
+      "title": "Цифровой Океан",
+      "subscribers": 21872,
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=digitalocean",
+      "source_type": "dzen_channel_export",
+      "observed_at": "2026-11-18T18:32:31+00:00",
+      "all_cards": {
+        "total": 21,
+        "types": {
+          "native": 18,
+          "channel_block_suites": 1,
+          "channel_block_shorts": 1,
+          "channel_block_videos": 1
+        },
+        "views": {
+          "positive": 18,
+          "zero": 0,
+          "unknown": 3
+        },
+        "comments": {
+          "positive": 6,
+          "zero": 12,
+          "unknown": 3
+        }
+      },
+      "valid_articles": 18,
+      "skipped_cards": {
+        "not_article": 3
+      },
+      "article_filters": {
+        "off_topic": 12,
+        "older_than_120_minutes": 6
+      },
+      "freshness": {
+        "all_articles_up_to_30_minutes": 0,
+        "all_articles_up_to_60_minutes": 0,
+        "all_articles_up_to_120_minutes": 0,
+        "ai_articles_up_to_72_hours": 1
+      },
+      "history": {
+        "status": "low_activity",
+        "channel_history_sample_size": 9,
+        "channel_historical_median_views": 19,
+        "channel_history_discussion_rate": 0.4444,
+        "views_known": 9,
+        "comments_known": 9,
+        "articles_with_discussion": 4,
+        "history_ai_articles": 4,
+        "median_gap_hours": 9.93,
+        "sample_age_hours": [
+          25.11,
+          142.86
+        ],
+        "regular_in_sample": true
+      },
+      "newest_ai_up_to_72_hours": {
+        "title": "Первый китайский блокбастер, созданный с помощью ИИ, провалился в прокате. Что пошло не так",
+        "url": "https://dzen.ru/a/avyNN1o7XEG5ONPT",
+        "channel": "digitalocean",
+        "source": "https://dzen.ru/api/v3/launcher/export?channel_name=digitalocean",
+        "source_type": "dzen_channel_export",
+        "observed_at": "2026-11-18T18:32:31+00:00",
+        "published_at": "2026-11-17T17:25:57+00:00",
+        "first_seen_at": "2026-11-18T18:32:31+00:00",
+        "article_age_minutes": 1506.5666666666666,
+        "current_article_comments": 0,
+        "current_article_views": 13,
+        "window": "older_than_120_minutes",
+        "channel_status": "low_activity",
+        "channel_history_sample_size": 9,
+        "channel_historical_median_views": 19,
+        "channel_history_discussion_rate": 0.4444
+      }
+    },
+    {
+      "channel": "tolyai",
+      "title": "Толян и Нейросеть | Как выжить после ИИ-революции",
+      "subscribers": 12004,
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=tolyai",
+      "source_type": "dzen_channel_export",
+      "observed_at": "2026-11-18T18:32:37+00:00",
+      "all_cards": {
+        "total": 20,
+        "types": {
+          "native": 20
+        },
+        "views": {
+          "positive": 18,
+          "zero": 0,
+          "unknown": 2
+        },
+        "comments": {
+          "positive": 4,
+          "zero": 16,
+          "unknown": 0
+        }
+      },
+      "valid_articles": 20,
+      "skipped_cards": {},
+      "article_filters": {
+        "off_topic": 20
+      },
+      "freshness": {
+        "all_articles_up_to_30_minutes": 1,
+        "all_articles_up_to_60_minutes": 3,
+        "all_articles_up_to_120_minutes": 5,
+        "ai_articles_up_to_72_hours": 0
+      },
+      "history": {
+        "status": "insufficient_evidence",
+        "channel_history_sample_size": 0,
+        "channel_historical_median_views": null,
+        "channel_history_discussion_rate": null,
+        "views_known": 0,
+        "comments_known": 0,
+        "articles_with_discussion": 0,
+        "history_ai_articles": 0,
+        "median_gap_hours": null,
+        "sample_age_hours": null,
+        "regular_in_sample": false
+      },
+      "newest_ai_up_to_72_hours": null
+    }
+  ],
+  "article_only_matches_before_story_dedup": 0,
+  "duplicate_stories": 0,
+  "opportunities": [],
+  "unqualified_candidates": [],
+  "qualified_candidate_timing": {
+    "total": 0,
+    "within_30_minutes": 0,
+    "within_60_minutes": 0,
+    "rate_30_minutes": null,
+    "rate_60_minutes": null
+  }
+}
