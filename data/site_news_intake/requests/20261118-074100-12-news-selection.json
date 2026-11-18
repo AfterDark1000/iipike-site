@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "ИИ взялся за одну из главных нерешённых задач физики",
+      "source_url": "https://openai.com/index/step-toward-defining-the-standard-model/",
+      "summary": "15 ноября: исследовательское предложение о решёточном описании Стандартной модели; требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В США запустили суперкомпьютер для поиска новых материалов и исследований термоядерной энергии",
+      "source_url": "https://newsroom.amd.com/news/amd-powered-lux-supercomputer-opens-scientific-users/",
+      "summary": "16 ноября: запуск научного суперкомпьютера Lux на ускорителях AMD.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёные создали ИИ-коллегу для биомедицинских открытий",
+      "source_url": "https://aiuniversejournal.org/issues/2026-11-17/",
+      "summary": "16 ноября: сообщение о научном ИИ-агенте для биомедицинских гипотез; первоисточник не установлен.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ ищет риск переломов по обычному рентгену грудной клетки",
+      "source_url": "https://aiuniversejournal.org/issues/2026-11-17/",
+      "summary": "16 ноября: сообщение об исследовании прогноза риска переломов по рентгену; первоисточник не установлен.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Британцы выделили финансирование сразу 20 исследователям ИИ",
+      "source_url": "https://www.ukri.org/news/",
+      "summary": "16 ноября: сообщение о грантах Turing AI Fellowships; ссылка ведёт на общую ленту, проверить конкретный анонс.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google обнаружила кибератаки, которые ИИ проводит самостоятельно",
+      "source_url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gtig-ai-threat-tracker-q4-2026/",
+      "summary": "16 ноября: отчёт Google об использовании ИИ злоумышленниками.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA заявила о двукратном ускорении обучения ИИ на Vera Rubin",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "summary": "17 ноября: сообщение о результатах MLPerf; вторичный источник, проверить оригинал.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американская компания сдаст ИИ-дата-центр в аренду за миллиард долларов",
+      "source_url": "https://www.reuters.com/business/energy/giga-energy-signs-1-billion-lease-texas-ai-data-center-with-cloud-provider-2026-11-17/",
+      "summary": "17 ноября: сообщение о десятилетней аренде 60-мегаваттного дата-центра Giga Energy.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "HeyGen научила цифровых двойников говорить почти как настоящие люди",
+      "source_url": "https://www.heygen.com/research/avatar-6-model",
+      "summary": "17 ноября: запуск Avatar 6 с генерацией видео до 2K и управлением жестами.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "LangChain перестраивает наблюдение за ИИ-агентами вокруг их истории действий",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "summary": "17 ноября: сообщение об обновлении LangSmith; вторичный источник, детали проверить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google открыла Gemini в Apps Script для широкого использования",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "summary": "17 ноября: сообщение об интеграции Gemini в Apps Script; проверить доступность.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агентам дали защищённую песочницу для работы с сайтами",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "summary": "17 ноября: сообщение об инструменте Firecrawl; проверить детали релиза.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
