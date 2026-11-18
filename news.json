@@ -6524,5 +6524,34 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude",
+    "summary": "OpenAI выпустила GPT-6.2 Astra и Sol. Astra почти догнала Claude Fable 5.2 по общему индексу Artificial Analysis, Sol показала низкую стоимость заданий в FrontierCode 2.0.",
+    "published": "2026-11-18",
+    "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "cover": "assets/editorial/openai-gpt-6-2-astra-sol-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🚀 OPENAI выпустила GPT-6.2 ASTRA И SOL — новые модели уже доступны",
+    "vk_summary": "Astra стала сильнее в программировании, исследованиях, презентациях и таблицах. Цены на её токены в API снижены на 20%. Sol рассчитана на повседневные задачи и экономнее расходует ресурсы. Обе модели вышли 17 ноября в ChatGPT Work, Codex и API — в обычном чате ChatGPT их пока нет.",
+    "published_at_utc": "2026-11-18T06:09:21Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "openai-gpt-6-2-astra-sol-20261117",
+    "url": "articles/openai-gpt-6-2-astra-sol-20261117/",
+    "topics": [
+      "models",
+      "development"
+    ],
+    "companies": [
+      "openai",
+      "anthropic",
+      "google"
+    ],
+    "products": [
+      "gpt-6",
+      "claude",
+      "gemini"
+    ]
   }
 ]
