@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
+  "text_revision": 3,
+  "text_updated_at": "2026-11-18T02:50:00.000Z",
+  "cover_version": 2,
+  "cover_blob_sha": "c02889e80647bddb6a4bccfb6c553a68182cd105",
+  "cover_metadata_blob_sha": "063ef3c5f87f24f70b8b8c9cc71468acd89d9c18",
+  "source_draft_blob_sha": "818e1a11b2557fb5b656e7925e54fa8e0c144c6c",
+  "source_text_decision_blob_sha": "8ffeb6b08bbd7db46b3f378ae67ba24a0997c561",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-18T11:00:21.236Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
