@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17T19:47:30.040912Z",
+  "updated_at": "2026-11-18T02:22:28.319149Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
       "fresh_matches": 5
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 3
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-17T19:47:30.040912Z",
-      "last_success_at": "2026-11-17T19:47:30.040912Z",
+      "checked_at": "2026-11-18T02:22:28.319149Z",
+      "last_success_at": "2026-11-18T02:22:28.319149Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-18",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -114,10 +114,14 @@
       "first_seen_at": "2026-11-17T19:47:30.040912Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Индийские исследователи проверили DeepSeek R1 и Mistral Large на имитацию согласованности в бытовых дилеммах. Удивительно, что у меньшей модели разрыв оказался вдвое больше.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-18T02:22:28.319149Z",
+      "reason": "Выделил конкретный эксперимент индийских ученых с цифрами по моделям DeepSeek и Mistral.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-18T02:22:28.319149Z"
     },
     {
       "id": "699465cee39f241a7ea8b15b",
@@ -220,12 +224,14 @@
       "first_seen_at": "2026-11-17T11:38:04.453264Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-17T11:38:04.453264Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что старые Gems превращаются в черновики Skills, но теряют кучу форматов вроде GitHub и старого офиса. Опять пользователям разгребать ручной перенос.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-18T02:22:28.319149Z",
+      "reason": "Зацепился за деталь автоматического преобразования старых инструкций в черновики с потерей поддержки ряда форматов.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-18T02:22:28.319149Z"
     },
     {
       "id": "22b3d8dd41d6930888f0b403",
@@ -260,10 +266,14 @@
       "first_seen_at": "2026-11-17T11:38:04.453264Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно смотреть на процессор с пятьюдесятью тысячами ядер CUDA, который делают вообще не под нейросети. Ждать его правда еще до 2028 года.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-18T02:22:28.319149Z",
+      "reason": "Опирался на деталь про более чем 50 000 ядер CUDA в чипе не для ИИ.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-18T02:22:28.319149Z"
     },
     {
       "id": "160fc9ccdda32c7916e342fb",
@@ -2302,46 +2312,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "8eec532fd0ef69fd2a7fa0c0",
-      "title": "Создатели Cyanogen готовят Linux, напичканный ИИ — новая ОС Kora объединит разные нейросети",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151126",
-      "published_at": "2026-11-10T22:05:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-11T00:36:53.625120Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Требовать от десктопной ОС минимум 64 Гбайт оперативной памяти ради локальных моделей — это, конечно, мощный способ сразу оставить за бортом большую часть потенциальной аудитории.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-11T07:08:41.035149Z",
-      "reason": "Высокое системное требование в 64 ГБ ОЗУ выделено как спорный барьер для аудитории.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-11T07:08:41.035149Z"
-    },
-    {
-      "id": "c03564088f97ce00ca06c30a",
-      "title": "Без CUDA никуда? Конкурентное преимущество NVIDIA в сфере ПО для ИИ сходит на нет",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151113",
-      "published_at": "2026-11-10T20:05:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-11T00:36:53.625120Z",
-      "views": null,
-      "comments": null,
-      "status": "read_error",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-11T07:08:41.035149Z",
-      "reason": "Не удалось прочитать статью целиком (ValueError)",
       "link_status": "dzen_link_missing"
     }
   ]
