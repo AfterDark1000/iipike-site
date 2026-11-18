@@ -1,4 +1,4 @@
-"""Bounded, read-only network diagnostic for issue #215."""
+"""First-response and sitemap diagnostic for issue #215."""
 
 import argparse
 import gzip
@@ -113,8 +113,17 @@ def checked_get(groups, path, observations):
     time.sleep(2)
     url = ORIGIN + path
     status, headers, body = http_get(url)
-    observations.append(observed_response(url, status, headers, len(body)))
+    size = len(body) if status < 300 else None
+    observations.append(observed_response(url, status, headers, size))
     return status, headers, body
+
+
+def access_status(http_status):
+    if http_status in REDIRECTS:
+        return "redirect_not_followed"
+    if http_status in ACCESS_ERRORS:
+        return "blocked"
+    return None
 
 
 def sitemap(groups, kind, observations, today):
@@ -157,7 +166,7 @@ def sitemap(groups, kind, observations, today):
     return summary, newest
 
 
-def browser_probe(groups, urls, executable):
+def first_document_probe(groups, urls, executable):
     from playwright.sync_api import Error, sync_playwright
 
     proxy = getproxies().get("https")
@@ -189,8 +198,9 @@ def browser_probe(groups, urls, executable):
                         response = route.fetch(max_redirects=0, timeout=20_000)
                         length = response.headers.get("content-length")
                         result.update(observed_response(url, response.status, response.headers))
-                        if response.status in REDIRECTS | ACCESS_ERRORS:
-                            result["status"] = "blocked"
+                        status = access_status(response.status)
+                        if status:
+                            result["status"] = status
                         elif response.ok and response.headers.get("content-type", "").startswith("text/html"):
                             if length and (not length.isdecimal() or int(length) > LIMIT):
                                 result["status"] = "invalid_response"
@@ -215,7 +225,7 @@ def browser_probe(groups, urls, executable):
                 if result.get("http_status") in ACCESS_ERRORS:
                     break
         browser.close()
-    return {"chromium_version": version, "pages": results}
+    return {"mode": "first_document_only", "chromium_version": version, "pages": results}
 
 
 def inspect_document(page, url, result):
@@ -265,26 +275,31 @@ def run(args):
             "url": url,
             "sitemap_lastmod": lastmod,
             "published_at": None,
-            "status": "blocked" if attempted.get(url, {}).get("http_status") in REDIRECTS | ACCESS_ERRORS
-                      else "found_but_not_checked",
+            "status": access_status(attempted.get(url, {}).get("http_status"))
+            or "found_but_not_checked",
         }
         for url, lastmod in sample
     ]
     if args.browser and not any(item["http_status"] in ACCESS_ERRORS for item in report["http"]):
-        report["browser"] = browser_probe(groups, [ORIGIN + path for path in controls], args.chromium)
+        report["browser"] = first_document_probe(
+            groups, [ORIGIN + path for path in controls], args.chromium
+        )
         browser_results = {item["url"]: item for item in report["browser"]["pages"]}
         for article in report["article_sample"]:
             page = browser_results.get(article["url"], {})
             if page.get("status") == "direct_verified":
                 article.update(status="direct_verified", title=page["title"])
-            elif page.get("status") == "blocked":
-                article["status"] = "blocked"
+            elif page.get("status") in {"blocked", "redirect_not_followed"}:
+                article["status"] = page["status"]
     return report
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--browser", action="store_true", help="Run the Playwright Chromium page probe")
+    parser.add_argument(
+        "--browser", action="store_true",
+        help="Inspect the first HTML document with Playwright, without JavaScript or redirects",
+    )
     parser.add_argument("--chromium", help="Path to an existing Chromium installation")
     args = parser.parse_args()
     try:
