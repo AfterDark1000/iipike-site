@@ -60,7 +60,10 @@ class AutonomousCoverWorkerTests(unittest.TestCase):
         self.assertEqual(plan["revision"], 3)
         self.assertEqual(plan["headline"], "КРОССОВОК НА СОБЕСЕДОВАНИИ")
         self.assertEqual(plan["style_index"], 0)
-        self.assertIn("not like an authentic photograph", prompt_for(plan))
+        prompt=prompt_for(plan)
+        self.assertIn("SPORT SNEAKER ON TOP OF HIS HEAD",prompt)
+        self.assertNotIn("КРОССОВОК НА СОБЕСЕДОВАНИИ",prompt)
+        self.assertIn("no faux text",prompt)
 
     def test_never_run_on_unapproved_or_changed_text(self):
         self.decision_file.unlink()
