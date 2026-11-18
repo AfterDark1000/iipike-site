@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
+  "text_revision": 3,
+  "cover_version": 2,
+  "status": "handed_off_to_site_queue",
+  "source_draft_blob_sha": "818e1a11b2557fb5b656e7925e54fa8e0c144c6c",
+  "text_decision_blob_sha": "8ffeb6b08bbd7db46b3f378ae67ba24a0997c561",
+  "cover_metadata_blob_sha": "063ef3c5f87f24f70b8b8c9cc71468acd89d9c18",
+  "cover_blob_sha": "c02889e80647bddb6a4bccfb6c553a68182cd105",
+  "cover_decision_blob_sha": "60967c4970b5eca114399513a7562350a54ef856",
+  "text_approved_at": "2026-11-18T03:06:28.975Z",
+  "cover_approved_at": "2026-11-18T11:00:21.236Z",
+  "story_path": "editorial_inbox/stories/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.json",
+  "cover_path": "editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp",
+  "site_queue": "standard",
+  "social_posts": "prepared_in_auto_draft_not_dispatched",
+  "note": "Derived from separately human-approved text and image; no direct publication."
+}
