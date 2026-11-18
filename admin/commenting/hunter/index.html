@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Дзен-охотник — ХПИИ</title>
+<style>
+:root{font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#203038;background:#f4f1e9}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:1100px;margin:0 auto;padding:22px 20px}header{background:#173c38;color:#fff;padding:16px 0}header h1{margin:.1em 0;font-size:27px}header a{color:#fff}p{margin:.45em 0 1em}main{padding-top:22px}.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.tools{background:#fff;border:1px solid #d9ddd6;padding:16px;border-radius:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:end}label{display:grid;font-size:13px;gap:5px;color:#53605e}input,select,button{font:inherit;padding:9px 10px;border-radius:9px;border:1px solid #c5d0ca}input{min-width:220px}button{cursor:pointer;background:#e1ebe7;color:#20453f}button:hover{background:#c6dcd5}.primary{background:#176a60;color:#fff}.stats{font-weight:600;margin:13px 0}.card{background:#fff;border:1px solid #d9ddd6;border-radius:12px;padding:18px;margin:12px 0}.card h2{font-size:19px;line-height:1.3;margin:.1em 0 .5em}.card h2 a{color:#164f83}.meta{font-size:13px;color:#62716d;margin:8px 0}.muted{font-size:13px;color:#66716c}.status{padding:10px 12px;background:#fff8e5;border-left:3px solid #d5994c;border-radius:5px;margin:12px 0}.card .actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px}.card .actions a{color:#fff;text-decoration:none;background:#176a60;border-radius:9px;padding:9px 14px}a:hover{text-decoration:underline}.notice{padding:14px;border:1px solid #d5ded7;border-radius:12px;background:#fff}details{margin-top:15px}summary{cursor:pointer}footer{color:#62716d;font-size:13px;padding:20px 0}
+</style></head><body><header><div class="wrap"><div style="font-size:11px;letter-spacing:.12em">ХРОНИКИ ПИКИРУЮЩЕГО ИИ</div><h1>Дзен-охотник</h1><p>Автоматически найденные прямые ссылки на статьи Дзена</p><a href="/admin/commenting/">← К комментингу</a></div></header>
+<main class="wrap"><div class="tools">
+<label>Поиск по названию<input id="query" placeholder="нейросеть, ChatGPT, робот..."></label>
+<label>Отметки<select id="filter"><option value="all">Все</option><option value="new">Ещё не обработаны</option><option value="posted">Разместил</option><option value="skip">Пропустил</option></select></label>
+<button id="refresh" type="button" class="primary">Обновить результаты</button><button id="export" type="button">Сохранить JSON</button>
+</div><div id="stats" class="stats">Загружаю находки…</div><div id="message"></div><div id="items"></div>
+<details><summary>Диагностика источников</summary><pre id="health" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre></details>
+<footer>Дата обнаружения — не дата публикации Дзена. Ссылки найдены в RSS-поиске; доступность статьи и комментариев автоматически не проверены. Отметки хранятся только в этом браузере.</footer></main>
+<script>
+(()=>{'use strict';
+const DATA='https://raw.githubusercontent.com/AfterDark1000/iipike-site/commenting-free-data/data/hunter_queue.json';
+const STORAGE='hpii-free-hunter-marks-v1';const $=id=>document.getElementById(id);
+let queue=null,marks={};try{marks=JSON.parse(localStorage.getItem(STORAGE)||'{}')||{}}catch(_){marks={}}
+const direct=u=>typeof u==='string'&&/^https:\/\/dzen\.ru\/(?:a|b)\/[A-Za-z0-9_-]{8,100}$/.test(u)||typeof u==='string'&&/^https:\/\/dzen\.ru\/media\/[a-zA-Z0-9._-]{2,100}\/[a-zA-Z0-9._-]{6,180}$/.test(u);
+const time=s=>s?new Date(s).toLocaleString('ru-RU',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'}):'неизвестно';
+function el(parent,tag,txt,cls){const n=document.createElement(tag);if(txt!==undefined)n.textContent=txt;if(cls)n.className=cls;parent.append(n);return n}
+function save(url,state){marks[url]=state;try{localStorage.setItem(STORAGE,JSON.stringify(marks))}catch(e){$('message').textContent='Не удалось сохранить отметки в браузере'}render()}
+function render(){const pane=$('items');pane.replaceChildren();if(!queue)return;
+const q=$('query').value.trim().toLowerCase(),f=$('filter').value;
+const rows=queue.items.filter(r=>direct(r.dzen_url)&&(r.title+' '+r.source).toLowerCase().includes(q)).filter(r=>f==='all'||(f==='new'?!marks[r.dzen_url]:marks[r.dzen_url]===f));
+$('stats').textContent='Всего прямых ссылок: '+queue.items.length+' · найдено в последнем проходе: '+queue.new_items+' · показано: '+rows.length+' · обновлено '+time(queue.updated_at);
+$('health').textContent=(queue.sources||[]).map(s=>s.source+': '+s.status+(s.status==='ok'?' · найдено прямых '+s.direct_matches+' · старых/без даты '+s.outdated_or_undated:' · '+s.error_type)).join('\n')||'Данных пока нет';
+if(!rows.length)el(pane,'p','Подходящих ссылок пока нет. Это не означает, что статей нет в Дзене — доступные индексы могут их не находить.','notice');
+for(const r of rows){const card=el(pane,'article',undefined,'card');const h=el(card,'h2');const link=el(h,'a',r.title);link.href=r.dzen_url;link.target='_blank';link.rel='noopener noreferrer';
+el(card,'div','Найдено '+time(r.first_seen_at)+' · источник: '+r.source,'meta');el(card,'div',r.date_note||'Дата публикации в Дзене не подтверждена','muted');
+const actions=el(card,'div',undefined,'actions');const open=el(actions,'a','Открыть статью в Дзене');open.href=r.dzen_url;open.target='_blank';open.rel='noopener noreferrer';
+for(const [value,title] of [['posted','Разместил комментарий'],['skip','Пропустить'],['','Вернуть']]){const b=el(actions,'button',title);b.type='button';b.disabled=(marks[r.dzen_url]||'')===value;b.addEventListener('click',()=>save(r.dzen_url,value))}
+if(marks[r.dzen_url])el(card,'div','Отметка: '+(marks[r.dzen_url]==='posted'?'разместил':'пропустил'),'meta');}}
+async function refresh(){const button=$('refresh');button.disabled=true;try{const res=await fetch(DATA+'?v='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('Пока нет автоматических данных (HTTP '+res.status+'). Необходимо включить бесплатный сборщик в GitHub Actions.');const data=await res.json();if(data.schema_version!==1||!Array.isArray(data.items))throw new Error('Неверный формат данных');queue=data;$('message').textContent='';render()}catch(e){$('message').textContent=e.message; if(!queue)$('stats').textContent='Сборщик пока не запускался'}finally{button.disabled=false}}
+$('filter').addEventListener('change',render);$('query').addEventListener('input',render);$('refresh').addEventListener('click',refresh);
+$('export').addEventListener('click',()=>{if(!queue)return;const blob=new Blob([JSON.stringify({items:queue.items,marks},null,2)],{type:'application/json'});const u=URL.createObjectURL(blob);const a=document.createElement('a');a.href=u;a.download='dzen-hunter.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)});
+refresh();})();
+</script></body></html>
