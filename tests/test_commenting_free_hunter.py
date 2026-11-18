@@ -43,21 +43,29 @@ class Tests(unittest.TestCase):
         def fetcher(url):
             urls.append(url)
             return RSS
-        conf={"queries":["ChatGPT"],"bing_news":True,"google_news":True,"history_days":14}
+        conf={"queries":["ChatGPT"],"bing_news":True,"google_news":True,"bing_web":False,"history_days":14}
         result=h.run(conf,fetcher=fetcher,now=NOW)
         self.assertEqual(len(urls),2)
         self.assertTrue(all("dzen.ru" not in h.urllib.parse.urlsplit(url).hostname for url in urls))
         self.assertEqual(result["new_items"],1)
     def test_old_feed_results_are_discarded(self):
         old=RSS.replace("Wed, 18 Nov 2026 10:00:00 GMT", "Wed, 18 Nov 2020 10:00:00 GMT")
-        result=h.run({"queries":["ИИ"],"bing_news":True,"google_news":False,"max_feed_age_hours":72,"history_days":14},fetcher=lambda _:old,now=NOW)
+        result=h.run({"queries":["ИИ"],"bing_news":True,"google_news":False,"bing_web":False,"max_feed_age_hours":72,"history_days":14},fetcher=lambda _:old,now=NOW)
         self.assertEqual(result["new_items"],0)
         self.assertEqual(result["sources"][0]["outdated_or_undated"],2)
 
     def test_no_secret_leak_in_health(self):
-        result=h.run({"queries":["ИИ"],"bing_news":False,"google_news":False}, secrets="https://www.google.com/alerts/feeds/123/456",fetcher=lambda _:ATOM,now=NOW)
+        result=h.run({"queries":["ИИ"],"bing_news":False,"google_news":False,"bing_web":False}, secrets="https://www.google.com/alerts/feeds/123/456",fetcher=lambda _:ATOM,now=NOW)
         self.assertEqual(result["sources"][0]["source"],"Google Alerts RSS 1")
         self.assertNotIn("123/456",str(result))
+    def test_web_rss_undated_link_kept_but_not_marked_fresh(self):
+        rss='<?xml version="1.0"?><rss><channel><item><title>ChatGPT обновился</title><link>https://dzen.ru/a/Abcdef1234567890</link></item></channel></rss>'
+        config={"queries":["ChatGPT"],"google_news":False,"bing_news":False,"bing_web":True,"history_days":14}
+        result=h.run(config,fetcher=lambda _:rss,now=NOW)
+        self.assertEqual(result["new_items"],1)
+        self.assertEqual(result["items"][0]["feed_date_status"],"unknown")
+        self.assertIsNone(result["items"][0]["dzen_publication_date"])
+
     def test_reject_unapproved_feed_source(self):
         for bad in ["https://evil.example/rss", "https://dzen.ru/search?q=a", "http://www.bing.com/news/search", "https://www.google.com/alerts/feeds/no/1"]:
             with self.assertRaises(ValueError):h.checked_feed(bad)
