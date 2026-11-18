@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Suno научилась делать клипы к собственным ИИ-песням",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature",
+      "summary": "18 ноября: Suno Visuals предлагает обложки и видео до 15 секунд с синхронизацией губ; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В США хотят заставить компании публично признаваться в использовании китайского ИИ",
+      "source_url": "https://www.reuters.com/world/china/trump-administration-weighs-forcing-us-firms-disclose-chinese-ai-use-2026-11-18/",
+      "summary": "18 ноября: администрация обсуждает требование раскрывать использование китайских моделей, включая Qwen и DeepSeek; пока предложение.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Tencent предупредила, что американские ограничения могут затормозить обучение её следующей нейросети",
+      "source_url": "https://www.reuters.com/technology/tencent-q3-revenue-growth-slows-8-misses-estimates-2026-11-18/",
+      "summary": "18 ноября: Tencent сообщила о влиянии экспортных ограничений на доступ к ускорителям для обучения следующих моделей.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Малайзия потребовала от дата-центров соблюдать американские ограничения на ИИ-чипы",
+      "source_url": "https://www.reuters.com/business/finance/malaysia-says-data-centres-must-comply-us-ai-chip-rules-2026-11-18/",
+      "summary": "18 ноября: власти Малайзии призвали операторов дата-центров соблюдать ограничения США на ИИ-чипы.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Kling заявила о генерации изображений в 8K",
+      "source_url": "https://neurocartel.com/en/blog/ai-video-news-november-18-2026",
+      "summary": "18 ноября: в профильной подборке сообщается о Kling Image 4.0, генерации до 8K, серийных изображениях и тексте в кадре; вторичный источник, проверить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Pika показала управление ИИ-видео мышкой",
+      "source_url": "https://neurocartel.com/en/blog/ai-video-news-november-18-2026",
+      "summary": "17 ноября: упомянут исследовательский прототип Enact для управления персонажами и камерой в ходе генерации; вторичный источник, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ научили воссоздавать видеоролики как редактируемую анимацию из кода",
+      "source_url": "https://neurocartel.com/en/blog/ai-video-news-november-18-2026",
+      "summary": "17 ноября: сообщение об OpenMotion 0.1.0, преобразующем видеообразец в редактируемую HTML-анимацию; требуется первоисточник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Kaggle запустила арену, где нейросети соревнуются в создании анимации кодом",
+      "source_url": "https://neurocartel.com/en/blog/ai-video-news-november-18-2026",
+      "summary": "17 ноября: упоминание слепого сравнения моделей при генерации анимации кодом; вторичный источник, проверить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Runway показала интерфейс, который нейросеть рисует целиком, пиксель за пикселем",
+      "source_url": "https://neurocartel.com/en/blog/ai-video-news-november-18-2026",
+      "summary": "17 ноября: сообщение об исследовательской демонстрации Diffusion-UI; детали и дата требуют подтверждения у разработчика.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
