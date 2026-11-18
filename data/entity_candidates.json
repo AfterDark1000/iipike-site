@@ -1141,6 +1141,18 @@
           "source_url": "https://arxiv.org/abs/2411.16489"
         }
       ]
+    },
+    {
+      "key": "elvis-presley-enterprises",
+      "name": "Elvis Presley Enterprises",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "suno-elvis-seven-songs-lawsuit-20261113",
+          "source_url": "https://www.musicbusinessworldwide.com/files/2026/11/Elvis-Presley-Enterprises-v-Suno-amended-complaint-1.pdf"
+        }
+      ]
     }
   ],
   "products": [
