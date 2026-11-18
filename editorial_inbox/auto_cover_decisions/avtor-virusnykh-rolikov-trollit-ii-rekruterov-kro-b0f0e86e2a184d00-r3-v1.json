@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
+  "text_revision": 3,
+  "text_updated_at": "2026-11-18T02:50:00.000Z",
+  "cover_version": 1,
+  "cover_blob_sha": "8e75435f0a8d0ab5c9820dc3dd632d4f9bc1ed45",
+  "cover_metadata_blob_sha": "8aa5262b2be52217139c1ca63599421285c2882d",
+  "source_draft_blob_sha": "818e1a11b2557fb5b656e7925e54fa8e0c144c6c",
+  "source_text_decision_blob_sha": "8ffeb6b08bbd7db46b3f378ae67ba24a0997c561",
+  "action": "revise_cover",
+  "note": "Почему он голый?\nВыбери другой стиль\nНадпись на картинке ни о чем не говорит про смысл статьи",
+  "status": "cover_revision_requested",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-18T08:56:07.821Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
