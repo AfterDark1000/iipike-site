@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 157 · **В каталоге Дзена подтверждены:** 136 · **Не подтверждены, уже на сайте:** 19 · **Не подтверждены, ждут сайт:** 2
+**Всего одобренных:** 158 · **В каталоге Дзена подтверждены:** 136 · **Не подтверждены, уже на сайте:** 20 · **Не подтверждены, ждут сайт:** 2
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -33,6 +33,7 @@
 | 17 | [Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/unesco-ucl-ai-climate-sycophancy-20261116.md) | 18.11.2026, 09:15 | [На сайте](https://iipike.ru/articles/unesco-ucl-ai-climate-sycophancy-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
 | 18 | [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fed-warsh-ai-economy-scenarios-20261116.md) | 18.11.2026, 10:30 | [На сайте](https://iipike.ru/articles/fed-warsh-ai-economy-scenarios-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
 | 19 | [OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-gpt-6-2-astra-sol-20261117.md) | 18.11.2026, 11:09 | [На сайте](https://iipike.ru/articles/openai-gpt-6-2-astra-sol-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-6-2-astra-sol-20261117.webp) |
+| 20 | [Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/sabre-grok-bot-travel-connector-20261117.md) | 18.11.2026, 12:15 | [На сайте](https://iipike.ru/articles/sabre-grok-bot-travel-connector-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/sabre-grok-bot-travel-connector-20261117.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -40,8 +41,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/sabre-grok-bot-travel-connector-20261117.md) | **Не ранее 18.11.2026 12:22 (Усть-Катав)**; пауза до 18.11.2026 12:09 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/sabre-grok-bot-travel-connector-20261117.webp) |
-| 2 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 13:22 (Усть-Катав)**; пауза до 18.11.2026 12:09 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| 1 | [OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-apollo-embedded-evaluations-20261116.md) | **Не ранее 18.11.2026 13:22 (Усть-Катав)**; пауза до 18.11.2026 13:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-apollo-embedded-evaluations-20261116.webp) |
+| 2 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 14:22 (Усть-Катав)**; пауза до 18.11.2026 13:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
