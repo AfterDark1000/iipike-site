@@ -1177,6 +1177,18 @@
           "source_url": "https://www.reuters.com/business/media-telecom/baidu-ceo-says-ai-investment-must-deliver-profits-avoid-bubble-2026-11-17/"
         }
       ]
+    },
+    {
+      "key": "mandiant",
+      "name": "Mandiant",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "google-gtig-exploit-agent-autonomous-attacks-20261116",
+          "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+        }
+      ]
     }
   ],
   "products": [
