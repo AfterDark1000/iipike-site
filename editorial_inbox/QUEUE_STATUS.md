@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 161
+**В очереди:** 3 · **Готовы:** 3 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 161
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -12,9 +12,9 @@
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 19:22 (Усть-Катав)**; пауза до 18.11.2026 19:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
-| **2** | [Правообладатели Элвиса нашли семь его песен в одном треке Suno](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-elvis-seven-songs-lawsuit-20261113.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 20:22 (Усть-Катав)**; пауза до 18.11.2026 19:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-elvis-seven-songs-lawsuit-20261113.webp) |
-| **3** | [Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/bofa-fund-managers-ai-bubble-baidu-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 21:22 (Усть-Катав)**; пауза до 18.11.2026 19:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bofa-fund-managers-ai-bubble-baidu-20261117.webp) |
+| **1** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | 🟢 Готова к выпуску | **Не ранее 18.11.2026 19:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| **2** | [Правообладатели Элвиса нашли семь его песен в одном треке Suno](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-elvis-seven-songs-lawsuit-20261113.json) | 🟢 Готова к выпуску | **Не ранее 18.11.2026 20:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-elvis-seven-songs-lawsuit-20261113.webp) |
+| **3** | [Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/bofa-fund-managers-ai-bubble-baidu-20261117.json) | 🟢 Готова к выпуску | **Не ранее 18.11.2026 21:22 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bofa-fund-managers-ai-bubble-baidu-20261117.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
