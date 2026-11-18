@@ -3,14 +3,22 @@
 import argparse
 import hashlib
 import json
+import os
 import re
+import socket
+import ssl
+import subprocess
+import sys
 import time
 import webbrowser
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
+from http.client import HTTPException
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from urllib.parse import parse_qsl, unquote, urljoin, urlsplit
+from urllib.request import getproxies
 
 from playwright.sync_api import Error, sync_playwright
 
@@ -41,6 +49,7 @@ MANUAL_STATUSES = {
     "Статья не открылась": "article_unavailable",
 }
 REPORT_NAME = "dzen-a2-report.json"
+DIAGNOSTIC_VERSION = 2
 PAGE_SECONDS = 25
 REQUEST_LIMIT = 80
 MAX_REDIRECTS = 3
@@ -77,29 +86,121 @@ def approved_host(url):
     return parts[0] if parts and parts[0] in REVIEWED_HOSTS else None
 
 
+def transport_error(exc):
+    reason = getattr(exc, "reason", exc)
+    code = getattr(reason, "winerror", None) or getattr(reason, "errno", None)
+    if "Tunnel connection failed:" in str(reason):
+        return "proxy_connect_failed"
+    if isinstance(reason, ssl.SSLCertVerificationError):
+        return "certificate_verification_failed"
+    if isinstance(reason, ssl.SSLError):
+        return "tls_error"
+    if isinstance(reason, socket.gaierror) or code in {11001, 11002, 11003, 11004}:
+        return "dns_error"
+    if isinstance(reason, TimeoutError) or code == 10060:
+        return "timeout"
+    if isinstance(reason, ConnectionError) or code in {10051, 10053, 10054, 10061, 10065}:
+        return "connection_error"
+    if isinstance(reason, ValueError):
+        return "invalid_response"
+    return "transport_error"
+
+
+def windows_policy_request(url):
+    """Try the system TLS client only when Python had no proxy for this URL."""
+    if sys.platform != "win32":
+        return None, "windows_client_unavailable"
+    proxies = getproxies()
+    if proxies.get("https") or proxies.get("all"):
+        return None, "configured_proxy"
+    curl = Path(os.environ.get("SystemRoot", "C:\\Windows")) / "System32" / "curl.exe"
+    if not curl.is_file():
+        return None, "windows_client_unavailable"
+    try:
+        with TemporaryDirectory() as directory:
+            output = Path(directory) / "policy"
+            # -q disables local curl configuration. No redirects, proxy changes or TLS overrides.
+            result = subprocess.run(
+                [str(curl), "-q", "--silent", "--proto", "=https", "--no-location",
+                 "--connect-timeout", "6", "--max-time", "15",
+                 "--max-filesize", str(LIMIT), "--user-agent", f"{AGENT}/0.1",
+                 "--output", str(output), "--write-out", "%{http_code}\n%{content_type}", "--", url],
+                capture_output=True, encoding="utf-8", errors="replace", timeout=18,
+                creationflags=subprocess.CREATE_NO_WINDOW,
+            )
+            status, _, content_type = result.stdout.partition("\n")
+            if not re.fullmatch(r"[1-5][0-9]{2}", status):
+                errors = {6: "dns_error", 7: "connection_error", 28: "timeout",
+                          35: "tls_error", 60: "certificate_verification_failed"}
+                return None, errors.get(result.returncode, "transport_error")
+            if result.returncode:
+                # A response status was seen. Never use a partial policy document.
+                return (int(status), {}, b""), "incomplete_response"
+            with output.open("rb") as file:
+                body = file.read(LIMIT + 1)
+            if len(body) > LIMIT:
+                return (int(status), {}, b""), "invalid_response"
+            return (int(status), {"content-type": content_type.strip()}, body), None
+    except subprocess.TimeoutExpired:
+        return None, "timeout"
+    except OSError:
+        return None, "transport_error"
+
+
 class SiteRules:
     """Check the current rules of each reviewed host before requesting its content."""
 
-    def __init__(self, get=http_get):
+    def __init__(self, get=http_get, fallback=windows_policy_request):
         self.get = get
+        self.fallback = fallback
         self.rules = {}
         self.audit = {}
+        self.fetches = {}
+
+    def fetch(self, url, key):
+        attempts = self.fetches[key] = []
+        try:
+            response = self.get(url)
+        except (OSError, ValueError, HTTPException) as exc:
+            reason = transport_error(exc)
+            attempts.append({"client": "python", "http_status": None, "error": reason})
+            if reason not in {
+                "certificate_verification_failed", "tls_error", "dns_error", "timeout", "connection_error",
+            }:
+                return None
+            response, reason = self.fallback(url)
+            attempts.append({"client": "windows_curl", "http_status": response[0] if response else None,
+                             "error": reason})
+            return response
+        attempts.append({"client": "python", "http_status": response[0], "error": None})
+        return response
 
     def load(self, host):
         if host not in self.rules:
             self.rules[host] = None
             self.audit[host] = None
-            try:
-                status, headers, body = self.get(f"https://{host}/robots.txt")
+            response = self.fetch(f"https://{host}/robots.txt", host)
+            if response:
+                status, headers, body = response
                 self.audit[host] = status
-                if status == 200 and headers.get("content-type", "").startswith("text/plain"):
-                    rules = robots_rules(body.decode("utf-8-sig"))
+                attempt = self.fetches[host][-1]
+                if attempt["error"]:
+                    return None
+                if host in ASSET_HOSTS and status in {404, 410}:
+                    self.rules[host] = [(["*"], [])]
+                elif status == 200:
+                    if not headers.get("content-type", "").lower().startswith("text/plain"):
+                        attempt["error"] = "unexpected_content_type"
+                        return None
+                    try:
+                        rules = robots_rules(body.decode("utf-8-sig"))
+                    except UnicodeDecodeError:
+                        attempt["error"] = "invalid_encoding"
+                        return None
                     if any(agents for agents, _ in rules):
                         self.rules[host] = rules
-                elif host in ASSET_HOSTS and status in {404, 410}:
-                    self.rules[host] = [(["*"], [])]
-            except (OSError, ValueError):
-                pass
+                    else:
+                        attempt["error"] = "missing_user_agent_rules"
         return self.rules[host]
 
     def decision(self, url, browser_agent):
@@ -128,10 +229,10 @@ class SiteRules:
         denial = self.decision(url, AGENT)
         if denial:
             return denial
-        try:
-            status, _, body = self.get(url)
-        except (OSError, ValueError):
+        response = self.fetch(url, "terms")
+        if response is None or self.fetches["terms"][-1]["error"]:
             return "terms_unavailable"
+        status, _, body = response
         if status != 200:
             return "terms_unavailable"
         if hashlib.sha256(body).hexdigest() != REVIEWED_TERMS:
@@ -418,8 +519,9 @@ def probe_article(browser, rules, url):
 def run_probe():
     rules = SiteRules()
     report = {
-        "stage": "A.2", "started_at_utc": timestamp(), "status": "not_run",
-        "browser": None, "robots_http": rules.audit,
+        "stage": "A.2", "diagnostic_version": DIAGNOSTIC_VERSION,
+        "started_at_utc": timestamp(), "status": "not_run",
+        "browser": None, "robots_http": rules.audit, "policy_fetches": rules.fetches,
         "results": [
             {"control": name, "role": role, "url": url,
              "ordinary_browser": empty_result("not_observed"),
@@ -430,7 +532,7 @@ def run_probe():
     }
     denied = rules.check_terms()
     if denied:
-        report["status"] = denied
+        report.update(status=denied, finished_at_utc=timestamp())
         return report
     with sync_playwright() as playwright:
         for channel in ("chrome", "msedge"):
@@ -441,7 +543,7 @@ def run_probe():
             except Error:
                 pass
         else:
-            report["status"] = "browser_unavailable"
+            report.update(status="browser_unavailable", finished_at_utc=timestamp())
             return report
         report["browser"] = {"channel": channel, "version": browser.version, "java_script": True}
         try:
@@ -487,7 +589,7 @@ def show_app(path):
     from tkinter import ttk
 
     window = tk.Tk()
-    window.title("Дзен · проверка доступности A.2")
+    window.title(f"Дзен · проверка доступности A.2 · версия {DIAGNOSTIC_VERSION}")
     window.minsize(570, 290)
     panel = ttk.Frame(window, padding=20)
     panel.pack(fill="both", expand=True)
