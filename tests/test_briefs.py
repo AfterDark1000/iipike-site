@@ -127,8 +127,26 @@ class BriefFeedTests(unittest.TestCase):
         from scripts import sync_briefs_pool
         temp,root=self.fixture()
         try:
-            shutil.copyfile(ROOT/"data/site_news_pool.json",root/"data/site_news_pool.json")
             c=self.candidates()[0]
+            candidate = {
+                "id": c["pool_id"],
+                "sequence": c["pool_sequence"],
+                "title": c["headline"],
+                "source_url": c["source_url"],
+                "summary": c["body"],
+                "origin": "test fixture",
+                "priority": "normal",
+                "status": "queued",
+                "added_at": "2026-11-16T00:00:00Z",
+                "review_started_at": None,
+                "closed_at": None,
+                "article_id": None,
+                "note": "",
+            }
+            pool = {"schema_version": 1, "note": "test fixture", "items": [candidate]}
+            (root/"data/site_news_pool.json").write_text(
+                json.dumps(pool, ensure_ascii=False), encoding="utf-8"
+            )
             a=json.loads((root/b.APPROVED).read_text(encoding="utf-8"))
             a["items"]=[self.publish_row(c)]
             (root/b.APPROVED).write_text(json.dumps(a,ensure_ascii=False),encoding="utf-8")
