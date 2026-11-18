@@ -1,33 +1,82 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-17T11:12:06Z",
-  "status": "partial",
+  "generated_at_utc": "2026-11-18T10:45:37Z",
+  "status": "ok",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "Ce57Vh3sA1g",
-      "url": "https://www.youtube.com/shorts/Ce57Vh3sA1g",
-      "title": "📱 Tech vs. Tau: The Funny Smartphone Prank",
-      "channel": "Mohan Kishan",
-      "published_at": "2026-11-15T13:23:38Z",
-      "duration_seconds": 11,
-      "views": 3453,
-      "likes": 29,
-      "subscribers": 7,
+      "id": "n7nI7IkP_p0",
+      "url": "https://www.youtube.com/shorts/n7nI7IkP_p0",
+      "title": "When The Keyboard Is Too Indestructible! 💀⌨️ #shorts #comedy #gaming  #funny #tech",
+      "channel": "Max Dobson",
+      "published_at": "2026-11-15T11:30:02Z",
+      "duration_seconds": 31,
+      "views": 27131,
+      "likes": 186,
+      "subscribers": 3450,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-17T11:12:06Z",
+      "statistics_checked_at": "2026-11-18T10:45:37Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 74.2,
-      "rank_score": 8.12,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API HTTP 503"
+      "growth_views_per_hour": 127.5,
+      "rank_score": 10.6,
+      "viral_status": "candidate_verified_stats",
+      "analysis": {
+        "observed_visuals": "Man in duck onesie and pigtails tries to destroy a mechanical keyboard using various methods (stepping on it, running it over with a car, cutting with an angle grinder), but the keyboard remains undamaged, surprising both him and the gamer.",
+        "observed_audio": "Dialogue between a gamer and a man in a onesie, sound effects of typing, stomping, car engine, angle grinder buzzing, and comedic dramatic voice acting.",
+        "hook_0_3s": "A man in a duck onesie stands behind a gamer playing at a computer, complaining that he has been gaming for hours.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "Gamer at PC typing, man in duck onesie stands behind him talking.",
+            "editing": "Direct shot with dialogue subtitles.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:03",
+            "visible_action": "Man in onesie stomps on the keyboard on the floor with duck slippers.",
+            "editing": "Quick cut to floor-level action shot.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10",
+            "visible_action": "A car drives over the keyboard on gravel.",
+            "editing": "Cut to exterior outdoor shot.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:16",
+            "visible_action": "Man cuts the keyboard with an angle grinder, creating sparks.",
+            "editing": "Cut to workshop setting.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:20",
+            "visible_action": "Man returns the undamaged keyboard to the gamer.",
+            "editing": "Cut back to the original room setting.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:26",
+            "visible_action": "Man covers gamer's mouth to prevent naming the brand to avoid advertisement.",
+            "editing": "Zoom-in reaction shot with comedic timing.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Durability test parody skit demonstrating indestructible product endurance through absurd escalation.",
+        "transfer_to_hpii": "Create a dramatic test of an AI model where it withstands extreme, absurd prompt challenges or safety stress tests, ending with a comedic prevention of praising its creator.",
+        "what_not_to_copy": "Do not replicate the exact duck onesie props, specific keyboard destruction methods, or verbatim dialogue.",
+        "limitations": "Subtitles present on screen, audio is simplified to key sound effects and dialogue.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-18T10:45:42Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
     },
     {
       "id": "oPZ2RNXxMOY",
@@ -36,93 +85,157 @@
       "channel": "sters pov",
       "published_at": "2026-11-17T02:25:52Z",
       "duration_seconds": 53,
-      "views": 1777,
-      "likes": 30,
+      "views": 2527,
+      "likes": 37,
       "subscribers": 33,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-17T11:12:06Z",
+      "statistics_checked_at": "2026-11-18T10:45:37Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
-      "growth_views_per_hour": null,
-      "rank_score": 6.13,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API network/timeout error"
-    },
-    {
-      "id": "-wiEauWBQVs",
-      "url": "https://www.youtube.com/shorts/-wiEauWBQVs",
-      "title": "Why Your Cat IGNORES You 😳🐱 (Science Explained) #shorts",
-      "channel": "Vibeuzz Official",
-      "published_at": "2026-11-14T03:51:57Z",
-      "duration_seconds": 39,
-      "views": 1962,
-      "likes": 39,
-      "subscribers": 175,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-17T11:12:06Z",
-      "is_confirmed_short": false,
-      "search_family": "explanation",
-      "format_family_guess": "explanation",
-      "growth_views_per_hour": 14.9,
-      "rank_score": 5.78,
+      "growth_views_per_hour": 31.8,
+      "rank_score": 7.47,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Мужчина в серой футболке сидит на диване и в комнате рядом с ним находится рыжий кот. В видео сменяются различные ракурсы взаимодействия человека и кота, присутствуют анимированные графические элементы (звуковые волны и интерфейсные иконки), показывающие процесс восприятия звука котом.",
-        "observed_audio": "Мужской голос за кадром рассказывает о поведении кошек и их восприятии человеческого голоса на английском языке.",
-        "hook_0_3s": "Мужчина эмоционально разговаривает, обращаясь к рыжему коту на диване, на экране появляются крупные титры с текстом.",
+        "observed_visuals": "POV-съемка в торговом центре, где молодой человек подходит к незнакомцам, делает комплименты внешности и просит контакты, показывая экран смартфона.",
+        "observed_audio": "Разговорные реплики на английском языке, комплименты, фоновый шум торгового центра.",
+        "hook_0_3s": "Крупный план девушки в магазине, надпись вверху 'Practicing my cold approach', слышно приветствие оператора.",
         "timeline": [
           {
             "time": "00:00 - 00:03",
-            "visible_action": "Мужчина сидит на диване и жестикулирует, рыжий кот сидит на скамейке рядом, смонтированы крупные субтитры.",
-            "editing": "Быстрая смена кадров с одинаковой локацией, наложение текстовых титров.",
+            "visible_action": "Оператор подходит к девушке у прилавка, диалог.",
+            "editing": "Прямая склейка, ручная камера.",
             "confidence": "seen"
           },
           {
-            "time": "00:04 - 00:08",
-            "visible_action": "Крупный план лица мужчины, затем смена ракурса на кота с графикой Voice Recognition над головой.",
-            "editing": "Плавный переход между ракурсами, добавление графических элементов.",
+            "time": "00:09 - 00:12",
+            "visible_action": "Смена локации в магазине, диалог с мужчиной-продавцом.",
+            "editing": "Быстрая склейка.",
             "confidence": "seen"
           },
           {
-            "time": "00:09 - 00:17",
-            "visible_action": "Появляются анимированные концентрические круги (звуковые волны), иллюстрирующие звуковые колебания вокруг кота.",
-            "editing": "Всплывающая визуальная графика звуковых волн поверх 3D-анимации.",
+            "time": "00:22 - 00:25",
+            "visible_action": "Показ экрана смартфона двум девушкам в коридоре ТЦ.",
+            "editing": "Быстрая склейка.",
             "confidence": "seen"
           },
           {
-            "time": "00:18 - 00:25",
-            "visible_action": "Мужчина сидит на стуле в другой комнате, рядом с котом появляется собака.",
-            "editing": "Смена локации и персонажей (появление собаки).",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:26 - 00:38",
-            "visible_action": "Кот подходит к мужчине, трется о руку, мужчина гладит кота на диване.",
-            "editing": "Динамичные склейки разных сцен взаимодействия.",
+            "time": "00:44 - 00:48",
+            "visible_action": "Общение со взрослой женщиной и девушкой в коридоре ТЦ.",
+            "editing": "Быстрая склейка.",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Научно-популярный ролик в формате фактчекинга мифов с использованием 3D-анимации персонажей, динамических субтитров по словам и визуализации невидимых процессов (звуковых волн).",
-        "transfer_to_hpii": "Использовать аналогичную механику визуализации абстрактных технологических процессов (например, как нейросеть распознает запрос) через анимированные волны и иконки поверх реальных или сгенерированных сцен.",
-        "what_not_to_copy": "Не копировать тему домашних животных, дословный сценарий про кошачий слух и стиль 3D-моделирования персонажей.",
-        "limitations": "Аудиодорожка распознана частично по смыслу речи, темп смены кадров высокий.",
+        "format_mechanic": "Динамичный пранк/челлендж формата POV с быстрой сменой сцен и реакций людей на улице или в магазине.",
+        "transfer_to_hpii": "Использование формата социального эксперимента или провокационного диалога для демонстрации возможностей ИИ-агента, который 'подкатывает' или общается с виртуальными персонажами в реальном времени.",
+        "what_not_to_copy": "Прямое копирование пранков в торговых центрах и навязчивое общение с реальными людьми без их согласия.",
+        "limitations": "Быстрые монтажные склейки и смена лиц могут затруднять детальный анализ каждого взаимодействия при низкой частоте кадров.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-17T11:14:12Z",
+      "analyzed_at_utc": "2026-11-18T10:45:49Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "E9wveiD_uqQ",
+      "url": "https://www.youtube.com/shorts/E9wveiD_uqQ",
+      "title": "Black Hole क्या होता है? 🌌 5 Amazing Space Facts | Universe Explained in Hindi | Cartoon Science",
+      "channel": "Aaj tumne kya sheekha ",
+      "published_at": "2026-11-17T12:31:40Z",
+      "duration_seconds": 59,
+      "views": 1456,
+      "likes": 14,
+      "subscribers": 14,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-18T10:45:37Z",
+      "is_confirmed_short": false,
+      "search_family": "explanation",
+      "format_family_guess": "explanation",
+      "growth_views_per_hour": null,
+      "rank_score": 4.92,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Animated space setting with colored bean characters interacting with holographic displays showing space objects like stars and black holes.",
+        "observed_audio": "Voiceover in a foreign language explaining scientific concepts with sound effects for space phenomena and UI elements.",
+        "hook_0_3s": "Characters standing around a glowing console in a spaceship with a large black hole projected above, accompanied by a question text overlay.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:03",
+            "visible_action": "Characters in a spaceship looking at a black hole projection",
+            "editing": "Direct shot with text overlay",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:03 - 00:07",
+            "visible_action": "Characters gesturing toward a glowing holographic black hole",
+            "editing": "Scene transition to close up projection",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:07 - 00:12",
+            "visible_action": "Holographic display showing a star with directional arrows",
+            "editing": "Graphic overlay update",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:12 - 00:18",
+            "visible_action": "Character explaining physics while star graphic displays outward and inward forces",
+            "editing": "Dynamic zoom on holographic screen",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:18 - 00:24",
+            "visible_action": "Explosion effect on the hologram and transformation into a colorful star",
+            "editing": "Flash effect and graphic swap",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:24 - 00:30",
+            "visible_action": "Black hole visualization returning with characters reacting",
+            "editing": "Wide shot reset",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:30 - 00:36",
+            "visible_action": "Detailed breakdown of event horizon on a screen",
+            "editing": "Zoom in on UI panel",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:36 - 00:43",
+            "visible_action": "Light particles failing to escape the black hole graphic",
+            "editing": "Animation particle effect",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:43 - 00:50",
+            "visible_action": "Gravitational lensing bending light rays around the black hole",
+            "editing": "Curved light vector animation",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:50 - 00:56",
+            "visible_action": "Stars behind black hole appearing distorted due to lensing",
+            "editing": "Warp effect on background elements",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:56 - 00:59",
+            "visible_action": "Spaceship flying past space anomalies",
+            "editing": "Final cinematic pan out",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Educational explainer video using animated mascot characters and holographic infographics to simplify complex topics.",
+        "transfer_to_hpii": "Use animated interactive holograms of neural networks to explain complex AI news concepts visually.",
+        "what_not_to_copy": "Cartoon bean characters and non-standard foreign voiceovers.",
+        "limitations": "Specific dialogue translation and exact timing of rapid asset changes may vary.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-18T10:46:10Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     }
   ],
-  "errors": [
-    {
-      "video_id": "Ce57Vh3sA1g",
-      "code": "analysis_failed"
-    },
-    {
-      "video_id": "oPZ2RNXxMOY",
-      "code": "analysis_failed"
-    }
-  ]
+  "errors": []
 }
