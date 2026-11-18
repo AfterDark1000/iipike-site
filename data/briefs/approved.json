@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "note": "ONLY explicitly approved and checked short news go here. Empty means no public brief. New records require editor_approved, approved_by=human_editor, approval_ref=owner GitHub issue, timestamp; generator will reject duplicates and unsafe URLs.",
+  "items": []
+}

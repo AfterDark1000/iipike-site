@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Короткие новости на проверке — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css"><link rel="stylesheet" href="../../assets/briefs.css">
+<style>
+.brief-review{padding-top:35px;padding-bottom:70px}.brief-review h1{font-size:clamp(34px,5vw,54px)}.brief-review-note{background:#fff8e9;padding:15px;border-left:4px solid #ad5a34;font-size:14px;max-width:900px}.brief-review-items{max-width:900px}.brief-review-entry{border-bottom:1px solid #d5d0c9;padding:25px 0}.brief-review-entry h2{font-size:clamp(22px,3vw,29px);margin:9px 0}.brief-review-entry p{line-height:1.75}.brief-review-entry small{color:#616c68;font-weight:700}.brief-review-entry a{overflow-wrap:anywhere}.brief-review-state{display:inline-block;padding:2px 8px;border:1px solid #bbb7ad;font:750 12px/1.4 system-ui,sans-serif;margin-bottom:5px}
+</style></head>
+<body class="brief-page"><header class="header"><div class="wrap bar"><a class="logo" href="../../admin/"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>РЕДАКЦИОННАЯ ПРОВЕРКА</small></span></a><nav class="menu"><a href="../">Пульт</a><a href="../../briefs/">Публичная лента</a></nav></div></header>
+<main class="wrap brief-review"><p class="brief-kicker">ХПИИ / Кандидаты</p><h1>Новости коротко: <em>на проверке</em></h1>
+<p class="brief-review-note"><strong>Эти тексты ещё не опубликованы.</strong> Это публично доступный в GitHub редакционный просмотр. Проверка и утверждение человеком обязательны; на этой странице пока нет действий, которые меняют очередь или запускают публикацию. После утверждения комплект будет переноситься в независимую ленту.</p>
+<div id="brief-review-status" role="status" aria-live="polite">Читаю кандидатов из GitHub…</div>
+<div id="brief-review-items" class="brief-review-items"></div></main>
+<footer class="footer"><div class="wrap"><a href="../">← Пульт ХПИИ</a></div></footer>
+<script>
+(async function(){
+ const status=document.getElementById("brief-review-status"),root=document.getElementById("brief-review-items");
+ const node=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!=null)x.textContent=txt;return x};
+ try{
+   const r=await fetch("../../data/briefs/candidates.json?v="+Date.now(),{cache:"no-store"});
+   if(!r.ok)throw Error("GitHub Pages HTTP "+r.status);
+   const data=await r.json();
+   if(data.schema_version!==1||!Array.isArray(data.items))throw Error("Неверный формат кандидатов");
+   root.replaceChildren();
+   for(const c of data.items){
+     if(c.status!=="pending_review")continue;
+     const card=node("article","brief-review-entry");const tag=node("small","brief-review-state","ЖДЁТ РЕДАКТОРА · ПУЛ №"+c.pool_sequence);
+     const heading=node("h2",null,c.headline);
+     const body=node("p",null,c.body);
+     const detail=node("p",null,"Проверка: "+c.fact_check);
+     const source=node("a",null,"Открыть первоисточник: "+c.source+" ↗");
+     try{const u=new URL(c.source_url);if(u.protocol==="https:"){source.href=u.href;source.target="_blank";source.rel="noopener noreferrer"}}catch(_){}
+     card.append(tag,heading,body,detail,source);root.append(card);
+   }
+   status.textContent="Кандидатов на утверждение: "+root.children.length+" · ничего не опубликовано";
+ }catch(e){status.textContent="Не удалось загрузить кандидатов: "+e.message}
+})();
+</script></body></html>

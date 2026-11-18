@@ -1,0 +1,115 @@
+name: HPII — independent short news lane (separate from hourly articles)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/briefs/**'
+      - 'scripts/build_briefs.py'
+      - 'tests/test_briefs.py'
+      - 'briefs/**'
+      - 'admin/briefs/**'
+      - 'index.html'
+      - 'assets/briefs.css'
+      - '.github/workflows/hpii-briefs.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'data/briefs/**'
+      - 'scripts/build_briefs.py'
+      - 'briefs/**'
+      - '.github/workflows/hpii-briefs.yml'
+  schedule:
+    # Independent checks, off the main 7/22/37/52 article-release minutes.
+    - cron: '12,42 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hpii-independent-short-news-release
+  cancel-in-progress: false
+jobs:
+  test-briefs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate independent short-news format and human-approval gate
+        run: |
+          python3 -m unittest discover -s tests -p 'test_briefs.py' -v
+          python3 scripts/build_briefs.py --write
+          python3 scripts/build_briefs.py --check
+      - name: Prevent changes to the full article publisher
+        run: |
+          if git diff --name-only | grep -Ev '^(index.html|briefs/)'; then
+            echo 'Unexpected output file outside short-news section' >&2
+            exit 1
+          fi
+          git diff --check
+
+  release-approved-briefs:
+    if: github.event_name != 'pull_request'
+    needs: [test-briefs]
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      issues: read
+    steps:
+      - name: Check out current main, never author unapproved drafts
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Check every approved slug against a real owner-created GitHub Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('data/briefs/approved.json','utf8'));
+            if (!Array.isArray(data.items) || data.schema_version !== 1)
+              throw Error('Approved briefs registry invalid');
+            const {owner,repo} = context.repo;
+            const seen = new Set();
+            for (const row of data.items) {
+              const match = /^https:\/\/github\.com\/AfterDark1000\/iipike-site\/issues\/([1-9]\d*)$/.exec(row.approval_ref || '');
+              if (!match) throw Error('No owner issue approval for ' + row.slug);
+              const id = Number(match[1]);
+              if (seen.has(id)) throw Error('Reused owner issue on multiple briefs');
+              seen.add(id);
+              const issue = (await github.rest.issues.get({owner,repo,issue_number:id})).data;
+              if (issue.pull_request || issue.user?.login !== 'AfterDark1000' ||
+                  issue.title !== 'ХПИИ: утвердить короткую новость ' + row.slug ||
+                  !(issue.body || '').includes(row.source_url) ||
+                  !(issue.body || '').includes(row.headline)) {
+                throw Error('Issue does not confirm this exact brief ' + row.slug);
+              }
+            }
+      - name: Rebuild only from explicitly approved records, never from candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_briefs.py --write
+          python3 scripts/build_briefs.py --check
+          git add -- index.html briefs/
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'No approved short news to render.'
+            exit 0
+          fi
+          if git diff --cached --name-only | grep -Ev '^(index.html|briefs/)'; then
+            echo 'Non-short-news files unexpectedly staged' >&2
+            exit 1
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'briefs: render owner-approved short news [skip ci]'
+          # No force push. A competing site release means retry on the next schedule.
+          git push origin HEAD:refs/heads/main
+      - name: Summary
+        if: always()
+        run: |
+          echo 'This job never touches news.json, editorial_inbox/stories, article slots, Dzen or socials.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'A real, explicit owner GitHub Issue must approve each short-news record.' >> "$GITHUB_STEP_SUMMARY"
