@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 166 · **В каталоге Дзена подтверждены:** 148 · **Не подтверждены, уже на сайте:** 16 · **Не подтверждены, ждут сайт:** 2
+**Всего одобренных:** 166 · **В каталоге Дзена подтверждены:** 148 · **Не подтверждены, уже на сайте:** 17 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -30,6 +30,7 @@
 | 14 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | 18.11.2026, 19:30 | [На сайте](https://iipike.ru/articles/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 | 15 | [Правообладатели Элвиса нашли семь его песен в одном треке Suno](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/suno-elvis-seven-songs-lawsuit-20261113.md) | 18.11.2026, 20:45 | [На сайте](https://iipike.ru/articles/suno-elvis-seven-songs-lawsuit-20261113/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-elvis-seven-songs-lawsuit-20261113.webp) |
 | 16 | [Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/bofa-fund-managers-ai-bubble-baidu-20261117.md) | 18.11.2026, 22:01 | [На сайте](https://iipike.ru/articles/bofa-fund-managers-ai-bubble-baidu-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bofa-fund-managers-ai-bubble-baidu-20261117.webp) |
+| 17 | [Блогер пришёл к ИИ-рекрутеру с кроссовком на голове](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.md) | 18.11.2026, 23:15 | [На сайте](https://iipike.ru/articles/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -37,8 +38,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Блогер пришёл к ИИ-рекрутеру с кроссовком на голове](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.md) | **Не ранее 18.11.2026 23:07 (Усть-Катав)**; пауза до 18.11.2026 23:01 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp) |
-| 2 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.md) | **Не ранее 19.11.2026 00:07 (Усть-Катав)**; пауза до 18.11.2026 23:01 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
+| 1 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.md) | **Не ранее 19.11.2026 00:22 (Усть-Катав)**; пауза до 19.11.2026 00:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
