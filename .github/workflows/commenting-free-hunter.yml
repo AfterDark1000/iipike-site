@@ -73,3 +73,28 @@ jobs:
             await core.summary.addHeading('Дзен-охотник (бесплатно)')
               .addRaw('Прямых URL: '+payload.items.length+' · новых: '+payload.new_items+' · источников: '+payload.sources.length+'\n\n'+
                 'Список: https://iipike.ru/admin/commenting/hunter/').write();
+
+  smoke:
+    if: github.event_name == 'pull_request'
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test two free RSS queries against live sources, no writes
+        run: |
+          python3 - <<'PY'
+          import json
+          from scripts.commenting_free_hunter import run
+          config=json.load(open('data/commenting_free_hunter.json'))
+          config['queries']=config['queries'][:2]
+          result=run(config)
+          for item in result['sources']:
+              print(item['source'],item['status'],item.get('direct_matches',0),item.get('error_type',''))
+          print('DIRECT_LINKS_FOUND',len(result['items']))
+          for item in result['items'][:5]:
+              print(item['dzen_url'],item['title'][:90])
+          PY
