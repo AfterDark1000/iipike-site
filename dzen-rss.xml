@@ -15,6 +15,7 @@
 <p>А дальше начинается арифметика:</p>
 <ul><li><strong>Sol:</strong> 43,8% при стоимости задания $1,29.</li><li><strong>Astra:</strong> 44,2% за $5,97.</li><li><strong>Gemini 4 Carbon:</strong> 42,6% за $5,06.</li><li><strong>Claude Fable 5.2:</strong> 50,2% за $17,73.</li></ul>
 <p>По этому сочетанию результата и цены Sol выглядит особенно выгодно. Она также обошла Claude Sonnet 5.5 с результатом 42,2% и Gemini 4 Hydrogen с 38,9%.</p>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/openai-gpt-6-2-astra-sol-20261117/gpt-6-2-comparison.webp" alt="Сравнение семи моделей OpenAI, Anthropic и Google: общий индекс, результаты и стоимость задач FrontierCode 2.0"></figure>
 <p>Однако в другом тесте Artificial Analysis, посвящённом работе ИИ-агентов с кодом, новая Astra осталась примерно на уровне предшественницы, а Sol потеряла три балла относительно GPT-6.1 Sol. Результаты сильно зависят от того, какую именно работу поручают модели.</p>
 <h2>В автоматизации лидирует Google, в 3D — Astra</h2>
 <p><strong>Zapier</strong> проверила, как модели выполняют настоящие многошаговые поручения: работают с корпоративными системами, обновляют записи, находят данные и запускают автоматизации.</p>
