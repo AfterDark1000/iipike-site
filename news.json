@@ -6753,5 +6753,26 @@
       "suno"
     ],
     "products": []
+  },
+  {
+    "title": "Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет",
+    "summary": "По опросу Bank of America, чистый перевес технологических акций в портфелях фондов снизился с 37% до 12% за месяц. Управляющие опасаются избыточных расходов на ИИ, а глава Baidu Робин Ли предупредил о риске пузыря без роста прибыли.",
+    "published": "2026-11-18",
+    "source_url": "https://www.reuters.com/business/global-markets-bofa-survey-2026-11-17/",
+    "cover": "assets/editorial/bofa-fund-managers-ai-bubble-baidu-20261117.webp",
+    "rubric": "news",
+    "vk_title": "📉 ИНВЕСТОРЫ ОХЛАДЕЛИ к ИИ — сильнейший разворот с 2006 года",
+    "vk_summary": "Bank of America обнаружил самое резкое с 2006 года сокращение ставок фондов на технологические акции: чистый перевес упал с 37% до 12%. 52% опрошенных ждут урезания расходов на ИИ хотя бы у одного облачного гиганта. Глава Baidu Робин Ли предупреждает: без роста прибыли опасения насчёт пузыря могут оправдаться.",
+    "published_at_utc": "2026-11-18T17:01:10Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+    "url": "articles/bofa-fund-managers-ai-bubble-baidu-20261117/",
+    "topics": [
+      "finance",
+      "business"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
