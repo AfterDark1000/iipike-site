@@ -1129,6 +1129,18 @@
           "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
         }
       ]
+    },
+    {
+      "key": "shanghai-jiao-tong-university",
+      "name": "Shanghai Jiao Tong University",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "china-openai-distillation-reuters-20261117",
+          "source_url": "https://arxiv.org/abs/2411.16489"
+        }
+      ]
     }
   ],
   "products": [
@@ -2194,6 +2206,19 @@
         {
           "article_id": "apple-macos-27-3-ai-agent-permissions-20261116",
           "source_url": "https://developer.apple.com/news/?id=oqng0zjk"
+        }
+      ]
+    },
+    {
+      "key": "openai-o1",
+      "name": "OpenAI o1",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "china-openai-distillation-reuters-20261117",
+          "source_url": "https://arxiv.org/abs/2411.16489"
         }
       ]
     }
