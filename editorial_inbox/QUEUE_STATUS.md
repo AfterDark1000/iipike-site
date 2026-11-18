@@ -2,18 +2,18 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 156
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 157
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **18.11.2026 12:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **18.11.2026 13:30 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-apollo-embedded-evaluations-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 13:22 (Усть-Катав)**; пауза до 18.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-apollo-embedded-evaluations-20261116.webp) |
-| **2** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 14:22 (Усть-Катав)**; пауза до 18.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| **1** | [⚡ Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/apple-macos-27-3-ai-agent-permissions-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 14:37 (Усть-Катав)**; пауза до 18.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/apple-macos-27-3-ai-agent-permissions-20261116.webp) |
+| **2** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 15:37 (Усть-Катав)**; пауза до 18.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +25,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат](https://iipike.ru/articles/openai-apollo-embedded-evaluations-20261116/) | 18.11.2026 13:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-apollo-embedded-evaluations-20261116.webp) |
 | [Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену](https://iipike.ru/articles/sabre-grok-bot-travel-connector-20261117/) | 18.11.2026 12:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/sabre-grok-bot-travel-connector-20261117.webp) |
 | [OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude](https://iipike.ru/articles/openai-gpt-6-2-astra-sol-20261117/) | 18.11.2026 11:09 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-6-2-astra-sol-20261117.webp) |
 | [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://iipike.ru/articles/fed-warsh-ai-economy-scenarios-20261116/) | 18.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
