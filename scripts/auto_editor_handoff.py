@@ -155,6 +155,13 @@ def build_candidate(ref, main_root, id, revision, version):
     allowed_content=ALLOWED_FIELDS - {"id","schema_version","status","approved_by","approved_at"}
     # The pilot's threads/x text is separate metadata, never published by this handoff.
     story={k:content[k] for k in allowed_content if k in content}
+    # The ordinary site/VK publisher expects a single-line optional summary.
+    # Autonomous drafts may preserve paragraph breaks. Normalize whitespace
+    # ONLY in the derived site payload, not in the owner's approved source.
+    # Any non-whitespace content violation remains blocked by validate_story.
+    for key in ("vk_title", "vk_summary"):
+        if isinstance(story.get(key), str):
+            story[key] = " ".join(story[key].split())
     story.update({
        "schema_version":1,"id":id,"status":"editor_approved",
        "approved_by":"human_editor","approved_at":approved_date(text["decided_at"])

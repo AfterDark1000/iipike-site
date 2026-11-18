@@ -104,6 +104,36 @@ class HandoffTests(unittest.TestCase):
         self.assertEqual(marker["status"],"handed_off_to_site_queue")
         self.assertEqual(marker["social_posts"],"prepared_in_auto_draft_not_dispatched")
         self.assertLess(len(image),800000)
+    def test_autonomous_vk_multiline_formatting_does_not_block_handoff(self):
+        objects, reader, paths = self.fixture()
+        raw = "\n\nМэтт добавил четыре коробки яиц.\n\nПользователь подтвердил заказ."
+        draft = json.loads(objects[paths["draft"]])
+        draft["content"]["vk_summary"] = raw
+        # A changed draft must go through the full SHA approval chain; this
+        # recreates those real content-addressed links without bypassing guards.
+        objects[paths["draft"]] = encoded(draft)
+        text = json.loads(objects[paths["text"]])
+        text["draft_blob_sha"] = blob_sha(objects[paths["draft"]])
+        objects[paths["text"]] = encoded(text)
+        cover = json.loads(objects[paths["cover_meta"]])
+        cover["source_draft_blob_sha"] = blob_sha(objects[paths["draft"]])
+        cover["source_decision_blob_sha"] = blob_sha(objects[paths["text"]])
+        objects[paths["cover_meta"]] = encoded(cover)
+        approval = json.loads(objects[paths["decision"]])
+        approval["source_draft_blob_sha"] = blob_sha(objects[paths["draft"]])
+        approval["source_text_decision_blob_sha"] = blob_sha(objects[paths["text"]])
+        approval["cover_metadata_blob_sha"] = blob_sha(objects[paths["cover_meta"]])
+        objects[paths["decision"]] = encoded(approval)
+        with patch.object(h, "read_git", side_effect=reader):
+            names, story_bytes, image, record = h.build_candidate(
+                "origin/editorial-intake", ROOT, ID, REV, VERSION)
+        story = json.loads(story_bytes)
+        self.assertEqual(story["vk_summary"], "Мэтт добавил четыре коробки яиц. Пользователь подтвердил заказ.")
+        self.assertEqual(json.loads(objects[paths["draft"]])["content"]["vk_summary"], raw)
+        self.assertEqual(story["article_markdown"], draft["content"]["article_markdown"])
+        self.assertEqual(names, paths)
+        self.assertEqual(image, objects[paths["cover_image"]])
+
     def test_change_to_cover_invalidates_approval(self):
         objects,reader,paths=self.fixture()
         cover=json.loads(objects[paths["cover_meta"]])
