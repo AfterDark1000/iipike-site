@@ -12,6 +12,7 @@
   ],
   "google_news": true,
   "bing_news": true,
+  "bing_web": true,
   "history_days": 14,
   "max_feed_age_hours": 72,
   "max_items": 300
