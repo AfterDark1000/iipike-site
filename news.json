@@ -6812,5 +6812,26 @@
     "topics": [],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки",
+    "summary": "Мэтт Смит рассказал, как помощник добавил четыре упаковки по 18 яиц в продуктовую корзину. Заказ подтвердил сам покупатель; объяснить выбор агент не смог.",
+    "published": "2026-11-19",
+    "source_url": "https://x.com/nerdalert/status/2120251385199419805",
+    "cover": "assets/editorial/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "🥚 ИИ добавил в корзину 72 ЯЙЦА. ЗАЧЕМ — не объяснил",
+    "vk_summary": "Мэтт Смит рассказал, что ИИ-помощник положил в продуктовую корзину четыре упаковки яиц по 18 штук. В списке их не было. Агент не сумел объяснить выбор, а сам заказ подтвердил покупатель.",
+    "published_at_utc": "2026-11-18T19:30:52Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+    "url": "articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/",
+    "topics": [
+      "agents",
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
