@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+  "revision": 1,
+  "updated_at": "2026-11-18T11:48:00+00:00",
+  "action": "revise",
+  "note": "Убираем подводки типам\"Это особенно занятно\"; убираем всю воду и неопределённость. Если не знаем - не пишем. ; убираем повторы; линки на внешние сайты в теле статьи не нужны; не раздувай статью искусственно. Оформление  слабое. а вот перелинковку свою - нужна; в Threads финальная шутка короткая, мемная, хайповая, в одном предложении; в ВКонтакте не по формату;",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-18T13:18:11.609Z",
+  "draft_blob_sha": "5852bd7471f4d02774a434f56cad00a9e9741d36",
+  "status": "feedback_pending_revision",
+  "channel": "hpii-admin-oauth-gateway"
+}
