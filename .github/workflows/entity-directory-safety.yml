@@ -73,8 +73,13 @@ jobs:
                    'scripts/watchdog_queue.py', 'tests/test_watchdog_queue.py',
                    'tests/test_search_indexing.py',
                    'index.html', 'articles/index.html', 'sitemap.xml',
-                   'assets/entities.css', '.github/workflows/entity-directory-safety.yml'}
-          prefixes = ('entities/', 'assets/entity-icons/')
+                   'assets/entities.css', '.github/workflows/entity-directory-safety.yml',
+                   '.github/workflows/hpii-briefs.yml',
+                   'admin/index.html', 'admin/briefs/index.html',
+                   'assets/briefs.css', 'data/briefs/approved.json',
+                   'data/briefs/candidates.json', 'docs/SHORT_NEWS.md',
+                   'scripts/build_briefs.py', 'tests/test_briefs.py', 'robots.txt'}
+          prefixes = ('entities/', 'assets/entity-icons/', 'briefs/')
           # Article HTML changes are restricted to the IDs already reviewed
           # in the public registry; their exact header-only diff is tested.
           registry = json.load(open('data/entity_registry.json', encoding='utf-8'))
