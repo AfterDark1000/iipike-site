@@ -58,7 +58,7 @@ def checked_feed(raw: str) -> str:
         raise ValueError("RSS source host is not allowed")
     if p.hostname == "news.google.com" and p.path != "/rss/search":
         raise ValueError("Invalid Google News RSS path")
-    if p.hostname == "www.bing.com" and p.path != "/news/search":
+    if p.hostname == "www.bing.com" and p.path not in {"/news/search", "/search"}:
         raise ValueError("Invalid Bing News RSS path")
     if p.hostname == "www.google.com" and not re.fullmatch(r"/alerts/feeds/\d+/\d+", p.path):
         raise ValueError("Invalid Google Alerts RSS path")
@@ -192,6 +192,8 @@ def feed_urls(config, secrets=""):
             feeds.append(("Google News RSS", "https://news.google.com/rss/search?" + urllib.parse.urlencode({"q": query, "hl": "ru", "gl": "RU", "ceid": "RU:ru"})))
         if config.get("bing_news", True):
             feeds.append(("Bing News RSS", "https://www.bing.com/news/search?" + urllib.parse.urlencode({"q": query, "format": "rss"})))
+        if config.get("bing_web", True):
+            feeds.append(("Bing Web RSS", "https://www.bing.com/search?" + urllib.parse.urlencode({"q": q + " site:dzen.ru/a/", "format": "rss"})))
     for i, raw in enumerate(secrets.splitlines()):
         raw = raw.strip()
         if raw:
@@ -218,6 +220,7 @@ def build_queue(collected, previous, now, config):
                 "source": row.get("source") or "RSS",
                 "first_seen_at": now.isoformat(),
                 "feed_date": row.get("feed_date"),
+                "feed_date_status": "provided" if row.get("feed_date") else "unknown",
                 "dzen_publication_date": None,
                 "date_note": "Дата публикации в Дзене не подтверждена",
                 "views": None, "comments": None, "subscribers": None,
@@ -241,8 +244,13 @@ def run(config, previous=None, fetcher=read_feed, secrets="", now=None):
             recent = []
             for row in results:
                 observed = parse_date(row.get("feed_date"))
-                if not observed or not (dt.timedelta(0) <= now - observed <= dt.timedelta(hours=config.get("max_feed_age_hours", 72))):
+                if observed:
+                    if not (dt.timedelta(0) <= now - observed <= dt.timedelta(hours=config.get("max_feed_age_hours", 72))):
+                        continue
+                elif label != "Bing Web RSS":
                     continue
+                # Bing web search usually has no publication timestamp; these
+                # entries are shown as undated, never treated as recent Dzen posts.
                 recent.append(row)
             collected.extend(recent)
             health.append({"source": label, "status": "ok", "direct_matches": len(recent),
