@@ -40,11 +40,11 @@ test("drafting and blocked are not falsely marked ready for chief editor review"
  assert.equal((await model()({...doc,status:"blocked"})).group,"error");
 });
 test("approved text without a candidate is in progress with artist",async()=>{
- const cls=model({"auto_decisions/"+key+".json":textDecision});
+ const cls=model({["auto_decisions/"+key+".json"]:textDecision});
  assert.equal((await cls(doc)).group,"active");
 });
 test("an unreviewed image requires owner decision",async()=>{
- const cls=model({"auto_decisions/"+key+".json":textDecision,"auto_covers/"+key+"-v1.json":cover(1)});
+ const cls=model({["auto_decisions/"+key+".json"]:textDecision,["auto_covers/"+key+"-v1.json"]:cover(1)});
  const status=await cls(doc);
  assert.equal(status.group,"review");assert.match(status.label,/обложку v1/);
 });
@@ -86,6 +86,6 @@ test("mismatched approval version is never treated as safe success",async()=>{
  await assert.rejects(cls(doc),/не совпадает/);
 });
 test("rejected text is not shown as awaiting approval",async()=>{
- const cls=model({"auto_decisions/"+key+".json":{...textDecision,status:"rejected",action:"reject"}});
+ const cls=model({["auto_decisions/"+key+".json"]:{...textDecision,status:"rejected",action:"reject"}});
  assert.equal((await cls(doc)).group,"done");
 });
