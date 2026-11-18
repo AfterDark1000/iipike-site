@@ -3400,12 +3400,12 @@
       "summary": "Анонс интеграции Sabre и Grok для туристических операций.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": "2026-11-18T03:38:57.826Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "17.11.2026, решение главреда после полной ревизии: Первая волна повышенного редакционного приоритета; перед выпуском проверка фактов обязательна.\n2026-11-18: редактор №18 зарезервировал новость №227 для проверки первоисточников, существующих публикаций и подготовки статьи на утверждение.\n18.11.2026: проверены официальный анонс Sabre от 16.11 https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel и отраслевой отчёт Business Travel News от 17.11. На Investor Day 17.11 показали Sabre Mosaic Travel Connector для Grok Bot: бронирование перелётов/отелей, изменения поездки, push-сигналы об отменах рейсов и снижении цен через event-driven API. Бета обещана вскоре, публичный запуск НЕ подтверждён. Перелинковка: опубликованная статья о запрете United Airlines для неавторизованных агентов, dzen_id 6af82a86f8ad2a1742724f36, https://dzen.ru/a/avgqhvitKhdCck82. Далее: подготовить Дзен, Threads, X и VK на утверждение."
+      "closed_at": "2026-11-18T05:50:40.444Z",
+      "article_id": "sabre-grok-bot-travel-connector-20261117",
+      "note": "17.11.2026, решение главреда после полной ревизии: Первая волна повышенного редакционного приоритета; перед выпуском проверка фактов обязательна.\n2026-11-18: редактор №18 зарезервировал новость №227 для проверки первоисточников, существующих публикаций и подготовки статьи на утверждение.\n18.11.2026: проверены официальный анонс Sabre от 16.11 https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel и отраслевой отчёт Business Travel News от 17.11. На Investor Day 17.11 показали Sabre Mosaic Travel Connector для Grok Bot: бронирование перелётов/отелей, изменения поездки, push-сигналы об отменах рейсов и снижении цен через event-driven API. Бета обещана вскоре, публичный запуск НЕ подтверждён. Перелинковка: опубликованная статья о запрете United Airlines для неавторизованных агентов, dzen_id 6af82a86f8ad2a1742724f36, https://dzen.ru/a/avgqhvitKhdCck82. Далее: подготовить Дзен, Threads, X и VK на утверждение.\n18.11.2026: главред утвердил окончательный текст без заключительного абзаца; единый VK-пост, Threads и X сохранены с проверкой лимитов; ID=sabre-grok-bot-travel-connector-20261117. Ожидаем обложку в editorial-intake."
     },
     {
       "id": "n-b5b8d2f9cb551dda",
