@@ -2183,6 +2183,19 @@
           "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
         }
       ]
+    },
+    {
+      "key": "macos",
+      "name": "macOS",
+      "company": "apple",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "apple-macos-27-3-ai-agent-permissions-20261116",
+          "source_url": "https://developer.apple.com/news/?id=oqng0zjk"
+        }
+      ]
     }
   ]
 }
