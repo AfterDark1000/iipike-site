@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 154 · **В каталоге Дзена подтверждены:** 134 · **Не подтверждены, уже на сайте:** 18 · **Не подтверждены, ждут сайт:** 2
+**Всего одобренных:** 155 · **В каталоге Дзена подтверждены:** 134 · **Не подтверждены, уже на сайте:** 18 · **Не подтверждены, ждут сайт:** 3
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -40,7 +40,8 @@
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
 | 1 | [Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/unesco-ucl-ai-climate-sycophancy-20261116.md) | **Не ранее 18.11.2026 09:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
-| 2 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 10:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| 2 | [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fed-warsh-ai-economy-scenarios-20261116.md) | **Не ранее 18.11.2026 10:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
+| 3 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 11:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
