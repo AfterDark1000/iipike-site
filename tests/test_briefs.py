@@ -1,0 +1,123 @@
+"""Short-news lane: independent, no images, no accidental publishing of drafts."""
+from pathlib import Path
+import copy
+import json
+import shutil
+import tempfile
+import unittest
+import xml.etree.ElementTree as ET
+
+from scripts import build_briefs as b
+
+ROOT=Path(__file__).resolve().parents[1]
+
+class BriefFeedTests(unittest.TestCase):
+    def candidates(self):
+        return json.loads((ROOT/"data/briefs/candidates.json").read_text(encoding="utf-8"))["items"]
+
+    def test_first_pilot_is_unpublished_until_exact_human_approval(self):
+        candidates=self.candidates()
+        self.assertEqual(len(candidates),3)
+        self.assertEqual({c["pool_sequence"] for c in candidates},{125,185,226})
+        self.assertTrue(all(c["status"]=="pending_review" for c in candidates))
+        self.assertEqual(b.validated(ROOT),[])
+        output=b.outputs(ROOT)
+        for path,value in output.items():
+            self.assertTrue(path.is_file(),path)
+            self.assertEqual(path.read_text(encoding="utf-8"),value,path)
+        html=output[ROOT/"briefs/index.html"]
+        home=output[ROOT/"index.html"]
+        self.assertIn("Пока короткие новости готовятся",html)
+        self.assertIn("Первая подборка на редакционной проверке",home)
+        for c in candidates:
+            self.assertNotIn(c["headline"],html)
+            self.assertNotIn(c["headline"],home)
+            self.assertFalse((ROOT/"briefs"/c["slug"]).exists())
+        self.assertNotIn("editorial_inbox/stories",home)
+
+    def test_readable_mobile_feed_has_permalinks_and_sources(self):
+        css=(ROOT/"assets/briefs.css").read_text(encoding="utf-8")
+        index=(ROOT/"briefs/index.html").read_text(encoding="utf-8")
+        self.assertIn('@media(max-width:520px)',css)
+        self.assertIn('href="feed.xml"',index)
+        self.assertIn('HPII_BRIEFS_ITEMS_START',index)
+        self.assertIn('rel="canonical"',index)
+        self.assertNotIn('<img',index)
+        self.assertIn('href="briefs/"',(ROOT/"index.html").read_text(encoding="utf-8"))
+        self.assertTrue((ROOT/"admin/briefs/index.html").is_file())
+        self.assertIn('pending_review',(ROOT/"admin/briefs/index.html").read_text(encoding="utf-8"))
+
+    def fixture(self):
+        temp=tempfile.TemporaryDirectory(prefix="hpii-brief-tests-")
+        root=Path(temp.name)
+        for path in ("data/briefs/candidates.json","data/briefs/approved.json",
+                     "briefs/index.html","index.html","news.json"):
+            target=root/path;target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(ROOT/path,target)
+        return temp,root
+
+    def publish_row(self,c):
+        return {k:c[k] for k in ("slug","pool_id","pool_sequence","headline","topic","event_date",
+                                  "source","source_url","body")} | {
+            "status":"editor_approved","approved_by":"human_editor",
+            "approval_ref":"https://github.com/AfterDark1000/iipike-site/issues/99999",
+            "approved_at_utc":"2026-11-18T06:00:00Z",
+            "published_at_utc":"2026-11-18T07:00:00Z"
+        }
+
+    def test_approved_one_generates_distinct_page_rss_and_source(self):
+        temp,root=self.fixture()
+        try:
+            c=self.candidates()[0]
+            a=json.loads((root/b.APPROVED).read_text(encoding="utf-8"))
+            a["items"]=[self.publish_row(c)]
+            (root/b.APPROVED).write_text(json.dumps(a,ensure_ascii=False),encoding="utf-8")
+            rows=b.validated(root)
+            self.assertEqual(len(rows),1)
+            out=b.outputs(root)
+            self.assertIn(root/"briefs"/c["slug"]/"index.html",out)
+            page=out[root/"briefs"/c["slug"]/"index.html"]
+            self.assertIn(c["body"],page)
+            self.assertIn(c["source_url"].replace("&","&amp;"),page)
+            self.assertNotIn("<img",page)
+            self.assertIn("/briefs/"+c["slug"]+"/",page)
+            self.assertIn(c["headline"],out[root/"briefs/index.html"])
+            self.assertIn(c["headline"],out[root/"index.html"])
+            channel=ET.fromstring(out[root/"briefs/feed.xml"])
+            self.assertEqual(len(channel.findall("./channel/item")),1)
+            self.assertEqual(channel.findtext("./channel/item/link"),
+                             "https://iipike.ru/briefs/"+c["slug"]+"/")
+        finally:temp.cleanup()
+
+    def test_unapproved_wrong_text_duplicate_and_bad_url_fail_closed(self):
+        temp,root=self.fixture()
+        try:
+            row=self.publish_row(self.candidates()[0])
+            path=root/b.APPROVED
+            def expect_bad(mutate):
+                bad=copy.deepcopy(row);mutate(bad)
+                path.write_text(json.dumps({"schema_version":1,"items":[bad]},ensure_ascii=False))
+                with self.assertRaises(ValueError):
+                    b.validated(root)
+            expect_bad(lambda x:x.update({"status":"pending_review"}))
+            expect_bad(lambda x:x.update({"approved_by":"hpii-auto-editor"}))
+            expect_bad(lambda x:x.update({"approval_ref":"https://example.org/ok"}))
+            expect_bad(lambda x:x.update({"body":"Подменённый текст после утверждения."}))
+            expect_bad(lambda x:x.update({"source_url":"javascript:alert(1)"}))
+            row["body"]=row["body"]+" "
+            path.write_text(json.dumps({"schema_version":1,"items":[row,row]},ensure_ascii=False))
+            with self.assertRaises(ValueError):
+                b.validated(root)
+        finally:temp.cleanup()
+
+    def test_pool_and_full_article_data_never_mutated_by_brief_generation(self):
+        import inspect
+        code=inspect.getsource(b)
+        self.assertNotIn("site_publication_queue",code)
+        self.assertNotIn("HPII_SITE_FIRST_AUTOPUBLISH",code)
+        self.assertNotIn("editorial_inbox/stories",code)
+        # Outputs are restricted to briefs and the homepage strip, not the full-article catalog.
+        self.assertTrue(all(p.name=="index.html" or "/briefs/" in p.as_posix()
+                            for p in b.outputs(ROOT)))
+if __name__=="__main__":
+    unittest.main()
