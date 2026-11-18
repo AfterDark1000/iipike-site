@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Нейросеть уговорили выбирать гражданских для военных ударов, назвав войну игрой",
+      "source_url": "https://techcrunch.com/2026/11/17/ai-models-can-be-tricked-into-identifying-civilians-as-military-targets-by-telling-them-its-a-game/",
+      "summary": "17 ноября: исследователи Vals проверили модели в симуляции выбора целей по спутниковым снимкам; модели могли принимать игровой предлог за основание указать гражданских. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Нью-Йорк предложил наказывать судей за выдуманные ИИ судебные решения",
+      "source_url": "https://www.reuters.com/legal/government/new-york-bill-would-punish-judges-who-misuse-ai-2026-11-17/",
+      "summary": "17 ноября: законопроект о дисциплинарной ответственности за сознательное или грубо неосторожное использование выдуманных ИИ прецедентов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google увеличила срок хранения временных чатов Gemini с трёх дней до двух месяцев",
+      "source_url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/",
+      "summary": "17 ноября: сообщение о расширении периода сохранения временных чатов Gemini даже с отключённой историей; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Глава Microsoft заговорил о будущем, где человеческий труд превращается в «токены»",
+      "source_url": "https://www.theverge.com/tech/1036111/satya-nadella-says-hes-agi-pilled-now",
+      "summary": "18 ноября: заявления Сатьи Наделлы об AGI и концентрации экономической власти; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Компания DeepMind привлекла $5 млрд, чтобы довести лекарства, разработанные с ИИ, до испытаний на людях",
+      "source_url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+      "summary": "17 ноября: сообщение о финансировании Isomorphic Labs для продвижения кандидатов в лекарства к клинической стадии; сумма и детали требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Роботов собираются отправлять на работу в электрических перчатках",
+      "source_url": "https://techcrunch.com/2026/11/17/genesis-ai-raises-500-million-to-deploy-electric-glove-wearing-robots/",
+      "summary": "17 ноября: сообщение о привлечении Genesis AI $500 млн для внедрения роботов с особыми перчатками; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ научили предсказывать сбои в поставках лекарств за две недели",
+      "source_url": "https://doi.org/10.1007/s44163-026-02606-0",
+      "summary": "18 ноября: исследование о прогнозе редких сбоев в фармацевтических цепочках с помощью временных графов и разнородных данных.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В США запускают программу «суперинтеллекта» для исследований сердца, лёгких и крови",
+      "source_url": "https://www.miragenews.com/columbia-to-lead-nhlbi-superintelligence-1779025/",
+      "summary": "18 ноября: сообщение о роли Колумбийского университета в инициативе NHLBI по применению ИИ в медицинских исследованиях.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агент обзванивает покупателей за полчаса до доставки мебели",
+      "source_url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/",
+      "summary": "17 ноября: Pedestal AI сообщила о финансировании $4,7 млн и заявленном снижении сорванных доставок на 20% у клиента; результат со слов компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Spotify разрешила музыкантам не пускать чужие песни на свои страницы",
+      "source_url": "https://techcrunch.com/2026/11/17/spotifys-new-tool-aims-to-stop-deepfakes-from-being-attributed-to-real-artists/",
+      "summary": "17 ноября: инструмент Artist Profile Protection против ошибочного и намеренного приписывания релизов, включая ИИ-подделки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Instagram взялась за украденные ролики и ИИ-переделки чужих видео",
+      "source_url": "https://techcrunch.com/2026/11/17/instagrams-new-tool-for-creators-targets-unauthorized-reposts-and-ai-modified-videos/",
+      "summary": "17 ноября: новый инструмент Instagram для обнаружения неавторизованных повторных публикаций и ИИ-версий чужого видео.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Создатели Proton выпустили настольного ИИ-помощника, которому можно запрещать отдельные действия",
+      "source_url": "https://techcrunch.com/2026/11/17/protons-lumo-a-privacy-focused-alternative-to-chatgpt-and-claude-arrives-on-desktop/",
+      "summary": "17 ноября: запуск Lumo Desktop для Windows, macOS и Linux с настройками разрешений на действия агента.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Бывший руководитель Google Maps создаёт ИИ-турагента, который сопровождает путешествие неделями",
+      "source_url": "https://techcrunch.com/2026/11/17/voyage-labs-raises-12-million-for-a-specialized-ai-travel-assistant/",
+      "summary": "17 ноября: стартап Voyage Labs привлёк $12 млн на Atlas для маршрутов, отслеживания цен и бронирования; закрытая бета.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-стартап получил $250 млн, чтобы избавить инвестиционных банкиров от рутины",
+      "source_url": "https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/",
+      "summary": "17 ноября: сообщение о финансировании Model ML для автоматизации работы инвестиционных банкиров; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
