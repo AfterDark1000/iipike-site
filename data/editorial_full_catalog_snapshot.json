@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "d09aef81adb598de82e9129dfa3e7d68e37ca68f",
-  "source_blob_sha": "d0d8d52e77be7ffc0b17c4868b0af6141d6e5bc7",
+  "source_commit": "1e63f53a4b2274c525b8a67e2073df34c9b85488",
+  "source_blob_sha": "736b70eb2da11fdb73d888770debed6f7a788dbd",
   "snapshot_date": "2026-11-18",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
@@ -15,6 +15,86 @@
       "source": "editorial_archive.json",
       "excerpt": "OpenAI 17 ноября выпустила две нейросети — GPT-6.2 Astra для сложной профессиональной работы и GPT-6.2 Sol для повседневных задач. В независимом рейтинге Artificial Analysis новая Astra набрала 62 балла против 65 у лидирующей Claude Fable 5.2. При этом стандартное задание в тестах обошлось в $4 против $26,54 у Claude — разница примерно в 6,6 раза. Обе новинки уже доступны в ChatGPT Work, Codex и API. В обычном чате C",
       "published_at_utc": "2026-11-18T07:23:56+00:00"
+    },
+    {
+      "dzen_id": "6afd4a791f68621720548873",
+      "title": "В США остановили все вылеты, заподозрили ИИ за $875 млн — виновника ищут среди маршрутизаторов",
+      "dzen_url": "https://dzen.ru/a/av1KeR9oYhcgVIhz",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Федеральное управление гражданской авиации США (FAA) 13 ноября остановило вылеты самолётов по всей стране из-за масштабного сбоя связи. Под подозрение попала недавно внедрённая система искусственного интеллекта SMART, на которую выделили $875 млн. Но расследование пошло в другую сторону. FAA связало неполадки с устаревшей телекоммуникационной сетью и работами по замене оборудования. В заявлении от 15 ноября ведомство",
+      "published_at_utc": "2026-11-18T18:02:00+00:00"
+    },
+    {
+      "dzen_id": "6afd49ef95135143e57e1a49",
+      "title": "Alibaba выпустила Qwen4-Max: из обучения нейросети убрали инструкции для кибератак",
+      "dzen_url": "https://dzen.ru/a/av1J75UTUUPlfhpJ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Alibaba 16 ноября выпустила Qwen4-Max — новую флагманскую нейросеть, при обучении которой особое внимание уделили кибербезопасности. Из обучающих материалов отфильтровали инструкции для наступательных кибератак, сохранив знания, необходимые для поиска и исправления уязвимостей. Alibaba также начала проверять безопасность программного кода прямо во время обучения нейросети. Модель оценивали не только по тому, работает",
+      "published_at_utc": "2026-11-18T17:02:25+00:00"
+    },
+    {
+      "dzen_id": "6afd498af4a35255c9a8a352",
+      "title": "США и Россия тормозят договор об оружии, которое само выбирает цели",
+      "dzen_url": "https://dzen.ru/a/av1JivSjUlXJqKNS",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Кому принимать решение об открытии огня — человеку или машине? В Женеве 16 ноября началась конференция ООН, на которой страны пытаются договориться о международных правилах для автономного оружия. США и Россия выступают против начала переговоров о юридически обязательном договоре. Вашингтон предлагает ещё пять лет разрабатывать необязательные рекомендации. Москва считает, что обсуждать запреты пока рано. Причём росси",
+      "published_at_utc": "2026-11-18T16:01:45+00:00"
+    },
+    {
+      "dzen_id": "6afd490032a89b6bbe604ddc",
+      "title": "Картинка за 1,1 секунды: Recraft ускорила нейросеть и научила её лучше писать текст",
+      "dzen_url": "https://dzen.ru/a/av1JADKom2u-YE3c",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Recraft 13 ноября выпустила V4.1 Flash V2 — обновлённую нейросеть, которая генерирует изображения в среднем за 1,1 секунды по медианному показателю внутренних испытаний компании. Причём разработчики успели подтянуть качество, особенно в работе с надписями, мелкими деталями и реалистичными фотографиями. Новинка уже доступна в Recraft Studio. Тем, кто пользовался предыдущей Flash, ничего перенастраивать не придётся: об",
+      "published_at_utc": "2026-11-18T15:03:12+00:00"
+    },
+    {
+      "dzen_id": "6afd48981f6862172050c0fd",
+      "title": "Маск и 180 тысяч человек требуют вернуть Хуанга в NVIDIA, но совет директоров против",
+      "dzen_url": "https://dzen.ru/a/av1ImB9oYhcgUMD9",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Илон Маск и другие руководители технологических компаний поддержали кампанию за возвращение Дженсена Хуанга на пост главы NVIDIA. К вечеру 16 ноября петиция собрала уже более 180 тысяч подписей, однако совет директоров компании, по сведениям Reuters, возвращение основателя пока не рассматривает. Хуанг руководил NVIDIA 33 года. Его отставку приняли 11 ноября, а на следующий день компания официально объявила об уходе г",
+      "published_at_utc": "2026-11-18T14:02:36+00:00"
+    },
+    {
+      "dzen_id": "6afd481e6cafb8415d714482",
+      "title": "Конкуренту NVIDIA дали $720 млн. Хотя его чипов ещё нет в продаже",
+      "dzen_url": "https://dzen.ru/a/av1IHmyvuEFdcUSC",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Британская Fractile привлекла $720 миллионов на разработку процессоров для искусственного интеллекта. Инвесторы оценили стартап в $7 миллиардов — при том, что первый коммерческий чип компания рассчитывает выпустить только в 2027 году. О сделке объявили 11 ноября. Среди инвесторов оказались Thrive Capital, Founders Fund, Lightspeed, Redpoint, инвестиционное подразделение Google CapitalG и даже британское государство.",
+      "published_at_utc": "2026-11-18T13:01:04+00:00"
+    },
+    {
+      "dzen_id": "6afd47baffa5a7641f42275e",
+      "title": "Овца на крыше принесла фильму приз в $500 тысяч",
+      "dzen_url": "https://dzen.ru/a/av1Huv-lp2QfQide",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Короткометражка про аргентинского пастуха и упрямую овцу выиграла главный приз Higgsfield Global Film Festival — 500 тысяч долларов. Фильм называется Listen to MEH, длится меньше шести минут и создан с помощью искусственного интеллекта. Победителем стала аргентинская PURGA Studio. Для команды, прежде занимавшейся преимущественно рекламным производством, это первый художественный короткометражный фильм. На крыше дома",
+      "published_at_utc": "2026-11-18T12:03:37+00:00"
+    },
+    {
+      "dzen_id": "6afd2f46d47473154bf62598",
+      "title": "Claude за 8 часов сделал шутер из одного предложения",
+      "dzen_url": "https://dzen.ru/a/av0vRtR0cxVL9iWY",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Сотрудник Anthropic Феликс Ризеберг попросил нейросеть Claude Fable 5.2 создать красивый шутер от первого лица. Дал ей одно задание, оставил работать без подсказок и спустя восемь часов получил готовую браузерную игру. Эксперимент обошёлся примерно в $550 по тарифам API. Результат под названием Saltline Ризеберг показал 9 ноября, в день выхода новой модели Claude. Поиграть в Saltline можно прямо в браузере. Скачивать",
+      "published_at_utc": "2026-11-18T11:02:47+00:00"
     },
     {
       "dzen_id": "6afd2b6d5655634d62beb423",
