@@ -294,6 +294,8 @@ test("cover-review validation fails closed for unexpected actions and blank rewo
   assert.equal(__test.validCoverReview({...base,note:""}),false);
   assert.equal(__test.validCoverReview({...base,action:"publish"}),false);
   assert.equal(__test.validCoverReview({...base,image_blob_sha:"bad"}),false);
-  assert.equal(__test.validCoverReview({...base,cover_version:2}),false);
+  assert.equal(__test.validCoverReview({...base,cover_version:2}),true);
+  assert.equal(__test.validCoverReview({...base,cover_version:0}),false);
+  assert.equal(__test.validCoverReview({...base,cover_version:6}),false);
   assert.equal(__test.validCoverReview({...base,admin:true}),false);
 });

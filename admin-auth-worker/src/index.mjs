@@ -145,7 +145,7 @@ function validCoverReview(d) {
       JSON.stringify(["article_id","revision","text_updated_at","cover_version","image_blob_sha","action","note"].sort())) return false;
   return typeof d.article_id==="string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(d.article_id) && d.article_id.length<=80 &&
     Number.isSafeInteger(d.revision) && d.revision>=1 && d.revision<=9999 &&
-    d.cover_version===1 &&
+    Number.isSafeInteger(d.cover_version) && d.cover_version>=1 && d.cover_version<=5 &&
     typeof d.text_updated_at==="string" && d.text_updated_at.length>0 && d.text_updated_at.length<80 &&
     typeof d.image_blob_sha==="string" && /^[0-9a-f]{40}$/.test(d.image_blob_sha) &&
     ["approve_cover","revise_cover"].includes(d.action) &&
@@ -169,6 +169,17 @@ async function recordCoverReview(env, data, login) {
   ]);
   if(old.status===200)return fail(409,"cover_review_already_exists");
   if(old.status!==404)return fail(502,"cover_review_lookup_failed");
+  if(data.cover_version>1){
+    const previous="editorial_inbox/auto_cover_decisions/"+data.article_id+"-r"+data.revision+"-v"+(data.cover_version-1)+".json";
+    const prior=await githubJson("/contents/"+previous+"?ref="+ref,env);
+    if(prior.status!==200)return fail(409,"previous_cover_revision_missing");
+    let pv;
+    try{pv=decodeGitHubContent(prior.data)}catch{return fail(409,"previous_cover_revision_invalid")}
+    if(pv.article_id!==data.article_id||pv.text_revision!==data.revision||
+       pv.text_updated_at!==data.text_updated_at||pv.cover_version!==data.cover_version-1||
+       pv.action!=="revise_cover"||pv.status!=="cover_revision_requested"||!pv.note?.trim())
+      return fail(409,"previous_cover_revision_not_requested");
+  }
   if([draft,text,cover,image].some(x=>x.status!==200))return fail(409,"cover_or_approval_unavailable");
   let dv,tv,cv;
   try{dv=decodeGitHubContent(draft.data);tv=decodeGitHubContent(text.data);cv=decodeGitHubContent(cover.data)}
@@ -250,10 +261,12 @@ async function receiveCover(env, request, login) {
   let data;
   try{data=await request.formData()}catch{return fail(400,"bad_upload_form")}
   const article_id=data.get("article_id"), revision=Number(data.get("revision")),
+        cover_version=Number(data.get("cover_version")||1),
         updated_at=data.get("updated_at"), headline=data.get("headline"), concept=data.get("concept"),
         file=data.get("file");
   if(typeof article_id!=="string" || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article_id) || article_id.length>80 ||
      !Number.isSafeInteger(revision)||revision<1||revision>9999||
+     !Number.isSafeInteger(cover_version)||cover_version<1||cover_version>5||
      typeof updated_at!=="string"||updated_at.length>80||
      typeof headline!=="string"||headline.trim().length<2||headline.length>100||
      typeof concept!=="string"||concept.trim().length<8||concept.length>600||
@@ -273,7 +286,18 @@ async function receiveCover(env, request, login) {
      approve.updated_at!==updated_at||approve.action!=="approve_text"||
      approve.status!=="text_approved_cover_pending"||approve.draft_blob_sha!==draft.data.sha)
     return fail(409,"text_revision_or_approval_changed");
-  const stem=article_id+"-r"+revision+"-v1";
+  if(cover_version>1){
+    const previous="editorial_inbox/auto_cover_decisions/"+article_id+"-r"+revision+"-v"+(cover_version-1)+".json";
+    const prior=await githubJson("/contents/"+previous+"?ref="+ref,env);
+    if(prior.status!==200)return fail(409,"previous_cover_revision_missing");
+    let pv;
+    try{pv=decodeGitHubContent(prior.data)}catch{return fail(409,"previous_cover_revision_invalid")}
+    if(pv.article_id!==article_id||pv.text_revision!==revision||pv.text_updated_at!==updated_at||
+       pv.cover_version!==cover_version-1||pv.action!=="revise_cover"||
+       pv.status!=="cover_revision_requested"||!pv.note?.trim())
+      return fail(409,"previous_cover_revision_not_requested");
+  }
+  const stem=article_id+"-r"+revision+"-v"+cover_version;
   const image_path="editorial_inbox/auto_covers/"+stem+".webp";
   const meta_path="editorial_inbox/auto_covers/"+stem+".json";
   const exists=await githubJson("/contents/"+meta_path+"?ref="+ref,env);

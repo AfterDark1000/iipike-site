@@ -50,15 +50,16 @@ export class HpiiAdminAuth {
       method:"POST",headers:{"content-type":"application/json"},
       body:JSON.stringify({
         article_id:article.article_id,revision:article.revision,
-        text_updated_at:article.updated_at,cover_version:1,
+        text_updated_at:article.updated_at,cover_version:cover.cover_version||1,
         image_blob_sha:cover.image_blob_sha,action,note
       })
     });
   }
-  async uploadCover(article,file,headline,concept) {
+  async uploadCover(article,file,headline,concept,coverVersion=1) {
     const data=new FormData();
     data.set("article_id",article.article_id);
     data.set("revision",String(article.revision));
+    data.set("cover_version",String(coverVersion));
     data.set("updated_at",article.updated_at);
     data.set("headline",headline);
     data.set("concept",concept);
