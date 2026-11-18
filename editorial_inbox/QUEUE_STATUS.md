@@ -2,30 +2,30 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 3 · **Ждут интервал:** 0 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 157
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 158
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **18.11.2026 13:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **18.11.2026 14:45 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/apple-macos-27-3-ai-agent-permissions-20261116.json) | ⚡ Срочная очередь — готова | **Не ранее 18.11.2026 14:37 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/apple-macos-27-3-ai-agent-permissions-20261116.webp) |
-| **2** | [⚡ Китайские нейросети учатся на ответах OpenAI](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/china-openai-distillation-reuters-20261117.json) | ⚡ Срочная очередь — готова | **Не ранее 18.11.2026 15:37 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/china-openai-distillation-reuters-20261117.webp) |
-| **3** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | 🟢 Готова к выпуску | **Не ранее 18.11.2026 16:37 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| **1** | [⚡ Китайские нейросети учатся на ответах OpenAI](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/china-openai-distillation-reuters-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 15:52 (Усть-Катав)**; пауза до 18.11.2026 15:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/china-openai-distillation-reuters-20261117.webp) |
+| **2** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 16:52 (Усть-Катав)**; пауза до 18.11.2026 15:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| — | Нет проблемных материалов | — | — |
+| [Правообладатели Элвиса нашли семь его песен в одном треке Suno](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-elvis-seven-songs-lawsuit-20261113.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам](https://iipike.ru/articles/apple-macos-27-3-ai-agent-permissions-20261116/) | 18.11.2026 14:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/apple-macos-27-3-ai-agent-permissions-20261116.webp) |
 | [OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат](https://iipike.ru/articles/openai-apollo-embedded-evaluations-20261116/) | 18.11.2026 13:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-apollo-embedded-evaluations-20261116.webp) |
 | [Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену](https://iipike.ru/articles/sabre-grok-bot-travel-connector-20261117/) | 18.11.2026 12:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/sabre-grok-bot-travel-connector-20261117.webp) |
 | [OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude](https://iipike.ru/articles/openai-gpt-6-2-astra-sol-20261117/) | 18.11.2026 11:09 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-6-2-astra-sol-20261117.webp) |
