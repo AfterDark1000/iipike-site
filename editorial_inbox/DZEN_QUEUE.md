@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 155 · **В каталоге Дзена подтверждены:** 134 · **Не подтверждены, уже на сайте:** 18 · **Не подтверждены, ждут сайт:** 3
+**Всего одобренных:** 155 · **В каталоге Дзена подтверждены:** 134 · **Не подтверждены, уже на сайте:** 19 · **Не подтверждены, ждут сайт:** 2
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -32,6 +32,7 @@
 | 16 | [Google Карты научились звонить в салоны и искать свободную запись. ИИ выходит в 30 стран Европы](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ask-maps-booking-europe-20261116.md) | 18.11.2026, 00:45 | [На сайте](https://iipike.ru/articles/google-ask-maps-booking-europe-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-ask-maps-booking-europe-20261116.webp) |
 | 17 | [Число сообщений об опасном использовании ИИ против детей выросло в 85 раз](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/childlight-ai-child-safety-reports-85x-20261116.md) | 18.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/childlight-ai-child-safety-reports-85x-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/childlight-ai-child-safety-reports-85x-20261116.webp) |
 | 18 | [ИИ-агенты OpenAI устроили десятки кибератак. Калифорния потребовала ответа через суд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/california-openai-agents-hugging-face-lawsuit-20261116.md) | 18.11.2026, 08:00 | [На сайте](https://iipike.ru/articles/california-openai-agents-hugging-face-lawsuit-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/california-openai-agents-hugging-face-lawsuit-20261116.webp) |
+| 19 | [Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/unesco-ucl-ai-climate-sycophancy-20261116.md) | 18.11.2026, 09:15 | [На сайте](https://iipike.ru/articles/unesco-ucl-ai-climate-sycophancy-20261116/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -39,9 +40,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/unesco-ucl-ai-climate-sycophancy-20261116.md) | **Не ранее 18.11.2026 09:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
-| 2 | [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fed-warsh-ai-economy-scenarios-20261116.md) | **Не ранее 18.11.2026 10:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
-| 3 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 11:07 (Усть-Катав)**; пауза до 18.11.2026 09:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| 1 | [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/fed-warsh-ai-economy-scenarios-20261116.md) | **Не ранее 18.11.2026 10:22 (Усть-Катав)**; пауза до 18.11.2026 10:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
+| 2 | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.md) | **Не ранее 18.11.2026 11:22 (Усть-Катав)**; пауза до 18.11.2026 10:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
