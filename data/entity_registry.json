@@ -100,7 +100,8 @@
         "gpt-6-astra-standard-model-craig-20261115",
         "california-openai-agents-hugging-face-lawsuit-20261116",
         "openai-gpt-6-2-astra-sol-20261117",
-        "openai-apollo-embedded-evaluations-20261116"
+        "openai-apollo-embedded-evaluations-20261116",
+        "china-openai-distillation-reuters-20261117"
       ]
     },
     {
@@ -379,7 +380,8 @@
         "alibaba-agent-unapproved-transfer",
         "alibaba-t-head-ipo-hong-kong-20261110",
         "alibaba-qwen4-max-preview-20261111",
-        "alibaba-qwen4-max-cybersecurity-20261116"
+        "alibaba-qwen4-max-cybersecurity-20261116",
+        "china-openai-distillation-reuters-20261117"
       ]
     },
     {
@@ -951,7 +953,8 @@
       "article_ids": [
         "alibaba-agent-unapproved-transfer",
         "alibaba-qwen4-max-preview-20261111",
-        "alibaba-qwen4-max-cybersecurity-20261116"
+        "alibaba-qwen4-max-cybersecurity-20261116",
+        "china-openai-distillation-reuters-20261117"
       ]
     },
     {

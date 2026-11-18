@@ -6635,5 +6635,31 @@
     "products": [
       "muse"
     ]
+  },
+  {
+    "title": "Китайские нейросети учатся на ответах OpenAI",
+    "summary": "Reuters изучило свыше 300 документов о том, как китайские исследователи используют ответы американских нейросетей для дообучения собственных моделей. Один эксперимент дал 10 750 двуязычных примеров для Qwen.",
+    "published": "2026-11-18",
+    "source_url": "https://www.reuters.com/world/china/china-taps-us-ai-models-train-homegrown-rivals-chip-curbs-bite-2026-11-17/",
+    "cover": "assets/editorial/china-openai-distillation-reuters-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🇨🇳 Китайские нейросети учатся на ОТВЕТАХ OPENAI",
+    "vk_summary": "Reuters изучило 300 с лишним научных и корпоративных документов о том, как китайские компании обучают модели на ответах американских нейросетей. В одном эксперименте так подготовили 10 750 двуязычных примеров для Qwen от Alibaba. Метод называется дистилляцией; условия OpenAI ограничивают его использование для создания конкурентов.",
+    "published_at_utc": "2026-11-18T11:00:57Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "china-openai-distillation-reuters-20261117",
+    "url": "articles/china-openai-distillation-reuters-20261117/",
+    "topics": [
+      "models",
+      "infrastructure"
+    ],
+    "companies": [
+      "openai",
+      "alibaba"
+    ],
+    "products": [
+      "qwen"
+    ]
   }
 ]
