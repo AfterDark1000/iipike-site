@@ -17,22 +17,27 @@
  const status=document.getElementById("brief-review-status"),root=document.getElementById("brief-review-items");
  const node=(tag,cls,txt)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(txt!=null)x.textContent=txt;return x};
  try{
-   const r=await fetch("../../data/briefs/candidates.json?v="+Date.now(),{cache:"no-store"});
-   if(!r.ok)throw Error("GitHub Pages HTTP "+r.status);
-   const data=await r.json();
-   if(data.schema_version!==1||!Array.isArray(data.items))throw Error("Неверный формат кандидатов");
+   const [r,a]=await Promise.all([
+     fetch("../../data/briefs/candidates.json?v="+Date.now(),{cache:"no-store"}),
+     fetch("../../data/briefs/approved.json?v="+Date.now(),{cache:"no-store"})
+   ]);
+   if(!r.ok||!a.ok)throw Error("GitHub Pages HTTP "+(r.ok?a.status:r.status));
+   const [data,approvals]=await Promise.all([r.json(),a.json()]);
+   if(data.schema_version!==1||!Array.isArray(data.items)||approvals.schema_version!==1||!Array.isArray(approvals.items))throw Error("Неверный формат записей");
+   const approved=new Set(approvals.items.map(x=>x.slug));
    root.replaceChildren();
    for(const c of data.items){
-     if(c.status!=="pending_review")continue;
+     if(c.status!=="pending_review"||approved.has(c.slug))continue;
      const card=node("article","brief-review-entry");const tag=node("small","brief-review-state","ЖДЁТ РЕДАКТОРА · ПУЛ №"+c.pool_sequence);
      const heading=node("h2",null,c.headline);
      const body=node("p",null,c.body);
-     const detail=node("p",null,"Проверка: "+c.fact_check);
+     const detail=node("details","brief-review-proof");
+     detail.append(node("summary",null,"Редакционная проверка · служебное"),node("p",null,c.fact_check));
      const source=node("a",null,"Открыть первоисточник: "+c.source+" ↗");
      try{const u=new URL(c.source_url);if(u.protocol==="https:"){source.href=u.href;source.target="_blank";source.rel="noopener noreferrer"}}catch(_){}
      card.append(tag,heading,body,detail,source);root.append(card);
    }
-   status.textContent="Кандидатов на утверждение: "+root.children.length+" · ничего не опубликовано";
+   status.textContent="Ожидают утверждения: "+root.children.length+" · утверждены: "+approved.size;
  }catch(e){status.textContent="Не удалось загрузить кандидатов: "+e.message}
 })();
 </script></body></html>

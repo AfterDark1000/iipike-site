@@ -5,6 +5,7 @@ The candidate list is NEVER read by this publisher. A human-approved record in
 data/briefs/approved.json is the only possible public input. No images required.
 """
 import argparse
+import hashlib
 from datetime import datetime
 from html import escape
 import json
@@ -62,6 +63,11 @@ def read_candidates(root):
             raise ValueError("Unresearched candidate")
     return source["items"]
 
+def approval_sha256(row):
+    """Fingerprint the reviewed text, pinned to an owner-created GitHub Issue."""
+    return hashlib.sha256(chr(10).join(row[k] for k in
+           ("slug","pool_id","headline","body","source_url")).encode("utf-8")).hexdigest()
+
 def validated(root):
     doc=json.loads((root/APPROVED).read_text(encoding="utf-8"))
     if doc.get("schema_version")!=1 or not isinstance(doc.get("items"),list):
@@ -91,8 +97,8 @@ def validated(root):
             raise ValueError("Invalid brief topic")
         if not isinstance(row["headline"],str) or not 15<=len(row["headline"])<=120:
             raise ValueError("Bad headline")
-        if not isinstance(row["body"],str) or not 280<=len(row["body"])<=900 or "\n" in row["body"]:
-            raise ValueError("A short brief must be 280-900 characters in one paragraph")
+        if not isinstance(row["body"],str) or not 180<=len(row["body"])<=650 or "\n" in row["body"]:
+            raise ValueError("A short brief must be 180-650 characters in one paragraph")
         if row["event_date"]!=cand["event_date"] or not re.fullmatch(r"20\d\d-\d\d-\d\d",row["event_date"]):
             raise ValueError("Invalid event date")
         if not isinstance(row["pool_sequence"],int) or row["pool_sequence"]<1:

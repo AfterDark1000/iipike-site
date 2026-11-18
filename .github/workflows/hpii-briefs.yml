@@ -5,6 +5,7 @@ on:
     paths:
       - 'data/briefs/**'
       - 'scripts/build_briefs.py'
+      - 'scripts/sync_briefs_pool.py'
       - 'tests/test_briefs.py'
       - 'briefs/**'
       - 'admin/briefs/**'
@@ -68,6 +69,7 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const crypto = require('crypto');
             const data = JSON.parse(fs.readFileSync('data/briefs/approved.json','utf8'));
             if (!Array.isArray(data.items) || data.schema_version !== 1)
               throw Error('Approved briefs registry invalid');
@@ -80,7 +82,12 @@ jobs:
               if (seen.has(id)) throw Error('Reused owner issue on multiple briefs');
               seen.add(id);
               const issue = (await github.rest.issues.get({owner,repo,issue_number:id})).data;
+              const digest = crypto.createHash('sha256')
+                .update(['slug','pool_id','headline','body','source_url'].map(k => row[k]).join(String.fromCharCode(10)), 'utf8')
+                .digest('hex');
+              const pinned = (issue.body || '').split(String.fromCharCode(10)).some(line => line.trim() === 'SHA256: ' + digest);
               if (issue.pull_request || issue.user?.login !== 'AfterDark1000' ||
+                  !pinned ||
                   issue.title !== 'ХПИИ: утвердить короткую новость ' + row.slug ||
                   !(issue.body || '').includes(row.source_url) ||
                   !(issue.body || '').includes(row.headline)) {
@@ -107,6 +114,21 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'briefs: render owner-approved short news [skip ci]'
           # No force push. A competing site release means retry on the next schedule.
+          git push origin HEAD:refs/heads/main
+      - name: Close rendered briefs in raw pool (only after publishing)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/sync_briefs_pool.py --write
+          git add -- data/site_news_pool.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Raw pool already synchronized.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'briefs: reconcile published short news in raw pool [skip ci]'
           git push origin HEAD:refs/heads/main
       - name: Summary
         if: always()
