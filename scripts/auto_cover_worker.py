@@ -265,14 +265,18 @@ def generate(root, plan, account_id, token):
         "created_at": datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z"),
     }
     metadata_file.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    import os
+    previous_dir = Path.cwd()
     try:
-        # Validator is rooted to the editorial-intake worktree in the GitHub job.
-        validate_cover(metadata_file)
+        # The existing validator resolves paths relative to editorial-intake.
+        os.chdir(root)
+        validate_cover(Path(plan["meta_path"]))
     except Exception:
-        # Keep failures out of the review queue.
         metadata_file.unlink(missing_ok=True)
         image_file.unlink(missing_ok=True)
         raise
+    finally:
+        os.chdir(previous_dir)
     print("HPII_COVER_CANDIDATE_READY " + image_file.name + " " + str(len(result)) + " bytes")
 
 
