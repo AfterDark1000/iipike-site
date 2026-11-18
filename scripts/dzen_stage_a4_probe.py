@@ -131,8 +131,9 @@ def channel_history(articles, thresholds):
     }
 
 
-def article_window(article):
-    if not article.ai_topic:
+def article_window(article, *, ai_topic=None):
+    topic_matches = article.ai_topic if ai_topic is None else ai_topic
+    if not topic_matches:
         return "off_topic"
     if article.age_minutes > 120:
         return "older_than_120_minutes"
@@ -169,7 +170,7 @@ def article_record(article, window, slug, source, observed_at, history):
     }
 
 
-def analyze_snapshot(slug, data, observed_at, thresholds):
+def export_cards(slug, data):
     channel = data["channel"]
     source = channel["source"]
     publisher = source["publisher_id"]
@@ -180,7 +181,12 @@ def analyze_snapshot(slug, data, observed_at, thresholds):
             or not isinstance(cards, list) or len(cards) > MAX_CARDS
             or not all(isinstance(card, dict) for card in cards)):
         raise ValueError(f"Unexpected one-page export for {slug}")
+    return source, cards
 
+
+def analyze_snapshot(slug, data, observed_at, thresholds):
+    source, cards = export_cards(slug, data)
+    publisher = source["publisher_id"]
     articles, skipped = read_articles(cards, publisher, observed_at)
     history = channel_history(articles, thresholds)
     source_url = f"{ORIGIN}/api/v3/launcher/export?channel_name={slug}"
