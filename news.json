@@ -6730,5 +6730,28 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Правообладатели Элвиса нашли семь его песен в одном треке Suno",
+    "summary": "Правообладатели Элвиса Пресли дополнили иск к Suno 114 примерами генераций. В одном треке, по их утверждению, обнаружены элементы семи песен. Финансовые требования — 128,85 млн долларов.",
+    "published": "2026-11-18",
+    "source_url": "https://www.musicbusinessworldwide.com/files/2026/11/Elvis-Presley-Enterprises-v-Suno-amended-complaint-1.pdf",
+    "cover": "assets/editorial/suno-elvis-seven-songs-lawsuit-20261113.webp",
+    "rubric": "news",
+    "vk_title": "🎸 В одном треке SUNO нашли СЕМЬ песен Элвиса",
+    "vk_summary": "Правообладатели Элвиса Пресли расширили иск против Suno: добавили 114 записей, которые считают примерами незаконного копирования музыки или голоса певца. В одной, по версии истцов, соединены семь песен. Теперь в материалах дела 164 примера. Компания настаивает, что преобразует имена артистов в описания музыкального стиля.",
+    "published_at_utc": "2026-11-18T15:45:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-13",
+    "id": "suno-elvis-seven-songs-lawsuit-20261113",
+    "url": "articles/suno-elvis-seven-songs-lawsuit-20261113/",
+    "topics": [
+      "audio",
+      "society"
+    ],
+    "companies": [
+      "suno"
+    ],
+    "products": []
   }
 ]
