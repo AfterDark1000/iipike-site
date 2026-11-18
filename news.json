@@ -6705,5 +6705,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов",
+    "summary": "Google расширила доступ к Gemini 4 Carbon: платный API, корпоративные клиенты и подписчики AI Ultra. Показала экспериментальный /swarm, объявила цены до и после 30 ноября.",
+    "published": "2026-11-18",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/",
+    "cover": "assets/editorial/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp",
+    "rubric": "news",
+    "vk_title": "🧠 GOOGLE ОТКРЫЛА Gemini 4 Carbon и показала «РОЙ» ИИ-агентов",
+    "vk_summary": "С 10 ноября модель доступна платным разработчикам и подписчикам AI Ultra. В Antigravity тестируют /swarm: несколько ИИ-агентов работают над одной задачей. Цена API удвоится после 30 ноября.",
+    "published_at_utc": "2026-11-18T14:30:50Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-10",
+    "id": "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
+    "url": "articles/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
