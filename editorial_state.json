@@ -180,6 +180,12 @@
       "utc_date": "2026-11-17",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/",
       "source_title": "Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base"
+    },
+    {
+      "id": "361479cc0a0b93ad5d29",
+      "utc_date": "2026-11-18",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/",
+      "source_title": "Stitch Loop: a long-running product agent that connects to codebase and metrics"
     }
   ]
 }
