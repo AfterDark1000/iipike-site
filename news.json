@@ -6553,5 +6553,30 @@
       "claude",
       "gemini"
     ]
+  },
+  {
+    "title": "Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену",
+    "summary": "Sabre представила для Grok Bot коннектор бронирования перелётов и отелей с уведомлениями об отменах рейсов и снижении цен; готовится бета-версия.",
+    "published": "2026-11-18",
+    "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel",
+    "cover": "assets/editorial/sabre-grok-bot-travel-connector-20261117.webp",
+    "rubric": "news",
+    "vk_title": "✈️ GROK BOT научат БРОНИРОВАТЬ БИЛЕТЫ и помогать при отмене рейсов",
+    "vk_summary": "Sabre показала Grok Bot с подключением к системам бронирования авиабилетов и отелей. ИИ сможет самостоятельно получать сигналы об отмене рейса и снижении цен, предлагать замену и помогать переоформить поездку. Интеграцию представили 17 ноября, бета-версию обещают вскоре.",
+    "published_at_utc": "2026-11-18T07:15:43Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "sabre-grok-bot-travel-connector-20261117",
+    "url": "articles/sabre-grok-bot-travel-connector-20261117/",
+    "topics": [
+      "agents",
+      "apps"
+    ],
+    "companies": [
+      "xai"
+    ],
+    "products": [
+      "grok"
+    ]
   }
 ]
