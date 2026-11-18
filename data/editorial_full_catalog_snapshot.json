@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "6a4ebf2e7dad2a229c2eac3b1510d9045fb49273",
-  "source_blob_sha": "3750d80d1e4fca9887676a2484c92a04daaacd5e",
-  "snapshot_date": "2026-11-17",
+  "source_commit": "d09aef81adb598de82e9129dfa3e7d68e37ca68f",
+  "source_blob_sha": "d0d8d52e77be7ffc0b17c4868b0af6141d6e5bc7",
+  "snapshot_date": "2026-11-18",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afd522e499f5e349075e078",
+      "title": "OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude",
+      "dzen_url": "https://dzen.ru/a/av1SLkmfXjSQdeB4",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI 17 ноября выпустила две нейросети — GPT-6.2 Astra для сложной профессиональной работы и GPT-6.2 Sol для повседневных задач. В независимом рейтинге Artificial Analysis новая Astra набрала 62 балла против 65 у лидирующей Claude Fable 5.2. При этом стандартное задание в тестах обошлось в $4 против $26,54 у Claude — разница примерно в 6,6 раза. Обе новинки уже доступны в ChatGPT Work, Codex и API. В обычном чате C",
+      "published_at_utc": "2026-11-18T07:23:56+00:00"
+    },
+    {
+      "dzen_id": "6afd2b6d5655634d62beb423",
+      "title": "ИИ-певица забрала четыре награды на первой премии для нейросетей",
+      "dzen_url": "https://dzen.ru/a/av0rbVZVY01ivrQj",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Виртуальная певица Xania Monet стала главным победителем первой американской премии AI Music Awards. Она получила четыре награды, включая звания лучшего ИИ-исполнителя, лучшей песни и лучшего альбома года. Церемония прошла 13 ноября в Лос-Анджелесе, в театре The Mayan. На сцене вручали настоящие награды за музыку, созданную с помощью искусственного интеллекта. За цифровой певицей стоит американская поэтесса Телиша «Н",
+      "published_at_utc": "2026-11-18T10:02:11+00:00"
+    },
+    {
+      "dzen_id": "6afd2a6514fee769439f129b",
+      "title": "Учёные научили холодильник скучать, а цветок — обижаться",
+      "dzen_url": "https://dzen.ru/a/av0qZRT-52lDnxKb",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Исследователи Университета Карнеги — Меллона превратили обычные домашние предметы в подобие тамагочи. Теперь холодильник может скучать без внимания, цветок — грустить от недостатка воды, а гантеля — расстраиваться, если хозяин забросил тренировки. Система называется OATs (Object-Agent Twins). Разработчица проекта Дэхва Ким придумала небольшое устройство с экраном на электронных чернилах — как у электронных книг. Его",
+      "published_at_utc": "2026-11-18T09:02:33+00:00"
+    },
+    {
+      "dzen_id": "6afd294a5a3b5c41b9e27703",
+      "title": "Хакеры взломали Cursor через чужой ключ и добрались до 5000 пользователей",
+      "dzen_url": "https://dzen.ru/a/av0pSlo7XEG54ncD",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Cursor выяснила, как злоумышленники проникли в её системы и сумели подменить расширение Claude Code в магазине редактора. Входом послужил ключ доступа, который компания выдала своему партнёру Fireworks AI для работы с ИИ-моделями. 13 ноября Cursor опубликовала результаты двухнедельного расследования октябрьского взлома. Выяснилось, что история с заражённым расширением была последним звеном гораздо более длинной атаки",
+      "published_at_utc": "2026-11-18T08:03:08+00:00"
+    },
+    {
+      "dzen_id": "6afd28b6d47473154bee6899",
+      "title": "DeepSeek разрешила создать своего ИИ-помощника",
+      "dzen_url": "https://dzen.ru/a/av0ottR0cxVL7miZ",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "DeepSeek 13 ноября открыла разработчикам функции своего чат-бота: поиск в интернете, чтение документов и сайтов, распознавание речи и озвучивание ответов. Теперь эти возможности можно подключать к сторонним приложениям через API — интерфейс, позволяющий одной программе обращаться к другой. Раньше разработчик, желавший создать полноценного ИИ-помощника на базе DeepSeek, должен был самостоятельно подбирать и подключать",
+      "published_at_utc": "2026-11-18T07:01:57+00:00"
+    },
+    {
+      "dzen_id": "6afd27deec0bce12d0dbd047",
+      "title": "ИИ помог написать полицейский рапорт — суд отпустил подозреваемого",
+      "dzen_url": "https://dzen.ru/a/av0n3uwLzhLQ29BH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В американском штате Аризона суд освободил мужчину, задержанного по подозрению в пьяной езде. Причиной стал полицейский рапорт, который помогла составить нейросеть Truleo AI. Судья не смог установить, какие сведения в документе написал сам полицейский, а какие сформировала программа. В результате представленных материалов оказалось недостаточно для обоснования ареста. Историю 13 ноября рассказало местное издание ABC1",
+      "published_at_utc": "2026-11-18T06:00:47+00:00"
+    },
+    {
+      "dzen_id": "6afd273f1f68621720205657",
+      "title": "ByteDance выпустила Seedance 2.5 Flash — вдвое быстрее и на треть дешевле",
+      "dzen_url": "https://dzen.ru/a/av0nPx9oYhcgIFZX",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ByteDance выпустила Seedance 2.5 Flash — ускоренную версию своей нейросети для создания видео. По заявлению разработчиков, она генерирует ролики почти вдвое быстрее обычной Seedance 2.5, а обходится на 34% дешевле. Новинку представили 12 ноября через облачную платформу BytePlus. С 15 ноября модель доступна разработчикам через API сервиса ModelArk. За секунду готового ролика в разрешении 720p BytePlus установила цену",
+      "published_at_utc": "2026-11-18T04:20:59+00:00"
+    },
     {
       "dzen_id": "6afc3ca78799425881a62b05",
       "title": "Маск уволил 60 сотрудников Grok Imagine",
