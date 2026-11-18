@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+  "revision": 3,
+  "updated_at": "2026-11-18T14:50:45+00:00",
+  "action": "approve_text",
+  "note": "",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-18T15:30:13.451Z",
+  "draft_blob_sha": "5dfec4de1c32085de050c597112eaae38b8ee22b",
+  "status": "text_approved_cover_pending",
+  "channel": "hpii-admin-oauth-gateway"
+}
