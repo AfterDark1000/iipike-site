@@ -1153,6 +1153,30 @@
           "source_url": "https://www.musicbusinessworldwide.com/files/2026/11/Elvis-Presley-Enterprises-v-Suno-amended-complaint-1.pdf"
         }
       ]
+    },
+    {
+      "key": "bank-of-america",
+      "name": "Bank of America",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+          "source_url": "https://www.reuters.com/business/global-markets-bofa-survey-2026-11-17/"
+        }
+      ]
+    },
+    {
+      "key": "baidu",
+      "name": "Baidu",
+      "status": "candidate",
+      "first_seen": "2026-11-18",
+      "evidence": [
+        {
+          "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+          "source_url": "https://www.reuters.com/business/media-telecom/baidu-ceo-says-ai-investment-must-deliver-profits-avoid-bubble-2026-11-17/"
+        }
+      ]
     }
   ],
   "products": [
