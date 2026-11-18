@@ -6438,5 +6438,23 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "Число сообщений об опасном использовании ИИ против детей выросло в 85 раз",
+    "summary": "Доклад Childlight показал рост числа сообщений об опасном использовании генеративного ИИ против детей: с примерно 4700 в 2023 году до более 400 тысяч в 2025-м. В статистике NCMEC учитываются и попытки создания запрещённых материалов.",
+    "published": "2026-11-18",
+    "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf",
+    "cover": "assets/editorial/childlight-ai-child-safety-reports-85x-20261116.webp",
+    "rubric": "news",
+    "vk_title": "⚠️ ОПАСНЫХ ИИ-ПОДДЕЛОК СТАНОВИТСЯ БОЛЬШЕ",
+    "vk_summary": "Американский центр NCMEC получил более 400 тысяч сообщений об опасном использовании генеративного ИИ против детей в 2025 году — против 4700 в 2023-м. Среди угроз — подделки на основе обычных детских фотографий, которые могут использоваться для травли и шантажа. Данные приведены в исследовании Childlight от 16 ноября.",
+    "published_at_utc": "2026-11-18T02:00:54Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "childlight-ai-child-safety-reports-85x-20261116",
+    "url": "articles/childlight-ai-child-safety-reports-85x-20261116/",
+    "topics": [],
+    "companies": [],
+    "products": []
   }
 ]
