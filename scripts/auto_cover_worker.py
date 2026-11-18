@@ -21,7 +21,7 @@ from scripts.check_auto_cover_pilot import git_blob_sha, validate as validate_co
 STYLES = (
     {
         "name": "Сатирическая книжная линогравюра",
-        "art": "Satirical 1960s editorial linocut and torn-paper collage, uneven print registration, warm paper grain, expressive characters, forest green, ochre, dusty rose and black ink. Strong storytelling, humorous without infantilizing.",
+        "art": "Expressive satirical hand-painted scene with hand-cut linocut texture, rough-edged ink shapes, warm paper grain, forest green, ochre, dusty rose and black. An unmistakable human action, tactile physical objects, blank simple background. Absolutely no poster, print clipping, book, sign, writing, stamp, caption or text-bearing surface.",
         "background": (18, 55, 47, 248),
         "foreground": (255, 244, 215),
         "layout": "left",
@@ -147,18 +147,33 @@ def eligible(root):
 def prompt_for(plan):
     style = STYLES[plan["style_index"]]
     where = {"left": "right 60%", "right": "left 60%", "bottom": "upper 70%"}[style["layout"]]
+    # Giving a text-to-image model the requested *written headline* and the
+    # words "poster" or "newspaper" caused fake Cyrillic-like printed text
+    # in the first real pilot. Keep the facts, but avoid typographic cues.
+    factual = plan["fact"][:900]
+    scene = ""
+    if "кроссовк" in factual.lower():
+        scene = (
+            "CENTRAL VISIBLE ACTION: an amused human candidate physically "
+            "wears a SINGLE SPORT SNEAKER ON TOP OF HIS HEAD, sitting at "
+            "a simple interview table, facing a small expressionless "
+            "fictional interviewer represented by a plain intercom. "
+            "Clearly comedic and visibly staged. The sneaker and human "
+            "must be large, distinct and unmistakable. "
+        )
     return (
-        "Produce a high-quality original landscape 16:9 editorial news illustration. "
-        + style["art"] + " "
-        "Essential true factual context (render a visual metaphor, not a fake screenshot): "
-        + plan["fact"][:900] + ". "
-        "Story hook: " + plan["hook"][:350] + ". "
-        "Editorial constraints: " + plan["constraints"][:700] + ". "
-        "Place the main visual action mostly in the " + where + " to leave room for real typography. "
-        "Do not draw words, letters, logos, captions, headlines, website interfaces or watermarks. "
-        "Avoid generic robots, holographic brains, neon server rooms, card-based UIs and streaming code. "
-        "Strong singular concept, varied expressive composition. "
-        "Any staged or satirical scene must look clearly illustrated, not like an authentic photograph."
+        "Illustrate a vivid, wordless scene for a landscape 16:9 news cover. "
+        + style["art"] + " " + scene +
+        "True story context to inform the drawing, not to transcribe: "
+        + factual + ". "
+        "Visual tone: " + plan["hook"][:200] + ". "
+        "Keep the important objects and action mostly in the " + where + ". "
+        "Completely blank walls and surfaces: no printed papers, no books, "
+        "no posters, no typography, no handwriting, no labels, no signs, "
+        "no giant quotation marks, no logos, no UI, no letters, no glyphs, "
+        "no faux text, no captions, no headlines or watermarks. "
+        "Only a tangible visual scene, no decorative data graphics. "
+        "Never create the appearance of an authentic photograph of a real employer."
     )
 
 
