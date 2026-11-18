@@ -1,0 +1,398 @@
+{
+  "at_utc": "2026-11-18T15:40:06+00:00",
+  "http": [
+    {
+      "url": "https://dzen.ru/robots.txt",
+      "at_utc": "2026-11-18T15:40:06+00:00",
+      "http_status": 200,
+      "bytes": 9794
+    },
+    {
+      "url": "https://dzen.ru/legal/ru/termsofuse/index.html",
+      "at_utc": "2026-11-18T15:40:10+00:00",
+      "http_status": 200,
+      "bytes": 234878
+    },
+    {
+      "url": "https://dzen.ru/sitemaps/native_v2/sitemap.xml",
+      "at_utc": "2026-11-18T15:40:13+00:00",
+      "http_status": 200,
+      "bytes": 76273
+    },
+    {
+      "url": "https://dzen.ru/sitemaps/native_v2/native-sitemap-34j.xml.gz",
+      "at_utc": "2026-11-18T15:40:20+00:00",
+      "http_status": 200,
+      "bytes": 666085
+    },
+    {
+      "url": "https://dzen.ru/sitemaps/channels_v2/sitemap.xml",
+      "at_utc": "2026-11-18T15:40:24+00:00",
+      "http_status": 200,
+      "bytes": 942
+    },
+    {
+      "url": "https://dzen.ru/sitemaps/channels_v2/channels-sitemap-1d.xml.gz",
+      "at_utc": "2026-11-18T15:40:32+00:00",
+      "http_status": 200,
+      "bytes": 785697
+    },
+    {
+      "url": "https://dzen.ru/articles",
+      "at_utc": "2026-11-18T15:40:36+00:00",
+      "http_status": 302,
+      "bytes": 0,
+      "redirect_target": "https://sso.passport.yandex.ru/push"
+    },
+    {
+      "url": "https://dzen.ru/techinsider",
+      "at_utc": "2026-11-18T15:40:39+00:00",
+      "http_status": 302,
+      "bytes": 0,
+      "redirect_target": "https://sso.passport.yandex.ru/push"
+    },
+    {
+      "url": "https://dzen.ru/aimira_tech",
+      "at_utc": "2026-11-18T15:40:42+00:00",
+      "http_status": 302,
+      "bytes": 0,
+      "redirect_target": "https://sso.passport.yandex.ru/push"
+    },
+    {
+      "url": "https://dzen.ru/neural_network_it",
+      "at_utc": "2026-11-18T15:40:44+00:00",
+      "http_status": 302,
+      "bytes": 0,
+      "redirect_target": "https://sso.passport.yandex.ru/push"
+    },
+    {
+      "url": "https://dzen.ru/a/avzrF7LU2Bb_QNqN",
+      "at_utc": "2026-11-18T15:40:46+00:00",
+      "http_status": 302,
+      "bytes": 0,
+      "redirect_target": "https://sso.passport.yandex.ru/push"
+    }
+  ],
+  "robots_sha256": "a6e7d16a66dcbbfe8d64ec966726922ac7736fd28f3a4b5bede7897992c92086",
+  "terms_sha256": "e02596e5379727da4825f8d32a3912a4c08939541ea912c085fc4ef6f3c71cd9",
+  "sitemaps": {
+    "articles": {
+      "index_entries": 868,
+      "shard_url": "https://dzen.ru/sitemaps/native_v2/native-sitemap-34j.xml.gz",
+      "rows": 41949,
+      "unique_matching_urls": 41949,
+      "with_lastmod_in_30_days": 2340,
+      "fields": [
+        "lastmod",
+        "loc"
+      ]
+    },
+    "channels": {
+      "index_entries": 9,
+      "shard_url": "https://dzen.ru/sitemaps/channels_v2/channels-sitemap-1d.xml.gz",
+      "rows": 48000,
+      "unique_matching_urls": 47977,
+      "with_lastmod_in_30_days": 8632,
+      "fields": [
+        "lastmod",
+        "loc"
+      ]
+    }
+  },
+  "article_sample": [
+    {
+      "url": "https://dzen.ru/a/avzrF7LU2Bb_QNqN",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "blocked"
+    },
+    {
+      "url": "https://dzen.ru/a/avz3E2GKCzOWJAsG",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/avxLwM3gh2vppMAJ",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/avvxqc3gh2vponoO",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/avqr-LTmP0dR6jKJ",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/avf7ZbTmP0dR2-jf",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2sVc3gh2vprZkC",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2sVc3gh2vprZj_",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2r6Fo7XEG5266G",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2jqM3gh2vprWEB",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2fK7TmP0dR_S3v",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2afAe1dUYwfO8y",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2ZrLLU2Bb_QxBf",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2MHM3gh2vprMST",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2JM1FR62Fd5qJg",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2I7s3gh2vprK97",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2I7s3gh2vprK93",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av2G97TmP0dR_Iux",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1tqYJzhG1H4xHV",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1sbLLU2Bb_QnFi",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1q5M3gh2vpq9qd",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1q5M3gh2vpq9qZ",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1pPrTmP0dR-7gj",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1nlrTmP0dR-67g",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1mDUpJWBpn5T9M",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1jv7LU2Bb_QlH-",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1jsf4fbmTnA-YV",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1gKOStxTkaCYGG",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1ecVZVY01iEZ65",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    },
+    {
+      "url": "https://dzen.ru/a/av1aQ1ZVY01iCaz8",
+      "sitemap_lastmod": "2026-11-18",
+      "published_at": null,
+      "status": "found_but_not_checked"
+    }
+  ],
+  "browser": {
+    "chromium_version": "156.0.8078.79",
+    "pages": [
+      {
+        "url": "https://dzen.ru/articles",
+        "at_utc": "2026-11-18T15:40:50+00:00",
+        "status": "blocked",
+        "http_status": 302,
+        "redirect_target": "https://sso.passport.yandex.ru/push"
+      },
+      {
+        "url": "https://dzen.ru/techinsider",
+        "at_utc": "2026-11-18T15:40:53+00:00",
+        "status": "blocked",
+        "http_status": 302,
+        "redirect_target": "https://sso.passport.yandex.ru/push"
+      },
+      {
+        "url": "https://dzen.ru/aimira_tech",
+        "at_utc": "2026-11-18T15:40:55+00:00",
+        "status": "blocked",
+        "http_status": 302,
+        "redirect_target": "https://sso.passport.yandex.ru/push"
+      },
+      {
+        "url": "https://dzen.ru/neural_network_it",
+        "at_utc": "2026-11-18T15:40:58+00:00",
+        "status": "blocked",
+        "http_status": 302,
+        "redirect_target": "https://sso.passport.yandex.ru/push"
+      },
+      {
+        "url": "https://dzen.ru/a/avzrF7LU2Bb_QNqN",
+        "at_utc": "2026-11-18T15:41:01+00:00",
+        "status": "blocked",
+        "http_status": 302,
+        "redirect_target": "https://sso.passport.yandex.ru/push"
+      }
+    ]
+  },
+  "separate_http_control": {
+    "url": "https://dzen.ru/a/an2NK2wTexfqvqGD",
+    "at_utc": "2026-11-18T15:30:08+00:00",
+    "http_status": 302,
+    "redirect_target": "https://sso.passport.yandex.ru/push",
+    "status": "blocked",
+    "source_url": "https://tenchat.ru/media/6056319-iz-praktiki-nastroyki-i-raboty-iipomoschnikov"
+  },
+  "external_catalog_http": [
+    {
+      "url": "https://dzen.guru/robots.txt",
+      "at_utc": "2026-11-18T15:29:02+00:00",
+      "http_status": 200,
+      "sha256": "0fe9ae126689a47d02a839c1e4552613ce8056a69f9614968d9f549264a1dd81"
+    },
+    {
+      "url": "https://dzen.guru/legal/offer",
+      "at_utc": "2026-11-18T15:29:29+00:00",
+      "http_status": 200
+    },
+    {
+      "url": "https://dzen.guru/channels?topicId=18",
+      "at_utc": "2026-11-18T15:35:29+00:00",
+      "http_status": 200,
+      "channel_card_links_in_html": 50
+    },
+    {
+      "url": "https://dzen.guru/channels/hiaimedia",
+      "at_utc": "2026-11-18T15:29:38+00:00",
+      "http_status": 200,
+      "subscribers": 1013,
+      "estimated_views_30d": 3581,
+      "audience_status": "insufficient_evidence"
+    },
+    {
+      "url": "https://dzen.guru/channels/hiaimedia/posts",
+      "at_utc": "2026-11-18T15:30:07+00:00",
+      "http_status": 200,
+      "direct_article_links_in_html": 0,
+      "per_article_metric_rows_in_html": 0
+    },
+    {
+      "url": "https://dzen.guru/channels/neuralmagic",
+      "at_utc": "2026-11-18T15:29:42+00:00",
+      "http_status": 200,
+      "subscribers": 1057,
+      "estimated_views_30d": null,
+      "audience_status": "insufficient_evidence"
+    },
+    {
+      "url": "https://dzen.guru/channels/nplus1",
+      "at_utc": "2026-11-18T15:35:34+00:00",
+      "http_status": 200,
+      "reported_reach_per_publication": 3187,
+      "reported_engagement_pct": 1.2,
+      "audience_status": "insufficient_evidence"
+    },
+    {
+      "url": "https://dzen.guru/channels/nplus1/posts",
+      "at_utc": "2026-11-18T15:35:38+00:00",
+      "http_status": 200,
+      "direct_article_links_in_html": 0,
+      "per_article_metric_rows_in_html": 0
+    }
+  ],
+  "acceptance": {
+    "verified_articles": 0,
+    "selected_for_manual_commenting": 0,
+    "channel_sample": 6,
+    "active_audience": 0,
+    "insufficient_evidence": 6,
+    "low_activity": 0,
+    "suspected_content_farm": 0
+  }
+}
