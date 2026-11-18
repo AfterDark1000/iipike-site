@@ -1,6 +1,7 @@
 """Short-news lane: independent, no images, no accidental publishing of drafts."""
 from pathlib import Path
 import copy
+import hashlib
 import json
 import shutil
 import tempfile
@@ -44,7 +45,10 @@ class BriefFeedTests(unittest.TestCase):
         self.assertNotIn('<img',index)
         self.assertIn('href="briefs/"',(ROOT/"index.html").read_text(encoding="utf-8"))
         self.assertTrue((ROOT/"admin/briefs/index.html").is_file())
-        self.assertIn('pending_review',(ROOT/"admin/briefs/index.html").read_text(encoding="utf-8"))
+        admin=(ROOT/"admin/briefs/index.html").read_text(encoding="utf-8")
+        self.assertIn('pending_review',admin)
+        self.assertIn('brief-review-proof',admin)
+        self.assertIn('approved.json',admin)
 
     def fixture(self):
         temp=tempfile.TemporaryDirectory(prefix="hpii-brief-tests-")
@@ -79,6 +83,8 @@ class BriefFeedTests(unittest.TestCase):
             self.assertIn(c["body"],page)
             self.assertIn(c["source_url"].replace("&","&amp;"),page)
             self.assertNotIn("<img",page)
+            self.assertNotIn("fact_check",page)
+            self.assertNotIn(c["fact_check"],page)
             self.assertIn("/briefs/"+c["slug"]+"/",page)
             self.assertIn(c["headline"],out[root/"briefs/index.html"])
             self.assertIn(c["headline"],out[root/"index.html"])
@@ -107,6 +113,35 @@ class BriefFeedTests(unittest.TestCase):
             path.write_text(json.dumps({"schema_version":1,"items":[row,row]},ensure_ascii=False))
             with self.assertRaises(ValueError):
                 b.validated(root)
+        finally:temp.cleanup()
+
+    def test_approval_sha256_changes_when_text_changes(self):
+        row=self.publish_row(self.candidates()[0])
+        expected=hashlib.sha256(chr(10).join(row[k] for k in
+                  ("slug","pool_id","headline","body","source_url")).encode("utf-8")).hexdigest()
+        self.assertEqual(b.approval_sha256(row),expected)
+        row["body"]+="!"
+        self.assertNotEqual(b.approval_sha256(row),expected)
+
+    def test_pool_sync_is_safe_and_idempotent(self):
+        from scripts import sync_briefs_pool
+        temp,root=self.fixture()
+        try:
+            shutil.copyfile(ROOT/"data/site_news_pool.json",root/"data/site_news_pool.json")
+            c=self.candidates()[0]
+            a=json.loads((root/b.APPROVED).read_text(encoding="utf-8"))
+            a["items"]=[self.publish_row(c)]
+            (root/b.APPROVED).write_text(json.dumps(a,ensure_ascii=False),encoding="utf-8")
+            (root/"briefs"/c["slug"]).mkdir(parents=True)
+            (root/"briefs"/c["slug"]/"index.html").write_text("rendered",encoding="utf-8")
+            out,changes=sync_briefs_pool.synchronized(root)
+            self.assertEqual(changes,[c["slug"]])
+            item=next(x for x in out["items"] if x["id"]==c["pool_id"])
+            self.assertEqual(item["status"],"approved")
+            self.assertEqual(item["article_id"],c["slug"])
+            (root/"data/site_news_pool.json").write_text(json.dumps(out,ensure_ascii=False),encoding="utf-8")
+            _,again=sync_briefs_pool.synchronized(root)
+            self.assertEqual(again,[])
         finally:temp.cleanup()
 
     def test_pool_and_full_article_data_never_mutated_by_brief_generation(self):
