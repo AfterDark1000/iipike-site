@@ -220,7 +220,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
  const decisionUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/"+
    doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
  try{
-  const r=await fetch(decisionUrl,{cache:"no-store"});
+  const r=await fetchGitHubRecord(decisionUrl);
   if(!current())return;
   if(r.status===404){
     decisionState="open";
@@ -237,7 +237,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
       const handoff="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/"+
         doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
       try{
-        const handoffResponse=await fetch(handoff,{cache:"no-store"});
+        const handoffResponse=await fetchGitHubRecord(handoff);
         if(!current())return;
         if(handoffResponse.ok){
           const transferred=await handoffResponse.json();
@@ -311,7 +311,7 @@ async function showCoverCandidate(doc,region,topState){
   let coverVersion=1,previousFeedback="";
   const decisionBase="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/";
   while(coverVersion<5){
-    const decisionResponse=await fetch(decisionBase+stem+"-v"+coverVersion+".json?v="+Date.now(),{cache:"no-store"});
+    const decisionResponse=await fetchGitHubRecord(decisionBase+stem+"-v"+coverVersion+".json?v="+Date.now());
     if(!current())return;
     if(decisionResponse.status===404)break;
     if(!decisionResponse.ok)throw Error("Не удалось прочесть решение по версии "+coverVersion);
@@ -323,7 +323,7 @@ async function showCoverCandidate(doc,region,topState){
     previousFeedback=decision.note||"";
     coverVersion++;
   }
-  const response=await fetch(base+stem+"-v"+coverVersion+".json?v="+Date.now(),{cache:"no-store"});
+  const response=await fetchGitHubRecord(base+stem+"-v"+coverVersion+".json?v="+Date.now());
   if(!current())return;
   if(response.status===404){
    if(coverVersion>1){
@@ -439,7 +439,7 @@ function draw(doc){
  });
  // A saved decision is authoritative. Never present local clicks as confirmed.
  const decisionFile="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json";
- fetch(decisionFile+"?v="+Date.now(),{cache:"no-store"}).then(async r=>{
+ fetchGitHubRecord(decisionFile+"?v="+Date.now()).then(async r=>{
   if(r.status===404){stateTag.textContent=doc.status==="ready_for_review"?"Готов к проверке":doc.status;status.textContent="Решение ещё не записано.";actions.querySelectorAll("button").forEach(b=>b.disabled=doc.status!=="ready_for_review");return}
   if(!r.ok)throw Error("HTTP "+r.status);
   const saved=await r.json();
@@ -461,8 +461,40 @@ const handoffRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/e
 const groupTitles={review:"Нужно твоё решение",error:"Не удалось проверить",active:"В работе",transfer:"Передача в очередь",done:"Завершено"};
 const groupOrder=["review","error","active","transfer","done"];
 function rowStatus(group,label){return {group,label}}
+// A just-created decision can be invisible on raw.githubusercontent.com for a while.
+ // Recheck via GitHub's authoritative Contents API before telling the chief editor
+ // that a decision is missing. Never treat an API/auth/rate-limit failure as 404.
+async function fetchGitHubRecord(url){
+ const prefix="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/";
+ let response=null,networkError=null;
+ try{response=await fetch(url,{cache:"no-store"})}catch(e){networkError=e}
+ if(response?.ok)return response;
+ if(!url.startsWith(prefix)){
+  if(networkError)throw networkError;
+  return response;
+ }
+ const path=url.slice(prefix.length).split("?")[0];
+ if(!/^editorial_inbox\/[a-z_]+\/[a-z0-9-]+(?:-r\d+(?:-v\d+)?)?\.json$/.test(path)){
+  if(networkError)throw networkError;
+  return response;
+ }
+ const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/"+path+
+   "?ref=editorial-intake&v="+Date.now();
+ const authoritative=await fetch(api,{cache:"no-store",headers:{Accept:"application/vnd.github+json"}});
+ if(authoritative.status===404){
+  if(response?.status===404)return response;
+  throw Error("GitHub API не нашёл файл после сетевой ошибки");
+ }
+ if(!authoritative.ok)throw Error("GitHub API HTTP "+authoritative.status);
+ const record=await authoritative.json();
+ if(record.type!=="file"||record.encoding!=="base64"||typeof record.content!=="string")
+  throw Error("GitHub API вернул некорректный формат JSON-файла");
+ const decoded=Uint8Array.from(atob(record.content.replace(/\s/g,"")),c=>c.charCodeAt(0));
+ const value=JSON.parse(new TextDecoder().decode(decoded));
+ return {ok:true,status:200,json:async()=>value};
+}
 async function readOptionalJson(url){
- const response=await fetch(url+"?v="+Date.now(),{cache:"no-store"});
+ const response=await fetchGitHubRecord(url+"?v="+Date.now());
  if(response.status===404)return null;
  if(!response.ok)throw Error("GitHub HTTP "+response.status);
  return response.json();

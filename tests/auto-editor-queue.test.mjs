@@ -6,7 +6,7 @@ import vm from "node:vm";
 const html=fs.readFileSync(new URL("../admin/auto-editor/index.html",import.meta.url),"utf8");
 const script=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)?.[1];
 assert.ok(script,"Inline auto-editor script must exist");
-const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify};})();");
+const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify,fetchGitHubRecord};})();");
 assert.notEqual(executable,script,"Expected explicit IIFE ending");
 
 const slug="example-ai-story-1234567890abcdef", revision=3;
@@ -18,13 +18,26 @@ const textDecision={article_id:slug,revision,updated_at:updated,status:"text_app
 const cover=v=>({article_id:slug,text_revision:3,text_updated_at:updated,status:"ready_for_cover_review",image_path:"editorial_inbox/auto_covers/"+key+"-v"+v+".webp",image_blob_sha:"b".repeat(40)});
 const coverDecision=(v,action,status)=>({article_id:slug,text_revision:3,text_updated_at:updated,cover_version:v,cover_blob_sha:"b".repeat(40),action,status});
 const handoff=v=>({article_id:slug,text_revision:3,cover_version:v,cover_blob_sha:"b".repeat(40),status:"handed_off_to_site_queue"});
-function model(attachments={}){
+function model(attachments={},apiAttachments={}){
  const responses=new Map(Object.entries(attachments).map(([p,value])=>[raw+p,value]));
+ const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/";
+ const authoritative=new Map(Object.entries(apiAttachments).map(([p,value])=>[api+p,value]));
  const noop=()=>{};
  const docStub={getElementById:()=>({addEventListener:noop}),querySelectorAll:()=>[]};
- const ctx={document:docStub,window:{addEventListener:noop},URL,URLSearchParams,Date,JSON,
-  fetch:async(url)=>{const value=responses.get(String(url).split("?")[0]);return value===undefined?
-   {status:404,ok:false}:{status:200,ok:true,json:async()=>value}},
+ const ctx={document:docStub,window:{addEventListener:noop},URL,URLSearchParams,Date,JSON,atob,TextDecoder,
+  fetch:async(url)=>{
+   const key=String(url).split("?")[0];
+   if(key.startsWith(api)){
+    const value=authoritative.get(key);
+    if(value===undefined)return {status:404,ok:false};
+    if(value==="rate_limited")return {status:403,ok:false};
+    return {status:200,ok:true,json:async()=>({
+     type:"file",encoding:"base64",content:Buffer.from(JSON.stringify(value),"utf8").toString("base64")
+    })};
+   }
+   const value=responses.get(key);
+   return value===undefined?{status:404,ok:false}:{status:200,ok:true,json:async()=>value}
+  },
   console};
  ctx.globalThis=ctx;
  vm.runInNewContext(executable,ctx,{timeout:2000});
@@ -88,4 +101,32 @@ test("mismatched approval version is never treated as safe success",async()=>{
 test("rejected text is not shown as awaiting approval",async()=>{
  const cls=model({["auto_decisions/"+key+".json"]:{...textDecision,status:"rejected",action:"reject"}});
  assert.equal((await cls(doc)).group,"done");
+});
+
+test("fresh approved cover is visible even when raw.githubusercontent returns stale 404",async()=>{
+ const accepted=model(
+  {["auto_decisions/"+key+".json"]:textDecision,
+   ["auto_covers/"+key+"-v1.json"]:cover(1)},
+  {["editorial_inbox/auto_cover_decisions/"+key+"-v1.json"]:
+   coverDecision(1,"approve_cover","cover_approved_handoff_pending")}
+ );
+ const status=await accepted(doc);
+ assert.equal(status.group,"transfer");
+ assert.match(status.label,/утверждена/);
+});
+test("a GitHub API outage never becomes a false 'not approved' status",async()=>{
+ const classify=model(
+  {["auto_decisions/"+key+".json"]:textDecision,
+   ["auto_covers/"+key+"-v1.json"]:cover(1)},
+  {["editorial_inbox/auto_cover_decisions/"+key+"-v1.json"]:"rate_limited"}
+ );
+ await assert.rejects(classify(doc),/GitHub API HTTP 403/);
+});
+test("fresh text approval is also recovered from official GitHub Contents API",async()=>{
+ const classify=model({},{
+  ["editorial_inbox/auto_decisions/"+key+".json"]:textDecision
+ });
+ const result=await classify(doc);
+ assert.equal(result.group,"active");
+ assert.equal(result.label,"Текст утверждён · у художника");
 });
