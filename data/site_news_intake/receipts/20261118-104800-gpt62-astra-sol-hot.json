@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261118-104800-gpt62-astra-sol-hot.json",
+  "request_sha256": "563587ba5765f5720a41336ef64725f3f87b75476014922645e5e0c0f03509c9",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 261,
+      "id": "n-8f6af8c44a4a1bfb",
+      "title": "OpenAI представила GPT-6.2 Astra и Sol — две новые модели для сложных задач и повседневной работы"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}

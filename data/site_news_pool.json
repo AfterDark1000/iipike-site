@@ -3901,6 +3901,21 @@
       "closed_at": null,
       "article_id": null,
       "note": "2026-11-18, решение главреда: ПОВЫШЕНА В ГОРЯЧИЕ. Не утверждать, что десятки тысяч чипов реально исчезли; отделить расследование Megaspeed и проверенные объёмы."
+    },
+    {
+      "id": "n-8f6af8c44a4a1bfb",
+      "sequence": 261,
+      "title": "OpenAI представила GPT-6.2 Astra и Sol — две новые модели для сложных задач и повседневной работы",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "summary": "17 ноября 2026 года OpenAI представила GPT-6.2 Astra для сложных профессиональных задач, исследований и программирования, а также более экономичную GPT-6.2 Sol для повседневной работы. Модели доступны в ChatGPT Work, Codex и API; анонс не означает появление моделей в обычном режиме ChatGPT.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "high",
+      "status": "queued",
+      "added_at": "2026-11-18T05:50:16+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
