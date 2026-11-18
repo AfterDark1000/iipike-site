@@ -129,7 +129,7 @@ async function convertSelectedCover(file) {
  }finally{bitmap.close()}
 }
 
-async function addCoverUploader(doc,region){
+async function addCoverUploader(doc,region,coverVersion=1){
  const decision="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json?v="+Date.now();
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
  try{
@@ -142,7 +142,7 @@ async function addCoverUploader(doc,region){
  if(!current())return;
  const group=add(region,"div",undefined,"cover-upload");
  group.style.cssText="border-top:1px solid #d9dfdc;margin-top:16px;padding-top:14px";
- add(group,"h3","Загрузить PNG или WebP — преобразую автоматически");
+ add(group,"h3","Загрузить обложку v"+coverVersion+" (PNG или WebP)");
  paragraph(group,"Выбери PNG, который создал художник, или готовый WebP. Браузер сам превратит его в WebP до 800 КБ, а сервер проверит утверждение текста и сохранит кандидат в GitHub. Публикации не будет.");
  const label=add(group,"label","Исходная обложка PNG или WebP (до 16 МБ)");
  label.style.cssText="display:block;font-weight:650;margin:8px 0";
@@ -165,7 +165,7 @@ async function addCoverUploader(doc,region){
   try{
    const webp=await convertSelectedCover(file);
    status.textContent="WebP готов: "+Math.round(webp.size/1024)+" КБ. Сохраняю через защищённый сервер…";
-   const result=await window.HpiiAdminAuth.uploadCover(doc,webp,title.value.trim(),concept.value.trim());
+   const result=await window.HpiiAdminAuth.uploadCover(doc,webp,title.value.trim(),concept.value.trim(),coverVersion);
    if(!current())return;
    status.textContent="✓ WebP сохранён и подтверждён в GitHub. Статус: кандидат ожидает утверждения главредом. Ничего не опубликовано.";
    const p=add(group,"p");
@@ -201,7 +201,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
  setDisabled(true);
  const checkValid=()=>image.dataset.hpiiValid==="1"&&current()&&decisionState==="open";
  const decisionUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/"+
-   doc.article_id+"-r"+doc.revision+"-v1.json?v="+Date.now();
+   doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
  try{
   const r=await fetch(decisionUrl,{cache:"no-store"});
   if(!current())return;
@@ -213,12 +213,12 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
     const saved=await r.json();
     if(!current())return;
     if(saved.article_id!==doc.article_id||saved.text_revision!==doc.revision||
-       saved.cover_version!==1||saved.cover_blob_sha!==cover.image_blob_sha)
+       saved.cover_version!==cover.cover_version||saved.cover_blob_sha!==cover.image_blob_sha)
       throw Error("Сохранённое решение не совпадает с обложкой.");
     decisionState="saved";
     if(saved.status==="cover_approved_handoff_pending"){
       const handoff="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/"+
-        doc.article_id+"-r"+doc.revision+"-v1.json?v="+Date.now();
+        doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
       try{
         const handoffResponse=await fetch(handoff,{cache:"no-store"});
         if(!current())return;
@@ -226,7 +226,7 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
           const transferred=await handoffResponse.json();
           if(transferred.article_id===doc.article_id &&
              transferred.text_revision===doc.revision &&
-             transferred.cover_version===1 &&
+             transferred.cover_version===cover.cover_version &&
              transferred.cover_blob_sha===cover.image_blob_sha &&
              transferred.status==="handed_off_to_site_queue"){
             feedback("✓ Текст и обложка утверждены. Комплект автоматически передан в очередь сайта. Выпуск произойдёт по штатному расписанию.","success");
@@ -290,9 +290,32 @@ async function showCoverCandidate(doc,region,topState){
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
  const label=add(region,"p","Проверяю, сохранил ли художник WebP…","muted");
  try{
-  const response=await fetch(base+stem+"-v1.json?v="+Date.now(),{cache:"no-store"});
+  let coverVersion=1,previousFeedback="";
+  const decisionBase="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/";
+  while(coverVersion<5){
+    const decisionResponse=await fetch(decisionBase+stem+"-v"+coverVersion+".json?v="+Date.now(),{cache:"no-store"});
+    if(!current())return;
+    if(decisionResponse.status===404)break;
+    if(!decisionResponse.ok)throw Error("Не удалось прочесть решение по версии "+coverVersion);
+    const decision=await decisionResponse.json();
+    if(decision.article_id!==doc.article_id||decision.text_revision!==doc.revision||
+       decision.text_updated_at!==doc.updated_at||decision.cover_version!==coverVersion)
+      throw Error("Сохранённое решение не соответствует версии текста");
+    if(decision.action!=="revise_cover"||decision.status!=="cover_revision_requested")break;
+    previousFeedback=decision.note||"";
+    coverVersion++;
+  }
+  const response=await fetch(base+stem+"-v"+coverVersion+".json?v="+Date.now(),{cache:"no-store"});
   if(!current())return;
   if(response.status===404){
+   if(coverVersion>1){
+     label.textContent="Замечания сохранены. Ожидаем новую обложку v"+coverVersion+" от нашего художника.";
+     topState.textContent="На переделке — ожидает обложку v"+coverVersion+".";
+     if(previousFeedback)field(region,"Замечания главреда",previousFeedback);
+     paragraph(region,"Попроси «ХПИИ — Художника» взять доработку из GitHub. После сохранения новой версии обнови страницу.");
+     await addCoverUploader(doc,region,coverVersion);
+     return;
+   }
    const blocked=await fetch(base+"attempts/"+stem+".json?v="+Date.now(),{cache:"no-store"});
    if(!current())return;
    if(blocked.status===404){label.textContent="WebP пока не сохранён.";topState.textContent="Обложка ещё не загружена.";await addCoverUploader(doc,region);return}
@@ -306,12 +329,13 @@ async function showCoverCandidate(doc,region,topState){
   }
   if(!response.ok)throw Error("Метаданные обложки: HTTP "+response.status);
   const cover=await response.json();
-  const expected="editorial_inbox/auto_covers/"+stem+"-v1.webp";
+  const expected="editorial_inbox/auto_covers/"+stem+"-v"+coverVersion+".webp";
   if(cover.article_id!==doc.article_id||cover.text_revision!==doc.revision||
      cover.text_updated_at!==doc.updated_at||cover.status!=="ready_for_cover_review"||
      cover.image_path!==expected||!Number.isSafeInteger(cover.width)||!Number.isSafeInteger(cover.height)||
      !/^[0-9a-f]{40}$/.test(cover.image_blob_sha||""))throw Error("Кандидат не соответствует утверждённой версии текста");
-  label.textContent="Кандидат WebP найден. Проверяю решение главреда…";
+  cover.cover_version=coverVersion;
+  label.textContent="Кандидат WebP v"+coverVersion+" найден. Проверяю решение главреда…";
   topState.textContent="WebP загружен. Проверяю статус утверждения…";
   const image=add(region,"img");
   image.alt="Кандидат обложки: "+(cover.headline||doc.content?.title||doc.article_id);
@@ -328,12 +352,14 @@ async function showCoverCandidate(doc,region,topState){
       image.dataset.hpiiValid="1";
     }
   };
-  image.src=base+stem+"-v1.webp?v="+Date.now();
+  image.src=base+stem+"-v"+coverVersion+".webp?v="+Date.now();
+  field(region,"Версия",coverVersion);
   field(region,"Размер",cover.width+" × "+cover.height+" · WebP");
+  if(previousFeedback)field(region,"Замечания к предыдущей версии",previousFeedback);
   if(cover.concept)field(region,"Концепция",cover.concept);
   if(cover.headline)field(region,"Заголовок",cover.headline);
   paragraph(region,"Для передачи в публикационную очередь ещё требуется отдельное утверждение обложки главредом.");
-  const p=add(region,"p");link(p,"Файл обложки ↗",base+stem+"-v1.webp");
+  const p=add(region,"p");link(p,"Файл обложки v"+coverVersion,base+stem+"-v"+coverVersion+".webp");
   void showCoverReviewControls(doc,cover,region,image,topState);
  }catch(e){if(current()){label.textContent="Не удалось подтвердить наличие кандидата: "+e.message;topState.textContent="Не удалось проверить обложку.";}}
 }
