@@ -246,7 +246,10 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
              transferred.cover_version===cover.cover_version &&
              transferred.cover_blob_sha===cover.image_blob_sha &&
              transferred.status==="handed_off_to_site_queue"){
-            feedback("✓ Текст и обложка утверждены. Комплект автоматически передан в очередь сайта. Выпуск произойдёт по штатному расписанию.","success");
+            const known=storyRows.find(x=>x.name===doc.article_id+".json");
+            feedback(known?.label==="Опубликовано на сайте"?
+             "✓ Статья уже опубликована на сайте.":
+             "✓ Текст и обложка утверждены. Комплект передан в очередь сайта.","success");
           }else throw Error("handoff_mismatch");
         }else if(handoffResponse.status===404){
           feedback("✓ Обложка утверждена. Комплект ожидает автоматического переноса в очередь сайта.","success");
@@ -458,9 +461,20 @@ const decisionRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/
 const coverRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_covers/";
 const coverDecisionRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/";
 const handoffRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/";
-const groupTitles={review:"Нужно твоё решение",error:"Не удалось проверить",active:"В работе",transfer:"Передача в очередь",done:"Завершено"};
+const groupTitles={review:"Нужно твоё решение",error:"Не удалось проверить",active:"В работе",transfer:"В очереди сайта",done:"Завершено"};
 const groupOrder=["review","error","active","transfer","done"];
 function rowStatus(group,label){return {group,label}}
+// main/news.json is the publication record; intake handoff alone is not a release.
+const publishedNewsUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/news.json";
+async function readPublishedIds(){
+ const response=await fetch(publishedNewsUrl+"?v="+Date.now(),{cache:"no-store"});
+ if(!response.ok)throw Error("Новости сайта: HTTP "+response.status);
+ const rows=await response.json();
+ if(!Array.isArray(rows))throw Error("Новости сайта: некорректный формат");
+ return new Set(rows.filter(row=>row&&typeof row.id==="string"&&
+   typeof row.published_at_utc==="string"&&
+   row.url==="articles/"+row.id+"/").map(row=>row.id));
+}
 // A just-created decision can be invisible on raw.githubusercontent.com for a while.
  // Recheck via GitHub's authoritative Contents API before telling the chief editor
  // that a decision is missing. Never treat an API/auth/rate-limit failure as 404.
@@ -503,7 +517,7 @@ function sameText(decision,doc){
  return decision && decision.article_id===doc.article_id &&
   decision.revision===doc.revision && decision.updated_at===doc.updated_at;
 }
-async function classify(doc){
+async function classify(doc,publishedIds=new Set()){
  if(doc.status==="drafting")return rowStatus("active","Редактор пишет текст");
  if(doc.status==="blocked")return rowStatus("error","Заблокировано — требуется разбор");
  if(doc.status!=="ready_for_review")return rowStatus("error","Неизвестный статус: "+doc.status);
@@ -535,12 +549,16 @@ async function classify(doc){
   }
   if(decision.action==="approve_cover"&&decision.status==="cover_approved_handoff_pending"){
    const handoff=await readOptionalJson(handoffRoot+coverKey+".json");
-   if(!handoff)return rowStatus("transfer","Обложка v"+version+" утверждена · ждёт передачи");
+   if(!handoff){
+    if(publishedIds.has(doc.article_id))return rowStatus("done","Опубликовано на сайте");
+    return rowStatus("transfer","Обложка v"+version+" утверждена · передача не подтверждена");
+   }
    if(handoff.article_id!==doc.article_id||handoff.text_revision!==doc.revision||
       handoff.cover_version!==version||handoff.cover_blob_sha!==cover.image_blob_sha||
       handoff.status!=="handed_off_to_site_queue")
     throw Error("Передача комплекта не подтверждена");
-   return rowStatus("done","Передано в очередь сайта");
+   if(publishedIds.has(doc.article_id))return rowStatus("done","Опубликовано на сайте");
+   return rowStatus("transfer","В очереди сайта");
   }
   throw Error("Неизвестное решение по обложке v"+version);
  }
@@ -605,6 +623,9 @@ async function load(){
   if(!res.ok)throw Error("HTTP "+res.status);
   const entries=await res.json();
   if(!Array.isArray(entries))throw Error("Неверный ответ GitHub");
+  let publishedIds=new Set(),siteStatusWarning="";
+  try{publishedIds=await readPublishedIds()}
+  catch(e){siteStatusWarning=" · публикации сайта не проверены: "+e.message}
   names=entries.filter(x=>x.type==="file"&&/^[a-z0-9-]+\.json$/.test(x.name)).map(x=>x.name).sort();
   const rows=new Array(names.length);
   let cursor=0;
@@ -616,7 +637,7 @@ async function load(){
      doc=await readOptionalJson(raw+encodeURIComponent(name));
      if(!doc||doc.article_id+".json"!==name||!doc.content||!doc.status)
       throw Error("Некорректный формат черновика");
-     const stage=await classify(doc);
+     const stage=await classify(doc,publishedIds);
      rows[index]={name,doc,title:doc.content.title||doc.article_id,...stage};
     }catch(e){
      rows[index]={name,doc:doc?.content?doc:null,
@@ -630,7 +651,7 @@ async function load(){
   storyRows=rows;
   renderList();
   document.getElementById("loaded").textContent=
-   "Сверено: "+new Date().toLocaleString("ru-RU")+" · записей: "+rows.length;
+   "Сверено: "+new Date().toLocaleString("ru-RU")+" · записей: "+rows.length+siteStatusWarning;
   if(!rows.length){detail.replaceChildren();add(detail,"p","Сохранённых черновиков пока нет.","muted");return}
   const visible=visibleRows();
   if(visible.length)void choose(visible.some(x=>x.name===selected)?selected:visible[0].name);
