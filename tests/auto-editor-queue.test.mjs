@@ -6,7 +6,7 @@ import vm from "node:vm";
 const html=fs.readFileSync(new URL("../admin/auto-editor/index.html",import.meta.url),"utf8");
 const script=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)?.[1];
 assert.ok(script,"Inline auto-editor script must exist");
-const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify,fetchGitHubRecord};})();");
+const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify,fetchGitHubRecord,readPublishedIds};})();");
 assert.notEqual(executable,script,"Expected explicit IIFE ending");
 
 const slug="example-ai-story-1234567890abcdef", revision=3;
@@ -18,7 +18,7 @@ const textDecision={article_id:slug,revision,updated_at:updated,status:"text_app
 const cover=v=>({article_id:slug,text_revision:3,text_updated_at:updated,status:"ready_for_cover_review",image_path:"editorial_inbox/auto_covers/"+key+"-v"+v+".webp",image_blob_sha:"b".repeat(40)});
 const coverDecision=(v,action,status)=>({article_id:slug,text_revision:3,text_updated_at:updated,cover_version:v,cover_blob_sha:"b".repeat(40),action,status});
 const handoff=v=>({article_id:slug,text_revision:3,cover_version:v,cover_blob_sha:"b".repeat(40),status:"handed_off_to_site_queue"});
-function model(attachments={},apiAttachments={}){
+function model(attachments={},apiAttachments={},newsRows=null){
  const responses=new Map(Object.entries(attachments).map(([p,value])=>[raw+p,value]));
  const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/";
  const authoritative=new Map(Object.entries(apiAttachments).map(([p,value])=>[api+p,value]));
@@ -35,13 +35,18 @@ function model(attachments={},apiAttachments={}){
      type:"file",encoding:"base64",content:Buffer.from(JSON.stringify(value),"utf8").toString("base64")
     })};
    }
+   if(key==="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/news.json"){
+    return newsRows===null?{status:404,ok:false}:{status:200,ok:true,json:async()=>newsRows};
+   }
    const value=responses.get(key);
    return value===undefined?{status:404,ok:false}:{status:200,ok:true,json:async()=>value}
   },
   console};
  ctx.globalThis=ctx;
  vm.runInNewContext(executable,ctx,{timeout:2000});
- return ctx.__queueTests.classify;
+ const classify=(draft,published=[])=>ctx.__queueTests.classify(draft,new Set(published));
+ classify.readPublishedIds=ctx.__queueTests.readPublishedIds;
+ return classify;
 }
 
 test("new ready draft requires an actual owner text decision",async()=>{
@@ -68,9 +73,9 @@ test("approved cover still awaiting transfer is not completed",async()=>{
   ["auto_cover_decisions/"+key+"-v1.json"]:coverDecision(1,"approve_cover","cover_approved_handoff_pending")
  });
  const status=await cls(doc);
- assert.equal(status.group,"transfer");assert.match(status.label,/ждёт передачи/);
+ assert.equal(status.group,"transfer");assert.match(status.label,/передача не подтверждена/);
 });
-test("handoff confirmed in GitHub moves material to completed",async()=>{
+test("handoff confirmed but not published remains in site queue",async()=>{
  const cls=model({
   ["auto_decisions/"+key+".json"]:textDecision,
   ["auto_covers/"+key+"-v1.json"]:cover(1),
@@ -78,7 +83,7 @@ test("handoff confirmed in GitHub moves material to completed",async()=>{
   ["auto_handoffs/"+key+"-v1.json"]:handoff(1)
  });
  const status=await cls(doc);
- assert.equal(status.group,"done");assert.equal(status.label,"Передано в очередь сайта");
+ assert.equal(status.group,"transfer");assert.equal(status.label,"В очереди сайта");
 });
 test("rejected cover v1 followed by approved v2 is a transfer, not a repeat review",async()=>{
  const cls=model({
@@ -129,4 +134,35 @@ test("fresh text approval is also recovered from official GitHub Contents API",a
  const result=await classify(doc);
  assert.equal(result.group,"active");
  assert.equal(result.label,"Текст утверждён · у художника");
+});
+
+test("main/news.json confirmed publication overrides waiting handoff display",async()=>{
+ const cls=model({
+  ["auto_decisions/"+key+".json"]:textDecision,
+  ["auto_covers/"+key+"-v1.json"]:cover(1),
+  ["auto_cover_decisions/"+key+"-v1.json"]:coverDecision(1,"approve_cover","cover_approved_handoff_pending")
+ });
+ const status=await cls(doc,[slug]);
+ assert.equal(status.group,"done");
+ assert.equal(status.label,"Опубликовано на сайте");
+});
+test("published status is only claimed when main news.json contains matching published article",async()=>{
+ const cls=model({}, {},[
+  {id:slug,url:"articles/"+slug+"/",published_at_utc:"2026-11-18T18:15:41Z"},
+  {id:"not-published",url:"articles/not-published/"}
+ ]);
+ const ids=await cls.readPublishedIds();
+ assert.equal(ids.has(slug),true);
+ assert.equal(ids.has("not-published"),false);
+});
+test("handoff and verified publication means completed, not still in queue",async()=>{
+ const cls=model({
+  ["auto_decisions/"+key+".json"]:textDecision,
+  ["auto_covers/"+key+"-v1.json"]:cover(1),
+  ["auto_cover_decisions/"+key+"-v1.json"]:coverDecision(1,"approve_cover","cover_approved_handoff_pending"),
+  ["auto_handoffs/"+key+"-v1.json"]:handoff(1)
+ });
+ const status=await cls(doc,[slug]);
+ assert.equal(status.group,"done");
+ assert.equal(status.label,"Опубликовано на сайте");
 });
