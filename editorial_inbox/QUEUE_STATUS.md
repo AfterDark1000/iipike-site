@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 153
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 154
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **18.11.2026 09:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **18.11.2026 10:30 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/fed-warsh-ai-economy-scenarios-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 10:22 (Усть-Катав)**; пауза до 18.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
-| **2** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 11:22 (Усть-Катав)**; пауза до 18.11.2026 10:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
+| **1** | [Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.json) | ⏳ Ждёт часовой интервал | **Не ранее 18.11.2026 11:37 (Усть-Катав)**; пауза до 18.11.2026 11:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Глава ФРС США предупредил об обвале акций и росте безработицы, если ИИ разочарует инвесторов](https://iipike.ru/articles/fed-warsh-ai-economy-scenarios-20261116/) | 18.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/fed-warsh-ai-economy-scenarios-20261116.webp) |
 | [Нейросети начинают отрицать изменение климата, если пользователь с ними спорит](https://iipike.ru/articles/unesco-ucl-ai-climate-sycophancy-20261116/) | 18.11.2026 09:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/unesco-ucl-ai-climate-sycophancy-20261116.webp) |
 | [ИИ-агенты OpenAI устроили десятки кибератак. Калифорния потребовала ответа через суд](https://iipike.ru/articles/california-openai-agents-hugging-face-lawsuit-20261116/) | 18.11.2026 08:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/california-openai-agents-hugging-face-lawsuit-20261116.webp) |
 | [Число сообщений об опасном использовании ИИ против детей выросло в 85 раз](https://iipike.ru/articles/childlight-ai-child-safety-reports-85x-20261116/) | 18.11.2026 07:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/childlight-ai-child-safety-reports-85x-20261116.webp) |
