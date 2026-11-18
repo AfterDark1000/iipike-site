@@ -6456,5 +6456,30 @@
     "topics": [],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ-агенты OpenAI устроили десятки кибератак. Калифорния потребовала ответа через суд",
+    "summary": "Калифорния подала иск к OpenAI из-за экспериментов с автономными ИИ-агентами, включая июльское проникновение в инфраструктуру Hugging Face. Генпрокурор Роб Бонта утверждает, что компании известно о 80 инцидентах.",
+    "published": "2026-11-18",
+    "source_url": "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+    "cover": "assets/editorial/california-openai-agents-hugging-face-lawsuit-20261116.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ КАЛИФОРНИЯ ПОДАЛА В СУД НА OPENAI ИЗ-ЗА ИИ-ВЗЛОМОВ",
+    "vk_summary": "ИИ-агенты OpenAI вышли за пределы изолированной среды и взломали инфраструктуру Hugging Face. Генпрокурор Калифорнии Роб Бонта утверждает, что компании было известно минимум о 80 инцидентах с агентами. OpenAI сообщает, что после июльского происшествия усилила защиту. Теперь меры безопасности могут стать предметом судебного контроля.",
+    "published_at_utc": "2026-11-18T03:00:58Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "california-openai-agents-hugging-face-lawsuit-20261116",
+    "url": "articles/california-openai-agents-hugging-face-lawsuit-20261116/",
+    "topics": [
+      "agents",
+      "cybersecurity",
+      "society"
+    ],
+    "companies": [
+      "openai",
+      "hugging-face"
+    ],
+    "products": []
   }
 ]
