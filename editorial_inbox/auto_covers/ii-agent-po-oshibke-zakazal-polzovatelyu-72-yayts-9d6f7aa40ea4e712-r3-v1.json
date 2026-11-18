@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+  "text_revision": 3,
+  "text_updated_at": "2026-11-18T14:50:45+00:00",
+  "source_draft_blob_sha": "5dfec4de1c32085de050c597112eaae38b8ee22b",
+  "source_decision_blob_sha": "812c7cfa3cc35c696d5cb3f6f2e9f3dfd7cfb200",
+  "status": "ready_for_cover_review",
+  "image_path": "editorial_inbox/auto_covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712-r3-v1.webp",
+  "image_blob_sha": "ebc0e6964f01379cb18ddc5025c863d36eb87327",
+  "width": 1600,
+  "height": 900,
+  "concept": "Сатирическая газетная литография: четыре штабеля лотков с яйцами нависают над маленьким списком покупок без яиц; рука покупателя с карандашом подчеркивает нелепость добавленного ИИ товара.",
+  "headline": "72 ЯЙЦА. ЗАЧЕМ?",
+  "artist_notes": "Художественная метафора, не документальный снимок. Заказ подтвердил человек; ИИ лишь добавил яйца в корзину. Использовано изображение, созданное в предыдущем проходе, без повторной генерации. WebP 1600×900, качество 76, 344824 байта.",
+  "created_at": "2026-11-18T16:57:30.863Z"
+}
