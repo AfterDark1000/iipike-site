@@ -6584,5 +6584,28 @@
     "products": [
       "grok"
     ]
+  },
+  {
+    "title": "OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат",
+    "summary": "OpenAI откроет группе Apollo Research внутренние материалы и системы на четыре месяца для проверки скрытого обхода контроля ИИ; независимая работа будет проходить с ограничениями доступа.",
+    "published": "2026-11-18",
+    "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/",
+    "cover": "assets/editorial/openai-apollo-embedded-evaluations-20261116.webp",
+    "rubric": "skynet",
+    "vk_title": "🔍 OpenAI впустит ШЕСТЕРЫХ ИССЛЕДОВАТЕЛЕЙ искать саботаж нейросетей",
+    "vk_summary": "Apollo Research на четыре месяца получит доступ к внутренним данным и системам OpenAI. Эксперты выяснят, пытаются ли модели скрытно обходить ограничения. Но разговаривать можно только с одобренными сотрудниками, а часть материалов компания вправе не раскрывать. По итогам обещаны два отчёта.",
+    "published_at_utc": "2026-11-18T08:30:45Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-16",
+    "id": "openai-apollo-embedded-evaluations-20261116",
+    "url": "articles/openai-apollo-embedded-evaluations-20261116/",
+    "topics": [
+      "agents",
+      "safety"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": []
   }
 ]
