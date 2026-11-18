@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://iipike.ru/sitemap.xml
+Sitemap: https://iipike.ru/briefs/sitemap.xml
