@@ -2324,6 +2324,32 @@
           "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
         }
       ]
+    },
+    {
+      "key": "mai-code-2",
+      "name": "MAI Code 2",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "microsoft-mai-code-2-20261117",
+          "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
+        }
+      ]
+    },
+    {
+      "key": "mai-code-2-flash",
+      "name": "MAI Code 2 Flash",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "microsoft-mai-code-2-20261117",
+          "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
+        }
+      ]
     }
   ]
 }
