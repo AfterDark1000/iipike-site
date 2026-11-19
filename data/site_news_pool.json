@@ -2665,12 +2665,12 @@
       "summary": "16 ноября: Associated Press опубликовало репортаж о роботакси, доставочных дронах и робототехнике в Шэньчжэне. Это репортаж о действующих технологиях, а не запуск нового продукта.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T12:21:09+00:00",
       "review_started_at": "2026-11-19T10:14:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-5197e3710e4648e4"
+      "closed_at": "2026-11-19T15:38:58Z",
+      "article_id": "shenzhen-apec-robotaxis-robots-20261116",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-5197e3710e4648e4\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/shenzhen-apec-robotaxis-robots-20261116/"
     },
     {
       "id": "n-f82f1ee6a6370b15",
