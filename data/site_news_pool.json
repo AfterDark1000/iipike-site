@@ -4405,12 +4405,12 @@
       "summary": "18 ноября: анонс Gemini 4 Neon и каналов доступа.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-19T11:38:59.247Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "19.11.2026: редактор 21 зарезервировал горячую №294. Официальный анонс 18.11 https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/ и модельная карточка https://deepmind.google/models/model-cards/gemini-4-neon/ : Gemini 4 Neon — отдельный релиз; Gemini app только платные Pro/Ultra, API платный; AI Studio, Antigravity, business. Цена API $3 за млн входных / $15 за млн выходных; 1 млн токенов контекста; разработана на основе Carbon. Artificial Analysis: Neon 61 (xhigh), Opus 5.5 59, GPT-6.2 Sol 57; high 60. При xhigh 21,5 мин на сложную тестовую задачу, расход токенов высокий. Google заявляет 32% ниже стоимость задания против Carbon при high; цену за токен с ценой задания не смешивать. Ссылки на Carbon/Hydrogen в архиве проверены. Далее Дзен/Threads/X/VK на утверждение."
+      "closed_at": "2026-11-19T11:53:03.795Z",
+      "article_id": "google-gemini-4-neon-20261118",
+      "note": "19.11.2026: редактор 21 зарезервировал горячую №294. Официальный анонс 18.11 https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/ и модельная карточка https://deepmind.google/models/model-cards/gemini-4-neon/ : Gemini 4 Neon — отдельный релиз; Gemini app только платные Pro/Ultra, API платный; AI Studio, Antigravity, business. Цена API $3 за млн входных / $15 за млн выходных; 1 млн токенов контекста; разработана на основе Carbon. Artificial Analysis: Neon 61 (xhigh), Opus 5.5 59, GPT-6.2 Sol 57; high 60. При xhigh 21,5 мин на сложную тестовую задачу, расход токенов высокий. Google заявляет 32% ниже стоимость задания против Carbon при high; цену за токен с ценой задания не смешивать. Ссылки на Carbon/Hydrogen в архиве проверены. Далее Дзен/Threads/X/VK на утверждение.\n19.11.2026: главный редактор утвердил последнюю отредактированную версию. Дзен/сайт Markdown, VK, Threads и X сохранены; точная ссылка Carbon соответствует сайту и Дзену. Кандидат Gemini 4 Neon записан. article_id=google-gemini-4-neon-20261118; site_queue=priority; ожидается обложка."
     },
     {
       "id": "n-e240b18865546634",
