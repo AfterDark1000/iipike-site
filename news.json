@@ -6864,5 +6864,30 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже",
+    "summary": "Microsoft представила MAI Code 2 и MAI Code 2 Flash для программирования в GitHub Copilot. По четырём тестам компании MAI Code 2 достигла 96% результата Claude Opus 5.5 при 5% затрат с учётом временной скидки.",
+    "published": "2026-11-19",
+    "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/",
+    "cover": "assets/editorial/microsoft-mai-code-2-20261117.webp",
+    "rubric": "news",
+    "vk_title": "💻 MICROSOFT обещает КОД почти как у Claude — за 5% затрат",
+    "vk_summary": "Microsoft представила MAI Code 2 для программирования. В четырёх тестах компании модель набрала 96% результата Claude Opus 5.5 при 5% затрат на задания. Сравнение учитывает временную скидку 50%. Обе новинки, включая MAI Code 2 Flash, уже доступны через GitHub Copilot.",
+    "published_at_utc": "2026-11-19T10:15:34Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "microsoft-mai-code-2-20261117",
+    "url": "articles/microsoft-mai-code-2-20261117/",
+    "topics": [
+      "development",
+      "models"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": [
+      "copilot"
+    ]
   }
 ]
