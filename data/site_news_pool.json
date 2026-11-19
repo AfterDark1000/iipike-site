@@ -3535,12 +3535,12 @@
       "summary": "Сообщение о консенсусе по ответственному применению ИИ и управлению данными.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T14:36:23+00:00",
       "review_started_at": "2026-11-19T10:42:50+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-8462329d963e2409"
+      "closed_at": "2026-11-19T19:08:50Z",
+      "article_id": "apec-ai-safe-use-data-consensus-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8462329d963e2409\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/apec-ai-safe-use-data-consensus-20261117/"
     },
     {
       "id": "n-5a8fec6c8020889d",
