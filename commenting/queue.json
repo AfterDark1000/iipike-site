@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18T19:22:37.954843Z",
+  "updated_at": "2026-11-19T01:27:32.490715Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,32 +9,32 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
-      "last_success_at": "2026-11-18T19:22:37.954843Z",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
+      "last_success_at": "2026-11-19T01:27:32.490715Z",
       "error": null,
-      "fresh_matches": 1
+      "fresh_matches": 3
     },
     {
       "id": "overclockers",
       "name": "Overclockers.ru",
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
-      "last_success_at": "2026-11-18T10:40:21.546019Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
+      "last_success_at": "2026-11-19T01:27:32.490715Z",
+      "error": null,
+      "fresh_matches": 0
     },
     {
       "id": "mk",
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
+      "status": "error",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
       "last_success_at": "2026-11-18T19:22:37.954843Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (TimeoutError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
-      "last_success_at": "2026-11-18T19:22:37.954843Z",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
+      "last_success_at": "2026-11-19T01:27:32.490715Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
-      "last_success_at": "2026-11-18T19:22:37.954843Z",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
+      "last_success_at": "2026-11-19T01:27:32.490715Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,23 +64,57 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-18T19:22:37.954843Z",
-      "last_success_at": "2026-11-18T19:22:37.954843Z",
+      "checked_at": "2026-11-19T01:27:32.490715Z",
+      "last_success_at": "2026-11-19T01:27:32.490715Z",
       "error": null,
       "fresh_matches": 4
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Expecting property name enclosed in double quotes: line 6 column 7 (char 89)"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-19",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "4a3105c4c646437697d2f471",
+      "title": "ИИ больше не эксклюзив смартфонов с большим объемом памяти: Google адаптировала Gemini для устройств с 2 ГБ ОЗУ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/ii-bolse-ne-ekskliuziv-dorogix-smartfonov-google-adaptirovala-gemini-dlia-smartfonov-s-2-gb-operativnoi-pamiati.html",
+      "published_at": "2026-11-18T23:41:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-19T01:27:32.490715Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "8cd9c8a089efba3269f7fadc",
+      "title": "«Пожалуйста, не разрушайте свою жизнь». По 75 000 долларов за помощь в выявлении случаев списывания с использованием ИИ на самом важном экзамене заплатят в Южной Корее",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/18/pozaluista-ne-razrusaite-svoiu-zizn-po-75-000-dollarov-za-pomoshh-v-vyiavlenii-slucaev-spisyvaniia-s-ispolzovaniem-ii-na-samom-vaznom-ekzamene-zaplatiat-v-iuznoi-koree.html",
+      "published_at": "2026-11-18T20:56:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-19T01:27:32.490715Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "5284dc1cd966eea1058d6cce",
       "title": "Обзор игрового ноутбука Acer Nitro V 17 AI: AMD Ryzen 7 260, Nvidia GeForce RTX 5060 и с возможностью апгрейда",
@@ -93,12 +127,14 @@
       "first_seen_at": "2026-11-18T19:22:37.954843Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-18T19:22:37.954843Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "attempts": 2,
+      "last_attempt_at": "2026-11-19T01:27:32.490715Z",
+      "reason": "Рекламный обзор ноутбука, зацепиться не за что.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "not_requested",
+      "generated_at": "2026-11-19T01:27:32.490715Z"
     },
     {
       "id": "921b3c3fa5336b220fe3963d",
@@ -171,12 +207,14 @@
       "first_seen_at": "2026-11-18T10:40:21.546019Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-18T19:22:37.954843Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-19T01:27:32.490715Z",
+      "reason": "Не прошёл проверку: В статье указана задержка в 36 мс только для режима 90 FPS (для 60 FPS — около 20 мс), а комментарий утверждает, что управлять героем придется с задержкой в 36",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-19T01:27:32.490715Z"
     },
     {
       "id": "71c2e8fbb38d49f6adbb94cf",
@@ -262,12 +300,14 @@
       "first_seen_at": "2026-11-18T10:40:21.546019Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-18T19:22:37.954843Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-19T01:27:32.490715Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-19T01:27:32.490715Z"
     },
     {
       "id": "47358f4a6ed88bc4dfea14ea",
@@ -2210,69 +2250,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "fb11a19d4ea955c39e1fa625",
-      "title": "Альтман позвал Samsung в союз против Apple — OpenAI задумала гаджет для эпохи «после смартфонов»",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151180",
-      "published_at": "2026-11-11T21:53:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-11T22:16:29.421834Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-11T22:16:29.421834Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-11T22:16:29.421834Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "5b6303d27d095f61e93d36eb",
-      "title": "Google научила ИИ принимать решения без лишних слов — Gemini Decisions API сэкономит на токенах",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151176",
-      "published_at": "2026-11-11T20:49:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-11T22:16:29.421834Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Google предлагает Gemini Decisions API, где выходные токены вообще не тарифицируются, а оплачиваются только входные данные. Очень щедро для индустрии, которая обычно берет деньги за каждый чих модели.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-11T22:16:29.421834Z",
-      "reason": "Интересная модель монетизации с бесплатными выходными токенами.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-11T22:16:29.421834Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "69ab86842fb4547f6ce8cf0e",
-      "title": "Google тайно тестирует Gemini 4 Hydrogen — быструю и экономичную альтернативу мощным ИИ-моделям",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151173",
-      "published_at": "2026-11-11T19:23:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-11T22:16:29.421834Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Google тестирует модель Gemini 4 Hydrogen через платформу Jetski после того, как отменила выпуск Gemini 3.5 Pro. Переход на химические элементы в названиях идет быстрее, чем стабильный релизный график.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-11T22:16:29.421834Z",
-      "reason": "Забавная чехарда с кодовыми именами и отменой прошлых версий.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-11T22:16:29.421834Z",
       "link_status": "dzen_link_missing"
     }
   ]
