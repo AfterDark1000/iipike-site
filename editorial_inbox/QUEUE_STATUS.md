@@ -2,18 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 172
+**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 173
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **19.11.2026 19:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **19.11.2026 20:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/isomorphic-labs-5b-ai-medicines-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 20:22 (Усть-Катав)**; пауза до 19.11.2026 20:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/isomorphic-labs-5b-ai-medicines-20261117.webp) |
-| **2** | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 21:22 (Усть-Катав)**; пауза до 19.11.2026 20:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
+| **1** | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 21:22 (Усть-Катав)**; пауза до 19.11.2026 21:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -25,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд](https://iipike.ru/articles/isomorphic-labs-5b-ai-medicines-20261117/) | 19.11.2026 20:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/isomorphic-labs-5b-ai-medicines-20261117.webp) |
 | [Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование](https://iipike.ru/articles/nvidia-megaspeed-chips-export-investigation-20261117/) | 19.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-megaspeed-chips-export-investigation-20261117.webp) |
 | [НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей](https://iipike.ru/articles/openai-nato-cyber-defense-daybreak-20261117/) | 19.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-nato-cyber-defense-daybreak-20261117.webp) |
 | [Google выпустила Gemini 4 Neon: обогнала Claude Opus 5.5 и GPT-6.2 Sol в тестах](https://iipike.ru/articles/google-gemini-4-neon-20261118/) | 19.11.2026 16:57 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-4-neon-20261118.webp) |
