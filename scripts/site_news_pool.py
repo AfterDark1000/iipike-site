@@ -206,10 +206,14 @@ def add(pool, records, *, now=None):
     return result, {"added": added, "duplicates": duplicate}
 
 
-def next_item(pool, *, now=None):
+def next_item(pool, *, now=None, routing=None):
     validate(pool)
+    from scripts.editorial_routing import load_routes, long_allowed
+    if routing is None:
+        routing = load_routes(pool)
     result = copy.deepcopy(pool)
-    pending = [x for x in result["items"] if x["status"] == "queued"]
+    pending = [x for x in result["items"]
+               if x["status"] == "queued" and long_allowed(x, routing)]
     if not pending:
         return result, None
     # Hot editorial items are selected first, FIFO by immutable sequence.
