@@ -25,10 +25,16 @@ def read_request(path):
             not REQUEST_NAME.fullmatch(path.name) or path.stat().st_size > 4096):
         raise ValueError("Invalid short-editor request file")
     obj = json.loads(path.read_text(encoding="utf-8"))
-    if (type(obj) is not dict or set(obj) != {"schema_version", "action", "worker"} or
-            obj != {"schema_version": 1, "action": "claim_short", "worker": "hpii-short-editor"}):
+    if (type(obj) is not dict or not
+            {"schema_version", "action", "worker"} <= set(obj) or
+            not set(obj) <= {"schema_version", "action", "worker", "count"} or
+            obj["schema_version"] != 1 or obj["action"] != "claim_short" or
+            obj["worker"] != "hpii-short-editor"):
         raise ValueError("Invalid short-editor request body")
-    return obj
+    count = obj.get("count", 1)
+    if type(count) is not int or not 1 <= count <= 5:
+        raise ValueError("Short-editor request count must be 1..5")
+    return count
 
 
 def consume(root=ROOT, *, now=None):
@@ -55,23 +61,26 @@ def consume(root=ROOT, *, now=None):
                 raise ValueError("Invalid existing short-editor receipt")
             continue
         try:
-            read_request(path)
+            count = read_request(path)
             busy = editorial_routing.short_work_in_progress(current)
-            current, item = editorial_routing.claim_short(
-                current, routes=routes, now=now, root=root
+            current, items = editorial_routing.claim_short_batch(
+                current, count=count, routes=routes, now=now, root=root
             )
+            rows = [{
+                "pool_id": item["id"], "pool_sequence": item["sequence"],
+                "title": item["title"], "source_url": item["source_url"],
+                "claimed_at": item["review_started_at"], "worker": "hpii-short-editor"
+            } for item in items]
             receipt = {
                 "schema_version": 1, "request": path.name,
                 "request_sha256": digest,
-                "status": "reserved" if item else (
+                "status": "reserved" if items else (
                     "short_work_in_progress" if busy else "no_short_news"
                 ),
-                **({
-                    "pool_id": item["id"], "pool_sequence": item["sequence"],
-                    "title": item["title"], "source_url": item["source_url"],
-                    "claimed_at": item["review_started_at"],
-                    "worker": "hpii-short-editor"
-                } if item else {})
+                "count": len(rows),
+                "items": rows,
+                # Backward-compatible one-item receipt fields for older short chats.
+                **(rows[0] if count == 1 and rows else {})
             }
         except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
             receipt = {
