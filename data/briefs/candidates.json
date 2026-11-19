@@ -170,6 +170,71 @@
       "source": "Epidemic Sound",
       "source_url": "https://corporate.epidemicsound.com/press-and-media/press-releases/2026/ai-faces-a-trust-test-in-2027-as-adoption-grows-across-creative-industries-epidemic-sound-predicts",
       "fact_check": "Epidemic Sound official press release 12.11.2026: 4500 UK/US respondents surveyed March-April 2026; 76% human-made content becoming premium, 83% human-made music strengthens emotional connection; projections are company forecasts."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 100,
+      "pool_id": "n-0a987bbc824ebf80",
+      "slug": "lmsys-sglang-consortium-20261112",
+      "headline": "NVIDIA, AMD, Google и Meta объединились ради ускорения ИИ",
+      "body": "Организация LMSYS 12 ноября создала консорциум разработчиков SGLang — открытого движка, который помогает запускать нейросети быстрее и экономнее. В число девяти участников вошли NVIDIA, AMD, Intel, Google, Meta, Thinking Machines Lab, Cloudflare, Modal и RadixArk. Компании будут совместно развивать программную основу для работы ИИ-моделей на разном оборудовании.",
+      "topic": "Технологии",
+      "event_date": "2026-11-12",
+      "source": "LMSYS Org",
+      "source_url": "https://www.lmsys.org/blog/2026-11-12-sglang-consortium",
+      "fact_check": "Первичный релиз LMSYS Org 12.11.2026. Девять членов-основателей; общая работа над открытым inference engine SGLang. Это организация консорциума, не новая модель."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 101,
+      "pool_id": "n-5db0d3e2ca6e5b64",
+      "slug": "block-builderlab-ai-agent-teams-20261112",
+      "headline": "Block дала ИИ-агентам место в команде рядом с сотрудниками",
+      "body": "Компания Block представила 12 ноября инструменты Builderlab для совместной работы людей и ИИ-агентов. В рабочем пространстве Buzz агенту можно назначить имя, права доступа и поручение, а затем проверить историю его действий. Разработчики предлагают открытые компоненты и облачное выполнение задач: сотрудники смогут поручать агентам длительную работу и возвращаться к её проверке.",
+      "topic": "Технологии",
+      "event_date": "2026-11-12",
+      "source": "SiliconANGLE / theCUBE",
+      "source_url": "https://siliconangle.com/2026/11/12/block-builderlab-launch-event-2026-ai-agents-join-team/",
+      "fact_check": "Прямые интервью команды Block на мероприятии Builderlab 12.11.2026 в репортаже SiliconANGLE; Buzz впервые представлен летом 2026, новость — инструменты Builderlab, совместная работа и облачные агенты. theCUBE — платный медиапартнёр мероприятия."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 103,
+      "pool_id": "n-40cac42c0e5d26d0",
+      "slug": "gta6-san-antonio-fan-ai-trailer-20261113",
+      "headline": "GTA VI перенесли в Сан-Антонио — в фанатском ИИ-трейлере",
+      "body": "Американский видеограф Стивен Альварадо создал минутный трейлер воображаемой GTA VI: San Antonio Edition с помощью генеративного ИИ. В ролике — погоня по автостраде, перестрелка у Аламо и гонки на водных мотоциклах по городской набережной. Альварадо рассказал местной газете, что сделал видео ради эксперимента перед выходом GTA VI. К студии Rockstar Games проект отношения не имеет.",
+      "topic": "Культура",
+      "event_date": "2026-11-13",
+      "source": "San Antonio Express-News",
+      "source_url": "https://www.expressnews.com/lifestyle/article/san-antonio-grand-theft-auto-6-trailer-22527547.php",
+      "fact_check": "Репортаж с интервью автора Стивена Альварадо 13.11.2026. AI fan trailer ~1 minute; кадры San Antonio incl. Alamo / River Walk. Только фанатская работа, не официальный трейлер Rockstar."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 110,
+      "pool_id": "n-68ac6b2421998e1c",
+      "slug": "france-prix-pascal-ai-literature-20261020",
+      "headline": "Во Франции начали принимать книги, написанные при помощи ИИ, на литературную премию",
+      "body": "Во Франции открыли приём заявок на Prix Pascal — литературную премию для произведений, созданных при участии искусственного интеллекта. Авторы должны представить французский текст примерно на 300 тысяч знаков и раскрыть, какие ИИ-инструменты использовали. Заявки принимают до 30 ноября, победителя объявят 15 декабря. Награда предусматривает публикацию произведения; жюри оценивает литературное качество.",
+      "topic": "Культура",
+      "event_date": "2026-10-20",
+      "source": "Prix Pascal",
+      "source_url": "https://www.prixpascal.fr/index.html",
+      "fact_check": "Официальный сайт Prix Pascal: приём с 20 октября до 30 ноября 2026, объявление 15 декабря, рукопись около 300000 знаков, приложение о процессе/моделях, награда публикация. Материал Le Monde от 14 ноября — повторный обзор события, не дата учреждения."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 116,
+      "pool_id": "n-43d579b0adbf2540",
+      "slug": "stanford-memorilla-16-memory-tokens-20261114",
+      "headline": "Стэнфорд упаковал историю 107 бесед в 16 токенов памяти",
+      "body": "Исследователи Стэнфорда представили Memorilla — систему памяти для языковых моделей, которая извлекает нужные для ответа сведения из длинной истории документов и переписок в небольшое число специальных токенов. В одном из тестов история из 107 разговоров объёмом около 32 тысяч токенов представлялась для модели всего 16 токенами памяти. Авторы опубликовали код и обученные компоненты, а результаты пока получены в исследовательских испытаниях.",
+      "topic": "Наука",
+      "event_date": "2026-11-14",
+      "source": "Stanford SNAP / Memorilla",
+      "source_url": "https://github.com/snap-stanford/memorilla",
+      "fact_check": "README Stanford SNAP Memorilla, paper arXiv 2610.21375; пример 107 разговоров ~32000 токенов к 16 query-dependent memory tokens. Метод не гарантирует точного сохранения всей истории; испытания авторов, требования GPU (пример 80GB)."
     }
   ]
 }
