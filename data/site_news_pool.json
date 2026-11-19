@@ -3490,12 +3490,12 @@
       "summary": "Короткие ИИ-аудиообзоры книг для поиска новых произведений.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T14:36:23+00:00",
       "review_started_at": "2026-11-19T10:33:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-aca925b15bf1ae05"
+      "closed_at": "2026-11-19T18:38:57Z",
+      "article_id": "audible-ai-audio-discovery-20261116",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-aca925b15bf1ae05\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/audible-ai-audio-discovery-20261116/"
     },
     {
       "id": "n-1971393481b4e1cf",
