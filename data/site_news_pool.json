@@ -4705,12 +4705,12 @@
       "summary": "17–18 ноября: десктопный Vibe, работа с файлами и облачными задачами; ссылка на страницу заметок о релизах.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T12:00:04+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-614783a992ccefaa"
     },
     {
       "id": "n-36bbeb249216ceb6",
@@ -4720,12 +4720,12 @@
       "summary": "18 ноября: временные разговоры в AI Mode Google; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T12:00:04+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-36bbeb249216ceb6"
     },
     {
       "id": "n-3047d7657748ea76",
@@ -4780,12 +4780,12 @@
       "summary": "18 ноября: Tesorai привлекла $5,3 млн на поиск и повторное использование научных данных; сообщение компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T12:00:04+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-81c30b1162a2aaed"
     },
     {
       "id": "n-58da586369f33999",

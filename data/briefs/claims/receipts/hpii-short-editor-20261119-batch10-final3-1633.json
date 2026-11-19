@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch10-final3-1633.json",
+  "request_sha256": "5e2141089d11eb535d3505d83aaf5bb5fb351e9870e767c66ad1c9dff2722f94",
+  "status": "reserved",
+  "count": 3,
+  "items": [
+    {
+      "pool_id": "n-614783a992ccefaa",
+      "pool_sequence": 314,
+      "title": "Mistral выпустила настольного ИИ-агента Vibe",
+      "source_url": "https://docs.mistral.ai/resources/release-notes",
+      "claimed_at": "2026-11-19T12:00:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-36bbeb249216ceb6",
+      "pool_sequence": 315,
+      "title": "Google добавила режим инкогнито для поиска с ИИ",
+      "source_url": "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode",
+      "claimed_at": "2026-11-19T12:00:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-81c30b1162a2aaed",
+      "pool_sequence": 319,
+      "title": "Учёные хотят заставить ИИ работать с забытыми результатами лабораторных опытов",
+      "source_url": "https://www.prnewswire.com/news-releases/tesorai-raises-5-3-million-to-put-vast-troves-of-untapped-research-data-to-work-302944021.html",
+      "claimed_at": "2026-11-19T12:00:04+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
