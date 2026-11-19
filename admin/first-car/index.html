@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Первый вагон · ХПИИ</title>
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/admin/first-car/queue.css">
+  <script src="/admin/first-car/commenting-live.js" defer></script>
+  <script src="/admin/first-car/queue.js" defer></script>
+  <script type="module" src="/admin/auth/gate.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="frame masthead">
+    <a class="platform" href="/admin/">← Админка ХПИИ</a>
+    <span class="local">Ручной комментинг</span>
+  </div></header>
+  <main class="frame">
+    <div class="heading"><h1>Первый вагон</h1><p>ИИ-статьи и готовые реплики за последние 24 часа.</p></div>
+    <nav class="navigation" aria-label="Разделы">
+      <button type="button" data-view="queue" aria-current="page">Очередь <span id="queue-count" class="count">0</span></button>
+      <button type="button" data-view="channels">Приоритетные каналы</button>
+      <button id="refresh-commenting" type="button">Обновить</button>
+    </nav>
+    <div class="columns">
+      <section id="panel" class="panel" aria-label="Текущий раздел" aria-live="polite"></section>
+      <aside class="guide"><div class="guide-section">
+        <h2>Ручная проверка</h2>
+        <ul><li>Открой статью и сверь текущее обсуждение.</li>
+          <li>Если прямой ссылки нет, найди версию в Дзене.</li>
+          <li>Используй реплику, если она подходит к статье.</li></ul>
+      </div></aside>
+    </div>
+    <footer><span>Время — Екатеринбург (UTC+5)</span><span id="storage-note">Отметки в этом браузере не синхронизируются с админкой</span></footer>
+    <span id="announcement" class="visually-hidden" role="status"></span>
+  </main>
+</body>
+</html>
