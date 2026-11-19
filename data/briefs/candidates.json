@@ -105,6 +105,71 @@
       "source": "Arinco",
       "source_url": "https://arinco.com.au/case-study/arn-brings-traffic-bulletin-production-in-house-with-ai/",
       "fact_check": "Официальный кейс Arinco (16.11.2026): PoC шесть рынков, август 2026 примерно 170 бюллетеней доставлены в playout, 30 секунд генерации, обязательное одобрение сотрудником. Не утверждать полное развёртывание на 3000+ еженедельных выпусков."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 83,
+      "pool_id": "n-9539aaad3f277ad5",
+      "slug": "cupertino-ai-bo-sues-creators-20261113",
+      "headline": "Разумный ИИ в сериале Cupertino решил судиться со своими создателями",
+      "body": "В юридической драме CBS «Cupertino» разумный ИИ по имени Бо обращается к адвокатам: он хочет судиться с создавшей его компанией за удаление защитных ограничений. Персонажа играет актёр Роб Макклюр, номинант на театральную премию «Тони». Авторы сериала сделали искусственный интеллект клиентом юридической фирмы, которая обычно защищает людей от технологических корпораций.",
+      "topic": "Культура",
+      "event_date": "2026-11-12",
+      "source": "The Wall Street Journal",
+      "source_url": "https://www.wsj.com/arts-culture/television/cupertino-cbs-rob-mcclure-bo-ai-97b9eebd",
+      "fact_check": "WSJ, 12.11.2026, профиль актёра Роба Макклюра, роль Бо. Бо намерен обратиться с иском из-за снятия guardrails. Художественный сюжет; нет реального иска. Тот же сериал, но отдельная сюжетная линия от №84."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 84,
+      "pool_id": "n-e1a1a9b9c177ad10",
+      "slug": "cupertino-method-man-ai-music-lawsuit-20261112",
+      "headline": "Method Man судится с ИИ-музыкой — пока только в сериале",
+      "body": "В серии «Cupertino», вышедшей на CBS 12 ноября, рэпер Method Man играет музыканта YUNGWOOD, чьи доходы от прослушиваний упали из-за песен-подражаний, выпущенных ИИ-студией. Герой обращается к юристам, и те подают иск против компании. Для телевизионной юридической драмы это отдельный сюжет: никаких реальных судебных претензий самого Method Man к ИИ-разработчикам здесь нет.",
+      "topic": "Культура",
+      "event_date": "2026-11-12",
+      "source": "CBS / Paramount",
+      "source_url": "https://www.paramountpressexpress.com/cbs-studios/shows/cupertino/releases/?view=113468-the-team-tries-to-save-art-and-original-music-by-suing-an-ai-music-studio-that-is-impacting-a-legendary-rappers-streaming-revenue-on-cupertino-thursda",
+      "fact_check": "Paramount Press Express, релиз 22.10 об эпизоде YUNGWOOD эфир 12.11.2026: в сюжете юристы судятся с AI-music studio, выпускающей copycat songs и снижающей доход YUNGWOOD; гостевая роль Method Man. Это вымышленное дело."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 88,
+      "pool_id": "n-f740dffd211520bd",
+      "slug": "musk-huang-hiring-honor-20261113",
+      "headline": "Маск заявил, что нанять Дженсена Хуанга было бы честью",
+      "body": "После призыва в X «Илон, найми Дженсена» Илон Маск ответил, что нанять Дженсена Хуанга было бы для него честью. Реплика появилась 11 ноября, незадолго до сообщения об уходе Хуанга с поста руководителя NVIDIA. Маск публично поддержал одного из самых известных людей в индустрии ИИ-чипов, но конкретную должность, предложение о работе и переговоры не объявлял.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-11",
+      "source": "Fortune",
+      "source_url": "https://fortune.com/2026/11/13/jensen-huang-nvidia-elon-musk-hire-honor",
+      "fact_check": "Fortune 13.11, Bloomberg 12.11, Reuters/BI coverage. Musk responded 'That would be an honor' on X Nov 11 to request 'Elon please hire Jensen'; no official offer or hiring. Keep departure timing exact."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 89,
+      "pool_id": "n-990de9f2deb6136f",
+      "slug": "toby-walsh-agi-decade-away-20261113",
+      "headline": "Тоби Уолш: до ИИ человеческого уровня ещё минимум десять лет",
+      "body": "Австралийский исследователь искусственного интеллекта Тоби Уолш считает чрезмерными прогнозы скорой катастрофы из-за ИИ. В интервью The Australian 13 ноября он оценил срок появления искусственного интеллекта общего назначения — AGI, способного решать широкий круг задач на уровне человека, — как минимум в десять лет. При этом Уолш признаёт, что технология уже преобразует экономику и науку.",
+      "topic": "Общество",
+      "event_date": "2026-11-13",
+      "source": "The Australian",
+      "source_url": "https://www.theaustralian.com.au/inquirer/australian-scientist-toby-walsh-defends-ai-rollout-amid-doomsday-fears/news-story/8918f17d3f3931bd5a88549f65f85c5c",
+      "fact_check": "The Australian interview 13.11.2026 indexed article: AI risks 'overblown', AGI at least decade away, acknowledges science/economy effects. Full paywalled text not independently readable; avoid invented quotes."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 91,
+      "pool_id": "n-4046a8969473b51b",
+      "slug": "epidemic-sound-human-creative-premium-20261112",
+      "headline": "76% опрошенных считают человеческое творчество премиальным на фоне ИИ",
+      "body": "Компания Epidemic Sound опубликовала прогноз на 2027 год, основанный на опросах 4500 представителей творческих профессий и брендов в США и Великобритании. 76% респондентов считают, что контент, созданный людьми, становится премиальным продуктом, а 83% связывают человеческую музыку с более сильной эмоциональной реакцией аудитории. Компания ожидает роста требований к лицензированию и прозрачности использования ИИ.",
+      "topic": "Культура",
+      "event_date": "2026-11-12",
+      "source": "Epidemic Sound",
+      "source_url": "https://corporate.epidemicsound.com/press-and-media/press-releases/2026/ai-faces-a-trust-test-in-2027-as-adoption-grows-across-creative-industries-epidemic-sound-predicts",
+      "fact_check": "Epidemic Sound official press release 12.11.2026: 4500 UK/US respondents surveyed March-April 2026; 76% human-made content becoming premium, 83% human-made music strengthens emotional connection; projections are company forecasts."
     }
   ]
 }
