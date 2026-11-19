@@ -58,11 +58,7 @@ def release_one(root, *, now=None):
     # Site-first's editorial night window: no 01:00–06:59 local releases.
     if 1 <= now.astimezone(LOCAL_TZ).hour < 7:
         return doc, None, "night_pause"
-    # A GitHub Actions delay cannot create an extra off-slot release.
-    if now.minute % 15 != 0:
-        # The scheduler normally reaches this function in the next minutes
-        # after the cron boundary. Enforce 1 per quarter hour below instead.
-        pass
+    # Guard the entire quarter-hour even when Actions starts late.
     quarter = now.replace(minute=(now.minute // 15) * 15, second=0)
     if any(p >= quarter for _, p in released):
         return doc, None, "slot_already_used"
