@@ -3,10 +3,15 @@ on:
   schedule:
     - cron: '7,37 * * * *'
   workflow_dispatch:
+  workflow_run:
+    workflows: ['HPII — watchdog (no publishing)']
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
       - 'scripts/commenting_queue.py'
+      - 'scripts/commenting_recovery.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - '.github/workflows/commenting-queue.yml'
@@ -14,58 +19,82 @@ on:
     branches: [main]
     paths:
       - 'scripts/commenting_queue.py'
+      - 'scripts/commenting_recovery.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - 'admin/index.html'
       - 'tests/test_commenting_queue.py'
       - 'tests/commenting.test.cjs'
+      - 'tests/commenting_recovery.test.cjs'
       - '.github/workflows/commenting-queue.yml'
 permissions:
   contents: read
-concurrency:
-  group: hpii-commenting-queue
-  cancel-in-progress: false
 jobs:
   offline-tests:
+    # GitHub filters workflow_run by branch, but not by its original event.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.head_repository.full_name == github.repository &&
+       contains(fromJSON('["schedule", "workflow_dispatch"]'), github.event.workflow_run.event))
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - run: python3 -m unittest discover -s tests -p 'test_commenting_queue.py' -v
       - run: python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
-      - run: node --test tests/commenting.test.cjs
+      - run: node --test tests/commenting.test.cjs tests/commenting_recovery.test.cjs
       - run: node --check admin/commenting/app.js
   update-queue:
-    if: github.event_name != 'pull_request'
+    # A push tests the hotfix. Only schedule, recovery or an explicit dispatch can collect.
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      contains(fromJSON('["schedule", "workflow_dispatch", "workflow_run"]'), github.event_name)
     needs: offline-tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    concurrency:
+      group: hpii-commenting-queue
+      cancel-in-progress: false
     permissions:
       contents: write
+      statuses: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
           persist-credentials: false
       - name: Read previous queue without changing publication branches
+        id: state
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            try {
-              const {data} = await github.rest.repos.getContent({...context.repo,
-                path:'commenting/queue.json', ref:'commenting-data'});
-              if (data.encoding !== 'base64' || typeof data.content !== 'string') throw Error('Invalid queue file');
-              fs.writeFileSync('_commenting_previous.json', Buffer.from(data.content, 'base64'));
-            } catch (e) {
-              if (e.status !== 404) throw e;
-              fs.writeFileSync('_commenting_previous.json', '{}');
+            const { claimRecovery, readQueue } = require('./scripts/commenting_recovery.cjs');
+            let previous;
+            if (context.eventName === 'workflow_run') {
+              previous = await claimRecovery({github, context, core});
+              if (previous === null) return;
+            } else {
+              try {
+                previous = await readQueue(github, context.repo, 'commenting-data');
+              } catch (e) {
+                if (e.status !== 404) throw e;
+                previous = '{}';
+              }
             }
+            fs.writeFileSync('_commenting_previous.json', previous);
+            core.setOutput('collect', true);
       - name: Read public publisher feeds and prepare at most three drafts
+        if: steps.state.outputs.collect == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/commenting_queue.py --state _commenting_previous.json --output _commenting_queue.json
       - name: Save only queue metadata and drafts to dedicated data branch
+        if: steps.state.outputs.collect == 'true'
         uses: actions/github-script@v7
         with:
           script: |
