@@ -2740,12 +2740,12 @@
       "summary": "16 ноября: WSJ сообщает об инвестициях в ИИ-модели для анализа сетей и журналов безопасности. Название и условия инвестиций перепроверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:38:01+00:00",
       "review_started_at": "2026-11-19T10:14:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-ae2875a8e2c34165"
+      "closed_at": "2026-11-19T16:38:53Z",
+      "article_id": "corma-defensive-ai-series-a-125m-20261116",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ae2875a8e2c34165\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/corma-defensive-ai-series-a-125m-20261116/"
     },
     {
       "id": "n-b8c8af68ba9e3fb1",
