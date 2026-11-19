@@ -1,6 +1,7 @@
 """Canonical HPII rubrics: editorial categories, not extra copies of articles."""
 from html import escape
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 BASE = "https://iipike.ru"
@@ -46,6 +47,21 @@ def publication_date(value):
     return f"{day.day} {MONTHS_RU[day.month - 1]} {day.year}"
 
 
+def publication_label(row):
+    """Reader-visible publication day and, when known, local HH:MM (UTC+05).
+
+    Historic day-only records never receive invented publication minutes.
+    """
+    stamp = row.get("published_at_utc")
+    if stamp and row.get("publication_date_precision") != "day":
+        moment = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+        if moment.tzinfo is None:
+            raise ValueError("Publication timestamp missing UTC offset")
+        local = moment.astimezone(ZoneInfo("Asia/Yekaterinburg"))
+        return f"{publication_date(local.date().isoformat())} · {local:%H:%M}"
+    return publication_date(row["published"])
+
+
 def publication_date_caps(value):
     return publication_date(value).upper()
 
@@ -76,7 +92,7 @@ def render_page(key, records):
         '<a class="archive-card" href="../../' + escape(r["url"], quote=True) + '">'
         '<img loading="lazy" src="../../' + escape(r["cover"], quote=True) + '" alt="Обложка статьи">'
         '<span><h3>' + escape(r["title"]) + '</h3>'
-        '<small class="date">' + escape(publication_date(r["published"])) + '</small>'
+        '<small class="date">' + escape(publication_label(r)) + '</small>'
         '<p>' + escape(r["summary"]) + '</p></span>'
         '<span aria-hidden="true">↗</span></a>'
         for r in matches
