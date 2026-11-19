@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "e19beec1dfca898de489cbf8d00b76cd8feb41a9",
-  "source_blob_sha": "52d79f2ae0c7c2d40b39306f066ea9e6ea52c9aa",
+  "source_commit": "6b0025fa97a51c7dc109ed61bf207adbc182882d",
+  "source_blob_sha": "0baa10e08dde7010ecc2b1b9fe1e2ac5c4b77b26",
   "snapshot_date": "2026-11-19",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afeb5854c30af749936ed54",
+      "title": "Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов",
+      "dzen_url": "https://dzen.ru/a/av61hUwwr3SZNu1U",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Google 10 ноября открыла Gemini 4 Carbon для платных разработчиков, корпоративных клиентов и подписчиков Google AI Ultra. До этого модель была доступна лишь участникам специальной программы по кибербезопасности. Теперь Carbon можно подключать через платный API и продукты Google. Бесплатного доступа к ней в приложении Gemini компания не объявляла. Одновременно компания показала в среде разработки Google Antigravity эк",
+      "published_at_utc": "2026-11-19T16:38:04+00:00"
+    },
+    {
+      "dzen_id": "6afeb50b97093c1e3fbd46c0",
+      "title": "ИИ-двойники перестали махать руками невпопад: HeyGen выпустила Avatar 6",
+      "dzen_url": "https://dzen.ru/a/av61C5cJPB4_vUbA",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Зрители ошибочно выбирали сгенерированное видео, принимая его за настоящую съёмку. HeyGen 17 ноября выпустила Avatar 6 — нейросеть, которая создаёт говорящих цифровых двойников из фотографии и аудиозаписи. Новая модель научилась подбирать мимику и жесты под смысл произносимых слов. Раньше аватары могли повторять одни и те же движения независимо от текста. Теперь цифровой ведущий реагирует на то, о чём рассказывает. В",
+      "published_at_utc": "2026-11-19T15:22:30+00:00"
+    },
+    {
+      "dzen_id": "6afeb4c02cbc0d52dfc624d3",
+      "title": "Google обнаружила ИИ-хакера, который превращает исправления программ в новые атаки",
+      "dzen_url": "https://dzen.ru/a/av60wCy8DVLfxiTT",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "На открытом сервере злоумышленников лежали похищенные данные с чужих сайтов. Google Threat Intelligence Group и Mandiant обнаружили там систему exploit_agent, способную самостоятельно искать уязвимости в программах, создавать инструменты для их эксплуатации и запускать атаки. 16 ноября Google опубликовала отчёт об использовании подобных ИИ-систем в реальных хакерских операциях. exploit_agent следит за обновлениями по",
+      "published_at_utc": "2026-11-19T14:12:51+00:00"
+    },
+    {
+      "dzen_id": "6afeb458eb5aac0b021d90ac",
+      "title": "Китайские нейросети учатся на ответах OpenAI",
+      "dzen_url": "https://dzen.ru/a/av60WOtarAsCHZCs",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Reuters 17 ноября опубликовало расследование о том, как китайские исследователи и компании обучают собственные нейросети на ответах OpenAI и других американских разработчиков. Журналисты изучили 300 с лишним научных работ, патентов, корпоративных и государственных документов. Выяснилось, что дистилляция давно вышла за пределы лабораторных экспериментов. Китайские компании разрабатывают программы для автоматического с",
+      "published_at_utc": "2026-11-19T13:02:11+00:00"
+    },
+    {
+      "dzen_id": "6afeb3de8dd59d0778580d9c",
+      "title": "Apple научила Mac давать ИИ-агентам доступ только к выбранным папкам и программам",
+      "dzen_url": "https://dzen.ru/a/av6z3o3VnQd4WA2c",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Одно разрешение — и ИИ-агент мог получить доступ почти ко всему Mac, включая почту и личные переписки. Apple 16 ноября добавила в macOS 27.3 beta 2 новые настройки безопасности для приложений с расширенными разрешениями. Теперь владелец Mac может разрешить ИИ-агенту работать с отдельными папками и программами, не предоставляя ему контроль над всем компьютером. Появилась и возможность заставить агента спрашивать разре",
+      "published_at_utc": "2026-11-19T12:00:15+00:00"
+    },
+    {
+      "dzen_id": "6afeb35e4645305247c91587",
+      "title": "OpenAI впустит шестерых исследователей искать тайный саботаж ИИ — но доступ им ограничат",
+      "dzen_url": "https://dzen.ru/a/av6zXkZFMFJHyRWH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Шесть специалистов Apollo Research проведут четыре месяца внутри OpenAI: изучат данные обучения нейросетей, промежуточные версии моделей и работу систем наблюдения. Их задача — выяснить, не пытаются ли ИИ-системы скрытно обходить установленные разработчиками ограничения. 16 ноября OpenAI объявила о соглашениях с четырьмя независимыми организациями: Apollo Research, METR, Transluce и Goodfire. Проверяющие получат дост",
+      "published_at_utc": "2026-11-19T10:43:43+00:00"
+    },
+    {
+      "dzen_id": "6afea2fdd47473154b365e43",
+      "title": "Grok Bot готовят к роли турагента: он сам заметит отмену рейса и предложит замену",
+      "dzen_url": "https://dzen.ru/a/av6i_dR0cxVLNl5D",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Sabre, один из крупнейших поставщиков технологий для туристической отрасли, 17 ноября показала подключение для Grok Bot, которое позволит искусственному интеллекту бронировать авиабилеты и отели, а затем самостоятельно отслеживать проблемы с уже оформленной поездкой. Если рейс отменят, система сможет сообщить об этом ИИ-агенту, подобрать альтернативный перелёт и предложить пассажиру перебронировать билет. Разработку",
+      "published_at_utc": "2026-11-19T09:33:21+00:00"
+    },
     {
       "dzen_id": "6afd522e499f5e349075e078",
       "title": "OpenAI выпустила GPT-6.2 Astra и Sol: новая Astra почти догнала Claude",
