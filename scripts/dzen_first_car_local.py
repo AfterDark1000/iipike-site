@@ -8,6 +8,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from dzen_first_car import connect, mark, queue_snapshot
+from dzen_first_car_signals import mark_signal, signal_snapshot
 
 LAB = Path(__file__).resolve().parents[1] / "lab" / "dzen-first-car"
 ASSETS = {"/": ("index.html", "text/html"), "/index.html": ("index.html", "text/html"),
@@ -45,8 +46,10 @@ def serve(db_path, port, replay, replay_at):
                 filename, media_type = ASSETS[self.path]
                 self.send((LAB / filename).read_bytes(), media_type)
             elif self.path == "/snapshots.js":
+                now = self.now()
                 with closing(connect(db_path, replay=replay)) as db:
-                    data = queue_snapshot(db, self.now(), replay=replay)
+                    data = queue_snapshot(db, now, replay=replay)
+                    data["signals"] = signal_snapshot(db, now)
                 data.update(bridge=True, demo=archive["demo"], demo_observed_at=archive["demo_observed_at"])
                 self.send(("window.firstCarSnapshots = " + json.dumps(data) + ";").encode(), "application/javascript")
             else:
@@ -58,7 +61,8 @@ def serve(db_path, port, replay, replay_at):
                     or self.headers.get_content_type() != "application/json"):
                 self.send_error(403)
                 return
-            if self.path != "/decision":
+            actions = {"/decision": mark, "/signal-decision": mark_signal}
+            if self.path not in actions:
                 self.send_error(404)
                 return
             try:
@@ -67,7 +71,7 @@ def serve(db_path, port, replay, replay_at):
                     raise ValueError("Invalid request length")
                 data = json.loads(self.rfile.read(length))
                 with closing(connect(db_path, replay=replay)) as db:
-                    mark(db, data["url"], data["action"], self.now())
+                    actions[self.path](db, data["url"], data["action"], self.now())
             except (ValueError, KeyError, TypeError, sqlite3.Error):
                 self.send(b'{"saved":false}', "application/json", 400)
                 return

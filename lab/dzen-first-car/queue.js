@@ -14,6 +14,8 @@
   const percent = new Intl.NumberFormat("ru-RU", { style: "percent", maximumFractionDigits: 1 });
   const minute = 60_000;
   const freshnessLimit = 15 * minute;
+  const signalWindow = 60 * minute;
+  const signals = data.signals ?? [];
   const decisions = readDecisions();
   if (data.bridge) {
     for (const key of decisions.keys()) if (key.startsWith("queue|")) decisions.delete(key);
@@ -24,6 +26,7 @@
     document.querySelector(".local").textContent = "Демо · тестовый прогон";
   }
   let view = "queue";
+  let signalTimer;
 
   function readDecisions() {
     try {
@@ -155,6 +158,34 @@
         ${handled.map((article) => articleRow(article)).join("")}</details>` : ""}`;
   }
 
+  function signalRow(signal) {
+    const button = (action, label) => `<button type="button" class="button" data-decision="${action}" data-url="${escapeText(signal.url)}">${label}</button>`;
+    const decision = signal.action === "commented" ? "Прокомментировано" : "Проверил/не подходит";
+    return `<article class="row">
+      <div class="row-top">${status("Не подтверждено", "stale")}${signal.action ? status(decision) : ""}</div>
+      <h3>${escapeText(signal.title)}</h3>
+      <dl>
+        ${field("Ссылка обнаружена", dateLabel(signal.detected_at))}
+        ${field("Опубликовано в Дзене", dateLabel(signal.dzen_published_at))}
+        ${field("Комментарии Дзена", known(signal.dzen_comments))}
+      </dl>
+      ${link(signal.source_url, "Источник ссылки", /^https:\/\//, "evidence-link")}
+      <div class="actions">
+        ${link(signal.url, "Открыть в Дзене", directArticle, "button primary")}
+        ${signal.action ? "" : button("checked", "Проверил/не подходит") + button("commented", "Прокомментировано")}
+      </div>
+    </article>`;
+  }
+
+  function signalPanel(pending, handled) {
+    const empty = `<div class="empty"><h2>Свежих разведсигналов нет</h2></div>`;
+    return `<header class="panel-head"><h2>Разведсигналы</h2>
+      <p>Прямые ссылки для ручной проверки. Видны до часа после обнаружения.</p></header>
+      ${pending.length ? pending.map(signalRow).join("") : empty}
+      ${handled.length ? `<details class="handled"><summary>Отмеченные · ${handled.length}</summary>
+        ${handled.map(signalRow).join("")}</details>` : ""}`;
+  }
+
   function channelPanel() {
     const labels = {
       confirmed_candidate: ["Подтверждён", "observed"],
@@ -199,32 +230,46 @@
     const now = data.replay ? exactTime(data.as_of) : Date.now();
     const eligible = queueEntries(now);
     const pending = eligible.filter((article) => !decisions.has(`queue|${article.url}`));
+    const currentSignals = signals.filter((signal) => {
+      const seen = exactTime(signal.detected_at);
+      return signal.verified === false && directArticle.test(signal.url) && seen !== null
+        && seen <= now && now - seen <= signalWindow;
+    });
+    const pendingSignals = currentSignals.filter((signal) => !signal.action);
     document.querySelector("#queue-count").textContent = pending.length;
+    document.querySelector("#signal-count").textContent = pendingSignals.length;
     document.querySelector("#channel-count").textContent = data.channels.length;
     document.querySelectorAll(".navigation [data-view]").forEach((button) => {
       if (button.dataset.view === view) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
     });
     panel.innerHTML = view === "queue" ? queuePanel(now, eligible, pending) :
+      view === "signals" ? signalPanel(pendingSignals, currentSignals.filter((signal) => signal.action)) :
       view === "channels" ? channelPanel() : demoPanel();
+    clearTimeout(signalTimer);
+    if (view === "signals" && !data.replay && currentSignals.length) {
+      const oldest = exactTime(currentSignals[currentSignals.length - 1].detected_at);
+      signalTimer = setTimeout(render, oldest + signalWindow - now + 1);
+    }
   }
 
   document.addEventListener("click", async (event) => {
     const button = event.target.closest("button");
     if (!button) return;
-    if (["queue", "channels", "demo"].includes(button.dataset.view)) {
+    if (["queue", "signals", "channels", "demo"].includes(button.dataset.view)) {
       view = button.dataset.view;
       render();
       document.querySelector(`.navigation [data-view="${view}"]`).focus();
     } else if (directArticle.test(button.dataset.url)) {
       const action = button.dataset.decision;
       const key = `${view}|${button.dataset.url}`;
-      const bridge = data.bridge && view === "queue";
+      const signal = view === "signals" && signals.find((item) => item.url === button.dataset.url);
+      const bridge = data.bridge && (view === "queue" || Boolean(signal));
       if (bridge) {
         const actions = button.closest(".actions").querySelectorAll("button");
         actions.forEach((item) => { item.disabled = true; });
         try {
-          const response = await fetch("/decision", {
+          const response = await fetch(signal ? "/signal-decision" : "/decision", {
             method: "POST", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ url: button.dataset.url, action }),
           });
@@ -236,7 +281,8 @@
         }
         document.querySelector("#storage-note").textContent = "Отметка сохранена в локальной истории";
       }
-      if (action === "undo") decisions.delete(key);
+      if (signal && bridge) signal.action = action;
+      else if (action === "undo") decisions.delete(key);
       else if (["commented", "skipped"].includes(action)) decisions.set(key, action);
       else return;
       if (!bridge) storeDecisions();

@@ -49,6 +49,12 @@ CREATE TABLE IF NOT EXISTS decisions(
     recorded INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS decisions_as_of ON decisions(url, recorded DESC, id DESC);
+CREATE TABLE IF NOT EXISTS scout_signals(
+    url TEXT PRIMARY KEY, detected INTEGER NOT NULL, title TEXT NOT NULL,
+    source_url TEXT NOT NULL, policy TEXT NOT NULL, permission_ref TEXT,
+    action TEXT, marked INTEGER
+);
+CREATE INDEX IF NOT EXISTS scout_signals_detected ON scout_signals(detected);
 """
 
 
@@ -360,6 +366,8 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     saved = commands.add_parser("import")
     saved.add_argument("file", type=Path)
+    scout = commands.add_parser("import-signals")
+    scout.add_argument("file", type=Path)
     dzen = commands.add_parser("import-dzen")
     dzen.add_argument("file", type=Path)
     dzen.add_argument("--channel", required=True)
@@ -382,6 +390,9 @@ def main():
                 if not args.replay:
                     parser.error("replay-sequence requires --replay")
                 result = replay_sequence(db, json.loads(args.file.read_bytes())["steps"])
+            elif args.command == "import-signals":
+                from dzen_first_car_signals import ingest_signals
+                result = ingest_signals(db, json.loads(args.file.read_bytes()), replay=args.replay)
             elif args.command in {"import", "import-dzen"}:
                 data = json.loads(args.file.read_bytes())
                 if args.command == "import-dzen":
@@ -399,7 +410,9 @@ def main():
                     mark(db, args.url, args.action, now)
                     result = {"url": args.url, "action": args.action}
                 else:
+                    from dzen_first_car_signals import signal_snapshot
                     result = queue_snapshot(db, now, replay=args.replay)
+                    result["signals"] = signal_snapshot(db, now)
     except (OSError, ValueError, KeyError, TypeError, sqlite3.Error) as error:
         parser.error(str(error))
     print(json.dumps(result, ensure_ascii=True, indent=2))

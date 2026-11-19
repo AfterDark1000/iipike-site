@@ -9,10 +9,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from dzen_first_car import connect, dzen_snapshot, ingest, mark, queue_snapshot, replay_sequence, timestamp
 from dzen_first_car_rss import hints
+from dzen_first_car_signals import ingest_signals, mark_signal, signal_snapshot
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "lab" / "dzen-first-car" / "fixtures" / "sequence.json"
 NEW = "https://dzen.ru/a/demo000000000006"
+SIGNALS = FIXTURE.with_name("scout-signals.json")
 
 
 class FirstCarPipelineTest(unittest.TestCase):
@@ -118,6 +120,68 @@ class FirstCarPipelineTest(unittest.TestCase):
         self.assertEqual(queue_snapshot(self.db, now, replay=True)["decisions"], {NEW: "skipped"})
         mark(self.db, NEW, "undo", now)
         self.assertEqual(queue_snapshot(self.db, now, replay=True)["decisions"], {})
+
+    def test_external_signals_keep_first_detection_and_expire_outside_queue(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        catalog = json.loads((ROOT / "news.json").read_bytes())
+        published_links = {row.get("site_first_dzen_url") for row in catalog}
+        for signal in snapshot["signals"]:
+            self.assertIn(signal["url"].split("?")[0], published_links)
+        now = timestamp("2026-11-19T10:10:00Z")
+        self.assertEqual(ingest_signals(self.db, snapshot, replay=True), {"signals_read": 4, "signals_saved": 3})
+        self.assertEqual(ingest_signals(self.db, snapshot, replay=True)["signals_saved"], 0)
+        signals = signal_snapshot(self.db, now)
+        self.assertEqual(len(signals), 2)
+        self.assertEqual(signals[1]["detected_at"], "2026-11-19T10:00:00+00:00")
+        for signal in signals:
+            self.assertIn(signal["url"], published_links)
+            self.assertIsNone(signal["dzen_published_at"])
+            self.assertIsNone(signal["dzen_comments"])
+            self.assertIs(signal["verified"], False)
+        self.assertEqual(queue_snapshot(self.db, now, replay=True)["articles"], [])
+        self.assertEqual(self.db.execute("SELECT count(*) FROM articles").fetchone()[0], 0)
+        self.assertEqual(signal_snapshot(self.db, now + 3600), [])
+        with self.assertRaises(ValueError):
+            mark_signal(self.db, signals[1]["url"], "checked", now + 3600)
+
+    def test_signal_decisions_are_durable_and_do_not_mark_queue_articles(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        ingest_signals(self.db, snapshot, replay=True)
+        now = timestamp("2026-11-19T10:10:00Z")
+        first, second = signal_snapshot(self.db, now)
+        mark_signal(self.db, first["url"], "checked", now)
+        mark_signal(self.db, second["url"], "commented", now)
+        mark_signal(self.db, first["url"], "checked", now + 1)
+        with closing(connect(self.path, replay=True)) as reopened:
+            self.assertEqual([s["action"] for s in signal_snapshot(reopened, now)], ["checked", "commented"])
+            self.assertEqual(queue_snapshot(reopened, now, replay=True)["decisions"], {})
+        with self.assertRaises(ValueError):
+            mark(self.db, first["url"], "commented", now)
+
+    def test_signal_import_rejects_an_unapproved_source_and_rolls_back_bad_urls(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        with closing(connect(":memory:")) as offline:
+            with self.assertRaises(ValueError):
+                ingest_signals(offline, snapshot)
+            snapshot["source_policy"] = {"status": "approved", "permission_ref": "Publisher grants local use"}
+            snapshot["signals"][-1]["source_url"] = "https://user@example.org/signal"
+            with self.assertRaises(ValueError):
+                ingest_signals(offline, snapshot)
+            self.assertEqual(offline.execute("SELECT count(*) FROM scout_signals").fetchone()[0], 0)
+            snapshot["signals"].pop()
+            self.assertEqual(ingest_signals(offline, snapshot)["signals_saved"], 2)
+            self.assertEqual(len(signal_snapshot(offline, timestamp("2026-11-19T10:10:00Z"))), 2)
+
+    def test_independently_verified_article_is_only_shown_in_strict_queue(self):
+        for step in self.steps[:2]:
+            ingest(self.db, step["snapshot"], replay=True)
+        snapshot = json.loads(SIGNALS.read_bytes())
+        snapshot["signals"] = [{**snapshot["signals"][0], "url": NEW}]
+        ingest_signals(self.db, snapshot, replay=True)
+        now = timestamp("2026-11-19T10:10:00Z")
+        self.assertEqual(len(signal_snapshot(self.db, now)), 1)
+        self.assertEqual([article["url"] for article in queue_snapshot(self.db, now, replay=True)["articles"]], [NEW])
+        self.assertEqual(signal_snapshot(self.db, now), [])
 
 
 if __name__ == "__main__":
