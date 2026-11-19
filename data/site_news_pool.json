@@ -3190,12 +3190,12 @@
       "summary": "15 ноября: приложение объединяет сообщения, календарь, оборудование и закупки, создано через Claude Code и Codex. Со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": "2026-11-19T10:33:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-f60757c71353b675"
+      "closed_at": "2026-11-19T18:08:46Z",
+      "article_id": "noriki-ai-built-lab-ops-app-20261115",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f60757c71353b675\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/noriki-ai-built-lab-ops-app-20261115/"
     },
     {
       "id": "n-0b720af165702e48",
