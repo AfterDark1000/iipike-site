@@ -1225,6 +1225,30 @@
           "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
         }
       ]
+    },
+    {
+      "key": "megaspeed",
+      "name": "Megaspeed International",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
+          "source_url": "https://www.justice.gov/opa/pr/joint-statement-department-commerce-and-department-justice-megaspeed-investigation"
+        }
+      ]
+    },
+    {
+      "key": "supermicro",
+      "name": "Supermicro",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
+          "source_url": "https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/"
+        }
+      ]
     }
   ],
   "products": [
