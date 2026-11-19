@@ -6960,5 +6960,28 @@
       "openai"
     ],
     "products": []
+  },
+  {
+    "title": "Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование",
+    "summary": "При сверке таможенных данных с инвентаризацией NVIDIA обнаружилось расхождение примерно в 50 тысяч ИИ-чипов, связанных с поставками Megaspeed. Власти США раскрыли хронологию расследования, начатого в 2024 году.",
+    "published": "2026-11-19",
+    "source_url": "https://www.justice.gov/opa/pr/joint-statement-department-commerce-and-department-justice-megaspeed-investigation",
+    "cover": "assets/editorial/nvidia-megaspeed-chips-export-investigation-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🕵️ 50 ТЫСЯЧ ЧИПОВ NVIDIA не сошлись в отчётах — США ведут расследование",
+    "vk_summary": "Минюст и Минторг США подтвердили расследование поставок ИИ-чипов через сингапурскую Megaspeed, начатое ещё в 2024 году. По данным Bloomberg, при сверке таможенных документов с инвентаризацией NVIDIA возникло расхождение примерно в 50 тысяч ускорителей. NVIDIA заявила о дополнительных проверках складов.",
+    "published_at_utc": "2026-11-19T14:15:38Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "nvidia-megaspeed-chips-export-investigation-20261117",
+    "url": "articles/nvidia-megaspeed-chips-export-investigation-20261117/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
