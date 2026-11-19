@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch08-unique1837.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-e04686f80cf8e47e",
+      "pool_sequence": 274,
+      "title": "Бывший руководитель Google Maps создаёт ИИ-турагента, который сопровождает путешествие неделями",
+      "source_url": "https://techcrunch.com/2026/11/17/voyage-labs-raises-12-million-for-a-specialized-ai-travel-assistant",
+      "claimed_at": "2026-11-19T11:32:58+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2fb55c3571a040c5",
+      "pool_sequence": 275,
+      "title": "ИИ-стартап получил $250 млн, чтобы избавить инвестиционных банкиров от рутины",
+      "source_url": "https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work",
+      "claimed_at": "2026-11-19T11:32:58+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-29e7b0bd1f83d595",
+      "pool_sequence": 278,
+      "title": "Tencent предупредила, что американские ограничения могут затормозить обучение её следующей нейросети",
+      "source_url": "https://www.reuters.com/technology/tencent-q3-revenue-growth-slows-8-misses-estimates-2026-11-18",
+      "claimed_at": "2026-11-19T11:32:58+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a1083ec54cdb520a",
+      "pool_sequence": 279,
+      "title": "Малайзия потребовала от дата-центров соблюдать американские ограничения на ИИ-чипы",
+      "source_url": "https://www.reuters.com/business/finance/malaysia-says-data-centres-must-comply-us-ai-chip-rules-2026-11-18",
+      "claimed_at": "2026-11-19T11:32:58+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-077945a9711f1a20",
+      "pool_sequence": 289,
+      "title": "ФРС США предупредила, что разочарование в ИИ может ударить по финансовой системе",
+      "source_url": "https://www.reuters.com/legal/transactional/fed-policymakers-concerned-about-financial-system-risks-minutes-show-2026-11-18",
+      "claimed_at": "2026-11-19T11:32:58+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

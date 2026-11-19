@@ -4105,12 +4105,12 @@
       "summary": "17 ноября: стартап Voyage Labs привлёк $12 млн на Atlas для маршрутов, отслеживания цен и бронирования; закрытая бета.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T13:05:12+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:32:58+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e04686f80cf8e47e"
     },
     {
       "id": "n-2fb55c3571a040c5",
@@ -4120,12 +4120,12 @@
       "summary": "17 ноября: сообщение о финансировании Model ML для автоматизации работы инвестиционных банкиров; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T13:05:12+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:32:58+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-2fb55c3571a040c5"
     },
     {
       "id": "n-942518637ca001c7",
@@ -4165,12 +4165,12 @@
       "summary": "18 ноября: Tencent сообщила о влиянии экспортных ограничений на доступ к ускорителям для обучения следующих моделей.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T14:52:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:32:58+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-29e7b0bd1f83d595"
     },
     {
       "id": "n-a1083ec54cdb520a",
@@ -4180,12 +4180,12 @@
       "summary": "18 ноября: власти Малайзии призвали операторов дата-центров соблюдать ограничения США на ИИ-чипы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T14:52:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:32:58+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a1083ec54cdb520a"
     },
     {
       "id": "n-6da45ad568d60255",
@@ -4330,12 +4330,12 @@
       "summary": "18 ноября: протокол заседания ФРС обсуждает переоценку активов и ИИ-инфраструктуру; возможный тематический дубль.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:32:58+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-077945a9711f1a20"
     },
     {
       "id": "n-b3ad7093de78ce7b",
