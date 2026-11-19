@@ -83,6 +83,13 @@ def long_allowed(item, routes):
     return routes.get(item["id"], {}).get("lane", "long") == "long"
 
 
+def effective_priority(item, routes):
+    """Promote approved hot stories even before the large raw pool is rewritten."""
+    if routes.get(item["id"], {}).get("decision") == "hot":
+        return "high"
+    return item["priority"]
+
+
 def short_allowed(item, routes):
     return routes.get(item["id"], {}).get("lane") == "short"
 
