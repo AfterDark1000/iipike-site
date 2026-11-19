@@ -1249,6 +1249,54 @@
           "source_url": "https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/"
         }
       ]
+    },
+    {
+      "key": "isomorphic-labs",
+      "name": "Isomorphic Labs",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+        }
+      ]
+    },
+    {
+      "key": "greenoaks",
+      "name": "Greenoaks",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+        }
+      ]
+    },
+    {
+      "key": "sequoia-capital",
+      "name": "Sequoia Capital",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+        }
+      ]
+    },
+    {
+      "key": "andreessen-horowitz",
+      "name": "Andreessen Horowitz",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+        }
+      ]
     }
   ],
   "products": [
@@ -2435,6 +2483,19 @@
         {
           "article_id": "openai-nato-cyber-defense-daybreak-20261117",
           "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
+        }
+      ]
+    },
+    {
+      "key": "isodde",
+      "name": "IsoDDE",
+      "company": "isomorphic-labs",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
         }
       ]
     }
