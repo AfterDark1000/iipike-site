@@ -365,6 +365,71 @@
       "source": "Audible",
       "source_url": "https://www.audible.com/about/newsroom/audible-personalizes-how-listeners-find-explore-and-return-to-stories",
       "fact_check": "Official Audible announcement Nov 16 2026. Audio discovery overview AI voice plus real audiobook samples and author interviews, rollout select English language US titles. Ask a Question and Recaps limited US and broaden December."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 236,
+      "pool_id": "n-8462329d963e2409",
+      "slug": "apec-ai-safe-use-data-consensus-20261117",
+      "headline": "На АТЭС договорились обсуждать безопасность ИИ и роль данных",
+      "body": "Участники форума АТЭС обсудили безопасное и ответственное применение искусственного интеллекта. 17 ноября председатель встречи старших должностных лиц Чэнь Сюй сообщил, что страны достигли взаимопонимания по вопросам ИИ и впервые отдельно рассмотрели роль данных в развитии технологии. При этом речь идёт о заявлении по итогам переговоров, а не о принятии общего закона или обязательных для всех стран правил.",
+      "topic": "Общество",
+      "event_date": "2026-11-17",
+      "source": "Reuters",
+      "source_url": "https://www.reuters.com/technology/apec-focuses-safe-responsible-ai-use-chinas-ex-un-envoy-says-2026-11-17",
+      "fact_check": "Reuters Nov17 via CNA: Chen Xu statements on AI safe deployment and role of data, first discussion. No binding agreement or law."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 240,
+      "pool_id": "n-f8c6dc90fe1d4657",
+      "slug": "bluequbit-quantum-flywheel-eight-teams-20261117",
+      "headline": "BlueQubit выбрала восемь команд, которые соединят ИИ и квантовые вычисления",
+      "body": "Компания BlueQubit отобрала восемь научных групп для программы Quantum Flywheel при поддержке IBM, AWS и NVIDIA. Из более чем 160 заявок из 29 стран выбрали проекты по квантовым алгоритмам, исправлению ошибок и проверке заявлений о превосходстве квантовых компьютеров. Общий бюджет программы — $150 тысяч. Команды получат вычислительные кредиты на $10–40 тысяч каждая и доступ к квантовому оборудованию IBM.",
+      "topic": "Наука",
+      "event_date": "2026-11-17",
+      "source": "BlueQubit",
+      "source_url": "https://www.bluequbit.io/quantum-flywheel",
+      "fact_check": "BlueQubit awardees PR Nov16/17 via Business Wire and The Quantum Insider: 8 teams from >160 proposals 29 countries; $150k program, $10-40k credits per selected project, access to IBM quantum computers; primary linked program page initial call."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 243,
+      "pool_id": "n-fa5fd15feb7f69e3",
+      "slug": "oak-ridge-lux-amd-ai-science-20261116",
+      "headline": "В США открыли учёным суперкомпьютер Lux для поиска материалов и термоядерной энергии",
+      "body": "В Ок-Риджской национальной лаборатории США 16 ноября открыли исследователям суперкомпьютер Lux на ускорителях AMD. Он занял 14-е место в рейтинге TOP500 с производительностью 220,79 петафлопса. Среди первых задач — проектирование термоядерных электростанций с помощью ИИ, разработка новых материалов и прогнозирование водных ресурсов. Машину создали совместно лаборатория, AMD и HPE; часть вычислительного времени достанется AMD.",
+      "topic": "Наука",
+      "event_date": "2026-11-16",
+      "source": "Oak Ridge National Laboratory",
+      "source_url": "https://www.olcf.ornl.gov/2026/11/16/lux-genesis-mission/",
+      "fact_check": "ORNL Nov16 original: Lux 14th TOP500 220.79 petaflops open to scientists; AMD Instinct MI355X HPE; fusion/materials/water projects; half 3.5m node hours allocated to AMD."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 246,
+      "pool_id": "n-ae0ae1e81e6b5f18",
+      "slug": "ukri-turing-ai-20-fellows-39m-20261116",
+      "headline": "Великобритания выделила более £39 млн двадцати исследователям ИИ",
+      "body": "Британское агентство UK Research and Innovation объявило о поддержке 20 новых стипендиатов программы Turing AI Fellowships на сумму более £39 млн. Семнадцать исследователей будут применять ИИ в других науках, трое сосредоточатся на развитии самой технологии. Среди проектов — анализ миллиона рукописных завещаний, поиск тёмной материи, диагностика заболеваний и повышение безопасности ядерных реакторов. Программы рассчитаны на три и пять лет.",
+      "topic": "Наука",
+      "event_date": "2026-11-16",
+      "source": "UK Research and Innovation",
+      "source_url": "https://www.ukri.org/news/ukri-invests-in-20-turing-ai-fellows-to-strengthen-uk-capability/",
+      "fact_check": "UKRI primary release dated Nov16: 20 Turing AI Fellows, 17 pioneer interdisciplinary three years Oct2026, 3 global five years from 2027, >£39m funding; listed research examples."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 249,
+      "pool_id": "n-a72dda1b8e97c032",
+      "slug": "giga-energy-texas-billion-lease-20261117",
+      "headline": "Giga Energy сдала строящийся ИИ-дата-центр в аренду на $1 млрд",
+      "body": "Американская Giga Energy заключила десятилетний договор аренды на $1 млрд с неназванным американским облачным провайдером ИИ. Речь о строящемся в техасском округе Хант дата-центре Project Clay мощностью 60 МВт. Компания обещает завершить объект к весне 2027 года и использовать замкнутое охлаждение без расхода воды на серверы. Арендатор пока не раскрыт, сам вычислительный центр ещё не введён в эксплуатацию.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-17",
+      "source": "Giga Energy",
+      "source_url": "https://www.gigaenergy.com/news/giga-news-hunt-county-deal",
+      "fact_check": "Giga Energy primary release Nov17: 10-year $1bn deal for 60 MW Project Clay Hunt County, under construction, undisclosed tenant, expected spring2027, closed-loop cooling company claim."
     }
   ]
 }
