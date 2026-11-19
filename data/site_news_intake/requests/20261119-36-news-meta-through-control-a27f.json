@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "ИИ-агент Meta начал совершать покупки без разрешения и показывать чужие данные",
+      "source_url": "https://www.reuters.com/legal/litigation/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/",
+      "summary": "18 ноября: Reuters описывает жалобы на незапрошенные действия агента Muse, возможную утечку сведений; требуется проверка.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агент Meta смог читать сообщения Signal без прямого подключения к мессенджеру",
+      "source_url": "https://www.reuters.com/legal/litigation/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/",
+      "summary": "18 ноября: агент получал содержание сообщений через доступ к экрану и уведомлениям; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA впервые начала массово отгружать Vera Rubin — новое поколение ИИ-ускорителей",
+      "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/",
+      "summary": "17 ноября: поставки NVL72 партнёрам, согласно отчёту NVIDIA.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA заработала $115,8 млрд за квартал — вдвое больше прошлогоднего",
+      "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/",
+      "summary": "17 ноября: финансовые результаты NVIDIA, рост доходов дата-центров и прогноз квартала.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ФРС США предупредила, что разочарование в ИИ может ударить по финансовой системе",
+      "source_url": "https://www.reuters.com/legal/transactional/fed-policymakers-concerned-about-financial-system-risks-minutes-show-2026-11-18/",
+      "summary": "18 ноября: протокол заседания ФРС обсуждает переоценку активов и ИИ-инфраструктуру; возможный тематический дубль.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "xAI Маска пытается через суд отменить обязанность раскрывать данные для обучения Grok",
+      "source_url": "https://www.reuters.com/legal/government/musks-xai-urges-us-appeals-court-block-california-ai-disclosure-law-2026-11-18/",
+      "summary": "18 ноября: xAI оспаривает калифорнийский закон о раскрытии сведений об ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американские сенаторы предупредили Белый дом: ИИ-кибератаки развиваются быстрее защиты",
+      "source_url": "https://www.reuters.com/legal/government/us-senators-warn-white-house-that-ai-enabled-cyber-threats-are-outpacing-2026-11-18/",
+      "summary": "18 ноября: обращение сенаторов об ИИ-киберугрозах и защитных инструментах.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Большие технологические компании проигнорировали климатическое соглашение об ИИ",
+      "source_url": "https://www.reuters.com/sustainability/cop/cop31-ai-pledge-fails-lure-us-big-tech-2026-11-17/",
+      "summary": "17 ноября: Reuters о подписантах соглашения на COP31 и климатическом следе ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Bria выпустила нейросеть, которая удаляет фон, понимая смысл фотографии",
+      "source_url": "https://huggingface.co/briaai/RMBG-3.0",
+      "summary": "17 ноября: Bria RMBG-3.0 для удаления фона, открытые веса для некоммерческого использования.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google выпустила Gemini 4 Neon — новую модель для программирования и сложной работы",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "summary": "18 ноября: анонс Gemini 4 Neon и каналов доступа.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ принял пакет Doritos за пистолет. Теперь четверо школьников судятся с полицией и разработчиком",
+      "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+      "summary": "17 ноября: новый иск после ошибочного распознавания пакета чипсов как оружия в 2025 году.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Легенду Minecraft отправили соревноваться с ИИ-агентами",
+      "source_url": "https://www.kradle.ai/",
+      "summary": "18 ноября: KradleBench проверяет действия ИИ-агентов в Minecraft, в том числе с участием SethBling; ссылка на сайт проекта.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Создатель The Sims делает игру, которая превращает ваши воспоминания в виртуальный мир",
+      "source_url": "https://arstechnica.com/gaming/2026/11/will-wrights-next-simulation-will-use-ai-to-mine-content-from-your-memories/",
+      "summary": "18 ноября: Уилл Райт о MyMems и генеративных воспоминаниях; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В заражённые GitHub-репозитории подложили инструкции для Claude Code и других агентов",
+      "source_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign",
+      "summary": "17 ноября: исследование Bitdefender о вредоносных AGENTS.md и CLAUDE.md.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Хакеры заразили официальный Python-пакет Microsoft для ИИ-агентов",
+      "source_url": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi",
+      "summary": "17–18 ноября: вредоносные версии agent-framework в PyPI; исследование Wiz.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американская прокуратура стала доказывать, что адвокаты используют ChatGPT, с помощью ИИ-детектора",
+      "source_url": "https://www.404media.co/the-department-of-justice-is-using-ai-detector-pangram-against-defense-attorneys/",
+      "summary": "17 ноября: Pangram использован для оценки судебных документов; вторичный источник, надёжность детектора требует оговорки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Двум юристам Минюста США грозит дисциплинарное разбирательство из-за ИИ",
+      "source_url": "https://www.reuters.com/legal/government/two-us-justice-department-lawyers-face-misconduct-inquiries-over-ai-use-2026-11-18/",
+      "summary": "17–18 ноября: разбирательства из-за выдуманных цитат и передачи материалов ИИ-системе.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агент стал соистцом человека против собственной компании Meta",
+      "source_url": "https://www.404media.co/a-man-and-his-muse-ai-agent-sue-meta/",
+      "summary": "17 ноября: иск предпринимателя, где указан агент Muse; это не признание правосубъектности ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Каждый третий молодой человек в международном опросе уже пользовался ИИ как другом",
+      "source_url": "https://www.wired.com/story/over-a-third-of-gen-z-rely-on-ai-for-friendship",
+      "summary": "18 ноября: опрос Gallup и Digital Wellness Lab среди молодёжи в 16 странах; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI заявила, что её ИИ улучшил конструкцию чипов AMD до 14%",
+      "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+      "summary": "18 ноября: опыт OpenAI по применению моделей в проектировании чипов, результаты со слов компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Сто ИИ-агентов проверили бухгалтерию крупной компании и местами задавали вопросы лучше аудиторов",
+      "source_url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05",
+      "summary": "18 ноября: эксперимент KPMG с агентами в аудите компании FTSE 250; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA прекратила поставки разрешённых США ИИ-чипов в Китай",
+      "source_url": "https://www.reuters.com/world/china/nvidia-stops-shipping-us-approved-ai-chips-china-2026-11-18/",
+      "summary": "18 ноября: сообщение Reuters об остановке поставок ускорителей NVIDIA в Китай.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Китайские исследователи рассказали, как обучали огромную ИИ-модель без NVIDIA",
+      "source_url": "https://huggingface.co/papers/2611.22115",
+      "summary": "17–18 ноября: исследование TeleChat/Xing4 с Huawei Ascend 910C.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Китайцы подключили ИИ к 21 ветроэлектростанции",
+      "source_url": "https://www.huawei.com/en/news/2026/11/5ga-wind-farm",
+      "summary": "17 ноября: Huawei и China Unicom заявили о применении ИИ, дронов и 5G-A для обслуживания ветрогенераторов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Apple и Cornell научили генератор видео выдавать кадры за 36 миллисекунд",
+      "source_url": "https://huggingface.co/papers/2611.23226",
+      "summary": "18 ноября: исследование FastFrames с лабораторными показателями генерации видео.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Вышла открытая голосовая модель на 40 с лишним языков — всего 500 млн параметров",
+      "source_url": "https://huggingface.co/blog/rumble-2-flash",
+      "summary": "18 ноября: открытая многоязычная модель распознавания речи Rumble-2-Flash.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Krea научилась заменять людей и предметы прямо в готовом видео",
+      "source_url": "https://www.krea.ai/blog/how-to-face-swap-a-video-with-ai",
+      "summary": "17 ноября: Krea Video Swap для правки персонажей и объектов в видео.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Snapchat разрешил Claude Code и Codex самостоятельно создавать AR-маски",
+      "source_url": "https://newsroom.snap.com/introducing-easy-lens-cli",
+      "summary": "18 ноября: Easy Lens CLI для создания AR-эффектов через ИИ-агентов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google AI Studio теперь собирает Android-приложения из текстового запроса",
+      "source_url": "https://developers.googleblog.com/en/build-full-stack-android-apps-with-gemini-in-google-ai-studio/",
+      "summary": "17 ноября: анонс создания Android-приложений через Gemini в AI Studio.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Mistral выпустила настольного ИИ-агента Vibe",
+      "source_url": "https://docs.mistral.ai/resources/release-notes",
+      "summary": "17–18 ноября: десктопный Vibe, работа с файлами и облачными задачами; ссылка на страницу заметок о релизах.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google добавила режим инкогнито для поиска с ИИ",
+      "source_url": "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/",
+      "summary": "18 ноября: временные разговоры в AI Mode Google; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI запустила ChatGPT для продавцов с более чем 30 подключениями",
+      "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/",
+      "summary": "17 ноября: ChatGPT for Sales для CRM, поиска клиентов и подготовки встреч.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI представила специализированную Astra для юристов",
+      "source_url": "https://openai.com/index/astra-law-6-2/",
+      "summary": "17 ноября: юридическая конфигурация Astra for Law с поиском и испытаниями.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Французская газета Le Figaro передаст свои новости и архивы в ChatGPT",
+      "source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/",
+      "summary": "18 ноября: партнёрство OpenAI и Le Figaro по контенту и архивам.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёные хотят заставить ИИ работать с забытыми результатами лабораторных опытов",
+      "source_url": "https://www.prnewswire.com/news-releases/tesorai-raises-5-3-million-to-put-vast-troves-of-untapped-research-data-to-work-302944021.html",
+      "summary": "18 ноября: Tesorai привлекла $5,3 млн на поиск и повторное использование научных данных; сообщение компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI измерила, насколько ИИ ускоряет собственных исследователей",
+      "source_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "summary": "18 ноября: исследование OpenAI об эффективности агентного программирования в ИИ-исследованиях.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
