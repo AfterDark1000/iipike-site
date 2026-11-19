@@ -1201,6 +1201,30 @@
           "source_url": "https://www.heygen.com/research/avatar-6-model"
         }
       ]
+    },
+    {
+      "key": "nato",
+      "name": "NATO",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+          "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
+        }
+      ]
+    },
+    {
+      "key": "ncia",
+      "name": "NATO Communications and Information Agency (NCIA)",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+          "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
+        }
+      ]
     }
   ],
   "products": [
@@ -2374,6 +2398,19 @@
         {
           "article_id": "microsoft-mai-cyber-2-flash-20261117",
           "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
+        }
+      ]
+    },
+    {
+      "key": "openai-daybreak",
+      "name": "Daybreak",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+          "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
         }
       ]
     }
