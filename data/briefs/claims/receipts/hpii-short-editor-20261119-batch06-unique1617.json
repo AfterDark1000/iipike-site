@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch06-unique1617.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-8462329d963e2409",
+      "pool_sequence": 236,
+      "title": "На саммите APEC договорились обсуждать ИИ и данные как отдельную международную проблему",
+      "source_url": "https://www.reuters.com/technology/apec-focuses-safe-responsible-ai-use-chinas-ex-un-envoy-says-2026-11-17",
+      "claimed_at": "2026-11-19T10:42:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f8c6dc90fe1d4657",
+      "pool_sequence": 240,
+      "title": "Восемь научных команд получили гранты на попытки соединить ИИ с квантовыми компьютерами",
+      "source_url": "https://thequantuminsider.com/2026/11/17/bluequbit-names-eight-research-teams-quantum-flywheel",
+      "claimed_at": "2026-11-19T10:42:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-fa5fd15feb7f69e3",
+      "pool_sequence": 243,
+      "title": "В США запустили суперкомпьютер для поиска новых материалов и исследований термоядерной энергии",
+      "source_url": "https://newsroom.amd.com/news/amd-powered-lux-supercomputer-opens-scientific-users",
+      "claimed_at": "2026-11-19T10:42:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ae0ae1e81e6b5f18",
+      "pool_sequence": 246,
+      "title": "Британцы выделили финансирование сразу 20 исследователям ИИ",
+      "source_url": "https://www.ukri.org/news",
+      "claimed_at": "2026-11-19T10:42:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a72dda1b8e97c032",
+      "pool_sequence": 249,
+      "title": "Американская компания сдаст ИИ-дата-центр в аренду за миллиард долларов",
+      "source_url": "https://www.reuters.com/business/energy/giga-energy-signs-1-billion-lease-texas-ai-data-center-with-cloud-provider-2026-11-17",
+      "claimed_at": "2026-11-19T10:42:50+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

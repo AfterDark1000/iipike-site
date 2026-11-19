@@ -3535,12 +3535,12 @@
       "summary": "Сообщение о консенсусе по ответственному применению ИИ и управлению данными.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T14:36:23+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:42:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8462329d963e2409"
     },
     {
       "id": "n-5a8fec6c8020889d",
@@ -3595,12 +3595,12 @@
       "summary": "17 ноября: программа BlueQubit Quantum Flywheel выбрала восемь исследовательских команд.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T14:36:23+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:42:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f8c6dc90fe1d4657"
     },
     {
       "id": "n-0aa64fce32a6a01e",
@@ -3640,12 +3640,12 @@
       "summary": "16 ноября: запуск научного суперкомпьютера Lux на ускорителях AMD.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:42:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fa5fd15feb7f69e3"
     },
     {
       "id": "n-d6ce1fd724864a44",
@@ -3685,12 +3685,12 @@
       "summary": "16 ноября: сообщение о грантах Turing AI Fellowships; ссылка ведёт на общую ленту, проверить конкретный анонс.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:42:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "2026-11-18, решение главреда: Не удалять: возможный кандидат для будущего короткого дайджеста («Новости коротко»). Решение о разделе ещё не принято; формат и отдельная очередь не создаются. Пока остаётся queued/normal; перед использованием нужна проверка фактов."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ae0ae1e81e6b5f18"
     },
     {
       "id": "n-e064cdc0ef6bfc1e",
@@ -3730,12 +3730,12 @@
       "summary": "17 ноября: сообщение о десятилетней аренде 60-мегаваттного дата-центра Giga Energy.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:42:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a72dda1b8e97c032"
     },
     {
       "id": "n-05edd5ffa5c91f76",
