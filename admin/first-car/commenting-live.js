@@ -2,6 +2,7 @@
 
 const firstCarCommenting = (() => {
   const SOURCE = "https://raw.githubusercontent.com/AfterDark1000/iipike-site/commenting-data/commenting/queue.json";
+  const DZEN_INTAKE = "https://raw.githubusercontent.com/AfterDark1000/iipike-site/first-car-data/dzen/queue.json";
   const HOUR = 3_600_000;
   const DIRECT = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
   const ZONED = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
@@ -58,6 +59,29 @@ const firstCarCommenting = (() => {
     }).map((row) => ({ ...row, kind: "dzen", key: row.url, dzen_url: row.url, dzen_published_at: row.published_at }));
   }
 
+  function intakeCandidates(rows, now) {
+    return rows.filter((row) => {
+      const seen = timestamp(row?.first_seen_at);
+      const published = row?.published_at === null ? seen : timestamp(row?.published_at);
+      return row?.source === "manual_dzen" && typeof row.url === "string" && DIRECT.test(row.url)
+        && typeof row.title === "string" && row.title.trim() && published <= seen && seen <= now
+        && now - published <= 24 * HOUR;
+    }).map((row) => ({ ...row, kind: "dzen", key: row.url, dzen_url: row.url, dzen_published_at: row.published_at }));
+  }
+
+  async function readIntake(fetcher = fetch) {
+    const url = new URL(DZEN_INTAKE);
+    url.searchParams.set("t", String(Date.now()));
+    const response = await fetcher(url, {
+      mode: "cors", cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15_000),
+    });
+    if (response.status === 404) return []; // The data branch is created by the first accepted submission.
+    if (!response.ok) throw new Error(`Очередь Дзена вернула HTTP ${response.status}`);
+    const queue = await response.json();
+    if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw new Error("Некорректная очередь Дзена");
+    return queue.articles;
+  }
+
   async function read(fetcher = fetch) {
     const url = new URL(SOURCE);
     url.searchParams.set("t", String(Date.now()));
@@ -69,7 +93,7 @@ const firstCarCommenting = (() => {
     return normalize(queue, Date.now());
   }
 
-  return { normalize, nativeCandidates, read, staleAfter: 90 * 60_000 };
+  return { normalize, nativeCandidates, intakeCandidates, read, readIntake, staleAfter: 90 * 60_000 };
 })();
 
 if (typeof module !== "undefined" && module.exports) module.exports = firstCarCommenting;
