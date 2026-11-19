@@ -1,0 +1,72 @@
+name: HPII — short-editor FIFO claims (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/briefs/claims/requests/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/briefs_claim.py'
+      - 'scripts/editorial_routing.py'
+      - 'data/editorial_routing.json'
+      - 'tests/test_editorial_routing.py'
+      - '.github/workflows/hpii-short-editor-claim.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-short-editor-claim
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python3 scripts/site_news_pool.py --validate
+          python3 scripts/editorial_routing.py --validate
+          python3 -m unittest discover -s tests -p 'test_editorial_routing.py' -v
+          python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
+  reserve:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Atomic short-only reserve and receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/editorial_routing.py --validate
+            python3 scripts/briefs_claim.py --consume --report "$RUNNER_TEMP/hpii-short-claims.json"
+            python3 scripts/site_news_pool.py --validate
+            git add -- data/site_news_pool.json data/briefs/claims/receipts/
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/briefs/claims/receipts/[a-z0-9._-]+\.json)$'; then
+              echo 'UNSAFE: changed path outside pool and short receipts'; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'NO_PENDING_SHORT_REQUEST'; exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore(briefs): reserve one short editorial item and receipt [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'HPII_SHORT_RESERVATION_COMMITTED'
+              cat "$RUNNER_TEMP/hpii-short-claims.json"
+              exit 0
+            fi
+          done
+          echo 'Short claim main changed repeatedly; no unsafe overwrite'; exit 1
