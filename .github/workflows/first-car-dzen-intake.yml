@@ -1,0 +1,75 @@
+name: HPII — add a verified Dzen link to First Car
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Канал Дзена'
+        required: true
+        type: choice
+        options:
+          - gptnul
+          - neirospecialist
+          - negura
+          - id/657ac898254ced4086f33eda
+          - neyrosetiya
+      article_url:
+        description: 'Прямая ссылка на статью https://dzen.ru/a/…'
+        required: true
+      title:
+        description: 'Заголовок статьи'
+        required: true
+      published_at:
+        description: 'Точное время публикации, если проверено (ISO 8601 с часовым поясом)'
+        required: false
+      confirmed:
+        description: 'Проверены канал, ИИ-тема и возраст статьи до 24 часов'
+        type: boolean
+        required: true
+        default: false
+  pull_request:
+    branches: [main]
+    paths:
+      - 'admin/first-car/**'
+      - 'scripts/first_car_dzen_intake.cjs'
+      - 'tests/first_car_admin.test.cjs'
+      - 'tests/first_car_dzen_intake.test.cjs'
+      - '.github/workflows/first-car-dzen-intake.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test-first-car-intake:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: node --check admin/first-car/queue.js
+      - run: node --test tests/first_car_admin.test.cjs tests/first_car_dzen_intake.test.cjs
+  add-dzen-link:
+    if: >-
+      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+      github.actor == github.repository_owner && github.triggering_actor == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const watchlist = require('./admin/first-car/watchlist.json');
+            const { publishArticle } = require('./scripts/first_car_dzen_intake.cjs');
+            const input = context.payload.inputs;
+            const added = await publishArticle(github, context.repo, watchlist, {
+              ...input, confirmed: input.confirmed === 'true',
+            });
+            await core.summary.addHeading(added ? 'Ссылка добавлена' : 'Ссылка уже была в очереди')
+              .addLink('Первый вагон', 'https://iipike.ru/admin/first-car/').write();

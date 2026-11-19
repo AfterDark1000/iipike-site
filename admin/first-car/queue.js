@@ -16,9 +16,11 @@
   const decisions = readDecisions();
   const authorized = () => document.documentElement.classList.contains("hpii-authorized");
   let watchlist = null;
+  let intake = [];
   let snapshot = null;
   let sourceError = false;
   let watchError = false;
+  let intakeError = false;
   let loading = false;
   let view = "queue";
 
@@ -121,31 +123,35 @@
         if (!Array.isArray(data?.channels) || !Array.isArray(data?.articles)) throw Error("Invalid watchlist");
         return data;
       });
-    const [data, research] = await Promise.allSettled([commenting.read(), watch]);
+    const [data, research, links] = await Promise.allSettled([commenting.read(), watch, commenting.readIntake()]);
     loading = false;
     refreshButton.disabled = false;
     if (!authorized()) return;
     sourceError = data.status !== "fulfilled";
     watchError = research.status !== "fulfilled";
+    intakeError = links.status !== "fulfilled";
     snapshot = sourceError ? null : data.value;
     watchlist = watchError ? null : research.value;
+    intake = intakeError ? [] : links.value;
     render();
   }
 
   function candidateRow(row, age) {
     const native = row.kind === "dzen";
+    const manual = row.source === "manual_dzen";
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
     const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
     return `<article class="row candidate">
       <div class="row-top"><span class="muted">${escapeText(row.source_name)}</span><div class="tags">
-        ${status(native ? "Разовый замер Дзена" : "Есть реплика Gemini")}
+        ${status(manual ? "Ссылка подтверждена вручную" : native ? "Разовый замер Дзена" : "Есть реплика Gemini")}
         ${native ? status("Сверить обсуждение", "stale") : !row.dzen_url ? status("Без прямой ссылки на Дзен", "stale") : ""}</div></div>
       <h3>${escapeText(row.title)}</h3>
       <dl>${field(native ? "Опубликовано в Дзене" : "Опубликовано у издателя", dateLabel(row.dzen_published_at ?? row.publisher_published_at))}
         ${field("Возраст статьи", ageLabel(age))}
         ${native ? field("Комментарии в замере", known(row.comments)) + field("Просмотры в замере", known(row.views)) : ""}</dl>
-      <p class="details">${native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
+      <p class="details">${manual ? `Добавлено ${dateLabel(row.first_seen_at)}.` :
+        native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
       ${row.angle ? `<p class="details">${escapeText(row.angle)}</p>` : ""}
       ${draft(row)}
       <div class="actions">
@@ -170,16 +176,20 @@
     const ranges = [[0, 120, "0–2 ч · первый приоритет"], [120, 480, "2–8 ч · основная очередь"],
       [480, 1441, "8–24 ч · поздние возможности"]];
     const tier = ({ row }) => row.comments == null ? 2 : Number(row.comments > 3);
-    return ranges.map(([start, end, label]) => {
-      const group = entries.filter(({ age }) => start <= age && age < end).sort((a, b) => tier(a) - tier(b) || a.age - b.age);
+    const groups = ranges.map(([start, end, label]) => {
+      const group = entries.filter(({ age }) => age !== null && start <= age && age < end)
+        .sort((a, b) => tier(a) - tier(b) || a.age - b.age);
       return group.length ? `<h4 class="age-group">${label}</h4>` + group.map(({ row, age }) => candidateRow(row, age)).join("") : "";
     }).join("");
+    const undated = entries.filter(({ age }) => age === null);
+    return groups + (undated.length ? '<h4 class="age-group">Точное время публикации неизвестно</h4>' +
+      undated.map(({ row, age }) => candidateRow(row, age)).join("") : "");
   }
 
   function render() {
     if (!authorized()) return;
     const now = Date.now();
-    const native = commenting.nativeCandidates(watchlist, now);
+    const native = [...commenting.intakeCandidates(intake, now), ...commenting.nativeCandidates(watchlist, now)];
     const rows = new Map(native.map((row) => [row.key, row]));
     for (const row of snapshot?.candidates ?? []) {
       const previous = rows.get(row.key);
@@ -188,7 +198,8 @@
     }
     const entries = [...rows.values()].map((row) => ({ row,
       age: minutesBetween(exactTime(row.dzen_published_at ?? row.publisher_published_at), now),
-    })).filter(({ age }) => age !== null && age <= 1440).sort((a, b) => a.age - b.age);
+    })).filter(({ row, age }) => age === null ? row.source === "manual_dzen" : age <= 1440)
+      .sort((a, b) => (a.age ?? 1441) - (b.age ?? 1441));
     const sections = ["Статьи с прямой ссылкой на Дзен", "Реплики к статьям издателей"];
     const open = entries.filter(({ row }) => !decisions.has(row.key));
     const handled = entries.filter(({ row }) => decisions.has(row.key));
@@ -199,9 +210,10 @@
     });
     const pane = (index) => {
       const picked = open.filter(({ row }) => (row.kind === "dzen") === (index === 0));
-      const empty = index === 0 ? "В сохранённом замере нет подходящих статей за последние 24 часа." : "Готовых реплик за последние 24 часа нет.";
+      const empty = index === 0 ? "Нет подтверждённых ссылок на статьи за последние 24 часа." : "Готовых реплик за последние 24 часа нет.";
       return `<header class="panel-head ${index > 0 ? "candidate-head" : ""}"><h2>${sections[index]}</h2></header>
         ${index > 0 ? sourceStatus(now) : watchError ? `<p class="source-note">Замер каналов недоступен.</p>` : ""}
+        ${index === 0 && intakeError ? `<p class="source-note">Не удалось прочитать добавленные ссылки Дзена.</p>` : ""}
         ${picked.length ? grouped(picked) : `<p class="section-empty">${empty}</p>`}`;
     };
     panel.innerHTML = view === "channels" ? channelPanel() : pane(0) + pane(1) + (handled.length ?
@@ -241,6 +253,7 @@
   window.addEventListener("hpii-admin-signout", () => {
     snapshot = null;
     watchlist = null;
+    intake = [];
     panel.replaceChildren();
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) void refresh(); });
