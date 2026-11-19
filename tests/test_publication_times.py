@@ -56,7 +56,8 @@ class PublicationTimesTests(unittest.TestCase):
                 path.write_text(content, encoding="utf-8")
             outputs2, report2 = output_map(root)
             self.assertEqual(report2["article_dates_updated"], 0)
-            self.assertEqual(outputs2[dest], outputs[dest])
+            self.assertNotIn(dest, outputs2)
+            self.assertEqual(dest.read_text(encoding="utf-8"), outputs[dest])
 
 
 if __name__ == "__main__":
