@@ -6889,5 +6889,28 @@
     "products": [
       "copilot"
     ]
+  },
+  {
+    "title": "Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже",
+    "summary": "Microsoft представила MAI Cyber 2 Flash для поиска уязвимостей. В тесте CyberGym-E2E модель достигла 92,3% успешных заданий против 91,5% у GPT-6 Astra при затратах менее 2% стоимости конкурента.",
+    "published": "2026-11-19",
+    "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/",
+    "cover": "assets/editorial/microsoft-mai-cyber-2-flash-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🛡️ MICROSOFT научила ИИ ИСКАТЬ УЯЗВИМОСТИ дешевле в 50 раз",
+    "vk_summary": "Microsoft представила MAI Cyber 2 Flash для поиска ошибок безопасности в программном коде. В тесте CyberGym-E2E модель выполнила 92,3% заданий против 91,5% у GPT-6 Astra при затратах менее 2% от конкурента. С середины декабря её начнут подключать к защитным инструментам для проверенных клиентов.",
+    "published_at_utc": "2026-11-19T11:15:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "microsoft-mai-cyber-2-flash-20261117",
+    "url": "articles/microsoft-mai-cyber-2-flash-20261117/",
+    "topics": [
+      "cybersecurity",
+      "models"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": []
   }
 ]
