@@ -3,10 +3,15 @@ on:
   schedule:
     - cron: '7,37 * * * *'
   workflow_dispatch:
+  workflow_run:
+    workflows: ['HPII — watchdog (no publishing)']
+    types: [completed]
+    branches: [main]
   push:
     branches: [main]
     paths:
       - 'scripts/commenting_queue.py'
+      - 'scripts/commenting_recovery.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - '.github/workflows/commenting-queue.yml'
@@ -14,29 +19,51 @@ on:
     branches: [main]
     paths:
       - 'scripts/commenting_queue.py'
+      - 'scripts/commenting_recovery.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - 'admin/index.html'
       - 'tests/test_commenting_queue.py'
       - 'tests/commenting.test.cjs'
+      - 'tests/commenting_recovery.test.cjs'
       - '.github/workflows/commenting-queue.yml'
 permissions:
   contents: read
 concurrency:
-  group: hpii-commenting-queue
+  group: ${{ github.event_name == 'pull_request' && format('hpii-commenting-queue-pr-{0}', github.event.pull_request.number) || 'hpii-commenting-queue' }}
   cancel-in-progress: false
 jobs:
   offline-tests:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event != 'pull_request' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    outputs:
+      recovery_due: ${{ steps.recovery.outputs.due }}
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest discover -s tests -p 'test_commenting_queue.py' -v
-      - run: python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
-      - run: node --test tests/commenting.test.cjs
-      - run: node --check admin/commenting/app.js
+      - name: Check whether the watchdog needs to recover the queue
+        if: github.event_name == 'workflow_run'
+        id: recovery
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { checkRecovery } = require('./scripts/commenting_recovery.cjs');
+            await checkRecovery({github, context, core});
+      - name: Run offline tests before collection
+        if: github.event_name != 'workflow_run' || steps.recovery.outputs.due == 'true'
+        run: |
+          python3 -m unittest discover -s tests -p 'test_commenting_queue.py' -v
+          python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
+          node --test tests/commenting.test.cjs tests/commenting_recovery.test.cjs
+          node --check admin/commenting/app.js
   update-queue:
-    if: github.event_name != 'pull_request'
+    if: >-
+      github.event_name != 'pull_request' &&
+      (github.event_name != 'workflow_run' || needs.offline-tests.outputs.recovery_due == 'true')
     needs: offline-tests
     runs-on: ubuntu-latest
     timeout-minutes: 10

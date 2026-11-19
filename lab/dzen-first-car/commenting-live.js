@@ -59,7 +59,7 @@ const firstCarCommenting = (() => {
     return normalize(queue, Date.now());
   }
 
-  return { normalize, read, staleAfter: 2 * HOUR };
+  return { normalize, read, staleAfter: 90 * 60_000 };
 })();
 
 if (typeof module !== "undefined" && module.exports) module.exports = firstCarCommenting;

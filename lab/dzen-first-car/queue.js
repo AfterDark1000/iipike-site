@@ -155,7 +155,7 @@
     const stale = now - exactTime(sourceSnapshot.updated_at) > commenting.staleAfter;
     const failed = sourceSnapshot.failed.length ? ` · Не обновились: ${escapeText(sourceSnapshot.failed.join(", "))}` : "";
     const last = `Снимок Gemini · ${stamp}${failed}`;
-    return stale ? `<div class="notice" role="status"><strong>Снимок старше 2 часов</strong><span>${last}</span></div>` :
+    return stale ? `<div class="notice" role="status"><strong>Очередь не обновлялась более 90 минут</strong><span>${last}</span></div>` :
       `<p class="source-note" role="status">${last}${loading ? " · обновляем…" : ""}</p>`;
   }
 
@@ -465,6 +465,10 @@
     }
   });
 
-  if (live) void refreshLive();
-  else render();
+  if (live) {
+    void refreshLive();
+    window.setInterval(() => {
+      if (!document.hidden) void refreshLive();
+    }, 5 * minute);
+  } else render();
 })();
