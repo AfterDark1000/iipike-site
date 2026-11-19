@@ -5,6 +5,8 @@ on:
     paths:
       - 'data/briefs/**'
       - 'scripts/build_briefs.py'
+      - 'scripts/release_one_brief.py'
+      - 'tests/test_brief_release_schedule.py'
       - 'scripts/sync_briefs_pool.py'
       - 'tests/test_briefs.py'
       - 'briefs/**'
@@ -39,6 +41,7 @@ jobs:
       - name: Validate independent short-news format and human-approval gate
         run: |
           python3 -m unittest discover -s tests -p 'test_briefs.py' -v
+          python3 -m unittest discover -s tests -p 'test_brief_release_schedule.py' -v
           python3 scripts/build_briefs.py --write
           python3 scripts/build_briefs.py --check
       - name: Prevent changes to the full article publisher
