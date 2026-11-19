@@ -1735,12 +1735,12 @@
       "summary": "14 ноября: новая публикация описывает метод компактного представления истории и документов для моделей.",
       "origin": "ХПИИ — добытчик новостей (контрольный проход 15.11.2026 и два дополнения главреда)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-15T03:19:00.000Z",
       "review_started_at": "2026-11-19T08:48:19+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-43d579b0adbf2540"
+      "closed_at": "2026-11-19T15:08:47Z",
+      "article_id": "stanford-memorilla-16-memory-tokens-20261114",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-43d579b0adbf2540\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/stanford-memorilla-16-memory-tokens-20261114/"
     },
     {
       "id": "n-70e2db13922263ef",
