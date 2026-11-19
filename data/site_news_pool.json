@@ -880,12 +880,12 @@
       "summary": "12 ноября: Майкл Барр предупреждает о рисках для рабочих мест и неравенства.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-13T03:10:00+00:00",
       "review_started_at": "2026-11-19T06:30:41+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6c8dcc4daf751efd"
+      "closed_at": "2026-11-19T09:05:22Z",
+      "article_id": "fed-barr-ai-jobs-inequality-20261112",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6c8dcc4daf751efd\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/fed-barr-ai-jobs-inequality-20261112/"
     },
     {
       "id": "n-f1276fcf4509a500",
