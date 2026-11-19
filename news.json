@@ -7006,5 +7006,32 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100",
+    "summary": "В CyberBinGym ИИ-агенты сравнивали уязвимые и исправленные сборки без исходного кода. Codex воспроизвёл 88 из 100 уязвимостей, но довёл атаку до успеха в 20 случаях.",
+    "published": "2026-11-19",
+    "source_url": "https://rdi.berkeley.edu/blog/cyberbingym/",
+    "cover": "assets/editorial/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp",
+    "rubric": "news",
+    "vk_title": "🛡️ ЗАПЛАТКА выдала путь к взлому",
+    "vk_summary": "В тесте CyberBinGym на 100 реальных уязвимостях Codex воспроизвёл 88 ошибок и успешно использовал 20. Исходный код ему не показывали — только старую и исправленную сборки. Заплатка оказалась полезна и исследователям атак.",
+    "published_at_utc": "2026-11-19T16:15:48Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-07",
+    "id": "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+    "url": "articles/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ],
+    "companies": [
+      "openai",
+      "anthropic"
+    ],
+    "products": [
+      "codex",
+      "claude-code"
+    ]
   }
 ]
