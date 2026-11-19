@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T17:39:01.397079Z",
+  "updated_at": "2026-11-19T18:38:25.987656Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-19T17:39:01.397079Z",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
       "error": null,
       "fresh_matches": 12
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-19T17:39:01.397079Z",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-18T19:22:37.954843Z",
-      "error": "Лента недоступна или не распознана (TimeoutError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "error": null,
+      "fresh_matches": 0
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-19T17:39:01.397079Z",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
       "error": null,
       "fresh_matches": 7
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-19T17:39:01.397079Z",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T17:39:01.397079Z",
-      "last_success_at": "2026-11-19T17:39:01.397079Z",
+      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "last_success_at": "2026-11-19T18:38:25.987656Z",
       "error": null,
       "fresh_matches": 3
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-19",
-    "attempted": 12
+    "attempted": 15
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -112,10 +112,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно выглядит гибрид из фотонного чипа и обычного GPU, но без тестов скорости вся эта красота пока остаётся просто красивой витриной.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-19T18:38:25.987656Z",
+      "reason": "Зацепился за отсутствие цифр производительности у гибридного процессора.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T18:38:25.987656Z"
     },
     {
       "id": "8eee383edd25e0f5dbdece96",
@@ -148,10 +152,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Сроки выхода смартфона на конец 2027 года выглядят так далеко, что к тому моменту и железо, и концепция интерфейса успеют устареть трижды.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-19T18:38:25.987656Z",
+      "reason": "Выделил далекие сроки выпуска первого смартфона OpenAI.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T18:38:25.987656Z"
     },
     {
       "id": "ad828f663c9368c05c1ba5c3",
@@ -233,10 +241,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что модели выдали годовой объём инженерной работы быстрее, чем успевают согласовать хотя бы один нормальный контракт.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-19T18:38:25.987656Z",
+      "reason": "Обратил внимание на скорость оптимизации чипов с помощью ИИ.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T18:38:25.987656Z"
     },
     {
       "id": "feed6ef178d72b77f45f6206",
@@ -2414,65 +2426,6 @@
       "link_status": "dzen_link_missing",
       "fact_review": "passed",
       "generated_at": "2026-11-13T16:13:17.265557Z"
-    },
-    {
-      "id": "52b7314bcbf0a6795fa84ff5",
-      "title": "ИИ ЦОД продолжают перетягивать память на себя — серверные SSD подорожают ещё на 15–20 %",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151231",
-      "published_at": "2026-11-12T18:28:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-12T19:51:36.739952Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Забавно, как дата-центры для искусственного интеллекта зачистили рынок памяти так бодро, что производители бронируют мощности аж до 2028 года. Обычным ПК остаётся только надеяться, что кремний не начнут продавать по талонам.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-13T16:13:17.265557Z",
-      "reason": "Ирония над масштабом дефицита памяти, который провоцируют ИИ-дата-центры, и сроками бронирования мощностей.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-13T16:13:17.265557Z"
-    },
-    {
-      "id": "72c4916f928971f17fc946ab",
-      "title": "ИИ от Google DeepMind научился находить мутации, которые запускают болезни только в определённых клетках",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/12/ii-ot-google-deepmind-naucilsia-naxodit-mutacii-kotorye-zapuskaiut-bolezni-tolko-v-opredelennyx-kletkax.html",
-      "published_at": "2026-11-12T18:17:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-12T19:51:36.739952Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "AlphaGenome 2 от Google DeepMind впечатляет точностью, но особенно забавно выглядит приписка, что модель пока не предназначена для клинической диагностики. Видимо, чтобы врачи не начали ставить диагнозы по утренним сводкам от нейросети.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-13T16:13:17.265557Z",
-      "reason": "Замечание по поводу того, что мощный инструмент генетического анализа официально снимает с себя ответственность за реальную медицину.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-13T16:13:17.265557Z"
-    },
-    {
-      "id": "d7f9bbb404e915f59ffbf217",
-      "title": "Samsung запустила строительство гигантского комплекса по выпуску ИИ-памяти — счёт вложений пошёл на квинтиллионы",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151230",
-      "published_at": "2026-11-12T17:53:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-12T19:51:36.739952Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
     }
   ]
 }
