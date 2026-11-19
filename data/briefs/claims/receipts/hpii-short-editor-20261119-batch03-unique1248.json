@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch03-unique1248.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-0a987bbc824ebf80",
+      "pool_sequence": 100,
+      "title": "LMSYS создала консорциум SGLang с NVIDIA, AMD, Google и Meta",
+      "source_url": "https://www.hpcwire.com/off-the-wire/lmsys-org-forms-sglang-consortium-with-nvidia-amd-google-and-meta/",
+      "claimed_at": "2026-11-19T08:48:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-5db0d3e2ca6e5b64",
+      "pool_sequence": 101,
+      "title": "Block представила совместную работу сотрудников и ИИ-агентов на Builderlab",
+      "source_url": "https://siliconangle.com/2026/11/12/block-builderlab-launch-event-2026-ai-agents-join-team/",
+      "claimed_at": "2026-11-19T08:48:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-40cac42c0e5d26d0",
+      "pool_sequence": 103,
+      "title": "Фанат GTA VI создал ИИ-трейлер игры в Сан-Антонио",
+      "source_url": "https://www.expressnews.com/lifestyle/article/san-antonio-grand-theft-auto-6-trailer-22527547.php",
+      "claimed_at": "2026-11-19T08:48:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-68ac6b2421998e1c",
+      "pool_sequence": 110,
+      "title": "Во Франции учредили литературную премию за книги, созданные с ИИ",
+      "source_url": "https://www.lemonde.fr/en/m-le-mag/article/2026/11/14/new-french-literary-prize-will-reward-work-created-with-ai-help_6780556_117.html",
+      "claimed_at": "2026-11-19T08:48:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-43d579b0adbf2540",
+      "pool_sequence": 116,
+      "title": "Stanford Memorilla сжимает контекст в компактную память для ИИ",
+      "source_url": "https://github.com/snap-stanford/memorilla",
+      "claimed_at": "2026-11-19T08:48:19+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

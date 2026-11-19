@@ -1495,12 +1495,12 @@
       "summary": "13 ноября: участники объявили совместное развитие открытой системы запуска моделей SGLang.",
       "origin": "ХПИИ — добытчик новостей (дневной проход 14.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-14T14:24:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T08:48:19+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Объявление LMSYS через HPCwire; отличается от прежней новости про AWS SGLang-Neuron."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-0a987bbc824ebf80"
     },
     {
       "id": "n-5db0d3e2ca6e5b64",
@@ -1510,12 +1510,12 @@
       "summary": "12 ноября: компания показала рабочие пространства, в которых сотрудники и агенты выполняют задачи вместе.",
       "origin": "ХПИИ — добытчик новостей (дневной проход 14.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-14T14:24:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T08:48:19+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Вторичный источник SiliconANGLE."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-5db0d3e2ca6e5b64"
     },
     {
       "id": "n-09d7bbde32dccb5e",
@@ -1540,12 +1540,12 @@
       "summary": "13 ноября: видеограф Стивен Альварадо представил минутный фанатский трейлер GTA VI, действие которого перенесено в Сан-Антонио.",
       "origin": "ХПИИ — добытчик новостей (дневной проход 14.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-14T14:24:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T08:48:19+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Со слов автора, San Antonio Express-News; неофициальный фанатский проект.\n17.11.2026, решение главреда после полной ревизии: Вторая волна повышения приоритета — кандидат после первичной проверки; текущий normal пока сохраняется."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-40cac42c0e5d26d0"
     },
     {
       "id": "n-bbb025c77e6c6d7a",
@@ -1645,12 +1645,12 @@
       "summary": "14 ноября: Prix Pascal будет отмечать произведения с раскрытым применением ИИ; жюри возглавил Жак Аттали.",
       "origin": "ХПИИ — добытчик новостей (контрольный проход 15.11.2026 и два дополнения главреда)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-15T03:19:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T08:48:19+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Вторичный источник Le Monde.\n17.11.2026, решение главреда после полной ревизии: Вторая волна повышения приоритета — кандидат после первичной проверки; текущий normal пока сохраняется."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-68ac6b2421998e1c"
     },
     {
       "id": "n-207786cdf2f0d885",
@@ -1735,12 +1735,12 @@
       "summary": "14 ноября: новая публикация описывает метод компактного представления истории и документов для моделей.",
       "origin": "ХПИИ — добытчик новостей (контрольный проход 15.11.2026 и два дополнения главреда)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-15T03:19:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T08:48:19+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Возможная старая история; дата оригинального исследования и точность заявления о 16 токенах требуют проверки."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-43d579b0adbf2540"
     },
     {
       "id": "n-70e2db13922263ef",
