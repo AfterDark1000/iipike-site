@@ -1,0 +1,70 @@
+name: HPII — refresh publication-time labels (NO NEW PUBLICATIONS)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backfill_publication_times.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/backfill_publication_times.py'
+      - 'scripts/site_rubrics.py'
+      - 'scripts/site_home.py'
+      - 'scripts/publish_approved_article.py'
+      - 'tests/test_publication_times.py'
+      - '.github/workflows/hpii-publication-time-labels.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-publication-time-labels
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python3 -m unittest discover -s tests -p 'test_publication_times.py' -v
+          python3 scripts/backfill_publication_times.py
+          python3 scripts/site_news_pool.py --validate
+  backfill:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Refresh only visible dates and indexes
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/backfill_publication_times.py --write
+            python3 scripts/build_briefs.py --write
+            python3 scripts/site_news_pool.py --validate
+            git add -- articles/ rubrics/ index.html briefs/
+            if git diff --cached --name-only | grep -Ev '^(index\.html|articles/|rubrics/|briefs/)'; then
+              echo 'UNSAFE: unrelated change'; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'PUBLICATION_TIMES_ALREADY_CURRENT'; exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'site: show local published minutes on existing pages [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'PUBLICATION_TIMES_UPDATED'; exit 0
+            fi
+          done
+          echo 'Concurrent main edits: cannot safely backfill'; exit 1
