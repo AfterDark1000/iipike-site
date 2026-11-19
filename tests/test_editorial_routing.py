@@ -102,6 +102,11 @@ class RoutingTests(unittest.TestCase):
             self.assertEqual(saved["items"][0]["status"], "in_review")
             self.assertEqual(briefs_claim.consume(root, now=NOW), {})
             self.assertEqual(saved, json.loads(path.read_text(encoding="utf-8")))
+            another = requests / "test-short-002.json"
+            another.write_text(req.read_text(encoding="utf-8"), encoding="utf-8")
+            blocked = briefs_claim.consume(root, now=NOW)
+            self.assertEqual(blocked[another.name]["status"], "short_work_in_progress")
+            self.assertEqual(saved, json.loads(path.read_text(encoding="utf-8")))
             req.write_text('{"worker":"evil"}', encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "changed after acknowledgment"):
                 briefs_claim.consume(root, now=NOW)
