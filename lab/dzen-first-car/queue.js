@@ -5,7 +5,7 @@
   const panel = document.querySelector("#panel");
   const storageKey = "dzen-first-car-v1";
   const directArticle = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{16}$/;
-  const channelLink = /^https:\/\/dzen\.ru\/[A-Za-z0-9_.-]+$/;
+  const channelLink = /^https:\/\/dzen\.ru\/(?:[A-Za-z0-9_.-]+|id\/[a-f0-9]{24})$/;
   const guruLink = /^https:\/\/dzen\.guru\/channels\/[A-Za-z0-9_.-]+$/;
   const clock = new Intl.DateTimeFormat("ru-RU", {
     timeZone: "Asia/Yekaterinburg", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", second: "2-digit",
@@ -15,6 +15,14 @@
   const minute = 60_000;
   const freshnessLimit = 15 * minute;
   const decisions = readDecisions();
+  if (data.bridge) {
+    for (const key of decisions.keys()) if (key.startsWith("queue|")) decisions.delete(key);
+    for (const [url, action] of Object.entries(data.decisions)) decisions.set(`queue|${url}`, action);
+    document.querySelector("#storage-note").textContent = "Отметки очереди хранятся в локальной истории";
+  }
+  if (data.replay) {
+    document.querySelector(".local").textContent = "Демо · тестовый прогон";
+  }
   let view = "queue";
 
   function readDecisions() {
@@ -110,8 +118,9 @@
     return `
       <article class="row">
         <div class="row-top"><span class="muted">${escapeText(channelName)}</span>
-          ${status(stored ? decisionText : demo ? "Наблюдалось в архиве" : "Подтверждено", "observed")}</div>
-        <h3>${link(article.url, article.title, directArticle)}</h3>
+          ${status(stored ? decisionText : demo ? "Наблюдалось в архиве" :
+            data.replay ? "Тестовая карточка" : "Подтверждено", "observed")}</div>
+        <h3>${data.replay && !demo ? escapeText(article.title) : link(article.url, article.title, directArticle)}</h3>
         <dl>
           ${field("Опубликовано", dateLabel(article.published_at))}
           ${field("Возраст при находке", ageLabel(age))}
@@ -122,18 +131,21 @@
           · с обсуждениями ${known(channel.discussion_rate, percent)}</p>
         <p class="details">${demo ? "Аудитория не подтверждена. Опубликовано за пределами окна." :
           age <= 30 ? "Найдена в первые 30 минут, обсуждение открыто." : "Найдена в первые 60 минут, обсуждение открыто."}</p>
-        <p class="details">Снимок Дзена · ${dateLabel(article.observed_at)}${demo ? " · определение просмотров не сверено" : ""}</p>
-        <div class="actions">${link(article.url, "Открыть", directArticle, "button primary")}${decisionButtons}</div>
+        <p class="details">${data.replay && !demo ? "Тестовый снимок" :
+          escapeText(article.source || "Снимок Дзена")} · ${dateLabel(article.observed_at)}
+          ${demo ? " · определение просмотров не сверено" : ` · впервые ${dateLabel(article.first_seen_at)}`}</p>
+        <div class="actions">${data.replay && !demo ? "" : link(article.url, "Открыть", directArticle, "button primary")}${decisionButtons}</div>
       </article>`;
   }
 
   function queuePanel(now, entries, pending) {
-    const latest = Math.max(...data.articles.map((item) => exactTime(item.observed_at) ?? -Infinity));
+    const latest = exactTime(data.latest_observed_at) ??
+      Math.max(...data.articles.map((item) => exactTime(item.observed_at) ?? -Infinity));
     const stale = Number.isFinite(latest) && now - latest > freshnessLimit;
     const source = stale ? `<div class="notice"><strong>Источник устарел</strong>
       <span>Последний снимок ${clock.format(latest)}.</span></div>` : "";
     const empty = `<div class="empty"><h2>Сейчас подходящих статей нет</h2>
-      <p>${data.articles.length ? "По сохранённым данным нет новых статей, доступных для отбора." :
+      <p>${data.bridge || data.articles.length ? "По сохранённым данным нет новых статей, доступных для отбора." :
         "Для шести каналов нет сохранённых снимков последних публикаций. Пригодность их статей пока нельзя проверить."}</p>
       <button type="button" class="button" data-view="channels">Посмотреть каналы</button></div>`;
     const handled = entries.filter((article) => decisions.has(`queue|${article.url}`));
@@ -158,11 +170,11 @@
       <article class="row">
         <div class="row-top">
           <h3>${link(channel.url, channel.name, channelLink)}</h3>
-          ${status(...labels[channel.status])}
+          ${channel.stale ? status("Источник устарел", "stale") : status(...labels[channel.status])}
         </div>
         <dl>
           ${field("ИИ-статьи в Дзене", channel.ai_share ?? "Неизвестно")}
-          ${field("Медиана ИИ-статей", known(channel.history?.median_views))}
+          ${field(data.bridge ? "Медиана общего потока" : "Медиана ИИ-статей", known(channel.history?.median_views))}
           ${field("С обсуждениями", known(channel.history?.discussion_rate, percent))}
           ${field("Медиана Guru · справочно", known(channel.guru_median))}
         </dl>
@@ -184,7 +196,7 @@
   }
 
   function render() {
-    const now = Date.now();
+    const now = data.replay ? exactTime(data.as_of) : Date.now();
     const eligible = queueEntries(now);
     const pending = eligible.filter((article) => !decisions.has(`queue|${article.url}`));
     document.querySelector("#queue-count").textContent = pending.length;
@@ -197,7 +209,7 @@
       view === "channels" ? channelPanel() : demoPanel();
   }
 
-  document.addEventListener("click", (event) => {
+  document.addEventListener("click", async (event) => {
     const button = event.target.closest("button");
     if (!button) return;
     if (["queue", "channels", "demo"].includes(button.dataset.view)) {
@@ -207,10 +219,27 @@
     } else if (directArticle.test(button.dataset.url)) {
       const action = button.dataset.decision;
       const key = `${view}|${button.dataset.url}`;
+      const bridge = data.bridge && view === "queue";
+      if (bridge) {
+        const actions = button.closest(".actions").querySelectorAll("button");
+        actions.forEach((item) => { item.disabled = true; });
+        try {
+          const response = await fetch("/decision", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ url: button.dataset.url, action }),
+          });
+          if (!response.ok) throw new Error("Local decision was rejected");
+        } catch {
+          actions.forEach((item) => { item.disabled = false; });
+          document.querySelector("#storage-note").textContent = "Отметка не сохранена. Повторите действие.";
+          return;
+        }
+        document.querySelector("#storage-note").textContent = "Отметка сохранена в локальной истории";
+      }
       if (action === "undo") decisions.delete(key);
       else if (["commented", "skipped"].includes(action)) decisions.set(key, action);
       else return;
-      storeDecisions();
+      if (!bridge) storeDecisions();
       document.querySelector("#announcement").textContent = action === "undo" ?
         "Локальная отметка снята" : "Локальная отметка сохранена";
       render();

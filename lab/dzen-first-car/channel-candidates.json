@@ -1,0 +1,462 @@
+{
+  "description": "Потенциальная база. Тематические сигналы и каталог сами по себе не подтверждают пригодность.",
+  "network_enabled": false,
+  "channels": [
+    {
+      "channel": "appleinsider.ru",
+      "name": "AppleInsider.ru",
+      "url": "https://dzen.ru/appleinsider.ru",
+      "public_profile": "https://dzen.guru/channels/appleinsider.ru",
+      "public_profile_observed_at": "2026-11-18T19:02:31+00:00",
+      "guru_reference_median": 619,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Крупное технологическое медиа. Apple Intelligence, Siri, генерация на iPhone.",
+        "urls": [
+          "https://appleinsider.ru/sluxi/siri-mozhet-stat-ii-agentom-uzhe-v-sleduyushhem-godu-glava-apple-potreboval-uskoritsya.html",
+          "https://appleinsider.ru/tips-tricks/kak-sdelat-svoi-oboi-na-iphone-v-ios-27-s-pomoshhyu-nejroseti.html"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": "https://appleinsider.ru/feed",
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "priority"
+    },
+    {
+      "channel": "mrandroidru",
+      "name": "Mr.Android — эксперт по гаджетам",
+      "url": "https://dzen.ru/mrandroidru",
+      "public_profile": "https://dzen.guru/channels/mrandroidru",
+      "public_profile_observed_at": "2026-11-18T19:02:39+00:00",
+      "guru_reference_median": 378,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологический автор. Применение языковых моделей и мобильные ИИ-сервисы.",
+        "urls": [
+          "https://mrandroid.ru/ai-deciphered-napoleon-letter/",
+          "https://mrandroid.ru/google-gemini-trademark-russia/"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "priority"
+    },
+    {
+      "channel": "androidinsider.ru",
+      "name": "AndroidInsider.ru",
+      "url": "https://dzen.ru/androidinsider.ru",
+      "public_profile": "https://dzen.guru/channels/androidinsider.ru",
+      "public_profile_observed_at": "2026-11-18T19:02:27+00:00",
+      "guru_reference_median": 337,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Локальные нейросети, Gemini и Android.",
+        "urls": [
+          "https://androidinsider.ru/obzory-prilozhenij/vyshla-besplatnaya-nejroset-na-android-kotoraya-rabotaet-bez-interneta-i-ne-slivaet-dannye.html",
+          "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": "https://androidinsider.ru/feed",
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "priority"
+    },
+    {
+      "channel": "poznyaevru",
+      "name": "Блог системного администратора",
+      "url": "https://dzen.ru/poznyaevru",
+      "public_profile": "https://dzen.guru/channels/poznyaevru",
+      "public_profile_observed_at": "2026-11-18T19:08:09+00:00",
+      "guru_reference_median": 303,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Авторский IT-блог. Устройство нейросетей, применение и влияние на профессии.",
+        "urls": [
+          "https://poznyaev.ru/chto-takoe-neyroseti/",
+          "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "priority"
+    },
+    {
+      "channel": "nplus1",
+      "name": "N + 1 — новости науки и технологий",
+      "url": "https://dzen.ru/nplus1",
+      "public_profile": "https://dzen.guru/channels/nplus1",
+      "public_profile_observed_at": "2026-11-18T19:03:02+00:00",
+      "guru_reference_median": 223,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Научное медиа. Языковые модели, машинное обучение в исследованиях и робототехнике.",
+        "urls": [
+          "https://nplus1.ru/blog/2026/09/25/astra-behind-the-wheel/amp",
+          "https://nplus1.ru/news/2026/07/03/genatator"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": "https://nplus1.ru/rss",
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "reserve"
+    },
+    {
+      "channel": "habr_career",
+      "name": "Хабр Карьера",
+      "url": "https://dzen.ru/habr_career",
+      "public_profile": "https://dzen.guru/channels/habr_career",
+      "public_profile_observed_at": "2026-11-18T19:06:41+00:00",
+      "guru_reference_median": 188,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Профессиональное медиа. ИИ в IT-работе и обучении.",
+        "urls": [
+          "https://habr.com/ru/companies/habr_career/articles/1047570/",
+          "https://habr.com/ru/companies/habr_career/articles/985796/"
+        ]
+      },
+      "status": "existing_shortlist",
+      "eligible_for_queue": false,
+      "publisher_rss": "https://habr.com/ru/rss/companies/habr_career/articles/?fl=ru",
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "reserve"
+    },
+    {
+      "channel": "ichip.ru",
+      "name": "ICHIP.RU",
+      "url": "https://dzen.ru/ichip.ru",
+      "public_profile": "https://dzen.guru/channels/ichip.ru",
+      "public_profile_observed_at": "2026-11-18T19:02:34+00:00",
+      "guru_reference_median": 67,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Прикладные обзоры нейросетей и ИИ-инструментов",
+        "urls": [
+          "https://ichip.ru/obzory/programmy-i-prilozheniya/nejroset-po-pyatnicam-razbiraemsya-pochemu-vokrug-deepseek-tak-mnogo-hajpa-902812"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "mts_media",
+      "name": "МТС Редспот",
+      "url": "https://dzen.ru/mts_media",
+      "public_profile": "https://dzen.guru/channels/mts_media",
+      "public_profile_observed_at": "2026-11-18T19:08:06+00:00",
+      "guru_reference_median": 48,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Объяснения и практика работы с нейросетями.",
+        "urls": [
+          "https://media.mts.ru/technologies/214773-chto-nelzya-delat-cherez-nejroseti",
+          "https://media.mts.ru/technologies/214110-chto-takoe-gallyucinacii-iskusstvennogo-intellekta"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "hi-news.ru",
+      "name": "Hi-News.ru",
+      "url": "https://dzen.ru/hi-news.ru",
+      "public_profile": "https://dzen.guru/channels/hi-news.ru",
+      "public_profile_observed_at": "2026-11-18T19:02:36+00:00",
+      "guru_reference_median": 43,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Объяснения технологий машинного обучения",
+        "urls": [
+          "https://hi-news.ru/eto-interesno/kak-iskusstvennyj-intellekt-raspoznaet-izobrazheniya.html"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "naukatv",
+      "name": "Наука",
+      "url": "https://dzen.ru/naukatv",
+      "public_profile": "https://dzen.guru/channels/naukatv",
+      "public_profile_observed_at": "2026-11-18T19:02:57+00:00",
+      "guru_reference_median": 39,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Научное медиа. Прикладной ИИ и новые исследования.",
+        "urls": [
+          "https://naukatv.ru/news/rossijskie_uchenye_perenesli_mekhanizm_samoregulyatsii_mozga_v_nejroset",
+          "https://naukatv.ru/news/openai_pokazala_kak_ii_uskoryaet_razrabotku_elektroniki_i_avtomobilnykh_detalej"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "dp.ru",
+      "name": "Деловой Петербург — свежие новости и видео",
+      "url": "https://dzen.ru/dp.ru",
+      "public_profile": "https://dzen.guru/channels/dp.ru",
+      "public_profile_observed_at": "2026-11-18T19:03:21+00:00",
+      "guru_reference_median": 24,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Применение ИИ в экономике и городской инфраструктуре",
+        "urls": [
+          "https://www.dp.ru/a/2026/10/05/ot-rentgena-do-tramvaja-gde"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "hi-tech.mail.ru",
+      "name": "Hi-Tech Mail",
+      "url": "https://dzen.ru/hi-tech.mail.ru",
+      "public_profile": "https://dzen.guru/channels/hi-tech.mail.ru",
+      "public_profile_observed_at": "2026-11-18T19:02:48+00:00",
+      "guru_reference_median": 18,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Отдельная редакционная рубрика ИИ.",
+        "urls": [
+          "https://hi-tech.mail.ru/rubric/ai/",
+          "https://hi-tech.mail.ru/tags/iskusstvennyyintellekt/"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "digitalocean",
+      "name": "Цифровой Океан",
+      "url": "https://dzen.ru/digitalocean",
+      "public_profile": "https://dzen.guru/channels/digitalocean",
+      "public_profile_observed_at": "2026-11-18T18:47:05Z",
+      "guru_reference_median": 15,
+      "topic_signal": {
+        "kind": "dzen_publications",
+        "theme": "Технологическое медиа. Прикладной ИИ, генеративное кино и использование фотографий.",
+        "urls": [
+          "https://dzen.ru/a/avyNN1o7XEG5ONPT",
+          "https://github.com/AfterDark1000/iipike-site/blob/1d25575662dd80a17840d4aacbe72f8918750732/docs/DZEN_DISCOVERY_STAGE_A5.md"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "kod",
+      "name": "Код.ру",
+      "url": "https://dzen.ru/kod",
+      "public_profile": "https://dzen.guru/channels/kod",
+      "public_profile_observed_at": "2026-11-18T19:07:57+00:00",
+      "guru_reference_median": 10,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. ИИ-продукты и встроенные помощники.",
+        "urls": [
+          "https://kod.ru/2gis-zapis-na-uslugi/amp",
+          "https://kod.ru/sber-predstavil-gigachat-ultra/amp"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "nakedscience",
+      "name": "Naked Science",
+      "url": "https://dzen.ru/nakedscience",
+      "public_profile": "https://dzen.guru/channels/nakedscience",
+      "public_profile_observed_at": "2026-11-18T19:02:59+00:00",
+      "guru_reference_median": 10,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Исследования и новости о машинном обучении",
+        "urls": [
+          "https://naked-science.ru/tags/yandeks-2"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "forbes.ru",
+      "name": "Forbes Russia",
+      "url": "https://dzen.ru/forbes.ru",
+      "public_profile": "https://dzen.guru/channels/forbes.ru",
+      "public_profile_observed_at": "2026-11-18T19:03:24+00:00",
+      "guru_reference_median": 5,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. ИИ в банкинге и регулировании.",
+        "urls": [
+          "https://blogs.forbes.ru/2026/11/17/kak-ii-menjaet-banking-i-pochemu-nastojashhaja-transformacija-tolko-nachinaetsja/",
+          "https://blogs.forbes.ru/2026/10/29/opasnoe-uskorenie-regulirovanie-ii-ne-spaset-biznes-ot-kiberugroz/"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "incrussia.ru",
+      "name": "Инк.",
+      "url": "https://dzen.ru/incrussia.ru",
+      "public_profile": "https://dzen.guru/channels/incrussia.ru",
+      "public_profile_observed_at": "2026-11-18T19:03:18+00:00",
+      "guru_reference_median": 5,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. Внедрение ИИ и инвестиции компаний.",
+        "urls": [
+          "https://incrussia.ru/news/rossijskij-biznes-stolknulsya-s-trudnostyami-pri-vnedrenii-ii/",
+          "https://incrussia.ru/news/rashody-amerikanskih-kompanij-na-ii-dostigli-rekorda/"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "bfm.ru",
+      "name": "BFM.ru",
+      "url": "https://dzen.ru/bfm.ru",
+      "public_profile": "https://dzen.guru/channels/bfm.ru",
+      "public_profile_observed_at": "2026-11-18T19:03:16+00:00",
+      "guru_reference_median": 3,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. Агентная экономика и рынки ИИ.",
+        "urls": [
+          "https://www.bfm.ru/amp/news/623582",
+          "https://www.bfm.ru/amp/news/617917"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "below_pilot_median"
+    },
+    {
+      "channel": "clubdns",
+      "name": "Клуб DNS",
+      "url": "https://dzen.ru/clubdns",
+      "public_profile": "https://dzen.guru/channels/clubdns",
+      "public_profile_observed_at": "2026-11-18T19:08:02+00:00",
+      "guru_reference_median": null,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое сообщество. Отдельная рубрика об ИИ в приложениях и гаджетах.",
+        "urls": [
+          "https://club.dns-shop.ru/blog/t-415-neiroseti-i-ai/183100-kak-otkluchit-ii-v-prilojeniyah-i-gadjetah/",
+          "https://club.dns-shop.ru/digest/120036-v-prilojenii-2gis-poyavilsya-iskusstvennyii-intellekt/"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "possible_mean_fallback",
+      "previous_portfolio_status": "unverified_median"
+    },
+    {
+      "channel": "ixbt.live",
+      "name": "IXBT Live",
+      "url": "https://dzen.ru/ixbt.live",
+      "public_profile": "https://dzen.guru/channels/ixbt.live",
+      "public_profile_observed_at": "2026-11-18T19:07:59+00:00",
+      "guru_reference_median": null,
+      "topic_signal": {
+        "kind": "publisher_site",
+        "theme": "Технологическое сообщество. Обзоры и сравнения ИИ-сервисов.",
+        "urls": [
+          "https://www.ixbt.com/live/sw/google-anonsirovala-gemini-38-live-i-extended-thinking-ii-sposoben-vosprinimat-vizualnuyu-informaciyu-i-reshat-zadachi-pryamo-v-hode-dialoga.amp.html",
+          "https://www.ixbt.com/live/sw/kakaya-neyroset-luchshe-sravnivaem-chatgpt-claude-gemini-i-deepseek.html"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "possible_mean_fallback",
+      "previous_portfolio_status": "unverified_median"
+    },
+    {
+      "channel": "neuro_progressor",
+      "name": "нейро Прогрессор || HR, бизнес и нейросети || Валерия Кравченко",
+      "url": "https://dzen.ru/neuro_progressor",
+      "public_profile": "https://dzen.guru/channels/neuro_progressor",
+      "public_profile_observed_at": "2026-11-18T19:06:49+00:00",
+      "guru_reference_median": null,
+      "topic_signal": {
+        "kind": "author_feed",
+        "theme": "Авторские примеры применения ИИ в HR и бизнесе",
+        "urls": [
+          "https://rutube.ru/channel/67537775/"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "possible_mean_fallback",
+      "previous_portfolio_status": "unverified_median"
+    },
+    {
+      "channel": "na_sviazi",
+      "name": "На свяZи",
+      "url": "https://dzen.ru/na_sviazi",
+      "public_profile": "https://dzen.guru/channels/na_sviazi",
+      "public_profile_observed_at": "2026-11-18T19:02:42+00:00",
+      "guru_reference_median": 14333,
+      "topic_signal": {
+        "kind": "author_feed",
+        "theme": "Технологический автор. Практический обзор HyperAI; второй самостоятельный материал не подтверждён.",
+        "urls": [
+          "https://t.me/s/na_sviazi/3862"
+        ]
+      },
+      "status": "discovery_only",
+      "eligible_for_queue": false,
+      "publisher_rss": null,
+      "guru_metric_quality": "guru_faq_median",
+      "previous_portfolio_status": "unverified_recurring_ai"
+    }
+  ]
+}

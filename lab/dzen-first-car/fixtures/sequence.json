@@ -1,0 +1,229 @@
+{
+  "description": "Синтетический тестовый поток. Не данные Дзена.",
+  "steps": [
+    {
+      "step": "mature_history",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T09:45:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000001",
+            "channel": "demo-channel",
+            "title": "Демо: зрелая статья 1",
+            "published_at": "2026-11-18T09:00:00Z",
+            "ai": false,
+            "views": 330,
+            "comments": 0,
+            "comments_open": true
+          },
+          {
+            "url": "https://dzen.ru/a/demo000000000002",
+            "channel": "demo-channel",
+            "title": "Демо: зрелая статья 2",
+            "published_at": "2026-11-18T03:00:00Z",
+            "ai": true,
+            "views": 450,
+            "comments": 2,
+            "comments_open": true
+          },
+          {
+            "url": "https://dzen.ru/a/demo000000000003",
+            "channel": "demo-channel",
+            "title": "Демо: зрелая статья 3",
+            "published_at": "2026-11-18T00:15:00Z",
+            "ai": false,
+            "views": 500,
+            "comments": 1,
+            "comments_open": true
+          },
+          {
+            "url": "https://dzen.ru/a/demo000000000004",
+            "channel": "demo-channel",
+            "title": "Демо: зрелая статья 4",
+            "published_at": "2026-11-17T18:30:00Z",
+            "ai": true,
+            "views": 800,
+            "comments": 3,
+            "comments_open": true
+          },
+          {
+            "url": "https://dzen.ru/a/demo000000000005",
+            "channel": "demo-channel",
+            "title": "Демо: зрелая статья 5",
+            "published_at": "2026-11-17T15:00:00Z",
+            "ai": false,
+            "views": 1100,
+            "comments": 0,
+            "comments_open": true
+          }
+        ]
+      }
+    },
+    {
+      "step": "first_seen_at_10_minutes",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T10:10:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000006",
+            "channel": "demo-channel",
+            "title": "Демо: новая ИИ-статья",
+            "published_at": "2026-11-19T10:00:00Z",
+            "ai": true,
+            "views": 0,
+            "comments": 0,
+            "comments_open": true
+          }
+        ]
+      }
+    },
+    {
+      "step": "same_snapshot",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T10:10:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000006",
+            "channel": "demo-channel",
+            "title": "Демо: новая ИИ-статья",
+            "published_at": "2026-11-19T10:00:00Z",
+            "ai": true,
+            "views": 0,
+            "comments": 0,
+            "comments_open": true
+          }
+        ]
+      }
+    },
+    {
+      "step": "views_and_comments_grew",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T10:27:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000006",
+            "channel": "demo-channel",
+            "title": "Демо: новая ИИ-статья",
+            "published_at": "2026-11-19T10:00:00Z",
+            "ai": true,
+            "views": 150,
+            "comments": 2,
+            "comments_open": true
+          }
+        ]
+      },
+      "mark_after": {
+        "url": "https://dzen.ru/a/demo000000000006",
+        "action": "commented"
+      }
+    },
+    {
+      "step": "handled_within_60_minutes",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T10:42:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000006",
+            "channel": "demo-channel",
+            "title": "Демо: новая ИИ-статья",
+            "published_at": "2026-11-19T10:00:00Z",
+            "ai": true,
+            "views": 400,
+            "comments": 3,
+            "comments_open": true
+          }
+        ]
+      }
+    },
+    {
+      "step": "late",
+      "snapshot": {
+        "schema_version": 1,
+        "source": "saved_replay_fixture",
+        "source_policy": {
+          "status": "fixture",
+          "metrics_verified": true
+        },
+        "observed_at": "2026-11-19T11:05:00Z",
+        "channels": [
+          {
+            "channel": "demo-channel",
+            "name": "Демо-канал"
+          }
+        ],
+        "articles": [
+          {
+            "url": "https://dzen.ru/a/demo000000000006",
+            "channel": "demo-channel",
+            "title": "Демо: новая ИИ-статья",
+            "published_at": "2026-11-19T10:00:00Z",
+            "ai": true,
+            "views": 800,
+            "comments": 18,
+            "comments_open": true
+          }
+        ]
+      }
+    }
+  ]
+}

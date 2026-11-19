@@ -58,6 +58,10 @@ class YandexMetrikaTests(unittest.TestCase):
             parser = ScriptSources()
             parser.feed(html)
             matches = [x for x in parser.script_srcs if "social-footer.js" in x]
+            if page == ROOT / "lab" / "dzen-first-car" / "index.html":
+                # The queue is a local replay utility and must stay offline.
+                self.assertEqual(matches, [], str(page.relative_to(ROOT)))
+                continue
             self.assertEqual(len(matches), 1, str(page.relative_to(ROOT)))
             self.assertEqual((page.parent / matches[0]).resolve(), SHARED.resolve(),
                              str(page.relative_to(ROOT)))
