@@ -495,6 +495,71 @@
       "source": "TechCrunch",
       "source_url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/",
       "fact_check": "TechCrunch exclusive direct startup interview 17 Nov 2026: $4.7m seed, agent calls 30min prior, separate text fallback, 20% reduction in missed deliveries per company; not independently validated."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 274,
+      "pool_id": "n-e04686f80cf8e47e",
+      "slug": "voyage-labs-atlas-travel-agent-12m-20261117",
+      "headline": "Экс-руководитель Google Maps получил $12 млн на ИИ-турагента Atlas",
+      "body": "Стартап Voyage Labs бывшего руководителя Google Maps Маника Гупты привлёк $12 млн на ИИ-помощника Atlas. Он планирует поездку, подбирает билеты и жильё, следит за изменением цен и расписания уже после бронирования. Общение может продолжаться неделями: агент запоминает предпочтения путешественника. Atlas работает в iMessage и вебе, но пока доступен только в закрытой бета-версии по списку ожидания.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-17",
+      "source": "Voyage Labs / PRNewswire",
+      "source_url": "https://www.prnewswire.com/news-releases/voyage-labs-raises-12m-to-build-atlas-a-personal-ai-agent-that-helps-people-experience-more-of-the-world-302941872.html",
+      "fact_check": "Official Voyage Labs press release Nov17, $12m seed Kleiner Perkins, private beta waitlist Atlas iMessage web, flight/hotel booking and monitoring company claims, founder Manik Gupta formerly director Google Maps."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 275,
+      "pool_id": "n-2fb55c3571a040c5",
+      "slug": "model-ml-banking-agents-250m-20261117",
+      "headline": "ИИ для инвестиционных банкиров привлёк $250 млн",
+      "body": "Лондонский стартап Model ML получил $250 млн инвестиций при оценке в $1,5 млрд. Его ИИ-агенты готовят финансовые модели, презентации и документы для проверки сделок, используя данные и программы самого банка, включая Excel и PowerPoint. Компания заявляет, что агенты способны обновлять расчёты при появлении важных новостей. Раунд возглавили General Atlantic и QED Investors; общий объём привлечённых средств достиг $350 млн.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-17",
+      "source": "General Atlantic / Model ML",
+      "source_url": "https://www.generalatlantic.com/media-article/model-ml-raises-250-million-at-1-5-billion-valuation-18-months-after-launching-from-stealth/",
+      "fact_check": "Primary Nov17 release $250m Series B $1.5bn valuation, co-led General Atlantic QED, total $350m, firm-integrated AI agents. Operational capabilities per vendor, no independent performance confirmation."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 278,
+      "pool_id": "n-29e7b0bd1f83d595",
+      "slug": "tencent-us-chip-curbs-next-ai-model-20261118",
+      "headline": "Tencent предупредила: ограничения США задержат обучение следующей ИИ-модели",
+      "body": "Президент Tencent Мартин Лау 18 ноября заявил, что новые американские ограничения на удалённый доступ к мощным ИИ-чипам могут замедлить обучение следующей модели компании. При этом Tencent не ожидает серьёзного падения доходов облачного подразделения: там уже используют местные чипы преимущественно для запуска готовых моделей. В долгосрочной перспективе, по словам Лау, запреты ускорят развитие китайских производителей ускорителей.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "Reuters / Straits Times",
+      "source_url": "https://www.straitstimes.com/business/tencent-says-new-us-chip-curbs-wont-hurt-cloud-revenue-may-slow-model-training",
+      "fact_check": "Reuters reporting executive comments in Tencent earnings call Nov18: Martin Lau next model training likely slows; James Mitchell cloud inference domestic chips, no substantial effect on cloud revenues; outlook not yet confirmed impact."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 279,
+      "pool_id": "n-a1083ec54cdb520a",
+      "slug": "malaysia-us-ai-chip-datacenter-compliance-20261118",
+      "headline": "Малайзия предупредила дата-центры: американские правила для ИИ-чипов придётся соблюдать",
+      "body": "Министр торговли Малайзии Джохари Абдул Гани 18 ноября заявил, что операторы местных дата-центров должны соблюдать экспортные ограничения США, если используют американские ИИ-ускорители. Власти планируют уведомить все 117 одобренных проектов, когда получат официальные разъяснения Вашингтона. Пока страна уточняет, как новые лицензии затронут не только поставки чипов, но и аренду вычислительных мощностей иностранным клиентам.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "Bernama",
+      "source_url": "https://web27.bernama.com/bernamabiz/news.php?id=2636201",
+      "fact_check": "Direct minister Johari remarks to Malaysian Bernama reporters Nov18, 117 approved data centre projects, clarifications pending US, compliance for US chips and third-party data-centre services. Do not frame as Malaysian independent export rules."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 289,
+      "pool_id": "n-077945a9711f1a20",
+      "slug": "fed-fomc-minutes-ai-investment-risk-20261118",
+      "headline": "Почти все участники заседания ФРС обсудили риск разочарования инвесторов в ИИ",
+      "body": "В опубликованном 18 ноября протоколе октябрьского заседания ФРС почти все участники обсуждали сценарий, при котором инвестиции в ИИ не оправдают ожиданий. Чиновников беспокоит быстрый рост долгов на строительство ИИ-инфраструктуры и сложные схемы финансирования, способные усилить потери при падении цен на активы. При этом сотрудники ФРС считают банковскую систему достаточно устойчивой к тяжёлым потрясениям. Речь идёт об оценке риска, а не прогнозе неизбежного обвала.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "Federal Reserve / FOMC Minutes",
+      "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm",
+      "fact_check": "Primary Fed minutes published Nov18 from Oct27-28 meeting: almost all participants financial stability AI disappointment risks; opaque debt financing, bank resilience noted. Related existing full article fed-warsh-ai-economy-scenarios-20261116 about Fed chair's separate comments; potential thematic overlap but substantively new official meeting minutes."
     }
   ]
 }
