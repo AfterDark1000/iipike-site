@@ -12,7 +12,7 @@ from scripts import build_briefs, site_news_pool
 ROOT = Path(__file__).resolve().parents[1]
 
 def synchronized(root):
-    rows = build_briefs.validated(root)
+    rows = build_briefs.released_rows(root)
     path = root / "data/site_news_pool.json"
     pool = json.loads(path.read_text(encoding="utf-8"))
     site_news_pool.validate(pool)
