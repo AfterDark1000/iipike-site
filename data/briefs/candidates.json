@@ -300,6 +300,71 @@
       "source": "OpenAI",
       "source_url": "https://openai.com/index/the-kings-trust-and-openai/",
       "fact_check": "OpenAI Nov 16 2026: £1m donation, up to 25k over 18 months, priority NEET, nationally recognized qualifications being developed."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 201,
+      "pool_id": "n-e5757b335efc56a8",
+      "slug": "meituan-longcat-avatar-16-20261115",
+      "headline": "Meituan научила ИИ-аватаров говорить на видео дольше десяти минут",
+      "body": "Китайская Meituan выпустила LongCat-Video-Avatar 1.6 — открытую модель, создающую видео говорящего человека по изображению и звуковой дорожке. Разработчики заявляют о более естественных движениях губ и лица и устойчивости изображения в роликах длительностью свыше десяти минут. Код и веса доступны для загрузки. В собственном сравнении команды модель заняла второе место среди шести систем, уступив OmniHuman 2.0.",
+      "topic": "Технологии",
+      "event_date": "2026-11-15",
+      "source": "Meituan LongCat",
+      "source_url": "https://github.com/meituan-longcat/LongCat-Video",
+      "fact_check": "Official GitHub changelog dated Nov 15, HuggingFace model card: >10 min, lip sync, weights and code available, vendor-run human preference 33051 judgments 2nd of six. Do not represent as independent benchmark."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 204,
+      "pool_id": "n-eab8cb02f723379b",
+      "slug": "popnow-protect-refund-credits-20261113",
+      "headline": "PopNow обещает возвращать кредиты за сбои при генерации видео",
+      "body": "Сервис PopNow представил Protect — программу возврата кредитов за неудачные генерации изображений, видео и аудио. Если задача завершилась ошибкой или результат не совпал с заказанными размером, длительностью или форматом, сервис обещает вернуть потраченные кредиты. За превышение указанного времени генерации предусмотрена отдельная компенсация. Но плохое качество картинки или несходство с текстовым запросом гарантия не покрывает.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-13",
+      "source": "PopNow Protect",
+      "source_url": "https://popnow.ai/protect",
+      "fact_check": "Official PopNow Protect terms updated Nov 13, 2026: refunds as in-app credits for failed and objectively wrong-spec generations; speed rewards only when timing guarantee displayed, capped; taste/style/prompt interpretation excluded. Publicity claims, not independently verified payments."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 213,
+      "pool_id": "n-f60757c71353b675",
+      "slug": "noriki-ai-built-lab-ops-app-20261115",
+      "headline": "Учёный собрал с помощью ИИ замену Slack и таблицам для своей лаборатории",
+      "body": "Исследователь, публикующийся под именем Noriki, показал собственное приложение для управления лабораторией. По его словам, он написал его при помощи Claude Code и Codex, собрав в одном месте рабочий чат, календарь, права доступа, учёт оборудования и закупки. Раньше для этих задач команда использовала Slack и электронные таблицы. О работе системы известно по демонстрации самого автора.",
+      "topic": "Технологии",
+      "event_date": "2026-11-15",
+      "source": "Noriki / WhatPeopleMade",
+      "source_url": "https://www.whatpeoplemade.com/i/a-lab-operations-app-replaced-slack-and-spreadsheets-891966.html",
+      "fact_check": "Curated summary embeds original author Noriki @noriki_m post 15 November 2026; assistant professor PI NIT. Author's account, not audited productivity claims or public product. Original X post 2121947174082891966 inaccessible."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 225,
+      "pool_id": "n-a88aae871bc0b36e",
+      "slug": "noeri-choi-guestrin-110m-ai-20261116",
+      "headline": "Профессора Стэнфорда привлекли $110 млн на ИИ, которым владеет заказчик",
+      "body": "Исследователи Йеджин Чой и Карлос Гестрин основали Noeri и привлекли $110 млн инвестиций. Стартап разрабатывает системы, которые учатся на задачах конкретной компании и улучшают её ИИ-агентов, инструменты и модели. Вместо зависимости от одного универсального поставщика Noeri предлагает предприятиям создавать собственные специализированные решения. Раунд возглавил Menlo Ventures, среди инвесторов — NVIDIA и Snowflake.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-16",
+      "source": "Noeri / Madrona",
+      "source_url": "https://www.madrona.com/the-system-for-ai-systems-our-day-one-investment-in-noeri/",
+      "fact_check": "Investor Madrona announcement Nov 16 2026, startup own website: $110M led Menlo Ventures, NVIDIA Snowflake strategic, founders Yejin Choi Carlos Guestrin Stanford. Ownership of custom data and workflow models subject to third-party licenses; no claim product proven."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 233,
+      "pool_id": "n-aca925b15bf1ae05",
+      "slug": "audible-ai-audio-discovery-20261116",
+      "headline": "Audible начала озвучивать краткие ИИ-обзоры аудиокниг",
+      "body": "Audible представила Audio Discovery: перед выбором аудиокниги можно прослушать короткую подборку из фрагмента произведения, рассказа о его темах и того, что понравилось слушателям. Обзор озвучивает искусственный голос, а комментарии авторов берут из настоящих интервью. Функцию начали постепенно добавлять к отдельным англоязычным книгам в США. Отдельно Audible расширяет тесты вопросов по сюжету и кратких пересказов без спойлеров.",
+      "topic": "Культура",
+      "event_date": "2026-11-16",
+      "source": "Audible",
+      "source_url": "https://www.audible.com/about/newsroom/audible-personalizes-how-listeners-find-explore-and-return-to-stories",
+      "fact_check": "Official Audible announcement Nov 16 2026. Audio discovery overview AI voice plus real audiobook samples and author interviews, rollout select English language US titles. Ask a Question and Recaps limited US and broaden December."
     }
   ]
 }
