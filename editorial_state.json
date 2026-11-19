@@ -186,6 +186,12 @@
       "utc_date": "2026-11-18",
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/",
       "source_title": "Stitch Loop: a long-running product agent that connects to codebase and metrics"
+    },
+    {
+      "id": "c9098ac47ad213215e81",
+      "utc_date": "2026-11-19",
+      "source_url": "https://blog.cloudflare.com/open-clairic/",
+      "source_title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team"
     }
   ]
 }

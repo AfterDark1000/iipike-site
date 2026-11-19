@@ -1,5 +1,12 @@
 [
   {
+    "id": "c9098ac47ad213215e81",
+    "date": "2026-11-19",
+    "title": "Cloudflare показала две открытые нейросети Clairic для чтения таблиц, чеков и документов",
+    "source_name": "Cloudflare",
+    "source_url": "https://blog.cloudflare.com/open-clairic/"
+  },
+  {
     "id": "361479cc0a0b93ad5d29",
     "date": "2026-11-18",
     "title": "GoogleLabs выпустила StitchLoop: ИИ-агент сам чинит код и правит ошибки круглые сутки",
