@@ -1135,12 +1135,12 @@
       "summary": "12 ноября: LiquidCodec преобразует речь в токены для голосовых моделей и рассчитан на быструю потоковую работу.",
       "origin": "ХПИИ — добытчик новостей (контрольный и культурный проходы 13.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-13T16:36:00.299Z",
       "review_started_at": "2026-11-19T06:30:41+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-c4e189afed1eb43b"
+      "closed_at": "2026-11-19T10:23:35Z",
+      "article_id": "liquidai-liquidcodec-74m-20261112",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c4e189afed1eb43b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/liquidai-liquidcodec-74m-20261112/"
     },
     {
       "id": "n-a5c415bbb6839fc6",
