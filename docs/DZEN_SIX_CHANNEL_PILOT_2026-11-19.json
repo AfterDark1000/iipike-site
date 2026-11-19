@@ -1,0 +1,807 @@
+{
+  "report_date_local": "2026-11-19",
+  "timezone": "Asia/Yekaterinburg",
+  "policy": {
+    "robots_url": "https://dzen.ru/robots.txt",
+    "robots_http_status": 200,
+    "robots_sha256": "a6e7d16a66dcbbfe8d64ec966726922ac7736fd28f3a4b5bede7897992c92086",
+    "terms_url": "https://dzen.ru/legal/ru/termsofuse/index.html",
+    "terms_http_status": 200,
+    "terms_revision": "2026-11-12",
+    "terms_sha256": "e02596e5379727da4825f8d32a3912a4c08939541ea912c085fc4ef6f3c71cd9",
+    "diagnostic_scope": "single_anonymous_metadata_request_per_channel",
+    "regular_use_status": "permission_not_established",
+    "feedback_url": "https://dzen.ru/help/ru/troubleshooting/feedback.html"
+  },
+  "totals": {
+    "channels_requested": 6,
+    "channels_with_cards": 6,
+    "cards": 123,
+    "native_articles": 112,
+    "ai_articles": 7,
+    "channels_with_observed_ai": 4,
+    "ai_articles_with_comments": 7,
+    "channels_confirmed_for_early_queue": 0,
+    "potential_early_windows": 0
+  },
+  "channels": [
+    {
+      "channel": "appleinsider.ru",
+      "publisher_title": "AppleInsider.ru",
+      "channel_url": "https://dzen.ru/appleinsider.ru",
+      "request": "2026-11-19T10:06:23+00:00",
+      "response": "2026-11-19T10:06:26+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=appleinsider.ru",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 358692,
+      "cards": 20,
+      "native_articles": 20,
+      "excluded_cards": {},
+      "publication_period": {
+        "oldest": "2026-11-16T18:20:56+00:00",
+        "newest": "2026-11-19T09:50:52+00:00",
+        "span_hours": 63.499
+      },
+      "ai_articles": 0,
+      "ai_share_of_returned_articles": 0.0,
+      "newest_ai_published_at": null,
+      "ai_articles_with_comments": 0,
+      "ai_articles_comments_known": 0,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 1,
+      "native_articles_with_comments": 10,
+      "native_articles_comments_known": 20,
+      "native_articles_views_known": 20,
+      "guru_reference": {
+        "median": 619,
+        "metric_url": "https://dzen.guru/channels/appleinsider.ru",
+        "observed_at": "2026-11-18T19:02:31+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 8,
+          "views_known": 8,
+          "comments_known": 8,
+          "median_views": 1110.5,
+          "discussed": 5,
+          "discussion_rate": 0.625,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 4,
+          "views_known": 4,
+          "comments_known": 4,
+          "median_views": 1128.5,
+          "discussed": 3,
+          "discussion_rate": 0.75,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        }
+      ],
+      "older_age_cohorts_hours": [],
+      "ai_age_cohorts_hours": [],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "В первой странице нет статьи с подтверждённой ИИ-темой. Сопоставимая группа общего потока активна.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [
+        {
+          "url": "https://dzen.ru/a/av1PzM3gh2vpqyH1",
+          "reason": "Анонс носимого гаджета с Алисой. Доступное превью не подтверждает, что ИИ — основная тема."
+        }
+      ],
+      "ai_observations": []
+    },
+    {
+      "channel": "androidinsider.ru",
+      "publisher_title": "AndroidInsider.ru",
+      "channel_url": "https://dzen.ru/androidinsider.ru",
+      "request": "2026-11-19T10:06:28+00:00",
+      "response": "2026-11-19T10:06:30+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=androidinsider.ru",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 360500,
+      "cards": 20,
+      "native_articles": 20,
+      "excluded_cards": {},
+      "publication_period": {
+        "oldest": "2026-11-16T11:00:31+00:00",
+        "newest": "2026-11-19T09:05:31+00:00",
+        "span_hours": 70.083
+      },
+      "ai_articles": 1,
+      "ai_share_of_returned_articles": 0.05,
+      "newest_ai_published_at": "2026-11-18T16:30:28+00:00",
+      "ai_articles_with_comments": 1,
+      "ai_articles_comments_known": 1,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 0,
+      "native_articles_with_comments": 12,
+      "native_articles_comments_known": 20,
+      "native_articles_views_known": 20,
+      "guru_reference": {
+        "median": 337,
+        "metric_url": "https://dzen.guru/channels/androidinsider.ru",
+        "observed_at": "2026-11-18T19:02:27+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 5,
+          "views_known": 5,
+          "comments_known": 5,
+          "median_views": 493,
+          "discussed": 4,
+          "discussion_rate": 0.8,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 8,
+          "views_known": 8,
+          "comments_known": 8,
+          "median_views": 660.0,
+          "discussed": 6,
+          "discussion_rate": 0.75,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        }
+      ],
+      "older_age_cohorts_hours": [],
+      "ai_age_cohorts_hours": [
+        {
+          "age_hours": [
+            0,
+            24
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "median_views": 236,
+          "comments_known": 1,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        }
+      ],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "Одна тематическая статья младше 24 часов. Сопоставимые группы общего потока активны.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [],
+      "ai_observations": [
+        {
+          "url": "https://dzen.ru/a/av3TvaCL2QDF_wYt",
+          "title": "Google читает ваши переписки с Gemini — как это отключить на Android",
+          "published_at": "2026-11-18T16:30:28+00:00",
+          "observed_at": "2026-11-19T10:06:30+00:00",
+          "age_minutes_at_observation": 1056.033,
+          "views": 236,
+          "comments": 3,
+          "comments_open": true,
+          "topic_reason": "Приватность переписки с Gemini",
+          "early_at_observation": false
+        }
+      ]
+    },
+    {
+      "channel": "mrandroidru",
+      "publisher_title": "Mr.Android — эксперт по гаджетам",
+      "channel_url": "https://dzen.ru/mrandroidru",
+      "request": "2026-11-19T10:06:32+00:00",
+      "response": "2026-11-19T10:06:36+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=mrandroidru",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 792345,
+      "cards": 21,
+      "native_articles": 18,
+      "excluded_cards": {
+        "channel_block_suites": 1,
+        "channel_block_shorts": 1,
+        "channel_block_videos": 1
+      },
+      "publication_period": {
+        "oldest": "2026-11-06T06:02:20+00:00",
+        "newest": "2026-11-18T11:31:20+00:00",
+        "span_hours": 293.483
+      },
+      "ai_articles": 1,
+      "ai_share_of_returned_articles": 0.0556,
+      "newest_ai_published_at": "2026-11-17T10:29:13+00:00",
+      "ai_articles_with_comments": 1,
+      "ai_articles_comments_known": 1,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 0,
+      "native_articles_with_comments": 12,
+      "native_articles_comments_known": 18,
+      "native_articles_views_known": 18,
+      "guru_reference": {
+        "median": 378,
+        "metric_url": "https://dzen.guru/channels/mrandroidru",
+        "observed_at": "2026-11-18T19:02:39+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "comments_known": 1,
+          "median_views": 46,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 4,
+          "views_known": 4,
+          "comments_known": 4,
+          "median_views": 473.5,
+          "discussed": 3,
+          "discussion_rate": 0.75,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 4,
+          "views_known": 4,
+          "comments_known": 4,
+          "median_views": 3938.5,
+          "discussed": 3,
+          "discussion_rate": 0.75,
+          "enough_for_comparison": false
+        }
+      ],
+      "older_age_cohorts_hours": [
+        {
+          "age_hours": [
+            168,
+            336
+          ],
+          "sample_size": 8,
+          "views_known": 8,
+          "median_views": 471.5,
+          "comments_known": 8,
+          "discussed": 4,
+          "discussion_rate": 0.5,
+          "enough_for_comparison": true
+        }
+      ],
+      "ai_age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "median_views": 46,
+          "comments_known": 1,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        }
+      ],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "Одна ИИ-статья в возрасте 24–48 часов. Для типичных просмотров ИИ-статей выборки нет.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [],
+      "ai_observations": [
+        {
+          "url": "https://dzen.ru/a/avwr4tR0cxVLfKGh",
+          "title": "Почта Mail научила ИИ читать билеты и Госуслуги",
+          "published_at": "2026-11-17T10:29:13+00:00",
+          "observed_at": "2026-11-19T10:06:36+00:00",
+          "age_minutes_at_observation": 2857.383,
+          "views": 46,
+          "comments": 1,
+          "comments_open": true,
+          "topic_reason": "Модели ИИ в Почте Mail",
+          "early_at_observation": false
+        }
+      ]
+    },
+    {
+      "channel": "poznyaevru",
+      "publisher_title": "Блог системного администратора",
+      "channel_url": "https://dzen.ru/poznyaevru",
+      "request": "2026-11-19T10:06:38+00:00",
+      "response": "2026-11-19T10:06:44+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=poznyaevru",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 953211,
+      "cards": 21,
+      "native_articles": 17,
+      "excluded_cards": {
+        "channel_block_shorts": 2,
+        "channel_block_suites": 1,
+        "channel_block_videos": 1
+      },
+      "publication_period": {
+        "oldest": "2026-11-03T19:24:53+00:00",
+        "newest": "2026-11-18T06:45:18+00:00",
+        "span_hours": 347.34
+      },
+      "ai_articles": 1,
+      "ai_share_of_returned_articles": 0.0588,
+      "newest_ai_published_at": "2026-11-10T06:12:06+00:00",
+      "ai_articles_with_comments": 1,
+      "ai_articles_comments_known": 1,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 0,
+      "native_articles_with_comments": 17,
+      "native_articles_comments_known": 17,
+      "native_articles_views_known": 17,
+      "guru_reference": {
+        "median": 303,
+        "metric_url": "https://dzen.guru/channels/poznyaevru",
+        "observed_at": "2026-11-18T19:08:09+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "comments_known": 1,
+          "median_views": 405,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 2,
+          "views_known": 2,
+          "comments_known": 2,
+          "median_views": 378.0,
+          "discussed": 2,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 5,
+          "views_known": 5,
+          "comments_known": 5,
+          "median_views": 932,
+          "discussed": 5,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": true
+        }
+      ],
+      "older_age_cohorts_hours": [
+        {
+          "age_hours": [
+            168,
+            336
+          ],
+          "sample_size": 7,
+          "views_known": 7,
+          "median_views": 1121,
+          "comments_known": 7,
+          "discussed": 7,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            336,
+            504
+          ],
+          "sample_size": 2,
+          "views_known": 2,
+          "median_views": 1000.0,
+          "comments_known": 2,
+          "discussed": 2,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        }
+      ],
+      "ai_age_cohorts_hours": [
+        {
+          "age_hours": [
+            168,
+            336
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "median_views": 7993,
+          "comments_known": 1,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        }
+      ],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "Одна ИИ-статья с заметным откликом, слишком старая для раннего окна. Сопоставимая группа общего потока активна.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [],
+      "ai_observations": [
+        {
+          "url": "https://dzen.ru/a/avKyuKbY6Vt6I2Qh",
+          "title": "Почему искусственный интеллект заработал так поздно, хотя был придуман еще 50+ лет назад?",
+          "published_at": "2026-11-10T06:12:06+00:00",
+          "observed_at": "2026-11-19T10:06:44+00:00",
+          "age_minutes_at_observation": 13194.633,
+          "views": 7993,
+          "comments": 298,
+          "comments_open": true,
+          "topic_reason": "История искусственного интеллекта",
+          "early_at_observation": false
+        }
+      ]
+    },
+    {
+      "channel": "nplus1",
+      "publisher_title": "N + 1 — новости науки и технологий",
+      "channel_url": "https://dzen.ru/nplus1",
+      "request": "2026-11-19T10:06:46+00:00",
+      "response": "2026-11-19T10:06:51+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=nplus1",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 641788,
+      "cards": 21,
+      "native_articles": 17,
+      "excluded_cards": {
+        "channel_block_suites": 1,
+        "brief": 2,
+        "channel_block_shorts": 1
+      },
+      "publication_period": {
+        "oldest": "2026-11-18T05:00:00+00:00",
+        "newest": "2026-11-19T08:49:00+00:00",
+        "span_hours": 27.817
+      },
+      "ai_articles": 0,
+      "ai_share_of_returned_articles": 0.0,
+      "newest_ai_published_at": null,
+      "ai_articles_with_comments": 0,
+      "ai_articles_comments_known": 0,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 0,
+      "native_articles_with_comments": 7,
+      "native_articles_comments_known": 17,
+      "native_articles_views_known": 17,
+      "guru_reference": {
+        "median": 223,
+        "metric_url": "https://dzen.guru/channels/nplus1",
+        "observed_at": "2026-11-18T19:03:02+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 6,
+          "views_known": 6,
+          "comments_known": 6,
+          "median_views": 171.5,
+          "discussed": 3,
+          "discussion_rate": 0.5,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        }
+      ],
+      "older_age_cohorts_hours": [],
+      "ai_age_cohorts_hours": [],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "На первой странице нет подтверждённых ИИ-статей, покрытие составляет около 28 часов.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [],
+      "ai_observations": []
+    },
+    {
+      "channel": "habr_career",
+      "publisher_title": "Хабр Карьера",
+      "channel_url": "https://dzen.ru/habr_career",
+      "request": "2026-11-19T10:06:53+00:00",
+      "response": "2026-11-19T10:06:56+00:00",
+      "request_url": "https://dzen.ru/api/v3/launcher/export?channel_name=habr_career",
+      "http_status": 200,
+      "content_type": "application/json",
+      "diagnostic_status": "observed",
+      "bytes_received": 395147,
+      "cards": 20,
+      "native_articles": 20,
+      "excluded_cards": {},
+      "publication_period": {
+        "oldest": "2026-09-15T07:02:25+00:00",
+        "newest": "2026-11-07T07:55:58+00:00",
+        "span_hours": 1272.892
+      },
+      "ai_articles": 4,
+      "ai_share_of_returned_articles": 0.2,
+      "newest_ai_published_at": "2026-11-01T13:49:18+00:00",
+      "ai_articles_with_comments": 4,
+      "ai_articles_comments_known": 4,
+      "potential_early_windows": 0,
+      "native_articles_up_to_60_minutes": 0,
+      "native_articles_with_comments": 17,
+      "native_articles_comments_known": 20,
+      "native_articles_views_known": 20,
+      "guru_reference": {
+        "median": 188,
+        "metric_url": "https://dzen.guru/channels/habr_career",
+        "observed_at": "2026-11-18T19:06:41+00:00"
+      },
+      "age_cohorts_hours": [
+        {
+          "age_hours": [
+            24,
+            48
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            48,
+            72
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            72,
+            168
+          ],
+          "sample_size": 0,
+          "views_known": 0,
+          "comments_known": 0,
+          "median_views": null,
+          "discussed": 0,
+          "discussion_rate": null,
+          "enough_for_comparison": false
+        }
+      ],
+      "older_age_cohorts_hours": [
+        {
+          "age_hours": [
+            168,
+            336
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "median_views": 10,
+          "comments_known": 1,
+          "discussed": 0,
+          "discussion_rate": 0.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            336,
+            504
+          ],
+          "sample_size": 6,
+          "views_known": 6,
+          "median_views": 173.5,
+          "comments_known": 6,
+          "discussed": 5,
+          "discussion_rate": 0.8333,
+          "enough_for_comparison": true
+        },
+        {
+          "age_hours": [
+            504,
+            672
+          ],
+          "sample_size": 1,
+          "views_known": 1,
+          "median_views": 206,
+          "comments_known": 1,
+          "discussed": 1,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            672,
+            1008
+          ],
+          "sample_size": 11,
+          "views_known": 11,
+          "median_views": 735,
+          "comments_known": 11,
+          "discussed": 10,
+          "discussion_rate": 0.9091,
+          "enough_for_comparison": true
+        }
+      ],
+      "ai_age_cohorts_hours": [
+        {
+          "age_hours": [
+            336,
+            504
+          ],
+          "sample_size": 2,
+          "views_known": 2,
+          "median_views": 782.0,
+          "comments_known": 2,
+          "discussed": 2,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        },
+        {
+          "age_hours": [
+            672,
+            1008
+          ],
+          "sample_size": 2,
+          "views_known": 2,
+          "median_views": 2590.5,
+          "comments_known": 2,
+          "discussed": 2,
+          "discussion_rate": 1.0,
+          "enough_for_comparison": false
+        }
+      ],
+      "independent_views_check": null,
+      "views_metric_status": "metric_definition_unverified",
+      "status": "insufficient_evidence",
+      "status_reason": "Четыре ИИ-статьи за несколько недель, на каждую возрастную группу приходится только по две. Свежих статей в выборке нет.",
+      "typical_ai_views": null,
+      "adjacent_not_counted": [],
+      "ai_observations": [
+        {
+          "url": "https://dzen.ru/a/audDLaV4vCP1a54y",
+          "title": "«Жизнь после блокировки: нейронки изменили мою профессию и я не хочу снова работать по‑старому»",
+          "published_at": "2026-11-01T13:49:18+00:00",
+          "observed_at": "2026-11-19T10:06:56+00:00",
+          "age_minutes_at_observation": 25697.633,
+          "views": 1390,
+          "comments": 14,
+          "comments_open": true,
+          "topic_reason": "Применение нейросетей в DevOps",
+          "early_at_observation": false
+        },
+        {
+          "url": "https://dzen.ru/a/audBwon_1Cc6ROJr",
+          "title": "Кибермарксизм, или почему ИИ несовместим с капитализмом, и почему нас ждёт слом социально‑экономической формации",
+          "published_at": "2026-11-01T13:43:42+00:00",
+          "observed_at": "2026-11-19T10:06:56+00:00",
+          "age_minutes_at_observation": 25703.233,
+          "views": 174,
+          "comments": 3,
+          "comments_open": true,
+          "topic_reason": "Экономические последствия ИИ",
+          "early_at_observation": false
+        },
+        {
+          "url": "https://dzen.ru/a/asyeWiXysHkheNXj",
+          "title": "Не ИИ заменит людей, а люди заменят ИИ. И это уже происходит",
+          "published_at": "2026-10-12T08:47:05+00:00",
+          "observed_at": "2026-11-19T10:06:56+00:00",
+          "age_minutes_at_observation": 54799.85,
+          "views": 4769,
+          "comments": 53,
+          "comments_open": true,
+          "topic_reason": "Влияние ИИ на разработку и найм",
+          "early_at_observation": false
+        },
+        {
+          "url": "https://dzen.ru/a/asydS9jdjCJTjihc",
+          "title": "Путь к ИИ‑сингулярности",
+          "published_at": "2026-10-12T08:43:11+00:00",
+          "observed_at": "2026-11-19T10:06:56+00:00",
+          "age_minutes_at_observation": 54803.75,
+          "views": 412,
+          "comments": 4,
+          "comments_open": true,
+          "topic_reason": "Автоматизация программирования ИИ-агентами",
+          "early_at_observation": false
+        }
+      ]
+    }
+  ]
+}
