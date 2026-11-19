@@ -106,7 +106,7 @@ jobs:
           python3 scripts/site_news_pool.py --validate
           git add -- index.html briefs/ data/briefs/released.json data/site_news_pool.json
           git diff --cached --check
-          if git diff --cached --name-only | grep -Ev '^(index.html|briefs/|data/briefs/released\\.json|data/site_news_pool\\.json)'; then
+          if git diff --cached --name-only | grep -Ev '^(index.html|briefs/|data/briefs/released[.]json|data/site_news_pool[.]json)'; then
             echo 'UNSAFE: unrelated change staged' >&2
             exit 1
           fi
