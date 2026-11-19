@@ -3370,12 +3370,12 @@
       "summary": "Запуск лаборатории Noeri с финансированием $110 млн.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": "2026-11-19T10:33:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a88aae871bc0b36e"
+      "closed_at": "2026-11-19T18:23:47Z",
+      "article_id": "noeri-choi-guestrin-110m-ai-20261116",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a88aae871bc0b36e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/noeri-choi-guestrin-110m-ai-20261116/"
     },
     {
       "id": "n-0cbe160116fdd47a",
