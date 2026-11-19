@@ -2455,12 +2455,12 @@
       "summary": "16 ноября — публикация. Активисты Stop Funding Billionaires провели акции с шест футовой символической башней против рисков ИИ-бума для инвесторов; даты самих акций требуют уточнения. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей, 16.11.2026, утренний проход; выбрано №5",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T03:28:45+00:00",
       "review_started_at": "2026-11-19T10:14:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-cf7d450c509f730e"
+      "closed_at": "2026-11-19T15:23:56Z",
+      "article_id": "anthropic-ipo-protest-jenga-20261115",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-cf7d450c509f730e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/anthropic-ipo-protest-jenga-20261115/"
     },
     {
       "id": "n-2abce8109659f034",
