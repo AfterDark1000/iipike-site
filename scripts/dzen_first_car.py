@@ -16,7 +16,8 @@ from dzen_stage_a_probe import ARTICLE, ORIGIN
 BANDS = ((24, 48), (48, 72), (72, 168))
 HOUR = 3600
 FRESHNESS = 900
-WINDOW = 3600
+WINDOW = 24 * HOUR
+MAX_COMMENTS = 15
 MIN_SAMPLE = 5
 MIN_MEDIAN = 300
 EDITORIAL_TIMEZONE = timezone(timedelta(hours=5))
@@ -264,12 +265,12 @@ def channel_history(rows, latest, as_of):
     }, first_by_url
 
 
-def fresh_candidate(row, first_seen, as_of, history):
+def fresh_candidate(row, first_seen, as_of, history, window=WINDOW):
     return (history["status"] == "confirmed_candidate" and row["verified"] and row["ai"] == 1
-            and row["comments_open"] == 1 and row["comments"] is not None and row["comments"] <= 3
+            and row["comments_open"] == 1 and row["comments"] is not None and row["comments"] <= MAX_COMMENTS
             and 0 <= as_of - row["seen"] <= FRESHNESS
-            and 0 <= first_seen - row["published"] <= WINDOW
-            and 0 <= as_of - row["published"] <= WINDOW)
+            and 0 <= first_seen - row["published"] <= window
+            and 0 <= as_of - row["published"] <= window)
 
 
 def decision_at(db, url, as_of):
@@ -280,9 +281,9 @@ def decision_at(db, url, as_of):
     return row["action"] if row and row["action"] != "undo" else None
 
 
-def queue_snapshot(db, as_of, *, replay=False):
+def queue_snapshot(db, as_of, *, replay=False, window=WINDOW):
     decisions = {}
-    channels, articles = [], []
+    channels, articles, candidates = [], [], []
     newest_snapshot = None
     with db:
         db.execute("BEGIN IMMEDIATE")
@@ -304,9 +305,41 @@ def queue_snapshot(db, as_of, *, replay=False):
                              "status": history["status"], "history": history, "reason": history["reason"],
                              "ai_share": history["ai_share"], "guru_median": None,
                              "latest_observed_at": iso(newest["seen"]), "stale": as_of - newest["seen"] > FRESHNESS})
+            previous = {(row["url"], row["source"], row["policy"], row["verified"]): row for row in rows
+                        if row["seen"] < newest["seen"] and row["comments"] is not None}
             for row in latest:
                 url = row["url"]
-                if not fresh_candidate(row, first_seen[url], as_of, history):
+                comments = row["comments"]
+                if (row["ai"] != 1 or not 0 <= as_of - row["published"] <= window
+                        or row["comments_open"] == 0 or (comments is not None and comments > MAX_COMMENTS)):
+                    continue
+                prior = previous.get((url, row["source"], row["policy"], row["verified"]))
+                change = None if prior is None or comments is None else {
+                    "delta": comments - prior["comments"], "from_at": iso(prior["seen"]), "to_at": iso(row["seen"]),
+                }
+                entry = {
+                    "url": url, "channel": slug, "title": row["title"], "ai": True,
+                    "comments_open": None if row["comments_open"] is None else bool(row["comments_open"]),
+                    "comments": comments, "views": row["views"], "comment_change": change,
+                    "published_at": iso(row["published"]), "observed_at": iso(row["seen"]),
+                    "first_seen_at": iso(first_seen[url]), "source": row["source"], "source_policy": row["policy"],
+                }
+                if not fresh_candidate(row, first_seen[url], as_of, history, window):
+                    reasons = []
+                    if history["status"] != "confirmed_candidate":
+                        reasons.append(history["reason"])
+                    if not row["verified"]:
+                        reasons.append("Источник метрик требует сверки.")
+                    if comments is None or row["comments_open"] != 1:
+                        reasons.append("Счётчик или статус обсуждения неизвестен.")
+                    stale = as_of - row["seen"] > FRESHNESS
+                    if stale:
+                        reasons.append("Счётчики наблюдались более 15 минут назад.")
+                    comparable = history if history["verified"] else next(
+                        (band for band in history["unverified_age_cohorts"] if band["views_known"] >= MIN_SAMPLE), history)
+                    candidates.append({**entry, "dzen_url": url, "dzen_published_at": entry["published_at"],
+                                       "kind": "dzen", "source_name": channel["name"], "historical": stale,
+                                       "history": comparable, "confidence": "limited", "reason": " ".join(reasons)})
                     continue
                 db.execute("""INSERT INTO offers VALUES (?, ?)
                               ON CONFLICT(url) DO UPDATE SET offered = MIN(offered, excluded.offered)""", (url, as_of))
@@ -314,14 +347,12 @@ def queue_snapshot(db, as_of, *, replay=False):
                 if decision:
                     decisions[url] = decision
                 articles.append({
-                    "url": url, "channel": slug, "title": row["title"], "ai": True,
-                    "evidence": "verified", "comments_open": True, "comments": row["comments"], "views": row["views"],
-                    "published_at": iso(row["published"]), "observed_at": iso(row["seen"]),
-                    "first_seen_at": iso(first_seen[url]), "source": row["source"], "source_policy": row["policy"],
+                    **entry, "evidence": "verified", "confidence": "verified",
                     "offer_at": iso(db.execute("SELECT offered FROM offers WHERE url = ?", (url,)).fetchone()[0]),
                 })
     articles.sort(key=lambda row: (-timestamp(row["published_at"]), row["comments"], row["url"]))
-    return {"channels": channels, "articles": articles, "decisions": decisions, "demo": [],
+    return {"channels": channels, "articles": articles, "decisions": decisions, "candidates": candidates, "demo": [],
+            "window_hours": window / HOUR,
             "latest_observed_at": iso(newest_snapshot), "as_of": iso(as_of), "replay": replay}
 
 
@@ -383,6 +414,10 @@ def main():
     server = commands.add_parser("serve")
     server.add_argument("--port", type=int, default=8765)
     server.add_argument("--as-of")
+    for view in (snapshot, server):
+        view.add_argument("--window-hours", type=int, choices=range(1, 49), default=24, metavar="1..48")
+        view.add_argument("--commenting-queue", type=Path, help="Saved commenting-data/commenting/queue.json")
+        view.add_argument("--dzen-pilot", type=Path, help="Saved Dzen diagnostic report")
     args = parser.parse_args()
     try:
         with closing(connect(args.db, replay=args.replay)) as db:
@@ -399,19 +434,24 @@ def main():
                     data = dzen_snapshot(data, args.channel, args.observed_at)
                 result = ingest(db, data, replay=args.replay)
             else:
-                if args.as_of and not args.replay:
-                    parser.error("--as-of requires --replay")
                 now = timestamp(args.as_of) if args.as_of else int(datetime.now(UTC).timestamp())
+                if args.command == "mark" and args.as_of and not args.replay:
+                    parser.error("mark --as-of requires --replay")
+                if args.command != "mark":
+                    from dzen_first_car_candidates import SavedCandidates
+                    saved = SavedCandidates(args.commenting_queue, args.dzen_pilot)
+                    window = args.window_hours * HOUR
                 if args.command == "serve":
                     from dzen_first_car_local import serve
-                    serve(args.db, args.port, args.replay, now if args.as_of else None)
+                    serve(args.db, args.port, args.replay, now if args.as_of else None, saved=saved, window=window)
                     return
                 if args.command == "mark":
                     mark(db, args.url, args.action, now)
                     result = {"url": args.url, "action": args.action}
                 else:
                     from dzen_first_car_signals import signal_snapshot
-                    result = queue_snapshot(db, now, replay=args.replay)
+                    result = queue_snapshot(db, now, replay=args.replay, window=window)
+                    saved.add_to(result, now, window)
                     result["signals"] = signal_snapshot(db, now)
     except (OSError, ValueError, KeyError, TypeError, sqlite3.Error) as error:
         parser.error(str(error))

@@ -15,7 +15,7 @@ ASSETS = {"/": ("index.html", "text/html"), "/index.html": ("index.html", "text/
           "/queue.js": ("queue.js", "application/javascript"), "/queue.css": ("queue.css", "text/css")}
 
 
-def serve(db_path, port, replay, replay_at):
+def serve(db_path, port, replay, replay_at, *, saved, window):
     if replay and replay_at is None:
         raise ValueError("Local replay requires an explicit --as-of")
     archive = json.loads((LAB / "snapshots.js").read_text().partition(" = ")[2].strip().removesuffix(";"))
@@ -48,9 +48,11 @@ def serve(db_path, port, replay, replay_at):
             elif self.path == "/snapshots.js":
                 now = self.now()
                 with closing(connect(db_path, replay=replay)) as db:
-                    data = queue_snapshot(db, now, replay=replay)
+                    data = queue_snapshot(db, now, replay=replay, window=window)
                     data["signals"] = signal_snapshot(db, now)
-                data.update(bridge=True, demo=archive["demo"], demo_observed_at=archive["demo_observed_at"])
+                saved.add_to(data, now, window)
+                data.update(bridge=True, archive_mode=replay_at is not None and not replay,
+                            demo=archive["demo"], demo_observed_at=archive["demo_observed_at"])
                 self.send(("window.firstCarSnapshots = " + json.dumps(data) + ";").encode(), "application/javascript")
             else:
                 self.send_error(404)

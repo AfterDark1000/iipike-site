@@ -5,6 +5,8 @@
   const panel = document.querySelector("#panel");
   const storageKey = "dzen-first-car-v1";
   const directArticle = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{16}$/;
+  const dzenMirror = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
+  const httpsLink = /^https:\/\//;
   const channelLink = /^https:\/\/dzen\.ru\/(?:[A-Za-z0-9_.-]+|id\/[a-f0-9]{24})$/;
   const guruLink = /^https:\/\/dzen\.guru\/channels\/[A-Za-z0-9_.-]+$/;
   const clock = new Intl.DateTimeFormat("ru-RU", {
@@ -14,17 +16,23 @@
   const percent = new Intl.NumberFormat("ru-RU", { style: "percent", maximumFractionDigits: 1 });
   const minute = 60_000;
   const freshnessLimit = 15 * minute;
+  const windowHours = data.window_hours ?? 24;
+  const windowMinutes = windowHours * 60;
   const signalWindow = 60 * minute;
   const signals = data.signals ?? [];
+  const candidates = data.candidates ?? [];
   const decisions = readDecisions();
   if (data.bridge) {
     for (const key of decisions.keys()) if (key.startsWith("queue|")) decisions.delete(key);
     for (const [url, action] of Object.entries(data.decisions)) decisions.set(`queue|${url}`, action);
-    document.querySelector("#storage-note").textContent = "Отметки очереди хранятся в локальной истории";
+    document.querySelector("#storage-note").textContent = "Отметки кандидатов хранятся в браузере";
   }
   if (data.replay) {
     document.querySelector(".local").textContent = "Демо · тестовый прогон";
+  } else if (data.archive_mode) {
+    document.querySelector(".local").textContent = "Архивный просмотр";
   }
+  document.querySelector("#window-hours").textContent = windowHours;
   let view = "queue";
   let signalTimer;
 
@@ -102,11 +110,42 @@
       return directArticle.test(article.url) && author?.status === "confirmed_candidate"
         && author.history?.verified === true && article.evidence === "verified"
         && article.ai === true && article.comments_open === true
-        && Number.isInteger(article.comments) && article.comments >= 0 && article.comments <= 3
+        && Number.isInteger(article.comments) && article.comments >= 0 && article.comments <= 15
         && firstSeen !== null && snapshot !== null && firstSeen <= snapshot
         && now >= snapshot && now - snapshot <= freshnessLimit
-        && seenAge !== null && seenAge <= 60 && currentAge !== null && currentAge <= 60;
-    }).sort((a, b) => exactTime(b.published_at) - exactTime(a.published_at) || a.comments - b.comments);
+        && seenAge !== null && seenAge <= windowMinutes && currentAge !== null && currentAge <= windowMinutes;
+    });
+  }
+
+  function draft(row) {
+    if (!row.draft_comment) return "";
+    return `<label class="draft-label">Готовая реплика Gemini
+      <textarea class="draft-text" readonly rows="3">${escapeText(row.draft_comment)}</textarea></label>`;
+  }
+
+  const copyButton = `<button type="button" class="button" data-copy>Скопировать комментарий</button>`;
+
+  function discussionChange(row) {
+    if (!row.comment_change) return "";
+    const change = row.comment_change;
+    const delta = change.delta > 0 ? `+${change.delta}` : String(change.delta);
+    return `<p class="details">Изменение числа комментариев: ${delta} · ${dateLabel(change.from_at)} → ${dateLabel(change.to_at)}</p>`;
+  }
+
+  function grouped(rows, now, renderRow) {
+    const groups = [[], [], [], []];
+    for (const row of rows) {
+      const published = row.dzen_published_at ?? row.publisher_published_at ?? row.published_at;
+      const age = minutesBetween(exactTime(published), now);
+      if (age === null || age > windowMinutes) continue;
+      const band = age < 120 ? 0 : age < 480 ? 1 : age <= 1440 ? 2 : 3;
+      const tier = row.comments == null ? 2 : Number(row.comments > 3);
+      groups[band].push({ row, tier, age });
+    }
+    const labels = ["0–2 ч · первый приоритет", "2–8 ч · основная очередь", "8–24 ч · поздние возможности",
+      `24–${windowHours} ч · резерв`];
+    return groups.map((group, index) => group.length ? `<h4 class="age-group">${labels[index]}</h4>` +
+      group.sort((a, b) => a.tier - b.tier || a.age - b.age).map(({ row, age }) => renderRow(row, age)).join("") : "").join("");
   }
 
   function articleRow(article, demo = false) {
@@ -122,7 +161,7 @@
       <article class="row">
         <div class="row-top"><span class="muted">${escapeText(channelName)}</span>
           ${status(stored ? decisionText : demo ? "Наблюдалось в архиве" :
-            data.replay ? "Тестовая карточка" : "Подтверждено", "observed")}</div>
+            data.replay ? "Тестовая карточка" : data.archive_mode ? "Подтверждено в снимке" : "Подтверждено", "observed")}</div>
         <h3>${data.replay && !demo ? escapeText(article.title) : link(article.url, article.title, directArticle)}</h3>
         <dl>
           ${field("Опубликовано", dateLabel(article.published_at))}
@@ -130,32 +169,72 @@
           ${field("Комментарии в снимке", known(article.comments))}
           ${field("Просмотры в снимке", known(article.views))}
         </dl>
+        ${article.publisher_published_at ? `<p class="details">У издателя · ${dateLabel(article.publisher_published_at)}</p>` : ""}
         <p class="details"><strong>История канала</strong> · медиана ${known(channel.median_views)} по ${known(channel.views_known)} ст.
           · с обсуждениями ${known(channel.discussion_rate, percent)}</p>
         <p class="details">${demo ? "Аудитория не подтверждена. Опубликовано за пределами окна." :
-          age <= 30 ? "Найдена в первые 30 минут, обсуждение открыто." : "Найдена в первые 60 минут, обсуждение открыто."}</p>
+          article.comments <= 3 ? "Обсуждение открыто · первый эшелон." : "Обсуждение открыто · второй эшелон."}</p>
+        ${discussionChange(article)}${draft(article)}
         <p class="details">${data.replay && !demo ? "Тестовый снимок" :
           escapeText(article.source || "Снимок Дзена")} · ${dateLabel(article.observed_at)}
           ${demo ? " · определение просмотров не сверено" : ` · впервые ${dateLabel(article.first_seen_at)}`}</p>
-        <div class="actions">${data.replay && !demo ? "" : link(article.url, "Открыть", directArticle, "button primary")}${decisionButtons}</div>
+        <div class="actions">${data.replay && !demo ? "" : link(article.url, "Открыть", directArticle, "button primary")}
+          ${article.source_url ? link(article.source_url, "Оригинал", httpsLink, "button") : ""}
+          ${article.draft_comment ? copyButton : ""}${decisionButtons}</div>
       </article>`;
   }
 
-  function queuePanel(now, entries, pending) {
+  function candidateRow(row, age) {
+    const native = row.kind === "dzen";
+    const synthetic = row.source_policy === "fixture";
+    const stored = decisions.get(`candidate|${row.key}`);
+    const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
+    const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
+    const history = row.history;
+    const date = native ? row.dzen_published_at : row.publisher_published_at;
+    return `<article class="row candidate">
+      <div class="row-top"><span class="muted">${escapeText(row.source_name)}</span>
+        <div class="tags">${status(synthetic ? "Тестовая карточка" : row.confidence === "publisher_only" ? "Есть реплика Gemini" : "Частично подтверждено")}
+        ${!row.dzen_url ? status("Без прямой ссылки на Дзен", "stale") : ""}
+        ${row.historical ? status("Архивные счётчики", "stale") : ""}</div></div>
+      <h3>${escapeText(row.title)}</h3>
+      <dl>
+        ${field(native ? "Опубликовано в Дзене" : "Опубликовано у издателя", dateLabel(date))}
+        ${field("Возраст в окне", ageLabel(age))}
+        ${native ? field("Комментарии в снимке", known(row.comments)) + field("Просмотры в снимке", known(row.views)) : ""}
+      </dl>
+      ${native && row.publisher_published_at ? `<p class="details">У издателя · ${dateLabel(row.publisher_published_at)}</p>` : ""}
+      <p class="details">${escapeText(row.reason)} ${native ? `Снимок Дзена · ${dateLabel(row.observed_at)}. ${
+        row.comments_open === true ? "Обсуждение открыто в снимке." : "Статус обсуждения неизвестен."}` : ""}</p>
+      ${native && history?.median_views != null ? `<p class="details"><strong>Общий поток</strong> · медиана ${known(history.median_views)} просмотров по ${known(history.views_known)} ст. возраста ${history.age_hours.join("–")} ч · ${known(history.discussed)} с обсуждениями.</p>` : ""}
+      ${discussionChange(row)}${draft(row)}
+      <div class="actions">
+        ${synthetic ? "" : row.dzen_url ? link(row.dzen_url, "Открыть в Дзене", dzenMirror, "button primary") : link(search, "Найти в Дзене", httpsLink, "button primary")}
+        ${row.source_url ? link(row.source_url, "Оригинал", httpsLink, "button") : ""}
+        ${row.draft_comment ? copyButton : ""}
+        ${stored ? status(stored === "commented" ? "Прокомментировано" : "Пропущено") + mark("undo", "Вернуть") :
+          mark("commented", "Прокомментировано") + mark("skipped", "Пропустить")}
+      </div>
+    </article>`;
+  }
+
+  function queuePanel(now, entries, pending, available, handledCandidates) {
     const latest = exactTime(data.latest_observed_at) ??
       Math.max(...data.articles.map((item) => exactTime(item.observed_at) ?? -Infinity));
     const stale = Number.isFinite(latest) && now - latest > freshnessLimit;
     const source = stale ? `<div class="notice"><strong>Источник устарел</strong>
       <span>Последний снимок ${clock.format(latest)}.</span></div>` : "";
-    const empty = `<div class="empty"><h2>Сейчас подходящих статей нет</h2>
-      <p>${data.bridge || data.articles.length ? "По сохранённым данным нет новых статей, доступных для отбора." :
-        "Для шести каналов нет сохранённых снимков последних публикаций. Пригодность их статей пока нельзя проверить."}</p>
-      <button type="button" class="button" data-view="channels">Посмотреть каналы</button></div>`;
     const handled = entries.filter((article) => decisions.has(`queue|${article.url}`));
-    return `<header class="panel-head"><h2>Очередь статей</h2><p>Ожидают отметки · ${pending.length}</p></header>
-      ${source}${pending.length ? pending.map((article) => articleRow(article)).join("") : empty}
+    const archive = data.archive_mode ? `<div class="notice"><strong>Просмотр сохранённых данных</strong>
+      <span>Окно на ${dateLabel(data.as_of)}. Счётчики с тех пор могли измениться.</span></div>` : "";
+    return `${archive}<header class="panel-head"><h2>Проверенные возможности</h2><p>Ожидают отметки · ${pending.length}</p></header>
+      ${source}${pending.length ? grouped(pending, now, (article) => articleRow(article)) : `<p class="section-empty">Проверенных возможностей в этом окне нет.</p>`}
       ${handled.length ? `<details class="handled"><summary>Отмеченные · ${handled.length}</summary>
-        ${handled.map((article) => articleRow(article)).join("")}</details>` : ""}`;
+        ${handled.map((article) => articleRow(article)).join("")}</details>` : ""}
+      <header class="panel-head candidate-head"><h2>Кандидаты на просмотр</h2><p>Ожидают ручной оценки · ${available.length}</p></header>
+      ${available.length ? grouped(available, now, candidateRow) : `<p class="section-empty">Кандидатов в этом окне нет.</p>`}
+      ${handledCandidates.length ? `<details class="handled"><summary>Отмеченные кандидаты · ${handledCandidates.length}</summary>
+        ${grouped(handledCandidates, now, candidateRow)}</details>` : ""}`;
   }
 
   function signalRow(signal) {
@@ -227,27 +306,33 @@
   }
 
   function render() {
-    const now = data.replay ? exactTime(data.as_of) : Date.now();
+    const now = data.replay || data.archive_mode ? exactTime(data.as_of) : Date.now();
     const eligible = queueEntries(now);
     const pending = eligible.filter((article) => !decisions.has(`queue|${article.url}`));
+    const currentCandidates = candidates.filter((row) => {
+      const age = minutesBetween(exactTime(row.dzen_published_at ?? row.publisher_published_at), now);
+      return age !== null && age <= windowMinutes;
+    });
+    const openCandidates = currentCandidates.filter((row) => !decisions.has(`candidate|${row.key}`));
     const currentSignals = signals.filter((signal) => {
       const seen = exactTime(signal.detected_at);
       return signal.verified === false && directArticle.test(signal.url) && seen !== null
         && seen <= now && now - seen <= signalWindow;
     });
     const pendingSignals = currentSignals.filter((signal) => !signal.action);
-    document.querySelector("#queue-count").textContent = pending.length;
+    document.querySelector("#queue-count").textContent = pending.length + openCandidates.length;
     document.querySelector("#signal-count").textContent = pendingSignals.length;
     document.querySelector("#channel-count").textContent = data.channels.length;
     document.querySelectorAll(".navigation [data-view]").forEach((button) => {
       if (button.dataset.view === view) button.setAttribute("aria-current", "page");
       else button.removeAttribute("aria-current");
     });
-    panel.innerHTML = view === "queue" ? queuePanel(now, eligible, pending) :
+    panel.innerHTML = view === "queue" ? queuePanel(now, eligible, pending, openCandidates,
+      currentCandidates.filter((row) => decisions.has(`candidate|${row.key}`))) :
       view === "signals" ? signalPanel(pendingSignals, currentSignals.filter((signal) => signal.action)) :
       view === "channels" ? channelPanel() : demoPanel();
     clearTimeout(signalTimer);
-    if (view === "signals" && !data.replay && currentSignals.length) {
+    if (view === "signals" && !data.replay && !data.archive_mode && currentSignals.length) {
       const oldest = exactTime(currentSignals[currentSignals.length - 1].detected_at);
       signalTimer = setTimeout(render, oldest + signalWindow - now + 1);
     }
@@ -256,6 +341,30 @@
   document.addEventListener("click", async (event) => {
     const button = event.target.closest("button");
     if (!button) return;
+    if (button.hasAttribute("data-copy")) {
+      const text = button.closest("article").querySelector(".draft-text");
+      try {
+        await navigator.clipboard.writeText(text.value);
+        document.querySelector("#announcement").textContent = "Комментарий скопирован";
+        button.textContent = "Скопировано";
+      } catch {
+        text.focus();
+        text.select();
+        document.querySelector("#announcement").textContent = "Текст выделен. Скопируйте его вручную.";
+      }
+      return;
+    }
+    if (button.dataset.candidate) {
+      const key = `candidate|${button.dataset.candidate}`;
+      const action = button.dataset.decision;
+      if (action === "undo") decisions.delete(key);
+      else if (action === "commented" || action === "skipped") decisions.set(key, action);
+      storeDecisions();
+      document.querySelector("#announcement").textContent = "Отметка кандидата сохранена локально";
+      render();
+      document.querySelector('.navigation [data-view="queue"]').focus();
+      return;
+    }
     if (["queue", "signals", "channels", "demo"].includes(button.dataset.view)) {
       view = button.dataset.view;
       render();

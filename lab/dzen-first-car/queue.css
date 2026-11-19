@@ -38,6 +38,13 @@ h1 { font-size: clamp(38px, 5vw, 60px); font-weight: 750; letter-spacing: -.065e
 .panel-head h2 { font-size: 22px; letter-spacing: -.03em; }
 .panel-head p, .muted { color: var(--muted); font-size: 14px; }
 .panel-head p { margin-top: 3px; }
+.section-empty { padding: 13px 28px; color: var(--muted); font-size: 14px; }
+.candidate-head { border-top: 1px solid var(--line); }
+.age-group { margin: 0; padding: 9px 28px; background: var(--canvas); color: var(--muted); font-size: 13px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.draft-label { display: block; margin-top: 12px; color: var(--muted); font-size: 13px; font-weight: 650; }
+.draft-text { display: block; width: 100%; margin-top: 5px; padding: 9px 12px; border: 1px solid var(--line);
+  border-radius: 8px; background: var(--canvas); color: var(--ink); resize: vertical; font: inherit; font-weight: 400; }
 .guide-section { padding: 22px; }
 .guide-section + .guide-section { border-top: 1px solid var(--line); }
 .guide h2 { font-size: 16px; }
