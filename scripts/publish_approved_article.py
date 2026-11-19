@@ -20,7 +20,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date
+from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, publication_date, publication_label
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home, sorted_published
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
@@ -338,10 +338,7 @@ def render_article(data, records=None, catalog=None, registry=None):
         data.get("related_dzen_ids", []), card_row, site_crosslinks)
     related_html = render_links(linked_ids, records or [], catalog or {},
                                 site_crosslinks=site_crosslinks)
-    date = dt.date.fromisoformat(data["published"])
-    months = ["января", "февраля", "марта", "апреля", "мая", "июня",
-              "июля", "августа", "сентября", "октября", "ноября", "декабря"]
-    label = f"{date.day} {months[date.month - 1]} {date.year}"
+    label = publication_label(data)
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{summary}"><meta property="og:type" content="article">
@@ -372,7 +369,7 @@ def render_catalog(records):
         f'<a class="archive-card" href="{quote(row["id"])}/">'
         f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
         f'<span><h3>{quote(row["title"])}</h3>'
-        f'<small class="date">{quote(publication_date(row["published"]))}'
+        f'<small class="date">{quote(publication_label(row))}'
         f' · {quote(RUBRICS[row.get("rubric", "news")]["name"])}</small>'
         f'<p>{quote(row["summary"])}</p></span>'
         '<span aria-hidden="true">↗</span></a>' for row in ordered
