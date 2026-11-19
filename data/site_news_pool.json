@@ -730,12 +730,12 @@
       "summary": "11 ноября: Berkeley RDI представила исследование CyberBinGym на 100 реальных уязвимостях: Codex сумел в лаборатории восстановить уязвимость в 88% случаев и провести успешную эксплуатацию в 20%. Средняя стоимость отдельного теста в сравнительном наборе около $31; прежние утверждения «два часа и дешевле $30» не подтверждены.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-12T08:25:31+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T02:32:31+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=manual-20261119-ordinary-004.json; article_id=berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8"
     },
     {
       "id": "n-59b3661386606b37",
