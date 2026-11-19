@@ -1,11 +1,31 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "6b0025fa97a51c7dc109ed61bf207adbc182882d",
-  "source_blob_sha": "0baa10e08dde7010ecc2b1b9fe1e2ac5c4b77b26",
+  "source_commit": "a2348f57a8d2b5962ce5ad1eff46f79ac5d984bd",
+  "source_blob_sha": "8bea61168f7634a601870bb39ee6240ef6ca3c31",
   "snapshot_date": "2026-11-19",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afeb6458fe97b246aea84e2",
+      "title": "Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет",
+      "dzen_url": "https://dzen.ru/a/av62RY_peyRq6oTi",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "52% управляющих фондами ждут, что хотя бы один из крупнейших облачных операторов в ближайшие полгода объявит о сокращении расходов на ИИ. Bank of America 17 ноября опубликовал результаты опроса управляющих, проведённого с 6 по 12 ноября. В октябре число управляющих, державших технологические акции выше выбранного ориентира, превышало число тех, кто держал их ниже ориентира, на 37 процентных пунктов. В ноябре разница",
+      "published_at_utc": "2026-11-19T18:59:36+00:00"
+    },
+    {
+      "dzen_id": "6afeb5cc3965384d0f0843a4",
+      "title": "Правообладатели Элвиса нашли семь его песен в одном треке Suno",
+      "dzen_url": "https://dzen.ru/a/av61zDllOE0PCEOk",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Правообладатели Элвиса Пресли требуют от Suno 128,85 млн долларов. 13 ноября они дополнили иск ещё 114 записями, созданными музыкальной нейросетью. Раньше истцы представили 50 примеров предполагаемых нарушений. Теперь их 164. Из новых записей 42 относятся к произведениям, перечисленным в иске. Ещё 72 — к другим песням, которые исполнял Пресли, но которые не входят в нынешние требования правообладателей. В одной из за",
+      "published_at_utc": "2026-11-19T17:47:17+00:00"
+    },
     {
       "dzen_id": "6afeb5854c30af749936ed54",
       "title": "Google открыла Gemini 4 Carbon платным пользователям и показала «рой» ИИ-агентов",
