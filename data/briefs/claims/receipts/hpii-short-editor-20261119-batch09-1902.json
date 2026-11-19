@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch09-1902.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-e87d81ee6e260443",
+      "pool_sequence": 291,
+      "title": "Американские сенаторы предупредили Белый дом: ИИ-кибератаки развиваются быстрее защиты",
+      "source_url": "https://www.reuters.com/legal/government/us-senators-warn-white-house-that-ai-enabled-cyber-threats-are-outpacing-2026-11-18",
+      "claimed_at": "2026-11-19T11:43:55+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-5cfdcdfbcb5e9e93",
+      "pool_sequence": 293,
+      "title": "Bria выпустила нейросеть, которая удаляет фон, понимая смысл фотографии",
+      "source_url": "https://huggingface.co/briaai/RMBG-3.0",
+      "claimed_at": "2026-11-19T11:43:55+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f2e7b028a6ca7225",
+      "pool_sequence": 308,
+      "title": "Китайцы подключили ИИ к 21 ветроэлектростанции",
+      "source_url": "https://www.huawei.com/en/news/2026/11/5ga-wind-farm",
+      "claimed_at": "2026-11-19T11:43:55+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-5b89a2db7f60ae90",
+      "pool_sequence": 310,
+      "title": "Вышла открытая голосовая модель на 40 с лишним языков — всего 500 млн параметров",
+      "source_url": "https://huggingface.co/blog/rumble-2-flash",
+      "claimed_at": "2026-11-19T11:43:55+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-068a62d82b818119",
+      "pool_sequence": 312,
+      "title": "Snapchat разрешил Claude Code и Codex самостоятельно создавать AR-маски",
+      "source_url": "https://newsroom.snap.com/introducing-easy-lens-cli",
+      "claimed_at": "2026-11-19T11:43:55+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
