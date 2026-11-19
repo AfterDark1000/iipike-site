@@ -22,13 +22,29 @@ class BriefPacingTests(unittest.TestCase):
             dest = self.root / rel
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / rel, dest)
-        self.known = {r["pool_sequence"]: r for r in build_briefs.validated(self.root)}
+        # Isolation from changing live publication history: always model the
+        # original three released pilot briefs, while preserving all currently
+        # approved drafts. A production release must never break this test.
+        approvals = build_briefs.validated(self.root)
+        pilots = [r for r in approvals if r["pool_sequence"] in (125, 185, 226)]
+        if len(pilots) != 3:
+            raise ValueError("Missing three established pilot briefs in fixture")
+        fixture_manifest = {
+            "schema_version": 1, "note": "Isolated historical pilot baseline",
+            "items": [{"slug": r["slug"],
+                       "published_at_utc": r["published_at_utc"]}
+                      for r in pilots]
+        }
+        (self.root / release_one_brief.RELEASED).write_text(
+            json.dumps(fixture_manifest, ensure_ascii=False), encoding="utf-8")
+        self.known = {r["pool_sequence"]: r for r in approvals}
 
     def t(self, raw):
         return datetime.fromisoformat(raw.replace("Z", "+00:00"))
 
     def test_new_five_remain_private_until_each_independent_release(self):
-        self.assertEqual(len(build_briefs.validated(self.root)), 8)
+        self.assertGreaterEqual(len(build_briefs.validated(self.root)), 8)
+        self.assertTrue({59, 63, 66, 76, 82} <= set(self.known))
         self.assertEqual(len(build_briefs.released_rows(self.root)), 3)
         index = build_briefs.outputs(self.root)[self.root / "briefs/index.html"]
         self.assertNotIn(self.known[59]["headline"], index)
