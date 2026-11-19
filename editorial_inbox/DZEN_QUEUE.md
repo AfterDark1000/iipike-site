@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 170 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 3
+**Всего одобренных:** 170 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 2
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -26,6 +26,7 @@
 | 10 | [Блогер пришёл к ИИ-рекрутеру с кроссовком на голове](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.md) | 18.11.2026, 23:15 | [На сайте](https://iipike.ru/articles/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp) |
 | 11 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.md) | 19.11.2026, 00:30 | [На сайте](https://iipike.ru/articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
 | 12 | [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-tasks-free-calls-shopping-20261117.md) | 19.11.2026, 14:00 | [На сайте](https://iipike.ru/articles/google-gemini-tasks-free-calls-shopping-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-tasks-free-calls-shopping-20261117.webp) |
+| 13 | [Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-code-2-20261117.md) | 19.11.2026, 15:15 | [На сайте](https://iipike.ru/articles/microsoft-mai-code-2-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-code-2-20261117.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -33,9 +34,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-code-2-20261117.md) | **Не ранее 19.11.2026 15:07 (Усть-Катав)**; пауза до 19.11.2026 15:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-code-2-20261117.webp) |
-| 2 | [Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-cyber-2-flash-20261117.md) | **Не ранее 19.11.2026 16:07 (Усть-Катав)**; пауза до 19.11.2026 15:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-cyber-2-flash-20261117.webp) |
-| 3 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.md) ⚠️ ссылки на сайт — проверить | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
+| 1 | [Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-cyber-2-flash-20261117.md) | **Не ранее 19.11.2026 16:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-cyber-2-flash-20261117.webp) |
+| 2 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.md) ⚠️ ссылки на сайт — проверить | **Не ранее 19.11.2026 17:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
