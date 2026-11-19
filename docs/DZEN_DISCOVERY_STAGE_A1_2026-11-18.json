@@ -1,0 +1,115 @@
+{
+  "stage": "A.1",
+  "at_utc": "2026-11-18T15:56:52+00:00",
+  "status": "manual_access_confirmed_automation_unverified",
+  "robots": [
+    {
+      "url": "https://dzen.ru/robots.txt",
+      "at_utc": "2026-11-18T15:52:28+00:00",
+      "status": 200,
+      "sha256": "a6e7d16a66dcbbfe8d64ec966726922ac7736fd28f3a4b5bede7897992c92086",
+      "direct_article_paths_allowed": true,
+      "terms_url": "https://dzen.ru/legal/ru/termsofuse/index.html",
+      "terms_sha256": "e02596e5379727da4825f8d32a3912a4c08939541ea912c085fc4ef6f3c71cd9"
+    },
+    {
+      "url": "https://sso.passport.yandex.ru/robots.txt",
+      "at_utc": "2026-11-18T15:52:29+00:00",
+      "status": 200,
+      "user_agent": "*",
+      "disallow": "/",
+      "push_allowed": false
+    },
+    {
+      "url": "https://login.vk.com/robots.txt",
+      "at_utc": "2026-11-18T15:52:29+00:00",
+      "proxy_connect_status": 403,
+      "status": null
+    }
+  ],
+  "desktop_chromium": {
+    "profile_isolation_confirmed": false,
+    "owner_session_used": false,
+    "status": "browser_policy_denied",
+    "reason": "Browser authority for navigation was not granted. Review prohibited retrying through another interface."
+  },
+  "controls": [
+    {
+      "source_name": "Александр Чурсин",
+      "source_url": "https://tenchat.ru/media/6056319-iz-praktiki-nastroyki-i-raboty-iipomoschnikov",
+      "url": "https://dzen.ru/a/an2NK2wTexfqvqGD",
+      "at_utc": "2026-11-18T15:56:55+00:00",
+      "http_status": 302,
+      "redirect_target": "https://sso.passport.yandex.ru/push",
+      "http_observation": "redirect_not_followed",
+      "desktop_status": "browser_policy_denied",
+      "final_url": null,
+      "title": null,
+      "published_at": null,
+      "author": null,
+      "comments_visible": null,
+      "comment_count": null,
+      "views": null
+    },
+    {
+      "source_name": "МираТех",
+      "source_url": "https://rutube.ru/video/da573922734b8bfe6789bcea16020d2c/",
+      "url": "https://dzen.ru/a/ab_OAuYHUkJihdAb",
+      "at_utc": "2026-11-18T15:56:58+00:00",
+      "http_status": 302,
+      "redirect_target": "https://sso.passport.yandex.ru/push",
+      "http_observation": "redirect_not_followed",
+      "desktop_status": "not_attempted",
+      "final_url": null,
+      "title": null,
+      "published_at": null,
+      "author": null,
+      "comments_visible": null,
+      "comment_count": null,
+      "views": null
+    },
+    {
+      "source_name": "Евгения Грунис",
+      "source_url": "https://tenchat.ru/media/3931520-nedavno-zavela-kanal-na-dzene-podpischikov-poka-nemnogo",
+      "url": "https://dzen.ru/a/aO9TS4LAkjimNKgQ",
+      "at_utc": "2026-11-18T15:57:01+00:00",
+      "http_status": 302,
+      "redirect_target": "https://sso.passport.yandex.ru/push",
+      "http_observation": "redirect_not_followed",
+      "desktop_status": "not_attempted",
+      "final_url": null,
+      "title": null,
+      "published_at": null,
+      "author": null,
+      "comments_visible": null,
+      "comment_count": null,
+      "views": null
+    }
+  ],
+  "playwright_full_navigation": "not_run",
+  "channel_history_sample": "not_run",
+  "owner_browser_observation": {
+    "recorded_at_utc": "2026-11-18T16:15:30Z",
+    "source": "owner_report_with_mobile_screenshot",
+    "control_url": "https://dzen.ru/a/an2NK2wTexfqvqGD",
+    "reported_browsers": [
+      "Chrome",
+      "Yandex Browser"
+    ],
+    "article_opened": true,
+    "visible_destination_host": "dzen.ru",
+    "full_final_url": null,
+    "auth_state": null,
+    "redirect_chain": null,
+    "title": "Почему мы не смогли просто попросить AI «быть Сократом»",
+    "channel_name": "AI-MARS.PRO",
+    "author": null,
+    "published_label": "3 мес",
+    "published_at": null,
+    "subscribers": 6,
+    "views": 10,
+    "comments_visible": null,
+    "comment_count": null,
+    "discussion_evidence": "not_in_screenshot"
+  }
+}

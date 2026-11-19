@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Первый вагон · очередь Дзена</title>
+  <link rel="stylesheet" href="queue.css">
+  <script src="snapshots.js" defer></script>
+  <script src="commenting-live.js" defer></script>
+  <script src="queue.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="frame masthead">
+      <span class="platform">Дзен<span></span>Ручной комментинг</span>
+      <span class="local"><i></i> Локальный просмотр</span>
+    </div>
+  </header>
+  <main class="frame">
+    <div class="heading">
+      <h1>Первый вагон</h1>
+      <p>Очередь свежих ИИ-статей для ручного комментирования.</p>
+    </div>
+    <nav class="navigation" aria-label="Разделы">
+      <button type="button" data-view="queue" aria-current="page">Очередь <span id="queue-count" class="count">0</span></button>
+      <button type="button" data-view="signals">Разведсигналы <span id="signal-count" class="count">0</span></button>
+      <button type="button" data-view="channels">Каналы <span id="channel-count" class="count">6</span></button>
+      <button type="button" data-view="demo">Демо · архив</button>
+      <button id="refresh-commenting" type="button" hidden>Обновить</button>
+    </nav>
+    <div class="columns">
+      <section id="panel" class="panel" aria-label="Текущий раздел"></section>
+      <aside class="guide">
+        <div class="guide-section">
+          <h2>Условия входа</h2>
+          <ul>
+            <li>Подтверждённая аудитория канала</li>
+            <li>ИИ-статья до <span id="window-hours">24</span> ч</li>
+            <li>Открытое обсуждение, актуальный счётчик</li>
+            <li>Приоритет · 0–3 комментария, затем 4–15</li>
+          </ul>
+        </div>
+        <div class="guide-section">
+          <h2>Статус данных</h2>
+          <dl class="legend">
+            <div><dt><span class="dot observed"></span>Наблюдалось</dt><dd>Значение есть в указанном снимке.</dd></div>
+            <div><dt><span class="dot unknown"></span>Не подтверждено</dt><dd>Источник или охват требуют проверки.</dd></div>
+            <div><dt><span class="dot stale"></span>Счётчики Дзена устарели</dt><dd>Снимок счётчиков старше 15 минут.</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+    <footer><span>Время — Екатеринбург (UTC+5)</span><span id="storage-note">Отметки хранятся в этом браузере</span></footer>
+    <span id="announcement" class="visually-hidden" role="status"></span>
+    <noscript>Для работы локальной очереди включите JavaScript.</noscript>
+  </main>
+</body>
+</html>

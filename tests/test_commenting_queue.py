@@ -116,6 +116,21 @@ class QueueTests(unittest.TestCase):
         self.assertEqual(result["sources"][0]["last_success_at"], cq.stamp(NOW))
         self.assertEqual(result["items"][0]["comment"], queue["items"][0]["comment"])
 
+    def test_mk_invalid_xml_preserves_other_sources_and_reports_only_position(self):
+        mk = next(s for s in cq.load_config(ROOT / "data/commenting_sources.json")["sources"] if s["id"] == "mk")
+
+        def feeds(url, source):
+            return "<rss>\n<broken-private-content></rss>" if source["id"] == "mk" else fetcher(url, source)
+
+        result = cq.build_queue({**CONFIG, "sources": [mk, SOURCE]}, {}, NOW,
+                                fetcher=feeds, model=model, api_key="test-placeholder")
+        mk_health, other = result["sources"]
+        self.assertEqual(mk_health["status"], "error")
+        self.assertRegex(mk_health["error"], r"ParseError, строка 2, позиция \d+")
+        self.assertNotIn("private-content", json.dumps(result))
+        self.assertEqual(other["status"], "ok")
+        self.assertEqual(result["items"][0]["status"], "draft_ready")
+
     def test_unreadable_article_never_reaches_model(self):
         def source(url, config): return rss() if url == config["feed_url"] else "<html>Access denied</html>"
         def no_call(*args): self.fail("Unreadable article passed to model")

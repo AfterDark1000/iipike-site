@@ -1,0 +1,67 @@
+{
+  "started_at_utc": "2026-11-18T18:13:59+00:00",
+  "status": "success",
+  "http": [
+    {
+      "url": "https://dzen.ru/robots.txt",
+      "at_utc": "2026-11-18T18:14:00+00:00",
+      "http_status": 200
+    },
+    {
+      "url": "https://dzen.ru/legal/ru/termsofuse/index.html",
+      "at_utc": "2026-11-18T18:14:04+00:00",
+      "http_status": 200,
+      "bytes": 234878
+    },
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=techinsider",
+      "at_utc": "2026-11-18T18:14:08+00:00",
+      "http_status": 200,
+      "bytes": 435251,
+      "items_in_response": 20
+    },
+    {
+      "url": "https://dzen.ru/api/v3/launcher/export?channel_name=hiaimedia",
+      "at_utc": "2026-11-18T18:14:13+00:00",
+      "http_status": 200,
+      "bytes": 410866,
+      "items_in_response": 20
+    }
+  ],
+  "publications": [
+    {
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=techinsider",
+      "observed_at_utc": "2026-11-18T18:14:08+00:00",
+      "status": "observed",
+      "channel": "TechInsider",
+      "channel_subscribers": 625046,
+      "title": "Пока мы выбираем электромобиль, Китай осваивает небо",
+      "url": "https://dzen.ru/a/avxr9c3gh2vppaHk",
+      "date": "2026-11-17T14:57:00+00:00",
+      "date_type": "exact",
+      "date_field": "publication_date",
+      "creation_time": "1 день назад",
+      "views": 148,
+      "comments": 1,
+      "comments_reason": null
+    },
+    {
+      "source": "https://dzen.ru/api/v3/launcher/export?channel_name=hiaimedia",
+      "observed_at_utc": "2026-11-18T18:14:13+00:00",
+      "status": "observed",
+      "channel": "Hi, AI | Нейросети и технологии",
+      "channel_subscribers": 1014,
+      "title": "Стоя или сидя — без разницы. Урологи из Колумбии сравнили две мужские позы в туалете",
+      "url": "https://dzen.ru/a/avQpRRnX-RwkH1nj",
+      "date": "2026-11-11T08:39:11+00:00",
+      "date_type": "exact",
+      "date_field": "publication_date",
+      "creation_time": "1 неделю назад",
+      "views": 2,
+      "comments": 1,
+      "comments_reason": null
+    }
+  ],
+  "robots_sha256": "a6e7d16a66dcbbfe8d64ec966726922ac7736fd28f3a4b5bede7897992c92086",
+  "terms_sha256": "e02596e5379727da4825f8d32a3912a4c08939541ea912c085fc4ef6f3c71cd9"
+}

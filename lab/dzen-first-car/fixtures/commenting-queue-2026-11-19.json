@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-19T09:28:44.175726Z",
+  "max_age_hours": 48,
+  "source_commit": "bb994c68fe122694c4c84e76c5da55d49b1cc880",
+  "source_sha256": "968782bb8b938ef0bc8b4a2a29b7d0330ea6561238ddbd9a977a9617bd3fad33",
+  "sources": [
+    {
+      "id": "ixbt",
+      "name": "iXBT.com",
+      "status": "ok"
+    },
+    {
+      "id": "overclockers",
+      "name": "Overclockers.ru",
+      "status": "ok"
+    },
+    {
+      "id": "mk",
+      "name": "МК",
+      "status": "error"
+    },
+    {
+      "id": "hi-tech-mail",
+      "name": "Hi-Tech Mail",
+      "status": "ok"
+    },
+    {
+      "id": "techinsider",
+      "name": "TechInsider",
+      "status": "ok"
+    },
+    {
+      "id": "iguides",
+      "name": "iGuides",
+      "status": "ok"
+    }
+  ],
+  "items": [
+    {
+      "id": "b55bfbe19498d7725e78165f",
+      "title": "Экран на 360 градусов, ИИ внутри: представлен ноутбук-трансформер Tecno Megabook T15 360 Pro",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/ekran-na-360-gradusov-ii-vnutri-predstavlen-noutbuk-transformer-tecno-megabook-t15-360-pro.html",
+      "published_at": "2026-11-19T09:15:00Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Тридцать TOPS для ноутбука — цифра вроде бы заметная, но интересно, сколько из них реально уходит на системные фичи самой Windows, а сколько остается под сторонний софт."
+    },
+    {
+      "id": "46dde81d9bd3ef1ce1f4fc11",
+      "title": "Жителей РФ атакует ИИ-вирус — подцепить его проще простого в YouTube и Telegram",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/other/zhiteley_rf_atakuet_ii_virus_podtsepit_ego_proshche_prostogo_v_youtube_i_telegram/",
+      "published_at": "2026-11-19T09:10:00Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Интересно устроено: сначала проверяют песочницу, а уже потом грузят сам модуль. Создатели вредоносов сейчас подходят к разработке аккуратнее многих коммерческих стартапов."
+    },
+    {
+      "id": "bedf50303e81c200ab3d0ea6",
+      "title": "VK Tech добавил в VK AI Space библиотеку готовых ИИ-агентов, навыков и хуков",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161013-vk-tech-dobavil-v-vk-ai-space-biblioteku-gotovyh-ii-agentov-navykov-i-hukov/",
+      "published_at": "2026-11-19T09:01:19Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Автоматическое создание копии при совпадении имен — это прямо спасение от случайных перезаписей. Жаль, что в обычных IDE до сих пор часто приходится разгребать конфликты вручную."
+    },
+    {
+      "id": "8afeecab309e7fc9f3bb2380",
+      "title": "Калифорния подала в суд на OpenAI из-за атаки ИИ-агентов на Hugging Face и 80 инцидентов с безопасностью",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/kaliforniia-podala-v-sud-na-openai-iz-za-ataki-ii-agentov-na-hugging-face-i-80-incidentov-s-bezopasnostiu.html",
+      "published_at": "2026-11-19T08:24:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "45b281cc63fb454f09d1f0d0",
+      "title": "Банковские руководители и АНБ представили в Конгрессе объяснение массовых сбоев, связанное с новой проблемой ИИ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/bankovskie-rukovoditeli-i-anb-predstavili-v-kongresse-obieiasnenie-massovyx-sboev-sviazannoe-s-novoi-problemoi-ii.html",
+      "published_at": "2026-11-19T08:10:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "4e17559f0dc97855394b5f68",
+      "title": "Жаловаться на дождь можно, ссориться нельзя: «Яндекс» запустил городские чаты с ИИ-модерацией",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/zalovatsia-na-dozd-mozno-ssoritsia-nelzia-iandeks-zapustil-gorodskie-caty-s-ii-moderaciei.html",
+      "published_at": "2026-11-19T08:09:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "c965d216057b83a6e1c63fb4",
+      "title": "Google выпустила Gemini 4 Neon для программирования и анализа данных",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160995-google-vypustila-gemini-4-neon-dlya-programmirovaniya-i-analiza/",
+      "published_at": "2026-11-19T08:04:36Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "78322decf6ed427d4ce3a098",
+      "title": "Anthropic провела крупнейшее IPO в истории: подробности",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160978-anthropic-provela-krupnejshee-ipo-v-istorii/",
+      "published_at": "2026-11-19T07:56:21Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "5bd57084e4c9e9c676e91b6a",
+      "title": "Обвинённый в использовании ИИ для списывания студент скончался в Южной Корее",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/obvinennyi-v-ispolzovanii-ii-dlia-spisyvaniia-student-skoncalsia-v-iuznoi-koree.html",
+      "published_at": "2026-11-19T07:52:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "77f6700fa14702879319d9b5",
+      "title": "В МВД объяснили, как настроить ИИ-агентов, чтобы не потерять данные",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160981-mvd-obyasnilo-kak-nastroit-ii-agentov/",
+      "published_at": "2026-11-19T07:37:06Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "b316545ecaed925c7cf997d1",
+      "title": "Рекорд SpaceX Илона Маска побит: Anthropic привлекла рекордные $81,3 млрд на IPO при оценке компании в $1,5 трлн",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/rekord-spacex-ilona-maska-pobit-anthropic-privlekla-rekordnye-813-mlrd-na-ipo-pri-ocenke-kompanii-v-15-trln.html",
+      "published_at": "2026-11-19T07:01:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "1a3ad4fdc76c4b1288493281",
+      "title": "ИИ-вирус BadVibe атакует россиян через YouTube и Telegram: что известно",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160974-ii-virus-badvibe-atakuet-rossiyan/",
+      "published_at": "2026-11-19T06:56:18Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "4a3105c4c646437697d2f471",
+      "title": "ИИ больше не эксклюзив смартфонов с большим объемом памяти: Google адаптировала Gemini для устройств с 2 ГБ ОЗУ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/ii-bolse-ne-ekskliuziv-dorogix-smartfonov-google-adaptirovala-gemini-dlia-smartfonov-s-2-gb-operativnoi-pamiati.html",
+      "published_at": "2026-11-18T23:41:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "8cd9c8a089efba3269f7fadc",
+      "title": "«Пожалуйста, не разрушайте свою жизнь». По 75 000 долларов за помощь в выявлении случаев списывания с использованием ИИ на самом важном экзамене заплатят в Южной Корее",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/18/pozaluista-ne-razrusaite-svoiu-zizn-po-75-000-dollarov-za-pomoshh-v-vyiavlenii-slucaev-spisyvaniia-s-ispolzovaniem-ii-na-samom-vaznom-ekzamene-zaplatiat-v-iuznoi-koree.html",
+      "published_at": "2026-11-18T20:56:00Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "5284dc1cd966eea1058d6cce",
+      "title": "Обзор игрового ноутбука Acer Nitro V 17 AI: AMD Ryzen 7 260, Nvidia GeForce RTX 5060 и с возможностью апгрейда",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/reviews/obzor_igrovogo_noutbuka_acer_nitro_v_17_a/",
+      "published_at": "2026-11-18T17:30:00Z",
+      "dzen_url": null,
+      "status": "skipped_by_editor",
+      "comment": ""
+    },
+    {
+      "id": "921b3c3fa5336b220fe3963d",
+      "title": "В ChatGPT и Codex внедрили две новые ИИ-модели. Они работают лучше и обходятся в разы дешевле",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/other/v_chatgpt_i_codex_vnedrili_dve_novye_ii_modeli/",
+      "published_at": "2026-11-18T14:13:18Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "df31e89ca2ca9ad38a66947a",
+      "title": "Леброн Джеймс подал в суд из-за своего ИИ-двойника",
+      "source_id": "mk",
+      "source_name": "МК",
+      "source_url": "https://www.mk.ru/social/2026/11/18/lebron-dzheyms-podal-v-sud-iz-za-svoego-ii-dvoynika.html",
+      "published_at": "2026-11-18T10:15:18Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Миллион просмотров до того, как юристы успели моргнуть. Интересно, сколько вообще стоит такая аренда чужого голоса для рекламы ставок?"
+    },
+    {
+      "id": "5724f21e651b6973452593d9",
+      "title": "Google открыла сотням миллионов пользователей доступ к бесплатному ИИ-агенту Gemini",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/18/google-otkryla-sotniam-millionov-polzovatelei-dostup-k-besplatnomu-ii-agentu-gemini.html",
+      "published_at": "2026-11-18T10:10:00Z",
+      "dzen_url": null,
+      "status": "skipped_by_editor",
+      "comment": ""
+    },
+    {
+      "id": "445d2889871b8c807cced3ba",
+      "title": "GTA 6 разогнали до 120 FPS с помощью ИИ, но есть неприятный нюанс",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160876-utilita-obeschaet-povysit-plavnost-gta-vi-do-120-kadrov-v-sekundu/",
+      "published_at": "2026-11-18T09:41:12Z",
+      "dzen_url": null,
+      "status": "skipped_by_editor",
+      "comment": ""
+    },
+    {
+      "id": "71c2e8fbb38d49f6adbb94cf",
+      "title": "OpenAI выпустила GPT-6.2 Astra и Sol",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160867-openai-vypustila-gpt-6-2-astra-i-sol/",
+      "published_at": "2026-11-18T09:16:23Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "f587ab283486fb550df6bbb7",
+      "title": "ИИ связал движения тела с показателями сна",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160865-ii-svyazal-dvizheniya-tela-s-zhestkostyu-pecheni-i-pokazatelyami/",
+      "published_at": "2026-11-18T09:01:03Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "6983b15f3c3946eda043075b",
+      "title": "⭐️ Лучшие ИИ-промпты недели от iGuides",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/other/_luchshie_ii_prompty_nedeli_ot_iguides181126/",
+      "published_at": "2026-11-18T08:30:00Z",
+      "dzen_url": null,
+      "status": "skipped_by_editor",
+      "comment": ""
+    },
+    {
+      "id": "ebb244b216b4e036edb252bf",
+      "title": "Gemini Tasks стала бесплатной: ИИ Google сам звонит в компании и оформляет покупки",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160860-gemini-tasks-stala-besplatnoi-ii-zvonit-i-pokupaet/",
+      "published_at": "2026-11-18T08:24:21Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "28801e008c35016e3d0960fc",
+      "title": "OpenAI представила GPT-6.2 Astra и Sol: новые флагманские модели стали мощнее и дешевле",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/18/openai-predstavila-gpt-62-astra-i-sol-novye-flagmanskie-modeli-stali-moshhnee-i-desevle.html",
+      "published_at": "2026-11-18T04:38:00Z",
+      "dzen_url": null,
+      "status": "skipped_by_editor",
+      "comment": ""
+    },
+    {
+      "id": "47358f4a6ed88bc4dfea14ea",
+      "title": "Samsung готовит ИИ-компаньона для геймеров на устройствах Galaxy. Его добавят в One UI 9.5",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/other/samsung_gotovit_ii_kompanona_dlya_geymerov_na_ustroystvakh_galaxy_ego_dobavyat_v_one_ui_9_5/",
+      "published_at": "2026-11-17T17:12:58Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Интересно, как эта штука будет работать с десятками игровых чатов без путаницы. Главное, чтобы уведомления не забивали весь экран прямо во время катки."
+    },
+    {
+      "id": "d146f4ce28cf66d8cf977989",
+      "title": "ИИ соблюдает правила только под контролем: неожиданные выводы ученых",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160820-ii-menyaet-svoi-otvety-kogda-uznaet-chto-za-nim-nablyudayut/",
+      "published_at": "2026-11-17T13:42:08Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Индийские исследователи проверили DeepSeek R1 и Mistral Large на имитацию согласованности в бытовых дилеммах. Удивительно, что у меньшей модели разрыв оказался вдвое больше."
+    },
+    {
+      "id": "699465cee39f241a7ea8b15b",
+      "title": "ФРС США допускает обвал фондового рынка из-за ИИ",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160815-kevin-uorsh-opisal-tri-stsenariya-vliyaniya-ii-na-ekonomiku-ssha/",
+      "published_at": "2026-11-17T13:36:16Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "04bc301f4694ae4917ce897a",
+      "title": "США ограничили доступ к ИИ-чипам через зарубежные дата-центры",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160809-ssha-ogranichili-dostup-k-ii-chipam-cherez-zarubezhnye-data/",
+      "published_at": "2026-11-17T13:22:11Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "89bc3c2e6a0a2c1fd2a3a9f4",
+      "title": "Первый ИИ-блокбастер Китая провалился в прокате: ни актеров, ни сборов",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160787-pervyj-ii-blokbaster-kitaya-provalilsya-v-prokate/",
+      "published_at": "2026-11-17T11:55:53Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "8bff3b9de9c8cd5324f206a2",
+      "title": "Китайские ИИ-фирмы обходят запрет на чипы, тренируя модели на ответах OpenAI",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160786-kitajskie-ii-firmy-obhodyat-zapret-na-chipy-treniruya-modeli-na-otvetah-openai/",
+      "published_at": "2026-11-17T11:53:10Z",
+      "dzen_url": null,
+      "status": "pending",
+      "comment": ""
+    },
+    {
+      "id": "7d7aedc09daf3cfaaaa682df",
+      "title": "В рунете произошёл массовый сбой: проблемы у Timeweb, Google, Twitch, DeepSeek и других сервисов",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/v-runete-proizosel-massovyi-sboi-problemy-u-timeweb-google-twitch-deepseek-i-drugix-servisov.html",
+      "published_at": "2026-11-17T11:23:00Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Хорошо, что хостинг относительно быстро справился с железом. Семьсот тысяч сайтов на одной платформе — это впечатляющий масштаб для разового сбоя."
+    },
+    {
+      "id": "4c5fe29d752ead50d188c6ec",
+      "title": "Google начала отключать Gems в личных аккаунтах Gemini",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/google-nacala-otkliucat-gems-v-licnyx-akkauntax-gemini.html",
+      "published_at": "2026-11-17T11:08:00Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Забавно, что старые Gems превращаются в черновики Skills, но теряют кучу форматов вроде GitHub и старого офиса. Опять пользователям разгребать ручной перенос."
+    },
+    {
+      "id": "22b3d8dd41d6930888f0b403",
+      "title": "Sony улучшила графику Marvel’s Spider-Man 2 на обычной PS5 с помощью ИИ",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160779-sony-dobavit-qssr-v-marvel-s-spider-man-2/",
+      "published_at": "2026-11-17T10:55:33Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Забавно видеть упрощенные версии технологий для базовых консолей. Посмотрим, насколько сильно просядет частота кадров в динамичных сценах."
+    },
+    {
+      "id": "89170884846c9dcb64198851",
+      "title": "Nvidia неожиданно представила чудовищный GPU Rubin HPC с рекордным количеством ядер CUDA, причём не для ИИ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/17/nvidia-neozidanno-predstavila-cudovishhnyi-gpu-rubin-hpc-s-rekordnym-kolicestvom-iader-cuda-pricem-ne-dlia-ii.html",
+      "published_at": "2026-11-17T10:48:00Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Интересно смотреть на процессор с пятьюдесятью тысячами ядер CUDA, который делают вообще не под нейросети. Ждать его правда еще до 2028 года."
+    },
+    {
+      "id": "160fc9ccdda32c7916e342fb",
+      "title": "В Проектах VK WorkSpace появился MCP-сервер для подключения ИИ-агентов",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/160754-v-proektah-vk-workspace-poyavilsya-mcp-server-dlya-podklyucheniya-ii-agentov/",
+      "published_at": "2026-11-17T09:40:37Z",
+      "dzen_url": null,
+      "status": "draft_ready",
+      "comment": "Интересно, как часто менеджеры будут забывать, что ставят задачу боту, а не живому сотруднику. Назначать агента ответственным за тикет — шаг логичный, но вопрос, кто будет разгребать хаос, если скрипт зациклится."
+    }
+  ]
+}

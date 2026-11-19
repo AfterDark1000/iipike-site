@@ -1,0 +1,1432 @@
+{
+  "report_date_local": "2026-11-19",
+  "timezone": "Asia/Yekaterinburg",
+  "source_rules": {
+    "url": "https://dzen.guru/robots.txt",
+    "http_status": 200,
+    "sha256": "0fe9ae126689a47d02a839c1e4552613ce8056a69f9614968d9f549264a1dd81",
+    "internal_dzen_export_used": false
+  },
+  "other_discovery_sources": [
+    "https://zenstat.ru/rating/channels/it/"
+  ],
+  "status_counts": {
+    "priority": 4,
+    "reserve": 2,
+    "below_pilot_median": 15,
+    "unverified_median": 10,
+    "unverified_recurring_ai": 7
+  },
+  "metric_quality_counts": {
+    "guru_faq_median": 28,
+    "possible_mean_fallback": 7,
+    "missing_median": 3
+  },
+  "catalog_inputs": [
+    {
+      "url": "https://dzen.guru/channels?topicId=12",
+      "rows": 36,
+      "profile_plan": [
+        "https://dzen.guru/channels/3sea3gadgets",
+        "https://dzen.guru/channels/digitalocean",
+        "https://dzen.guru/channels/592ef27de3cda8c8f17c6385",
+        "https://dzen.guru/channels/androidlime",
+        "https://dzen.guru/channels/fotosklad",
+        "https://dzen.guru/channels/gergen"
+      ],
+      "observed_at": "2026-11-18T18:31:56Z",
+      "http_status": 200,
+      "snapshot_stage": "A.4"
+    },
+    {
+      "url": "https://dzen.guru/channels?topicId=18",
+      "rows": 50,
+      "profile_plan": [
+        "https://dzen.guru/channels/aktivniy_vozrast",
+        "https://dzen.guru/channels/antropogenez",
+        "https://dzen.guru/channels/himia12345",
+        "https://dzen.guru/channels/5f9abb2e66afb7042d59a0af",
+        "https://dzen.guru/channels/inznan",
+        "https://dzen.guru/channels/journalgolovolomok"
+      ],
+      "observed_at": "2026-11-18T18:30:57+00:00",
+      "http_status": 200,
+      "snapshot_stage": "A.4"
+    },
+    {
+      "url": "https://dzen.guru/channels?topicId=3",
+      "rows": 44,
+      "profile_plan": [
+        "https://dzen.guru/channels/5a843de9ad0f225ae940a212",
+        "https://dzen.guru/channels/novostroy-m.ru",
+        "https://dzen.guru/channels/borisvoronin",
+        "https://dzen.guru/channels/ekonomim_dengi",
+        "https://dzen.guru/channels/invest_s_umom",
+        "https://dzen.guru/channels/vasyaznaet.ru"
+      ],
+      "observed_at": "2026-11-18T19:01:32+00:00",
+      "http_status": 200
+    },
+    {
+      "url": "https://dzen.guru/channels?topicId=19",
+      "rows": 50,
+      "profile_plan": [
+        "https://dzen.guru/channels/anna_klishina",
+        "https://dzen.guru/channels/avia.pro",
+        "https://dzen.guru/channels/fishki",
+        "https://dzen.guru/channels/master_sergeich",
+        "https://dzen.guru/channels/maximonline.ru",
+        "https://dzen.guru/channels/mikheev"
+      ],
+      "observed_at": "2026-11-18T19:01:36+00:00",
+      "http_status": 200
+    },
+    {
+      "url": "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8",
+      "rows": 50,
+      "profile_plan": [
+        "https://dzen.guru/channels/657ac898254ced4086f33eda",
+        "https://dzen.guru/channels/cg_stas",
+        "https://dzen.guru/channels/hiaimedia",
+        "https://dzen.guru/channels/neyrosetiya",
+        "https://dzen.guru/channels/sukhov_ai",
+        "https://dzen.guru/channels/sabka_pro"
+      ],
+      "observed_at": "2026-11-18T18:49:24Z",
+      "http_status": 200,
+      "snapshot_stage": "A.5"
+    }
+  ],
+  "unique_catalog_channels": 230,
+  "profiles_reviewed": 38,
+  "rules": {
+    "priority_median": 300,
+    "reserve_median": 100,
+    "minimum_publications_30d": 4,
+    "regular_use_internal_export": "permission_not_established"
+  },
+  "shortlist": [
+    {
+      "channel": "appleinsider.ru",
+      "name": "AppleInsider.ru",
+      "url": "https://dzen.ru/appleinsider.ru",
+      "metric_source": "https://dzen.guru/channels/appleinsider.ru",
+      "observed_at": "2026-11-18T19:02:31+00:00",
+      "profile_updated_at": "2026-11-18T15:25:07.799571+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 86778,
+      "publications_30d": 231,
+      "median_views": 619,
+      "guru_faq_views": 619,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        11,
+        10724
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Крупное технологическое медиа. Apple Intelligence, Siri, генерация на iPhone.",
+        "urls": [
+          "https://appleinsider.ru/sluxi/siri-mozhet-stat-ii-agentom-uzhe-v-sleduyushhem-godu-glava-apple-potreboval-uskoritsya.html",
+          "https://appleinsider.ru/tips-tricks/kak-sdelat-svoi-oboi-na-iphone-v-ios-27-s-pomoshhyu-nejroseti.html"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://appleinsider.ru/sluxi/siri-mozhet-stat-ii-agentom-uzhe-v-sleduyushhem-godu-glava-apple-potreboval-uskoritsya.html",
+            "observed_at": "2026-11-19T01:57:17+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://appleinsider.ru/tips-tricks/kak-sdelat-svoi-oboi-na-iphone-v-ios-27-s-pomoshhyu-nejroseti.html",
+            "observed_at": "2026-11-19T01:57:18+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "priority"
+    },
+    {
+      "channel": "mrandroidru",
+      "name": "Mr.Android — эксперт по гаджетам",
+      "url": "https://dzen.ru/mrandroidru",
+      "metric_source": "https://dzen.guru/channels/mrandroidru",
+      "observed_at": "2026-11-18T19:02:39+00:00",
+      "profile_updated_at": "2026-11-18T15:20:05.276256+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 132752,
+      "publications_30d": 58,
+      "median_views": 378,
+      "guru_faq_views": 378,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        5,
+        31324
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологический автор. Применение языковых моделей и мобильные ИИ-сервисы.",
+        "urls": [
+          "https://mrandroid.ru/ai-deciphered-napoleon-letter/",
+          "https://mrandroid.ru/google-gemini-trademark-russia/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://mrandroid.ru/ai-deciphered-napoleon-letter/",
+            "observed_at": "2026-11-19T01:57:20+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://mrandroid.ru/google-gemini-trademark-russia/",
+            "observed_at": "2026-11-19T01:57:21+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "priority"
+    },
+    {
+      "channel": "androidinsider.ru",
+      "name": "AndroidInsider.ru",
+      "url": "https://dzen.ru/androidinsider.ru",
+      "metric_source": "https://dzen.guru/channels/androidinsider.ru",
+      "observed_at": "2026-11-18T19:02:27+00:00",
+      "profile_updated_at": "2026-11-18T06:35:06.393776+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 198371,
+      "publications_30d": 200,
+      "median_views": 337,
+      "guru_faq_views": 337,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        85,
+        1963
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Локальные нейросети, Gemini и Android.",
+        "urls": [
+          "https://androidinsider.ru/obzory-prilozhenij/vyshla-besplatnaya-nejroset-na-android-kotoraya-rabotaet-bez-interneta-i-ne-slivaet-dannye.html",
+          "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://androidinsider.ru/obzory-prilozhenij/vyshla-besplatnaya-nejroset-na-android-kotoraya-rabotaet-bez-interneta-i-ne-slivaet-dannye.html",
+            "observed_at": "2026-11-19T01:57:23+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html",
+            "observed_at": "2026-11-19T01:57:25+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "priority"
+    },
+    {
+      "channel": "poznyaevru",
+      "name": "Блог системного администратора",
+      "url": "https://dzen.ru/poznyaevru",
+      "metric_source": "https://dzen.guru/channels/poznyaevru",
+      "observed_at": "2026-11-18T19:08:09+00:00",
+      "profile_updated_at": "2026-11-18T06:40:03.202743+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 237225,
+      "publications_30d": 19,
+      "median_views": 303,
+      "guru_faq_views": 303,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        19,
+        10606
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Авторский IT-блог. Устройство нейросетей, применение и влияние на профессии.",
+        "urls": [
+          "https://poznyaev.ru/chto-takoe-neyroseti/",
+          "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://poznyaev.ru/chto-takoe-neyroseti/",
+            "observed_at": "2026-11-19T01:57:28+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/",
+            "observed_at": "2026-11-19T01:57:29+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "priority"
+    },
+    {
+      "channel": "nplus1",
+      "name": "N + 1 — новости науки и технологий",
+      "url": "https://dzen.ru/nplus1",
+      "metric_source": "https://dzen.guru/channels/nplus1",
+      "observed_at": "2026-11-18T19:03:02+00:00",
+      "profile_updated_at": "2026-11-18T03:58:08.137548+00:00",
+      "niches": [
+        "Наука и образование"
+      ],
+      "subscribers": 189174,
+      "publications_30d": 161,
+      "median_views": 223,
+      "guru_faq_views": 223,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        16,
+        3484
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=18"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Научное медиа. Языковые модели, машинное обучение в исследованиях и робототехнике.",
+        "urls": [
+          "https://nplus1.ru/blog/2026/09/25/astra-behind-the-wheel/amp",
+          "https://nplus1.ru/news/2026/07/03/genatator"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://nplus1.ru/blog/2026/09/25/astra-behind-the-wheel/amp",
+            "observed_at": "2026-11-19T01:57:31+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://nplus1.ru/news/2026/07/03/genatator",
+            "observed_at": "2026-11-19T01:57:32+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "reserve"
+    },
+    {
+      "channel": "habr_career",
+      "name": "Хабр Карьера",
+      "url": "https://dzen.ru/habr_career",
+      "metric_source": "https://dzen.guru/channels/habr_career",
+      "observed_at": "2026-11-18T19:06:41+00:00",
+      "profile_updated_at": "2026-11-18T05:43:11.407389+00:00",
+      "niches": [],
+      "subscribers": 7321,
+      "publications_30d": 9,
+      "median_views": 188,
+      "guru_faq_views": 188,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        9,
+        7976
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Профессиональное медиа. ИИ в IT-работе и обучении.",
+        "urls": [
+          "https://habr.com/ru/companies/habr_career/articles/1047570/",
+          "https://habr.com/ru/companies/habr_career/articles/985796/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://habr.com/ru/companies/habr_career/articles/1047570/",
+            "observed_at": "2026-11-19T01:57:34+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://habr.com/ru/companies/habr_career/articles/985796/",
+            "observed_at": "2026-11-19T01:57:35+00:00",
+            "http_status": 200
+          }
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "reserve"
+    }
+  ],
+  "held": [
+    {
+      "channel": "ichip.ru",
+      "name": "ICHIP.RU",
+      "url": "https://dzen.ru/ichip.ru",
+      "metric_source": "https://dzen.guru/channels/ichip.ru",
+      "observed_at": "2026-11-18T19:02:34+00:00",
+      "profile_updated_at": "2026-11-18T03:58:08.137548+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 152545,
+      "publications_30d": 304,
+      "median_views": 67,
+      "guru_faq_views": 67,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        25,
+        1853
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "mts_media",
+      "name": "МТС Редспот",
+      "url": "https://dzen.ru/mts_media",
+      "metric_source": "https://dzen.guru/channels/mts_media",
+      "observed_at": "2026-11-18T19:08:06+00:00",
+      "profile_updated_at": "2026-11-18T05:59:44.74496+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 77421,
+      "publications_30d": 17,
+      "median_views": 48,
+      "guru_faq_views": 48,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        17,
+        25169
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Объяснения и практика работы с нейросетями.",
+        "urls": [
+          "https://media.mts.ru/technologies/214773-chto-nelzya-delat-cherez-nejroseti",
+          "https://media.mts.ru/technologies/214110-chto-takoe-gallyucinacii-iskusstvennogo-intellekta"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "hi-news.ru",
+      "name": "Hi-News.ru",
+      "url": "https://dzen.ru/hi-news.ru",
+      "metric_source": "https://dzen.guru/channels/hi-news.ru",
+      "observed_at": "2026-11-18T19:02:36+00:00",
+      "profile_updated_at": "2026-11-18T17:20:14.941144+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 156688,
+      "publications_30d": 231,
+      "median_views": 43,
+      "guru_faq_views": 43,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        6,
+        112
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "naukatv",
+      "name": "Наука",
+      "url": "https://dzen.ru/naukatv",
+      "metric_source": "https://dzen.guru/channels/naukatv",
+      "observed_at": "2026-11-18T19:02:57+00:00",
+      "profile_updated_at": "2026-11-18T17:20:04.673201+00:00",
+      "niches": [
+        "Наука и образование"
+      ],
+      "subscribers": 300028,
+      "publications_30d": 594,
+      "median_views": 39,
+      "guru_faq_views": 39,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        5,
+        170
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=18"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Научное медиа. Прикладной ИИ и новые исследования.",
+        "urls": [
+          "https://naukatv.ru/news/rossijskie_uchenye_perenesli_mekhanizm_samoregulyatsii_mozga_v_nejroset",
+          "https://naukatv.ru/news/openai_pokazala_kak_ii_uskoryaet_razrabotku_elektroniki_i_avtomobilnykh_detalej"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "pochinka_blog",
+      "name": "Pochinka_blog",
+      "url": "https://dzen.ru/pochinka_blog",
+      "metric_source": "https://dzen.guru/channels/pochinka_blog",
+      "observed_at": "2026-11-18T19:02:21+00:00",
+      "profile_updated_at": "2026-11-18T06:05:57.888508+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 224555,
+      "publications_30d": 292,
+      "median_views": 35,
+      "guru_faq_views": 35,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        2,
+        16212
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "dp.ru",
+      "name": "Деловой Петербург — свежие новости и видео",
+      "url": "https://dzen.ru/dp.ru",
+      "metric_source": "https://dzen.guru/channels/dp.ru",
+      "observed_at": "2026-11-18T19:03:21+00:00",
+      "profile_updated_at": "2026-11-18T06:12:44.595491+00:00",
+      "niches": [
+        "Финансы, бизнес и недвижимость"
+      ],
+      "subscribers": 74981,
+      "publications_30d": 200,
+      "median_views": 24,
+      "guru_faq_views": 24,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        1003
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=3"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "hi-tech.mail.ru",
+      "name": "Hi-Tech Mail",
+      "url": "https://dzen.ru/hi-tech.mail.ru",
+      "metric_source": "https://dzen.guru/channels/hi-tech.mail.ru",
+      "observed_at": "2026-11-18T19:02:48+00:00",
+      "profile_updated_at": "2026-11-18T07:20:08.918457+00:00",
+      "niches": [
+        "Наука и образование"
+      ],
+      "subscribers": 644674,
+      "publications_30d": 18,
+      "median_views": 18,
+      "guru_faq_views": 18,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        15411
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=18"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. Отдельная редакционная рубрика ИИ.",
+        "urls": [
+          "https://hi-tech.mail.ru/rubric/ai/",
+          "https://hi-tech.mail.ru/tags/iskusstvennyyintellekt/"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "digitalocean",
+      "name": "Цифровой Океан",
+      "url": "https://dzen.ru/digitalocean",
+      "metric_source": "https://dzen.guru/channels/digitalocean",
+      "observed_at": "2026-11-18T18:47:05Z",
+      "profile_updated_at": "2026-11-18T07:20:14.521815+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 21851,
+      "publications_30d": 48,
+      "median_views": 15,
+      "guru_faq_views": 15,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        25002
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "dzen_publications",
+        "theme": "Технологическое медиа. Прикладной ИИ, генеративное кино и использование фотографий.",
+        "ai_share_on_dzen": {
+          "matches": 4,
+          "sample_size": 10,
+          "observed_at": "2026-11-18T18:32:31Z"
+        },
+        "historical_discussions_on_dzen": {
+          "mature_ai_posts_with_comments": 2,
+          "observed_at": "2026-11-18T18:32:31Z"
+        },
+        "urls": [
+          "https://dzen.ru/a/avyNN1o7XEG5ONPT",
+          "https://github.com/AfterDark1000/iipike-site/blob/1d25575662dd80a17840d4aacbe72f8918750732/docs/DZEN_DISCOVERY_STAGE_A5.md"
+        ]
+      },
+      "ai_share_on_dzen": {
+        "matches": 4,
+        "sample_size": 10,
+        "observed_at": "2026-11-18T18:32:31Z"
+      },
+      "historical_discussions_on_dzen": {
+        "mature_ai_posts_with_comments": 2,
+        "observed_at": "2026-11-18T18:32:31Z"
+      },
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "nstor",
+      "name": "NStor - журнал о графике и нейросетях",
+      "url": "https://dzen.ru/nstor",
+      "metric_source": "https://dzen.guru/channels/nstor",
+      "observed_at": "2026-11-18T19:03:08+00:00",
+      "profile_updated_at": "2026-11-18T10:00:21.452735+00:00",
+      "niches": [],
+      "subscribers": 95186,
+      "publications_30d": 437,
+      "median_views": 12,
+      "guru_faq_views": 12,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        35
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "kod",
+      "name": "Код.ру",
+      "url": "https://dzen.ru/kod",
+      "metric_source": "https://dzen.guru/channels/kod",
+      "observed_at": "2026-11-18T19:07:57+00:00",
+      "profile_updated_at": "2026-11-18T03:32:03.543523+00:00",
+      "niches": [],
+      "subscribers": 18904,
+      "publications_30d": 632,
+      "median_views": 10,
+      "guru_faq_views": 10,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        136
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое медиа. ИИ-продукты и встроенные помощники.",
+        "urls": [
+          "https://kod.ru/2gis-zapis-na-uslugi/amp",
+          "https://kod.ru/sber-predstavil-gigachat-ultra/amp"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "nakedscience",
+      "name": "Naked Science",
+      "url": "https://dzen.ru/nakedscience",
+      "metric_source": "https://dzen.guru/channels/nakedscience",
+      "observed_at": "2026-11-18T19:02:59+00:00",
+      "profile_updated_at": "2026-11-18T07:30:16.85375+00:00",
+      "niches": [
+        "Наука и образование"
+      ],
+      "subscribers": 159323,
+      "publications_30d": 742,
+      "median_views": 10,
+      "guru_faq_views": 10,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        3,
+        30
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=18"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "forbes.ru",
+      "name": "Forbes Russia",
+      "url": "https://dzen.ru/forbes.ru",
+      "metric_source": "https://dzen.guru/channels/forbes.ru",
+      "observed_at": "2026-11-18T19:03:24+00:00",
+      "profile_updated_at": "2026-11-18T09:50:07.807676+00:00",
+      "niches": [
+        "Финансы, бизнес и недвижимость"
+      ],
+      "subscribers": 214767,
+      "publications_30d": 588,
+      "median_views": 5,
+      "guru_faq_views": 5,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        1,
+        10
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=3"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. ИИ в банкинге и регулировании.",
+        "urls": [
+          "https://blogs.forbes.ru/2026/11/17/kak-ii-menjaet-banking-i-pochemu-nastojashhaja-transformacija-tolko-nachinaetsja/",
+          "https://blogs.forbes.ru/2026/10/29/opasnoe-uskorenie-regulirovanie-ii-ne-spaset-biznes-ot-kiberugroz/"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "iguides",
+      "name": "iGuides.ru - обзоры, личный опыт, инструкции",
+      "url": "https://dzen.ru/iguides",
+      "metric_source": "https://dzen.guru/channels/iguides",
+      "observed_at": "2026-11-18T19:08:13+00:00",
+      "profile_updated_at": "2026-11-18T16:50:13.074681+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 48478,
+      "publications_30d": 500,
+      "median_views": 5,
+      "guru_faq_views": 5,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        2,
+        29
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "incrussia.ru",
+      "name": "Инк.",
+      "url": "https://dzen.ru/incrussia.ru",
+      "metric_source": "https://dzen.guru/channels/incrussia.ru",
+      "observed_at": "2026-11-18T19:03:18+00:00",
+      "profile_updated_at": "2026-11-18T10:00:08.495737+00:00",
+      "niches": [
+        "Финансы, бизнес и недвижимость"
+      ],
+      "subscribers": 96394,
+      "publications_30d": 371,
+      "median_views": 5,
+      "guru_faq_views": 5,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        3,
+        908
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=3"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. Внедрение ИИ и инвестиции компаний.",
+        "urls": [
+          "https://incrussia.ru/news/rossijskij-biznes-stolknulsya-s-trudnostyami-pri-vnedrenii-ii/",
+          "https://incrussia.ru/news/rashody-amerikanskih-kompanij-na-ii-dostigli-rekorda/"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "bfm.ru",
+      "name": "BFM.ru",
+      "url": "https://dzen.ru/bfm.ru",
+      "metric_source": "https://dzen.guru/channels/bfm.ru",
+      "observed_at": "2026-11-18T19:03:16+00:00",
+      "profile_updated_at": "2026-11-18T15:20:15.138325+00:00",
+      "niches": [
+        "Финансы, бизнес и недвижимость"
+      ],
+      "subscribers": 241529,
+      "publications_30d": 3000,
+      "median_views": 3,
+      "guru_faq_views": 3,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        2,
+        43
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=3"
+      ],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Деловое медиа. Агентная экономика и рынки ИИ.",
+        "urls": [
+          "https://www.bfm.ru/amp/news/623582",
+          "https://www.bfm.ru/amp/news/617917"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "below_pilot_median"
+    },
+    {
+      "channel": "000l.ru",
+      "name": "Секреты нейросетей",
+      "url": "https://dzen.ru/000l.ru",
+      "metric_source": "https://dzen.guru/channels/000l.ru",
+      "observed_at": "2026-11-18T19:06:55+00:00",
+      "profile_updated_at": "2026-11-18T16:31:19.436378+00:00",
+      "niches": [],
+      "subscribers": 1068,
+      "publications_30d": 92,
+      "median_views": null,
+      "guru_faq_views": 1,
+      "guru_views_30d_for_metric_check": 124,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "ainewscp",
+      "name": "AI News | Новости ИИ",
+      "url": "https://dzen.ru/ainewscp",
+      "metric_source": "https://dzen.guru/channels/ainewscp",
+      "observed_at": "2026-11-18T19:06:44+00:00",
+      "profile_updated_at": "2026-11-18T05:15:32.739598+00:00",
+      "niches": [],
+      "subscribers": 2166,
+      "publications_30d": 1,
+      "median_views": null,
+      "guru_faq_views": null,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "missing_median",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "clubdns",
+      "name": "Клуб DNS",
+      "url": "https://dzen.ru/clubdns",
+      "metric_source": "https://dzen.guru/channels/clubdns",
+      "observed_at": "2026-11-18T19:08:02+00:00",
+      "profile_updated_at": "2026-11-18T03:04:14.721064+00:00",
+      "niches": [
+        "Гаджеты и электроника"
+      ],
+      "subscribers": 40185,
+      "publications_30d": 47,
+      "median_views": null,
+      "guru_faq_views": 8613,
+      "guru_views_30d_for_metric_check": 404801,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое сообщество. Отдельная рубрика об ИИ в приложениях и гаджетах.",
+        "urls": [
+          "https://club.dns-shop.ru/blog/t-415-neiroseti-i-ai/183100-kak-otkluchit-ii-v-prilojeniyah-i-gadjetah/",
+          "https://club.dns-shop.ru/digest/120036-v-prilojenii-2gis-poyavilsya-iskusstvennyii-intellekt/"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "ixbt.live",
+      "name": "IXBT Live",
+      "url": "https://dzen.ru/ixbt.live",
+      "metric_source": "https://dzen.guru/channels/ixbt.live",
+      "observed_at": "2026-11-18T19:07:59+00:00",
+      "profile_updated_at": "2026-11-18T03:58:07.42702+00:00",
+      "niches": [],
+      "subscribers": 21915,
+      "publications_30d": 177,
+      "median_views": null,
+      "guru_faq_views": 125,
+      "guru_views_30d_for_metric_check": 22150,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": {
+        "kind": "publisher_site",
+        "theme": "Технологическое сообщество. Обзоры и сравнения ИИ-сервисов.",
+        "urls": [
+          "https://www.ixbt.com/live/sw/google-anonsirovala-gemini-38-live-i-extended-thinking-ii-sposoben-vosprinimat-vizualnuyu-informaciyu-i-reshat-zadachi-pryamo-v-hode-dialoga.amp.html",
+          "https://www.ixbt.com/live/sw/kakaya-neyroset-luchshe-sravnivaem-chatgpt-claude-gemini-i-deepseek.html"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "neuralmagic",
+      "name": "Магия нейросетей",
+      "url": "https://dzen.ru/neuralmagic",
+      "metric_source": "https://dzen.guru/channels/neuralmagic",
+      "observed_at": "2026-11-18T19:06:46+00:00",
+      "profile_updated_at": "2026-11-18T15:29:28.56138+00:00",
+      "niches": [],
+      "subscribers": 1057,
+      "publications_30d": 0,
+      "median_views": null,
+      "guru_faq_views": null,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "missing_median",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "neuro_progressor",
+      "name": "нейро Прогрессор || HR, бизнес и нейросети || Валерия Кравченко",
+      "url": "https://dzen.ru/neuro_progressor",
+      "metric_source": "https://dzen.guru/channels/neuro_progressor",
+      "observed_at": "2026-11-18T19:06:49+00:00",
+      "profile_updated_at": "2026-11-18T15:41:50.430883+00:00",
+      "niches": [],
+      "subscribers": 400,
+      "publications_30d": 17,
+      "median_views": null,
+      "guru_faq_views": 289,
+      "guru_views_30d_for_metric_check": 4910,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "neuroseti_zdes",
+      "name": "Нейросети здесь",
+      "url": "https://dzen.ru/neuroseti_zdes",
+      "metric_source": "https://dzen.guru/channels/neuroseti_zdes",
+      "observed_at": "2026-11-18T19:03:11+00:00",
+      "profile_updated_at": "2026-11-18T18:07:53.341266+00:00",
+      "niches": [
+        "IT (информационные технологии)"
+      ],
+      "subscribers": 5083,
+      "publications_30d": 66,
+      "median_views": null,
+      "guru_faq_views": 1252,
+      "guru_views_30d_for_metric_check": 82628,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "neyrosetiya",
+      "name": "Нейросети и Писатель",
+      "url": "https://dzen.ru/neyrosetiya",
+      "metric_source": "https://dzen.guru/channels/neyrosetiya",
+      "observed_at": "2026-11-18T19:06:58+00:00",
+      "profile_updated_at": "2026-11-18T18:42:16.372099+00:00",
+      "niches": [],
+      "subscribers": 3759,
+      "publications_30d": 31,
+      "median_views": null,
+      "guru_faq_views": 31,
+      "guru_views_30d_for_metric_check": 950,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "promptsy",
+      "name": "Промтсы / Промты Для Нейросети",
+      "url": "https://dzen.ru/promptsy",
+      "metric_source": "https://dzen.guru/channels/promptsy",
+      "observed_at": "2026-11-18T19:06:52+00:00",
+      "profile_updated_at": "2026-11-18T05:40:40.838905+00:00",
+      "niches": [],
+      "subscribers": 138,
+      "publications_30d": 0,
+      "median_views": null,
+      "guru_faq_views": null,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "missing_median",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "sukhov_ai",
+      "name": "Vladimir Sukhov | Нейросети, профессии и доход",
+      "url": "https://dzen.ru/sukhov_ai",
+      "metric_source": "https://dzen.guru/channels/sukhov_ai",
+      "observed_at": "2026-11-18T19:03:13+00:00",
+      "profile_updated_at": "2026-11-18T18:08:19.791409+00:00",
+      "niches": [],
+      "subscribers": 2329,
+      "publications_30d": 57,
+      "median_views": null,
+      "guru_faq_views": 281,
+      "guru_views_30d_for_metric_check": 16021,
+      "metric_quality": "possible_mean_fallback",
+      "median_observed_range": null,
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?q=%D0%BD%D0%B5%D0%B9%D1%80%D0%BE%D1%81%D0%B5%D1%82%D0%B8"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_median"
+    },
+    {
+      "channel": "na_sviazi",
+      "name": "На свяZи",
+      "url": "https://dzen.ru/na_sviazi",
+      "metric_source": "https://dzen.guru/channels/na_sviazi",
+      "observed_at": "2026-11-18T19:02:42+00:00",
+      "profile_updated_at": "2026-11-18T06:15:48.364471+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 157756,
+      "publications_30d": 11,
+      "median_views": 14333,
+      "guru_faq_views": 14333,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        599,
+        31686
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": {
+        "kind": "author_feed",
+        "theme": "Технологический автор. Практический обзор HyperAI; второй самостоятельный материал не подтверждён.",
+        "urls": [
+          "https://t.me/s/na_sviazi/3862"
+        ]
+      },
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "androidlime",
+      "name": "AndroidLime",
+      "url": "https://dzen.ru/androidlime",
+      "metric_source": "https://dzen.guru/channels/androidlime",
+      "observed_at": "2026-11-18T19:02:24+00:00",
+      "profile_updated_at": "2026-11-18T14:00:06.326544+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 218307,
+      "publications_30d": 13,
+      "median_views": 2730,
+      "guru_faq_views": 2730,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        209,
+        97352
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "nauka",
+      "name": "Популярная наука",
+      "url": "https://dzen.ru/nauka",
+      "metric_source": "https://dzen.guru/channels/nauka",
+      "observed_at": "2026-11-18T19:02:53+00:00",
+      "profile_updated_at": "2026-11-18T06:45:11.621732+00:00",
+      "niches": [
+        "История"
+      ],
+      "subscribers": 773344,
+      "publications_30d": 109,
+      "median_views": 1404,
+      "guru_faq_views": 1404,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        26,
+        24144
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "cifrohype",
+      "name": "ЦИФРОХАЙП",
+      "url": "https://dzen.ru/cifrohype",
+      "metric_source": "https://dzen.guru/channels/cifrohype",
+      "observed_at": "2026-11-18T19:02:45+00:00",
+      "profile_updated_at": "2026-11-18T14:45:06.426626+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 131103,
+      "publications_30d": 93,
+      "median_views": 975,
+      "guru_faq_views": 975,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        90,
+        15342
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "inznan",
+      "name": "⚠️ Инженерные Знания",
+      "url": "https://dzen.ru/inznan",
+      "metric_source": "https://dzen.guru/channels/inznan",
+      "observed_at": "2026-11-18T19:03:05+00:00",
+      "profile_updated_at": "2026-11-18T18:10:12.313762+00:00",
+      "niches": [
+        "Наука и образование"
+      ],
+      "subscribers": 206548,
+      "publications_30d": 54,
+      "median_views": 842,
+      "guru_faq_views": 842,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        10,
+        5962
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=18"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "geekwolf",
+      "name": "The Geek Wolf",
+      "url": "https://dzen.ru/geekwolf",
+      "metric_source": "https://dzen.guru/channels/geekwolf",
+      "observed_at": "2026-11-18T19:07:01+00:00",
+      "profile_updated_at": "2026-11-18T05:15:06.002997+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 23950,
+      "publications_30d": 28,
+      "median_views": 443,
+      "guru_faq_views": 443,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        29,
+        26724
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    },
+    {
+      "channel": "dplatforma",
+      "name": "ПЛАТФОРМА",
+      "url": "https://dzen.ru/dplatforma",
+      "metric_source": "https://dzen.guru/channels/dplatforma",
+      "observed_at": "2026-11-18T19:02:51+00:00",
+      "profile_updated_at": "2026-11-18T10:00:10.080546+00:00",
+      "niches": [
+        "IT и гаджеты"
+      ],
+      "subscribers": 38802,
+      "publications_30d": 273,
+      "median_views": 359,
+      "guru_faq_views": 359,
+      "guru_views_30d_for_metric_check": null,
+      "metric_quality": "guru_faq_median",
+      "median_observed_range": [
+        19,
+        928
+      ],
+      "median_sample_size": null,
+      "median_post_age": null,
+      "catalog_sources": [
+        "https://dzen.guru/channels?topicId=12"
+      ],
+      "topic_evidence": null,
+      "ai_share_on_dzen": null,
+      "historical_discussions_on_dzen": null,
+      "audience_status": "unverified",
+      "status": "unverified_recurring_ai"
+    }
+  ],
+  "editorial_link_recheck": {
+    "direct_dzen_matches_from_publishers": 0,
+    "replaced_link": "https://androidinsider.ru/obzory-prilozhenij/google-polnostyu-peredelala-gemini-na-android-kak-izmenitsya-nejroset-v-2026-godu.html",
+    "replaced_link_http_status": 404,
+    "replacement": "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html"
+  }
+}

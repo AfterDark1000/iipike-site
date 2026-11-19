@@ -1,0 +1,248 @@
+import copy
+import json
+import sys
+import tempfile
+import unittest
+from contextlib import closing
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from dzen_first_car import HOUR, WINDOW, connect, dzen_snapshot, ingest, mark, queue_snapshot, replay_sequence, timestamp
+from dzen_first_car_candidates import SavedCandidates, publisher_candidates
+from dzen_first_car_rss import hints
+from dzen_first_car_signals import ingest_signals, mark_signal, signal_snapshot
+
+ROOT = Path(__file__).resolve().parents[1]
+FIXTURE = ROOT / "lab" / "dzen-first-car" / "fixtures" / "sequence.json"
+NEW = "https://dzen.ru/a/demo000000000006"
+SIGNALS = FIXTURE.with_name("scout-signals.json")
+COMMENTING = FIXTURE.with_name("commenting-queue-2026-11-19.json")
+PILOT = ROOT / "docs" / "DZEN_SIX_CHANNEL_PILOT_2026-11-19.json"
+ANDROID = "https://dzen.ru/a/av3TvaCL2QDF_wYt"
+
+
+class FirstCarPipelineTest(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.path = Path(self.temp.name) / "history.db"
+        self.db = connect(self.path, replay=True)
+        self.addCleanup(self.db.close)
+        self.steps = json.loads(FIXTURE.read_bytes())["steps"]
+
+    def test_sequence_detects_once_and_keeps_handled_item_out_of_pending(self):
+        steps = replay_sequence(self.db, self.steps)["steps"]
+        self.assertEqual([len(s["pending"]) for s in steps], [0, 1, 1, 1, 0, 0])
+        self.assertEqual([s["total_offers"] for s in steps], [0, 1, 1, 1, 1, 1])
+        self.assertEqual(steps[4]["handled"], {NEW: "commented"})
+        self.assertEqual(steps[1]["pending"][0]["views"], 0)
+        self.assertEqual(steps[3]["pending"][0]["comments"], 2)
+        self.assertEqual(steps[3]["pending"][0]["first_seen_at"], "2026-11-19T10:10:00+00:00")
+        self.assertEqual(steps[3]["pending"][0]["offer_at"], steps[1]["as_of"])
+        with closing(connect(self.path, replay=True)) as reopened:
+            self.assertEqual(queue_snapshot(reopened, timestamp(steps[4]["as_of"]), replay=True)["decisions"],
+                             {NEW: "commented"})
+        self.assertEqual(queue_snapshot(self.db, timestamp(steps[1]["as_of"]), replay=True)["decisions"], {})
+
+    def test_conflicting_snapshot_is_atomic(self):
+        saved = self.steps[0]["snapshot"]
+        ingest(self.db, saved, replay=True)
+        bad = copy.deepcopy(saved)
+        bad["articles"][0]["views"] = 400
+        with self.assertRaisesRegex(ValueError, "Conflicting"):
+            ingest(self.db, bad, replay=True)
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM observations").fetchone()[0], 5)
+
+    def test_stale_snapshot_and_unknown_comments_cannot_enter_queue(self):
+        ingest(self.db, self.steps[0]["snapshot"], replay=True)
+        fresh = copy.deepcopy(self.steps[1]["snapshot"])
+        fresh["articles"][0]["comments"] = None
+        ingest(self.db, fresh, replay=True)
+        result = queue_snapshot(self.db, timestamp(fresh["observed_at"]), replay=True)
+        self.assertEqual(result["channels"][0]["status"], "confirmed_candidate")
+        self.assertEqual(result["channels"][0]["history"]["median_views"], 500)
+        self.assertEqual(result["articles"], [])
+        self.assertEqual(result["candidates"][0]["confidence"], "limited")
+        self.assertIsNone(result["candidates"][0]["comments"])
+        saved = self.steps[3]["snapshot"]
+        ingest(self.db, saved, replay=True)
+        later = timestamp("2026-11-19T10:43:00Z")
+        self.assertEqual(queue_snapshot(self.db, later, replay=True)["articles"], [])
+
+    def test_24h_keeps_second_tier_and_requires_fresh_metrics(self):
+        ingest(self.db, self.steps[0]["snapshot"], replay=True)
+        later = copy.deepcopy(self.steps[1]["snapshot"])
+        later["articles"][0]["published_at"] = "2026-11-18T16:30:00Z"
+        later["articles"][0]["comments"] = 4
+        ingest(self.db, later, replay=True)
+        next_observation = copy.deepcopy(later)
+        next_observation["observed_at"] = "2026-11-19T10:20:00Z"
+        next_observation["articles"][0]["comments"] = 15
+        ingest(self.db, next_observation, replay=True)
+        now = timestamp(next_observation["observed_at"])
+        verified = queue_snapshot(self.db, now, replay=True)["articles"]
+        self.assertEqual([(row["url"], row["comments"]) for row in verified], [(NEW, 15)])
+        self.assertEqual(verified[0]["comment_change"]["delta"], 11)
+        self.assertEqual(queue_snapshot(self.db, now, replay=True, window=HOUR)["articles"], [])
+        stale = queue_snapshot(self.db, now + 901, replay=True)
+        self.assertEqual(stale["articles"], [])
+        self.assertTrue(stale["candidates"][0]["historical"])
+
+    def test_real_commenting_and_pilot_snapshots_are_read_only_candidates(self):
+        now = timestamp("2026-11-19T10:06:30Z")
+        saved = SavedCandidates(COMMENTING, PILOT)
+        source = json.loads(COMMENTING.read_bytes())
+        self.assertEqual(len(list(publisher_candidates(source, timestamp("2026-11-19T09:28:44Z"), WINDOW))), 4)
+        result = queue_snapshot(self.db, now, replay=True)
+        saved.add_to(result, now, WINDOW)
+        self.assertEqual(result["articles"], [])
+        self.assertEqual(len(result["candidates"]), 5)
+        by_kind = [row for row in result["candidates"] if row["kind"] == "publisher"]
+        self.assertEqual(len(by_kind), 4)
+        self.assertTrue(all(row["draft_comment"] and row["dzen_url"] is None and
+                            row["dzen_published_at"] is None for row in by_kind))
+        direct = next(row for row in result["candidates"] if row["kind"] == "dzen")
+        self.assertEqual((direct["dzen_url"], direct["comments"], direct["views"]), (ANDROID, 3, 236))
+        self.assertEqual(direct["history"]["median_views"], 493)
+        self.assertTrue(direct["historical"])
+        self.assertIsNone(direct.get("comment_change"))
+        self.assertEqual(self.db.execute("SELECT count(*) FROM observations").fetchone()[0], 0)
+        self.assertEqual(json.loads(COMMENTING.read_bytes()), source)
+
+    def test_mirror_enriches_one_candidate_without_overwriting_dzen_time(self):
+        saved = SavedCandidates(COMMENTING, PILOT)
+        original = saved.commenting["items"][0]
+        original["dzen_url"] = ANDROID
+        saved.commenting["items"].append(dict(original))
+        now = timestamp("2026-11-19T10:06:30Z")
+        result = queue_snapshot(self.db, now, replay=True)
+        saved.add_to(result, now, WINDOW)
+        self.assertEqual(len(result["candidates"]), 4)
+        direct = next(row for row in result["candidates"] if row["key"] == ANDROID)
+        self.assertEqual(direct["draft_comment"], original["comment"])
+        self.assertEqual(direct["dzen_published_at"], "2026-11-18T16:30:28+00:00")
+        self.assertEqual(direct["publisher_published_at"], "2026-11-19T09:15:00+00:00")
+
+    def test_source_policies_and_demo_databases_remain_isolated(self):
+        with self.assertRaisesRegex(ValueError, "separate databases"):
+            connect(self.path)
+        with closing(connect(Path(self.temp.name) / "operational.db")) as separate:
+            with self.assertRaisesRegex(ValueError, "incompatible"):
+                ingest(separate, self.steps[0]["snapshot"])
+            raw = {"channel": {"status": "ok", "source": {
+                "title": "Контроль", "publisher_id": "0" * 24, "feed_link": "https://dzen.ru/control",
+            }}, "items": [{
+                "item_type": "native", "publisher_id": "0" * 24, "link": NEW + "?track=x",
+                "title": "Новая нейросеть", "publication_date": str(timestamp("2026-11-19T10:00:00Z")),
+                "views": 0, "socialInfo": {"commentsEnabled": True, "commentCount": 0},
+            }]}
+            snapshot = dzen_snapshot(raw, "control", "2026-11-19T10:10:00Z")
+            ingest(separate, snapshot)
+            self.assertEqual(separate.execute("SELECT url, views, comments, verified FROM observations")
+                             .fetchone()[:], (NEW, 0, 0, 0))
+            self.assertEqual(queue_snapshot(separate, timestamp(snapshot["observed_at"]))["articles"], [])
+
+    def test_rss_hint_is_deduplicated_and_remains_outside_article_history(self):
+        xml = b"""<rss><channel><item><title>New Apple Intelligence feature</title>
+                 <link>https://example.org/article</link><guid>1</guid>
+                 <description>Background: https://dzen.ru/a/demo000000000006</description>
+                 <pubDate>Thu, 19 Nov 2026 10:00:00 +0000</pubDate></item></channel></rss>"""
+        at = timestamp("2026-11-19T10:10:00Z")
+        result = hints(self.db, "control", "https://example.org/feed", xml, at)
+        self.assertTrue(result["request_hint"])
+        self.assertFalse(result["confirmed_on_dzen"])
+        self.assertNotIn("dzen_url", result["new_publisher_items"][0])
+        self.assertFalse(hints(self.db, "control", "https://example.org/feed", xml, at)["request_hint"])
+        self.assertEqual(self.db.execute("SELECT COUNT(*) FROM articles").fetchone()[0], 0)
+
+    def test_atom_dzen_alternate_is_a_hint_only_and_omitted_if_ambiguous(self):
+        at = timestamp("2026-11-19T10:10:00Z")
+        for extra, expected in (("", NEW), ('<link href="https://dzen.ru/a/demo000000000007"/>', None)):
+            xml = f"""<feed xmlns="http://www.w3.org/2005/Atom"><entry>
+                <title>New Apple Intelligence feature</title>
+                <link rel="alternate" href="https://example.org/article"/>
+                <link rel="alternate" href="{NEW}?share_to=link"/>{extra}
+                <published>2026-11-19T10:00:00Z</published></entry></feed>""".encode()
+            with closing(connect(":memory:")) as db:
+                result = hints(db, "control", "https://example.org/feed", xml, at)
+                self.assertFalse(result["confirmed_on_dzen"])
+                item = result["new_publisher_items"][0]
+                self.assertEqual(item.get("dzen_url"), expected)
+                self.assertEqual(item["publisher_published_at"], "2026-11-19T10:00:00+00:00")
+                self.assertEqual(queue_snapshot(db, at)["articles"], [])
+
+    def test_skip_persists_until_an_explicit_undo(self):
+        for step in self.steps[:2]:
+            ingest(self.db, step["snapshot"], replay=True)
+        now = timestamp("2026-11-19T10:10:00Z")
+        queue_snapshot(self.db, now, replay=True)
+        mark(self.db, NEW, "skipped", now)
+        self.assertEqual(queue_snapshot(self.db, now, replay=True)["decisions"], {NEW: "skipped"})
+        mark(self.db, NEW, "undo", now)
+        self.assertEqual(queue_snapshot(self.db, now, replay=True)["decisions"], {})
+
+    def test_external_signals_keep_first_detection_and_expire_outside_queue(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        catalog = json.loads((ROOT / "news.json").read_bytes())
+        published_links = {row.get("site_first_dzen_url") for row in catalog}
+        for signal in snapshot["signals"]:
+            self.assertIn(signal["url"].split("?")[0], published_links)
+        now = timestamp("2026-11-19T10:10:00Z")
+        self.assertEqual(ingest_signals(self.db, snapshot, replay=True), {"signals_read": 4, "signals_saved": 3})
+        self.assertEqual(ingest_signals(self.db, snapshot, replay=True)["signals_saved"], 0)
+        signals = signal_snapshot(self.db, now)
+        self.assertEqual(len(signals), 2)
+        self.assertEqual(signals[1]["detected_at"], "2026-11-19T10:00:00+00:00")
+        for signal in signals:
+            self.assertIn(signal["url"], published_links)
+            self.assertIsNone(signal["dzen_published_at"])
+            self.assertIsNone(signal["dzen_comments"])
+            self.assertIs(signal["verified"], False)
+        self.assertEqual(queue_snapshot(self.db, now, replay=True)["articles"], [])
+        self.assertEqual(self.db.execute("SELECT count(*) FROM articles").fetchone()[0], 0)
+        self.assertEqual(signal_snapshot(self.db, now + 3600), [])
+        with self.assertRaises(ValueError):
+            mark_signal(self.db, signals[1]["url"], "checked", now + 3600)
+
+    def test_signal_decisions_are_durable_and_do_not_mark_queue_articles(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        ingest_signals(self.db, snapshot, replay=True)
+        now = timestamp("2026-11-19T10:10:00Z")
+        first, second = signal_snapshot(self.db, now)
+        mark_signal(self.db, first["url"], "checked", now)
+        mark_signal(self.db, second["url"], "commented", now)
+        mark_signal(self.db, first["url"], "checked", now + 1)
+        with closing(connect(self.path, replay=True)) as reopened:
+            self.assertEqual([s["action"] for s in signal_snapshot(reopened, now)], ["checked", "commented"])
+            self.assertEqual(queue_snapshot(reopened, now, replay=True)["decisions"], {})
+        with self.assertRaises(ValueError):
+            mark(self.db, first["url"], "commented", now)
+
+    def test_signal_import_rejects_an_unapproved_source_and_rolls_back_bad_urls(self):
+        snapshot = json.loads(SIGNALS.read_bytes())
+        with closing(connect(":memory:")) as offline:
+            with self.assertRaises(ValueError):
+                ingest_signals(offline, snapshot)
+            snapshot["source_policy"] = {"status": "approved", "permission_ref": "Publisher grants local use"}
+            snapshot["signals"][-1]["source_url"] = "https://user@example.org/signal"
+            with self.assertRaises(ValueError):
+                ingest_signals(offline, snapshot)
+            self.assertEqual(offline.execute("SELECT count(*) FROM scout_signals").fetchone()[0], 0)
+            snapshot["signals"].pop()
+            self.assertEqual(ingest_signals(offline, snapshot)["signals_saved"], 2)
+            self.assertEqual(len(signal_snapshot(offline, timestamp("2026-11-19T10:10:00Z"))), 2)
+
+    def test_independently_verified_article_is_only_shown_in_strict_queue(self):
+        for step in self.steps[:2]:
+            ingest(self.db, step["snapshot"], replay=True)
+        snapshot = json.loads(SIGNALS.read_bytes())
+        snapshot["signals"] = [{**snapshot["signals"][0], "url": NEW}]
+        ingest_signals(self.db, snapshot, replay=True)
+        now = timestamp("2026-11-19T10:10:00Z")
+        self.assertEqual(len(signal_snapshot(self.db, now)), 1)
+        self.assertEqual([article["url"] for article in queue_snapshot(self.db, now, replay=True)["articles"]], [NEW])
+        self.assertEqual(signal_snapshot(self.db, now), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
