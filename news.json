@@ -6839,5 +6839,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки",
+    "summary": "Google начала бесплатно открывать Tasks in Gemini в шести странах. В США агент может обзванивать компании и готовить покупки с подтверждением владельца.",
+    "published": "2026-11-19",
+    "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+    "cover": "assets/editorial/google-gemini-tasks-free-calls-shopping-20261117.webp",
+    "rubric": "news",
+    "vk_title": "📞 GOOGLE сделала ИИ-ИСПОЛНИТЕЛЯ бесплатным — он сам звонит компаниям",
+    "vk_summary": "Google открыла бесплатный доступ к Tasks в Gemini в шести странах. Агент выполняет поручения в фоне, а в США дополнительно умеет обзванивать компании, записывать на услуги и готовить покупки через Google Pay. Оплата проходит после подтверждения владельца.",
+    "published_at_utc": "2026-11-19T09:00:55Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "google-gemini-tasks-free-calls-shopping-20261117",
+    "url": "articles/google-gemini-tasks-free-calls-shopping-20261117/",
+    "topics": [
+      "agents",
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
