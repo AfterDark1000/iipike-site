@@ -1,0 +1,29 @@
+name: HPII — handoff after cover decision (NO PUBLICATION)
+on:
+  push:
+    branches: [editorial-intake]
+    paths:
+      - 'editorial_inbox/auto_cover_decisions/*.json'
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: hpii-approved-cover-dispatch
+  cancel-in-progress: false
+jobs:
+  dispatch-guarded-main-handoff:
+    if: github.repository == 'AfterDark1000/iipike-site'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Start existing verified handoff (no direct publication)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner,repo} = context.repo;
+            await github.rest.actions.createWorkflowDispatch({
+              owner, repo,
+              workflow_id: 'hpii-auto-editor-handoff.yml',
+              ref: 'main'
+            });
+            core.info('Requested guarded human-approval handoff; no publication.');
