@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 167 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 11 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 167 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -25,6 +25,7 @@
 | 9 | [Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/bofa-fund-managers-ai-bubble-baidu-20261117.md) | 18.11.2026, 22:01 | [На сайте](https://iipike.ru/articles/bofa-fund-managers-ai-bubble-baidu-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bofa-fund-managers-ai-bubble-baidu-20261117.webp) |
 | 10 | [Блогер пришёл к ИИ-рекрутеру с кроссовком на голове](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.md) | 18.11.2026, 23:15 | [На сайте](https://iipike.ru/articles/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp) |
 | 11 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.md) | 19.11.2026, 00:30 | [На сайте](https://iipike.ru/articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
+| 12 | [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-tasks-free-calls-shopping-20261117.md) | 19.11.2026, 14:00 | [На сайте](https://iipike.ru/articles/google-gemini-tasks-free-calls-shopping-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-tasks-free-calls-shopping-20261117.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -32,7 +33,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-tasks-free-calls-shopping-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| — | Нет материалов | — | — | — |
 
 ## 3. Подтверждены опубликованными в Дзене
 
