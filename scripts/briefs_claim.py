@@ -62,7 +62,7 @@ def consume(root=ROOT, *, now=None):
             continue
         try:
             count = read_request(path)
-            busy = editorial_routing.short_work_in_progress(current)
+            busy = editorial_routing.short_work_in_progress(current, root=root)
             current, items = editorial_routing.claim_short_batch(
                 current, count=count, routes=routes, now=now, root=root
             )
