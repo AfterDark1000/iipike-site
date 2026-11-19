@@ -1,0 +1,70 @@
+name: HPII — apply approved morning triage (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/editorial_triage/requests/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/triage_apply_requests.py'
+      - 'scripts/editorial_routing.py'
+      - 'tests/test_triage_apply_requests.py'
+      - '.github/workflows/hpii-triage-requests.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-triage-requests-atomic
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python3 scripts/site_news_pool.py --validate
+          python3 scripts/triage_apply_requests.py --check
+          python3 -m unittest discover -s tests -p 'test_triage_apply_requests.py' -v
+          python3 -m unittest discover -s tests -p 'test_editorial_routing.py' -v
+  apply:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Consume approved triage and protect all in-review articles
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/triage_apply_requests.py --check
+            python3 scripts/triage_apply_requests.py --consume
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/triage_apply_requests.py --check
+            git add -- data/site_news_pool.json data/editorial_routing.json data/editorial_triage/receipts/
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/editorial_routing\.json|data/editorial_triage/receipts/[a-z0-9._-]+\.json)$'; then
+              echo 'UNSAFE: unexpected staged file'; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'NO_PENDING_TRIAGE_REQUEST'; exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore(triage): apply approved editorial decisions [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'TRIAGE_DECISIONS_COMMITTED_WITH_RECEIPT'; exit 0
+            fi
+          done
+          echo 'Concurrent main change: no unsafe override'; exit 1

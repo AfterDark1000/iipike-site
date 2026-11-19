@@ -150,6 +150,38 @@ def claim_short(pool, *, routes=None, now=None, root=ROOT, exclude_ids=()):
     return result, copy.deepcopy(target)
 
 
+def claim_short_batch(pool, count=5, *, routes=None, now=None, root=ROOT, exclude_ids=()):
+    """Reserve 1..5 short items in one verified pool transaction, not one per command.
+
+    Existing short-editor WIP blocks an additional batch. Every reserved item has
+    its own immutable pool ID and status; no text approval or publication happens.
+    """
+    site_news_pool.validate(pool)
+    if type(count) is not int or not 1 <= count <= 5:
+        raise ValueError("Short-editor batch size must be 1..5")
+    if short_work_in_progress(pool):
+        return copy.deepcopy(pool), []
+    if routes is None:
+        routes = load_routes(pool, root=root)
+    excluded = set(exclude_ids) | reserved_brief_ids(root)
+    selected = sorted((
+        i for i in pool["items"]
+        if i["status"] == "queued" and short_allowed(i, routes)
+        and i["id"] not in excluded
+    ), key=lambda i: i["sequence"])[:count]
+    result = copy.deepcopy(pool)
+    timestamp = now or site_news_pool.stamp()
+    site_news_pool.utc_time(timestamp)
+    ids = {i["id"] for i in selected}
+    for item in result["items"]:
+        if item["id"] in ids:
+            item["status"] = "in_review"
+            item["review_started_at"] = timestamp
+            item["note"] = "SHORT_EDITOR claim=short; pool_id=" + item["id"]
+    site_news_pool.validate(result)
+    return result, [copy.deepcopy(i) for i in result["items"] if i["id"] in ids]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--validate", action="store_true")

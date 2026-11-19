@@ -1,9 +1,5 @@
-name: HPII — apply approved triage hot priorities (NO PUBLICATION)
+name: HPII — historical triage hot priority tests (NO PUBLICATION)
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'data/editorial_routing.json'
   pull_request:
     branches: [main]
     paths:
@@ -26,41 +22,3 @@ jobs:
           python3 scripts/site_news_pool.py --validate
           python3 scripts/editorial_routing.py --validate
           python3 scripts/triage_apply_priorities.py
-  apply:
-    if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-          persist-credentials: true
-      - name: Validate and apply seven promotions only
-        shell: bash
-        run: |
-          set -euo pipefail
-          for attempt in 1 2 3; do
-            git fetch origin main
-            git reset --hard origin/main
-            python3 scripts/site_news_pool.py --validate
-            python3 scripts/editorial_routing.py --validate
-            python3 scripts/triage_apply_priorities.py --write
-            python3 scripts/site_news_pool.py --validate
-            git add -- data/site_news_pool.json
-            if git diff --cached --name-only | grep -v '^data/site_news_pool\.json$'; then
-              echo 'UNSAFE: changed unrelated file'; exit 1
-            fi
-            if git diff --cached --quiet; then
-              echo 'NO_TRIAGE_PRIORITIES_TO_APPLY'; exit 0
-            fi
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'chore(triage): apply seven approved hot priorities [skip ci]'
-            if git push origin HEAD:main; then
-              echo 'APPROVED_TRIAGE_HOT_PRIORITIES_COMMITTED'; exit 0
-            fi
-          done
-          echo 'Concurrent main drift; no overwrite'; exit 1

@@ -136,6 +136,69 @@ class RoutingTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             validate_document(duplicated, pool)
 
+    def test_claim_up_to_five_short_items_atomically(self):
+        from scripts.editorial_routing import claim_short_batch
+        pool = {"schema_version": 1, "note": "Testing batch", "items": []}
+        records = [
+            {"title": "Batch short news number " + str(i),
+             "source_url": "https://example.org/short/" + str(i)}
+            for i in range(1, 8)
+        ]
+        pool, _ = add(pool, records, now=NOW)
+        routes = {
+            x["id"]: {"pool_id": x["id"], "sequence": x["sequence"],
+                       "lane": "short" if x["sequence"] < 7 else "long",
+                       "decision": "short" if x["sequence"] < 7 else "full"}
+            for x in pool["items"]
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            updated, rows = claim_short_batch(
+                pool, count=5, now=NOW, root=Path(tmp), routes=routes)
+            self.assertEqual([x["sequence"] for x in rows], [1, 2, 3, 4, 5])
+            self.assertEqual(sum(x["status"] == "in_review" for x in updated["items"]), 5)
+            self.assertEqual(updated["items"][5]["status"], "queued")
+            self.assertEqual(updated["items"][6]["status"], "queued")
+            self.assertEqual(claim_short_batch(
+                updated, count=5, now=NOW, root=Path(tmp), routes=routes)[1], [])
+            with self.assertRaisesRegex(ValueError, "1..5"):
+                claim_short_batch(pool, count=6, routes=routes, root=Path(tmp))
+
+    def test_batch_request_receipt_contains_all_confirmed_ids(self):
+        from scripts import briefs_claim
+        from scripts.editorial_routing import ROUTES
+        import json
+        pool = {"schema_version": 1, "note": "Batch request test", "items": []}
+        pool, _ = add(pool, [
+            {"title": f"Short briefing article {i}",
+             "source_url": f"https://example.org/brief/{i}"}
+            for i in range(1, 7)
+        ], now=NOW)
+        route = {
+            "schema_version": 1, "approved_date": "2026-11-19",
+            "source": "fixture", "source_pool_sha": "fixture", "note": "fixture",
+            "items": [{"pool_id": x["id"], "sequence": x["sequence"],
+                        "lane": "short", "decision": "short"} for x in pool["items"]]
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for path, data in (("data/site_news_pool.json", pool), (str(ROUTES), route)):
+                dest = root / path
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            req = root / briefs_claim.REQUESTS / "batch-short-001.json"
+            req.parent.mkdir(parents=True, exist_ok=True)
+            req.write_text(json.dumps({"schema_version": 1,
+                "action": "claim_short", "worker": "hpii-short-editor", "count": 5}))
+            first = briefs_claim.consume(root, now=NOW)[req.name]
+            self.assertEqual(first["status"], "reserved")
+            self.assertEqual(first["count"], 5)
+            self.assertEqual([x["pool_sequence"] for x in first["items"]], [1,2,3,4,5])
+            self.assertEqual(briefs_claim.consume(root, now=NOW), {})
+            request2 = req.parent / "batch-short-002.json"
+            request2.write_text(req.read_text())
+            blocked = briefs_claim.consume(root, now=NOW)[request2.name]
+            self.assertEqual(blocked["status"], "short_work_in_progress")
+
     def test_unrouted_future_news_defaults_to_long(self):
         pool, routes = fixture()
         self.assertTrue(long_allowed({"id": "n-0000000000000000"}, routes))
