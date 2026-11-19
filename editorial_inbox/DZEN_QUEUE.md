@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 167 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 0
+**Всего одобренных:** 170 · **В каталоге Дзена подтверждены:** 155 · **Не подтверждены, уже на сайте:** 12 · **Не подтверждены, ждут сайт:** 3
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -33,7 +33,9 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| — | Нет материалов | — | — | — |
+| 1 | [Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-code-2-20261117.md) | **Не ранее 19.11.2026 15:07 (Усть-Катав)**; пауза до 19.11.2026 15:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-code-2-20261117.webp) |
+| 2 | [Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-mai-cyber-2-flash-20261117.md) | **Не ранее 19.11.2026 16:07 (Усть-Катав)**; пауза до 19.11.2026 15:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-cyber-2-flash-20261117.webp) |
+| 3 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.md) ⚠️ ссылки на сайт — проверить | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
