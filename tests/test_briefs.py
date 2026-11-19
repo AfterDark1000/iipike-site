@@ -35,6 +35,24 @@ class BriefFeedTests(unittest.TestCase):
                 self.assertNotIn(c["headline"],home)
         self.assertNotIn("editorial_inbox/stories",home)
 
+    def test_home_news_wire_is_compact_timestamped_and_public_only(self):
+        rows = b.released_rows(ROOT)
+        wire = b.home_strip(rows)
+        css = (ROOT/"assets/briefs.css").read_text(encoding="utf-8")
+        self.assertIn('class="brief-home-grid"', (ROOT/"index.html").read_text(encoding="utf-8"))
+        self.assertIn(".brief-home-time", css)
+        self.assertIn("@media(max-width:830px)", css)
+        self.assertEqual(wire.count('class="brief-home-link"'), min(6, len(rows)))
+        self.assertNotIn('<img', wire)
+        for row in rows[:6]:
+            self.assertIn('href="briefs/' + row["slug"] + '/"', wire)
+            self.assertIn('datetime="' + row["published_at_utc"] + '"', wire)
+            self.assertIn(row["headline"], wire)
+        for candidate in self.candidates():
+            if candidate["slug"] not in {r["slug"] for r in rows}:
+                self.assertNotIn(candidate["headline"], wire)
+        self.assertEqual(b.home_strip(rows[:0]).count('class="brief-home-link"'), 0)
+
     def test_readable_mobile_feed_has_permalinks_and_sources(self):
         css=(ROOT/"assets/briefs.css").read_text(encoding="utf-8")
         index=(ROOT/"briefs/index.html").read_text(encoding="utf-8")
