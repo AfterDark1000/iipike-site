@@ -3010,12 +3010,12 @@
       "summary": "15 ноября: заявлены улучшенная синхронизация губ и устойчивость цифрового аватара в длинных видео; открытые веса и код на GitHub.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": "2026-11-19T10:33:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-e5757b335efc56a8"
+      "closed_at": "2026-11-19T17:23:49Z",
+      "article_id": "meituan-longcat-avatar-16-20261115",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e5757b335efc56a8\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/meituan-longcat-avatar-16-20261115/"
     },
     {
       "id": "n-8e4ca78447a7e5be",
