@@ -3,6 +3,8 @@ on:
   push:
     branches: [main]
     paths:
+      # An owner-requested kick can retry the handoff without publishing.
+      - '.github/auto-handoff-kick.txt'
       - 'scripts/auto_editor_handoff.py'
       - 'tests/test_auto_editor_handoff.py'
       - '.github/workflows/hpii-auto-editor-handoff.yml'
