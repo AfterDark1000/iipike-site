@@ -2710,12 +2710,12 @@
       "summary": "16 ноября: пилот ИИ-мониторинга риска наводнений на основе осадков, речных и приливных данных. Вторичный источник; результаты требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:38:01+00:00",
       "review_started_at": "2026-11-19T10:14:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d12217714e51c16c"
+      "closed_at": "2026-11-19T16:08:51Z",
+      "article_id": "dublin-ai-flood-warning-pilot-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d12217714e51c16c\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/dublin-ai-flood-warning-pilot-20261117/"
     },
     {
       "id": "n-b00cdf459e426ae9",
