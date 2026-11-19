@@ -111,7 +111,7 @@
     if (!authorized() || loading) return;
     loading = true;
     refreshButton.disabled = true;
-    const watch = watchlist ? Promise.resolve(watchlist) : fetch("/admin/first-car/watchlist.json", {
+    const watch = fetch("/admin/first-car/watchlist.json", {
       cache: "no-store", signal: AbortSignal.timeout(15_000),
     })
       .then((response) => {
