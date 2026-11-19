@@ -625,6 +625,45 @@
       "source": "Snap",
       "source_url": "https://newsroom.snap.com/introducing-easy-lens-cli",
       "fact_check": "Official Snap announcement Nov18 2026, CLI free with Snapchat account for Mac/Windows/Linux, Claude Code Codex Cursor, >100 AR blocks, >50 generators, preview test and publishing; review process remains."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 314,
+      "pool_id": "n-614783a992ccefaa",
+      "slug": "mistral-vibe-desktop-work-code-20261117",
+      "headline": "Mistral выпустила Vibe Desktop — ИИ-агента для работы с файлами и кодом",
+      "body": "Mistral 17 ноября выпустила Vibe Desktop для Windows и macOS. В одном приложении собрали работу с локальными файлами, программирование и облачные задачи ИИ-агентов. Пользователь может поручить агенту изменения в проекте, следить за командами и проверять правки кода, не переключаясь между окнами. Vibe поддерживает параллельные задания и работу с Git-репозиториями. Версия для Linux пока только запланирована.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Mistral AI",
+      "source_url": "https://docs.mistral.ai/resources/release-notes",
+      "fact_check": "Mistral primary dated release notes Nov17 2026: Vibe Desktop GA macOS Windows, Work and Code local/cloud, local sessions share Vibe CLI engine without separate CLI install, Git repos worktrees and parallel tasks, Linux coming soon."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 315,
+      "pool_id": "n-36bbeb249216ceb6",
+      "slug": "google-ai-mode-temporary-threads-20261117",
+      "headline": "Google добавила временные беседы в поиск с ИИ",
+      "body": "Google запустила Temporary Threads в поисковом AI Mode. Временную беседу можно открыть отдельной кнопкой: вопросы не сохраняются в истории аккаунта, не влияют на рекомендации, а ответы не учитывают прежние предпочтения пользователя. После закрытия такая беседа исчезает из интерфейса. Возможность постепенно появляется по всему миру в браузерах на компьютерах и телефонах, на всех языках, где доступен AI Mode.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Google",
+      "source_url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+      "fact_check": "Google primary dated Nov17 2026: Temporary Threads in Search AI Mode; detached from account, no search history or personalization, session disappears from interface, gradual global rollout browsers desktop/mobile languages supported by AI Mode. Avoid promise of absolute invisibility or no server retention."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 319,
+      "pool_id": "n-81c30b1162a2aaed",
+      "slug": "tesorai-old-lab-data-ai-seed-53m-20261118",
+      "headline": "Tesorai получила $5,3 млн, чтобы ИИ заново изучал старые лабораторные данные",
+      "body": "Американский стартап Tesorai привлёк $5,3 млн на систему, которая повторно обрабатывает исходные данные научных экспериментов. Она объединяет результаты исследований, выполненных разными методами, и позволяет искать в них ранее упущенные закономерности. По данным компании, анализ пяти опубликованных исследований мозга помог обнаружить белковый маркер болезни Альцгеймера, которого не было в первоначальных отчётах. Результат описан в препринте.",
+      "topic": "Наука",
+      "event_date": "2026-11-18",
+      "source": "Tesorai / PRNewswire",
+      "source_url": "https://www.prnewswire.com/news-releases/tesorai-raises-5-3-million-to-put-vast-troves-of-untapped-research-data-to-work-302944021.html",
+      "fact_check": "Tesorai announcement Nov18 2026: $5.3m seed, $8m total; analyzes archival raw molecular research data, reports recovery of p-tau217 marker in reprocessed five brain studies Aug 2026, described in own preprint, not independently validated clinical finding."
     }
   ]
 }
