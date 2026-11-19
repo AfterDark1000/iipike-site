@@ -3895,12 +3895,12 @@
       "summary": "17 ноября: сообщение о расследовании возможного обхода экспортных ограничений Megaspeed; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T03:12:00+00:00",
       "review_started_at": "2026-11-19T10:20:33.077Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "19.11.2026: DOJ+Commerce 17.11 https://www.justice.gov/opa/pr/joint-statement-department-commerce-and-department-justice-megaspeed-investigation: расследование Megaspeed с 2024; запрос документов NVIDIA май 2025; NVIDIA no-sell с июня; очная проверка июнь; затем уголовное расследование DOJ. Bloomberg 09.11 https://www.bloomberg.com/news/articles/2026-11-09/nvidia-intervened-in-us-probe-of-megaspeed-chip-smuggling: данные импорта и первоначального отчёта NVIDIA разошлись примерно на 50 тыс GPU, позднее NVIDIA указала на другие склады, не назвала объём. Сингапур подтвердил 12.11 https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/ расследование заявлений о серверах и перемещениях в Малайзию. NVIDIA 17.11 учредила комитет экспортного контроля. 50k не доказанная контрабанда. В архиве связанная публикация о расследовании вокруг Хуанга 08.11, Дзен avLu7YD4cDo6Wam9; №306 самостоятельное решение. Статья и соцпосты на утверждение."
+      "closed_at": "2026-11-19T10:36:38.132Z",
+      "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
+      "note": "19.11.2026: DOJ+Commerce 17.11 https://www.justice.gov/opa/pr/joint-statement-department-commerce-and-department-justice-megaspeed-investigation: расследование Megaspeed с 2024; запрос документов NVIDIA май 2025; NVIDIA no-sell с июня; очная проверка июнь; затем уголовное расследование DOJ. Bloomberg 09.11 https://www.bloomberg.com/news/articles/2026-11-09/nvidia-intervened-in-us-probe-of-megaspeed-chip-smuggling: данные импорта и первоначального отчёта NVIDIA разошлись примерно на 50 тыс GPU, позднее NVIDIA указала на другие склады, не назвала объём. Сингапур подтвердил 12.11 https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/ расследование заявлений о серверах и перемещениях в Малайзию. NVIDIA 17.11 учредила комитет экспортного контроля. 50k не доказанная контрабанда. В архиве связанная публикация о расследовании вокруг Хуанга 08.11, Дзен avLu7YD4cDo6Wam9; №306 самостоятельное решение. Статья и соцпосты на утверждение.\n19.11.2026: главный редактор утвердил окончательный заголовок о расхождении 50 тыс. чипов; Markdown, Threads/X и VK сохранены в GitHub. article_id=nvidia-megaspeed-chips-export-investigation-20261117; очередь сайта priority, ждём обложку."
     },
     {
       "id": "n-8f6af8c44a4a1bfb",
