@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch05-unique1513.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-e5757b335efc56a8",
+      "pool_sequence": 201,
+      "title": "Meituan представила LongCat-Video-Avatar 1.6 для длинных роликов с говорящими людьми",
+      "source_url": "https://github.com/meituan-longcat/LongCat-Video",
+      "claimed_at": "2026-11-19T10:33:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-eab8cb02f723379b",
+      "pool_sequence": 204,
+      "title": "PopNow AI обещает возвращать кредиты за неудачные генерации видео",
+      "source_url": "https://www.einnews.com/pr_news/956673842/popnow-ai-launches-popnow-protect-calling-itself-the-world-s-first-ai-studio-with-automatic-price-protection",
+      "claimed_at": "2026-11-19T10:33:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f60757c71353b675",
+      "pool_sequence": 213,
+      "title": "Учёный заменил Slack и таблицы приложением для лаборатории, написанным ИИ",
+      "source_url": "https://www.whatpeoplemade.com/i/a-lab-operations-app-replaced-slack-and-spreadsheets-891966.html",
+      "claimed_at": "2026-11-19T10:33:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a88aae871bc0b36e",
+      "pool_sequence": 225,
+      "title": "Создатели ИИ-лаборатории Noeri привлекли $110 млн на модели, которые компании смогут контролировать сами",
+      "source_url": "https://www.hpcwire.com/aiwire/2026/11/16/noeri-launches-with-110m-to-empower-companies-to-build-and-own-their-ai",
+      "claimed_at": "2026-11-19T10:33:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-aca925b15bf1ae05",
+      "pool_sequence": 233,
+      "title": "Audible придумала ИИ-анонсы аудиокниг вместо чтения отзывов",
+      "source_url": "https://techcrunch.com/2026/11/16/audible-turns-to-ai-to-help-users-discover-audiobooks",
+      "claimed_at": "2026-11-19T10:33:37+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

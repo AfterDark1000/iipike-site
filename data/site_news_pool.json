@@ -3010,12 +3010,12 @@
       "summary": "15 ноября: заявлены улучшенная синхронизация губ и устойчивость цифрового аватара в длинных видео; открытые веса и код на GitHub.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:59:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:33:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e5757b335efc56a8"
     },
     {
       "id": "n-8e4ca78447a7e5be",
@@ -3055,12 +3055,12 @@
       "summary": "16 ноября: компания объявила PopNow Protect — компенсацию кредитов за часть неудачных генераций и задержек. Пресс-релиз, по заявлению компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:59:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:33:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "17.11.2026, решение главреда после полной ревизии: Кандидат на снятие после контрольного первоисточника и проверки новостной ценности; не отклонять автоматически.\n2026-11-18, решение главреда: Не удалять: возможный кандидат для будущего короткого дайджеста («Новости коротко»). Решение о разделе ещё не принято; формат и отдельная очередь не создаются. Пока остаётся queued/normal; перед использованием нужна проверка фактов."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-eab8cb02f723379b"
     },
     {
       "id": "n-7ccc4442108abb99",
@@ -3190,12 +3190,12 @@
       "summary": "15 ноября: приложение объединяет сообщения, календарь, оборудование и закупки, создано через Claude Code и Codex. Со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:59:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:33:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f60757c71353b675"
     },
     {
       "id": "n-0b720af165702e48",
@@ -3370,12 +3370,12 @@
       "summary": "Запуск лаборатории Noeri с финансированием $110 млн.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T03:33:51+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:33:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a88aae871bc0b36e"
     },
     {
       "id": "n-0cbe160116fdd47a",
@@ -3490,12 +3490,12 @@
       "summary": "Короткие ИИ-аудиообзоры книг для поиска новых произведений.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T14:36:23+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:33:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-aca925b15bf1ae05"
     },
     {
       "id": "n-1971393481b4e1cf",
