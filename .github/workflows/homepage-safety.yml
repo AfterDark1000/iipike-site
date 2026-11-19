@@ -93,6 +93,9 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_dzen_redirect.py' -v
           python3 -m unittest discover -s tests -p 'test_threads_redirect.py' -v
           python3 -m unittest discover -s tests -p 'test_x_redirect.py' -v
+          # Regenerate deterministic date labels in this throwaway PR checkout
+          # before comparing generated HTML with committed historical pages.
+          python3 scripts/backfill_publication_times.py --write
           python3 scripts/build_rubrics.py --check
           python3 scripts/build_home_published.py --check
           python3 scripts/build_sitemap.py --check

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "note": "Actual site releases only. The three pre-existing published pilot briefs retain their historical recorded timestamps. Later approved drafts are not public until a separate 15-minute release records them here.",
+  "items": [
+    {
+      "slug": "cuhk-iena-2026-awards",
+      "published_at_utc": "2026-11-18T06:05:25Z"
+    },
+    {
+      "slug": "fractal-25-ai-startups-talks",
+      "published_at_utc": "2026-11-18T06:05:25Z"
+    },
+    {
+      "slug": "stanford-hai-hoffman-yee-grants-2026",
+      "published_at_utc": "2026-11-18T06:05:25Z"
+    }
+  ]
+}

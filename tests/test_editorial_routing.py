@@ -199,6 +199,41 @@ class RoutingTests(unittest.TestCase):
             blocked = briefs_claim.consume(root, now=NOW)[request2.name]
             self.assertEqual(blocked["status"], "short_work_in_progress")
 
+    def test_editor_can_start_next_batch_after_chat_approval_before_publication(self):
+        from scripts.editorial_routing import short_work_in_progress, claim_short_batch
+        import json
+        import shutil
+        repo = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("data/briefs/candidates.json", "data/briefs/approved.json", "news.json"):
+                dest = root / name
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(repo / name, dest)
+            approved = json.loads((root / "data/briefs/approved.json").read_text())["items"]
+            one = next(r for r in approved if r["pool_sequence"] == 59)
+            pool = {"schema_version":1, "note":"Test approved WIP", "items":[]}
+            pool, _ = add(pool, [
+                {"title":"Already approved short story", "source_url":"https://example.org/a"},
+                {"title":"Next eligible short story", "source_url":"https://example.org/b"},
+            ], now=NOW)
+            existing = pool["items"][0]
+            existing["id"] = one["pool_id"]
+            existing["status"] = "in_review"
+            existing["review_started_at"] = NOW
+            existing["note"] = "SHORT_EDITOR claim=short; pool_id=" + existing["id"]
+            # The next new item still has an ordinary, unique pool ID.
+            validate_pool(pool)
+            routes = {i["id"]: {
+                "pool_id":i["id"],"sequence":i["sequence"],"lane":"short","decision":"short"}
+                for i in pool["items"]}
+            self.assertFalse(short_work_in_progress(pool, root=root))
+            next_pool, claimed = claim_short_batch(
+                pool, count=1, root=root, now=NOW, routes=routes)
+            self.assertEqual(len(claimed),1)
+            self.assertEqual(claimed[0]["sequence"],2)
+            self.assertEqual(next_pool["items"][0]["status"], "in_review")
+
     def test_unrouted_future_news_defaults_to_long(self):
         pool, routes = fixture()
         self.assertTrue(long_allowed({"id": "n-0000000000000000"}, routes))

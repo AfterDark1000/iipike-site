@@ -78,7 +78,15 @@ jobs:
                    'admin/index.html', 'admin/briefs/index.html',
                    'assets/briefs.css', 'data/briefs/approved.json',
                    'data/briefs/candidates.json', 'docs/SHORT_NEWS.md',
-                   'scripts/build_briefs.py', 'tests/test_briefs.py', 'robots.txt'}
+                   'scripts/build_briefs.py', 'tests/test_briefs.py', 'robots.txt',
+                   '.github/workflows/homepage-safety.yml',
+                   '.github/workflows/hpii-publication-time-labels.yml',
+                   'data/briefs/released.json', 'docs/BRIEFS_EDITOR_AGENT.md',
+                   'scripts/backfill_publication_times.py', 'scripts/briefs_claim.py',
+                   'scripts/editorial_routing.py', 'scripts/release_one_brief.py',
+                   'scripts/site_home.py', 'scripts/site_rubrics.py',
+                   'scripts/sync_briefs_pool.py', 'tests/test_brief_release_schedule.py',
+                   'tests/test_editorial_routing.py', 'tests/test_publication_times.py'}
           prefixes = ('entities/', 'assets/entity-icons/', 'briefs/')
           # Article HTML changes are restricted to the IDs already reviewed
           # in the public registry; their exact header-only diff is tested.
@@ -88,9 +96,42 @@ jobs:
               for kind in ('companies', 'products')
               for entity in registry[kind] for sid in entity['article_ids']
           }
+          # A separate, strict time-label migration may touch many existing
+          # article pages. Accept them ONLY when exactly the visible date
+          # string changes to the canonical local publication timestamp.
+          import re
+          from scripts.site_rubrics import publication_label
+          registry_rows = {r['id']: r for r in json.load(
+              open('news.json', encoding='utf-8'))}
+          date_pat = re.compile(r'<p class="date">Опубликовано: ([^<]*)</p>')
+          def only_publication_time(path):
+              match = re.fullmatch(r'articles/([a-z0-9-]+)/index[.]html', path)
+              if not match:
+                  return False
+              row = registry_rows.get(match.group(1))
+              if not row:
+                  return False
+              try:
+                  before = subprocess.check_output(
+                      ['git', 'show', 'origin/main:' + path], text=True)
+                  after = subprocess.check_output(
+                      ['git', 'show', 'HEAD:' + path], text=True)
+              except subprocess.CalledProcessError:
+                  return False
+              bm, am = list(date_pat.finditer(before)), list(date_pat.finditer(after))
+              if len(bm) != 1 or len(am) != 1:
+                  return False
+              if am[0].group(1) != publication_label(row):
+                  return False
+              normalize = lambda v: date_pat.sub(
+                  '<p class="date">Опубликовано: __TIME__</p>', v)
+              return normalize(before) == normalize(after)
+          # Rubrics were independently checked against their exact generator.
+          allowed_time_articles = {x for x in changed if only_publication_time(x)}
           unexpected = [x for x in changed
                         if x not in exact and x not in allowed_articles
-                        and not x.startswith(prefixes)]
+                        and x not in allowed_time_articles
+                        and not x.startswith(prefixes + ('rubrics/',))]
           if unexpected:
               raise SystemExit('Unexpected editorial/production modifications: ' + str(unexpected))
           print('Taxonomy-only changes:', len(changed))

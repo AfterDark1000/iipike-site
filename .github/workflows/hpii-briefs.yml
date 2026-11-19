@@ -5,6 +5,8 @@ on:
     paths:
       - 'data/briefs/**'
       - 'scripts/build_briefs.py'
+      - 'scripts/release_one_brief.py'
+      - 'tests/test_brief_release_schedule.py'
       - 'scripts/sync_briefs_pool.py'
       - 'tests/test_briefs.py'
       - 'briefs/**'
@@ -20,8 +22,8 @@ on:
       - 'briefs/**'
       - '.github/workflows/hpii-briefs.yml'
   schedule:
-    # Independent checks, off the main 7/22/37/52 article-release minutes.
-    - cron: '12,42 * * * *'
+    # Four independent slots per hour, 7 minutes apart from 7/22/37/52 full articles.
+    - cron: '0,15,30,45 * * * *'
   workflow_dispatch:
 permissions:
   contents: read
@@ -39,6 +41,7 @@ jobs:
       - name: Validate independent short-news format and human-approval gate
         run: |
           python3 -m unittest discover -s tests -p 'test_briefs.py' -v
+          python3 -m unittest discover -s tests -p 'test_brief_release_schedule.py' -v
           python3 scripts/build_briefs.py --write
           python3 scripts/build_briefs.py --check
       - name: Prevent changes to the full article publisher
@@ -50,7 +53,7 @@ jobs:
           git diff --check
 
   release-approved-briefs:
-    if: github.event_name != 'pull_request'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     needs: [test-briefs]
     runs-on: ubuntu-latest
     timeout-minutes: 12
@@ -94,44 +97,34 @@ jobs:
                 throw Error('Issue does not confirm this exact brief ' + row.slug);
               }
             }
-      - name: Rebuild only from explicitly approved records, never from candidates
+      - name: Release at most one verified short story per local 15-minute slot
         shell: bash
         run: |
           set -euo pipefail
+          python3 scripts/release_one_brief.py --write
           python3 scripts/build_briefs.py --write
           python3 scripts/build_briefs.py --check
-          git add -- index.html briefs/
+          # Once a page is rendered locally, mark only that released pool ID.
+          python3 -m scripts.sync_briefs_pool --write
+          python3 scripts/site_news_pool.py --validate
+          git add -- index.html briefs/ data/briefs/released.json data/site_news_pool.json
           git diff --cached --check
-          if git diff --cached --quiet; then
-            echo 'No approved short news to render.'
-            exit 0
-          fi
-          if git diff --cached --name-only | grep -Ev '^(index.html|briefs/)'; then
-            echo 'Non-short-news files unexpectedly staged' >&2
+          if git diff --cached --name-only | grep -Ev '^(index.html|briefs/|data/briefs/released[.]json|data/site_news_pool[.]json)'; then
+            echo 'UNSAFE: unrelated change staged' >&2
             exit 1
           fi
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'briefs: render owner-approved short news [skip ci]'
-          # No force push. A competing site release means retry on the next schedule.
-          git push origin HEAD:refs/heads/main
-      - name: Close rendered briefs in raw pool (only after publishing)
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 -m scripts.sync_briefs_pool --write
-          git add -- data/site_news_pool.json
-          git diff --cached --check
           if git diff --cached --quiet; then
-            echo 'Raw pool already synchronized.'
+            echo 'No due short story, or editorial night pause.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'briefs: reconcile published short news in raw pool [skip ci]'
+          git commit -m 'briefs: release one approved short story in 15-minute slot [skip ci]'
+          # One atomic fast-forward: release ledger, page, RSS and source-pool close.
+          # Another writer may win the race; the next scheduled slot retries.
           git push origin HEAD:refs/heads/main
       - name: Summary
         if: always()
         run: |
           echo 'This job never touches news.json, editorial_inbox/stories, article slots, Dzen or socials.' >> "$GITHUB_STEP_SUMMARY"
-          echo 'A real, explicit owner GitHub Issue must approve each short-news record.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'At most one owner-approved brief per 15-minute slot; local 01:00–07:00 pause.' >> "$GITHUB_STEP_SUMMARY"

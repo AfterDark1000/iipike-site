@@ -3,7 +3,7 @@ from html import escape
 import json
 from pathlib import Path
 import re
-from scripts.site_rubrics import RUBRICS, publication_date, publication_date_caps, publication_sort_key
+from scripts.site_rubrics import RUBRICS, publication_date, publication_date_caps, publication_sort_key, publication_label
 
 START = "<!-- HPII_PUBLISHED_SECTION_START -->"
 END = "<!-- HPII_PUBLISHED_SECTION_END -->"
@@ -77,7 +77,7 @@ def render_focus_section(records, focus_items):
             '<small class="home-focus-tag">' + escape(item["label"]) + '</small>' +
             '<strong class="home-focus-title">' + escape(row["title"]) + '</strong>' +
             '<span class="home-focus-date">' +
-            escape(publication_date(row["published"])) + ' · ' +
+            escape(publication_label(row)) + ' · ' +
             escape(RUBRICS[row.get("rubric", "news")]["name"]) +
             '</span></span><span class="home-focus-arrow" aria-hidden="true">↗</span></a>'
         )
@@ -108,12 +108,12 @@ def render_home_section(records, focus_items=()):
     title = escape(featured["title"])
     brief = escape(featured["summary"])
     rubric = escape(RUBRICS[featured.get("rubric", "news")]["name"].upper())
-    label = escape(publication_date_caps(featured["published"]))
+    label = escape(publication_label(featured).upper())
     related = "\n".join(
         '<a class="home-site-post" href="' + escape(row["url"], quote=True) + '">'
         '<img loading="lazy" alt="Обложка статьи" src="' + escape(row["cover"], quote=True) + '">'
         '<span><h3>' + escape(row["title"]) + '</h3>'
-        '<small class="date">' + escape(publication_date(row["published"]))
+        '<small class="date">' + escape(publication_label(row))
         + ' · ' + escape(RUBRICS[row.get("rubric", "news")]["name"]) + '</small>'
         '<span class="home-site-read">Читать на сайте ↗</span></span></a>'
         for row in others

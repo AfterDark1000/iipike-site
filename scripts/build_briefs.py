@@ -11,10 +11,13 @@ from html import escape
 import json
 from pathlib import Path
 import re
+import sys
 from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 APPROVED=Path("data/briefs/approved.json")
 CANDIDATES=Path("data/briefs/candidates.json")
 SITE=Path("briefs/index.html")
@@ -109,6 +112,20 @@ def validated(root):
         seen_ids.add(slug);seen_pool.add(row["pool_id"]);seen_sources.add(source);out.append(row)
     return sorted(out,key=lambda x:(x["published_at_utc"],x["slug"]),reverse=True)
 
+def released_rows(root):
+    """Only independently released records appear on the public site/RSS."""
+    from scripts.release_one_brief import releases
+    approved = validated(root)
+    _, ledger = releases(root, approved)
+    by_slug = {r["slug"]: r for r in approved}
+    output = []
+    for slug, when in ledger:
+        row = dict(by_slug[slug])
+        row["published_at_utc"] = when.strftime("%Y-%m-%dT%H:%M:%SZ")
+        output.append(row)
+    return sorted(output, key=lambda x: (x["published_at_utc"], x["slug"]), reverse=True)
+
+
 def swap(text,start,end,content):
     if text.count(start)!=1 or text.count(end)!=1 or text.index(start)>text.index(end):
         raise ValueError("Missing/duplicate protected HTML markers")
@@ -116,10 +133,13 @@ def swap(text,start,end,content):
     return text[:a]+"\n"+content+"\n"+text[b:]
 
 def date_label(iso):
-    d=datetime.fromisoformat(iso.replace("Z","+00:00"))
+    """Date and minute in the Ust-Katav/Ekaterinburg editorial timezone."""
+    from zoneinfo import ZoneInfo
+    d=datetime.fromisoformat(iso.replace("Z","+00:00")).astimezone(
+        ZoneInfo("Asia/Yekaterinburg"))
     months=("января","февраля","марта","апреля","мая","июня","июля","августа",
             "сентября","октября","ноября","декабря")
-    return f"{d.day} {months[d.month-1]} {d.year}"
+    return f"{d.day} {months[d.month-1]} {d.year} · {d:%H:%M}"
 
 def card(r):
     slug=r["slug"]
@@ -179,7 +199,7 @@ def sitemap(rows):
             ''.join('  <url><loc>'+escape(u)+'</loc></url>\n' for u in entries)+'</urlset>\n')
 
 def outputs(root):
-    rows=validated(root)
+    rows=released_rows(root)
     index=(root/SITE).read_text(encoding="utf-8")
     home=(root/HOME).read_text(encoding="utf-8")
     item_html="\n".join(map(card,rows)) if rows else (

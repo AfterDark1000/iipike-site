@@ -113,16 +113,24 @@ def reserved_brief_ids(root=ROOT):
     return ids
 
 
-def short_work_in_progress(pool):
-    """Only one unresolved short-editor-owned pool reservation at a time."""
+def short_work_in_progress(pool, *, root=ROOT):
+    """Block only unfinished chat drafts, NOT approved briefs awaiting site slots.
+
+    Pool status remains in_review until its separate site release. A fully
+    editor-approved, candidate-matching brief is completed for the chat stage.
+    Publication remains protected by independent owner-Issue/SHA gate.
+    """
+    from scripts.build_briefs import validated as validated_approvals
+    approved_ids = {r["pool_id"] for r in validated_approvals(root)} if (
+        (Path(root) / APPROVED).is_file()) else set()
     return any(i["status"] == "in_review" and
                i["note"].startswith("SHORT_EDITOR claim=short; pool_id=")
-               for i in pool["items"])
+               and i["id"] not in approved_ids for i in pool["items"])
 
 
 def next_short(pool, *, routes=None, root=ROOT, exclude_ids=()):
     site_news_pool.validate(pool)
-    if short_work_in_progress(pool):
+    if short_work_in_progress(pool, root=root):
         return None
     if routes is None:
         routes = load_routes(pool, root=root)

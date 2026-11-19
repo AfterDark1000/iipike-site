@@ -18,10 +18,10 @@ class BriefFeedTests(unittest.TestCase):
 
     def test_first_pilot_is_unpublished_until_exact_human_approval(self):
         candidates=self.candidates()
-        self.assertEqual(len(candidates),3)
-        self.assertEqual({c["pool_sequence"] for c in candidates},{125,185,226})
+        # The original pilot has grown; regression tests must accept future briefs.
+        self.assertTrue({125,185,226} <= {c["pool_sequence"] for c in candidates})
         self.assertTrue(all(c["status"]=="pending_review" for c in candidates))
-        approved=b.validated(ROOT)
+        approved=b.released_rows(ROOT)
         approved_slugs={row["slug"] for row in approved}
         output=b.outputs(ROOT)
         html=output[ROOT/"briefs/index.html"]
@@ -54,7 +54,7 @@ class BriefFeedTests(unittest.TestCase):
         temp=tempfile.TemporaryDirectory(prefix="hpii-brief-tests-")
         root=Path(temp.name)
         for path in ("data/briefs/candidates.json","data/briefs/approved.json",
-                     "briefs/index.html","index.html","news.json"):
+                     "data/briefs/released.json","briefs/index.html","index.html","news.json"):
             target=root/path;target.parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(ROOT/path,target)
         return temp,root
@@ -75,6 +75,10 @@ class BriefFeedTests(unittest.TestCase):
             a=json.loads((root/b.APPROVED).read_text(encoding="utf-8"))
             a["items"]=[self.publish_row(c)]
             (root/b.APPROVED).write_text(json.dumps(a,ensure_ascii=False),encoding="utf-8")
+            (root/"data/briefs/released.json").write_text(json.dumps({
+                "schema_version":1,"note":"fixture",
+                "items":[{"slug":c["slug"],"published_at_utc":"2026-11-18T07:00:00Z"}]
+            }),encoding="utf-8")
             rows=b.validated(root)
             self.assertEqual(len(rows),1)
             out=b.outputs(root)
@@ -150,6 +154,10 @@ class BriefFeedTests(unittest.TestCase):
             a=json.loads((root/b.APPROVED).read_text(encoding="utf-8"))
             a["items"]=[self.publish_row(c)]
             (root/b.APPROVED).write_text(json.dumps(a,ensure_ascii=False),encoding="utf-8")
+            (root/"data/briefs/released.json").write_text(json.dumps({
+                "schema_version":1,"note":"fixture",
+                "items":[{"slug":c["slug"],"published_at_utc":"2026-11-18T07:00:00Z"}]
+            }),encoding="utf-8")
             (root/"briefs"/c["slug"]).mkdir(parents=True)
             (root/"briefs"/c["slug"]/"index.html").write_text("rendered",encoding="utf-8")
             out,changes=sync_briefs_pool.synchronized(root)
