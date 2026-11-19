@@ -51,18 +51,21 @@ def consume(root=ROOT, *, now=None):
             old = json.loads(receipt_path.read_text(encoding="utf-8"))
             if old.get("request_sha256") != digest:
                 raise ValueError("Immutable short-editor request changed after acknowledgment")
-            if old.get("status") not in {"reserved", "no_short_news", "rejected"}:
+            if old.get("status") not in {"reserved", "no_short_news", "short_work_in_progress", "rejected"}:
                 raise ValueError("Invalid existing short-editor receipt")
             continue
         try:
             read_request(path)
+            busy = editorial_routing.short_work_in_progress(current)
             current, item = editorial_routing.claim_short(
                 current, routes=routes, now=now, root=root
             )
             receipt = {
                 "schema_version": 1, "request": path.name,
                 "request_sha256": digest,
-                "status": "reserved" if item else "no_short_news",
+                "status": "reserved" if item else (
+                    "short_work_in_progress" if busy else "no_short_news"
+                ),
                 **({
                     "pool_id": item["id"], "pool_sequence": item["sequence"],
                     "title": item["title"], "source_url": item["source_url"],
