@@ -1,241 +1,173 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-18T10:45:37Z",
-  "status": "ok",
+  "generated_at_utc": "2026-11-19T10:45:35Z",
+  "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "n7nI7IkP_p0",
-      "url": "https://www.youtube.com/shorts/n7nI7IkP_p0",
-      "title": "When The Keyboard Is Too Indestructible! 💀⌨️ #shorts #comedy #gaming  #funny #tech",
-      "channel": "Max Dobson",
-      "published_at": "2026-11-15T11:30:02Z",
-      "duration_seconds": 31,
-      "views": 27131,
-      "likes": 186,
-      "subscribers": 3450,
+      "id": "3XrmOSLD0rE",
+      "url": "https://www.youtube.com/shorts/3XrmOSLD0rE",
+      "title": "tillu vith a tech 🥰🔦#shorts #comedy #funny #relatable #@mycomedyvideo922",
+      "channel": "S___G",
+      "published_at": "2026-11-14T12:30:40Z",
+      "duration_seconds": 37,
+      "views": 30379,
+      "likes": 180,
+      "subscribers": 803,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-18T10:45:37Z",
+      "statistics_checked_at": "2026-11-19T10:45:35Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 127.5,
-      "rank_score": 10.6,
+      "growth_views_per_hour": 2.1,
+      "rank_score": 8.99,
       "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "Man in duck onesie and pigtails tries to destroy a mechanical keyboard using various methods (stepping on it, running it over with a car, cutting with an angle grinder), but the keyboard remains undamaged, surprising both him and the gamer.",
-        "observed_audio": "Dialogue between a gamer and a man in a onesie, sound effects of typing, stomping, car engine, angle grinder buzzing, and comedic dramatic voice acting.",
-        "hook_0_3s": "A man in a duck onesie stands behind a gamer playing at a computer, complaining that he has been gaming for hours.",
+        "observed_visuals": "Парень в оранжевой футболке играет две роли (с помощью смены одежды и головного убора на платок): парень и воображаемый папа/персонаж с фонариком.",
+        "observed_audio": "Динамичные звуки ударов, смех, комичные голосовые реплики на иностранном языке и звуковые эффекты мультяшного типа.",
+        "hook_0_3s": "Крупный план парня с фонариком в руках и смешное звуковое сопровождение с быстрой сменой ракурса.",
         "timeline": [
           {
-            "time": "00:00",
-            "visible_action": "Gamer at PC typing, man in duck onesie stands behind him talking.",
-            "editing": "Direct shot with dialogue subtitles.",
+            "time": "00:00 - 00:03",
+            "visible_action": "Парень держит фонарик и смотрит в камеру",
+            "editing": "Прямая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:03",
-            "visible_action": "Man in onesie stomps on the keyboard on the floor with duck slippers.",
-            "editing": "Quick cut to floor-level action shot.",
+            "time": "00:03 - 00:10",
+            "visible_action": "Смена костюма на головной платок, персонаж изображает удивление или попадание света в глаза",
+            "editing": "Динамичная смена кадров",
             "confidence": "seen"
           },
           {
-            "time": "00:10",
-            "visible_action": "A car drives over the keyboard on gravel.",
-            "editing": "Cut to exterior outdoor shot.",
+            "time": "00:10 - 00:20",
+            "visible_action": "Диалог между двумя ролями одного актера, комичная жестикуляция с фонариком",
+            "editing": "Чередование планов",
             "confidence": "seen"
           },
           {
-            "time": "00:16",
-            "visible_action": "Man cuts the keyboard with an angle grinder, creating sparks.",
-            "editing": "Cut to workshop setting.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:20",
-            "visible_action": "Man returns the undamaged keyboard to the gamer.",
-            "editing": "Cut back to the original room setting.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:26",
-            "visible_action": "Man covers gamer's mouth to prevent naming the brand to avoid advertisement.",
-            "editing": "Zoom-in reaction shot with comedic timing.",
+            "time": "00:20 - 00:36",
+            "visible_action": "Финальные шутки с фонариком и демонстрация объекта в камеру",
+            "editing": "Быстрые переходы",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Durability test parody skit demonstrating indestructible product endurance through absurd escalation.",
-        "transfer_to_hpii": "Create a dramatic test of an AI model where it withstands extreme, absurd prompt challenges or safety stress tests, ending with a comedic prevention of praising its creator.",
-        "what_not_to_copy": "Do not replicate the exact duck onesie props, specific keyboard destruction methods, or verbatim dialogue.",
-        "limitations": "Subtitles present on screen, audio is simplified to key sound effects and dialogue.",
+        "format_mechanic": "Скетч с переодеванием одного актера в разные роли для демонстрации бытовой шутки.",
+        "transfer_to_hpii": "Использовать прием смены двух ролей одним человеком для показа диалога пользователя и искусственного интеллекта.",
+        "what_not_to_copy": "Дословное повторение шуток про фонарик и бессмысленные комичные звуки.",
+        "limitations": "Часть реплик не переведена, но визуальный ряд понятен полностью.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-18T10:45:42Z",
+      "analyzed_at_utc": "2026-11-19T10:45:43Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "oPZ2RNXxMOY",
-      "url": "https://www.youtube.com/shorts/oPZ2RNXxMOY",
-      "title": "This Social Experiment Reveals the True Side of People 👀❤️ #shorts",
-      "channel": "sters pov",
-      "published_at": "2026-11-17T02:25:52Z",
-      "duration_seconds": 53,
-      "views": 2527,
-      "likes": 37,
-      "subscribers": 33,
+      "id": "xr5qTl0ueIw",
+      "url": "https://www.youtube.com/shorts/xr5qTl0ueIw",
+      "title": "Sheldon reveals a hidden birthday secret before walking right into a surprise trap🎂",
+      "channel": "Tuấn Mai Mối",
+      "published_at": "2026-11-18T11:29:50Z",
+      "duration_seconds": 163,
+      "views": 11358,
+      "likes": 537,
+      "subscribers": 1400,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-18T10:45:37Z",
+      "statistics_checked_at": "2026-11-19T10:45:35Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
-      "growth_views_per_hour": 31.8,
-      "rank_score": 7.47,
-      "viral_status": "unconfirmed",
-      "analysis": {
-        "observed_visuals": "POV-съемка в торговом центре, где молодой человек подходит к незнакомцам, делает комплименты внешности и просит контакты, показывая экран смартфона.",
-        "observed_audio": "Разговорные реплики на английском языке, комплименты, фоновый шум торгового центра.",
-        "hook_0_3s": "Крупный план девушки в магазине, надпись вверху 'Practicing my cold approach', слышно приветствие оператора.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:03",
-            "visible_action": "Оператор подходит к девушке у прилавка, диалог.",
-            "editing": "Прямая склейка, ручная камера.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:09 - 00:12",
-            "visible_action": "Смена локации в магазине, диалог с мужчиной-продавцом.",
-            "editing": "Быстрая склейка.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:22 - 00:25",
-            "visible_action": "Показ экрана смартфона двум девушкам в коридоре ТЦ.",
-            "editing": "Быстрая склейка.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:44 - 00:48",
-            "visible_action": "Общение со взрослой женщиной и девушкой в коридоре ТЦ.",
-            "editing": "Быстрая склейка.",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Динамичный пранк/челлендж формата POV с быстрой сменой сцен и реакций людей на улице или в магазине.",
-        "transfer_to_hpii": "Использование формата социального эксперимента или провокационного диалога для демонстрации возможностей ИИ-агента, который 'подкатывает' или общается с виртуальными персонажами в реальном времени.",
-        "what_not_to_copy": "Прямое копирование пранков в торговых центрах и навязчивое общение с реальными людьми без их согласия.",
-        "limitations": "Быстрые монтажные склейки и смена лиц могут затруднять детальный анализ каждого взаимодействия при низкой частоте кадров.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-18T10:45:49Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
+      "growth_views_per_hour": null,
+      "rank_score": 7.96,
+      "viral_status": "candidate_verified_stats",
+      "status": "failed",
+      "failure": "API HTTP 503"
     },
     {
-      "id": "E9wveiD_uqQ",
-      "url": "https://www.youtube.com/shorts/E9wveiD_uqQ",
-      "title": "Black Hole क्या होता है? 🌌 5 Amazing Space Facts | Universe Explained in Hindi | Cartoon Science",
-      "channel": "Aaj tumne kya sheekha ",
-      "published_at": "2026-11-17T12:31:40Z",
-      "duration_seconds": 59,
-      "views": 1456,
-      "likes": 14,
-      "subscribers": 14,
+      "id": "ooiKbaORMyo",
+      "url": "https://www.youtube.com/shorts/ooiKbaORMyo",
+      "title": "Why Soldiers Break Step on Bridges",
+      "channel": "Dexception",
+      "published_at": "2026-11-17T12:30:05Z",
+      "duration_seconds": 60,
+      "views": 1499,
+      "likes": 28,
+      "subscribers": 829,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-18T10:45:37Z",
+      "statistics_checked_at": "2026-11-19T10:45:35Z",
       "is_confirmed_short": false,
       "search_family": "explanation",
       "format_family_guess": "explanation",
-      "growth_views_per_hour": null,
-      "rank_score": 4.92,
+      "growth_views_per_hour": 6.1,
+      "rank_score": 5.42,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Animated space setting with colored bean characters interacting with holographic displays showing space objects like stars and black holes.",
-        "observed_audio": "Voiceover in a foreign language explaining scientific concepts with sound effects for space phenomena and UI elements.",
-        "hook_0_3s": "Characters standing around a glowing console in a spaceship with a large black hole projected above, accompanied by a question text overlay.",
+        "observed_visuals": "Animated video featuring stick figure soldiers marching across a suspension bridge, graphics explaining physics concepts, and a historical newspaper clipping.",
+        "observed_audio": "Voiceover narration explaining a historical event and its physical mechanics, accompanied by background music and sound effects.",
+        "hook_0_3s": "Анимационный персонаж в военной форме приказывает солдатам прекратить маршировать в ногу на мосту.",
         "timeline": [
           {
             "time": "00:00 - 00:03",
-            "visible_action": "Characters in a spaceship looking at a black hole projection",
-            "editing": "Direct shot with text overlay",
+            "visible_action": "Солдаты идут по мосту под руководством командира.",
+            "editing": "Динамичные склейки, субтитры по центру.",
             "confidence": "seen"
           },
           {
-            "time": "00:03 - 00:07",
-            "visible_action": "Characters gesturing toward a glowing holographic black hole",
-            "editing": "Scene transition to close up projection",
+            "time": "00:03 - 00:10",
+            "visible_action": "Демонстрация двух соревнующихся групп на мостах через реку.",
+            "editing": "Панорамирование камеры, смена планов.",
             "confidence": "seen"
           },
           {
-            "time": "00:07 - 00:12",
-            "visible_action": "Holographic display showing a star with directional arrows",
-            "editing": "Graphic overlay update",
+            "time": "00:10 - 00:17",
+            "visible_action": "Лицо полководца меняет цвет на фиолетовый от гнева при виде нестройного шага.",
+            "editing": "Крупный план персонажа, смена эмоций.",
             "confidence": "seen"
           },
           {
-            "time": "00:12 - 00:18",
-            "visible_action": "Character explaining physics while star graphic displays outward and inward forces",
-            "editing": "Dynamic zoom on holographic screen",
+            "time": "00:17 - 00:25",
+            "visible_action": "Соперники маршируют в идеальном ногу на железном мосту.",
+            "editing": "Монтаж с акцентом на шаги.",
             "confidence": "seen"
           },
           {
-            "time": "00:18 - 00:24",
-            "visible_action": "Explosion effect on the hologram and transformation into a colorful star",
-            "editing": "Flash effect and graphic swap",
+            "time": "00:25 - 00:40",
+            "visible_action": "Мост начинает раскачиваться в такт шагам, цепи рвутся, и солдаты падают в воду.",
+            "editing": "Ускорение монтажа, анимация разрыва цепей.",
             "confidence": "seen"
           },
           {
-            "time": "00:24 - 00:30",
-            "visible_action": "Black hole visualization returning with characters reacting",
-            "editing": "Wide shot reset",
+            "time": "00:40 - 00:50",
+            "visible_action": "Инфографика с объяснением физики резонанса и раскачивания качелей.",
+            "editing": "Переход к схемным чертежам на синем фоне.",
             "confidence": "seen"
           },
           {
-            "time": "00:30 - 00:36",
-            "visible_action": "Detailed breakdown of event horizon on a screen",
-            "editing": "Zoom in on UI panel",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:36 - 00:43",
-            "visible_action": "Light particles failing to escape the black hole graphic",
-            "editing": "Animation particle effect",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:43 - 00:50",
-            "visible_action": "Gravitational lensing bending light rays around the black hole",
-            "editing": "Curved light vector animation",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:50 - 00:56",
-            "visible_action": "Stars behind black hole appearing distorted due to lensing",
-            "editing": "Warp effect on background elements",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:56 - 00:59",
-            "visible_action": "Spaceship flying past space anomalies",
-            "editing": "Final cinematic pan out",
+            "time": "00:50 - 01:00",
+            "visible_action": "Показ исторической газеты и финальная сцена с сухими солдатами.",
+            "editing": "Статичные кадры с текстом и финальная шутка.",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Educational explainer video using animated mascot characters and holographic infographics to simplify complex topics.",
-        "transfer_to_hpii": "Use animated interactive holograms of neural networks to explain complex AI news concepts visually.",
-        "what_not_to_copy": "Cartoon bean characters and non-standard foreign voiceovers.",
-        "limitations": "Specific dialogue translation and exact timing of rapid asset changes may vary.",
+        "format_mechanic": "Исторический кейс с объяснением физического закона через анимацию и визуальную инфографику с последующим выводом.",
+        "transfer_to_hpii": "Разбор физической уязвимости нейросетей: как незаметные микровоздействия (синхронные шаги) вызывают резонанс и «падение» всей архитектуры ИИ.",
+        "what_not_to_copy": "Не копировать анимацию мультяшных солдатиков и исторический сюжет про британский мост 1831 года.",
+        "limitations": "Анализ базируется на визуальных и звуковых элементах доступного ролика без учета скрытых метаданных.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-18T10:46:10Z",
+      "analyzed_at_utc": "2026-11-19T10:45:57Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "video_id": "xr5qTl0ueIw",
+      "code": "analysis_failed"
+    }
+  ]
 }
