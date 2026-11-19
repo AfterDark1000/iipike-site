@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "1e63f53a4b2274c525b8a67e2073df34c9b85488",
-  "source_blob_sha": "736b70eb2da11fdb73d888770debed6f7a788dbd",
-  "snapshot_date": "2026-11-18",
+  "source_commit": "354599c74afc49c8505212620f53c888e6503dd3",
+  "source_blob_sha": "98040c599a88df180a0cb63c10487e88c9583684",
+  "snapshot_date": "2026-11-19",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
     {
@@ -15,6 +15,16 @@
       "source": "editorial_archive.json",
       "excerpt": "OpenAI 17 ноября выпустила две нейросети — GPT-6.2 Astra для сложной профессиональной работы и GPT-6.2 Sol для повседневных задач. В независимом рейтинге Artificial Analysis новая Astra набрала 62 балла против 65 у лидирующей Claude Fable 5.2. При этом стандартное задание в тестах обошлось в $4 против $26,54 у Claude — разница примерно в 6,6 раза. Обе новинки уже доступны в ChatGPT Work, Codex и API. В обычном чате C",
       "published_at_utc": "2026-11-18T07:23:56+00:00"
+    },
+    {
+      "dzen_id": "6afd4aed492bed648c7e9cf5",
+      "title": "GPT-6 Astra помогла физику найти решение задачи, над которой работали больше 50 лет",
+      "dzen_url": "https://dzen.ru/a/av1K7Ukr7WSMfpz1",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Физик Натаниэль Крейг с помощью GPT-6 Astra разработал новый математический подход к одной из старейших нерешённых задач Стандартной модели — теории, описывающей элементарные частицы и их взаимодействия. 15 ноября OpenAI опубликовала рассказ исследователя о совместной работе с нейросетью. Крейг придумал стратегию решения, но долго не мог доказать, что она работает во всех необходимых случаях. У меня была стратегия ре",
+      "published_at_utc": "2026-11-18T19:31:58+00:00"
     },
     {
       "dzen_id": "6afd4a791f68621720548873",
