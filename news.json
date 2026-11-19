@@ -6983,5 +6983,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд",
+    "summary": "Isomorphic Labs привлекла $5 млрд на разработку лекарств с ИИ спустя полгода после раунда на $2,1 млрд. Её программы в онкологии и иммунологии пока находятся на доклинической стадии.",
+    "published": "2026-11-19",
+    "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round",
+    "cover": "assets/editorial/isomorphic-labs-5b-ai-medicines-20261117.webp",
+    "rubric": "news",
+    "vk_title": "💊 КОМПАНИЯ СОЗДАТЕЛЯ ALPHAFOLD получила ещё $5 МЛРД на лекарства с ИИ",
+    "vk_summary": "Isomorphic Labs, созданная Демисом Хассабисом, привлекла $5 млрд инвестиций. В мае компания получила ещё $2,1 млрд. Деньги пойдут на ИИ-систему проектирования лекарств и подготовку будущих испытаний на людях. Пока разработки находятся на доклинической стадии.",
+    "published_at_utc": "2026-11-19T15:15:40Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "isomorphic-labs-5b-ai-medicines-20261117",
+    "url": "articles/isomorphic-labs-5b-ai-medicines-20261117/",
+    "topics": [
+      "health",
+      "finance"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
