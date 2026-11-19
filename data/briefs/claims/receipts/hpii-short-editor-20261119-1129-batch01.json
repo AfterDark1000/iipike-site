@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-1129-batch01.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-6c8dcc4daf751efd",
+      "pool_sequence": 59,
+      "title": "ФРС предупредила о риске массовых изменений занятости из-за ИИ",
+      "source_url": "https://www.reuters.com/legal/government/feds-barr-us-should-prepare-serious-ai-job-disruption-widening-inequality-2026-11-12/",
+      "claimed_at": "2026-11-19T06:30:41+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-45f5fd394ef9d677",
+      "pool_sequence": 63,
+      "title": "OpenAI выделила $2 млн на исследования влияния ИИ на детей",
+      "source_url": "https://openai.com/index/children-first-declaration/",
+      "claimed_at": "2026-11-19T06:30:41+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-c3fe8341e49f4a45",
+      "pool_sequence": 66,
+      "title": "Anthropic пообещала $50 млн благотворительным организациям Сан-Франциско",
+      "source_url": "https://www.sfchronicle.com/tech/article/anthropic-ipo-philanthropy-22521168.php",
+      "claimed_at": "2026-11-19T06:30:41+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-c4e189afed1eb43b",
+      "pool_sequence": 76,
+      "title": "Liquid AI представила речевой кодек LiquidCodec на 74 млн параметров",
+      "source_url": "https://www.liquid.ai/blog/liquidcodec",
+      "claimed_at": "2026-11-19T06:30:41+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2ceddae7caa9cf56",
+      "pool_sequence": 82,
+      "title": "Австралийское радио ARN готовит ИИ-озвучивание дорожных сводок",
+      "source_url": "https://au.variety.com/2026/biz/news/tennis-travel-and-ai-traffic-arn-upfronts-reveals-plans-to-close-38-million-gap-42487",
+      "claimed_at": "2026-11-19T06:30:41+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
