@@ -1790,6 +1790,10 @@
         {
           "article_id": "google-gemini-4-hydrogen-20261112",
           "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        {
+          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
         }
       ]
     },
@@ -2292,6 +2296,32 @@
         {
           "article_id": "heygen-avatar-6-contextual-gestures-20261117",
           "source_url": "https://www.heygen.com/research/avatar-6-model"
+        }
+      ]
+    },
+    {
+      "key": "tasks-in-gemini",
+      "name": "Tasks in Gemini",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+        }
+      ]
+    },
+    {
+      "key": "google-pay",
+      "name": "Google Pay",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
         }
       ]
     }
