@@ -4405,12 +4405,12 @@
       "summary": "18 ноября: анонс Gemini 4 Neon и каналов доступа.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:38:59.247Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "19.11.2026: редактор 21 зарезервировал горячую №294. Первоисточник Google 18.11 https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/ . Проверить модельную карточку, независимые бенчмарки, доступность и цену. Предыстория Carbon и Hydrogen; Дзен/Threads/X/VK на утверждение."
     },
     {
       "id": "n-e240b18865546634",
