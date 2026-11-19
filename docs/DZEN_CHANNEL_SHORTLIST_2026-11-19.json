@@ -137,6 +137,18 @@
         "urls": [
           "https://appleinsider.ru/sluxi/siri-mozhet-stat-ii-agentom-uzhe-v-sleduyushhem-godu-glava-apple-potreboval-uskoritsya.html",
           "https://appleinsider.ru/tips-tricks/kak-sdelat-svoi-oboi-na-iphone-v-ios-27-s-pomoshhyu-nejroseti.html"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://appleinsider.ru/sluxi/siri-mozhet-stat-ii-agentom-uzhe-v-sleduyushhem-godu-glava-apple-potreboval-uskoritsya.html",
+            "observed_at": "2026-11-19T01:57:17+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://appleinsider.ru/tips-tricks/kak-sdelat-svoi-oboi-na-iphone-v-ios-27-s-pomoshhyu-nejroseti.html",
+            "observed_at": "2026-11-19T01:57:18+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -175,6 +187,18 @@
         "urls": [
           "https://mrandroid.ru/ai-deciphered-napoleon-letter/",
           "https://mrandroid.ru/google-gemini-trademark-russia/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://mrandroid.ru/ai-deciphered-napoleon-letter/",
+            "observed_at": "2026-11-19T01:57:20+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://mrandroid.ru/google-gemini-trademark-russia/",
+            "observed_at": "2026-11-19T01:57:21+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -212,7 +236,19 @@
         "theme": "Технологическое медиа. Локальные нейросети, Gemini и Android.",
         "urls": [
           "https://androidinsider.ru/obzory-prilozhenij/vyshla-besplatnaya-nejroset-na-android-kotoraya-rabotaet-bez-interneta-i-ne-slivaet-dannye.html",
-          "https://androidinsider.ru/obzory-prilozhenij/google-polnostyu-peredelala-gemini-na-android-kak-izmenitsya-nejroset-v-2026-godu.html"
+          "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://androidinsider.ru/obzory-prilozhenij/vyshla-besplatnaya-nejroset-na-android-kotoraya-rabotaet-bez-interneta-i-ne-slivaet-dannye.html",
+            "observed_at": "2026-11-19T01:57:23+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html",
+            "observed_at": "2026-11-19T01:57:25+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -250,8 +286,19 @@
         "theme": "Авторский IT-блог. Устройство нейросетей, применение и влияние на профессии.",
         "urls": [
           "https://poznyaev.ru/chto-takoe-neyroseti/",
-          "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/",
-          "https://poznyaev.ru/podcast/it-news-60/"
+          "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://poznyaev.ru/chto-takoe-neyroseti/",
+            "observed_at": "2026-11-19T01:57:28+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://poznyaev.ru/ai-ostavit-nas-bez-raboty/",
+            "observed_at": "2026-11-19T01:57:29+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -290,6 +337,18 @@
         "urls": [
           "https://nplus1.ru/blog/2026/09/25/astra-behind-the-wheel/amp",
           "https://nplus1.ru/news/2026/07/03/genatator"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://nplus1.ru/blog/2026/09/25/astra-behind-the-wheel/amp",
+            "observed_at": "2026-11-19T01:57:31+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://nplus1.ru/news/2026/07/03/genatator",
+            "observed_at": "2026-11-19T01:57:32+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -324,6 +383,18 @@
         "urls": [
           "https://habr.com/ru/companies/habr_career/articles/1047570/",
           "https://habr.com/ru/companies/habr_career/articles/985796/"
+        ],
+        "public_link_checks": [
+          {
+            "url": "https://habr.com/ru/companies/habr_career/articles/1047570/",
+            "observed_at": "2026-11-19T01:57:34+00:00",
+            "http_status": 200
+          },
+          {
+            "url": "https://habr.com/ru/companies/habr_career/articles/985796/",
+            "observed_at": "2026-11-19T01:57:35+00:00",
+            "http_status": 200
+          }
         ]
       },
       "ai_share_on_dzen": null,
@@ -1351,5 +1422,11 @@
       "audience_status": "unverified",
       "status": "unverified_recurring_ai"
     }
-  ]
+  ],
+  "editorial_link_recheck": {
+    "direct_dzen_matches_from_publishers": 0,
+    "replaced_link": "https://androidinsider.ru/obzory-prilozhenij/google-polnostyu-peredelala-gemini-na-android-kak-izmenitsya-nejroset-v-2026-godu.html",
+    "replaced_link_http_status": 404,
+    "replacement": "https://androidinsider.ru/polezno-znat/rabotaet-li-nejroset-gemini-v-rossii.html"
+  }
 }
