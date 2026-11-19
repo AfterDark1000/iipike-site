@@ -61,6 +61,51 @@ class RoutingTests(unittest.TestCase):
             self.assertEqual(long_item["sequence"], 3)
             self.assertEqual(after["items"][0]["status"], "in_review")
 
+    def test_hot_routed_priority_takes_precedence_over_raw_normal(self):
+        pool, routes = fixture()
+        pool["items"][2]["priority"] = "normal"
+        manual, selected = next_item(pool, now=NOW, routing=routes)
+        self.assertEqual(selected["sequence"], 3)
+        self.assertEqual(manual["items"][2]["status"], "in_review")
+        # The ordinary-only automatic editor must also respect the hot routing.
+        _, ticket = claim_ordinary(pool, "test-routed-hot.json", now=NOW, routing=routes)
+        self.assertEqual(ticket["pool_sequence"], 4)
+
+    def test_request_receipt_claim_is_idempotent(self):
+        from scripts import briefs_claim
+        import json
+        from scripts.editorial_routing import ROUTES
+        pool, routes = fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = root / "data/site_news_pool.json"
+            path.parent.mkdir(parents=True)
+            path.write_text(json.dumps(pool, ensure_ascii=False), encoding="utf-8")
+            route_file = root / ROUTES
+            route_file.parent.mkdir(parents=True, exist_ok=True)
+            doc = {
+                "schema_version": 1, "approved_date": "2026-11-19",
+                "source": "test", "source_pool_sha": "test", "note": "test",
+                "items": list(routes.values())
+            }
+            route_file.write_text(json.dumps(doc), encoding="utf-8")
+            requests = root / briefs_claim.REQUESTS
+            requests.mkdir(parents=True)
+            req = requests / "test-short-001.json"
+            req.write_text(json.dumps({
+                "schema_version": 1, "action": "claim_short", "worker": "hpii-short-editor"
+            }), encoding="utf-8")
+            first = briefs_claim.consume(root, now=NOW)
+            self.assertEqual(first[req.name]["pool_sequence"], 1)
+            self.assertEqual(first[req.name]["status"], "reserved")
+            saved = json.loads(path.read_text(encoding="utf-8"))
+            self.assertEqual(saved["items"][0]["status"], "in_review")
+            self.assertEqual(briefs_claim.consume(root, now=NOW), {})
+            self.assertEqual(saved, json.loads(path.read_text(encoding="utf-8")))
+            req.write_text('{"worker":"evil"}', encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "changed after acknowledgment"):
+                briefs_claim.consume(root, now=NOW)
+
     def test_short_candidate_dedup(self):
         pool, routes = fixture()
         with tempfile.TemporaryDirectory() as tmp:
