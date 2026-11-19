@@ -3,7 +3,7 @@ import datetime as dt
 import json
 from pathlib import Path
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 from scripts import commenting_queue as cq
 
 NOW = dt.datetime(2026, 11, 8, 7, tzinfo=dt.timezone.utc)
@@ -115,6 +115,41 @@ class QueueTests(unittest.TestCase):
         self.assertIsNone(result["sources"][0]["fresh_matches"])
         self.assertEqual(result["sources"][0]["last_success_at"], cq.stamp(NOW))
         self.assertEqual(result["items"][0]["comment"], queue["items"][0]["comment"])
+
+    def test_mk_invalid_xml_preserves_other_sources_and_reports_only_position(self):
+        mk = next(s for s in cq.load_config(ROOT / "data/commenting_sources.json")["sources"] if s["id"] == "mk")
+
+        def feeds(url, source):
+            return "<rss>\n<broken-private-content></rss>" if source["id"] == "mk" else fetcher(url, source)
+
+        result = cq.build_queue({**CONFIG, "sources": [mk, SOURCE]}, {}, NOW,
+                                fetcher=feeds, model=model, api_key="test-placeholder")
+        mk_health, other = result["sources"]
+        self.assertEqual(mk_health["status"], "error")
+        self.assertRegex(mk_health["error"], r"ParseError, строка 2, позиция \d+")
+        self.assertNotIn("private-content", json.dumps(result))
+        self.assertEqual(other["status"], "ok")
+        self.assertEqual(result["items"][0]["status"], "draft_ready")
+
+    def test_recovery_uses_persisted_daily_budget_and_existing_per_run_limit(self):
+        config = cq.load_config(ROOT / "data/commenting_sources.json")
+        self.assertEqual((config["max_per_run"], config["max_per_day"]), (3, 24))
+        config["sources"] = [SOURCE]
+        entries = "".join(rss(url=f"https://www.ixbt.com/news/story-{i}.html").removeprefix("<rss><channel>")
+                          .removesuffix("</channel></rss>") for i in range(5))
+
+        def feeds(url, source):
+            return "<rss><channel>" + entries + "</channel></rss>" if url == source["feed_url"] else fetcher(url, source)
+
+        for previous_attempts, expected_batch in ((21, 3), (23, 1), (24, 0)):
+            state = {"schema_version": 1, "usage": {"date": "2026-11-08", "attempted": previous_attempts}}
+            with self.subTest(previous_attempts=previous_attempts):
+                generator = Mock(wraps=model)
+                result = cq.build_queue(config, state, NOW, fetcher=feeds, model=generator, api_key="test-placeholder")
+                self.assertEqual(generator.call_count, int(expected_batch > 0))
+                if expected_batch:
+                    self.assertEqual(len(generator.call_args.args[0]), expected_batch)
+                self.assertEqual(result["usage"]["attempted"], previous_attempts + expected_batch)
 
     def test_unreadable_article_never_reaches_model(self):
         def source(url, config): return rss() if url == config["feed_url"] else "<html>Access denied</html>"

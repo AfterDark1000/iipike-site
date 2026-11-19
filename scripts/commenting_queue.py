@@ -434,6 +434,9 @@ def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_ke
         try:
             rows = feed_items(fetcher(source["feed_url"], source), source, now, config["max_age_hours"])
             return source, rows, None
+        except ET.ParseError as exc:
+            line, column = exc.position
+            return source, [], f"Некорректный XML (ParseError, строка {line}, позиция {column})"
         except Exception as exc:
             return source, [], f"Лента недоступна или не распознана ({type(exc).__name__})"
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
