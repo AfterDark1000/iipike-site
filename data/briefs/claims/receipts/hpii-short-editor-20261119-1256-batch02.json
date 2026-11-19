@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-1256-batch02.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-9539aaad3f277ad5",
+      "pool_sequence": 83,
+      "title": "В сериале Cupertino разумный ИИ хочет судиться со своими создателями",
+      "source_url": "https://www.wsj.com/arts-culture/television/cupertino-cbs-rob-mcclure-bo-ai-97b9eebd",
+      "claimed_at": "2026-11-19T07:56:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-e1a1a9b9c177ad10",
+      "pool_sequence": 84,
+      "title": "Method Man играет рэпера, который судится с ИИ-музыкой в Cupertino",
+      "source_url": "https://www.tvinsider.com/1303068/cupertino-episode-7-sneak-peek-method-man-guest-stars-exclusive",
+      "claimed_at": "2026-11-19T07:56:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f740dffd211520bd",
+      "pool_sequence": 88,
+      "title": "Илон Маск не исключил найма Дженсена Хуанга",
+      "source_url": "https://fortune.com/2026/11/13/jensen-huang-nvidia-elon-musk-hire-honor",
+      "claimed_at": "2026-11-19T07:56:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-990de9f2deb6136f",
+      "pool_sequence": 89,
+      "title": "Тоби Уолш заявил, что опасения вокруг ИИ преувеличены, а AGI ещё далеко",
+      "source_url": "https://www.theaustralian.com.au/inquirer/australian-scientist-toby-walsh-defends-ai-rollout-amid-doomsday-fears/news-story/8918f17d3f3931bd5a88549f65f85c5c",
+      "claimed_at": "2026-11-19T07:56:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-4046a8969473b51b",
+      "pool_sequence": 91,
+      "title": "Epidemic Sound предсказала рост ценности человеческого творчества на фоне ИИ",
+      "source_url": "https://corporate.epidemicsound.com/press-and-media/press-releases/2026/ai-faces-a-trust-test-in-2027-as-adoption-grows-across-creative-industries-epidemic-sound-predicts",
+      "claimed_at": "2026-11-19T07:56:45+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
