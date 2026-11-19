@@ -113,8 +113,17 @@ def reserved_brief_ids(root=ROOT):
     return ids
 
 
+def short_work_in_progress(pool):
+    """Only one unresolved short-editor-owned pool reservation at a time."""
+    return any(i["status"] == "in_review" and
+               i["note"].startswith("SHORT_EDITOR claim=short; pool_id=")
+               for i in pool["items"])
+
+
 def next_short(pool, *, routes=None, root=ROOT, exclude_ids=()):
     site_news_pool.validate(pool)
+    if short_work_in_progress(pool):
+        return None
     if routes is None:
         routes = load_routes(pool, root=root)
     excluded = set(exclude_ids)
