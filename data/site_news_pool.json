@@ -3595,12 +3595,12 @@
       "summary": "17 ноября: программа BlueQubit Quantum Flywheel выбрала восемь исследовательских команд.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T14:36:23+00:00",
       "review_started_at": "2026-11-19T10:42:50+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-f8c6dc90fe1d4657"
+      "closed_at": "2026-11-19T19:38:52Z",
+      "article_id": "bluequbit-quantum-flywheel-eight-teams-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f8c6dc90fe1d4657\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/bluequbit-quantum-flywheel-eight-teams-20261117/"
     },
     {
       "id": "n-0aa64fce32a6a01e",
