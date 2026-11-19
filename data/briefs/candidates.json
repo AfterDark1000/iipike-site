@@ -235,6 +235,71 @@
       "source": "Stanford SNAP / Memorilla",
       "source_url": "https://github.com/snap-stanford/memorilla",
       "fact_check": "README Stanford SNAP Memorilla, paper arXiv 2610.21375; пример 107 разговоров ~32000 токенов к 16 query-dependent memory tokens. Метод не гарантирует точного сохранения всей истории; испытания авторов, требования GPU (пример 80GB)."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 164,
+      "pool_id": "n-cf7d450c509f730e",
+      "slug": "anthropic-ipo-protest-jenga-20261115",
+      "headline": "Против IPO Anthropic вышли с почти двухметровой «Дженгой»",
+      "body": "Активисты Stop Funding Billionaires устроили акции против выхода Anthropic на биржу. 9 ноября они протестовали у офиса компании в Нью-Йорке, а 10 ноября в Сан-Франциско установили башню «Дженга» высотой около 1,8 метра с логотипами технологических компаний. Организаторы опасаются, что обвал ИИ-рынка ударит по пенсионным накоплениям обычных американцев. Башня должна была показать, насколько хрупкой они считают нынешнюю финансовую конструкцию.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-10",
+      "source": "Business Insider",
+      "source_url": "https://www.businessinsider.com/anthropic-ipo-protest-ant-stock-ai-tech-2026-11",
+      "fact_check": "Business Insider 15.11.2026: protests in NYC Nov 9 and SF Nov 10; 6-foot Jenga made by local artist. Organizer Stop Funding Billionaires. Concern about investor exposure to AI bubble."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 178,
+      "pool_id": "n-5197e3710e4648e4",
+      "slug": "shenzhen-apec-robotaxis-robots-20261116",
+      "headline": "Перед саммитом АТЭС в Шэньчжэне показали город с роботакси",
+      "body": "Журналисты Associated Press проехали 7,6 километра по Шэньчжэню в беспилотном такси Pony.ai: поездка заняла 24 минуты и обошлась в 12,7 юаня со скидкой. Город принимает саммит АТЭС и показывает гостям свои технологии — от роботакси до сервисных роботов. При этом беспилотные машины ездят только между утверждёнными точками, а перед саммитом их работу даже ограничили. Доставка дронами временно приостановлена.",
+      "topic": "Технологии",
+      "event_date": "2026-11-16",
+      "source": "Associated Press",
+      "source_url": "https://apnews.com/article/df655739f3881e2025c873c13b1fed70",
+      "fact_check": "AP reportage Nov 16 2026; 7.6 km, 24 minutes, 12.7 yuan discounted; service restricted and delivery drones suspended before APEC."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 181,
+      "pool_id": "n-d12217714e51c16c",
+      "slug": "dublin-ai-flood-warning-pilot-20261117",
+      "headline": "Дублин испытывает ИИ, предупреждающий о наводнениях за 21 час",
+      "body": "Власти Дублина и компания EMR запустили пилот ИИ-системы раннего предупреждения о наводнениях. Она анализирует десять лет показаний датчиков: уровни рек, осадки, приливы и метеоданные. При проверке на прошлых событиях алгоритм смог выявить некоторые риски за 13–21 час до подтопления. Каждый сигнал оценивают специалисты городского совета, а испытания пройдут осенью и зимой 2026/27 года.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Dublin City Council",
+      "source_url": "https://www.dublincity.ie/news/dublin-city-council-and-emr-pilot-ai-early-warning-system-major-flood-events",
+      "fact_check": "Dublin City Council Nov 17 2026: pilot, 10 years sensor data, 13-21h on some mountain rainfall historic test events; each alert reviewed by DCC staff. Pilot through autumn/winter 2026/27."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 183,
+      "pool_id": "n-ae2875a8e2c34165",
+      "slug": "corma-defensive-ai-series-a-125m-20261116",
+      "headline": "Corma получила $125 млн на ИИ-агентов для защиты от хакеров",
+      "body": "Стартап Corma объявил 16 ноября о привлечении $125 млн в раунде Series A при оценке компании в $1 млрд. Раунд возглавил фонд NEA, участвовали Sequoia Capital, Khosla Ventures и Coatue. Corma разрабатывает собственные ИИ-модели и агентов, которые работают внутри привычных средств киберзащиты компании и помогают аналитикам разбирать угрозы. Новые деньги направят прежде всего на обучение моделей и вычислительные мощности.",
+      "topic": "Безопасность",
+      "event_date": "2026-11-16",
+      "source": "Corma",
+      "source_url": "https://www.corma.ai/blog/three-months-in",
+      "fact_check": "Primary Corma announcement Nov 16 2026: $125m Series A at $1bn valuation, NEA lead, Sequoia/Khosla/Coatue. No assertion of independently validated defensive performance."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 197,
+      "pool_id": "n-60f3c7381bc61eae",
+      "slug": "openai-kings-trust-million-pounds-20261116",
+      "headline": "OpenAI выделила £1 млн на обучение британской молодёжи работе с ИИ",
+      "body": "OpenAI и благотворительная организация The King’s Trust объявили 16 ноября о программе обучения ИИ-навыкам для молодых британцев. Компания направляет на неё £1 млн. За ближайшие 18 месяцев партнёры рассчитывают охватить до 25 тысяч человек, прежде всего тех, кто сейчас не учится и не работает. Программа предполагает практические занятия, помощь в трудоустройстве и подготовку к получению признаваемых квалификаций.",
+      "topic": "Общество",
+      "event_date": "2026-11-16",
+      "source": "OpenAI",
+      "source_url": "https://openai.com/index/the-kings-trust-and-openai/",
+      "fact_check": "OpenAI Nov 16 2026: £1m donation, up to 25k over 18 months, priority NEET, nationally recognized qualifications being developed."
     }
   ]
 }
