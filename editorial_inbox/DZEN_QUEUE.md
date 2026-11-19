@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 174 · **В каталоге Дзена подтверждены:** 160 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 174 · **В каталоге Дзена подтверждены:** 160 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -27,6 +27,7 @@
 | 11 | [НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-nato-cyber-defense-daybreak-20261117.md) | 19.11.2026, 18:00 | [На сайте](https://iipike.ru/articles/openai-nato-cyber-defense-daybreak-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-nato-cyber-defense-daybreak-20261117.webp) |
 | 12 | [Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/nvidia-megaspeed-chips-export-investigation-20261117.md) | 19.11.2026, 19:15 | [На сайте](https://iipike.ru/articles/nvidia-megaspeed-chips-export-investigation-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-megaspeed-chips-export-investigation-20261117.webp) |
 | 13 | [ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/isomorphic-labs-5b-ai-medicines-20261117.md) | 19.11.2026, 20:15 | [На сайте](https://iipike.ru/articles/isomorphic-labs-5b-ai-medicines-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/isomorphic-labs-5b-ai-medicines-20261117.webp) |
+| 14 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.md) ⚠️ ссылки на сайт — проверить | 19.11.2026, 21:15 | [На сайте](https://iipike.ru/articles/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -34,7 +35,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.md) ⚠️ ссылки на сайт — проверить | **Не ранее 19.11.2026 21:22 (Усть-Катав)**; пауза до 19.11.2026 21:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
+| — | Нет материалов | — | — | — |
 
 ## 3. Подтверждены опубликованными в Дзене
 
