@@ -2498,6 +2498,19 @@
           "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
         }
       ]
+    },
+    {
+      "key": "gemini-4-neon",
+      "name": "Gemini 4 Neon",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "google-gemini-4-neon-20261118",
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+        }
+      ]
     }
   ]
 }
