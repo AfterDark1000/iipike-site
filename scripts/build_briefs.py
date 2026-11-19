@@ -11,10 +11,13 @@ from html import escape
 import json
 from pathlib import Path
 import re
+import sys
 from urllib.parse import urlparse
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 APPROVED=Path("data/briefs/approved.json")
 CANDIDATES=Path("data/briefs/candidates.json")
 SITE=Path("briefs/index.html")
