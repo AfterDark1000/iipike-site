@@ -21,7 +21,7 @@ class BriefFeedTests(unittest.TestCase):
         # The original pilot has grown; regression tests must accept future briefs.
         self.assertTrue({125,185,226} <= {c["pool_sequence"] for c in candidates})
         self.assertTrue(all(c["status"]=="pending_review" for c in candidates))
-        approved=b.validated(ROOT)
+        approved=b.released_rows(ROOT)
         approved_slugs={row["slug"] for row in approved}
         output=b.outputs(ROOT)
         html=output[ROOT/"briefs/index.html"]
