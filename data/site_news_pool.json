@@ -3990,7 +3990,7 @@
       "review_started_at": "2026-11-19T10:44:15.898Z",
       "closed_at": null,
       "article_id": null,
-      "note": "19.11.2026: редактор 20 зарезервировал горячую №266 по маршруту long/hot. Проверить анонс Isomorphic Labs от 17.11, сумму $5 млрд, тип сделки (инвестиции/оценка/партнёрство), стадию клинических испытаний, связи с Google DeepMind, архив и возможные дубли. Далее Дзен/Threads/X/VK на утверждение."
+      "note": "19.11: проверен первоисточник Isomorphic Labs 17.11 https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round и полный релиз https://www.prnewswire.com/news-releases/isomorphic-labs-announces-5-billion-series-c-funding-302942062.html . $5 млрд именно раунд Series C (Greenoaks/Sequoia; a16z, Alphabet и существующие инвесторы); оценка не раскрыта. В мае 12.05 отдельный Series B $2,1 млрд https://www.isomorphiclabs.com/press/isomorphic-labs-funding , всего за 6 месяцев $7,1 млрд. Isomorphic — основанная в 2021 отдельная компания, выделившаяся из DeepMind, глава Демис Хассабис. IsoDDE моделирует/подбирает молекулы, внутренние программы онкология и иммунология; положительные результаты доклиники; дат/названий первых испытаний нет. Прямого дубля в news.json и Дзен-каталоге нет. На утверждение Дзен/Threads/X/VK."
     },
     {
       "id": "n-1901229e7d1fe285",
