@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch07-unique1733.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-30f3acb86b10736b",
+      "pool_sequence": 251,
+      "title": "LangChain перестраивает наблюдение за ИИ-агентами вокруг их истории действий",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "claimed_at": "2026-11-19T11:09:22+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-8a7529e97fb60107",
+      "pool_sequence": 252,
+      "title": "Google открыла Gemini в Apps Script для широкого использования",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "claimed_at": "2026-11-19T11:09:22+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-7535b1adf01f0dc8",
+      "pool_sequence": 253,
+      "title": "ИИ-агентам дали защищённую песочницу для работы с сайтами",
+      "source_url": "https://ai.info/daily/2026-11-17",
+      "claimed_at": "2026-11-19T11:09:22+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-96308e7073fc11f6",
+      "pool_sequence": 257,
+      "title": "Microsoft представила новые ИИ для картинок и расшифровки речи",
+      "source_url": "https://www.reuters.com/legal/litigation/microsoft-unveils-ai-models-coding-cybersecurity-it-takes-anthropic-openai-2026-11-17",
+      "claimed_at": "2026-11-19T11:09:22+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-5a600a844d9b7ef8",
+      "pool_sequence": 270,
+      "title": "ИИ-агент обзванивает покупателей за полчаса до доставки мебели",
+      "source_url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain",
+      "claimed_at": "2026-11-19T11:09:22+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

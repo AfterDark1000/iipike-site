@@ -3760,12 +3760,12 @@
       "summary": "17 ноября: сообщение об обновлении LangSmith; вторичный источник, детали проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:09:22+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-30f3acb86b10736b"
     },
     {
       "id": "n-8a7529e97fb60107",
@@ -3775,12 +3775,12 @@
       "summary": "17 ноября: сообщение об интеграции Gemini в Apps Script; проверить доступность.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:09:22+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8a7529e97fb60107"
     },
     {
       "id": "n-7535b1adf01f0dc8",
@@ -3790,12 +3790,12 @@
       "summary": "17 ноября: сообщение об инструменте Firecrawl; проверить детали релиза.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T02:42:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:09:22+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-7535b1adf01f0dc8"
     },
     {
       "id": "n-20774146b79ca781",
@@ -3850,12 +3850,12 @@
       "summary": "17 ноября: модели генерации изображений и транскрипции Microsoft; уточнить доступность.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T03:12:00+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:09:22+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-96308e7073fc11f6"
     },
     {
       "id": "n-afbc39225c5371df",
@@ -4045,12 +4045,12 @@
       "summary": "17 ноября: Pedestal AI сообщила о финансировании $4,7 млн и заявленном снижении сорванных доставок на 20% у клиента; результат со слов компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T13:05:12+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T11:09:22+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-5a600a844d9b7ef8"
     },
     {
       "id": "n-dc9b00f988f99db7",
