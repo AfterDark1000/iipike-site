@@ -6912,5 +6912,30 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "Google выпустила Gemini 4 Neon: обогнала Claude Opus 5.5 и GPT-6.2 Sol в тестах",
+    "summary": "Google представила Gemini 4 Neon для программирования и задач ИИ-агентов. В Artificial Analysis модель набрала 61 балл; Google сравнивает её стоимость выполнения задач с Gemini 4 Carbon.",
+    "published": "2026-11-19",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+    "cover": "assets/editorial/google-gemini-4-neon-20261118.webp",
+    "rubric": "news",
+    "vk_title": "⚡ GOOGLE выпустила GEMINI 4 NEON: обошла Claude и GPT-6.2 Sol в тестах",
+    "vk_summary": "Gemini 4 Neon получила 61 балл в Artificial Analysis при максимальном режиме рассуждений — против 59 у Claude Opus 5.5 и 57 у GPT-6.2 Sol. Google обещает на 32% меньшую стоимость тестового задания против Carbon. Новинка постепенно появляется у платных пользователей Gemini и в API.",
+    "published_at_utc": "2026-11-19T11:57:56Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-18",
+    "id": "google-gemini-4-neon-20261118",
+    "url": "articles/google-gemini-4-neon-20261118/",
+    "topics": [
+      "models",
+      "development"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
