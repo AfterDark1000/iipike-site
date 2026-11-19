@@ -1,6 +1,8 @@
 # «Первый вагон» в браузере
 
-[Открыть «Первый вагон»](https://htmlpreview.github.io/?https://github.com/AfterDark1000/iipike-site/blob/51b74f2470974f1923f9455964bc6d26470c5d02/lab/dzen-first-car/index.html)
+[Открыть «Первый вагон»](https://htmlpreview.github.io/?https://github.com/AfterDark1000/iipike-site/blob/42f53add1d04c0c6f7d4365dce3b00486485a237/lab/dzen-first-car/index.html)
+
+Версия по ссылке сверяет текущий JSON каждые пять минут в видимой вкладке и предупреждает после 90 минут без обновления. [Диагностика и восстановление источника](DZEN_FIRST_CAR_COLLECTOR_RECOVERY.md)
 
 Ссылка фиксирует проверенную версию интерфейса из черновой ветки. Данные читаются напрямую из текущего `commenting-data/commenting/queue.json` при открытии страницы, по кнопке «Обновить» и при возврате на вкладку. Относительно текущего времени браузера показываются материалы младше 24 часов с готовыми репликами. У кандидатов без ссылки на версию статьи в Дзене доступны оригинал и ручной поиск. Метки сохраняются в браузере и не синхронизируются с рабочей админкой. Python, SQLite и токены для этой страницы не нужны. [Задание](https://github.com/AfterDark1000/iipike-site/pull/216#issuecomment-7008494163) · [Рабочий JSON](https://raw.githubusercontent.com/AfterDark1000/iipike-site/commenting-data/commenting/queue.json)
 
