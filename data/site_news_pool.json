@@ -3985,12 +3985,12 @@
       "summary": "17 ноября: сообщение о финансировании Isomorphic Labs для продвижения кандидатов в лекарства к клинической стадии; сумма и детали требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T13:05:12+00:00",
       "review_started_at": "2026-11-19T10:44:15.898Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "19.11: проверен первоисточник Isomorphic Labs 17.11 https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round и полный релиз https://www.prnewswire.com/news-releases/isomorphic-labs-announces-5-billion-series-c-funding-302942062.html . $5 млрд именно раунд Series C (Greenoaks/Sequoia; a16z, Alphabet и существующие инвесторы); оценка не раскрыта. В мае 12.05 отдельный Series B $2,1 млрд https://www.isomorphiclabs.com/press/isomorphic-labs-funding , всего за 6 месяцев $7,1 млрд. Isomorphic — основанная в 2021 отдельная компания, выделившаяся из DeepMind, глава Демис Хассабис. IsoDDE моделирует/подбирает молекулы, внутренние программы онкология и иммунология; положительные результаты доклиники; дат/названий первых испытаний нет. Прямого дубля в news.json и Дзен-каталоге нет. На утверждение Дзен/Threads/X/VK."
+      "closed_at": "2026-11-19T11:31:41.514Z",
+      "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+      "note": "19.11: проверен первоисточник Isomorphic Labs 17.11 https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round и полный релиз https://www.prnewswire.com/news-releases/isomorphic-labs-announces-5-billion-series-c-funding-302942062.html . $5 млрд именно раунд Series C (Greenoaks/Sequoia; a16z, Alphabet и существующие инвесторы); оценка не раскрыта. В мае 12.05 отдельный Series B $2,1 млрд https://www.isomorphiclabs.com/press/isomorphic-labs-funding , всего за 6 месяцев $7,1 млрд. Isomorphic — основанная в 2021 отдельная компания, выделившаяся из DeepMind, глава Демис Хассабис. IsoDDE моделирует/подбирает молекулы, внутренние программы онкология и иммунология; положительные результаты доклиники; дат/названий первых испытаний нет. Прямого дубля в news.json и Дзен-каталоге нет. На утверждение Дзен/Threads/X/VK.\n19.11.2026: главред утвердил. Статья и VK-тексты сохранены в editorial-intake, Threads/X — approved. Проверены $5 млрд (Series C), майские $2,1 млрд (Series B), IsoDDE, доклиническая стадия и соответствие ссылок AlphaGenome 2. article_id=isomorphic-labs-5b-ai-medicines-20261117; очередь priority, ждём обложку."
     },
     {
       "id": "n-1901229e7d1fe285",
