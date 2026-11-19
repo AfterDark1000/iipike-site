@@ -6937,5 +6937,28 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей",
+    "summary": "По данным OpenAI, структуры НАТО через NCIA используют до 300 млрд входных и выходных токенов в месяц для киберзащиты. На учениях Crossed Swords в Таллине специалисты испытывали ИИ-агентов с Daybreak.",
+    "published": "2026-11-19",
+    "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/",
+    "cover": "assets/editorial/openai-nato-cyber-defense-daybreak-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🛡️ НАТО использует ИИ OPENAI для КИБЕРОБОРОНЫ",
+    "vk_summary": "Через агентство NCIA структуры НАТО работают с моделями OpenAI, используя до 300 млрд токенов в месяц. На ноябрьских учениях Crossed Swords в Таллине участники из более чем 40 стран учились создавать и проверять ИИ-агентов в среде Daybreak под контролем специалистов.",
+    "published_at_utc": "2026-11-19T13:00:59Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "openai-nato-cyber-defense-daybreak-20261117",
+    "url": "articles/openai-nato-cyber-defense-daybreak-20261117/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": []
   }
 ]
