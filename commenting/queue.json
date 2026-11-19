@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-19T18:38:25.987656Z",
+  "updated_at": "2026-11-19T21:28:02.041608Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
+      "last_success_at": "2026-11-19T21:28:02.041608Z",
       "error": null,
-      "fresh_matches": 12
+      "fresh_matches": 13
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
+      "last_success_at": "2026-11-19T21:28:02.041608Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
+      "status": "error",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
       "last_success_at": "2026-11-19T18:38:25.987656Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
+      "last_success_at": "2026-11-19T21:28:02.041608Z",
       "error": null,
-      "fresh_matches": 7
+      "fresh_matches": 6
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
+      "last_success_at": "2026-11-19T21:28:02.041608Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-19T18:38:25.987656Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
+      "checked_at": "2026-11-19T21:28:02.041608Z",
+      "last_success_at": "2026-11-19T21:28:02.041608Z",
       "error": null,
       "fresh_matches": 3
     }
@@ -76,11 +76,32 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-19",
-    "attempted": 15
+    "date": "2026-11-20",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "b31dfa834c2ca405ea58ea3c",
+      "title": "Нейросеть Google Gemma 3 на 270 миллионов параметров запустили на лазерном принтере с 14 МБ памяти",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/19/neiroset-google-gemma-3-na-270-millionov-parametrov-zapustili-na-lazernom-printere-s-14-mb-pamiati.html",
+      "published_at": "2026-11-19T19:10:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-19T21:28:02.041608Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Забавно, что принтер думал почти три минуты, зато выдал фразу про мелкий шрифт. Интересно, сколько еще проживет эта модель PostScript, если на нее уже нейросети вешают.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-19T21:28:02.041608Z",
+      "reason": "Зацепка за время ответа и выбор фразы для печати.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T21:28:02.041608Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "808289e667e2bfcb1c863d67",
       "title": "Европейский облачный провайдер выпустил 55 новых ИИ-продуктов и расширяет инфраструктуру на Blackwell и Rubin",
@@ -173,10 +194,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Агент смотрит всего на пять кадров в секунду и при этом справляется с боями и головоломками. Любопытно, как такая частота кадров справляется с динамичными стычками.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-19T21:28:02.041608Z",
+      "reason": "Интерес к низкой частоте кадров при управлении игрой.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T21:28:02.041608Z"
     },
     {
       "id": "6e0d19b20f08b0363a52342e",
@@ -262,10 +287,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Чип выдает дикие семнадцать тысяч токенов в секунду, но модель в нем зашита намертво в кремний. Менять ее два месяца через производство кремния — это прямо возврат к эпохе картриджей.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-19T21:28:02.041608Z",
+      "reason": "Зацепка за аппаратную зашиту модели и долгий срок смены.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-19T21:28:02.041608Z"
     },
     {
       "id": "16324aebaa2701215914addd",
@@ -2369,63 +2398,6 @@
       "last_attempt_at": "2026-11-13T07:51:18.375979Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "d53692dc736749581944a248",
-      "title": "Microsoft показала, как превратить ИИ-агента в троян, изменив всего семь нейронов",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151240",
-      "published_at": "2026-11-12T21:23:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-13T01:00:42.489242Z",
-      "views": null,
-      "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-13T07:51:18.375979Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "ea9eca3427e22ce4921c2abf",
-      "title": "Google представила Gemini 4 Hydrogen — модель работает в 2,5 раза быстрее предшественницы и уже доступна всем",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151236",
-      "published_at": "2026-11-12T20:01:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-13T01:00:42.489242Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "9576ebe3ff4282e908318785",
-      "title": "Увольнения, засилье ИИ и умершие надежды: исследование показало удручающее состояние игровой индустрии в 2026 году",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151234",
-      "published_at": "2026-11-12T19:23:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-12T19:51:36.739952Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Странно удивляться засилью ИИ в индустрии, где 86 % сотрудников пашут сверхурочно, а психика каждого второго побита кранчами. Когда разработка держится на честном слове и выгорании, боссам проще скормить рутину алгоритму, чем нанять людей.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-13T16:13:17.265557Z",
-      "reason": "Развитие мысли о том, что игровая индустрия сама создала почву для массового внедрения ИИ из-за переработок и выгорания сотрудников.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-13T16:13:17.265557Z"
     }
   ]
 }
