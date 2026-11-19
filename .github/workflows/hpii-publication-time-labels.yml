@@ -19,6 +19,39 @@ concurrency:
   group: hpii-publication-time-labels
   cancel-in-progress: false
 jobs:
+  # One-time same-repository PR migration: commit generated date labels so all
+  # established static-site safety checks can compare actual HTML, not old pages.
+  stage-static-migration:
+    if: ${{ github.event_name == 'pull_request' && github.head_ref == 'tech/briefs-stagger-15min-published-time-20261119' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Generate exact static publication time labels on the PR branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/backfill_publication_times.py --write
+          python3 scripts/build_briefs.py --write
+          git add -- index.html articles/ rubrics/ briefs/
+          if git diff --cached --name-only | grep -Ev '^(index[.]html|articles/|rubrics/|briefs/)'; then
+            echo 'UNSAFE: unexpected files' >&2
+            exit 1
+          fi
+          if git diff --cached --quiet; then
+            echo 'STATIC_MIGRATION_ALREADY_APPLIED'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'site: stage publication-time labels for PR verification [skip ci]'
+          git push origin HEAD:${{ github.head_ref }}
   validate:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
