@@ -560,6 +560,71 @@
       "source": "Federal Reserve / FOMC Minutes",
       "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm",
       "fact_check": "Primary Fed minutes published Nov18 from Oct27-28 meeting: almost all participants financial stability AI disappointment risks; opaque debt financing, bank resilience noted. Related existing full article fed-warsh-ai-economy-scenarios-20261116 about Fed chair's separate comments; potential thematic overlap but substantively new official meeting minutes."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 291,
+      "pool_id": "n-e87d81ee6e260443",
+      "slug": "us-senators-ai-cyber-defense-warning-20261118",
+      "headline": "Сенаторы США потребовали ускорить защиту от ИИ-кибератак",
+      "body": "Сенаторы Мария Кантвелл и Майк Раундс 18 ноября призвали Белый дом срочно усилить защиту от кибератак с применением ИИ. Они предлагают объединить разработчиков нейросетей, специалистов по безопасности и федеральные ведомства, чтобы автоматизировать поиск уязвимостей и выпуск исправлений. Отдельно сенаторы требуют стандартов для автономных ИИ-агентов: проверки их действий, ограничений доступа и независимого аудита.",
+      "topic": "Безопасность",
+      "event_date": "2026-11-18",
+      "source": "U.S. Senate Committee on Commerce",
+      "source_url": "https://www.commerce.senate.gov/press/dem/release/cantwell-rounds-warn-ai-cyber-threats-are-outpacing-u-s-defenses-call-for-urgent-white-house-action-to-protect-critical-infrastructure/",
+      "fact_check": "Official Senate release Nov 18 2026; bipartisan letter Cantwell and Rounds to Jay Clayton calls for national defensive AI effort and NIST standards for autonomous agents. Appeal only, no enacted law."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 293,
+      "pool_id": "n-5cfdcdfbcb5e9e93",
+      "slug": "bria-rmbg-3-semantic-background-20261117",
+      "headline": "Bria научила нейросеть удалять фон, разбираясь в содержимом фотографии",
+      "body": "Bria представила RMBG 3.0 — модель для удаления фона с фотографий, построенную на генеративном ИИ Fibo 2.0. Она учитывает, где заканчивается главный объект и начинаются тени, отражения и посторонние предметы. В собственном сравнении на 234 сложных снимках Bria поставила новинку выше пяти конкурентов. Веса модели открыты для некоммерческого использования; для локального запуска требуется видеокарта с памятью от 32 ГБ.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Bria AI / Hugging Face",
+      "source_url": "https://huggingface.co/briaai/RMBG-3.0",
+      "fact_check": "Bria model card November 2026; generative alpha-matte based on 8B Fibo2 edit turbo. Internal 234-image evaluation; limitations glass, transparent objects, clutter; noncommercial CC BY-NC 4.0, GPU >=32 GB."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 308,
+      "pool_id": "n-f2e7b028a6ca7225",
+      "slug": "huawei-china-unicom-21-wind-farms-ai-20261117",
+      "headline": "Huawei подключила ИИ и дроны к 21 ветропарку в Китае",
+      "body": "Huawei, China Unicom и энергокомпания Inner Mongolia Energy Group развернули систему 5G-A и ИИ на 21 ветроэлектростанции. Дроны снимают лопасти турбин в высоком разрешении, а алгоритмы помогают обнаруживать повреждения без подъёма инженеров на высоту. По данным Huawei, время обслуживания сократилось на 10%, расходы — на 21%, а простои — на 15%. Решение планируют распространить более чем на 1500 ветрогенераторов.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Huawei",
+      "source_url": "https://www.huawei.com/en/news/2026/11/5ga-wind-farm",
+      "fact_check": "Huawei dated release Nov17 states 21 farms, rollout expected 1500+ turbines, 4K drones, 5G-A, O&M time -10%, costs -21%, downtime -15% all self-reported."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 310,
+      "pool_id": "n-5b89a2db7f60ae90",
+      "slug": "reson8-rumble-2-flash-500m-asr-20261118",
+      "headline": "Rumble-2-Flash распознаёт речь на более чем 40 языках при размере 500 млн параметров",
+      "body": "Команда Reson8 открыла Rumble-2-Flash — модель распознавания речи с 500 млн параметров и поддержкой более 40 языков. Она автоматически определяет язык и превращает аудио в текст. На многоязычном тесте Open ASR средняя доля ошибок составила 6,96%. Разработчики сообщают, что при пакетной обработке модель расшифровывает час записи примерно за полсекунды. Веса доступны на Hugging Face по лицензии Apache 2.0.",
+      "topic": "Технологии",
+      "event_date": "2026-11-18",
+      "source": "Reson8 / Hugging Face",
+      "source_url": "https://huggingface.co/blog/rumble-2-flash",
+      "fact_check": "Reson8 primary Hugging Face blog Nov18, ASR not voice generation, 0.5B, 40+ languages, self-reported multilingual Open ASR 6.96% error, ~0.5s per 1h audio only large fully utilized batches, Apache 2.0."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 312,
+      "pool_id": "n-068a62d82b818119",
+      "slug": "snap-easy-lens-cli-ai-ar-20261118",
+      "headline": "Snapchat разрешил Claude Code и Codex создавать AR-маски по описанию",
+      "body": "Snap 18 ноября выпустила Easy Lens CLI — бесплатный инструмент, который подключает Claude Code, Codex и Cursor к созданию масок и дополненной реальности для Snapchat. Разработчик описывает эффект обычным языком, а ИИ собирает его из готовых блоков, создаёт материалы и помогает проверить результат на телефоне. Через тот же инструмент маску можно отправить на публикацию. CLI доступен на Windows, macOS и Linux с аккаунтом Snapchat.",
+      "topic": "Технологии",
+      "event_date": "2026-11-18",
+      "source": "Snap",
+      "source_url": "https://newsroom.snap.com/introducing-easy-lens-cli",
+      "fact_check": "Official Snap announcement Nov18 2026, CLI free with Snapchat account for Mac/Windows/Linux, Claude Code Codex Cursor, >100 AR blocks, >50 generators, preview test and publishing; review process remains."
     }
   ]
 }
