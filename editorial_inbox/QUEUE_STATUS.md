@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 166
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 167
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **19.11.2026 00:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **19.11.2026 14:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -18,12 +18,13 @@
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-tasks-free-calls-shopping-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://iipike.ru/articles/google-gemini-tasks-free-calls-shopping-20261117/) | 19.11.2026 14:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-tasks-free-calls-shopping-20261117.webp) |
 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://iipike.ru/articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/) | 19.11.2026 00:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
 | [Блогер пришёл к ИИ-рекрутеру с кроссовком на голове](https://iipike.ru/articles/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00/) | 18.11.2026 23:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00.webp) |
 | [Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет](https://iipike.ru/articles/bofa-fund-managers-ai-bubble-baidu-20261117/) | 18.11.2026 22:01 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bofa-fund-managers-ai-bubble-baidu-20261117.webp) |
