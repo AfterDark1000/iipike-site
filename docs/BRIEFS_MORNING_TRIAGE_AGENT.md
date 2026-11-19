@@ -12,12 +12,11 @@
      "worker":"hpii-morning-triage",
      "approval":"explicit_chief_editor_chat_command",
      "items":[
-       {"sequence":59,"pool_id":"n-6c8dcc4daf751efd","lane":"short","decision":"short"},
-       {"sequence":266,"pool_id":"n-0000000000000000","lane":"long","decision":"hot","priority":"high"}
+       {"sequence":59,"pool_id":"n-6c8dcc4daf751efd","lane":"short","decision":"short"}
      ]
    }
    ```
-   Это **пример структуры**, не копируй вымышленный ID из второй строки! Используй только актуальные настоящие ID. От 1 до 500 строк, никаких произвольных полей. Допустимые решения: `hot`, `full`, `short`, `linked_primary`, `linked_secondary`, `defer`, `manual`, `reject_after_verification`; категории `long`, `short`, `hold` по реестру. При объединении добавь `group` и `group_primary`. Понижение прежней горячей новости обозначай явным `priority:"normal"` или `"low"`. Сортировка без явного priority сохраняет прежний, кроме `hot` (повышается до high). Не переводить условные `reject_after_verification` в `rejected` без отдельной проверки/решения.
+   Это **пример структуры**, используй только актуальные реальные ID и подтверждённые главредом решения. От 1 до 500 строк, никаких произвольных полей. Допустимые решения: `hot`, `full`, `short`, `linked_primary`, `linked_secondary`, `defer`, `manual`, `reject_after_verification`; категории `long`, `short`, `hold` по реестру. При объединении добавь `group` и `group_primary`. Понижение прежней горячей новости обозначай явным `priority:"normal"` или `"low"`. Сортировка без явного priority сохраняет прежний, кроме `hot` (повышается до high). Не переводить условные `reject_after_verification` в `rejected` без отдельной проверки/решения.
 3. GitHub workflow `hpii-triage-requests.yml` в одном атомарном коммите применяет маршруты и допустимые priority к свободным `queued`, валидирует **весь** пул штатной Python-функцией, не меняет `in_review/approved/rejected` и выдаёт `main/data/editorial_triage/receipts/<то же имя>.json`. При изменении `main` повторяет чтение и пересчёт, без принудительного перезаписывания.
 4. Получи и прочитай **квитанцию с точным тем же именем**, сверь SHA request, выведи фактические `applied`, `unchanged`, `skipped`. `status=partial_conflict` — действительно не всё применено; не выдавай это за успех всей сортировки. `rejected` — не записано. Пока receipt не появился, говори «отправлено на применение, результат не подтверждён», не обещай успех.
 5. Перечитай `main/data/editorial_routing.json` и выборочно пул, проверь, что изменения действительно появились. **Не** трогай публикационные Actions, статьи, обложки, Дзен, чужие резервирования.
