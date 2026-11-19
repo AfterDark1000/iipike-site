@@ -2455,12 +2455,12 @@
       "summary": "16 ноября — публикация. Активисты Stop Funding Billionaires провели акции с шест футовой символической башней против рисков ИИ-бума для инвесторов; даты самих акций требуют уточнения. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей, 16.11.2026, утренний проход; выбрано №5",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T03:28:45+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:14:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "17.11.2026, решение главреда после полной ревизии: Вторая волна повышения приоритета — кандидат после первичной проверки; текущий normal пока сохраняется."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-cf7d450c509f730e"
     },
     {
       "id": "n-2abce8109659f034",
@@ -2665,12 +2665,12 @@
       "summary": "16 ноября: Associated Press опубликовало репортаж о роботакси, доставочных дронах и робототехнике в Шэньчжэне. Это репортаж о действующих технологиях, а не запуск нового продукта.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T12:21:09+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:14:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "17.11.2026, решение главреда после полной ревизии: Кандидат на снятие после контрольного первоисточника и проверки новостной ценности; не отклонять автоматически.\n2026-11-18, решение главреда: Не удалять: возможный кандидат для будущего короткого дайджеста («Новости коротко»). Решение о разделе ещё не принято; формат и отдельная очередь не создаются. Пока остаётся queued/normal; перед использованием нужна проверка фактов."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-5197e3710e4648e4"
     },
     {
       "id": "n-f82f1ee6a6370b15",
@@ -2710,12 +2710,12 @@
       "summary": "16 ноября: пилот ИИ-мониторинга риска наводнений на основе осадков, речных и приливных данных. Вторичный источник; результаты требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:38:01+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:14:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d12217714e51c16c"
     },
     {
       "id": "n-b00cdf459e426ae9",
@@ -2740,12 +2740,12 @@
       "summary": "16 ноября: WSJ сообщает об инвестициях в ИИ-модели для анализа сетей и журналов безопасности. Название и условия инвестиций перепроверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:38:01+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:14:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ae2875a8e2c34165"
     },
     {
       "id": "n-b8c8af68ba9e3fb1",
@@ -2950,12 +2950,12 @@
       "summary": "16 ноября: совместная инициатива с The King's Trust предполагает обучение до 25 тысяч молодых людей.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:59:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-19T10:14:37+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-60f3c7381bc61eae"
     },
     {
       "id": "n-11608d311d004779",

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261119-batch04-1513.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-cf7d450c509f730e",
+      "pool_sequence": 164,
+      "title": "Против IPO Anthropic протестуют с гигантской башней «Дженга».",
+      "source_url": "https://www.businessinsider.com/anthropic-ipo-protest-ant-stock-ai-tech-2026-11",
+      "claimed_at": "2026-11-19T10:14:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-5197e3710e4648e4",
+      "pool_sequence": 178,
+      "title": "Роботакси и роботы Шэньчжэня стали витриной перед саммитом АТЭС",
+      "source_url": "https://apnews.com/article/df655739f3881e2025c873c13b1fed70",
+      "claimed_at": "2026-11-19T10:14:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-d12217714e51c16c",
+      "pool_sequence": 181,
+      "title": "Дублин тестирует ИИ-предупреждения о наводнениях за 13–21 час",
+      "source_url": "https://www.thesun.ie/news/17923896/ai-warning-system-floods-dublin",
+      "claimed_at": "2026-11-19T10:14:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ae2875a8e2c34165",
+      "pool_sequence": 183,
+      "title": "Стартап Corma привлёк $125 млн на ИИ-агентов для киберзащиты",
+      "source_url": "https://www.wsj.com/pro/cybersecurity/cyber-startup-corma-raises-125-million-for-defensive-ai-agents-f30a4387",
+      "claimed_at": "2026-11-19T10:14:37+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-60f3c7381bc61eae",
+      "pool_sequence": 197,
+      "title": "OpenAI выделила £1 млн на обучение британской молодёжи работе с ИИ",
+      "source_url": "https://openai.com/index/the-kings-trust-and-openai",
+      "claimed_at": "2026-11-19T10:14:37+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
