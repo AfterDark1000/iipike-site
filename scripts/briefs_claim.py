@@ -4,6 +4,11 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
+
+SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_ROOT))
 import re
 
 from scripts import site_news_pool, editorial_routing
