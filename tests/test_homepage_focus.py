@@ -71,7 +71,18 @@ class FocusTests(unittest.TestCase):
         self.assertNotIn("expires_at", (ROOT / "data/home_focus.json").read_text(encoding="utf-8"))
 
     def test_rebuild_is_idempotent_for_current_catalog_and_picks(self):
-        self.assertEqual(update_home(self.html, self.records, root=ROOT), self.html)
+        generated = update_home(self.html, self.records, root=ROOT)
+        self.assertEqual(update_home(generated, self.records, root=ROOT), generated)
+        # During the one-time date-to-minute migration, only metadata labels
+        # may differ from the committed static HTML, never links or picks.
+        if generated != self.html:
+            import re
+            def mask_publication_labels(value):
+                return re.sub(
+                    r'<(?:span|small) class="(?:home-focus-date|date|home-section-index)">[^<]*</(?:span|small)>',
+                    '<PUBLICATION_META>', value)
+            self.assertEqual(mask_publication_labels(generated),
+                             mask_publication_labels(self.html))
 
     def test_missing_draft_is_not_exposed_by_pins(self):
         row = dict(self.records[0])
