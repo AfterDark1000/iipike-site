@@ -2350,6 +2350,32 @@
           "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
         }
       ]
+    },
+    {
+      "key": "mai-cyber-2-flash",
+      "name": "MAI Cyber 2 Flash",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "microsoft-mai-cyber-2-flash-20261117",
+          "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
+        }
+      ]
+    },
+    {
+      "key": "codename-mdash",
+      "name": "Codename MDASH",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-19",
+      "evidence": [
+        {
+          "article_id": "microsoft-mai-cyber-2-flash-20261117",
+          "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
+        }
+      ]
     }
   ]
 }
