@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+  "text_revision": 2,
+  "text_updated_at": "2026-11-19T05:08:00Z",
+  "cover_version": 1,
+  "cover_blob_sha": "e1ac438570e0ca887de05e5f7a213cf12941b370",
+  "cover_metadata_blob_sha": "e00fb47a5aa4aa795ef253ff389596a03da9a0c5",
+  "source_draft_blob_sha": "5f41fb04bdcd24b3c4f20cdeb4c484c043532656",
+  "source_text_decision_blob_sha": "22921b1664de677ec20b6fa99b4301495ed363ae",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-19T07:08:15.844Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
