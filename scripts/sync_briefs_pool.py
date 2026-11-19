@@ -26,8 +26,11 @@ def synchronized(root):
             raise ValueError("Unrendered brief; pool stays untouched")
         if item["status"] == "approved" and item["article_id"] == brief["slug"]:
             continue
-        if item["status"] != "queued":
-            raise ValueError("Refusing to overwrite a reserved/processed pool item")
+        owned_short_claim = (item["status"] == "in_review" and
+                             item["note"].startswith(
+                                 "SHORT_EDITOR claim=short; pool_id=" + brief["pool_id"]))
+        if item["status"] != "queued" and not owned_short_claim:
+            raise ValueError("Refusing to overwrite a foreign reserved/processed pool item")
         suffix = "Опубликовано в «Новости коротко»: https://iipike.ru/briefs/" + brief["slug"] + "/"
         note = (item["note"].rstrip() + chr(10) + suffix).strip()
         if len(note) > 1500:

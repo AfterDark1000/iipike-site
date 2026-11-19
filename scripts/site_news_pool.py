@@ -206,16 +206,20 @@ def add(pool, records, *, now=None):
     return result, {"added": added, "duplicates": duplicate}
 
 
-def next_item(pool, *, now=None):
+def next_item(pool, *, now=None, routing=None):
     validate(pool)
+    from scripts.editorial_routing import load_routes, long_allowed, effective_priority
+    if routing is None:
+        routing = load_routes(pool)
     result = copy.deepcopy(pool)
-    pending = [x for x in result["items"] if x["status"] == "queued"]
+    pending = [x for x in result["items"]
+               if x["status"] == "queued" and long_allowed(x, routing)]
     if not pending:
         return result, None
     # Hot editorial items are selected first, FIFO by immutable sequence.
     # Once hot items are exhausted, ordinary items retain their FIFO order.
     # Normal/low are informational within the ordinary lane.
-    item = min(pending, key=lambda x: (0 if x["priority"] == "high" else 1,
+    item = min(pending, key=lambda x: (0 if effective_priority(x, routing) == "high" else 1,
                                        x["sequence"]))
     item["status"] = "in_review"
     item["review_started_at"] = now or stamp()

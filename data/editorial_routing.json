@@ -1,0 +1,1171 @@
+{
+  "schema_version": 1,
+  "approved_date": "2026-11-19",
+  "source": "data/editorial_triage/approved_2026-11-19.json",
+  "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
+  "note": "Routing only. No texts/approvals/publication. Not an article status. Unknown future pool items retain the default long lane. Linked secondary items and deferred/manual/rejection-pending are held pending human decisions.",
+  "items": [
+    {
+      "sequence": 55,
+      "pool_id": "n-47586c41947fa450",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 58,
+      "pool_id": "n-8e599f8fd3fc906d",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 59,
+      "pool_id": "n-6c8dcc4daf751efd",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 60,
+      "pool_id": "n-f1276fcf4509a500",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 61,
+      "pool_id": "n-fea30cfaa0c9d6e8",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "muse_features",
+      "group_primary": 61
+    },
+    {
+      "sequence": 63,
+      "pool_id": "n-45f5fd394ef9d677",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 66,
+      "pool_id": "n-c3fe8341e49f4a45",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 70,
+      "pool_id": "n-ab23a7fa21e24fb3",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "muse_features",
+      "group_primary": 61
+    },
+    {
+      "sequence": 74,
+      "pool_id": "n-17c4dede92bec796",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 75,
+      "pool_id": "n-cd9a227217501d9b",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 76,
+      "pool_id": "n-c4e189afed1eb43b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 82,
+      "pool_id": "n-2ceddae7caa9cf56",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 83,
+      "pool_id": "n-9539aaad3f277ad5",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 84,
+      "pool_id": "n-e1a1a9b9c177ad10",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 87,
+      "pool_id": "n-6c125407b75651f5",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 88,
+      "pool_id": "n-f740dffd211520bd",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 89,
+      "pool_id": "n-990de9f2deb6136f",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 91,
+      "pool_id": "n-4046a8969473b51b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 95,
+      "pool_id": "n-a0496c5bf3e13bec",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "climate_chip_vs_datacenter",
+      "group_primary": 95
+    },
+    {
+      "sequence": 96,
+      "pool_id": "n-cf50c772431ffecc",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 97,
+      "pool_id": "n-fb1ddd2a5ff741f6",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 99,
+      "pool_id": "n-c9b924eb9c495d55",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 100,
+      "pool_id": "n-0a987bbc824ebf80",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 101,
+      "pool_id": "n-5db0d3e2ca6e5b64",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 102,
+      "pool_id": "n-09d7bbde32dccb5e",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 103,
+      "pool_id": "n-40cac42c0e5d26d0",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 105,
+      "pool_id": "n-635d84dfa6ac7b12",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 109,
+      "pool_id": "n-dd9188a8c982ecaa",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 110,
+      "pool_id": "n-68ac6b2421998e1c",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 111,
+      "pool_id": "n-207786cdf2f0d885",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 112,
+      "pool_id": "n-3b24412519dae7c6",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 116,
+      "pool_id": "n-43d579b0adbf2540",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 117,
+      "pool_id": "n-70e2db13922263ef",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 120,
+      "pool_id": "n-8b0fd7b329fb7a80",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 121,
+      "pool_id": "n-5dd6a91d0e60ecea",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 126,
+      "pool_id": "n-dc0eca653e182ace",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 127,
+      "pool_id": "n-c40b1f8c279a4e20",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 131,
+      "pool_id": "n-497b7eb362f5f581",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 132,
+      "pool_id": "n-2e08a1312bd275b7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 133,
+      "pool_id": "n-e834c99d574c7a0f",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 134,
+      "pool_id": "n-a8e6f4b5941705c6",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "muse_features",
+      "group_primary": 61
+    },
+    {
+      "sequence": 136,
+      "pool_id": "n-646c0d68a19aec4f",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 141,
+      "pool_id": "n-79a4111a1acdc3b4",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "physical_ai_demos",
+      "group_primary": 141
+    },
+    {
+      "sequence": 144,
+      "pool_id": "n-397cf99f141ff309",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "ai_game_demos",
+      "group_primary": 144
+    },
+    {
+      "sequence": 146,
+      "pool_id": "n-17fd915e87ff86e0",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "physical_ai_demos",
+      "group_primary": 141
+    },
+    {
+      "sequence": 148,
+      "pool_id": "n-b50b61e20931af76",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 149,
+      "pool_id": "n-9c52b68e170321d3",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 153,
+      "pool_id": "n-2b4e76b73a2dbf19",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 160,
+      "pool_id": "n-32b37ac6f0f1162d",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 161,
+      "pool_id": "n-e2a30f097330fbd7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 164,
+      "pool_id": "n-cf7d450c509f730e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 165,
+      "pool_id": "n-2abce8109659f034",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "programmatic_art_demos",
+      "group_primary": 165
+    },
+    {
+      "sequence": 166,
+      "pool_id": "n-201bb67fb5c534e7",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 169,
+      "pool_id": "n-87b76e5b13944ae0",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 170,
+      "pool_id": "n-9c03efa3e8726602",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 171,
+      "pool_id": "n-6e4ad6cae755ae8d",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 173,
+      "pool_id": "n-dabe8f307636040a",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 174,
+      "pool_id": "n-47f52454863472a7",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 175,
+      "pool_id": "n-46b77b9af60ea103",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 176,
+      "pool_id": "n-d70326574af2f61d",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 177,
+      "pool_id": "n-c5c47b45e48f02af",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 178,
+      "pool_id": "n-5197e3710e4648e4",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 179,
+      "pool_id": "n-f82f1ee6a6370b15",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 180,
+      "pool_id": "n-3952705eecb351e7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 181,
+      "pool_id": "n-d12217714e51c16c",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 182,
+      "pool_id": "n-b00cdf459e426ae9",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 183,
+      "pool_id": "n-ae2875a8e2c34165",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 184,
+      "pool_id": "n-b8c8af68ba9e3fb1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 186,
+      "pool_id": "n-639ecf85c1badba5",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 187,
+      "pool_id": "n-c3d43d54e118eacb",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "haru_voice_and_local_runtime",
+      "group_primary": 187
+    },
+    {
+      "sequence": 188,
+      "pool_id": "n-2aed91ed19a98cd1",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "programmatic_art_demos",
+      "group_primary": 165
+    },
+    {
+      "sequence": 189,
+      "pool_id": "n-b3dc26ac1c991fb8",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 191,
+      "pool_id": "n-21b4758ab52123ac",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "openai_healthcare_approved",
+      "group_primary": 192
+    },
+    {
+      "sequence": 192,
+      "pool_id": "n-21e886491b30cfff",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "openai_healthcare_approved",
+      "group_primary": 192
+    },
+    {
+      "sequence": 194,
+      "pool_id": "n-250e4f687b3aae21",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 195,
+      "pool_id": "n-06e51d6f0fdac88f",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 196,
+      "pool_id": "n-ff7833693fa2a067",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "france_news_publishers",
+      "group_primary": 196
+    },
+    {
+      "sequence": 197,
+      "pool_id": "n-60f3c7381bc61eae",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 200,
+      "pool_id": "n-58fac6f176a3c475",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 201,
+      "pool_id": "n-e5757b335efc56a8",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 202,
+      "pool_id": "n-8e4ca78447a7e5be",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 203,
+      "pool_id": "n-ab156d0249c17afb",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 204,
+      "pool_id": "n-eab8cb02f723379b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 205,
+      "pool_id": "n-7ccc4442108abb99",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "physical_ai_demos",
+      "group_primary": 141
+    },
+    {
+      "sequence": 206,
+      "pool_id": "n-e1a95e7aa23bbf8e",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 207,
+      "pool_id": "n-3262b4711b745eb5",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_game_demos",
+      "group_primary": 144
+    },
+    {
+      "sequence": 208,
+      "pool_id": "n-8079b0b4ff5d6987",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_game_demos",
+      "group_primary": 144
+    },
+    {
+      "sequence": 209,
+      "pool_id": "n-24c7117f6b559f90",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_game_demos",
+      "group_primary": 144
+    },
+    {
+      "sequence": 210,
+      "pool_id": "n-ec4495fd1e81c0db",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 211,
+      "pool_id": "n-a6bf3628ac1cbf98",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "haru_voice_and_local_runtime",
+      "group_primary": 187
+    },
+    {
+      "sequence": 212,
+      "pool_id": "n-1060cdea07a6052b",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "programmatic_art_demos",
+      "group_primary": 165
+    },
+    {
+      "sequence": 213,
+      "pool_id": "n-f60757c71353b675",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 214,
+      "pool_id": "n-0b720af165702e48",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "physical_ai_demos",
+      "group_primary": 141
+    },
+    {
+      "sequence": 215,
+      "pool_id": "n-d73c5c4219c995bf",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "programmatic_art_demos",
+      "group_primary": 165
+    },
+    {
+      "sequence": 216,
+      "pool_id": "n-5c4bc6a893df28fb",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 219,
+      "pool_id": "n-dff41c38a4e0c818",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "climate_chip_vs_datacenter",
+      "group_primary": 95
+    },
+    {
+      "sequence": 221,
+      "pool_id": "n-6d0c7f60dd499bd7",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 222,
+      "pool_id": "n-1788965d91d5bb6a",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 223,
+      "pool_id": "n-4ef3fbc0562fdcd7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 224,
+      "pool_id": "n-aede5bf8ca875179",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 225,
+      "pool_id": "n-a88aae871bc0b36e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 228,
+      "pool_id": "n-b5b8d2f9cb551dda",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 231,
+      "pool_id": "n-dd659f011024f04f",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "openai_child_safety_approved",
+      "group_primary": 231
+    },
+    {
+      "sequence": 232,
+      "pool_id": "n-3471bfa2c8b5d599",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "openai_child_safety_approved",
+      "group_primary": 231
+    },
+    {
+      "sequence": 233,
+      "pool_id": "n-aca925b15bf1ae05",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 236,
+      "pool_id": "n-8462329d963e2409",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 237,
+      "pool_id": "n-5a8fec6c8020889d",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 240,
+      "pool_id": "n-f8c6dc90fe1d4657",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 241,
+      "pool_id": "n-0aa64fce32a6a01e",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 243,
+      "pool_id": "n-fa5fd15feb7f69e3",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 244,
+      "pool_id": "n-d6ce1fd724864a44",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 245,
+      "pool_id": "n-14e71a463863d650",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 246,
+      "pool_id": "n-ae0ae1e81e6b5f18",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 248,
+      "pool_id": "n-c1684ee960f7e3e3",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 249,
+      "pool_id": "n-a72dda1b8e97c032",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 251,
+      "pool_id": "n-30f3acb86b10736b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 252,
+      "pool_id": "n-8a7529e97fb60107",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 253,
+      "pool_id": "n-7535b1adf01f0dc8",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 254,
+      "pool_id": "n-20774146b79ca781",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 255,
+      "pool_id": "n-00b8b317a3d79b68",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 256,
+      "pool_id": "n-ad4bca1c2e32f8a2",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 257,
+      "pool_id": "n-96308e7073fc11f6",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 258,
+      "pool_id": "n-afbc39225c5371df",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 259,
+      "pool_id": "n-e6ed8830e4404ff5",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 260,
+      "pool_id": "n-de61810a72fcfb07",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 262,
+      "pool_id": "n-0fd37b922e47061f",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 263,
+      "pool_id": "n-f792f077035f71ad",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 264,
+      "pool_id": "n-92ead912d06bbf7e",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 265,
+      "pool_id": "n-d34ce25785fdf87b",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 266,
+      "pool_id": "n-4794d4873562de76",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 267,
+      "pool_id": "n-1901229e7d1fe285",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 268,
+      "pool_id": "n-475c880599fcf4e5",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 269,
+      "pool_id": "n-6c3466d8a199b580",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 270,
+      "pool_id": "n-5a600a844d9b7ef8",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 271,
+      "pool_id": "n-dc9b00f988f99db7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 272,
+      "pool_id": "n-ceb045ea888ed5b6",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 273,
+      "pool_id": "n-3818d6ccd2a7f7a1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 274,
+      "pool_id": "n-e04686f80cf8e47e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 275,
+      "pool_id": "n-2fb55c3571a040c5",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 276,
+      "pool_id": "n-942518637ca001c7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 277,
+      "pool_id": "n-0e4751bbdf8f56f7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 278,
+      "pool_id": "n-29e7b0bd1f83d595",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 279,
+      "pool_id": "n-a1083ec54cdb520a",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 280,
+      "pool_id": "n-6da45ad568d60255",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 281,
+      "pool_id": "n-000dfa1975827c73",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 282,
+      "pool_id": "n-1739fafa3fbb53c4",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 283,
+      "pool_id": "n-74360e27295b708c",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 284,
+      "pool_id": "n-20dae2c9f4d48385",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 285,
+      "pool_id": "n-76d2a4c4d480c101",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "meta_muse_incident",
+      "group_primary": 285
+    },
+    {
+      "sequence": 286,
+      "pool_id": "n-7b529608f93e136c",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "meta_muse_incident",
+      "group_primary": 285
+    },
+    {
+      "sequence": 287,
+      "pool_id": "n-e6d89b2f2caca13a",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "nvidia_earnings_and_rubin",
+      "group_primary": 288
+    },
+    {
+      "sequence": 288,
+      "pool_id": "n-523c500a3e037003",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "nvidia_earnings_and_rubin",
+      "group_primary": 288
+    },
+    {
+      "sequence": 289,
+      "pool_id": "n-077945a9711f1a20",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 290,
+      "pool_id": "n-b3ad7093de78ce7b",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 291,
+      "pool_id": "n-e87d81ee6e260443",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 292,
+      "pool_id": "n-a06f50e43430c56f",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 293,
+      "pool_id": "n-5cfdcdfbcb5e9e93",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 294,
+      "pool_id": "n-be0aed2f51056a6d",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 295,
+      "pool_id": "n-e240b18865546634",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 296,
+      "pool_id": "n-4026a4cf1fa73bf7",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 297,
+      "pool_id": "n-6e60ec8c10b2996b",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 298,
+      "pool_id": "n-0d63b3060ccc898d",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 299,
+      "pool_id": "n-7dad0d8bf0fb7efc",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 300,
+      "pool_id": "n-a8d6cfaec298d663",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 301,
+      "pool_id": "n-e0de14a1d55db39c",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 302,
+      "pool_id": "n-be466738ec1cd018",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 303,
+      "pool_id": "n-0b739fb0e0ef7ad3",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 304,
+      "pool_id": "n-68ddb817fe4001c0",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 305,
+      "pool_id": "n-aed92cf78c5d62b0",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 306,
+      "pool_id": "n-67f985afe6941b56",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 307,
+      "pool_id": "n-887ee97acada33a1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 308,
+      "pool_id": "n-f2e7b028a6ca7225",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 309,
+      "pool_id": "n-756c08a8fd09ab88",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 310,
+      "pool_id": "n-5b89a2db7f60ae90",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 311,
+      "pool_id": "n-4bdcf542f5fd2a88",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 312,
+      "pool_id": "n-068a62d82b818119",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 313,
+      "pool_id": "n-58df857ae0efe2d8",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 314,
+      "pool_id": "n-614783a992ccefaa",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 315,
+      "pool_id": "n-36bbeb249216ceb6",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 316,
+      "pool_id": "n-3047d7657748ea76",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 317,
+      "pool_id": "n-b43ef08ac3ed4f7a",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 318,
+      "pool_id": "n-a1de396d3910fa2e",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "france_news_publishers",
+      "group_primary": 196
+    },
+    {
+      "sequence": 319,
+      "pool_id": "n-81c30b1162a2aaed",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 320,
+      "pool_id": "n-58da586369f33999",
+      "lane": "long",
+      "decision": "full"
+    }
+  ]
+}

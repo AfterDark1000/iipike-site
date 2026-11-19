@@ -82,13 +82,18 @@ def article_slug(item):
         raise ValueError("Article slug invalid")
     return value
 
-def claim_ordinary(pool, request_filename, *, now=None, used_ids=()):
-    """Pure function: only the earliest queued normal/low; NEVER a high candidate."""
+def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=None):
+    """Only queued normal/low in the long lane; never a high or short candidate."""
+    from scripts.editorial_routing import load_routes, long_allowed, effective_priority
     validate_pool(pool)
+    if routing is None:
+        routing = load_routes(pool)
     if not REQUEST_NAME.fullmatch(request_filename):
         raise ValueError("Invalid request filename")
     pending = [i for i in pool["items"]
-               if i["status"] == "queued" and i["priority"] in ("normal", "low")]
+               if i["status"] == "queued" and i["priority"] in ("normal", "low")
+               and effective_priority(i, routing) != "high"
+               and long_allowed(i, routing)]
     if not pending:
         return copy.deepcopy(pool), None
     item = min(pending, key=lambda x: x["sequence"])
