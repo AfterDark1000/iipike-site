@@ -3055,12 +3055,12 @@
       "summary": "16 ноября: компания объявила PopNow Protect — компенсацию кредитов за часть неудачных генераций и задержек. Пресс-релиз, по заявлению компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": "2026-11-19T10:33:37+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-eab8cb02f723379b"
+      "closed_at": "2026-11-19T17:53:42Z",
+      "article_id": "popnow-protect-refund-credits-20261113",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-eab8cb02f723379b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/popnow-protect-refund-credits-20261113/"
     },
     {
       "id": "n-7ccc4442108abb99",
