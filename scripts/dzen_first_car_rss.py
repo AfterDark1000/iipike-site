@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 from xml.etree import ElementTree
 
-from dzen_first_car import connect, iso, timestamp
+from dzen_first_car import canonical, connect, iso, timestamp
 from dzen_stage_a5_audit import SLUG, topic_basis
 
 MAX_FEED_BYTES = 4_000_000
@@ -35,6 +35,22 @@ def feed_timestamp(value):
             return None
 
 
+def alternate_urls(entry):
+    for child in entry:
+        if child.tag.rsplit("}", 1)[-1] == "link" and child.get("rel", "alternate") == "alternate":
+            yield (child.get("href") or child.text or "").strip()
+
+
+def explicit_dzen_url(urls):
+    direct = set()
+    for url in urls:
+        try:
+            direct.add(canonical(url))
+        except ValueError:
+            continue
+    return direct.pop() if len(direct) == 1 else None
+
+
 def publisher_entries(xml, as_of):
     if len(xml) > MAX_FEED_BYTES or b"<!DOCTYPE" in xml.upper():
         raise ValueError("Feed size or document type is unsupported")
@@ -51,13 +67,15 @@ def publisher_entries(xml, as_of):
         published = feed_timestamp(text.get("pubDate") or text.get("published") or "")
         if published is None or not 0 <= as_of - published <= MAX_AGE_SECONDS:
             continue
-        link = next((child for child in entry if child.tag.rsplit("}", 1)[-1] == "link"
-                     and child.get("rel", "alternate") == "alternate"), None)
-        url = (link.get("href") or link.text or "").strip() if link is not None else ""
+        urls = list(alternate_urls(entry))
+        url = next(iter(urls), "")
         address = urlsplit(url)
         guid = text.get("guid") or text.get("id") or url
         if guid and address.scheme == "https" and address.hostname and not address.username:
-            yield guid, title, url, published
+            item = {"title": title, "publisher_url": url, "publisher_published_at": iso(published)}
+            if dzen_url := explicit_dzen_url(urls):
+                item["dzen_url"] = dzen_url
+            yield guid, item
 
 
 def hints(db, channel, feed_url, xml, as_of):
@@ -70,10 +88,10 @@ def hints(db, channel, feed_url, xml, as_of):
                    channel TEXT NOT NULL, feed TEXT NOT NULL, item TEXT NOT NULL,
                    PRIMARY KEY(channel, feed, item))""")
         new = []
-        for guid, title, url, published in publisher_entries(xml, as_of):
-            item = sha256(guid.encode("utf-8")).hexdigest()
-            if db.execute("INSERT OR IGNORE INTO rss_seen VALUES (?, ?, ?)", (channel, feed_url, item)).rowcount:
-                new.append({"title": title, "publisher_url": url, "publisher_published_at": iso(published)})
+        for guid, item in publisher_entries(xml, as_of):
+            seen = sha256(guid.encode("utf-8")).hexdigest()
+            if db.execute("INSERT OR IGNORE INTO rss_seen VALUES (?, ?, ?)", (channel, feed_url, seen)).rowcount:
+                new.append(item)
     return {"channel": channel, "feed_url": feed_url, "observed_at": iso(as_of),
             "request_hint": bool(new), "confirmed_on_dzen": False, "new_publisher_items": new}
 

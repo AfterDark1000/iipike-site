@@ -83,13 +83,31 @@ class FirstCarPipelineTest(unittest.TestCase):
     def test_rss_hint_is_deduplicated_and_remains_outside_article_history(self):
         xml = b"""<rss><channel><item><title>New Apple Intelligence feature</title>
                  <link>https://example.org/article</link><guid>1</guid>
+                 <description>Background: https://dzen.ru/a/demo000000000006</description>
                  <pubDate>Thu, 19 Nov 2026 10:00:00 +0000</pubDate></item></channel></rss>"""
         at = timestamp("2026-11-19T10:10:00Z")
         result = hints(self.db, "control", "https://example.org/feed", xml, at)
         self.assertTrue(result["request_hint"])
         self.assertFalse(result["confirmed_on_dzen"])
+        self.assertNotIn("dzen_url", result["new_publisher_items"][0])
         self.assertFalse(hints(self.db, "control", "https://example.org/feed", xml, at)["request_hint"])
         self.assertEqual(self.db.execute("SELECT COUNT(*) FROM articles").fetchone()[0], 0)
+
+    def test_atom_dzen_alternate_is_a_hint_only_and_omitted_if_ambiguous(self):
+        at = timestamp("2026-11-19T10:10:00Z")
+        for extra, expected in (("", NEW), ('<link href="https://dzen.ru/a/demo000000000007"/>', None)):
+            xml = f"""<feed xmlns="http://www.w3.org/2005/Atom"><entry>
+                <title>New Apple Intelligence feature</title>
+                <link rel="alternate" href="https://example.org/article"/>
+                <link rel="alternate" href="{NEW}?share_to=link"/>{extra}
+                <published>2026-11-19T10:00:00Z</published></entry></feed>""".encode()
+            with closing(connect(":memory:")) as db:
+                result = hints(db, "control", "https://example.org/feed", xml, at)
+                self.assertFalse(result["confirmed_on_dzen"])
+                item = result["new_publisher_items"][0]
+                self.assertEqual(item.get("dzen_url"), expected)
+                self.assertEqual(item["publisher_published_at"], "2026-11-19T10:00:00+00:00")
+                self.assertEqual(queue_snapshot(db, at)["articles"], [])
 
     def test_skip_persists_until_an_explicit_undo(self):
         for step in self.steps[:2]:
