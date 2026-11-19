@@ -940,12 +940,12 @@
       "summary": "12 ноября: OpenAI объявила о выделении $2 млн на независимые исследования безопасности и влияния ИИ на детей.",
       "origin": "ХПИИ — добытчик новостей (подборка 13.11.2026, последние 4)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-13T14:07:00+00:00",
       "review_started_at": "2026-11-19T06:30:41+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-45f5fd394ef9d677"
+      "closed_at": "2026-11-19T09:23:42Z",
+      "article_id": "openai-child-safety-research-2m-20261112",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-45f5fd394ef9d677\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/openai-child-safety-research-2m-20261112/"
     },
     {
       "id": "n-036fdc4befba26da",
