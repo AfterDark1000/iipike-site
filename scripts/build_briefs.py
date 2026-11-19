@@ -153,13 +153,26 @@ def card(r):
             'Первоисточник: '+escape(r["source"])+' ↗</a></div></article>')
 
 def home_strip(rows):
+    """Compact, factual publication wire. Never label an unreleased story live."""
     if not rows:
-        return ('<div class="brief-home-empty">Небольшие истории без длинных статей и обложек. '
-                'Первая подборка на редакционной проверке.</div>')
-    return "\n".join('<a class="brief-home-link" href="briefs/'+escape(r["slug"])+'/">'
-                     '<span>'+escape(r["topic"])+'</span><strong>'+
-                     escape(r["headline"])+'</strong><span aria-hidden="true">↗</span></a>'
-                     for r in rows[:3])
+        return ('<div class="brief-home-empty">Пока выпусков нет. '
+                'Проверенные короткие заметки появятся здесь после публикации.</div>')
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo("Asia/Yekaterinburg")
+    result = []
+    for row in rows[:6]:
+        local = parse_time(row["published_at_utc"]).astimezone(tz)
+        date = local.strftime("%d.%m")
+        clock = local.strftime("%H:%M")
+        result.append(
+            '<a class="brief-home-link" href="briefs/'+escape(row["slug"], quote=True)+'/">'
+            '<time class="brief-home-time" datetime="'+escape(row["published_at_utc"], quote=True)+'">'
+            '<span>'+date+'</span><strong>'+clock+'</strong></time>'
+            '<span class="brief-home-copy"><span class="brief-home-topic">'+escape(row["topic"])+
+            '</span><span class="brief-home-title">'+escape(row["headline"])+'</span></span>'
+            '<span class="brief-home-arrow" aria-hidden="true">↗</span></a>'
+        )
+    return "\n".join(result)
 
 def render_page(r):
     head=escape(r["headline"]);body=escape(r["body"]);canonical=BASE+"/briefs/"+r["slug"]+"/"
