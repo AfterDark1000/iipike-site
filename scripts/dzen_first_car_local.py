@@ -12,7 +12,8 @@ from dzen_first_car_signals import mark_signal, signal_snapshot
 
 LAB = Path(__file__).resolve().parents[1] / "lab" / "dzen-first-car"
 ASSETS = {"/": ("index.html", "text/html"), "/index.html": ("index.html", "text/html"),
-          "/queue.js": ("queue.js", "application/javascript"), "/queue.css": ("queue.css", "text/css")}
+          "/queue.js": ("queue.js", "application/javascript"), "/queue.css": ("queue.css", "text/css"),
+          "/commenting-live.js": ("commenting-live.js", "application/javascript")}
 
 
 def serve(db_path, port, replay, replay_at, *, saved, window):

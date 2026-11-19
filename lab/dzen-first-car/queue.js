@@ -2,7 +2,10 @@
 
 (() => {
   const data = window.firstCarSnapshots;
+  const live = !data.bridge && !data.replay;
+  const commenting = window.firstCarCommenting;
   const panel = document.querySelector("#panel");
+  const refreshButton = document.querySelector("#refresh-commenting");
   const storageKey = "dzen-first-car-v1";
   const directArticle = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{16}$/;
   const dzenMirror = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
@@ -20,7 +23,10 @@
   const windowMinutes = windowHours * 60;
   const signalWindow = 60 * minute;
   const signals = data.signals ?? [];
-  const candidates = data.candidates ?? [];
+  let candidates = live ? [] : data.candidates ?? [];
+  let sourceSnapshot = null;
+  let sourceError = "";
+  let loading = false;
   const decisions = readDecisions();
   if (data.bridge) {
     for (const key of decisions.keys()) if (key.startsWith("queue|")) decisions.delete(key);
@@ -31,6 +37,11 @@
     document.querySelector(".local").textContent = "Демо · тестовый прогон";
   } else if (data.archive_mode) {
     document.querySelector(".local").textContent = "Архивный просмотр";
+  }
+  if (live) {
+    document.querySelector(".local").textContent = "Очередь Gemini";
+    document.querySelector("#storage-note").textContent = "Отметки в этом браузере не синхронизируются с админкой";
+    refreshButton.hidden = false;
   }
   document.querySelector("#window-hours").textContent = windowHours;
   let view = "queue";
@@ -49,8 +60,10 @@
   function storeDecisions() {
     try {
       localStorage.setItem(storageKey, JSON.stringify(Object.fromEntries(decisions)));
+      return true;
     } catch {
       document.querySelector("#storage-note").textContent = "Отметки хранятся в этой вкладке";
+      return false;
     }
   }
 
@@ -100,6 +113,7 @@
   }
 
   function queueEntries(now) {
+    if (live) return [];
     return data.articles.filter((article) => {
       const author = data.channels.find((channel) => channel.slug === article.channel);
       const publication = exactTime(article.published_at);
@@ -130,6 +144,40 @@
     const change = row.comment_change;
     const delta = change.delta > 0 ? `+${change.delta}` : String(change.delta);
     return `<p class="details">Изменение числа комментариев: ${delta} · ${dateLabel(change.from_at)} → ${dateLabel(change.to_at)}</p>`;
+  }
+
+  function sourceStatus(now) {
+    if (!live) return "";
+    if (sourceError) return `<div class="notice" role="status"><strong>Не удалось загрузить очередь Gemini</strong>
+      <span>${escapeText(sourceError)}. Нажмите «Обновить» для повторной загрузки.</span></div>`;
+    if (!sourceSnapshot) return `<p class="source-note" role="status">Загружаем очередь Gemini…</p>`;
+    const stamp = dateLabel(sourceSnapshot.updated_at);
+    const stale = now - exactTime(sourceSnapshot.updated_at) > commenting.staleAfter;
+    const failed = sourceSnapshot.failed.length ? ` · Не обновились: ${escapeText(sourceSnapshot.failed.join(", "))}` : "";
+    const last = `Снимок Gemini · ${stamp}${failed}`;
+    return stale ? `<div class="notice" role="status"><strong>Снимок старше 2 часов</strong><span>${last}</span></div>` :
+      `<p class="source-note" role="status">${last}${loading ? " · обновляем…" : ""}</p>`;
+  }
+
+  async function refreshLive() {
+    if (!live || loading) return;
+    loading = true;
+    sourceError = "";
+    refreshButton.disabled = true;
+    render();
+    try {
+      sourceSnapshot = await commenting.read();
+      candidates = sourceSnapshot.candidates;
+    } catch (error) {
+      candidates = [];
+      sourceSnapshot = null;
+      sourceError = error instanceof TypeError || error?.name === "TimeoutError" ?
+        "Источник недоступен в браузере" : error.message;
+    } finally {
+      loading = false;
+      refreshButton.disabled = false;
+      render();
+    }
   }
 
   function grouped(rows, now, renderRow) {
@@ -232,7 +280,8 @@
       ${handled.length ? `<details class="handled"><summary>Отмеченные · ${handled.length}</summary>
         ${handled.map((article) => articleRow(article)).join("")}</details>` : ""}
       <header class="panel-head candidate-head"><h2>Кандидаты на просмотр</h2><p>Ожидают ручной оценки · ${available.length}</p></header>
-      ${available.length ? grouped(available, now, candidateRow) : `<p class="section-empty">Кандидатов в этом окне нет.</p>`}
+      ${sourceStatus(now)}${available.length ? grouped(available, now, candidateRow) :
+        sourceError || (live && !sourceSnapshot) ? "" : `<p class="section-empty">Кандидатов в этом окне нет.</p>`}
       ${handledCandidates.length ? `<details class="handled"><summary>Отмеченные кандидаты · ${handledCandidates.length}</summary>
         ${grouped(handledCandidates, now, candidateRow)}</details>` : ""}`;
   }
@@ -341,6 +390,10 @@
   document.addEventListener("click", async (event) => {
     const button = event.target.closest("button");
     if (!button) return;
+    if (button === refreshButton) {
+      await refreshLive();
+      return;
+    }
     if (button.hasAttribute("data-copy")) {
       const text = button.closest("article").querySelector(".draft-text");
       try {
@@ -359,8 +412,8 @@
       const action = button.dataset.decision;
       if (action === "undo") decisions.delete(key);
       else if (action === "commented" || action === "skipped") decisions.set(key, action);
-      storeDecisions();
-      document.querySelector("#announcement").textContent = "Отметка кандидата сохранена локально";
+      document.querySelector("#announcement").textContent = storeDecisions() ?
+        "Отметка кандидата сохранена в этом браузере" : "Отметка доступна только в этой вкладке";
       render();
       document.querySelector('.navigation [data-view="queue"]').focus();
       return;
@@ -406,8 +459,12 @@
   });
 
   document.addEventListener("visibilitychange", () => {
-    if (!document.hidden) render();
+    if (!document.hidden) {
+      if (live) void refreshLive();
+      else render();
+    }
   });
 
-  render();
+  if (live) void refreshLive();
+  else render();
 })();

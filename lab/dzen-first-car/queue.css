@@ -31,6 +31,9 @@ h1 { font-size: clamp(38px, 5vw, 60px); font-weight: 750; letter-spacing: -.065e
 .navigation { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
 .navigation button { min-height: 47px; border: 0; padding: 0 14px; background: transparent; color: var(--muted); font-weight: 650; border-bottom: 3px solid transparent; }
 .navigation button[aria-current] { color: var(--green); border-color: var(--green); }
+.navigation #refresh-commenting { margin-left: auto; color: var(--green); }
+.navigation #refresh-commenting:disabled { color: var(--muted); cursor: default; }
+.source-note { padding: 11px 28px; margin: 0; color: var(--muted); font-size: 13px; }
 .count { display: inline-block; margin-left: 4px; min-width: 22px; text-align: center; background: #e4ebe6; border-radius: 12px; font-size: 12px; }
 .columns { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 24px; align-items: start; }
 .panel, .guide { border: 1px solid var(--line); border-radius: 16px; background: var(--paper); overflow: hidden; }

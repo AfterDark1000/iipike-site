@@ -6,6 +6,7 @@
   <title>Первый вагон · очередь Дзена</title>
   <link rel="stylesheet" href="queue.css">
   <script src="snapshots.js" defer></script>
+  <script src="commenting-live.js" defer></script>
   <script src="queue.js" defer></script>
 </head>
 <body>
@@ -25,6 +26,7 @@
       <button type="button" data-view="signals">Разведсигналы <span id="signal-count" class="count">0</span></button>
       <button type="button" data-view="channels">Каналы <span id="channel-count" class="count">6</span></button>
       <button type="button" data-view="demo">Демо · архив</button>
+      <button id="refresh-commenting" type="button" hidden>Обновить</button>
     </nav>
     <div class="columns">
       <section id="panel" class="panel" aria-label="Текущий раздел"></section>
