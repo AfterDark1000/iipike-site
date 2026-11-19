@@ -2,20 +2,19 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 4 · **Готовы:** 0 · **Ждут интервал:** 4 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 168
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 169
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **19.11.2026 15:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **19.11.2026 16:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-mai-cyber-2-flash-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 16:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-cyber-2-flash-20261117.webp) |
-| **2** | [⚡ НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-nato-cyber-defense-daybreak-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 17:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-nato-cyber-defense-daybreak-20261117.webp) |
-| **3** | [⚡ Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-megaspeed-chips-export-investigation-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 18:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-megaspeed-chips-export-investigation-20261117.webp) |
-| **4** | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 19:22 (Усть-Катав)**; пауза до 19.11.2026 16:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
+| **1** | [⚡ НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-nato-cyber-defense-daybreak-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 17:22 (Усть-Катав)**; пауза до 19.11.2026 17:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-nato-cyber-defense-daybreak-20261117.webp) |
+| **2** | [⚡ Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-megaspeed-chips-export-investigation-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 18:22 (Усть-Катав)**; пауза до 19.11.2026 17:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-megaspeed-chips-export-investigation-20261117.webp) |
+| **3** | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.json) | ⏳ Ждёт часовой интервал | **Не ранее 19.11.2026 19:22 (Усть-Катав)**; пауза до 19.11.2026 17:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -27,6 +26,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже](https://iipike.ru/articles/microsoft-mai-cyber-2-flash-20261117/) | 19.11.2026 16:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-cyber-2-flash-20261117.webp) |
 | [Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже](https://iipike.ru/articles/microsoft-mai-code-2-20261117/) | 19.11.2026 15:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-mai-code-2-20261117.webp) |
 | [Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки](https://iipike.ru/articles/google-gemini-tasks-free-calls-shopping-20261117/) | 19.11.2026 14:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-tasks-free-calls-shopping-20261117.webp) |
 | [ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки](https://iipike.ru/articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/) | 19.11.2026 00:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712.webp) |
