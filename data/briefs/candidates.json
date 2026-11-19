@@ -430,6 +430,71 @@
       "source": "Giga Energy",
       "source_url": "https://www.gigaenergy.com/news/giga-news-hunt-county-deal",
       "fact_check": "Giga Energy primary release Nov17: 10-year $1bn deal for 60 MW Project Clay Hunt County, under construction, undisclosed tenant, expected spring2027, closed-loop cooling company claim."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 251,
+      "pool_id": "n-30f3acb86b10736b",
+      "slug": "langsmith-agent-history-platform-20261116",
+      "headline": "LangSmith теперь собирает историю работы каждого ИИ-агента в одном месте",
+      "body": "LangChain перестроила платформу LangSmith вокруг отдельных ИИ-агентов. У каждого теперь есть постоянный идентификатор, ответственный сотрудник и общая история запусков, проверок и ошибок в разных окружениях. Компаниям это должно помочь понять, какой агент тратит деньги, где ошибается и кто отвечает за исправление. Платформа может отслеживать и агентов, запущенных на сторонних системах, если они передают данные наблюдения.",
+      "topic": "Технологии",
+      "event_date": "2026-11-16",
+      "source": "LangChain",
+      "source_url": "https://www.langchain.com/blog/we-rebuilt-langsmith-around-the-agent",
+      "fact_check": "LangChain primary 16 November 2026: agent record with immutable ID, owner, type, traces/evals and environment, third-party OTLP supported. New architecture not independent agent capability."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 252,
+      "pool_id": "n-8a7529e97fb60107",
+      "slug": "google-gemini-apps-script-general-availability-20261116",
+      "headline": "Google открыла Gemini в редакторе Apps Script для пользователей Workspace",
+      "body": "Google объявила о широком запуске Gemini прямо в редакторе Apps Script. Можно описать задачу обычными словами, получить JavaScript для автоматизации таблиц, почты и документов, проверить предложенные изменения и попросить ИИ объяснить ошибки выполнения. Функция распространяется постепенно с 12 ноября и доступна на определённых платных тарифах Workspace и Google AI. Скрипты продолжают работать с разрешениями пользователя.",
+      "topic": "Технологии",
+      "event_date": "2026-11-16",
+      "source": "Google Workspace Updates",
+      "source_url": "https://workspaceupdates.googleblog.com/2026/11/customize-and-extend-workspace-with-apps-script.html",
+      "fact_check": "Google official 16 Nov. Gemini side panel in Apps Script GA, 15 day gradual rollout started Nov12. Business Standard/Plus; Enterprise Standard/Plus; AI Expanded, Education AI Pro, Consumer Google AI Pro/Ultra. Scripts use user's permissions."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 253,
+      "pool_id": "n-7535b1adf01f0dc8",
+      "slug": "firecrawl-docker-sandboxes-web-access-20261118",
+      "headline": "Firecrawl дала ИИ-агентам доступ к сайтам без передачи ключа в песочницу",
+      "body": "Firecrawl выпустила комплект интеграции с Docker Sandboxes для ИИ-агентов Claude Code и Codex. Агент работает в изолированной среде и может искать и читать сайты через разрешённый адрес Firecrawl, не получая прямой доступ ко всему интернету. API-ключ хранится на стороне компьютера-хоста, а не внутри песочницы. Комплект доступен, но технология Docker Kits пока находится в раннем доступе и может измениться.",
+      "topic": "Безопасность",
+      "event_date": "2026-11-18",
+      "source": "Firecrawl",
+      "source_url": "https://www.firecrawl.dev/blog/firecrawl-docker-sandboxes-kit",
+      "fact_check": "Firecrawl primary announcement 18 Nov 2026: Docker Sandboxes v3 kit for host-side credentials proxy, one permitted API host, Claude Code/Codex example; Docker Kits Early Access experimental, available on Docker Hub. AI.info list Nov17 was dated earlier than this primary post."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 257,
+      "pool_id": "n-96308e7073fc11f6",
+      "slug": "microsoft-mai-image-27-transcribe-2-20261117",
+      "headline": "Microsoft выпустила ИИ для редактирования картинок и расшифровки речи",
+      "body": "На конференции Ignite 17 ноября Microsoft представила MAI Image 2.7 и MAI Transcribe 2. Первая модель редактирует изображения и, по данным компании, заняла первое место в рейтинге Artificial Analysis по качеству правок; облегчённая Flash рассчитана на массовую генерацию. Вторая предназначена для распознавания многоязычной речи и уже используется в медицинском Dragon Copilot. Image 2.7 доступна в предварительной версии через Microsoft Foundry.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Microsoft AI",
+      "source_url": "https://microsoft.ai/news/microsoft-ignite-2026/",
+      "fact_check": "Microsoft official Ignite 17 Nov seven models. MAI Image 2.7 #1 AA image edit claim, Flash in Foundry preview, MAI Transcribe 2 in Dragon Copilot, company states 10 million patient encounters monthly. Check substantive duplication with full MAI Image editor archive; recent release 2.7 separate from older model."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 270,
+      "pool_id": "n-5a600a844d9b7ef8",
+      "slug": "pedestal-ai-furniture-delivery-calls-20261117",
+      "headline": "ИИ-агент звонит покупателю за полчаса до доставки мебели",
+      "body": "Стартап Pedestal AI создал для мебельной компании агента, который за 30 минут до доставки звонит покупателю и уточняет инструкции для водителя. Если дозвониться не удаётся, отдельная система отправляет сообщение. По утверждению стартапа, у клиента число сорванных доставок сократилось на 20%. 17 ноября Pedestal объявила о привлечении $4,7 млн начальных инвестиций на развитие ИИ-инструментов для логистики.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-17",
+      "source": "TechCrunch",
+      "source_url": "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/",
+      "fact_check": "TechCrunch exclusive direct startup interview 17 Nov 2026: $4.7m seed, agent calls 30min prior, separate text fallback, 20% reduction in missed deliveries per company; not independently validated."
     }
   ]
 }
