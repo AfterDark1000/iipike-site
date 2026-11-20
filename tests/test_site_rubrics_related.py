@@ -39,11 +39,13 @@ class RubricAndArchiveTests(unittest.TestCase):
         pilot = next(row for row in self.records if row["id"] == "google-search-ai-links")
         self.assertFalse(pilot.get("dzen_id"), "Pilot article must not inherit a fake Dzen ID")
 
-    def test_canonical_four_rubrics_and_valid_pages(self):
-        self.assertEqual(list(RUBRICS), ["news", "skynet", "what-are-you-doing", "quotes"])
-        self.assertEqual(populated(self.records), list(RUBRICS))
+    def test_canonical_five_rubrics_and_valid_pages(self):
+        self.assertEqual(list(RUBRICS), ["news", "skynet", "what-are-you-doing", "quotes", "made-with-ai"])
+        self.assertEqual(populated(self.records), [
+            key for key in RUBRICS if any(row.get("rubric", "news") == key for row in self.records)
+        ])
         expected = render_all(self.records, ROOT)
-        self.assertEqual(len(expected), 4)
+        self.assertEqual(len(expected), 5)
         for path, markup in expected.items():
             self.assertEqual(path.read_text(encoding="utf-8"), markup, str(path))
             self.assertIn('rel="canonical" href="https://iipike.ru/rubrics/', markup)
@@ -54,6 +56,19 @@ class RubricAndArchiveTests(unittest.TestCase):
                 self.assertIn('name="robots" content="noindex, follow"', markup)
             if path.parent.name == "news":
                 self.assertIn("google-search-ai-links", markup)
+
+    def test_new_rubric_stays_empty_and_out_of_sitemap_until_real_publication(self):
+        from scripts.site_rubrics import render_page, navigation
+        empty = render_page("made-with-ai", self.records)
+        self.assertIn("<h1>Сделано с ИИ</h1>", empty)
+        self.assertIn('name="robots" content="noindex, follow"', empty)
+        self.assertIn("Публикации — 0", empty)
+        self.assertIn('href="../../rubrics/made-with-ai/"', navigation("../../"))
+        # A real published row makes the new rubric indexable, no manual reclassification.
+        public = dict(self.records[0], rubric="made-with-ai")
+        populated_page = render_page("made-with-ai", [public])
+        self.assertNotIn('name="robots" content="noindex', populated_page)
+        self.assertIn('../../' + public["url"], populated_page)
 
     def test_mobile_archive_cards_have_full_width_covers_and_clamped_teasers(self):
         stylesheet = (ROOT / "assets" / "site.css").read_text(encoding="utf-8")

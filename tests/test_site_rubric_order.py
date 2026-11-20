@@ -15,7 +15,7 @@ class RubricOrderingTests(unittest.TestCase):
     def setUpClass(cls):
         cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
 
-    def test_four_published_rubric_pages_match_canonical_generator(self):
+    def test_all_published_rubric_pages_match_canonical_generator(self):
         for key in RUBRICS:
             with self.subTest(rubric=key):
                 file = ROOT / "rubrics" / key / "index.html"
