@@ -85,6 +85,61 @@ async function githubJson(path, env, opts={}) {
   const result = await response.json().catch(()=>({}));
   return {status:response.status,data:result};
 }
+const FIRST_CAR_WORKFLOW = "/actions/workflows/first-car-dzen-collector.yml";
+const FIRST_CAR_COOLDOWN_MS = 60 * 60_000;
+const FIRST_CAR_EVENTS = new Set(["schedule", "workflow_dispatch"]);
+
+async function firstCarRun(request, url, env, headers) {
+  if (!env.FIRST_CAR_ACTIONS_TOKEN) return fail(503,"first_car_not_enabled",headers);
+  const actions = (path, options = {}) => githubJson(path, env, {
+    ...options, redirect:"error", signal:AbortSignal.timeout(10_000),
+    headers:{...githubHeaders(env.FIRST_CAR_ACTIONS_TOKEN),...options.headers}
+  });
+  const describe = (run, state, report = null) => send({
+    ok:true, id:run.id, state, conclusion:run.conclusion ?? null, report
+  }, state === "started" ? 202 : 200, headers);
+  try {
+    if (request.method === "POST") {
+      if (url.search || request.body !== null) return fail(400,"unexpected_input",headers);
+      const list = await actions(FIRST_CAR_WORKFLOW + "/runs?branch=main&per_page=10");
+      if (list.status !== 200 || !Array.isArray(list.data.workflow_runs)) return fail(502,"first_car_runs_unavailable",headers);
+      const runs = list.data.workflow_runs.filter(run => run.head_branch === "main" &&
+        FIRST_CAR_EVENTS.has(run.event) && Number.isSafeInteger(run.id));
+      const active = runs.find(run => run.status !== "completed");
+      if (active) return describe(active,"running");
+      const recent = runs.find(run => Date.now() - Date.parse(run.created_at) < FIRST_CAR_COOLDOWN_MS);
+      if (recent) return describe(recent,"cooldown");
+      const dispatch = await actions(FIRST_CAR_WORKFLOW + "/dispatches", {
+        method:"POST",headers:{"content-type":"application/json"},
+        body:JSON.stringify({ref:"main",return_run_details:true})
+      });
+      const id = dispatch.data.workflow_run_id;
+      if (dispatch.status !== 200 || !Number.isSafeInteger(id) || id < 1) return fail(502,"first_car_dispatch_failed",headers);
+      return describe({id},"started");
+    }
+    const id = Number(url.searchParams.get("run"));
+    if (!/^\d+$/.test(url.searchParams.get("run") ?? "") || !Number.isSafeInteger(id) || id < 1) {
+      return fail(400,"invalid_run",headers);
+    }
+    const {status,data:run} = await actions("/actions/runs/" + id);
+    if (status !== 200 || run.id !== id || run.head_branch !== "main" || !FIRST_CAR_EVENTS.has(run.event) ||
+        run.path?.split("@",1)[0] !== ".github/workflows/first-car-dzen-collector.yml") {
+      return fail(404,"first_car_run_unavailable",headers);
+    }
+    if (run.status !== "completed") return describe(run,"running");
+    const snapshot = await githubJson("/contents/dzen/queue.json?ref=first-car-data",env, {signal:AbortSignal.timeout(10_000)});
+    let report = null;
+    if (snapshot.status === 200) {
+      const last = decodeGitHubContent(snapshot.data).last_run;
+      if (last?.id === id && [last.processed,last.errors,last.added].every(x => Number.isSafeInteger(x) && x >= 0)) {
+        report = {processed:last.processed,errors:last.errors,added:last.added};
+      }
+    }
+    return describe(run,"completed",report);
+  } catch {
+    return fail(502,"first_car_service_unavailable",headers);
+  }
+}
 function pathFor(id) { return "editorial_inbox/auto_drafts/"+id+".json"; }
 function savedPath(id,revision) { return "editorial_inbox/auto_decisions/"+id+"-r"+revision+".json"; }
 function validReview(d) {
@@ -447,6 +502,9 @@ export default {
       if (!session) return fail(401,"login_required",headers);
       if (url.pathname==="/api/session" && request.method==="GET") {
         return send({ok:true,login:session.login,exp:session.exp},200,headers);
+      }
+      if (url.pathname==="/api/first-car/collect" && ["GET","POST"].includes(request.method)) {
+        return firstCarRun(request,url,env,headers);
       }
       if (url.pathname==="/api/review" && request.method==="POST") {
         if ((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json") return fail(415,"json_required",headers);

@@ -1,0 +1,163 @@
+{
+  "observations": [
+    {
+      "source": "dzen_launcher_export",
+      "observed_at": "2026-11-19T18:33:23.429126+00:00"
+    },
+    {
+      "source": "dzen_launcher_more",
+      "observed_at": "2026-11-19T20:07:11Z"
+    }
+  ],
+  "payload": {
+    "channel": {
+      "status": "ok",
+      "source": {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "feed_link": "https://dzen.ru/gptnul"
+      }
+    },
+    "items": [
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/av1b21o7XEG5Mop9",
+        "title": "ИИ-образ, похожий на Леброна, привёл приложение в суд: что оспаривает спортсмен",
+        "publication_date": "1795079338"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avv_HSU7-GczKDHd",
+        "title": "ИИ не остановил самолёты: что делает новая система FAA и почему о ней заговорили",
+        "publication_date": "1795073002"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avv_WsbDjSBA1vRR",
+        "title": "Copilot тоже перестал отвечать: что показал масштабный сбой Microsoft",
+        "publication_date": "1795065052"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/auSDCouIqglErmaL",
+        "title": "Spotify убрал 50 млн треков из рекомендаций: что происходит с ИИ-музыкой",
+        "publication_date": "1795057273"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/av1Z4uAVQWVb9XJ8",
+        "title": "GPT‑6.2 Astra и Sol: что изменилось и кому пригодятся новые модели",
+        "publication_date": "1795003611"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avbPiKZG7EUNjEXa",
+        "title": "НКО попросили суд остановить разработку продвинутого ИИ. Решения пока нет",
+        "publication_date": "1794992554"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avbP40aS2U7zs_vY",
+        "title": "ИИ-детектор заподозрил лауреата премии. Проверка не нашла доказательств",
+        "publication_date": "1794978156"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avabzsOd4kTLdGlC",
+        "title": "Нейросеть для решения задач бесплатно: что попробовать и как проверить ответ",
+        "publication_date": "1794970916"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avRPMGKopBdIctwM",
+        "title": "Claude выходит на совещания: ИИ начнёт выполнять поручения, пока сотрудники ещё разговаривают",
+        "publication_date": "1794906934"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avq6dfWpglfpWPc3",
+        "title": "Роботакси в Шэньчжэне — как выглядит поездка без водителя",
+        "publication_date": "1794892071"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avbPO9fnyBjyxvib",
+        "title": "AlphaGenome 2: как ИИ изучает работу ДНК в разных клетках",
+        "publication_date": "1794884664"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avq7GvWpglfpXQ4T",
+        "title": "Nvidia и Китай — почему спор об ИИ-чипах обострился",
+        "publication_date": "1794829320"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avq7hMmwPQVYUPxV",
+        "title": "Почему Европа хочет собственные нейросети — деньги, серверы и контроль",
+        "publication_date": "1794821642"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avIQZ3KMdiW3mcWX",
+        "title": "«Не пролей кофе на ноутбук»: как учёные MIT учат роботов понимать смысл команд",
+        "publication_date": "1794810961"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avbQKp3D7Wrp3WTK",
+        "title": "Как сохранить ИИ-компаньона, если модель меняется",
+        "publication_date": "1794805854"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avbQbKigQR1XR5bi",
+        "title": "ИИ перепутал сюжет романа — и читатели поверили пересказу",
+        "publication_date": "1794634399"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avV51ErNYXlUWrLO",
+        "title": "Нейросеть для Word: как привести документ в порядок с помощью ИИ",
+        "publication_date": "1794560629"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avV5sBnX-RwkIz_D",
+        "title": "Какой Gemini выбрать в 2026 году: Flash, Pro, Argon или Carbon",
+        "publication_date": "1794538324"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avRO4YD4cDo6W2Qd",
+        "title": "Владелец магазина тратил два часа на еженедельную рекламу. С ИИ справляется за 15 минут",
+        "publication_date": "1794474084"
+      },
+      {
+        "publisher_id": "6a041cacff82e6477e863c70",
+        "item_type": "native",
+        "link": "https://dzen.ru/a/avRPENfnyBjyqrhS",
+        "title": "ChatGPT превращается в площадку для бизнеса: появились профили компаний и ИИ-консультанты",
+        "publication_date": "1794452481"
+      }
+    ]
+  }
+}
