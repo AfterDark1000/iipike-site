@@ -4470,7 +4470,7 @@
       "review_started_at": "2026-11-20T06:54:09.298Z",
       "closed_at": null,
       "article_id": null,
-      "note": "20.11.2026: редактор 21 зарезервировал горячую №298, вредоносные инструкции AGENTS.md и CLAUDE.md в GitHub-репозиториях. Маршрут hot, без связанной группы. Проверить оригинальное исследование Bitdefender от 17.11, реальные файлы/механизм атак, масштаб, были ли компрометированы агенты, последствия и советы по защите; сопоставить с №299 о Python-пакете Microsoft и архивом."
+      "note": "20.11.2026, редактор 21: первоисточник Bitdefender Labs, 17.11 https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign . Найдено 22 вредоносные GitHub-ссылки/репозитория, не 22 доказанных заражения пользователей. CLAUDE.md и AGENTS.md под видом sealed/signed artifact требуют запускать scripts/setup.js, не смотреть содержимое и не спрашивать подтверждения; при включённых автоподтверждениях агент способен выполнить. Отдельно hook .claude/settings.json запускает скрипт при доверенном открытии без промпта. Возможности вредоноса по анализу: кража cloud/API/GitHub/GitLab, браузерных паролей, ssh; проверка токенов, распространение по репозиториям (25 targets default) и пакетным registry. №299 про официальный Microsoft agent-framework PyPI — другой инцидент, сравнен с Wiz https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi, не сливать. Дубликатов сюжета в архиве сайта/Дзена нет. Рубрика skynet, темы cybersecurity/development; кандидат Bitdefender после «берём». Подготовить Дзен/Threads/X/VK."
     },
     {
       "id": "n-7dad0d8bf0fb7efc",
