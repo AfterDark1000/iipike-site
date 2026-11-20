@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "f85db1190248937fee798d53362ab23615ed6d21",
-  "source_blob_sha": "978fb017cceeafebde7ea9e4dd6374cb384be26d",
+  "source_commit": "b5748852f964f062f19f17a84ec8a93ab455e406",
+  "source_blob_sha": "333b1704a35f9c4ebe340c55ed7b0c8f8759daf4",
   "snapshot_date": "2026-11-20",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b000bef9ad69e39f176e4d8",
+      "title": "ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся",
+      "dzen_url": "https://dzen.ru/a/awAL75rWnjnxduTY",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Сигнал ИИ о пистолете отменили ещё до приезда полиции. Четверых подростков всё равно поставили на колени и заковали в наручники. 17 ноября четверо учеников американской школы Kenwood High School подали иск против полиции, школьных властей и компании Omnilert, разработавшей систему обнаружения оружия с помощью искусственного интеллекта. История произошла 20 октября 2025 года в штате Мэриленд. После футбольной трениров",
+      "published_at_utc": "2026-11-20T15:02:36+00:00"
+    },
+    {
+      "dzen_id": "6b000b2e4c30af749939460a",
+      "title": "ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд",
+      "dzen_url": "https://dzen.ru/a/awALLkwwr3SZOUYK",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Лекарства ещё не испытывали на людях, а инвесторы уже вложили $5 млрд. Эти деньги получила Isomorphic Labs — компания нобелевского лауреата Демиса Хассабиса, которая разрабатывает препараты с помощью искусственного интеллекта. В мае ей уже выделили $2,1 млрд. Всего за полгода набралось 7,1 миллиарда долларов. О новом раунде финансирования объявили 17 ноября. Деньги пойдут на дальнейшую разработку лекарств и подготовк",
+      "published_at_utc": "2026-11-20T14:04:09+00:00"
+    },
+    {
+      "dzen_id": "6b000a5597093c1e3f136965",
+      "title": "Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование",
+      "dzen_url": "https://dzen.ru/a/awAKVZcJPB4_E2ll",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Около 50 тысяч ИИ-чипов NVIDIA не сошлись при сверке поставок сингапурской компании Megaspeed. Расхождение обнаружили журналисты Bloomberg, сопоставив таможенные документы с инвентаризацией, которую NVIDIA предоставила американским властям. А 17 ноября Министерство торговли и Министерство юстиции США официально раскрыли подробности расследования Megaspeed. Оказалось, что компания находится под наблюдением ещё с 2024",
+      "published_at_utc": "2026-11-20T13:02:28+00:00"
+    },
+    {
+      "dzen_id": "6b0009b48ab6443165813771",
+      "title": "НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей",
+      "dzen_url": "https://dzen.ru/a/awAJtIq2RDFlgTdx",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "До 300 миллиардов токенов за месяц используют структуры НАТО при работе с нейросетями OpenAI для киберзащиты. 17 ноября компания объявила о сотрудничестве с Агентством связи и информации НАТО (NCIA). Через него основные структуры альянса получают доступ к передовым ИИ-моделям для защиты компьютерных сетей. В статистику входят как входные, так и выходные токены — небольшие единицы текста, из которых складываются запро",
+      "published_at_utc": "2026-11-20T12:00:58+00:00"
+    },
+    {
+      "dzen_id": "6b00092416c3835672d0f764",
+      "title": "Google выпустила Gemini 4 Neon: обогнала Claude Opus 5.5 и GPT-6.2 Sol в тестах",
+      "dzen_url": "https://dzen.ru/a/awAJJBbDg1Zy0Pdk",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Новая Gemini обошла Claude и GPT-6.2 Sol в независимых тестах. И умудрилась быть дороже и дешевле собственной предшественницы одновременно. Google 18 ноября представила Gemini 4 Neon. В индексе Artificial Analysis модель набрала 61 балл — против 59 у Claude Opus 5.5 и 57 у GPT-6.2 Sol. Результат получен при максимальном уровне рассуждений xhigh. На стандартном high — 60 баллов. В семействе Gemini 4 новинка заняла мес",
+      "published_at_utc": "2026-11-20T11:03:05+00:00"
+    },
+    {
+      "dzen_id": "6afecfb3270b29709a2aeac6",
+      "title": "ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100",
+      "dzen_url": "https://dzen.ru/a/av7PsycLKXCaKurG",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-агент Codex с GPT-5.6 Sol добился 20 успешных взломов в 100 лабораторных задачах. Он получил только старые и исправленные версии программ. Результат зафиксирован в CyberBinGym — тесте исследователей нескольких университетов, включая Калифорнийский университет в Беркли. Агентам выдавали два исполняемых файла: уязвимую программу и сборку с установленной заплаткой. Исходного кода, описания ошибки и готового примера а",
+      "published_at_utc": "2026-11-20T10:01:13+00:00"
+    },
+    {
+      "dzen_id": "6afecf5e8fe97b246a1d2eec",
+      "title": "Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже",
+      "dzen_url": "https://dzen.ru/a/av7PXo_peyRqHS7s",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Microsoft представила нейросеть MAI Cyber 2 Flash, которая справилась с поиском уязвимостей лучше GPT-6 Astra, потратив на задания меньше 2% стоимости конкурента. Новинку показали 17 ноября на конференции Ignite. Она предназначена для поиска ошибок безопасности в программном коде, проверки обнаруженных уязвимостей и помощи специалистам в подготовке исправлений. В тесте CyberGym-E2E модель успешно выполнила 92,3% зада",
+      "published_at_utc": "2026-11-20T07:02:04+00:00"
+    },
     {
       "dzen_id": "6afeced18dd59d077891981f",
       "title": "Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже",
