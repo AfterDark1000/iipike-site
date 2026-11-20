@@ -100,7 +100,11 @@ async function firstCarRun(request, url, env, headers) {
   }, state === "started" ? 202 : 200, headers);
   try {
     if (request.method === "POST") {
-      if (url.search || request.body !== null) return fail(400,"unexpected_input",headers);
+      if (url.search) return fail(400,"unexpected_input",headers);
+      // A body stream can be present even when the request contains zero bytes.
+      for await (const chunk of request.body ?? []) {
+        if (chunk.byteLength > 0) return fail(400,"unexpected_input",headers);
+      }
       const list = await actions(FIRST_CAR_WORKFLOW + "/runs?branch=main&per_page=10");
       if (list.status !== 200 || !Array.isArray(list.data.workflow_runs)) return fail(502,"first_car_runs_unavailable",headers);
       const runs = list.data.workflow_runs.filter(run => run.head_branch === "main" &&
