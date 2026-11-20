@@ -4965,7 +4965,7 @@
       "review_started_at": "2026-11-20T11:01:54.095Z",
       "closed_at": null,
       "article_id": null,
-      "note": "20.11, редактор №22: взята горячая №331. Вторичный источник TechCrunch, проверяются первичные условия банков о доступе сторонних ИИ-агентов, ответственность за спорные транзакции, реальные случаи и отличие политики от закона. Проверка архива и подготовка текстов до «берём»; публикаций нет."
+      "note": "20.11, редактор №22. Первичный документ Citi, обновлён в ноябре: https://www.citi.com/tandc/view-printable-version (раздел H: действия сторонних ИИ-агентов и утёкшие credentials банк считает авторизованными клиентом; издержки ошибок на клиенте, «кроме случаев по закону»). Переводы: https://online.citi.com/JRS/forms/wire_xfrs_tsandcs.html . PNC: https://www.pnc.com/content/dam/digital-assets/en/documents/digital_services_agreement_UPDATE.pdf (сторонним агентам нельзя логины, пароли и платежи без явного разрешения; разрешены ограниченные подключения). Bank of America: https://web.bankofamerica.com/en/security/library/agentic-ai (предупреждение и защищённый путь подключения). Wells Fargo: https://www.wellsfargo.com/online-banking/online-access-agreement/upcoming/ (будущие условия с 24.11, не действуют сегодня). ВАЖНО: Regulation E защищает от несанкционированных переводов независимо от договора https://www.consumerfinance.gov/rules-policy/regulations/1005/6/ ; банк не может автоматически отменить закон. Архив: связанный Дзен https://dzen.ru/a/avkyo4t5FW9w4ctH «ChatGPT дали кошелёк» (точный сайт openai-chatgpt-wallet-dots-20261113); дубля сюжета нет. Горячая long, без группы. Готовить Дзен/Threads/X/VK на утверждение, без записи очередей до «берём»."
     },
     {
       "id": "n-01583a4729684d3b",
