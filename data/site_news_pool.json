@@ -4810,12 +4810,12 @@
       "summary": "17 ноября. Исследователь сообщил об обнаружении уязвимости Java4Shell в OpenJDK с помощью Codex; заявленный результат требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T13:14:35+00:00",
       "review_started_at": "2026-11-20T10:15:06.826Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор №22. Подтверждено Calif https://calif.io/java4shell/ : 24.10 Quang Luong направил OpenAI Codex на аудит OpenJDK, агент нашёл повреждение памяти в Base64 за час; через ~2 ч исследователь создал первое доказательство выполнения чужого кода. Стоимость токенов <$200. ВАЖНО для честного лида: исходную ошибку впервые публично сообщил sundarms в июне https://github.com/adoptium/adoptium-support/issues/1480 ; в сентябре предложено исправление, PR https://github.com/openjdk/jdk/pull/32781 закрыли без слияния; команда Calif самостоятельно повторно нашла дефект и показала опасность. На стендах получен RCE без входа в Jira, Jenkins, Keycloak и др.; это НЕ данные реальных взломов. Требования: уязвимые JDK 17/21/25/27 + x86-64 AVX-512 VBMI, а не вся Java. Oracle / OpenJDK выпустили патчи 17.11; https://flink.apache.org/2026/11/18/mitigating-cve-2026-114938-java4shell-in-apache-flink-deployments/ . Номер CVE-2026-114938, оценка Oracle 8.1/10 CVSS3, Calif 9.2/10 CVSS4. Архив сайта/Дзена без прямого дубля; связанные общие статьи про Codex и безопасность не вставлять автоматически. Решение hot без группы. Готовить Дзен/Threads/X/VK без коммита публикаций до «берём»."
+      "closed_at": "2026-11-20T10:40:07.994Z",
+      "article_id": "java4shell-codex-openjdk-20261117",
+      "note": "20.11, редактор №22. Проверено: Calif https://calif.io/java4shell/ (Codex обнаружил ошибку Base64 OpenJDK за час; первый эксплойт через два часа, токены менее $200); июньский отчёт https://github.com/adoptium/adoptium-support/issues/1480; сентябрьская попытка исправления https://github.com/openjdk/jdk/pull/32781; обновления безопасности 17.11 https://www.oracle.com/security-alerts/cspunov2026.html . CVE-2026-114938, уязвимые версии и требования AVX-512 VBMI; демонстрации взлома проходили на тестовых серверах. Архив: прямого дубля нет; перелинковка не требуется. После команды «берём» точная статья сохранена в editorial-intake, соцочереди Threads/X одобрены, VK подготовлен для RSS, кандидаты Calif и OpenJDK записаны. Приоритетный выпуск только после обложки. ID: java4shell-codex-openjdk-20261117"
     },
     {
       "id": "n-f506bdc7ec30ce7a",
