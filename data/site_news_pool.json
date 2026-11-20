@@ -655,12 +655,12 @@
       "summary": "10 ноября: Google расширила доступ к Gemini 4 Carbon для долгих многоэтапных задач, программирования и исследований. Платный API и подписка AI Ultra; это не общедоступная бесплатная модель.",
       "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T05:11:17.825Z",
       "review_started_at": "2026-11-17T06:52:18+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=pilot-20261117-chatgpt-auto-001.json; article_id=google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3"
+      "closed_at": "2026-11-18T14:30:50Z",
+      "article_id": "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
+      "note": "AUTO_EDITOR claim=pilot-20261117-chatgpt-auto-001.json; article_id=google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3\nОпубликовано на сайте: https://iipike.ru/articles/google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3/"
     },
     {
       "id": "n-b0f0e86e2a184d00",
@@ -670,12 +670,12 @@
       "summary": "10–11 ноября: Ник Рид публикует сатирические видео с ИИ-собеседованиями, маской супергероя и кроссовком на голове; ролики постановочные, участие реальных систем найма не подтверждено.",
       "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T05:11:17.826Z",
       "review_started_at": "2026-11-17T15:50:51+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=pilot-20261117-chatgpt-auto-002.json; article_id=avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00"
+      "closed_at": "2026-11-18T18:15:41Z",
+      "article_id": "avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00",
+      "note": "AUTO_EDITOR claim=pilot-20261117-chatgpt-auto-002.json; article_id=avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00\nОпубликовано на сайте: https://iipike.ru/articles/avtor-virusnykh-rolikov-trollit-ii-rekruterov-kro-b0f0e86e2a184d00/"
     },
     {
       "id": "n-9d6f7aa40ea4e712",
@@ -685,12 +685,12 @@
       "summary": "10 ноября: Мэтт Смит сообщил, что в заказе продуктов, оформленном ИИ, оказались 72 яйца; случай известен со слов автора и по опубликованным им материалам, независимой проверки заказа нет.",
       "origin": "ХПИИ — ручной отбор из подборки 12.11.2026",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T05:11:17.826Z",
       "review_started_at": "2026-11-18T10:55:30+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261118-1055-ordinary-003.json; article_id=ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712"
+      "closed_at": "2026-11-18T19:30:52Z",
+      "article_id": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712",
+      "note": "AUTO_EDITOR claim=auto-20261118-1055-ordinary-003.json; article_id=ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712\nОпубликовано на сайте: https://iipike.ru/articles/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712/"
     },
     {
       "id": "n-4076f1cccb01edfb",
@@ -730,12 +730,12 @@
       "summary": "11 ноября: Berkeley RDI представила исследование CyberBinGym на 100 реальных уязвимостях: Codex сумел в лаборатории восстановить уязвимость в 88% случаев и провести успешную эксплуатацию в 20%. Средняя стоимость отдельного теста в сравнительном наборе около $31; прежние утверждения «два часа и дешевле $30» не подтверждены.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-12T08:25:31+00:00",
       "review_started_at": "2026-11-19T02:32:31+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=manual-20261119-ordinary-004.json; article_id=berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8"
+      "closed_at": "2026-11-19T16:15:48Z",
+      "article_id": "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+      "note": "AUTO_EDITOR claim=manual-20261119-ordinary-004.json; article_id=berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8\nОпубликовано на сайте: https://iipike.ru/articles/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8/"
     },
     {
       "id": "n-59b3661386606b37",
