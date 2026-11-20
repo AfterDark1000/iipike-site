@@ -5185,12 +5185,12 @@
       "summary": "19 ноября. Сообщается о сотрудничестве Isomorphic Labs и MSD по поиску молекул против онкологических заболеваний; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T07:14:16+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a6418856dccd6908"
     },
     {
       "id": "n-a87bfc1ffc4c2d65",
@@ -5215,12 +5215,12 @@
       "summary": "19 ноября. Сообщается о финансировании MegaRobo для автоматизированных лабораторных исследований; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T07:14:16+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-561fdba2dffc08a0"
     },
     {
       "id": "n-11cf55f62ec06541",
@@ -5380,12 +5380,12 @@
       "summary": "19 ноября. Amazon представила ограниченную услугу создания синтетических голосов с разрешения владельцев.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T07:14:16+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a56014fd60304875"
     },
     {
       "id": "n-bed8fe2e85117580",
@@ -5425,12 +5425,12 @@
       "summary": "19 ноября. Учёные FAU представили метод обнаружения белух на снимках с дронов для природоохранных исследований.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T07:14:16+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9dc5f439a7a22126"
     },
     {
       "id": "n-20815b484a08901e",
@@ -5440,12 +5440,12 @@
       "summary": "18 ноября. Boltz объявил о финансировании для вычислительной разработки лекарств.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T07:14:16+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-20815b484a08901e"
     },
     {
       "id": "n-27b38ec62ac492a2",

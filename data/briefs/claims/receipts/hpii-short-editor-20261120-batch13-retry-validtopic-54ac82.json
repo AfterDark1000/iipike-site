@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261120-batch13-retry-validtopic-54ac82.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-a6418856dccd6908",
+      "pool_sequence": 346,
+      "title": "Google DeepMind будет искать лекарства от рака вместе с фармацевтическим гигантом MSD",
+      "source_url": "https://ainewsbites.com/isomorphic-labs-msd-ai-cancer-drug-research",
+      "claimed_at": "2026-11-20T07:14:16+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-561fdba2dffc08a0",
+      "pool_sequence": 348,
+      "title": "ИИ-лаборатория получила почти $200 млн, чтобы роботы сами проводили научные эксперименты",
+      "source_url": "https://ainewsbites.com/megarobo-raises-nearly-200-million-ai-infrastructure",
+      "claimed_at": "2026-11-20T07:14:16+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a56014fd60304875",
+      "pool_sequence": 359,
+      "title": "Amazon научила Polly клонировать голоса по нескольким минутам записи",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-launches-voice-cloning-a-unique-voice-for-your-brand",
+      "claimed_at": "2026-11-20T07:14:16+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9dc5f439a7a22126",
+      "pool_sequence": 362,
+      "title": "ИИ научился считать белух с высоты, даже когда фотографий для обучения почти нет",
+      "source_url": "https://www.fau.edu/news/2026/aimonitoringbelugawhales/index.php",
+      "claimed_at": "2026-11-20T07:14:16+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-20815b484a08901e",
+      "pool_sequence": 363,
+      "title": "Стартап Boltz получил $110 млн на поиск лекарств с помощью ИИ",
+      "source_url": "https://www.boltz.com/series-a",
+      "claimed_at": "2026-11-20T07:14:16+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
