@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "article_id": "britanskiy-ministr-predlozhil-ispolzovat-dannye-n-f1276fcf4509a500",
+  "revision": 1,
+  "updated_at": "2026-11-20T17:00:00+00:00",
+  "action": "reject",
+  "note": "Низкое качество. Канцеляризмы. Неинтересно читать. Не соблюдается регламент и правила стиля.",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-20T17:20:00.181Z",
+  "draft_blob_sha": "3f1a6f4e640bc557386892630c9d6e0f06c56e0c",
+  "status": "rejected",
+  "channel": "hpii-admin-oauth-gateway"
+}
