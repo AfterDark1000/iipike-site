@@ -87,6 +87,18 @@ jobs:
                    'scripts/site_home.py', 'scripts/site_rubrics.py',
                    'scripts/sync_briefs_pool.py', 'tests/test_brief_release_schedule.py',
                    'tests/test_editorial_routing.py', 'tests/test_publication_times.py'}
+          # New approved rubric keys need matching editor validation, regression
+          # tests and an editorial evidence policy; still run every read-only
+          # site/publisher test above before allowing this *exact* file set.
+          if 'scripts/site_rubrics.py' in changed:
+              exact.update({
+                  'scripts/auto_editor_workbench.py',
+                  'tests/test_auto_editor_workbench.py',
+                  'tests/test_site_rubric_order.py',
+                  'tests/test_site_rubrics_related.py',
+                  'docs/AUTO_EDITOR_INSTRUCTIONS.md',
+                  'docs/RUBRIC_MADE_WITH_AI.md',
+              })
           prefixes = ('entities/', 'assets/entity-icons/', 'briefs/')
           # Article HTML changes are restricted to the IDs already reviewed
           # in the public registry; their exact header-only diff is tested.
