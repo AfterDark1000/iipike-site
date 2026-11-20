@@ -4465,12 +4465,12 @@
       "summary": "17 ноября: исследование Bitdefender о вредоносных AGENTS.md и CLAUDE.md.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-20T06:54:09.298Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11.2026, редактор 21: первоисточник Bitdefender Labs, 17.11 https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign . Найдено 22 вредоносные GitHub-ссылки/репозитория, не 22 доказанных заражения пользователей. CLAUDE.md и AGENTS.md под видом sealed/signed artifact требуют запускать scripts/setup.js, не смотреть содержимое и не спрашивать подтверждения; при включённых автоподтверждениях агент способен выполнить. Отдельно hook .claude/settings.json запускает скрипт при доверенном открытии без промпта. Возможности вредоноса по анализу: кража cloud/API/GitHub/GitLab, браузерных паролей, ssh; проверка токенов, распространение по репозиториям (25 targets default) и пакетным registry. №299 про официальный Microsoft agent-framework PyPI — другой инцидент, сравнен с Wiz https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi, не сливать. Дубликатов сюжета в архиве сайта/Дзена нет. Рубрика skynet, темы cybersecurity/development; кандидат Bitdefender после «берём». Подготовить Дзен/Threads/X/VK."
+      "closed_at": "2026-11-20T07:12:05.146Z",
+      "article_id": "bitdefender-github-agent-instructions-malware-20261117",
+      "note": "20.11.2026, редактор 21: первоисточник Bitdefender Labs, 17.11 https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign . Найдено 22 вредоносные GitHub-ссылки/репозитория, не 22 доказанных заражения пользователей. CLAUDE.md и AGENTS.md под видом sealed/signed artifact требуют запускать scripts/setup.js, не смотреть содержимое и не спрашивать подтверждения; при включённых автоподтверждениях агент способен выполнить. Отдельно hook .claude/settings.json запускает скрипт при доверенном открытии без промпта. Возможности вредоноса по анализу: кража cloud/API/GitHub/GitLab, браузерных паролей, ssh; проверка токенов, распространение по репозиториям (25 targets default) и пакетным registry. №299 про официальный Microsoft agent-framework PyPI — другой инцидент, сравнен с Wiz https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi, не сливать. Дубликатов сюжета в архиве сайта/Дзена нет. Рубрика skynet, темы cybersecurity/development; кандидат Bitdefender после «берём». Подготовить Дзен/Threads/X/VK.\n20.11.2026: главред утвердил. Статья (Markdown), Threads/X и VK проверены в GitHub, кандидат Bitdefender записан. site_queue=priority; article_id=bitdefender-github-agent-instructions-malware-20261117. Ожидается обложка."
     },
     {
       "id": "n-7dad0d8bf0fb7efc",
