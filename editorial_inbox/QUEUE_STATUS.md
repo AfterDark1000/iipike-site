@@ -2,17 +2,17 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 1 · **Готовы:** 0 · **Ждут интервал:** 1 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 176
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 177
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **20.11.2026 12:01 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **20.11.2026 13:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/bitdefender-github-agent-instructions-malware-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 20.11.2026 13:07 (Усть-Катав)**; пауза до 20.11.2026 13:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bitdefender-github-agent-instructions-malware-20261117.webp) |
+| — | Готовых к выбору материалов нет | — | — | — |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -24,6 +24,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»](https://iipike.ru/articles/bitdefender-github-agent-instructions-malware-20261117/) | 20.11.2026 13:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bitdefender-github-agent-instructions-malware-20261117.webp) |
 | [Anthropic провела крупнейшее IPO в истории — $81 млрд. А Nasdaq всё равно упал на 2,3%](https://iipike.ru/articles/anthropic-record-ipo-81b-nasdaq-20261119/) | 20.11.2026 12:01 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-record-ipo-81b-nasdaq-20261119.webp) |
 | [ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся](https://iipike.ru/articles/omnilert-doritos-school-police-lawsuit-20261117/) | 20.11.2026 10:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/omnilert-doritos-school-police-lawsuit-20261117.webp) |
 | [ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100](https://iipike.ru/articles/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8/) | 19.11.2026 21:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8.webp) |
