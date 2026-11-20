@@ -5890,12 +5890,12 @@
       "summary": "19 ноября. Сообщается об ограниченном тестировании постоянных ИИ-агентов Dots для части подписчиков Plus. Массовый запуск не подтверждён.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-20T18:36:21.607Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11.2026, редактор №23: взята №393 по выбору главреда. Фактчек: инженер OpenAI Тибо Соттьо 19.11 сообщил о тесте Dots с небольшой группой Plus (https://x.com/thsottiaux/status/2123556256392847657 ; цитату пересказывает 9to5Mac https://9to5mac.com/2026/11/19/openai-begins-testing-dots-with-chatgpt-plus-users-expands-business-access/). Официальная справка https://help.openai.com/en/articles/20001530-getting-started-with-your-dot подтверждает: избранные Plus 18+, постепенный доступ, исключены EEA/UK/Швейцария, поддержка не включит вручную. Доступ также расширяют на Business Standard в США (релиз-ноты 19.11). Dots: облачный компьютер, память, подключённые приложения, проактивные проверки; примеры https://openai.com/index/introducing-dots/ . Архив: связанная публикация о Wallet `openai-chatgpt-wallet-dots-20261113` — другая новость (Wallet для Pro в США). Массовый Plus запуск/лимиты не подтверждены. Готовить короткую статью и Threads/X/VK, без очередей до «берём»."
+      "closed_at": "2026-11-20T18:55:28.041Z",
+      "article_id": "openai-dots-chatgpt-plus-test-20261119",
+      "note": "20.11.2026, редактор №23: взята №393 по выбору главреда. Фактчек: инженер OpenAI Тибо Соттьо 19.11 сообщил о тесте Dots с небольшой группой Plus (https://x.com/thsottiaux/status/2123556256392847657 ; цитату пересказывает 9to5Mac https://9to5mac.com/2026/11/19/openai-begins-testing-dots-with-chatgpt-plus-users-expands-business-access/). Официальная справка https://help.openai.com/en/articles/20001530-getting-started-with-your-dot подтверждает: избранные Plus 18+, постепенный доступ, исключены EEA/UK/Швейцария, поддержка не включит вручную. Доступ также расширяют на Business Standard в США (релиз-ноты 19.11). Dots: облачный компьютер, память, подключённые приложения, проактивные проверки; примеры https://openai.com/index/introducing-dots/ . Архив: связанная публикация о Wallet `openai-chatgpt-wallet-dots-20261113` — другая новость (Wallet для Pro в США). Массовый Plus запуск/лимиты не подтверждены. Готовить короткую статью и Threads/X/VK, без очередей до «берём».\n20.11: главред утвердил. Сохранены статья и Threads/X, ID openai-dots-chatgpt-plus-test-20261119. Ждёт обложку."
     },
     {
       "id": "n-266efb82a5bf9057",
