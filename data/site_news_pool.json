@@ -4695,7 +4695,7 @@
       "review_started_at": "2026-11-20T09:53:25.805Z",
       "closed_at": null,
       "article_id": null,
-      "note": "20.11.2026, редактор №22: зарезервирована горячая №313. Начата проверка анонса Google AI Studio о генерации Android-приложений; возможности, доступность и связь с прежними публикациями уточняются. Публикаций нет."
+      "note": "20.11, редактор №22. Подтверждено официально: Google Developers 17.11 https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/ ; Firebase 17.11 https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration . ВАЖНО: генерация Android по промпту вышла ещё 19.05.2026 https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/ . Новое: Firestore + правила доступа и синхронизация данных, вход Google, Gemini API через Firebase AI Logic и App Check, HD/audio эмулятор, скриншот агенту; публикация в личную библиотеку Google Play, только США, приватно, без $25. Подтверждено справкой Google Play https://support.google.com/googleplay/android-developer/answer/18765789?hl=en . Архив сайта/Дзена: релевантного опубликованного материала о AI Studio Android не найдено. Маршрут hot без группы; в очередь до «берём» не записывать."
     },
     {
       "id": "n-614783a992ccefaa",
