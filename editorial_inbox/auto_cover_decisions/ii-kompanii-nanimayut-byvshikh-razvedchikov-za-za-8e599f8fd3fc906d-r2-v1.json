@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+  "text_revision": 2,
+  "text_updated_at": "2026-11-20T07:51:47+00:00",
+  "cover_version": 1,
+  "cover_blob_sha": "fefc33582dd2b534fdf395faf9a67c709e22868d",
+  "cover_metadata_blob_sha": "fd4a2c1ed7df607702fda103b927e44f249dd5ed",
+  "source_draft_blob_sha": "eda10f025a8cb76fdeab37651aa96400d35f3762",
+  "source_text_decision_blob_sha": "f0ab29bf25a3456450c6ea2818017940d0d927ec",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-20T16:30:20.817Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
