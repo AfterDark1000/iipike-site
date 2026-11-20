@@ -69,7 +69,8 @@ def read_dzen_text(url, *, opener=None):
     return cq.article_text(page)[0]
 
 
-def prepare(discovery, previous, media, config, now, *, allowed=False, api_key="", reader=read_dzen_text):
+def prepare(discovery, previous, media, config, now, *, allowed=False, api_key="", reader=read_dzen_text,
+            submitted=None):
     previous = previous if previous.get("schema_version") == 1 else {}
     existing = {x["url"]: x for x in previous.get("items", [])}
     items = {}
@@ -82,24 +83,36 @@ def prepare(discovery, previous, media, config, now, *, allowed=False, api_key="
             continue
         items[url] = dict(existing.get(url) or {
             "id": "first-car:" + url.rsplit("/", 1)[-1], "url": url,
-            "published_at": article["published_at"], "title": title, "status": "pending", "attempts": 0,
+            "published_at": article["published_at"], "title": title, "status": "needs_text", "attempts": 0,
         })
     queue = {"schema_version": 1, "items": list(items.values()), "text_blocked": previous.get("text_blocked")}
     pending = [row for row in items.values() if row["status"] in {"pending", "needs_text", "read_error", "generation_error"}]
-    if not allowed or queue["text_blocked"] or discovery.get("blocked"):
-        for row in pending:
+    texts = {}
+    for row in pending:
+        text = (submitted or {}).get(row["url"])
+        if isinstance(text, str) and 350 <= len(text.strip()) <= cq.MAX_ARTICLE_CHARS:
+            texts[row["url"]] = text.strip()
+            if row["status"] == "read_error":
+                # A failed automatic read consumed no Gemini attempt.
+                row["attempts"] = 0
+                row.pop("last_attempt_at", None)
+            if row["status"] != "generation_error":
+                row["status"] = "pending"
+        elif row["status"] == "pending":
             row["status"] = "needs_text"
-        return queue, None
+    auto_read = allowed and not queue["text_blocked"] and not discovery.get("blocked")
     today = now.astimezone(dt.timezone(dt.timedelta(hours=5))).date().isoformat()
     usage = media.get("usage", {})
     if not api_key or (usage.get("date") == today and usage.get("attempted", 0) >= config["max_per_day"]):
         return queue, None
-    eligible = [row for row in pending if row["attempts"] < 2 and (
+    eligible = [row for row in pending if (row["url"] in texts or auto_read) and row["attempts"] < 2 and (
         not row.get("last_attempt_at") or now - cq.date(row["last_attempt_at"]) >= RETRY
     )]
     if not eligible:
         return queue, None
-    row = max(eligible, key=lambda item: item["published_at"])
+    row = max(eligible, key=lambda item: (item["url"] in texts, cq.date(item["published_at"])))
+    if row["url"] in texts:
+        return queue, {"item": row, "article_text": texts[row["url"]]}
     try:
         text = reader(row["url"])
         if not isinstance(text, str) or not 350 <= len(text) <= cq.MAX_ARTICLE_CHARS:
@@ -109,6 +122,8 @@ def prepare(discovery, previous, media, config, now, *, allowed=False, api_key="
         if isinstance(error, TextAccessStopped):
             queue["text_blocked"] = {"at": cq.stamp(now), "reason": str(error)}
         return queue, None
+    if row["status"] != "generation_error":
+        row["status"] = "pending"
     return queue, {"item": row, "article_text": text}
 
 
@@ -116,16 +131,26 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("state", "output", "discovery", "drafts-state", "drafts-output"):
         parser.add_argument("--" + name, required=True, type=Path)
+    parser.add_argument("--submitted-text", type=Path)
     args = parser.parse_args()
     now = dt.datetime.now(dt.timezone.utc)
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     config = cq.load_config(cq.ROOT / "data/commenting_sources.json")
     media = json.loads(args.state.read_text(encoding="utf-8"))
+    submitted = {}
+    if args.submitted_text and args.submitted_text.is_file():
+        try:
+            value = json.loads(args.submitted_text.read_text(encoding="utf-8"))
+            if isinstance(value, dict):
+                submitted = value
+        except (OSError, ValueError):
+            print("First Car submitted text unavailable")
     try:
         discovery = json.loads(args.discovery.read_text(encoding="utf-8"))
         old_drafts = json.loads(args.drafts_state.read_text(encoding="utf-8"))
         drafts, first_car = prepare(discovery, old_drafts, media, config, now,
-                                    allowed=os.environ.get("FIRST_CAR_ARTICLE_TEXT") == "enabled", api_key=api_key)
+                                    allowed=os.environ.get("FIRST_CAR_ARTICLE_TEXT") == "enabled",
+                                    api_key=api_key, submitted=submitted)
     except Exception:
         # An optional Dzen input must never prevent the normal publisher pass.
         print("First Car draft preparation unavailable")
@@ -133,6 +158,8 @@ def main():
     result = cq.build_queue(config, media, now, api_key=api_key, first_car=first_car)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if drafts is not None:
+        for row in drafts["items"]:
+            row.pop("reason", None)  # Do not persist excerpts returned as model rationale.
         args.drafts_output.write_text(json.dumps(drafts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 

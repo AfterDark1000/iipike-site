@@ -66,6 +66,7 @@ jobs:
     permissions:
       contents: write
       statuses: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -113,15 +114,39 @@ jobs:
             } catch (error) {
               if (error.status !== 404) core.warning('First Car input unavailable; continuing with publisher RSS.');
             }
+      - name: Read owner-submitted Dzen text privately
+        if: steps.state.outputs.collect == 'true' && vars.FIRST_CAR_DZEN_COLLECTION == 'enabled'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            if (!fs.existsSync('_first_car_discovery.json')) return;
+            try {
+              const identity = await core.getIDToken('hpii-first-car-text');
+              const result = await fetch('https://hpii-admin-gateway.svuktablet.workers.dev/api/first-car/workflow-text', {
+                headers: { authorization: 'Bearer ' + identity },
+                redirect: 'error',
+                signal: AbortSignal.timeout(10000),
+              });
+              if (!result.ok) throw Error('Text input unavailable');
+              const { ok, texts } = await result.json();
+              if (ok !== true || !texts || typeof texts !== 'object' || Array.isArray(texts)) throw Error('Invalid text input');
+              fs.writeFileSync(path.join(process.env.RUNNER_TEMP, 'first-car-submitted-text.json'), JSON.stringify(texts), { mode: 0o600 });
+            } catch {
+              core.warning('Private First Car text input unavailable; publisher processing continues.');
+            }
       - name: Read public publisher feeds and prepare at most three drafts
         if: steps.state.outputs.collect == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FIRST_CAR_ARTICLE_TEXT: ${{ vars.FIRST_CAR_DZEN_ARTICLE_TEXT }}
         run: |
+          trap 'rm -f -- "$RUNNER_TEMP/first-car-submitted-text.json"' EXIT
           if [ -s _first_car_discovery.json ]; then
             python3 -m scripts.first_car_commenting --state _commenting_previous.json --output _commenting_queue.json \
-              --discovery _first_car_discovery.json --drafts-state _first_car_previous.json --drafts-output _first_car_drafts.json
+              --discovery _first_car_discovery.json --drafts-state _first_car_previous.json --drafts-output _first_car_drafts.json \
+              --submitted-text "$RUNNER_TEMP/first-car-submitted-text.json"
           else
             python3 scripts/commenting_queue.py --state _commenting_previous.json --output _commenting_queue.json
           fi

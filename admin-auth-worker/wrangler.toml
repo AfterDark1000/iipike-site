@@ -13,6 +13,14 @@ BACKEND_ORIGIN = "https://hpii-admin-gateway.svuktablet.workers.dev"
 ALLOWED_GITHUB_USER_ID = "284211090"
 GITHUB_CLIENT_ID = "Ov23litFepGCBhLtRCdx"
 
+[[durable_objects.bindings]]
+name = "FIRST_CAR_TEXT"
+class_name = "FirstCarText"
+
+[[migrations]]
+tag = "first-car-text-v1"
+new_sqlite_classes = ["FirstCarText"]
+
 # Secrets are configured ONLY under Cloudflare Worker Runtime variables:
 # GITHUB_CLIENT_SECRET, SESSION_SIGNING_KEY, GITHUB_REPO_TOKEN
 # Never commit secret values or paste them into Build variables.

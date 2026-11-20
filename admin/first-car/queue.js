@@ -18,10 +18,15 @@
   const integer = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 1 });
   const minute = 60_000;
   const decisions = readDecisions();
+  const textEdits = new Map();
+  const textErrors = new Map();
+  const submitting = new Set();
+  const submitted = new Set();
   const authorized = () => document.documentElement.classList.contains("hpii-authorized");
   let watchlist = null;
   let dzenArticles = [];
   let dzenClockOffset = 0;
+  let pendingText = null;
   let dzenDrafts = new Map();
   let snapshot = null;
   let sourceError = false;
@@ -136,7 +141,8 @@
         return data;
       });
     const [data, research, dzen, drafts] = await Promise.allSettled([
-      commenting.read(), watch, commenting.readDzen(fetch, () => window.HpiiAdminAuth.fetchApi("/api/first-car/queue")),
+      commenting.read(), watch, commenting.readDzen(fetch, () =>
+        window.HpiiAdminAuth.fetchApi("/api/first-car/queue", { signal: AbortSignal.timeout(12_000) })),
       commenting.readDzenDrafts(),
     ]);
     loading = false;
@@ -150,7 +156,8 @@
     watchlist = watchError ? null : research.value;
     dzenArticles = dzenError ? dzenArticles : dzen.value.articles;
     dzenClockOffset = dzenError ? dzenClockOffset : dzen.value.clockOffset;
-    dzenDrafts = draftsError ? new Map() : drafts.value;
+    if (!dzenError) pendingText = dzen.value.pending === null ? null : new Set(dzen.value.pending);
+    if (!draftsError) dzenDrafts = drafts.value;
     render();
     if (refreshPending) {
       refreshPending = false;
@@ -197,16 +204,36 @@
     }
   }
 
+  function textInput(row) {
+    const key = row.key;
+    const savedText = textEdits.get(key) ?? "";
+    const error = textErrors.get(key);
+    return `<details class="text-input"${savedText || error ? " open" : ""}>
+      <summary>Передать текст для Gemini</summary>
+      <form data-article-text="${escapeText(key)}">
+        <label class="draft-label">Текст статьи без меню и комментариев
+          <textarea class="draft-text" name="text" rows="5" required minlength="350" maxlength="24000">${escapeText(savedText)}</textarea>
+        </label>
+        <p class="details">Текст поступит в следующий цикл Gemini и удалится из закрытой очереди через 24 часа после публикации статьи.</p>
+        <button type="submit" class="button"${submitting.has(key) ? " disabled" : ""}>Передать текст</button>
+        ${error ? `<p class="details" role="status">${escapeText(error)}</p>` : ""}
+      </form></details>`;
+  }
+
   function candidateRow(row, age) {
     const native = row.kind === "dzen";
     const collected = row.source === "dzen_launcher_more";
+    const hasText = pendingText?.has(row.key) || submitted.has(row.key) || row.draft_status === "pending";
     const draftState = row.draft_comment ? "Реплика готова" : {
       read_error: "Ошибка получения текста",
       pending: "Gemini готовит",
       generating: "Gemini готовит",
       generation_error: "Ошибка генерации Gemini",
       skipped_by_editor: "Пропущено при проверке Gemini",
-    }[row.draft_status] ?? "Ожидает текста";
+    }[hasText && ["read_error", "needs_text", undefined].includes(row.draft_status)
+      ? "pending" : row.draft_status] ?? "Ожидает текста";
+    const canSubmitText = collected && !hasText && !row.draft_comment && pendingText !== null &&
+      ["read_error", "needs_text", undefined].includes(row.draft_status);
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
     const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
@@ -223,6 +250,7 @@
         native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
       ${row.angle ? `<p class="details">${escapeText(row.angle)}</p>` : ""}
       ${draft(row)}
+      ${canSubmitText && !saved ? textInput(row) : ""}
       <div class="actions">
         ${row.dzen_url ? link(row.dzen_url, "Открыть в Дзене", dzenMirror, "button primary") : link(search, "Найти в Дзене", httpsLink, "button primary")}
         ${row.source_url ? link(row.source_url, "Оригинал", httpsLink, "button") : ""}
@@ -231,6 +259,42 @@
           mark("commented", "Прокомментировано") + mark("skipped", "Пропустить")}
       </div></article>`;
   }
+
+  document.addEventListener("input", (event) => {
+    const key = event.target.form?.dataset.articleText;
+    if (key && authorized()) textEdits.set(key,event.target.value);
+  });
+
+  document.addEventListener("submit", async (event) => {
+    const key = event.target.dataset.articleText;
+    if (!key) return;
+    event.preventDefault();
+    if (!authorized() || submitting.has(key)) return;
+    const text = new FormData(event.target).get("text");
+    submitting.add(key);
+    textErrors.delete(key);
+    if (event.submitter) event.submitter.disabled = true;
+    try {
+      await window.HpiiAdminAuth.fetchApi("/api/first-car/text", {
+        method: "POST", headers: { "content-type": "application/json" },
+        body: JSON.stringify({url:key,text}), signal: AbortSignal.timeout(15_000),
+      });
+      if (!authorized()) return;
+      submitted.add(key);
+      textEdits.delete(key);
+      document.querySelector("#announcement").textContent = "Текст принят к следующему циклу Gemini.";
+    } catch (error) {
+      if (!authorized()) return;
+      textErrors.set(key, {
+        invalid_article_text: "Вставьте текст статьи длиной от 350 до 24 000 знаков.",
+        article_not_in_active_queue: "Статьи больше нет в 24-часовой очереди.",
+        text_already_submitted: "Текст для этой статьи уже передан.",
+      }[error.message] ?? "Не удалось передать текст. Попробуйте ещё раз.");
+    } finally {
+      submitting.delete(key);
+      render();
+    }
+  });
 
   function channelPanel() {
     if (watchError) return `<p class="section-empty">Не удалось прочитать список каналов.</p>`;
@@ -278,6 +342,8 @@
       return `<header class="panel-head ${index > 0 ? "candidate-head" : ""}"><h2>${sections[index]}</h2></header>
         ${index > 0 ? sourceStatus(now) : watchError ? `<p class="source-note">Замер каналов недоступен.</p>` : ""}
         ${index === 0 && dzenError ? `<p class="source-note">Не удалось прочитать ленту каналов Дзена.</p>` : ""}
+        ${index === 0 && pendingText === null && dzenArticles.length
+          ? `<p class="source-note">Передача текста в Gemini пока недоступна.</p>` : ""}
         ${index === 0 && draftsError ? `<p class="source-note">Не удалось прочитать реплики к статьям Дзена.</p>` : ""}
         ${picked.length ? grouped(picked) : `<p class="section-empty">${empty}</p>`}`;
     };
@@ -321,7 +387,12 @@
     watchlist = null;
     dzenArticles = [];
     dzenClockOffset = 0;
+    pendingText = null;
     refreshPending = false;
+    textEdits.clear();
+    textErrors.clear();
+    submitting.clear();
+    submitted.clear();
     dzenDrafts.clear();
     collectProgress.textContent = "";
     collectFeedback.hidden = true;

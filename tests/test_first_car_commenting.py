@@ -28,9 +28,9 @@ def media_fetch(url, _source):
     return f"<rss><channel>{stories}</channel></rss>"
 
 
-def prepare(reader, *, allowed=True, previous=None, media=None, now=NOW):
+def prepare(reader, *, allowed=True, previous=None, media=None, now=NOW, submitted=None):
     return first_car.prepare({"articles": [ARTICLE]}, previous or {}, media or {}, CONFIG, now,
-                             allowed=allowed, api_key="test-key", reader=reader)
+                             allowed=allowed, api_key="test-key", reader=reader, submitted=submitted)
 
 
 class FirstCarCommentingTests(unittest.TestCase):
@@ -71,7 +71,8 @@ class FirstCarCommentingTests(unittest.TestCase):
         self.assertIsNone(candidate)
 
     def test_dzen_shares_existing_batch_quota_and_fact_review_with_publishers(self):
-        drafts, candidate = prepare(Mock(return_value=BODY))
+        reader = Mock()
+        drafts, candidate = prepare(reader, allowed=False, submitted={URL: BODY})
         proposed, checked = [], []
 
         def generate(payload, _key):
@@ -88,6 +89,7 @@ class FirstCarCommentingTests(unittest.TestCase):
         with patch.object(cq, "model_request", side_effect=generate) as request:
             media = cq.build_queue(CONFIG, {}, NOW, fetcher=media_fetch, api_key="test-key", first_car=candidate)
         self.assertEqual(request.call_count, 2)  # One shared generation and one shared fact-check.
+        reader.assert_not_called()
         self.assertEqual(len(proposed), 3)
         self.assertEqual(len(checked), 3)
         self.assertEqual(media["usage"]["attempted"], 3)
@@ -96,6 +98,46 @@ class FirstCarCommentingTests(unittest.TestCase):
         self.assertEqual(drafts["items"][0]["fact_review"], "passed")
         self.assertTrue(drafts["items"][0]["comment"])
         self.assertNotIn("article_text", drafts["items"][0])
+        _, candidate = prepare(reader, allowed=False, previous=drafts, submitted={URL: BODY})
+        self.assertIsNone(candidate)
+        reader.assert_not_called()
+
+    def test_submitted_context_matches_exact_discovery_and_expires_or_recovers_from_blocked_read(self):
+        reader = Mock(side_effect=first_car.TextAccessStopped("Dzen article HTTP 403"))
+        drafts, _ = prepare(reader)
+        failed = drafts["items"][0]
+        self.assertEqual(failed["status"], "read_error")
+        for text in ({URL: "Заголовок"}, {"https://dzen.ru/a/another-page": BODY}):
+            retained, candidate = prepare(reader, allowed=False, previous=drafts, submitted=text)
+            self.assertIsNone(candidate)
+            self.assertEqual(retained["items"][0]["status"], "read_error")
+        recovered, candidate = prepare(reader, allowed=False, previous=drafts, submitted={URL: BODY})
+        self.assertEqual(candidate["article_text"], BODY.strip())
+        self.assertEqual(recovered["items"][0]["attempts"], 0)
+        self.assertEqual(recovered["items"][0]["status"], "pending")
+        expired, candidate = prepare(reader, allowed=False, submitted={URL: BODY}, now=NOW + dt.timedelta(hours=24))
+        self.assertIsNone(candidate)
+        self.assertFalse(expired["items"])
+        reader.assert_called_once()
+
+    def test_dzen_fails_closed_if_model_fact_check_rejects_draft(self):
+        drafts, candidate = prepare(Mock(), allowed=False, submitted={URL: BODY})
+
+        def generate(payload, _key):
+            prompt = payload["contents"][0]["parts"][0]["text"]
+            if "строгий фактчекер" in prompt:
+                return {"checks": [{"id": candidate["item"]["id"], "ok": False}]}
+            return {"comments": [{"id": candidate["item"]["id"], "use": True, "evidence": EVIDENCE,
+                                  "comment": "Эксперимент точно доказал, что все другие модели проиграли."}]}
+
+        with patch.object(cq, "model_request", side_effect=generate) as request:
+            cq.build_queue(CONFIG, {}, NOW, fetcher=lambda *args: "<rss><channel/></rss>",
+                           api_key="test-key", first_car=candidate)
+        self.assertEqual(request.call_count, 2)
+        self.assertEqual(drafts["items"][0]["status"], "skipped_by_editor")
+        self.assertEqual(drafts["items"][0]["comment"], "")
+        _, candidate = prepare(Mock(), allowed=False, previous=drafts, submitted={URL: BODY})
+        self.assertIsNone(candidate)
 
     def test_last_daily_slot_stays_available_to_publisher(self):
         previous = {"schema_version": 1, "usage": {"date": "2026-11-20", "attempted": 23}}

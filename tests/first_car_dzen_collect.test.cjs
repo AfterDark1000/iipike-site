@@ -70,7 +70,7 @@ test("a new URL flows through the existing queue reader, deduplicates and expire
     published_at: new Date(now - 35 * 60_000).toISOString(), first_seen_at: new Date(now).toISOString(),
   });
   t.mock.method(Date, "now", () => now);
-  const visible = await readDzen(async (request, options) => {
+  const { articles: visible } = await readDzen(async (request, options) => {
     assert.equal(request.pathname, "/AfterDark1000/iipike-site/first-car-data/dzen/queue.json");
     assert.equal(options.cache, "no-store");
     return new Response(JSON.stringify(added.queue));
@@ -84,7 +84,7 @@ test("a new URL flows through the existing queue reader, deduplicates and expire
   assert.deepEqual(repeat.queue.articles, [row]);
   const expired = await collect(oneChannel, repeat.queue, { read: async () => changed, clock: () => now + 24 * HOUR });
   assert.deepEqual(expired.queue.articles, []);
-  assert.deepEqual(await readDzen(async () => new Response(null, { status: 404 })), []);
+  await assert.rejects(readDzen(async () => new Response(null, { status: 404 })), /404/);
   await assert.rejects(readDzen(async () => new Response(null, { status: 503 })), /503/);
 });
 

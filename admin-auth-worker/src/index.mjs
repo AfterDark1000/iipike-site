@@ -1,5 +1,8 @@
 // HPII admin auth/API gateway. Deploy separately; do NOT expose secrets in GitHub Pages.
 // GitHub OAuth identity is read-only. Repository write token stays in Worker secrets.
+import {DAY, firstCarWorkflowIdentity, ownerText, privateText} from "./first-car-text.mjs";
+export {FirstCarText} from "./first-car-text.mjs";
+
 const enc = new TextEncoder();
 const dec = new TextDecoder();
 const MAX_NOTE = 4000;
@@ -92,13 +95,31 @@ const FIRST_CAR_QUEUE = "/contents/dzen/queue.json?ref=first-car-data";
 
 async function firstCarQueue(env) {
   const snapshot = await githubJson(FIRST_CAR_QUEUE, env, {
-    redirect:"manual", signal:AbortSignal.timeout(10_000)
+    redirect:"manual", signal:AbortSignal.timeout(10_000), headers:{"cache-control":"no-cache"}
   });
   if (snapshot.status === 404) return {schema_version:1,articles:[]};
   if (snapshot.status !== 200) throw Error("First Car queue unavailable");
   const queue = decodeGitHubContent(snapshot.data);
   if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw Error("Invalid First Car queue");
   return queue;
+}
+
+async function firstCarTextSubmit(request, env, headers) {
+  if (!env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled",headers);
+  const body = await ownerText(request);
+  if (body.status !== 200) return fail(body.status,"invalid_article_text",headers);
+  try {
+    const queue = await firstCarQueue(env);
+    const article = queue.articles.find(row => row?.url === body.url && row.source === "dzen_launcher_more");
+    const published = Date.parse(article?.published_at);
+    const now = Date.now();
+    if (!(published <= now && now < published + DAY)) return fail(404,"article_not_in_active_queue",headers);
+    const result = await privateText(env.FIRST_CAR_TEXT,"submit",{url:body.url,text:body.text,expires:published + DAY});
+    if (!result.accepted) return fail(result.reason === "text_queue_full" ? 429 : 409,result.reason,headers);
+    return send({ok:true},202,headers);
+  } catch {
+    return fail(502,"first_car_text_unavailable",headers);
+  }
 }
 
 async function firstCarRun(request, url, env, headers) {
@@ -528,6 +549,16 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({ok:true,service:"hpii-auth-gateway",cover_review_max_version:5});
+    if (url.pathname==="/api/first-car/workflow-text" && request.method==="GET") {
+      if (url.search) return fail(400,"unexpected_input");
+      if (!await firstCarWorkflowIdentity(request)) return fail(401,"workflow_identity_required");
+      if (!env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled");
+      try {
+        return send({ok:true,texts:await privateText(env.FIRST_CAR_TEXT,"texts")});
+      } catch {
+        return fail(502,"first_car_text_unavailable");
+      }
+    }
     if (url.pathname.startsWith("/api/")) {
       if (!origin(request,env)) return fail(403,"origin_not_allowed");
       if (request.method==="OPTIONS") return new Response(null,{status:204,headers:{...noStore,...cors(env)}});
@@ -543,10 +574,18 @@ export default {
       if (url.pathname==="/api/first-car/queue" && request.method==="GET") {
         if (url.search) return fail(400,"unexpected_input",headers);
         try {
-          return send({ok:true,queue:await firstCarQueue(env),now:Date.now()},200,headers);
+          const [queue,pending] = await Promise.all([
+            firstCarQueue(env),
+            env.FIRST_CAR_TEXT ? privateText(env.FIRST_CAR_TEXT,"pending").catch(() => null) : null,
+          ]);
+          return send({ok:true,queue,now:Date.now(),pending},200,headers);
         } catch {
           return fail(502,"first_car_queue_unavailable",headers);
         }
+      }
+      if (url.pathname==="/api/first-car/text" && request.method==="POST") {
+        if (url.search) return fail(400,"unexpected_input",headers);
+        return firstCarTextSubmit(request,env,headers);
       }
       if (url.pathname==="/api/review" && request.method==="POST") {
         if ((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json") return fail(415,"json_required",headers);

@@ -71,9 +71,12 @@ const firstCarCommenting = (() => {
   async function readDzen(fetcher = fetch, readGateway) {
     if (readGateway) {
       try {
-        const { queue, now } = await readGateway();
+        const { queue, now, pending } = await readGateway();
         if (!Number.isSafeInteger(now) || now <= 0) throw Error("Некорректное время снимка Дзена");
-        return { articles: normalizeDzen(queue, now), clockOffset: now - Date.now() };
+        return {
+          articles: normalizeDzen(queue, now), clockOffset: now - Date.now(),
+          pending: Array.isArray(pending) ? pending.filter(url => typeof url === "string" && DIRECT.test(url)) : null,
+        };
       } catch (error) {
         if (error.message === "login_required") throw error;
         // Raw GitHub remains usable while the Gateway update rolls out.
@@ -85,7 +88,7 @@ const firstCarCommenting = (() => {
       mode: "cors", cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15_000),
     });
     if (!response.ok) throw new Error(`Лента Дзена вернула HTTP ${response.status}`);
-    return { articles: normalizeDzen(await response.json(), Date.now()), clockOffset: 0 };
+    return { articles: normalizeDzen(await response.json(), Date.now()), clockOffset: 0, pending: null };
   }
 
   async function readDzenDrafts(fetcher = fetch) {
@@ -96,13 +99,14 @@ const firstCarCommenting = (() => {
     if (!response.ok) throw new Error(`Реплики к статьям Дзена вернули HTTP ${response.status}`);
     const queue = await response.json();
     if (queue?.schema_version !== 1 || !Array.isArray(queue.items)) throw new Error("Некорректные реплики к статьям Дзена");
-    return new Map(queue.items.filter((row) => typeof row?.url === "string" && DIRECT.test(row.url)).map((row) => [
-      row.url, {
-        draft_status: row.status,
-        draft_comment: row.status === "draft_ready" && row.fact_review === "passed" && typeof row.comment === "string"
-          ? row.comment : "",
-      },
-    ]));
+    return new Map(queue.items.filter((row) => typeof row?.url === "string" && DIRECT.test(row.url)).map((row) => {
+      const ready = row.status === "draft_ready";
+      const approved = ready && row.fact_review === "passed" && typeof row.comment === "string" && row.comment.trim();
+      return [row.url, {
+        draft_status: ready && !approved ? "skipped_by_editor" : row.status,
+        draft_comment: approved ? row.comment : "",
+      }];
+    }));
   }
 
   async function read(fetcher = fetch) {
