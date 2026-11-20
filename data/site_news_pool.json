@@ -5380,12 +5380,12 @@
       "summary": "19 ноября. Amazon представила ограниченную услугу создания синтетических голосов с разрешения владельцев.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T07:14:16+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a56014fd60304875"
+      "closed_at": "2026-11-20T14:08:55Z",
+      "article_id": "amazon-polly-voice-cloning-gated-release-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a56014fd60304875\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/amazon-polly-voice-cloning-gated-release-20261119/"
     },
     {
       "id": "n-bed8fe2e85117580",
