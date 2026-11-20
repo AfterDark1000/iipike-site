@@ -4480,12 +4480,12 @@
       "summary": "17–18 ноября: вредоносные версии agent-framework в PyPI; исследование Wiz.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-20T07:14:22.370Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор 21. Проверено: Wiz Research 17.11 (обновлено 18.11), https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi ; GitHub Advisory 18.11 https://github.com/advisories/GHSA-764m-3ppc-5m73 ; Elastic Labs 18.11 https://www.elastic.co/security-labs/threat-command/we-caught-the-agent-framework-pypi-compromise-six-minutes-after-it-published . Зловредные agent-framework 1.26.1 (20:35 UTC) и 1.26.2 (21:08 UTC) удалены из PyPI к ~21:30, последняя чистая 1.26.0. .pth hook исполняет stealer при запуске ЛЮБОГО Python внутри заражённого окружения без импорта пакета; крал Azure/Azure DevOps, облачные, CI и GitHub Actions OIDC секреты. Wiz исследовала 50 запросов на exfil endpoint: 4 атакующие, 29 сканирования/тесты, оставшиеся 17 — 3 уникальных подтверждённых случая утечки данных жертв; это не полный масштаб пострадавших. Wiz предполагает компрометацию ESRP сертификата Microsoft; способ получения неизвестен. Архивная проверка: отдельной публикации нет. №298 — отдельная атака на CLAUDE.md/AGENTS.md, не объединять. Рубрика skynet; темы cybersecurity, development. На «берём» кандидаты Wiz и Microsoft Agent Framework. Готовить Дзен/Threads/X/VK."
+      "closed_at": "2026-11-20T09:15:11.336Z",
+      "article_id": "microsoft-agent-framework-pypi-stealer-20261117",
+      "note": "20.11, редактор 21. Проверено: Wiz Research 17.11 (обновлено 18.11), https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi ; GitHub Advisory 18.11 https://github.com/advisories/GHSA-764m-3ppc-5m73 ; Elastic Labs 18.11 https://www.elastic.co/security-labs/threat-command/we-caught-the-agent-framework-pypi-compromise-six-minutes-after-it-published . Зловредные agent-framework 1.26.1 (20:35 UTC) и 1.26.2 (21:08 UTC) удалены из PyPI к ~21:30, последняя чистая 1.26.0. .pth hook исполняет stealer при запуске ЛЮБОГО Python внутри заражённого окружения без импорта пакета; крал Azure/Azure DevOps, облачные, CI и GitHub Actions OIDC секреты. Wiz исследовала 50 запросов на exfil endpoint: 4 атакующие, 29 сканирования/тесты, оставшиеся 17 — 3 уникальных подтверждённых случая утечки данных жертв; это не полный масштаб пострадавших. Wiz предполагает компрометацию ESRP сертификата Microsoft; способ получения неизвестен. Архивная проверка: отдельной публикации нет. №298 — отдельная атака на CLAUDE.md/AGENTS.md, не объединять. Рубрика skynet; темы cybersecurity, development. 20.11: «берём», статья microsoft-agent-framework-pypi-stealer-20261117 сохранена в editorial-intake; Threads и X утверждены в очередях. Wiz и Microsoft Agent Framework записаны как кандидаты. Ждём обложку, публикации нет."
     },
     {
       "id": "n-a8d6cfaec298d663",
