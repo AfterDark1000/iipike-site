@@ -5425,12 +5425,12 @@
       "summary": "19 ноября. Учёные FAU представили метод обнаружения белух на снимках с дронов для природоохранных исследований.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T07:14:16+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9dc5f439a7a22126"
+      "closed_at": "2026-11-20T14:38:55Z",
+      "article_id": "fau-ai-beluga-whale-drone-semi-supervised-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9dc5f439a7a22126\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/fau-ai-beluga-whale-drone-semi-supervised-20261119/"
     },
     {
       "id": "n-20815b484a08901e",
