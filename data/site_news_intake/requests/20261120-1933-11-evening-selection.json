@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Фармацевтические гиганты сокращают поиск лекарств с трёх лет до полутора",
+      "source_url": "https://www.reuters.com/legal/litigation/big-pharma-with-eye-anthropic-says-ai-is-shrinking-drug-discovery-timelines-2026-11-20/",
+      "summary": "20 ноября. Reuters сообщил о примерах применения ИИ у Sanofi и Novartis для ускорения этапов поиска лекарств. Вторичный источник, цифры и условия уточнить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-бум может разогнать инфляцию, предупредили в Федеральной резервной системе США",
+      "source_url": "https://www.reuters.com/business/feds-goolsbee-says-ai-surge-could-strain-us-capacity-overheat-economy-2026-11-19/",
+      "summary": "19 ноября. Глава ФРБ Чикаго Остан Гулсби предупредил о возможном перегреве экономики из-за инвестиций в ИИ-дата-центры. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Мошенники научились проводить видеосовещания с поддельными начальниками",
+      "source_url": "https://www.wsj.com/pro/cybersecurity/ai-is-sharpening-deepfake-voice-and-video-scams-3e2cb728",
+      "summary": "20 ноября. WSJ описал новые схемы с видеодипфейками и голосовыми подделками. Вторичный источник, упомянутые оценки роста атак требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Kling 4.0 научилась генерировать видео в 4K HDR",
+      "source_url": "https://specialinfluencers.com/en/blog/ai-video-news-november-20-2026",
+      "summary": "20 ноября. В профильном обзоре сообщается о генерации видео Kling 4.0 в 4K HDR и новых цветовых настройках; возможное обновление уже вышедшей модели, вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "TikTok разрешил проверять ИИ-видео даже людям без аккаунта",
+      "source_url": "https://specialinfluencers.com/en/blog/ai-video-news-november-20-2026",
+      "summary": "20 ноября. Сообщается о проверке происхождения ИИ-видео и изображений для пользователей без аккаунта. Вторичный источник, уточнить официальный анонс.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Microsoft научила Copilot собирать видео прямо из документов",
+      "source_url": "https://specialinfluencers.com/en/blog/ai-video-news-november-20-2026",
+      "summary": "20 ноября — публикация обзора, предварительный доступ указан с 17 ноября. Clipchamp и Copilot якобы создают видео из документов Word, PDF и PowerPoint. Вторичный источник, проверить дату события.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "CapCut превратил ChatGPT в видеомонтажёра",
+      "source_url": "https://agihunt.info/en/daily/2026-11-20",
+      "summary": "19–20 ноября. Дайджест сообщает о подключении CapCut к ChatGPT для чернового монтажа по описанию. Вторичный источник, требуется подтверждение запуска.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Synthesia подключила генерацию видео к Claude",
+      "source_url": "https://agihunt.info/en/daily/2026-11-20",
+      "summary": "19–20 ноября. Дайджест сообщает о коннекторе Synthesia для создания видео через Claude из текста или презентации. Вторичный источник, требуется подтверждение.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "США одобрили поставки почти 900 тысяч ИИ-чипов в Китай",
+      "source_url": "https://www.reuters.com/world/license-information-ai-chips-sent-china-released-by-us-house-committee-2026-11-19/",
+      "summary": "19 ноября. Reuters сообщает о документах комитета Конгресса по разрешениям на экспорт ускорителей NVIDIA и AMD. Отличается от новости об остановке NVIDIA фактических отгрузок.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В Армении открыли общий центр робототехники для трёх университетов",
+      "source_url": "https://www.unite.ai/arcs-ai-opens-shared-arpi-center-for-physical-ai-training/",
+      "summary": "20 ноября. Сообщается об открытии ARPI Center для подготовки специалистов по физическому ИИ и робототехнике. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Армения замахнулась на 300 мегаватт ИИ-дата-центров",
+      "source_url": "https://tech.news.am/en/news/8183",
+      "summary": "20 ноября. Firebird рассказала о планах расширения инфраструктуры ИИ-вычислений в Армении к 2027 году. Вторичный источник, заявленные планы компании.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
