@@ -247,6 +247,10 @@
         {
           "article_id": "tsmc-openai-anthropic-investment-20261110",
           "source_url": "https://pr.tsmc.com/english/news/3352"
+        },
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
         }
       ]
     },
@@ -1307,6 +1311,54 @@
         {
           "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
           "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/"
+        }
+      ]
+    },
+    {
+      "key": "amd",
+      "name": "AMD",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+        }
+      ]
+    },
+    {
+      "key": "broadcom",
+      "name": "Broadcom",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+        }
+      ]
+    },
+    {
+      "key": "micron",
+      "name": "Micron",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+        }
+      ]
+    },
+    {
+      "key": "nasdaq",
+      "name": "Nasdaq",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
         }
       ]
     }
