@@ -27,6 +27,7 @@
   let dzenArticles = [];
   let dzenClockOffset = 0;
   let pendingText = null;
+  let textArticle = null;
   let dzenDrafts = new Map();
   let snapshot = null;
   let sourceError = false;
@@ -156,7 +157,10 @@
     watchlist = watchError ? null : research.value;
     dzenArticles = dzenError ? dzenArticles : dzen.value.articles;
     dzenClockOffset = dzenError ? dzenClockOffset : dzen.value.clockOffset;
-    if (!dzenError) pendingText = dzen.value.pending === null ? null : new Set(dzen.value.pending);
+    if (!dzenError) {
+      pendingText = dzen.value.pending === null ? null : new Set(dzen.value.pending);
+      textArticle = dzen.value.textArticle;
+    }
     if (!draftsError) dzenDrafts = drafts.value;
     render();
     if (refreshPending) {
@@ -214,7 +218,7 @@
         <label class="draft-label">Текст статьи без меню и комментариев
           <textarea class="draft-text" name="text" rows="5" required minlength="350" maxlength="24000">${escapeText(savedText)}</textarea>
         </label>
-        <p class="details">Текст поступит в следующий цикл Gemini и удалится из закрытой очереди через 24 часа после публикации статьи.</p>
+        <p class="details">Gemini возьмёт текст, когда в цикле останется свободное место. Хранилище удалит текст через 24 часа после публикации статьи.</p>
         <button type="submit" class="button"${submitting.has(key) ? " disabled" : ""}>Передать текст</button>
         ${error ? `<p class="details" role="status">${escapeText(error)}</p>` : ""}
       </form></details>`;
@@ -232,7 +236,7 @@
       skipped_by_editor: "Пропущено при проверке Gemini",
     }[hasText && ["read_error", "needs_text", undefined].includes(row.draft_status)
       ? "pending" : row.draft_status] ?? "Ожидает текста";
-    const canSubmitText = collected && !hasText && !row.draft_comment && pendingText !== null &&
+    const canSubmitText = collected && row.key === textArticle && !hasText && !row.draft_comment && pendingText !== null &&
       ["read_error", "needs_text", undefined].includes(row.draft_status);
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
@@ -282,7 +286,7 @@
       if (!authorized()) return;
       submitted.add(key);
       textEdits.delete(key);
-      document.querySelector("#announcement").textContent = "Текст принят к следующему циклу Gemini.";
+      document.querySelector("#announcement").textContent = "Текст принят в очередь Gemini.";
     } catch (error) {
       if (!authorized()) return;
       textErrors.set(key, {
@@ -388,6 +392,7 @@
     dzenArticles = [];
     dzenClockOffset = 0;
     pendingText = null;
+    textArticle = null;
     refreshPending = false;
     textEdits.clear();
     textErrors.clear();

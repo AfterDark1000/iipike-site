@@ -16,9 +16,10 @@ const env = {
   GITHUB_CLIENT_ID:"client",GITHUB_CLIENT_SECRET:"dummy",
   SESSION_SIGNING_KEY:"test-hmac-key-for-first-car-at-least-32",
   GITHUB_REPO_TOKEN:"dummy",ALLOWED_GITHUB_USER_ID:"284211090",
+  FIRST_CAR_OWNER_TEXT_ARTICLE_ID:url.split("/").at(-1),
   FIRST_CAR_TEXT:{idFromName: name => name, get: () => ({fetch:async target => {
     assert.equal(target,"https://first-car.internal/texts");
-    return Response.json({[url]:text});
+    return Response.json({[url]:text,"https://dzen.ru/a/offline-other-doc":"Inaccessible text"});
   }})}
 };
 
@@ -34,9 +35,9 @@ test("only a signed short-lived GitHub identity for the existing main workflow m
     const signed=encode(header)+"."+encode({...claims,...values});
     return signed+"."+createSign("RSA-SHA256").update(signed).sign(privateKey,"base64url");
   };
-  const access=(identity,route=path)=>gateway.fetch(new Request(env.BACKEND_ORIGIN+route,{
+  const access=(identity,route=path,overrides={})=>gateway.fetch(new Request(env.BACKEND_ORIGIN+route,{
     headers:identity ? {authorization:"Bearer "+identity} : {}
-  }),env);
+  }),{...env,...overrides});
   let status=200;
   const keys=t.mock.method(globalThis,"fetch",async(input,options)=>{
     assert.equal(input,issuer+"/.well-known/jwks");
@@ -66,6 +67,13 @@ test("only a signed short-lived GitHub identity for the existing main workflow m
   assert.equal(response.headers.get("cache-control"),"no-store");
   assert.equal(response.headers.get("access-control-allow-origin"),null);
   assert.deepEqual(await response.json(),{ok:true,texts:{[url]:text}});
+  const disabled=await access(valid,path,{FIRST_CAR_OWNER_TEXT_ARTICLE_ID:undefined});
+  assert.deepEqual(await disabled.json(),{ok:true,texts:{}});
+  assert.equal((await access(valid,path,{FIRST_CAR_TEXT:undefined})).status,503);
+  const outage=await access(valid,path,{FIRST_CAR_TEXT:{idFromName: name=>name,
+    get:()=>({fetch:()=>{throw Error("Sensitive fake service error")}})}});
+  assert.equal(outage.status,502);
+  assert.deepEqual(await outage.json(),{ok:false,error:"first_car_text_unavailable"});
 });
 
 test("submitted private text is idempotent and an expiration alarm deletes it", async t => {

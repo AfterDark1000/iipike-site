@@ -423,7 +423,7 @@ def load_config(path):
     return config
 
 
-def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_key="", no_model=False, first_car=None):
+def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_key="", no_model=False):
     previous = previous if isinstance(previous, dict) and previous.get("schema_version") == 1 else {}
     old_sources = {s["id"]: s for s in previous.get("sources", [])}
     items = {x["id"]: dict(x) for x in previous.get("items", [])
@@ -481,10 +481,6 @@ def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_ke
     elif not budget:
         generator.update(status="daily_limit", message="Дневной лимит подготовки исчерпан")
     else:
-        # Share the existing model batch and quota. Leave a publisher slot when one is needed.
-        dzen_item = first_car["item"] if first_car and (budget > 1 or not pending) else None
-        if dzen_item:
-            budget -= 1
         # Reading is separate from generation, and a failed read never becomes a draft.
         for row in pending[:budget]:
             row["attempts"] = row.get("attempts", 0) + 1
@@ -498,19 +494,9 @@ def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_ke
             except Exception as exc:
                 row.update(status="read_error", reason="Не удалось прочитать статью целиком (" + type(exc).__name__ + ")")
                 read_errors.append(row["id"])
-        if dzen_item:
-            dzen_item["attempts"] += 1
-            dzen_item["last_attempt_at"] = stamp(now)
-            attempted += 1
-            candidates.append({"id": dzen_item["id"], "title": dzen_item["title"], "article_text": first_car["article_text"]})
         if candidates:
             try:
                 results = validate_comments(model(candidates, api_key), candidates)
-                if dzen_item:
-                    result = results.pop(dzen_item["id"])
-                    if result["status"] == "draft_ready" and result["fact_review"] != "passed":
-                        result = {"status": "skipped_by_editor", "comment": "", "fact_review": "rejected"}
-                    dzen_item.update(result, generated_at=stamp(now))
                 for ident, result in results.items():
                     items[ident].update(result, generated_at=stamp(now))
                 generator.update(status="ok", message=f"Обработано статей: {len(candidates)}")
@@ -519,8 +505,7 @@ def build_queue(config, previous, now, *, fetcher=fetch, model=ask_model, api_ke
                 # Do not persist raw remote error bodies or request details.
                 generator.update(status="error", message=message[:220] if not re.search(r"AIza|key=|Bearer", message) else "Ошибка модели")
                 for row in candidates:
-                    target = items.get(row["id"], dzen_item)
-                    target.update(status="generation_error", reason="Не удалось подготовить комментарий")
+                    items[row["id"]].update(status="generation_error", reason="Не удалось подготовить комментарий")
         elif read_errors:
             generator.update(status="read_error", message="Ни одна выбранная статья не прочитана целиком")
     for row in items.values():

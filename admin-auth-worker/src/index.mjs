@@ -1,6 +1,6 @@
 // HPII admin auth/API gateway. Deploy separately; do NOT expose secrets in GitHub Pages.
 // GitHub OAuth identity is read-only. Repository write token stays in Worker secrets.
-import {DAY, firstCarWorkflowIdentity, ownerText, privateText} from "./first-car-text.mjs";
+import {DAY, firstCarTextArticle, firstCarWorkflowIdentity, ownerText, privateText} from "./first-car-text.mjs";
 export {FirstCarText} from "./first-car-text.mjs";
 
 const enc = new TextEncoder();
@@ -105,9 +105,11 @@ async function firstCarQueue(env) {
 }
 
 async function firstCarTextSubmit(request, env, headers) {
-  if (!env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled",headers);
+  const active = firstCarTextArticle(env);
+  if (!active || !env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled",headers);
   const body = await ownerText(request);
   if (body.status !== 200) return fail(body.status,"invalid_article_text",headers);
+  if (body.url !== active) return fail(404,"article_not_in_active_queue",headers);
   try {
     const queue = await firstCarQueue(env);
     const article = queue.articles.find(row => row?.url === body.url && row.source === "dzen_launcher_more");
@@ -548,13 +550,20 @@ export default {
     if (url.origin!==env.BACKEND_ORIGIN) return fail(403,"unexpected_host");
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
-    if (url.pathname==="/health" && request.method==="GET") return send({ok:true,service:"hpii-auth-gateway",cover_review_max_version:5});
+    if (url.pathname==="/health" && request.method==="GET") return send({
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,
+      first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
+      first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
+    });
     if (url.pathname==="/api/first-car/workflow-text" && request.method==="GET") {
       if (url.search) return fail(400,"unexpected_input");
       if (!await firstCarWorkflowIdentity(request)) return fail(401,"workflow_identity_required");
+      const active = firstCarTextArticle(env);
+      if (!active) return send({ok:true,texts:{}});
       if (!env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled");
       try {
-        return send({ok:true,texts:await privateText(env.FIRST_CAR_TEXT,"texts")});
+        const texts = await privateText(env.FIRST_CAR_TEXT,"texts");
+        return send({ok:true,texts:typeof texts[active] === "string" ? {[active]:texts[active]} : {}});
       } catch {
         return fail(502,"first_car_text_unavailable");
       }
@@ -574,11 +583,15 @@ export default {
       if (url.pathname==="/api/first-car/queue" && request.method==="GET") {
         if (url.search) return fail(400,"unexpected_input",headers);
         try {
+          const textArticle = firstCarTextArticle(env);
           const [queue,pending] = await Promise.all([
             firstCarQueue(env),
-            env.FIRST_CAR_TEXT ? privateText(env.FIRST_CAR_TEXT,"pending").catch(() => null) : null,
+            textArticle && env.FIRST_CAR_TEXT ? privateText(env.FIRST_CAR_TEXT,"pending").catch(() => null) : null,
           ]);
-          return send({ok:true,queue,now:Date.now(),pending},200,headers);
+          return send({ok:true,queue,now:Date.now(),
+            text_article:Array.isArray(pending) ? textArticle : null,
+            pending:Array.isArray(pending) ? pending.filter(item => item === textArticle) : null,
+          },200,headers);
         } catch {
           return fail(502,"first_car_queue_unavailable",headers);
         }

@@ -7,6 +7,11 @@ const DZEN_LINK = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
 const MAX_BYTES = 160_000;
 export const DAY = 86_400_000;
 
+export function firstCarTextArticle(env) {
+  const id = env.FIRST_CAR_OWNER_TEXT_ARTICLE_ID;
+  return typeof id === "string" && /^[A-Za-z0-9_-]{8,100}$/.test(id) ? "https://dzen.ru/a/" + id : null;
+}
+
 function decode64(value) {
   if (!/^[A-Za-z0-9_-]+$/.test(value)) throw Error("Invalid base64url");
   return Uint8Array.from(atob(value.replace(/-/g,"+").replace(/_/g,"/")), char => char.charCodeAt(0));
@@ -65,8 +70,10 @@ export async function ownerText(request) {
 
 export async function privateText(binding, action, entry) {
   const store = binding.get(binding.idFromName("dzen-draft-text"));
-  const response = await store.fetch("https://first-car.internal/" + action, entry === undefined ? {} : {
-    method:"POST", body:JSON.stringify(entry)
+  const response = await store.fetch("https://first-car.internal/" + action, {
+    signal:AbortSignal.timeout(3000), ...(entry === undefined ? {} : {
+      method:"POST", body:JSON.stringify(entry)
+    }),
   });
   if (!response.ok) throw Error("First Car text storage unavailable");
   return response.json();

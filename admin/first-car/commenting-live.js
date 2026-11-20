@@ -71,11 +71,12 @@ const firstCarCommenting = (() => {
   async function readDzen(fetcher = fetch, readGateway) {
     if (readGateway) {
       try {
-        const { queue, now, pending } = await readGateway();
+        const { queue, now, pending, text_article } = await readGateway();
         if (!Number.isSafeInteger(now) || now <= 0) throw Error("Некорректное время снимка Дзена");
         return {
           articles: normalizeDzen(queue, now), clockOffset: now - Date.now(),
           pending: Array.isArray(pending) ? pending.filter(url => typeof url === "string" && DIRECT.test(url)) : null,
+          textArticle: typeof text_article === "string" && DIRECT.test(text_article) ? text_article : null,
         };
       } catch (error) {
         if (error.message === "login_required") throw error;
@@ -88,7 +89,7 @@ const firstCarCommenting = (() => {
       mode: "cors", cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15_000),
     });
     if (!response.ok) throw new Error(`Лента Дзена вернула HTTP ${response.status}`);
-    return { articles: normalizeDzen(await response.json(), Date.now()), clockOffset: 0, pending: null };
+    return { articles: normalizeDzen(await response.json(), Date.now()), clockOffset: 0, pending: null, textArticle: null };
   }
 
   async function readDzenDrafts(fetcher = fetch) {

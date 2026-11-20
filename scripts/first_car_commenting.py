@@ -8,6 +8,8 @@ from html.parser import HTMLParser
 import json
 import os
 from pathlib import Path
+import re
+import signal
 import urllib.error
 import urllib.request
 
@@ -15,6 +17,8 @@ from scripts import commenting_queue as cq
 
 DAY = dt.timedelta(hours=24)
 RETRY = dt.timedelta(hours=6)
+PUBLIC_FIELDS = {"id", "url", "title", "published_at", "status", "attempts", "last_attempt_at",
+                 "generated_at", "comment", "fact_review"}
 
 
 class TextAccessStopped(Exception):
@@ -127,6 +131,60 @@ def prepare(discovery, previous, media, config, now, *, allowed=False, api_key="
     return queue, {"item": row, "article_text": text}
 
 
+def generate(candidate, media, previous, config, now, api_key, *, model=None):
+    if not candidate or not api_key or media["generator"]["status"] not in {"ok", "idle", "read_error"}:
+        return
+    usage = media["usage"]
+    old_usage = previous.get("usage", {}) if previous.get("schema_version") == 1 else {}
+    before = int(old_usage.get("attempted", 0)) if old_usage.get("date") == usage["date"] else 0
+    if usage["attempted"] >= config["max_per_day"] or usage["attempted"] - before >= config["max_per_run"]:
+        return
+    row = candidate["item"]
+    context = [{"id": row["id"], "title": row["title"], "article_text": candidate["article_text"]}]
+    usage["attempted"] += 1
+    row.update(attempts=row["attempts"] + 1, last_attempt_at=cq.stamp(now))
+    try:
+        result = cq.validate_comments((model or cq.ask_model)(context, api_key), context)[row["id"]]
+        comment = result["comment"]
+        matched = [word.casefold() for word in re.findall(r"\w+", comment)]
+        article = " " + " ".join(re.findall(r"\w+", candidate["article_text"].casefold())) + " "
+        quoting = any(" " + " ".join(matched[i:i+8]) + " " in article for i in range(len(matched) - 7))
+        if result["status"] == "draft_ready" and (result["fact_review"] != "passed" or quoting
+                or api_key in comment or re.search(r"\b(?:Bearer\s+\S+|AIza[\w-]{15,})", comment, re.I)):
+            result = {"status": "skipped_by_editor", "comment": "", "fact_review": "rejected"}
+        row.update({key: result[key] for key in ("status", "comment", "fact_review")}, generated_at=cq.stamp(now))
+    except Exception:
+        # Dzen response errors can contain private context; they stay out of media diagnostics.
+        row.update(status="generation_error", comment="")
+
+
+def run_optional_dzen(args, config, previous, media, now, api_key):
+    submitted = {}
+    if args.submitted_text and args.submitted_text.is_file():
+        try:
+            value = json.loads(args.submitted_text.read_text(encoding="utf-8"))
+            if isinstance(value, dict):
+                submitted = value
+        except (OSError, ValueError):
+            print("First Car submitted text unavailable")
+    discovery = json.loads(args.discovery.read_text(encoding="utf-8"))
+    old_drafts = json.loads(args.drafts_state.read_text(encoding="utf-8"))
+    drafts, candidate = prepare(discovery, old_drafts, media, config, now,
+                                allowed=os.environ.get("FIRST_CAR_ARTICLE_TEXT") == "enabled",
+                                api_key=api_key, submitted=submitted)
+    generate(candidate, media, previous, config, now, api_key)
+    for row in drafts["items"]:
+        for key in row.keys() - PUBLIC_FIELDS:
+            del row[key]
+        if row.get("status") != "draft_ready" or row.get("fact_review") != "passed":
+            row.pop("comment", None)
+    args.drafts_output.write_text(json.dumps(drafts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def first_car_timeout(_signum, _frame):
+    raise TimeoutError("First Car exceeded its optional time budget")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("state", "output", "discovery", "drafts-state", "drafts-output"):
@@ -136,31 +194,19 @@ def main():
     now = dt.datetime.now(dt.timezone.utc)
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     config = cq.load_config(cq.ROOT / "data/commenting_sources.json")
-    media = json.loads(args.state.read_text(encoding="utf-8"))
-    submitted = {}
-    if args.submitted_text and args.submitted_text.is_file():
-        try:
-            value = json.loads(args.submitted_text.read_text(encoding="utf-8"))
-            if isinstance(value, dict):
-                submitted = value
-        except (OSError, ValueError):
-            print("First Car submitted text unavailable")
+    previous = json.loads(args.state.read_text(encoding="utf-8"))
+    media = cq.build_queue(config, previous, now, api_key=api_key)
+    # The GitHub-hosted runner is Linux. Leave time to save the completed publisher batch.
+    prior = signal.signal(signal.SIGALRM, first_car_timeout)
     try:
-        discovery = json.loads(args.discovery.read_text(encoding="utf-8"))
-        old_drafts = json.loads(args.drafts_state.read_text(encoding="utf-8"))
-        drafts, first_car = prepare(discovery, old_drafts, media, config, now,
-                                    allowed=os.environ.get("FIRST_CAR_ARTICLE_TEXT") == "enabled",
-                                    api_key=api_key, submitted=submitted)
+        signal.alarm(55)
+        run_optional_dzen(args, config, previous, media, now, api_key)
     except Exception:
-        # An optional Dzen input must never prevent the normal publisher pass.
         print("First Car draft preparation unavailable")
-        drafts, first_car = None, None
-    result = cq.build_queue(config, media, now, api_key=api_key, first_car=first_car)
-    args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    if drafts is not None:
-        for row in drafts["items"]:
-            row.pop("reason", None)  # Do not persist excerpts returned as model rationale.
-        args.drafts_output.write_text(json.dumps(drafts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, prior)
+    args.output.write_text(json.dumps(media, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

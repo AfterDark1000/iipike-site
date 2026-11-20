@@ -73,7 +73,7 @@ test("First Car text intake accepts only owner text tied to a known fresh public
   const expired="https://dzen.ru/a/aul8OQIrtEtCeO6V";
   const body="Содержательный текст статьи об эксперименте. ".repeat(10).trim();
   const saved=[];
-  const {request,session}=firstCarSession({FIRST_CAR_TEXT:{
+  const {request,session,enabled}=firstCarSession({FIRST_CAR_OWNER_TEXT_ARTICLE_ID:canonical.split("/").at(-1),FIRST_CAR_TEXT:{
     idFromName: name => name,
     get: () => ({fetch: async (path,opts) => {
       if (path.endsWith("/submit")) {
@@ -81,7 +81,7 @@ test("First Car text intake accepts only owner text tied to a known fresh public
         return Response.json({accepted:true});
       }
       assert.ok(path.endsWith("/pending"));
-      return Response.json(saved.map(item => item.url));
+      return Response.json([...saved.map(item => item.url),expired]);
     }})
   }});
   const post=(data,headers=session)=>request("/api/first-car/text",{
@@ -102,7 +102,9 @@ test("First Car text intake accepts only owner text tied to a known fresh public
   assert.equal((await post({url:canonical,text:body,override:true})).status,400);
   assert.equal((await post({url:canonical,text:"a".repeat(160_001)})).status,413);
   assert.equal(github.mock.callCount(),0);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=expired.split("/").at(-1);
   assert.equal((await post({url:expired,text:body})).status,404);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=canonical.split("/").at(-1);
   assert.equal((await post({url:"https://dzen.ru/a/unknown-publication",text:body})).status,404);
   const accepted=await post({url:canonical,text:body});
   assert.equal(accepted.status,202);
@@ -110,7 +112,17 @@ test("First Car text intake accepts only owner text tied to a known fresh public
   assert.deepEqual(saved,[{url:canonical,text:body,expires:published+86400_000}]);
   const status=await (await request("/api/first-car/queue")).json();
   assert.deepEqual(status.pending,[canonical]);
+  assert.equal(status.text_article,canonical);
   assert.ok(!JSON.stringify(status).includes(body));
+  delete enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID;
+  assert.equal((await post({url:canonical,text:body})).status,503);
+  assert.equal((await (await request("/health")).json()).first_car_text_active,false);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=canonical.split("/").at(-1);
+  enabled.FIRST_CAR_TEXT={idFromName: name=>name,get:()=>({fetch:()=>{throw Error("fake outage")}})};
+  const degraded=await (await request("/api/first-car/queue")).json();
+  assert.equal(degraded.pending,null);
+  assert.equal(degraded.text_article,null);
+  assert.deepEqual(degraded.queue,queue);
 });
 test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
   const api="/api/first-car/collect";

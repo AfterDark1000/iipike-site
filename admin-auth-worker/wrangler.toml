@@ -7,6 +7,10 @@ preview_urls = false
 # Keep runtime bindings entered in Cloudflare across Git-based deploys.
 keep_vars = true
 
+[observability.logs]
+enabled = true
+invocation_logs = false
+
 [vars]
 ADMIN_ORIGIN = "https://iipike.ru"
 BACKEND_ORIGIN = "https://hpii-admin-gateway.svuktablet.workers.dev"
