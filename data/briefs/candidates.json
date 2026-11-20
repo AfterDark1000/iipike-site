@@ -794,6 +794,71 @@
       "source": "Daydream",
       "source_url": "https://www.prnewswire.com/news-releases/daydream-launches-first-ever-autonomous-agent-for-fashion-shopping-styling-and-checkout-302941544.html",
       "fact_check": "Daydream first-party release dated Nov17 2026: background tasks for price/watch availability, outfit and virtual try-on, >10k brands, 1-click purchase only with shopper authorization and participating partners, available iOS app/SMS. 'While asleep' means background product monitoring, not unapproved overnight checkout."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 346,
+      "pool_id": "n-a6418856dccd6908",
+      "slug": "isomorphic-labs-msd-cancer-drug-collaboration-20261119",
+      "headline": "Isomorphic Labs и MSD договорились искать молекулы против рака с помощью ИИ",
+      "body": "Isomorphic Labs, выросшая из Google DeepMind, заключила исследовательское соглашение с фармкомпанией MSD (Merck в США). ИИ-система IsoDDE будет подбирать молекулы против одной онкологической мишени, название которой партнёры не раскрывают. MSD предоставит исследовательские данные и возьмёт на себя испытания и производство, если появятся перспективные препараты. Сумму первоначального платежа и возможных выплат за успех стороны не назвали.",
+      "topic": "Наука",
+      "event_date": "2026-11-19",
+      "source": "MSD / Merck & Co.",
+      "source_url": "https://www.msd.com/news/msd-and-isomorphic-labs-enter-strategic-research-collaboration/",
+      "fact_check": "Dated primary MSD press release 19 Nov 2026: Isomorphic Labs, not Google DeepMind, is counterparty; unnamed oncology target, IsoDDE produces in silico molecular designs using selected MSD datasets; MSD handles preclinical/clinical development manufacturing and commercialization; upfront and milestone amounts undisclosed. Research agreement, no drug/clinical results yet. Separate from earlier Isomorphic Labs $5bn financing news."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 348,
+      "pool_id": "n-561fdba2dffc08a0",
+      "slug": "megarobo-200m-robotic-labs-20261118",
+      "headline": "MegaRobo получила почти $200 млн на лаборатории, где ИИ ставит опыты через роботов",
+      "body": "Китайская MegaRobo привлекла почти $200 млн, в том числе от суверенного фонда Омана. Её платформа Megalaxy Lab позволяет учёным и ИИ-агентам заказывать эксперименты: роботы выполняют их в лаборатории, а результаты возвращаются в цифровую систему. По словам компании, платформой уже воспользовались более 200 клиентов. Деньги направят на развитие технологий и выход на новые рынки. Общий объём привлечённого финансирования приблизился к $600 млн.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "MegaRobo / PRNewswire",
+      "source_url": "https://www.prnewswire.com/news-releases/megarobo-raises-nearly-us200-million-in-new-funding-to-build-intelligence-infrastructure-for-the-physical-world-302944651.html",
+      "fact_check": "MegaRobo first-party PRNewswire release Nov18 2026 US time (China Nov19); nearly $200m round includes Oman Investment Authority, existing Granite Asia Sinovation et al; total ~600m, Megalaxy Lab >200 customers company-reported, not proof of fully autonomous AI discovery or commercially approved medicines."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 359,
+      "pool_id": "n-a56014fd60304875",
+      "slug": "amazon-polly-voice-cloning-gated-release-20261119",
+      "headline": "Amazon Polly научилась клонировать голоса по нескольким минутам записи",
+      "body": "Amazon добавила в Polly создание синтетического голоса по нескольким минутам записи человека, который дал на это согласие. Такой голос затем может озвучивать новый текст. Поддерживаются семь языков, включая английский, испанский и немецкий; русского среди них нет. AWS пока открыла функцию избранным клиентам, остальные могут подать заявку. На созданное аудио Amazon наносит цифровой водяной знак, а доступ к голосу ограничен аккаунтом владельца.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Amazon Web Services",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/amazon-polly-launches-voice-cloning-a-unique-voice-for-your-brand/",
+      "fact_check": "AWS primary Nov19 2026 announcement: voice cloning released GA gated; few minutes consenting speaker recordings; languages English Spanish German French Italian Portuguese Hindi (no Russian); selected customers enabled, apply otherwise, synthesized speech watermark, AWS-account-scoped voices, no claim of mass public access."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 362,
+      "pool_id": "n-9dc5f439a7a22126",
+      "slug": "fau-ai-beluga-whale-drone-semi-supervised-20261119",
+      "headline": "ИИ научился искать белух на снимках с дронов, обучившись всего на 34 размеченных кадрах",
+      "body": "Учёные Флоридского Атлантического университета проверили ИИ для поиска белух и их детёнышей на фотографиях с дронов. В распоряжении исследователей было 7655 снимков. Модель SEMI-DETR, обученная с использованием лишь 34 размеченных изображений, по показателю точности обнаружения опередила лучший из сравниваемых методов на 20%. Исследователи надеются, что такой подход сократит ручную обработку кадров и поможет следить за численностью китов.",
+      "topic": "Наука",
+      "event_date": "2026-11-19",
+      "source": "Florida Atlantic University / Frontiers in Marine Science",
+      "source_url": "https://www.fau.edu/news/2026/aimonitoringbelugawhales/index.php",
+      "fact_check": "FAU primary university dated 19 Nov 2026 reporting peer-reviewed Frontiers in Marine Science study, data 7,655 high-res drone photos adults/calves; 34 labeled images (1% training labels); SEMI-DETR mAP 19.2, 20% relative improvement vs best fully supervised comparator at 1% annotation; no claim only 34 photos total; benefits marine conservation anticipated."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 363,
+      "pool_id": "n-20815b484a08901e",
+      "slug": "boltz-110m-series-a-drug-discovery-20261118",
+      "headline": "Boltz привлекла $110 млн на ИИ, который помогает проектировать молекулы лекарств",
+      "body": "Стартап Boltz, основанный выходцами из MIT, привлёк $110 млн в раунде Series A под руководством Bessemer Venture Partners. Его ИИ-модели помогают исследователям прогнозировать свойства молекул и разрабатывать белки. По данным компании, платформой Boltz Lab пользуются шесть из двадцати крупнейших фармкомпаний мира, включая Pfizer и GSK. Инвестиции направят на вычислительные мощности, научные данные и расширение команды.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "Boltz",
+      "source_url": "https://www.boltz.com/series-a",
+      "fact_check": "Primary Boltz Nov18 2026 company announcement: $110m Series A led by Bessemer; founded by former MIT researchers; biomolecular design and protein modeling, proprietary BoltzMol/BoltzProt while historical Boltz models open-source; six of world top 20 pharma customers (Pfizer GSK Takeda BMS) company statement; funds compute/data/team."
     }
   ]
 }
