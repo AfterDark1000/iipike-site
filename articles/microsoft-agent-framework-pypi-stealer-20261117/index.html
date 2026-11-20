@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="В PyPI под именем официального Microsoft Agent Framework появились две заражённые версии. Похититель запускался при старте Python; исследователи Wiz обнаружили три случая утечки данных."><meta property="og:type" content="article">
+<meta property="og:title" content="В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли"><meta property="og:description" content="В PyPI под именем официального Microsoft Agent Framework появились две заражённые версии. Похититель запускался при старте Python; исследователи Wiz обнаружили три случая утечки данных.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/microsoft-agent-framework-pypi-stealer-20261117.webp">
+<meta property="og:url" content="https://iipike.ru/articles/microsoft-agent-framework-pypi-stealer-20261117/"><meta property="article:published_time" content="2026-11-20T09:30:47Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли", "mainEntityOfPage": "https://iipike.ru/articles/microsoft-agent-framework-pypi-stealer-20261117/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-20T09:30:47Z", "image": "https://iipike.ru/assets/editorial/microsoft-agent-framework-pypi-stealer-20261117.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/microsoft-agent-framework-pypi-stealer-20261117/"><title>В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/entities.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a></p><h1>В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли</h1>
+<p class="summary">В PyPI под именем официального Microsoft Agent Framework появились две заражённые версии. Похититель запускался при старте Python; исследователи Wiz обнаружили три случая утечки данных.</p><p class="date">Опубликовано: 20 ноября 2026 · 14:30</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/development/">Разработка и код</a></nav><nav class="article-entity-links" aria-label="Компании и продукты статьи"><span class="article-entity-links-label">Компании и продукты</span><a href="../../entities/companies/microsoft/"><img src="../../assets/entity-icons/microsoft.svg" alt="" loading="lazy">Microsoft</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/microsoft-agent-framework-pypi-stealer-20261117.webp" alt="Обложка: В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi" target="_blank" rel="noopener noreferrer">Wiz Research — Microsoft agent-framework Compromised: Credential Stealer Targets Azure and CI Pipelines (17–18 November 2026) ↗</a>
+</aside><article class="article-text"><p class="lead">Две заражённые версии пакета <strong>Microsoft</strong> продержались в каталоге Python меньше часа. Но даже за это время исследователи обнаружили три случая успешной кражи данных.</p>
+<p>17 ноября в каталоге программных библиотек <strong>PyPI</strong> появились два вредоносных обновления <strong>Microsoft Agent Framework</strong> — инструмента, с помощью которого разработчики создают ИИ-агентов.</p>
+<p>Программисты скачивали официальный пакет `agent-framework`, а вместе с ним могли получить похититель паролей и облачных ключей доступа.</p>
+<p>Первую заражённую версию, 1.26.1, опубликовали в 20:35 UTC. Через 33 минуты появилась вторая — 1.26.2.</p>
+<p>Специалисты <strong>Elastic Security Labs</strong> обнаружили первую угрозу всего через шесть минут после публикации. К 21:30 обе версии уже удалили из PyPI.</p>
+<p>Но удалить опасный пакет из каталога оказалось недостаточно, чтобы отменить последствия его установки.</p>
+<h2>Вирус запускался сам</h2>
+<p>Злоумышленники использовали особенность языка программирования Python.</p>
+<p>В заражённый пакет добавили файл с расширением `.pth`. Такие файлы могут автоматически обрабатываться при запуске Python.</p>
+<p>В результате вредоносная программа стартовала при очередном запуске Python в заражённом окружении. Разработчику даже не требовалось запускать Microsoft Agent Framework. Достаточно было открыть совершенно другую Python-программу.</p>
+<p>Сам похититель работал в фоне, собирал доступные секреты и пытался отправить их на внешний сервер.</p>
+<p>Интересовали злоумышленников прежде всего ключи доступа к Microsoft Azure, Azure DevOps, <strong>GitHub</strong> и другим сервисам, которыми разработчики пользуются для хранения кода, автоматической сборки и запуска приложений.</p>
+<p>Вторая заражённая версия получила дополнительную возможность — добывать временные токены GitHub Actions, позволяющие автоматизированным процессам обращаться к облачным ресурсам.</p>
+<h2>Что удалось украсть</h2>
+<p>Специалисты компании <strong>Wiz</strong>, расследовавшие атаку, получили доступ к части запросов, которые вредоносная программа отправляла злоумышленникам.</p>
+<p>Всего исследователи изучили 50 таких запросов.</p>
+<p>Четыре поступили от самих атакующих, ещё 29 были связаны с проверками безопасности и тестовыми средами. Оставшиеся 17 запросов соответствовали трём уникальным случаям успешной передачи данных пострадавших.</p>
+<p>Это число подтверждённых исследователями случаев, а не полный список всех, кто мог установить опасные версии.</p>
+<p>Для понимания масштаба потенциального риска: обычный пакет `agent-framework`, по данным Wiz, скачивают около 41 тысячи раз в неделю. Это загрузки всех его версий, а не количество заражений.</p>
+<h2>Как хакеры добрались до официального пакета</h2>
+<p>Вредоносные обновления появились под настоящим именем проекта Microsoft. При этом опасного кода не было в основной ветке официального репозитория.</p>
+<p>По реконструкции Wiz, злоумышленники, вероятно, получили доступ к сертификату и закрытому ключу системы публикации Microsoft ESRP.</p>
+<p>Исследователи увидели следы неудачной попытки отправить пакет с сервера AWS и последующей успешной публикации через инфраструктуру Microsoft. Как именно атакующие получили необходимые реквизиты доступа, пока неизвестно.</p>
+<p>В базе предупреждений GitHub обе версии — 1.26.1 и 1.26.2 — отмечены как вредоносные. Последняя известная безопасная версия — 1.26.0.</p>
+<p>Разработчикам, установившим заражённые обновления, специалисты советуют проверить окружения и журналы сборок, заменить потенциально украденные ключи и восстановить затронутые среды из чистых компонентов.</p>
+<p>Простое удаление пакета не делает ранее раскрытые пароли снова секретными.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
