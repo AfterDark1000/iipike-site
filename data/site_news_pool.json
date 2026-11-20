@@ -5620,12 +5620,12 @@
       "summary": "19 ноября. СМИ сообщают о предполагаемой цене устройства Muse Charm, официально не подтверждена.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T09:52:26+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-f5a7961cee71e427"
+      "closed_at": "2026-11-20T17:38:55Z",
+      "article_id": "meta-muse-charm-300-free-5g-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f5a7961cee71e427\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/meta-muse-charm-300-free-5g-20261119/"
     },
     {
       "id": "n-ac5d6c67687a6569",
