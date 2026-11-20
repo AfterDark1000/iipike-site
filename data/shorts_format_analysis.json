@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-19T10:45:35Z",
+  "generated_at_utc": "2026-11-20T10:31:46Z",
   "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
@@ -9,157 +9,102 @@
   },
   "videos": [
     {
-      "id": "3XrmOSLD0rE",
-      "url": "https://www.youtube.com/shorts/3XrmOSLD0rE",
-      "title": "tillu vith a tech 🥰🔦#shorts #comedy #funny #relatable #@mycomedyvideo922",
-      "channel": "S___G",
-      "published_at": "2026-11-14T12:30:40Z",
-      "duration_seconds": 37,
-      "views": 30379,
-      "likes": 180,
-      "subscribers": 803,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-19T10:45:35Z",
-      "is_confirmed_short": false,
-      "search_family": "humor",
-      "format_family_guess": "humor",
-      "growth_views_per_hour": 2.1,
-      "rank_score": 8.99,
-      "viral_status": "candidate_verified_stats",
-      "analysis": {
-        "observed_visuals": "Парень в оранжевой футболке играет две роли (с помощью смены одежды и головного убора на платок): парень и воображаемый папа/персонаж с фонариком.",
-        "observed_audio": "Динамичные звуки ударов, смех, комичные голосовые реплики на иностранном языке и звуковые эффекты мультяшного типа.",
-        "hook_0_3s": "Крупный план парня с фонариком в руках и смешное звуковое сопровождение с быстрой сменой ракурса.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:03",
-            "visible_action": "Парень держит фонарик и смотрит в камеру",
-            "editing": "Прямая склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:03 - 00:10",
-            "visible_action": "Смена костюма на головной платок, персонаж изображает удивление или попадание света в глаза",
-            "editing": "Динамичная смена кадров",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:10 - 00:20",
-            "visible_action": "Диалог между двумя ролями одного актера, комичная жестикуляция с фонариком",
-            "editing": "Чередование планов",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:20 - 00:36",
-            "visible_action": "Финальные шутки с фонариком и демонстрация объекта в камеру",
-            "editing": "Быстрые переходы",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Скетч с переодеванием одного актера в разные роли для демонстрации бытовой шутки.",
-        "transfer_to_hpii": "Использовать прием смены двух ролей одним человеком для показа диалога пользователя и искусственного интеллекта.",
-        "what_not_to_copy": "Дословное повторение шуток про фонарик и бессмысленные комичные звуки.",
-        "limitations": "Часть реплик не переведена, но визуальный ряд понятен полностью.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-19T10:45:43Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
-    },
-    {
       "id": "xr5qTl0ueIw",
       "url": "https://www.youtube.com/shorts/xr5qTl0ueIw",
       "title": "Sheldon reveals a hidden birthday secret before walking right into a surprise trap🎂",
-      "channel": "Tuấn Mai Mối",
+      "channel": "CutLoom-jjj",
       "published_at": "2026-11-18T11:29:50Z",
       "duration_seconds": 163,
-      "views": 11358,
-      "likes": 537,
-      "subscribers": 1400,
+      "views": 25366,
+      "likes": 1068,
+      "subscribers": 1460,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-19T10:45:35Z",
+      "statistics_checked_at": "2026-11-20T10:31:46Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
-      "growth_views_per_hour": null,
-      "rank_score": 7.96,
+      "growth_views_per_hour": 589.3,
+      "rank_score": 12.45,
       "viral_status": "candidate_verified_stats",
       "status": "failed",
       "failure": "API HTTP 503"
     },
     {
-      "id": "ooiKbaORMyo",
-      "url": "https://www.youtube.com/shorts/ooiKbaORMyo",
-      "title": "Why Soldiers Break Step on Bridges",
-      "channel": "Dexception",
-      "published_at": "2026-11-17T12:30:05Z",
-      "duration_seconds": 60,
-      "views": 1499,
-      "likes": 28,
-      "subscribers": 829,
+      "id": "ljLy2oDacg4",
+      "url": "https://www.youtube.com/shorts/ljLy2oDacg4",
+      "title": "Store Clerk Mocked Grandpa's Tech Skills 💀📱#shorts #jokes #funny #comedy #relatable #reels",
+      "channel": "Iron Chuckle\n\n",
+      "published_at": "2026-11-19T00:03:19Z",
+      "duration_seconds": 14,
+      "views": 21171,
+      "likes": 208,
+      "subscribers": 1940,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-19T10:45:35Z",
+      "statistics_checked_at": "2026-11-20T10:31:46Z",
+      "is_confirmed_short": false,
+      "search_family": "humor",
+      "format_family_guess": "humor",
+      "growth_views_per_hour": 436.4,
+      "rank_score": 12.05,
+      "viral_status": "candidate_verified_stats",
+      "status": "failed",
+      "failure": "API HTTP 503"
+    },
+    {
+      "id": "0baqucNPsPk",
+      "url": "https://www.youtube.com/shorts/0baqucNPsPk",
+      "title": "Why Does Your Door Handle SHOCK You? ⚡🔑",
+      "channel": "Animated Curiosity",
+      "published_at": "2026-11-19T21:28:48Z",
+      "duration_seconds": 23,
+      "views": 1166,
+      "likes": 8,
+      "subscribers": 17,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-20T10:31:46Z",
       "is_confirmed_short": false,
       "search_family": "explanation",
       "format_family_guess": "explanation",
-      "growth_views_per_hour": 6.1,
-      "rank_score": 5.42,
+      "growth_views_per_hour": null,
+      "rank_score": 5.12,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Animated video featuring stick figure soldiers marching across a suspension bridge, graphics explaining physics concepts, and a historical newspaper clipping.",
-        "observed_audio": "Voiceover narration explaining a historical event and its physical mechanics, accompanied by background music and sound effects.",
-        "hook_0_3s": "Анимационный персонаж в военной форме приказывает солдатам прекратить маршировать в ногу на мосту.",
+        "observed_visuals": "Animated scientist character touching a door handle, getting shocked, explaining the static charge effect and demonstrating how to use a metal key to safely discharge electricity.",
+        "observed_audio": "Voiceover explaining static charge and how to prevent shocks with a metal key, accompanied by sound effects like a zap and upbeat background music.",
+        "hook_0_3s": "Animated scientist shouting 'Ouch!' with electricity symbols as he touches a door handle.",
         "timeline": [
           {
-            "time": "00:00 - 00:03",
-            "visible_action": "Солдаты идут по мосту под руководством командира.",
-            "editing": "Динамичные склейки, субтитры по центру.",
+            "time": "00:00",
+            "visible_action": "Scientist touches door and gets shocked",
+            "editing": "Direct jump cut",
             "confidence": "seen"
           },
           {
-            "time": "00:03 - 00:10",
-            "visible_action": "Демонстрация двух соревнующихся групп на мостах через реку.",
-            "editing": "Панорамирование камеры, смена планов.",
+            "time": "00:03",
+            "visible_action": "Explanation of dry air and static charge build-up",
+            "editing": "Text overlay graphic appearance",
             "confidence": "seen"
           },
           {
-            "time": "00:10 - 00:17",
-            "visible_action": "Лицо полководца меняет цвет на фиолетовый от гнева при виде нестройного шага.",
-            "editing": "Крупный план персонажа, смена эмоций.",
+            "time": "00:09",
+            "visible_action": "Scientist shows a metal key as a trick",
+            "editing": "Close-up cut on key",
             "confidence": "seen"
           },
           {
-            "time": "00:17 - 00:25",
-            "visible_action": "Соперники маршируют в идеальном ногу на железном мосту.",
-            "editing": "Монтаж с акцентом на шаги.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:25 - 00:40",
-            "visible_action": "Мост начинает раскачиваться в такт шагам, цепи рвутся, и солдаты падают в воду.",
-            "editing": "Ускорение монтажа, анимация разрыва цепей.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:40 - 00:50",
-            "visible_action": "Инфографика с объяснением физики резонанса и раскачивания качелей.",
-            "editing": "Переход к схемным чертежам на синем фоне.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:50 - 01:00",
-            "visible_action": "Показ исторической газеты и финальная сцена с сухими солдатами.",
-            "editing": "Статичные кадры с текстом и финальная шутка.",
+            "time": "00:16",
+            "visible_action": "Final demonstration and closing slogan",
+            "editing": "Wide shot cut with end screen graphics",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Исторический кейс с объяснением физического закона через анимацию и визуальную инфографику с последующим выводом.",
-        "transfer_to_hpii": "Разбор физической уязвимости нейросетей: как незаметные микровоздействия (синхронные шаги) вызывают резонанс и «падение» всей архитектуры ИИ.",
-        "what_not_to_copy": "Не копировать анимацию мультяшных солдатиков и исторический сюжет про британский мост 1831 года.",
-        "limitations": "Анализ базируется на визуальных и звуковых элементах доступного ролика без учета скрытых метаданных.",
+        "format_mechanic": "Educational animated character explaining a physics phenomenon with step-by-step visual breakdowns and text callouts.",
+        "transfer_to_hpii": "Explain complex AI breakthroughs or system vulnerabilities by using a relatable animated metaphor or interactive visual demonstration.",
+        "what_not_to_copy": "The specific static electricity scenario or cartoon art style.",
+        "limitations": "Animated content; actual physical demonstrations may vary.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-19T10:45:57Z",
+      "analyzed_at_utc": "2026-11-20T10:32:08Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     }
@@ -167,6 +112,10 @@
   "errors": [
     {
       "video_id": "xr5qTl0ueIw",
+      "code": "analysis_failed"
+    },
+    {
+      "video_id": "ljLy2oDacg4",
       "code": "analysis_failed"
     }
   ]
