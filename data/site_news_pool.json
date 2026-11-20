@@ -5010,7 +5010,7 @@
       "review_started_at": "2026-11-20T12:31:06.258Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Редактор №23, 20.11.2026: взята ведущая горячая №334. Связанная №335 — демонстрация The Life of Ants, проверить совместно по первоисточнику Google. Далее: проверить статус доступа Genie 4, лимиты, демонстрацию и архив."
+      "note": "20.11.2026, редактор №23. Проверены официальные публикации Google 18.11 (https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie) и 19.11 (https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/). Новость — запуск Genie 4 для подходящих Ultra и отдельно Gemini API/AI Studio; Pro — лист ожидания. Новые Project Genie agent, галерея с The Life of Ants (№335), Genie 3 с сессиями до 3 минут (не приписывать это Genie 4). Архив: уже вышел анонс 27.10 `google-genie4-worlds` (Dzen ID 6ae18fd1d73786100df5c71d), новая статья — о доступе и функциях 18–19.11, без повторения анонса. Ограничения: эксперимент, дрейф деталей, физика и звук. Следующий шаг — утвердить текст, затем «берём»."
     },
     {
       "id": "n-4bdb5ab763a987c3",
