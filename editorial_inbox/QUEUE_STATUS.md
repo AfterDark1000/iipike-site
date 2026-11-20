@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 183
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 184
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **20.11.2026 20:15 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **20.11.2026 22:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -19,12 +19,12 @@
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
-| [Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-foundry-autopilot-ai-employees-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника](https://iipike.ru/articles/microsoft-foundry-autopilot-ai-employees-20261119/) | 20.11.2026 22:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-foundry-autopilot-ai-employees-20261119.webp) |
 | [Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой](https://iipike.ru/articles/google-genie4-project-genie-access-20261118/) | 20.11.2026 20:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-genie4-project-genie-access-20261118.webp) |
 | [Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы](https://iipike.ru/articles/citibank-ai-agent-liability-20261120/) | 20.11.2026 19:01 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/citibank-ai-agent-liability-20261120.webp) |
 | [С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям](https://iipike.ru/articles/oregon-openai-chatgpt-child-safety-lawsuit-20261117/) | 20.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/oregon-openai-chatgpt-child-safety-lawsuit-20261117.webp) |
