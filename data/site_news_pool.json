@@ -5470,12 +5470,12 @@
       "summary": "19 ноября. Walmart сообщил о росте использования покупательского ИИ-помощника Sparky.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T09:37:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-467e99a8f3b56dec"
+      "closed_at": "2026-11-20T16:08:53Z",
+      "article_id": "walmart-sparky-usage-plus-129-percent-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-467e99a8f3b56dec\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/walmart-sparky-usage-plus-129-percent-20261119/"
     },
     {
       "id": "n-8493998dfffb5250",
