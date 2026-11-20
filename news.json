@@ -7320,5 +7320,30 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата",
+    "summary": "OpenAI 19 ноября начала ограниченное тестирование персональных ИИ-агентов Dots у части подписчиков ChatGPT Plus. Программа пока недоступна всем пользователям Plus и имеет возрастные и региональные ограничения.",
+    "published": "2026-11-21",
+    "source_url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+    "cover": "assets/editorial/openai-dots-chatgpt-plus-test-20261119.webp",
+    "rubric": "news",
+    "vk_title": "🟢 OpenAI начала пускать DOTS в ChatGPT Plus",
+    "vk_summary": "С 19 ноября OpenAI тестирует автономных ИИ-агентов Dots у небольшой группы подписчиков ChatGPT Plus. Они продолжают работу между разговорами и используют подключённые приложения. Полного запуска пока нет, а для Plus действуют региональные ограничения.",
+    "published_at_utc": "2026-11-20T19:15:45Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-19",
+    "id": "openai-dots-chatgpt-plus-test-20261119",
+    "url": "articles/openai-dots-chatgpt-plus-test-20261119/",
+    "topics": [
+      "agents",
+      "apps"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
