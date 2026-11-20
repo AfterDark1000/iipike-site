@@ -4420,12 +4420,12 @@
       "summary": "17 ноября: новый иск после ошибочного распознавания пакета чипсов как оружия в 2025 году.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-19T11:56:38.306Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "19.11: горячая №295, in_review. Проверены судебный иск Allen v. Omnilert, подан 17.11.2026 https://www.lawyerscommittee.org/wp-content/uploads/2026/11/Allen-v.-Baltimore-County-Complaint-STAMPED.pdf , сообщение юристов https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/ и независимый доклад инспектора Мэриленда от 25.11.2025 https://oige.maryland.gov/wp-content/uploads/sites/18/2025/11/OIGE-Case-25-0014-I-BCPS-Report-11252025-Amended.pdf . Событие 20.10.2025: сигнал Omnilert 90%, отмена уполномоченными ~7:05, директор передала скриншот через ~10+ мин, 4 подростков задержали вооружённые полицейские. Уточнение инспектора: распознавание по движению/положению руки и предмета, не пакет сам по себе. Omnilert говорит, что система отработала штатно. Иск требует возмещения и процедур защиты; решения суда нет. Дубли сайта и каталога Дзена не найдены. Далее — Дзен/Threads/X/VK на утверждение."
+      "closed_at": "2026-11-20T04:01:57.013Z",
+      "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
+      "note": "19.11: горячая №295, in_review. Проверены судебный иск Allen v. Omnilert, подан 17.11.2026 https://www.lawyerscommittee.org/wp-content/uploads/2026/11/Allen-v.-Baltimore-County-Complaint-STAMPED.pdf , сообщение юристов https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/ и независимый доклад инспектора Мэриленда от 25.11.2025 https://oige.maryland.gov/wp-content/uploads/sites/18/2025/11/OIGE-Case-25-0014-I-BCPS-Report-11252025-Amended.pdf . Событие 20.10.2025: сигнал Omnilert 90%, отмена уполномоченными ~7:05, директор передала скриншот через ~10+ мин, 4 подростков задержали вооружённые полицейские. Уточнение инспектора: распознавание по движению/положению руки и предмета, не пакет сам по себе. Omnilert говорит, что система отработала штатно. Иск требует возмещения и процедур защиты; решения суда нет. Дубли сайта и каталога Дзена не найдены. Далее — Дзен/Threads/X/VK на утверждение. 20.11.2026: главред утвердил. Полный Markdown сайта/Дзена, VK и Threads/X сохранены в GitHub; введены кандидаты Omnilert и Omnilert Gun Detect. article_id=omnilert-doritos-school-police-lawsuit-20261117; site_queue=priority; ждём обложку."
     },
     {
       "id": "n-4026a4cf1fa73bf7",
