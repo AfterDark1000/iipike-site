@@ -36,19 +36,30 @@ test("fail closed before login",async()=>{
   assert.equal(r.status,200);
   assert.equal((await r.json()).cover_review_max_version,5);
 });
-test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
-  const api="/api/first-car/collect";
+function firstCarSession() {
   const enabled={...env,FIRST_CAR_ACTIONS_TOKEN:"fixture-actions-token"};
   const raw=Buffer.from(JSON.stringify({kind:"session",user_id:284211090,login:"AfterDark1000",
     exp:Math.floor(Date.now()/1000)+600})).toString("base64url");
   const mac=createHmac("sha256",env.SESSION_SIGNING_KEY).update(raw).digest("base64url");
   const session={Origin:env.ADMIN_ORIGIN,Authorization:`Bearer ${raw}.${mac}`};
   const request=(path,options={})=>gateway.fetch(new Request(env.BACKEND_ORIGIN+path,{headers:session,...options}),enabled);
+  return {enabled,session,request};
+}
+test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
+  const api="/api/first-car/collect";
+  const {enabled,session,request}=firstCarSession();
   const workflow="/actions/workflows/first-car-dzen-collector.yml";
   const run={id:42,event:"workflow_dispatch",status:"in_progress",head_branch:"main",
     path:".github/workflows/first-car-dzen-collector.yml",created_at:new Date().toISOString()};
   let dispatched=false;
   const github=t.mock.method(globalThis,"fetch",async(input,options)=>{
+    // workerd rejects redirect:"error" while constructing the outgoing request.
+    if (options.redirect==="error") throw new TypeError("Unsupported redirect mode");
+    assert.equal(options.redirect,"manual");
+    assert.equal(new URL(input).origin,"https://api.github.com");
+    assert.equal(options.headers.accept,"application/vnd.github+json");
+    assert.equal(options.headers["x-github-api-version"],"2022-11-28");
+    assert.equal(options.headers.cookie,undefined);
     const path=String(input).split("/iipike-site")[1];
     if(path==="/contents/dzen/queue.json?ref=first-car-data"){
       assert.equal(options.headers.authorization,"Bearer "+env.GITHUB_REPO_TOKEN);
@@ -88,6 +99,40 @@ test("First Car dispatch is owner-only, fixed to main, and reuses active or rece
   assert.equal((await (await request(api,{method:"POST"})).json()).state,"cooldown");
   run.path=".github/workflows/commenting-queue.yml";
   assert.equal((await request(api+"?run=42")).status,404);
+});
+test("First Car rejects upstream redirects and reports only safe failure diagnostics",async(t)=>{
+  const {request}=firstCarSession();
+  const marker="never-copy-token-or-cookie";
+  const warn=t.mock.method(console,"warn",()=>{});
+  let reply;
+  const fetcher=t.mock.method(globalThis,"fetch",async(input,options)=>{
+    assert.equal(options.redirect,"manual");
+    assert.equal(new URL(input).origin,"https://api.github.com");
+    if (String(input).endsWith("/dispatches")) throw new TypeError("Authorization: Bearer "+marker);
+    return reply();
+  });
+  const cases=[
+    {reply:()=>Response.json({message:marker},{status:302,headers:{Location:"https://other.example/"+marker}}),
+      expected:{error:"first_car_runs_unavailable",stage:"list_runs",kind:"upstream_3xx",upstream_status:302},requests:1},
+    {reply:()=>Response.json({message:marker},{status:403}),
+      expected:{error:"first_car_runs_unavailable",stage:"list_runs",kind:"upstream_http",upstream_status:403},requests:1},
+    {reply:()=>Response.json(null),
+      expected:{error:"first_car_runs_unavailable",stage:"list_runs",kind:"invalid_response",upstream_status:200},requests:1},
+    {reply:()=>Response.json({workflow_runs:[]}),
+      expected:{error:"first_car_service_unavailable",stage:"dispatch",kind:"TypeError"},requests:2},
+  ];
+  for (const scenario of cases) {
+    reply=scenario.reply;
+    fetcher.mock.resetCalls();
+    warn.mock.resetCalls();
+    const response=await request("/api/first-car/collect",{method:"POST"});
+    assert.equal(response.status,502);
+    assert.deepEqual(await response.json(),{ok:false,...scenario.expected});
+    assert.equal(fetcher.mock.callCount(),scenario.requests);
+    const {error,...diagnostic}=scenario.expected;
+    assert.deepEqual(warn.mock.calls[0].arguments,["first_car_failure",diagnostic]);
+    assert.equal(warn.mock.callCount(),1);
+  }
 });
 test("GitHub OAuth popup yields owner-only session; review is idempotent",async()=>{
   const previousFetch=globalThis.fetch;
