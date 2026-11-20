@@ -197,6 +197,15 @@ class AutoEditorDraftTests(unittest.TestCase):
         self.assertEqual(validate_draft(self.make_ready(), self.receipt)["status"],
                          "ready_for_review")
 
+    def test_new_human_made_ai_rubric_allowed_without_approval(self):
+        from scripts.site_rubrics import RUBRICS as site_rubrics
+        from scripts.auto_editor_workbench import RUBRICS as draft_rubrics
+        self.assertEqual(set(draft_rubrics), set(site_rubrics))
+        ready = self.make_ready()
+        ready["content"]["rubric"] = "made-with-ai"
+        ready["content"]["section"] = "СДЕЛАНО С ИИ"
+        self.assertEqual(validate_draft(ready, self.receipt)["status"], "ready_for_review")
+
     def test_no_approval_metadata_or_wrong_claim(self):
         d = self.make_ready()
         d["approved_by"] = "human_editor"
