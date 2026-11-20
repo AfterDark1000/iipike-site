@@ -4690,12 +4690,12 @@
       "summary": "17 ноября: анонс создания Android-приложений через Gemini в AI Studio.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-20T09:53:25.805Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор №22. Подтверждено официально: Google Developers 17.11 https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/ ; Firebase 17.11 https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration . ВАЖНО: генерация Android по промпту вышла ещё 19.05.2026 https://blog.google/innovation-and-ai/technology/developers-tools/google-ai-studio-io-2026/ . Новое: Firestore + правила доступа и синхронизация данных, вход Google, Gemini API через Firebase AI Logic и App Check, HD/audio эмулятор, скриншот агенту; публикация в личную библиотеку Google Play, только США, приватно, без $25. Подтверждено справкой Google Play https://support.google.com/googleplay/android-developer/answer/18765789?hl=en . Архив сайта/Дзена: релевантного опубликованного материала о AI Studio Android не найдено. Маршрут hot без группы; в очередь до «берём» не записывать."
+      "closed_at": "2026-11-20T10:12:09.592Z",
+      "article_id": "google-ai-studio-android-firebase-play-20261117",
+      "note": "20.11, редактор №22. Проверено: Google Developers 17.11 https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/ ; Firebase 17.11 https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration ; Google Play private library https://support.google.com/googleplay/android-developer/answer/18765789?hl=en . Android-приложения по запросу поддерживались с мая 2026; новости ноября — облачные данные, вход через Google, защищённый Gemini, эмулятор и установка через приватную библиотеку Google Play (пока США). В опубликованном архиве дубликатов нет. «Берём»: утверждённый Markdown сохранён в editorial-intake; Threads и X — approved, ВК — в метаданных; кандидаты Google AI Studio, Firebase, Google Play записаны. Приоритетная очередь, ожидает обложку. article_id=google-ai-studio-android-firebase-play-20261117"
     },
     {
       "id": "n-614783a992ccefaa",
