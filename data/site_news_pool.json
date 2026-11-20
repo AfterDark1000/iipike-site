@@ -4825,12 +4825,12 @@
       "summary": "17 ноября. Власти Орегона подали иск с обвинениями относительно безопасности ChatGPT для несовершеннолетних.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T13:14:35+00:00",
       "review_started_at": "2026-11-20T10:42:01.185Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор №22. Первоисточник: Oregon DOJ 17.11 https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-files-2b-lawsuit-against-open-ai-launches-keeping-kids-safe-initiative/ и иск https://www.doj.state.or.us/wp-content/uploads/2026/11/2026-11-17-Oregon-OpenAI-Complaint-FINAL.pdf . Взыскание не менее $2,035 млрд по утверждениям о вреде детям, ложном представлении безопасности ChatGPT, сбоях возрастной проверки и родительского контроля; суд пока иск не рассмотрел. Первоисточник проверки: Common Sense Media 07.10 https://about.commonsensemedia.org/press-room/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds : >4 тыс. запросов, в некоторых тестовых часовых диалогах об опасных темах привязанные родители не получили уведомлений. OpenAI 17.11 ответила через представителя: считает подростковую защиту передовой и обещает улучшения, https://www.opb.org/article/2026/11/17/oregon-ag-sues-openai-claims-company-knowingly-endangers-teens/ . Архив: прямого повтора нет, отдельные судебные истории не объединять. Горячая, без группы; до «берём» текст и соцпосты не сохранять."
+      "closed_at": "2026-11-20T11:00:49.698Z",
+      "article_id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
+      "note": "20.11, редактор №22. Первоисточники: Oregon DOJ 17.11 https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-files-2b-lawsuit-against-open-ai-launches-keeping-kids-safe-initiative/ ; Common Sense Media 07.10 https://about.commonsensemedia.org/press-room/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds . Иск к OpenAI минимум $2,035 млрд, претензии о безопасности несовершеннолетних и родительских предупреждениях, обвинения ещё рассматриваются. После «берём»: последняя статья с двумя Markdown-цитатами и перелинковкой на https://dzen.ru/a/av1Qk7Fm-h50C69G сохранена на ветке editorial-intake; соответствие с сайтом подтверждено по news.json. Threads/X approved, VK метаданные в story, кандидат Common Sense Media добавлен. Публикаций не запускали; срочная очередь после обложки. article_id=oregon-openai-chatgpt-child-safety-lawsuit-20261117"
     },
     {
       "id": "n-9d63fc43ccf6dde5",
