@@ -5605,12 +5605,12 @@
       "summary": "19 ноября. The Information сообщает о переговорах NVIDIA по покупке разработчика диффузионных моделей; сделка не подтверждена.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T09:37:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-314d079cbce4fbab"
+      "closed_at": "2026-11-20T17:08:57Z",
+      "article_id": "nvidia-inception-acquisition-talks-500m-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-314d079cbce4fbab\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/nvidia-inception-acquisition-talks-500m-20261119/"
     },
     {
       "id": "n-f5a7961cee71e427",
