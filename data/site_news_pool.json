@@ -5095,12 +5095,12 @@
       "summary": "19 ноября. Разработчики заявили об улучшении модели для программирующих агентов после дополнительного обучения; проверить независимые оценки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T06:57:40+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-f0b81ce3c1461288"
+      "closed_at": "2026-11-20T12:08:49Z",
+      "article_id": "radixark-daisyrose-27b-1200-rl-tasks-20261118",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f0b81ce3c1461288\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/radixark-daisyrose-27b-1200-rl-tasks-20261118/"
     },
     {
       "id": "n-e308a84a77ae00d8",
