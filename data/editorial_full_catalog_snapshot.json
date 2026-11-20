@@ -1,11 +1,31 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "b5748852f964f062f19f17a84ec8a93ab455e406",
-  "source_blob_sha": "333b1704a35f9c4ebe340c55ed7b0c8f8759daf4",
+  "source_commit": "2cdce5b16bbced8bd2beb7aa61f91a462e43bad8",
+  "source_blob_sha": "e640498312a6b8d9f471721df5540d3c36637a6f",
   "snapshot_date": "2026-11-20",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b000d8e270b29709ae3d8ed",
+      "title": "Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»",
+      "dzen_url": "https://dzen.ru/a/awANjicLKXCa49jt",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В GitHub нашли 22 ловушки для ИИ-программистов. Хакеры оставляли нейросетям инструкции запускать подозрительный код — и ни в коем случае не заглядывать внутрь. 17 ноября специалисты Bitdefender Labs сообщили о вредоносной кампании, нацеленной на разработчиков, использующих Claude Code, Codex, Cursor и других ИИ-помощников. Злоумышленники размещали опасные файлы в проектах на GitHub — платформе, где программисты храня",
+      "published_at_utc": "2026-11-20T17:01:33+00:00"
+    },
+    {
+      "dzen_id": "6b000ccceba5b051fd8bbc00",
+      "title": "Anthropic провела крупнейшее IPO в истории — $81 млрд. А Nasdaq всё равно упал на 2,3%",
+      "dzen_url": "https://dzen.ru/a/awAMzOulsFH9i7wA",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "На открытии торгов создатель Claude стоил почти два триллиона долларов. К вечеру его акции растеряли половину первоначального взлёта, а американский фондовый рынок ушёл в красное. 19 ноября Anthropic начала торговаться на бирже Nasdaq под тикером ANT. Первое размещение акций компании, известной нейросетью Claude, стало крупнейшим в истории: $81,34 млрд. Раньше рекорд принадлежал SpaceX Илона Маска, которая в июне 202",
+      "published_at_utc": "2026-11-20T16:02:50+00:00"
+    },
     {
       "dzen_id": "6b000bef9ad69e39f176e4d8",
       "title": "ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся",
