@@ -3730,12 +3730,12 @@
       "summary": "17 ноября: сообщение о десятилетней аренде 60-мегаваттного дата-центра Giga Energy.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T02:42:11+00:00",
       "review_started_at": "2026-11-19T10:42:50+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a72dda1b8e97c032"
+      "closed_at": "2026-11-20T02:53:45Z",
+      "article_id": "giga-energy-texas-billion-lease-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a72dda1b8e97c032\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/giga-energy-texas-billion-lease-20261117/"
     },
     {
       "id": "n-05edd5ffa5c91f76",
