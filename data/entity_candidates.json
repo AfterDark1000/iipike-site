@@ -1361,6 +1361,18 @@
           "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
         }
       ]
+    },
+    {
+      "key": "bitdefender",
+      "name": "Bitdefender",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "bitdefender-github-agent-instructions-malware-20261117",
+          "source_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign"
+        }
+      ]
     }
   ],
   "products": [
