@@ -4840,12 +4840,12 @@
       "summary": "17 ноября. Сообщается о предварительном проспекте IPO и диапазоне цены $70–78; вторичный источник, проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-19T13:14:35+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-20T06:51:41.639Z",
       "article_id": null,
-      "note": ""
+      "note": "Объединено с №361, article_id=anthropic-record-ipo-81b-nasdaq-20261119. Факты: первоначальный диапазон $70–78 и документы регистрации 17 ноября. Самостоятельная публикация не нужна; source_url сохранён."
     },
     {
       "id": "n-41dc3fdcb58bd92d",
@@ -5110,12 +5110,12 @@
       "summary": "18 ноября. Сообщается об окончательной цене предполагаемого IPO в $83 за акцию. Отдельный этап после предварительной подачи документов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-20T06:51:41.639Z",
       "article_id": null,
-      "note": ""
+      "note": "Объединено с №361, article_id=anthropic-record-ipo-81b-nasdaq-20261119. Факты: цена размещения $83 и 980 млн акций 18 ноября. Самостоятельная публикация не нужна; source_url сохранён."
     },
     {
       "id": "n-ddb370c34e5553db",
@@ -5410,12 +5410,12 @@
       "summary": "19 ноября. Сообщается о начале торгов акциями Anthropic; отдельное событие после определения цены размещения, вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T06:24:57.740Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор 21. Полностью проверена группа anthropic_ipo_20261119: №323 Nasdaq Form 8-A от 17.11 SEC + диапазон $70–78 в анонсе Anthropic 10.11; №341 официальная цена $83, 980 млн акций, 18.11; №361 торги 19.11: старт $111.50 (+34%), закрытие $97.17 (+17%), оценка на пике ~$2 трлн fully diluted, к закрытию ~$1.77 трлн. SEC 18.11: IPO $81.34 млрд, отдельно $26 млрд private placement (Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC), обязательное завершение условно. Nasdaq Composite 19.11 -2.25%, S&P -2.02%. SEC prospectus 9 мес 2026: выручка $33.242 млрд, операционный убыток $1.26 млрд. Пруфы: https://www.anthropic.com/news/anthropic-prices-initial-public-offering ; https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm ; https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/ . Сайт/Дзен: контекст на утверждённые статьи про опрос BofA и TSMC. Ведущая №361 остаётся in_review; №323 и №341 остаются hold/queued до «берём» и подтверждённого story."
+      "closed_at": "2026-11-20T06:51:41.639Z",
+      "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+      "note": "20.11, редактор 21. Полностью проверена группа anthropic_ipo_20261119: №323 Nasdaq Form 8-A от 17.11 SEC + диапазон $70–78 в анонсе Anthropic 10.11; №341 официальная цена $83, 980 млн акций, 18.11; №361 торги 19.11: старт $111.50 (+34%), закрытие $97.17 (+17%), оценка на пике ~$2 трлн fully diluted, к закрытию ~$1.77 трлн. SEC 18.11: IPO $81.34 млрд, отдельно $26 млрд private placement (Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC), обязательное завершение условно. Nasdaq Composite 19.11 -2.25%, S&P -2.02%. SEC prospectus 9 мес 2026: выручка $33.242 млрд, операционный убыток $1.26 млрд. Пруфы: https://www.anthropic.com/news/anthropic-prices-initial-public-offering ; https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm ; https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/ . Сайт/Дзен: контекст на утверждённые статьи про опрос BofA и TSMC. Ведущая №361 остаётся in_review; №323 и №341 остаются hold/queued до «берём» и подтверждённого story.\n20.11.2026: статья утверждена главредом; 323 (подача/диапазон), 341 (цена $83) объединены в №361. Ведущий article_id=anthropic-record-ipo-81b-nasdaq-20261119; текст, Threads, X, VK сохранены. priority site_queue, обложка ожидается."
     },
     {
       "id": "n-9dc5f439a7a22126",
