@@ -1297,6 +1297,18 @@
           "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
         }
       ]
+    },
+    {
+      "key": "omnilert",
+      "name": "Omnilert",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
+          "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/"
+        }
+      ]
     }
   ],
   "products": [
@@ -2509,6 +2521,19 @@
         {
           "article_id": "google-gemini-4-neon-20261118",
           "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+        }
+      ]
+    },
+    {
+      "key": "omnilert-gun-detect",
+      "name": "Omnilert Gun Detect",
+      "company": "omnilert",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
+          "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/"
         }
       ]
     }
