@@ -729,6 +729,71 @@
       "source": "Shanghai AI Laboratory / Hugging Face",
       "source_url": "https://huggingface.co/internlm/Sage-S2.1-Flash",
       "fact_check": "Official Shanghai AI Lab internlm HF model card: 321B total parameter Sage S2.1 Flash MoE, scientific input via separate Sage SciPerception encoders/projectors (molecules, crystals, proteins), self-reported #1 on 4 of 15 test benchmarks vs five named models; weights/code MIT; no HF inference provider; released mid-Nov 2026 (official repository published Nov15/16)."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 336,
+      "pool_id": "n-cef4a627b91c6fcc",
+      "slug": "sam-altman-artificial-andrew-garfield-dealbook-20261118",
+      "headline": "Альтман: фильм с Эндрю Гарфилдом даже не входит в десятку странностей моей жизни",
+      "body": "Сэма Альтмана 18 ноября на саммите DealBook спросили о фильме «Artificial», в котором его играет Эндрю Гарфилд. Глава OpenAI ответил: двадцать лет назад кино о собственной жизни показалось бы ему невероятной странностью. Теперь подобное событие даже не попадает в его личную десятку самых необычных. Фильм рассказывает в том числе об увольнении Альтмана из OpenAI в 2023 году и его возвращении. Выход в кинотеатрах США намечен на 25 декабря.",
+      "topic": "Громко сказано",
+      "event_date": "2026-11-18",
+      "source": "TechCrunch / NYT DealBook Summit",
+      "source_url": "https://techcrunch.com/2026/11/18/sam-altman-says-his-life-is-so-weird-that-hes-unfazed-by-andrew-garfield-portraying-him-in-upcoming-movie/",
+      "fact_check": "Contemporaneous TechCrunch direct quotation of Sam Altman at NYT DealBook Summit Nov18, 2026: movie Artificial starring Andrew Garfield and 2023 OpenAI ouster; US Dec25 theatrical opening. Altman's remark about not being among ten weirdest things paraphrased without fabricated quote; thematic short 'Громко сказано' instructed by editor, not a new publication lane."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 340,
+      "pool_id": "n-f0b81ce3c1461288",
+      "slug": "radixark-daisyrose-27b-1200-rl-tasks-20261118",
+      "headline": "DaisyRose-27B улучшили на 1200 заданиях — обучение заняло 18 дней и 144 ускорителя",
+      "body": "Разработчики RadixArk взяли открытую Qwen3.8-27B и дополнительно обучили её на 1200 специально отобранных многошаговых заданиях. Так появилась DaisyRose-27B — модель для ИИ-агентов, которые пишут код и работают с инструментами. В тесте Terminal-Bench 4.1 доля успешно решённых задач выросла с 5,6 до 12%, по данным команды. Обучение длилось 18 дней на 144 ускорителях H200. Веса опубликованы по лицензии Apache 2.0.",
+      "topic": "Технологии",
+      "event_date": "2026-11-18",
+      "source": "RadixArk / Hugging Face",
+      "source_url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "fact_check": "RadixArk primary dated Nov18, 2026; Qwen3.8-27B base, 1,200 selected unique long-horizon RL training tasks, run 18 days on 144 H200 (63,000 GPU hours); own Terminal Bench 4.1 pass@1 5.6 -> 12.0%; weights BF16/FP8/NVFP4 Apache 2.0. Not claim 1200 total training episodes or low compute."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 342,
+      "pool_id": "n-ddb370c34e5553db",
+      "slug": "humyn-labs-47m-robot-training-data-20261118",
+      "headline": "Индийская Humyn Labs привлекла $47 млн на обучение роботов реальной работе",
+      "body": "Индийская Humyn Labs привлекла $47 млн для подготовки учебных данных робототехническим компаниям, в том числе из США. Из суммы $26 млн составили инвестиции в капитал, а $21 млн — заёмные средства. Компания записывает, как люди работают на заводах, складах и фермах, затем превращает изображения, звуки и движения в наборы данных для обучения роботов. По заявлению Humyn, такие записи собирают уже более чем в 20 странах.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "Humyn Labs",
+      "source_url": "https://humynlabs.ai/blog/humyn-labs-raises-usd-47m-in-series-a",
+      "fact_check": "Official Humyn Labs dated Nov18 2026 release: Series A $47m comprises $26m equity led Accel plus $21m venture debt led Lighthouse Canton. Data collected in 20+ countries via devices recording factories, warehouses, farms, homes, capturing sight sound motion touch. US robotics lab customers per first-hand TechCrunch Nov18 report, not claim robots located exclusively US."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 343,
+      "pool_id": "n-2c4163c7e21d994d",
+      "slug": "unsiloed-ai-felicis-75m-document-agents-20261118",
+      "headline": "Unsiloed AI получила $7,5 млн, чтобы ИИ-агенты правильно читали сложные документы",
+      "body": "Стартап Unsiloed AI привлёк $7,5 млн в раунде во главе с Felicis. Его система разбирает корпоративные PDF с таблицами, графиками и сложной вёрсткой, превращая содержимое в данные для ИИ-агентов. Рядом с извлечёнными цифрами сохраняется указание на место в исходном документе, чтобы их можно было проверить. На 542 финансовых документах компания заявила точность 99,78%. Результат получен в собственном тесте и независимо не подтверждён.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-18",
+      "source": "TechCrunch / Unsiloed AI",
+      "source_url": "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/",
+      "fact_check": "TechCrunch exclusive direct founder Aman Mishra interview Nov18 2026; $7.5m seed led Felicis; parses tables charts PDFs, provenance for extracted data; 99.78% internal test on 542 financial docs / ~84k data points provided by startup, explicitly not independently verified. First-hand reporting used because dated primary company press release not found."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 344,
+      "pool_id": "n-981b64d3f299c710",
+      "slug": "daydream-fashion-shopping-agent-while-sleep-20261117",
+      "headline": "Daydream выпустила ИИ-стилиста, который ищет одежду, пока покупатель спит",
+      "body": "Daydream выпустила ИИ-помощника, которому можно поручить поиск одежды и уйти спать. Он отслеживает скидки и наличие вещей, собирает комплекты с учётом размера, бюджета и вкуса покупателя, а также предлагает виртуальную примерку по фотографии. В каталоге — более 10 тысяч брендов. Покупку агент оформляет только после согласия человека и лишь у подключённых магазинов. Daydream Agent доступен в приложении для iPhone и через SMS.",
+      "topic": "Технологии",
+      "event_date": "2026-11-17",
+      "source": "Daydream",
+      "source_url": "https://www.prnewswire.com/news-releases/daydream-launches-first-ever-autonomous-agent-for-fashion-shopping-styling-and-checkout-302941544.html",
+      "fact_check": "Daydream first-party release dated Nov17 2026: background tasks for price/watch availability, outfit and virtual try-on, >10k brands, 1-click purchase only with shopper authorization and participating partners, available iOS app/SMS. 'While asleep' means background product monitoring, not unapproved overnight checkout."
     }
   ]
 }
