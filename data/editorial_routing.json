@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "approved_date": "2026-11-19",
-  "source": "data/editorial_triage/approved_2026-11-19.json",
+  "approved_date": "2026-11-20",
+  "source": "data/editorial_triage/requests/20261120-approved-full-triage-56-v1.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
-  "note": "Routing only. No texts/approvals/publication. Not an article status. Unknown future pool items retain the default long lane. Linked secondary items and deferred/manual/rejection-pending are held pending human decisions.",
+  "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
     {
       "sequence": 55,
@@ -1164,6 +1164,356 @@
     {
       "sequence": 320,
       "pool_id": "n-58da586369f33999",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 321,
+      "pool_id": "n-6ece0df5b64b652f",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 322,
+      "pool_id": "n-f506bdc7ec30ce7a",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 323,
+      "pool_id": "n-9d63fc43ccf6dde5",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "anthropic_ipo_20261119",
+      "group_primary": 361
+    },
+    {
+      "sequence": 324,
+      "pool_id": "n-41dc3fdcb58bd92d",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 325,
+      "pool_id": "n-625a70917b256da6",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 326,
+      "pool_id": "n-9cb421824ca38751",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 327,
+      "pool_id": "n-96d80dee4c0118b2",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 328,
+      "pool_id": "n-bc4b4de593518dc5",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 329,
+      "pool_id": "n-b345a07c453835af",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 330,
+      "pool_id": "n-70bfd6abc8217573",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 331,
+      "pool_id": "n-42ab85f3d5b2fc42",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 332,
+      "pool_id": "n-01583a4729684d3b",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "google_school_search_20261119",
+      "group_primary": 357
+    },
+    {
+      "sequence": 333,
+      "pool_id": "n-dcbfa5b842f13f82",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 334,
+      "pool_id": "n-a261d2eee241a886",
+      "lane": "long",
+      "decision": "hot",
+      "group": "google_genie4_20261118",
+      "group_primary": 334
+    },
+    {
+      "sequence": 335,
+      "pool_id": "n-4bdb5ab763a987c3",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "google_genie4_20261118",
+      "group_primary": 334
+    },
+    {
+      "sequence": 336,
+      "pool_id": "n-cef4a627b91c6fcc",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 337,
+      "pool_id": "n-def7dfc6bcfd4fb9",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 338,
+      "pool_id": "n-ab8d6d917647d202",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 339,
+      "pool_id": "n-d8c780d9a81b0858",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 340,
+      "pool_id": "n-f0b81ce3c1461288",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 341,
+      "pool_id": "n-e308a84a77ae00d8",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "anthropic_ipo_20261119",
+      "group_primary": 361
+    },
+    {
+      "sequence": 342,
+      "pool_id": "n-ddb370c34e5553db",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 343,
+      "pool_id": "n-2c4163c7e21d994d",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 344,
+      "pool_id": "n-981b64d3f299c710",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 345,
+      "pool_id": "n-a5f8ec5362c29818",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 346,
+      "pool_id": "n-a6418856dccd6908",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 347,
+      "pool_id": "n-a87bfc1ffc4c2d65",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 348,
+      "pool_id": "n-561fdba2dffc08a0",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 349,
+      "pool_id": "n-11cf55f62ec06541",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 350,
+      "pool_id": "n-fd6216995b7a0e95",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 351,
+      "pool_id": "n-3cbd056aa7e029fe",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 352,
+      "pool_id": "n-cd81a6641c0205c7",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 353,
+      "pool_id": "n-5b0dcaf377b0a4d1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 354,
+      "pool_id": "n-ed80d1bd7d710065",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 355,
+      "pool_id": "n-efdbd6c83627cffe",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 356,
+      "pool_id": "n-8c74da9392aae70d",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 357,
+      "pool_id": "n-280f95c3ca779d43",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "google_school_search_20261119",
+      "group_primary": 357
+    },
+    {
+      "sequence": 358,
+      "pool_id": "n-60fa4a02220b4eca",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 359,
+      "pool_id": "n-a56014fd60304875",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 360,
+      "pool_id": "n-bed8fe2e85117580",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 361,
+      "pool_id": "n-f6367f144bee4241",
+      "lane": "long",
+      "decision": "hot",
+      "group": "anthropic_ipo_20261119",
+      "group_primary": 361
+    },
+    {
+      "sequence": 362,
+      "pool_id": "n-9dc5f439a7a22126",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 363,
+      "pool_id": "n-20815b484a08901e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 364,
+      "pool_id": "n-27b38ec62ac492a2",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 365,
+      "pool_id": "n-467e99a8f3b56dec",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 366,
+      "pool_id": "n-8493998dfffb5250",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 367,
+      "pool_id": "n-9342dbf934e428aa",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 368,
+      "pool_id": "n-056cf0b58a3dbace",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 369,
+      "pool_id": "n-a38aa49b586de75a",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 370,
+      "pool_id": "n-8c5914db57aa649d",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 371,
+      "pool_id": "n-def546913c85473b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 372,
+      "pool_id": "n-2191c000c7dbd2ad",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 373,
+      "pool_id": "n-a1429146f3f2b49f",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 374,
+      "pool_id": "n-314d079cbce4fbab",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 375,
+      "pool_id": "n-f5a7961cee71e427",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 376,
+      "pool_id": "n-ac5d6c67687a6569",
       "lane": "long",
       "decision": "full"
     }
