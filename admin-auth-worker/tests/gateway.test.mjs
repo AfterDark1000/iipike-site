@@ -36,8 +36,8 @@ test("fail closed before login",async()=>{
   assert.equal(r.status,200);
   assert.equal((await r.json()).cover_review_max_version,5);
 });
-function firstCarSession() {
-  const enabled={...env,FIRST_CAR_ACTIONS_TOKEN:"fixture-actions-token"};
+function firstCarSession(bindings={}) {
+  const enabled={...env,FIRST_CAR_ACTIONS_TOKEN:"fixture-actions-token",...bindings};
   const raw=Buffer.from(JSON.stringify({kind:"session",user_id:284211090,login:"AfterDark1000",
     exp:Math.floor(Date.now()/1000)+600})).toString("base64url");
   const mac=createHmac("sha256",env.SESSION_SIGNING_KEY).update(raw).digest("base64url");
@@ -45,6 +45,85 @@ function firstCarSession() {
   const request=(path,options={})=>gateway.fetch(new Request(env.BACKEND_ORIGIN+path,{headers:session,...options}),enabled);
   return {enabled,session,request};
 }
+test("First Car queue reads the canonical data branch, reports upstream errors, and requires the owner",async(t)=>{
+  const {request}=firstCarSession();
+  const route="/api/first-car/queue";
+  const queue={schema_version:1,articles:[{url:"https://dzen.ru/a/avwsiGM1tFu-0T5x"}]};
+  let status=200;
+  const github=t.mock.method(globalThis,"fetch",async(input,options)=>{
+    assert.equal(String(input),"https://api.github.com/repos/AfterDark1000/iipike-site/contents/dzen/queue.json?ref=first-car-data");
+    assert.equal(options.redirect,"manual");
+    return Response.json({type:"file",sha:"queue-sha",content:Buffer.from(JSON.stringify(queue)).toString("base64")},{status});
+  });
+  assert.equal((await request(route,{headers:{Origin:env.ADMIN_ORIGIN}})).status,401);
+  assert.equal((await request(route+"?ref=other")).status,400);
+  assert.equal(github.mock.callCount(),0);
+  const response=await request(route);
+  assert.equal(response.headers.get("cache-control"),"no-store");
+  const snapshot=await response.json();
+  assert.deepEqual(snapshot.queue,queue);
+  assert.ok(Math.abs(snapshot.now-Date.now())<5000);
+  status=503;
+  assert.equal((await request(route)).status,502);
+  status=404;
+  assert.deepEqual((await (await request(route)).json()).queue,{schema_version:1,articles:[]});
+});
+test("First Car text intake accepts only owner text tied to a known fresh publication and never echoes it",async(t)=>{
+  const canonical="https://dzen.ru/a/avwsiGM1tFu-0T5x";
+  const expired="https://dzen.ru/a/aul8OQIrtEtCeO6V";
+  const body="Содержательный текст статьи об эксперименте. ".repeat(10).trim();
+  const saved=[];
+  const {request,session,enabled}=firstCarSession({FIRST_CAR_OWNER_TEXT_ARTICLE_ID:canonical.split("/").at(-1),FIRST_CAR_TEXT:{
+    idFromName: name => name,
+    get: () => ({fetch: async (path,opts) => {
+      if (path.endsWith("/submit")) {
+        saved.push(JSON.parse(opts.body));
+        return Response.json({accepted:true});
+      }
+      assert.ok(path.endsWith("/pending"));
+      return Response.json([...saved.map(item => item.url),expired]);
+    }})
+  }});
+  const post=(data,headers=session)=>request("/api/first-car/text",{
+    method:"POST", headers:{...headers,"content-type":"application/json"},body:JSON.stringify(data)
+  });
+  const published=Date.now()-3600_000;
+  const queue={schema_version:1,articles:[
+    {url:canonical,source:"dzen_launcher_more",published_at:new Date(published).toISOString()},
+    {url:expired,source:"dzen_launcher_more",published_at:new Date(published-86400_000).toISOString()},
+  ]};
+  const github=t.mock.method(globalThis,"fetch",async(input)=>{
+    assert.ok(String(input).endsWith("/contents/dzen/queue.json?ref=first-car-data"));
+    return Response.json({type:"file",sha:"queue-sha",content:Buffer.from(JSON.stringify(queue)).toString("base64")});
+  });
+  assert.equal((await post({url:canonical,text:body},{Origin:env.ADMIN_ORIGIN})).status,401);
+  assert.equal((await post({url:canonical,text:body},{...session,Origin:"https://wrong.test"})).status,403);
+  assert.equal((await post({url:canonical,text:"Заголовок"})).status,400);
+  assert.equal((await post({url:canonical,text:body,override:true})).status,400);
+  assert.equal((await post({url:canonical,text:"a".repeat(160_001)})).status,413);
+  assert.equal(github.mock.callCount(),0);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=expired.split("/").at(-1);
+  assert.equal((await post({url:expired,text:body})).status,404);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=canonical.split("/").at(-1);
+  assert.equal((await post({url:"https://dzen.ru/a/unknown-publication",text:body})).status,404);
+  const accepted=await post({url:canonical,text:body});
+  assert.equal(accepted.status,202);
+  assert.deepEqual(await accepted.json(),{ok:true});
+  assert.deepEqual(saved,[{url:canonical,text:body,expires:published+86400_000}]);
+  const status=await (await request("/api/first-car/queue")).json();
+  assert.deepEqual(status.pending,[canonical]);
+  assert.equal(status.text_article,canonical);
+  assert.ok(!JSON.stringify(status).includes(body));
+  delete enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID;
+  assert.equal((await post({url:canonical,text:body})).status,503);
+  assert.equal((await (await request("/health")).json()).first_car_text_active,false);
+  enabled.FIRST_CAR_OWNER_TEXT_ARTICLE_ID=canonical.split("/").at(-1);
+  enabled.FIRST_CAR_TEXT={idFromName: name=>name,get:()=>({fetch:()=>{throw Error("fake outage")}})};
+  const degraded=await (await request("/api/first-car/queue")).json();
+  assert.equal(degraded.pending,null);
+  assert.equal(degraded.text_article,null);
+  assert.deepEqual(degraded.queue,queue);
+});
 test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
   const api="/api/first-car/collect";
   const {enabled,session,request}=firstCarSession();

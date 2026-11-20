@@ -60,20 +60,36 @@ const firstCarCommenting = (() => {
     }).map((row) => ({ ...row, kind: "dzen", key: row.url, dzen_url: row.url, dzen_published_at: row.published_at }));
   }
 
-  async function readDzen(fetcher = fetch) {
+  function normalizeDzen(queue, now) {
+    if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw new Error("Некорректная лента Дзена");
+    return nativeCandidates({ articles: queue.articles
+      .filter((row) => row?.source === "dzen_launcher_more" && typeof row.title === "string" && row.title.trim())
+      .map(({ url, title, source_name, published_at, first_seen_at, source }) =>
+        ({ url, title, source_name, published_at, observed_at: first_seen_at, source })) }, now);
+  }
+
+  async function readDzen(fetcher = fetch, readGateway) {
+    if (readGateway) {
+      try {
+        const { queue, now, pending, text_article } = await readGateway();
+        if (!Number.isSafeInteger(now) || now <= 0) throw Error("Некорректное время снимка Дзена");
+        return {
+          articles: normalizeDzen(queue, now), clockOffset: now - Date.now(),
+          pending: Array.isArray(pending) ? pending.filter(url => typeof url === "string" && DIRECT.test(url)) : null,
+          textArticle: typeof text_article === "string" && DIRECT.test(text_article) ? text_article : null,
+        };
+      } catch (error) {
+        if (error.message === "login_required") throw error;
+        // Raw GitHub remains usable while the Gateway update rolls out.
+      }
+    }
     const url = new URL(DZEN_SOURCE);
     url.searchParams.set("t", String(Date.now()));
     const response = await fetcher(url, {
       mode: "cors", cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15_000),
     });
-    if (response.status === 404) return []; // The branch is absent until collection is enabled.
     if (!response.ok) throw new Error(`Лента Дзена вернула HTTP ${response.status}`);
-    const queue = await response.json();
-    if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw new Error("Некорректная лента Дзена");
-    return nativeCandidates({ articles: queue.articles
-      .filter((row) => row?.source === "dzen_launcher_more")
-      .map(({ url, title, source_name, published_at, first_seen_at, source }) =>
-        ({ url, title, source_name, published_at, observed_at: first_seen_at, source })) }, Date.now());
+    return { articles: normalizeDzen(await response.json(), Date.now()), clockOffset: 0, pending: null, textArticle: null };
   }
 
   async function readDzenDrafts(fetcher = fetch) {
@@ -84,13 +100,14 @@ const firstCarCommenting = (() => {
     if (!response.ok) throw new Error(`Реплики к статьям Дзена вернули HTTP ${response.status}`);
     const queue = await response.json();
     if (queue?.schema_version !== 1 || !Array.isArray(queue.items)) throw new Error("Некорректные реплики к статьям Дзена");
-    return new Map(queue.items.filter((row) => typeof row?.url === "string" && DIRECT.test(row.url)).map((row) => [
-      row.url, {
-        draft_status: row.status,
-        draft_comment: row.status === "draft_ready" && row.fact_review === "passed" && typeof row.comment === "string"
-          ? row.comment : "",
-      },
-    ]));
+    return new Map(queue.items.filter((row) => typeof row?.url === "string" && DIRECT.test(row.url)).map((row) => {
+      const ready = row.status === "draft_ready";
+      const approved = ready && row.fact_review === "passed" && typeof row.comment === "string" && row.comment.trim();
+      return [row.url, {
+        draft_status: ready && !approved ? "skipped_by_editor" : row.status,
+        draft_comment: approved ? row.comment : "",
+      }];
+    }));
   }
 
   async function read(fetcher = fetch) {

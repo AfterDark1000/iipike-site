@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'admin-auth-worker/src/index.mjs'
+      - 'admin-auth-worker/src/**'
       - 'admin-auth-worker/wrangler.toml'
       - '.github/workflows/hpii-admin-gateway-deploy.yml'
   workflow_dispatch:
@@ -54,8 +54,9 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_ADMIN_DEPLOY_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: admin-auth-worker
+          wranglerVersion: '4.165.0'
           command: deploy --keep-vars
-      - name: Confirm live gateway API supports cover versions up to v5
+      - name: Confirm live gateway API supports cover versions up to v5 and the First Car binding
         if: steps.credentials.outputs.ready == 'true'
         shell: bash
         run: |
@@ -68,12 +69,13 @@ jobs:
                   request=urllib.request.Request(target,headers={"User-Agent":"HPII-Gateway-Deploy-Healthcheck"})
                   with urllib.request.urlopen(request,timeout=10) as response:
                       payload=json.load(response)
-                  if payload.get("ok") is True and payload.get("service")=="hpii-auth-gateway" and payload.get("cover_review_max_version")==5:
-                      print("LIVE_GATEWAY_COVER_V2_TO_V5_READY")
+                  if (payload.get("ok") is True and payload.get("service")=="hpii-auth-gateway"
+                          and payload.get("cover_review_max_version")==5 and payload.get("first_car_text_binding") is True):
+                      print("LIVE_GATEWAY_COVER_AND_FIRST_CAR_BINDING_READY")
                       break
               except Exception as exc:
                   print("Health check attempt failed:",type(exc).__name__)
               if attempt==4: raise SystemExit("Gateway was not verified as deployed; do not mark v2 API ready")
               time.sleep(3)
           PY
-          echo 'DEPLOYED AND VERIFIED: live /health supports cover_review_max_version=5. Authorized owner review still required.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'DEPLOYED AND VERIFIED: live /health confirms cover v5 and the First Car binding. Owner testing is separate.' >> "$GITHUB_STEP_SUMMARY"

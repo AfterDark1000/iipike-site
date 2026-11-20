@@ -1,5 +1,8 @@
 // HPII admin auth/API gateway. Deploy separately; do NOT expose secrets in GitHub Pages.
 // GitHub OAuth identity is read-only. Repository write token stays in Worker secrets.
+import {DAY, firstCarTextArticle, firstCarWorkflowIdentity, ownerText, privateText} from "./first-car-text.mjs";
+export {FirstCarText} from "./first-car-text.mjs";
+
 const enc = new TextEncoder();
 const dec = new TextDecoder();
 const MAX_NOTE = 4000;
@@ -88,6 +91,38 @@ async function githubJson(path, env, opts={}) {
 const FIRST_CAR_WORKFLOW = "/actions/workflows/first-car-dzen-collector.yml";
 const FIRST_CAR_COOLDOWN_MS = 60 * 60_000;
 const FIRST_CAR_EVENTS = new Set(["schedule", "workflow_dispatch"]);
+const FIRST_CAR_QUEUE = "/contents/dzen/queue.json?ref=first-car-data";
+
+async function firstCarQueue(env) {
+  const snapshot = await githubJson(FIRST_CAR_QUEUE, env, {
+    redirect:"manual", signal:AbortSignal.timeout(10_000), headers:{"cache-control":"no-cache"}
+  });
+  if (snapshot.status === 404) return {schema_version:1,articles:[]};
+  if (snapshot.status !== 200) throw Error("First Car queue unavailable");
+  const queue = decodeGitHubContent(snapshot.data);
+  if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw Error("Invalid First Car queue");
+  return queue;
+}
+
+async function firstCarTextSubmit(request, env, headers) {
+  const active = firstCarTextArticle(env);
+  if (!active || !env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled",headers);
+  const body = await ownerText(request);
+  if (body.status !== 200) return fail(body.status,"invalid_article_text",headers);
+  if (body.url !== active) return fail(404,"article_not_in_active_queue",headers);
+  try {
+    const queue = await firstCarQueue(env);
+    const article = queue.articles.find(row => row?.url === body.url && row.source === "dzen_launcher_more");
+    const published = Date.parse(article?.published_at);
+    const now = Date.now();
+    if (!(published <= now && now < published + DAY)) return fail(404,"article_not_in_active_queue",headers);
+    const result = await privateText(env.FIRST_CAR_TEXT,"submit",{url:body.url,text:body.text,expires:published + DAY});
+    if (!result.accepted) return fail(result.reason === "text_queue_full" ? 429 : 409,result.reason,headers);
+    return send({ok:true},202,headers);
+  } catch {
+    return fail(502,"first_car_text_unavailable",headers);
+  }
+}
 
 async function firstCarRun(request, url, env, headers) {
   if (!env.FIRST_CAR_ACTIONS_TOKEN) return fail(503,"first_car_not_enabled",headers);
@@ -146,7 +181,7 @@ async function firstCarRun(request, url, env, headers) {
     }
     if (run.status !== "completed") return describe(run,"running");
     stage = "read_report";
-    const snapshot = await actions("/contents/dzen/queue.json?ref=first-car-data",{},env.GITHUB_REPO_TOKEN);
+    const snapshot = await actions(FIRST_CAR_QUEUE,{},env.GITHUB_REPO_TOKEN);
     if (snapshot.status !== 200 && snapshot.status !== 404) return upstreamFailed("first_car_report_unavailable",snapshot.status);
     let report = null;
     if (snapshot.status === 200) {
@@ -515,7 +550,24 @@ export default {
     if (url.origin!==env.BACKEND_ORIGIN) return fail(403,"unexpected_host");
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
-    if (url.pathname==="/health" && request.method==="GET") return send({ok:true,service:"hpii-auth-gateway",cover_review_max_version:5});
+    if (url.pathname==="/health" && request.method==="GET") return send({
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,
+      first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
+      first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
+    });
+    if (url.pathname==="/api/first-car/workflow-text" && request.method==="GET") {
+      if (url.search) return fail(400,"unexpected_input");
+      if (!await firstCarWorkflowIdentity(request)) return fail(401,"workflow_identity_required");
+      const active = firstCarTextArticle(env);
+      if (!active) return send({ok:true,texts:{}});
+      if (!env.FIRST_CAR_TEXT) return fail(503,"first_car_text_not_enabled");
+      try {
+        const texts = await privateText(env.FIRST_CAR_TEXT,"texts");
+        return send({ok:true,texts:typeof texts[active] === "string" ? {[active]:texts[active]} : {}});
+      } catch {
+        return fail(502,"first_car_text_unavailable");
+      }
+    }
     if (url.pathname.startsWith("/api/")) {
       if (!origin(request,env)) return fail(403,"origin_not_allowed");
       if (request.method==="OPTIONS") return new Response(null,{status:204,headers:{...noStore,...cors(env)}});
@@ -527,6 +579,26 @@ export default {
       }
       if (url.pathname==="/api/first-car/collect" && ["GET","POST"].includes(request.method)) {
         return firstCarRun(request,url,env,headers);
+      }
+      if (url.pathname==="/api/first-car/queue" && request.method==="GET") {
+        if (url.search) return fail(400,"unexpected_input",headers);
+        try {
+          const textArticle = firstCarTextArticle(env);
+          const [queue,pending] = await Promise.all([
+            firstCarQueue(env),
+            textArticle && env.FIRST_CAR_TEXT ? privateText(env.FIRST_CAR_TEXT,"pending").catch(() => null) : null,
+          ]);
+          return send({ok:true,queue,now:Date.now(),
+            text_article:Array.isArray(pending) ? textArticle : null,
+            pending:Array.isArray(pending) ? pending.filter(item => item === textArticle) : null,
+          },200,headers);
+        } catch {
+          return fail(502,"first_car_queue_unavailable",headers);
+        }
+      }
+      if (url.pathname==="/api/first-car/text" && request.method==="POST") {
+        if (url.search) return fail(400,"unexpected_input",headers);
+        return firstCarTextSubmit(request,env,headers);
       }
       if (url.pathname==="/api/review" && request.method==="POST") {
         if ((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json") return fail(415,"json_required",headers);

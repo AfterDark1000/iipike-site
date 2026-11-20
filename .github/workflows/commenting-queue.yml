@@ -13,6 +13,7 @@ on:
       - 'scripts/commenting_queue.py'
       - 'scripts/commenting_recovery.cjs'
       - 'scripts/first_car_commenting.py'
+      - 'scripts/first_car_text_input.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - '.github/workflows/commenting-queue.yml'
@@ -22,6 +23,7 @@ on:
       - 'scripts/commenting_queue.py'
       - 'scripts/commenting_recovery.cjs'
       - 'scripts/first_car_commenting.py'
+      - 'scripts/first_car_text_input.cjs'
       - 'data/commenting_sources.json'
       - 'admin/commenting/**'
       - 'admin/index.html'
@@ -29,6 +31,7 @@ on:
       - 'tests/test_first_car_commenting.py'
       - 'tests/commenting.test.cjs'
       - 'tests/commenting_recovery.test.cjs'
+      - 'tests/first_car_text_input.test.cjs'
       - '.github/workflows/commenting-queue.yml'
 permissions:
   contents: read
@@ -50,7 +53,7 @@ jobs:
       - run: python3 -m unittest discover -s tests -p 'test_commenting_queue.py' -v
       - run: python3 -m unittest discover -s tests -p 'test_first_car_commenting.py' -v
       - run: python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
-      - run: node --test tests/commenting.test.cjs tests/commenting_recovery.test.cjs
+      - run: node --test tests/commenting.test.cjs tests/commenting_recovery.test.cjs tests/first_car_text_input.test.cjs
       - run: node --check admin/commenting/app.js
   update-queue:
     # A push tests the hotfix. Only schedule, recovery or an explicit dispatch can collect.
@@ -66,6 +69,7 @@ jobs:
     permissions:
       contents: write
       statuses: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -94,12 +98,14 @@ jobs:
             core.setOutput('collect', true);
       - name: Read optional First Car input
         if: steps.state.outputs.collect == 'true' && vars.FIRST_CAR_DZEN_COLLECTION == 'enabled'
+        continue-on-error: true
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
+            const signal = AbortSignal.timeout(10000);
             async function read(path, ref) {
-              const { data } = await github.rest.repos.getContent({ ...context.repo, path, ref });
+              const { data } = await github.rest.repos.getContent({ ...context.repo, path, ref, request: { signal } });
               if (data.encoding !== 'base64' || typeof data.content !== 'string') throw Error('Invalid queue file');
               return Buffer.from(data.content, 'base64');
             }
@@ -113,15 +119,39 @@ jobs:
             } catch (error) {
               if (error.status !== 404) core.warning('First Car input unavailable; continuing with publisher RSS.');
             }
+      - name: Read owner-submitted Dzen text privately
+        if: steps.state.outputs.collect == 'true' && vars.FIRST_CAR_DZEN_COLLECTION == 'enabled'
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { readSubmittedText } = require('./scripts/first_car_text_input.cjs');
+            if (!fs.existsSync('_first_car_discovery.json')) return;
+            try {
+              const texts = await readSubmittedText();
+              if (Object.keys(texts).length) {
+                fs.writeFileSync(path.join(process.env.RUNNER_TEMP, 'first-car-submitted-text.json'), JSON.stringify(texts),
+                  { mode: 0o600, flag: 'wx' });
+              }
+            } catch (error) {
+              const message = error?.message;
+              const reason = /^(?:GitHub OIDC unavailable|First Car text unavailable) \(HTTP [1-5]\d\d\)$/.test(message)
+                ? message : 'Private First Car text input unavailable';
+              core.warning(reason + '; publisher processing continues.');
+            }
       - name: Read public publisher feeds and prepare at most three drafts
         if: steps.state.outputs.collect == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FIRST_CAR_ARTICLE_TEXT: ${{ vars.FIRST_CAR_DZEN_ARTICLE_TEXT }}
         run: |
+          trap 'rm -f -- "$RUNNER_TEMP/first-car-submitted-text.json"' EXIT
           if [ -s _first_car_discovery.json ]; then
             python3 -m scripts.first_car_commenting --state _commenting_previous.json --output _commenting_queue.json \
-              --discovery _first_car_discovery.json --drafts-state _first_car_previous.json --drafts-output _first_car_drafts.json
+              --discovery _first_car_discovery.json --drafts-state _first_car_previous.json --drafts-output _first_car_drafts.json \
+              --submitted-text "$RUNNER_TEMP/first-car-submitted-text.json"
           else
             python3 scripts/commenting_queue.py --state _commenting_previous.json --output _commenting_queue.json
           fi
