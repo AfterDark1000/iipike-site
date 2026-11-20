@@ -2,30 +2,30 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 180
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 181
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **20.11.2026 16:45 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **20.11.2026 18:00 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/oregon-openai-chatgpt-child-safety-lawsuit-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 20.11.2026 17:52 (Усть-Катав)**; пауза до 20.11.2026 17:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/oregon-openai-chatgpt-child-safety-lawsuit-20261117.webp) |
-| **2** | [⚡ Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/citibank-ai-agent-liability-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 20.11.2026 18:52 (Усть-Катав)**; пауза до 20.11.2026 17:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/citibank-ai-agent-liability-20261120.webp) |
+| **1** | [⚡ Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/citibank-ai-agent-liability-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 20.11.2026 19:07 (Усть-Катав)**; пауза до 20.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/citibank-ai-agent-liability-20261120.webp) |
+| **2** | [⚡ Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-genie4-project-genie-access-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 20.11.2026 20:07 (Усть-Катав)**; пауза до 20.11.2026 19:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-genie4-project-genie-access-20261118.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
-| [Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-genie4-project-genie-access-20261118.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям](https://iipike.ru/articles/oregon-openai-chatgpt-child-safety-lawsuit-20261117/) | 20.11.2026 18:00 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/oregon-openai-chatgpt-child-safety-lawsuit-20261117.webp) |
 | [ИИ за час нашёл дыру в Java, которую пять месяцев не чинили](https://iipike.ru/articles/java4shell-codex-openjdk-20261117/) | 20.11.2026 16:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/java4shell-codex-openjdk-20261117.webp) |
 | [США разрешили, а NVIDIA остановила поставки ИИ-чипов в Китай](https://iipike.ru/articles/nvidia-china-hopper-shipments-halt-20261118/) | 20.11.2026 15:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-china-hopper-shipments-halt-20261118.webp) |
 | [В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли](https://iipike.ru/articles/microsoft-agent-framework-pypi-stealer-20261117/) | 20.11.2026 14:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-agent-framework-pypi-stealer-20261117.webp) |
