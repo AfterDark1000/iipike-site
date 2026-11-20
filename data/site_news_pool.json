@@ -4720,12 +4720,12 @@
       "summary": "18 ноября: временные разговоры в AI Mode Google; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-19T12:00:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-36bbeb249216ceb6"
+      "closed_at": "2026-11-20T09:08:48Z",
+      "article_id": "google-ai-mode-temporary-threads-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-36bbeb249216ceb6\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/google-ai-mode-temporary-threads-20261117/"
     },
     {
       "id": "n-3047d7657748ea76",
