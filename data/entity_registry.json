@@ -110,7 +110,8 @@
         "china-openai-distillation-reuters-20261117",
         "openai-nato-cyber-defense-daybreak-20261117",
         "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
-        "bitdefender-github-agent-instructions-malware-20261117"
+        "bitdefender-github-agent-instructions-malware-20261117",
+        "java4shell-codex-openjdk-20261117"
       ]
     },
     {
@@ -387,7 +388,8 @@
       "name": "Oracle",
       "description": "Корпоративные ИИ-решения и интеграции Oracle.",
       "article_ids": [
-        "oracle-chatgpt-accounting"
+        "oracle-chatgpt-accounting",
+        "java4shell-codex-openjdk-20261117"
       ]
     },
     {
@@ -853,7 +855,8 @@
         "openai-pierre-acquisition-20261104",
         "openai-chatgpt-codex-shared-limits-20261107",
         "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
-        "bitdefender-github-agent-instructions-malware-20261117"
+        "bitdefender-github-agent-instructions-malware-20261117",
+        "java4shell-codex-openjdk-20261117"
       ]
     },
     {

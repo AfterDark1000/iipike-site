@@ -7183,5 +7183,31 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "ИИ за час нашёл дыру в Java, которую пять месяцев не чинили",
+    "summary": "Codex нашёл уязвимость в обработчике Base64 OpenJDK за час; исследователи Calif показали выполнение чужого кода на тестовых серверах. Об ошибке сообщали ещё в июне, исправления вышли 17 ноября.",
+    "published": "2026-11-20",
+    "source_url": "https://calif.io/java4shell",
+    "cover": "assets/editorial/java4shell-codex-openjdk-20261117.webp",
+    "rubric": "skynet",
+    "vk_title": "🕳️ ИИ за ЧАС нашёл ДЫРУ в Java, которую не чинили пять месяцев",
+    "vk_summary": "Разработчик Calif поручил Codex поиск уязвимостей. Нейросеть обнаружила ошибку Base64, а исследователи взломали тестовые Jira и Jenkins без пароля. За первый эксплойт заплатили менее $200 токенами. О сбое сообщали ещё в июне; исправление Oracle выпустила 17 ноября.",
+    "published_at_utc": "2026-11-20T11:45:36Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "java4shell-codex-openjdk-20261117",
+    "url": "articles/java4shell-codex-openjdk-20261117/",
+    "topics": [
+      "cybersecurity",
+      "development"
+    ],
+    "companies": [
+      "openai",
+      "oracle"
+    ],
+    "products": [
+      "codex"
+    ]
   }
 ]

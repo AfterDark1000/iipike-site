@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Codex нашёл уязвимость в обработчике Base64 OpenJDK за час; исследователи Calif показали выполнение чужого кода на тестовых серверах. Об ошибке сообщали ещё в июне, исправления вышли 17 ноября."><meta property="og:type" content="article">
+<meta property="og:title" content="ИИ за час нашёл дыру в Java, которую пять месяцев не чинили"><meta property="og:description" content="Codex нашёл уязвимость в обработчике Base64 OpenJDK за час; исследователи Calif показали выполнение чужого кода на тестовых серверах. Об ошибке сообщали ещё в июне, исправления вышли 17 ноября.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/java4shell-codex-openjdk-20261117.webp">
+<meta property="og:url" content="https://iipike.ru/articles/java4shell-codex-openjdk-20261117/"><meta property="article:published_time" content="2026-11-20T11:45:36Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "ИИ за час нашёл дыру в Java, которую пять месяцев не чинили", "mainEntityOfPage": "https://iipike.ru/articles/java4shell-codex-openjdk-20261117/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-20T11:45:36Z", "image": "https://iipike.ru/assets/editorial/java4shell-codex-openjdk-20261117.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/java4shell-codex-openjdk-20261117/"><title>ИИ за час нашёл дыру в Java, которую пять месяцев не чинили — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/entities.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/skynet/">Скайнет просыпается</a></p><h1>ИИ за час нашёл дыру в Java, которую пять месяцев не чинили</h1>
+<p class="summary">Codex нашёл уязвимость в обработчике Base64 OpenJDK за час; исследователи Calif показали выполнение чужого кода на тестовых серверах. Об ошибке сообщали ещё в июне, исправления вышли 17 ноября.</p><p class="date">Опубликовано: 20 ноября 2026 · 16:45</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/development/">Разработка и код</a></nav><nav class="article-entity-links" aria-label="Компании и продукты статьи"><span class="article-entity-links-label">Компании и продукты</span><a href="../../entities/companies/openai/"><img src="../../assets/entity-icons/openai.svg" alt="" loading="lazy">OpenAI</a><a href="../../entities/companies/oracle/"><img src="../../assets/entity-icons/oracle.svg" alt="" loading="lazy">Oracle</a><a href="../../entities/products/codex/"><img src="../../assets/entity-icons/codex.svg" alt="" loading="lazy">Codex</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/java4shell-codex-openjdk-20261117.webp" alt="Обложка: ИИ за час нашёл дыру в Java, которую пять месяцев не чинили" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://calif.io/java4shell" target="_blank" rel="noopener noreferrer">Calif — Java4Shell: OpenJDK Base64 vulnerability discovered with Codex ↗</a>
+</aside><article class="article-text"><p class="lead">Ошибка в Java оставалась без исправления пять месяцев — а затем через неё исследователи взломали тестовые серверы Jira и Jenkins без пароля.</p>
+<p>24 октября специалист компании <strong>Calif</strong> Quang Luong поручил <strong>Codex</strong> от <strong>OpenAI</strong> проверить исходный код <strong>OpenJDK</strong>. Нейросеть искала уязвимости в самых сложных участках программы.</p>
+<p>Через час Codex принёс находку. Ещё два часа ушло на создание первого работающего эксплойта — программы, которая использует уязвимость для взлома.</p>
+<p>На токены Codex ушло <strong>меньше $200</strong>.</p>
+<h2>Дыра, о которой уже знали</h2>
+<p>Ещё <strong>9 июня</strong> пользователь под ником sundarms сообщил разработчикам Java о регулярных аварийных завершениях программы. В сентябре появился способ воспроизвести ошибку, а другой разработчик даже предложил исправление.</p>
+<p>Но предложенную заплатку так и не включили в OpenJDK. Запрос на изменение закрыли.</p>
+<p>Команда Calif обнаружила ту же ошибку независимо. Codex при поиске не обращался к старым сообщениям об этой проблеме.</p>
+<a class="editorial-related-card" href="https://iipike.ru/articles/openai-pierre-acquisition-20261104/" aria-label="По теме: OpenAI покупает Pierre: её инструменты уже работают в Codex"><img loading="lazy" decoding="async" src="../../assets/editorial/openai-pierre-acquisition-20261104.webp" alt=""><span class="editorial-related-card-copy"><span class="editorial-related-card-eyebrow">По теме</span><span class="editorial-related-card-title">OpenAI покупает Pierre: её инструменты уже работают в Codex</span><span class="editorial-related-card-meta">Новости ИИ · 6 ноября 2026</span></span></a>
+<p>Раньше разработчики видели сбой Java. Теперь исследователи показали, как использовать его для взлома.</p>
+<h2>Как через Java взламывали серверы</h2>
+<p>Проблему нашли в ускоренном обработчике <strong>Base64</strong> — распространённого способа передачи данных в текстовом виде.</p>
+<p>Специально сформированные данные заставляли Java записывать информацию за пределами выделенной области памяти. Исследователи использовали эту ошибку, чтобы запускать собственный код внутри чужого приложения.</p>
+<p>На тестовых установках Calif продемонстрировала атаки без авторизации на <strong>Jira, Jenkins, Confluence, Keycloak</strong> и несколько других популярных серверных продуктов.</p>
+<p>Уязвимость назвали <strong>Java4Shell</strong>, ей присвоили номер <strong>CVE-2026-114938</strong>.</p>
+<p>Она затрагивает определённые версии OpenJDK 17, 21, 25 и 27 на процессорах x86-64 с поддержкой инструкций AVX-512 VBMI. Именно в ускоренном коде для этих процессоров и пряталась ошибка.</p>
+<p><strong>17 ноября Oracle и OpenJDK выпустили исправления.</strong></p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
