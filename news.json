@@ -7063,5 +7063,26 @@
       "codex",
       "claude-code"
     ]
+  },
+  {
+    "title": "ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся",
+    "summary": "После ложной тревоги школьной ИИ-системы Omnilert четверых подростков задержала вооружённая полиция, хотя предупреждение об оружии уже отменили. Ученики подали иск к разработчику, полиции и школьным властям.",
+    "published": "2026-11-20",
+    "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/",
+    "cover": "assets/editorial/omnilert-doritos-school-police-lawsuit-20261117.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "⚖️ ИИ ПЕРЕПУТАЛ DORITOS с пистолетом: школьники подали в суд",
+    "vk_summary": "В Мэриленде четверо школьников подали иск после ложного сигнала системы Omnilert Gun Detect. Тревогу отменили через две минуты, но директор школы позднее передала снимок полицейскому. Вооружённые сотрудники задержали и обыскали подростков. Истцы требуют компенсации и изменения правил проверки ИИ-сигналов.",
+    "published_at_utc": "2026-11-20T05:30:47Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "omnilert-doritos-school-police-lawsuit-20261117",
+    "url": "articles/omnilert-doritos-school-police-lawsuit-20261117/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
