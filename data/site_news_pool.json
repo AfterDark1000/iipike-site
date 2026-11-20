@@ -4900,12 +4900,12 @@
       "summary": "17 ноября. Сообщается об эксперименте по разделению этапов инференса между AMD и Cerebras; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T13:14:35+00:00",
       "review_started_at": "2026-11-20T06:47:13+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-96d80dee4c0118b2"
+      "closed_at": "2026-11-20T10:08:50Z",
+      "article_id": "cerebras-amd-disaggregated-inference-5x-per-mw-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-96d80dee4c0118b2\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/cerebras-amd-disaggregated-inference-5x-per-mw-20261117/"
     },
     {
       "id": "n-bc4b4de593518dc5",
