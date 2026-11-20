@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts.site_news_pool import validate as validate_pool, utc_time, stamp, canonical_url
+from scripts.site_rubrics import RUBRICS as SITE_RUBRICS
 
 REQUESTS = Path("data/auto_editor/requests")
 RECEIPTS = Path("data/auto_editor/receipts")
@@ -27,7 +28,7 @@ REQUEST_NAME = re.compile(r"[a-z0-9][a-z0-9._-]{4,100}\.json\Z")
 POOL_ID = re.compile(r"n-[0-9a-f]{16}\Z")
 ARTICLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 STATES = {"drafting", "ready_for_review", "blocked"}
-RUBRICS = {"news", "skynet", "what-are-you-doing", "quotes"}
+RUBRICS = frozenset(SITE_RUBRICS)  # Same editorial keys as the site's canonical taxonomy.
 CYRILLIC = dict(zip(
     "абвгдежзийклмнопрстуфхцчшщъыьэюя",
     ("a", "b", "v", "g", "d", "e", "zh", "z", "i", "y", "k",
