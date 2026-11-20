@@ -4705,12 +4705,12 @@
       "summary": "17–18 ноября: десктопный Vibe, работа с файлами и облачными задачами; ссылка на страницу заметок о релизах.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-19T12:00:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-614783a992ccefaa"
+      "closed_at": "2026-11-20T08:53:48Z",
+      "article_id": "mistral-vibe-desktop-work-code-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-614783a992ccefaa\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/mistral-vibe-desktop-work-code-20261117/"
     },
     {
       "id": "n-36bbeb249216ceb6",
