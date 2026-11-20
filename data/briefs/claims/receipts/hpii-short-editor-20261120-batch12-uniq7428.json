@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261120-batch12-uniq7428.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-cef4a627b91c6fcc",
+      "pool_sequence": 336,
+      "title": "Сэм Альтман отреагировал на фильм, в котором его сыграет Эндрю Гарфилд",
+      "source_url": "https://techcrunch.com/2026/11/18/sam-altman-says-his-life-is-so-weird-that-hes-unfazed-by-andrew-garfield-portraying-him-in-upcoming-movie",
+      "claimed_at": "2026-11-20T06:57:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f0b81ce3c1461288",
+      "pool_sequence": 340,
+      "title": "Открытую модель DaisyRose-27B дообучили всего на 1200 заданиях",
+      "source_url": "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+      "claimed_at": "2026-11-20T06:57:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ddb370c34e5553db",
+      "pool_sequence": 342,
+      "title": "Индийский стартап привлёк $47 млн, чтобы учить американских роботов",
+      "source_url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers",
+      "claimed_at": "2026-11-20T06:57:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2c4163c7e21d994d",
+      "pool_sequence": 343,
+      "title": "Стартап получил $7,5 млн, чтобы ИИ-агенты перестали путаться в корпоративных документах",
+      "source_url": "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents",
+      "claimed_at": "2026-11-20T06:57:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-981b64d3f299c710",
+      "pool_sequence": 344,
+      "title": "Модный ИИ-агент научился искать одежду, пока покупатель спит",
+      "source_url": "https://www.vogue.com/article/daydreams-new-ai-agent-can-shop-for-you-while-you-sleep",
+      "claimed_at": "2026-11-20T06:57:40+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
