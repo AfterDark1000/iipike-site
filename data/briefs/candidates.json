@@ -797,19 +797,6 @@
     },
     {
       "status": "pending_review",
-      "pool_sequence": 346,
-      "pool_id": "n-a6418856dccd6908",
-      "slug": "isomorphic-labs-msd-cancer-drug-collaboration-20261119",
-      "headline": "Isomorphic Labs и MSD договорились искать молекулы против рака с помощью ИИ",
-      "body": "Isomorphic Labs, выросшая из Google DeepMind, заключила исследовательское соглашение с фармкомпанией MSD (Merck в США). ИИ-система IsoDDE будет подбирать молекулы против одной онкологической мишени, название которой партнёры не раскрывают. MSD предоставит исследовательские данные и возьмёт на себя испытания и производство, если появятся перспективные препараты. Сумму первоначального платежа и возможных выплат за успех стороны не назвали.",
-      "topic": "Наука",
-      "event_date": "2026-11-19",
-      "source": "MSD / Merck & Co.",
-      "source_url": "https://www.msd.com/news/msd-and-isomorphic-labs-enter-strategic-research-collaboration/",
-      "fact_check": "Dated primary MSD press release 19 Nov 2026: Isomorphic Labs, not Google DeepMind, is counterparty; unnamed oncology target, IsoDDE produces in silico molecular designs using selected MSD datasets; MSD handles preclinical/clinical development manufacturing and commercialization; upfront and milestone amounts undisclosed. Research agreement, no drug/clinical results yet. Separate from earlier Isomorphic Labs $5bn financing news."
-    },
-    {
-      "status": "pending_review",
       "pool_sequence": 348,
       "pool_id": "n-561fdba2dffc08a0",
       "slug": "megarobo-200m-robotic-labs-20261118",
