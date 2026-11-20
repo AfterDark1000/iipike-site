@@ -7024,7 +7024,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b000a5597093c1e3f136965",
+    "site_first_dzen_url": "https://dzen.ru/a/awAKVZcJPB4_E2ll"
   },
   {
     "title": "ИИ ищет лекарства от рака. Инвесторы вложили $5 млрд",
@@ -7047,7 +7049,9 @@
     "companies": [
       "google"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b000b2e4c30af749939460a",
+    "site_first_dzen_url": "https://dzen.ru/a/awALLkwwr3SZOUYK"
   },
   {
     "title": "ИИ взламывал программы по их заплаткам: Berkeley насчитал 20 успехов из 100",
@@ -7097,7 +7101,9 @@
       "society"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b000bef9ad69e39f176e4d8",
+    "site_first_dzen_url": "https://dzen.ru/a/awAL75rWnjnxduTY"
   },
   {
     "title": "Anthropic провела крупнейшее IPO в истории — $81 млрд. А Nasdaq всё равно упал на 2,3%",
@@ -7123,7 +7129,9 @@
     ],
     "products": [
       "claude"
-    ]
+    ],
+    "site_first_dzen_id": "6b000ccceba5b051fd8bbc00",
+    "site_first_dzen_url": "https://dzen.ru/a/awAMzOulsFH9i7wA"
   },
   {
     "title": "Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»",
@@ -7151,7 +7159,9 @@
     "products": [
       "claude-code",
       "codex"
-    ]
+    ],
+    "site_first_dzen_id": "6b000d8e270b29709ae3d8ed",
+    "site_first_dzen_url": "https://dzen.ru/a/awANjicLKXCa49jt"
   },
   {
     "title": "В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли",
