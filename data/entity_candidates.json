@@ -1449,6 +1449,18 @@
           "source_url": "https://www.wellsfargo.com/online-banking/online-access-agreement/upcoming/"
         }
       ]
+    },
+    {
+      "key": "nous-research",
+      "name": "Nous Research",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
     }
   ],
   "products": [
@@ -2743,6 +2755,71 @@
         {
           "article_id": "java4shell-codex-openjdk-20261117",
           "source_url": "https://github.com/openjdk/jdk/pull/32781"
+        }
+      ]
+    },
+    {
+      "key": "microsoft-foundry",
+      "name": "Microsoft Foundry",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
+    },
+    {
+      "key": "foundry-autopilot",
+      "name": "Autopilot",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
+    },
+    {
+      "key": "microsoft-agent-365",
+      "name": "Agent 365",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
+    },
+    {
+      "key": "microsoft-entra",
+      "name": "Microsoft Entra",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
+    },
+    {
+      "key": "hermes",
+      "name": "Hermes",
+      "company": "nous-research",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
         }
       ]
     }
