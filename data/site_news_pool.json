@@ -4390,12 +4390,12 @@
       "summary": "17 ноября: Bria RMBG-3.0 для удаления фона, открытые веса для некоммерческого использования.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-19T11:43:55+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-5cfdcdfbcb5e9e93"
+      "closed_at": "2026-11-20T07:38:45Z",
+      "article_id": "bria-rmbg-3-semantic-background-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-5cfdcdfbcb5e9e93\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/bria-rmbg-3-semantic-background-20261117/"
     },
     {
       "id": "n-be0aed2f51056a6d",
