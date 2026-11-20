@@ -48,9 +48,17 @@ jobs:
           script: |
             const watchlist = require('./admin/first-car/watchlist.json');
             const { updateDataBranch } = require('./scripts/first_car_dzen_collect.cjs');
-            const { requests, added, queue } = await updateDataBranch(github, context.repo, watchlist, {
+            const { requests, processed, errors, added, queue } = await updateDataBranch(github, context.repo, watchlist, {
               intervalMinutes: Number(process.env.POLL_INTERVAL || 60),
             });
-            await core.summary.addHeading('Первый вагон')
-              .addRaw(`Запросов: ${requests} · новых статей: ${added}\n`).write();
+            core.summary.addHeading('Первый вагон')
+              .addRaw(`Запросов: ${requests} · каналов разобрано: ${processed} · ошибок: ${errors.length} · новых ссылок: ${added}\n`);
+            if (errors.length) {
+              const labels = { format: 'Ошибка формата', fetch: 'Ошибка получения', access: 'Доступ остановлен' };
+              const failures = errors.map(({ channel, kind, reason }) => `${channel} — ${labels[kind]} (${reason})`);
+              core.summary.addList(failures);
+              for (const failure of failures) core.warning(failure);
+            }
+            await core.summary.write();
             if (queue.blocked) core.setFailed(`Сбор остановлен. HTTP ${queue.blocked.status}. ${queue.blocked.reason}`);
+            else if (errors.length && !processed) core.setFailed('Не удалось обработать ни одного канала Дзена.');

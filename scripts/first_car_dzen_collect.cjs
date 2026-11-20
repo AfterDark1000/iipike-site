@@ -36,7 +36,7 @@ function articleList(payload, channel) {
   if (payload?.channel?.status !== "ok" || typeof publisher !== "string" || !publisher ||
       (id ? id !== publisher : feed !== channel.url) ||
       !Array.isArray(payload?.items) || payload.items.length > 50) {
-    throw new Error("Unrecognized channel or response shape");
+    throw new ChannelError("format", "Unrecognized channel or response shape");
   }
   return payload.items.flatMap((item) => {
     if (item?.publisher_id !== publisher || item.item_type !== "native") return [];
@@ -48,9 +48,16 @@ function articleList(payload, channel) {
   });
 }
 
-class AccessStopped extends Error {
-  constructor(status, reason) {
+class ChannelError extends Error {
+  constructor(kind, reason) {
     super(reason);
+    this.kind = kind;
+  }
+}
+
+class AccessStopped extends ChannelError {
+  constructor(status, reason) {
+    super("access", reason);
     this.status = status;
   }
 }
@@ -69,7 +76,7 @@ async function fetchChannel(channel, fetcher = fetch) {
   }
   if (!response.ok) {
     await dispose();
-    throw new Error(`Dzen HTTP ${status}`);
+    throw new ChannelError("fetch", `Dzen HTTP ${status}`);
   }
   if (!/^application\/json(?:\s*;|$)/i.test(response.headers.get("content-type") ?? "")) {
     await dispose();
@@ -79,10 +86,14 @@ async function fetchChannel(channel, fetcher = fetch) {
   let length = 0;
   for await (const chunk of response.body) {
     length += chunk.byteLength;
-    if (length > MAX_BODY) throw new Error("Dzen response exceeds 1 MiB");
+    if (length > MAX_BODY) throw new ChannelError("format", "Dzen response exceeds 1 MiB");
     chunks.push(chunk);
   }
-  return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+  try {
+    return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+  } catch {
+    throw new ChannelError("format", "Invalid JSON from Dzen");
+  }
 }
 
 function emptyQueue() {
@@ -105,6 +116,7 @@ async function collect(watchlist, previous = emptyQueue(), {
   const articles = new Map(previous.articles.map((row) => [row.url, row]));
   const known = new Set(watchlist.articles.map((row) => canonicalArticle(row.url)));
   const polls = { ...previous.polls };
+  const errors = [];
   let blocked = previous.blocked;
   let requests = 0;
   let added = 0;
@@ -130,6 +142,12 @@ async function collect(watchlist, previous = emptyQueue(), {
         added += 1;
       }
     } catch (error) {
+      const knownError = error instanceof ChannelError;
+      errors.push({
+        channel: channel.url,
+        kind: knownError ? error.kind : "fetch",
+        reason: knownError ? error.message : "Network request failed or timed out",
+      });
       if (error instanceof AccessStopped) {
         blocked = { status: error.status, reason: error.message, at: new Date(clock()).toISOString() };
       } else {
@@ -143,7 +161,10 @@ async function collect(watchlist, previous = emptyQueue(), {
   }
   const active = [...articles.values()].filter((row) => Date.parse(row.published_at) >= start - DAY);
   active.sort((a, b) => b.published_at.localeCompare(a.published_at));
-  return { queue: { schema_version: 1, articles: active, polls, blocked }, requests, added };
+  return {
+    queue: { schema_version: 1, articles: active, polls, blocked },
+    requests, processed: requests - errors.length, errors, added,
+  };
 }
 
 async function updateDataBranch(github, repo, watchlist, options) {

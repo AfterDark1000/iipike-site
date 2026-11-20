@@ -26,8 +26,37 @@ test("two saved GPTнул observations have 20 authentic URLs and yield zero new
   assert.equal(actual.filter((row) => later - Date.parse(row.published_at) <= 24 * HOUR).length, 4);
   const again = await collect(oneChannel, seen.queue, { read: async () => payload, clock: () => later });
   assert.equal(again.requests, 1);
+  assert.equal(again.processed, 1);
+  assert.deepEqual(again.errors, []);
   assert.equal(again.added, 0);
   assert.deepEqual(again.queue.articles, []);
+});
+
+test("HTTP 200 with an unrecognized response is an error for every affected channel", async () => {
+  const result = await collect(watchlist, undefined, {
+    read: (channel) => fetchChannel(channel, async () =>
+      new Response(JSON.stringify({ items: [] }), { status: 200, headers: { "Content-Type": "application/json" } })),
+    clock: () => now,
+  });
+  assert.equal(result.requests, 5);
+  assert.equal(result.processed, 0);
+  assert.equal(result.added, 0);
+  assert.deepEqual(result.errors, watchlist.channels.map(({ url }) =>
+    ({ channel: url, kind: "format", reason: "Unrecognized channel or response shape" })));
+});
+
+test("a valid channel is counted separately from an HTTP 200 with malformed JSON", async () => {
+  const second = watchlist.channels[1];
+  const result = await collect({ ...watchlist, channels: [GPTNUL, second] }, undefined, {
+    read: (channel) => fetchChannel(channel, async () => new Response(
+      channel === GPTNUL ? JSON.stringify(payload) : 'invalid: private payload',
+      { status: 200, headers: { "Content-Type": "application/json" } },
+    )),
+    clock: () => now,
+  });
+  assert.equal(result.processed, 1);
+  assert.equal(result.added, 0);
+  assert.deepEqual(result.errors, [{ channel: second.url, kind: "format", reason: "Invalid JSON from Dzen" }]);
 });
 
 test("a new URL flows through the existing queue reader, deduplicates and expires", async (t) => {
@@ -113,6 +142,8 @@ test("stop on 403/429 or redirect, and never automatically restart a stopped col
       read: (channel) => fetchChannel(channel, async () => new Response(null, { status })), clock: () => now,
     });
     assert.equal(denied.requests, 1);
+    assert.equal(denied.processed, 0);
+    assert.equal(denied.errors[0].kind, "access");
     assert.equal(denied.queue.blocked.status, status);
     const blocked = await collect(watchlist, denied.queue, { clock: () => now + 48 * HOUR });
     assert.equal(blocked.requests, 0);
@@ -126,6 +157,7 @@ test("transient errors back off and preserve unexpired articles", async () => {
     read: async () => { throw new Error("timeout"); }, clock: () => now + HOUR,
   });
   assert.equal(failed.queue.polls[GPTNUL.url].failures, 1);
+  assert.deepEqual(failed.errors, [{ channel: GPTNUL.url, kind: "fetch", reason: "Network request failed or timed out" }]);
   assert.deepEqual(failed.queue.articles, good.queue.articles);
   assert.equal((await collect(oneChannel, failed.queue, { read, clock: () => now + 2 * HOUR })).requests, 0);
   const later = await collect(oneChannel, failed.queue, { read, clock: () => now + 3 * HOUR });
