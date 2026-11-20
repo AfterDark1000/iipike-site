@@ -4,6 +4,10 @@
   const commenting = window.firstCarCommenting;
   const panel = document.querySelector("#panel");
   const refreshButton = document.querySelector("#refresh-commenting");
+  const collectButton = document.querySelector("#collect-fresh");
+  const collectFeedback = document.querySelector("#collect-feedback");
+  const collectProgress = document.querySelector("#collect-progress");
+  const collectRun = document.querySelector("#collect-run");
   const storageKey = "hpii:first-car:v1";
   const dzenMirror = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
   const channelLink = /^https:\/\/dzen\.ru\/(?:[A-Za-z0-9_.-]+|id\/[a-f0-9]{24})$/;
@@ -17,10 +21,12 @@
   const authorized = () => document.documentElement.classList.contains("hpii-authorized");
   let watchlist = null;
   let dzenArticles = [];
+  let dzenDrafts = new Map();
   let snapshot = null;
   let sourceError = false;
   let watchError = false;
   let dzenError = false;
+  let draftsError = false;
   let loading = false;
   let view = "queue";
 
@@ -123,22 +129,71 @@
         if (!Array.isArray(data?.channels) || !Array.isArray(data?.articles)) throw Error("Invalid watchlist");
         return data;
       });
-    const [data, research, dzen] = await Promise.allSettled([commenting.read(), watch, commenting.readDzen()]);
+    const [data, research, dzen, drafts] = await Promise.allSettled([
+      commenting.read(), watch, commenting.readDzen(), commenting.readDzenDrafts(),
+    ]);
     loading = false;
     refreshButton.disabled = false;
     if (!authorized()) return;
     sourceError = data.status !== "fulfilled";
     watchError = research.status !== "fulfilled";
     dzenError = dzen.status !== "fulfilled";
+    draftsError = drafts.status !== "fulfilled";
     snapshot = sourceError ? null : data.value;
     watchlist = watchError ? null : research.value;
     dzenArticles = dzenError ? [] : dzen.value;
+    dzenDrafts = draftsError ? new Map() : drafts.value;
     render();
+  }
+
+  async function checkFreshArticles() {
+    if (!authorized() || collectButton.disabled) return;
+    collectButton.disabled = true;
+    collectFeedback.hidden = false;
+    collectRun.hidden = true;
+    collectProgress.textContent = "Запрашиваю проверку каналов…";
+    try {
+      const auth = window.HpiiAdminAuth;
+      const path = "/api/first-car/collect";
+      const run = await auth.fetchApi(path, { method: "POST" });
+      if (!authorized() || !Number.isSafeInteger(run.id) || run.id < 1) return;
+      collectRun.href = `https://github.com/AfterDark1000/iipike-site/actions/runs/${run.id}`;
+      collectRun.hidden = false;
+      const message = run.state === "cooldown" ? "Каналы уже проверяли в последний час." : "Проверка каналов запущена.";
+      collectProgress.textContent = message;
+      const deadline = Date.now() + 3 * minute;
+      while (authorized() && Date.now() < deadline) {
+        const current = await auth.fetchApi(`${path}?run=${run.id}`);
+        if (!authorized()) return;
+        if (current.state === "completed") {
+          const label = current.conclusion === "success" ? "Проверка завершена." : "Проверка завершилась с ошибкой или была отменена.";
+          const report = current.report;
+          collectProgress.textContent = report
+            ? `${label} Каналов разобрано ${report.processed}, ошибок ${report.errors}, новых ссылок ${report.added}.`
+            : `${label} Отчёт доступен в GitHub Actions, если сборщик был запущен.`;
+          await refresh();
+          return;
+        }
+        await new Promise((resolve) => window.setTimeout(resolve, 7000));
+      }
+      if (authorized()) collectProgress.textContent = "Проверка ещё идёт. Результат будет доступен по ссылке на запуск.";
+    } catch (error) {
+      if (authorized()) collectProgress.textContent = error.message === "first_car_not_enabled"
+        ? "Запуск сборщика пока не включён." : "Не удалось запустить проверку или получить её статус.";
+    } finally {
+      collectButton.disabled = false;
+    }
   }
 
   function candidateRow(row, age) {
     const native = row.kind === "dzen";
     const collected = row.source === "dzen_launcher_more";
+    const draftState = {
+      read_error: "Нужен текст статьи. Реплика не подготовлена.",
+      needs_text: "Нужен текст статьи. Реплика не подготовлена.",
+      generation_error: "Не удалось подготовить реплику Gemini.",
+      skipped_by_editor: "Подходящая реплика не прошла отбор или фактчек.",
+    }[row.draft_status] ?? "Ожидает подготовки реплики.";
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
     const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
@@ -154,6 +209,7 @@
         native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
       ${row.angle ? `<p class="details">${escapeText(row.angle)}</p>` : ""}
       ${draft(row)}
+      ${collected && !row.draft_comment ? `<p class="details">${draftState}</p>` : ""}
       <div class="actions">
         ${row.dzen_url ? link(row.dzen_url, "Открыть в Дзене", dzenMirror, "button primary") : link(search, "Найти в Дзене", httpsLink, "button primary")}
         ${row.source_url ? link(row.source_url, "Оригинал", httpsLink, "button") : ""}
@@ -185,12 +241,14 @@
   function render() {
     if (!authorized()) return;
     const now = Date.now();
-    const native = [...dzenArticles, ...commenting.nativeCandidates(watchlist, now)];
+    const native = [...dzenArticles.map((row) => ({ ...row, ...dzenDrafts.get(row.key) })),
+      ...commenting.nativeCandidates(watchlist, now)];
     const rows = new Map(native.map((row) => [row.key, row]));
     for (const row of snapshot?.candidates ?? []) {
       const previous = rows.get(row.key);
       // Preserve the Dzen timestamp and counts when Gemini points to this exact article.
-      rows.set(row.key, previous ? { ...previous, draft_comment: row.draft_comment, source_url: row.source_url } : row);
+      rows.set(row.key, previous ? { ...previous, draft_comment: previous.draft_comment || row.draft_comment,
+        source_url: row.source_url } : row);
     }
     const entries = [...rows.values()].map((row) => ({ row,
       age: minutesBetween(exactTime(row.dzen_published_at ?? row.publisher_published_at), now),
@@ -209,6 +267,7 @@
       return `<header class="panel-head ${index > 0 ? "candidate-head" : ""}"><h2>${sections[index]}</h2></header>
         ${index > 0 ? sourceStatus(now) : watchError ? `<p class="source-note">Замер каналов недоступен.</p>` : ""}
         ${index === 0 && dzenError ? `<p class="source-note">Не удалось прочитать ленту каналов Дзена.</p>` : ""}
+        ${index === 0 && draftsError ? `<p class="source-note">Не удалось прочитать реплики к статьям Дзена.</p>` : ""}
         ${picked.length ? grouped(picked) : `<p class="section-empty">${empty}</p>`}`;
     };
     panel.innerHTML = view === "channels" ? channelPanel() : pane(0) + pane(1) + (handled.length ?
@@ -220,6 +279,7 @@
     const button = event.target.closest("button");
     if (!button || !authorized()) return;
     if (button === refreshButton) void refresh();
+    else if (button === collectButton) void checkFreshArticles();
     else if (button.dataset.view) {
       view = button.dataset.view;
       render();
@@ -249,6 +309,10 @@
     snapshot = null;
     watchlist = null;
     dzenArticles = [];
+    dzenDrafts.clear();
+    collectProgress.textContent = "";
+    collectFeedback.hidden = true;
+    collectRun.hidden = true;
     panel.replaceChildren();
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) void refresh(); });

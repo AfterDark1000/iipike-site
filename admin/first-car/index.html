@@ -22,7 +22,10 @@
       <button type="button" data-view="queue" aria-current="page">Очередь <span id="queue-count" class="count">0</span></button>
       <button type="button" data-view="channels">Приоритетные каналы</button>
       <button id="refresh-commenting" type="button">Обновить</button>
+      <button id="collect-fresh" type="button">Проверить свежие статьи</button>
     </nav>
+    <p id="collect-feedback" class="source-note" hidden><span id="collect-progress" role="status"></span> <a id="collect-run" hidden
+      target="_blank" rel="noopener noreferrer">Открыть запуск в GitHub Actions</a></p>
     <div class="columns">
       <section id="panel" class="panel" aria-label="Текущий раздел" aria-live="polite"></section>
       <aside class="guide"><div class="guide-section">

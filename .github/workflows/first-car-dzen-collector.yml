@@ -1,7 +1,9 @@
 name: HPII — First Car Dzen collector
 
 on:
-  workflow_call:
+  schedule:
+    - cron: '0 4 * * *' # 09:00 Asia/Yekaterinburg (UTC+5)
+  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
@@ -28,7 +30,7 @@ jobs:
       - run: node --test tests/first_car_admin.test.cjs tests/first_car_dzen_collect.test.cjs
   collect-dzen:
     if: >-
-      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
+      contains(fromJSON('["schedule", "workflow_dispatch"]'), github.event_name) && github.ref == 'refs/heads/main' &&
       github.repository == 'AfterDark1000/iipike-site' && vars.FIRST_CAR_DZEN_COLLECTION == 'enabled'
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -50,6 +52,7 @@ jobs:
             const { updateDataBranch } = require('./scripts/first_car_dzen_collect.cjs');
             const { requests, processed, errors, added, queue } = await updateDataBranch(github, context.repo, watchlist, {
               intervalMinutes: Number(process.env.POLL_INTERVAL || 60),
+              runId: context.runId,
             });
             core.summary.addHeading('Первый вагон')
               .addRaw(`Запросов: ${requests} · каналов разобрано: ${processed} · ошибок: ${errors.length} · новых ссылок: ${added}\n`);

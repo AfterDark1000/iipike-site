@@ -180,6 +180,12 @@ async function updateDataBranch(github, repo, watchlist, options) {
     previous = JSON.parse(Buffer.from(data.content, "base64").toString("utf8"));
   }
   const result = await collect(watchlist, previous, options);
+  if (options?.runId) {
+    const { requests, processed, errors, added } = result;
+    result.queue.last_run = { id: options.runId, requests, processed, errors: errors.length, added };
+  } else if (previous.last_run) {
+    result.queue.last_run = previous.last_run;
+  }
   if (JSON.stringify(previous) === JSON.stringify(result.queue)) return result;
   const tree = await github.rest.git.createTree({ ...repo, tree: [{
     path: DATA_PATH, mode: "100644", type: "blob", content: JSON.stringify(result.queue, null, 2) + "\n",

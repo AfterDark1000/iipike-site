@@ -3,6 +3,7 @@
 const firstCarCommenting = (() => {
   const SOURCE = "https://raw.githubusercontent.com/AfterDark1000/iipike-site/commenting-data/commenting/queue.json";
   const DZEN_SOURCE = "https://raw.githubusercontent.com/AfterDark1000/iipike-site/first-car-data/dzen/queue.json";
+  const DZEN_DRAFTS = "https://raw.githubusercontent.com/AfterDark1000/iipike-site/commenting-data/first-car/drafts.json";
   const HOUR = 3_600_000;
   const DIRECT = /^https:\/\/dzen\.ru\/a\/[A-Za-z0-9_-]{8,100}$/;
   const ZONED = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
@@ -75,6 +76,23 @@ const firstCarCommenting = (() => {
         ({ url, title, source_name, published_at, observed_at: first_seen_at, source })) }, Date.now());
   }
 
+  async function readDzenDrafts(fetcher = fetch) {
+    const url = new URL(DZEN_DRAFTS);
+    url.searchParams.set("t", String(Date.now()));
+    const response = await fetcher(url, { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15_000) });
+    if (response.status === 404) return new Map();
+    if (!response.ok) throw new Error(`Реплики к статьям Дзена вернули HTTP ${response.status}`);
+    const queue = await response.json();
+    if (queue?.schema_version !== 1 || !Array.isArray(queue.items)) throw new Error("Некорректные реплики к статьям Дзена");
+    return new Map(queue.items.filter((row) => typeof row?.url === "string" && DIRECT.test(row.url)).map((row) => [
+      row.url, {
+        draft_status: row.status,
+        draft_comment: row.status === "draft_ready" && row.fact_review === "passed" && typeof row.comment === "string"
+          ? row.comment : "",
+      },
+    ]));
+  }
+
   async function read(fetcher = fetch) {
     const url = new URL(SOURCE);
     url.searchParams.set("t", String(Date.now()));
@@ -86,7 +104,7 @@ const firstCarCommenting = (() => {
     return normalize(queue, Date.now());
   }
 
-  return { normalize, nativeCandidates, read, readDzen, staleAfter: 90 * 60_000 };
+  return { normalize, nativeCandidates, read, readDzen, readDzenDrafts, staleAfter: 90 * 60_000 };
 })();
 
 if (typeof module !== "undefined" && module.exports) module.exports = firstCarCommenting;

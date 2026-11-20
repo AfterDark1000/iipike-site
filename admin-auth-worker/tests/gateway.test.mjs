@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {webcrypto,createHash} from "node:crypto";
+import {webcrypto,createHash,createHmac} from "node:crypto";
 import gateway, {__test} from "../src/index.mjs";
 globalThis.crypto ||= webcrypto;
 
@@ -35,6 +35,54 @@ test("fail closed before login",async()=>{
   r=await call("/health");
   assert.equal(r.status,200);
   assert.equal((await r.json()).cover_review_max_version,5);
+});
+test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
+  const api="/api/first-car/collect";
+  const enabled={...env,FIRST_CAR_ACTIONS_TOKEN:"fixture-actions-token"};
+  const raw=Buffer.from(JSON.stringify({kind:"session",user_id:284211090,login:"AfterDark1000",
+    exp:Math.floor(Date.now()/1000)+600})).toString("base64url");
+  const mac=createHmac("sha256",env.SESSION_SIGNING_KEY).update(raw).digest("base64url");
+  const session={Origin:env.ADMIN_ORIGIN,Authorization:`Bearer ${raw}.${mac}`};
+  const request=(path,options={})=>gateway.fetch(new Request(env.BACKEND_ORIGIN+path,{headers:session,...options}),enabled);
+  const workflow="/actions/workflows/first-car-dzen-collector.yml";
+  const run={id:42,event:"workflow_dispatch",status:"in_progress",head_branch:"main",
+    path:".github/workflows/first-car-dzen-collector.yml",created_at:new Date().toISOString()};
+  let dispatched=false;
+  const github=t.mock.method(globalThis,"fetch",async(input,options)=>{
+    const path=String(input).split("/iipike-site")[1];
+    if(path==="/contents/dzen/queue.json?ref=first-car-data"){
+      assert.equal(options.headers.authorization,"Bearer "+env.GITHUB_REPO_TOKEN);
+      const queue={last_run:{id:42,processed:4,errors:1,added:2}};
+      return Response.json({type:"file",sha:"queue-sha",content:Buffer.from(JSON.stringify(queue)).toString("base64")});
+    }
+    assert.equal(options.headers.authorization,"Bearer "+enabled.FIRST_CAR_ACTIONS_TOKEN);
+    if(path===workflow+"/runs?branch=main&per_page=10")
+      return Response.json({workflow_runs:dispatched?[run]:[]});
+    if(path===workflow+"/dispatches"){
+      assert.equal(dispatched,false);
+      assert.deepEqual(JSON.parse(options.body),{ref:"main",return_run_details:true});
+      dispatched=true;
+      return Response.json({workflow_run_id:42});
+    }
+    if(path==="/actions/runs/42")return Response.json(run);
+    throw Error("Unexpected request");
+  });
+  assert.equal((await request(api,{method:"POST",headers:{Origin:env.ADMIN_ORIGIN}})).status,401);
+  assert.equal((await request(api,{method:"POST",headers:{...session,Origin:"https://wrong.test"}})).status,403);
+  assert.equal((await call(api,{method:"POST",headers:session})).status,503);
+  assert.equal((await request(api+"?ref=other",{method:"POST"})).status,400);
+  assert.equal(github.mock.callCount(),0);
+  const start=await request(api,{method:"POST"});
+  assert.equal(start.status,202);
+  assert.equal((await start.json()).id,42);
+  assert.equal((await (await request(api,{method:"POST"})).json()).state,"running");
+  assert.equal((await (await request(api+"?run=42")).json()).state,"running");
+  Object.assign(run,{status:"completed",conclusion:"success"});
+  const complete=await (await request(api+"?run=42")).json();
+  assert.deepEqual(complete,{ok:true,id:42,state:"completed",conclusion:"success",report:{processed:4,errors:1,added:2}});
+  assert.equal((await (await request(api,{method:"POST"})).json()).state,"cooldown");
+  run.path=".github/workflows/commenting-queue.yml";
+  assert.equal((await request(api+"?run=42")).status,404);
 });
 test("GitHub OAuth popup yields owner-only session; review is idempotent",async()=>{
   const previousFetch=globalThis.fetch;

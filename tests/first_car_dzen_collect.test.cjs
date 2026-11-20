@@ -199,8 +199,9 @@ test("write only the dedicated data ref and do not rewrite unchanged cached stat
   } };
   const options = { read: async () => ({ ...payload, items: [fresh] }), clock: () => now };
   const repo = { owner: "AfterDark1000", repo: "iipike-site" };
-  const first = await updateDataBranch(github, repo, oneChannel, options);
+  const first = await updateDataBranch(github, repo, oneChannel, { ...options, runId: 42 });
   assert.equal(first.added, 1);
+  assert.deepEqual(JSON.parse(saved).last_run, { id: 42, requests: 1, processed: 1, errors: 0, added: 1 });
   const cached = await updateDataBranch(github, repo, oneChannel, options);
   assert.equal(cached.requests, 0);
   assert.equal(cached.added, 0);
