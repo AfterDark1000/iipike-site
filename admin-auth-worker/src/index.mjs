@@ -91,13 +91,23 @@ const FIRST_CAR_EVENTS = new Set(["schedule", "workflow_dispatch"]);
 
 async function firstCarRun(request, url, env, headers) {
   if (!env.FIRST_CAR_ACTIONS_TOKEN) return fail(503,"first_car_not_enabled",headers);
-  const actions = (path, options = {}) => githubJson(path, env, {
-    ...options, redirect:"error", signal:AbortSignal.timeout(10_000),
-    headers:{...githubHeaders(env.FIRST_CAR_ACTIONS_TOKEN),...options.headers}
+  const actions = (path, options = {}, token = env.FIRST_CAR_ACTIONS_TOKEN) => githubJson(path, env, {
+    ...options, redirect:"manual", signal:AbortSignal.timeout(10_000),
+    headers:{...githubHeaders(token),...options.headers}
   });
   const describe = (run, state, report = null) => send({
     ok:true, id:run.id, state, conclusion:run.conclusion ?? null, report
   }, state === "started" ? 202 : 200, headers);
+  let stage = "request";
+  const failed = (error, kind, upstreamStatus) => {
+    // Error messages, headers, redirect locations and response bodies may contain credentials.
+    const diagnostic = {stage,kind};
+    if (upstreamStatus !== undefined) diagnostic.upstream_status = upstreamStatus;
+    console.warn("first_car_failure",diagnostic);
+    return send({ok:false,error,...diagnostic},502,headers);
+  };
+  const upstreamFailed = (error,status) => failed(error,
+    status >= 300 && status < 400 ? "upstream_3xx" : status !== 200 ? "upstream_http" : "invalid_response",status);
   try {
     if (request.method === "POST") {
       if (url.search) return fail(400,"unexpected_input",headers);
@@ -105,33 +115,39 @@ async function firstCarRun(request, url, env, headers) {
       for await (const chunk of request.body ?? []) {
         if (chunk.byteLength > 0) return fail(400,"unexpected_input",headers);
       }
+      stage = "list_runs";
       const list = await actions(FIRST_CAR_WORKFLOW + "/runs?branch=main&per_page=10");
-      if (list.status !== 200 || !Array.isArray(list.data.workflow_runs)) return fail(502,"first_car_runs_unavailable",headers);
+      if (list.status !== 200 || !Array.isArray(list.data?.workflow_runs)) return upstreamFailed("first_car_runs_unavailable",list.status);
       const runs = list.data.workflow_runs.filter(run => run.head_branch === "main" &&
         FIRST_CAR_EVENTS.has(run.event) && Number.isSafeInteger(run.id));
       const active = runs.find(run => run.status !== "completed");
       if (active) return describe(active,"running");
       const recent = runs.find(run => Date.now() - Date.parse(run.created_at) < FIRST_CAR_COOLDOWN_MS);
       if (recent) return describe(recent,"cooldown");
+      stage = "dispatch";
       const dispatch = await actions(FIRST_CAR_WORKFLOW + "/dispatches", {
         method:"POST",headers:{"content-type":"application/json"},
         body:JSON.stringify({ref:"main",return_run_details:true})
       });
-      const id = dispatch.data.workflow_run_id;
-      if (dispatch.status !== 200 || !Number.isSafeInteger(id) || id < 1) return fail(502,"first_car_dispatch_failed",headers);
+      const id = dispatch.data?.workflow_run_id;
+      if (dispatch.status !== 200 || !Number.isSafeInteger(id) || id < 1) return upstreamFailed("first_car_dispatch_failed",dispatch.status);
       return describe({id},"started");
     }
     const id = Number(url.searchParams.get("run"));
     if (!/^\d+$/.test(url.searchParams.get("run") ?? "") || !Number.isSafeInteger(id) || id < 1) {
       return fail(400,"invalid_run",headers);
     }
+    stage = "get_run";
     const {status,data:run} = await actions("/actions/runs/" + id);
-    if (status !== 200 || run.id !== id || run.head_branch !== "main" || !FIRST_CAR_EVENTS.has(run.event) ||
+    if (status !== 200 && status !== 404) return upstreamFailed("first_car_run_unavailable",status);
+    if (status !== 200 || run?.id !== id || run.head_branch !== "main" || !FIRST_CAR_EVENTS.has(run.event) ||
         run.path?.split("@",1)[0] !== ".github/workflows/first-car-dzen-collector.yml") {
       return fail(404,"first_car_run_unavailable",headers);
     }
     if (run.status !== "completed") return describe(run,"running");
-    const snapshot = await githubJson("/contents/dzen/queue.json?ref=first-car-data",env, {signal:AbortSignal.timeout(10_000)});
+    stage = "read_report";
+    const snapshot = await actions("/contents/dzen/queue.json?ref=first-car-data",{},env.GITHUB_REPO_TOKEN);
+    if (snapshot.status !== 200 && snapshot.status !== 404) return upstreamFailed("first_car_report_unavailable",snapshot.status);
     let report = null;
     if (snapshot.status === 200) {
       const last = decodeGitHubContent(snapshot.data).last_run;
@@ -140,8 +156,10 @@ async function firstCarRun(request, url, env, headers) {
       }
     }
     return describe(run,"completed",report);
-  } catch {
-    return fail(502,"first_car_service_unavailable",headers);
+  } catch (error) {
+    const name = error?.name;
+    const kind = ["TypeError","TimeoutError","AbortError","SyntaxError"].includes(name) ? name : "unexpected_error";
+    return failed("first_car_service_unavailable",kind);
   }
 }
 function pathFor(id) { return "editorial_inbox/auto_drafts/"+id+".json"; }
