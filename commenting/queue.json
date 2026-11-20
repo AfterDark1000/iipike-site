@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-20T20:06:44.444588Z",
+  "updated_at": "2026-11-20T23:57:20.122407Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
-      "fresh_matches": 9
+      "fresh_matches": 10
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,23 +64,65 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T20:06:44.444588Z",
-      "last_success_at": "2026-11-20T20:06:44.444588Z",
+      "checked_at": "2026-11-20T23:57:20.122407Z",
+      "last_success_at": "2026-11-20T23:57:20.122407Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-21",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "b1ce134599434bb3e8021bb8",
+      "title": "Китайская Trina Storage создала гибридную электростанцию для ИИ-дата-центров: аккумуляторы и газовые турбины выдают до 1 ГВт мощности",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/20/kitaiskaia-trina-storage-sozdala-gibridnuiu-elektrostanciiu-dlia-ii-data-centrov-akkumuliatory-i-gazovye-turbiny-vydaiut-do-1-gvt-moshhnosti.html",
+      "published_at": "2026-11-20T20:58:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-20T23:57:20.122407Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Батареи должны сглаживать скачки, пока турбины набирают обороты. Интересно, на сколько минут автономности этих аккумуляторов вообще рассчитан такой комплекс при резком отключении внешней сети.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-20T23:57:20.122407Z",
+      "reason": "Зацепился за гибридную схему с аккумуляторами и газовыми генераторами.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-20T23:57:20.122407Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "dbc916b3e59578d0bdcb0410",
+      "title": "Первое изображение чёрной дыры M87* независимо подтвердили с помощью ИИ",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/20/pervoe-izobrazenie-cernoi-dyry-m87-nezavisimo-podtverdili-s-pomoshhiu-ii.html",
+      "published_at": "2026-11-20T20:23:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-20T23:57:20.122407Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Нейросеть прогнали по старым радиоданным телескопов и получили ровно то же кольцо без подсказок о его форме. Приятно, когда ИИ не придумывает лишнего, а подтверждает чужие измерения.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-20T23:57:20.122407Z",
+      "reason": "Использование алгоритма для независимой проверки снимка черной дыры.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-20T23:57:20.122407Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "b14a125cfc368e7c84704995",
       "title": "ИИ спроектировал роботов для реальной полосы препятствий. Учёные MIT вручную собрали и протестировали 135 из них",
@@ -273,10 +315,14 @@
       "first_seen_at": "2026-11-20T17:59:17.471424Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Половина опрошенных учителей освоила вайб-кодинг и пишет приложения обычными словами. Звучит бодро, но хочется понять, какого уровня эти программы и запускает ли их кто-то дальше своего класса.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-20T23:57:20.122407Z",
+      "reason": "Деталь про вайб-кодинг среди учителей.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-20T23:57:20.122407Z"
     },
     {
       "id": "baf5db834afefb9847effc17",
@@ -2296,48 +2342,6 @@
       "status": "pending",
       "comment": "",
       "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "87c0f357e33a39900857d596",
-      "title": "Процессоры могут повторить судьбу видеокарт: бум ИИ грозит новым дефицитом комплектующих",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151289",
-      "published_at": "2026-11-13T21:02:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-13T22:08:46.095144Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Если на один графический чип теперь нужен целый центральный процессор, заводы по производству кремния точно взвывут первыми. Спрос на серверные CPU собираются увеличивать в пять раз, но ограничения по деталям обещают растянуть до 2028 года. Будто кто-то забыл спросить у фабрик, успеют ли они за таким аппетитом.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-13T22:08:46.095144Z",
-      "reason": "Заметка про изменение пропорции GPU и CPU в ИИ-системах и дефицит комплектующих до 2028 года.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-13T22:08:46.095144Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "001754406ca34d1337880dd3",
-      "title": "ИИ-проекты Китая на $3,2 млрд оказались под угрозой из-за увольнения Хуанга",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151287",
-      "published_at": "2026-11-13T20:49:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-13T22:08:46.095144Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "В статье пишут про отставку Дженсена Хуанга из-за расследования, хотя в реальности такого события не происходило. Забавно, как тексты иногда опережают новости или просто путают реальность с черновиками сценаристов.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-13T22:08:46.095144Z",
-      "reason": "В статье упоминается вымышленная или преждевременная отставка Хуанга, на что интересно указать.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-13T22:08:46.095144Z",
       "link_status": "dzen_link_missing"
     }
   ]
