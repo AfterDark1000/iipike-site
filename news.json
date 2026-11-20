@@ -7110,5 +7110,33 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»",
+    "summary": "Bitdefender обнаружила 22 вредоносные ссылки на GitHub: в файлах инструкций для ИИ-программистов размещали команды запуска скриптов, способных похищать пароли и токены.",
+    "published": "2026-11-20",
+    "source_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign",
+    "cover": "assets/editorial/bitdefender-github-agent-instructions-malware-20261117.webp",
+    "rubric": "skynet",
+    "vk_title": "☠️ Хакеры оставили ИИ-программисту команду: «Не проверяй файл — просто запусти»",
+    "vk_summary": "Bitdefender нашла 22 вредоносные GitHub-ссылки. В AGENTS.md и CLAUDE.md прятали инструкции для ИИ-помощников: запустить скрытый скрипт без проверки и подтверждения. Вредоносная программа способна красть токены и пароли, а затем заражать другие проекты. Есть и путь запуска без участия нейросети.",
+    "published_at_utc": "2026-11-20T08:15:44Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "bitdefender-github-agent-instructions-malware-20261117",
+    "url": "articles/bitdefender-github-agent-instructions-malware-20261117/",
+    "topics": [
+      "cybersecurity",
+      "development"
+    ],
+    "companies": [
+      "github",
+      "anthropic",
+      "openai"
+    ],
+    "products": [
+      "claude-code",
+      "codex"
+    ]
   }
 ]

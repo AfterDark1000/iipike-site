@@ -109,7 +109,8 @@
         "openai-apollo-embedded-evaluations-20261116",
         "china-openai-distillation-reuters-20261117",
         "openai-nato-cyber-defense-daybreak-20261117",
-        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8"
+        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+        "bitdefender-github-agent-instructions-malware-20261117"
       ]
     },
     {
@@ -188,7 +189,8 @@
         "claude-saltline-shooter-eight-hours-20261109",
         "openai-gpt-6-2-astra-sol-20261117",
         "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
-        "anthropic-record-ipo-81b-nasdaq-20261119"
+        "anthropic-record-ipo-81b-nasdaq-20261119",
+        "bitdefender-github-agent-instructions-malware-20261117"
       ]
     },
     {
@@ -591,7 +593,8 @@
       "name": "GitHub",
       "description": "ИИ-функции для разработки и проверки безопасности кода на GitHub.",
       "article_ids": [
-        "github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec"
+        "github-zapustil-ii-proverku-bezopasnosti-programmnogo-koda-f93ec",
+        "bitdefender-github-agent-instructions-malware-20261117"
       ]
     },
     {
@@ -847,7 +850,8 @@
         "openai-gpt6-astra-device-20261103",
         "openai-pierre-acquisition-20261104",
         "openai-chatgpt-codex-shared-limits-20261107",
-        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8"
+        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+        "bitdefender-github-agent-instructions-malware-20261117"
       ]
     },
     {
@@ -864,7 +868,8 @@
         "microsoft-lazarus-dormant-neurons-20261110",
         "ai-eight-unusual-experiments-20261115",
         "cursor-fireworks-key-incident-20261113",
-        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8"
+        "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
+        "bitdefender-github-agent-instructions-malware-20261117"
       ]
     },
     {
