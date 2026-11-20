@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-20T01:13:06.034855Z",
+  "updated_at": "2026-11-20T03:07:16.167725Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-20T01:13:06.034855Z",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
       "error": null,
       "fresh_matches": 13
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-20T01:13:06.034855Z",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-19T18:38:25.987656Z",
-      "error": "Лента недоступна или не распознана (TimeoutError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
+      "error": null,
+      "fresh_matches": 0
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-20T01:13:06.034855Z",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-20T01:13:06.034855Z",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-20T01:13:06.034855Z",
-      "last_success_at": "2026-11-20T01:13:06.034855Z",
+      "checked_at": "2026-11-20T03:07:16.167725Z",
+      "last_success_at": "2026-11-20T03:07:16.167725Z",
       "error": null,
       "fresh_matches": 3
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-20",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -219,10 +219,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Странно, что ролик убрали только после миллиона просмотров. Видимо, хайп от скандала перевесил все возможные претензии юристов.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-20T03:07:16.167725Z",
+      "reason": "Зацепился за то, что рекламу удалили только после миллиона просмотров, и добавил мысль про расчет на скандал.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-20T03:07:16.167725Z"
     },
     {
       "id": "973b06fc89b90c33f8d27e9b",
@@ -236,10 +240,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-20T03:07:16.167725Z",
+      "reason": "Не прошёл проверку: Статья говорит о том, что нагрузка у половины осталась прежней, у 10% выросла, а у 6% снизилась. Утверждение, что 'бумажной волокиты прибавилось', не подтвержде",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-20T03:07:16.167725Z"
     },
     {
       "id": "5d58c432534dbea7be2a9f9a",
@@ -329,10 +337,14 @@
       "first_seen_at": "2026-11-19T17:39:01.397079Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересный парадокс: сама модель дешевле в работе, но миллион входных токенов через API всё равно стоит три доллара.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-20T03:07:16.167725Z",
+      "reason": "Обратил внимание на конкретные расценки за токены на фоне заявлений о дешевизне.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-20T03:07:16.167725Z"
     },
     {
       "id": "a431da90fe3dfd3d150c873c",
