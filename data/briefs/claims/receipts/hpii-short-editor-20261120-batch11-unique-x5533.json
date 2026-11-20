@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261120-batch11-unique-x5533.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-625a70917b256da6",
+      "pool_sequence": 325,
+      "title": "ИИ будет размечать сельскохозяйственные поля по спутниковым снимкам",
+      "source_url": "https://allenai.org/blog/taylor-geospatial-partnership",
+      "claimed_at": "2026-11-20T06:47:13+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-96d80dee4c0118b2",
+      "pool_sequence": 327,
+      "title": "Cerebras объединила свои ускорители с AMD и заявила о пятикратном выигрыше",
+      "source_url": "https://ai.info/news/cerebras-disaggregated-inference-amd-production",
+      "claimed_at": "2026-11-20T06:47:13+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-bc4b4de593518dc5",
+      "pool_sequence": 328,
+      "title": "ElevenLabs покупает японскую лабораторию голосового ИИ Kotoba",
+      "source_url": "https://digibites.me/news/2026-11-18.html",
+      "claimed_at": "2026-11-20T06:47:13+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-b345a07c453835af",
+      "pool_sequence": 329,
+      "title": "Китайская SenseTime показала компактную нейросеть с повторным использованием вычислительных блоков",
+      "source_url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-19-2026",
+      "claimed_at": "2026-11-20T06:47:13+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-70bfd6abc8217573",
+      "pool_sequence": 330,
+      "title": "Шанхайская лаборатория выпустила 321-миллиардную модель для научных исследований",
+      "source_url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-19-2026",
+      "claimed_at": "2026-11-20T06:47:13+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
