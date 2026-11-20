@@ -4465,12 +4465,12 @@
       "summary": "17 ноября: исследование Bitdefender о вредоносных AGENTS.md и CLAUDE.md.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T06:54:09.298Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "20.11.2026: редактор 21 зарезервировал горячую №298, вредоносные инструкции AGENTS.md и CLAUDE.md в GitHub-репозиториях. Маршрут hot, без связанной группы. Проверить оригинальное исследование Bitdefender от 17.11, реальные файлы/механизм атак, масштаб, были ли компрометированы агенты, последствия и советы по защите; сопоставить с №299 о Python-пакете Microsoft и архивом."
     },
     {
       "id": "n-7dad0d8bf0fb7efc",
