@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Открытый ИИ убирает шум из голоса, но оставляет смех и вздохи",
+      "source_url": "https://inworld.ai/blog/introducing-voice-isolator",
+      "summary": "18 ноября. Inworld опубликовала модели Voice Isolator для очистки голоса в реальном времени.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Tencent открыла огромную нейросеть, которой при работе нужна только часть её параметров",
+      "source_url": "https://github.com/Tencent-Hunyuan/Hy4-flash",
+      "summary": "18 ноября. Tencent выпустила открытые веса модели Hy4 flash с выборочной активацией параметров.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Ubisoft создала отдельную компанию ради персонажей, которые всё помнят",
+      "source_url": "https://www.globenewswire.com/news-release/2026/11/19/3406965/0/en/ubisoft-reports-first-half-2026-27-earnings-figures.html",
+      "summary": "19 ноября. Сообщается о разработке ИИ для NPC с памятью через инициативу Motherbrain; уточнить сведения у Ubisoft.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NVIDIA собирается купить разработчика альтернативных языковых моделей за $500 млн с лишним",
+      "source_url": "https://www.theinformation.com/articles/nvidia-nears-acquisition-diffusion-ai-developer-500-million",
+      "summary": "19 ноября. The Information сообщает о переговорах NVIDIA по покупке разработчика диффузионных моделей; сделка не подтверждена.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Meta готовит карманный ИИ-гаджет за $300",
+      "source_url": "https://www.reuters.com/business/media-telecom/meta-price-muse-charm-gadget-300-information-reports-2026-11-19/",
+      "summary": "19 ноября. СМИ сообщают о предполагаемой цене устройства Muse Charm, официально не подтверждена.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Мужчина придумал целую спортивную лигу: 30 команд, 38 лет истории и собственные журналисты",
+      "source_url": "https://www.reddit.com/r/ClaudeAI/comments/1xyklpy/i_invented_a_sports_league_that_runs_itself_fock/",
+      "summary": "18–19 ноября по подборке. Автор на Reddit описал виртуальную спортивную лигу, созданную с помощью Claude; со слов автора, дата требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
