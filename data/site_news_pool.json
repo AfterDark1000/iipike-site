@@ -5440,12 +5440,12 @@
       "summary": "18 ноября. Boltz объявил о финансировании для вычислительной разработки лекарств.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T07:14:16+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-20815b484a08901e"
+      "closed_at": "2026-11-20T15:09:00Z",
+      "article_id": "boltz-110m-series-a-drug-discovery-20261118",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-20815b484a08901e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/boltz-110m-series-a-drug-discovery-20261118/"
     },
     {
       "id": "n-27b38ec62ac492a2",
