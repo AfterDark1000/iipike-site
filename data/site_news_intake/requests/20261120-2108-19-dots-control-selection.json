@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "OpenAI начала тестировать Dots на ChatGPT Plus",
+      "source_url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot",
+      "summary": "19 ноября. Сообщается об ограниченном тестировании постоянных ИИ-агентов Dots для части подписчиков Plus. Массовый запуск не подтверждён.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Signal закрыл переписки от любопытных глаз Gemini и Siri",
+      "source_url": "https://signal.org/blog/protecting-your-privacy/",
+      "summary": "20 ноября. Signal описал защиту переписок от чтения системными ИИ-помощниками; проверить конкретные ограничения платформ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google превращает главную страницу поиска в историю разговоров с ИИ",
+      "source_url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+      "summary": "19 ноября. Google вводит историю разговоров AI Mode на главной поисковой странице; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google пустила Genie 4 к разработчикам — теперь виртуальные миры можно встраивать в приложения",
+      "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/",
+      "summary": "19 ноября. После демонстрации Project Genie Google открыла разработчикам Genie 4 через Gemini API и AI Studio.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Новые GPT-6.2 раскритиковали первые испытатели — OpenAI заявила, что модели уже исправили",
+      "source_url": "https://tech.yahoo.com/ai/chatgpt/articles/openai-gpt-6-2-sol-212009090.html",
+      "summary": "19 ноября. Сообщается об отзывах первых тестировщиков Astra и Sol и реакции представителя OpenAI; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ самостоятельно спроектировал новую архитектуру процессора. Создатели заявляют об эффективности в 4,6 раза выше",
+      "source_url": "https://architectlabs.com/blog/frostbite",
+      "summary": "18–19 ноября. Architect Labs показала Frostbite — экспериментальную CPU-архитектуру, разработанную с участием ИИ; заявленные тесты требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ круглосуточно следит за пациентами реанимации и замечает признаки опасной спутанности сознания",
+      "source_url": "https://hai.stanford.edu/news/ai-enabled-video-system-monitors-icu-patients-for-early-signs-of-delirium",
+      "summary": "20 ноября. Стэнфорд представил исследовательскую систему TRACER для выявления признаков делирия на основе видео и медданных.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ проверил почти 4000 медицинских исследований и обнаружил проблему с открытым кодом",
+      "source_url": "https://news.mit.edu/2026/ai-helps-researchers-investigate-how-medical-studies-share-code-1119",
+      "summary": "19 ноября. Исследователи MIT изучили доступность программного кода в медицинских исследованиях с помощью языковых моделей.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Учёные научили ИИ изучать кино: в системе уже больше 2000 фильмов",
+      "source_url": "https://news.richmond.edu/releases/article/-/28955/university-of-richmond-distant-viewing-lab-releases-datareel-a-new-ai-tool-for-film-research.html",
+      "summary": "20 ноября. Университет Ричмонда представил DataReel для анализа фильма, монтажа, звука и приёмов съёмки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-агент научился настраивать физическую нейросеть из света",
+      "source_url": "https://arxiv.org/abs/2611.23875",
+      "summary": "19 ноября. Авторы научной работы Optics as Code описали ИИ-агента, настраивающего оптическое оборудование; со слов авторов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Голосовой ИИ размером всего 4 МБ научился говорить в том числе по-русски",
+      "source_url": "https://github.com/KittenML/KittenTTS/blob/main/docs/kitten-tts-2-tiny.md",
+      "summary": "19 ноября. KittenML описала компактную модель Pico для синтеза речи без облака; языки и дату проверить.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Nari Labs выпустила Dia2 — нейросеть начинает говорить, не дожидаясь конца текста",
+      "source_url": "https://github.com/nari-labs/dia2",
+      "summary": "19 ноября. Nari Labs представила потоковую TTS-модель Dia2; со слов разработчиков.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Клонирование голоса заработало прямо в браузере — без отправки записи на сервер",
+      "source_url": "https://huggingface.co/software-mansion/Reverb-TTS",
+      "summary": "19–20 ноября. Software Mansion выложила модель Reverb-TTS для работы с WebGPU в браузере; со слов разработчиков.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Tencent открыла четыре модели, которые одновременно смотрят видео и слушают звук",
+      "source_url": "https://github.com/Tencent/WeMM-Video",
+      "summary": "19–20 ноября. Tencent показала открытые модели WeMM-Video для анализа изображения и звука одновременно.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "LangChain придумала единый пропускной пункт для ИИ-агентов",
+      "source_url": "https://www.langchain.com/blog/langsmith-tool-gateway",
+      "summary": "19 ноября. LangSmith Tool Gateway вышел в публичную бету и позволяет управлять разрешениями и журналом действий агентов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Британский финансовый регулятор собрал больше 200 организаций в открытый каталог применения ИИ",
+      "source_url": "https://www.fca.org.uk/news/press-releases/fca-launches-world-first-platform-giving-firms-new-insight-ai-innovation",
+      "summary": "19 ноября. FCA открыл AI Spotlight Observatory для обзора внедрения ИИ финансовыми организациями.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчики научили ИИ-агента покупать продукты в девяти магазинах",
+      "source_url": "https://hnshowcase.com/post/50562508/agentmall-let-your-ai-agent-buy-groceries",
+      "summary": "19 ноября. Авторы AgentMall показали агентные покупки продуктов в нескольких магазинах; со слов авторов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Энтузиаст показал, как менять характер нейросети редактированием крошечной части её весов",
+      "source_url": "https://hnshowcase.com/post/50561436/watch-weight-space-programming-in-action-with-webgpu",
+      "summary": "19 ноября. Разработчик представил WebGPU-демонстрацию модификации весов Qwen3.5-0.8B; со слов автора.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчики выпустили облако, которое обещает само восстанавливаться после сбоев ИИ-агентов",
+      "source_url": "https://volcano.dev/",
+      "summary": "19 ноября. Команда Kong представила Volcano для автономных приложений и восстановления агентных задач; со слов разработчиков.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
