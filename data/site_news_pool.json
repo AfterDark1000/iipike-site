@@ -3850,12 +3850,12 @@
       "summary": "17 ноября: модели генерации изображений и транскрипции Microsoft; уточнить доступность.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T03:12:00+00:00",
       "review_started_at": "2026-11-19T11:09:22+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-96308e7073fc11f6"
+      "closed_at": "2026-11-20T04:38:45Z",
+      "article_id": "microsoft-mai-image-27-transcribe-2-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-96308e7073fc11f6\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/microsoft-mai-image-27-transcribe-2-20261117/"
     },
     {
       "id": "n-afbc39225c5371df",
