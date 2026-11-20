@@ -82,6 +82,44 @@ jobs:
           if grep -q '^ONE_RELEASE_REQUESTED:' /tmp/hpii-site-release.log; then
             echo 'published=true' >> "$GITHUB_OUTPUT"
           fi
+      - name: Close raw AUTO_EDITOR claims only after confirmed site publication
+        # Independent of Dzen; both a normal release and a no-due scan can
+        # reconcile older published stories. Explicit inspect_only stays read-only.
+        if: ${{ steps.release.outcome == 'success' && inputs.inspect_only != true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            # The release worker may have updated main. Never write against its
+            # old checkout; fetch and re-evaluate the latest production catalog.
+            git fetch origin main
+            git reset --hard origin/main
+            git switch --detach origin/main
+            python3 -m unittest discover -s tests -p 'test_auto_editor_published_pool_sync.py' -v
+            python3 scripts/sync_published_auto_editor_pool.py --write
+            python3 scripts/site_news_pool.py --validate
+            git add -- data/site_news_pool.json
+            git diff --cached --check
+            changed="$(git diff --cached --name-only)"
+            if [ -z "$changed" ]; then
+              echo 'AUTO_EDITOR_POOL_ALREADY_IN_SYNC'
+              exit 0
+            fi
+            if [ "$changed" != 'data/site_news_pool.json' ]; then
+              echo 'UNSAFE: reconciler staged unrelated files' >&2
+              exit 1
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'editorial: close only already published autonomous claims [skip ci]'
+            if git push origin HEAD:refs/heads/main; then
+              echo 'AUTO_EDITOR_PUBLISHED_POOL_RECONCILED'
+              exit 0
+            fi
+            echo "Main changed concurrently during pool sync (attempt $attempt)"
+          done
+          echo 'AUTO_EDITOR_POOL_SYNC_RETRY_EXHAUSTED' >&2
+          exit 1
       - name: Recompute queue dashboard after publication or failure
         if: always()
         run: |
