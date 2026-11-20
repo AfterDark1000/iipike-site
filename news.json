@@ -7248,5 +7248,27 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы",
+    "summary": "Американские банки ужесточают условия для клиентов, которые доверяют доступ к счёту сторонним ИИ-агентам. Citi считает действия через переданные реквизиты авторизованными клиентом, однако федеральная защита от несанкционированных переводов сохраняется.",
+    "published": "2026-11-20",
+    "source_url": "https://www.citi.com/tandc/view-printable-version",
+    "cover": "assets/editorial/citibank-ai-agent-liability-20261120.webp",
+    "rubric": "news",
+    "vk_title": "💸 Доверили ИИ ДЕНЬГИ? Банки предупредили об ответственности",
+    "vk_summary": "Citibank считает операции сторонних ИИ-агентов с переданными учётными данными разрешёнными клиентом — даже при утечке пароля. При этом федеральные гарантии защиты от незаконных переводов сохраняются.",
+    "published_at_utc": "2026-11-20T14:01:00Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-18",
+    "id": "citibank-ai-agent-liability-20261120",
+    "url": "articles/citibank-ai-agent-liability-20261120/",
+    "topics": [
+      "finance",
+      "safety",
+      "agents"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
