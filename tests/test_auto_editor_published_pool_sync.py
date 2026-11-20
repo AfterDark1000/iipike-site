@@ -55,9 +55,11 @@ class AutoEditorPublishedSyncTests(unittest.TestCase):
         self.assertEqual(updates, [])
         self.assertEqual(result["items"][0]["status"], "in_review")
         self.page.unlink()
-        result, updates = sync.reconcile(self.pool, [self.article], root=self.root)
-        self.assertEqual(updates, [])
-        self.assertEqual(result, self.pool)
+        # A catalog row with no actual site page is corrupt publication state.
+        # Fail closed rather than marking the original news as completed.
+        with self.assertRaisesRegex(ValueError, "absent from actual site"):
+            sync.reconcile(self.pool, [self.article], root=self.root)
+        self.assertEqual(self.pool["items"][0]["status"], "in_review")
 
     def test_unrelated_reserved_story_never_reassigned(self):
         self.pool["items"][0]["note"] = "SHORT_EDITOR claim=short; pool_id=" + POOL_ID
