@@ -16,9 +16,11 @@
   const decisions = readDecisions();
   const authorized = () => document.documentElement.classList.contains("hpii-authorized");
   let watchlist = null;
+  let dzenArticles = [];
   let snapshot = null;
   let sourceError = false;
   let watchError = false;
+  let dzenError = false;
   let loading = false;
   let view = "queue";
 
@@ -121,31 +123,35 @@
         if (!Array.isArray(data?.channels) || !Array.isArray(data?.articles)) throw Error("Invalid watchlist");
         return data;
       });
-    const [data, research] = await Promise.allSettled([commenting.read(), watch]);
+    const [data, research, dzen] = await Promise.allSettled([commenting.read(), watch, commenting.readDzen()]);
     loading = false;
     refreshButton.disabled = false;
     if (!authorized()) return;
     sourceError = data.status !== "fulfilled";
     watchError = research.status !== "fulfilled";
+    dzenError = dzen.status !== "fulfilled";
     snapshot = sourceError ? null : data.value;
     watchlist = watchError ? null : research.value;
+    dzenArticles = dzenError ? [] : dzen.value;
     render();
   }
 
   function candidateRow(row, age) {
     const native = row.kind === "dzen";
+    const collected = row.source === "dzen_launcher_more";
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
     const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
     return `<article class="row candidate">
       <div class="row-top"><span class="muted">${escapeText(row.source_name)}</span><div class="tags">
-        ${status(native ? "Разовый замер Дзена" : "Есть реплика Gemini")}
+        ${status(collected ? "Лента канала Дзена" : native ? "Разовый замер Дзена" : "Есть реплика Gemini")}
         ${native ? status("Сверить обсуждение", "stale") : !row.dzen_url ? status("Без прямой ссылки на Дзен", "stale") : ""}</div></div>
       <h3>${escapeText(row.title)}</h3>
       <dl>${field(native ? "Опубликовано в Дзене" : "Опубликовано у издателя", dateLabel(row.dzen_published_at ?? row.publisher_published_at))}
         ${field("Возраст статьи", ageLabel(age))}
         ${native ? field("Комментарии в замере", known(row.comments)) + field("Просмотры в замере", known(row.views)) : ""}</dl>
-      <p class="details">${native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
+      <p class="details">${collected ? `Обнаружено ${dateLabel(row.observed_at)}.` :
+        native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
       ${row.angle ? `<p class="details">${escapeText(row.angle)}</p>` : ""}
       ${draft(row)}
       <div class="actions">
@@ -179,7 +185,7 @@
   function render() {
     if (!authorized()) return;
     const now = Date.now();
-    const native = commenting.nativeCandidates(watchlist, now);
+    const native = [...dzenArticles, ...commenting.nativeCandidates(watchlist, now)];
     const rows = new Map(native.map((row) => [row.key, row]));
     for (const row of snapshot?.candidates ?? []) {
       const previous = rows.get(row.key);
@@ -199,9 +205,10 @@
     });
     const pane = (index) => {
       const picked = open.filter(({ row }) => (row.kind === "dzen") === (index === 0));
-      const empty = index === 0 ? "В сохранённом замере нет подходящих статей за последние 24 часа." : "Готовых реплик за последние 24 часа нет.";
+      const empty = index === 0 ? "Нет статей с прямой ссылкой за последние 24 часа." : "Готовых реплик за последние 24 часа нет.";
       return `<header class="panel-head ${index > 0 ? "candidate-head" : ""}"><h2>${sections[index]}</h2></header>
         ${index > 0 ? sourceStatus(now) : watchError ? `<p class="source-note">Замер каналов недоступен.</p>` : ""}
+        ${index === 0 && dzenError ? `<p class="source-note">Не удалось прочитать ленту каналов Дзена.</p>` : ""}
         ${picked.length ? grouped(picked) : `<p class="section-empty">${empty}</p>`}`;
     };
     panel.innerHTML = view === "channels" ? channelPanel() : pane(0) + pane(1) + (handled.length ?
@@ -241,6 +248,7 @@
   window.addEventListener("hpii-admin-signout", () => {
     snapshot = null;
     watchlist = null;
+    dzenArticles = [];
     panel.replaceChildren();
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden) void refresh(); });

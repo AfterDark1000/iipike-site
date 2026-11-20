@@ -1,0 +1,56 @@
+name: HPII — First Car Dzen collector
+
+on:
+  workflow_call:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'admin/first-car/**'
+      - 'scripts/first_car_dzen_collect.cjs'
+      - 'tests/first_car_admin.test.cjs'
+      - 'tests/first_car_dzen_collect.test.cjs'
+      - 'tests/fixtures/first-car-gptnul-more.json'
+      - '.github/workflows/first-car-dzen-collector.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test-dzen-collector:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: node --check admin/first-car/queue.js
+      - run: node --test tests/first_car_admin.test.cjs tests/first_car_dzen_collect.test.cjs
+  collect-dzen:
+    if: >-
+      github.event_name != 'pull_request' && github.ref == 'refs/heads/main' &&
+      github.repository == 'AfterDark1000/iipike-site' && vars.FIRST_CAR_DZEN_COLLECTION == 'enabled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: hpii-first-car-dzen-collector
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/github-script@v7
+        env:
+          POLL_INTERVAL: ${{ vars.FIRST_CAR_DZEN_INTERVAL_MINUTES }}
+        with:
+          script: |
+            const watchlist = require('./admin/first-car/watchlist.json');
+            const { updateDataBranch } = require('./scripts/first_car_dzen_collect.cjs');
+            const { requests, added, queue } = await updateDataBranch(github, context.repo, watchlist, {
+              intervalMinutes: Number(process.env.POLL_INTERVAL || 60),
+            });
+            await core.summary.addHeading('Первый вагон')
+              .addRaw(`Запросов: ${requests} · новых статей: ${added}\n`).write();
+            if (queue.blocked) core.setFailed(`Сбор остановлен. HTTP ${queue.blocked.status}. ${queue.blocked.reason}`);
