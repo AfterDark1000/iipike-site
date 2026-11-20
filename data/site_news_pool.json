@@ -5230,12 +5230,12 @@
       "summary": "19 ноября. Microsoft Foundry описала корпоративные учётные записи, разрешения и ответственных за автономных агентов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T12:51:53.749Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "20.11, редактор №23. Первоисточник 19.11: https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry/ ; справка https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/autopilot-overview ; Ignite 18.11 https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026/ . Подтверждено: Autopilot агент имеет свой Entra agent user, корпоративную почту, Teams, календарь, OneDrive и назначенного человека-менеджера; права на документы выдаются отдельно, есть аудит и отключение шаблона. Microsoft: Office of Amanda работает внутри компании, >30 шаблонов. ВАЖНО: Autopilot public preview анонсирован ещё летом 2026; новость 19.11 — описание внедрений и развития, не изобретение технологии. Hermes Business/Enterprise анонсирован на будущее, cookbook уже открыт. По выборке опубликованных статей в news.json прямого дубля не найдено. Далее: утвердить статью, затем «берём»."
+      "closed_at": "2026-11-20T16:39:02.141Z",
+      "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+      "note": "20.11, редактор №23. Первоисточник 19.11: https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry/ ; справка https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/autopilot-overview ; Ignite 18.11 https://devblogs.microsoft.com/foundry/whats-new-in-foundry-agent-service-at-ignite-2026/ . Подтверждено: Autopilot агент имеет свой Entra agent user, корпоративную почту, Teams, календарь, OneDrive и назначенного человека-менеджера; права на документы выдаются отдельно, есть аудит и отключение шаблона. Microsoft: Office of Amanda работает внутри компании, >30 шаблонов. ВАЖНО: Autopilot public preview анонсирован ещё летом 2026; новость 19.11 — описание внедрений и развития, не изобретение технологии. Hermes Business/Enterprise анонсирован на будущее, cookbook уже открыт. По выборке опубликованных статей в news.json прямого дубля не найдено. Далее: утвердить статью, затем «берём».\n20.11.2026: утверждена главредом последняя редакция статьи и Threads/X. ID microsoft-foundry-autopilot-ai-employees-20261119. Сохранено в editorial-intake и соцочередях; ждёт обложку."
     },
     {
       "id": "n-fd6216995b7a0e95",
