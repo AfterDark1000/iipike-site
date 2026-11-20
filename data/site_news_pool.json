@@ -5455,12 +5455,12 @@
       "summary": "19 ноября. BMO представил эксперимент по отбору признаков для машинного обучения с применением квантовых компьютеров IBM.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T09:37:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-27b38ec62ac492a2"
     },
     {
       "id": "n-467e99a8f3b56dec",
@@ -5470,12 +5470,12 @@
       "summary": "19 ноября. Walmart сообщил о росте использования покупательского ИИ-помощника Sparky.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T09:37:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-467e99a8f3b56dec"
     },
     {
       "id": "n-8493998dfffb5250",
@@ -5545,12 +5545,12 @@
       "summary": "18 ноября. Исследователи сообщили об однопроходном генераторе Jeveration со скоростью 78 мс в эксперименте; со слов авторов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T09:37:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8c5914db57aa649d"
     },
     {
       "id": "n-def546913c85473b",
@@ -5560,12 +5560,12 @@
       "summary": "18 ноября. Inworld опубликовала модели Voice Isolator для очистки голоса в реальном времени.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T09:37:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-def546913c85473b"
     },
     {
       "id": "n-2191c000c7dbd2ad",
@@ -5605,12 +5605,12 @@
       "summary": "19 ноября. The Information сообщает о переговорах NVIDIA по покупке разработчика диффузионных моделей; сделка не подтверждена.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T09:37:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-314d079cbce4fbab"
     },
     {
       "id": "n-f5a7961cee71e427",
