@@ -5185,12 +5185,12 @@
       "summary": "19 ноября. Сообщается о сотрудничестве Isomorphic Labs и MSD по поиску молекул против онкологических заболеваний; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "rejected",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T07:14:16+00:00",
-      "closed_at": null,
+      "closed_at": "2026-11-20T09:20:35Z",
       "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a6418856dccd6908"
+      "note": "Отклонено главредом 20.11.2026 как повтор темы уже опубликованной статьи об Isomorphic Labs: https://iipike.ru/articles/isomorphic-labs-5b-ai-medicines-20261117/ ; короткую №346 не публиковать."
     },
     {
       "id": "n-a87bfc1ffc4c2d65",
