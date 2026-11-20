@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261120-batch13-fifo-b3d729.json",
+  "request_sha256": "6f6930949f083f1deb6f33c4ac9e6cdc2bebe692b365fa68a113b95bf950c1ae",
+  "status": "rejected",
+  "error": "Invalid brief topic"
+}
