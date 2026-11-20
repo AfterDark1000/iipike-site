@@ -1397,6 +1397,18 @@
           "source_url": "https://calif.io/java4shell"
         }
       ]
+    },
+    {
+      "key": "common-sense-media",
+      "name": "Common Sense Media",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
+          "source_url": "https://about.commonsensemedia.org/press-room/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds"
+        }
+      ]
     }
   ],
   "products": [
