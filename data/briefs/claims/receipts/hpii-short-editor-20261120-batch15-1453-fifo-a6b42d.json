@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261120-batch15-1453-fifo-a6b42d.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 1,
+  "items": [
+    {
+      "pool_id": "n-f5a7961cee71e427",
+      "pool_sequence": 375,
+      "title": "Meta готовит карманный ИИ-гаджет за $300",
+      "source_url": "https://www.reuters.com/business/media-telecom/meta-price-muse-charm-gadget-300-information-reports-2026-11-19",
+      "claimed_at": "2026-11-20T09:52:26+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
