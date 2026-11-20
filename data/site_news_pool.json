@@ -895,12 +895,12 @@
       "summary": "12 ноября: министр науки Британии призывает использовать медицинские данные NHS для исследований; вопрос конфиденциальности.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-13T03:10:00+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T16:55:11+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Сырьё; редактор проверяет дату и первоисточник. Порядок исправлен по указанию пользователя: ретроспективный контрольный проход за 12.11 предшествует утренней подборке 13.11; added_at отражает реальную запись."
+      "note": "AUTO_EDITOR claim=auto-20261120-1654-ordinary-006.json; article_id=britanskiy-ministr-predlozhil-ispolzovat-dannye-n-f1276fcf4509a500"
     },
     {
       "id": "n-fea30cfaa0c9d6e8",

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261120-1654-ordinary-006.json",
+  "request_sha256": "2db950bef6db6ff80985f8395f4d1cc8ed362483c5e7d610e45d9aeaa7eb6a2b",
+  "status": "reserved",
+  "pool_id": "n-f1276fcf4509a500",
+  "pool_sequence": 60,
+  "article_id": "britanskiy-ministr-predlozhil-ispolzovat-dannye-n-f1276fcf4509a500",
+  "priority": "normal",
+  "title": "Британский министр предложил использовать данные NHS для ИИ-разработки лекарств",
+  "source_url": "https://www.ft.com/content/f95d9298-d27e-4c1b-87e5-ea75f67a1e0c",
+  "claimed_at": "2026-11-20T16:55:11+00:00",
+  "worker": "hpii-auto-editor"
+}
