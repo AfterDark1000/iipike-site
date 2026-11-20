@@ -7084,5 +7084,31 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Anthropic провела крупнейшее IPO в истории — $81 млрд. А Nasdaq всё равно упал на 2,3%",
+    "summary": "Anthropic провела IPO на $81,34 млрд, крупнейшее размещение акций в истории. После первоначального скачка котировки снизились, а индекс Nasdaq потерял за день 2,25%.",
+    "published": "2026-11-20",
+    "source_url": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+    "cover": "assets/editorial/anthropic-record-ipo-81b-nasdaq-20261119.webp",
+    "rubric": "news",
+    "vk_title": "Anthropic привлекла $81 млрд на IPO. Но Nasdaq в тот же день упал на 2,3%",
+    "vk_summary": "Создатель Claude провёл крупнейшее IPO в истории: 980 млн акций по $83. На старте торгов Anthropic ненадолго оценили в $2 трлн, однако акции отступили с $111,50 до $97,17. Пока Anthropic осталась в плюсе на 17% к цене размещения, индекс Nasdaq потерял 2,25%.",
+    "published_at_utc": "2026-11-20T07:00:55Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "anthropic-record-ipo-81b-nasdaq-20261119",
+    "url": "articles/anthropic-record-ipo-81b-nasdaq-20261119/",
+    "topics": [
+      "finance"
+    ],
+    "companies": [
+      "anthropic",
+      "google",
+      "nvidia"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
