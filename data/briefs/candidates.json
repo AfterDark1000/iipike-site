@@ -846,6 +846,71 @@
       "source": "Boltz",
       "source_url": "https://www.boltz.com/series-a",
       "fact_check": "Primary Boltz Nov18 2026 company announcement: $110m Series A led by Bessemer; founded by former MIT researchers; biomolecular design and protein modeling, proprietary BoltzMol/BoltzProt while historical Boltz models open-source; six of world top 20 pharma customers (Pfizer GSK Takeda BMS) company statement; funds compute/data/team."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 364,
+      "pool_id": "n-27b38ec62ac492a2",
+      "slug": "bmo-ibm-quantum-ml-feature-selection-20261119",
+      "headline": "Канадский банк проверил, сможет ли квантовый компьютер помочь обучать ИИ",
+      "body": "Канадский банк BMO вместе с исследователями Университета Демокрита во Фракии испытал квантовые компьютеры IBM для отбора полезных признаков в данных машинного обучения. По оценке банка, метод дал сопоставимое качество отбора, потребовав в 10–100 раз меньше выборок, чем традиционные подходы. Пока это исследовательская разработка: её применение для оценки банковских рисков ещё изучают.",
+      "topic": "Наука",
+      "event_date": "2026-11-19",
+      "source": "BMO",
+      "source_url": "https://newsroom.bmo.com/2026-11-19-BMO-Demonstrates-Quantum-Utility-in-Machine-Learning-Application-Using-IBM-Quantum-Computers",
+      "fact_check": "BMO official press release 2026-11-19: proof-of-concept quantum utility with IBM quantum and Democritus University of Thrace; feature selection quality comparable with one to two orders of magnitude fewer samples than traditional methods; banking risk uses only possible."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 365,
+      "pool_id": "n-467e99a8f3b56dec",
+      "slug": "walmart-sparky-usage-plus-129-percent-20261119",
+      "headline": "Walmart: американцы стали пользоваться ИИ-помощником Sparky на 129% чаще",
+      "body": "Американская сеть Walmart сообщила, что использование её ИИ-помощника Sparky в США выросло на 129% по сравнению с прошлым годом. Sparky помогает покупателям искать товары и подбирать подходящие варианты. Цифру компания привела 19 ноября в отчёте за третий квартал финансового 2027 года. Количество пользователей и число обращений к помощнику в абсолютных значениях Walmart не указала.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-19",
+      "source": "Walmart",
+      "source_url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings",
+      "fact_check": "Walmart Q3 FY27 earnings published 2026-11-19: 129% year-over-year increase in Sparky usage in the US, reported by Walmart; no underlying absolute usage or user count in displayed statement."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 370,
+      "pool_id": "n-8c5914db57aa649d",
+      "slug": "jeveration-78ms-image-nvidia-h200-20261118",
+      "headline": "ИИ нарисовал картинку за 78 миллисекунд — на одном ускорителе NVIDIA H200",
+      "body": "Исследователи представили Jeveration — модель, которая создаёт изображение размером 512×512 пикселей за 78 миллисекунд. Такой результат авторы получили в собственном тесте на одном ускорителе NVIDIA H200. В том же сравнении Jeveration оказалась в 122 раза быстрее модели Janus-Pro-7B. Изображение создаётся за один проход нейросети; та же система умеет преобразовывать исходные картинки. Результаты опубликованы в исследовательской статье.",
+      "topic": "Наука",
+      "event_date": "2026-11-18",
+      "source": "arXiv",
+      "source_url": "https://arxiv.org/abs/2611.24738",
+      "fact_check": "Original research Jeveration arXiv:2611.24738 submitted Nov 18 2026: 512x512, 77.8/78 ms measured end-to-end on single NVIDIA H200; 122x vs Janus-Pro-7B in authors' comparisons, single forward pass; image-to-image and dense predictions; not general device performance."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 371,
+      "pool_id": "n-def546913c85473b",
+      "slug": "inworld-voice-isolator-open-source-noise-20261118",
+      "headline": "ИИ убирает шум из записи, сохраняя даже смех и вздохи",
+      "body": "Компания Inworld выпустила Voice Isolator — инструмент, который удаляет из аудиозаписи музыку, фоновую речь и другие шумы, сохраняя голос, смех и вздохи говорящего. Доступны две модели: для очистки готовых записей и для обработки голоса в реальном времени. Обе работают со звуком 48 кГц. Код и веса открыты по лицензии Apache 2.0; программу можно запускать на компьютере с CPU, Apple Silicon или ускорителем NVIDIA.",
+      "topic": "Технологии",
+      "event_date": "2026-11-18",
+      "source": "Inworld",
+      "source_url": "https://inworld.ai/blog/introducing-voice-isolator",
+      "fact_check": "Inworld official 2026-11-18 blog: two 48kHz models offline/realtime (20ms lookahead), Apache 2.0 code+weights, laughter, breath and background noise targeted; supported CUDA, Apple Silicon and CPUs. Inworld's private benchmark is not an independent quality comparison."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 374,
+      "pool_id": "n-314d079cbce4fbab",
+      "slug": "nvidia-inception-acquisition-talks-500m-20261119",
+      "headline": "The Information: NVIDIA обсуждает покупку Inception за сумму свыше $500 млн",
+      "body": "По данным The Information, NVIDIA ведёт переговоры о покупке стартапа Inception более чем за $500 млн. Inception разрабатывает языковые модели Mercury на диффузионной архитектуре: они формируют ответ параллельно, что позволяет ускорить генерацию текста. О переговорах изданию рассказали три осведомлённых источника. NVIDIA и Inception пока не объявляли о заключении сделки.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-19",
+      "source": "The Information",
+      "source_url": "https://www.theinformation.com/articles/nvidia-nears-acquisition-diffusion-ai-developer-500-million",
+      "fact_check": "The Information report 2026-11-19, three sources: Nvidia in advanced talks to acquire Inception for >$500m, not confirmed deal. The article body is paywalled; news summary available from original publication and independent summaries. Inception official pages confirm Mercury diffusion language models."
     }
   ]
 }
