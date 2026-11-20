@@ -865,12 +865,12 @@
       "summary": "12 ноября: Reuters сообщает об усилении контрразведки в ИИ-компаниях.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-13T03:10:00+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-20T02:53:00+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Сырьё; редактор проверяет дату и первоисточник. Порядок исправлен по указанию пользователя: ретроспективный контрольный проход за 12.11 предшествует утренней подборке 13.11; added_at отражает реальную запись."
+      "note": "AUTO_EDITOR claim=auto-20261120-0252-ordinary-005.json; article_id=ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
     },
     {
       "id": "n-6c8dcc4daf751efd",

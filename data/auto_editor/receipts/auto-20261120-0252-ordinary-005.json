@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261120-0252-ordinary-005.json",
+  "request_sha256": "2db950bef6db6ff80985f8395f4d1cc8ed362483c5e7d610e45d9aeaa7eb6a2b",
+  "status": "reserved",
+  "pool_id": "n-8e599f8fd3fc906d",
+  "pool_sequence": 58,
+  "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+  "priority": "normal",
+  "title": "ИИ-компании нанимают бывших разведчиков за зарплаты до $500 тысяч",
+  "source_url": "https://www.marketscreener.com/news/help-wanted-ai-firms-court-ex-spies-as-nvidia-drama-spotlights-security-risks-ce785ed8df8df323",
+  "claimed_at": "2026-11-20T02:53:00+00:00",
+  "worker": "hpii-auto-editor"
+}
