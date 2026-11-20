@@ -419,7 +419,15 @@ function draw(doc){
  const coverRegion=add(detail,"section",undefined,"card");add(coverRegion,"h3","Кандидат обложки от автономного художника");void showCoverCandidate(doc,coverRegion,coverState);
  const actions=add(detail,"div",undefined,"actionbar");
  const note=add(detail,"textarea");note.placeholder="Замечания для доработки или причина отклонения";note.setAttribute("aria-label","Замечания главреда");
+ note.maxLength=4000;
+ // Save unsent review notes only in this browser tab, scoped to the exact text revision.
+ // They are NOT a GitHub decision and must never be treated as a sent review.
+ const noteKey="hpii-auto-review-note:"+doc.article_id+":r"+doc.revision;
+ try{const stored=sessionStorage.getItem(noteKey);if(stored!==null)note.value=stored}
+ catch(e){/* Private browsing may disable tab storage; review controls still work. */}
+ note.addEventListener("input",()=>{try{sessionStorage.setItem(noteKey,note.value)}catch(e){}});
  const status=add(detail,"p","Проверяю сохранённые решения…","muted");
+ status.setAttribute("role","status");status.setAttribute("aria-live","polite");
  [["Утвердить текст","approve_text"],["На доработку","revise"],["Отклонить","reject"]].forEach(([label,action])=>{
   const b=add(actions,"button",label);b.disabled=true;
   b.addEventListener("click",async()=>{
@@ -433,6 +441,7 @@ function draw(doc){
     const saved=await window.HpiiAdminAuth.review(doc,action,note.value.trim());
     stateTag.textContent=action==="approve_text"?"Текст утверждён":action==="revise"?"На доработке":"Отклонено";
     status.textContent="✓ Подтверждено GitHub: "+saved.status+" · ревизия "+saved.revision+". Материал не опубликован.";
+    try{sessionStorage.removeItem(noteKey)}catch(e){}
     void load();
    }catch(e){
     status.textContent="Решение НЕ записано: "+e.message+". Проверь состояние GitHub и повтори после обновления.";
@@ -443,7 +452,19 @@ function draw(doc){
  // A saved decision is authoritative. Never present local clicks as confirmed.
  const decisionFile="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_decisions/"+doc.article_id+"-r"+doc.revision+".json";
  fetchGitHubRecord(decisionFile+"?v="+Date.now()).then(async r=>{
-  if(r.status===404){stateTag.textContent=doc.status==="ready_for_review"?"Готов к проверке":doc.status;status.textContent="Решение ещё не записано.";actions.querySelectorAll("button").forEach(b=>b.disabled=doc.status!=="ready_for_review");return}
+  if(r.status===404){
+   const ready=doc.status==="ready_for_review";
+   stateTag.textContent=ready?"Готов к проверке":
+     doc.status==="drafting"?"Редактор ещё работает":
+     doc.status==="blocked"?"Редактор заблокирован":doc.status;
+   status.textContent=ready?
+     "Решение ещё не записано. Можно утвердить текст или отправить замечания.":
+     doc.status==="drafting"?
+     "Это промежуточный черновик (drafting): редактор ещё завершает проверку. Кнопки станут активными после статуса «Готов к проверке». Введённые заметки сохраняются только в этой вкладке браузера, но ещё НЕ отправлены.":
+     "Решения для этого статуса пока недоступны. Заметки в этой вкладке не отправлены.";
+   actions.querySelectorAll("button").forEach(b=>b.disabled=!ready);
+   return;
+  }
   if(!r.ok)throw Error("HTTP "+r.status);
   const saved=await r.json();
   if(saved.article_id!==doc.article_id||saved.revision!==doc.revision)throw Error("Неверный документ решения");
