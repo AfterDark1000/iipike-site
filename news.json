@@ -7270,5 +7270,31 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой",
+    "summary": "Google открыла Genie 4 подписчикам AI Ultra и разработчикам: пользователи исследуют интерактивные миры и меняют окружение текстовыми командами на ходу. Среди новых демонстраций — муравьиная колония The Life of Ants.",
+    "published": "2026-11-20",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie",
+    "cover": "assets/editorial/google-genie4-project-genie-access-20261118.webp",
+    "rubric": "news",
+    "vk_title": "🌍 Google открыла Genie 4: МЕНЯЙТЕ МИР одной фразой",
+    "vk_summary": "Genie 4 создаёт интерактивные виртуальные миры и меняет погоду, персонажей и окружение по команде во время прогулки. Google открыла доступ подходящим подписчикам AI Ultra и разработчикам. Среди демонстраций — виртуальный муравейник.",
+    "published_at_utc": "2026-11-20T15:15:53Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-18",
+    "id": "google-genie4-project-genie-access-20261118",
+    "url": "articles/google-genie4-project-genie-access-20261118/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "genie",
+      "gemini"
+    ]
   }
 ]

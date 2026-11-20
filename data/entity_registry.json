@@ -45,7 +45,8 @@
         "google-gemini-tasks-free-calls-shopping-20261117",
         "google-gemini-4-neon-20261118",
         "isomorphic-labs-5b-ai-medicines-20261117",
-        "anthropic-record-ipo-81b-nasdaq-20261119"
+        "anthropic-record-ipo-81b-nasdaq-20261119",
+        "google-genie4-project-genie-access-20261118"
       ]
     },
     {
@@ -799,7 +800,8 @@
         "openai-gpt-6-2-astra-sol-20261117",
         "google-otkryla-dostup-k-gemini-4-carbon-dlya-sloz-765087e5bd19c6a3",
         "google-gemini-tasks-free-calls-shopping-20261117",
-        "google-gemini-4-neon-20261118"
+        "google-gemini-4-neon-20261118",
+        "google-genie4-project-genie-access-20261118"
       ]
     },
     {
@@ -1051,7 +1053,8 @@
       "company": "google",
       "description": "Модели Google Genie для создания интерактивных миров.",
       "article_ids": [
-        "google-genie4-worlds"
+        "google-genie4-worlds",
+        "google-genie4-project-genie-access-20261118"
       ]
     }
   ]
