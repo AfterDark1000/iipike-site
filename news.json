@@ -7223,5 +7223,30 @@
     "products": [
       "codex"
     ]
+  },
+  {
+    "title": "С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям",
+    "summary": "Генпрокурор Орегона потребовал от OpenAI не менее $2,035 млрд по иску о безопасности подростков в ChatGPT. Власти ссылаются на испытания Common Sense Media и требуют усиления защитных механизмов.",
+    "published": "2026-11-20",
+    "source_url": "https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-files-2b-lawsuit-against-open-ai-launches-keeping-kids-safe-initiative",
+    "cover": "assets/editorial/oregon-openai-chatgpt-child-safety-lawsuit-20261117.webp",
+    "rubric": "skynet",
+    "vk_title": "⚖️ С OpenAI требуют $2 МЛРД за безопасность детей в ChatGPT",
+    "vk_summary": "Орегон подал иск на $2,035 млрд, обвиняя компанию в обмане родителей. В тестах Common Sense Media подростковая версия ChatGPT час обсуждала опасные темы, а родительский аккаунт не получил предупреждения. OpenAI защищает свои меры безопасности. Штат также требует через суд усилить контроль возраста и уведомления.",
+    "published_at_utc": "2026-11-20T13:00:54Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
+    "url": "articles/oregon-openai-chatgpt-child-safety-lawsuit-20261117/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
