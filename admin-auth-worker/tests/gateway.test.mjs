@@ -45,6 +45,29 @@ function firstCarSession() {
   const request=(path,options={})=>gateway.fetch(new Request(env.BACKEND_ORIGIN+path,{headers:session,...options}),enabled);
   return {enabled,session,request};
 }
+test("First Car queue reads the canonical data branch, reports upstream errors, and requires the owner",async(t)=>{
+  const {request}=firstCarSession();
+  const route="/api/first-car/queue";
+  const queue={schema_version:1,articles:[{url:"https://dzen.ru/a/avwsiGM1tFu-0T5x"}]};
+  let status=200;
+  const github=t.mock.method(globalThis,"fetch",async(input,options)=>{
+    assert.equal(String(input),"https://api.github.com/repos/AfterDark1000/iipike-site/contents/dzen/queue.json?ref=first-car-data");
+    assert.equal(options.redirect,"manual");
+    return Response.json({type:"file",sha:"queue-sha",content:Buffer.from(JSON.stringify(queue)).toString("base64")},{status});
+  });
+  assert.equal((await request(route,{headers:{Origin:env.ADMIN_ORIGIN}})).status,401);
+  assert.equal((await request(route+"?ref=other")).status,400);
+  assert.equal(github.mock.callCount(),0);
+  const response=await request(route);
+  assert.equal(response.headers.get("cache-control"),"no-store");
+  const snapshot=await response.json();
+  assert.deepEqual(snapshot.queue,queue);
+  assert.ok(Math.abs(snapshot.now-Date.now())<5000);
+  status=503;
+  assert.equal((await request(route)).status,502);
+  status=404;
+  assert.deepEqual((await (await request(route)).json()).queue,{schema_version:1,articles:[]});
+});
 test("First Car dispatch is owner-only, fixed to main, and reuses active or recent runs",async(t)=>{
   const api="/api/first-car/collect";
   const {enabled,session,request}=firstCarSession();

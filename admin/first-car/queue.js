@@ -21,6 +21,7 @@
   const authorized = () => document.documentElement.classList.contains("hpii-authorized");
   let watchlist = null;
   let dzenArticles = [];
+  let dzenClockOffset = 0;
   let dzenDrafts = new Map();
   let snapshot = null;
   let sourceError = false;
@@ -28,6 +29,7 @@
   let dzenError = false;
   let draftsError = false;
   let loading = false;
+  let refreshPending = false;
   let view = "queue";
 
   function readDecisions() {
@@ -116,7 +118,11 @@
   }
 
   async function refresh() {
-    if (!authorized() || loading) return;
+    if (!authorized()) return;
+    if (loading) {
+      refreshPending = true;
+      return;
+    }
     loading = true;
     refreshButton.disabled = true;
     const watch = fetch("/admin/first-car/watchlist.json", {
@@ -130,7 +136,8 @@
         return data;
       });
     const [data, research, dzen, drafts] = await Promise.allSettled([
-      commenting.read(), watch, commenting.readDzen(), commenting.readDzenDrafts(),
+      commenting.read(), watch, commenting.readDzen(fetch, () => window.HpiiAdminAuth.fetchApi("/api/first-car/queue")),
+      commenting.readDzenDrafts(),
     ]);
     loading = false;
     refreshButton.disabled = false;
@@ -141,9 +148,14 @@
     draftsError = drafts.status !== "fulfilled";
     snapshot = sourceError ? null : data.value;
     watchlist = watchError ? null : research.value;
-    dzenArticles = dzenError ? [] : dzen.value;
+    dzenArticles = dzenError ? dzenArticles : dzen.value.articles;
+    dzenClockOffset = dzenError ? dzenClockOffset : dzen.value.clockOffset;
     dzenDrafts = draftsError ? new Map() : drafts.value;
     render();
+    if (refreshPending) {
+      refreshPending = false;
+      await refresh();
+    }
   }
 
   async function checkFreshArticles() {
@@ -188,18 +200,20 @@
   function candidateRow(row, age) {
     const native = row.kind === "dzen";
     const collected = row.source === "dzen_launcher_more";
-    const draftState = {
-      read_error: "Нужен текст статьи. Реплика не подготовлена.",
-      needs_text: "Нужен текст статьи. Реплика не подготовлена.",
-      generation_error: "Не удалось подготовить реплику Gemini.",
-      skipped_by_editor: "Подходящая реплика не прошла отбор или фактчек.",
-    }[row.draft_status] ?? "Ожидает подготовки реплики.";
+    const draftState = row.draft_comment ? "Реплика готова" : {
+      read_error: "Ошибка получения текста",
+      pending: "Gemini готовит",
+      generating: "Gemini готовит",
+      generation_error: "Ошибка генерации Gemini",
+      skipped_by_editor: "Пропущено при проверке Gemini",
+    }[row.draft_status] ?? "Ожидает текста";
     const saved = decisions.get(row.key);
     const mark = (action, name) => `<button type="button" class="button" data-candidate="${escapeText(row.key)}" data-decision="${action}">${name}</button>`;
     const search = `https://dzen.ru/search?query=${encodeURIComponent(`${row.title} ${row.source_name}`)}`;
     return `<article class="row candidate">
       <div class="row-top"><span class="muted">${escapeText(row.source_name)}</span><div class="tags">
         ${status(collected ? "Лента канала Дзена" : native ? "Разовый замер Дзена" : "Есть реплика Gemini")}
+        ${collected && !saved ? status(draftState) : ""}
         ${native ? status("Сверить обсуждение", "stale") : !row.dzen_url ? status("Без прямой ссылки на Дзен", "stale") : ""}</div></div>
       <h3>${escapeText(row.title)}</h3>
       <dl>${field(native ? "Опубликовано в Дзене" : "Опубликовано у издателя", dateLabel(row.dzen_published_at ?? row.publisher_published_at))}
@@ -209,7 +223,6 @@
         native ? `Счётчики на ${dateLabel(row.observed_at)}.` : escapeText(row.reason)}</p>
       ${row.angle ? `<p class="details">${escapeText(row.angle)}</p>` : ""}
       ${draft(row)}
-      ${collected && !row.draft_comment ? `<p class="details">${draftState}</p>` : ""}
       <div class="actions">
         ${row.dzen_url ? link(row.dzen_url, "Открыть в Дзене", dzenMirror, "button primary") : link(search, "Найти в Дзене", httpsLink, "button primary")}
         ${row.source_url ? link(row.source_url, "Оригинал", httpsLink, "button") : ""}
@@ -241,17 +254,15 @@
   function render() {
     if (!authorized()) return;
     const now = Date.now();
-    const native = [...dzenArticles.map((row) => ({ ...row, ...dzenDrafts.get(row.key) })),
-      ...commenting.nativeCandidates(watchlist, now)];
+    const native = [...commenting.nativeCandidates(watchlist, now),
+      ...dzenArticles.map((row) => ({ ...row, ...dzenDrafts.get(row.key) }))];
     const rows = new Map(native.map((row) => [row.key, row]));
     for (const row of snapshot?.candidates ?? []) {
-      const previous = rows.get(row.key);
-      // Preserve the Dzen timestamp and counts when Gemini points to this exact article.
-      rows.set(row.key, previous ? { ...previous, draft_comment: previous.draft_comment || row.draft_comment,
-        source_url: row.source_url } : row);
+      if (!rows.has(row.key)) rows.set(row.key, row);
     }
     const entries = [...rows.values()].map((row) => ({ row,
-      age: minutesBetween(exactTime(row.dzen_published_at ?? row.publisher_published_at), now),
+      age: minutesBetween(exactTime(row.dzen_published_at ?? row.publisher_published_at),
+        row.source === "dzen_launcher_more" ? now + dzenClockOffset : now),
     })).filter(({ age }) => age !== null && age <= 1440).sort((a, b) => a.age - b.age);
     const sections = ["Статьи с прямой ссылкой на Дзен", "Реплики к статьям издателей"];
     const open = entries.filter(({ row }) => !decisions.has(row.key));
@@ -309,6 +320,8 @@
     snapshot = null;
     watchlist = null;
     dzenArticles = [];
+    dzenClockOffset = 0;
+    refreshPending = false;
     dzenDrafts.clear();
     collectProgress.textContent = "";
     collectFeedback.hidden = true;

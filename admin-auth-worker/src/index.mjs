@@ -88,6 +88,18 @@ async function githubJson(path, env, opts={}) {
 const FIRST_CAR_WORKFLOW = "/actions/workflows/first-car-dzen-collector.yml";
 const FIRST_CAR_COOLDOWN_MS = 60 * 60_000;
 const FIRST_CAR_EVENTS = new Set(["schedule", "workflow_dispatch"]);
+const FIRST_CAR_QUEUE = "/contents/dzen/queue.json?ref=first-car-data";
+
+async function firstCarQueue(env) {
+  const snapshot = await githubJson(FIRST_CAR_QUEUE, env, {
+    redirect:"manual", signal:AbortSignal.timeout(10_000)
+  });
+  if (snapshot.status === 404) return {schema_version:1,articles:[]};
+  if (snapshot.status !== 200) throw Error("First Car queue unavailable");
+  const queue = decodeGitHubContent(snapshot.data);
+  if (queue?.schema_version !== 1 || !Array.isArray(queue.articles)) throw Error("Invalid First Car queue");
+  return queue;
+}
 
 async function firstCarRun(request, url, env, headers) {
   if (!env.FIRST_CAR_ACTIONS_TOKEN) return fail(503,"first_car_not_enabled",headers);
@@ -146,7 +158,7 @@ async function firstCarRun(request, url, env, headers) {
     }
     if (run.status !== "completed") return describe(run,"running");
     stage = "read_report";
-    const snapshot = await actions("/contents/dzen/queue.json?ref=first-car-data",{},env.GITHUB_REPO_TOKEN);
+    const snapshot = await actions(FIRST_CAR_QUEUE,{},env.GITHUB_REPO_TOKEN);
     if (snapshot.status !== 200 && snapshot.status !== 404) return upstreamFailed("first_car_report_unavailable",snapshot.status);
     let report = null;
     if (snapshot.status === 200) {
@@ -527,6 +539,14 @@ export default {
       }
       if (url.pathname==="/api/first-car/collect" && ["GET","POST"].includes(request.method)) {
         return firstCarRun(request,url,env,headers);
+      }
+      if (url.pathname==="/api/first-car/queue" && request.method==="GET") {
+        if (url.search) return fail(400,"unexpected_input",headers);
+        try {
+          return send({ok:true,queue:await firstCarQueue(env),now:Date.now()},200,headers);
+        } catch {
+          return fail(502,"first_car_queue_unavailable",headers);
+        }
       }
       if (url.pathname==="/api/review" && request.method==="POST") {
         if ((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json") return fail(415,"json_required",headers);
