@@ -6868,7 +6868,9 @@
       "safety"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6afeb73a97093c1e3fc1d4ab",
+    "site_first_dzen_url": "https://dzen.ru/a/av63OpcJPB4_wdSr"
   },
   {
     "title": "Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки",
@@ -6893,7 +6895,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6afece813965384d0faea36e",
+    "site_first_dzen_url": "https://dzen.ru/a/av7OgTllOE0PrqNu"
   },
   {
     "title": "Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже",
@@ -6918,7 +6922,9 @@
     ],
     "products": [
       "copilot"
-    ]
+    ],
+    "site_first_dzen_id": "6afeced18dd59d077891981f",
+    "site_first_dzen_url": "https://dzen.ru/a/av7O0Y3VnQd4kZgf"
   },
   {
     "title": "Microsoft создала ИИ для поиска уязвимостей: в тесте он обошёл GPT-6 Astra при затратах в 50 раз ниже",
@@ -6941,7 +6947,9 @@
     "companies": [
       "microsoft"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6afecf5e8fe97b246a1d2eec",
+    "site_first_dzen_url": "https://dzen.ru/a/av7PXo_peyRqHS7s"
   },
   {
     "title": "Google выпустила Gemini 4 Neon: обогнала Claude Opus 5.5 и GPT-6.2 Sol в тестах",
@@ -6966,7 +6974,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6b00092416c3835672d0f764",
+    "site_first_dzen_url": "https://dzen.ru/a/awAJJBbDg1Zy0Pdk"
   },
   {
     "title": "НАТО уже использует до 300 миллиардов токенов OpenAI в месяц для защиты своих сетей",
@@ -6989,7 +6999,9 @@
     "companies": [
       "openai"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b0009b48ab6443165813771",
+    "site_first_dzen_url": "https://dzen.ru/a/awAJtIq2RDFlgTdx"
   },
   {
     "title": "Таможня насчитала на 50 тысяч ИИ-чипов NVIDIA больше, чем сама NVIDIA. США ведут расследование",
@@ -7062,7 +7074,9 @@
     "products": [
       "codex",
       "claude-code"
-    ]
+    ],
+    "site_first_dzen_id": "6afecfb3270b29709a2aeac6",
+    "site_first_dzen_url": "https://dzen.ru/a/av7PsycLKXCaKurG"
   },
   {
     "title": "ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся",
