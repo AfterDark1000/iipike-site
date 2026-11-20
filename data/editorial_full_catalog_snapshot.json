@@ -1,11 +1,51 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "a2348f57a8d2b5962ce5ad1eff46f79ac5d984bd",
-  "source_blob_sha": "8bea61168f7634a601870bb39ee6240ef6ca3c31",
-  "snapshot_date": "2026-11-19",
+  "source_commit": "f85db1190248937fee798d53362ab23615ed6d21",
+  "source_blob_sha": "978fb017cceeafebde7ea9e4dd6374cb384be26d",
+  "snapshot_date": "2026-11-20",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6afeced18dd59d077891981f",
+      "title": "Microsoft заявила, что её ИИ-программист почти сравнялся с Claude Opus при затратах в 20 раз ниже",
+      "dzen_url": "https://dzen.ru/a/av7O0Y3VnQd4kZgf",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Microsoft утверждает, что её новая нейросеть MAI Code 2 выполняет задачи программистов почти на уровне Claude Opus 5.5, расходуя всего 5% его стоимости. Модель представили 17 ноября на конференции Ignite вместе с облегчённой версией MAI Code 2 Flash. Обе уже подключили к GitHub Copilot — ИИ-помощнику для программистов. Основная модель рассчитана на сложную работу с кодом: искать и исправлять ошибки, менять сразу неск",
+      "published_at_utc": "2026-11-20T06:02:47+00:00"
+    },
+    {
+      "dzen_id": "6afece813965384d0faea36e",
+      "title": "Google сделала ИИ-исполнителя бесплатным: он сам звонит в компании и оформляет покупки",
+      "dzen_url": "https://dzen.ru/a/av7OgTllOE0PrqNu",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Вице-президент Google Джош Вудворд отправил Gemini слушать телефонную музыку ожидания вместо себя — и получил запись в автосервис меньше чем за пять минут. Нейросеть одновременно обзвонила две мастерские, нашла подходящее время и внесла запись в календарь владельца машины. 17 ноября Google начала бесплатно открывать Tasks in Gemini в шести странах: США, Японии, Южной Корее, Канаде, Австралии и Индии. Раньше этот ИИ-а",
+      "published_at_utc": "2026-11-20T04:52:27+00:00"
+    },
+    {
+      "dzen_id": "6afeb73a97093c1e3fc1d4ab",
+      "title": "ИИ положил в корзину 72 яйца. Покупатель узнал об этом после доставки",
+      "dzen_url": "https://dzen.ru/a/av63OpcJPB4_wdSr",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "72 яйца обнаружил Мэтт Смит в доставке продуктов, собранных с помощью ИИ-агента. В списке покупок яиц не было. 10 ноября Смит опубликовал в X переписку с помощником. Тот сообщил, что добавил в корзину четыре упаковки Vital Farms по 18 яиц. Заказ оформил сам Смит, не заметив лишнего товара. Смит спросил, почему агент выбрал яйца. Помощник сначала предположил, что неверно прочитал фотографию списка покупок. Смит ответи",
+      "published_at_utc": "2026-11-20T03:41:53+00:00"
+    },
+    {
+      "dzen_id": "6afeb69b41f1b507684d2ad8",
+      "title": "Блогер пришёл к ИИ-рекрутеру с кроссовком на голове",
+      "dzen_url": "https://dzen.ru/a/av62m0HxtQdoTSrY",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Парень без футболки, с кроссовком на голове, приходит на собеседование в Burger King. Встречает его виртуальная сотрудница по имени Карен. Кандидат представляется Крангеусом Макбаскетболом и просит зарплату 725 тысяч долларов в год. Карен предлагает четыре доллара в час и возмущается поведением соискателя. Кандидат продолжает издеваться над вопросами. Видео разошлось по соцсетям, а зрители начали спорить, действитель",
+      "published_at_utc": "2026-11-20T02:32:16+00:00"
+    },
     {
       "dzen_id": "6afeb6458fe97b246aea84e2",
       "title": "Инвесторы испугались ИИ-пузыря: такого разворота от техакций не было 20 лет",
