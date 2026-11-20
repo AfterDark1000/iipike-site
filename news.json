@@ -7296,5 +7296,29 @@
       "genie",
       "gemini"
     ]
+  },
+  {
+    "title": "Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника",
+    "summary": "Microsoft внедряет автономных ИИ-сотрудников Foundry с собственными учётными записями и назначенными руководителями. В компании используют более 30 шаблонов таких агентов; права на документы выдаются отдельно.",
+    "published": "2026-11-20",
+    "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry",
+    "cover": "assets/editorial/microsoft-foundry-autopilot-ai-employees-20261119.webp",
+    "rubric": "news",
+    "vk_title": "📧 Microsoft выдаёт ИИ-СОТРУДНИКАМ почту и назначает начальников",
+    "vk_summary": "В Microsoft Foundry автономные агенты получают собственные корпоративные аккаунты, работают с почтой, документами и Teams. Их действия отслеживаются, права доступа ограничиваются, а ответственность закреплена за человеком. Внутри Microsoft уже используются более 30 шаблонов таких помощников.",
+    "published_at_utc": "2026-11-20T17:00:55Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "microsoft-foundry-autopilot-ai-employees-20261119",
+    "url": "articles/microsoft-foundry-autopilot-ai-employees-20261119/",
+    "topics": [
+      "agents",
+      "business",
+      "safety"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": []
   }
 ]
