@@ -3760,12 +3760,12 @@
       "summary": "17 ноября: сообщение об обновлении LangSmith; вторичный источник, детали проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T02:42:11+00:00",
       "review_started_at": "2026-11-19T11:09:22+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-30f3acb86b10736b"
+      "closed_at": "2026-11-20T03:38:44Z",
+      "article_id": "langsmith-agent-history-platform-20261116",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-30f3acb86b10736b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/langsmith-agent-history-platform-20261116/"
     },
     {
       "id": "n-8a7529e97fb60107",
