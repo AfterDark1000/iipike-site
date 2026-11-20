@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261120-1654-ordinary-006.json",
+  "pool_id": "n-f1276fcf4509a500",
+  "pool_sequence": 60,
+  "article_id": "britanskiy-ministr-predlozhil-ispolzovat-dannye-n-f1276fcf4509a500",
+  "status": "ready_for_review",
+  "revision": 1,
+  "created_at": "2026-11-20T16:55:11+00:00",
+  "updated_at": "2026-11-20T17:00:00+00:00",
+  "content": {
+    "title": "Британия хочет использовать медицинские данные пациентов для разработки лекарств с ИИ",
+    "dzen_title": "Британия хочет использовать медицинские данные пациентов для разработки лекарств с ИИ",
+    "summary": "Министр науки Британии предложил активнее использовать многолетние данные NHS для ИИ-разработки лекарств. Но остаются вопросы доступа, доверия пациентов и коммерческой выгоды.",
+    "rubric": "news",
+    "section": "НОВОСТИ ИИ",
+    "topics": [
+      "ai-healthcare",
+      "privacy"
+    ],
+    "companies": [],
+    "products": [],
+    "source_url": "https://www.ft.com/content/f95d9298-d27e-4c1b-87e5-ea75f67a1e0c",
+    "source_title": "Financial Times — Britain should ‘exploit’ NHS data to power AI, says minister",
+    "event_date": "2026-11-11",
+    "related_dzen_ids": [],
+    "site_crosslinks": {},
+    "article_markdown": "**Британские власти хотят превратить медицинские записи NHS в инструмент для разработки лекарств с помощью ИИ.** Министр науки Крис Макдональд заявил, что десятилетия данных государственной системы здравоохранения могут привлечь инвестиции в фармацевтику.\n\nВыступая 11 ноября на конференции FT Global Pharma and Biotech Summit, Макдональд назвал преимущество Великобритании редким: у страны есть многолетние медицинские записи пациентов и развитая ИИ-индустрия. Такие массивы данных интересны исследователям, которые ищут закономерности заболеваний и проверяют перспективные направления разработки препаратов.\n\nНо у плана есть неприятная сторона. Медицинские сведения — особенно чувствительная информация, а доверие пациентов нельзя получить одним обещанием технологического прорыва. На фоне споров о роли Palantir в инфраструктуре NHS и сообщения о продаже данных, связанных с UK Biobank, министр отдельно говорил о необходимости контроля доступа и общественного доверия.\n\nПравительство при этом не намерено отказываться от коммерческого использования медицинских данных. По информации Financial Times, контракт Palantir с NHS предполагается продлить ещё на два года, пока власти готовят новую процедуру закупки с повышенным вниманием к технологической самостоятельности страны.\n\nЕсть и денежный вопрос. После изменения условий закупки новых лекарств NHS несёт дополнительные расходы, а ожидаемая выгода от инвестиций фармкомпаний может достаться другим частям экономики — например, через налоговые поступления. Макдональд признал это расхождение. Конкретного нового механизма доступа ИИ-компаний к персональным медицинским данным министр на выступлении не представил.",
+    "threads_text": "Британия хочет пустить медицинские данные NHS в разработку лекарств с помощью ИИ.\n\nМинистр науки видит в десятилетиях записей пациентов конкурентное преимущество. Но после споров вокруг Palantir и UK Biobank главный вопрос — кому доверят доступ к этим данным и на каких условиях.\n\nЗдоровье пациентов — слишком дорогая валюта для сделки вслепую.",
+    "x_text": "Британский министр науки предлагает активнее использовать данные NHS для разработки лекарств с ИИ. Десятилетия медицинских записей могут привлечь фармкомпании, но спор о доступе и доверии пациентов никуда не делся.",
+    "vk_title": "Британия хочет отдать данные NHS на службу ИИ-разработке лекарств",
+    "vk_summary": "Британский министр науки Крис Макдональд призвал использовать многолетние медицинские данные NHS для разработки лекарств с ИИ. Власти рассчитывают привлечь фармацевтические инвестиции, но на фоне споров о Palantir и безопасности медицинских сведений вопрос доверия пациентов остаётся открытым."
+  },
+  "research": {
+    "sources": [
+      {
+        "url": "https://www.ft.com/content/f95d9298-d27e-4c1b-87e5-ea75f67a1e0c",
+        "title": "Financial Times, 11 November 2026",
+        "role": "original reporting and minister's conference remarks"
+      }
+    ],
+    "fact_checks": [
+      "FT reports Chris McDonald speaking at FT Global Pharma and Biotech Summit on 11 November 2026; pool's 12 November is a collection/reporting date, not confirmed event date.",
+      "FT attributes the long-term NHS dataset competitive advantage claim to McDonald; no specific new patient-data access mechanism announced.",
+      "FT reports proposed two-year Palantir contract extension, not a completed new award.",
+      "FT reports controversy about UK Biobank data and trust; no claim that NHS sold patient records.",
+      "Financial Times article is the reporting source; no separate official transcript located in this pass."
+    ],
+    "notes": "Journalistic pass: minister, venue, date, NHS records, Palantir, trust and financial trade-off checked against FT report. Critical pass: removed empty transitions and speculative claims. No quote reproduced verbatim. No confirmed Dzen crosslink or published internal related article; site_crosslinks left empty. Entity registry checked: NHS is a health service rather than company, Palantir is incidental and omitted from main company tags. Source is FT reporting, not an independently available official transcript."
+  },
+  "entity_candidates": {
+    "companies": [],
+    "products": []
+  },
+  "cover_brief": {
+    "fact": "Британский министр предлагает использовать накопленные медицинские записи NHS для ИИ-разработки лекарств; вопрос доверия и доступа остаётся предметом спора.",
+    "hook": "МЕДКАРТЫ ДЛЯ ИИ?",
+    "constraints": "Горизонтальная 16:9 авторская редакционная иллюстрация: бумажная медицинская картотека превращается в лабиринт с таблеткой в центре, дверь с замком на переднем плане; интеллектуальная газетная графика, без роботов, неона, лиц пациентов и логотипов. Не изображать как уже состоявшуюся продажу медицинских данных."
+  },
+  "editor_notes": [
+    "Подтверждён receipt и FIFO sequence=60; status=in_review, priority=normal.",
+    "Два прохода редакторской вычитки: проверка фактов по FT и критическая чистка повторов/пустых вступлений.",
+    "Дата события 11 ноября по FT; исходный пул кратко относил новость к 12 ноября.",
+    "Перелинковка на Дзен не добавлена без подтверждённого ID; публикации и обложки не создавались.",
+    "Ограничение: выступление министра проверено по репортажу FT, а не по официальной стенограмме."
+  ]
+}
