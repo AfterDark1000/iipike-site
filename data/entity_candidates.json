@@ -1167,6 +1167,10 @@
         {
           "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
           "source_url": "https://www.reuters.com/business/global-markets-bofa-survey-2026-11-17/"
+        },
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "source_url": "https://web.bankofamerica.com/en/security/library/agentic-ai"
         }
       ]
     },
@@ -1407,6 +1411,42 @@
         {
           "article_id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
           "source_url": "https://about.commonsensemedia.org/press-room/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds"
+        }
+      ]
+    },
+    {
+      "key": "citibank",
+      "name": "Citibank",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "source_url": "https://www.citi.com/tandc/view-printable-version"
+        }
+      ]
+    },
+    {
+      "key": "pnc",
+      "name": "PNC",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "source_url": "https://www.pnc.com/content/dam/digital-assets/en/documents/digital_services_agreement_UPDATE.pdf"
+        }
+      ]
+    },
+    {
+      "key": "wells-fargo",
+      "name": "Wells Fargo",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "source_url": "https://www.wellsfargo.com/online-banking/online-access-agreement/upcoming/"
         }
       ]
     }
