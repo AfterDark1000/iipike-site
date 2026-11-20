@@ -9,13 +9,15 @@ import copy
 import json
 from pathlib import Path
 import re
-
-from scripts import site_news_pool
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts import site_news_pool
 CLAIM = re.compile(
     r"AUTO_EDITOR claim=([a-z0-9][a-z0-9._-]*[.]json); "
-    r"article_id=([a-z0-9]+(?:-[a-z0-9]+)*)\\Z"
+    r"article_id=([a-z0-9]+(?:-[a-z0-9]+)*)\Z"
 )
 
 
