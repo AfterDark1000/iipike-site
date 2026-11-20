@@ -4590,7 +4590,7 @@
       "review_started_at": "2026-11-20T09:20:08.187Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Редактор №22, 20.11.2026: начата проверка новости о приостановке NVIDIA поставок ИИ-чипов в Китай. Первоисточник и точное название чипов ещё проверяются; публикаций нет."
+      "note": "20.11, редактор №22. Проверено: NVIDIA earnings 17.11 https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/ ; SEC CFO commentary https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm ; earnings call: лицензированные Hopper для Китая на $2,4 млрд за квартал до 25.10, дальнейшие поставки остановлены, в прогнозе Q4 их нет. Reuters 18.11 https://www.reuters.com/world/china/nvidia-stops-shipping-us-approved-ai-chips-china-2026-11-18/ : причина остановки и постоянность неизвестны; китайская сторона ограничивала импорт H200. H200 подпадает под индивидуальные лицензии США (15.01); не путать с полным запретом всех чипов NVIDIA. Маршрут: hot, без группы. Далее проверить архив и написать Дзен/Threads/X/VK."
     },
     {
       "id": "n-887ee97acada33a1",
