@@ -70,11 +70,16 @@ test("First Car dispatch is owner-only, fixed to main, and reuses active or rece
   assert.equal((await request(api,{method:"POST",headers:{Origin:env.ADMIN_ORIGIN}})).status,401);
   assert.equal((await request(api,{method:"POST",headers:{...session,Origin:"https://wrong.test"}})).status,403);
   assert.equal((await call(api,{method:"POST",headers:session})).status,503);
-  assert.equal((await request(api+"?ref=other",{method:"POST"})).status,400);
+  for(const [path,body] of [[api+"?ref=other",""],[api,"{}"],[api," "],[api,new Uint8Array([0])]]){
+    const response=await request(path,{method:"POST",body});
+    assert.equal(response.status,400);
+    assert.deepEqual(await response.json(),{ok:false,error:"unexpected_input"});
+  }
   assert.equal(github.mock.callCount(),0);
-  const start=await request(api,{method:"POST"});
+  const start=await request(api,{method:"POST",body:""});
   assert.equal(start.status,202);
   assert.equal((await start.json()).id,42);
+  assert.equal((await (await request(api,{method:"POST",body:new Uint8Array(0)})).json()).state,"running");
   assert.equal((await (await request(api,{method:"POST"})).json()).state,"running");
   assert.equal((await (await request(api+"?run=42")).json()).state,"running");
   Object.assign(run,{status:"completed",conclusion:"success"});
