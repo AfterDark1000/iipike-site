@@ -192,6 +192,12 @@
       "utc_date": "2026-11-19",
       "source_url": "https://blog.cloudflare.com/open-clairic/",
       "source_title": "An updated Clairic and Clairic-flash are now open-weight, from the new Workers AI Superintelligence team"
+    },
+    {
+      "id": "979f97d8e071f91792d1",
+      "utc_date": "2026-11-20",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/putting-one-of-quantum-mechanics-deepest-features-to-test-at-scale/",
+      "source_title": "Google Quantum AI shows contextuality powers quantum algorithms at scale"
     }
   ]
 }
