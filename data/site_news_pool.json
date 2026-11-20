@@ -5455,12 +5455,12 @@
       "summary": "19 ноября. BMO представил эксперимент по отбору признаков для машинного обучения с применением квантовых компьютеров IBM.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T09:37:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-27b38ec62ac492a2"
+      "closed_at": "2026-11-20T15:38:57Z",
+      "article_id": "bmo-ibm-quantum-ml-feature-selection-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-27b38ec62ac492a2\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/bmo-ibm-quantum-ml-feature-selection-20261119/"
     },
     {
       "id": "n-467e99a8f3b56dec",
