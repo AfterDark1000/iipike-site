@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 177 · **В каталоге Дзена подтверждены:** 169 · **Не подтверждены, уже на сайте:** 8 · **Не подтверждены, ждут сайт:** 0
+**Всего одобренных:** 178 · **В каталоге Дзена подтверждены:** 169 · **Не подтверждены, уже на сайте:** 9 · **Не подтверждены, ждут сайт:** 0
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -22,6 +22,7 @@
 | 6 | [ИИ принял Doritos за пистолет — школьников задержали после отмены тревоги, теперь они судятся](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/omnilert-doritos-school-police-lawsuit-20261117.md) | 20.11.2026, 10:30 | [На сайте](https://iipike.ru/articles/omnilert-doritos-school-police-lawsuit-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/omnilert-doritos-school-police-lawsuit-20261117.webp) |
 | 7 | [Anthropic провела крупнейшее IPO в истории — $81 млрд. А Nasdaq всё равно упал на 2,3%](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/anthropic-record-ipo-81b-nasdaq-20261119.md) | 20.11.2026, 12:01 | [На сайте](https://iipike.ru/articles/anthropic-record-ipo-81b-nasdaq-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-record-ipo-81b-nasdaq-20261119.webp) |
 | 8 | [Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/bitdefender-github-agent-instructions-malware-20261117.md) | 20.11.2026, 13:15 | [На сайте](https://iipike.ru/articles/bitdefender-github-agent-instructions-malware-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/bitdefender-github-agent-instructions-malware-20261117.webp) |
+| 9 | [В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-agent-framework-pypi-stealer-20261117.md) | 20.11.2026, 14:30 | [На сайте](https://iipike.ru/articles/microsoft-agent-framework-pypi-stealer-20261117/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-agent-framework-pypi-stealer-20261117.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
