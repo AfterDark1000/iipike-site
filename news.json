@@ -7161,5 +7161,27 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "США разрешили, а NVIDIA остановила поставки ИИ-чипов в Китай",
+    "summary": "NVIDIA прекратила поставки лицензированных ИИ-ускорителей Hopper в Китай после квартала с отгрузками на $2,4 млрд. В следующем квартальном прогнозе компания исключила китайские продажи вычислительных продуктов для дата-центров.",
+    "published": "2026-11-20",
+    "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/",
+    "cover": "assets/editorial/nvidia-china-hopper-shipments-halt-20261118.webp",
+    "rubric": "skynet",
+    "vk_title": "🚫 NVIDIA ОСТАНОВИЛА поставки ИИ-чипов в Китай, хотя США их разрешали!",
+    "vk_summary": "За прошлый квартал компания отгрузила ускорителей Hopper на $2,4 млрд. Теперь китайских продаж вычислительных продуктов для дата-центров нет в прогнозе NVIDIA. А в Гонконге, по данным Reuters, около 600 тысяч H200 ожидают разрешения на ввоз в Китай.",
+    "published_at_utc": "2026-11-20T10:45:34Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "nvidia-china-hopper-shipments-halt-20261118",
+    "url": "articles/nvidia-china-hopper-shipments-halt-20261118/",
+    "topics": [
+      "infrastructure"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
