@@ -2629,6 +2629,45 @@
           "source_url": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi"
         }
       ]
+    },
+    {
+      "key": "google-ai-studio",
+      "name": "Google AI Studio",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "google-ai-studio-android-firebase-play-20261117",
+          "source_url": "https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/"
+        }
+      ]
+    },
+    {
+      "key": "firebase",
+      "name": "Firebase",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "google-ai-studio-android-firebase-play-20261117",
+          "source_url": "https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration"
+        }
+      ]
+    },
+    {
+      "key": "google-play",
+      "name": "Google Play",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-20",
+      "evidence": [
+        {
+          "article_id": "google-ai-studio-android-firebase-play-20261117",
+          "source_url": "https://support.google.com/googleplay/android-developer/answer/18765789?hl=en"
+        }
+      ]
     }
   ]
 }
