@@ -1,5 +1,12 @@
 [
   {
+    "id": "536d4386c711aad48fdf",
+    "date": "2026-11-21",
+    "title": "Google научила Duplex звонить в компании по поручению прямо из Gemini",
+    "source_name": "Google Research",
+    "source_url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/"
+  },
+  {
     "id": "979f97d8e071f91792d1",
     "date": "2026-11-20",
     "title": "Квантовое превосходство подтверждено: Google доказала роль контекстуальности в кубитах",

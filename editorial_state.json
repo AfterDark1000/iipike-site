@@ -198,6 +198,12 @@
       "utc_date": "2026-11-20",
       "source_url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/putting-one-of-quantum-mechanics-deepest-features-to-test-at-scale/",
       "source_title": "Google Quantum AI shows contextuality powers quantum algorithms at scale"
+    },
+    {
+      "id": "536d4386c711aad48fdf",
+      "utc_date": "2026-11-21",
+      "source_url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/",
+      "source_title": "How Google Duplex evolved to also call businesses for you in Gemini"
     }
   ]
 }
