@@ -1,5 +1,30 @@
 {
   "schema_version": 1,
-  "items": [],
+  "items": [
+    {
+      "id": "first-car:awF-58xOelSnaViX",
+      "url": "https://dzen.ru/a/awF-58xOelSnaViX",
+      "published_at": "2026-11-21T11:29:09.000Z",
+      "title": "Может ли ChatGPT придумать сюжетный поворот?",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:avxwvx9oYhcgL9q8",
+      "url": "https://dzen.ru/a/avxwvx9oYhcgL9q8",
+      "published_at": "2026-11-21T05:07:34.000Z",
+      "title": "Нейросеть для создания приложений: от идеи до прототипа",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:avwqsfWpglfpR_AV",
+      "url": "https://dzen.ru/a/avwqsfWpglfpR_AV",
+      "published_at": "2026-11-21T03:01:58.000Z",
+      "title": "Threads приостановил аккаунт: как ИИ помог разобраться с уведомлением",
+      "status": "needs_text",
+      "attempts": 0
+    }
+  ],
   "text_blocked": null
 }
