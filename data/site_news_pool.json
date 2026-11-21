@@ -5710,12 +5710,12 @@
       "summary": "20 ноября. Сообщается о проверке происхождения ИИ-видео и изображений для пользователей без аккаунта. Вторичный источник, уточнить официальный анонс.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:34:56+00:00",
       "review_started_at": "2026-11-21T05:54:45+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6c7b6b9c53638fcd"
+      "closed_at": "2026-11-21T06:53:52Z",
+      "article_id": "tiktok-ai-content-checker-no-account-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6c7b6b9c53638fcd\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/tiktok-ai-content-checker-no-account-20261120/"
     },
     {
       "id": "n-f42026462c33c209",
