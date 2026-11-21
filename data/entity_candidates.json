@@ -1505,6 +1505,18 @@
           "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
+    },
+    {
+      "key": "signal",
+      "name": "Signal",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "signal-ai-screenshot-protection-20261120",
+          "source_url": "https://signal.org/blog/protecting-your-privacy/"
+        }
+      ]
     }
   ],
   "products": [
@@ -2940,6 +2952,19 @@
         {
           "article_id": "us-879868-ai-chips-china-licenses-20261119",
           "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
+        }
+      ]
+    },
+    {
+      "key": "signal-messenger",
+      "name": "Signal Messenger",
+      "company": "signal",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "signal-ai-screenshot-protection-20261120",
+          "source_url": "https://signal.org/blog/protecting-your-privacy/"
         }
       ]
     }
