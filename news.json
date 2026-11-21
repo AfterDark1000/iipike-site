@@ -7523,5 +7523,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США",
+    "summary": "20 ноября акции NVIDIA потеряли 14%, Nasdaq Composite — 5,3%. Reuters сообщило о проверке бухгалтерии NVIDIA регулятором США, а акции Anthropic снизились на второй день после IPO.",
+    "published": "2026-11-21",
+    "source_url": "https://www.reuters.com/world/us-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-2026-11-20/",
+    "cover": "assets/editorial/nvidia-sec-anthropic-market-selloff-20261120.webp",
+    "rubric": "news",
+    "vk_title": "📉 NVIDIA обвалилась на 14% за ДЕНЬ — распродажа ИИ-акций",
+    "vk_summary": "20 ноября NVIDIA потеряла 14% после публикации Reuters о возможной проверке её бухгалтерии Комиссией по ценным бумагам США. Nasdaq Composite упал на 5,3%, Anthropic — примерно на 9% во второй день торгов после рекордного IPO. При этом цена акций Anthropic осталась выше цены размещения $83.",
+    "published_at_utc": "2026-11-21T16:15:40Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "nvidia-sec-anthropic-market-selloff-20261120",
+    "url": "articles/nvidia-sec-anthropic-market-selloff-20261120/",
+    "topics": [
+      "finance"
+    ],
+    "companies": [
+      "nvidia",
+      "anthropic"
+    ],
+    "products": []
   }
 ]
