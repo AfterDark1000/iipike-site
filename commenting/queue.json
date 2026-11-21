@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T01:28:42.870886Z",
+  "updated_at": "2026-11-21T06:57:02.445698Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
-      "last_success_at": "2026-11-21T01:28:42.870886Z",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
+      "last_success_at": "2026-11-21T06:57:02.445698Z",
       "error": null,
-      "fresh_matches": 10
+      "fresh_matches": 7
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
-      "last_success_at": "2026-11-21T01:28:42.870886Z",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
+      "last_success_at": "2026-11-21T06:57:02.445698Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
+      "status": "error",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
       "last_success_at": "2026-11-21T01:28:42.870886Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (TimeoutError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
-      "last_success_at": "2026-11-21T01:28:42.870886Z",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
+      "last_success_at": "2026-11-21T06:57:02.445698Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
-      "last_success_at": "2026-11-21T01:28:42.870886Z",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
+      "last_success_at": "2026-11-21T06:57:02.445698Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T01:28:42.870886Z",
-      "last_success_at": "2026-11-21T01:28:42.870886Z",
+      "checked_at": "2026-11-21T06:57:02.445698Z",
+      "last_success_at": "2026-11-21T06:57:02.445698Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Expecting property name enclosed in double quotes: line 20 column 7 (char 1136)"
   },
   "usage": {
     "date": "2026-11-21",
-    "attempted": 9
+    "attempted": 12
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -137,8 +137,8 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-20T20:06:44.444588Z",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-21T06:57:02.445698Z",
       "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     },
@@ -232,9 +232,9 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-20T20:06:44.444588Z",
+      "last_attempt_at": "2026-11-21T06:57:02.445698Z",
       "reason": "Не удалось подготовить комментарий"
     },
     {
@@ -268,9 +268,9 @@
       "comments": null,
       "status": "generation_error",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-20T20:06:44.444588Z",
+      "last_attempt_at": "2026-11-21T06:57:02.445698Z",
       "reason": "Не удалось подготовить комментарий"
     },
     {
@@ -2326,23 +2326,6 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "dzen_url": null,
       "first_seen_at": "2026-11-14T16:43:11.507340Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "0dba81c5c0249fb31cad55ee",
-      "title": "Временная глава Nvidia Колетт Кресс конфликтовала с Хуангом из-за рискованных ставок на ИИ",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151294",
-      "published_at": "2026-11-14T06:26:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-14T10:12:52.904898Z",
       "views": null,
       "comments": null,
       "status": "pending",
