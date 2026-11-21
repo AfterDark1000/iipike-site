@@ -6115,12 +6115,12 @@
       "summary": "19 ноября. FCA открыл AI Spotlight Observatory для обзора внедрения ИИ финансовыми организациями.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:15:05+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-4e1534961d60ea2e"
+      "closed_at": "2026-11-21T11:23:46Z",
+      "article_id": "uk-fca-ai-spotlight-observatory-200-organisations-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-4e1534961d60ea2e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/uk-fca-ai-spotlight-observatory-200-organisations-20261119/"
     },
     {
       "id": "n-59a7f51e05a2577f",
