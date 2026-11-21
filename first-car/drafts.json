@@ -1,14 +1,5 @@
 {
   "schema_version": 1,
-  "items": [
-    {
-      "id": "first-car:avwsiGM1tFu-0T5x",
-      "url": "https://dzen.ru/a/avwsiGM1tFu-0T5x",
-      "published_at": "2026-11-20T07:16:37.000Z",
-      "title": "83 000 просмотров в Threads за месяц: что показал аккаунт с ИИ-картинками",
-      "status": "needs_text",
-      "attempts": 0
-    }
-  ],
+  "items": [],
   "text_blocked": null
 }
