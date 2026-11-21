@@ -5320,12 +5320,12 @@
       "summary": "19 ноября. Сообщается о доступе Gemini к операциям с локальными файлами и приложениями на Mac; уточнить фактический запуск.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-20T19:01:00.369Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "21.11, редактор №23: первоисточник Google от 19.11 https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/; справка https://support.google.com/gemini/answer/18956635?hl=en. Computer Use для Gemini Mac: реальные клики в приложениях через изолированный фоновый экран, живой просмотр; пользователь сохраняет мышь, разрешает приложения, подтверждает чувствительные действия. Примеры: Lightroom, PDF→формы, объявления о продаже. Доступ постепенно США/английский, личный аккаунт 18+, AI Plus/Pro/Ultra; Mac Apple Silicon macOS 15+, рабочие/учебные аккаунты исключены. В Tasks вводится @Computer use. Риски: доступ к залогиненным приложениям, prompt injection между приложениями, бэкап не всегда возможен. Архив: близкая статья https://dzen.ru/a/av7OgTllOE0PrqNu о бесплатных Tasks/звонках, без дубля. Далее: текст на утверждение. Не менять пул до «берём»."
+      "closed_at": "2026-11-21T04:00:02.981Z",
+      "article_id": "google-gemini-mac-computer-use-20261119",
+      "note": "21.11, редактор №23: первоисточник Google от 19.11 https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/; справка https://support.google.com/gemini/answer/18956635?hl=en. Computer Use для Gemini Mac: реальные клики в приложениях через изолированный фоновый экран, живой просмотр; пользователь сохраняет мышь, разрешает приложения, подтверждает чувствительные действия. Примеры: Lightroom, PDF→формы, объявления о продаже. Доступ постепенно США/английский, личный аккаунт 18+, AI Plus/Pro/Ultra; Mac Apple Silicon macOS 15+, рабочие/учебные аккаунты исключены. В Tasks вводится @Computer use. Риски: доступ к залогиненным приложениям, prompt injection между приложениями, бэкап не всегда возможен. Архив: близкая статья https://dzen.ru/a/av7OgTllOE0PrqNu о бесплатных Tasks/звонках, без дубля. Далее: текст на утверждение. Не менять пул до «берём».\n21.11: главред утвердил новый заголовок и отдельный VK-анонс. Дословная статья и Threads/X сохранены: google-gemini-mac-computer-use-20261119. Ждёт обложку."
     },
     {
       "id": "n-8c74da9392aae70d",
