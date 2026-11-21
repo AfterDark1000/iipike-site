@@ -5755,12 +5755,12 @@
       "summary": "19–20 ноября. Дайджест сообщает о коннекторе Synthesia для создания видео через Claude из текста или презентации. Вторичный источник, требуется подтверждение.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:34:56+00:00",
       "review_started_at": "2026-11-21T05:54:45+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-79de63834d2ffe2a"
+      "closed_at": "2026-11-21T07:38:58Z",
+      "article_id": "synthesia-claude-video-connector-launch-20261118",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-79de63834d2ffe2a\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/synthesia-claude-video-connector-launch-20261118/"
     },
     {
       "id": "n-e9fc8c69776afa19",
