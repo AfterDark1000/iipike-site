@@ -1183,6 +1183,10 @@
         {
           "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
           "source_url": "https://www.reuters.com/business/media-telecom/baidu-ceo-says-ai-investment-must-deliver-profits-avoid-bubble-2026-11-17/"
+        },
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
     },
@@ -1327,6 +1331,10 @@
         {
           "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+        },
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
     },
@@ -1483,6 +1491,18 @@
         {
           "article_id": "ec-ai-assisted-cyberattack-20261119",
           "source_url": "https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex"
+        }
+      ]
+    },
+    {
+      "key": "byd",
+      "name": "BYD",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
     }
@@ -1688,6 +1708,10 @@
         {
           "article_id": "nvidia-china-hopper-shipments-halt-20261118",
           "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/"
+        },
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
     },
@@ -2903,6 +2927,19 @@
         {
           "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
           "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+        }
+      ]
+    },
+    {
+      "key": "amd-mi325x",
+      "name": "AMD Instinct MI325X",
+      "company": "amd",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
         }
       ]
     }
