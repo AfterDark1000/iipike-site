@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T17:26:48.550571Z",
+  "updated_at": "2026-11-21T21:05:44.019393Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
-      "fresh_matches": 4
+      "fresh_matches": 5
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,10 +31,10 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
-      "fresh_matches": 0
+      "fresh_matches": 1
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,23 +64,65 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T17:26:48.550571Z",
-      "last_success_at": "2026-11-21T17:26:48.550571Z",
+      "checked_at": "2026-11-21T21:05:44.019393Z",
+      "last_success_at": "2026-11-21T21:05:44.019393Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-21",
-    "attempted": 21
+    "date": "2026-11-22",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "762dcbad180948bdc9baa30c",
+      "title": "Главе МВБ США запретили общаться с журналистами после заявлений об ИИ",
+      "source_id": "mk",
+      "source_name": "МК",
+      "source_url": "https://www.mk.ru/politics/2026/11/21/glave-mvb-ssha-zapretili-obshhatsya-s-zhurnalistami-posle-zayavleniy-ob-ii.html",
+      "published_at": "2026-11-21T20:33:24Z",
+      "channel_url": "https://dzen.ru/mk.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-21T21:05:44.019393Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Забавно, как любые случайные неполадки теперь списывают на нейросети. Скоро отключение света в подъезде будут объяснять бунтом алгоритмов.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-21T21:05:44.019393Z",
+      "reason": "Забавная деталь про списанные на ИИ технические неполадки.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-21T21:05:44.019393Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "3e8d71aab14136ec51b1db7d",
+      "title": "Гипотезу Римана попытались доказать дважды с публикациями в один день: с ИИ и без него",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/21/gipotezu-rimana-popytalis-dokazat-dvazdy-s-publikaciiami-v-odin-den-s-ii-i-bez-nego.html",
+      "published_at": "2026-11-21T17:57:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-21T21:05:44.019393Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Восемь часов продержалось «человеческое» доказательство до разбора нейросетями. Кажется, теперь проверять научные работы будут быстрее, чем авторы успевают их выкладывать.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-21T21:05:44.019393Z",
+      "reason": "Быстрое обнаружение ошибок в доказательстве с помощью ИИ.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-21T21:05:44.019393Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "adf6c13dc11dd72a6a6c89c2",
       "title": "Математик утверждает, что с помощью ИИ-модели Claude ему удалось доказать гипотезу Римана",
@@ -173,10 +215,14 @@
       "first_seen_at": "2026-11-21T15:17:21.987893Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-21T21:05:44.019393Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-21T21:05:44.019393Z"
     },
     {
       "id": "0f77eab1dd8347b430bd0a85",
@@ -2278,27 +2324,6 @@
       "reason": "Скепсис по поводу самостоятельности нового ИИ-агента Samsung и платной подписки.",
       "fact_review": "passed",
       "generated_at": "2026-11-15T01:17:42.344504Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "96d36d7f295cf3e539c85d37",
-      "title": "Флот спутников под управлением ИИ: стартап из Сиэтла запустил платформу для космических группировок",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/14/flot-sputnikov-pod-upravleniem-ii-startap-iz-sietla-zapustil-platformu-dlia-kosmiceskix-gruppirovok.html",
-      "published_at": "2026-11-14T19:51:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-14T21:24:57.425007Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-14T21:24:57.425007Z",
-      "reason": "Не прошёл проверку: В статье не указано, что стартап базируется в Сиэтле.",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-14T21:24:57.425007Z",
       "link_status": "dzen_link_missing"
     }
   ]
