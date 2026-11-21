@@ -6100,12 +6100,12 @@
       "summary": "19 ноября. LangSmith Tool Gateway вышел в публичную бету и позволяет управлять разрешениями и журналом действий агентов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:15:05+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d40b37a43fa11767"
+      "closed_at": "2026-11-21T10:53:55Z",
+      "article_id": "langsmith-tool-gateway-agent-access-public-beta-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d40b37a43fa11767\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/langsmith-tool-gateway-agent-access-public-beta-20261119/"
     },
     {
       "id": "n-4e1534961d60ea2e",
