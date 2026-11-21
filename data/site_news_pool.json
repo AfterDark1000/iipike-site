@@ -6130,12 +6130,12 @@
       "summary": "19 ноября. Авторы AgentMall показали агентные покупки продуктов в нескольких магазинах; со слов авторов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:22:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-59a7f51e05a2577f"
+      "closed_at": "2026-11-21T11:53:50Z",
+      "article_id": "agentmall-ai-agent-groceries-nine-checkout-70pct-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-59a7f51e05a2577f\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/agentmall-ai-agent-groceries-nine-checkout-70pct-20261119/"
     },
     {
       "id": "n-e8720308bcbc644a",
