@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 192
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 193
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **21.11.2026 17:31 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **21.11.2026 21:15 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -19,12 +19,12 @@
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
-| [NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-sec-anthropic-market-selloff-20261120.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США](https://iipike.ru/articles/nvidia-sec-anthropic-market-selloff-20261120/) | 21.11.2026 21:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-sec-anthropic-market-selloff-20261120.webp) |
 | [Трамп и Си договорились: ИИ не должен сам начинать крупные военные операции](https://iipike.ru/articles/trump-xi-military-ai-human-control-20261120/) | 21.11.2026 17:31 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/trump-xi-military-ai-human-control-20261120.webp) |
 | [Трамп пригрозил «огромным налогом» за ИИ-дата-центры за границей](https://iipike.ru/articles/trump-ai-datacenters-overseas-tax-threat-20261120/) | 21.11.2026 16:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/trump-ai-datacenters-overseas-tax-threat-20261120.webp) |
 | [Signal запретил скриншоты, чтобы Siri и Gemini не читали ваши переписки](https://iipike.ru/articles/signal-ai-screenshot-protection-20261120/) | 21.11.2026 15:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/signal-ai-screenshot-protection-20261120.webp) |
