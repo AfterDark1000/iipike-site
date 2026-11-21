@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 186 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 8 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 187 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 9 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -22,6 +22,7 @@
 | 6 | [Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-genie4-project-genie-access-20261118.md) | 20.11.2026, 20:15 | [На сайте](https://iipike.ru/articles/google-genie4-project-genie-access-20261118/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-genie4-project-genie-access-20261118.webp) |
 | 7 | [Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-foundry-autopilot-ai-employees-20261119.md) | 20.11.2026, 22:00 | [На сайте](https://iipike.ru/articles/microsoft-foundry-autopilot-ai-employees-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-foundry-autopilot-ai-employees-20261119.webp) |
 | 8 | [OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-dots-chatgpt-plus-test-20261119.md) | 21.11.2026, 00:15 | [На сайте](https://iipike.ru/articles/openai-dots-chatgpt-plus-test-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-dots-chatgpt-plus-test-20261119.webp) |
+| 9 | [Google пустила Gemini за ваш Mac: ИИ сам работает в программах, пока вы заняты](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-mac-computer-use-20261119.md) | 21.11.2026, 09:45 | [На сайте](https://iipike.ru/articles/google-gemini-mac-computer-use-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-mac-computer-use-20261119.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
