@@ -5800,12 +5800,12 @@
       "summary": "20 ноября. Firebird рассказала о планах расширения инфраструктуры ИИ-вычислений в Армении к 2027 году. Вторичный источник, заявленные планы компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:34:56+00:00",
       "review_started_at": "2026-11-21T06:02:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a4d0283da1b04563"
+      "closed_at": "2026-11-21T08:38:48Z",
+      "article_id": "firebird-armenia-ai-datacenters-300mw-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a4d0283da1b04563\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/firebird-armenia-ai-datacenters-300mw-20261120/"
     },
     {
       "id": "n-fce966fefe73a89e",
