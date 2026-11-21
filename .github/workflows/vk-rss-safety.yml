@@ -4,6 +4,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/build_vk_rss.py'
+      - 'scripts/vk_rss_experiment.py'
+      - 'scripts/vk_rss_asset_probe.py'
+      - 'tests/test_vk_rss_experiment.py'
+      - 'experiments/vk-rss-lab/**'
       - 'data/vk_rss_export.json'
       - 'vk-rss.xml'
       - 'tests/test_vk_rss.py'
@@ -13,6 +17,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/build_vk_rss.py'
+      - 'scripts/vk_rss_experiment.py'
+      - 'scripts/vk_rss_asset_probe.py'
+      - 'tests/test_vk_rss_experiment.py'
+      - 'experiments/vk-rss-lab/**'
       - 'data/vk_rss_export.json'
       - 'vk-rss.xml'
       - 'tests/test_vk_rss.py'
@@ -34,3 +42,9 @@ jobs:
           python3 scripts/build_vk_rss.py --check
           python3 -m unittest discover -s tests -p 'test_vk_rss.py' -v
           python3 -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Inspect real VK cover sizes and verify inert RSS experiments
+        run: |
+          python3 -m py_compile scripts/vk_rss_experiment.py scripts/vk_rss_asset_probe.py
+          python3 scripts/vk_rss_asset_probe.py
+          python3 scripts/vk_rss_experiment.py --check
+          python3 -m unittest discover -s tests -p 'test_vk_rss_experiment.py' -v
