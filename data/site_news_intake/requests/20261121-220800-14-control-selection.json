@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Microsoft и Danaher создают платформу для управления лабораторными приборами с помощью ИИ-агентов",
+      "source_url": "https://www.prnewswire.com/news-releases/danaher-collaborates-with-microsoft-to-make-scientific-instruments-agentically-connected-and-laboratories-more-intelligent-302946263.html",
+      "summary": "20 ноября: компании заявили о работе над агентной платформой для приборов и экспериментов. Пока анонс разработки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "GE HealthCare представила ИИ-инструменты для настройки КТ и МРТ",
+      "source_url": "https://www.gehealthcare.com/en/about/newsroom/press-releases/ge-healthcare-introduces-new-imaging-360-features-to-simplify-protocol-management-and-support-radiology-workflows",
+      "summary": "20 ноября: новые функции Imaging 360 для анализа данных и рекомендаций по протоколам обследований.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Суд назначил надзор за защитой данных пользователей Character.AI",
+      "source_url": "https://ag.state.mn.us/Office/Communications/2026/11/20_CharacterAI.asp",
+      "summary": "20 ноября: независимый специалист должен проверить защиту переписок при возможной продаже активов компании, включая данные детей.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ИИ-дата-центры осложняют выполнение климатических целей Meta",
+      "source_url": "https://www.bisnow.com/news/national/data-center-sustainability-operations/meta-could-push-back-climate-goal-as-data-centres-cause-spike-in-carbon-emissions",
+      "summary": "20 ноября: сообщается о росте выбросов и возможном пересмотре климатической цели на 2030 год; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ElevenLabs расширила Ads Engine инструментами дубляжа и локализации рекламы",
+      "source_url": "https://elevenlabs.io/blog/video-variants-localization-ads-engine",
+      "summary": "20 ноября: генерация вариантов рекламы с переводом, голосом, музыкой и синхронизацией губ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчики OhanTTS представили открытую модель клонирования голоса",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-tts",
+      "summary": "20 ноября: по словам авторов, для копирования голоса хватает нескольких секунд записи; поддерживается восемь языков.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Metric-AI выпустила OhanASR для распознавания армянской речи",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-asr-v01",
+      "summary": "20 ноября: открытые модели распознавания речи, включая потоковый вариант; отдельный релиз от OhanTTS.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Разработчик Devin Cognition обсуждает оценку в 75 миллиардов долларов",
+      "source_url": "https://finance.yahoo.com/technology/ai/articles/cognition-talks-75-billion-value-204755865.html",
+      "summary": "20 ноября: сообщается о переговорах по привлечению не менее 2 млрд долларов; сделка не заключена, вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Фонд Дженсена Хуанга обязался потратить 350 млн долларов на CoreWeave",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1038792/jensen-huangs-charity-is-spending-350-million-on-coreweave",
+      "summary": "20 ноября: раскрыты детали ранее возникших обязательств фонда по оплате облачных вычислений; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI сообщила о защите от выманивания скрытых рассуждений моделей",
+      "source_url": "https://openai.com/index/combatting-adversarial-distillation/",
+      "summary": "20 ноября: компания заявляет о снижении успешности атак на внутренние рассуждения в собственных тестах.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Hugging Face представила Harness Adapters для эффективной работы ИИ-агентов",
+      "source_url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "summary": "20 ноября: метод адаптации моделей под агентные среды; авторы сообщают о росте успешности и экономии токенов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "AWS представила SageMaker HyperPod Global Inference Gateway",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/",
+      "summary": "20 ноября: единая точка доступа для распределения запросов между регионами и кластерами.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "SK hynix показала систему MARS и технологии памяти для ИИ на SC26",
+      "source_url": "https://news.skhynix.com/en/sc26-ai-hpc-exhibition/",
+      "summary": "20 ноября: итоги демонстраций высокоскоростной памяти и вычислительной инфраструктуры; дата отдельных демонстраций требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Японский производитель печатей предлагает аутентификацию видео в X",
+      "source_url": "https://asia.nikkei.com/business/companies/japan-stamp-maker-stomps-into-ai-realm-by-authenticating-videos-on-x",
+      "summary": "21 ноября: производитель традиционных средств заверения документов выходит на рынок проверки подлинности видео; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
