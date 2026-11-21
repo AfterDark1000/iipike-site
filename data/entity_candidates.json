@@ -2879,6 +2879,32 @@
           "source_url": "https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex"
         }
       ]
+    },
+    {
+      "key": "aws-marketplace",
+      "name": "AWS Marketplace",
+      "company": "amazon",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
+          "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+        }
+      ]
+    },
+    {
+      "key": "agentcore-payments",
+      "name": "Amazon Bedrock AgentCore payments",
+      "company": "amazon",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
+          "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+        }
+      ]
     }
   ]
 }
