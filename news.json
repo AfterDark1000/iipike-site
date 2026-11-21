@@ -7546,5 +7546,30 @@
       "anthropic"
     ],
     "products": []
+  },
+  {
+    "title": "Meta пустила ИИ в Chrome — под вашим логином",
+    "summary": "Meta выпустила расширение Muse для Chrome: агент действует в отдельной группе вкладок, используя открытые пользователем сессии. Ранее компания добавила поддержку Apple Watch и Wear OS.",
+    "published": "2026-11-21",
+    "source_url": "https://www.meta.com/en-gb/help/superintelligence/2124746764949121/",
+    "cover": "assets/editorial/meta-muse-chrome-login-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🧩 Meta пустила ИИ в CHROME — под вашим логином!",
+    "vk_summary": "Агент Muse поселился в боковой панели. Он работает с сайтами, где вы уже авторизованы, заполняет формы и помогает оформлять покупки. Пароли ему не нужны: хватает открытой сессии. Поэтому сама Meta советует выйти из аккаунтов, к которым не хотите подпускать агента. Бро уже в гостях. 👀",
+    "published_at_utc": "2026-11-21T17:45:41Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-20",
+    "id": "meta-muse-chrome-login-20261120",
+    "url": "articles/meta-muse-chrome-login-20261120/",
+    "topics": [
+      "agents",
+      "search"
+    ],
+    "companies": [
+      "meta"
+    ],
+    "products": [
+      "muse"
+    ]
   }
 ]
