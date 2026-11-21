@@ -5775,7 +5775,7 @@
       "review_started_at": "2026-11-21T07:37:47.233Z",
       "closed_at": null,
       "article_id": null,
-      "note": "21.11.2026: редактор №24 взял горячую №385 по FIFO. Проверяем Reuters, первичные документы и связь с предыдущими новостями о поставках ускорителей в Китай. Публикаций/утверждения пока нет."
+      "note": "21.11.2026, редактор №24: горячая №385 закреплена. Первоисточник: Комитет иностранных дел Палаты представителей США 19.11 https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china ; сводка https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-HFAC-Summary.pdf ; таблица https://democrats-foreignaffairs.house.gov/wp-content/uploads/2026/11/11.19.26-ECRA-Information-Disclosure-of-BIS-License-Decisions.pdf . На 11.05.2026 запрошены 3,444,160 NVIDIA H200/AMD MI325X, одобрены 879,868 по 21 лицензии, в таблице статус Approved, not shipped на эту дату. Alibaba 75k, Tencent 150k, Baidu 43k, BYD 4k — в перечне Пентагона (июнь 2026). 20.11 AP/NVIDIA подтвердили ограниченные реальные поставки в последующие месяцы, затем прекращение H200. Связь с уже опубликованной статьёй про расследование Megaspeed; #306 о прекращении H200 есть на сайте, но Dzen URL пока не подтверждён. Далее: текст Дзен + Threads/X/VK на утверждение; ничего не сохранять в публикационные очереди до команды «берём»."
     },
     {
       "id": "n-2e1a15f089296837",
