@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 191 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 13 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 193 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 14 · **Не подтверждены, ждут сайт:** 2
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -27,6 +27,7 @@
 | 11 | [Amazon разрешила ИИ тратить ваши деньги без спроса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/amazon-aws-marketplace-agentic-payments-20261119.md) | 21.11.2026, 12:45 | [На сайте](https://iipike.ru/articles/amazon-aws-marketplace-agentic-payments-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-aws-marketplace-agentic-payments-20261119.webp) |
 | 12 | [США разрешили Китаю 880 тысяч ИИ-чипов — даже фирмам из военного списка Пентагона](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/us-879868-ai-chips-china-licenses-20261119.md) | 21.11.2026, 14:00 | [На сайте](https://iipike.ru/articles/us-879868-ai-chips-china-licenses-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/us-879868-ai-chips-china-licenses-20261119.webp) |
 | 13 | [Signal запретил скриншоты, чтобы Siri и Gemini не читали ваши переписки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/signal-ai-screenshot-protection-20261120.md) | 21.11.2026, 15:15 | [На сайте](https://iipike.ru/articles/signal-ai-screenshot-protection-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/signal-ai-screenshot-protection-20261120.webp) |
+| 14 | [Трамп пригрозил «огромным налогом» за ИИ-дата-центры за границей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/trump-ai-datacenters-overseas-tax-threat-20261120.md) | 21.11.2026, 16:30 | [На сайте](https://iipike.ru/articles/trump-ai-datacenters-overseas-tax-threat-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/trump-ai-datacenters-overseas-tax-threat-20261120.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -35,6 +36,7 @@
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
 | 1 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 2 | [Трамп и Си договорились: ИИ не должен сам начинать крупные военные операции](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/trump-xi-military-ai-human-control-20261120.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
