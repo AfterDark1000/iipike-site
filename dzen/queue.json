@@ -2,60 +2,60 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/avwsiGM1tFu-0T5x",
-      "title": "83 000 просмотров в Threads за месяц: что показал аккаунт с ИИ-картинками",
-      "published_at": "2026-11-20T07:16:37.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-20T09:44:05.526Z",
+      "url": "https://dzen.ru/a/awF-58xOelSnaViX",
+      "title": "Может ли ChatGPT придумать сюжетный поворот?",
+      "published_at": "2026-11-21T11:29:09.000Z",
+      "source_name": "Нейросети и Писатель",
+      "first_seen_at": "2026-11-21T12:13:05.397Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/avv-0M4gzAfJvKhy",
-      "title": "Как учёные используют ChatGPT: поиск идей, анализ данных и проверка гипотез",
-      "published_at": "2026-11-20T05:09:45.000Z",
+      "url": "https://dzen.ru/a/avxwvx9oYhcgL9q8",
+      "title": "Нейросеть для создания приложений: от идеи до прототипа",
+      "published_at": "2026-11-21T05:07:34.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-20T09:44:05.526Z",
+      "first_seen_at": "2026-11-21T12:13:03.642Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/aul8OQIrtEtCeO6V",
-      "title": "GPT-6 Astra расшифровала 217-летний шифр: что Наполеон приказал передать генералу Мармону",
-      "published_at": "2026-11-20T03:02:01.000Z",
+      "url": "https://dzen.ru/a/avwqsfWpglfpR_AV",
+      "title": "Threads приостановил аккаунт: как ИИ помог разобраться с уведомлением",
+      "published_at": "2026-11-21T03:01:58.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-20T09:44:05.526Z",
+      "first_seen_at": "2026-11-21T12:13:03.642Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-20T09:44:04.559Z",
+      "attempted_at": "2026-11-21T12:13:02.350Z",
       "failures": 0,
-      "next_at": "2026-11-20T10:44:04.559Z"
+      "next_at": "2026-11-21T13:13:02.350Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-20T09:44:05.526Z",
+      "attempted_at": "2026-11-21T12:13:03.642Z",
       "failures": 0,
-      "next_at": "2026-11-20T10:44:05.526Z"
+      "next_at": "2026-11-21T13:13:03.642Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-20T09:44:05.860Z",
+      "attempted_at": "2026-11-21T12:13:04.104Z",
       "failures": 0,
-      "next_at": "2026-11-20T10:44:05.860Z"
+      "next_at": "2026-11-21T13:13:04.104Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-20T09:44:06.201Z",
+      "attempted_at": "2026-11-21T12:13:04.528Z",
       "failures": 0,
-      "next_at": "2026-11-20T10:44:06.201Z"
+      "next_at": "2026-11-21T13:13:04.528Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-20T09:44:06.514Z",
+      "attempted_at": "2026-11-21T12:13:04.943Z",
       "failures": 0,
-      "next_at": "2026-11-20T10:44:06.514Z"
+      "next_at": "2026-11-21T13:13:04.943Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 44713191472,
+    "id": 44902770255,
     "requests": 5,
     "processed": 5,
     "errors": 0,
