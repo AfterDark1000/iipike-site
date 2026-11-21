@@ -6025,12 +6025,12 @@
       "summary": "19 ноября. Авторы научной работы Optics as Code описали ИИ-агента, настраивающего оптическое оборудование; со слов авторов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:15:05+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-454e9ae4843b4701"
+      "closed_at": "2026-11-21T09:53:45Z",
+      "article_id": "optics-as-code-ai-agent-trains-optical-network-20261118",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-454e9ae4843b4701\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/optics-as-code-ai-agent-trains-optical-network-20261118/"
     },
     {
       "id": "n-2e0248f14b028b8c",
