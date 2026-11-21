@@ -1361,6 +1361,54 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/328",
       "approved_at_utc": "2026-11-21T06:18:11Z",
       "published_at_utc": "2026-11-21T06:18:11Z"
+    },
+    {
+      "slug": "agentmall-ai-agent-groceries-nine-checkout-70pct-20261119",
+      "pool_id": "n-59a7f51e05a2577f",
+      "pool_sequence": 409,
+      "headline": "Разработчики AgentMall научили ИИ-агентов покупать продукты, но пока с ошибками",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Разработчики AgentMall, анонс Show HN",
+      "source_url": "https://news.ycombinator.com/item?id=50562508",
+      "body": "Разработчики AgentMall представили сервис, через который ИИ-агент может собрать корзину и оформить покупку в интернет-магазине. Авторы заявляют поддержку девяти торговых площадок, но поимённо назвали только семь. В сообщении на Hacker News 19 ноября они признали, что успешно завершаются около 70% попыток оформления заказа. Доступны тестовые ключи, позволяющие пройти весь процесс без реальной покупки.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/329",
+      "approved_at_utc": "2026-11-21T06:32:33Z",
+      "published_at_utc": "2026-11-21T06:32:33Z"
+    },
+    {
+      "slug": "kong-volcano-lavaflow-agent-cloud-fix-pr-20261119",
+      "pool_id": "n-db6a3673e4cbdb2f",
+      "pool_sequence": 411,
+      "headline": "Kong запустила облако, где ИИ ищет ошибки и предлагает исправления",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Kong / Volcano, официальный анонс и документация",
+      "source_url": "https://volcano.dev/blog/introducing-volcano-agent-cloud",
+      "body": "Компания Kong 19 ноября представила Volcano — облачную платформу для запуска ИИ-агентов и приложений. Встроенный инструмент LavaFlow, по заявлению разработчиков, разбирает повторяющиеся сбои по журналам и исходному коду, после чего предлагает исправление через запрос на изменение в GitHub. По умолчанию такой код должен проверить и принять человек; автоматическое объединение исправлений настраивается отдельно.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/330",
+      "approved_at_utc": "2026-11-21T06:32:35Z",
+      "published_at_utc": "2026-11-21T06:32:35Z"
+    },
+    {
+      "slug": "harvard-cornell-12m-ai-quantum-error-correction-20261120",
+      "pool_id": "n-56c244d2df40fb3d",
+      "pool_sequence": 420,
+      "headline": "Гарвард возглавил квантовый ИИ-проект с грантом $12 млн",
+      "topic": "Наука",
+      "event_date": "2026-11-20",
+      "source": "Harvard Gazette / Cornell Chronicle",
+      "source_url": "https://news.harvard.edu/gazette/story/2026/11/harvard-led-team-receives-12-million-in-federal-funds-to-advance-quantum-computing-with-ai/",
+      "body": "Команда под руководством физика Гарварда Михаила Лукина получила грант Минэнерго США на $12 млн. Вместе с Корнеллом, MIT, научными лабораториями и компаниями NVIDIA и Anthropic исследователи будут применять ИИ для исправления ошибок квантовых вычислений. В частности, учёные планируют обучать модели выбирать способы защиты кубитов и превращать алгоритмы в команды квантовому оборудованию. Об участии в проекте университеты сообщили 20 ноября.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/331",
+      "approved_at_utc": "2026-11-21T06:32:38Z",
+      "published_at_utc": "2026-11-21T06:32:38Z"
     }
   ]
 }
