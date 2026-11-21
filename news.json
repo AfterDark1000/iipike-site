@@ -7448,5 +7448,34 @@
       "tencent"
     ],
     "products": []
+  },
+  {
+    "title": "Signal запретил скриншоты, чтобы Siri и Gemini не читали ваши переписки",
+    "summary": "Signal усилил защиту переписок от системных ИИ-помощников: блокировка захвата экрана на iPhone и Android, ручные исключения Siri на Mac.",
+    "published": "2026-11-21",
+    "source_url": "https://signal.org/blog/protecting-your-privacy/",
+    "cover": "assets/editorial/signal-ai-screenshot-protection-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🔒 Signal закрыл ЧАТЫ от Siri и Gemini — ценой скриншотов",
+    "vk_summary": "После проверки Reuters, в которой агент Meta Muse прочитал сообщения Signal через доступ к экрану, мессенджер усилил защиту. На iPhone блокировка снимков включена сразу, на Android — при попытке ИИ прочитать чат. На Mac автоматическая защита пока недоступна.",
+    "published_at_utc": "2026-11-21T10:15:51Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "signal-ai-screenshot-protection-20261120",
+    "url": "articles/signal-ai-screenshot-protection-20261120/",
+    "topics": [
+      "safety",
+      "apps"
+    ],
+    "companies": [
+      "apple",
+      "google",
+      "meta"
+    ],
+    "products": [
+      "siri",
+      "gemini",
+      "muse"
+    ]
   }
 ]
