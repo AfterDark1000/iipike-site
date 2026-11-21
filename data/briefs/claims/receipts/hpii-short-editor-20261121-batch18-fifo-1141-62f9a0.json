@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261121-batch18-fifo-1141-62f9a0.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-454e9ae4843b4701",
+      "pool_sequence": 402,
+      "title": "ИИ-агент научился настраивать физическую нейросеть из света",
+      "source_url": "https://arxiv.org/abs/2611.23875",
+      "claimed_at": "2026-11-21T06:15:05+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-626f4837bc5cd805",
+      "pool_sequence": 404,
+      "title": "Nari Labs выпустила Dia2 — нейросеть начинает говорить, не дожидаясь конца текста",
+      "source_url": "https://github.com/nari-labs/dia2",
+      "claimed_at": "2026-11-21T06:15:05+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-80f5324f0e632581",
+      "pool_sequence": 406,
+      "title": "Tencent открыла четыре модели, которые одновременно смотрят видео и слушают звук",
+      "source_url": "https://github.com/Tencent/WeMM-Video",
+      "claimed_at": "2026-11-21T06:15:05+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-d40b37a43fa11767",
+      "pool_sequence": 407,
+      "title": "LangChain придумала единый пропускной пункт для ИИ-агентов",
+      "source_url": "https://www.langchain.com/blog/langsmith-tool-gateway",
+      "claimed_at": "2026-11-21T06:15:05+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-4e1534961d60ea2e",
+      "pool_sequence": 408,
+      "title": "Британский финансовый регулятор собрал больше 200 организаций в открытый каталог применения ИИ",
+      "source_url": "https://www.fca.org.uk/news/press-releases/fca-launches-world-first-platform-giving-firms-new-insight-ai-innovation",
+      "claimed_at": "2026-11-21T06:15:05+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
