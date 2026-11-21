@@ -6160,12 +6160,12 @@
       "summary": "19 ноября. Команда Kong представила Volcano для автономных приложений и восстановления агентных задач; со слов разработчиков.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:22:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-db6a3673e4cbdb2f"
+      "closed_at": "2026-11-21T12:08:55Z",
+      "article_id": "kong-volcano-lavaflow-agent-cloud-fix-pr-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-db6a3673e4cbdb2f\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/kong-volcano-lavaflow-agent-cloud-fix-pr-20261119/"
     },
     {
       "id": "n-764e00eb7ce2de59",
