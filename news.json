@@ -7400,5 +7400,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Amazon разрешила ИИ тратить ваши деньги без спроса",
+    "summary": "Amazon Web Services открыла ИИ-агентам покупки платных инструментов через AWS Marketplace: агент тратит заранее выделенный бюджет, а платежи поступают на облачный счёт владельца.",
+    "published": "2026-11-21",
+    "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/",
+    "cover": "assets/editorial/amazon-aws-marketplace-agentic-payments-20261119.webp",
+    "rubric": "news",
+    "vk_title": "💸 Amazon разрешила ИИ тратить ДЕНЬГИ компании",
+    "vk_summary": "ИИ-агенты AWS Marketplace самостоятельно оплачивают запросы к платным сервисам. В демонстрации бот купил веб-поиск за один цент. Расходы попадают в счёт компании, а заранее заданный бюджет ограничивает покупки.",
+    "published_at_utc": "2026-11-21T07:45:35Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "amazon-aws-marketplace-agentic-payments-20261119",
+    "url": "articles/amazon-aws-marketplace-agentic-payments-20261119/",
+    "topics": [
+      "agents",
+      "business"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
