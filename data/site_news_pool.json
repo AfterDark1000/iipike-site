@@ -6295,12 +6295,12 @@
       "summary": "20 ноября: сообщение о совместной инициативе; вторичный источник, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T03:51:43+00:00",
       "review_started_at": "2026-11-21T06:22:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-56c244d2df40fb3d"
+      "closed_at": "2026-11-21T12:38:52Z",
+      "article_id": "harvard-cornell-12m-ai-quantum-error-correction-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-56c244d2df40fb3d\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/harvard-cornell-12m-ai-quantum-error-correction-20261120/"
     },
     {
       "id": "n-6bdfccb498eb826a",
