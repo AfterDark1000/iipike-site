@@ -924,6 +924,71 @@
       "source": "Reuters / The Information",
       "source_url": "https://www.reuters.com/business/media-telecom/meta-price-muse-charm-gadget-300-information-reports-2026-11-19",
       "fact_check": "The Information original report dated 2026-11-19 (https://www.theinformation.com/articles/meta-bets-300-muse-charm-boost-ai-hardware-business) cites a person familiar with plans; Reuters 2026-11-19 independently quotes its report: intended $300 price and up to 12 months free Verizon 5G; Meta spokesperson did not confirm price. September 2026 Meta Connect unveiled the device, Zuckerberg target December holiday window. No actual availability yet. Existing site articles searched for duplication."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 378,
+      "pool_id": "n-d86143d36f7bbbb4",
+      "slug": "chicago-fed-goolsbee-ai-inflation-risk-20261119",
+      "headline": "В ФРС предупредили: строительство ИИ-дата-центров может разогнать инфляцию",
+      "body": "Глава Федерального резервного банка Чикаго Остан Гулсби предупредил, что масштабные вложения в ИИ могут перегреть экономику США. Строительство дата-центров уже повышает спрос на оборудование и другие ресурсы, а предложение не успевает за ним. На встрече с журналистами 19 ноября Гулсби заявил, что Федеральной резервной системе придётся сдерживать инфляцию, пока обещанный рост производительности от ИИ остаётся неопределённым.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-19",
+      "source": "Reuters / Федеральный резервный банк Чикаго",
+      "source_url": "https://www.reuters.com/business/feds-goolsbee-says-ai-surge-could-strain-us-capacity-overheat-economy-2026-11-19",
+      "fact_check": "Reuters contemporaneous direct reporting 2026-11-19 quotes Chicago Fed president Austan Goolsbee (not Fed Chairman) warning AI data-center construction can strain productive capacity and raise inflation. Chicago Fed speaking calendar independently records his November 19 Economic Club of Indiana appearance. Separate development from prior FOMC AI disappointment coverage."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 381,
+      "pool_id": "n-6c7b6b9c53638fcd",
+      "slug": "tiktok-ai-content-checker-no-account-20261120",
+      "headline": "TikTok открыл всем проверку видео на следы своих нейросетей",
+      "body": "TikTok запустил онлайн-инструмент для проверки изображений и видео, созданных или изменённых с помощью ИИ-функций платформы. Загрузить файл можно даже без аккаунта TikTok — в том числе если ролик уже разошёлся по другим сайтам. Проверка ищет встроенные сведения о происхождении контента и невидимый водяной знак VeraDura. Инструмент рассчитан именно на материалы, обработанные средствами TikTok.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "TikTok Newsroom",
+      "source_url": "https://newsroom.tiktok.com/more-tools-to-provide-clarity-and-control-around-ai-generated-content?lang=en-GB",
+      "fact_check": "TikTok dated official Nov 20 2026: public transparency checker available now without account for uploaded video/image from TikTok's own AI creation/editing features; reads Content Credentials and TikTok proprietary VeraDura watermark. NOT universal AI detector. Other distinct feature Likeness Detection rolling out to eligible creators only."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 383,
+      "pool_id": "n-a40ba9db1dfa0ca3",
+      "slug": "capcut-chatgpt-video-plugin-announced-20261024",
+      "headline": "CapCut анонсировала видеомонтаж по командам прямо в ChatGPT",
+      "body": "CapCut ещё 24 октября объявила о подготовке интеграции с ChatGPT: пользователь сможет описать идею ролика, получить первый монтаж и попросить ИИ поправить длительность кадров, субтитры или музыку. Разработчики обещают учитывать и ручные изменения, внесённые в редакторе CapCut, чтобы затем продолжать работу в чате. Функцию представили на CapCut World в Лос-Анджелесе. Срок запуска компания обозначила как «ближайшие месяцы».",
+      "topic": "Технологии",
+      "event_date": "2026-10-24",
+      "source": "CapCut World / CapCut Newsroom",
+      "source_url": "https://www.capcut.com/newsroom/capcut-world-la",
+      "fact_check": "PRIMARY CapCut World Los Angeles 2026 event ended October 24 (official capcutworld.com/recap/los-angeles/), company announced plugin Oct 24 and newsroom summarized on/about Oct 26. Not new launch November 20 as suggested by secondary aggregator agihunt. Explicit editorial instruction 2026-11-21 says №383 is SHORT ANNOUNCEMENT, not live public release. Official newsroom: in coming months, ChatGPT draft cut, revisions via conversation and manual editor changes; no launch date or public access confirmation."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 384,
+      "pool_id": "n-79de63834d2ffe2a",
+      "slug": "synthesia-claude-video-connector-launch-20261118",
+      "headline": "В Claude появилась Synthesia: ИИ собирает видео по запросу из чата",
+      "body": "Synthesia 18 ноября запустила подключение к Claude. Пользователь может попросить ИИ собрать видео по текстовому описанию или документу, выбрать шаблон, аватара и озвучку, а затем менять ролик обычными сообщениями. Готовое видео можно экспортировать или открыть в редакторе Synthesia. Для подключения используется коннектор, а создание видеочерновиков требует платного тарифа Synthesia.",
+      "topic": "Технологии",
+      "event_date": "2026-11-18",
+      "source": "Synthesia",
+      "source_url": "https://www.synthesia.io/post/synthesia-connector-claude",
+      "fact_check": "Synthesia first-party blog dated 2026-11-18 launched Claude connector, draft Syren/Studio videos from conversations or documents and revision, export; official help docs state Basic can connect but paid Synthesia plan needed to create draft. Users may have to add custom connector; product not universal built-in for all."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 386,
+      "pool_id": "n-2e1a15f089296837",
+      "slug": "armenia-arpi-robotics-shared-center-20261120",
+      "headline": "Три университета Армении объединяют лаборатории для обучения роботов",
+      "body": "В Ереване объявили о создании центра ARPI, который объединит специалистов и оборудование трёх университетов Армении для исследований робототехники и физического ИИ — систем, управляющих реальными машинами. Организаторы планируют готовить по 50 инженеров в год. Первые 30 студентов уже занимаются по программе, а в новую робототехническую лабораторию при Американском университете Армении намерены вложить $500 тысяч.",
+      "topic": "Наука",
+      "event_date": "2026-11-20",
+      "source": "ARCS.ai / Armenpress",
+      "source_url": "https://armenpress.am/en/article/1266199",
+      "fact_check": "ARCS.ai dated Nov 20 2026 press statement republished verbatim by Armenpress: new ARPI centre links AUA, YSU, NPUA; target 50 engineers per academic year, 30 students started first stage, $500k intended new lab at AUA. Centre being established; don't imply all labs operational or 50 graduated yet."
     }
   ]
 }
