@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261121-batch17-fifo-1102-69d3c1.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-a4d0283da1b04563",
+      "pool_sequence": 387,
+      "title": "Армения замахнулась на 300 мегаватт ИИ-дата-центров",
+      "source_url": "https://tech.news.am/en/news/8183",
+      "claimed_at": "2026-11-21T06:02:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-fce966fefe73a89e",
+      "pool_sequence": 388,
+      "title": "Робота научили чистить водяные баки — и он забрал главную технологическую награду Гонконга",
+      "source_url": "https://www.bastillepost.com/global/article/6379689-hong-kong-ict-awards-2026-celebrates-20th-anniversary-and-recognises-outstanding-ict-achievements",
+      "claimed_at": "2026-11-21T06:02:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ded52a6a77fc25ad",
+      "pool_sequence": 391,
+      "title": "Египетский стартап продаёт вычисления для ИИ за местную валюту, чтобы не зависеть от долларов",
+      "source_url": "https://thecondia.com/chipverse-pre-seed-funding-egypt-ai-computing",
+      "claimed_at": "2026-11-21T06:02:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a15222140c94bbf8",
+      "pool_sequence": 392,
+      "title": "Основатель Hugging Face предупредил: гиганты могут забрать весь искусственный интеллект себе",
+      "source_url": "https://www.thetimes.com/business/companies-markets/article/anthropic-ipo-danger-ai-hugging-face-z8hvfwz7p",
+      "claimed_at": "2026-11-21T06:02:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-c363e4ee1aa6f6ac",
+      "pool_sequence": 395,
+      "title": "Google превращает главную страницу поиска в историю разговоров с ИИ",
+      "source_url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+      "claimed_at": "2026-11-21T06:02:12+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

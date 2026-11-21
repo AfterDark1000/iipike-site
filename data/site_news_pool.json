@@ -5800,12 +5800,12 @@
       "summary": "20 ноября. Firebird рассказала о планах расширения инфраструктуры ИИ-вычислений в Армении к 2027 году. Вторичный источник, заявленные планы компании.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:02:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a4d0283da1b04563"
     },
     {
       "id": "n-fce966fefe73a89e",
@@ -5815,12 +5815,12 @@
       "summary": "19 ноября. ИИ-робот для очистки резервуаров получил награду Hong Kong ICT Awards 2026; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:36:33+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:02:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fce966fefe73a89e"
     },
     {
       "id": "n-f78ef7f2a476c891",
@@ -5860,12 +5860,12 @@
       "summary": "19 ноября. Египетский Chipverse сообщил о начальном финансировании GPU-инфраструктуры и инструментов работы с аудио/видео; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:36:33+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:02:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ded52a6a77fc25ad"
     },
     {
       "id": "n-a15222140c94bbf8",
@@ -5875,12 +5875,12 @@
       "summary": "19–20 ноября. По сообщению The Times, Томас Вольф на Slush выступил против концентрации контроля над ИИ в крупных компаниях; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:36:33+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:02:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a15222140c94bbf8"
     },
     {
       "id": "n-3dd96524dd1edfcf",
@@ -5920,12 +5920,12 @@
       "summary": "19 ноября. Google вводит историю разговоров AI Mode на главной поисковой странице; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T16:24:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:02:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c363e4ee1aa6f6ac"
     },
     {
       "id": "n-dc88cc571d8c7771",
