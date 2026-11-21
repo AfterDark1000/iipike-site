@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 188 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 10 · **Не подтверждены, ждут сайт:** 1
+**Всего одобренных:** 189 · **В каталоге Дзена подтверждены:** 177 · **Не подтверждены, уже на сайте:** 11 · **Не подтверждены, ждут сайт:** 1
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -24,6 +24,7 @@
 | 8 | [OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-dots-chatgpt-plus-test-20261119.md) | 21.11.2026, 00:15 | [На сайте](https://iipike.ru/articles/openai-dots-chatgpt-plus-test-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-dots-chatgpt-plus-test-20261119.webp) |
 | 9 | [Google пустила Gemini за ваш Mac: ИИ сам работает в программах, пока вы заняты](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-mac-computer-use-20261119.md) | 21.11.2026, 09:45 | [На сайте](https://iipike.ru/articles/google-gemini-mac-computer-use-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-mac-computer-use-20261119.webp) |
 | 10 | [Еврокомиссию атаковали с помощью ИИ: отключили даже систему отпусков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ec-ai-assisted-cyberattack-20261119.md) | 21.11.2026, 11:30 | [На сайте](https://iipike.ru/articles/ec-ai-assisted-cyberattack-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ec-ai-assisted-cyberattack-20261119.webp) |
+| 11 | [Amazon разрешила ИИ тратить ваши деньги без спроса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/amazon-aws-marketplace-agentic-payments-20261119.md) | 21.11.2026, 12:45 | [На сайте](https://iipike.ru/articles/amazon-aws-marketplace-agentic-payments-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-aws-marketplace-agentic-payments-20261119.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
