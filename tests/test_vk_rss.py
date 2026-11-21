@@ -93,6 +93,21 @@ class VKRSS(unittest.TestCase):
         self.assertFalse(assets)
         self.assertFalse(ET.fromstring(xml).findall("./channel/item"))
 
+    def test_site_first_dzen_sync_does_not_evict_vk_rss_item(self):
+        row = self.row("site-first-kept", date="2026-11-14T08:00:00Z")
+        before_xml, before_images = vk.render(self.root, [row], settings=self.active())
+        row["site_first_dzen_id"] = "confirmed-dzen-id"
+        row["site_first_dzen_url"] = "https://dzen.ru/a/known"
+        after_xml, after_images = vk.render(self.root, [row], settings=self.active())
+        self.assertEqual(after_xml, before_xml)
+        self.assertEqual(after_images, before_images)
+        self.assertIn("site-first-kept", after_xml)
+        # Legacy Dzen-first materials must still be excluded.
+        row["dzen_id"] = "historical-dzen-first"
+        legacy_xml, legacy_images = vk.render(self.root, [row], settings=self.active())
+        self.assertFalse(legacy_images)
+        self.assertFalse(ET.fromstring(legacy_xml).findall("./channel/item"))
+
     def test_export_and_readonly_check(self):
         row = self.row("released-story")
         (self.root / "news.json").write_text(json.dumps([row], ensure_ascii=False))

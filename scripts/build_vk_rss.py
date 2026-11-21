@@ -73,7 +73,10 @@ def eligible(root, rows, settings):
         if slug in seen:
             raise ValueError("Duplicate published article ID in VK RSS input: " + slug)
         seen.add(slug)
-        if row.get("dzen_id") or row.get("site_first_dzen_id"):
+        # Dzen-first imports are legacy and must not be reposted to VK.
+        # A site-first article can gain site_first_dzen_id *after* release:
+        # removing it from VK RSS would make it disappear before VK polls.
+        if row.get("dzen_id"):
             continue
         if row.get("url") != f"articles/{slug}/":
             continue
