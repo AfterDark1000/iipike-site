@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Трамп пригрозил налогом компаниям за ИИ-дата-центры за границей",
+      "source_url": "https://www.reuters.com/technology/trump-says-us-penalize-firms-building-data-centers-abroad-2026-11-20/",
+      "summary": "20 ноября: заявление о возможных мерах против размещения вычислительных мощностей за рубежом; требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Трамп и Си договорились сохранять участие человека в военных решениях с ИИ",
+      "source_url": "https://www.reuters.com/world/china/trump-xi-agreed-that-military-ai-decisions-should-involve-humans-bessent-says-2026-11-20/",
+      "summary": "20 ноября: о договорённости сообщил Скотт Бессент; детали требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ООН не смогла договориться о регулировании автономного оружия",
+      "source_url": "https://www.reuters.com/world/americas/thorny-un-talks-regulating-killer-robots-drag-past-deadline-2026-11-20/",
+      "summary": "20 ноября: переговоры о роботизированном оружии затянулись.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Распродажа ИИ-акций: NVIDIA и Nasdaq резко снизились",
+      "source_url": "https://www.reuters.com/legal/transactional/wall-st-futures-slip-anthropic-debut-fails-reassure-ai-investors-2026-11-20/",
+      "summary": "20 ноября: рыночные опасения окупаемости ИИ; цифры требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Акции Anthropic упали после IPO, розничные инвесторы понесли убытки",
+      "source_url": "https://www.reuters.com/business/finance/anthropic-retail-traders-face-losses-shares-dive-13-day-after-debut-2026-11-20/",
+      "summary": "20 ноября: сообщение о падении акций после дебюта; факт IPO требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Suno представила Visuals для создания клипов на песни",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature",
+      "summary": "19 ноября: генерация коротких видеороликов и изображений для музыки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Дартмут запускает образовательные эксперименты с ИИ и без него",
+      "source_url": "https://home.dartmouth.edu/news/2026/11/dartmouth-pilot-new-approaches-ai-education",
+      "summary": "20 ноября: пилотные подходы к обучению с применением ИИ и без него.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "NIOSH собирает данные о безопасности гуманоидных роботов на работе",
+      "source_url": "https://casrai.org/news/niosh-rfi-center-for-occupational-robotics-research-2026",
+      "summary": "20 ноября: запрос сведений о рисках для работников; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Гарвард и Корнелл участвуют в квантовом ИИ-проекте на 75 млн долларов",
+      "source_url": "https://quantumzeitgeist.com/energy-collaborate-ai-driven-quantum-computing/",
+      "summary": "20 ноября: сообщение о совместной инициативе; вторичный источник, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
