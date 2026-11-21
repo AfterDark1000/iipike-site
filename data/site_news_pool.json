@@ -6175,12 +6175,12 @@
       "summary": "20 ноября: заявление о возможных мерах против размещения вычислительных мощностей за рубежом; требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T03:51:43+00:00",
       "review_started_at": "2026-11-21T10:02:51.687Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "21.11.2026, редактор №24. Горячая №412. Главный первоисточник: Белый дом 20.11 https://www.whitehouse.gov/releases/2026/11/at-press-briefing-president-trump-touts-historic-wins-for-americans-signals-deal-making-on-healthcare/ ; видеозапись https://www.whitehouse.gov/videos/president-trump-hosts-a-news-conference/ . Reuters 20.11 https://www.reuters.com/technology/trump-says-us-penalize-firms-building-data-centers-abroad-2026-11-20/ . Полная расшифровка https://singjupost.com/transcript-president-trumps-news-conference-post-summit-nov-20-2026/ : «We’re not going to allow our companies to build data centers outside ...» и «put a tremendous tax»; Трамп заявил, что даже собственной команде об идее ещё не говорил. Официальной ставки, механизма, сроков налога не объявлено. Американские Equinix/Digital Realty работают за рубежом, но Трамп не называл их лично. Отдельные действующие правила экспортного контроля от 19.11 не путать с налогом. Архив ХПИИ: прямого дубля нет. Следующий шаг: Дзен+Threads/X/VK на согласование, без сохранения в публикационные очереди до «берём»."
+      "closed_at": "2026-11-21T10:50:14.303Z",
+      "article_id": "trump-ai-datacenters-overseas-tax-threat-20261120",
+      "note": "21.11.2026, редактор №24. Горячая №412. Главный первоисточник: Белый дом 20.11 https://www.whitehouse.gov/releases/2026/11/at-press-briefing-president-trump-touts-historic-wins-for-americans-signals-deal-making-on-healthcare/ ; видеозапись https://www.whitehouse.gov/videos/president-trump-hosts-a-news-conference/ . Reuters 20.11 https://www.reuters.com/technology/trump-says-us-penalize-firms-building-data-centers-abroad-2026-11-20/ . Полная расшифровка https://singjupost.com/transcript-president-trumps-news-conference-post-summit-nov-20-2026/ : «We’re not going to allow our companies to build data centers outside ...» и «put a tremendous tax»; Трамп заявил, что даже собственной команде об идее ещё не говорил. Официальной ставки, механизма, сроков налога не объявлено. Американские Equinix/Digital Realty работают за рубежом, но Трамп не называл их лично. Отдельные действующие правила экспортного контроля от 19.11 не путать с налогом. Архив ХПИИ: прямого дубля нет. Следующий шаг: Дзен+Threads/X/VK на согласование, без сохранения в публикационные очереди до «берём».\n21.11: главред утвердил последнюю редакцию без оценочных подводок. Story и посты Threads/X сохранены. article_id=trump-ai-datacenters-overseas-tax-threat-20261120. Очередь сайта priority, ожидает обложку."
     },
     {
       "id": "n-2fd3d8b41fb327ea",
