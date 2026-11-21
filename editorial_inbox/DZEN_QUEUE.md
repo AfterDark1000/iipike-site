@@ -35,8 +35,8 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 2 | [Трамп и Си договорились: ИИ не должен сам начинать крупные военные операции](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/trump-xi-military-ai-human-control-20261120.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [Трамп и Си договорились: ИИ не должен сам начинать крупные военные операции](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/trump-xi-military-ai-human-control-20261120.md) | **Не ранее 21.11.2026 17:37 (Усть-Катав)**; пауза до 21.11.2026 17:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/trump-xi-military-ai-human-control-20261120.webp) |
+| 2 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
