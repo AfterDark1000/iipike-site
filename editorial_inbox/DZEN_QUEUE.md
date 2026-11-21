@@ -30,7 +30,7 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/artcraft-photocraft-ai-photoshop-prototype-20261112.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/artcraft-photocraft-ai-photoshop-prototype-20261112.md) | **Не ранее 22.11.2026 00:07 (Усть-Катав)** | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
 | 2 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
