@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "approved_date": "2026-11-20",
-  "source": "data/editorial_triage/requests/20261120-approved-full-triage-56-v1.json",
+  "approved_date": "2026-11-21",
+  "source": "data/editorial_triage/requests/20261121-morning-approved-44-capcut-hot-v1.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
   "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
@@ -1497,7 +1497,7 @@
       "sequence": 373,
       "pool_id": "n-a1429146f3f2b49f",
       "lane": "long",
-      "decision": "hot"
+      "decision": "full"
     },
     {
       "sequence": 374,
@@ -1516,6 +1516,268 @@
       "pool_id": "n-ac5d6c67687a6569",
       "lane": "long",
       "decision": "full"
+    },
+    {
+      "sequence": 377,
+      "pool_id": "n-710522c426ed8052",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 378,
+      "pool_id": "n-d86143d36f7bbbb4",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 379,
+      "pool_id": "n-6610da14dd501ccc",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 380,
+      "pool_id": "n-fbea0ada6a33bdcd",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 381,
+      "pool_id": "n-6c7b6b9c53638fcd",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 382,
+      "pool_id": "n-f42026462c33c209",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 383,
+      "pool_id": "n-a40ba9db1dfa0ca3",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 384,
+      "pool_id": "n-79de63834d2ffe2a",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 385,
+      "pool_id": "n-e9fc8c69776afa19",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 386,
+      "pool_id": "n-2e1a15f089296837",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 387,
+      "pool_id": "n-a4d0283da1b04563",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 388,
+      "pool_id": "n-fce966fefe73a89e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 389,
+      "pool_id": "n-f78ef7f2a476c891",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 390,
+      "pool_id": "n-3b8ea91b577fd325",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 391,
+      "pool_id": "n-ded52a6a77fc25ad",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 392,
+      "pool_id": "n-a15222140c94bbf8",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 394,
+      "pool_id": "n-266efb82a5bf9057",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 395,
+      "pool_id": "n-c363e4ee1aa6f6ac",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 396,
+      "pool_id": "n-dc88cc571d8c7771",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 397,
+      "pool_id": "n-e19bdfd386d6de56",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 398,
+      "pool_id": "n-3381c1b46b2b81fa",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 399,
+      "pool_id": "n-365717b4bf299dbd",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 400,
+      "pool_id": "n-c842cebd4bd1f2ab",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 401,
+      "pool_id": "n-e5996d780fecbb73",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 402,
+      "pool_id": "n-454e9ae4843b4701",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 403,
+      "pool_id": "n-2e0248f14b028b8c",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 404,
+      "pool_id": "n-626f4837bc5cd805",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 405,
+      "pool_id": "n-5e2ed9175eef8752",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 406,
+      "pool_id": "n-80f5324f0e632581",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 407,
+      "pool_id": "n-d40b37a43fa11767",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 408,
+      "pool_id": "n-4e1534961d60ea2e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 409,
+      "pool_id": "n-59a7f51e05a2577f",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 410,
+      "pool_id": "n-e8720308bcbc644a",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 411,
+      "pool_id": "n-db6a3673e4cbdb2f",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 412,
+      "pool_id": "n-764e00eb7ce2de59",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 413,
+      "pool_id": "n-2fd3d8b41fb327ea",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 414,
+      "pool_id": "n-7950aa0b4339a1bd",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 415,
+      "pool_id": "n-56f701d3eeb5b56b",
+      "lane": "long",
+      "decision": "hot",
+      "group": "anthropic_market_selloff_20261120",
+      "group_primary": 415
+    },
+    {
+      "sequence": 416,
+      "pool_id": "n-aef0f75524a946bd",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "anthropic_market_selloff_20261120",
+      "group_primary": 415
+    },
+    {
+      "sequence": 417,
+      "pool_id": "n-50ea28ea61dc33f3",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 418,
+      "pool_id": "n-5714f496dc197ef9",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 419,
+      "pool_id": "n-de8cbacb06e1383a",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 420,
+      "pool_id": "n-56c244d2df40fb3d",
+      "lane": "short",
+      "decision": "short"
     }
   ]
 }
