@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request": "20261121-152200-5-selected-news.json",
+  "request_sha256": "b0edbc22264b81eeb5c244ba037145e56668caa6bde477c11f796be483c6e690",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 421,
+      "id": "n-6bdfccb498eb826a",
+      "title": "Дата-центры ИИ могут ухудшать качество воздуха за сотни километров"
+    },
+    {
+      "sequence": 422,
+      "id": "n-b2926e8e7f4e634a",
+      "title": "MIT предложил физически согласованные ИИ-модели хаотических процессов"
+    },
+    {
+      "sequence": 423,
+      "id": "n-9872e633f4588967",
+      "title": "Deutsche Telekom инвестировала 100 млн евро в Mistral AI"
+    },
+    {
+      "sequence": 424,
+      "id": "n-c263b280fabbf488",
+      "title": "Canva добавила возможность отключить генеративные функции ИИ"
+    },
+    {
+      "sequence": 425,
+      "id": "n-a25f4ef9490792c9",
+      "title": "Cerence подала патентный иск к ElevenLabs"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
