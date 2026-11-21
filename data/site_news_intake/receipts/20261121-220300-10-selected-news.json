@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "request": "20261121-220300-10-selected-news.json",
+  "request_sha256": "f6df3ba21412feff00fd10b7a086a05fa5b2fd5e675983cc74e7144757e112da",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 426,
+      "id": "n-9ce96386ca54d52c",
+      "title": "Claude якобы помог доказать гипотезу Римана"
+    },
+    {
+      "sequence": 427,
+      "id": "n-9e4b673dad7956e0",
+      "title": "Фармацевтические компании сообщают об ускорении поиска лекарств благодаря ИИ"
+    },
+    {
+      "sequence": 428,
+      "id": "n-abadbd1e4ec5bc65",
+      "title": "ФРС США изучает риски финансирования ИИ-инфраструктуры"
+    },
+    {
+      "sequence": 429,
+      "id": "n-7aa6acbd35f79e1a",
+      "title": "Meta подошла к сроку введения правил использования контента издателей для ИИ"
+    },
+    {
+      "sequence": 430,
+      "id": "n-bb198be887420ebb",
+      "title": "Tencent якобы открыла веса модели Hy4 с 770 млрд параметров"
+    },
+    {
+      "sequence": 431,
+      "id": "n-6e08c6973239bd85",
+      "title": "Thinking Machines якобы представила Inkling 2 Mini"
+    },
+    {
+      "sequence": 432,
+      "id": "n-65925f55a55da889",
+      "title": "Apple якобы представила Depth Pro 2 для оценки глубины по фотографии"
+    },
+    {
+      "sequence": 433,
+      "id": "n-8ac044537ea6e862",
+      "title": "Google якобы представила Tool Retrieval для Gemini Interactions API"
+    },
+    {
+      "sequence": 434,
+      "id": "n-7be6fd113d28b9c1",
+      "title": "Microsoft якобы добавила локальную модель Aion Instruct в Edge"
+    },
+    {
+      "sequence": 435,
+      "id": "n-2e7d573aafc7a6bd",
+      "title": "Palo Alto Networks якобы покупает Applied Compute"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
