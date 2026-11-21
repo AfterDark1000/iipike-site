@@ -5740,12 +5740,12 @@
       "summary": "19–20 ноября. Дайджест сообщает о подключении CapCut к ChatGPT для чернового монтажа по описанию. Вторичный источник, требуется подтверждение запуска.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:34:56+00:00",
       "review_started_at": "2026-11-21T05:54:45+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a40ba9db1dfa0ca3"
+      "closed_at": "2026-11-21T07:08:53Z",
+      "article_id": "capcut-chatgpt-video-plugin-announced-20261024",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a40ba9db1dfa0ca3\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/capcut-chatgpt-video-plugin-announced-20261024/"
     },
     {
       "id": "n-79de63834d2ffe2a",
