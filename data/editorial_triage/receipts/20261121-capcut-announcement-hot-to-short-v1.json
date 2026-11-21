@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "20261121-capcut-announcement-hot-to-short-v1.json",
+  "request_sha256": "226960d16c0d35fd3af3fefd9bf97df0ad0651f2b2a15b3c6b3b144d2ccf5ca9",
+  "status": "applied",
+  "applied": [
+    383
+  ],
+  "unchanged": [],
+  "skipped": []
+}
