@@ -7423,5 +7423,30 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "США разрешили Китаю 880 тысяч ИИ-чипов — даже фирмам из военного списка Пентагона",
+    "summary": "Комитет Палаты представителей США раскрыл 21 разрешение на экспорт 879 868 ускорителей NVIDIA и AMD в Китай. Среди согласованных получателей — Alibaba, Tencent, Baidu и BYD.",
+    "published": "2026-11-21",
+    "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china",
+    "cover": "assets/editorial/us-879868-ai-chips-china-licenses-20261119.webp",
+    "rubric": "news",
+    "vk_title": "🇨🇳 США разрешили 880 ТЫСЯЧ ИИ-чипов для Китая",
+    "vk_summary": "Комитет Конгресса раскрыл 21 разрешение на экспорт ускорителей NVIDIA и AMD — 879 868 штук. Среди заказчиков Alibaba, Tencent, Baidu и BYD, которых Пентагон позднее внёс в список компаний, связанных с китайской армией. На май партии значились неотгруженными; позже ограниченные поставки всё же состоялись.",
+    "published_at_utc": "2026-11-21T09:00:54Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "us-879868-ai-chips-china-licenses-20261119",
+    "url": "articles/us-879868-ai-chips-china-licenses-20261119/",
+    "topics": [
+      "society",
+      "infrastructure"
+    ],
+    "companies": [
+      "nvidia",
+      "alibaba",
+      "tencent"
+    ],
+    "products": []
   }
 ]
