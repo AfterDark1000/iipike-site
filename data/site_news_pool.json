@@ -6085,12 +6085,12 @@
       "summary": "19–20 ноября. Tencent показала открытые модели WeMM-Video для анализа изображения и звука одновременно.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T06:15:05+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-80f5324f0e632581"
+      "closed_at": "2026-11-21T10:23:52Z",
+      "article_id": "tencent-wemm-video-four-models-audiovisual-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-80f5324f0e632581\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/tencent-wemm-video-four-models-audiovisual-20261120/"
     },
     {
       "id": "n-d40b37a43fa11767",
