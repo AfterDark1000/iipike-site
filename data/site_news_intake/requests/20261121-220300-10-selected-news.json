@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Claude якобы помог доказать гипотезу Римана",
+      "source_url": "https://apnews.com/article/4fe8b69a891f160f9e7f0c85af8c55c8",
+      "summary": "20–21 ноября: заявление математика о доказательстве с Claude и Lean; независимое подтверждение требуется.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Фармацевтические компании сообщают об ускорении поиска лекарств благодаря ИИ",
+      "source_url": "https://www.reuters.com/legal/litigation/big-pharma-with-eye-anthropic-says-ai-is-shrinking-drug-discovery-timelines-2026-11-20/",
+      "summary": "20 ноября: Reuters приводит примеры ускорения этапов разработки лекарств; результаты требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "ФРС США изучает риски финансирования ИИ-инфраструктуры",
+      "source_url": "https://www.reuters.com/business/feds-cook-says-central-bank-watching-ai-industry-financing-2026-11-20/",
+      "summary": "20 ноября: Лиза Кук высказалась о рисках финансирования ИИ.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Meta подошла к сроку введения правил использования контента издателей для ИИ",
+      "source_url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping",
+      "summary": "20 ноября: срок ранее отложенных условий; вступление в силу требует проверки, возможный дубль.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Tencent якобы открыла веса модели Hy4 с 770 млрд параметров",
+      "source_url": "https://www.bitdoze.com/news/2026-11-20/",
+      "summary": "20 ноября: сообщение об открытии весов мультимодальной модели; вторичный обзор, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Thinking Machines якобы представила Inkling 2 Mini",
+      "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-20-2026-531",
+      "summary": "20 ноября: сообщение о компактной модели с циклической архитектурой; вторичный обзор, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Apple якобы представила Depth Pro 2 для оценки глубины по фотографии",
+      "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-20-2026-531",
+      "summary": "20 ноября: сообщение о новой модели глубины; вторичный обзор, дата и релиз требуют проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google якобы представила Tool Retrieval для Gemini Interactions API",
+      "source_url": "https://www.citrusaiworks.com/ai-news.html",
+      "summary": "20 ноября: сообщение о динамической загрузке инструментов ИИ-агентами; вторичный обзор, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Microsoft якобы добавила локальную модель Aion Instruct в Edge",
+      "source_url": "https://www.citrusaiworks.com/ai-news.html",
+      "summary": "20 ноября: сообщение о встроенной локальной модели браузера; вторичный обзор, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Palo Alto Networks якобы покупает Applied Compute",
+      "source_url": "https://www.citrusaiworks.com/ai-news.html",
+      "summary": "20 ноября: сообщение о приобретении ИИ-платформы; вторичный обзор, требует проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
