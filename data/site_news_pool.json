@@ -5365,12 +5365,12 @@
       "summary": "19 ноября. Публичное подтверждение Еврокомиссии о применении ИИ в более раннем киберинциденте; уточнить подробности.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-21T05:55:49.444Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "21.11.2026, ред. №23. Первичный источник: стенограмма брифинга ЕК 19.11 https://audiovisual.ec.europa.eu/en/media/video/I-298222 ; Регнье подтвердил AI-generated cyber campaign / misuse publicly available AI tool, НЕ назвал название, виновных или масштаб. Инцидент обнаружен 22.10, подтверждён 26.10. Несколько приложений отключали превентивно, большинство восстановили; следствие не закончено, доказательств массовой утечки данных персонала пока нет. Из Politico https://www.politico.eu/newsletter/brussels-playbook/cyberattack-hits-the-commission/: Sysper (расчётные листки, отпуск, табель), MyPMO (возмещение медрасходов), переводческие сервисы, перебои более 10 дней; зарплаты при этом выплачивались. CERT-EU 05.11 https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex предупреждал об ARTEX, но ЕК НЕ подтвердила это имя для атаки на брифинге. Прямого дубля в news.json нет. Далее: текст на утверждение, ничего не публиковать."
+      "closed_at": "2026-11-21T06:11:05.910Z",
+      "article_id": "ec-ai-assisted-cyberattack-20261119",
+      "note": "21.11.2026, ред. №23. Первичный источник: стенограмма брифинга ЕК 19.11 https://audiovisual.ec.europa.eu/en/media/video/I-298222 ; Регнье подтвердил AI-generated cyber campaign / misuse publicly available AI tool, НЕ назвал название, виновных или масштаб. Инцидент обнаружен 22.10, подтверждён 26.10. Несколько приложений отключали превентивно, большинство восстановили; следствие не закончено, доказательств массовой утечки данных персонала пока нет. Из Politico https://www.politico.eu/newsletter/brussels-playbook/cyberattack-hits-the-commission/: Sysper (расчётные листки, отпуск, табель), MyPMO (возмещение медрасходов), переводческие сервисы, перебои более 10 дней; зарплаты при этом выплачивались. CERT-EU 05.11 https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex предупреждал об ARTEX, но ЕК НЕ подтвердила это имя для атаки на брифинге. Прямого дубля в news.json нет. Далее: текст на утверждение, ничего не публиковать.\n21.11: главред утвердил полную статью, Threads и X. ID ec-ai-assisted-cyberattack-20261119. Ожидает обложку."
     },
     {
       "id": "n-a56014fd60304875",
