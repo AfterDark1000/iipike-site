@@ -5905,12 +5905,12 @@
       "summary": "20 ноября. Signal описал защиту переписок от чтения системными ИИ-помощниками; проверить конкретные ограничения платформ.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T16:24:59+00:00",
       "review_started_at": "2026-11-21T08:49:40.987Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "21.11.2026, редактор №24. Подтверждено Signal 20.11 https://signal.org/blog/protecting-your-privacy/ ; инструкция Signal https://support.signal.org/hc/en-us/articles/11338514641306-Screen-security-blocking-Google-Gemini-and-Siri-AI . iPhone: Signal 8.37+, iOS 27+, Block Siri AI по умолчанию, можно отключить на 10 минут; Android: Signal 8.35.1+, Screen security включается при обнаружении ИИ-доступа к экрану, не все устройства дают детектировать; macOS 27: автоматический запрет скриншотов невозможен, Signal надо исключить в настройках Siri. Ранее на Windows заблокировали Recall. Доступ через файлы/уведомления остаётся возможен, защита неполная. Reuters 20.11 https://www.reuters.com/legal/litigation/signal-restricts-screenshots-block-ai-agents-reading-messages-2026-11-20/ подтверждает опыт с Meta Muse через разрешения ОС. В архиве подходящий контекст: Google проверила шифрование Signal https://dzen.ru/a/avQYA2KopBdIAcFL . №286 связана с №285 в отдельной группе meta_muse_incident; не менять их статусы. Далее — утверждение статьи и Threads/X/VK; публикации не создавать."
+      "closed_at": "2026-11-21T08:54:47.478Z",
+      "article_id": "signal-ai-screenshot-protection-20261120",
+      "note": "21.11.2026, редактор №24. Подтверждено Signal 20.11 https://signal.org/blog/protecting-your-privacy/ ; инструкция Signal https://support.signal.org/hc/en-us/articles/11338514641306-Screen-security-blocking-Google-Gemini-and-Siri-AI . iPhone: Signal 8.37+, iOS 27+, Block Siri AI по умолчанию, можно отключить на 10 минут; Android: Signal 8.35.1+, Screen security включается при обнаружении ИИ-доступа к экрану, не все устройства дают детектировать; macOS 27: автоматический запрет скриншотов невозможен, Signal надо исключить в настройках Siri. Ранее на Windows заблокировали Recall. Доступ через файлы/уведомления остаётся возможен, защита неполная. Reuters 20.11 https://www.reuters.com/legal/litigation/signal-restricts-screenshots-block-ai-agents-reading-messages-2026-11-20/ подтверждает опыт с Meta Muse через разрешения ОС. В архиве подходящий контекст: Google проверила шифрование Signal https://dzen.ru/a/avQYA2KopBdIAcFL . №286 связана с №285 в отдельной группе meta_muse_incident; не менять их статусы. Далее — утверждение статьи и Threads/X/VK; публикации не создавать.\n21.11: главред утвердил №394: Signal запретил скриншоты, чтобы Siri и Gemini не читали ваши переписки. Story, Threads/X сохранены. article_id=signal-ai-screenshot-protection-20261120; ждём обложку."
     },
     {
       "id": "n-c363e4ee1aa6f6ac",
