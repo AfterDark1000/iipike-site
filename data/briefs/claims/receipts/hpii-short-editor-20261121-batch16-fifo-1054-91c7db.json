@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261121-batch16-fifo-1054-91c7db.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-d86143d36f7bbbb4",
+      "pool_sequence": 378,
+      "title": "ИИ-бум может разогнать инфляцию, предупредили в Федеральной резервной системе США",
+      "source_url": "https://www.reuters.com/business/feds-goolsbee-says-ai-surge-could-strain-us-capacity-overheat-economy-2026-11-19",
+      "claimed_at": "2026-11-21T05:54:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6c7b6b9c53638fcd",
+      "pool_sequence": 381,
+      "title": "TikTok разрешил проверять ИИ-видео даже людям без аккаунта",
+      "source_url": "https://specialinfluencers.com/en/blog/ai-video-news-november-20-2026",
+      "claimed_at": "2026-11-21T05:54:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a40ba9db1dfa0ca3",
+      "pool_sequence": 383,
+      "title": "CapCut превратил ChatGPT в видеомонтажёра",
+      "source_url": "https://agihunt.info/en/daily/2026-11-20",
+      "claimed_at": "2026-11-21T05:54:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-79de63834d2ffe2a",
+      "pool_sequence": 384,
+      "title": "Synthesia подключила генерацию видео к Claude",
+      "source_url": "https://agihunt.info/en/daily/2026-11-20",
+      "claimed_at": "2026-11-21T05:54:45+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2e1a15f089296837",
+      "pool_sequence": 386,
+      "title": "В Армении открыли общий центр робототехники для трёх университетов",
+      "source_url": "https://www.unite.ai/arcs-ai-opens-shared-arpi-center-for-physical-ai-training",
+      "claimed_at": "2026-11-21T05:54:45+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

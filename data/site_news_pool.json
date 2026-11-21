@@ -5665,12 +5665,12 @@
       "summary": "19 ноября. Глава ФРБ Чикаго Остан Гулсби предупредил о возможном перегреве экономики из-за инвестиций в ИИ-дата-центры. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T05:54:45+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d86143d36f7bbbb4"
     },
     {
       "id": "n-6610da14dd501ccc",
@@ -5710,12 +5710,12 @@
       "summary": "20 ноября. Сообщается о проверке происхождения ИИ-видео и изображений для пользователей без аккаунта. Вторичный источник, уточнить официальный анонс.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T05:54:45+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6c7b6b9c53638fcd"
     },
     {
       "id": "n-f42026462c33c209",
@@ -5740,12 +5740,12 @@
       "summary": "19–20 ноября. Дайджест сообщает о подключении CapCut к ChatGPT для чернового монтажа по описанию. Вторичный источник, требуется подтверждение запуска.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T05:54:45+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a40ba9db1dfa0ca3"
     },
     {
       "id": "n-79de63834d2ffe2a",
@@ -5755,12 +5755,12 @@
       "summary": "19–20 ноября. Дайджест сообщает о коннекторе Synthesia для создания видео через Claude из текста или презентации. Вторичный источник, требуется подтверждение.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T05:54:45+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-79de63834d2ffe2a"
     },
     {
       "id": "n-e9fc8c69776afa19",
@@ -5785,12 +5785,12 @@
       "summary": "20 ноября. Сообщается об открытии ARPI Center для подготовки специалистов по физическому ИИ и робототехнике. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T05:54:45+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-2e1a15f089296837"
     },
     {
       "id": "n-a4d0283da1b04563",
