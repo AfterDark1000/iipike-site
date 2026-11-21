@@ -1529,6 +1529,18 @@
           "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
         }
       ]
+    },
+    {
+      "key": "mansa",
+      "name": "Mansa",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "mansa-ai-zombie-series-no-actors-20261113",
+          "source_url": "https://www.mansa.com/they-left-us-to-die"
+        }
+      ]
     }
   ],
   "products": [
