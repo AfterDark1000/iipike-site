@@ -1517,6 +1517,18 @@
           "source_url": "https://signal.org/blog/protecting-your-privacy/"
         }
       ]
+    },
+    {
+      "key": "artcraft",
+      "name": "ArtCraft",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
+        }
+      ]
     }
   ],
   "products": [
@@ -2965,6 +2977,58 @@
         {
           "article_id": "signal-ai-screenshot-protection-20261120",
           "source_url": "https://signal.org/blog/protecting-your-privacy/"
+        }
+      ]
+    },
+    {
+      "key": "photocraft",
+      "name": "PhotoCraft",
+      "company": "artcraft",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
+        }
+      ]
+    },
+    {
+      "key": "filmcraft",
+      "name": "FilmCraft",
+      "company": "artcraft",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
+        }
+      ]
+    },
+    {
+      "key": "pdfcraft",
+      "name": "PdfCraft",
+      "company": "artcraft",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
+        }
+      ]
+    },
+    {
+      "key": "autocraft",
+      "name": "AutoCraft",
+      "company": "artcraft",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
         }
       ]
     }
