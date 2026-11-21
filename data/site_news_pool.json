@@ -6220,12 +6220,12 @@
       "summary": "20 ноября: рыночные опасения окупаемости ИИ; цифры требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T03:51:43+00:00",
       "review_started_at": "2026-11-21T11:38:45.431Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "21.11.2026: №415 в работе, группа №415+416 (вторичную пока не менять). Проверено: 20 ноября Nasdaq Composite -5,3% за день/-10% за неделю, NVIDIA -14% за день/-23% за неделю, Anthropic -~9% в конце дня после снижения до -13–14% внутри торгов. Reuters 20.11 https://www.reuters.com/business/view-nasdaq-plunges-5-day-after-anthropic-debut-investors-still-believe-ai-2026-11-20/ ; AP https://apnews.com/article/c4c3f4878b12989347f8a930ed813dad . SEC по словам источников Reuters проверяет бухгалтерию NVIDIA https://www.reuters.com/world/us-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-2026-11-20/ ; это не доказательство нарушений. Anthropic официально подтвердила 20.11 IPO 19 ноября $83 и итог $93,5 млрд https://www.anthropic.com/news/ipo-close ; Nasdaq подтвердил https://www.nasdaq.com/economic-institute/chartstopper-112026 . №416: Reuters https://www.reuters.com/business/finance/anthropic-retail-traders-face-losses-shares-dive-13-day-after-debut-2026-11-20/ ; открытие $112 → закрытие пятницы ~$89; частные инвесторы оборот >$750 млн (Vanda), не все инвесторы в минусе. В архиве уже статья об IPO №361 https://dzen.ru/a/awAMzOulsFH9i7wA; свежая новость отдельная — обвал 20.11. Дальше текст и Threads/X/VK на утверждение."
+      "closed_at": "2026-11-21T15:03:12.322Z",
+      "article_id": "nvidia-sec-anthropic-market-selloff-20261120",
+      "note": ", группа №415+416 (вторичную пока не менять). Проверено: 20 ноября Nasdaq Composite -5,3% за день/-10% за неделю, NVIDIA -14% за день/-23% за неделю, Anthropic -~9% в конце дня после снижения до -13–14% внутри торгов. Reuters 20.11 https://www.reuters.com/business/view-nasdaq-plunges-5-day-after-anthropic-debut-investors-still-believe-ai-2026-11-20/ ; AP https://apnews.com/article/c4c3f4878b12989347f8a930ed813dad . SEC по словам источников Reuters проверяет бухгалтерию NVIDIA https://www.reuters.com/world/us-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-2026-11-20/ ; это не доказательство нарушений. Anthropic официально подтвердила 20.11 IPO 19 ноября $83 и итог $93,5 млрд https://www.anthropic.com/news/ipo-close ; Nasdaq подтвердил https://www.nasdaq.com/economic-institute/chartstopper-112026 . №416: Reuters https://www.reuters.com/business/finance/anthropic-retail-traders-face-losses-shares-dive-13-day-after-debut-2026-11-20/ ; открытие $112 → закрытие пятницы ~$89; частные инвесторы оборот >$750 млн (Vanda), не все инвесторы в минусе. В архиве уже статья об IPO №361 https://dzen.ru/a/awAMzOulsFH9i7wA; свежая новость отдельная — обвал 20.11. Дальше текст и Threads/X/VK на утверждение.\n21.11.2026: главред утвердил объединённую статью №415+416. Статья, Threads и X сохранены и повторно прочитаны из GitHub. article_id=nvidia-sec-anthropic-market-selloff-20261120; сайт priority; ждёт обложку. №416 поглощена с сохранением её исходного источника и истории."
     },
     {
       "id": "n-aef0f75524a946bd",
@@ -6235,12 +6235,12 @@
       "summary": "20 ноября: сообщение о падении акций после дебюта; факт IPO требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-21T03:51:43+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-21T15:03:12.322Z",
       "article_id": null,
-      "note": ""
+      "note": "21.11.2026: Объединено с №415, article_id=nvidia-sec-anthropic-market-selloff-20261120. В утверждённую статью вошли падение акций Anthropic после IPO 20.11, цены $83/$112/~$89, розничные инвесторы и данные Vanda Research. Отдельной статьи и соцпостов по №416 не создавать. Исходный источник и номер сохранены."
     },
     {
       "id": "n-50ea28ea61dc33f3",
