@@ -6130,12 +6130,12 @@
       "summary": "19 ноября. Авторы AgentMall показали агентные покупки продуктов в нескольких магазинах; со слов авторов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T16:24:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:22:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-59a7f51e05a2577f"
     },
     {
       "id": "n-e8720308bcbc644a",
@@ -6160,12 +6160,12 @@
       "summary": "19 ноября. Команда Kong представила Volcano для автономных приложений и восстановления агентных задач; со слов разработчиков.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T16:24:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:22:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-db6a3673e4cbdb2f"
     },
     {
       "id": "n-764e00eb7ce2de59",
@@ -6295,12 +6295,12 @@
       "summary": "20 ноября: сообщение о совместной инициативе; вторичный источник, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T03:51:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-21T06:22:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-56c244d2df40fb3d"
     }
   ]
 }
