@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 187
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 188
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **21.11.2026 11:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **21.11.2026 12:45 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -18,13 +18,13 @@
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Amazon разрешила ИИ тратить ваши деньги без спроса](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/amazon-aws-marketplace-agentic-payments-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Amazon разрешила ИИ тратить ваши деньги без спроса](https://iipike.ru/articles/amazon-aws-marketplace-agentic-payments-20261119/) | 21.11.2026 12:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-aws-marketplace-agentic-payments-20261119.webp) |
 | [Еврокомиссию атаковали с помощью ИИ: отключили даже систему отпусков](https://iipike.ru/articles/ec-ai-assisted-cyberattack-20261119/) | 21.11.2026 11:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ec-ai-assisted-cyberattack-20261119.webp) |
 | [Google пустила Gemini за ваш Mac: ИИ сам работает в программах, пока вы заняты](https://iipike.ru/articles/google-gemini-mac-computer-use-20261119/) | 21.11.2026 09:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-mac-computer-use-20261119.webp) |
 | [OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата](https://iipike.ru/articles/openai-dots-chatgpt-plus-test-20261119/) | 21.11.2026 00:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-dots-chatgpt-plus-test-20261119.webp) |
