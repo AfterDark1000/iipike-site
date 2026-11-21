@@ -989,6 +989,71 @@
       "source": "ARCS.ai / Armenpress",
       "source_url": "https://armenpress.am/en/article/1266199",
       "fact_check": "ARCS.ai dated Nov 20 2026 press statement republished verbatim by Armenpress: new ARPI centre links AUA, YSU, NPUA; target 50 engineers per academic year, 30 students started first stage, $500k intended new lab at AUA. Centre being established; don't imply all labs operational or 50 graduated yet."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 387,
+      "pool_id": "n-a4d0283da1b04563",
+      "slug": "firebird-armenia-ai-datacenters-300mw-20261120",
+      "headline": "Firebird планирует более 300 МВт мощностей для ИИ в Армении к концу 2027 года",
+      "body": "Армянская Firebird AI планирует довести суммарную мощность своих дата-центров для ИИ до более 300 МВт к концу 2027 года. Об этом 20 ноября на конференции DigiTec рассказал сооснователь компании Александр Есаян. В августе Firebird уже открыла ИИ-центр в Раздане при участии NVIDIA и Dell; среди клиентов компания называет Perplexity. Есаян считает, что вместе с другими проектами новые мощности помогут Армении войти в десятку стран по вычислениям для ИИ.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-20",
+      "source": "NEWS.am Tech / выступление Firebird на DigiTec",
+      "source_url": "https://tech.news.am/en/news/8183",
+      "fact_check": "NEWS.am Tech прямой репортаж от 20.11.2026 с выступления сооснователя Firebird Александра Есаяна на DigiTec. Совокупная мощность >300 МВт заявлена к концу 2027, это план, не введённые мощности. Открыт центр в Раздане 08.08.2026, NVIDIA и Dell участвовали в проекте, Perplexity названа клиентом. Топ-10 — прогноз Есаяна, не независимое подтверждение."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 388,
+      "pool_id": "n-fce966fefe73a89e",
+      "slug": "hongkong-water-tank-cleaning-robot-ict-award-20261119",
+      "headline": "Робот для мойки водяных баков получил главную технологическую награду Гонконга",
+      "body": "В Гонконге главную награду ICT Awards 2026 получил робот для чистки резервуаров с водой. Его разработали исследователи и государственные службы: машина сама перемещается внутри бака, работает щётками и струёй воды, а ИИ помогает находить загрязнения. Робота уже испытывали на объектах жилищных ведомств. Система позволяет очищать баки без спуска рабочих внутрь, где есть риск нехватки кислорода.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Правительство Гонконга / HKSTP",
+      "source_url": "https://www.news.gov.hk/eng/2026/11/20261119/20261119_202126_064.html?type=ticker",
+      "fact_check": "Hong Kong government official news dated 19 Nov 2026: ICT Awards 2026 Award of the Year and Smart Business Grand Award to AI-enabled Smart Water Tank Cleaning Robot joint team. HKSTP dated 9 June 2026: autonomous amphibious robot using brushes, high-pressure jets, AI contamination detection; field tested on government Housing Department properties, workers need not enter confined space. Do not present as new invention Nov 19 (prize is new)."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 391,
+      "pool_id": "n-ded52a6a77fc25ad",
+      "slug": "chipverse-egypt-local-currency-ai-compute-funding-20261119",
+      "headline": "Египетский стартап сдаёт ИИ-серверы за местные фунты и привлёк инвестиции",
+      "body": "Египетская Chipverse привлекла инвестиции на ранней стадии для расширения вычислительной инфраструктуры ИИ. Стартап сдаёт в аренду серверы и кластеры видеоускорителей, выставляя счета в египетских фунтах. Клиентам не приходится покупать доллары ради оплаты этих вычислений. Сумму раунда компания не раскрыла. На привлечённые средства Chipverse собирается увеличить парк видеоускорителей и открыть программный доступ к мощностям через API.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-19",
+      "source": "The Condia / Chipverse",
+      "source_url": "https://thecondia.com/chipverse-pre-seed-funding-egypt-ai-computing/",
+      "fact_check": "The Condia article dated 19 Nov 2026: founder Andrew Isaac; Chipverse founded 2024, pre-seed funding undisclosed, GPU servers and clusters billed in Egyptian pounds, new GPU capacity and API roadmap, future audio/video AI tools. EgyptInnovate independent publication Nov19 also reports undisclosed pre-seed funds. No claimed funding sum or publicly launched API."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 392,
+      "pool_id": "n-a15222140c94bbf8",
+      "slug": "huggingface-thomas-wolf-anthropic-ipo-ai-concentration-20261120",
+      "headline": "Сооснователь Hugging Face предупредил об опасной концентрации ИИ у корпораций",
+      "body": "Сооснователь и научный директор Hugging Face Томас Вольф предупредил об опасной концентрации контроля над ИИ в руках крупнейших компаний. В интервью The Times он связал эти опасения с рекордным выходом Anthropic на биржу: по его словам, капитал и возможности передовых ИИ-систем сосредотачиваются у одной-двух корпораций. Вольф считает, что отрасль подошла к развилке, от которой зависит, насколько открытым останется развитие ИИ.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-20",
+      "source": "The Times (интервью Томаса Вольфа)",
+      "source_url": "https://www.thetimes.com/business/companies-markets/article/anthropic-ipo-danger-ai-hugging-face-z8hvfwz7p",
+      "fact_check": "The Times dated Nov 20 2026 primary interview with Hugging Face co-founder and chief science officer Thomas Wolf. Accessible original title/subtitle plus web news excerpt quote: concentration of power, capital and intelligence in one or two companies, Anthropic IPO as example; he calls industry at crossroads. Article paywalled: do not invent additional full-text details or literal direct quotes. AP Nov19 confirms Anthropic listing."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 395,
+      "pool_id": "n-c363e4ee1aa6f6ac",
+      "slug": "google-search-ai-mode-chat-history-homepage-20261119",
+      "headline": "Google выводит историю разговоров с ИИ прямо на главную страницу поиска",
+      "body": "Google начала добавлять на главную страницу поиска для компьютеров боковую панель с историей обращений к AI Mode. Там можно открыть прежний разговор с поисковым ИИ, продолжить его, начать новую беседу или найти нужный диалог. О нововведении 19 ноября сообщил вице-президент Google Робби Стайн, показав работу панели в видео. Функцию постепенно разворачивают по всему миру для пользователей настольной версии поиска.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Google / The Verge",
+      "source_url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
+      "fact_check": "Direct participant Google VP Robby Stein post X https://x.com/rmstein/status/2123500235930640844 from November 19, 2026; The Verge direct report Nov19 includes his video and statement of global desktop rollout. Collapsible homepage sidebar to reopen, search and start AI Mode conversations; no mobile access claim."
     }
   ]
 }
