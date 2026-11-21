@@ -5490,7 +5490,7 @@
       "review_started_at": "2026-11-21T06:19:18.928Z",
       "closed_at": null,
       "article_id": null,
-      "note": "21.11, редактор №23. Взята горячая №366 (AWS Marketplace / платежи ИИ-агентов) по FIFO. Проверить первоисточники AWS, кто и как платит, доступность x402, механизмы лимитов и согласования, условия выпуска и сравнить с ранее опубликованными новостями о кошельках агентов."
+      "note": "21.11.2026, редактор №23. Датированный официальный запуск AWS 19.11 https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/ . Подробности https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/ . AgentCore payments был GA с августа https://aws.amazon.com/about-aws/whats-new/2026/08/bedrock-agentcore-payments-ga/ ; новое — оплата x402-предложений AWS Marketplace в USD на AWS-счёт без криптокошелька. Покупки API/данных за запрос, продавцы заранее регистрируются. В примере Tavily одна покупка $0.01, лимиты демо $0.05 за сеанс, $0.02 за запрос; агент не может повысить бюджет. Лимиты и разрешённые продавцы настраивает владелец, аудит CloudTrail/Cost Explorer. ВАЖНО: анонс обещает доступ в регионах AgentCore payments; buyer guide конкретно пишет US East us-east-1: https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-ai-agents-products.html . Архив catalog 399: близкая Wallet https://dzen.ru/a/avkyo4t5FW9w4ctH, это иной механизм. Готовить статью и соцпосты на утверждение."
     },
     {
       "id": "n-9342dbf934e428aa",
