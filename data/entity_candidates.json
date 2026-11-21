@@ -2577,6 +2577,10 @@
         {
           "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
           "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+        },
+        {
+          "article_id": "google-gemini-mac-computer-use-20261119",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac"
         }
       ]
     },
@@ -2824,6 +2828,19 @@
         {
           "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
           "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+        }
+      ]
+    },
+    {
+      "key": "gemini-computer-use",
+      "name": "Computer Use",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-21",
+      "evidence": [
+        {
+          "article_id": "google-gemini-mac-computer-use-20261119",
+          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac"
         }
       ]
     }
