@@ -86,7 +86,10 @@ def main():
     args = p.parse_args()
     if args.write == args.check:
         p.error("Choose exactly one of --write or --check")
-    variants = render(SOURCE.read_text(encoding="utf-8"))
+    # Check the immutable control fixture so future site releases cannot
+    # make this historical experiment fail just by rotating the live feed.
+    source = (SOURCE if args.write else DEST / "01-control.xml")
+    variants = render(source.read_text(encoding="utf-8"))
     if args.write:
         DEST.mkdir(parents=True, exist_ok=True)
     for name, value in variants.items():
