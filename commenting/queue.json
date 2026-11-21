@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-21T15:17:21.987893Z",
+  "updated_at": "2026-11-21T17:26:48.550571Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 4
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-21T15:17:21.987893Z",
-      "last_success_at": "2026-11-21T15:17:21.987893Z",
+      "checked_at": "2026-11-21T17:26:48.550571Z",
+      "last_success_at": "2026-11-21T17:26:48.550571Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
   },
   "usage": {
     "date": "2026-11-21",
-    "attempted": 18
+    "attempted": 21
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -124,6 +124,25 @@
       "link_status": "dzen_link_missing"
     },
     {
+      "id": "c0fe18452e9be40e52bc400a",
+      "title": "Математик заявил, что Claude помог доказать гипотезу Римана",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161254-matematik-zayavil-chto-claude-pomog-dokazat-gipotezu-rimana/",
+      "published_at": "2026-11-21T10:35:09Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-21T17:26:48.550571Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-21T17:26:48.550571Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
       "id": "3198beb6ab633bc378fadf57",
       "title": "20 ГБ и ноутбук: Thinking Machines выпустила ИИ-модель для слабого компьютера",
       "source_id": "ixbt",
@@ -135,10 +154,12 @@
       "first_seen_at": "2026-11-21T15:17:21.987893Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-21T17:26:48.550571Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "47471a6d96fad922ec9214d6",
@@ -626,10 +647,12 @@
       "first_seen_at": "2026-11-20T09:08:17.459866Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-21T17:26:48.550571Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "8458b26027cc437bcaf6ee54",
@@ -2276,69 +2299,6 @@
       "reason": "Не прошёл проверку: В статье не указано, что стартап базируется в Сиэтле.",
       "fact_review": "rejected",
       "generated_at": "2026-11-14T21:24:57.425007Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "c127964f20712902353796e9",
-      "title": "SpaceX уволила 60 разработчиков Grok Imagine, оставив ИИ-генератор почти без команды",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/14/spacex-uvolila-60-razrabotcikov-grok-imagine-ostaviv-ii-generator-pocti-bez-komandy.html",
-      "published_at": "2026-11-14T16:54:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-14T21:24:57.425007Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Уволить шестьдесят разработчиков Grok Imagine и оставить горстку энтузиастов — отличный способ показать, куда теперь дует ветер в SpaceX после всех этих многомиллиардных слияний.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-14T21:24:57.425007Z",
-      "reason": "Замечаем масштаб сокращений в подразделении и смену фокуса компании.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-14T21:24:57.425007Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "4b43ac6e07f7fdbe4add3d41",
-      "title": "Alphabet занимает на ИИ уже в Гонконге и Сингапуре. Спрос на первые облигации превысил $7 млрд",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/14/alphabet-zanimaet-na-ii-uze-v-gonkonge-i-singapure-spros-na-pervye-obligacii-prevysil-7-mlrd.html",
-      "published_at": "2026-11-14T16:33:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-14T16:43:11.507340Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "План капитальных затрат Alphabet на 2026 год в $205 млрд выглядит так, будто компания решила построить собственный дата-центр на орбите. С такими аппетитами скоро придётся занимать в каждой валюте мира, включая монопольные деньги.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-14T16:43:11.507340Z",
-      "reason": "Забавный масштаб инвестиций Alphabet в $205 млрд, который позволяет развить мысль про аппетиты компании.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-14T16:43:11.507340Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "296a7e6bc7ec213379ff7c54",
-      "title": "Отказ Nvidia от кругового финансирования ИИ по схеме Хуанга не вернёт дешёвые видеокарты в 2027 году",
-      "source_id": "3dnews",
-      "source_name": "3DNews",
-      "source_url": "https://3dnews.ru/1151308",
-      "published_at": "2026-11-14T15:20:00Z",
-      "channel_url": "https://dzen.ru/3dnews.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-14T16:43:11.507340Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Ждать, что отказ Nvidia от схемы Хуанга вернёт дешёвые видеокарты к 2027 году — это какая-то наивная вера в чудо. Серверные ускорители с HBM-памятью в игровые ПК всё равно не запихнуть напильником.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-14T16:43:11.507340Z",
-      "reason": "Развенчание мифа о том, что отказ от финансирования ИИ сразу освободит полки магазинов для геймеров.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-14T16:43:11.507340Z",
       "link_status": "dzen_link_missing"
     }
   ]
