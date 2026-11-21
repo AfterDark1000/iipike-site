@@ -1031,19 +1031,6 @@
     },
     {
       "status": "pending_review",
-      "pool_sequence": 392,
-      "pool_id": "n-a15222140c94bbf8",
-      "slug": "huggingface-thomas-wolf-anthropic-ipo-ai-concentration-20261120",
-      "headline": "Сооснователь Hugging Face предупредил об опасной концентрации ИИ у корпораций",
-      "body": "Сооснователь и научный директор Hugging Face Томас Вольф предупредил об опасной концентрации контроля над ИИ в руках крупнейших компаний. В интервью The Times он связал эти опасения с рекордным выходом Anthropic на биржу: по его словам, капитал и возможности передовых ИИ-систем сосредотачиваются у одной-двух корпораций. Вольф считает, что отрасль подошла к развилке, от которой зависит, насколько открытым останется развитие ИИ.",
-      "topic": "Бизнес",
-      "event_date": "2026-11-20",
-      "source": "The Times (интервью Томаса Вольфа)",
-      "source_url": "https://www.thetimes.com/business/companies-markets/article/anthropic-ipo-danger-ai-hugging-face-z8hvfwz7p",
-      "fact_check": "The Times dated Nov 20 2026 primary interview with Hugging Face co-founder and chief science officer Thomas Wolf. Accessible original title/subtitle plus web news excerpt quote: concentration of power, capital and intelligence in one or two companies, Anthropic IPO as example; he calls industry at crossroads. Article paywalled: do not invent additional full-text details or literal direct quotes. AP Nov19 confirms Anthropic listing."
-    },
-    {
-      "status": "pending_review",
       "pool_sequence": 395,
       "pool_id": "n-c363e4ee1aa6f6ac",
       "slug": "google-search-ai-mode-chat-history-homepage-20261119",
