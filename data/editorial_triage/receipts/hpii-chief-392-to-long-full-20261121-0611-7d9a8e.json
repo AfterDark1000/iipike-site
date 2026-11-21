@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "hpii-chief-392-to-long-full-20261121-0611-7d9a8e.json",
+  "request_sha256": "271fd2445e8d30ae6b6a9f1e4b44381249f82d45f0c97f47ac12be809b9bb61f",
+  "status": "applied",
+  "applied": [
+    392
+  ],
+  "unchanged": [],
+  "skipped": []
+}
