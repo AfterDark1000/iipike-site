@@ -7208,7 +7208,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b01845ecd21ad0860e89a65",
+    "site_first_dzen_url": "https://dzen.ru/a/awGEXs0hrQhg6Jpl"
   },
   {
     "title": "ИИ за час нашёл дыру в Java, которую пять месяцев не чинили",
@@ -7234,7 +7236,9 @@
     ],
     "products": [
       "codex"
-    ]
+    ],
+    "site_first_dzen_id": "6b0184dccb29e46e9885f094",
+    "site_first_dzen_url": "https://dzen.ru/a/awGE3Msp5G6YhfCU"
   },
   {
     "title": "С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям",
@@ -7259,7 +7263,9 @@
     ],
     "products": [
       "chatgpt"
-    ]
+    ],
+    "site_first_dzen_id": "6b018517c454d13298a183f8",
+    "site_first_dzen_url": "https://dzen.ru/a/awGFF8RU0TKYoYP4"
   },
   {
     "title": "Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы",
@@ -7281,7 +7287,9 @@
       "agents"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b01859ccb29e46e988a0c6a",
+    "site_first_dzen_url": "https://dzen.ru/a/awGFnMsp5G6Yigxq"
   },
   {
     "title": "Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой",
@@ -7307,7 +7315,9 @@
     "products": [
       "genie",
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6b0186191de56a6a5c508ca0",
+    "site_first_dzen_url": "https://dzen.ru/a/awGGGR3lampcUIyg"
   },
   {
     "title": "Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника",
@@ -7331,7 +7341,9 @@
     "companies": [
       "microsoft"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b018705c454d13298a591cb",
+    "site_first_dzen_url": "https://dzen.ru/a/awGHBcRU0TKYpZHL"
   },
   {
     "title": "OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата",
@@ -7383,7 +7395,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6b01893364e342739706edd0",
+    "site_first_dzen_url": "https://dzen.ru/a/awGJM2TjQnOXBu3Q"
   },
   {
     "title": "Еврокомиссию атаковали с помощью ИИ: отключили даже систему отпусков",
