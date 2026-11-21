@@ -5815,12 +5815,12 @@
       "summary": "19 ноября. ИИ-робот для очистки резервуаров получил награду Hong Kong ICT Awards 2026; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:36:33+00:00",
       "review_started_at": "2026-11-21T06:02:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-fce966fefe73a89e"
+      "closed_at": "2026-11-21T08:53:52Z",
+      "article_id": "hongkong-water-tank-cleaning-robot-ict-award-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fce966fefe73a89e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/hongkong-water-tank-cleaning-robot-ict-award-20261119/"
     },
     {
       "id": "n-f78ef7f2a476c891",
