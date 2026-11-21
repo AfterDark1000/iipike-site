@@ -48,5 +48,19 @@ class VKLabSafety(unittest.TestCase):
         self.assertIn(lab.ART_URL, text_link.findtext("description"))
         self.assertEqual(control.findtext("description"), media.findtext("description"))
 
+    def test_two_og_preview_pages_are_inert_and_use_distinct_image_formats(self):
+        from pathlib import Path
+        pages = {}
+        for filename in ("og-webp.html", "og-jpeg.html"):
+            html = (lab.DEST / filename).read_text(encoding="utf-8")
+            self.assertIn('<meta name="robots" content="noindex,nofollow">', html)
+            self.assertNotIn('http-equiv="refresh"', html)
+            self.assertIn('property="og:url" content="https://iipike.ru/experiments/vk-rss-lab/' + filename + '"', html)
+            pages[filename] = html
+        self.assertIn('property="og:image" content="https://iipike.ru/assets/editorial/meta-muse-chrome-login-20261120.webp"', pages["og-webp.html"])
+        self.assertIn('property="og:image" content="https://iipike.ru/assets/vk/meta-muse-chrome-login-20261120.jpg"', pages["og-jpeg.html"])
+        self.assertIn('property="og:image:width" content="1600"', pages["og-webp.html"])
+        self.assertIn('property="og:image:width" content="1280"', pages["og-jpeg.html"])
+
 if __name__ == "__main__":
     unittest.main()
