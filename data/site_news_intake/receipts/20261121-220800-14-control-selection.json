@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "request": "20261121-220800-14-control-selection.json",
+  "request_sha256": "d3519b02b98149167a970de06f3d8b3eaa56e3494c577317ae6bfa788e6c57cc",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 436,
+      "id": "n-c76932da0042377d",
+      "title": "Microsoft и Danaher создают платформу для управления лабораторными приборами с помощью ИИ-агентов"
+    },
+    {
+      "sequence": 437,
+      "id": "n-6a2f62488ccfded1",
+      "title": "GE HealthCare представила ИИ-инструменты для настройки КТ и МРТ"
+    },
+    {
+      "sequence": 438,
+      "id": "n-f448adc53d11ddb5",
+      "title": "Суд назначил надзор за защитой данных пользователей Character.AI"
+    },
+    {
+      "sequence": 439,
+      "id": "n-908ddd2bcee158a6",
+      "title": "ИИ-дата-центры осложняют выполнение климатических целей Meta"
+    },
+    {
+      "sequence": 440,
+      "id": "n-68a177a4ce19b67d",
+      "title": "ElevenLabs расширила Ads Engine инструментами дубляжа и локализации рекламы"
+    },
+    {
+      "sequence": 441,
+      "id": "n-1430c2a50a889b8b",
+      "title": "Разработчики OhanTTS представили открытую модель клонирования голоса"
+    },
+    {
+      "sequence": 442,
+      "id": "n-6a664b768ab661a9",
+      "title": "Metric-AI выпустила OhanASR для распознавания армянской речи"
+    },
+    {
+      "sequence": 443,
+      "id": "n-9067dd2427d6b174",
+      "title": "Разработчик Devin Cognition обсуждает оценку в 75 миллиардов долларов"
+    },
+    {
+      "sequence": 444,
+      "id": "n-36677e166994bf6b",
+      "title": "Фонд Дженсена Хуанга обязался потратить 350 млн долларов на CoreWeave"
+    },
+    {
+      "sequence": 445,
+      "id": "n-7ad44f990f0c53ef",
+      "title": "OpenAI сообщила о защите от выманивания скрытых рассуждений моделей"
+    },
+    {
+      "sequence": 446,
+      "id": "n-701a571706ec6c00",
+      "title": "Hugging Face представила Harness Adapters для эффективной работы ИИ-агентов"
+    },
+    {
+      "sequence": 447,
+      "id": "n-d5bec1fa3b07f617",
+      "title": "AWS представила SageMaker HyperPod Global Inference Gateway"
+    },
+    {
+      "sequence": 448,
+      "id": "n-fcfe169e10fcb253",
+      "title": "SK hynix показала систему MARS и технологии памяти для ИИ на SC26"
+    },
+    {
+      "sequence": 449,
+      "id": "n-0b6b96c55f96f5e5",
+      "title": "Японский производитель печатей предлагает аутентификацию видео в X"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
