@@ -7477,5 +7477,26 @@
       "gemini",
       "muse"
     ]
+  },
+  {
+    "title": "Трамп пригрозил «огромным налогом» за ИИ-дата-центры за границей",
+    "summary": "Дональд Трамп пригрозил американским компаниям «огромным налогом» за строительство дата-центров за границей, но не назвал ставку, сроки и механизм его введения.",
+    "published": "2026-11-21",
+    "source_url": "https://www.whitehouse.gov/videos/president-trump-hosts-a-news-conference/",
+    "cover": "assets/editorial/trump-ai-datacenters-overseas-tax-threat-20261120.webp",
+    "rubric": "quotes",
+    "vk_title": "🇺🇸 Трамп грозит ОГРОМНЫМ НАЛОГОМ за ИИ-центры за границей",
+    "vk_summary": "После поездки в Азию Трамп пригрозил крупным налогом американским компаниям, строящим дата-центры за рубежом. На пресс-конференции признался, что даже своей команде ещё не сообщил о плане. Ставку, сроки и механизм президент не назвал.",
+    "published_at_utc": "2026-11-21T11:30:48Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "trump-ai-datacenters-overseas-tax-threat-20261120",
+    "url": "articles/trump-ai-datacenters-overseas-tax-threat-20261120/",
+    "topics": [
+      "business",
+      "infrastructure"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
