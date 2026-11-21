@@ -1041,6 +1041,71 @@
       "source": "Google / The Verge",
       "source_url": "https://www.theverge.com/tech/1038059/google-search-homepage-ai-chats",
       "fact_check": "Direct participant Google VP Robby Stein post X https://x.com/rmstein/status/2123500235930640844 from November 19, 2026; The Verge direct report Nov19 includes his video and statement of global desktop rollout. Collapsible homepage sidebar to reopen, search and start AI Mode conversations; no mobile access claim."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 402,
+      "pool_id": "n-454e9ae4843b4701",
+      "slug": "optics-as-code-ai-agent-trains-optical-network-20261118",
+      "headline": "ИИ-агент научился настраивать нейросеть из света по снимкам камеры",
+      "body": "Исследователи показали, как ИИ-агент обучает настоящую оптическую нейросеть без заранее откалиброванной цифровой модели оборудования. Агент пишет код, меняет настройки световых элементов и по снимкам камеры оценивает результат. В экспериментах с распознаванием и кодированием изображений метод обошёл обычные способы настройки без вычисления градиентов. Пока это результат научной работы, опубликованной 18 ноября.",
+      "topic": "Наука",
+      "event_date": "2026-11-18",
+      "source": "arXiv, исследователи Стэнфордского университета и коллеги",
+      "source_url": "https://arxiv.org/abs/2611.23875",
+      "fact_check": "Primary arXiv 2611.23875, 18 Nov 2026, In Situ Training of Optical Neural Networks by Coding Agents, Oguz et al. Coding agent controls real optical hardware using camera images and program-generated phase masks, without calibrated per-device model or gradients; authors report better results than gradient-free alternatives for classification/image encoding. Research experiment only, not a consumer product."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 404,
+      "pool_id": "n-626f4837bc5cd805",
+      "slug": "nari-labs-dia2-streaming-tts-open-20261119",
+      "headline": "Dia2 начинает говорить, пока ей ещё пишут текст",
+      "body": "Nari Labs открыла код и веса Dia2 — нейросети, которая может начинать озвучивание после первых слов входящего текста, не дожидаясь всей фразы. Она поддерживает диалог двух собеседников и умеет продолжать речь с учётом аудиопримера. Разработчики выложили версии на 1 и 2 млрд параметров и демонстрацию на Hugging Face. Пока Dia2 работает с английским языком, а одна генерация ограничена двумя минутами.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Nari Labs, GitHub",
+      "source_url": "https://github.com/nari-labs/dia2",
+      "fact_check": "Nari Labs official Dia README marks Dia2 GitHub/HF release 19 Nov; dia2 official repo describes streaming input, starting after first words, audio conditioning, 1B and 2B checkpoints; only English, up to 2 minutes audio generation; Apache 2.0 code, educational/research context and restrictions on deceptive voice impersonation."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 406,
+      "pool_id": "n-80f5324f0e632581",
+      "slug": "tencent-wemm-video-four-models-audiovisual-20261120",
+      "headline": "Tencent открыла четыре нейросети, которые одновременно видят и слышат видео",
+      "body": "Команда Tencent WeChat Vision выложила четыре модели WeMM-Video для совместного анализа видеокадров и звуковой дорожки. Они отвечают на вопросы о происходящем в ролике, а также работают с изображениями, аудио и обычным текстом на китайском и английском языках. Доступны версии с 2, 4, 9 и 35 млрд параметров, вместе с кодом и весами для запуска. Результаты сравнений с конкурентами пока приводит сама команда разработчиков.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Tencent, официальный репозиторий WeMM-Video",
+      "source_url": "https://github.com/Tencent/WeMM-Video",
+      "fact_check": "Official Tencent/WeMM-Video README and model zoo: bilingual Chinese/English video-with-original-soundtrack understanding, image/audio/text input, textual answers; 2B/4B/9B and MoE 35B-A3B variants; code under Apache 2.0, models subject to own WeMM license dated 20 Nov 2026, downloadable weights. Internal benchmark claims not independent verification. Not a video generator."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 407,
+      "pool_id": "n-d40b37a43fa11767",
+      "slug": "langsmith-tool-gateway-agent-access-public-beta-20261119",
+      "headline": "LangChain запустила «пропускной пункт» для инструментов ИИ-агентов",
+      "body": "LangChain выпустила в публичную бету LangSmith Tool Gateway — единый шлюз для инструментов, которыми пользуются ИИ-агенты. Через него можно разрешать каждому агенту только нужные действия, назначать учётные данные и просматривать журнал обращений. Разработчикам достаточно подключить один адрес вместо отдельной настройки каждого инструмента. Шлюз работает с MCP и клиентами вроде Claude Code и Cursor.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "LangChain, официальный анонс",
+      "source_url": "https://www.langchain.com/blog/langsmith-tool-gateway",
+      "fact_check": "LangChain official blog by Karthic Subramanian 19 Nov 2026: Tool Gateway launched as Public Beta on LangSmith Agent Platform, access identity, managed credentials, per-tool policy, logging and single endpoint/kit; MCP-compatible including Claude Code and Cursor. Not universal public availability outside LangSmith platform."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 408,
+      "pool_id": "n-4e1534961d60ea2e",
+      "slug": "uk-fca-ai-spotlight-observatory-200-organisations-20261119",
+      "headline": "Британский финрегулятор открыл каталог ИИ-проектов более 200 организаций",
+      "body": "Британское Управление по финансовому регулированию (FCA) запустило AI Spotlight Observatory — онлайн-каталог реальных примеров применения ИИ в финансовой отрасли. В нём собраны проекты более 200 организаций по 150 направлениям, от борьбы с мошенничеством до автоматизации платежей. Базовый обзор открыт всем, а для подробной информации о клиентах и запросов на демонстрации нужна регистрация. Каталог планируют пополнять.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-19",
+      "source": "Financial Conduct Authority, официальный пресс-релиз",
+      "source_url": "https://www.fca.org.uk/news/press-releases/fca-launches-world-first-platform-giving-firms-new-insight-ai-innovation",
+      "fact_check": "FCA dated press release 19 Nov 2026: launched AI Spotlight Observatory in partnership with CFTE and NayaOne; use cases from >200 organisations across 150 areas; open basic access, detailed client insights and demo requests require registration; includes financial crime/compliance, agentic payments and neurosymbolic AI. FCA claims world-first; avoid endorsing absolute superlative."
     }
   ]
 }
