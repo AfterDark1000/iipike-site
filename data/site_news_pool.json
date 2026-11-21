@@ -5860,12 +5860,12 @@
       "summary": "19 ноября. Египетский Chipverse сообщил о начальном финансировании GPU-инфраструктуры и инструментов работы с аудио/видео; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T14:36:33+00:00",
       "review_started_at": "2026-11-21T06:02:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-ded52a6a77fc25ad"
+      "closed_at": "2026-11-21T09:08:57Z",
+      "article_id": "chipverse-egypt-local-currency-ai-compute-funding-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ded52a6a77fc25ad\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/chipverse-egypt-local-currency-ai-compute-funding-20261119/"
     },
     {
       "id": "n-a15222140c94bbf8",
