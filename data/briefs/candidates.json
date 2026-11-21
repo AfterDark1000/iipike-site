@@ -1106,6 +1106,45 @@
       "source": "Financial Conduct Authority, официальный пресс-релиз",
       "source_url": "https://www.fca.org.uk/news/press-releases/fca-launches-world-first-platform-giving-firms-new-insight-ai-innovation",
       "fact_check": "FCA dated press release 19 Nov 2026: launched AI Spotlight Observatory in partnership with CFTE and NayaOne; use cases from >200 organisations across 150 areas; open basic access, detailed client insights and demo requests require registration; includes financial crime/compliance, agentic payments and neurosymbolic AI. FCA claims world-first; avoid endorsing absolute superlative."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 409,
+      "pool_id": "n-59a7f51e05a2577f",
+      "slug": "agentmall-ai-agent-groceries-nine-checkout-70pct-20261119",
+      "headline": "Разработчики AgentMall научили ИИ-агентов покупать продукты, но пока с ошибками",
+      "body": "Разработчики AgentMall представили сервис, через который ИИ-агент может собрать корзину и оформить покупку в интернет-магазине. Авторы заявляют поддержку девяти торговых площадок, но поимённо назвали только семь. В сообщении на Hacker News 19 ноября они признали, что успешно завершаются около 70% попыток оформления заказа. Доступны тестовые ключи, позволяющие пройти весь процесс без реальной покупки.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Разработчики AgentMall, анонс Show HN",
+      "source_url": "https://news.ycombinator.com/item?id=50562508",
+      "fact_check": "Первичный пост авторов Nel и Kosi на Hacker News от 19.11.2026, доступен через зеркала HN Showcase (https://hnshowcase.com/post/50562508/agentmall-let-your-ai-agent-buy-groceries), содержит утверждение о 9 merchants, но поимённо называет только 7: Walmart, Albertsons, Ocado, Wegmans, FreshDirect, Best Buy, Instacart. Авторы сами оценивают успешность checkout ~70%, желают >90%, дают тестовые ключи без размещения заказа и 10 бесплатных завершённых заказов новым аккаунтам. Не смешивать с несвязанным agentmall.sh и не считать заявленные 9 независимо подтверждёнными."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 411,
+      "pool_id": "n-db6a3673e4cbdb2f",
+      "slug": "kong-volcano-lavaflow-agent-cloud-fix-pr-20261119",
+      "headline": "Kong запустила облако, где ИИ ищет ошибки и предлагает исправления",
+      "body": "Компания Kong 19 ноября представила Volcano — облачную платформу для запуска ИИ-агентов и приложений. Встроенный инструмент LavaFlow, по заявлению разработчиков, разбирает повторяющиеся сбои по журналам и исходному коду, после чего предлагает исправление через запрос на изменение в GitHub. По умолчанию такой код должен проверить и принять человек; автоматическое объединение исправлений настраивается отдельно.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Kong / Volcano, официальный анонс и документация",
+      "source_url": "https://volcano.dev/blog/introducing-volcano-agent-cloud",
+      "fact_check": "Официальный датированный анонс Marco Palladino 19 Nov 2026. Volcano — платформа для разработчиков агентов, приложений и хранения данных. LavaFlow согласно https://docs.volcano.dev/docs/platform/guides/lavaflow получает логи/исходники, запускается на повторяющихся исключениях (как правило не на первой ошибке), создаёт PR; по умолчанию human review, autonomous merge опционален при доступности/настройке. Не обещать безошибочного восстановления или автоматического merge всем. Более раннее объявление Kong было 30 Sept 2026; нынешняя публикация — доступность Volcano."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 420,
+      "pool_id": "n-56c244d2df40fb3d",
+      "slug": "harvard-cornell-12m-ai-quantum-error-correction-20261120",
+      "headline": "Гарвард возглавил квантовый ИИ-проект с грантом $12 млн",
+      "body": "Команда под руководством физика Гарварда Михаила Лукина получила грант Минэнерго США на $12 млн. Вместе с Корнеллом, MIT, научными лабораториями и компаниями NVIDIA и Anthropic исследователи будут применять ИИ для исправления ошибок квантовых вычислений. В частности, учёные планируют обучать модели выбирать способы защиты кубитов и превращать алгоритмы в команды квантовому оборудованию. Об участии в проекте университеты сообщили 20 ноября.",
+      "topic": "Наука",
+      "event_date": "2026-11-20",
+      "source": "Harvard Gazette / Cornell Chronicle",
+      "source_url": "https://news.harvard.edu/gazette/story/2026/11/harvard-led-team-receives-12-million-in-federal-funds-to-advance-quantum-computing-with-ai/",
+      "fact_check": "Официальные датированные первоисточники Harvard Gazette 20.11.2026 и Cornell Chronicle https://news.cornell.edu/stories/2026/11/cornell-collaborate-genesis-mission-project-advance-quantum-computing-ai от той же даты: конкретный грант проекту ASQC $12 million, не $75m как ошибочно в заголовке Quantum Zeitgeist; это один из 12 Phase II awards, объявленных 9 октября в Genesis Mission. Principal investigator Mikhail Lukin, collaborators MIT/Cornell, national labs, QuEra, NVIDIA, Anthropic. ИИ для адаптивной quantum error correction, RL compiler Cornell. Проект финансируется, система ещё не реализована."
     }
   ]
 }
