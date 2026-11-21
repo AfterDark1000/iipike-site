@@ -1,11 +1,81 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "2cdce5b16bbced8bd2beb7aa61f91a462e43bad8",
-  "source_blob_sha": "e640498312a6b8d9f471721df5540d3c36637a6f",
-  "snapshot_date": "2026-11-20",
+  "source_commit": "0579393f28aa2a050e1c186692189228aaf17b97",
+  "source_blob_sha": "d7daaeb4801f60081a477add68d6e61aa5429d05",
+  "snapshot_date": "2026-11-21",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b0187d7cb7610255c40882a",
+      "title": "OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата",
+      "dzen_url": "https://dzen.ru/a/awGH18t2ECVcQIgq",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "OpenAI начала открывать некоторым подписчикам ChatGPT Plus доступ к ИИ-помощнику, который продолжает работать, даже когда хозяин закрыл чат. 19 ноября руководитель разработки ChatGPT и Codex Тибо Соттьо написал в X: «Мы начинаем тестировать Dots с небольшим числом пользователей ChatGPT Plus». — Тибо Соттьо, перевод с английского Пока это небольшой эксперимент. Но ещё недавно за такими помощниками приходилось идти на",
+      "published_at_utc": "2026-11-21T12:02:17+00:00"
+    },
+    {
+      "dzen_id": "6b0186191de56a6a5c508ca0",
+      "title": "Google открыла Genie 4: меняйте погоду и населяйте виртуальные миры одной фразой",
+      "dzen_url": "https://dzen.ru/a/awGGGR3lampcUIyg",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Написал «пусть пойдёт дождь», и над головой сгущаются тучи. Попросил дракона, и он появляется перед тобой. Google начала открывать пользователям Genie 4, нейросеть, которая создаёт интерактивные виртуальные миры и перестраивает их прямо во время прогулки. Изменения происходят в реальном времени, пока человек исследует созданное пространство. 18 ноября компания запустила обновлённый Project Genie для подходящих подпис",
+      "published_at_utc": "2026-11-21T17:03:19+00:00"
+    },
+    {
+      "dzen_id": "6b01859ccb29e46e988a0c6a",
+      "title": "Доверили ИИ деньги? Банк решил, что за его ошибки заплатите вы",
+      "dzen_url": "https://dzen.ru/a/awGFnMsp5G6Yigxq",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Даже если сторонний ИИ-помощник потеряет пароль от вашего банковского счёта, Citibank намерен считать операции с этим паролем разрешёнными вами. В ноябре банк добавил в пользовательское соглашение отдельный раздел об ИИ-агентах, которым владелец предоставляет доступ к своим счетам и поручает финансовые операции. В документе прямо прописано, что произойдёт при утечке пароля. «Citi будет считать любой доступ и действия",
+      "published_at_utc": "2026-11-21T16:03:00+00:00"
+    },
+    {
+      "dzen_id": "6b018517c454d13298a183f8",
+      "title": "С OpenAI требуют $2 млрд: ChatGPT обвинили в угрозе детям",
+      "dzen_url": "https://dzen.ru/a/awGFF8RU0TKYoYP4",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Подростковая версия ChatGPT час обсуждала самоповреждение во время испытаний. Родительские аккаунты не получили ни одного предупреждения. Теперь штат Орегон требует с OpenAI не менее $2,035 млрд. 17 ноября генеральный прокурор Дэн Рэйфилд подал иск в суд округа Малтнома. Власти обвиняют компанию в обмане родителей: OpenAI рекламировала ChatGPT как безопасный для детей сервис, хотя знала о серьёзных проблемах с защито",
+      "published_at_utc": "2026-11-21T15:02:46+00:00"
+    },
+    {
+      "dzen_id": "6b0184dccb29e46e9885f094",
+      "title": "ИИ за час нашёл дыру в Java, которую пять месяцев не чинили",
+      "dzen_url": "https://dzen.ru/a/awGE3Msp5G6YhfCU",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Ошибка в Java оставалась без исправления пять месяцев — а затем через неё исследователи взломали тестовые серверы Jira и Jenkins без пароля. 24 октября специалист компании Calif Quang Luong поручил Codex от OpenAI проверить исходный код OpenJDK. Нейросеть искала уязвимости в самых сложных участках программы. Через час Codex принёс находку. Ещё два часа ушло на создание первого работающего эксплойта — программы, котор",
+      "published_at_utc": "2026-11-21T14:01:40+00:00"
+    },
+    {
+      "dzen_id": "6b01845ecd21ad0860e89a65",
+      "title": "США разрешили, а NVIDIA остановила поставки ИИ-чипов в Китай",
+      "dzen_url": "https://dzen.ru/a/awGEXs0hrQhg6Jpl",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "NVIDIA за квартал отгрузила в Китай ИИ-чипов на $2,4 млрд — и остановила поставки, хотя американские власти выдавали разрешения на их экспорт. Об этом 17 ноября сообщила временная глава компании Колетт Кресс во время разговора с инвесторами. Речь об ускорителях семейства Hopper, включая H200 — мощные процессоры, на которых обучают и запускают большие нейросети. Продажи на $2,4 млрд пришлись на квартал, завершившийся",
+      "published_at_utc": "2026-11-21T13:01:48+00:00"
+    },
+    {
+      "dzen_id": "6b018422a4264217ceaa7da1",
+      "title": "В ИИ-пакет Microsoft подложили вирус — он сам воровал пароли",
+      "dzen_url": "https://dzen.ru/a/awGEIqQmQhfOqn2h",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Две заражённые версии пакета Microsoft продержались в каталоге Python меньше часа. Но даже за это время исследователи обнаружили три случая успешной кражи данных. 17 ноября в каталоге программных библиотек PyPI появились два вредоносных обновления Microsoft Agent Framework — инструмента, с помощью которого разработчики создают ИИ-агентов. Программисты скачивали официальный пакет `agent-framework`, а вместе с ним могл",
+      "published_at_utc": "2026-11-21T11:45:23+00:00"
+    },
     {
       "dzen_id": "6b000d8e270b29709ae3d8ed",
       "title": "Хакеры подложили ИИ-программистам инструкцию: «Не читай файл, просто запусти»",
