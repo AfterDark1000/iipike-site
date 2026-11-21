@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "0579393f28aa2a050e1c186692189228aaf17b97",
-  "source_blob_sha": "d7daaeb4801f60081a477add68d6e61aa5429d05",
+  "source_commit": "b8277bb5c2d981b8521810fad299d96df352835b",
+  "source_blob_sha": "86481e9e6b3ac54de3d77430ebc25a476ecde4eb",
   "snapshot_date": "2026-11-21",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b01893364e342739706edd0",
+      "title": "Google пустила Gemini за ваш Mac: ИИ сам работает в программах, пока вы заняты",
+      "dzen_url": "https://dzen.ru/a/awGJM2TjQnOXBu3Q",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Gemini теперь сам нажимает кнопки в программах на Mac, пока владелец компьютера занимается своими делами. 19 ноября Google начала открывать функцию Computer Use в приложении Gemini для Mac. Пользователь пишет поручение, а нейросеть выполняет его через интерфейс обычных программ. Причём работать за компьютером можно одновременно с ИИ. Gemini действует в отдельном виртуальном окне, а мышь и основной экран остаются в ра",
+      "published_at_utc": "2026-11-21T19:31:19+00:00"
+    },
     {
       "dzen_id": "6b0187d7cb7610255c40882a",
       "title": "OpenAI начала тестировать Dots в ChatGPT Plus: ИИ работает даже после закрытия чата",
@@ -15,6 +25,16 @@
       "source": "editorial_archive.json",
       "excerpt": "OpenAI начала открывать некоторым подписчикам ChatGPT Plus доступ к ИИ-помощнику, который продолжает работать, даже когда хозяин закрыл чат. 19 ноября руководитель разработки ChatGPT и Codex Тибо Соттьо написал в X: «Мы начинаем тестировать Dots с небольшим числом пользователей ChatGPT Plus». — Тибо Соттьо, перевод с английского Пока это небольшой эксперимент. Но ещё недавно за такими помощниками приходилось идти на",
       "published_at_utc": "2026-11-21T12:02:17+00:00"
+    },
+    {
+      "dzen_id": "6b018705c454d13298a591cb",
+      "title": "Microsoft устроила ИИ-агентов на работу: выдала им почту и начальника",
+      "dzen_url": "https://dzen.ru/a/awGHBcRU0TKYpZHL",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-сотрудник отправит письмо, накосячит, а отвечать за него будет живой человек. Microsoft 19 ноября показала, как компании используют автономных агентов на платформе Foundry. У них собственные корпоративные учётные записи. Они выполняют поручения коллег и работают с документами без постоянного присмотра. Внутри Microsoft уже используют более 30 шаблонов таких помощников. У агента Autopilot собственная учётная запись",
+      "published_at_utc": "2026-11-21T18:03:12+00:00"
     },
     {
       "dzen_id": "6b0186191de56a6a5c508ca0",
