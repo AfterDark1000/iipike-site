@@ -7688,5 +7688,26 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "Character.AI выставляет переписки на торги. Даже детские",
+    "summary": "В ходе банкротства Character.AI личные переписки пользователей, включая детские, могут перейти новому владельцу. Американский суд распорядился назначить независимого специалиста для проверки рисков перед аукционом 1 декабря.",
+    "published": "2026-11-23",
+    "source_url": "https://www.ag.state.mn.us/Office/Communications/2026/11/20_CharacterAI.asp",
+    "cover": "assets/editorial/character-ai-bankruptcy-private-chats-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🔒 Character.AI хочет ПРОДАТЬ переписки. Даже ДЕТСКИЕ",
+    "vk_summary": "Компания проходит банкротство и планирует торги 1 декабря. В числе данных, которые могут достаться покупателю, миллионы детских переписок с ИИ. Суд назначил независимого эксперта по конфиденциальности, чтобы оценить риски перед продажей.",
+    "published_at_utc": "2026-11-22T19:45:39Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "character-ai-bankruptcy-private-chats-20261120",
+    "url": "articles/character-ai-bankruptcy-private-chats-20261120/",
+    "topics": [
+      "society",
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
