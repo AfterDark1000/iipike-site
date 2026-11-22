@@ -865,12 +865,12 @@
       "summary": "12 ноября: Reuters сообщает об усилении контрразведки в ИИ-компаниях.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-13T03:10:00+00:00",
       "review_started_at": "2026-11-22T16:24:08.707Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "22.11.2026: главред отклонил качество опубликованной версии автономного редактора. Материал снят с сайта и возвращён в горячую очередь на НОВУЮ РУЧНУЮ редактуру. Не принимать прежний автодрафт и не отдавать этому же автономному редактору. Историческая заявка: auto-20261120-0252-ordinary-005.json. Первоисточник для перепроверки: https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/\n22.11.2026: повторная ручная проверка: Reuters (12.11) — https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/ ; вакансия OpenAI ($230,4–500 тыс. базовой зарплаты + доля, требование 8 лет следственного опыта) https://openai.com/careers/senior-global-security-investigator-us-remote/ ; объявление ASML о поиске специалиста на Тайване https://www.asml.com/en/careers/find-your-job/regional-intelligence-liaison-officer-south-east-asia-sea-j00341630 . Связанная опубликованная статья о Хуанге: https://dzen.ru/a/avgqzbM7UF161YBw . Готовится новый ручной текст на утверждение; прежний автодрафт не используем."
+      "closed_at": "2026-11-22T16:52:39.591Z",
+      "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+      "note": "22.11.2026: главред отклонил качество опубликованной версии автономного редактора. Материал снят с сайта и возвращён в горячую очередь на НОВУЮ РУЧНУЮ редактуру. Не принимать прежний автодрафт и не отдавать этому же автономному редактору. Историческая заявка: auto-20261120-0252-ordinary-005.json. Первоисточник для перепроверки: https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/\n22.11.2026: повторная ручная проверка: Reuters (12.11) — https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/ ; вакансия OpenAI ($230,4–500 тыс. базовой зарплаты + доля, требование 8 лет следственного опыта) https://openai.com/careers/senior-global-security-investigator-us-remote/ ; объявление ASML о поиске специалиста на Тайване https://www.asml.com/en/careers/find-your-job/regional-intelligence-liaison-officer-south-east-asia-sea-j00341630 . Связанная опубликованная статья о Хуанге: https://dzen.ru/a/avgqzbM7UF161YBw . Готовится новый ручной текст на утверждение; прежний автодрафт не используем.\n22.11.2026: главред утвердил новую ручную редакцию, сохранён article_markdown и Threads/X. Для сайта сохранён прежний ID; VK RSS исключён по PR #369. Точная прежняя обложка будет передана в editorial-intake после проверки атомарного повторного выпуска (PR #370). Старый пост ВК не менять."
     },
     {
       "id": "n-6c8dcc4daf751efd",
