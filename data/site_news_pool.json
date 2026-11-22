@@ -6850,12 +6850,12 @@
       "summary": "20 ноября: Apollo и Goldman Sachs объявили о финансировании; ограничение на отправку GPU в космос требует дополнительной проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T18:46:40.403Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "22.11.2026: взята горячая №457 по FIFO, первоисточник Apollo/Goldman Sachs, проверяются сумма финансирования и связь с SpaceX/орбитальными GPU; затем архив и материал на утверждение."
     },
     {
       "id": "n-607807410ad52273",
