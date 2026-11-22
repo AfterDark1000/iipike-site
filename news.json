@@ -7643,5 +7643,26 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Зомби сыграли нейросети: 30 серий без единого живого актёра",
+    "summary": "Студия Mansa выпустила 30-серийный зомби-хоррор с персонажами, созданными ИИ. Сооснователь Нейт Паркер объяснил, почему компания использует такие сериалы для проверки спроса перед возможными съёмками с актёрами.",
+    "published": "2026-11-22",
+    "source_url": "https://www.wired.com/story/black-roles-are-disappearing-in-hollywood-this-startup-is-using-ai-microdramas-to-fight-back",
+    "cover": "assets/editorial/mansa-ai-zombie-series-no-actors-20261113.webp",
+    "rubric": "made-with-ai",
+    "vk_title": "🎬 30 СЕРИЙ — НИ ОДНОГО ЖИВОГО АКТЁРА!",
+    "vk_summary": "Mansa выпустила зомби-сериал с ИИ. Основатель объясняет: сначала проверим интерес, потом попробуем найти деньги на съёмки с людьми. Зрители возмутились: студию создавали для поддержки темнокожих артистов, а роли достались нейросети. Цифры просмотров компания не раскрыла. Кастинг закрыт, чат открыт. 💀",
+    "published_at_utc": "2026-11-22T14:15:40Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-13",
+    "id": "mansa-ai-zombie-series-no-actors-20261113",
+    "url": "articles/mansa-ai-zombie-series-no-actors-20261113/",
+    "topics": [
+      "entertainment",
+      "video"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
