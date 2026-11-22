@@ -7665,5 +7665,28 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Microsoft поселила ИИ в Edge. Ему не нужен интернет",
+    "summary": "Microsoft выпустила локальную ИИ-модель Aion Instruct для Edge. Сайты могут тестировать её через Prompt API, но нужны подходящее устройство и первоначальная загрузка.",
+    "published": "2026-11-22",
+    "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/",
+    "cover": "assets/editorial/microsoft-edge-aion-instruct-local-ai-20261119.webp",
+    "rubric": "news",
+    "vk_title": "🧠 Microsoft встроила ИИ прямо в EDGE — работает даже БЕЗ ИНТЕРНЕТА",
+    "vk_summary": "Edge получил модель Aion Instruct с 2,3 млрд параметров. Сайты тестируют доступ к ней: текст обрабатывается на компьютере посетителя, без отправки в облако. Но нужны подходящее устройство и первоначальная загрузка. Русского языка в списке восьми заявленных языков модели пока нет.",
+    "published_at_utc": "2026-11-22T18:30:47Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "microsoft-edge-aion-instruct-local-ai-20261119",
+    "url": "articles/microsoft-edge-aion-instruct-local-ai-20261119/",
+    "topics": [
+      "search",
+      "models"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": []
   }
 ]
