@@ -6550,12 +6550,12 @@
       "summary": "20 ноября: новые функции Imaging 360 для анализа данных и рекомендаций по протоколам обследований.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T13:31:38+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6a2f62488ccfded1"
+      "closed_at": "2026-11-22T16:08:53Z",
+      "article_id": "ge-healthcare-imaging360-ai-protocols-ct-mri-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6a2f62488ccfded1\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/ge-healthcare-imaging360-ai-protocols-ct-mri-20261120/"
     },
     {
       "id": "n-f448adc53d11ddb5",
