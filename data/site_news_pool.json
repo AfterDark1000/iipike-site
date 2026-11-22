@@ -6535,12 +6535,12 @@
       "summary": "20 ноября: компании заявили о работе над агентной платформой для приборов и экспериментов. Пока анонс разработки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T13:31:38+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-c76932da0042377d"
+      "closed_at": "2026-11-22T15:39:01Z",
+      "article_id": "danaher-microsoft-ai-agents-lab-instruments-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c76932da0042377d\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/danaher-microsoft-ai-agents-lab-instruments-20261120/"
     },
     {
       "id": "n-6a2f62488ccfded1",
