@@ -6565,9 +6565,9 @@
       "summary": "20 ноября: независимый специалист должен проверить защиту переписок при возможной продаже активов компании, включая данные детей.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T18:20:40.985Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
