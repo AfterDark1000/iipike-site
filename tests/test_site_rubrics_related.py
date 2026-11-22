@@ -59,15 +59,25 @@ class RubricAndArchiveTests(unittest.TestCase):
 
     def test_new_rubric_stays_empty_and_out_of_sitemap_until_real_publication(self):
         from scripts.site_rubrics import render_page, navigation
-        empty = render_page("made-with-ai", self.records)
+        # Use an isolated empty fixture: the real site catalog will start
+        # containing made-with-ai after the first ArtCraft release. The
+        # empty-rubric contract must remain testable after that milestone.
+        without_made = [row for row in self.records
+                        if row.get("rubric", "news") != "made-with-ai"]
+        self.assertNotIn("made-with-ai", populated(without_made))
+        empty = render_page("made-with-ai", without_made)
         self.assertIn("<h1>Сделано с ИИ</h1>", empty)
         self.assertIn('name="robots" content="noindex, follow"', empty)
         self.assertIn("Публикации — 0", empty)
         self.assertIn('href="../../rubrics/made-with-ai/"', navigation("../../"))
-        # A real published row makes the new rubric indexable, no manual reclassification.
+        # The first published row makes the new rubric indexable and
+        # eligible for the sitemap; don't freeze that transition in tests.
         public = dict(self.records[0], rubric="made-with-ai")
-        populated_page = render_page("made-with-ai", [public])
+        with_made = without_made + [public]
+        self.assertIn("made-with-ai", populated(with_made))
+        populated_page = render_page("made-with-ai", with_made)
         self.assertNotIn('name="robots" content="noindex', populated_page)
+        self.assertIn("Публикации — 1", populated_page)
         self.assertIn('../../' + public["url"], populated_page)
 
     def test_mobile_archive_cards_have_full_width_covers_and_clamped_teasers(self):
