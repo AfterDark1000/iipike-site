@@ -7639,5 +7639,29 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "167 лет математики не могли доказать гипотезу Римана — Claude помог, и результат уже подтвердили",
+    "summary": "Левент Альпёге и Claude представили формальное доказательство гипотезы Римана из 17 миллионов строк Lean-кода. Сообщества Lean и Mathlib подтвердили корректность проверки.",
+    "published": "2026-11-22",
+    "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+    "cover": "assets/editorial/claude-riemann-hypothesis-proof-20261122.webp",
+    "rubric": "news",
+    "vk_title": "🧮 Claude помог доказать гипотезу Римана — загадку, которую не могли решить 167 ЛЕТ",
+    "vk_summary": "Математик Левент Альпёге представил доказательство гипотезы Римана, созданное вместе с Claude. Оно занимает 17 миллионов строк кода. Сообщества Lean и Mathlib проверили доказательство и подтвердили его корректность.",
+    "published_at_utc": "2026-11-22T16:30:45Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-21",
+    "id": "claude-riemann-hypothesis-proof-20261122",
+    "url": "articles/claude-riemann-hypothesis-proof-20261122/",
+    "topics": [
+      "science"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
