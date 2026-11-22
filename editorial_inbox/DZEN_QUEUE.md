@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 198 · **В каталоге Дзена подтверждены:** 191 · **Не подтверждены, уже на сайте:** 4 · **Не подтверждены, ждут сайт:** 3
+**Всего одобренных:** 199 · **В каталоге Дзена подтверждены:** 191 · **Не подтверждены, уже на сайте:** 5 · **Не подтверждены, ждут сайт:** 3
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -18,6 +18,7 @@
 | 2 | [NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/nvidia-sec-anthropic-market-selloff-20261120.md) | 21.11.2026, 21:15 | [На сайте](https://iipike.ru/articles/nvidia-sec-anthropic-market-selloff-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-sec-anthropic-market-selloff-20261120.webp) |
 | 3 | [Meta пустила ИИ в Chrome — под вашим логином](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/meta-muse-chrome-login-20261120.md) | 21.11.2026, 22:45 | [На сайте](https://iipike.ru/articles/meta-muse-chrome-login-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-chrome-login-20261120.webp) |
 | 4 | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/artcraft-photocraft-ai-photoshop-prototype-20261112.md) | 22.11.2026, 16:45 | [На сайте](https://iipike.ru/articles/artcraft-photocraft-ai-photoshop-prototype-20261112/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
+| 5 | [ИИ-компании нанимают бывших разведчиков с зарплатой до $500 тысяч](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.md) | 22.11.2026, 18:01 | [На сайте](https://iipike.ru/articles/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -25,9 +26,9 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [ИИ-компании нанимают бывших разведчиков с зарплатой до $500 тысяч](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.md) | **Не ранее 22.11.2026 17:52 (Усть-Катав)**; пауза до 22.11.2026 17:45 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
-| 2 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 3 | [Зомби сыграли нейросети: 30 серий без единого живого актёра](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/mansa-ai-zombie-series-no-actors-20261113.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 1 | [Зомби сыграли нейросети: 30 серий без единого живого актёра](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/mansa-ai-zombie-series-no-actors-20261113.md) | **Не ранее 22.11.2026 19:07 (Усть-Катав)**; пауза до 22.11.2026 19:01 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mansa-ai-zombie-series-no-actors-20261113.webp) |
+| 2 | [Canva добавила кнопку «Выключить ИИ»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/canva-ai-controls-opt-out-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 3 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
