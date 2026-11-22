@@ -134,6 +134,33 @@ class HandoffTests(unittest.TestCase):
         self.assertEqual(names, paths)
         self.assertEqual(image, objects[paths["cover_image"]])
 
+    def test_pinned_reviewed_topics_compatibility_preserves_original_approval(self):
+        # Historical approved r2 of the ex-spies story used labels absent
+        # from the site's canonical topic registry. Keep approvals immutable:
+        # ONLY its exact draft Git blob can be mapped in derived site metadata.
+        article_id = "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
+        original_sha = "eda10f025a8cb76fdeab37651aa96400d35f3762"
+        raw = ["security", "ai-industry"]
+        self.assertEqual(
+            h.derived_reviewed_topics(article_id, original_sha, raw),
+            ["cybersecurity", "business"])
+        self.assertEqual(raw, ["security", "ai-industry"])
+        from scripts.site_topics import validate_topics
+        self.assertEqual(
+            validate_topics(h.derived_reviewed_topics(article_id, original_sha, raw)),
+            ["cybersecurity", "business"])
+        # A different revision or article cannot silently relabel a story.
+        for key, sha, labels in (
+            (article_id, "0"*40, raw),
+            ("different-article", original_sha, raw),
+            (article_id, original_sha, ["ai-industry", "security"]),
+            (article_id, original_sha, ["unreviewed-topic"]),
+        ):
+            derived = h.derived_reviewed_topics(key, sha, labels)
+            self.assertEqual(derived, labels)
+            with self.assertRaisesRegex(ValueError, "Unknown topic key"):
+                validate_topics(derived)
+
     def test_change_to_cover_invalidates_approval(self):
         objects,reader,paths=self.fixture()
         cover=json.loads(objects[paths["cover_meta"]])

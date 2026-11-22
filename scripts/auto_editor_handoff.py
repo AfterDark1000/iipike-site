@@ -34,6 +34,30 @@ TZ=ZoneInfo("Asia/Yekaterinburg")
 MAX_STORY=128_000
 MAX_IMAGE=800_000
 
+# Exactly one already-approved legacy draft used noncanonical editorial topic
+# labels. Translate ONLY this known immutable revision in the derived site
+# payload; never edit the approved text or weaken site-level topic validation.
+# The article's author-intended categories were security and AI industry.
+REVIEWED_TOPIC_COMPAT = {
+    ("ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+     "eda10f025a8cb76fdeab37651aa96400d35f3762",
+     ("security", "ai-industry")): ("cybersecurity", "business"),
+}
+
+
+def derived_reviewed_topics(article_id, source_draft_sha, topics):
+    if not isinstance(topics, list):
+        return topics
+    replacement = REVIEWED_TOPIC_COMPAT.get(
+        (article_id, source_draft_sha, tuple(topics)))
+    if replacement is None:
+        return topics
+    from scripts.site_topics import validate_topics
+    remapped = validate_topics(list(replacement))
+    print("REVIEWED_TOPIC_COMPAT_APPLIED:", article_id,
+          ",".join(topics), "=>", ",".join(remapped), flush=True)
+    return remapped
+
 class HandoffBlocked(ValueError): pass
 
 def git_bytes(*args):
@@ -155,6 +179,8 @@ def build_candidate(ref, main_root, id, revision, version):
     allowed_content=ALLOWED_FIELDS - {"id","schema_version","status","approved_by","approved_at"}
     # The pilot's threads/x text is separate metadata, never published by this handoff.
     story={k:content[k] for k in allowed_content if k in content}
+    if "topics" in story:
+        story["topics"] = derived_reviewed_topics(id, draft_sha, story["topics"])
     # The ordinary site/VK publisher expects a single-line optional summary.
     # Autonomous drafts may preserve paragraph breaks. Normalize whitespace
     # ONLY in the derived site payload, not in the owner's approved source.
