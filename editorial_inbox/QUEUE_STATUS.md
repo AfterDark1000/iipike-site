@@ -12,7 +12,7 @@
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/artcraft-photocraft-ai-photoshop-prototype-20261112.json) | 🟢 Готова к выпуску | **Не ранее 22.11.2026 12:52 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
+| **1** | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/artcraft-photocraft-ai-photoshop-prototype-20261112.json) | 🟢 Готова к выпуску | **Не ранее 22.11.2026 13:07 (Усть-Катав)** | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
