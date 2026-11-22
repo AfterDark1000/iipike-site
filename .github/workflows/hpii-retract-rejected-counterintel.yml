@@ -1,0 +1,142 @@
+name: HPII — owner-rejected auto story retraction (one time)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/retract_rejected_auto_story_20261122.py'
+      - '.github/workflows/hpii-retract-rejected-counterintel.yml'
+      - 'data/site_retractions/requests/retract-20261122-counterintelligence.json'
+  push:
+    branches: [main]
+    paths:
+      - 'data/site_retractions/requests/retract-20261122-counterintelligence.json'
+env:
+  PYTHONPATH: '.'
+permissions:
+  contents: write
+  pages: write
+  actions: write
+concurrency:
+  group: hpii-site-first-serial-publication
+  cancel-in-progress: false
+jobs:
+  validate-retraction-only:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Dry-run full retraction on disposable PR checkout (NO RELEASE)
+        run: |
+          python3 -m py_compile scripts/retract_rejected_auto_story_20261122.py
+          python3 scripts/retract_rejected_auto_story_20261122.py
+          python3 scripts/site_news_pool.py --validate
+          python3 scripts/editorial_routing.py --validate
+          python3 scripts/sync_published_auto_editor_pool.py
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_topics.py --check
+          python3 scripts/site_entities.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 scripts/build_dzen_rss.py --check
+          python3 scripts/build_vk_rss.py --check
+          git diff --check
+  retract-rejected:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out production history
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Withdraw only the owner-rejected story and rebuild indexes
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main editorial-intake
+            git reset --hard origin/main
+            # The old approved source must not remain in the live editor queue:
+            # otherwise a missing public page could be automatically republished.
+            if git cat-file -e origin/editorial-intake:editorial_inbox/stories/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json 2>/dev/null; then
+              echo 'BLOCKED: rejected story still eligible in editorial-intake' >&2
+              exit 1
+            fi
+            python3 scripts/retract_rejected_auto_story_20261122.py
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/editorial_routing.py --validate
+            python3 -m unittest discover -s tests -p 'test_auto_editor_published_pool_sync.py' -v
+            python3 scripts/sync_published_auto_editor_pool.py
+            python3 scripts/build_home_published.py --check
+            python3 scripts/build_rubrics.py --check
+            python3 scripts/build_topics.py --check
+            python3 scripts/site_entities.py --check
+            python3 scripts/build_sitemap.py --check
+            python3 scripts/build_dzen_rss.py --check
+            python3 scripts/build_vk_rss.py --check
+            git add -A -- \
+              news.json index.html articles feed.xml sitemap.xml dzen-rss.xml vk-rss.xml \
+              data/site_news_pool.json data/editorial_routing.json data/entity_registry.json \
+              data/site_retractions/receipts \
+              assets/editorial/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp \
+              assets/vk/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.jpg \
+              editorial_inbox/stories/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json \
+              editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp \
+              content/approved/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json \
+              rubrics topics entities
+            python3 - <<'PY'
+          import subprocess
+          slug = "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
+          changed = subprocess.check_output(
+              ["git", "diff", "--cached", "--name-only"], text=True
+          ).splitlines()
+          exact = {
+              "news.json", "index.html", "articles/index.html",
+              "feed.xml", "dzen-rss.xml", "vk-rss.xml", "sitemap.xml",
+              "data/site_news_pool.json", "data/editorial_routing.json",
+              "data/entity_registry.json",
+              "data/site_retractions/receipts/retract-20261122-counterintelligence.json",
+              f"articles/{slug}/index.html", f"content/approved/{slug}.json",
+              f"assets/editorial/{slug}.webp", f"assets/vk/{slug}.jpg",
+              f"editorial_inbox/stories/{slug}.json",
+              f"editorial_inbox/covers/{slug}.webp",
+          }
+          allowed = {"rubrics", "topics", "entities"}
+          bad = [p for p in changed if p not in exact and
+                 not any(p.startswith(prefix + "/") and p.endswith("/index.html")
+                         for prefix in allowed)]
+          if bad:
+              raise SystemExit("UNSAFE unrecognized changed paths: " + str(bad))
+          if "data/site_news_pool.json" not in changed or "news.json" not in changed:
+              raise SystemExit("Retraction omitted critical published/pool records")
+          print("RETRACTION_ALLOWED_FILES:", len(changed))
+          PY
+            git diff --cached --check
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'editorial: retract rejected auto story and return pool 58 [skip ci]'
+            if git push origin HEAD:refs/heads/main; then
+              echo 'RETRACTION_MAIN_UPDATED'
+              gh api -X POST "repos/$GITHUB_REPOSITORY/pages/builds"
+              echo 'PAGES_REBUILD_REQUESTED'
+              gh workflow run dzen-reading-queue.yml --ref main
+              echo 'DZEN_READING_QUEUE_REFRESH_REQUESTED'
+              exit 0
+            fi
+            echo "::warning::Main moved during retraction (attempt $attempt)"
+          done
+          echo 'RETRACTION_RETRY_EXHAUSTED' >&2
+          exit 1
