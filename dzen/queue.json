@@ -2,63 +2,79 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/awF-58xOelSnaViX",
-      "title": "Может ли ChatGPT придумать сюжетный поворот?",
-      "published_at": "2026-11-21T11:29:09.000Z",
+      "url": "https://dzen.ru/a/awGCodbkVFXrfl6i",
+      "title": "Литературный замысел: почему идеи сюжета недостаточно",
+      "published_at": "2026-11-22T10:07:31.000Z",
       "source_name": "Нейросети и Писатель",
-      "first_seen_at": "2026-11-21T12:13:05.397Z",
+      "first_seen_at": "2026-11-22T12:20:00.710Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/avxwvx9oYhcgL9q8",
-      "title": "Нейросеть для создания приложений: от идеи до прототипа",
-      "published_at": "2026-11-21T05:07:34.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-21T12:13:03.642Z",
+      "url": "https://dzen.ru/a/awKqwlae7X1N604g",
+      "title": "ВК-шопс: продала кофточку и заработала 94 рубля! Рассказываю, как мне это удалось",
+      "published_at": "2026-11-22T09:04:53.000Z",
+      "source_name": "Блог НЕгуры",
+      "first_seen_at": "2026-11-22T12:20:00.038Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/avwqsfWpglfpR_AV",
-      "title": "Threads приостановил аккаунт: как ИИ помог разобраться с уведомлением",
-      "published_at": "2026-11-21T03:01:58.000Z",
+      "url": "https://dzen.ru/a/avxwp4qgWRhTxcy4",
+      "title": "Какой Gemini выбрать: сравниваем модели Google",
+      "published_at": "2026-11-22T05:17:11.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-21T12:13:03.642Z",
+      "first_seen_at": "2026-11-22T12:19:59.347Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/avwp2mM1tFu-y0-q",
+      "title": "ИИ ответил за автора в Threads — и выдал себя не стилем, а разговором",
+      "published_at": "2026-11-22T03:07:35.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-22T12:19:59.347Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/awGYwqUmXWDE-lGW",
+      "title": "Можно ли заработать на VK-Shops? Показываю свой заработок за два месяца",
+      "published_at": "2026-11-21T13:35:08.000Z",
+      "source_name": "Блог НЕгуры",
+      "first_seen_at": "2026-11-22T12:20:00.038Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-21T12:13:02.350Z",
+      "attempted_at": "2026-11-22T12:19:58.315Z",
       "failures": 0,
-      "next_at": "2026-11-21T13:13:02.350Z"
+      "next_at": "2026-11-22T13:19:58.315Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-21T12:13:03.642Z",
+      "attempted_at": "2026-11-22T12:19:59.347Z",
       "failures": 0,
-      "next_at": "2026-11-21T13:13:03.642Z"
+      "next_at": "2026-11-22T13:19:59.347Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-21T12:13:04.104Z",
+      "attempted_at": "2026-11-22T12:19:59.724Z",
       "failures": 0,
-      "next_at": "2026-11-21T13:13:04.104Z"
+      "next_at": "2026-11-22T13:19:59.724Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-21T12:13:04.528Z",
+      "attempted_at": "2026-11-22T12:20:00.038Z",
       "failures": 0,
-      "next_at": "2026-11-21T13:13:04.528Z"
+      "next_at": "2026-11-22T13:20:00.038Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-21T12:13:04.943Z",
+      "attempted_at": "2026-11-22T12:20:00.362Z",
       "failures": 0,
-      "next_at": "2026-11-21T13:13:04.943Z"
+      "next_at": "2026-11-22T13:20:00.362Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 44902770255,
+    "id": 45021707182,
     "requests": 5,
     "processed": 5,
     "errors": 0,
-    "added": 3
+    "added": 5
   }
 }
