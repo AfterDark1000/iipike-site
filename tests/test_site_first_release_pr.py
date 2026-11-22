@@ -106,6 +106,45 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
             "repos/AfterDark1000/iipike-site/pages/builds"
         )
 
+    def test_auto_release_allows_fifth_canonical_rubric_but_no_rogue_rubrics(self):
+        # Reproduce the exact post-test ArtCraft release diff. This guard runs
+        # after the full publisher tests and must accept the canonical fifth
+        # rubric, without permitting editor-invented or arbitrary paths.
+        sid = ID
+        story = f"editorial_inbox/stories/{sid}.json"
+        cover = f"editorial_inbox/covers/{sid}.webp"
+        required = [
+            story, cover, f"assets/editorial/{sid}.webp",
+            f"content/approved/{sid}.json", f"articles/{sid}/index.html",
+            "news.json", "feed.xml", "sitemap.xml", "index.html",
+            "articles/index.html",
+        ]
+        fifth = "rubrics/made-with-ai/index.html"
+        def fake_git(*args, **kwargs):
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\n".join(required + [fifth]) + "\n")
+            if args[0] == "rev-parse":
+                return SimpleNamespace(stdout="safe-main-base\n")
+            return SimpleNamespace(stdout="")
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_git) as git_call, \
+             patch("scripts.site_first_release_pr.run_checked") as pages:
+            auto_publish_site(sid, "safe-main-base", (story, cover))
+        self.assertTrue(any(c.args[:3] == ("push", "origin", "HEAD:refs/heads/main")
+                            for c in git_call.call_args_list))
+        pages.assert_called_once()
+
+        rogue = "rubrics/not-a-canonical-rubric/index.html"
+        def fake_untrusted(*args, **kwargs):
+            if args[0] == "diff":
+                return SimpleNamespace(stdout="\n".join(required + [rogue]) + "\n")
+            return SimpleNamespace(stdout="")
+        with patch("scripts.site_first_release_pr.git", side_effect=fake_untrusted) as git_call, \
+             patch("scripts.site_first_release_pr.run_checked") as pages:
+            with self.assertRaisesRegex(ValueError, "non-editorial"):
+                auto_publish_site(sid, "safe-main-base", (story, cover))
+        pages.assert_not_called()
+        self.assertFalse(any(c.args[0] == "push" for c in git_call.call_args_list))
+
     def test_auto_release_accepts_only_byte_identical_approved_inline_image(self):
         sid = ID
         story = f"editorial_inbox/stories/{sid}.json"
