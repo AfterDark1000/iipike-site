@@ -20,6 +20,7 @@
 |---|---|---|---|
 | [Canva добавила кнопку «Выключить ИИ»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/canva-ai-controls-opt-out-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json) | ⚠️ Несогласованный выпуск | Публичная страница и каталог news.json не совпадают | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
 
 ## Опубликованы через site-first — новые сверху
 
