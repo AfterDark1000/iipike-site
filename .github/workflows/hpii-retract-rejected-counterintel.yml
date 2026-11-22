@@ -1,5 +1,11 @@
 name: HPII — owner-rejected auto story retraction (one time)
 on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/retract_rejected_auto_story_20261122.py'
+      - '.github/workflows/hpii-retract-rejected-counterintel.yml'
+      - 'data/site_retractions/requests/retract-20261122-counterintelligence.json'
   push:
     branches: [main]
     paths:
@@ -12,7 +18,35 @@ concurrency:
   group: hpii-site-first-serial-publication
   cancel-in-progress: false
 jobs:
+  validate-retraction-only:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install validation dependencies
+        run: python3 -m pip install --disable-pip-version-check pillow
+      - name: Dry-run full retraction on disposable PR checkout (NO RELEASE)
+        run: |
+          python3 -m py_compile scripts/retract_rejected_auto_story_20261122.py
+          python3 scripts/retract_rejected_auto_story_20261122.py
+          python3 scripts/site_news_pool.py --validate
+          python3 scripts/editorial_routing.py --validate
+          python3 scripts/sync_published_auto_editor_pool.py
+          python3 scripts/build_home_published.py --check
+          python3 scripts/build_rubrics.py --check
+          python3 scripts/build_topics.py --check
+          python3 scripts/site_entities.py --check
+          python3 scripts/build_sitemap.py --check
+          python3 scripts/build_dzen_rss.py --check
+          python3 scripts/build_vk_rss.py --check
+          git diff --check
   retract-rejected:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
