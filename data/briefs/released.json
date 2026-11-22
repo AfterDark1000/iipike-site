@@ -389,6 +389,10 @@
     {
       "slug": "metric-ai-ohan-tts-armenian-voice-cloning-20261120",
       "published_at_utc": "2026-11-22T17:08:54Z"
+    },
+    {
+      "slug": "metric-ai-ohan-asr-armenian-speech-transcription-20261120",
+      "published_at_utc": "2026-11-22T17:23:55Z"
     }
   ]
 }

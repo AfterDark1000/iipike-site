@@ -6625,12 +6625,12 @@
       "summary": "20 ноября: открытые модели распознавания речи, включая потоковый вариант; отдельный релиз от OhanTTS.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T13:31:38+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6a664b768ab661a9"
+      "closed_at": "2026-11-22T17:23:55Z",
+      "article_id": "metric-ai-ohan-asr-armenian-speech-transcription-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6a664b768ab661a9\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/metric-ai-ohan-asr-armenian-speech-transcription-20261120/"
     },
     {
       "id": "n-9067dd2427d6b174",
