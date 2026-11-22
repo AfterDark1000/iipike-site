@@ -86,6 +86,30 @@ class VKRSS(unittest.TestCase):
         self.assertEqual(item.findtext("link"),
                          "https://iipike.ru/articles/new-story/")
 
+    def test_manual_republication_can_be_excluded_without_removing_old_image(self):
+        old = self.row("old-vk-post")
+        new = self.row("other-news")
+        (self.root / vk.EXCLUSIONS).write_text(json.dumps({
+            "schema_version": 1, "article_ids": ["old-vk-post"]
+        }))
+        saved = self.root / "assets/vk/old-vk-post.jpg"
+        saved.parent.mkdir(parents=True, exist_ok=True)
+        saved.write_bytes(b"previously-posted-vk-thumbnail")
+        xml, images = vk.render(self.root, [old, new], settings=self.active())
+        exported = ET.fromstring(xml).findall("./channel/item")
+        self.assertEqual(len(exported), 1)
+        self.assertIn("other-news", exported[0].findtext("guid"))
+        self.assertNotIn("old-vk-post", xml)
+        self.assertEqual(saved.read_bytes(), b"previously-posted-vk-thumbnail")
+        self.assertEqual([p.name for p in images], ["other-news.jpg"])
+
+    def test_invalid_vk_exclusion_id_blocks_feed(self):
+        (self.root / vk.EXCLUSIONS).write_text(json.dumps({
+            "schema_version": 1, "article_ids": ["../unsafe"]
+        }))
+        with self.assertRaisesRegex(ValueError, "excluded article ID"):
+            vk.render(self.root, [self.row("valid-news")], settings=self.active())
+
     def test_dzen_and_drafts_are_excluded(self):
         rows = [self.row("dzen-copy", dzen_id="123"), self.row("unpublished-story")]
         (self.root / "articles/unpublished-story/index.html").unlink()
