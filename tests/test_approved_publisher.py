@@ -242,6 +242,24 @@ class PublisherTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Already published"):
             PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
 
+    def test_first_made_with_ai_article_becomes_indexable_in_site_release(self):
+        # Reproduce the blocked ArtCraft transition in a disposable test site.
+        # Before the release the fifth rubric may be empty/noindex. Afterwards
+        # it must appear once in sitemap and expose its newly published story.
+        self.article["rubric"] = "made-with-ai"
+        self.write_article()
+        PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
+        records = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
+        self.assertIn("made-with-ai", populated(records))
+        rubric_page = (self.root / "rubrics/made-with-ai/index.html").read_text(encoding="utf-8")
+        self.assertIn("Публикации — 1", rubric_page)
+        self.assertIn("sample-verified-news", rubric_page)
+        self.assertNotIn('name="robots" content="noindex', rubric_page)
+        sitemap = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
+        urls = [node.text for node in sitemap.iter() if node.tag.endswith("}loc")]
+        self.assertEqual(urls.count("https://iipike.ru/rubrics/made-with-ai/"), 1)
+        self.assertEqual(urls.count("https://iipike.ru/articles/sample-verified-news/"), 1)
+
     def test_full_editor_layout_is_preserved_in_published_html(self):
         self.article["paragraphs"] = [
             {"type": "lead", "text": "В **важной новости** появился *неожиданный* вывод."},
