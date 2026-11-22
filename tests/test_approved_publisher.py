@@ -248,11 +248,19 @@ class PublisherTests(unittest.TestCase):
         # it must appear once in sitemap and expose its newly published story.
         self.article["rubric"] = "made-with-ai"
         self.write_article()
+        prior = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
+        # site-first CI also runs the suite AFTER staging the real ArtCraft
+        # article; count what is already published instead of assuming zero.
+        expected_count = 1 + sum(row.get("rubric", "news") == "made-with-ai"
+                                 for row in prior)
         PUBLISHER.publish(self.root, "sample-verified-news", apply=True)
         records = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
         self.assertIn("made-with-ai", populated(records))
+        self.assertEqual(
+            sum(row.get("rubric", "news") == "made-with-ai" for row in records),
+            expected_count)
         rubric_page = (self.root / "rubrics/made-with-ai/index.html").read_text(encoding="utf-8")
-        self.assertIn("Публикации — 1", rubric_page)
+        self.assertIn(f"Публикации — {expected_count}", rubric_page)
         self.assertIn("sample-verified-news", rubric_page)
         self.assertNotIn('name="robots" content="noindex', rubric_page)
         sitemap = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
