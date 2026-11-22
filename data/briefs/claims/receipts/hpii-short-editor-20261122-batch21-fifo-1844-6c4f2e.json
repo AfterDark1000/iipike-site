@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261122-batch21-fifo-1844-6c4f2e.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-c76932da0042377d",
+      "pool_sequence": 436,
+      "title": "Microsoft и Danaher создают платформу для управления лабораторными приборами с помощью ИИ-агентов",
+      "source_url": "https://www.prnewswire.com/news-releases/danaher-collaborates-with-microsoft-to-make-scientific-instruments-agentically-connected-and-laboratories-more-intelligent-302946263.html",
+      "claimed_at": "2026-11-22T13:31:38+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6a2f62488ccfded1",
+      "pool_sequence": 437,
+      "title": "GE HealthCare представила ИИ-инструменты для настройки КТ и МРТ",
+      "source_url": "https://www.gehealthcare.com/en/about/newsroom/press-releases/ge-healthcare-introduces-new-imaging-360-features-to-simplify-protocol-management-and-support-radiology-workflows",
+      "claimed_at": "2026-11-22T13:31:38+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-68a177a4ce19b67d",
+      "pool_sequence": 440,
+      "title": "ElevenLabs расширила Ads Engine инструментами дубляжа и локализации рекламы",
+      "source_url": "https://elevenlabs.io/blog/video-variants-localization-ads-engine",
+      "claimed_at": "2026-11-22T13:31:38+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-1430c2a50a889b8b",
+      "pool_sequence": 441,
+      "title": "Разработчики OhanTTS представили открытую модель клонирования голоса",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-tts",
+      "claimed_at": "2026-11-22T13:31:38+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6a664b768ab661a9",
+      "pool_sequence": 442,
+      "title": "Metric-AI выпустила OhanASR для распознавания армянской речи",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-asr-v01",
+      "claimed_at": "2026-11-22T13:31:38+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
