@@ -6415,12 +6415,12 @@
       "summary": "20 ноября: Лиза Кук высказалась о рисках финансирования ИИ.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:03:26+00:00",
       "review_started_at": "2026-11-22T12:56:09+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-abadbd1e4ec5bc65"
+      "closed_at": "2026-11-22T14:08:51Z",
+      "article_id": "fed-lisa-cook-ai-financing-complex-risk-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-abadbd1e4ec5bc65\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/fed-lisa-cook-ai-financing-complex-risk-20261120/"
     },
     {
       "id": "n-7aa6acbd35f79e1a",
