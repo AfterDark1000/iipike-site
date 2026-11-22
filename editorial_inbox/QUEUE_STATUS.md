@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 197
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 196
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -26,7 +26,6 @@
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
 | [Зомби сыграли нейросети: 30 серий без единого живого актёра](https://iipike.ru/articles/mansa-ai-zombie-series-no-actors-20261113/) | 22.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mansa-ai-zombie-series-no-actors-20261113.webp) |
-| [ИИ-компании нанимают бывших разведчиков с зарплатой до $500 тысяч](https://iipike.ru/articles/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d/) | 22.11.2026 18:01 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
 | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://iipike.ru/articles/artcraft-photocraft-ai-photoshop-prototype-20261112/) | 22.11.2026 16:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
 | [Meta пустила ИИ в Chrome — под вашим логином](https://iipike.ru/articles/meta-muse-chrome-login-20261120/) | 21.11.2026 22:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-chrome-login-20261120.webp) |
 | [NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США](https://iipike.ru/articles/nvidia-sec-anthropic-market-selloff-20261120/) | 21.11.2026 21:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-sec-anthropic-market-selloff-20261120.webp) |
