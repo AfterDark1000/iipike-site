@@ -2,11 +2,11 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 197
+**В очереди:** 0 · **Готовы:** 0 · **Ждут интервал:** 0 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 3 · **Заблокированы:** 0 · **Опубликованы через site-first:** 198
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **22.11.2026 21:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **22.11.2026 23:30 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
@@ -19,6 +19,7 @@
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [Canva добавила кнопку «Выключить ИИ»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/canva-ai-controls-opt-out-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Character.AI выставляет переписки на торги. Даже детские](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/character-ai-bankruptcy-private-chats-20261120.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-ai-studio-android-firebase-play-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json) | ⚠️ Несогласованный выпуск | Публичная страница и каталог news.json не совпадают | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
 
@@ -26,6 +27,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Microsoft поселила ИИ в Edge. Ему не нужен интернет](https://iipike.ru/articles/microsoft-edge-aion-instruct-local-ai-20261119/) | 22.11.2026 23:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-edge-aion-instruct-local-ai-20261119.webp) |
 | [167 лет математики не могли доказать гипотезу Римана — Claude помог, и результат уже подтвердили](https://iipike.ru/articles/claude-riemann-hypothesis-proof-20261122/) | 22.11.2026 21:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-riemann-hypothesis-proof-20261122.webp) |
 | [Зомби сыграли нейросети: 30 серий без единого живого актёра](https://iipike.ru/articles/mansa-ai-zombie-series-no-actors-20261113/) | 22.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mansa-ai-zombie-series-no-actors-20261113.webp) |
 | [Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ](https://iipike.ru/articles/artcraft-photocraft-ai-photoshop-prototype-20261112/) | 22.11.2026 16:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/artcraft-photocraft-ai-photoshop-prototype-20261112.webp) |
