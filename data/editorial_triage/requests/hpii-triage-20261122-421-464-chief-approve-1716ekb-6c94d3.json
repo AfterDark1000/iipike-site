@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "action": "apply_approved_triage",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "items": [
+    {
+      "sequence": 421,
+      "pool_id": "n-6bdfccb498eb826a",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 422,
+      "pool_id": "n-b2926e8e7f4e634a",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 423,
+      "pool_id": "n-9872e633f4588967",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 424,
+      "pool_id": "n-c263b280fabbf488",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 425,
+      "pool_id": "n-a25f4ef9490792c9",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 426,
+      "pool_id": "n-9ce96386ca54d52c",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 427,
+      "pool_id": "n-9e4b673dad7956e0",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 428,
+      "pool_id": "n-abadbd1e4ec5bc65",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 429,
+      "pool_id": "n-7aa6acbd35f79e1a",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 430,
+      "pool_id": "n-bb198be887420ebb",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 431,
+      "pool_id": "n-6e08c6973239bd85",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 432,
+      "pool_id": "n-65925f55a55da889",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 433,
+      "pool_id": "n-8ac044537ea6e862",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 434,
+      "pool_id": "n-7be6fd113d28b9c1",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 435,
+      "pool_id": "n-2e7d573aafc7a6bd",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 436,
+      "pool_id": "n-c76932da0042377d",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 437,
+      "pool_id": "n-6a2f62488ccfded1",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 438,
+      "pool_id": "n-f448adc53d11ddb5",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 439,
+      "pool_id": "n-908ddd2bcee158a6",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 440,
+      "pool_id": "n-68a177a4ce19b67d",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 441,
+      "pool_id": "n-1430c2a50a889b8b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 442,
+      "pool_id": "n-6a664b768ab661a9",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 443,
+      "pool_id": "n-9067dd2427d6b174",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 444,
+      "pool_id": "n-36677e166994bf6b",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 445,
+      "pool_id": "n-7ad44f990f0c53ef",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 446,
+      "pool_id": "n-701a571706ec6c00",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 447,
+      "pool_id": "n-d5bec1fa3b07f617",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 448,
+      "pool_id": "n-fcfe169e10fcb253",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 449,
+      "pool_id": "n-0b6b96c55f96f5e5",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 450,
+      "pool_id": "n-c1a2af93db54bfcf",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 451,
+      "pool_id": "n-d4ed742b780585e4",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 452,
+      "pool_id": "n-6df30b9327788125",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 453,
+      "pool_id": "n-ca4255e5e56a8857",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 454,
+      "pool_id": "n-e175ec379fa37c64",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 455,
+      "pool_id": "n-5449c44fd696ee30",
+      "lane": "hold",
+      "decision": "defer"
+    },
+    {
+      "sequence": 456,
+      "pool_id": "n-838bb6feb725eb0e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 457,
+      "pool_id": "n-168a57a7870659d7",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 458,
+      "pool_id": "n-607807410ad52273",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 459,
+      "pool_id": "n-f98d1c44450f1e18",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 460,
+      "pool_id": "n-1ec825e3395562d7",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 461,
+      "pool_id": "n-f7c5fc96307a13fd",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 462,
+      "pool_id": "n-71d8d760c730896e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 463,
+      "pool_id": "n-325e6e2c464d5272",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 464,
+      "pool_id": "n-6be4258a5882474e",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    }
+  ]
+}
