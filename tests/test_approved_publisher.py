@@ -3,7 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 from scripts.site_topics import TOPICS, active_topics
-from scripts.site_rubrics import RUBRICS
+from scripts.site_rubrics import RUBRICS, populated
 from scripts.site_entities import entity_urls, load_registry
 import shutil
 import tempfile
@@ -224,8 +224,17 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(guid, "https://afterdark1000.github.io/iipike-site/articles/google-search-ai-links/")
         site = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
         locs = [x.text for x in site.iter() if x.tag.endswith("}loc")]
-        self.assertEqual(len(locs), len(records) + 3 + 4 + len(active_topics(records))
+        # Include only rubrics that actually contain published articles.
+        # The count grows from four to five when the first made-with-ai
+        # article is released; an empty rubric stays out of the sitemap.
+        active_rubrics = populated(records)
+        self.assertEqual(len(locs), len(records) + 3 + len(active_rubrics)
+                         + len(active_topics(records))
                          + len(entity_urls(load_registry(ROOT))))
+        for rubric in RUBRICS:
+            rubric_url = f"https://iipike.ru/rubrics/{rubric}/"
+            self.assertEqual(locs.count(rubric_url),
+                             1 if rubric in active_rubrics else 0)
         self.assertIn("https://iipike.ru/topics/", locs)
         self.assertIn("https://iipike.ru/rubrics/news/", locs)
         self.assertIn("https://iipike.ru/articles/sample-verified-news/", locs)
