@@ -6505,9 +6505,9 @@
       "summary": "20 ноября: сообщение о встроенной локальной модели браузера; вторичный обзор, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:03:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T17:02:33.084Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
