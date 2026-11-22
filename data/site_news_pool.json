@@ -6505,12 +6505,12 @@
       "summary": "20 ноября: сообщение о встроенной локальной модели браузера; вторичный обзор, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:03:26+00:00",
       "review_started_at": "2026-11-22T17:02:33.084Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "22.11.2026: проверен официальный анонс Edge от 19 ноября https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/ . Aion Instruct (2,3 млрд) GA как встроенная модель Edge и открытые веса MIT https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B . Prompt API на обычных сайтах — origin trial, Decisions API — предварительный тест Canary/Dev; документация https://learn.microsoft.com/en-us/microsoft-edge/web-platform/prompt-api (20 ГБ свободного места, 3 ГБ VRAM для теста). В официальном списке языков нет русского. В Windows распространение модели ожидается декабрь 2026 — январь 2027, НЕ путать с релизом Edge. Архивная связь: Opera WebAI https://dzen.ru/a/auMWu1UnvRMpmBgk, Dzen ID 6ae316bb5527bd1329981824. Следующее: согласование статьи/Threads/X/VK, не отправлять в очереди до «берём»."
+      "closed_at": "2026-11-22T18:18:30.741Z",
+      "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
+      "note": "22.11.2026: проверен официальный анонс Edge от 19 ноября https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/ . Aion Instruct (2,3 млрд) GA как встроенная модель Edge и открытые веса MIT https://huggingface.co/microsoft/Aion-1.0-Instruct-2.3B . Prompt API на обычных сайтах — origin trial, Decisions API — предварительный тест Canary/Dev; документация https://learn.microsoft.com/en-us/microsoft-edge/web-platform/prompt-api (20 ГБ свободного места, 3 ГБ VRAM для теста). В официальном списке языков нет русского. В Windows распространение модели ожидается декабрь 2026 — январь 2027, НЕ путать с релизом Edge. Архивная связь: Opera WebAI https://dzen.ru/a/auMWu1UnvRMpmBgk, Dzen ID 6ae316bb5527bd1329981824. Следующее: согласование статьи/Threads/X/VK, не отправлять в очереди до «берём».\n22.11.2026: главред утвердил окончательную статью «Microsoft поселила ИИ в Edge. Ему не нужен интернет». Сохранено в editorial-intake: microsoft-edge-aion-instruct-local-ai-20261119; Threads и X approved; VK RSS анонс в JSON. Приоритетный выпуск по готовности обложки."
     },
     {
       "id": "n-2e7d573aafc7a6bd",
