@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-22T03:08:23.266358Z",
+  "updated_at": "2026-11-22T08:46:33.923585Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 2
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
-      "fresh_matches": 2
+      "fresh_matches": 3
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,10 +64,10 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T03:08:23.266358Z",
-      "last_success_at": "2026-11-22T03:08:23.266358Z",
+      "checked_at": "2026-11-22T08:46:33.923585Z",
+      "last_success_at": "2026-11-22T08:46:33.923585Z",
       "error": null,
-      "fresh_matches": 2
+      "fresh_matches": 1
     }
   ],
   "generator": {
@@ -77,10 +77,48 @@
   },
   "usage": {
     "date": "2026-11-22",
-    "attempted": 12
+    "attempted": 15
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "6f4dab19d1b3e45bc73b7537",
+      "title": "Эштон Катчер стал самым богатым актером в мире из-за Anthropic",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161258-sound-ventures-otsenili-v-7-mlrd-dolyu-v-anthropic/",
+      "published_at": "2026-11-22T07:57:49Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-22T08:46:33.923585Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Половина процента компании, которая выходит на такие оценки — это уже солидный капитал. Любопытно, как фонды будут делить прибыль, если часть пакета записана прямо на инвесторов.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-22T08:46:33.923585Z",
+      "reason": "Зацепились за размер доли фонда и распределение между инвесторами.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-22T08:46:33.923585Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "8d307e9c5cf73d4935e8ff32",
+      "title": "«Ого! Это круто!», «Я думал, что это ИИ», «Графика лучше, чем в GTA 6». Новая визуализация Tesla впечатлила пользователей",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/22/ogo-eto-kruto-ia-dumal-cto-eto-ii-grafika-lucse-cem-v-gta-6-novaia-vizualizaciia-tesla-vygliadit-vpecatlila-polzovatelei.html",
+      "published_at": "2026-11-22T05:03:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-22T08:46:33.923585Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "762dcbad180948bdc9baa30c",
       "title": "Главе МВБ США запретили общаться с журналистами после заявлений об ИИ",
@@ -343,12 +381,14 @@
       "first_seen_at": "2026-11-20T20:06:44.444588Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Двести пятьдесят тысяч страниц черновиков — это масштаб, который рецензенты будут разгребать годами. Даже если код сойдется в Lean, проверять такое математикам придется до пенсии.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-21T23:10:19.071142Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-22T08:46:33.923585Z",
+      "reason": "Выделен огромный объем промежуточных материалов.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-22T08:46:33.923585Z"
     },
     {
       "id": "da12430c02f8faf2e2142298",
@@ -423,12 +463,14 @@
       "first_seen_at": "2026-11-20T17:59:17.471424Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Интересный разрыв между бумажными расчетами и реальным тестом на Kimi. Железо может выдавать гигантские цифры, но упираться в софт.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-21T23:10:19.071142Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-22T08:46:33.923585Z",
+      "reason": "Зафиксирован разрыв между теоретической и реальной производительностью чипа.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-22T08:46:33.923585Z"
     },
     {
       "id": "e4ec67345c506510cfd961ec",
@@ -2227,65 +2269,6 @@
       "reason": "Редакторская правка: вывод опирается на объём заказа и невозвратные депозиты.",
       "fact_review": "passed",
       "generated_at": "2026-11-15T12:20:06.343116Z"
-    },
-    {
-      "id": "3e63802eaf8c6e56538ac45d",
-      "title": "Стартап привлечёт тепло океана для питания плавучих ИИ-дата-центров: Drogue уже привлекла $20 млн",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/15/startap-privlecet-teplo-okeana-dlia-pitaniia-plavucix-ii-data-centrov-drogue-uze-privlekla-20-mln.html",
-      "published_at": "2026-11-15T08:40:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-15T12:16:30.952279Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "a70d9e9d48223090ea68e608",
-      "title": "Япония доверит оборону искусственному интеллекту",
-      "source_id": "mk",
-      "source_name": "МК",
-      "source_url": "https://www.mk.ru/politics/2026/11/15/yaponiya-doverit-oboronu-iskusstvennomu-intellektu.html",
-      "published_at": "2026-11-15T07:47:00Z",
-      "channel_url": "https://dzen.ru/mk.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-15T08:24:59.330267Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Токио решил допустить американский ИИ к военным секретам. Интересно, нейросеть сразу начнет отчитываться в Пентагон или сначала попросит у японского министра обороны обновить софт?",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-15T08:24:59.330267Z",
-      "reason": "Развитие новости о допуске американского ИИ к секретам Японии с легкой иронией.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-15T08:24:59.330267Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "3faf12fa7b286cc9a586d4dc",
-      "title": "Нейросеть поможет снизить риск гибели купальщиков в отбойных течениях",
-      "source_id": "hi-tech-mail",
-      "source_name": "Hi-Tech Mail",
-      "source_url": "https://hi-tech.mail.ru/news/160559-nejroset-pomozhet-snizit-risk-gibeli-kupalshikov-v-otbojnyh-techeniyah/",
-      "published_at": "2026-11-15T06:53:02Z",
-      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-15T12:16:30.952279Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-15T12:16:30.952279Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-15T12:16:30.952279Z",
-      "link_status": "dzen_link_missing"
     }
   ]
 }
