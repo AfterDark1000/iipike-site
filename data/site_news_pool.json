@@ -6670,9 +6670,9 @@
       "summary": "20 ноября: компания заявляет о снижении успешности атак на внутренние рассуждения в собственных тестах.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T18:32:40.720Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
