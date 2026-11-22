@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261122-batch20-fifo-1755-8b5f4e.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-b2926e8e7f4e634a",
+      "pool_sequence": 422,
+      "title": "MIT предложил физически согласованные ИИ-модели хаотических процессов",
+      "source_url": "https://news.mit.edu/new-approach-enables-physically-consistent-ai-models-chaotic-systems-1120",
+      "claimed_at": "2026-11-22T12:56:09+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9872e633f4588967",
+      "pool_sequence": 423,
+      "title": "Deutsche Telekom инвестировала 100 млн евро в Mistral AI",
+      "source_url": "https://telecomlead.com/news/telecom-news-ericsson-altair-semiconductor-deutsche-telekom-t-capital-mistral-ai-128789",
+      "claimed_at": "2026-11-22T12:56:09+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-abadbd1e4ec5bc65",
+      "pool_sequence": 428,
+      "title": "ФРС США изучает риски финансирования ИИ-инфраструктуры",
+      "source_url": "https://www.reuters.com/business/feds-cook-says-central-bank-watching-ai-industry-financing-2026-11-20",
+      "claimed_at": "2026-11-22T12:56:09+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-65925f55a55da889",
+      "pool_sequence": 432,
+      "title": "Apple якобы представила Depth Pro 2 для оценки глубины по фотографии",
+      "source_url": "https://www.eyssen.ai/blog/latest-ai-news-35/latest-ai-news-november-20-2026-531",
+      "claimed_at": "2026-11-22T12:56:09+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2e7d573aafc7a6bd",
+      "pool_sequence": 435,
+      "title": "Palo Alto Networks якобы покупает Applied Compute",
+      "source_url": "https://www.citrusaiworks.com/ai-news.html",
+      "claimed_at": "2026-11-22T12:56:09+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
