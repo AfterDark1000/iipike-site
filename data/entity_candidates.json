@@ -1541,6 +1541,30 @@
           "source_url": "https://www.mansa.com/they-left-us-to-die"
         }
       ]
+    },
+    {
+      "key": "lean-fro",
+      "name": "Lean Focused Research Organization",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+        }
+      ]
+    },
+    {
+      "key": "mathlib-initiative",
+      "name": "Mathlib Initiative",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+        }
+      ]
     }
   ],
   "products": [
@@ -3041,6 +3065,32 @@
         {
           "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
           "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
+        }
+      ]
+    },
+    {
+      "key": "lean",
+      "name": "Lean",
+      "company": "lean-fro",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+        }
+      ]
+    },
+    {
+      "key": "mathlib",
+      "name": "Mathlib",
+      "company": "mathlib-initiative",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
         }
       ]
     }
