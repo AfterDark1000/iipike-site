@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Маск предупредил о возможном денежном кризисе ИИ-компаний в 2027 году",
+      "source_url": "https://www.businessinsider.com/elon-musk-warning-ai-compute-data-centers-cash-spacex-tesla-2026-11",
+      "summary": "21 ноября 2026: Маск предупредил, что задержки запуска вычислительных мощностей могут потребовать от ИИ-компаний огромных дополнительных средств. Заявление Маска; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В старых документах Амодеи обнаружили оценку риска катастрофы от ИИ в 20–30%",
+      "source_url": "https://www.washingtonpost.com/technology/2026/11/22/inside-an-ai-prophets-secretive-plans-humanitys-future/",
+      "summary": "22 ноября 2026: Washington Post опубликовала ранее неизвестную оценку Дарио Амодеи из более ранних документов. Это архивная оценка, а не новое заявление.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "После IPO Anthropic проверят обещание ставить безопасность выше прибыли",
+      "source_url": "https://www.wncw.org/2026-11-21/anthropic-says-it-will-put-humanity-first-will-its-ipo-change-that",
+      "summary": "21 ноября 2026: NPR обсудила, как выход Anthropic на биржу может повлиять на её обещание задерживать опасные модели ради проверок безопасности. Аналитический сюжет, не новый релиз.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Сценарист «Таксиста» Пол Шредер испугался сценариев ИИ и снимает фильм с нейросетью",
+      "source_url": "https://www.theguardian.com/film/2026/nov/21/taxi-driver-scriptwriter-paul-schrader-ai-film-making-martin-scorsese",
+      "summary": "21 ноября 2026: в интервью The Guardian Шредер рассказал, что ИИ смог имитировать его стиль; режиссёр работает с Fable над фильмом The Doors of Perception. Со слов режиссёра.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Режиссёр Артур Арари назвал ИИ опасным для кино и признался в дипфейке Леи Сейду",
+      "source_url": "https://mezha.net/eng/news/mezha-797529d42f9b136e94acef28_arthur_harari_calls/",
+      "summary": "22 ноября 2026: на фестивале в Марракеше Арари заявил об опасности ИИ при написании сценариев, но рассказал, как использовал дипфейк для сцены с Леей Сейду. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "The Atlantic предсказала Голливуду нового Pixar из мира ИИ",
+      "source_url": "https://www.theatlantic.com/ideas/2026/11/movies-pixar-animation-media/689535/",
+      "summary": "21 ноября 2026: колонка The Atlantic предполагает, что новые студии и независимые авторы могут создать крупный культурный прорыв с ИИ. Авторская позиция, не подтверждённый прогноз.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
