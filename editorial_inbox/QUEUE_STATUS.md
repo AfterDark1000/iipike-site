@@ -2,19 +2,18 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 198
+**В очереди:** 2 · **Готовы:** 0 · **Ждут интервал:** 2 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 199
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **22.11.2026 23:30 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **23.11.2026 00:45 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [⚡ Character.AI выставляет переписки на торги. Даже детские](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/character-ai-bankruptcy-private-chats-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 00:37 (Усть-Катав)**; пауза до 23.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/character-ai-bankruptcy-private-chats-20261120.webp) |
-| **2** | [⚡ OpenAI научила GPT молчать о своих «мыслях»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-gpt-hidden-reasoning-defense-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 07:07 (Усть-Катав)**; пауза до 23.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-hidden-reasoning-defense-20261120.webp) |
-| **3** | [⚡ SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/spacex-nvidia-gpu-orbit-financing-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 08:07 (Усть-Катав)**; пауза до 23.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/spacex-nvidia-gpu-orbit-financing-20261120.webp) |
+| **1** | [⚡ OpenAI научила GPT молчать о своих «мыслях»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-gpt-hidden-reasoning-defense-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 07:07 (Усть-Катав)**; пауза до 23.11.2026 01:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-hidden-reasoning-defense-20261120.webp) |
+| **2** | [⚡ SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/spacex-nvidia-gpu-orbit-financing-20261120.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 08:07 (Усть-Катав)**; пауза до 23.11.2026 01:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/spacex-nvidia-gpu-orbit-financing-20261120.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -28,6 +27,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Character.AI выставляет переписки на торги. Даже детские](https://iipike.ru/articles/character-ai-bankruptcy-private-chats-20261120/) | 23.11.2026 00:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/character-ai-bankruptcy-private-chats-20261120.webp) |
 | [Microsoft поселила ИИ в Edge. Ему не нужен интернет](https://iipike.ru/articles/microsoft-edge-aion-instruct-local-ai-20261119/) | 22.11.2026 23:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-edge-aion-instruct-local-ai-20261119.webp) |
 | [167 лет математики не могли доказать гипотезу Римана — Claude помог, и результат уже подтвердили](https://iipike.ru/articles/claude-riemann-hypothesis-proof-20261122/) | 22.11.2026 21:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-riemann-hypothesis-proof-20261122.webp) |
 | [Зомби сыграли нейросети: 30 серий без единого живого актёра](https://iipike.ru/articles/mansa-ai-zombie-series-no-actors-20261113/) | 22.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mansa-ai-zombie-series-no-actors-20261113.webp) |
