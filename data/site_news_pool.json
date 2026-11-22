@@ -865,9 +865,9 @@
       "summary": "12 ноября: Reuters сообщает об усилении контрразведки в ИИ-компаниях.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-13T03:10:00+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T16:24:08.707Z",
       "closed_at": null,
       "article_id": null,
       "note": "22.11.2026: главред отклонил качество опубликованной версии автономного редактора. Материал снят с сайта и возвращён в горячую очередь на НОВУЮ РУЧНУЮ редактуру. Не принимать прежний автодрафт и не отдавать этому же автономному редактору. Историческая заявка: auto-20261120-0252-ordinary-005.json. Первоисточник для перепроверки: https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/"
