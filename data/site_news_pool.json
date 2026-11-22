@@ -6520,12 +6520,12 @@
       "summary": "20 ноября: сообщение о приобретении ИИ-платформы; вторичный обзор, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:03:26+00:00",
       "review_started_at": "2026-11-22T12:56:09+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-2e7d573aafc7a6bd"
+      "closed_at": "2026-11-22T14:53:52Z",
+      "article_id": "palo-alto-applied-compute-acquisition-4-5bn-20261118",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-2e7d573aafc7a6bd\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/palo-alto-applied-compute-acquisition-4-5bn-20261118/"
     },
     {
       "id": "n-c76932da0042377d",
