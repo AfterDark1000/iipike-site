@@ -204,6 +204,12 @@
       "utc_date": "2026-11-21",
       "source_url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/",
       "source_title": "How Google Duplex evolved to also call businesses for you in Gemini"
+    },
+    {
+      "id": "06c62bbf6e86ef33e9e0",
+      "utc_date": "2026-11-22",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
+      "source_title": "Meta ads is now available in AWS Quick"
     }
   ]
 }

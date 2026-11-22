@@ -1,5 +1,12 @@
 [
   {
+    "id": "06c62bbf6e86ef33e9e0",
+    "date": "2026-11-22",
+    "title": "AWS Quick подружили с рекламой в Meta: теперь кампании можно собирать обычной речью",
+    "source_name": "Amazon AWS AI",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/"
+  },
+  {
     "id": "536d4386c711aad48fdf",
     "date": "2026-11-21",
     "title": "Google научила Duplex звонить в компании по поручению прямо из Gemini",
