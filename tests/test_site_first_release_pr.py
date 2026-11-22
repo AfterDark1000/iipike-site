@@ -47,9 +47,9 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
                 f"base:{old_cover}": pr.MANUAL_REISSUE_COVER_BLOB,
                 f"inbox:{new_cover}": pr.MANUAL_REISSUE_COVER_BLOB,
             }
-            return SimpleNamespace(stdout=expected[args[-1]] + "\\n")
+            return SimpleNamespace(stdout=expected[args[-1]] + "\n")
 
-        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \\
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \
              patch("scripts.site_first_release_pr.git", side_effect=hashes):
             self.assertEqual(
                 pr.verified_manual_reissue(sid, "inbox", "base"),
@@ -59,9 +59,9 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         def altered(*args, **kwargs):
             out = hashes(*args, **kwargs)
             if args[-1] == f"inbox:{new_cover}":
-                return SimpleNamespace(stdout="not-original-cover\\n")
+                return SimpleNamespace(stdout="not-original-cover\n")
             return out
-        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \\
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \
              patch("scripts.site_first_release_pr.git", side_effect=altered):
             self.assertIsNone(pr.verified_manual_reissue(sid, "inbox", "base"))
 
