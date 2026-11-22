@@ -6355,9 +6355,9 @@
       "summary": "19 ноября: пользователи могут отключать большинство генеративных инструментов; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T10:22:28+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T12:31:03.257Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
