@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "b8277bb5c2d981b8521810fad299d96df352835b",
-  "source_blob_sha": "86481e9e6b3ac54de3d77430ebc25a476ecde4eb",
-  "snapshot_date": "2026-11-21",
+  "source_commit": "22f4eaf7fc3634da77f7106d0b545b097b795db8",
+  "source_blob_sha": "006ebeb1abf1bbf7a37ddc90b7e985d3282f1705",
+  "snapshot_date": "2026-11-22",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b0189cacd21ad0860046c8e",
+      "title": "Еврокомиссию атаковали с помощью ИИ: отключили даже систему отпусков",
+      "dzen_url": "https://dzen.ru/a/awGJys0hrQhgBGyO",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В Еврокомиссии после кибератаки отключили служебный портал, через который сотрудники оформляют отпуска и проверяют зарплатные ведомости. 19 ноября Еврокомиссия подтвердила, что злоумышленники использовали искусственный интеллект. К тому моменту с обнаружения атаки прошло почти четыре недели. На брифинге представитель Еврокомиссии Томас Регнье заявил: «По результатам расследования мы подтверждаем: это была киберкампан",
+      "published_at_utc": "2026-11-22T03:01:17+00:00"
+    },
     {
       "dzen_id": "6b01893364e342739706edd0",
       "title": "Google пустила Gemini за ваш Mac: ИИ сам работает в программах, пока вы заняты",
