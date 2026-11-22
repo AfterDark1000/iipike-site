@@ -15,7 +15,7 @@
       "sequence": 58,
       "pool_id": "n-8e599f8fd3fc906d",
       "lane": "long",
-      "decision": "full"
+      "decision": "hot"
     },
     {
       "sequence": 59,

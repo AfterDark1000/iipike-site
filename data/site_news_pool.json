@@ -864,13 +864,13 @@
       "source_url": "https://www.marketscreener.com/news/help-wanted-ai-firms-court-ex-spies-as-nvidia-drama-spotlights-security-risks-ce785ed8df8df323",
       "summary": "12 ноября: Reuters сообщает об усилении контрразведки в ИИ-компаниях.",
       "origin": "ХПИИ — добытчик новостей (утро и контрольный проход 12–13.11.2026)",
-      "priority": "normal",
-      "status": "in_review",
+      "priority": "high",
+      "status": "queued",
       "added_at": "2026-11-13T03:10:00+00:00",
-      "review_started_at": "2026-11-20T02:53:00+00:00",
+      "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261120-0252-ordinary-005.json; article_id=ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
+      "note": "22.11.2026: главред отклонил качество опубликованной версии автономного редактора. Материал снят с сайта и возвращён в горячую очередь на НОВУЮ РУЧНУЮ редактуру. Не принимать прежний автодрафт и не отдавать этому же автономному редактору. Историческая заявка: auto-20261120-0252-ordinary-005.json. Первоисточник для перепроверки: https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/"
     },
     {
       "id": "n-6c8dcc4daf751efd",

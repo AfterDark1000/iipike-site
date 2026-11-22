@@ -7620,31 +7620,6 @@
     "products": []
   },
   {
-    "title": "ИИ-компании нанимают бывших разведчиков с зарплатой до $500 тысяч",
-    "summary": "OpenAI, Anthropic и производители чипов ищут специалистов по контрразведке. Reuters приводит вакансии, диапазоны оплаты и примеры угроз корпоративным секретам.",
-    "published": "2026-11-22",
-    "source_url": "https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/",
-    "cover": "assets/editorial/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp",
-    "rubric": "news",
-    "vk_title": "🕵️ ИИ-компании ищут КОНТРРАЗВЕДЧИКОВ за $500 тысяч",
-    "vk_summary": "Reuters обнаружил растущий спрос на специалистов по контрразведке в ИИ-индустрии. OpenAI, Anthropic и ASML защищают секретные разработки и сотрудников. В отдельных вакансиях годовая оплата достигает $500 тысяч.",
-    "published_at_utc": "2026-11-22T13:01:04Z",
-    "site_release_mode": "standard",
-    "event_date": "2026-11-12",
-    "id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
-    "url": "articles/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d/",
-    "topics": [
-      "cybersecurity",
-      "business"
-    ],
-    "companies": [
-      "openai",
-      "anthropic",
-      "nvidia"
-    ],
-    "products": []
-  },
-  {
     "title": "Зомби сыграли нейросети: 30 серий без единого живого актёра",
     "summary": "Студия Mansa выпустила 30-серийный зомби-хоррор с персонажами, созданными ИИ. Сооснователь Нейт Паркер объяснил, почему компания использует такие сериалы для проверки спроса перед возможными съёмками с актёрами.",
     "published": "2026-11-22",

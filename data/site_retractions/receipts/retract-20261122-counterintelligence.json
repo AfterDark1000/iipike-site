@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "action": "retract_publication_and_return_to_manual_pool",
+  "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+  "pool_id": "n-8e599f8fd3fc906d",
+  "sequence": 58,
+  "status": "retracted_and_queued_for_manual_editor",
+  "historic_claim": "auto-20261120-0252-ordinary-005.json",
+  "note": "Chief editor rejected the autonomous article; no automated reapproval."
+}
