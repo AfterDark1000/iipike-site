@@ -31,6 +31,16 @@ LEGACY_RECOVERY_RELEASES = {
 }
 # A changed publication index or publisher implementation requires a NEW
 # scheduler cycle, not a retry with stale selection or loaded Python code.
+# One chief-editor-approved reissue: old HTML/cover were left behind by
+# the retraction even though the public news index and approved source
+# were removed. This recovery never changes a published news.json row,
+# never changes the old VK JPEG and requires exact historic Git blobs.
+MANUAL_REISSUE_ID = "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
+MANUAL_REISSUE_PAGE_BLOB = "c37618328cd92397888d60599a5159f54d92c085"
+MANUAL_REISSUE_COVER_BLOB = "fefc33582dd2b534fdf395faf9a67c709e22868d"
+MANUAL_REISSUE_RECEIPT = "data/site_retractions/receipts/retract-20261122-counterintelligence.json"
+
+
 RETRY_BLOCKING_PATHS = (
     "news.json", "data/entity_registry.json",
     "scripts/site_first_release_pr.py", "scripts/site_publication_queue.py",
@@ -114,6 +124,40 @@ def safe_git_blob_at(ref, path):
     if not result or not result.startswith("100644 blob "):
         raise ValueError(f"Not a regular Git file: {path}")
     return git("show", f"{ref}:{path}").stdout
+
+
+
+def verified_manual_reissue(story_id, source_ref, base_ref):
+    """Permit only the verified withdrawn #58 to reuse its exact page and cover."""
+    if story_id != MANUAL_REISSUE_ID:
+        return None
+    slug = MANUAL_REISSUE_ID
+    page = f"articles/{slug}/index.html"
+    old_cover = f"assets/editorial/{slug}.webp"
+    new_cover = f"editorial_inbox/covers/{slug}.webp"
+    new_story = f"editorial_inbox/stories/{slug}.json"
+    try:
+        rows = json.loads(safe_git_blob_at(base_ref, "news.json"))
+        receipt = json.loads(safe_git_blob_at(base_ref, MANUAL_REISSUE_RECEIPT))
+        story = json.loads(safe_git_blob_at(source_ref, new_story))
+        if (any(row.get("id") == slug for row in rows)
+                or receipt.get("article_id") != slug
+                or receipt.get("status") != "retracted_and_queued_for_manual_editor"
+                or story.get("id") != slug
+                or story.get("status") != "editor_approved"
+                or story.get("approved_by") != "human_editor"):
+            return None
+        old_page_sha = git("rev-parse", f"{base_ref}:{page}").stdout.strip()
+        old_cover_sha = git("rev-parse", f"{base_ref}:{old_cover}").stdout.strip()
+        incoming_sha = git("rev-parse", f"{source_ref}:{new_cover}").stdout.strip()
+        if (old_page_sha, old_cover_sha, incoming_sha) != (
+                MANUAL_REISSUE_PAGE_BLOB,
+                MANUAL_REISSUE_COVER_BLOB,
+                MANUAL_REISSUE_COVER_BLOB):
+            return None
+        return page, old_cover
+    except (ValueError, KeyError, subprocess.CalledProcessError):
+        return None
 
 
 def transfer_blob(ref, relative):
@@ -249,6 +293,13 @@ def auto_publish_site(story_id, base_sha, source_paths):
                 for key in keys
             )
     changed = set(git("diff", "--name-only", f"{base_sha}..HEAD").stdout.splitlines())
+    original_cover = f"assets/editorial/{story_id}.webp"
+    if original_cover not in changed and verified_manual_reissue(story_id, "HEAD", base_sha):
+        # The original WebP bytes are deliberately reused, so Git sees
+        # no diff for the public cover. Verify the exact byte identity.
+        if git("rev-parse", f"HEAD:{original_cover}").stdout.strip() != MANUAL_REISSUE_COVER_BLOB:
+            raise ValueError("Manual reissue changed the approved historical cover")
+        expected_files.discard(original_cover)
     if not expected_files <= changed:
         raise ValueError("Release is missing required site/article artifacts: "
                          + str(sorted(expected_files - changed)))
@@ -330,7 +381,8 @@ def release_one(story_id, ref):
     for attempt in range(1, attempts + 1):
         # Fetch a fresh, independently validated publication base EACH time.
         git("fetch", "origin", "main")
-        if exists_at("origin/main", f"articles/{story_id}/index.html"):
+        reissue = verified_manual_reissue(story_id, ref, "origin/main")
+        if exists_at("origin/main", f"articles/{story_id}/index.html") and not reissue:
             print(f"ALREADY_PUBLISHED: {story_id}", flush=True)
             return "published"
         base_sha = git("rev-parse", "origin/main").stdout.strip()
@@ -341,6 +393,11 @@ def release_one(story_id, ref):
                   if auto else canonical_branch)
         git("switch", "--detach", "origin/main")
         git("switch", "-c", branch)
+        if reissue:
+            # The old page and WebP are replaced only in this validated
+            # release branch. No public-site downtime or lost VK JPEG.
+            for obsolete in reissue:
+                Path(obsolete).unlink()
         for path in paths:
             transfer_blob(ref, path)
         # Every retry regenerates from the exact approved editor sources.

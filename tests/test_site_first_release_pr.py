@@ -24,6 +24,47 @@ class SiteFirstReleaseSelectionTests(unittest.TestCase):
         self.assertIn("entities/companies/google/index.html", paths)
 
 
+    def test_only_verified_withdrawn_counterintelligence_story_can_reuse_url(self):
+        sid = pr.MANUAL_REISSUE_ID
+        page = f"articles/{sid}/index.html"
+        old_cover = f"assets/editorial/{sid}.webp"
+        new_cover = f"editorial_inbox/covers/{sid}.webp"
+
+        def blobs(ref, path):
+            if path == "news.json":
+                return "[]"
+            if path == pr.MANUAL_REISSUE_RECEIPT:
+                return ('{"article_id":"' + sid + '",'
+                        '"status":"retracted_and_queued_for_manual_editor"}')
+            if path == f"editorial_inbox/stories/{sid}.json":
+                return ('{"id":"' + sid + '","status":"editor_approved",'
+                        '"approved_by":"human_editor"}')
+            raise AssertionError(path)
+
+        def hashes(*args, **kwargs):
+            expected = {
+                f"base:{page}": pr.MANUAL_REISSUE_PAGE_BLOB,
+                f"base:{old_cover}": pr.MANUAL_REISSUE_COVER_BLOB,
+                f"inbox:{new_cover}": pr.MANUAL_REISSUE_COVER_BLOB,
+            }
+            return SimpleNamespace(stdout=expected[args[-1]] + "\n")
+
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \
+             patch("scripts.site_first_release_pr.git", side_effect=hashes):
+            self.assertEqual(
+                pr.verified_manual_reissue(sid, "inbox", "base"),
+                (page, old_cover))
+            self.assertIsNone(pr.verified_manual_reissue(ID, "inbox", "base"))
+
+        def altered(*args, **kwargs):
+            out = hashes(*args, **kwargs)
+            if args[-1] == f"inbox:{new_cover}":
+                return SimpleNamespace(stdout="not-original-cover\n")
+            return out
+        with patch("scripts.site_first_release_pr.safe_git_blob_at", side_effect=blobs), \
+             patch("scripts.site_first_release_pr.git", side_effect=altered):
+            self.assertIsNone(pr.verified_manual_reissue(sid, "inbox", "base"))
+
     def test_only_exact_named_inbox_paths_are_candidates(self):
         event = {
             "commits": [
