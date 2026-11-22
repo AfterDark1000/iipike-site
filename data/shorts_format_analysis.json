@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-21T10:15:27Z",
+  "generated_at_utc": "2026-11-22T10:20:25Z",
   "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
@@ -9,119 +9,146 @@
   },
   "videos": [
     {
-      "id": "ljLy2oDacg4",
-      "url": "https://www.youtube.com/shorts/ljLy2oDacg4",
-      "title": "Store Clerk Mocked Grandpa's Tech Skills 💀📱#shorts #jokes #funny #comedy #relatable #reels",
-      "channel": "Iron Chuckle\n\n",
-      "published_at": "2026-11-19T00:03:19Z",
-      "duration_seconds": 14,
-      "views": 27032,
-      "likes": 262,
-      "subscribers": 1970,
+      "id": "RDCXCrznJfc",
+      "url": "https://www.youtube.com/shorts/RDCXCrznJfc",
+      "title": "تكنولوچيا#shorts #comedy #viral",
+      "channel": "Mahmoud Metwaly99",
+      "published_at": "2026-11-19T20:23:44Z",
+      "duration_seconds": 13,
+      "views": 35654,
+      "likes": 141,
+      "subscribers": 9420,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-21T10:15:27Z",
+      "statistics_checked_at": "2026-11-22T10:20:25Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 247.0,
-      "rank_score": 11.6,
+      "growth_views_per_hour": 464.6,
+      "rank_score": 11.3,
       "viral_status": "candidate_verified_stats",
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "G3Y6EVUStGE",
-      "url": "https://www.youtube.com/shorts/G3Y6EVUStGE",
-      "title": "The Physics Experiment That Defies Your Expectations! 🤯#usashorts#viral",
-      "channel": "Accidental Eureka",
-      "published_at": "2026-11-18T13:30:01Z",
-      "duration_seconds": 25,
-      "views": 5052,
-      "likes": 31,
-      "subscribers": 9,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-21T10:15:27Z",
-      "is_confirmed_short": false,
-      "search_family": "experiment",
-      "format_family_guess": "experiment",
-      "growth_views_per_hour": 98.4,
-      "rank_score": 8.51,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "r4b95xtRxgA",
-      "url": "https://www.youtube.com/shorts/r4b95xtRxgA",
-      "title": "Why Do We Get HICCUPS? 😱 The Strange Science Behind Hiccups Explained! 😂 | Human Body Facts #Shorts",
-      "channel": "MindSpark",
-      "published_at": "2026-11-19T12:35:47Z",
-      "duration_seconds": 35,
-      "views": 1384,
-      "likes": 22,
-      "subscribers": 34,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-21T10:15:27Z",
-      "is_confirmed_short": false,
-      "search_family": "explanation",
-      "format_family_guess": "explanation",
-      "growth_views_per_hour": 1.7,
-      "rank_score": 4.73,
-      "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Анимационное видео в стилистике бумажной аппликации. На кадрах мальчик ест бургер, затем демонстрируется схематичное строение легких, диафрагмы и голосовых связок, после чего мужчина пьет газировку.",
-        "observed_audio": "Динамичная закадровая озвучка на иностранном языке с интонацией научно-популярного видео и звуковые эффекты (хлопки, икота).",
-        "hook_0_3s": "Мальчик ест бургер, резкий неожиданный звук и появление анимированной надписи «HIC!» привлекают внимание.",
+        "observed_visuals": "Двое мужчин поочередно появляются в кадре на фоне магазина: сначала мужчина в желтом худи, затем парень в черной кофте с нарисованным макияжем, далее другой мужчина в сером. Они обмениваются репликами и передают бутылку напитка, после чего взаимодействуют у витрины.",
+        "observed_audio": "Разговорная речь на арабском языке между несколькими участниками, звуки передачи предмета и шумы магазина.",
+        "hook_0_3s": "Мужчина в желтом худи резко обращается к зрителю на фоне холодильника с товарами.",
         "timeline": [
           {
-            "time": "00:00 - 00:03",
-            "visible_action": "Мальчик ест бургер, затем вздрагивает от икоты.",
-            "editing": "Быстрая смена кадров, появление текстовых плашек.",
+            "time": "00:00",
+            "visible_action": "Мужчина в желтом худи и кепке указывает пальцем в камеру на фоне холодильника.",
+            "editing": "Прямая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:04 - 00:10",
-            "visible_action": "Бургер отлетает вверх, мальчик с испуганным выражением лица и каплями пота.",
-            "editing": "Зум и анимированные взрывы на заднем фоне.",
+            "time": "00:01",
+            "visible_action": "Парень в черной кофте с макияжем на лице держит бутылку темного напитка.",
+            "editing": "Жесткая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:11 - 00:18",
-            "visible_action": "Демонстрация работы легких, диафрагмы и голосовых связок в разрезе.",
-            "editing": "Переход к анатомической схеме с бумажной текстурой.",
+            "time": "00:04",
+            "visible_action": "Мужчина в желтом худи держит ту же бутылку и говорит.",
+            "editing": "Жесткая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:19 - 00:25",
-            "visible_action": "Мужчина пьет холодный напиток из стакана с трубочкой.",
-            "editing": "Монтажная склейка с переходом к новому персонажу.",
+            "time": "00:08",
+            "visible_action": "Мужчина в серой кофте смотрит вверх у входа в магазин.",
+            "editing": "Жесткая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:26 - 00:34",
-            "visible_action": "Мужчина улыбается, меняется выражение лица, в конце появляется рекламный постер с вопросом.",
-            "editing": "Финальный стоп-кадр с наложением текста.",
+            "time": "00:09",
+            "visible_action": "Двое мужчин взаимодействуют у входа, один пьет из бутылки.",
+            "editing": "Жесткая склейка",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Объяснение сложного биологического процесса через простую бумажную анимацию с быстрым удержанием внимания за счет смены масштаба и звуковых эффектов.",
-        "transfer_to_hpii": "Использовать аналогичный визуальный стиль бумажной анимации для демонстрации архитектуры новой нейросети или алгоритма обработки данных.",
-        "what_not_to_copy": "Прямое копирование темы человеческой анатомии и икоты, а также заимствование персонажей.",
-        "limitations": "Анализ основывается только на визуальных и звуковых элементах ролика без учета перевода текста.",
+        "format_mechanic": "Скетч-диалог с быстрой сменой персонажей (джамп-каты) на одном локационном фоне для демонстрации абсурдной бытовой ситуации.",
+        "transfer_to_hpii": "Использовать механику быстрой смены кадров с разными лицами, чтобы показать цепочку абсурдных отказов или обновлений в сфере искусственного интеллекта (например, когда разные версии нейросетей перекладывают задачу друг на друга).",
+        "what_not_to_copy": "Не копировать сюжет с открыванием бутылок в магазине и специфический грим персонажей.",
+        "limitations": "Перевод реплик не выполнялся, доступен только визуальный ряд и общая интонация диалога.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-21T10:15:43Z",
+      "analyzed_at_utc": "2026-11-22T10:20:29Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
+    },
+    {
+      "id": "m8IckTwoxp8",
+      "url": "https://www.youtube.com/shorts/m8IckTwoxp8",
+      "title": "Sigma Chain Trick Teacher 🗿☠️ #physics #sigmaphysics #alberteinstein #shortsviral #shorts",
+      "channel": "THE BRAIN OF GALAXY ",
+      "published_at": "2026-11-20T11:25:28Z",
+      "duration_seconds": 15,
+      "views": 10148,
+      "likes": null,
+      "subscribers": 89200,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-22T10:20:25Z",
+      "is_confirmed_short": false,
+      "search_family": "experiment",
+      "format_family_guess": "experiment",
+      "growth_views_per_hour": 69.1,
+      "rank_score": 8.02,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Верхняя часть видео показывает демонстрацию фокуса с металлическим кольцом и цепочкой на фоне стола. В нижней части видео наложена фотография Альберта Эйнштейна с трубкой и черный блок с текстом «THE END IS LITERALLY INSANE». На кадрах фокусник держит кольцо зажатым в руке и продевает сквозь него цепочку.",
+        "observed_audio": "Звучит ритмичная русскоязычная поп-песня на фоне. Наложена английская субтитра, дублирующая процесс фокуса.",
+        "hook_0_3s": "В первые секунды крупным планом показаны руки с кольцом и цепочкой, а также субтитры и снимок Эйнштейна, привлекающий внимание интригующим заголовком.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:03",
+            "visible_action": "Руки показывают металлическое кольцо и цепочку, просовывая цепочку сквозь кольцо.",
+            "editing": "Разделенный экран: сверху фокус, снизу Эйнштейн и текст.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:04 - 00:09",
+            "visible_action": "Фокусник начинает завязывать цепочку узлом вокруг кольца, требуя внимания.",
+            "editing": "Непрерывное воспроизведение верхнего видеоряда.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10 - 00:14",
+            "visible_action": "Цепочка неожиданно оказывается вынутой из кольца, демонстрируя фокус.",
+            "editing": "Завершение ролика со смайликом удивления.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Вертикальное видео с разделением экрана: сверху демонстрация фокуса или манипуляций с реквизитом, снизу реакционный или отвлекающий элемент (фото известного ученого с кликбейтным текстом).",
+        "transfer_to_hpii": "Использовать механику разделенного экрана: в верхней части показать сложный процесс работы нейросети или генерации ИИ, а снизу поместить забавного персонажа или историческую личность с вопросом о будущем профессий.",
+        "what_not_to_copy": "Не стоит копировать фокусы с цепями и чужую музыкальную дорожку, а также использовать прямой плагиат текста про Эйнштейна.",
+        "limitations": "Анализ ограничен визуальными кадрами и общим содержанием экрана, текст и аудио распознаны частично.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-22T10:20:34Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "my2bh9tkgik",
+      "url": "https://www.youtube.com/shorts/my2bh9tkgik",
+      "title": "What If Earth Suddenly STOPPED Spinning? 🌎😳 #stickman  #science #facts #shorts",
+      "channel": "Stickology",
+      "published_at": "2026-11-20T00:00:32Z",
+      "duration_seconds": 31,
+      "views": 1908,
+      "likes": null,
+      "subscribers": 12,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-22T10:20:25Z",
+      "is_confirmed_short": false,
+      "search_family": "explanation",
+      "format_family_guess": "explanation",
+      "growth_views_per_hour": 12.7,
+      "rank_score": 5.94,
+      "viral_status": "unconfirmed",
+      "status": "failed",
+      "failure": "API HTTP 503"
     }
   ],
   "errors": [
     {
-      "video_id": "ljLy2oDacg4",
-      "code": "analysis_failed"
-    },
-    {
-      "video_id": "G3Y6EVUStGE",
+      "video_id": "my2bh9tkgik",
       "code": "analysis_failed"
     }
   ]
