@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261122-batch22-fifo-5-73b8e2.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-9067dd2427d6b174",
+      "pool_sequence": 443,
+      "title": "Разработчик Devin Cognition обсуждает оценку в 75 миллиардов долларов",
+      "source_url": "https://finance.yahoo.com/technology/ai/articles/cognition-talks-75-billion-value-204755865.html",
+      "claimed_at": "2026-11-22T15:51:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-701a571706ec6c00",
+      "pool_sequence": 446,
+      "title": "Hugging Face представила Harness Adapters для эффективной работы ИИ-агентов",
+      "source_url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "claimed_at": "2026-11-22T15:51:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-d5bec1fa3b07f617",
+      "pool_sequence": 447,
+      "title": "AWS представила SageMaker HyperPod Global Inference Gateway",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters",
+      "claimed_at": "2026-11-22T15:51:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-fcfe169e10fcb253",
+      "pool_sequence": 448,
+      "title": "SK hynix показала систему MARS и технологии памяти для ИИ на SC26",
+      "source_url": "https://news.skhynix.com/en/sc26-ai-hpc-exhibition",
+      "claimed_at": "2026-11-22T15:51:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-d4ed742b780585e4",
+      "pool_sequence": 451,
+      "title": "Американские сенаторы предлагают создать специальный комитет по ИИ",
+      "source_url": "https://apnews.com/article/047d0ab21237984701decd9ed5ced403",
+      "claimed_at": "2026-11-22T15:51:15+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

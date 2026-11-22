@@ -6640,12 +6640,12 @@
       "summary": "20 ноября: сообщается о переговорах по привлечению не менее 2 млрд долларов; сделка не заключена, вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T15:51:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9067dd2427d6b174"
     },
     {
       "id": "n-36677e166994bf6b",
@@ -6685,12 +6685,12 @@
       "summary": "20 ноября: метод адаптации моделей под агентные среды; авторы сообщают о росте успешности и экономии токенов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T15:51:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-701a571706ec6c00"
     },
     {
       "id": "n-d5bec1fa3b07f617",
@@ -6700,12 +6700,12 @@
       "summary": "20 ноября: единая точка доступа для распределения запросов между регионами и кластерами.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T15:51:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d5bec1fa3b07f617"
     },
     {
       "id": "n-fcfe169e10fcb253",
@@ -6715,12 +6715,12 @@
       "summary": "20 ноября: итоги демонстраций высокоскоростной памяти и вычислительной инфраструктуры; дата отдельных демонстраций требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:57:41+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T15:51:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fcfe169e10fcb253"
     },
     {
       "id": "n-0b6b96c55f96f5e5",
@@ -6760,12 +6760,12 @@
       "summary": "21 ноября: сенатор Джон Хикенлупер предложил отдельный комитет по регулированию ИИ; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T15:51:15+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d4ed742b780585e4"
     },
     {
       "id": "n-6df30b9327788125",
