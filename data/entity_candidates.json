@@ -1565,6 +1565,18 @@
           "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
         }
       ]
+    },
+    {
+      "key": "asml",
+      "name": "ASML",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+          "source_url": "https://www.asml.com/en/careers/find-your-job/regional-intelligence-liaison-officer-south-east-asia-sea-j00341630"
+        }
+      ]
     }
   ],
   "products": [
