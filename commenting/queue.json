@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-22T08:46:33.923585Z",
+  "updated_at": "2026-11-22T11:13:23.399177Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-22T08:46:33.923585Z",
-      "last_success_at": "2026-11-22T08:46:33.923585Z",
+      "checked_at": "2026-11-22T11:13:23.399177Z",
+      "last_success_at": "2026-11-22T11:13:23.399177Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -73,11 +73,11 @@
   "generator": {
     "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Обработано статей: 2"
   },
   "usage": {
     "date": "2026-11-22",
-    "attempted": 15
+    "attempted": 17
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -114,10 +114,14 @@
       "first_seen_at": "2026-11-22T08:46:33.923585Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавная забота о водителях: машина запоминает камеры, на которые водитель дважды пожаловался педалью. Интересно, сколько таких точек накопется за год.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-22T11:13:23.399177Z",
+      "reason": "Выделил механику обучения автопилота по реакции водителя на камеры.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-22T11:13:23.399177Z"
     },
     {
       "id": "762dcbad180948bdc9baa30c",
@@ -503,12 +507,14 @@
       "first_seen_at": "2026-11-20T17:59:17.471424Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Странно звучит это разрешение, если на одиннадцатое мая вообще ничего не вывезли. Бумагу подписали, а склады стоят полные.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-21T23:10:19.071142Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-22T11:13:23.399177Z",
+      "reason": "Зацепился за деталь о нулевых отгрузках при наличии официальных разрешений.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-22T11:13:23.399177Z"
     },
     {
       "id": "0874ec0617069dacbc002445",
@@ -2248,27 +2254,6 @@
       "reason": "Обратил внимание на избыточную поддержку четырёх симок и режим ожидания.",
       "fact_review": "passed",
       "generated_at": "2026-11-15T20:59:59.555877Z"
-    },
-    {
-      "id": "5486e9b3fda46489c2db5340",
-      "title": "SoftBank потерял более $3 млрд на газовых турбинах для ИИ-дата-центров: компания зарезервировала оборудование мощностью свыше 13 ГВт — почти на 50% больше необходимого",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/15/softbank-poterial-bolee-3-mlrd-na-gazovyx-turbinax-dlia-ii-data-centrov-kompaniia-zarezervirovala-oborudovanie-moshhnostiu-svyse-13-gvt-pocti-na-50-bolse-neobxodimogo.html",
-      "published_at": "2026-11-15T09:05:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-15T12:16:30.952279Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "SoftBank заказал турбин почти в полтора раза больше, чем требовалось. Невозвратный депозит — дорогой способ занять место в очереди.",
-      "attempts": 1,
-      "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-15T12:20:06.343116Z",
-      "reason": "Редакторская правка: вывод опирается на объём заказа и невозвратные депозиты.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-15T12:20:06.343116Z"
     }
   ]
 }
