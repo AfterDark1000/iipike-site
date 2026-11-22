@@ -1577,6 +1577,18 @@
           "source_url": "https://www.asml.com/en/careers/find-your-job/regional-intelligence-liaison-officer-south-east-asia-sea-j00341630"
         }
       ]
+    },
+    {
+      "key": "character-ai",
+      "name": "Character.AI",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "character-ai-bankruptcy-private-chats-20261120",
+          "source_url": "https://www.ag.state.mn.us/Office/Communications/2026/11/20_CharacterAI.asp"
+        }
+      ]
     }
   ],
   "products": [
