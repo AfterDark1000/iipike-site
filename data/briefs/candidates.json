@@ -1210,6 +1210,71 @@
       "source": "Palo Alto Networks / раскрытие компании в SEC",
       "source_url": "https://paloaltonetworks.gcs-web.com/news-releases/news-release-details/palo-alto-networks-acquire-applied-compute-bringing-secure-open",
       "fact_check": "Официальный пресс-релиз Palo Alto Networks от 18.11.2026 и форма 8-K SEC https://www.sec.gov/Archives/edgar/data/1327567/000132756726000030/panw-20261117.htm подтверждают definitive merger agreement with Applied Compute, stock consideration $4.5bn subject to adjustment. Planned closing fiscal third quarter 2027 conditional on approvals, not completed acquisition. Applied Compute post-training/inference open-weight models. 'Якобы' в исходном пуле неверно."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 436,
+      "pool_id": "n-c76932da0042377d",
+      "slug": "danaher-microsoft-ai-agents-lab-instruments-20261120",
+      "headline": "Microsoft и Danaher хотят научить ИИ-агентов управлять лабораторными приборами",
+      "body": "Danaher и Microsoft объявили 20 ноября о разработке общей платформы для ИИ-агентов в научных лабораториях. Она должна помогать учёным планировать эксперименты, настраивать приборы и разбирать результаты. Основой станут Azure и Microsoft Foundry. Первое коммерческое приложение — помощник для оборудования клеточной визуализации Molecular Devices — обещают клиентам ещё в 2026 году; новые приборы с агентами запланированы на 2027-й. Саму платформу пока продолжают разрабатывать.",
+      "topic": "Наука",
+      "event_date": "2026-11-20",
+      "source": "Danaher Corporation, официальный пресс-релиз",
+      "source_url": "https://www.prnewswire.com/news-releases/danaher-collaborates-with-microsoft-to-make-scientific-instruments-agentically-connected-and-laboratories-more-intelligent-302946263.html",
+      "fact_check": "Официальный датированный пресс-релиз Danaher 20.11.2026 (PRNewswire). Разрабатывается общая агентная платформа на Azure/Microsoft Foundry, с контролем приборов в заданных границах безопасности и под надзором персонала. Первые коммерческие приложения для Danaher планируются в 2026 (MetaXpress Acquire AI Assistant / Molecular Devices), новые инструменты в 2027. Эксперимент с Leica с экономией времени до 83% — предварительное внутреннее тестирование, в текст не включено. Не выдавать платформу за полностью выпущенную."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 437,
+      "pool_id": "n-6a2f62488ccfded1",
+      "slug": "ge-healthcare-imaging360-ai-protocols-ct-mri-20261120",
+      "headline": "GE HealthCare добавила ИИ в подготовку обследований на КТ и МРТ",
+      "body": "GE HealthCare представила два ИИ-инструмента для платформы Imaging 360. Один помогает сотрудникам клиник искать сведения о настройках томографов обычными вопросами на английском, другой предлагает протоколы для КТ и МРТ, которые проверяет специалист. ИИ-помощник не ставит диагнозы, не выдаёт персональных медицинских рекомендаций и сам ничего не перенастраивает. Новые функции компания собирается показать на конференции RSNA 2026.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "GE HealthCare, официальный пресс-релиз",
+      "source_url": "https://www.gehealthcare.com/en/about/newsroom/press-releases/ge-healthcare-introduces-new-imaging-360-features-to-simplify-protocol-management-and-support-radiology-workflows",
+      "fact_check": "Пресс-релиз GE HealthCare от 20.11.2026: два новых компонента Imaging 360 — read-only AI assistant для анализа operational protocol metrics на английском языке (не клиническая интерпретация и без изменения данных/протоколов); AI-assisted protocoling рекомендует КТ/МР протоколы, рентгенологи/технологи рассматривают их перед выбором в RIS. Демонстрация на RSNA 2026. Не утверждать всеобщую продажу/доступность или автоматическую настройку сканера."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 440,
+      "pool_id": "n-68a177a4ce19b67d",
+      "slug": "elevenlabs-ads-engine-video-dubbing-localization-20261120",
+      "headline": "ElevenLabs научила Ads Engine переозвучивать рекламу без пересъёмок",
+      "body": "ElevenLabs добавила в Ads Engine инструменты для создания новых версий видеорекламы. Сервис может заменить начало ролика, озвучить его голосовой копией прежнего диктора и подогнать движение губ. Для зарубежных рынков появились дубляж, перевод надписей и субтитров. Ads Engine также подключается к рекламным аккаунтам Google, Meta, LinkedIn и TikTok. Это продукт для рекламодателей: чтобы начать работу, компания предлагает обратиться к её команде.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "ElevenLabs, официальный продуктовый анонс",
+      "source_url": "https://elevenlabs.io/blog/video-variants-localization-ads-engine",
+      "fact_check": "Официальный блог ElevenLabs, 20.11.2026: Ads Engine (ElevenCreative) поддерживает video variants с новой opening hook, cloned voice + lip sync, soundtrack, localization через Dubbing v2 и translated captions; интеграции Google, Meta, LinkedIn, TikTok. Human review доступен, либо push directly. CTA Contact Sales/Talk to team; нет подтверждения бесплатной массовой доступности, цен не приводить."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 441,
+      "pool_id": "n-1430c2a50a889b8b",
+      "slug": "metric-ai-ohan-tts-armenian-voice-cloning-20261120",
+      "headline": "OhanTTS научилась читать по-армянски и копировать голос по короткой записи",
+      "body": "Команда Metric-AI открыла OhanTTS — модель озвучивания, разработанную прежде всего для армянского языка. Для копирования голоса достаточно образца длительностью 3–10 секунд и его расшифровки. В тесте разработчиков первый звук появлялся примерно через 0,33 секунды, хотя весь текст пока нужно передать заранее. Модель умеет озвучивать ещё семь языков, включая русский. Весами разрешено пользоваться бесплатно в некоммерческих целях, а один запрос ограничен примерно 20 секундами речи.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Metric-AI, первичный анонс на Hugging Face",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-tts",
+      "fact_check": "Первичный датированный community post Metric-AI на Hugging Face, 20.11.2026. OhanTTS-v0.1 фокус армянский; 8 языков, 3–10-секундный референс и точный транскрипт для voice cloning, с разрешения говорящего. Локальный тест разработчиков: single user NVIDIA GB10 first audio 331 мс. Пока полный текст предоставляется заранее, потоковым является только выходной звук; генерация до ~20с на запрос. Лицензия CC BY-NC 4.0 не для коммерции."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 442,
+      "pool_id": "n-6a664b768ab661a9",
+      "slug": "metric-ai-ohan-asr-armenian-speech-transcription-20261120",
+      "headline": "OhanASR распознаёт армянскую речь — даже в прямом эфире",
+      "body": "Metric-AI открыла две модели распознавания армянской речи. OhanASR-v0.1 превращает записи в текст, а OhanASR-Streaming-v0.1 делает это по мере поступления звука. Обе основаны на модели с 2 млрд параметров, дообученной на 820 часах армянских записей. В тестах самих разработчиков доля ошибок на уровне слов составила 16,12% у обычной версии и 19,07% у потоковой. Весами можно бесплатно пользоваться для исследований и других некоммерческих задач.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Metric-AI, первичный анонс на Hugging Face",
+      "source_url": "https://huggingface.co/blog/Metric-AI/ohan-asr-v01",
+      "fact_check": "Первичный блог Metric-AI на Hugging Face от 20.11.2026. Две модели распознавания армянской речи: OhanASR-v0.1 и Streaming. Основа 2B multilingual, дообучено на 820 часах. Собственный ArmBench-ASR benchmark WER 16.12% и 19.07% соответственно; не переводить WER в полную точность речи, упомянуть собственный тест; трудности с code-switching, шумом/нечёткой речью. Лицензия CC BY-NC 4.0, не для коммерции. Отличается от OhanTTS: ASR речь в текст, TTS текст в речь."
     }
   ]
 }
