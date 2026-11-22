@@ -1275,6 +1275,71 @@
       "source": "Metric-AI, первичный анонс на Hugging Face",
       "source_url": "https://huggingface.co/blog/Metric-AI/ohan-asr-v01",
       "fact_check": "Первичный блог Metric-AI на Hugging Face от 20.11.2026. Две модели распознавания армянской речи: OhanASR-v0.1 и Streaming. Основа 2B multilingual, дообучено на 820 часах. Собственный ArmBench-ASR benchmark WER 16.12% и 19.07% соответственно; не переводить WER в полную точность речи, упомянуть собственный тест; трудности с code-switching, шумом/нечёткой речью. Лицензия CC BY-NC 4.0, не для коммерции. Отличается от OhanTTS: ASR речь в текст, TTS текст в речь."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 443,
+      "pool_id": "n-9067dd2427d6b174",
+      "slug": "cognition-devin-funding-talks-2bn-75bn-20261120",
+      "headline": "Разработчик ИИ-программиста Devin обсуждает новый раунд от $2 млрд",
+      "body": "По данным Bloomberg от 20 ноября, разработчик ИИ-программиста Devin — стартап Cognition — обсуждает привлечение как минимум $2 млрд при оценке компании в $75 млрд. В сентябре инвесторы оценили его в $48 млрд после раунда на $2 млрд. О новых переговорах и возможной оценке $70–80 млрд Business Insider писал ещё 28 октября. Условия пока обсуждаются, соглашение о финансировании не объявлено.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-20",
+      "source": "Bloomberg (републикация Yahoo Finance)",
+      "source_url": "https://finance.yahoo.com/technology/ai/articles/cognition-talks-75-billion-value-204755865.html",
+      "fact_check": "Bloomberg/Yahoo Finance 20.11.2026 (открытый индекс, прямая страница ограничивает автоматический доступ), Reuters 20.11.2026: Cognition ведёт переговоры о привлечении от $2 млрд при оценке $75 млрд; компания сделку не подтвердила. ВАЖНО: Business Insider ещё 28.10.2026 сообщал о предложениях с оценкой $70–80 млрд, переговоры не являются новым раундом/полученными деньгами. Отличие ноябрьского сообщения — предполагаемый объём от $2 млрд. https://www.reuters.com/technology/cognition-ai-talks-be-valued-75-billion-latest-funding-round-bloomberg-news-2026-11-20/ ; https://www.businessinsider.com/cognition-round-of-funding-at-a-75-billion-valuation-2026-10 . Редакторский риск: сюжет не впервые стал известен 20 ноября; не представлять слух как состоявшееся событие."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 446,
+      "pool_id": "n-701a571706ec6c00",
+      "slug": "huggingface-harness-adapters-agent-coding-20261120",
+      "headline": "Hugging Face подстроила модель под ИИ-агентов: задач решено больше, токенов меньше",
+      "body": "Hugging Face показала Harness Adapters — небольшие дообучаемые надстройки, которые подстраивают ИИ-модель под конкретную агентную программу. В испытании с Qwen3.8-27B и инструментом pi доля решённых задач Terminal-Bench 2.1 выросла примерно с 39% до 55%, а средний расход сократился с 2900 до 1500 токенов на задачу. Это результаты собственных тестов команды; готовые адаптеры и материалы для повторения эксперимента опубликованы на Hugging Face.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Hugging Face, техническая статья команды",
+      "source_url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "fact_check": "Официальный блог Hugging Face, датирован 20.11.2026. Обучены RL LoRA адаптеры к Qwen3.8-27B для трёх агентных оболочек pi, Hermes Agent и OpenCode. В вводном примере Terminal-Bench 2.1 для pi: 39% pass@1 и 2.9K токенов против 55% и 1.5K после адаптации. Итоги их собственных бенчмарков; результаты нельзя обобщать на все модели/задачи. Ссылки на публичные артефакты и коллекцию есть в статье."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 447,
+      "pool_id": "n-d5bec1fa3b07f617",
+      "slug": "aws-hyperpod-global-inference-gateway-cross-region-20261120",
+      "headline": "AWS научила ИИ-кластеры подхватывать нагрузку друг у друга",
+      "body": "AWS представила Global Inference Gateway для SageMaker HyperPod. Шлюз принимает запросы к ИИ-моделям через единый адрес и распределяет их между вычислительными кластерами, даже если они находятся в разных регионах. Когда один кластер перегружен или выходит из строя, запросы можно автоматически направить на другой. Сервис рассчитан на команды, запускающие модели в кластерах HyperPod, и доступен в 13 регионах AWS.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Amazon Web Services, официальный технический блог",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/",
+      "fact_check": "AWS официальный технический блог 20.11.2026. Global Inference Gateway обеспечивает один managed endpoint между зарегистрированными HyperPod-кластерами в одном или нескольких регионах, маршрутизацию по нагрузке/состоянию и failover, AWS PrivateLink, SigV4/IAM. Блог явно перечисляет 13 доступных AWS Regions. Beta test Bagelcode на двух регионах описан как тест клиента, нельзя представлять универсальным доказательством безотказности."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 448,
+      "pool_id": "n-fcfe169e10fcb253",
+      "slug": "sk-hynix-mars-ai-memory-rack-sc26-demos-20261120",
+      "headline": "SK hynix показала серверную стойку MARS, которая делит память между ИИ-машинами",
+      "body": "На выставке Supercomputing 2026 компания SK hynix показала три демонстрации MARS — стойки для ИИ-серверов с общей системой памяти. Один сценарий позволял нескольким машинам повторно использовать уже рассчитанные данные модели (KV-кэш), не гоняя их заново через сеть. В другом через общую память обменивались подготовленными для модели токенами, уменьшая простои ускорителей. Пока компания рассказывает об испытаниях и демонстрациях; сроки коммерческого выпуска MARS не названы.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "SK hynix Newsroom, официальный отчёт о Supercomputing 2026",
+      "source_url": "https://news.skhynix.com/en/sc26-ai-hpc-exhibition/",
+      "fact_check": "Официальная публикация SK hynix 20.11.2026 по итогам SC26 (15–20 ноября). Раздел MARS (Memory-centric AI Rack System): три демонстрации CXL pooled memory / KV cache sharing & reuse, computational memory pool между серверами/GPU, token sharing между CPU серверами с сокращением времени простоя GPU. Формулировать как выставочные демонстрации, без независимых количественных сравнений, без заявлений о коммерческой доступности MARS."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 451,
+      "pool_id": "n-d4ed742b780585e4",
+      "slug": "hickenlooper-us-senate-select-ai-committee-letter-20261119",
+      "headline": "Сенатор США предложил обсудить создание отдельного комитета по ИИ",
+      "body": "Сенатор США Джон Хикенлупер 19 ноября обратился к претендентам на руководство демократами в Сенате с предложением рассмотреть создание отдельного комитета по искусственному интеллекту. По его мнению, постоянная группа могла бы быстрее разбираться в рисках и следить за технологиями. В письме он также предложил обсудить запрет на рекурсивное самоулучшение ИИ — когда система самостоятельно наращивает собственные способности. Официального решения о комитете или таком запрете пока нет.",
+      "topic": "Общество",
+      "event_date": "2026-11-19",
+      "source": "Сенатор Джон Хикенлупер, официальный пресс-релиз и письмо",
+      "source_url": "https://www.hickenlooper.senate.gov/press_releases/hickenlooper-presses-senate-leadership-candidates-to-outline-ai-safety-affordability-and-accountability-agenda/",
+      "fact_check": "Официальный пресс-релиз сенатора и собственноручное письмо (PDF) датированы 19.11.2026. Адресаты — лидер демократов Шумер и сенатор Ван Холлен как кандидаты на руководящую должность. В оригинале 'We should consider a Select Committee on AI' — предложение обсудить, не принятая резолюция Сената; 'consider banning Recursive Self-Improvement' — обсудить запрет, не поданный законопроект. В исходном сообщении пула неточно: 'сенаторы' во множественном числе и дата 21 ноября отражает вторичную публикацию AP, не дату обращения. Письмо: https://www.hickenlooper.senate.gov/wp-content/uploads/2026/11/Hickenlooper-AI-Leadership-Letter.pdf"
     }
   ]
 }
