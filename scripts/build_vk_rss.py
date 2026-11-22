@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
 FILE = "vk-rss.xml"
 CONFIG = "data/vk_rss_export.json"
+EXCLUSIONS = "data/vk_rss_exclusions.json"
 MAX_BYTES = 2_000_000
 SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 UTC = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z\Z")
@@ -56,12 +57,30 @@ def settings_from(root):
     return data
 
 
+def excluded_article_ids(root):
+    """Do not re-import articles already published by VK before a manual rewrite."""
+    path = root / EXCLUSIONS
+    if not path.is_file():
+        return set()
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if (not isinstance(data, dict) or set(data) != {"schema_version", "article_ids"}
+            or type(data["schema_version"]) is not int or data["schema_version"] != 1):
+        raise ValueError("Invalid VK RSS exclusions schema")
+    ids = data["article_ids"]
+    if (not isinstance(ids, list) or any(
+            not isinstance(x, str) or not SLUG.fullmatch(x) for x in ids
+    ) or len(ids) != len(set(ids))):
+        raise ValueError("Invalid or duplicate VK RSS excluded article ID")
+    return set(ids)
+
+
 def eligible(root, rows, settings):
     if not isinstance(rows, list):
         raise ValueError("Published news index is not a list")
     if settings["mode"] == "standby":
         return []
     cutover = timestamp(settings["cutover_at_utc"])
+    excluded = excluded_article_ids(root)
     candidates = []
     seen = set()
     for row in rows:
@@ -69,6 +88,8 @@ def eligible(root, rows, settings):
             continue
         slug = row.get("id")
         if not isinstance(slug, str) or not SLUG.fullmatch(slug):
+            continue
+        if slug in excluded:
             continue
         if slug in seen:
             raise ValueError("Duplicate published article ID in VK RSS input: " + slug)
