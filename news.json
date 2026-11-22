@@ -7595,5 +7595,28 @@
     "products": [
       "muse"
     ]
+  },
+  {
+    "title": "Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ",
+    "summary": "На конференции AI Engineer CODE основатель ArtCraft рассказал, как команда за сутки создала с помощью ИИ первый прототип PhotoCraft — открытого аналога Photoshop. Сейчас команда оценивает функциональность примерно в 60% от оригинала.",
+    "published": "2026-11-22",
+    "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas",
+    "cover": "assets/editorial/artcraft-photocraft-ai-photoshop-prototype-20261112.webp",
+    "rubric": "made-with-ai",
+    "vk_title": "🎨 С ИИ собрали аналог PHOTOSHOP за 24 часа!",
+    "vk_summary": "В ArtCraft получили рабочий прототип после подробного задания нейросети. Теперь PhotoCraft бесплатен, открывает PSD, а его код доступен на GitHub. Пока даже авторы оценивают сходство с Photoshop примерно в 60%. Adobe, Ctrl+Z на подписку не поможет. 💀",
+    "published_at_utc": "2026-11-22T11:45:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-12",
+    "id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
+    "url": "articles/artcraft-photocraft-ai-photoshop-prototype-20261112/",
+    "topics": [
+      "development",
+      "images"
+    ],
+    "companies": [
+      "adobe"
+    ],
+    "products": []
   }
 ]
