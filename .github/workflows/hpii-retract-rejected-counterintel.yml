@@ -10,6 +10,8 @@ on:
     branches: [main]
     paths:
       - 'data/site_retractions/requests/retract-20261122-counterintelligence.json'
+env:
+  PYTHONPATH: '.'
 permissions:
   contents: write
   pages: write
