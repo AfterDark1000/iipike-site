@@ -6475,12 +6475,12 @@
       "summary": "20 ноября: сообщение о новой модели глубины; вторичный обзор, дата и релиз требуют проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:03:26+00:00",
       "review_started_at": "2026-11-22T12:56:09+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-65925f55a55da889"
+      "closed_at": "2026-11-22T14:24:00Z",
+      "article_id": "apple-depth-pro-2-photo-video-depth-open-research-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-65925f55a55da889\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/apple-depth-pro-2-photo-video-depth-open-research-20261119/"
     },
     {
       "id": "n-8ac044537ea6e862",
