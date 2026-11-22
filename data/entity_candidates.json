@@ -3105,6 +3105,32 @@
           "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
         }
       ]
+    },
+    {
+      "key": "aion-instruct",
+      "name": "Aion Instruct",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
+          "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+        }
+      ]
+    },
+    {
+      "key": "microsoft-edge",
+      "name": "Microsoft Edge",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
+          "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+        }
+      ]
     }
   ]
 }
