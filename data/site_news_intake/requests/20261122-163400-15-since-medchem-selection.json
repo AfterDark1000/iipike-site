@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "ИИ отлично читает химические формулы, но пока плохо выбирает будущие лекарства",
+      "source_url": "https://openai.com/index/introducing-medchembench/",
+      "summary": "20 ноября: OpenAI представила MedChemBench из 99 задач по медицинской химии; результаты работы ИИ на разных этапах различаются, данные разработчика.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американские сенаторы предлагают создать специальный комитет по ИИ",
+      "source_url": "https://apnews.com/article/047d0ab21237984701decd9ed5ced403",
+      "summary": "21 ноября: сенатор Джон Хикенлупер предложил отдельный комитет по регулированию ИИ; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Runway заявила, что Praxis-1 управляет роборукой быстрее GPT-6 Astra",
+      "source_url": "https://x.com/runwayml/status/2123504421749526904",
+      "summary": "19 ноября: отдельное сравнение уже представленной Praxis-1, заявлено ускорение в 15,6 раза; со слов разработчика, возможный тематический дубль.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Нейросеть сама переписала собственные веса и улучшила результат",
+      "source_url": "https://ai.info/news/language-model-rewrites-own-weights-preprint",
+      "summary": "20 ноября: разбор препринта об изменении моделью своих весов, обновление препринта 18 ноября; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Нейросети затрудняются с интерактивными пространственными головоломками TuringSpace",
+      "source_url": "https://ai.info/news/turingspace-spatial-action-ai-benchmark",
+      "summary": "20 ноября: тест сравнил модели и людей в задачах с перетаскиванием предметов; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Claude помог авторам заявить о доказательстве задачи для уравнений Навье — Стокса",
+      "source_url": "https://aiweekly.co/alerts/alpge-buckmaster-post-ai-aided-unforced-navier-stokes-blowup",
+      "summary": "20 ноября: заявлено ИИ-assisted доказательство; вычислительный сертификат не опубликован, подтверждения нет.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Проверили печатаемость 80 файлов 3D-моделей от нейросетей",
+      "source_url": "https://ai.info/news/voyager-ai-3d-models-printability-check",
+      "summary": "20 ноября: сравнили проверки геометрии файлов нескольких 3D-генераторов; физическую печать не проводили, вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "SpaceX привлекает 44 млрд долларов на GPU NVIDIA, кредиторы обсуждают орбитальные ограничения",
+      "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion",
+      "summary": "20 ноября: Apollo и Goldman Sachs объявили о финансировании; ограничение на отправку GPU в космос требует дополнительной проверки.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Google выбрала Blue Origin для запуска космических ИИ-серверов Project Suncatcher",
+      "source_url": "https://www.theverge.com/tech/1037535/google-blue-origin-project-suncatcher-2029",
+      "summary": "20 ноября: сообщение о соглашении 19 ноября, запуски ожидаются в 2029 году; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Cursor рассматривает отказ от китайских открытых ИИ-моделей",
+      "source_url": "https://toolsift.ai/news/2026-11-21/",
+      "summary": "20–21 ноября: сообщение со ссылкой на доклад Конгресса США; окончательного решения нет, вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Oracle заявила, что финансирование дата-центров для OpenAI обеспечено",
+      "source_url": "https://toolsift.ai/news/2026-11-21/",
+      "summary": "20 ноября: Oracle опровергла опасения о нехватке финансирования; сводка, требует проверки официального заявления.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Kyutai представила AURA-5B для генерации говорящего видео по фото и аудио",
+      "source_url": "https://ai.info/news/kyutai-aura-5b-talking-head-video-model",
+      "summary": "20 ноября: модель оживляет портрет и синхронизирует движения губ с аудио; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "AMD представила Nitro-P для генерации изображений напрямую в пространстве пикселей",
+      "source_url": "https://ai.info/news/amd-nitro-p-pixel-space-image-generation",
+      "summary": "20 ноября: заявлена модель с открытыми весами и кодом обучения; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Together AI добавила Qwen3 TTS с быстрым началом генерации речи",
+      "source_url": "https://ai.info/news/together-ai-qwen3-tts-first-audio",
+      "summary": "20 ноября: провайдер заявил о задержке до первого звука 97 миллисекунд, поддержке русского и других языков.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Сотрудники Google выступили за поиск без ИИ в школах",
+      "source_url": "https://ai.info/news/google-workers-petition-ai-free-search-schools",
+      "summary": "20 ноября: более 540 сотрудников подписали обращение против обязательных ИИ-функций школьного поиска; вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
