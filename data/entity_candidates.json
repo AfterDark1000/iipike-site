@@ -1589,6 +1589,30 @@
           "source_url": "https://www.ag.state.mn.us/Office/Communications/2026/11/20_CharacterAI.asp"
         }
       ]
+    },
+    {
+      "key": "apollo-global-management",
+      "name": "Apollo Global Management",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+          "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+        }
+      ]
+    },
+    {
+      "key": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+          "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+        }
+      ]
     }
   ],
   "products": [
@@ -3141,6 +3165,19 @@
         {
           "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
           "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+        }
+      ]
+    },
+    {
+      "key": "nvidia-vera-rubin",
+      "name": "NVIDIA Vera Rubin",
+      "company": "nvidia",
+      "status": "candidate",
+      "first_seen": "2026-11-22",
+      "evidence": [
+        {
+          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+          "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
         }
       ]
     }
