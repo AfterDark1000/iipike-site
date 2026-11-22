@@ -6340,12 +6340,12 @@
       "summary": "20 ноября: сообщение об инвестициях в европейскую ИИ-инфраструктуру; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T10:22:28+00:00",
       "review_started_at": "2026-11-22T12:56:09+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9872e633f4588967"
+      "closed_at": "2026-11-22T13:38:57Z",
+      "article_id": "deutsche-telekom-mistral-100m-euro-series-d-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9872e633f4588967\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/deutsche-telekom-mistral-100m-euro-series-d-20261119/"
     },
     {
       "id": "n-c263b280fabbf488",
