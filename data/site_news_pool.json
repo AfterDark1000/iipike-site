@@ -6385,9 +6385,9 @@
       "summary": "20–21 ноября: заявление математика о доказательстве с Claude и Lean; независимое подтверждение требуется.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-21T17:03:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-22T13:11:00.025Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
