@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "request": "20261122-231900-5-control-deduped.json",
+  "request_sha256": "1ba041e4b1ee5752dbd25426ee6ce76376e4e2353cf5b418357d41fa65920bad",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 465,
+      "id": "n-2165e5382ec0d529",
+      "title": "ИИ-хакеры нашли дыру в медицинском ПО за 11 минут"
+    },
+    {
+      "sequence": 466,
+      "id": "n-6728ab5448c93c9a",
+      "title": "Amazon представила Textract Insights для проверки данных в документах"
+    },
+    {
+      "sequence": 467,
+      "id": "n-eaf01188aadd6144",
+      "title": "OpenAI открыла GPT-Live-1.1 в API для голосовых агентов"
+    },
+    {
+      "sequence": 468,
+      "id": "n-14f0c96e2688a6ba",
+      "title": "Harvey научила юридический ИИ синхронизировать правки с iManage"
+    },
+    {
+      "sequence": 469,
+      "id": "n-dbd5a641160d12d7",
+      "title": "Baseten представила модели для принятия решений Bison-1 и Groundhog-1"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
