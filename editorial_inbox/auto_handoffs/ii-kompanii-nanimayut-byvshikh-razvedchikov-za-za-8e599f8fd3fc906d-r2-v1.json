@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+  "text_revision": 2,
+  "cover_version": 1,
+  "status": "handed_off_to_site_queue",
+  "source_draft_blob_sha": "eda10f025a8cb76fdeab37651aa96400d35f3762",
+  "text_decision_blob_sha": "f0ab29bf25a3456450c6ea2818017940d0d927ec",
+  "cover_metadata_blob_sha": "fd4a2c1ed7df607702fda103b927e44f249dd5ed",
+  "cover_blob_sha": "fefc33582dd2b534fdf395faf9a67c709e22868d",
+  "cover_decision_blob_sha": "5a60080331296d72e6275bca00a403af00829339",
+  "text_approved_at": "2026-11-20T08:42:22.147Z",
+  "cover_approved_at": "2026-11-20T16:30:20.817Z",
+  "story_path": "editorial_inbox/stories/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.json",
+  "cover_path": "editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp",
+  "site_queue": "standard",
+  "social_posts": "prepared_in_auto_draft_not_dispatched",
+  "note": "Derived from separately human-approved text and image; no direct publication."
+}
