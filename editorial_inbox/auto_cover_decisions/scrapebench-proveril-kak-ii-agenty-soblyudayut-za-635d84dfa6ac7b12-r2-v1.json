@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
+  "text_revision": 2,
+  "text_updated_at": "2026-11-23T09:03:21Z",
+  "cover_version": 1,
+  "cover_blob_sha": "cf5cd30df74869ab916f564282550d521af8eb6a",
+  "cover_metadata_blob_sha": "d857fd3bbd6402695d68d29a5cd3a0b5575b0115",
+  "source_draft_blob_sha": "0adacc674d76791e006e51658fcea4ebac211aad",
+  "source_text_decision_blob_sha": "a8d7edfe4097d95f648e386035a7b458bc6bc061",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-23T10:09:17.002Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
