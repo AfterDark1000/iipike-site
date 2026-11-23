@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T12:21:22.752682Z",
+  "updated_at": "2026-11-23T21:17:15.902408Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
+      "last_success_at": "2026-11-23T21:17:15.902408Z",
       "error": null,
-      "fresh_matches": 10
+      "fresh_matches": 9
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
+      "last_success_at": "2026-11-23T21:17:15.902408Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
+      "status": "error",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
       "last_success_at": "2026-11-23T12:21:22.752682Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
+      "last_success_at": "2026-11-23T21:17:15.902408Z",
       "error": null,
-      "fresh_matches": 7
+      "fresh_matches": 1
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
+      "last_success_at": "2026-11-23T21:17:15.902408Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,23 +64,112 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T12:21:22.752682Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
+      "checked_at": "2026-11-23T21:17:15.902408Z",
+      "last_success_at": "2026-11-23T21:17:15.902408Z",
       "error": null,
       "fresh_matches": 0
     }
   ],
   "generator": {
-    "status": "ok",
+    "status": "error",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
   },
   "usage": {
-    "date": "2026-11-23",
-    "attempted": 10
+    "date": "2026-11-24",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "9c3b077a23643e74c2efc64a",
+      "title": "Маск предупредил о перегреве ИИ-рынка: задержки с запуском дата-центров могут потребовать сотни миллиардов долларов",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/23/mask-predupredil-o-peregreve-ii-rynka-zaderzki-data-centrov-mogut-potrebovat-sotni-milliardov-dollarov.html",
+      "published_at": "2026-11-23T19:20:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-23T21:17:15.902408Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "9fbb22dcb6643de8d270ab06",
+      "title": "Два штата США подали в суд на SpaceX из-за сексуализированных дипфейков, созданных Grok",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/23/dva-stata-ssa-podali-v-sud-na-spacex-iz-za-seksualizirovannyx-dipfeikov-sozdannyx-grok.html",
+      "published_at": "2026-11-23T18:29:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-23T21:17:15.902408Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "d2ef91aba1e9be7cc6e1c29b",
+      "title": "Дизайнер создал футболку с цифровым камуфляжем, скрывающим человека от распознавания с помощью ИИ",
+      "source_id": "techinsider",
+      "source_name": "TechInsider",
+      "source_url": "https://www.techinsider.ru/news/news-1750153-dizainer-sozdal-futbolku-s-cifrovym-kamuflyajem-skryvayushchim-cheloveka-ot-raspoznavaniya-s-pomoshchyu-ii/",
+      "published_at": "2026-11-23T17:54:00Z",
+      "channel_url": "https://dzen.ru/techinsider",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-23T21:17:15.902408Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "db2af79a4fddd351a685142f",
+      "title": "Z.ai представила ИИ-модель GLM-5.4, которая повторно использует одни и те же слои для более глубоких вычислений",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/23/zai-predstavila-ii-model-glm-54-kotoraia-povtorno-ispolzuet-odni-i-te-ze-sloi-dlia-bolee-glubokix-vycislenii.html",
+      "published_at": "2026-11-23T13:46:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-23T21:17:15.902408Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "7839265209c55bdd63913b2e",
+      "title": "Решать, а не списывать: помощник по математике на основе «Алисы AI» появился на «Госуслугах» по всей России",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/23/resat-a-ne-spisyvat-pomoshhnik-po-matematike-na-osnove-alisy-ai-poiavilsia-na-gosuslugax-po-vsei-rossii.html",
+      "published_at": "2026-11-23T13:27:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-23T21:17:15.902408Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "2c6f72c2a80055b18395ac8e",
       "title": "ChatGPT запустили на 35-летней консоли Nintendo",
@@ -135,10 +224,12 @@
       "first_seen_at": "2026-11-23T12:21:22.752682Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "ebd86b210f9414c1cb62f7eb",
@@ -2286,48 +2377,6 @@
       "comment": "",
       "attempts": 0,
       "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "f7d05e0a812cbfbe6538f9a3",
-      "title": "ИИ-модель научилась определять голоса редких птиц и может их обучить песне, если они ее забыли",
-      "source_id": "techinsider",
-      "source_name": "TechInsider",
-      "source_url": "https://www.techinsider.ru/news/news-1749789-ii-model-nauchilas-opredelyat-golosa-redkih-ptic-i-mojet-ih-samih-obuchit-pesne-esli-oni-ee-zabyli/",
-      "published_at": "2026-11-16T18:25:00Z",
-      "channel_url": "https://dzen.ru/techinsider",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-17T02:03:37.367821Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-17T02:03:37.367821Z",
-      "reason": "Не прошёл проверку: В статье не упоминается фоновый шум, комментарий добавляет несуществующую в тексте деталь про путаницу с фоновым шумом.",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-17T02:03:37.367821Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "edc45517e62e22a1daedfdae",
-      "title": "Неприятные изменения в DeepSeek: бесплатного безлимита больше нет",
-      "source_id": "iguides",
-      "source_name": "iGuides",
-      "source_url": "https://www.iguides.ru/main/other/nepriyatnye_izmeneniya_v_deepseek_besplatnogo_bezlimita_bolshe_net/",
-      "published_at": "2026-11-16T12:26:14Z",
-      "channel_url": "https://dzen.ru/iguides",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-16T18:24:17.064475Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-17T02:03:37.367821Z",
-      "reason": "Не прошёл проверку: В статье не указано, что сервис DeepSeek является полностью бесплатным («бесплатная лавочка»), это домысел автора комментария.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-17T02:03:37.367821Z"
     }
   ]
 }
