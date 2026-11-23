@@ -1625,6 +1625,18 @@
           "source_url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
         }
       ]
+    },
+    {
+      "key": "project-monai",
+      "name": "Project MONAI",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "amazon-cairn-monai-zero-day-20261120",
+          "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+        }
+      ]
     }
   ],
   "products": [
@@ -3216,6 +3228,19 @@
         {
           "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
           "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
+        }
+      ]
+    },
+    {
+      "key": "monai-label",
+      "name": "MONAI Label",
+      "company": "project-monai",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "amazon-cairn-monai-zero-day-20261120",
+          "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
         }
       ]
     }
