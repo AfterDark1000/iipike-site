@@ -206,6 +206,56 @@ class PublicationQueueTests(unittest.TestCase):
             found = ready_items()
         self.assertEqual([x["id"] for x in found], ["older", "newer"])
 
+    def test_exact_verified_manual_reissue_is_eligible_despite_existing_page(self):
+        """Only the audited #58 exception may bypass the usual page-exists gate."""
+        from scripts.site_first_release_pr import MANUAL_REISSUE_ID
+        sid = MANUAL_REISSUE_ID
+        tree = "\\n".join([
+            f"editorial_inbox/stories/{sid}.json",
+            f"editorial_inbox/covers/{sid}.webp",
+            "editorial_inbox/stories/other.json",
+            "editorial_inbox/covers/other.webp",
+        ])
+        def source(ref, path):
+            story_id = Path(path).stem
+            return json.dumps({
+                "id": story_id, "status": "editor_approved",
+                "approved_by": "human_editor", "site_queue": "priority",
+                "article_markdown": "Текст новости, одобренный человеком.",
+            })
+        def proof(story_id, source_ref, main_ref):
+            self.assertEqual(source_ref, "origin/editorial-intake")
+            self.assertEqual(main_ref, "origin/main")
+            return ("old-html", "old-cover") if story_id == sid else None
+        with patch("scripts.site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=tree)), \\
+             patch("scripts.site_publication_queue.exists_at", return_value=True), \\
+             patch("scripts.site_publication_queue.verified_manual_reissue",
+                   side_effect=proof), \\
+             patch("scripts.site_publication_queue.safe_git_blob_at",
+                   side_effect=source), \\
+             patch("scripts.site_publication_queue._last_change",
+                   return_value=NOW - dt.timedelta(hours=2)):
+            ready = ready_items()
+        self.assertEqual([row["id"] for row in ready], [sid])
+        self.assertEqual(ready[0]["lane"], "priority")
+
+    def test_manual_reissue_not_verified_stays_blocked(self):
+        """An existing page remains a hard stop if historic proofs fail."""
+        from scripts.site_first_release_pr import MANUAL_REISSUE_ID
+        sid = MANUAL_REISSUE_ID
+        tree = (f"editorial_inbox/stories/{sid}.json\\n"
+                f"editorial_inbox/covers/{sid}.webp")
+        with patch("scripts.site_publication_queue.git",
+                   return_value=SimpleNamespace(stdout=tree)), \\
+             patch("scripts.site_publication_queue.exists_at", return_value=True), \\
+             patch("scripts.site_publication_queue.verified_manual_reissue",
+                   return_value=None), \\
+             patch("scripts.site_publication_queue.safe_git_blob_at") as blob:
+            ready = ready_items()
+        self.assertEqual(ready, [])
+        blob.assert_not_called()
+
     def test_unverified_dzen_link_isolated_from_other_ready_stories(self):
         tree = "\n".join([
             "editorial_inbox/stories/blocking.json",
