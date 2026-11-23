@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 13 · **Готовы:** 0 · **Ждут интервал:** 13 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 206
+**В очереди:** 15 · **Готовы:** 0 · **Ждут интервал:** 15 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 206
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -25,12 +25,13 @@
 | **11** | [ИИ научился заменять отдельные слова в аудиозаписи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/riverside-tonality-audio-word-edit-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 07:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/riverside-tonality-audio-word-edit-20261112.webp) |
 | **12** | [Четыре необычных эксперимента с ИИ: от проектирования дома до управления роботом](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-physical-experiments-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 08:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-four-physical-experiments-20261115.webp) |
 | **13** | [Четыре эксперимента с ИИ: создатель Elona сделал игру за три часа, а нейросеть стала стримером](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-game-experiments-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 09:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-four-game-experiments-20261115.webp) |
+| **14** | [Китай приучает почти 200 миллионов школьников к ИИ. Первые результаты удивляют даже учителей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/china-ai-schools-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 10:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/china-ai-schools-20261116.webp) |
+| **15** | [Четыре эксперимента с ИИ: фильм без камеры, 700 тысяч мазков и японский храм из кода](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-visual-experiments-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 11:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-four-visual-experiments-20261115.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Китай приучает почти 200 миллионов школьников к ИИ. Первые результаты удивляют даже учителей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/china-ai-schools-20261116.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Сценарист «Таксиста» попросил ИИ написать фильм в его стиле и испугался результата](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/paul-schrader-ai-screenplay-fable-20261121.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
