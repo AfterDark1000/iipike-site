@@ -6805,12 +6805,12 @@
       "summary": "20 ноября: тест сравнил модели и людей в задачах с перетаскиванием предметов; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-23T06:10:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-e175ec379fa37c64"
+      "closed_at": "2026-11-23T11:54:02Z",
+      "article_id": "turingspace-spatial-captcha-humans-astra-benchmark-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e175ec379fa37c64\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/turingspace-spatial-captcha-humans-astra-benchmark-20261119/"
     },
     {
       "id": "n-5449c44fd696ee30",
