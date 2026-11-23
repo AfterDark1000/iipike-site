@@ -6,6 +6,7 @@ on:
     paths:
       - 'admin-auth-worker/**'
       - 'admin/auth/hpii-auth-client.js'
+      - 'admin/auth/gate.js'
       - '.github/workflows/hpii-admin-auth-tests.yml'
 
 permissions:
@@ -26,5 +27,6 @@ jobs:
         run: |
           node --check admin-auth-worker/src/index.mjs
           node --check admin/auth/hpii-auth-client.js
+          node --check admin/auth/gate.js
       - name: Run mocked GitHub OAuth and action tests
         run: node --test admin-auth-worker/tests/*.test.mjs
