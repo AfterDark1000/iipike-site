@@ -7976,5 +7976,26 @@
       "openai"
     ],
     "products": []
+  },
+  {
+    "title": "Сценарист «Таксиста» попросил ИИ написать фильм в его стиле и испугался результата",
+    "summary": "Пол Шредер рассказал, что нейросеть быстро подготовила сценарий в его стиле и напугала его точностью подражания. Теперь режиссёр планирует использовать ИИ-студию Fable для сцен нового хоррора.",
+    "published": "2026-11-23",
+    "source_url": "https://www.theguardian.com/film/2026/nov/21/taxi-driver-scriptwriter-paul-schrader-ai-film-making-martin-scorsese",
+    "cover": "assets/editorial/paul-schrader-ai-screenplay-fable-20261121.webp",
+    "rubric": "news",
+    "vk_title": "🎬 Сценарист «Таксиста» ИСПУГАЛСЯ того, что написал ИИ вместо него",
+    "vk_summary": "80-летний Пол Шредер попросил нейросеть придумать сценарий в его стиле. ИИ за десять минут подготовил сюжет, расписал более 40 сцен и начал имитировать авторскую манеру. Режиссёр испугался результата, но уже готовит собственный хоррор с ИИ-студией Fable.",
+    "published_at_utc": "2026-11-23T15:45:39Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-21",
+    "id": "paul-schrader-ai-screenplay-fable-20261121",
+    "url": "articles/paul-schrader-ai-screenplay-fable-20261121/",
+    "topics": [
+      "video",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
