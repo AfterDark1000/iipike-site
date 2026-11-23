@@ -7841,5 +7841,30 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Google доверила Безосу запуск космических ИИ-серверов после испытания с Маском",
+    "summary": "Google заключила соглашение с Blue Origin о запуске спутников Project Suncatcher на New Glenn в первом квартале 2029 года. Каждый аппарат получит вычислительные мощности масштаба серверной стойки.",
+    "published": "2026-11-23",
+    "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/",
+    "cover": "assets/editorial/google-blue-origin-suncatcher-new-glenn-20261119.webp",
+    "rubric": "news",
+    "vk_title": "🚀 Google доверила БЕЗОСУ запуск космических ИИ-СЕРВЕРОВ",
+    "vk_summary": "Google и Blue Origin подписали соглашение: в первом квартале 2029 года ракета New Glenn должна вывести на орбиту несколько спутников Project Suncatcher. Каждый рассчитан на вычисления примерно как стойка серверов в дата-центре. Первый прототип проекта Google уже запускала через SpaceX.",
+    "published_at_utc": "2026-11-23T08:30:49Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "google-blue-origin-suncatcher-new-glenn-20261119",
+    "url": "articles/google-blue-origin-suncatcher-new-glenn-20261119/",
+    "topics": [
+      "infrastructure",
+      "science"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "tpu"
+    ]
   }
 ]
