@@ -975,6 +975,10 @@
         {
           "article_id": "childlight-ai-child-safety-reports-85x-20261116",
           "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+        },
+        {
+          "article_id": "openai-child-safety-image-classifier-20261116",
+          "source_url": "https://openai.com/index/strengthening-online-child-safety/"
         }
       ]
     },
@@ -3575,6 +3579,19 @@
         {
           "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
           "source_url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/"
+        }
+      ]
+    },
+    {
+      "key": "openai-csam-image-classifier",
+      "name": "OpenAI CSAM Image Classifier",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "openai-child-safety-image-classifier-20261116",
+          "source_url": "https://openai.com/index/strengthening-online-child-safety/"
         }
       ]
     }
