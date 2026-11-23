@@ -6775,12 +6775,12 @@
       "summary": "19 ноября: отдельное сравнение уже представленной Praxis-1, заявлено ускорение в 15,6 раза; со слов разработчика, возможный тематический дубль.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-23T06:10:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6df30b9327788125"
+      "closed_at": "2026-11-23T09:09:03Z",
+      "article_id": "runway-praxis-1-vs-gpt6-astra-robot-speed-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6df30b9327788125\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/runway-praxis-1-vs-gpt6-astra-robot-speed-20261119/"
     },
     {
       "id": "n-ca4255e5e56a8857",
