@@ -8043,5 +8043,26 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "В Китае открыли биржу нейросетей. Уже 50 миллионов запросов в день",
+    "summary": "Baidu представила Token Exchange, площадку для сравнения и покупки доступа к ИИ-моделям. Компания заявляет о 50 млн обращений в день и более 100 предложениях.",
+    "published": "2026-11-23",
+    "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html",
+    "cover": "assets/editorial/baidu-token-exchange-ernie-55-20261112.webp",
+    "rubric": "news",
+    "vk_title": "💸 В Китае открыли БИРЖУ НЕЙРОСЕТЕЙ с 50 млн обращений в день",
+    "vk_summary": "Baidu представила Token Exchange, площадку для сравнения и покупки доступа к ИИ-моделям разных поставщиков. Компания заявляет о более 100 предложениях и 50 млн обращений в день. Одновременно вышла ERNIE 5.5 Flash Preview с контекстом в миллион токенов и ценой от одного юаня за миллион входных токенов.",
+    "published_at_utc": "2026-11-23T18:15:40Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-12",
+    "id": "baidu-token-exchange-ernie-55-20261112",
+    "url": "articles/baidu-token-exchange-ernie-55-20261112/",
+    "topics": [
+      "models",
+      "infrastructure"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
