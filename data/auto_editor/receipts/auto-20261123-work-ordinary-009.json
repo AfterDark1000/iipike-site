@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-009.json",
+  "request_sha256": "c4ed6f1b19120a69f0370207454909e8a4c5323de34f79148c86c7b93800a767",
+  "status": "reserved",
+  "pool_id": "n-4ef3fbc0562fdcd7",
+  "pool_sequence": 223,
+  "article_id": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7",
+  "priority": "normal",
+  "title": "NVIDIA выпустила научный ИИ, которому можно поручить химию и проектирование белков",
+  "source_url": "https://www.hpcwire.com/off-the-wire/nvidia-introduces-nemotron-for-science-to-accelerate-discoveries-with-agents",
+  "claimed_at": "2026-11-23T12:59:12+00:00",
+  "worker": "hpii-auto-editor"
+}

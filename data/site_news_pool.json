@@ -3340,12 +3340,12 @@
       "summary": "Nemotron for Science: модели и данные для научных агентов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T03:33:51+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T12:59:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-009.json; article_id=nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7"
     },
     {
       "id": "n-aede5bf8ca875179",
