@@ -1435,12 +1435,12 @@
       "summary": "12 ноября: Baidu анонсировала новые модели, площадку токенов и инфраструктурные решения, включая Tianchi.",
       "origin": "ХПИИ — добытчик новостей (утренний проход 14.11.2026)",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-14T08:28:00.000Z",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T07:15:46.035Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Пресс-релиз Baidu; технические детали проверить."
+      "note": "Пресс-релиз Baidu; технические детали проверить.\n23.11.2026: редактор №28 зарезервировал №96; проверка официального релиза Baidu, статуса ERNIE 5.5 Flash и Token Exchange, архива, затем тексты Дзен/Threads/X/VK."
     },
     {
       "id": "n-fb1ddd2a5ff741f6",
