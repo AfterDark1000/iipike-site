@@ -6,7 +6,9 @@ export {FirstCarText} from "./first-car-text.mjs";
 const enc = new TextEncoder();
 const dec = new TextDecoder();
 const MAX_NOTE = 4000;
-const SESSION_SECONDS = 8 * 3600;
+// IDEA-004: seven-day fixed owner session, never indefinite or silently renewed.
+// The browser shares this signed token between tabs; the Worker remains authoritative.
+const SESSION_SECONDS = 7 * 24 * 3600;
 const STATE_SECONDS = 600;
 
 function b64url(bytes) {
@@ -526,7 +528,8 @@ async function callback(request,env) {
     exp:Math.floor(Date.now()/1000)+SESSION_SECONDS
   });
   const nonce=random();
-  // No OAuth/GitHub token reaches the browser. Short-lived HMAC session arrives by origin-bound popup messaging.
+  // No OAuth/GitHub access token reaches the browser. A seven-day, fixed-expiry
+  // HMAC session arrives only by origin-bound popup messaging.
   const html='<!doctype html><meta charset="utf-8"><title>ХПИИ — вход</title>'+
     '<p>Вход подтверждён. Окно можно закрыть.</p>'+
     '<script nonce="'+nonce+'">if(window.opener){window.opener.postMessage('+JSON.stringify({type:"hpii-auth",token,login:user.login,backend:env.BACKEND_ORIGIN})+','+JSON.stringify(env.ADMIN_ORIGIN)+');window.close()}</script>';

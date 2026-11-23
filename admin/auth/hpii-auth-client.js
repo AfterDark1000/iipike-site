@@ -1,13 +1,63 @@
-// Client helper for a FUTURE activated backend. Not currently loaded by public /admin.
-// Backend MUST verify OAuth identity and authorize every write; this module is only UX.
+// Shared browser session for HPII admin pages on iipike.ru.
+// The Worker verifies the HMAC session, owner identity and every protected operation.
+// The GitHub OAuth access token and repository write credentials never enter this client.
 export class HpiiAdminAuth {
   constructor(backendOrigin) {
     if (!/^https:\/\//.test(backendOrigin)) throw Error("HTTPS backend required");
     this.backend = new URL(backendOrigin).origin;
-    this.storageKey = "hpii-admin-session-v1";
+    // v2 is shared across all same-origin admin tabs and browser restarts.
+    // v1 was tab-scoped: migrate a still-valid legacy session on first visit.
+    this.storageKey = "hpii-admin-session-v2";
+    this.legacyKey = "hpii-admin-session-v1";
   }
-  getToken() { return sessionStorage.getItem(this.storageKey); }
-  logout() { sessionStorage.removeItem(this.storageKey); }
+  _read(area, key) {
+    try { return window[area].getItem(key); } catch (_) { return null; }
+  }
+  _remove(area, key) {
+    try { window[area].removeItem(key); } catch (_) { /* Storage may be disabled. */ }
+  }
+  _validToken(value) {
+    return typeof value === "string" && value.length <= 2500 &&
+      /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(value);
+  }
+  getToken() {
+    const shared = this._read("localStorage", this.storageKey);
+    if (this._validToken(shared)) return shared;
+    if (shared) this._remove("localStorage", this.storageKey);
+    const tab = this._read("sessionStorage", this.storageKey) ||
+      this._read("sessionStorage", this.legacyKey);
+    if (!this._validToken(tab)) {
+      if (tab) this.logout();
+      return null;
+    }
+    // Migration is best-effort; private browsing can disallow persistent storage.
+    try {
+      window.localStorage.setItem(this.storageKey, tab);
+      this._remove("sessionStorage", this.storageKey);
+      this._remove("sessionStorage", this.legacyKey);
+    } catch (_) { /* Preserve existing tab session when storage is blocked. */ }
+    return tab;
+  }
+  _saveToken(token) {
+    if (!this._validToken(token)) throw Error("Неверный формат сессии");
+    try {
+      window.localStorage.setItem(this.storageKey, token);
+      this._remove("sessionStorage", this.storageKey);
+      this._remove("sessionStorage", this.legacyKey);
+      return;
+    } catch (_) { /* Fallback only if browser blocks persistent storage. */ }
+    try {
+      window.sessionStorage.setItem(this.storageKey, token);
+      return;
+    } catch (_) {
+      throw Error("Браузер запретил сохранять сессию. Разреши хранение данных для iipike.ru.");
+    }
+  }
+  logout() {
+    this._remove("localStorage", this.storageKey);
+    this._remove("sessionStorage", this.storageKey);
+    this._remove("sessionStorage", this.legacyKey);
+  }
   async login() {
     const popup=window.open(this.backend+"/auth/start","hpii-github-login","width=570,height=700");
     if(!popup) throw Error("Разреши всплывающее окно для входа через GitHub");
@@ -25,7 +75,8 @@ export class HpiiAdminAuth {
         if(event.data?.type!=="hpii-auth" || event.data?.backend!==self.backend ||
            typeof event.data?.token!=="string" || !/^[A-Za-z0-9_.-]+$/.test(event.data.token)) return;
         clear();
-        sessionStorage.setItem(self.storageKey,event.data.token);
+        try { self._saveToken(event.data.token); }
+        catch (error) { reject(error); return; }
         resolve(event.data.login);
       }
       window.addEventListener("message",receive);
