@@ -62,7 +62,12 @@ function show(){
 }
 function render(item){
  active=item;
- byId("status").textContent=(item.status==="needs_editor_attention"?"Требуется внимание журналиста":"Готово к сравнению")+" · r"+item.source_revision+" v"+item.copyedit_version;
+ const statusName={
+  needs_editor_attention:"Требуется внимание журналиста",
+  ready_for_comparison:"Готово к сравнению",
+  no_change_recommended:"Корректура не требуется"
+ };
+ byId("status").textContent=(statusName[item.status]||"Неизвестный статус")+" · r"+item.source_revision+" v"+item.copyedit_version;
  byId("info").textContent="Оригинал Git blob: "+item.source_draft_blob_sha+" · Сохранено: "+item.created_at;
  const quality=byId("quality");quality.replaceChildren();
  const headings=[
