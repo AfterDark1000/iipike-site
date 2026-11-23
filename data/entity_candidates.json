@@ -1709,6 +1709,18 @@
           "source_url": "https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service"
         }
       ]
+    },
+    {
+      "key": "meituan",
+      "name": "Meituan",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "meituan-longcat-2-5-open-weights-20261116",
+          "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5"
+        }
+      ]
     }
   ],
   "products": [
@@ -3423,6 +3435,19 @@
         {
           "article_id": "hong-kong-smartview-facial-recognition-20261116",
           "source_url": "https://www.police.gov.hk/ppp_en/11_useful_info/cctv.html"
+        }
+      ]
+    },
+    {
+      "key": "longcat-2-5",
+      "name": "LongCat-2.5",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "company": "meituan",
+      "evidence": [
+        {
+          "article_id": "meituan-longcat-2-5-open-weights-20261116",
+          "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5"
         }
       ]
     }
