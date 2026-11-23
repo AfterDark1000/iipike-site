@@ -7375,12 +7375,12 @@
       "summary": "22 ноября. Предложение об отраслевых пределах развития ИИ, привязанных к показателям безопасности.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-23T03:39:36+00:00",
       "review_started_at": "2026-11-23T07:04:42.721Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "23.11.2026: первоисточник OpenAI «Perplexity and Intelligence» (Jakub Pachocki, 22.11) https://openai.com/index/perplexity-and-intelligence/ проверен. Пахоцкий предлагает общие добровольные пределы развития моделей на основе perplexity + других показателей до конкретного достижения безопасности/мониторинга; соглашения отрасли нет. Внутренняя метрика на коде: GPT-3.5 ~0.99, GPT-4 ~0.91, <0.8 новые способности, ~0.76 математика, прогноз 0.68–0.7; нельзя переносить цифры на независимый рейтинг. Поддержка Сэма Альтмана подтверждена Reuters 22.11: https://www.reuters.com/business/openai-scientist-proposes-industry-ai-limits-tied-model-intelligence-metric-2026-11-22/. Архив Дзена проверен, прямого дубля нет. X: подтверждены @merettm, @sama, @OpenAI. Черновики Дзена/Threads/X/ВК на согласование, публикация не инициировалась."
+      "closed_at": "2026-11-23T07:08:27.846Z",
+      "article_id": "openai-pachocki-ai-limits-20261122",
+      "note": "23.11.2026: главред утвердил статью №492 о предложении Якуба Пахоцкого и поддержке Альтмана. Полный Markdown и VK поля подтверждены в editorial-intake/stories/openai-pachocki-ai-limits-20261122.json; Threads/X approved в main, записи повторно проверены. site_queue=priority. Ждёт обложку, публикация не запускалась."
     },
     {
       "id": "n-0a3f026f3a8e88bd",
