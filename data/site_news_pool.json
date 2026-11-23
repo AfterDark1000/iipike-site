@@ -6640,12 +6640,12 @@
       "summary": "20 ноября: сообщается о переговорах по привлечению не менее 2 млрд долларов; сделка не заключена, вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T15:51:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9067dd2427d6b174"
+      "closed_at": "2026-11-23T06:38:59Z",
+      "article_id": "cognition-devin-funding-talks-2bn-75bn-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9067dd2427d6b174\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/cognition-devin-funding-talks-2bn-75bn-20261120/"
     },
     {
       "id": "n-36677e166994bf6b",
