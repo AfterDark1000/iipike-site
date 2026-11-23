@@ -1801,6 +1801,18 @@
           "source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/"
         }
       ]
+    },
+    {
+      "key": "ebrd",
+      "name": "European Bank for Reconstruction and Development (ЕБРР)",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ebrd-ai-data-center-power-limits-20261117",
+          "source_url": "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/transition-report-archive/Transition%20Report%202026-27/chapters/transition-report-2026-27-ch3.pdf"
+        }
+      ]
     }
   ],
   "products": [
