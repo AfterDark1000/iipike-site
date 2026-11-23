@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261123-batch24-fifo-c49a8e.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-325e6e2c464d5272",
+      "pool_sequence": 463,
+      "title": "Together AI добавила Qwen3 TTS с быстрым началом генерации речи",
+      "source_url": "https://ai.info/news/together-ai-qwen3-tts-first-audio",
+      "claimed_at": "2026-11-23T06:23:44+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6728ab5448c93c9a",
+      "pool_sequence": 466,
+      "title": "Amazon представила Textract Insights для проверки данных в документах",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents",
+      "claimed_at": "2026-11-23T06:23:44+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-14f0c96e2688a6ba",
+      "pool_sequence": 468,
+      "title": "Harvey научила юридический ИИ синхронизировать правки с iManage",
+      "source_url": "https://www.harvey.ai/blog/two-way-sync-harvey-imanage",
+      "claimed_at": "2026-11-23T06:23:44+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-dbd5a641160d12d7",
+      "pool_sequence": 469,
+      "title": "Baseten представила модели для принятия решений Bison-1 и Groundhog-1",
+      "source_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1",
+      "claimed_at": "2026-11-23T06:23:44+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-8400d966ebbc5c18",
+      "pool_sequence": 472,
+      "title": "Провайдер Novita признал, что передавал запросы к MiniMax не туда, куда ожидали клиенты",
+      "source_url": "https://novita.ai/blog/minimax-requests-privacy-notice",
+      "claimed_at": "2026-11-23T06:23:44+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
