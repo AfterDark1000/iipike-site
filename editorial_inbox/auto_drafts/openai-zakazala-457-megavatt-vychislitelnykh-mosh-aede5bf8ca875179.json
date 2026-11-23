@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-010.json",
+  "pool_id": "n-aede5bf8ca875179",
+  "pool_sequence": 224,
+  "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+  "status": "ready_for_review",
+  "revision": 1,
+  "created_at": "2026-11-23T14:03:27+00:00",
+  "updated_at": "2026-11-23T14:04:21Z",
+  "content": {
+    "title": "OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?",
+    "dzen_title": "OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?",
+    "summary": "TensorWave поставит OpenAI выделенные мощности на ускорителях AMD Instinct MI455X. Первые серверы планируют ввести в первой половине 2027 года, а полный объём ожидается к началу 2028-го.",
+    "rubric": "news",
+    "section": "НОВОСТИ ИИ",
+    "topics": [
+      "infrastructure",
+      "business"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [],
+    "source_url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure",
+    "source_title": "TensorWave to Provide OpenAI with 457 Megawatts of AMD-Powered AI Infrastructure",
+    "event_date": "2026-11-16",
+    "related_dzen_ids": [
+      "6ae96ea055a910701b153d93"
+    ],
+    "site_crosslinks": {
+      "6ae96ea055a910701b153d93": "openai-power-grid-georgia-1000mw"
+    },
+    "article_markdown": "**TensorWave** подписала с **OpenAI** контракт на шесть лет и выделит ей мощности на нескольких площадках в США.\n\nУсловия сделки TensorWave раскрыла 16 ноября. По плану серверное оборудование на этих площадках сможет одновременно получать до 457 МВт.\n\nВ серверные стойки **AMD Helios** установят ускорители **AMD Instinct MI455X**. На этих серверах OpenAI сможет обучать модели и запускать их для пользователей.\n\n## Как контракт вписывается в сделку с AMD\n\nВ октябре 2025 года **AMD** и OpenAI договорились о развёртывании ускорителей суммарной мощностью 6 ГВт. По сообщению TensorWave, она стала первым публично названным облачным поставщиком в рамках этой договорённости.\n\nДля отдельного проекта в Джорджии [OpenAI договорилась с Georgia Power о сокращении нагрузки до 1000 МВт в пиковые часы](https://dzen.ru/a/auluoFWpEHAbFT2T).\n\nПервые мощности по контракту TensorWave рассчитывает запустить **в первой половине 2027 года**, остальные ввести к началу 2028-го.",
+    "threads_text": "OpenAI получит 457 МВт под серверы на ускорителях AMD. TensorWave подписала контракт на ШЕСТЬ ЛЕТ и распределит серверы по нескольким площадкам в США.\n\nПервые мощности обещают запустить в первой половине 2027 года, а все серверы подключить к началу 2028-го.\n\nУдлинитель из офиса в смету не вошёл.",
+    "x_text": "@TensorWave подписала шестилетний контракт с @OpenAI на 457 МВт под серверное оборудование с ускорителями @AMD Instinct MI455X. Первые мощности планируют запустить в первой половине 2027 года и выйти на полную мощность к началу 2028-го.",
+    "vk_title": "⚡ OpenAI получит 457 МВт под серверы с чипами AMD. Когда ЗАПУСК?",
+    "vk_summary": "TensorWave подписала с OpenAI шестилетний контракт и выделит мощности на нескольких площадках в США. Серверы оснастят ускорителями AMD Instinct MI455X. Первые мощности планируют запустить в первой половине 2027 года и выйти на полную мощность к началу 2028-го."
+  },
+  "research": {
+    "sources": [
+      {
+        "url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure",
+        "type": "primary",
+        "note": "Анонс поставщика от 16.11.2026. Срок договора, мощность, площадки, оборудование и план запуска."
+      },
+      {
+        "url": "https://www.foley.com/news/2026/11/foley-advises-tensorwave-on-457-mw-ai-infrastructure-agreement-with-openai/",
+        "type": "primary",
+        "note": "Сообщение консультанта по сделке Foley & Lardner от 17.11.2026. Срок, выделенные ресурсы, назначение и сроки запуска."
+      },
+      {
+        "url": "https://ir.amd.com/news-events/press-releases/detail/1260/amd-and-openai-announce-strategic-partnership-to-deploy-6-gigawatts-of-amd-gpus",
+        "type": "primary",
+        "note": "Совместное сообщение AMD и OpenAI от 06.10.2025 о более широком соглашении на 6 ГВт."
+      },
+      {
+        "url": "https://www.datacenterdynamics.com/en/news/openai-signs-on-for-457mw-ai-capacity-with-tensorwave/",
+        "type": "secondary",
+        "note": "Отраслевое издание Data Center Dynamics от 16.11.2026. Подтверждает, что 457 МВт относятся к IT-мощности."
+      }
+    ],
+    "fact_checks": [
+      "16 ноября TensorWave объявила шестилетний контракт с OpenAI на 457 МВт выделенной IT-мощности на нескольких площадках в США.",
+      "457 МВт — электрическая мощность выделенного IT-оборудования. Показатель не выражает производительность ускорителей или суммарное потребление всех площадок.",
+      "В стойки AMD Helios поставят AMD Instinct MI455X. Инфраструктура рассчитана на обучение и инференс. Первые мощности ожидаются в первом полугодии 2027, полный объём к началу 2028.",
+      "6 ГВт — более широкая договорённость OpenAI и AMD от 06.10.2025. TensorWave — первый публично названный облачный поставщик в рамках этой договорённости, по её сообщению.",
+      "Проект с Georgia Power отдельно подтверждён в архиве. Его 1000 МВт относятся к возможному сокращению нагрузки, площадка не приписывается сделке TensorWave.",
+      "X: @TensorWave идентифицирован по профилю компании и отраслевым публикациям, @OpenAI по справочному центру OpenAI, @AMD по корпоративной странице AMD Newsroom.",
+      "Дубль TensorWave, 457 МВт, MI455X в рамках этой сделки не найден среди опубликованных, готовящихся и собственных зарезервированных материалов."
+    ],
+    "notes": "Редакционный крючок — сроки подключения инфраструктуры под конкретную мощность. Заголовок и лид сообщают разные факты. Разведены мощность серверного оборудования, объём отдельной сделки и широкая договорённость. Источники и цифры перечитаны."
+  },
+  "entity_candidates": {
+    "companies": [
+      {
+        "key": "tensorwave",
+        "name": "TensorWave",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+            "source_url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure"
+          }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "key": "amd-instinct-mi455x",
+        "name": "AMD Instinct MI455X",
+        "company": "amd",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+            "source_url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure"
+          }
+        ]
+      },
+      {
+        "key": "amd-helios",
+        "name": "AMD Helios",
+        "company": "amd",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+            "source_url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure"
+          }
+        ]
+      }
+    ]
+  },
+  "cover_brief": {
+    "fact": "TensorWave поставит OpenAI выделенные 457 МВт под серверы на ускорителях AMD Instinct MI455X. План запуска начинается в первой половине 2027 года.",
+    "hook": "457 МВт ДЛЯ OPENAI",
+    "constraints": "Горизонтальная 16:9. Образ проекта с несколькими отдельными площадками или серверными залами и понятным масштабом мощности. Стиль выбирает художник после сверки с недавними обложками. Изображение не следует выдавать за готовый объект или конкретную площадку в Джорджии."
+  },
+  "editor_notes": [
+    "№224 подтверждён штатной квитанцией. normal, standalone full/long.",
+    "AMD уже есть среди кандидатов, поэтому повторная заявка на сущность не формировалась. TensorWave и два продукта предложены к последующей проверке.",
+    "Проверенная внутренняя ссылка ведёт на отдельную историю о нагрузке дата-центра OpenAI. Соцверсии проверены с фактической раскладкой."
+  ]
+}
