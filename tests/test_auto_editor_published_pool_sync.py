@@ -92,6 +92,35 @@ class AutoEditorPublishedSyncTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Multiple pool claims"):
             sync.reconcile(pool, [self.article], root=self.root)
 
+    def test_unrelated_bad_approved_record_is_not_silently_accepted(self):
+        # The reconciliation helper remains strict; workflow isolation should
+        # stop an unrelated raw-data defect from disrupting site publication.
+        unrelated = copy.deepcopy(self.item)
+        unrelated.update(
+            id="n-0000000000000002",
+            sequence=45,
+            title="Previously approved unrelated human story",
+            status="approved",
+            article_id="human-story",
+            review_started_at=None,
+            closed_at=None,
+            note="Approved by a human, but missing historical closure metadata",
+        )
+        invalid = {"schema_version": 1, "note": "test",
+                   "items": [self.item, unrelated]}
+        with self.assertRaisesRegex(ValueError, "Closed item requires closed_at"):
+            sync.reconcile(invalid, [self.article], root=self.root)
+
+    def test_release_workflow_isolates_raw_pool_validation_failure(self):
+        workflow = (
+            Path(__file__).resolve().parents[1]
+            / ".github/workflows/site-first-scheduled-release.yml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("if ! python3 scripts/site_news_pool.py --validate; then", workflow)
+        self.assertIn("AUTO_EDITOR_POOL_SYNC_SKIPPED_INVALID_POOL", workflow)
+        self.assertIn("exit 0\n            fi", workflow)
+        self.assertIn("python3 scripts/sync_published_auto_editor_pool.py --write", workflow)
+
     def test_malformed_claim_without_exact_identity_is_never_closed(self):
         self.pool["items"][0]["note"] = "AUTO_EDITOR claim=unexpected no article id"
         same, updates = sync.reconcile(self.pool, [self.article], root=self.root)
