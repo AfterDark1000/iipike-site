@@ -6775,12 +6775,12 @@
       "summary": "19 ноября: отдельное сравнение уже представленной Praxis-1, заявлено ускорение в 15,6 раза; со слов разработчика, возможный тематический дубль.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:10:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6df30b9327788125"
     },
     {
       "id": "n-ca4255e5e56a8857",
@@ -6805,12 +6805,12 @@
       "summary": "20 ноября: тест сравнил модели и людей в задачах с перетаскиванием предметов; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:10:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e175ec379fa37c64"
     },
     {
       "id": "n-5449c44fd696ee30",
@@ -6835,12 +6835,12 @@
       "summary": "20 ноября: сравнили проверки геометрии файлов нескольких 3D-генераторов; физическую печать не проводили, вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:10:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-838bb6feb725eb0e"
     },
     {
       "id": "n-168a57a7870659d7",
@@ -6895,12 +6895,12 @@
       "summary": "20 ноября: Oracle опровергла опасения о нехватке финансирования; сводка, требует проверки официального заявления.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:10:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-1ec825e3395562d7"
     },
     {
       "id": "n-f7c5fc96307a13fd",
@@ -6925,12 +6925,12 @@
       "summary": "20 ноября: заявлена модель с открытыми весами и кодом обучения; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T11:35:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:10:01+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-71d8d760c730896e"
     },
     {
       "id": "n-325e6e2c464d5272",

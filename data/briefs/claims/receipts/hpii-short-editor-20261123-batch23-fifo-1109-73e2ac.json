@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261123-batch23-fifo-1109-73e2ac.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-6df30b9327788125",
+      "pool_sequence": 452,
+      "title": "Runway заявила, что Praxis-1 управляет роборукой быстрее GPT-6 Astra",
+      "source_url": "https://x.com/runwayml/status/2123504421749526904",
+      "claimed_at": "2026-11-23T06:10:01+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-e175ec379fa37c64",
+      "pool_sequence": 454,
+      "title": "Нейросети затрудняются с интерактивными пространственными головоломками TuringSpace",
+      "source_url": "https://ai.info/news/turingspace-spatial-action-ai-benchmark",
+      "claimed_at": "2026-11-23T06:10:01+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-838bb6feb725eb0e",
+      "pool_sequence": 456,
+      "title": "Проверили печатаемость 80 файлов 3D-моделей от нейросетей",
+      "source_url": "https://ai.info/news/voyager-ai-3d-models-printability-check",
+      "claimed_at": "2026-11-23T06:10:01+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-1ec825e3395562d7",
+      "pool_sequence": 460,
+      "title": "Oracle заявила, что финансирование дата-центров для OpenAI обеспечено",
+      "source_url": "https://toolsift.ai/news/2026-11-21",
+      "claimed_at": "2026-11-23T06:10:01+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-71d8d760c730896e",
+      "pool_sequence": 462,
+      "title": "AMD представила Nitro-P для генерации изображений напрямую в пространстве пикселей",
+      "source_url": "https://ai.info/news/amd-nitro-p-pixel-space-image-generation",
+      "claimed_at": "2026-11-23T06:10:01+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
