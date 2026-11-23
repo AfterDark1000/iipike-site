@@ -7045,12 +7045,12 @@
       "summary": "22 ноября. OpenRouter сообщила об исключении трёх провайдеров и снятии статуса Zero Data Retention со 125 эндпоинтов после проверки обращения с запросами пользователей.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:28:16+00:00",
       "review_started_at": "2026-11-23T06:23:33.769Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "23.11.2026: проверен официальный анонс OpenRouter от 22.11 и исследование Dragos от 19.11. Подтверждено: отключены три провайдера, 125 endpoints лишены ZDR, затронутые клиенты уведомлены; нарушения самой OpenRouter не выявлено. Первоисточники: https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/ и https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens . Проверен архив: отдельной статьи по инциденту не найдено. Черновик Дзена/Threads/X подготовлен на утверждение; не утвержден и не публиковался."
+      "closed_at": "2026-11-23T06:32:41.833Z",
+      "article_id": "openrouter-provider-data-leak-20261123",
+      "note": "23.11.2026: главред утвердил финальную редакцию. Полный Markdown и VK-тексты сохранены в editorial-intake/stories/openrouter-provider-data-leak-20261123.json; Threads и X сохранены в очередях main со статусом approved и проверены повторным чтением. site_queue=priority. Обложка ожидается; ничего не опубликовано."
     },
     {
       "id": "n-31dbae397b46d6b3",
