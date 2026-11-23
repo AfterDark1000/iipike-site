@@ -210,7 +210,7 @@ class PublicationQueueTests(unittest.TestCase):
         """Only the audited #58 exception may bypass the usual page-exists gate."""
         from scripts.site_first_release_pr import MANUAL_REISSUE_ID
         sid = MANUAL_REISSUE_ID
-        tree = "\\n".join([
+        tree = "\n".join([
             f"editorial_inbox/stories/{sid}.json",
             f"editorial_inbox/covers/{sid}.webp",
             "editorial_inbox/stories/other.json",
@@ -228,12 +228,12 @@ class PublicationQueueTests(unittest.TestCase):
             self.assertEqual(main_ref, "origin/main")
             return ("old-html", "old-cover") if story_id == sid else None
         with patch("scripts.site_publication_queue.git",
-                   return_value=SimpleNamespace(stdout=tree)), \\
-             patch("scripts.site_publication_queue.exists_at", return_value=True), \\
+                   return_value=SimpleNamespace(stdout=tree)), \
+             patch("scripts.site_publication_queue.exists_at", return_value=True), \
              patch("scripts.site_publication_queue.verified_manual_reissue",
-                   side_effect=proof), \\
+                   side_effect=proof), \
              patch("scripts.site_publication_queue.safe_git_blob_at",
-                   side_effect=source), \\
+                   side_effect=source), \
              patch("scripts.site_publication_queue._last_change",
                    return_value=NOW - dt.timedelta(hours=2)):
             ready = ready_items()
@@ -244,13 +244,13 @@ class PublicationQueueTests(unittest.TestCase):
         """An existing page remains a hard stop if historic proofs fail."""
         from scripts.site_first_release_pr import MANUAL_REISSUE_ID
         sid = MANUAL_REISSUE_ID
-        tree = (f"editorial_inbox/stories/{sid}.json\\n"
+        tree = (f"editorial_inbox/stories/{sid}.json\n"
                 f"editorial_inbox/covers/{sid}.webp")
         with patch("scripts.site_publication_queue.git",
-                   return_value=SimpleNamespace(stdout=tree)), \\
-             patch("scripts.site_publication_queue.exists_at", return_value=True), \\
+                   return_value=SimpleNamespace(stdout=tree)), \
+             patch("scripts.site_publication_queue.exists_at", return_value=True), \
              patch("scripts.site_publication_queue.verified_manual_reissue",
-                   return_value=None), \\
+                   return_value=None), \
              patch("scripts.site_publication_queue.safe_git_blob_at") as blob:
             ready = ready_items()
         self.assertEqual(ready, [])
