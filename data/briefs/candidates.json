@@ -1405,6 +1405,71 @@
       "source": "AMD ROCm Blogs, технический анонс Nitro-P",
       "source_url": "https://rocm.blogs.amd.com/artificial-intelligence/nitro-p/README.html",
       "fact_check": "AMD ROCm technical blog 20.11.2026, Nitro-P is end-to-end pixel-space diffusion T2I with no VAE decoder. Authors release full training code and weights. On one MI300X for 512x512 images batch=32: full-step 10.26 samples/s and distilled one-step 90.02 samples/s. 1024x1024 distilled 26 samples/s batch=32. Не выдавать throughput на большом батче за скорость одной картинки/любой видеокарты; internal AMD benchmarking."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 463,
+      "pool_id": "n-325e6e2c464d5272",
+      "slug": "together-qwen3-tts-realtime-russian-97ms-20261120",
+      "headline": "Together AI запустила Qwen3 TTS с началом речи от 97 миллисекунд",
+      "body": "Together AI открыла разработчикам доступ к голосовой модели Qwen3 TTS через API. На выбор девять голосов: каждому можно задать настроение обычной фразой и заставить говорить на десяти языках, включая русский. При потоковой генерации первый звук, по замерам компании, появляется всего через 97 миллисекунд в лучших условиях. Сервис уже работает; цена на общем сервере составляет $20 за миллион символов текста.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Together AI, официальный продуктовый анонс",
+      "source_url": "https://www.together.ai/blog/qwen3-tts",
+      "fact_check": "Официальный блог Together AI, 20.11.2026: Qwen3 TTS 12Hz 1.7B доступна на Serverless Inference и выделенных endpoints. Девять preset voices, 10 языков (английский, китайский, японский, корейский, немецкий, французский, русский, португальский, испанский, итальянский). Через instructions управляется стиль/эмоция, при stream first audio as little as 97ms (лучший случай, не все запросы). HTTP streaming и WebSocket с порционным текстом. $20/1M characters через serverless. Сама модель Qwen была известна раньше; новость об API Together и её условиях."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 466,
+      "pool_id": "n-6728ab5448c93c9a",
+      "slug": "amazon-textract-insights-document-evidence-ga-20261120",
+      "headline": "Amazon научила ИИ извлекать данные из документов со ссылкой на страницу",
+      "body": "Amazon выпустила Textract Insights для разбора больших пакетов документов. Пользователь описывает нужные поля обычными словами, а сервис сам разделяет сканы на документы, распознаёт их тип и возвращает найденные значения. Для каждого ответа он указывает страницу-источник и оценку уверенности, чтобы сомнительные результаты можно было перепроверить. Через API функция доступна в двух регионах AWS в США: Северная Вирджиния и Орегон.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Amazon Web Services, официальный анонс",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/textract-insights-ga/",
+      "fact_check": "AWS 20.11.2026 official What's New и technical blog https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents/. General availability, не только preview; API извлекает структурированные данные по blueprint(JSON Schema) с confidence score и page grounding; разделение/классификация пакетов до 3000 страниц. Только AWS us-east-1 (N. Virginia) и us-west-2 (Oregon). Прямо не заявлять гарантию безошибочности: уверенность позволяет ручную проверку."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 468,
+      "pool_id": "n-14f0c96e2688a6ba",
+      "slug": "harvey-imanage-two-way-sync-legal-documents-20261120",
+      "headline": "Harvey разрешила юристам сохранять правки ИИ прямо в iManage",
+      "body": "Юридический ИИ-сервис Harvey добавил двустороннюю синхронизацию с системой документов iManage. Теперь юрист может попросить ИИ исправить договор и связанные файлы, проверить результат и одним подтверждением сохранить новые версии обратно в iManage. История изменений сохраняется, а перед записью Harvey проверяет права доступа и состояние документа. Функция появилась 20 ноября в раннем доступе; подключение запрашивается через менеджера Harvey.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Harvey, официальный продуктовый блог",
+      "source_url": "https://www.harvey.ai/blog/two-way-sync-harvey-imanage",
+      "fact_check": "Harvey 20.11.2026 official blog. Two-way sync from existing imported iManage docs back to iManage; redlines, new versions, first/final drafts; lawyer reviews & approves saving, optionally batch of documents; version history preserved, check checkout and write access. Explicit early access via Harvey account manager. No general availability claimed."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 469,
+      "pool_id": "n-dbd5a641160d12d7",
+      "slug": "baseten-bison-groundhog-gemma4-decision-models-20261120",
+      "headline": "Baseten выпустила Bison-1 и Groundhog-1 для ИИ, который принимает решения",
+      "body": "Baseten представила две открытые модели для задач выбора действий: Bison-1 и Groundhog-1. Обе построены на Google Gemma 4, работают с текстом и изображениями и поддерживают контекст до 128 тысяч токенов. По данным рейтинга Artificial Analysis Decision Index 2.1, Bison-1 набрала 76 баллов и заняла первое место среди 19 специализированных моделей. Обе доступны через API Baseten, а их веса опубликованы на Hugging Face.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Baseten, официальный анонс",
+      "source_url": "https://www.baseten.co/blog/meet-bison-1-and-groundhog-1/",
+      "fact_check": "Baseten official blog published Nov 20, 2026. Models bison-1 31B and groundhog-1 MoE 26B/4B active, Gemma4 based, context 128K on Model APIs, images + text, weights HF. On external Artificial Analysis Decision Index v2.1 bison-1 ranks #1 of 19 with 76 points (per Baseten article) ahead of d1.2-ultra=75. Only narrow decision model benchmark, not claim best overall LLM. Prices $0.10 and $0.035 per 1M tokens per official blog if needed."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 472,
+      "pool_id": "n-8400d966ebbc5c18",
+      "slug": "novita-minimax-api-routing-privacy-incident-20261122",
+      "headline": "Novita признала, что запросы к MiniMax могли попасть к третьей стороне",
+      "body": "Novita сообщила об ошибке маршрутизации: часть запросов к MiniMax проходила через официальный API разработчика модели вместо серверов Novita. Риск касается обращений с 28 мая по 11 ноября 2026 года, в том числе переданных через OpenRouter. Содержание запросов могло быть доступно сторонней компании или сохранено ею; масштаб такого доступа ещё выясняют. Затронутые модели отключены. Пользователям, отправлявшим в запросах пароли или API-ключи, советуют их заменить.",
+      "topic": "Безопасность",
+      "event_date": "2026-11-22",
+      "source": "Novita AI, официальное уведомление о конфиденциальности",
+      "source_url": "https://novita.ai/blog/minimax-requests-privacy-notice/",
+      "fact_check": "Novita AI official privacy notice dated Nov 22, 2026. Researcher informed provider and review confirmed that some MiniMax prompts forwarded to official MiniMax API rather than hosted in Novita infra; misconfigured forwarding path intended for some customers applied broadly. Exposure window May28–Nov11, requests via Novita and OpenRouter. Possible access or retention by third party, no confirmation all requests actually read/trained. Researcher observed accesses to test URLs/hostnames, but not test AWS secrets. Novita suspended affected models, verifying deletion, recommends rotation of live credentials in prompts. There is separate full story №470 on OpenRouter's three offboarded providers and 125 ZDR removed; this short concentrates on provider Novita's specific routing incident and dates. https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
     }
   ]
 }
