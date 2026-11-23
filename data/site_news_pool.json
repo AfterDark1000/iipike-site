@@ -7330,12 +7330,12 @@
       "summary": "21 ноября 2026: в интервью The Guardian Шредер рассказал, что ИИ смог имитировать его стиль; режиссёр работает с Fable над фильмом The Doors of Perception. Со слов режиссёра.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:32:47+00:00",
       "review_started_at": "2026-11-23T06:53:43.231Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "23.11.2026: проверено прямое интервью Пола Шредера The Guardian от 21.11.2026: 80-летний сценарист «Таксиста» получил 10 идей от ИИ (5 удачных, 3 на собственном уровне), актовый план за ~10 минут и более 40 сцен; имитация его стиля испугала. Для будущего триллера The Doors of Perception планирует делать психоделические видения с Fable, фильм пока проект, не законченный релиз. Пример сцены: ИИ предложил менее графичную постановку, режиссёр согласился. Сверен архив Дзена, прямого дубля не найдено. Доп. источник https://theplaylist.net/paul-schrader-domhnall-brendan-gleeson-liam-hemsworth-film-delay-20261121/ ; первоисточник https://www.theguardian.com/film/2026/nov/21/taxi-driver-scriptwriter-paul-schrader-ai-film-making-martin-scorsese. Следующий шаг: утверждение Дзен/Threads/X/VK."
+      "closed_at": "2026-11-23T07:03:50.700Z",
+      "article_id": "paul-schrader-ai-screenplay-fable-20261121",
+      "note": "23.11.2026: главред утвердил статью о Поле Шредере и Fable, Threads, X с подтверждённым @fablesimulation, VK. Полный Markdown и VK в editorial-intake/stories/paul-schrader-ai-screenplay-fable-20261121.json; Threads/X approved в main, записи перепроверены. site_queue=priority, ждёт обложку и выпуска по расписанию."
     },
     {
       "id": "n-3f0404a0f36fddcb",
