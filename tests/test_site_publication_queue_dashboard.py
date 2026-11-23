@@ -84,6 +84,60 @@ class EditorialQueuePageTests(unittest.TestCase):
         self.assertIn("Ночная пауза", page)
         self.assertIn("Нет проблемных материалов", page)
 
+    def test_verified_manual_reissue_is_queued_but_other_orphans_stay_blocked(self):
+        from contextlib import ExitStack
+        from scripts.site_first_release_pr import MANUAL_REISSUE_ID
+        sid = MANUAL_REISSUE_ID
+        tree = "\n".join([
+            f"editorial_inbox/stories/{sid}.json",
+            f"editorial_inbox/covers/{sid}.webp",
+            "editorial_inbox/stories/unverified.json",
+            "editorial_inbox/covers/unverified.webp",
+        ])
+        def blob(ref, path):
+            if path == "news.json":
+                return "[]"
+            stem = path.rsplit("/", 1)[-1].removesuffix(".json")
+            return json.dumps({
+                "id": stem, "title": "Counterintelligence " + stem,
+                "status": "editor_approved", "approved_by": "human_editor",
+                "site_queue": "priority",
+            })
+        def proof(article_id, source_ref, main_ref):
+            return ("old page", "old cover") if article_id == sid else None
+        with ExitStack() as stack:
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue.git",
+                return_value=SimpleNamespace(stdout=tree)))
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue.safe_git_blob_at",
+                side_effect=blob))
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue.exists_at",
+                return_value=True))
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue.verified_manual_reissue",
+                side_effect=proof))
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue.latest_site_first_publication",
+                return_value=None))
+            stack.enter_context(patch(
+                "scripts.render_site_publication_queue._last_change",
+                return_value=NOW - dt.timedelta(hours=2)))
+            rows, last = scan_queue(now=NOW)
+        got = {r["id"]: r for r in rows}
+        self.assertTrue(got[sid]["eligible"])
+        self.assertEqual(got[sid]["status"], "⚡ Срочная очередь — готова")
+        self.assertFalse(got[sid]["published"])
+        self.assertIsNone(got[sid]["published_at"])
+        self.assertFalse(got["unverified"]["eligible"])
+        self.assertEqual(got["unverified"]["status"], "⚠️ Несогласованный выпуск")
+        self.assertEqual([r["id"] for r, _ in forecast_order(rows, last, now=NOW)],
+                         [sid])
+        md = as_markdown(rows, last, now=NOW)
+        self.assertIn("Срочная очередь:** 1", md)
+        self.assertIn("Несогласованный выпуск", md)
+
     def test_corrupt_one_article_is_marked_without_crashing_queue_view(self):
         tree = "\n".join([
             "editorial_inbox/stories/bad.json",
