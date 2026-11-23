@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-009.json",
+  "pool_id": "n-4ef3fbc0562fdcd7",
+  "pool_sequence": 223,
+  "article_id": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7",
+  "status": "ready_for_review",
+  "revision": 1,
+  "created_at": "2026-11-23T12:59:12+00:00",
+  "updated_at": "2026-11-23T13:00:39Z",
+  "content": {
+    "title": "ИИ NVIDIA обошёл GPT-6 Astra в тесте на квантовых точках",
+    "dzen_title": "ИИ NVIDIA обошёл GPT-6 Astra в тесте на квантовых точках",
+    "summary": "В тесте на планирование опытов с квантовыми точками дообученная Nemotron набрала 61% против 54% у GPT-6 Astra. Результат компания привела в анонсе Nemotron for Science.",
+    "rubric": "news",
+    "section": "НОВОСТИ ИИ",
+    "topics": [
+      "science",
+      "models"
+    ],
+    "companies": [
+      "nvidia",
+      "openai"
+    ],
+    "products": [
+      "nemotron",
+      "gpt-6"
+    ],
+    "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-Nemotron-for-Science-to-Accelerate-Discoveries-With-Agents/default.aspx",
+    "source_title": "NVIDIA Introduces Nemotron for Science to Accelerate Discoveries With Agents",
+    "event_date": "2026-11-16",
+    "related_dzen_ids": [
+      "6afd522e499f5e349075e078"
+    ],
+    "site_crosslinks": {
+      "6afd522e499f5e349075e078": "openai-gpt-6-2-astra-sol-20261117"
+    },
+    "article_markdown": "По оценке **NVIDIA**, запуск **Nemotron** в этом тесте обходился в **10–20 раз дешевле**, чем запуск GPT-6 Astra.\n\n16 ноября на конференции SC26 компания представила **Nemotron for Science**, комплект для адаптации модели к исследовательским задачам. В одном из опытов **Lila Sciences** поручила Nemotron 3.5 Super VL составлять планы получения квантовых точек для автоматизированной лаборатории.\n\nУ этих полупроводниковых кристаллов размер всего в несколько нанометров. От размера зависит цвет свечения, и это свойство используют в экранах.\n\n## Что дала обратная связь из лаборатории\n\nПосле дообучения на лабораторных данных точность Nemotron в этой задаче почти удвоилась и достигла **61%**. У **GPT-6 Astra** от **OpenAI** в том же сравнении было 54%.\n\nРазмер выборки и точный критерий успешности NVIDIA в анонсе не раскрыла.\n\nВ тесте на правки кода [GPT-6.2 Sol почти сравнялась с Astra своего поколения по доле решённых задач](https://dzen.ru/a/av1SLkmfXjSQdeB4). Там одно задание в среднем стоило $1,29 у Sol и $5,97 у Astra.\n\nБазовую Nemotron 3.5 Super VL NVIDIA оптимизировала для локальной работы на настольной системе DGX Spark со 128 ГБ памяти.",
+    "threads_text": "Nemotron набрала 61% в задаче на квантовых точках. У GPT-6 Astra вышло 54%.\n\nМодель NVIDIA дообучили на данных из лаборатории Lila Sciences. Запуск в этом сравнении обходился в 10–20 раз ДЕШЕВЛЕ, по оценке NVIDIA.\n\nКажется, в споре о цене появилась квантовая точка.",
+    "x_text": "В тесте @LilaSciences на квантовых точках дообученная Nemotron от @NVIDIA набрала 61% против 54% у GPT-6 Astra от @OpenAI. По оценке NVIDIA, запуск Nemotron в этом сравнении стоил в 10–20 раз меньше.",
+    "vk_title": "🔬 Nemotron обошла GPT-6 Astra в тесте на КВАНТОВЫХ ТОЧКАХ",
+    "vk_summary": "Lila Sciences дообучила Nemotron на данных из лаборатории. В задаче на квантовых точках модель набрала 61% против 54% у GPT-6 Astra. NVIDIA оценила затраты на запуск Nemotron в этом тесте в 10–20 раз ниже."
+  },
+  "research": {
+    "sources": [
+      {
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-Nemotron-for-Science-to-Accelerate-Discoveries-With-Agents/default.aspx",
+        "type": "primary",
+        "note": "Анонс NVIDIA от 16.11.2026 со сравнением Lila Sciences, результатами и оценкой затрат на инференс."
+      },
+      {
+        "url": "https://blogs.nvidia.com/blog/ian-buck-sc26/",
+        "type": "primary",
+        "note": "Официальный отчёт NVIDIA от 17.11.2026 о презентации на SC26."
+      },
+      {
+        "url": "https://www.nobelprize.org/uploads/2023/10/advanced-chemistryprize2023-2.pdf",
+        "type": "primary",
+        "note": "Научная справка Шведской королевской академии наук к Нобелевской премии по химии 2023 года, свойства квантовых точек."
+      }
+    ],
+    "fact_checks": [
+      "16 ноября 2026 NVIDIA представила Nemotron for Science, основанный на Nemotron 3.5 Super VL. Корпоративный материал от 17 ноября описывает ту же презентацию SC26.",
+      "Lila Sciences использовала модель для составления планов опытов на автоматизированном лабораторном оборудовании. После дообучения по обратной связи лаборатории NVIDIA сообщила 61% в задаче с квантовыми точками против 54% у GPT-6 Astra. Точное правило оценки и размер выборки в анонсе отсутствуют. Числа не трактуются как доля успешных физических опытов.",
+      "Разница затрат в 10–20 раз касается инференса в заявленном сравнении. Она не описывает стоимость обучения или всего эксперимента.",
+      "Квантовые точки — нанометровые полупроводниковые кристаллы. Размер влияет на цвет излучения, одно из применений — экраны.",
+      "GPT-6 Astra в анонсе отличается от GPT-6.2 Astra в отдельном сравнении по коду. Архив подтверждает $1,29 у Sol и $5,97 у Astra в этом сравнении FrontierCode 2.0.",
+      "Для базовой Nemotron 3.5 Super VL NVIDIA сообщила об оптимизации под локальный запуск на системе DGX Spark со 128 ГБ памяти.",
+      "Официальные @NVIDIA и @OpenAI проверены по справочным страницам компаний. Профиль @LilaSciences идентифицирован по ссылкам на сайт lila.ai и публикациям от имени компании. Проверочные ссылки: https://www.nvidia.com/en-us/contact/social/, https://help.openai.com/en/articles/11725090-verifying-communications-from-openai, https://x.com/LilaSciences.",
+      "Проверка архива и очереди не выявила дубля анонса или отдельного материала о данном тесте. Родственные материалы об иных моделях Nemotron к этому анонсу не относятся."
+    ],
+    "notes": "Материал сосредоточен на тесте с квантовыми точками. Заголовок задаёт сравнение, отдельный лид приводит оценку стоимости, второй абзац называет событие и участника. Маркетинговая оценка привязана к конкретной проверке и атрибутирована."
+  },
+  "entity_candidates": {
+    "companies": [
+      {
+        "key": "lila-sciences",
+        "name": "Lila Sciences",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7",
+            "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Introduces-Nemotron-for-Science-to-Accelerate-Discoveries-With-Agents/default.aspx"
+          }
+        ]
+      }
+    ],
+    "products": []
+  },
+  "cover_brief": {
+    "fact": "NVIDIA сообщила о 61% у дообученной Nemotron и 54% у GPT-6 Astra в тесте на квантовых точках.",
+    "hook": "ИИ И КВАНТОВЫЕ ТОЧКИ",
+    "constraints": "Горизонтальная обложка 16:9. Квантовые точки можно показать как полупроводниковые нанокристаллы разных размеров, меняющие цвет свечения. Визуал не должен выглядеть как экспериментальный график или обещание, что тест распространяется на все научные задачи. Художественное решение выбирает художник."
+  },
+  "editor_notes": [
+    "№223 принят по подтверждённой Work-квитанции. Маршрут full/long, нормальный приоритет, без групповых признаков.",
+    "Фокус — материаловедение и измеримый результат опыта с квантовыми точками. Источники вынесены из Markdown, результаты и ограничения проверки сведены по пресс-релизу.",
+    "Связка сайта и Дзена проверена по опубликованной статье о другом тесте моделей и стоимости решения. Соцверсии перечитаны отдельно."
+  ]
+}
