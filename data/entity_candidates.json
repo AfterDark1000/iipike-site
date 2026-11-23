@@ -3413,6 +3413,18 @@
           "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
         }
       ]
+    },
+    {
+      "key": "smartview",
+      "name": "SmartView",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "hong-kong-smartview-facial-recognition-20261116",
+          "source_url": "https://www.police.gov.hk/ppp_en/11_useful_info/cctv.html"
+        }
+      ]
     }
   ]
 }
