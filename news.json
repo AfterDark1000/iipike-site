@@ -7889,5 +7889,26 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "Ваши секреты из чатов с ИИ могли попасть к хакерам: OpenRouter отключила трёх поставщиков",
+    "summary": "OpenRouter отключила трёх поставщиков ИИ после расследования Dragos: тестовые запросы с подставными секретами выявили утечки, а 125 точек доступа лишились статуса Zero Data Retention.",
+    "published": "2026-11-23",
+    "source_url": "https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers",
+    "cover": "assets/editorial/openrouter-provider-data-leak-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🔓 Хакеры ЧИТАЛИ ЗАПРОСЫ к нейросетям: OpenRouter отключила трёх поставщиков",
+    "vk_summary": "Исследователи отправили ИИ почти два миллиона запросов с подставными секретами и обнаружили утечки. Посторонние пытались использовать похищенные ключи, причём даже режим повышенной конфиденциальности не всегда помогал. OpenRouter отключила трёх поставщиков и пересмотрела настройки защиты данных для 125 точек доступа.",
+    "published_at_utc": "2026-11-23T10:45:40Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-22",
+    "id": "openrouter-provider-data-leak-20261123",
+    "url": "articles/openrouter-provider-data-leak-20261123/",
+    "topics": [
+      "cybersecurity",
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
