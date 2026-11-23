@@ -116,6 +116,7 @@ def validate(source_bytes, candidate, *, filename=None):
     updated = copy.deepcopy(source)
     updated["content"].update(edited)
     receipt = {"status": "reserved", "request": source["request"],
+               "claimed_at": source["created_at"],
                "pool_id": source["pool_id"], "pool_sequence": source["pool_sequence"],
                "article_id": sid}
     validate_draft(updated, receipt)
