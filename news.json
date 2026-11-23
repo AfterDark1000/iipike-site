@@ -7910,5 +7910,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям",
+    "summary": "ИИ-агент Together AI опубликовал в публичном GitHub секретный ключ. Посторонний скачал хранившиеся образцы клиентских запросов и проверял обнаруженные в них ключи.",
+    "published": "2026-11-23",
+    "source_url": "https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026",
+    "cover": "assets/editorial/together-ai-agent-github-prompt-leak-20261121.webp",
+    "rubric": "news",
+    "vk_title": "🔓 ИИ-программист СЛИЛ СЕКРЕТНЫЙ КЛЮЧ, и хакер скачал чужие запросы",
+    "vk_summary": "В Together AI ИИ-агент случайно опубликовал ключ доступа в открытом GitHub. Посторонний успел скачать сохранённые запросы клиентов к трём нейросетям и начал проверять найденные в них секреты. Компания обнаружила утечку и пересмотрела правила безопасности.",
+    "published_at_utc": "2026-11-23T12:01:00Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-21",
+    "id": "together-ai-agent-github-prompt-leak-20261121",
+    "url": "articles/together-ai-agent-github-prompt-leak-20261121/",
+    "topics": [
+      "cybersecurity",
+      "safety"
+    ],
+    "companies": [
+      "hugging-face"
+    ],
+    "products": []
   }
 ]

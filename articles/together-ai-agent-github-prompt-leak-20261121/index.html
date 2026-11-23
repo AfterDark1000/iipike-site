@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ИИ-агент Together AI опубликовал в публичном GitHub секретный ключ. Посторонний скачал хранившиеся образцы клиентских запросов и проверял обнаруженные в них ключи."><meta property="og:type" content="article">
+<meta property="og:title" content="ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям"><meta property="og:description" content="ИИ-агент Together AI опубликовал в публичном GitHub секретный ключ. Посторонний скачал хранившиеся образцы клиентских запросов и проверял обнаруженные в них ключи.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/together-ai-agent-github-prompt-leak-20261121.webp">
+<meta property="og:url" content="https://iipike.ru/articles/together-ai-agent-github-prompt-leak-20261121/"><meta property="article:published_time" content="2026-11-23T12:01:00Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям", "mainEntityOfPage": "https://iipike.ru/articles/together-ai-agent-github-prompt-leak-20261121/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-23T12:01:00Z", "image": "https://iipike.ru/assets/editorial/together-ai-agent-github-prompt-leak-20261121.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/together-ai-agent-github-prompt-leak-20261121/"><title>ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/entities.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям</h1>
+<p class="summary">ИИ-агент Together AI опубликовал в публичном GitHub секретный ключ. Посторонний скачал хранившиеся образцы клиентских запросов и проверял обнаруженные в них ключи.</p><p class="date">Опубликовано: 23 ноября 2026 · 17:01</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/safety/">Безопасность и контроль</a></nav><nav class="article-entity-links" aria-label="Компании и продукты статьи"><span class="article-entity-links-label">Компании и продукты</span><a href="../../entities/companies/hugging-face/"><img src="../../assets/entity-icons/hugging-face.svg" alt="" loading="lazy">Hugging Face</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/together-ai-agent-github-prompt-leak-20261121.webp" alt="Обложка: ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026" target="_blank" rel="noopener noreferrer">Together AI — Security event: prompt leakage for requests in June and July 2026 (21 November 2026) ↗</a>
+</aside><article class="article-text"><p class="lead">ИИ-помощник программиста случайно открыл постороннему человеку доступ к переписке клиентов с нейросетями, а автоматическая защита заметила ошибку слишком поздно.</p>
+<p>21 ноября компания <strong>Together AI</strong> признала утечку пользовательских запросов, отправленных летом 2026 года.</p>
+<p>Причиной оказался секретный ключ, который ИИ-агент добавил в общедоступный репозиторий с программным кодом на GitHub.</p>
+<h2>🔑 Ключ нашли, но секреты уже унесли</h2>
+<p>Разработчики Together AI работали над открытым проектом <strong>xorl</strong> с помощью ИИ-программиста.</p>
+<p>В какой-то момент агент включил в очередное изменение кода служебный ключ, открывавший доступ к закрытому хранилищу на <strong>Hugging Face</strong>.</p>
+<p>Автоматическая система безопасности заметила опубликованный секрет. Компания отменила изменение кода.</p>
+<p><strong>Но за короткое время, пока ключ оставался доступным, посторонний успел им воспользоваться.</strong></p>
+<p>В закрытом хранилище находились образцы запросов клиентов, которые Together AI сохраняла с разрешения пользователей для тестирования программного обеспечения.</p>
+<p>Злоумышленник скачал эти образцы, а затем начал искать внутри чужие пароли и ключи доступа к другим сервисам.</p>
+<p>Причём найденные ключи он пытался использовать.</p>
+<h2>🪤 Пять ключей оказались ловушкой</h2>
+<p>Утечка затронула часть запросов к трём моделям:</p>
+<ul class="editorial-list"><li><strong>MiniMax M3</strong></li><li><strong>GLM-5.2</strong></li><li><strong>Kimi K2.6</strong></li></ul>
+<p>Основные даты отправки этих запросов: 24 июня, 4, 8 и 14 июля 2026 года.</p>
+<p>Среди секретов, которые проверял злоумышленник, оказались <strong>пять подставных ключей компании Dragos</strong>.</p>
+<p>Исследователи специально внедряли такие приманки в запросы к нейросетям, чтобы обнаруживать утечки. Попытки воспользоваться ключами оставляли следы.</p>
+<p>Так эксперименты с безопасностью помогли обнаружить вполне реальное происшествие.</p>
+<h2>🔒 Что стало известно спустя несколько месяцев</h2>
+<p>Together AI привлекла внешних специалистов по расследованию компьютерных инцидентов и правоохранительные органы.</p>
+<p>Компания пока изучает содержимое похищенных запросов, чтобы установить, какие персональные или другие конфиденциальные сведения могли оказаться у постороннего.</p>
+<p><strong>Количество затронутых клиентов и скачанных запросов в сообщении не раскрывается.</strong></p>
+<p>После инцидента Together AI усилила проверку программного кода на секретные ключи и пересмотрела правила работы ИИ-агентов.</p>
+<p>Для новых аккаунтов режим <strong>Zero Data Retention</strong>, запрещающий хранение пользовательских запросов, теперь включён по умолчанию.</p>
+<p>Клиентам, которые работают с конфиденциальными данными, компания рекомендует проверить эту настройку в существующих аккаунтах.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>
