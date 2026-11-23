@@ -90,8 +90,9 @@ def validate(source_bytes, candidate, *, filename=None):
             raise ValueError("Empty or oversized edited field: " + field)
     if edited["title"] != edited["dzen_title"]:
         raise ValueError("Site and Dzen headlines must match")
-    if not any(original[field] != edited[field] for field in FIELDS):
-        raise ValueError("No actual copyediting changes")
+    if (candidate["status"] == "ready_for_comparison" and
+            not any(original[field] != edited[field] for field in FIELDS)):
+        raise ValueError("Clean copyedit must contain actual changes")
     for field in FIELDS:
         if values(original[field], URL) != values(edited[field], URL):
             raise ValueError("Changed or missing URL in " + field)
