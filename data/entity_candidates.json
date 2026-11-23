@@ -3504,6 +3504,18 @@
           "source_url": "https://huggingface.co/higurashi-ai/Haru-4B"
         }
       ]
+    },
+    {
+      "key": "speech-cpp",
+      "name": "speech.cpp",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "higurashi-haru4b-speech-cpp-20261115",
+          "source_url": "https://github.com/nyosegawa/speech.cpp/releases/tag/v0.11.0"
+        }
+      ]
     }
   ]
 }
