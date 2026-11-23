@@ -3243,6 +3243,30 @@
           "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
         }
       ]
+    },
+    {
+      "key": "ernie-5-5-flash",
+      "name": "ERNIE 5.5 Flash Preview",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "baidu-token-exchange-ernie-55-20261112",
+          "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html"
+        }
+      ]
+    },
+    {
+      "key": "token-exchange",
+      "name": "Token Exchange",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "baidu-token-exchange-ernie-55-20261112",
+          "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html"
+        }
+      ]
     }
   ]
 }
