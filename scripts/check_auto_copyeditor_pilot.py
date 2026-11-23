@@ -6,6 +6,7 @@ auto_draft Git blob. Does not modify drafts, approvals, covers or publications.
 """
 import argparse
 from collections import Counter
+from difflib import SequenceMatcher
 import copy
 from datetime import datetime, timezone
 import hashlib
@@ -24,7 +25,14 @@ from scripts.site_news_pool import utc_time
 
 FIELDS = ("title", "dzen_title", "summary", "article_markdown",
           "threads_text", "x_text", "vk_title", "vk_summary")
-STATUSES = {"ready_for_comparison", "needs_editor_attention"}
+STATUSES = {"ready_for_comparison", "needs_editor_attention", "no_change_recommended"}
+QUALITY_KEYS = ("source_event", "main_problem", "structural_action", "reader_gain", "fact_integrity")
+CLICHES = re.compile(
+    r"\b(?:представьте|суть\s+(?:в\s+том|заключается)|"
+    r"такие\s+результаты\s+показывают|самая\s+любопытная\s+часть|"
+    r"самая\s+интересная\s+часть|идея\s+понятна|"
+    r"важно\s+отметить|давайте\s+разбер[её]мся)\b", re.IGNORECASE
+)
 ARTICLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 NAME = re.compile(r"(?P<id>[a-z0-9]+(?:-[a-z0-9]+)*)-r(?P<rev>[1-9]\d*)-v(?P<version>[1-9]\d*)\.json\Z")
 NUMBER = re.compile(r"\d+(?:[ \u00a0]\d{3})*(?:[.,]\d+)?%?")
@@ -46,11 +54,47 @@ def values(text, regex):
     return Counter(regex.findall(text))
 
 
+def word_tokens(value):
+    return re.findall(r"[^\W_]+(?:[-‐‑][^\W_]+)*", value.casefold(), re.UNICODE)
+
+
+def check_editorial_quality(original, edited, status):
+    """Catch cosmetic edits and cliched rewrites; NOT a semantic quality score."""
+    if status != "ready_for_comparison":
+        return
+    before, after = original["article_markdown"], edited["article_markdown"]
+    old_words, new_words = word_tokens(before), word_tokens(after)
+    if not old_words or not new_words:
+        raise ValueError("Empty article after copyedit")
+    similarity = SequenceMatcher(None, old_words, new_words, autojunk=False).ratio()
+    if similarity > 0.94:
+        raise ValueError("Cosmetic article change: no substantial rewrite; escalate or rework")
+    blocks = [x.strip() for x in re.split(r"\n\s*\n", after) if x.strip()]
+    if not blocks or len(blocks[0]) > 320 or "\n" in blocks[0]:
+        raise ValueError("Lead must be one short standalone paragraph")
+    lead = blocks[0].strip("*_ ")
+    if (lead.startswith(("#", ">", "-", "* ")) or
+            not re.search(r"[.!?…](?:[»”'\"])*$", lead) or
+            re.search(r"[.!?…]\s+\S", lead)):
+        raise ValueError("Lead must be a standalone first sentence")
+    title = re.sub(r"\W+", "", edited["title"].casefold())
+    if title == re.sub(r"\W+", "", lead.casefold()):
+        raise ValueError("First sentence merely repeats the headline")
+    if re.search(r"[—–]", edited["title"]):
+        raise ValueError("Headline must not contain an em/en dash")
+    # Never penalize quoted source language for its literal content.
+    prose = "\n".join(line for line in after.splitlines()
+                      if not line.lstrip().startswith(">"))
+    if CLICHES.search(prose):
+        raise ValueError("Cliched editorial filler in revised article")
+
+
 def validate(source_bytes, candidate, *, filename=None):
     if not isinstance(candidate, dict) or set(candidate) != {
         "schema_version", "article_id", "source_revision", "source_updated_at",
         "source_draft_blob_sha", "copyedit_version", "status", "created_at",
-        "worker", "original_text", "edited_text", "change_log", "editor_flags"
+        "worker", "original_text", "edited_text", "change_log", "editor_flags",
+        "quality_review"
     }:
         raise ValueError("Invalid copyeditor candidate schema")
     source = json.loads(source_bytes.decode("utf-8"))
@@ -59,7 +103,7 @@ def validate(source_bytes, candidate, *, filename=None):
         raise ValueError("Invalid article ID")
     if source["article_id"] != sid or source["status"] != "ready_for_review":
         raise ValueError("Copyeditor requires exact ready_for_review original")
-    if (candidate["schema_version"] != 1 or
+    if (candidate["schema_version"] != 2 or
             candidate["worker"] != "hpii-chief-copyeditor" or
             candidate["source_revision"] != source["revision"] or
             candidate["source_updated_at"] != source["updated_at"] or
@@ -102,6 +146,13 @@ def validate(source_bytes, candidate, *, filename=None):
             raise ValueError("Changed numerical token in " + field)
     if values(original["article_markdown"], QUOTE) != values(edited["article_markdown"], QUOTE):
         raise ValueError("A source quotation or its Markdown prefix was altered")
+    review = candidate["quality_review"]
+    if (not isinstance(review, dict) or set(review) != set(QUALITY_KEYS)
+            or not all(isinstance(review[k], str) and
+                       20 <= len(review[k].strip()) <= 700
+                       for k in QUALITY_KEYS)):
+        raise ValueError("Missing concrete quality review diagnosis")
+    check_editorial_quality(original, edited, candidate["status"])
     log = candidate["change_log"]
     flags = candidate["editor_flags"]
     if (not isinstance(log, list) or not 1 <= len(log) <= 20 or
@@ -109,6 +160,9 @@ def validate(source_bytes, candidate, *, filename=None):
             not isinstance(flags, list) or len(flags) > 20 or
             not all(isinstance(v, str) and 5 <= len(v) <= 400 for v in flags)):
         raise ValueError("Invalid changes or editor flags")
+    if candidate["status"] == "no_change_recommended":
+        if edited != original or flags:
+            raise ValueError("No-change candidate must preserve original text without editor flags")
     if candidate["status"] == "needs_editor_attention" and not flags:
         raise ValueError("Escalated copyedit must contain a specific flag")
     if candidate["status"] == "ready_for_comparison" and flags:
