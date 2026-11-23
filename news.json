@@ -7736,5 +7736,29 @@
     "products": [
       "gpt-6"
     ]
+  },
+  {
+    "title": "SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле",
+    "summary": "SpaceX привлекает около $44 млрд на ускорители NVIDIA Vera Rubin. По данным Financial Times, кредиторы пытались ограничить отправку залоговых чипов в космос.",
+    "published": "2026-11-23",
+    "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion",
+    "cover": "assets/editorial/spacex-nvidia-gpu-orbit-financing-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🚀 SpaceX нашла $44 млрд на ИИ-ЧИПЫ, но кредиторы против ОРБИТЫ",
+    "vk_summary": "Apollo и Goldman Sachs согласовали выпуск долговых бумаг примерно на $44 млрд для чипов NVIDIA Vera Rubin. По данным Financial Times, кредиторы пытались запретить отправлять залоговые GPU в космос — там их сложно вернуть при невыплатах.",
+    "published_at_utc": "2026-11-23T03:00:53Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "spacex-nvidia-gpu-orbit-financing-20261120",
+    "url": "articles/spacex-nvidia-gpu-orbit-financing-20261120/",
+    "topics": [
+      "infrastructure",
+      "finance"
+    ],
+    "companies": [
+      "spacex",
+      "nvidia"
+    ],
+    "products": []
   }
 ]

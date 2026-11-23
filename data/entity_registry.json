@@ -238,7 +238,8 @@
         "anthropic-record-ipo-81b-nasdaq-20261119",
         "nvidia-china-hopper-shipments-halt-20261118",
         "us-879868-ai-chips-china-licenses-20261119",
-        "nvidia-sec-anthropic-market-selloff-20261120"
+        "nvidia-sec-anthropic-market-selloff-20261120",
+        "spacex-nvidia-gpu-orbit-financing-20261120"
       ]
     },
     {
@@ -608,7 +609,8 @@
       "description": "Инициативы SpaceX, связанные с автоматизацией и технологиями.",
       "article_ids": [
         "mask-poobeschal-kazhdomu-rebyonku-ssha-po-aktsii-spacex-tsena-6d4cb",
-        "grok-imagine-60-layoffs-20261113"
+        "grok-imagine-60-layoffs-20261113",
+        "spacex-nvidia-gpu-orbit-financing-20261120"
       ]
     },
     {
