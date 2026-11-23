@@ -7760,5 +7760,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»",
+    "summary": "OpenAI предлагает до $500 тысяч в год опытному расследователю, а ИИ-компании усиливают контрразведку после шпионских инцидентов. Вакансии проверены у работодателей.",
+    "published": "2026-11-23",
+    "source_url": "https://www.reuters.com/legal/litigation/help-wanted-ai-firms-court-ex-spies-nvidia-drama-spotlights-security-risks-2026-11-12/",
+    "cover": "assets/editorial/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp",
+    "rubric": "news",
+    "published_at_utc": "2026-11-23T05:00:56Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-12",
+    "id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+    "url": "articles/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d/",
+    "topics": [
+      "cybersecurity",
+      "business"
+    ],
+    "companies": [
+      "openai",
+      "anthropic",
+      "nvidia"
+    ],
+    "products": []
   }
 ]
