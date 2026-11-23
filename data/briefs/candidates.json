@@ -1535,6 +1535,19 @@
       "source": "NBC News, Meet the Press, интервью Джона Кеннеди от 22 ноября",
       "source_url": "https://www.nbcnews.com/meet-the-press/video/john-kennedy-if-howard-lutnick-is-giving-ai-chips-away-to-china-he-needs-to-stop-273979973777",
       "fact_check": "Original NBC Meet the Press Nov22 primary video and transcript URL (NBC blocks automated fetch): https://www.nbcnews.com/meet-the-press/transcripts/meet-press-november-22-2026-rcna610681 ; video link source_url. NBC's own syndicated clip https://www.yahoo.com/news/videos/john-kennedy-howard-lutnick-giving-144233388.html . Direct quotations and call confirmed by Washington Post https://www.washingtonpost.com/politics/2026/11/22/sen-kennedy-urges-scrutiny-lutnick-over-chinas-access-nvidia-chips/ and The Guardian https://www.theguardian.com/us-news/2026/nov/22/jensen-huang-nvidia-john-kennedy . He said 'appears' the Commerce Department has allowed China to circumvent export controls; wants Commerce Secretary Howard Lutnick and Treasury Secretary Scott Bessent testify under oath, no actual scheduled hearing. Never present suspected smuggling or Lutnick role as proven. Existing HPII full reports cover Nvidia scandal and halt shipments, but this is distinct Nov22 statement by Kennedy."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 494,
+      "pool_id": "n-47b2738e2872fd88",
+      "slug": "paris-marx-hyperscale-data-center-local-costs-20261122",
+      "headline": "Автор книги Hyperscale предупредил о цене ИИ-дата-центров для соседей",
+      "body": "Журналист Пэрис Маркс обвинил техгигантов в том, что расходы от строительства дата-центров ложатся на соседние города. В интервью TechCrunch 22 ноября автор книги Hyperscale назвал нынешние масштабы строительства ИИ-инфраструктуры неустойчивыми. По его мнению, жители рискуют столкнуться с ростом счетов за электричество, нехваткой воды и шумом систем охлаждения. Сам Маркс посетил дата-центр в Новой Зеландии и рассказал о пронзительном гуле серверных вентиляторов.",
+      "topic": "Общество",
+      "event_date": "2026-11-22",
+      "source": "Пэрис Маркс, интервью TechCrunch от 22 ноября 2026 года",
+      "source_url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
+      "fact_check": "Первичное интервью журналиста Paris Marx изданию TechCrunch (Anthony Ha) от 22.11.2026. Автор книги Hyperscale сказал, что масштаб строительства дата-центров 'fundamentally unsustainable', затраты на энергоснабжение и воду и шум охлаждения могут влиять на соседние сообщества. Он лично вошёл в дата-центр Новой Зеландии, описал громкие вентиляторы (захотелось бы беруши). Это авторская позиция и рассказ о собственном посещении, не установленное исследовательское доказательство вреда всех дата-центров. Сюжет скорее интервью-мнение, чем новое промышленное событие. Прямой источник: https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/ ."
     }
   ]
 }
