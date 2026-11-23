@@ -6715,12 +6715,12 @@
       "summary": "20 ноября: итоги демонстраций высокоскоростной памяти и вычислительной инфраструктуры; дата отдельных демонстраций требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T15:51:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-fcfe169e10fcb253"
+      "closed_at": "2026-11-23T08:24:08Z",
+      "article_id": "sk-hynix-mars-ai-memory-rack-sc26-demos-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fcfe169e10fcb253\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/sk-hynix-mars-ai-memory-rack-sc26-demos-20261120/"
     },
     {
       "id": "n-0b6b96c55f96f5e5",
