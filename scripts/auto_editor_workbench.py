@@ -84,17 +84,25 @@ def article_slug(item):
     return value
 
 def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=None):
-    """Only queued normal/low in the long lane; never a high or short candidate."""
+    """Claim only standalone ordinary long stories; skip all linked groups."""
     from scripts.editorial_routing import load_routes, long_allowed, effective_priority
     validate_pool(pool)
     if routing is None:
         routing = load_routes(pool)
     if not REQUEST_NAME.fullmatch(request_filename):
         raise ValueError("Invalid request filename")
+    # Linked groups are deliberately reserved for the human editor.
+    # Both the leading article and its companion stories are excluded:
+    # the autonomous Work editor should handle only standalone news.
+    def standalone(item):
+        route = routing.get(item["id"], {})
+        return (route.get("decision") not in ("linked_primary", "linked_secondary")
+                and "group" not in route and "group_primary" not in route)
+
     pending = [i for i in pool["items"]
                if i["status"] == "queued" and i["priority"] in ("normal", "low")
                and effective_priority(i, routing) != "high"
-               and long_allowed(i, routing)]
+               and long_allowed(i, routing) and standalone(i)]
     if not pending:
         return copy.deepcopy(pool), None
     item = min(pending, key=lambda x: x["sequence"])

@@ -39,6 +39,44 @@ class AutoEditorClaimTests(unittest.TestCase):
         self.assertEqual(manual["sequence"], 1)
         self.assertEqual(next_pool["items"][2]["status"], "queued")
 
+    def test_linked_primary_and_related_groups_are_skipped_in_fifo(self):
+        src = pool_with(("Linked lead", "normal"),
+                        ("Linked companion", "normal"),
+                        ("Group-tagged normal news", "normal"),
+                        ("Stand-alone news", "normal"))
+        before = copy.deepcopy(src)
+        a, b, c, d = [i["id"] for i in src["items"]]
+        routes = {
+            a: {"sequence": 1, "pool_id": a, "lane": "long",
+                "decision": "linked_primary", "group": "g1", "group_primary": 1},
+            b: {"sequence": 2, "pool_id": b, "lane": "long",
+                "decision": "linked_secondary", "group": "g1", "group_primary": 1},
+            c: {"sequence": 3, "pool_id": c, "lane": "long",
+                "decision": "full", "group": "g2", "group_primary": 3},
+            d: {"sequence": 4, "pool_id": d, "lane": "long", "decision": "full"},
+        }
+        updated, ticket = claim_ordinary(src, "request-solo.json",
+                                         now=NOW, routing=routes)
+        self.assertEqual(ticket["pool_sequence"], 4)
+        self.assertEqual(src, before)
+        self.assertEqual([i["status"] for i in updated["items"]],
+                         ["queued", "queued", "queued", "in_review"])
+
+    def test_linked_only_returns_no_candidate_without_rewriting_pool(self):
+        src = pool_with(("Linked lead", "normal"),
+                        ("Linked secondary", "normal"))
+        a, b = [i["id"] for i in src["items"]]
+        routes = {
+            a: {"sequence": 1, "pool_id": a, "lane": "long",
+                "decision": "linked_primary"},
+            b: {"sequence": 2, "pool_id": b, "lane": "hold",
+                "decision": "linked_secondary", "group": "g", "group_primary": 1},
+        }
+        updated, ticket = claim_ordinary(src, "request-linked.json",
+                                         now=NOW, routing=routes)
+        self.assertIsNone(ticket)
+        self.assertEqual(updated, src)
+
     def test_only_hot_returns_no_candidate_and_no_mutation(self):
         src = pool_with(("Hot A", "high"), ("Hot B", "high"))
         updated, ticket = claim_ordinary(src, "request-0002.json", now=NOW)
