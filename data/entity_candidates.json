@@ -1637,6 +1637,30 @@
           "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
         }
       ]
+    },
+    {
+      "key": "nebius",
+      "name": "Nebius",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "nebius-45b-microsoft-delay-20261112",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
+        }
+      ]
+    },
+    {
+      "key": "dataone",
+      "name": "DataOne",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "nebius-45b-microsoft-delay-20261112",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
+        }
+      ]
     }
   ],
   "products": [
