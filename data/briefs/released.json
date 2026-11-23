@@ -401,6 +401,10 @@
     {
       "slug": "huggingface-harness-adapters-agent-coding-20261120",
       "published_at_utc": "2026-11-23T07:09:03Z"
+    },
+    {
+      "slug": "aws-hyperpod-global-inference-gateway-cross-region-20261120",
+      "published_at_utc": "2026-11-23T07:39:08Z"
     }
   ]
 }

@@ -6700,12 +6700,12 @@
       "summary": "20 ноября: единая точка доступа для распределения запросов между регионами и кластерами.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T15:51:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d5bec1fa3b07f617"
+      "closed_at": "2026-11-23T07:39:08Z",
+      "article_id": "aws-hyperpod-global-inference-gateway-cross-region-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d5bec1fa3b07f617\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/aws-hyperpod-global-inference-gateway-cross-region-20261120/"
     },
     {
       "id": "n-fcfe169e10fcb253",
