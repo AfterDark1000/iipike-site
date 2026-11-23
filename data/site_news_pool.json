@@ -7651,6 +7651,51 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-db3dd850d269d802",
+      "sequence": 511,
+      "title": "Американские банки ужесточают контроль над внутренними ИИ-агентами",
+      "source_url": "https://www.reuters.com/legal/litigation/some-us-banks-tighten-ai-agent-controls-concern-about-models-escaping-safeguards-2026-11-23",
+      "summary": "23 ноября. Reuters сообщает об ограничениях полномочий, времени работы и доступа внутренних ИИ-агентов. Возможный тематический дубль более ранней новости о блокировке сторонних агентов на клиентских счетах.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-23T14:22:49+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-06f92aa7ff84a14e",
+      "sequence": 512,
+      "title": "Австралия ставит угрозы ИИ в центр внешней политики",
+      "source_url": "https://www.reuters.com/world/asia-pacific/australia-treat-ai-key-foreign-policy-challenge-2026-11-23",
+      "summary": "23 ноября. Пенни Вонг намерена выделить ИИ как внешнеполитическую угрозу, включая вмешательство в демократические процессы. Вторичный источник.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-23T14:22:49+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-50e93b04b5c51eba",
+      "sequence": 513,
+      "title": "Акции NVIDIA и других ИИ-компаний отскакивают после обвала",
+      "source_url": "https://www.reuters.com/business/wall-street-futures-rebound-after-rough-week-ai-linked-shares-2026-11-23",
+      "summary": "23 ноября. На предварительных торгах NVIDIA прибавляла около 8%, а фьючерсы Nasdaq-100 росли более чем на 3%. Новое рыночное событие после уже освещавшегося обвала.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-23T14:22:49+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request": "20261123-192200-3-selection.json",
+  "request_sha256": "f5c0a008f234e9f4adf9fc76360314083001c499ff538ea2bb57b9d3bf2c4702",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 511,
+      "id": "n-db3dd850d269d802",
+      "title": "Американские банки ужесточают контроль над внутренними ИИ-агентами"
+    },
+    {
+      "sequence": 512,
+      "id": "n-06f92aa7ff84a14e",
+      "title": "Австралия ставит угрозы ИИ в центр внешней политики"
+    },
+    {
+      "sequence": 513,
+      "id": "n-50e93b04b5c51eba",
+      "title": "Акции NVIDIA и других ИИ-компаний отскакивают после обвала"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
