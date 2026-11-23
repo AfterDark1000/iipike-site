@@ -7866,5 +7866,28 @@
     "products": [
       "tpu"
     ]
+  },
+  {
+    "title": "Хакер дал ИИ одну команду, и тот нашёл неизвестную дыру за 11 минут",
+    "summary": "Amazon раскрыла атаку на университетские серверы: ИИ-агенты нашли уязвимость MONAI Label за 11 минут, а затем получили права root. Разработчики закрыли ошибку в версии 0.8.6.",
+    "published": "2026-11-23",
+    "source_url": "https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/",
+    "cover": "assets/editorial/amazon-cairn-monai-zero-day-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🚨 ИИ-ХАКЕРЫ нашли НЕИЗВЕСТНУЮ ДЫРУ за 11 минут",
+    "vk_summary": "Amazon раскрыла атаку на университетские серверы: агенты Cairn самостоятельно нашли уязвимость в медицинской программе MONAI Label, а позднее получили полный контроль над сервером. 22 ноября разработчики выпустили исправление 0.8.6.",
+    "published_at_utc": "2026-11-23T09:44:39Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "amazon-cairn-monai-zero-day-20261120",
+    "url": "articles/amazon-cairn-monai-zero-day-20261120/",
+    "topics": [
+      "cybersecurity",
+      "safety"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
