@@ -7330,12 +7330,12 @@
       "summary": "21 ноября 2026: в интервью The Guardian Шредер рассказал, что ИИ смог имитировать его стиль; режиссёр работает с Fable над фильмом The Doors of Perception. Со слов режиссёра.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-22T18:32:47+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T06:53:43.231Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "23.11.2026: редактор №28 зарезервировал горячую №489. Проверка интервью Пола Шредера в The Guardian от 21.11, связанных заявлений режиссёра и проекта Fable; проверка дубликатов и подготовка Дзена/Threads/X/ВК."
     },
     {
       "id": "n-3f0404a0f36fddcb",
