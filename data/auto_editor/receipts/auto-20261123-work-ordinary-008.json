@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-008.json",
+  "request_sha256": "c4ed6f1b19120a69f0370207454909e8a4c5323de34f79148c86c7b93800a767",
+  "status": "reserved",
+  "pool_id": "n-1788965d91d5bb6a",
+  "pool_sequence": 222,
+  "article_id": "uchenye-vyyasnili-chto-ii-dlya-poiska-novykh-mate-1788965d91d5bb6a",
+  "priority": "normal",
+  "title": "Учёные выяснили, что ИИ для поиска новых материалов нужно гораздо меньше данных",
+  "source_url": "https://www.mtu.edu/news/2026/11/less-data-faster-discovery-researchers-rethink-ais-role-in-developing-new-materials.html",
+  "claimed_at": "2026-11-23T12:03:04+00:00",
+  "worker": "hpii-auto-editor"
+}
