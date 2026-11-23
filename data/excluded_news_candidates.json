@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "note": "Explicit owner exclusions. Do not re-import these sources as new candidates. Historical Git records remain auditable.",
+  "items": [
+    {
+      "pool_id": "n-1788965d91d5bb6a",
+      "article_id": "uchenye-vyyasnili-chto-ii-dlya-poiska-novykh-mate-1788965d91d5bb6a",
+      "title": "Учёные выяснили, что ИИ для поиска новых материалов нужно гораздо меньше данных",
+      "source_urls": [
+        "https://www.mtu.edu/news/2026/11/less-data-faster-discovery-researchers-rethink-ais-role-in-developing-new-materials.html",
+        "https://www.nature.com/articles/s41524-026-02361-x"
+      ],
+      "reason": "Owner rejected 2026-11-23: too narrow, technical and unclear for the general HPII audience. Remove from all production queues and do not automatically rediscover this story.",
+      "rejected_at": "2026-11-23"
+    }
+  ]
+}
