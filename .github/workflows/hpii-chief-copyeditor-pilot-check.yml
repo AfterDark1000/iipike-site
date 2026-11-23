@@ -1,0 +1,39 @@
+name: HPII chief copyeditor pilot safety (NO PUBLICATION)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/check_auto_copyeditor_pilot.py'
+      - 'tests/test_auto_copyeditor_pilot.py'
+      - 'docs/AUTO_CHIEF_COPYEDITOR_PILOT.md'
+      - '.github/workflows/hpii-chief-copyeditor-pilot-check.yml'
+      - 'admin/auto-corrector/index.html'
+  push:
+    branches: [editorial-intake]
+    paths:
+      - 'editorial_inbox/auto_copyedits/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-copyedits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read active pilot validator and full editorial history
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'push' && 'main' || github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Test copyediting boundary (no publication)
+        run: python3 -m unittest discover -s tests -p 'test_auto_copyeditor_pilot.py' -v
+      - name: Validate saved candidate Git blobs, fact tokens and schema
+        run: |
+          git fetch origin editorial-intake
+          python3 scripts/check_auto_copyeditor_pilot.py --verify-tree --ref origin/editorial-intake
+      - name: Confirm no production changes
+        run: |
+          echo 'Read-only validation: no article, cover, approval, site release, Dzen or social changes.' >> "$GITHUB_STEP_SUMMARY"

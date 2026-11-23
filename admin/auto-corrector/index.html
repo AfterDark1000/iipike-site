@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ХПИИ — шеф-корректор, пилот</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color-scheme:light dark}
+*{box-sizing:border-box}body{margin:0;background:#f6f5f1;color:#252824}
+header{background:#162824;color:white;padding:20px max(18px,calc((100vw - 1250px)/2));}
+header a{color:#ccebd9}header h1{margin:10px 0 4px;font-size:24px}header p{margin:0;color:#c2d4c9}
+main{max-width:1300px;margin:auto;padding:18px}section{background:#fff;border:1px solid #d8dcd5;border-radius:12px;padding:16px;margin-bottom:16px}
+.notice{padding:12px 14px;border-left:4px solid #517d69;background:#eef4ef;border-radius:6px;margin-bottom:16px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.tools select{flex:1;min-width:225px}
+select{border:1px solid #c5cfc8;background:white;color:#252824;border-radius:8px;padding:10px;font:inherit}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;margin:0}
+.panes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pane{border:1px solid #e0e5e0;border-radius:10px;padding:15px;min-width:0;background:#fcfcfa}
+.pane h3{margin:0 0 12px;font-size:16px}.original{border-top:4px solid #b6bcc0}.edited{border-top:4px solid #4b8c70}
+.muted{color:#65766d;font-size:13px}.flags{color:#8b3f1f;font-weight:600}.result{font-weight:600}
+ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-wrap:anywhere}
+@media(max-width:800px){.panes{grid-template-columns:1fr}header{padding:18px}main{padding:12px}.pane{padding:12px}}
+@media(prefers-color-scheme:dark){body{background:#111914;color:#e7ede7}section{background:#1e2922;border-color:#37473a}.notice{background:#21372a;color:#e4ebdf}.pane{background:#172118;border-color:#415045}select{background:#19251d;color:#eee;border-color:#526558}.muted,.meta{color:#a5b6aa}}
+</style>
+<script type="module" src="/admin/auth/gate.js"></script>
+</head>
+<body>
+<header><a href="/admin/auto-editor/">← Автономный редактор</a>
+<h1>Шеф-корректор · пилот</h1><p>Исходный текст и литературная правка рядом. Только сравнение.</p></header>
+<main>
+<div class="notice"><strong>Это НЕ финальное утверждение.</strong> Корректор не меняет исходный автодрафт, не утверждает статью и не отправляет её художнику. В действующей админке пока остаётся оригинал редактора.</div>
+<section><div class="tools">
+<label for="choose">Материал</label><select id="choose"><option>Загружаю…</option></select>
+<label for="field">Сравнить</label><select id="field">
+<option value="article_markdown">Статья</option><option value="title">Заголовок</option>
+<option value="summary">Анонс</option><option value="threads_text">Threads</option>
+<option value="x_text">X</option><option value="vk_title">VK заголовок</option>
+<option value="vk_summary">VK текст</option><option value="dzen_title">Дзен заголовок</option>
+</select></div><p id="status" aria-live="polite" class="muted">Проверяю кандидатов в GitHub…</p>
+<div id="info" class="meta"></div></section>
+<section><div class="panes">
+<div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
+<div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
+</div></section>
+<section><h2>Что изменено</h2><ul id="changes"><li>Нет записанной корректуры.</li></ul>
+<h2>Вопросы редактору</h2><div id="flags" class="muted">—</div></section>
+<p class="muted">Источник: публичная ветка GitHub editorial-intake / editorial_inbox / auto_copyedits. Для каждой версии сохранён Git SHA исходного JSON. Семантическую верность литературных замен всё равно проверяет человек.</p>
+</main>
+<script>
+(async function(){
+"use strict";
+const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/editorial_inbox/auto_copyedits?ref=editorial-intake";
+const names=["title","dzen_title","summary","article_markdown","threads_text","x_text","vk_title","vk_summary"];
+const byId=id=>document.getElementById(id);
+const select=byId("choose"), field=byId("field");
+let rows=[], active=null, version=0;
+function show(){
+ const key=field.value;
+ byId("before").textContent=active?.original_text?.[key]||"—";
+ byId("after").textContent=active?.edited_text?.[key]||"—";
+}
+function render(item){
+ active=item;
+ byId("status").textContent=(item.status==="needs_editor_attention"?"Требуется внимание журналиста":"Готово к сравнению")+" · r"+item.source_revision+" v"+item.copyedit_version;
+ byId("info").textContent="Оригинал Git blob: "+item.source_draft_blob_sha+" · Сохранено: "+item.created_at;
+ const list=byId("changes");list.replaceChildren();
+ for(const message of item.change_log||[]){const li=document.createElement("li");li.textContent=message;list.appendChild(li)}
+ const flags=byId("flags");flags.replaceChildren();
+ if(item.editor_flags?.length){flags.className="flags";for(const f of item.editor_flags){const p=document.createElement("p");p.textContent=f;flags.appendChild(p)}}
+ else{flags.className="muted";flags.textContent="Фактических вопросов редактору не заявлено."}
+ show();
+}
+async function load(index){
+ const v=++version;
+ select.disabled=true;byId("status").textContent="Читаю сохранённую корректуру…";
+ try{
+  const r=await fetch(rows[index].download_url,{cache:"no-store"});
+  if(!r.ok)throw Error("Не удалось прочесть файл: GitHub HTTP "+r.status);
+  const item=await r.json();
+  if(v!==version)return;
+  if(item.worker!=="hpii-chief-copyeditor" || item.article_id!==rows[index].article_id ||
+     item.copyedit_version!==rows[index].version || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
+    throw Error("Данные корректуры не соответствуют схеме");
+  render(item);
+ }catch(e){byId("status").textContent="Ошибка: "+e.message}
+ finally{select.disabled=false}
+}
+field.addEventListener("change",show);
+select.addEventListener("change",()=>load(select.selectedIndex));
+try{
+ const response=await fetch(api,{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
+ if(response.status===404){select.replaceChildren(new Option("Пилот ещё не запущен"));byId("status").textContent="Кандидатов пока нет.";return}
+ if(!response.ok)throw Error("GitHub HTTP "+response.status);
+ const list=await response.json();
+ rows=list.filter(x=>/^[a-z0-9-]+-r[1-9]\d*-v[1-9]\d*\.json$/.test(x.name)&&x.download_url)
+  .map(x=>({...x,article_id:x.name.replace(/-r[1-9]\d*-v[1-9]\d*\.json$/,""),version:Number(x.name.match(/-v(\d+)\.json$/)[1])}))
+  .sort((a,b)=>a.article_id.localeCompare(b.article_id));
+ select.replaceChildren();
+ if(!rows.length){select.add(new Option("Кандидатов ещё нет"));byId("status").textContent="Первые тексты ещё не проверены корректором.";return}
+ rows.forEach((x,i)=>select.add(new Option(x.article_id+" (v"+x.version+")",String(i))));
+ await load(0);
+}catch(e){select.replaceChildren(new Option("Ошибка загрузки"));byId("status").textContent="Не удалось прочитать GitHub: "+e.message}
+})();
+</script>
+</body>
+</html>
