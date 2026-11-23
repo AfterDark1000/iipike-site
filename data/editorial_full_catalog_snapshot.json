@@ -1,11 +1,61 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "cc90806a5642bed2f4b4efec7a06580920111504",
-  "source_blob_sha": "9e1df12139b5fa0765497a3d17b4b5bb1b257e79",
-  "snapshot_date": "2026-11-22",
+  "source_commit": "455ff6e601e888d017d41283d2b5348dae3d16cf",
+  "source_blob_sha": "1a9bdf7560fd454723ef03186155a286428cba2f",
+  "snapshot_date": "2026-11-23",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b03d54a1a98a4173e010a47",
+      "title": "Microsoft поселила ИИ в Edge. Ему не нужен интернет",
+      "dzen_url": "https://dzen.ru/a/awPVShqYpBc-AQpH",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Теперь браузер сам обрабатывает запросы к нейросети. Текст остаётся на вашем компьютере. 19 ноября Microsoft объявила о выпуске Aion Instruct — языковой модели с 2,3 миллиарда параметров, которая заменила прежнюю Phi-4-mini внутри Edge. Новая модель компактнее предшественницы. По данным Microsoft, на обычных текстовых задачах она показывает сопоставимое качество, а запускать её можно на большем количестве устройств.",
+      "published_at_utc": "2026-11-23T07:04:16+00:00"
+    },
+    {
+      "dzen_id": "6b03d2d6dc9f1e1d159e7342",
+      "title": "167 лет математики не могли доказать гипотезу Римана — Claude помог, и результат уже подтвердили",
+      "dzen_url": "https://dzen.ru/a/awPS1tyfHh0VnnNC",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Над этой задачей бились 167 лет. А на финишной прямой нейросеть Claude, по признанию самого математика, обогнала его. 20 ноября математик Левент Альпёге из Anthropic объявил, что вместе с Claude нашёл доказательство знаменитой гипотезы Римана. Он выложил результат в виде 17 миллионов строк программного кода. Уже на следующий день независимые специалисты проверили его работу и подтвердили корректность доказательства.",
+      "published_at_utc": "2026-11-23T05:55:09+00:00"
+    },
+    {
+      "dzen_id": "6b03169b569eed7d4dd37900",
+      "title": "Зомби сыграли нейросети: 30 серий без единого живого актёра",
+      "dzen_url": "https://dzen.ru/a/awMWm1ae7X1N03kA",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Студия, созданная для поддержки темнокожих артистов, выпустила сериал, в котором ни одному живому актёру не досталось роли. Mansa, основанная актёрами Дэвидом Ойелоуо и Нейтом Паркером, 30 октября представила They Left Us to Die («Они оставили нас умирать»). Это зомби-хоррор на 30 серий, целиком созданный с помощью генеративного ИИ. Действие разворачивается в Лос-Анджелесе. После вспышки зомби-вируса власти изолируют",
+      "published_at_utc": "2026-11-23T05:02:12+00:00"
+    },
+    {
+      "dzen_id": "6b031651bf87f1605cb8982c",
+      "title": "Аналог Photoshop за сутки: разработчик показал, что собрал с ИИ",
+      "dzen_url": "https://dzen.ru/a/awMWUb-H8WBcuJgs",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ArtCraft за 24 часа получила работающий прототип аналога Adobe Photoshop. Большую часть разработки поручили ИИ-агентам. 12 ноября на конференции AI Engineer CODE основатель компании Брэндон Томас объяснил, как это получилось. Команда составила для нейросети подробные задания: описала устройство фоторедактора и его инструменты, отдельно прописала работу с файлами. По этим планам агенты собирали программу на языке Rust",
+      "published_at_utc": "2026-11-23T04:01:27+00:00"
+    },
+    {
+      "dzen_id": "6b031610d6e45455eb663328",
+      "title": "Meta пустила ИИ в Chrome — под вашим логином",
+      "dzen_url": "https://dzen.ru/a/awMWENbkVFXrZjMo",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Meta превратила ваши открытые сессии в Google Chrome в пропуск для ИИ-агента Muse. 20 ноября руководитель ИИ-направления Meta Александр Ван объявил о запуске расширения, хотя в Chrome Web Store оно появилось раньше. Muse поселился в боковой панели браузера и теперь выполняет поручения прямо на сайтах: заполняет формы, сравнивает цены, помогает оформлять покупки и бронирования. Причём агенту доступны сайты, где пользо",
+      "published_at_utc": "2026-11-23T03:01:52+00:00"
+    },
     {
       "dzen_id": "6b0315ac5e16dc5f0883bada",
       "title": "NVIDIA рухнула на 14% за день после сообщения о проверке её бухгалтерии в США",
