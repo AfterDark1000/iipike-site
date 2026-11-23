@@ -1661,6 +1661,18 @@
           "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
         }
       ]
+    },
+    {
+      "key": "riverside",
+      "name": "Riverside",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "riverside-tonality-audio-word-edit-20261112",
+          "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
+        }
+      ]
     }
   ],
   "products": [
@@ -3301,6 +3313,18 @@
         {
           "article_id": "anthropic-self-hosted-managed-agents-20261112",
           "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents"
+        }
+      ]
+    },
+    {
+      "key": "riverside-tonality",
+      "name": "Tonality",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "riverside-tonality-audio-word-edit-20261112",
+          "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
         }
       ]
     }
