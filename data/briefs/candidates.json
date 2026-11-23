@@ -1470,6 +1470,71 @@
       "source": "Novita AI, официальное уведомление о конфиденциальности",
       "source_url": "https://novita.ai/blog/minimax-requests-privacy-notice/",
       "fact_check": "Novita AI official privacy notice dated Nov 22, 2026. Researcher informed provider and review confirmed that some MiniMax prompts forwarded to official MiniMax API rather than hosted in Novita infra; misconfigured forwarding path intended for some customers applied broadly. Exposure window May28–Nov11, requests via Novita and OpenRouter. Possible access or retention by third party, no confirmation all requests actually read/trained. Researcher observed accesses to test URLs/hostnames, but not test AWS secrets. Novita suspended affected models, verifying deletion, recommends rotation of live credentials in prompts. There is separate full story №470 on OpenRouter's three offboarded providers and 125 ZDR removed; this short concentrates on provider Novita's specific routing incident and dates. https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/"
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 477,
+      "pool_id": "n-a3eccfe629b91dd1",
+      "slug": "anthropic-claude-mobile-tabs-ios26-20261120",
+      "headline": "Claude получила вкладки для проектов, кода и документов на iPhone",
+      "body": "Anthropic начала обновлять мобильный Claude: внизу приложения появились вкладки чатов, проектов, кода и артефактов — созданных с ИИ документов и других материалов. Переключаться между ними можно жестом, а удержание вкладки открывает недавние задачи. Обновление распространяется постепенно, начиная с iPhone на iOS 26 и новее. На Android новый интерфейс обещают позже; переписки и проекты при переходе сохраняются.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "Anthropic, официальные примечания к обновлению Claude от 20 ноября",
+      "source_url": "https://support.claude.com/en/articles/12138966-release-notes",
+      "fact_check": "Anthropic Claude Help Center release notes dated Nov 20, 2026: refreshed Claude Mobile gradually rolling out, starting with Claude for iOS, requires iOS 26 or later, chats/projects/plan unchanged. Designer Daniel Destefanis first-party X Nov20: https://x.com/daniel__designs/status/2123860186951516287; designer Robert Bye post says bottom tabs chat/projects/code/artifacts, swipe to switch, long press recent: https://x.com/RobertJBye ; Android coming soon per designer's reply, do not claim now available Android. Independent Verge Nov20: https://www.theverge.com/ai-artificial-intelligence/1039188/claude-has-a-new-mobile-design-too."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 479,
+      "pool_id": "n-9501c77fabd313d3",
+      "slug": "aws-quick-plugins-build-by-chat-20261121",
+      "headline": "Amazon Quick научилась собирать плагины по описанию задачи",
+      "body": "AWS добавила в корпоративный помощник Quick плагины, объединяющие ИИ-агентов, навыки, подключения к сервисам и последовательности действий. Сотрудник может установить готовый набор для своей работы: например, для подготовки встреч или продаж. А собственный плагин можно собрать, просто описав задачу в чате, и затем открыть коллегам. По сообщению AWS от 21 ноября, доступно свыше ста готовых навыков и плагинов; функция работает во всех регионах Quick.",
+      "topic": "Технологии",
+      "event_date": "2026-11-21",
+      "source": "AWS, официальный анонс Quick plugins от 21 ноября",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows",
+      "fact_check": "Official AWS What's New November 21 2026: Quick now supports plugins combining agents, skills, connectors, flows, official plugins Calendar and Meetings Assistant; Sales Development; more than 100 skills and plugins; users can create plugins with natural-language task description, share with teammates; available all AWS Quick regions. This is AWS Quick business product, not a generic browser plugin or ChatGPT plugin. https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/ (Nov20) provides context. No pricing/inclusion claims."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 480,
+      "pool_id": "n-504e75b3f7fa505b",
+      "slug": "aws-bedrock-web-search-country-languages-20261121",
+      "headline": "Поиск для ИИ-агентов AWS научился учитывать страну и новые языки",
+      "body": "Amazon обновила Web Search в Bedrock — инструмент, которым ИИ-агенты ищут свежую информацию в интернете. Разработчик теперь может указать двухбуквенный код страны, например JP или DE, и поиск отдаст приоритет источникам из неё. Добавлена поддержка запросов на испанском, французском, немецком, итальянском и японском, а также региональных вариантов английского. Обновление доступно с 21 ноября в поддерживаемых регионах AWS Bedrock и AgentCore.",
+      "topic": "Технологии",
+      "event_date": "2026-11-21",
+      "source": "AWS, официальный анонс обновления Web Search от 21 ноября",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock",
+      "fact_check": "Official AWS What's New November 21, 2026. Web Search on Bedrock and Bedrock AgentCore now supports Spanish, French, German, Italian, Japanese and non-US English; optional country field ISO3166-1 alpha-2 (JP, DE) biases ranking toward sources from selected country; it is NOT automatic inference of user location or strict country filtering. Supported AWS Regions: AgentCore six incl US East Virginia/Ohio, US West Oregon, AP Sydney/Tokyo, Europe Ireland; Bedrock US Regions. Same pricing across languages. Do not claim Russian added."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 486,
+      "pool_id": "n-6f1e15f690aef8a4",
+      "slug": "musk-ai-data-center-working-capital-warning-20261121",
+      "headline": "Маск предупредил, что задержки ИИ-серверов потребуют сотен миллиардов долларов",
+      "body": "Илон Маск 21 ноября предупредил о возможном дефиците денег у ИИ-компаний в 2027 году. По его словам, запускать и охлаждать новые вычислительные мощности непросто, а оплачивать оборудование приходится задолго до получения выручки. Маск предположил, что задержки даже на несколько месяцев могут создать для всей отрасли потребность в дополнительных сотнях миллиардов долларов оборотных средств. Это его прогноз, без расчётов по конкретным компаниям.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-21",
+      "source": "Илон Маск, публичное сообщение в X от 21 ноября 2026",
+      "source_url": "https://x.com/elonmusk/status/2124271725927903388",
+      "fact_check": "First-person public post by Elon Musk on X, Nov21 2026, original URL confirmed by index https://www.advanceintelligence.ai/2026-11-21 : 'Getting this amount of compute turned on, cooled and working reliably is incredibly hard. The cash shortage is also going to be nuts next year. Even cumulative industry delays of a few months between paying for compute and getting it reliable enough to generate revenue will mean hundreds of billions of incremental dollars just for working capital. Where will that come from?' Original X page 403 to auto-browser; reproduced verbatim by 2026-11-21 primary-post capture. Independent Business Insider Nov22: https://www.businessinsider.com/elon-musk-warning-ai-compute-data-centers-cash-spacex-tesla-2026-11. Forecast of working capital gap, not actual crisis or funded need."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 493,
+      "pool_id": "n-0a3f026f3a8e88bd",
+      "slug": "sen-kennedy-lutnick-bessent-nvidia-china-chip-oath-20261122",
+      "headline": "Сенатор США хочет вызвать двух министров на допрос из-за ИИ-чипов для Китая",
+      "body": "Сенатор Джон Кеннеди 22 ноября заявил в эфире NBC, что хочет заслушать под присягой министров торговли и финансов США — Говарда Латника и Скотта Бессента. Он требует объяснить, как передовые чипы NVIDIA могли попадать в Китай в обход экспортных ограничений. Кеннеди предположил, что Минторг либо допустил обход правил, либо не справился с контролем. Пока это обвинения и призыв сенатора; решения о таких слушаниях не объявлено.",
+      "topic": "Общество",
+      "event_date": "2026-11-22",
+      "source": "NBC News, Meet the Press, интервью Джона Кеннеди от 22 ноября",
+      "source_url": "https://www.nbcnews.com/meet-the-press/video/john-kennedy-if-howard-lutnick-is-giving-ai-chips-away-to-china-he-needs-to-stop-273979973777",
+      "fact_check": "Original NBC Meet the Press Nov22 primary video and transcript URL (NBC blocks automated fetch): https://www.nbcnews.com/meet-the-press/transcripts/meet-press-november-22-2026-rcna610681 ; video link source_url. NBC's own syndicated clip https://www.yahoo.com/news/videos/john-kennedy-howard-lutnick-giving-144233388.html . Direct quotations and call confirmed by Washington Post https://www.washingtonpost.com/politics/2026/11/22/sen-kennedy-urges-scrutiny-lutnick-over-chinas-access-nvidia-chips/ and The Guardian https://www.theguardian.com/us-news/2026/nov/22/jensen-huang-nvidia-john-kennedy . He said 'appears' the Commerce Department has allowed China to circumvent export controls; wants Commerce Secretary Howard Lutnick and Treasury Secretary Scott Bessent testify under oath, no actual scheduled hearing. Never present suspected smuggling or Lutnick role as proven. Existing HPII full reports cover Nvidia scandal and halt shipments, but this is distinct Nov22 statement by Kennedy."
     }
   ]
 }
