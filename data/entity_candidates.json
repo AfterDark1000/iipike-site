@@ -1697,6 +1697,18 @@
           "source_url": "https://www.reuters.com/world/china/inside-chinas-drive-build-an-ai-native-generation-2026-11-16"
         }
       ]
+    },
+    {
+      "key": "midjourney-inc",
+      "name": "Midjourney, Inc.",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service"
+        }
+      ]
     }
   ],
   "products": [
@@ -2544,6 +2556,10 @@
         {
           "article_id": "bytedance-seedance-2-5-flash-20261115",
           "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+        },
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
         }
       ]
     },
@@ -2626,6 +2642,10 @@
         {
           "article_id": "openai-gpt-6-2-astra-sol-20261117",
           "source_url": "https://artificialanalysis.ai/leaderboards/models"
+        },
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://aishow.dev/p/photo-like-painting-in-700k-strokes"
         }
       ]
     },
@@ -3353,6 +3373,44 @@
         {
           "article_id": "riverside-tonality-audio-word-edit-20261112",
           "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
+        }
+      ]
+    },
+    {
+      "key": "cinecode",
+      "name": "cinecode",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://github.com/sarpstar/cinecode"
+        }
+      ]
+    },
+    {
+      "key": "midjourney",
+      "name": "Midjourney",
+      "company": "midjourney-inc",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
+        }
+      ]
+    },
+    {
+      "key": "dreamina",
+      "name": "Dreamina",
+      "company": "bytedance",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
         }
       ]
     }
