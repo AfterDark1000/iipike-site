@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 8 · **Готовы:** 0 · **Ждут интервал:** 8 · **Срочная очередь:** 5 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 205
+**В очереди:** 9 · **Готовы:** 0 · **Ждут интервал:** 9 · **Срочная очередь:** 5 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 205
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -20,6 +20,7 @@
 | **6** | [403 дата-центра США загрязняют атмосферу как целая Дания. Greenpeace взялась за NVIDIA](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-greenpeace-datacenter-emissions-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 19:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-greenpeace-datacenter-emissions-20261116.webp) |
 | **7** | [В Китае открыли биржу нейросетей. Уже 50 миллионов запросов в день](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/baidu-token-exchange-ernie-55-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 20:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/baidu-token-exchange-ernie-55-20261112.webp) |
 | **8** | [Компания бывшего главы «Яндекса» замахнулась на $45 млрд, но стройка для Microsoft уже буксует](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nebius-45b-microsoft-delay-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 21:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nebius-45b-microsoft-delay-20261112.webp) |
+| **9** | [Для ИИ придумали 2206 мер защиты. Контроль над агентами почти забыли](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-ai-risk-mitigation-2206-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 22:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-ai-risk-mitigation-2206-20261112.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
