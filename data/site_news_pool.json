@@ -7050,7 +7050,7 @@
       "review_started_at": "2026-11-23T06:23:33.769Z",
       "closed_at": null,
       "article_id": null,
-      "note": "23.11.2026: редактор №28 зарезервировал горячую новость; далее проверка первоисточника, архивных повторов и подготовка Дзена/Threads/X."
+      "note": "23.11.2026: проверен официальный анонс OpenRouter от 22.11 и исследование Dragos от 19.11. Подтверждено: отключены три провайдера, 125 endpoints лишены ZDR, затронутые клиенты уведомлены; нарушения самой OpenRouter не выявлено. Первоисточники: https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/ и https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens . Проверен архив: отдельной статьи по инциденту не найдено. Черновик Дзена/Threads/X подготовлен на утверждение; не утвержден и не публиковался."
     },
     {
       "id": "n-31dbae397b46d6b3",
