@@ -1340,6 +1340,71 @@
       "source": "Сенатор Джон Хикенлупер, официальный пресс-релиз и письмо",
       "source_url": "https://www.hickenlooper.senate.gov/press_releases/hickenlooper-presses-senate-leadership-candidates-to-outline-ai-safety-affordability-and-accountability-agenda/",
       "fact_check": "Официальный пресс-релиз сенатора и собственноручное письмо (PDF) датированы 19.11.2026. Адресаты — лидер демократов Шумер и сенатор Ван Холлен как кандидаты на руководящую должность. В оригинале 'We should consider a Select Committee on AI' — предложение обсудить, не принятая резолюция Сената; 'consider banning Recursive Self-Improvement' — обсудить запрет, не поданный законопроект. В исходном сообщении пула неточно: 'сенаторы' во множественном числе и дата 21 ноября отражает вторичную публикацию AP, не дату обращения. Письмо: https://www.hickenlooper.senate.gov/wp-content/uploads/2026/11/Hickenlooper-AI-Leadership-Letter.pdf"
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 452,
+      "pool_id": "n-6df30b9327788125",
+      "slug": "runway-praxis-1-vs-gpt6-astra-robot-speed-20261119",
+      "headline": "Praxis-1 оказалась в 15,6 раза быстрее GPT-6 Astra в тесте Runway",
+      "body": "Runway сравнила скорость своей модели Praxis-1 и GPT-6 Astra на одной роботизированной установке YAM. В трёх заданиях с небольшими предметами Praxis-1 в среднем тратила 16 секунд против 4 минут 13 секунд у Astra — в 15,6 раза быстрее. Стоимость выполненного задания в подсчётах Runway составила $0,04 против $1,87, то есть в 51 раз меньше. Испытание компания провела 9 ноября самостоятельно; сравнение касается только этих трёх задач.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Runway, технический отчёт Praxis-1",
+      "source_url": "https://runway.com/research/praxis-1-video-pretraining-to-robot-control",
+      "fact_check": "Runway Research, раздел 7.3, данные теста собраны 09.11.2026, сообщение Runway в X 19.11.2026. Те же YAM-робот/консоль/три задания; 0:16 против 4:13 среднее успешных эпизодов; 15,6x по времени; затраты per completed task с учётом неуспешных эпизодов $0.04 против $1.87, 51x. Это внутреннее сравнение Runway, три задачи, не общий бенчмарк робототехники. Отдельный опубликованный материал ХПИИ №115 о выпуске Praxis-1 11.11.2026 не содержит этих сравнений: https://iipike.ru/articles/runway-praxis-1-open-weights-20261111/."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 454,
+      "pool_id": "n-e175ec379fa37c64",
+      "slug": "turingspace-spatial-captcha-humans-astra-benchmark-20261119",
+      "headline": "ИИ спотыкается на пространственных капчах: Astra решила 74%, люди — 94%",
+      "body": "Авторы исследования TuringSpace проверили 125 интерактивных капч, где нужно перетаскивать предметы по экрану и учитывать результат своих действий. Лучшей среди испытанных моделей стала GPT-6 Astra с 74,1% решённых задач; трое участников из команды исследователей справились с 94,1%. Учёные обнаружили, что нейросети часто неверно читают изображение и не исправляют свою ошибку после обратной связи. Сравнение проведено на специально созданном авторами наборе задач.",
+      "topic": "Наука",
+      "event_date": "2026-11-19",
+      "source": "TuringSpace, исследование на arXiv от 19 ноября 2026",
+      "source_url": "https://arxiv.org/abs/2611.25387",
+      "fact_check": "Первичный препринт Xuwei Ding et al. arXiv:2611.25387, submitted 19.11.2026. 125 программно генерируемых интерактивных CAPTCHA, пять пространственных способностей. GPT-6 Astra решает 74.1%; 94.1% human baseline основан на ТРЁХ авторах, которые не строили задания, а не массовом пользовательском тесте. Авторская оценка и анализ ошибок; модели иногда неверно интерпретировали screenshot и закрепляли ложные представления. В первичном аннотационном тексте говорится о планах полного выпуска TuringSpace, не утверждать уже открытый публичный продукт."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 456,
+      "pool_id": "n-838bb6feb725eb0e",
+      "slug": "voyager-80-ai-3d-meshes-printability-check-20261119",
+      "headline": "Из 33 моделей Meshy ни одна не оказалась готова к 3D-печати без исправлений",
+      "body": "Компания Voyager проверила геометрию 80 файлов 3D-моделей, созданных восемью ИИ-генераторами. Все 11 файлов Hunyuan3D 3 оказались замкнутыми — без отверстий в поверхности. А ни один из 33 файлов трёх версий Meshy не прошёл эту проверку сразу после генерации. Авторы также нашли слишком тонкие стенки и лишние фрагменты, мешающие подготовке к печати. Проверяли файлы программно 19 ноября; физической печати в исследовании не было.",
+      "topic": "Технологии",
+      "event_date": "2026-11-19",
+      "source": "Voyager, собственное сравнение 80 ИИ-сгенерированных 3D-файлов",
+      "source_url": "https://voyager.so/blog/ai-stl-generator",
+      "fact_check": "Первичный отчет Voyager, Ravi Parikh, 19.11.2026. 80 файлов от восьми моделей: 7 моделей по 11, TRELLIS.2 3; Hunyuan3D 3 11/11 watertight as delivered, Meshy 6,7,7.1 в сумме 0/33 watertight as delivered. Проверки геометрии, без слайсинга и реальной 3D-печати; корректнее говорить 'замкнутая сетка/без отверстий', а не гарантированно печатается. Voyager коммерческий продукт, интегрирует рассматриваемые модели, выводы собственных выборок. Дата 19 ноября, не 20."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 460,
+      "pool_id": "n-1ec825e3395562d7",
+      "slug": "oracle-openai-data-center-contract-funded-20261120",
+      "headline": "Oracle заявила, что денег на дата-центры для OpenAI уже хватает",
+      "body": "Oracle 20 ноября заявила, что полностью обеспечила финансирование своих обязательств перед OpenAI по инфраструктурному контракту. По словам компании, средства получены после заключительного привлечения капитала в начале месяца, включая предусмотренное финансирование от поставщиков. Oracle отдельно подчеркнула, что для выполнения действующего договора ей не понадобятся новые соглашения с поставщиками. Заявление прозвучало на фоне вопросов инвесторов к стоимости масштабного строительства ИИ-центров.",
+      "topic": "Бизнес",
+      "event_date": "2026-11-20",
+      "source": "Oracle, официальное заявление от 20 ноября 2026",
+      "source_url": "https://www.oracle.com/news/announcement/oracle-statement-2026-11-20/",
+      "fact_check": "Официальное заявление Oracle от 20.11.2026, Austin TX. 'secured all the funding we need to fulfill our contract with OpenAI', 'final capital raise earlier this month', 'financing ... including vendor financing ... in place', further private discussions with vendors extra options, not dependent. Не путать собственное заверение о финансировании конкретного контракта с OpenAI с независимым аудитом или полностью профинансированной экспансией Oracle. Компания указывает ожидаемый положительный free cash flow во второй половине FY2028, но пока лишь прогноз. Reuters 20.11.2026 подтверждает сообщение: https://www.reuters.com/business/oracle-says-openai-infrastructure-deal-is-fully-funded-after-final-capital-raise-2026-11-20/."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 462,
+      "pool_id": "n-71d8d760c730896e",
+      "slug": "amd-nitro-p-pixel-space-image-model-open-20261120",
+      "headline": "AMD показала генератор изображений Nitro-P, работающий напрямую с пикселями",
+      "body": "AMD представила Nitro-P — модель генерации изображений, которая работает непосредственно с пикселями, без привычного этапа декодирования из сжатого представления. Компания открыла веса и код обучения. В собственном тесте на ускорителе MI300X однопроходная версия обрабатывала около 90 изображений размером 512×512 в секунду. Это скорость пакетной генерации сразу 32 изображений, а не одиночного запроса на домашнем компьютере.",
+      "topic": "Технологии",
+      "event_date": "2026-11-20",
+      "source": "AMD ROCm Blogs, технический анонс Nitro-P",
+      "source_url": "https://rocm.blogs.amd.com/artificial-intelligence/nitro-p/README.html",
+      "fact_check": "AMD ROCm technical blog 20.11.2026, Nitro-P is end-to-end pixel-space diffusion T2I with no VAE decoder. Authors release full training code and weights. On one MI300X for 512x512 images batch=32: full-step 10.26 samples/s and distilled one-step 90.02 samples/s. 1024x1024 distilled 26 samples/s batch=32. Не выдавать throughput на большом батче за скорость одной картинки/любой видеокарты; internal AMD benchmarking."
     }
   ]
 }
