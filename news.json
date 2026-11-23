@@ -8020,5 +8020,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "403 дата-центра США загрязняют атмосферу как целая Дания. Greenpeace взялась за NVIDIA",
+    "summary": "Исследователи оценили выбросы 403 американских дата-центров в 25,7 млн тонн CO₂ за год. Greenpeace отдельно сообщила о росте выбросов в цепочке поставок NVIDIA на 725% с 2020 года.",
+    "published": "2026-11-23",
+    "source_url": "https://www.nature.com/articles/s41893-026-01985-7",
+    "cover": "assets/editorial/nvidia-greenpeace-datacenter-emissions-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🌍 ИИ-ДАТА-ЦЕНТРЫ загрязняют атмосферу как Дания. NVIDIA тоже досталось",
+    "vk_summary": "Учёные оценили годовые выбросы 403 крупнейших дата-центров США в 25,7 млн тонн CO₂, сопоставимо с Данией. Greenpeace отдельно сообщила о росте выбросов в цепочке поставок NVIDIA на 725% с 2020 года и потребовала перехода производителей чипов на возобновляемую энергию.",
+    "published_at_utc": "2026-11-23T17:01:06Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "nvidia-greenpeace-datacenter-emissions-20261116",
+    "url": "articles/nvidia-greenpeace-datacenter-emissions-20261116/",
+    "topics": [
+      "infrastructure",
+      "science"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
