@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 11 · **Готовы:** 0 · **Ждут интервал:** 11 · **Срочная очередь:** 5 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 205
+**В очереди:** 12 · **Готовы:** 0 · **Ждут интервал:** 12 · **Срочная очередь:** 5 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 205
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -23,11 +23,13 @@
 | **9** | [Для ИИ придумали 2206 мер защиты. Контроль над агентами почти забыли](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/mit-ai-risk-mitigation-2206-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 22:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/mit-ai-risk-mitigation-2206-20261112.webp) |
 | **10** | [В США испытали роботов, которые сами ищут военные цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/darpa-racer-autonomous-targets-20261015.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 23:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/darpa-racer-autonomous-targets-20261015.webp) |
 | **11** | [Anthropic разрешила компаниям поселить ИИ-агентов Claude на своих серверах](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-self-hosted-managed-agents-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 00:37 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/anthropic-self-hosted-managed-agents-20261112.webp) |
+| **12** | [ИИ научился заменять отдельные слова в аудиозаписи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/riverside-tonality-audio-word-edit-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 07:07 (Усть-Катав)**; пауза до 23.11.2026 14:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/riverside-tonality-audio-word-edit-20261112.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
+| [Четыре необычных эксперимента с ИИ: от проектирования дома до управления роботом](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-physical-experiments-20261115.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Сценарист «Таксиста» попросил ИИ написать фильм в его стиле и испугался результата](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/paul-schrader-ai-screenplay-fable-20261121.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
