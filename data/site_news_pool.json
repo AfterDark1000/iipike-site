@@ -6760,12 +6760,12 @@
       "summary": "21 ноября: сенатор Джон Хикенлупер предложил отдельный комитет по регулированию ИИ; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-22T15:51:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d4ed742b780585e4"
+      "closed_at": "2026-11-23T08:39:09Z",
+      "article_id": "hickenlooper-us-senate-select-ai-committee-letter-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d4ed742b780585e4\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/hickenlooper-us-senate-select-ai-committee-letter-20261119/"
     },
     {
       "id": "n-6df30b9327788125",
