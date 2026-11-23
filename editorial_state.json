@@ -210,6 +210,12 @@
       "utc_date": "2026-11-22",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
       "source_title": "Meta ads is now available in AWS Quick"
+    },
+    {
+      "id": "6b1a37a3501d8c9aa6e0",
+      "utc_date": "2026-11-23",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
+      "source_title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together"
     }
   ]
 }

@@ -1,5 +1,12 @@
 [
   {
+    "id": "6b1a37a3501d8c9aa6e0",
+    "date": "2026-11-23",
+    "title": "AWS научила ИИ-помощников работать в команде и собирать бизнес-процессы на ходу",
+    "source_name": "Amazon AWS ML",
+    "source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/"
+  },
+  {
     "id": "06c62bbf6e86ef33e9e0",
     "date": "2026-11-22",
     "title": "AWS Quick подружили с рекламой в Meta: теперь кампании можно собирать обычной речью",
