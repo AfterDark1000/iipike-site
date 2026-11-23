@@ -6835,12 +6835,12 @@
       "summary": "20 ноября: сравнили проверки геометрии файлов нескольких 3D-генераторов; физическую печать не проводили, вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-23T06:10:01+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-838bb6feb725eb0e"
+      "closed_at": "2026-11-23T12:09:09Z",
+      "article_id": "voyager-80-ai-3d-meshes-printability-check-20261119",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-838bb6feb725eb0e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/voyager-80-ai-3d-meshes-printability-check-20261119/"
     },
     {
       "id": "n-168a57a7870659d7",
