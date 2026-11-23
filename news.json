@@ -7720,7 +7720,9 @@
       "safety"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b03d59262f36d5736cc1169",
+    "site_first_dzen_url": "https://dzen.ru/a/awPVkmLzbVc2zBFp"
   },
   {
     "title": "OpenAI научила GPT молчать о своих «мыслях»",
@@ -7745,7 +7747,9 @@
     ],
     "products": [
       "gpt-6"
-    ]
+    ],
+    "site_first_dzen_id": "6b03d5e00da4121fb3d304ac",
+    "site_first_dzen_url": "https://dzen.ru/a/awPV4A2kEh-z0wSs"
   },
   {
     "title": "SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле",
@@ -7769,7 +7773,9 @@
       "spacex",
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b03d62a5e16dc5f08a315d3",
+    "site_first_dzen_url": "https://dzen.ru/a/awPWKl4W3F8IoxXT"
   },
   {
     "title": "OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»",
@@ -7792,7 +7798,9 @@
       "anthropic",
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b03d666bf87f1605cd49074",
+    "site_first_dzen_url": "https://dzen.ru/a/awPWZr-H8WBc1JB0"
   },
   {
     "title": "Canva добавила кнопку «Выключить ИИ»",
@@ -7815,7 +7823,9 @@
     "companies": [
       "canva"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b03dcbb5e16dc5f08b0d6d2",
+    "site_first_dzen_url": "https://dzen.ru/a/awPcu14W3F8IsNbS"
   },
   {
     "title": "Google научила ИИ делать Android-приложения, которые вас помнят",
@@ -7840,7 +7850,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6b03dd14c98fbb1942873955",
+    "site_first_dzen_url": "https://dzen.ru/a/awPdFMmPuxlChzlV"
   },
   {
     "title": "Google доверила Безосу запуск космических ИИ-серверов после испытания с Маском",
@@ -7865,7 +7877,9 @@
     ],
     "products": [
       "tpu"
-    ]
+    ],
+    "site_first_dzen_id": "6b046aa5bf87f1605c54cc4f",
+    "site_first_dzen_url": "https://dzen.ru/a/awRqpb-H8WBcVMxP"
   },
   {
     "title": "Хакер дал ИИ одну команду, и тот нашёл неизвестную дыру за 11 минут",
@@ -8019,7 +8033,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b046157569eed7d4d418281",
+    "site_first_dzen_url": "https://dzen.ru/a/awRhV1ae7X1NQYKB"
   },
   {
     "title": "403 дата-центра США загрязняют атмосферу как целая Дания. Greenpeace взялась за NVIDIA",
