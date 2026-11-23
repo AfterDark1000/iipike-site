@@ -1685,6 +1685,18 @@
           "source_url": "https://www.whatpeoplemade.com/i/robot-arm-learned-a-precision-machining-task-from-fable-420351.html"
         }
       ]
+    },
+    {
+      "key": "z-ai",
+      "name": "Z.AI",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "china-ai-schools-20261116",
+          "source_url": "https://www.reuters.com/world/china/inside-chinas-drive-build-an-ai-native-generation-2026-11-16"
+        }
+      ]
     }
   ],
   "products": [
@@ -1815,6 +1827,10 @@
         {
           "article_id": "china-ai-shopping-doubao-dongdong-20261111",
           "source_url": "https://www.linkedin.com/company/wpic/"
+        },
+        {
+          "article_id": "china-ai-schools-20261116",
+          "source_url": "https://www.reuters.com/world/china/inside-chinas-drive-build-an-ai-native-generation-2026-11-16"
         }
       ]
     },
