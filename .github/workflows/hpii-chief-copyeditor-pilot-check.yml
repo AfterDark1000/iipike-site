@@ -9,6 +9,12 @@ on:
       - 'docs/AUTO_CHIEF_COPYEDITOR_PILOT.md'
       - '.github/workflows/hpii-chief-copyeditor-pilot-check.yml'
       - 'admin/auto-corrector/index.html'
+  # The editorial-intake branch intentionally contains no workflows.
+  # Therefore its pushes cannot run a newly added main-only workflow.
+  # Independently validate actual candidates twice an hour from main.
+  schedule:
+    - cron: '10,40 * * * *'
+  workflow_dispatch:
   push:
     branches: [editorial-intake]
     paths:
