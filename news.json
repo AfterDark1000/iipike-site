@@ -7933,5 +7933,25 @@
       "hugging-face"
     ],
     "products": []
+  },
+  {
+    "title": "В Южной Корее министр лишился должности из-за паники вокруг ИИ-шпаргалок",
+    "summary": "Министр образования Южной Кореи ушёл в отставку после резких изменений правил главного вступительного экзамена на фоне опасений списывания с помощью ИИ.",
+    "published": "2026-11-23",
+    "source_url": "https://en.yna.co.kr/view/AEN20261122001052315",
+    "cover": "assets/editorial/south-korea-ai-cheating-minister-resignation-20261122.webp",
+    "rubric": "news",
+    "vk_title": "🚨 В Южной Корее министр ПОТЕРЯЛ ДОЛЖНОСТЬ после паники вокруг ИИ-шпаргалок",
+    "vk_summary": "В Южной Корее борьба со списыванием через ИИ закончилась отставкой министра образования. Перед главным вступительным экзаменом школьникам заклеивали пуговицы, проверяли очки и искали спрятанные телефоны экстренными сигналами. Правила меняли до последнего дня.",
+    "published_at_utc": "2026-11-23T13:15:41Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-22",
+    "id": "south-korea-ai-cheating-minister-resignation-20261122",
+    "url": "articles/south-korea-ai-cheating-minister-resignation-20261122/",
+    "topics": [
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
