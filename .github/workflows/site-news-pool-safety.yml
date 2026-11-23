@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths:
       - 'data/site_news_pool.json'
+      - 'data/editorial_routing.json'
+      - 'data/excluded_news_candidates.json'
+      - 'tests/test_owner_excluded_news.py'
       - 'scripts/site_news_pool.py'
       - 'tests/test_site_news_pool.py'
       - 'docs/SITE_NEWS_POOL.md'
@@ -11,6 +14,9 @@ on:
   pull_request:
     paths:
       - 'data/site_news_pool.json'
+      - 'data/editorial_routing.json'
+      - 'data/excluded_news_candidates.json'
+      - 'tests/test_owner_excluded_news.py'
       - 'scripts/site_news_pool.py'
       - 'tests/test_site_news_pool.py'
       - 'docs/SITE_NEWS_POOL.md'
@@ -28,3 +34,5 @@ jobs:
         run: python3 scripts/site_news_pool.py --validate
       - name: Test batch import, dedup, reservation and release
         run: python3 -m unittest discover -s tests -p 'test_site_news_pool.py' -v
+      - name: Check owner blacklist and discarded story cleanup (never publishes)
+        run: python3 -m unittest discover -s tests -p 'test_owner_excluded_news.py' -v
