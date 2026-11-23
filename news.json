@@ -7783,5 +7783,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Canva добавила кнопку «Выключить ИИ»",
+    "summary": "Canva представила настройки AI Controls: на Free и Pro можно отключить генеративные инструменты и уменьшить количество ИИ-картинок в поиске. Некоторые средства редактирования продолжат работать.",
+    "published": "2026-11-23",
+    "source_url": "https://www.canva.com/newsroom/news/ai-controls-canva/",
+    "cover": "assets/editorial/canva-ai-controls-opt-out-20261119.webp",
+    "rubric": "news",
+    "vk_title": "🎨 CANVA ДАЛА КНОПКУ «ВЫКЛЮЧИТЬ ИИ»!",
+    "vk_summary": "На Free и Pro теперь можно скрыть генеративные инструменты. Отдельная настройка уменьшает число ИИ-картинок в библиотеке. Но убрать весь ИИ не получится: удаление фона и некоторые умные функции останутся, а в поиске ещё попадутся нейросетевые шаблоны. У ИИ наконец появилась кнопка «Хватит». 💀",
+    "published_at_utc": "2026-11-23T06:00:57Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-19",
+    "id": "canva-ai-controls-opt-out-20261119",
+    "url": "articles/canva-ai-controls-opt-out-20261119/",
+    "topics": [
+      "apps",
+      "images"
+    ],
+    "companies": [
+      "canva"
+    ],
+    "products": []
   }
 ]
