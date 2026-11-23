@@ -7711,5 +7711,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "OpenAI научила GPT молчать о своих «мыслях»",
+    "summary": "OpenAI представила защиту от атак, выманивающих скрытые рассуждения GPT: в тестах компании успешность извлечения данных из предыдущих запросов снизилась с 54% до 0,2%.",
+    "published": "2026-11-23",
+    "source_url": "https://openai.com/index/combatting-adversarial-distillation/",
+    "cover": "assets/editorial/openai-gpt-hidden-reasoning-defense-20261120.webp",
+    "rubric": "news",
+    "vk_title": "🧠 OpenAI научила GPT НЕ ВЫДАВАТЬ свои «МЫСЛИ»",
+    "vk_summary": "В тестах OpenAI успешность выманивания скрытых рассуждений из прежних запросов снизилась с 54% у GPT-6 Astra до 0,2% у GPT-6.2 Astra с новой защитой.",
+    "published_at_utc": "2026-11-23T02:00:48Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-20",
+    "id": "openai-gpt-hidden-reasoning-defense-20261120",
+    "url": "articles/openai-gpt-hidden-reasoning-defense-20261120/",
+    "topics": [
+      "safety",
+      "models"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "gpt-6"
+    ]
   }
 ]
