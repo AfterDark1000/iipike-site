@@ -1773,6 +1773,30 @@
           "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
         }
       ]
+    },
+    {
+      "key": "lvmh",
+      "name": "LVMH",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "openai-french-press-lvmh-figaro-20261118",
+          "source_url": "https://openai.com/index/lvmh-media-division-partnership/"
+        }
+      ]
+    },
+    {
+      "key": "groupe-figaro",
+      "name": "Groupe Figaro",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "openai-french-press-lvmh-figaro-20261118",
+          "source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/"
+        }
+      ]
     }
   ],
   "products": [
