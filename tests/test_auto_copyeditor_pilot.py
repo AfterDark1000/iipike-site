@@ -148,8 +148,6 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
         c["edited_text"]["article_markdown"] = self.doc["content"]["article_markdown"]
         with self.assertRaisesRegex(ValueError, "Cosmetic article change"):
             self.check(c)
-        c["edited_text"]["article_markdown"] = c["edited_text"]["article_markdown"].replace(
-            "новый механизм", "иной механизм")
         # A rewritten headline plus a one-word change is still cosmetic.
         c["edited_text"]["article_markdown"] = self.doc["content"]["article_markdown"].replace(
             "новый механизм", "иной механизм")
@@ -168,9 +166,9 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
             self.check(c)
         c = copy.deepcopy(self.candidate)
         c["edited_text"]["article_markdown"] = c["edited_text"]["article_markdown"].replace(
-            "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов.\\n\\n",
+            "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов.\n\n",
             "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов. "
-            "Это стало результатом эксперимента.\\n\\n")
+            "Это стало результатом эксперимента.\n\n")
         with self.assertRaisesRegex(ValueError, "standalone first sentence"):
             self.check(c)
 
