@@ -2935,12 +2935,12 @@
       "summary": "16 ноября: OpenAI заключила соглашение с медиаподразделением LVMH, включая Les Echos, Le Parisien, Paris Match.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": "2026-11-23T11:43:06.250Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "23.11.2026: №196 объединяется с №318 по маршруту. Подтверждены первоисточники: OpenAI/LVMH 16.11 https://openai.com/index/lvmh-media-division-partnership/ ; OpenAI/Le Figaro 18.11 https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/ ; прямой релиз издателя https://www.groupefigaro.com/uploads/a014d3b4-4841-4a25-bee0-82f5360c1f77.pdf . Оба договора предполагают выдержки, пересказы и ссылки на оригинальные статьи в ChatGPT; Le Figaro включает архив, оба внедряют ChatGPT Enterprise для редакций. Пока анонс, дата публичного запуска функций не подтверждена. Архив ХПИИ проверен: материал о поддержке отказа от обучения ИИ сайтами https://dzen.ru/a/aum0uGaSGStrK8Lk . Подготовка Дзена, Threads, X на утверждение; №318 не закрывать до «берём»."
+      "closed_at": "2026-11-23T11:48:25.521Z",
+      "article_id": "openai-french-press-lvmh-figaro-20261118",
+      "note": "23.11.2026: №196 объединяется с №318 по маршруту. Подтверждены первоисточники: OpenAI/LVMH 16.11 https://openai.com/index/lvmh-media-division-partnership/ ; OpenAI/Le Figaro 18.11 https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/ ; прямой релиз издателя https://www.groupefigaro.com/uploads/a014d3b4-4841-4a25-bee0-82f5360c1f77.pdf . Оба договора предполагают выдержки, пересказы и ссылки на оригинальные статьи в ChatGPT; Le Figaro включает архив, оба внедряют ChatGPT Enterprise для редакций. Пока анонс, дата публичного запуска функций не подтверждена. Архив ХПИИ проверен: материал о поддержке отказа от обучения ИИ сайтами https://dzen.ru/a/aum0uGaSGStrK8Lk . Подготовка Дзена, Threads, X на утверждение; №318 не закрывать до «берём».\n23.11.2026: утверждено главредом без блока «Источники» в тексте; Дзен/Threads/X сохранены. ID openai-french-press-lvmh-figaro-20261118."
     },
     {
       "id": "n-60f3c7381bc61eae",
@@ -4765,12 +4765,12 @@
       "summary": "18 ноября: партнёрство OpenAI и Le Figaro по контенту и архивам.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-23T11:48:25.521Z",
       "article_id": null,
-      "note": ""
+      "note": "\n23.11.2026: объединено с №196, article_id=openai-french-press-lvmh-figaro-20261118; отдельная статья не создаётся."
     },
     {
       "id": "n-81c30b1162a2aaed",
