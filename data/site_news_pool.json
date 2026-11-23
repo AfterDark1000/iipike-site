@@ -7030,12 +7030,12 @@
       "summary": "20 ноября Baseten выпустила открытые модели для выбора действий. Компания заявила результат Bison-1 в 76 пунктов на AA Decision Index.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:20:53+00:00",
       "review_started_at": "2026-11-23T06:23:44+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-dbd5a641160d12d7"
+      "closed_at": "2026-11-23T14:24:14Z",
+      "article_id": "baseten-bison-groundhog-gemma4-decision-models-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-dbd5a641160d12d7\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/baseten-bison-groundhog-gemma4-decision-models-20261120/"
     },
     {
       "id": "n-26c5ca669b141704",
