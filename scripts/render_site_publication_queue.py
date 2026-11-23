@@ -14,7 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.site_first_release_pr import COVER, STORY, exists_at, git, safe_git_blob_at
+from scripts.site_first_release_pr import (COVER, STORY, exists_at, git,
+                                           safe_git_blob_at, verified_manual_reissue)
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 from scripts.site_rich_text import markdown_to_blocks
 from scripts.site_release_quarantine import existing_error
@@ -98,15 +99,20 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
         page = exists_at(main, "articles/" + sid + "/index.html")
         published = public.get(sid)
         arts = covers.get(sid, [])
+        # A single previously withdrawn page has an audited one-time manual
+        # reissue path. Keep it in the queue; all other page/catalog conflicts
+        # must remain blocked.
+        reissue = (verified_manual_reissue(sid, inbox, main)
+                   if page and not published and len(arts) == 1 else None)
         ready_at = (max(_last_change(inbox, path), _last_change(inbox, arts[0]))
-                    if len(arts) == 1 and not page else None)
+                    if len(arts) == 1 and (not page or reissue) else None)
         block_reason = None
         eligible = False
 
-        if bool(page) != bool(published):
+        if bool(page) != bool(published) and not reissue:
             status = "⚠️ Несогласованный выпуск"
             block_reason = "Публичная страница и каталог news.json не совпадают"
-        elif page:
+        elif page and not reissue:
             status = "✅ Опубликована"
         elif data.get("status") != "editor_approved" or data.get("approved_by") != "human_editor":
             status = "⛔ Не утверждена"
@@ -168,7 +174,7 @@ def scan_queue(main=MAIN, inbox=INBOX, *, now=None):
 
         rows.append({
             "id": sid, "title": data.get("title"), "status": status,
-            "published": bool(page), "published_at": published.get("published_at_utc") if published else None,
+            "published": bool(published), "published_at": published.get("published_at_utc") if published else None,
             "eligible": eligible, "block_reason": block_reason,
             "ready_at": ready_at, "publish_at": scheduled, "lane": lane,
             "spacing_until": spacing_until if status.startswith("⏳ Ждёт ") else None,
