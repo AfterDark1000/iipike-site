@@ -7806,5 +7806,30 @@
       "canva"
     ],
     "products": []
+  },
+  {
+    "title": "Google научила ИИ делать Android-приложения, которые вас помнят",
+    "summary": "Google AI Studio получила интеграцию Firebase для Android-приложений: облачное хранение, вход через Google и защищённый доступ к Gemini. Установка через личную библиотеку Google Play доступна в США.",
+    "published": "2026-11-23",
+    "source_url": "https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/",
+    "cover": "assets/editorial/google-ai-studio-android-firebase-play-20261117.webp",
+    "rubric": "news",
+    "vk_title": "📱 Google научила ИИ делать Android-приложения С ПАМЯТЬЮ",
+    "vk_summary": "Google AI Studio сама подключает облачную базу данных, вход через аккаунт Google и Gemini. Приложение сохраняет ваши записи после закрытия браузера. Ошибки интерфейса нейросеть исправляет по скриншоту, а готовую программу устанавливаете на телефон через личную библиотеку Google Play. Установка пока доступна только в США и для личного пользования.",
+    "published_at_utc": "2026-11-23T07:15:58Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-17",
+    "id": "google-ai-studio-android-firebase-play-20261117",
+    "url": "articles/google-ai-studio-android-firebase-play-20261117/",
+    "topics": [
+      "development",
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
