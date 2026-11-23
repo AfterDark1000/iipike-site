@@ -7015,12 +7015,12 @@
       "summary": "20 ноября Harvey описала двустороннюю синхронизацию: юристы могут сохранять изменённые версии документов прямо в iManage.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:20:53+00:00",
       "review_started_at": "2026-11-23T06:23:44+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-14f0c96e2688a6ba"
+      "closed_at": "2026-11-23T14:09:07Z",
+      "article_id": "harvey-imanage-two-way-sync-legal-documents-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-14f0c96e2688a6ba\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/harvey-imanage-two-way-sync-legal-documents-20261120/"
     },
     {
       "id": "n-dbd5a641160d12d7",
