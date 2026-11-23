@@ -41,6 +41,8 @@ ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-w
 <div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
 <div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
 </div></section>
+<section><h2>Редакторский диагноз</h2>
+<div id="quality" class="meta">—</div></section>
 <section><h2>Что изменено</h2><ul id="changes"><li>Нет записанной корректуры.</li></ul>
 <h2>Вопросы редактору</h2><div id="flags" class="muted">—</div></section>
 <p class="muted">Источник: публичная ветка GitHub editorial-intake / editorial_inbox / auto_copyedits. Для каждой версии сохранён Git SHA исходного JSON. Семантическую верность литературных замен всё равно проверяет человек.</p>
@@ -62,6 +64,20 @@ function render(item){
  active=item;
  byId("status").textContent=(item.status==="needs_editor_attention"?"Требуется внимание журналиста":"Готово к сравнению")+" · r"+item.source_revision+" v"+item.copyedit_version;
  byId("info").textContent="Оригинал Git blob: "+item.source_draft_blob_sha+" · Сохранено: "+item.created_at;
+ const quality=byId("quality");quality.replaceChildren();
+ const headings=[
+  ["source_event","Что произошло в оригинале"],
+  ["main_problem","Главная проблема"],
+  ["structural_action","Как перестроена статья"],
+  ["reader_gain","Что стало понятнее читателю"],
+  ["fact_integrity","Проверка сохранения фактов"]
+ ];
+ for(const [key,label] of headings){
+  const p=document.createElement("p"),head=document.createElement("strong");
+  head.textContent=label+": ";
+  p.append(head,document.createTextNode(item.quality_review?.[key]||"Нет отчёта"));
+  quality.append(p);
+ }
  const list=byId("changes");list.replaceChildren();
  for(const message of item.change_log||[]){const li=document.createElement("li");li.textContent=message;list.appendChild(li)}
  const flags=byId("flags");flags.replaceChildren();
@@ -77,7 +93,8 @@ async function load(index){
   if(!r.ok)throw Error("Не удалось прочесть файл: GitHub HTTP "+r.status);
   const item=await r.json();
   if(v!==version)return;
-  if(item.worker!=="hpii-chief-copyeditor" || item.article_id!==rows[index].article_id ||
+  if(item.schema_version!==2 || item.worker!=="hpii-chief-copyeditor" ||
+     !item.quality_review || item.article_id!==rows[index].article_id ||
      item.copyedit_version!==rows[index].version || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
     throw Error("Данные корректуры не соответствуют схеме");
   render(item);
