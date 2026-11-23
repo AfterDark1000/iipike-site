@@ -21,7 +21,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_first_release_pr import (
     COVER, IMAGE_EXTS, STABLE_ID, STORY, GH_REPO,
-    exists_at, git, release_one, safe_git_blob_at,
+    exists_at, git, release_one, safe_git_blob_at, verified_manual_reissue,
 )
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
 from scripts.site_rich_text import markdown_to_blocks, validate_blocks, IMAGE_SOURCE
@@ -144,7 +144,12 @@ def ready_items(ref=QUEUE_REF, *, main_ref=MAIN_REF):
     for sid in sorted(stories):
         try:
             source = f"editorial_inbox/stories/{sid}.json"
-            if exists_at(main_ref, f"articles/{sid}/index.html"):
+            # A public page normally means the article is already released.
+            # The only exception is the one human-approved replacement of
+            # the withdrawn counterintelligence story. The publisher verifies
+            # the same historical blobs again before touching any public file.
+            if (exists_at(main_ref, f"articles/{sid}/index.html")
+                    and not verified_manual_reissue(sid, ref, main_ref)):
                 continue
             matched = covers.get(sid, [])
             if not matched:
