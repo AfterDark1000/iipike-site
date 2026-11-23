@@ -250,6 +250,10 @@ test("GitHub OAuth popup yields owner-only session; review is idempotent",async(
     const html=await cb.text();
     const token=html.match(/"token":"([^"]+)"/)?.[1];
     assert.ok(token);
+    // The Worker signs a fixed seven-day owner session.
+    const payload=JSON.parse(Buffer.from(token.split(".")[0],"base64url").toString("utf8"));
+    const ttl=payload.exp-Math.floor(Date.now()/1000);
+    assert.ok(ttl>=7*24*3600-5 && ttl<=7*24*3600, "Owner session must expire in seven days");
     assert.match(html,/https:\/\/iipike\.ru/);
     const headers={Origin:env.ADMIN_ORIGIN,Authorization:"Bearer "+token};
     const session=await call("/api/session",{headers});
@@ -267,6 +271,18 @@ test("GitHub OAuth popup yields owner-only session; review is idempotent",async(
   } finally {
     globalThis.fetch=previousFetch;
   }
+});
+
+test("expired signed owner session cannot access protected APIs",async()=>{
+  const raw=Buffer.from(JSON.stringify({kind:"session",user_id:284211090,
+    login:"AfterDark1000",exp:Math.floor(Date.now()/1000)-1})).toString("base64url");
+  const mac=createHmac("sha256",env.SESSION_SIGNING_KEY).update(raw).digest("base64url");
+  const expired=await call("/api/session",{headers:{Origin:env.ADMIN_ORIGIN,
+    Authorization:"Bearer "+raw+"."+mac}});
+  assert.equal(expired.status,401);
+  const invalid=await call("/api/session",{headers:{Origin:env.ADMIN_ORIGIN,
+    Authorization:"Bearer "+raw+"."+mac.slice(0,-1)+"?"}});
+  assert.equal(invalid.status,401);
 });
 
 test("misconfigured gateway returns only missing binding names",async()=>{
