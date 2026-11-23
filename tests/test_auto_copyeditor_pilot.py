@@ -12,6 +12,7 @@ from scripts.check_auto_copyeditor_pilot import FIELDS, blob_sha, validate
 class ChiefCopyeditorPilotTests(unittest.TestCase):
     def setUp(self):
         receipt = {"status": "reserved", "request": "test-work-claim.json",
+                   "claimed_at": "2026-11-23T09:00:00Z",
                    "pool_id": "n-123456789abcdef0", "pool_sequence": 25,
                    "article_id": "test-copyeditor-article"}
         doc = draft_template(receipt)
