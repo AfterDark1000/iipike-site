@@ -16,6 +16,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 POOL_PATH = ROOT / "data" / "site_news_pool.json"
+EXCLUDED_NEWS_PATH = ROOT / "data" / "excluded_news_candidates.json"
 STATES = {"queued", "in_review", "approved", "rejected"}
 PRIORITIES = {"high", "normal", "low"}  # high forms the hot editorial lane; other items keep FIFO
 EDITORIAL_TZ = ZoneInfo("Asia/Yekaterinburg")
@@ -166,6 +167,19 @@ def repair_placeholder_ids(pool):
 def add(pool, records, *, now=None):
     """Append source-backed candidates without changing an existing item's status."""
     validate(pool)
+    # Owner-vetoed stories must not leak back from the news scraper or agent.
+    excluded_urls = set()
+    if EXCLUDED_NEWS_PATH.is_file():
+        excluded = json.loads(EXCLUDED_NEWS_PATH.read_text(encoding="utf-8"))
+        if (type(excluded) is not dict or excluded.get("schema_version") != 1
+                or not isinstance(excluded.get("items"), list)):
+            raise ValueError("Invalid excluded candidate registry")
+        for entry in excluded["items"]:
+            if (not isinstance(entry, dict) or
+                    not isinstance(entry.get("source_urls"), list) or
+                    not entry["source_urls"]):
+                raise ValueError("Invalid owner exclusion entry")
+            excluded_urls.update(canonical_url(url) for url in entry["source_urls"])
     result = copy.deepcopy(pool)
     if not isinstance(records, list):
         raise ValueError("Expected a list of candidates")
@@ -180,6 +194,11 @@ def add(pool, records, *, now=None):
             raise ValueError("Candidate requires title and source_url")
         title = str(record["title"]).strip()
         url = canonical_url(record["source_url"])
+        if url in excluded_urls:
+            # Preserve the established return schema; excluded sources count as
+            # already-seen candidates, even if the headline has been reworded.
+            duplicate.append(title)
+            continue
         normalized = clean_title(title)
         if normalized in known_titles:
             duplicate.append(title)
