@@ -154,6 +154,60 @@ class AutoEditorClaimTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "edited after processing"):
                 consume(root, now=NOW, paths=paths)
 
+    def test_five_claims_per_rolling_24_hours_is_a_hard_server_guard(self):
+        # Even if Work sends six valid requests in one push, the sixth
+        # cannot reserve a news item or consume the editor's next-day quota.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / POOL).parent.mkdir(parents=True)
+            stories = [(f"Ordinary news headline {i}", "normal") for i in range(1, 8)]
+            original = pool_with(*stories)
+            (root / POOL).write_text(json.dumps(original), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            paths = []
+            for n in range(1, 7):
+                path = root / REQUESTS / f"work-production-{n:03}.json"
+                path.write_text(json.dumps({"schema_version": 1,
+                    "action": "claim_ordinary", "worker": "hpii-auto-editor"}), encoding="utf-8")
+                paths.append(path)
+            done = consume(root, now=NOW, paths=paths)
+            self.assertEqual([done[x.name]["status"] for x in paths],
+                             ["reserved"] * 5 + ["rejected"])
+            self.assertIn("AUTO_EDITOR_DAILY_CAP_5", done[paths[-1].name]["error"])
+            state = json.loads((root / POOL).read_text(encoding="utf-8"))
+            self.assertEqual([x["status"] for x in state["items"]],
+                             ["in_review"] * 5 + ["queued"] * 2)
+            self.assertEqual(consume(root, now=NOW, paths=paths), {})
+            next_path = root / REQUESTS / "work-production-next-day.json"
+            next_path.write_text(json.dumps({"schema_version": 1,
+                "action": "claim_ordinary", "worker": "hpii-auto-editor"}), encoding="utf-8")
+            future = consume(root, now="2026-11-18T06:30:01+00:00", paths=[next_path])
+            self.assertEqual(future[next_path.name]["status"], "reserved")
+            self.assertEqual(future[next_path.name]["pool_sequence"], 6)
+
+    def test_existing_recent_receipts_count_toward_five_article_cap(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / POOL).parent.mkdir(parents=True)
+            original = pool_with(("One still unclaimed headline", "normal"))
+            (root / POOL).write_text(json.dumps(original), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            (root / RECEIPTS).mkdir(parents=True)
+            for n in range(5):
+                r = {"schema_version": 1, "request": f"past-work-{n}.json",
+                     "request_sha256": "placeholder", "status": "reserved",
+                     "article_id": f"already-claimed-{n}",
+                     "claimed_at": NOW, "worker": "hpii-auto-editor"}
+                (root / RECEIPTS / r["request"]).write_text(
+                    json.dumps(r), encoding="utf-8")
+            path = root / REQUESTS / "new-production-request.json"
+            path.write_text(json.dumps({"schema_version": 1,
+                "action": "claim_ordinary", "worker": "hpii-auto-editor"}), encoding="utf-8")
+            report = consume(root, now=NOW, paths=[path])
+            self.assertEqual(report[path.name]["status"], "rejected")
+            self.assertIn("AUTO_EDITOR_DAILY_CAP_5", report[path.name]["error"])
+            self.assertEqual(json.loads((root / POOL).read_text()), original)
+
     def test_malicious_request_rejected_no_hot_claim(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

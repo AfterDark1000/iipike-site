@@ -6,6 +6,7 @@ incapable of approving, publishing, writing covers or editing production article
 """
 import argparse
 import copy
+from datetime import timedelta
 import hashlib
 import json
 from pathlib import Path
@@ -28,6 +29,7 @@ REQUEST_NAME = re.compile(r"[a-z0-9][a-z0-9._-]{4,100}\.json\Z")
 POOL_ID = re.compile(r"n-[0-9a-f]{16}\Z")
 ARTICLE_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 STATES = {"drafting", "ready_for_review", "blocked"}
+MAX_NEW_CLAIMS_PER_24H = 5  # Hard production safeguard, counted from immutable reserved receipts.
 RUBRICS = frozenset(SITE_RUBRICS)  # Same editorial keys as the site's canonical taxonomy.
 CYRILLIC = dict(zip(
     "абвгдежзийклмнопрстуфхцчшщъыьэюя",
@@ -130,6 +132,8 @@ def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=Non
 def consume(root=ROOT, *, now=None, paths=None):
     """Read latest checkout; update pool and all receipts in one Git commit later."""
     root = Path(root)
+    now = now or stamp()
+    now_utc = utc_time(now)
     original = json.loads((root / POOL).read_text(encoding="utf-8"))
     validate_pool(original)
     current = original
@@ -137,11 +141,17 @@ def consume(root=ROOT, *, now=None, paths=None):
     receipt_directory = root / RECEIPTS
     ordered = request_order(root) if paths is None else [Path(p) for p in paths]
     used_ids = set()
+    recent_claims = []
     existing = receipt_directory.glob("*.json") if receipt_directory.exists() else ()
     for p in existing:
         rec = json.loads(p.read_text(encoding="utf-8"))
         if rec.get("status") == "reserved":
             used_ids.add(rec["article_id"])
+            if rec.get("worker") == "hpii-auto-editor":
+                claimed = utc_time(rec["claimed_at"])
+                # Strict rolling window; cannot borrow unused future quota.
+                if now_utc - timedelta(hours=24) < claimed <= now_utc:
+                    recent_claims.append(claimed)
     for path in ordered:
         if path.parent != root / REQUESTS or path.is_symlink():
             raise ValueError("Only direct request inbox files can be consumed")
@@ -156,6 +166,8 @@ def consume(root=ROOT, *, now=None, paths=None):
             continue
         try:
             valid_request(path)
+            if len(recent_claims) >= MAX_NEW_CLAIMS_PER_24H:
+                raise ValueError("AUTO_EDITOR_DAILY_CAP_5: rolling 24-hour reservation quota reached")
             updated, ticket = claim_ordinary(current, path.name, now=now,
                                              used_ids=used_ids)
             current = updated
@@ -167,6 +179,7 @@ def consume(root=ROOT, *, now=None, paths=None):
             }
             if ticket:
                 used_ids.add(ticket["article_id"])
+                recent_claims.append(now_utc)
         except (ValueError, TypeError, KeyError, json.JSONDecodeError) as exc:
             # Fail closed: invalid input NEVER changes the pool.
             receipt = {"schema_version": 1, "request": path.name,
