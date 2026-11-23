@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261123-batch25-fifo-4d7b32.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-a3eccfe629b91dd1",
+      "pool_sequence": 477,
+      "title": "Claude поменяла мобильный интерфейс: проекты, код и артефакты получили отдельные вкладки",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/1039188/claude-has-a-new-mobile-design-too",
+      "claimed_at": "2026-11-23T06:42:21+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9501c77fabd313d3",
+      "pool_sequence": 479,
+      "title": "Amazon разрешила собирать собственные плагины из агентов и навыков обычным описанием задачи",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows",
+      "claimed_at": "2026-11-23T06:42:21+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-504e75b3f7fa505b",
+      "pool_sequence": 480,
+      "title": "Поисковые агенты Amazon научились учитывать страну пользователя",
+      "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock",
+      "claimed_at": "2026-11-23T06:42:21+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6f1e15f690aef8a4",
+      "pool_sequence": 486,
+      "title": "Маск предупредил о возможном денежном кризисе ИИ-компаний в 2027 году",
+      "source_url": "https://www.businessinsider.com/elon-musk-warning-ai-compute-data-centers-cash-spacex-tesla-2026-11",
+      "claimed_at": "2026-11-23T06:42:21+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-0a3f026f3a8e88bd",
+      "pool_sequence": 493,
+      "title": "Сенатор США высмеял скандал вокруг NVIDIA и потребовал разобраться с поставками ИИ-чипов в Китай",
+      "source_url": "https://www.theguardian.com/us-news/2026/nov/22/jensen-huang-nvidia-john-kennedy",
+      "claimed_at": "2026-11-23T06:42:21+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
