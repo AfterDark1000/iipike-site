@@ -2935,12 +2935,12 @@
       "summary": "16 ноября: OpenAI заключила соглашение с медиаподразделением LVMH, включая Les Echos, Le Parisien, Paris Match.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-16T15:59:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T11:43:06.250Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "23.11.2026: редактор взял объединённую новость №196 + №318 о соглашениях OpenAI с французскими издателями. Проверить оба официальных анонса, фактический статус доступа к контенту и права издателей, затем архив и статью."
     },
     {
       "id": "n-60f3c7381bc61eae",
