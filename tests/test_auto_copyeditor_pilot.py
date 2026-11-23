@@ -50,14 +50,20 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
         self.raw = (json.dumps(doc, ensure_ascii=False, indent=2) + "\n").encode()
         original = {k: doc["content"][k] for k in FIELDS}
         edited = copy.deepcopy(original)
-        edited["title"] = "ИИ получил доступ к сайтам. Что он сделал?"
+        edited["title"] = "Как ИИ проверил правила сайтов"
         edited["dzen_title"] = edited["title"]
-        edited["article_markdown"] = edited["article_markdown"].replace(
-            "Поэтому исследователи предложили новый механизм.",
-            "Исследователи предложили другой механизм."
+        edited["article_markdown"] = (
+            "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов.\n\n"
+            "После этой проверки исследователи предложили новый механизм. "
+            "Условия испытания описаны в [документе](https://example.com/study).\n\n"
+            "> «Мы изучили 14,2% записей», сообщили авторы.\n\n"
+            "В приложении к работе исследователи отдельно перечислили условия "
+            "испытания и способ отбора. Измерения проводили по одинаковому "
+            "протоколу, чтобы сравнивать результаты разных систем. "
+            "Ограничения проверки тоже приведены в публикации."
         )
         self.candidate = {
-            "schema_version": 1, "article_id": doc["article_id"],
+            "schema_version": 2, "article_id": doc["article_id"],
             "source_revision": 2,
             "source_updated_at": doc["updated_at"],
             "source_draft_blob_sha": blob_sha(self.raw),
@@ -65,8 +71,16 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
             "created_at": "2026-11-23T11:00:00Z",
             "worker": "hpii-chief-copyeditor",
             "original_text": original, "edited_text": edited,
-            "change_log": ["Перестроен заголовок и сокращена длинная фраза."],
-            "editor_flags": []
+            "change_log": ["Перестроен заголовок, лид отделён, порядок фактов изменён, "
+                           "пустой переход удалён; сохранены все численные данные."],
+            "editor_flags": [],
+            "quality_review": {
+                "source_event": "В исходнике говорится о проверке ИИ на 1 895 сайтах.",
+                "main_problem": "Лид смешивал результат и редакторское объяснение, нарушая ритм.",
+                "structural_action": "Результат вынесен отдельно, условия теста собраны рядом.",
+                "reader_gain": "Читатель сразу узнаёт результат, затем детали проверки.",
+                "fact_integrity": "Числа, цитата и первичная ссылка сохранены дословно."
+            }
         }
 
     def check(self, c=None, raw=None):
@@ -128,6 +142,46 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
         c["source_draft_blob_sha"] = blob_sha(raw)
         with self.assertRaisesRegex(ValueError, "ready_for_review"):
             self.check(c, raw)
+
+    def test_cosmetic_changes_cannot_be_called_successful(self):
+        c = copy.deepcopy(self.candidate)
+        c["edited_text"]["article_markdown"] = self.doc["content"]["article_markdown"]
+        with self.assertRaisesRegex(ValueError, "Cosmetic article change"):
+            self.check(c)
+        c["edited_text"]["article_markdown"] = c["edited_text"]["article_markdown"].replace(
+            "новый механизм", "иной механизм")
+        # A rewritten headline plus a one-word change is still cosmetic.
+        c["edited_text"]["article_markdown"] = self.doc["content"]["article_markdown"].replace(
+            "новый механизм", "иной механизм")
+        with self.assertRaisesRegex(ValueError, "Cosmetic article change"):
+            self.check(c)
+
+    def test_cliche_lead_and_audit_checks(self):
+        c = copy.deepcopy(self.candidate)
+        c["edited_text"]["article_markdown"] = (
+            "Суть в том, что " + c["edited_text"]["article_markdown"])
+        with self.assertRaisesRegex(ValueError, "Cliched editorial filler"):
+            self.check(c)
+        c = copy.deepcopy(self.candidate)
+        c["quality_review"]["reader_gain"] = "Всё хорошо."
+        with self.assertRaisesRegex(ValueError, "quality review diagnosis"):
+            self.check(c)
+        c = copy.deepcopy(self.candidate)
+        c["edited_text"]["article_markdown"] = c["edited_text"]["article_markdown"].replace(
+            "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов.\\n\\n",
+            "ИИ проверил 1 895 сайтов и получил 14,2% успешных ответов. "
+            "Это стало результатом эксперимента.\\n\\n")
+        with self.assertRaisesRegex(ValueError, "standalone first sentence"):
+            self.check(c)
+
+    def test_editor_attention_can_preserve_unfixable_original(self):
+        c = copy.deepcopy(self.candidate)
+        c["edited_text"] = copy.deepcopy(c["original_text"])
+        c["status"] = "needs_editor_attention"
+        c["editor_flags"] = [
+            "Исходник не объясняет критерий 14,2%: корректор не вправе его придумывать."
+        ]
+        self.assertEqual(self.check(c)["status"], "needs_editor_attention")
 
     def test_escalation_requires_flags_clean_revisions_have_none(self):
         c = copy.deepcopy(self.candidate)
