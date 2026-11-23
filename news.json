@@ -7997,5 +7997,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Хуанга вернули в NVIDIA через 11 дней после скандальной отставки, хотя совет директоров был против",
+    "summary": "NVIDIA восстановила Дженсена Хуанга на посту гендиректора спустя 11 дней после отставки, вызванной скандалом с подозрениями в иностранном разведывательном вмешательстве.",
+    "published": "2026-11-23",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director",
+    "cover": "assets/editorial/nvidia-jensen-huang-ceo-return-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🟢 Дженсен Хуанг ВЕРНУЛСЯ в NVIDIA спустя 11 дней после скандальной отставки",
+    "vk_summary": "23 ноября NVIDIA восстановила Дженсена Хуанга на посту гендиректора. Ещё неделю назад совет директоров исключал его возвращение после скандала с внебрачными связями и подозрениями в шпионаже. Решение приняли единогласно после консультаций с представителями властей США.",
+    "published_at_utc": "2026-11-23T15:47:47Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "nvidia-jensen-huang-ceo-return-20261123",
+    "url": "articles/nvidia-jensen-huang-ceo-return-20261123/",
+    "topics": [
+      "finance",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
