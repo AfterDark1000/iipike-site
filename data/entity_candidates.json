@@ -1613,6 +1613,18 @@
           "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
         }
       ]
+    },
+    {
+      "key": "blue-origin",
+      "name": "Blue Origin",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+          "source_url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
+        }
+      ]
     }
   ],
   "products": [
@@ -3178,6 +3190,32 @@
         {
           "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
           "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+        }
+      ]
+    },
+    {
+      "key": "new-glenn",
+      "name": "New Glenn",
+      "company": "blue-origin",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+          "source_url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
+        }
+      ]
+    },
+    {
+      "key": "project-suncatcher",
+      "name": "Project Suncatcher",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+          "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
         }
       ]
     }
