@@ -632,12 +632,6 @@
       "decision": "defer"
     },
     {
-      "sequence": 222,
-      "pool_id": "n-1788965d91d5bb6a",
-      "lane": "long",
-      "decision": "full"
-    },
-    {
       "sequence": 223,
       "pool_id": "n-4ef3fbc0562fdcd7",
       "lane": "long",

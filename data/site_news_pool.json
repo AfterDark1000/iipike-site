@@ -3318,21 +3318,6 @@
       "note": ""
     },
     {
-      "id": "n-1788965d91d5bb6a",
-      "sequence": 222,
-      "title": "Учёные выяснили, что ИИ для поиска новых материалов нужно гораздо меньше данных",
-      "source_url": "https://www.mtu.edu/news/2026/11/less-data-faster-discovery-researchers-rethink-ais-role-in-developing-new-materials.html",
-      "summary": "Подход к сокращению данных для предсказания свойств материалов.",
-      "origin": "ХПИИ — добытчик новостей",
-      "priority": "normal",
-      "status": "in_review",
-      "added_at": "2026-11-17T03:33:51+00:00",
-      "review_started_at": "2026-11-23T12:03:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-008.json; article_id=uchenye-vyyasnili-chto-ii-dlya-poiska-novykh-mate-1788965d91d5bb6a"
-    },
-    {
       "id": "n-4ef3fbc0562fdcd7",
       "sequence": 223,
       "title": "NVIDIA выпустила научный ИИ, которому можно поручить химию и проектирование белков",
