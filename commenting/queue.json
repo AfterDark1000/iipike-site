@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T00:15:36.372707Z",
+  "updated_at": "2026-11-23T03:04:11.098677Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
-      "last_success_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
+      "last_success_at": "2026-11-23T03:04:11.098677Z",
       "error": null,
       "fresh_matches": 7
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
-      "last_success_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
+      "last_success_at": "2026-11-23T03:04:11.098677Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,7 +31,7 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "error",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
       "last_success_at": "2026-11-22T22:26:37.850455Z",
       "error": "Лента недоступна или не распознана (URLError)",
       "fresh_matches": null
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
-      "last_success_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
+      "last_success_at": "2026-11-23T03:04:11.098677Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
-      "last_success_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
+      "last_success_at": "2026-11-23T03:04:11.098677Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T00:15:36.372707Z",
-      "last_success_at": "2026-11-23T00:15:36.372707Z",
+      "checked_at": "2026-11-23T03:04:11.098677Z",
+      "last_success_at": "2026-11-23T03:04:11.098677Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -73,11 +73,11 @@
   "generator": {
     "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Обработано статей: 3"
+    "message": "Обработано статей: 1"
   },
   "usage": {
     "date": "2026-11-23",
-    "attempted": 6
+    "attempted": 7
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -282,10 +282,14 @@
       "first_seen_at": "2026-11-22T17:04:41.486453Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "База всего в три с половиной тысячи фактов — прямо скажем, спартанские условия. Зато на старом железе завести получилось, и даже озвучку прикрутили.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-23T03:04:11.098677Z",
+      "reason": "Зацепился за точную цифру фактов в обучении и запуск на старом процессоре.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-23T03:04:11.098677Z"
     },
     {
       "id": "6f4dab19d1b3e45bc73b7537",
