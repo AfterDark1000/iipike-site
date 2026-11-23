@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261123-batch26-fifo-c8f21a.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 1,
+  "items": [
+    {
+      "pool_id": "n-47b2738e2872fd88",
+      "pool_sequence": 494,
+      "title": "Автор книги об ИИ-дата-центрах назвал их строительство неустойчивым",
+      "source_url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash",
+      "claimed_at": "2026-11-23T07:04:38+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

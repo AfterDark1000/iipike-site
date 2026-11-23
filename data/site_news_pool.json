@@ -7405,12 +7405,12 @@
       "summary": "22 ноября. Интервью Пэриса Маркса о воде, энергии и сопротивлении строительству дата-центров.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-23T03:39:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T07:04:38+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-47b2738e2872fd88"
     },
     {
       "id": "n-80d81a9d6dbf6dc1",
