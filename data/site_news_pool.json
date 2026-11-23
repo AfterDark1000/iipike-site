@@ -6685,12 +6685,12 @@
       "summary": "20 ноября: метод адаптации моделей под агентные среды; авторы сообщают о росте успешности и экономии токенов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-21T17:57:41+00:00",
       "review_started_at": "2026-11-22T15:51:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-701a571706ec6c00"
+      "closed_at": "2026-11-23T07:09:03Z",
+      "article_id": "huggingface-harness-adapters-agent-coding-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-701a571706ec6c00\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/huggingface-harness-adapters-agent-coding-20261120/"
     },
     {
       "id": "n-d5bec1fa3b07f617",
