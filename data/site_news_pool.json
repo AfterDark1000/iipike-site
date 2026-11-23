@@ -7180,12 +7180,12 @@
       "summary": "21 ноября. В Bedrock Web Search появились новые языки и управление географической релевантностью источников.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:28:16+00:00",
       "review_started_at": "2026-11-23T06:42:21+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-504e75b3f7fa505b"
+      "closed_at": "2026-11-23T16:09:16Z",
+      "article_id": "aws-bedrock-web-search-country-languages-20261121",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-504e75b3f7fa505b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/aws-bedrock-web-search-country-languages-20261121/"
     },
     {
       "id": "n-4fd24093a1461ec1",
