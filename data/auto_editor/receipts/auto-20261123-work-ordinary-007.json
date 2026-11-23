@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-007.json",
+  "request_sha256": "c4ed6f1b19120a69f0370207454909e8a4c5323de34f79148c86c7b93800a767",
+  "status": "reserved",
+  "pool_id": "n-635d84dfa6ac7b12",
+  "pool_sequence": 105,
+  "article_id": "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
+  "priority": "normal",
+  "title": "ScrapeBench проверил, как ИИ-агенты соблюдают запреты сайтов",
+  "source_url": "https://casrai.org/news/scrapebench-ai-agent-website-scraping-compliance-benchmark-2026",
+  "claimed_at": "2026-11-23T08:00:56+00:00",
+  "worker": "hpii-auto-editor"
+}
