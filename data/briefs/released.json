@@ -437,6 +437,10 @@
     {
       "slug": "together-qwen3-tts-realtime-russian-97ms-20261120",
       "published_at_utc": "2026-11-23T13:24:05Z"
+    },
+    {
+      "slug": "amazon-textract-insights-document-evidence-ga-20261120",
+      "published_at_utc": "2026-11-23T13:39:09Z"
     }
   ]
 }
