@@ -3355,12 +3355,12 @@
       "summary": "Соглашение TensorWave о вычислительных мощностях на ускорителях AMD.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-17T03:33:51+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-23T14:03:27+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "17.11.2026, решение главреда после полной ревизии: Вторая волна повышения приоритета — кандидат после первичной проверки; текущий normal пока сохраняется."
+      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-010.json; article_id=openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179"
     },
     {
       "id": "n-a88aae871bc0b36e",

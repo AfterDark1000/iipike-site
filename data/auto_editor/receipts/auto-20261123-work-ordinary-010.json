@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261123-work-ordinary-010.json",
+  "request_sha256": "c4ed6f1b19120a69f0370207454909e8a4c5323de34f79148c86c7b93800a767",
+  "status": "reserved",
+  "pool_id": "n-aede5bf8ca875179",
+  "pool_sequence": 224,
+  "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+  "priority": "normal",
+  "title": "OpenAI заказала 457 мегаватт вычислительных мощностей на чипах AMD",
+  "source_url": "https://www.hpcwire.com/aiwire/2026/11/16/tensorwave-announces-agreement-with-openai-to-deliver-more-than-450mw-of-amd-powered-ai-infrastructure",
+  "claimed_at": "2026-11-23T14:03:27+00:00",
+  "worker": "hpii-auto-editor"
+}
