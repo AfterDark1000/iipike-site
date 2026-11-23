@@ -6865,12 +6865,12 @@
       "summary": "20 ноября: сообщение о соглашении 19 ноября, запуски ожидаются в 2029 году; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-22T19:01:41.086Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "23.11.2026: горячая №458 зарезервирована по FIFO. Проверить соглашение Google/Blue Origin, планы Project Suncatcher на 2029 год, точные стадии запуска и архив ХПИИ; затем подготовить публикации на утверждение.\n23.11: проверка: Google и Blue Origin 19.11 подписали launch services agreement (blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/ ; blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher). New Glenn, I квартал 2029, несколько спутников Suncatcher, мощность каждого примерно серверная стойка, солнечно-синхронная орбита. 01.10 Google отправила первый прототип через SpaceX; 30.10 он выполнил запрос Gemma 4 (официальный Google blog). В архиве есть связанная опубликованная статья Google orbit: https://dzen.ru/a/augPIKV4vCP1TEeL, новый договор самостоятельная новость; №457 о SpaceX — другой сюжет. Далее текст Дзен/Threads/X/VK, очереди после «берём».\n23.11 правка главреда: внутреннюю ссылку встроить в предложение о том, как Gemma 4 сочинила хокку, без «ХПИИ писали отдельно». В Threads — короткая мемная шутка одним предложением в конце. Инструкция закреплена в CHATGPT_EDITOR_INSTRUCTIONS.md (main). Ждём «берём»."
+      "closed_at": "2026-11-23T06:09:17.689Z",
+      "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+      "note": "23.11.2026: горячая №458 зарезервирована по FIFO. Проверить соглашение Google/Blue Origin, планы Project Suncatcher на 2029 год, точные стадии запуска и архив ХПИИ; затем подготовить публикации на утверждение.\n23.11: проверка: Google и Blue Origin 19.11 подписали launch services agreement (blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/ ; blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher). New Glenn, I квартал 2029, несколько спутников Suncatcher, мощность каждого примерно серверная стойка, солнечно-синхронная орбита. 01.10 Google отправила первый прототип через SpaceX; 30.10 он выполнил запрос Gemma 4 (официальный Google blog). В архиве есть связанная опубликованная статья Google orbit: https://dzen.ru/a/augPIKV4vCP1TEeL, новый договор самостоятельная новость; №457 о SpaceX — другой сюжет. Далее текст Дзен/Threads/X/VK, очереди после «берём».\n23.11 правка главреда: внутреннюю ссылку встроить в предложение о том, как Gemma 4 сочинила хокку, без «ХПИИ писали отдельно». В Threads — короткая мемная шутка одним предложением в конце. Инструкция закреплена в CHATGPT_EDITOR_INSTRUCTIONS.md (main). Ждём «берём».\n23.11: главред утвердил исправленную редакцию. История и Threads/X сохранены в GitHub, ID=google-blue-origin-suncatcher-new-glenn-20261119."
     },
     {
       "id": "n-f98d1c44450f1e18",
