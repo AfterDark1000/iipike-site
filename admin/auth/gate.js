@@ -69,10 +69,12 @@ window.addEventListener("hpii-admin-signout",()=>{
 // all same-origin tabs, without another GitHub OAuth popup.
 window.addEventListener("storage",event=>{
   if(event.key!==auth.storageKey && event.key!==null)return;
-  if(!auth.getToken()){
+  // Never resurrect an old sessionStorage token after sign-out in another tab.
+  if(event.newValue===null){
     ++checkVersion;
+    auth.logout();
     showLogin("Сессия завершена в другой вкладке.");
-  }else{
+  }else if(auth.getToken()){
     void check();
   }
 });
