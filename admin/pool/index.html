@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#f4f1e9">
+<title>Пул новостей — ХПИИ</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--ink:#202a33;--muted:#65747c;--line:#dbe0df;--bg:#f4f1e9;--paper:#fffefb;--accent:#147d73;--danger:#a34539}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:#176d7d;text-decoration:none}a:hover{text-decoration:underline}
+button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #dfab42;outline-offset:3px}
+.wrap{width:min(1180px,100%);margin:auto;padding:0 22px}
+.mast{background:#15232b;color:#fff;padding:26px 0}
+.mast .wrap{display:flex;justify-content:space-between;gap:22px;align-items:center}
+.mast a{color:#cbe8e6}.mast h1{font-size:clamp(25px,4vw,38px);line-height:1.15;margin:6px 0}
+.mast p{color:#bdcccb;margin:0;font-size:14px}
+.eyebrow{font-weight:800;letter-spacing:.16em;font-size:11px;color:#a8c0be}
+.links{display:flex;gap:15px;flex-wrap:wrap;font-size:13px}
+main{padding:22px 0 55px}
+.topbar{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}
+.note{font-size:13px;color:var(--muted)}
+.refresh{background:var(--accent);border:1px solid var(--accent);color:#fff;border-radius:9px;font-weight:700;padding:9px 14px}
+.refresh:disabled{opacity:.65;cursor:wait}.refresh:hover:not(:disabled){background:#0c625a}
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin-bottom:17px}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:15px}
+.stat small{display:block;font-size:12px;color:var(--muted)}
+.stat strong{font-size:29px;line-height:1.25;display:block;margin-top:4px;font-variant-numeric:tabular-nums}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:20px;box-shadow:0 3px 16px #263a3320}
+.sheet h2{margin:0 0 6px;font-size:21px}.sheet .explainer{margin:0 0 16px;font-size:13px;color:var(--muted)}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.filter{border:1px solid #d2dcd8;background:#fff;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:650;color:#3c5256}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter[aria-pressed="true"]{background:#ddefe9;color:#09594e;border-color:#70afa3}
+.filter small{font-variant-numeric:tabular-nums;opacity:.7;margin-left:3px}
+.tools{display:grid;grid-template-columns:minmax(0,1fr) minmax(170px,230px);gap:12px;margin-bottom:12px}
+.tools label{display:block;font-size:12px;color:var(--muted);font-weight:700;margin-bottom:4px}
+.tools input,.tools select{width:100%;border:1px solid #c5d2cf;border-radius:9px;background:#fff;color:var(--ink);padding:10px 12px;min-height:43px}
+.result-line{font-size:13px;color:var(--muted);margin:8px 0 13px}
+.items{display:grid;gap:9px}
+.item{border:1px solid var(--line);border-radius:11px;padding:15px;background:#fff;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px}
+.item h3{font-size:16px;line-height:1.38;margin:5px 0 7px;overflow-wrap:anywhere}
+.item-top{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.number{font-size:12px;font-variant-numeric:tabular-nums;font-weight:850;color:#3d535d}
+.tag{font-size:11px;border-radius:5px;padding:2px 7px;background:#edf1f2;color:#53646d;font-weight:700}
+.tag.hot{background:#fff0dc;color:#9a4e09}.tag.full{background:#e4f3ec;color:#1b6554}
+.tag.short{background:#e9edff;color:#4f599e}.tag.hold{background:#f3eeee;color:#756369}
+.tag.work{background:#fff4cc;color:#785618}.tag.ok{background:#e8f3ed;color:#266445}
+.tag.closed{background:#f1eeee;color:#706467}
+.summary{font-size:14px;color:#475a64;margin:0 0 9px;overflow-wrap:anywhere}
+.actions{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;align-items:start;justify-content:flex-end;padding-top:3px}
+.actions a{white-space:nowrap}
+details{margin-top:8px;font-size:13px;color:#50616a}
+summary{cursor:pointer;color:#176d7d;font-weight:650}
+.details-content{border-top:1px dashed var(--line);margin-top:10px;padding-top:10px;overflow-wrap:anywhere;white-space:pre-wrap}
+.detail-line{margin:5px 0}
+.empty,.error{padding:28px;border:1px dashed var(--line);border-radius:11px;text-align:center;color:var(--muted)}
+.error{border-color:#dba69f;background:#fff3f0;color:#963a30}
+.more{display:block;margin:18px auto 0;border:1px solid #9cbfba;border-radius:9px;padding:10px 18px;background:#e8f3ef;color:#175a51;font-weight:800}
+footer{font-size:12px;color:var(--muted);margin-top:20px;line-height:1.6}
+footer a{margin-right:14px}
+[hidden]{display:none!important}
+@media(max-width:800px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.item{grid-template-columns:1fr}.actions{justify-content:flex-start;padding:0}.mast .wrap{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.wrap{padding:0 13px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.stat{padding:11px}.stat strong{font-size:25px}.sheet{padding:13px}.tools{grid-template-columns:1fr}.mast{padding:22px 0}.item{padding:12px}}
+</style>
+<style id="hpii-auth-style">
+html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
+#hpii-login-gate[hidden]{display:none!important}
+#hpii-login-gate{min-height:100vh;display:grid;place-items:center;padding:24px;background:#f4f1e9;color:#20303a;font:16px/1.5 system-ui,sans-serif}
+.hpii-login-card{background:#fffefb;border:1px solid #d9dfdc;border-radius:16px;padding:26px;max-width:480px;width:100%;box-shadow:0 5px 25px #1b38351a}
+.hpii-login-card h1{font-size:27px;margin:0 0 9px}
+.hpii-login-card p{margin:9px 0 17px}
+#hpii-login-message{padding:12px;border-radius:8px;background:#e6f3ee;overflow-wrap:anywhere}
+#hpii-login-button{background:#146e65;color:white;padding:11px 18px;border:0;border-radius:9px;font:inherit;cursor:pointer}
+#hpii-login-button:disabled{opacity:.55;cursor:default}
+.hpii-login-help{font-size:12px;color:#5f6c71}
+</style>
+<script type="module" src="/admin/auth/gate.js"></script>
+<script type="module" src="/admin/pool/app.js"></script>
+</head>
+<body>
+<header class="mast"><div class="wrap">
+<div><div class="eyebrow">ХРОНИКИ ПИКИРУЮЩЕГО ИИ · РЕДАКЦИЯ</div><h1>Пул новостей</h1><p>Все исходные новости, решения сортировщика и реальный порядок работы.</p></div>
+<nav class="links" aria-label="Навигация админки"><a href="/admin/">← Публикации</a><a href="/admin/auto-editor/">Автономный редактор</a><a href="/">На сайт ↗</a></nav>
+</div></header>
+<main class="wrap">
+<div class="topbar"><div id="updated" class="note" role="status" aria-live="polite">Загрузка пула из GitHub…</div><button class="refresh" id="refresh" type="button">↻ Обновить</button></div>
+<div class="stats" aria-label="Состояние пула">
+<div class="stat"><small>Всего в пуле</small><strong id="count-all">—</strong></div>
+<div class="stat"><small>Ожидают работы</small><strong id="count-queued">—</strong></div>
+<div class="stat"><small>В работе</small><strong id="count-in_review">—</strong></div>
+<div class="stat"><small>Согласованы</small><strong id="count-approved">—</strong></div>
+<div class="stat"><small>Закрыты</small><strong id="count-rejected">—</strong></div>
+</div>
+<section class="sheet" aria-labelledby="heading">
+<h2 id="heading">Очередь сырья</h2>
+<p class="explainer">Пул — ещё не очередь публикаций. «Согласована» означает завершение работы с исходной новостью, а не выход статьи на сайте. Решения сортировщика показываются отдельно от статуса обработки.</p>
+<div class="filters" id="views" role="group" aria-label="Раздел пула">
+<button class="filter" data-view="active" aria-pressed="true">Все активные <small id="view-active">—</small></button>
+<button class="filter" data-view="hot" aria-pressed="false">🔥 Горячие <small id="view-hot">—</small></button>
+<button class="filter" data-view="full" aria-pressed="false">Полные <small id="view-full">—</small></button>
+<button class="filter" data-view="short" aria-pressed="false">Короткие <small id="view-short">—</small></button>
+<button class="filter" data-view="hold" aria-pressed="false">Отложенные <small id="view-hold">—</small></button>
+<button class="filter" data-view="work" aria-pressed="false">В работе <small id="view-work">—</small></button>
+<button class="filter" data-view="history" aria-pressed="false">История <small id="view-history">—</small></button>
+<button class="filter" data-view="all" aria-pressed="false">Все записи</button>
+</div>
+<div class="tools">
+<div><label for="search">Поиск по номеру, названию или ID</label><input id="search" type="search" placeholder="Например, #58 или OpenAI" autocomplete="off"></div>
+<div><label for="sort">Порядок просмотра</label><select id="sort">
+<option value="priority">Рубрика + FIFO</option>
+<option value="fifo">FIFO: старые первыми</option>
+<option value="new">Новые первыми</option>
+</select></div>
+</div>
+<div class="result-line" id="result-line" role="status" aria-live="polite">Читаю данные…</div>
+<div id="items" class="items" aria-live="off"></div>
+<button id="more" class="more" type="button" hidden>Показать ещё 40</button>
+</section>
+<footer>
+Данные только для просмотра, прямо из публичного GitHub. Кнопки и фильтры ничего не меняют в пуле. Время обновления — время загрузки в этот браузер.
+<p><a href="https://github.com/AfterDark1000/iipike-site/blob/main/data/site_news_pool.json" target="_blank" rel="noopener noreferrer">Исходный пул ↗</a><a href="https://github.com/AfterDark1000/iipike-site/blob/main/data/editorial_routing.json" target="_blank" rel="noopener noreferrer">Решения сортировщика ↗</a></p>
+</footer>
+</main>
+</body>
+</html>
