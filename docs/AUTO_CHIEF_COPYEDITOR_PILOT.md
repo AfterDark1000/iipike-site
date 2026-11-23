@@ -27,7 +27,7 @@
 
 Результат: только **новый** JSON по пути editorial_inbox/auto_copyedits/<article_id>-r<revision>-v1.json в ветке editorial-intake. В пилоте на один исходник максимум v1. Три разных материала за весь пилот, не больше одного за часовой проход. **Не** создавать исправленные копии в auto_drafts, auto_decisions, auto_covers, stories или covers.
 
-Формат файла строго определён валидатором scripts/check_auto_copyeditor_pilot.py. Ровно 14 верхнеуровневых полей:
+Формат файла строго определён валидатором scripts/check_auto_copyeditor_pilot.py. Ровно 13 верхнеуровневых полей:
 
 schema_version (1), article_id, source_revision, source_updated_at, source_draft_blob_sha, copyedit_version (1), status (ready_for_comparison или needs_editor_attention), created_at (ISO UTC), worker (hpii-chief-copyeditor), original_text, edited_text, change_log, editor_flags.
 
