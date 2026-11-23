@@ -1,155 +1,211 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-22T10:20:25Z",
-  "status": "partial",
+  "generated_at_utc": "2026-11-23T11:17:33Z",
+  "status": "ok",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "RDCXCrznJfc",
-      "url": "https://www.youtube.com/shorts/RDCXCrznJfc",
-      "title": "تكنولوچيا#shorts #comedy #viral",
-      "channel": "Mahmoud Metwaly99",
-      "published_at": "2026-11-19T20:23:44Z",
-      "duration_seconds": 13,
-      "views": 35654,
-      "likes": 141,
-      "subscribers": 9420,
+      "id": "ljLy2oDacg4",
+      "url": "https://www.youtube.com/shorts/ljLy2oDacg4",
+      "title": "Store Clerk Mocked Grandpa's Tech Skills 💀📱#shorts #jokes #funny #comedy #relatable #reels",
+      "channel": "Iron Chuckle\n\n",
+      "published_at": "2026-11-19T00:03:19Z",
+      "duration_seconds": 14,
+      "views": 29240,
+      "likes": 272,
+      "subscribers": 2020,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-22T10:20:25Z",
+      "statistics_checked_at": "2026-11-23T11:17:33Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 464.6,
-      "rank_score": 11.3,
+      "growth_views_per_hour": 34.6,
+      "rank_score": 9.95,
       "viral_status": "candidate_verified_stats",
       "analysis": {
-        "observed_visuals": "Двое мужчин поочередно появляются в кадре на фоне магазина: сначала мужчина в желтом худи, затем парень в черной кофте с нарисованным макияжем, далее другой мужчина в сером. Они обмениваются репликами и передают бутылку напитка, после чего взаимодействуют у витрины.",
-        "observed_audio": "Разговорная речь на арабском языке между несколькими участниками, звуки передачи предмета и шумы магазина.",
-        "hook_0_3s": "Мужчина в желтом худи резко обращается к зрителю на фоне холодильника с товарами.",
+        "observed_visuals": "На видео показано статичное фоновое видео с вертикальным кадром лесной дороги и деревьев, поверх которого наложен длинный текстовый рассказ о разговоре в магазине телефонов с ехидным финалом про учителя информатики. Изменений сцен или персонажей внутри видеоряда не наблюдается.",
+        "observed_audio": "Фоновая ритмичная электронная музыка, человеческий голос или озвучка не установлены (присутствует только текст на экранах).",
+        "hook_0_3s": "Появление крупного блока текста на фоне лесной дороги с первых секунд.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:13",
+            "visible_action": "Статичное видео лесной дороги и деревьев с непрерывно наложенным текстом истории на весь экран.",
+            "editing": "Без видимых склеек и переходов, единый статический фон.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Текстовая история (storytime/reddit-story) наложенная на гипнотический фоновый видеоряд (background loop), удерживающая внимание длинным нарративом с неожиданным твистом в конце.",
+        "transfer_to_hpii": "Использовать механику текстового сторителлинга поверх релевантного фонового видеоряда для подачи новости об ИИ с неожиданным финалом (например, столкновение скептика-человека с умной нейросетью).",
+        "what_not_to_copy": "Не копировать сюжет про магазин телефонов и школьного учителя, а также длинный трудночитаемый текст в один блок.",
+        "limitations": "Аудиодорожка содержит только фоновую музыку, речь отсутствует, текст перекрывает весь экран.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-23T11:17:37Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "G3Y6EVUStGE",
+      "url": "https://www.youtube.com/shorts/G3Y6EVUStGE",
+      "title": "The Physics Experiment That Defies Your Expectations! 🤯#usashorts#viral",
+      "channel": "Accidental Eureka",
+      "published_at": "2026-11-18T13:30:01Z",
+      "duration_seconds": 25,
+      "views": 5764,
+      "likes": 36,
+      "subscribers": 14,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-23T11:17:33Z",
+      "is_confirmed_short": false,
+      "search_family": "experiment",
+      "format_family_guess": "experiment",
+      "growth_views_per_hour": 7.5,
+      "rank_score": 6.72,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Human hands demonstrate a physics puzzle using two wooden sticks connected by a hinge, attaching a wooden hammer with a red string to show balance without falling, and adding a small panda toy.",
+        "observed_audio": "Voiceover explaining a physics experiment with background music.",
+        "hook_0_3s": "A human hand holds a hinged wooden stick that hangs downward, followed by a voiceover and text prompt introducing a physics experiment.",
         "timeline": [
           {
             "time": "00:00",
-            "visible_action": "Мужчина в желтом худи и кепке указывает пальцем в камеру на фоне холодильника.",
-            "editing": "Прямая склейка",
+            "visible_action": "A hand holds two wooden parts connected by a flexible hinge, one part hangs down.",
+            "editing": "Direct shot",
             "confidence": "seen"
           },
           {
-            "time": "00:01",
-            "visible_action": "Парень в черной кофте с макияжем на лице держит бутылку темного напитка.",
-            "editing": "Жесткая склейка",
+            "time": "00:03",
+            "visible_action": "A finger points at the hinge mechanism.",
+            "editing": "Jump cut or continuous shot",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10",
+            "visible_action": "A wooden hammer is suspended from the structure using a red string.",
+            "editing": "Jump cut",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:17",
+            "visible_action": "Hands let go of the structure, and it remains balanced in the air.",
+            "editing": "Jump cut",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:22",
+            "visible_action": "A small panda toy is placed on top of the balanced structure.",
+            "editing": "Jump cut",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Visual physics demonstration with an interactive narrative hook, step-by-step assembly, and suspenseful problem framing leading to a surprising counter-intuitive result.",
+        "transfer_to_hpii": "Demonstrating an unexpected AI feature or breakthrough by first showing an unstable or broken state, then adding a hidden anchor/parameter that brings the whole system into stable balance.",
+        "what_not_to_copy": "Do not copy the exact wooden stick props, physics experiment dialogue, or educational tone about hammers and strings.",
+        "limitations": "The video lacks detailed explanations of the underlying center-of-gravity physics formulas.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-23T11:17:41Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "YGA535tXiI8",
+      "url": "https://www.youtube.com/shorts/YGA535tXiI8",
+      "title": "How Mona lisa vanished and nobody Noticed| #3danimation #animation #history #stories #3d",
+      "channel": "PippeYT",
+      "published_at": "2026-11-23T03:47:41Z",
+      "duration_seconds": 34,
+      "views": 1436,
+      "likes": null,
+      "subscribers": 4,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-23T11:17:33Z",
+      "is_confirmed_short": false,
+      "search_family": "explanation",
+      "format_family_guess": "explanation",
+      "growth_views_per_hour": null,
+      "rank_score": 5.97,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Animated historical sketch about the theft of the Mona Lisa featuring minimalist cartoon characters and museum settings.",
+        "observed_audio": "Voiceover narration explaining the historical event with upbeat cartoon sound effects.",
+        "hook_0_3s": "A cartoon depiction of the Mona Lisa hanging on a museum wall with text stating the year 1911.",
+        "timeline": [
+          {
+            "time": "00:00",
+            "visible_action": "Title frame showing Mona Lisa in a gallery",
+            "editing": "Static camera angle with zoom in",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:02",
+            "visible_action": "A character walks up to the painting and removes it from the wall",
+            "editing": "Cut to character action",
             "confidence": "seen"
           },
           {
             "time": "00:04",
-            "visible_action": "Мужчина в желтом худи держит ту же бутылку и говорит.",
-            "editing": "Жесткая склейка",
+            "visible_action": "Text reads 26 HOURS while guards walk past the empty wall",
+            "editing": "Jump cut to next scene",
             "confidence": "seen"
           },
           {
-            "time": "00:08",
-            "visible_action": "Мужчина в серой кофте смотрит вверх у входа в магазин.",
-            "editing": "Жесткая склейка",
+            "time": "00:07",
+            "visible_action": "Thief hiding in a closet sleeping",
+            "editing": "Cut to closet scene",
             "confidence": "seen"
           },
           {
             "time": "00:09",
-            "visible_action": "Двое мужчин взаимодействуют у входа, один пьет из бутылки.",
-            "editing": "Жесткая склейка",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Скетч-диалог с быстрой сменой персонажей (джамп-каты) на одном локационном фоне для демонстрации абсурдной бытовой ситуации.",
-        "transfer_to_hpii": "Использовать механику быстрой смены кадров с разными лицами, чтобы показать цепочку абсурдных отказов или обновлений в сфере искусственного интеллекта (например, когда разные версии нейросетей перекладывают задачу друг на друга).",
-        "what_not_to_copy": "Не копировать сюжет с открыванием бутылок в магазине и специфический грим персонажей.",
-        "limitations": "Перевод реплик не выполнялся, доступен только визуальный ряд и общая интонация диалога.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-22T10:20:29Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
-    },
-    {
-      "id": "m8IckTwoxp8",
-      "url": "https://www.youtube.com/shorts/m8IckTwoxp8",
-      "title": "Sigma Chain Trick Teacher 🗿☠️ #physics #sigmaphysics #alberteinstein #shortsviral #shorts",
-      "channel": "THE BRAIN OF GALAXY ",
-      "published_at": "2026-11-20T11:25:28Z",
-      "duration_seconds": 15,
-      "views": 10148,
-      "likes": null,
-      "subscribers": 89200,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-22T10:20:25Z",
-      "is_confirmed_short": false,
-      "search_family": "experiment",
-      "format_family_guess": "experiment",
-      "growth_views_per_hour": 69.1,
-      "rank_score": 8.02,
-      "viral_status": "unconfirmed",
-      "analysis": {
-        "observed_visuals": "Верхняя часть видео показывает демонстрацию фокуса с металлическим кольцом и цепочкой на фоне стола. В нижней части видео наложена фотография Альберта Эйнштейна с трубкой и черный блок с текстом «THE END IS LITERALLY INSANE». На кадрах фокусник держит кольцо зажатым в руке и продевает сквозь него цепочку.",
-        "observed_audio": "Звучит ритмичная русскоязычная поп-песня на фоне. Наложена английская субтитра, дублирующая процесс фокуса.",
-        "hook_0_3s": "В первые секунды крупным планом показаны руки с кольцом и цепочкой, а также субтитры и снимок Эйнштейна, привлекающий внимание интригующим заголовком.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:03",
-            "visible_action": "Руки показывают металлическое кольцо и цепочку, просовывая цепочку сквозь кольцо.",
-            "editing": "Разделенный экран: сверху фокус, снизу Эйнштейн и текст.",
+            "visible_action": "Thief walking out with the wrapped painting",
+            "editing": "Cut to exit scene",
             "confidence": "seen"
           },
           {
-            "time": "00:04 - 00:09",
-            "visible_action": "Фокусник начинает завязывать цепочку узлом вокруг кольца, требуя внимания.",
-            "editing": "Непрерывное воспроизведение верхнего видеоряда.",
+            "time": "00:16",
+            "visible_action": "Newspapers flying around a globe representing global news spread",
+            "editing": "Cut to outdoor city scene with animated globe",
             "confidence": "seen"
           },
           {
-            "time": "00:10 - 00:14",
-            "visible_action": "Цепочка неожиданно оказывается вынутой из кольца, демонстрируя фокус.",
-            "editing": "Завершение ролика со смайликом удивления.",
+            "time": "00:20",
+            "visible_action": "Crowds of people lining up to look at the empty wall",
+            "editing": "Cut back to gallery",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:23",
+            "visible_action": "Two years later, thief tries to sell it and gets caught",
+            "editing": "Cut to interior room and then arrest scene",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:26",
+            "visible_action": "Painting returned, massive crowds visiting in 2 days",
+            "editing": "Cut to gallery with text overlays",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:31",
+            "visible_action": "Concluding punchline about making a painting famous by stealing it",
+            "editing": "Final static shot of gallery",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Вертикальное видео с разделением экрана: сверху демонстрация фокуса или манипуляций с реквизитом, снизу реакционный или отвлекающий элемент (фото известного ученого с кликбейтным текстом).",
-        "transfer_to_hpii": "Использовать механику разделенного экрана: в верхней части показать сложный процесс работы нейросети или генерации ИИ, а снизу поместить забавного персонажа или историческую личность с вопросом о будущем профессий.",
-        "what_not_to_copy": "Не стоит копировать фокусы с цепями и чужую музыкальную дорожку, а также использовать прямой плагиат текста про Эйнштейна.",
-        "limitations": "Анализ ограничен визуальными кадрами и общим содержанием экрана, текст и аудио распознаны частично.",
+        "format_mechanic": "Historical storytelling through minimalist animation combined with quick pacing, text overlays, and humor.",
+        "transfer_to_hpii": "Use the mechanic of explaining an absurd or counterintuitive historical AI breakthrough using simple animated storytelling and bold text callouts.",
+        "what_not_to_copy": "Do not copy the exact cartoon style or historical narrative about art theft.",
+        "limitations": "Audio specifics beyond voiceover and SFX cannot be precisely transcribed without full transcript access.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-22T10:20:34Z",
+      "analyzed_at_utc": "2026-11-23T11:17:45Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
-    },
-    {
-      "id": "my2bh9tkgik",
-      "url": "https://www.youtube.com/shorts/my2bh9tkgik",
-      "title": "What If Earth Suddenly STOPPED Spinning? 🌎😳 #stickman  #science #facts #shorts",
-      "channel": "Stickology",
-      "published_at": "2026-11-20T00:00:32Z",
-      "duration_seconds": 31,
-      "views": 1908,
-      "likes": null,
-      "subscribers": 12,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-22T10:20:25Z",
-      "is_confirmed_short": false,
-      "search_family": "explanation",
-      "format_family_guess": "explanation",
-      "growth_views_per_hour": 12.7,
-      "rank_score": 5.94,
-      "viral_status": "unconfirmed",
-      "status": "failed",
-      "failure": "API HTTP 503"
     }
   ],
-  "errors": [
-    {
-      "video_id": "my2bh9tkgik",
-      "code": "analysis_failed"
-    }
-  ]
+  "errors": []
 }
