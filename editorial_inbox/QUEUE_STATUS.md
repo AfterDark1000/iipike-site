@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 6 · **Готовы:** 0 · **Ждут интервал:** 6 · **Срочная очередь:** 6 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 204
+**В очереди:** 8 · **Готовы:** 0 · **Ждут интервал:** 8 · **Срочная очередь:** 6 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 2 · **Заблокированы:** 0 · **Опубликованы через site-first:** 204
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -18,12 +18,14 @@
 | **4** | [⚡ ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/together-ai-agent-github-prompt-leak-20261121.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 16:22 (Усть-Катав)**; пауза до 23.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/together-ai-agent-github-prompt-leak-20261121.webp) |
 | **5** | [⚡ В Южной Корее министр лишился должности из-за паники вокруг ИИ-шпаргалок](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/south-korea-ai-cheating-minister-resignation-20261122.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 17:22 (Усть-Катав)**; пауза до 23.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/south-korea-ai-cheating-minister-resignation-20261122.webp) |
 | **6** | [⚡ Главный учёный OpenAI предложил притормозить гонку ИИ, и Альтман согласился](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-pachocki-ai-limits-20261122.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 18:22 (Усть-Катав)**; пауза до 23.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-pachocki-ai-limits-20261122.webp) |
+| **7** | [403 дата-центра США загрязняют атмосферу как целая Дания. Greenpeace взялась за NVIDIA](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-greenpeace-datacenter-emissions-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 19:22 (Усть-Катав)**; пауза до 23.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-greenpeace-datacenter-emissions-20261116.webp) |
+| **8** | [В Китае открыли биржу нейросетей. Уже 50 миллионов запросов в день](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/baidu-token-exchange-ernie-55-20261112.json) | ⏳ Ждёт часовой интервал | **Не ранее 23.11.2026 20:22 (Усть-Катав)**; пауза до 23.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/baidu-token-exchange-ernie-55-20261112.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [403 дата-центра США загрязняют атмосферу как целая Дания. Greenpeace взялась за NVIDIA](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-greenpeace-datacenter-emissions-20261116.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Компания бывшего главы «Яндекса» замахнулась на $45 млрд, но стройка для Microsoft уже буксует](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nebius-45b-microsoft-delay-20261112.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Сценарист «Таксиста» попросил ИИ написать фильм в его стиле и испугался результата](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/paul-schrader-ai-screenplay-fable-20261121.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
