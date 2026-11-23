@@ -18,7 +18,7 @@ export class HpiiAdminAuth {
   }
   _validToken(value) {
     return typeof value === "string" && value.length <= 2500 &&
-      /^[A-Za-z0-9_-]+\\.[A-Za-z0-9_-]+$/.test(value);
+      /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(value);
   }
   getToken() {
     const shared = this._read("localStorage", this.storageKey);
