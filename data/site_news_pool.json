@@ -7270,12 +7270,12 @@
       "summary": "21 ноября 2026: Маск предупредил, что задержки запуска вычислительных мощностей могут потребовать от ИИ-компаний огромных дополнительных средств. Заявление Маска; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:32:47+00:00",
       "review_started_at": "2026-11-23T06:42:21+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6f1e15f690aef8a4"
+      "closed_at": "2026-11-23T16:39:19Z",
+      "article_id": "musk-ai-data-center-working-capital-warning-20261121",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6f1e15f690aef8a4\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/musk-ai-data-center-working-capital-warning-20261121/"
     },
     {
       "id": "n-716ddf581d146167",
