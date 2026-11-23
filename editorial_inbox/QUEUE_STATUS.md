@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 17 · **Готовы:** 0 · **Ждут интервал:** 17 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 206
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 206
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -29,6 +29,7 @@
 | **15** | [Четыре эксперимента с ИИ: фильм без камеры, 700 тысяч мазков и японский храм из кода](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-visual-experiments-20261115.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 11:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai-four-visual-experiments-20261115.webp) |
 | **16** | [Сайты запретили сбор данных. Что сделали ИИ-агенты?](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 12:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12.webp) |
 | **17** | [В Гонконге включили распознавание лиц на городских камерах. Данные будут хранить до полугода](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/hong-kong-smartview-facial-recognition-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 13:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/hong-kong-smartview-facial-recognition-20261116.webp) |
+| **18** | [Китайцы открыли ИИ на 1,6 триллиона параметров. Он работает на чипах Huawei](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meituan-longcat-2-5-open-weights-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 14:07 (Усть-Катав)**; пауза до 23.11.2026 15:44 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meituan-longcat-2-5-open-weights-20261116.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
