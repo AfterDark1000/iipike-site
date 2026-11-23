@@ -1673,6 +1673,18 @@
           "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
         }
       ]
+    },
+    {
+      "key": "latent-physics",
+      "name": "Latent Physics",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "ai-four-physical-experiments-20261115",
+          "source_url": "https://www.whatpeoplemade.com/i/robot-arm-learned-a-precision-machining-task-from-fable-420351.html"
+        }
+      ]
     }
   ],
   "products": [
