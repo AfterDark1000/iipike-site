@@ -3291,6 +3291,18 @@
           "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html"
         }
       ]
+    },
+    {
+      "key": "claude-managed-agents",
+      "name": "Claude Managed Agents",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "anthropic-self-hosted-managed-agents-20261112",
+          "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents"
+        }
+      ]
     }
   ]
 }
