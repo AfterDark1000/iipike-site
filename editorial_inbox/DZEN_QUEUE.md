@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 204 · **В каталоге Дзена подтверждены:** 193 · **Не подтверждены, уже на сайте:** 6 · **Не подтверждены, ждут сайт:** 5
+**Всего одобренных:** 204 · **В каталоге Дзена подтверждены:** 193 · **Не подтверждены, уже на сайте:** 7 · **Не подтверждены, ждут сайт:** 4
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -20,6 +20,7 @@
 | 4 | [167 лет математики не могли доказать гипотезу Римана — Claude помог, и результат уже подтвердили](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/claude-riemann-hypothesis-proof-20261122.md) | 22.11.2026, 21:30 | [На сайте](https://iipike.ru/articles/claude-riemann-hypothesis-proof-20261122/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/claude-riemann-hypothesis-proof-20261122.webp) |
 | 5 | [Microsoft поселила ИИ в Edge. Ему не нужен интернет](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-edge-aion-instruct-local-ai-20261119.md) | 22.11.2026, 23:30 | [На сайте](https://iipike.ru/articles/microsoft-edge-aion-instruct-local-ai-20261119/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-edge-aion-instruct-local-ai-20261119.webp) |
 | 6 | [Character.AI выставляет переписки на торги. Даже детские](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/character-ai-bankruptcy-private-chats-20261120.md) | 23.11.2026, 00:45 | [На сайте](https://iipike.ru/articles/character-ai-bankruptcy-private-chats-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/character-ai-bankruptcy-private-chats-20261120.webp) |
+| 7 | [OpenAI научила GPT молчать о своих «мыслях»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-gpt-hidden-reasoning-defense-20261120.md) | 23.11.2026, 07:00 | [На сайте](https://iipike.ru/articles/openai-gpt-hidden-reasoning-defense-20261120/) | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-hidden-reasoning-defense-20261120.webp) |
 
 ## 2. Утверждены, ещё в редакционной очереди сайта
 
@@ -27,11 +28,10 @@
 
 | № | Материал — открыть готовый текст | Дата (Усть-Катав) | Состояние сайта | Обложка |
 |---:|---|---|---|---|
-| 1 | [OpenAI научила GPT молчать о своих «мыслях»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-gpt-hidden-reasoning-defense-20261120.md) | **Не ранее 23.11.2026 07:07 (Усть-Катав)** | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-gpt-hidden-reasoning-defense-20261120.webp) |
-| 2 | [SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/spacex-nvidia-gpu-orbit-financing-20261120.md) | **Не ранее 23.11.2026 08:07 (Усть-Катав)** | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/spacex-nvidia-gpu-orbit-financing-20261120.webp) |
-| 3 | [Canva добавила кнопку «Выключить ИИ»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/canva-ai-controls-opt-out-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 4 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 5 | [OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
+| 1 | [SpaceX нашла $44 млрд на чипы NVIDIA, но кредиторы хотят оставить их на Земле](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/spacex-nvidia-gpu-orbit-financing-20261120.md) | **Не ранее 23.11.2026 08:07 (Усть-Катав)**; пауза до 23.11.2026 08:00 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/spacex-nvidia-gpu-orbit-financing-20261120.webp) |
+| 2 | [Canva добавила кнопку «Выключить ИИ»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/canva-ai-controls-opt-out-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 3 | [Google научила ИИ делать Android-приложения, которые вас помнят](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-ai-studio-android-firebase-play-20261117.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 4 | [OpenAI ищет охотника за шпионами за $500 тысяч — в её переговорной уже находили «жучок»](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
