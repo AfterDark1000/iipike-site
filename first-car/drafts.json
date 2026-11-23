@@ -1,38 +1,5 @@
 {
   "schema_version": 1,
-  "items": [
-    {
-      "id": "first-car:awGCodbkVFXrfl6i",
-      "url": "https://dzen.ru/a/awGCodbkVFXrfl6i",
-      "published_at": "2026-11-22T10:07:31.000Z",
-      "title": "Литературный замысел: почему идеи сюжета недостаточно",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:awKqwlae7X1N604g",
-      "url": "https://dzen.ru/a/awKqwlae7X1N604g",
-      "published_at": "2026-11-22T09:04:53.000Z",
-      "title": "ВК-шопс: продала кофточку и заработала 94 рубля! Рассказываю, как мне это удалось",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:avxwp4qgWRhTxcy4",
-      "url": "https://dzen.ru/a/avxwp4qgWRhTxcy4",
-      "published_at": "2026-11-22T05:17:11.000Z",
-      "title": "Какой Gemini выбрать: сравниваем модели Google",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:avwp2mM1tFu-y0-q",
-      "url": "https://dzen.ru/a/avwp2mM1tFu-y0-q",
-      "published_at": "2026-11-22T03:07:35.000Z",
-      "title": "ИИ ответил за автора в Threads — и выдал себя не стилем, а разговором",
-      "status": "needs_text",
-      "attempts": 0
-    }
-  ],
+  "items": [],
   "text_blocked": null
 }
