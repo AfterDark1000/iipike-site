@@ -7075,12 +7075,12 @@
       "summary": "22 ноября. По сообщению Novita, часть запросов к MiniMax маршрутизировалась на сторонний официальный API; возможное нарушение ожидаемых условий обработки данных.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:28:16+00:00",
       "review_started_at": "2026-11-23T06:23:44+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-8400d966ebbc5c18"
+      "closed_at": "2026-11-23T14:47:38Z",
+      "article_id": "novita-minimax-api-routing-privacy-incident-20261122",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8400d966ebbc5c18\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/novita-minimax-api-routing-privacy-incident-20261122/"
     },
     {
       "id": "n-520e56a219a4af17",
