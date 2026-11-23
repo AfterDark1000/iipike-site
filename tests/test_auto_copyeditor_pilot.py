@@ -181,6 +181,16 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
         ]
         self.assertEqual(self.check(c)["status"], "needs_editor_attention")
 
+    def test_good_original_may_be_preserved_without_forced_rewrite(self):
+        c = copy.deepcopy(self.candidate)
+        c["edited_text"] = copy.deepcopy(c["original_text"])
+        c["status"] = "no_change_recommended"
+        self.assertEqual(self.check(c)["status"], "no_change_recommended")
+        c["edited_text"]["title"] = "Заменённый заголовок"
+        c["edited_text"]["dzen_title"] = "Заменённый заголовок"
+        with self.assertRaisesRegex(ValueError, "No-change candidate"):
+            self.check(c)
+
     def test_escalation_requires_flags_clean_revisions_have_none(self):
         c = copy.deepcopy(self.candidate)
         c["status"] = "needs_editor_attention"
