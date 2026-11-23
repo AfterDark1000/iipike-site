@@ -221,8 +221,11 @@ class PublicationQueueTests(unittest.TestCase):
             return json.dumps({
                 "id": story_id, "status": "editor_approved",
                 "approved_by": "human_editor", "site_queue": "priority",
-                "article_markdown": ("Подтверждённый ручной текст о безопасности "
-                                     "технологических компаний и работе специалистов. " * 9),
+                "article_markdown": (("В компании усилили проверки сотрудников "
+                                      "после подтверждённого инцидента. " * 5)
+                                     + "\n\n"
+                                     + ("Новый материал объясняет работу отдела "
+                                        "безопасности и проверенные вакансии. " * 5)),
             })
         def proof(story_id, source_ref, main_ref):
             self.assertEqual(source_ref, "origin/editorial-intake")
