@@ -1737,6 +1737,18 @@
           "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
         }
       ]
+    },
+    {
+      "key": "higurashi-ai",
+      "name": "higurashi",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "higurashi-haru4b-speech-cpp-20261115",
+          "source_url": "https://huggingface.co/higurashi-ai/Haru-4B"
+        }
+      ]
     }
   ],
   "products": [
@@ -3477,6 +3489,19 @@
         {
           "article_id": "meituan-longcat-2-5-open-weights-20261116",
           "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
+        }
+      ]
+    },
+    {
+      "key": "haru-4b",
+      "name": "Haru-4B",
+      "company": "higurashi-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-23",
+      "evidence": [
+        {
+          "article_id": "higurashi-haru4b-speech-cpp-20261115",
+          "source_url": "https://huggingface.co/higurashi-ai/Haru-4B"
         }
       ]
     }
