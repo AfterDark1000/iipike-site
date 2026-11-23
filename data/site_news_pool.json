@@ -7165,12 +7165,12 @@
       "summary": "21 ноября. AWS Quick представила объединённые плагины из агентов, навыков, соединений и рабочих процессов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T18:28:16+00:00",
       "review_started_at": "2026-11-23T06:42:21+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9501c77fabd313d3"
+      "closed_at": "2026-11-23T15:39:23Z",
+      "article_id": "aws-quick-plugins-build-by-chat-20261121",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9501c77fabd313d3\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/aws-quick-plugins-build-by-chat-20261121/"
     },
     {
       "id": "n-504e75b3f7fa505b",
