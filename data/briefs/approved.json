@@ -1889,6 +1889,22 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/392",
       "approved_at_utc": "2026-11-23T06:58:19Z",
       "published_at_utc": "2026-11-23T06:58:19Z"
+    },
+    {
+      "slug": "paris-marx-hyperscale-data-center-local-costs-20261122",
+      "pool_id": "n-47b2738e2872fd88",
+      "pool_sequence": 494,
+      "headline": "Автор книги Hyperscale предупредил о цене ИИ-дата-центров для соседей",
+      "topic": "Общество",
+      "event_date": "2026-11-22",
+      "source": "Пэрис Маркс, интервью TechCrunch от 22 ноября 2026 года",
+      "source_url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
+      "body": "Журналист Пэрис Маркс обвинил техгигантов в том, что расходы от строительства дата-центров ложатся на соседние города. В интервью TechCrunch 22 ноября автор книги Hyperscale назвал нынешние масштабы строительства ИИ-инфраструктуры неустойчивыми. По его мнению, жители рискуют столкнуться с ростом счетов за электричество, нехваткой воды и шумом систем охлаждения. Сам Маркс посетил дата-центр в Новой Зеландии и рассказал о пронзительном гуле серверных вентиляторов.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/393",
+      "approved_at_utc": "2026-11-23T07:11:24Z",
+      "published_at_utc": "2026-11-23T07:11:24Z"
     }
   ]
 }
