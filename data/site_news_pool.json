@@ -6940,12 +6940,12 @@
       "summary": "20 ноября: провайдер заявил о задержке до первого звука 97 миллисекунд, поддержке русского и других языков.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-22T11:35:35+00:00",
       "review_started_at": "2026-11-23T06:23:44+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-325e6e2c464d5272"
+      "closed_at": "2026-11-23T13:24:05Z",
+      "article_id": "together-qwen3-tts-realtime-russian-97ms-20261120",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-325e6e2c464d5272\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/together-qwen3-tts-realtime-russian-97ms-20261120/"
     },
     {
       "id": "n-6be4258a5882474e",
