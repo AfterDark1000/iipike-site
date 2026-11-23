@@ -1440,7 +1440,7 @@
       "review_started_at": "2026-11-23T07:15:46.035Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Пресс-релиз Baidu; технические детали проверить.\n23.11.2026: редактор №28 зарезервировал №96; проверка официального релиза Baidu, статуса ERNIE 5.5 Flash и Token Exchange, архива, затем тексты Дзен/Threads/X/VK."
+      "note": "Пресс-релиз Baidu; технические детали проверить.\n23.11.2026: редактор №28 зарезервировал №96; проверка официального релиза Baidu, статуса ERNIE 5.5 Flash и Token Exchange, архива, затем тексты Дзен/Threads/X/VK.\n23.11.2026: проверен датированный первоисточник Baidu 12.11 (PRNewswire https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html) и отчёт Baidu Q3 (https://ir.baidu.com/news-releases/news-release-details/baidu-announces-third-quarter-2026-results). ERNIE 5.5 Flash Preview: 280 млрд всего/14 млрд активных параметров, контекст 1 млн, API Qianfan, цена 1/4 юаня за млн входных/выходных токенов, бесплатно через OpenRouter на дату анонса; веса обещаны к 25.11, не объявлять уже опубликованными. Token Exchange: более 100 ресурсов, заявлены >50 млн вызовов и >700 млрд токенов в день после месяца работы; это данные Baidu. Сверен архив Дзена: прямого повтора не найдено. Проверен @Baidu_Inc в X. Дзен/Threads/X/VK подготовлены к утверждению."
     },
     {
       "id": "n-fb1ddd2a5ff741f6",
