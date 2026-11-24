@@ -96,6 +96,13 @@ export class HpiiAdminAuth {
     return data;
   }
   async session(){return this.fetchApi("/api/session")}
+  async reviewCopyedit(item,candidateSha,action,note=""){
+    return this.fetchApi("/api/copyedit-review",{
+      method:"POST",headers:{"content-type":"application/json"},
+      body:JSON.stringify({article_id:item.article_id,revision:item.source_revision,version:item.copyedit_version,
+        source_sha:item.source_draft_blob_sha,candidate_sha:candidateSha,action,note})
+    });
+  }
   async reviewCover(article,cover,action,note="") {
     return this.fetchApi("/api/cover-review",{
       method:"POST",headers:{"content-type":"application/json"},
