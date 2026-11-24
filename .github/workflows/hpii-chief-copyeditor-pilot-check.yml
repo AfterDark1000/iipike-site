@@ -6,6 +6,9 @@ on:
     paths:
       - 'scripts/check_auto_copyeditor_pilot.py'
       - 'tests/test_auto_copyeditor_pilot.py'
+      - 'scripts/check_auto_copyeditor_feedback.py'
+      - 'tests/test_auto_copyeditor_feedback.py'
+      - 'docs/AUTO_COPYEDITOR_FEEDBACK.md'
       - 'docs/AUTO_CHIEF_COPYEDITOR_PILOT.md'
       - '.github/workflows/hpii-chief-copyeditor-pilot-check.yml'
       - 'admin/auto-corrector/index.html'
@@ -35,11 +38,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Test copyediting boundary (no publication)
-        run: python3 -m unittest discover -s tests -p 'test_auto_copyeditor_pilot.py' -v
+        run: |
+          python3 -m unittest discover -s tests -p 'test_auto_copyeditor_pilot.py' -v
+          python3 -m unittest discover -s tests -p 'test_auto_copyeditor_feedback.py' -v
       - name: Validate saved candidate Git blobs, fact tokens and schema
         run: |
           git fetch origin editorial-intake
           python3 scripts/check_auto_copyeditor_pilot.py --verify-tree --ref origin/editorial-intake
+          python3 scripts/check_auto_copyeditor_feedback.py --verify-tree --ref origin/editorial-intake
       - name: Confirm no production changes
         run: |
           echo 'Read-only validation: no article, cover, approval, site release, Dzen or social changes.' >> "$GITHUB_STEP_SUMMARY"
