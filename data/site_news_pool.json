@@ -7525,12 +7525,12 @@
       "summary": "22 ноября по подборке. Воспроизведение записанных действий агентов без повторных вызовов модели; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-23T08:48:47+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:59:28+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c8455da0e0380bda"
     },
     {
       "id": "n-eddbf49d13f44b73",
@@ -7570,12 +7570,12 @@
       "summary": "23 ноября. Партия подтвердила использование ИИ для черновика публичного соболезнования.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-23T08:48:47+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:59:28+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d47fa605e2a81a6a"
     },
     {
       "id": "n-8af39869d610a073",
@@ -7585,12 +7585,12 @@
       "summary": "22 ноября. Личный эксперимент автора; со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-23T08:48:47+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:59:28+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8af39869d610a073"
     },
     {
       "id": "n-0162d4886027e702",
@@ -7660,12 +7660,12 @@
       "summary": "23 ноября. Пенни Вонг намерена выделить ИИ как внешнеполитическую угрозу, включая вмешательство в демократические процессы. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-23T14:22:49+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:59:28+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-06f92aa7ff84a14e"
     },
     {
       "id": "n-50e93b04b5c51eba",
@@ -7705,12 +7705,12 @@
       "summary": "23 ноября. Попытка решить P против NP; решение не подтверждено.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T03:18:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:59:28+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-248f10e3d3a0f226"
     },
     {
       "id": "n-4f5fe20de68e9dfd",
