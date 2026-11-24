@@ -4045,12 +4045,12 @@
       "summary": "17 ноября: инструмент Artist Profile Protection против ошибочного и намеренного приписывания релизов, включая ИИ-подделки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T13:05:12+00:00",
       "review_started_at": "2026-11-24T06:12:01.477Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверено: Spotify for Artists, анонс 15.03 с обновлением 17.11.2026 https://artists.spotify.com/en/blog/introducing-artist-profile-protection — доступ всем артистам, опциональное уведомление/удаление своего имени, отдельный режим Block releases. Справка https://support.spotify.com/us/artists/article/artist-profile-protection/ — срок 28 дней после релиза, artist key для доверенных дистрибьюторов, ограничения отдельных поставщиков. Financial Times 5.10: Sony Music сообщила о запросах удаления >260 тыс. дипфейк-треков с разных платформ, не только Spotify: https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350. Официальный @spotifyartists подтверждён страницей приложения Google Play. Дубли в пуле, новостном архиве, каталоге Дзена, очереди Threads и коротких кандидатах/утверждённых не найдены. Комплект на утверждении. ID spotify-artist-profile-protection-20261117."
+      "closed_at": "2026-11-24T06:29:15.382Z",
+      "article_id": "spotify-artist-profile-protection-20261117",
+      "note": "Проверено: Spotify for Artists, анонс 15.03 с обновлением 17.11.2026 https://artists.spotify.com/en/blog/introducing-artist-profile-protection — доступ всем артистам, опциональное уведомление/удаление своего имени, отдельный режим Block releases. Справка https://support.spotify.com/us/artists/article/artist-profile-protection/ — срок 28 дней после релиза, artist key для доверенных дистрибьюторов, ограничения отдельных поставщиков. Financial Times 5.10: Sony Music сообщила о запросах удаления >260 тыс. дипфейк-треков с разных платформ, не только Spotify: https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350. Официальный @spotifyartists подтверждён страницей приложения Google Play. Дубли в пуле, новостном архиве, каталоге Дзена, очереди Threads и коротких кандидатах/утверждённых не найдены. Комплект на утверждении. ID spotify-artist-profile-protection-20261117. Утверждено главредом после удаления оценочной подводки и модальности в Threads; статья и очереди сохранены, источники вне тела. Ждём обложку."
     },
     {
       "id": "n-ceb045ea888ed5b6",
