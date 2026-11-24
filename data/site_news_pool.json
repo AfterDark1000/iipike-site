@@ -4330,12 +4330,12 @@
       "summary": "18 ноября: xAI оспаривает калифорнийский закон о раскрытии сведений об ИИ.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T08:45:30.599Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Редактор 36: резерв, проверка судебных документов и архива."
     },
     {
       "id": "n-e87d81ee6e260443",
