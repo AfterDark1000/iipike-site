@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "genesis-ai-robot-gloves-funding-20261117",
+  "status": "editor_approved",
+  "approved_by": "human_editor",
+  "approved_at": "2026-11-24",
+  "title": "Стартап получил полмиллиарда долларов на обучение роботов с помощью перчаток",
+  "dzen_title": "Стартап получил полмиллиарда долларов на обучение роботов с помощью перчаток",
+  "vk_title": "🧤 Стартап получил $500 млн на обучение роботов РУЧНОМУ ТРУДУ",
+  "vk_summary": "Genesis AI обучает роботов на движениях настоящих работников, оснащённых перчатками с датчиками. Среди инвесторов компании оказались NVIDIA, AMD и Samsung Next.",
+  "summary": "Genesis AI обучает роботов на движениях настоящих работников, оснащённых перчатками с датчиками. Среди инвесторов компании оказались NVIDIA, AMD и Samsung Next.",
+  "rubric": "news",
+  "section": "НОВОСТИ ИИ",
+  "topics": [
+    "engineering",
+    "finance"
+  ],
+  "companies": [
+    "nvidia"
+  ],
+  "products": [],
+  "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html",
+  "source_title": "Genesis AI Raises $500M Series A at $3.5B Valuation to Master Human-Level Dexterity in General-Purpose Robots and Deploy at Scale",
+  "event_date": "2026-11-17",
+  "related_dzen_ids": [],
+  "threads_queue_id": "genesis-ai-robot-gloves-funding-20261117",
+  "x_queue_id": "genesis-ai-robot-gloves-funding-20261117",
+  "article_markdown": "Более сотни работников по всему миру уже носят специальные перчатки, чтобы научить роботов работать руками.\n\nСтартап **Genesis AI** разработал перчатки с датчиками, которые собирают данные о движениях пальцев и силе нажатия. Люди занимаются своей обычной работой, а нейросеть получает материал для обучения. Кисти роботов спроектированы с учётом пропорций человеческой руки, чтобы полученные навыки было проще переносить на машины.\n\n17 ноября Genesis AI объявила о привлечении **500 миллионов долларов** при оценке компании в 3,5 миллиарда. Среди инвесторов оказались NVIDIA, AMD и Samsung Next.\n\nДеньги пойдут на развитие технологии и производство робота **Eno**. У него две руки, колёсная платформа и регулируемый по высоте корпус. Головы у него вообще нет.\n\nПервыми роботами планируют оснащать предприятия, склады и лаборатории.\n\nПока разработчикам предстоит решить вполне земную проблему: как рассказал глава компании журналистам TechCrunch, роботизированные кисти выдерживают лишь несколько недель регулярной работы, после чего требуют замены."
+}
