@@ -1813,6 +1813,54 @@
           "source_url": "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/transition-report-archive/Transition%20Report%202026-27/chapters/transition-report-2026-27-ch3.pdf"
         }
       ]
+    },
+    {
+      "key": "ebay",
+      "name": "eBay",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+        }
+      ]
+    },
+    {
+      "key": "fairplay",
+      "name": "Fairplay",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+        }
+      ]
+    },
+    {
+      "key": "alliance-4-children",
+      "name": "Alliance 4 Children",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+        }
+      ]
+    },
+    {
+      "key": "set-at-16",
+      "name": "Set@16",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+        }
+      ]
     }
   ],
   "products": [
