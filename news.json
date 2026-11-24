@@ -8177,5 +8177,30 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "GPT-6.2 наконец добралась до обычного ChatGPT",
+    "summary": "OpenAI начала развёртывание GPT-6.2 в обычном ChatGPT на Plus, Pro, Business и Enterprise. В основе — адаптированная GPT-6.2 Sol.",
+    "published": "2026-11-24",
+    "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "cover": "assets/editorial/openai-gpt-6-2-sol-chatgpt-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🔥 GPT-6.2 наконец появилась в ОБЫЧНОМ ChatGPT",
+    "vk_summary": "OpenAI начала развёртывание новой модели на Plus, Pro, Business и Enterprise. GPT-6.2 лучше понимает изображения, выполняет сложные инструкции и ищет информацию в интернете.",
+    "published_at_utc": "2026-11-24T05:36:44Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "openai-gpt-6-2-sol-chatgpt-20261123",
+    "url": "articles/openai-gpt-6-2-sol-chatgpt-20261123/",
+    "topics": [
+      "models",
+      "apps"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
