@@ -1523,6 +1523,10 @@
         {
           "article_id": "signal-ai-screenshot-protection-20261120",
           "source_url": "https://signal.org/blog/protecting-your-privacy/"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
         }
       ]
     },
@@ -1923,6 +1927,10 @@
         {
           "article_id": "us-chinese-ai-disclosure-proposal-20261118",
           "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
         }
       ]
     },
@@ -3413,6 +3421,10 @@
         {
           "article_id": "signal-ai-screenshot-protection-20261120",
           "source_url": "https://signal.org/blog/protecting-your-privacy/"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
         }
       ]
     },
