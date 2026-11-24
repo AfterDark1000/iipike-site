@@ -23,9 +23,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          fetch-depth: 0
       - name: Safe autonomous publication reconciliation (no writes)
         run: |
           python3 -m unittest discover -s tests -p 'test_auto_editor_published_pool_sync.py' -v
+          git fetch origin editorial-intake
           python3 scripts/site_news_pool.py --validate
           python3 scripts/sync_published_auto_editor_pool.py
           git diff --exit-code -- data/site_news_pool.json news.json
