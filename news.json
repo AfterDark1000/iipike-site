@@ -8319,5 +8319,25 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ научился заменять отдельные слова в аудиозаписи",
+    "summary": "Riverside представила Tonality, модель для точечного изменения слов в готовых аудиозаписях. Она может исправлять произношение, паузы и интонации, сохраняя остальную речь.",
+    "published": "2026-11-24",
+    "source_url": "https://x.com/NadavKeyson/status/2120938261875147169",
+    "cover": "assets/editorial/riverside-tonality-audio-word-edit-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🎙️ ИИ научился ИСПРАВЛЯТЬ ОТДЕЛЬНЫЕ СЛОВА в готовой записи",
+    "vk_summary": "Riverside представила Tonality, нейросеть для точечного редактирования речи. Она позволяет заменить слово, изменить ударение или добавить паузу, сохраняя остальную запись. Разработчики открыли бесплатный демонстрационный режим и объявили о доступности API.",
+    "published_at_utc": "2026-11-24T12:45:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-12",
+    "id": "riverside-tonality-audio-word-edit-20261112",
+    "url": "articles/riverside-tonality-audio-word-edit-20261112/",
+    "topics": [
+      "audio"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
