@@ -1,5 +1,6 @@
 // HPII admin auth/API gateway. Deploy separately; do NOT expose secrets in GitHub Pages.
 // GitHub OAuth identity is read-only. Repository write token stays in Worker secrets.
+import {parseArticle} from "../../admin/auth/article-preview.mjs";
 import {DAY, firstCarTextArticle, firstCarWorkflowIdentity, ownerText, privateText} from "./first-car-text.mjs";
 export {FirstCarText} from "./first-car-text.mjs";
 
@@ -260,7 +261,8 @@ const COPY_DECISIONS="editorial_inbox/auto_copyedit_decisions/";
 const SHA40=/^[a-f0-9]{40}$/;
 function validCopyReview(d){
   return !!d&&typeof d==="object"&&!Array.isArray(d)&&
-    Object.keys(d).sort().join(",")==="action,article_id,candidate_sha,note,revision,source_sha,version"&&
+    [ "action,article_id,candidate_sha,note,revision,source_sha,version", "action,article_id,candidate_sha,manual_text,note,revision,source_sha,version" ].includes(Object.keys(d).sort().join(","))&&
+    (!Object.hasOwn(d,"manual_text")||(d.action==="accept_copyedit"&&validManualFields(d.manual_text)))&&
     typeof d.article_id==="string"&&d.article_id.length<=80&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(d.article_id)&&
     Number.isSafeInteger(d.revision)&&d.revision>=1&&d.revision<9999&&
     Number.isSafeInteger(d.version)&&d.version>=1&&d.version<=5&&
@@ -268,6 +270,35 @@ function validCopyReview(d){
     ["accept_copyedit","keep_original","revise_copyedit"].includes(d.action)&&
     typeof d.note==="string"&&d.note.length<=MAX_NOTE&&
     (d.action!=="revise_copyedit"||(d.version<5&&d.note.trim().length>0));
+}
+function validManualFields(fields){
+  return !!fields&&typeof fields==="object"&&!Array.isArray(fields)&&
+    Object.keys(fields).sort().join(",")===COPY_FIELDS.slice().sort().join(",")&&
+    COPY_FIELDS.every(k=>typeof fields[k]==="string"&&fields[k].trim()&&fields[k].length<=50000&&!fields[k].includes("\0"))&&
+    fields.title===fields.dzen_title&&Array.from(fields.title).length<=500&&
+    Array.from(fields.threads_text).length<=480&&Array.from(fields.x_text).length<=280&&
+    Array.from(fields.vk_title).length<=200&&Array.from(fields.vk_summary).length<=350&&
+    ["title","dzen_title","summary","vk_title","vk_summary"].every(k=>!/[\r\n]/.test(fields[k]));
+}
+function validManualEdit(candidate,d){
+  if(!validManualFields(d.manual_text))return false;
+  const text=d.manual_text,prev=candidate.edited_text;
+  if(!COPY_FIELDS.some(k=>text[k]!==prev[k]))return false;
+  // Owner edits are deliberately limited to literary changes. Preserve
+  // factual tokens and existing link/image bindings; no new research here.
+  for(const k of COPY_FIELDS){
+    for(const re of [/\d+(?:[ \u00a0]\d{3})*(?:[.,]\d+)?%?/g,/https?:\/\/[^\s\])>]+/g,/(?<![\p{L}\p{N}_])@[A-Za-z][\p{L}\p{N}_.]{1,30}/gu]){
+      if(copyTokens(prev[k],re)!==copyTokens(text[k],re))return false;
+    }
+  }
+  if(copyTokens(prev.article_markdown,/^>\s.+$/gm)!==copyTokens(text.article_markdown,/^>\s.+$/gm))return false;
+  try{
+    const opts={articleId:d.article_id};
+    const old=parseArticle(prev.article_markdown,opts),next=parseArticle(text.article_markdown,opts);
+    const images=b=>JSON.stringify(b.filter(x=>x.type==="image").map(x=>x.src).sort());
+    if(images(old)!==images(next))return false;
+  }catch{return false}
+  return true;
 }
 function copyTokens(value,re){
   return JSON.stringify(Array.from(value.matchAll(re),m=>m[0]).sort());
@@ -297,7 +328,7 @@ function validCopyPackage(draft,candidate,d){
      Array.from(edited.vk_summary).length>350)return false;
   if(candidate.status==="no_change_recommended"&&COPY_FIELDS.some(k=>original[k]!==edited[k]))return false;
   if(candidate.status==="ready_for_comparison"&&original.article_markdown===edited.article_markdown)return false;
-  if(d.action==="accept_copyedit"&&candidate.status!=="ready_for_comparison")return false;
+  if(d.action==="accept_copyedit"&&candidate.status!=="ready_for_comparison"&&!d.manual_text)return false;
   return true;
 }
 async function recordCopyReview(env,d,login){
@@ -325,6 +356,7 @@ async function recordCopyReview(env,d,login){
   let draft,candidate;
   try{draft=decodeGitHubContent(dr.data);candidate=decodeGitHubContent(cr.data)}catch{return fail(409,"copyedit_invalid")}
   if(!validCopyPackage(draft,candidate,d))return fail(409,"copyedit_package_invalid");
+  if(d.manual_text&&!validManualEdit(candidate,d))return fail(400,"manual_edit_invalid_or_protected_facts_changed");
   const treeBase=parent.data?.tree?.sha;
   if(!SHA40.test(treeBase))return fail(502,"copyedit_tree_unavailable");
   const now=new Date().toISOString(),accept=d.action==="accept_copyedit";
@@ -332,12 +364,13 @@ async function recordCopyReview(env,d,login){
     source_draft_blob_sha:d.source_sha,copyedit_blob_sha:d.candidate_sha,action:d.action,note:d.note.trim(),
     decided_by:login,decided_at:now,result_revision:accept?d.revision+1:d.revision,
     channel:"hpii-admin-oauth-gateway"};
+  if(d.manual_text)record.manual_edit=true;
   const path=COPY_DECISIONS+stem+".json";
   const tree=[{path,mode:"100644",type:"blob",content:JSON.stringify(record,null,2)+"\n"}];
   if(accept){
     const next={...draft,revision:d.revision+1,updated_at:now,
-      content:{...draft.content,...candidate.edited_text},
-      editor_notes:[...draft.editor_notes,"copyedit_accepted="+stem+".json; copyedit_sha="+d.candidate_sha]};
+      content:{...draft.content,...(d.manual_text||candidate.edited_text)},
+      editor_notes:[...draft.editor_notes,"copyedit_accepted="+stem+".json; copyedit_sha="+d.candidate_sha,...(d.manual_text?["Ручная литературная правка главреда поверх принятой корректуры."]:[])]};
     tree.push({path:pathFor(d.article_id),mode:"100644",type:"blob",content:JSON.stringify(next,null,2)+"\n"});
   }
   const post=(p,body)=>githubJson(p,env,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});
@@ -656,7 +689,7 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({
-      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,copyedit_manual_edit:true,
       first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
       first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
     });
@@ -719,7 +752,7 @@ export default {
       if(url.pathname==="/api/copyedit-review" && request.method==="POST"){
         if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")return fail(415,"json_required",headers);
         const raw=await request.text();
-        if(raw.length>8000)return fail(413,"request_too_large",headers);
+        if(raw.length>300000)return fail(413,"request_too_large",headers);
         let data;
         try{data=JSON.parse(raw)}catch{return fail(400,"bad_json",headers)}
         const result=await recordCopyReview(env,data,session.login);
@@ -751,4 +784,4 @@ export default {
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions};
+export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,validManualEdit,webpDimensions};
