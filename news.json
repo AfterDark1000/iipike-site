@@ -8103,5 +8103,25 @@
       "meta"
     ],
     "products": []
+  },
+  {
+    "title": "Для ИИ придумали 2206 мер защиты. Контроль над агентами почти забыли",
+    "summary": "Исследователи MIT собрали 2206 предложенных мер безопасности ИИ из 47 документов. На человеческий контроль автономных агентов приходится лишь 1,4% рекомендаций.",
+    "published": "2026-11-24",
+    "source_url": "https://mitsloan.mit.edu/press/mit-researchers-create-roadmap-to-help-organizations-mitigate-ai-risks",
+    "cover": "assets/editorial/mit-ai-risk-mitigation-2206-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🛡️ MIT нашёл 2206 способов ЗАЩИТЫ ОТ ИИ и серьёзный пробел",
+    "vk_summary": "Исследователи MIT изучили 2206 предложенных мер безопасности искусственного интеллекта из 47 документов. Только 1,4% посвящены человеческому контролю над автономными ИИ-агентами. Учёные создали бесплатную базу рекомендаций и показали, каким рискам пока уделяют меньше всего внимания.",
+    "published_at_utc": "2026-11-24T02:01:06Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-12",
+    "id": "mit-ai-risk-mitigation-2206-20261112",
+    "url": "articles/mit-ai-risk-mitigation-2206-20261112/",
+    "topics": [
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
