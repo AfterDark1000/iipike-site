@@ -4480,12 +4480,12 @@
       "summary": "17 ноября: Pangram использован для оценки судебных документов; вторичный источник, надёжность детектора требует оговорки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-24T09:08:17.349Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Редактор 36. Постановление 04.11.2026, дело 4:26-cr-00314-P, ECF 83, прочитано: https://storage.courtlistener.com/recap/gov.uscourts.txnd.426626/gov.uscourts.txnd.426626.83.0.pdf?ref=404media.co — отказ в освобождении до приговора по правовым основаниям и риску побега, судья критикует ошибочное применение прецедентов и предупреждает о санкциях вплоть до запрета практики в округе. 404 Media 17.11 https://www.404media.co/the-department-of-justice-is-using-ai-detector-pangram-against-defense-attorneys/ — прокуратура приложила результаты Pangram, защита признала помощь ИИ, объяснила болезнью адвоката и сроками. Отчёты 02.11 ECF 81-1 https://www.documentcloud.org/documents/28919310-81-1/ (403); цифры 63% в двух документах по Magica https://magica.com/news/doj-pangram-ai-detector-defense-attorneys . Архив: 6afd27deec0bce12d0dbd047 https://dzen.ru/a/av0n3uwLzhLQ29BH (рапорт в Аризоне). Дубля нет. @TheJusticeDept и @NDTXNews подтверждены, @pangram по публичному зеркалу аккаунта. Pangram Labs отсутствует в реестре. ID doj-pangram-ai-detector-defense-attorneys-20261117. На утверждении."
+      "closed_at": "2026-11-24T09:24:40.281Z",
+      "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
+      "note": "Редактор 36. Постановление 04.11.2026, дело 4:26-cr-00314-P, ECF 83, прочитано: https://storage.courtlistener.com/recap/gov.uscourts.txnd.426626/gov.uscourts.txnd.426626.83.0.pdf?ref=404media.co — отказ в освобождении до приговора по правовым основаниям и риску побега, судья критикует ошибочное применение прецедентов и предупреждает о санкциях вплоть до запрета практики в округе. 404 Media 17.11 https://www.404media.co/the-department-of-justice-is-using-ai-detector-pangram-against-defense-attorneys/ — прокуратура приложила результаты Pangram, защита признала помощь ИИ, объяснила болезнью адвоката и сроками. Отчёты 02.11 ECF 81-1 https://www.documentcloud.org/documents/28919310-81-1/ (403); цифры 63% в двух документах по Magica https://magica.com/news/doj-pangram-ai-detector-defense-attorneys . Архив: 6afd27deec0bce12d0dbd047 https://dzen.ru/a/av0n3uwLzhLQ29BH (рапорт в Аризоне). Дубля нет. @TheJusticeDept и @NDTXNews подтверждены, @pangram по публичному зеркалу аккаунта. Pangram Labs отсутствует в реестре. ID doj-pangram-ai-detector-defense-attorneys-20261117. 24.11: главред утвердил переработанное оформление. Статья, Threads и X записаны и перечитаны; VK-поля включены; Pangram Labs и Pangram записаны в кандидаты справочника. Ждём обложку."
     },
     {
       "id": "n-e0de14a1d55db39c",
