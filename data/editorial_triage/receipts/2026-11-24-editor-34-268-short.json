@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "2026-11-24-editor-34-268-short.json",
+  "request_sha256": "e7997a7ba77de6d7f5d6c1737210749a56f92e16a49eae13ee4ae1cb4fe122a7",
+  "status": "applied",
+  "applied": [
+    268
+  ],
+  "unchanged": [],
+  "skipped": []
+}
