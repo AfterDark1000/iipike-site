@@ -879,6 +879,10 @@
         {
           "article_id": "cursor-fireworks-key-incident-20261113",
           "source_url": "https://cursor.com/blog/security-incident-update"
+        },
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
         }
       ]
     },
@@ -1907,6 +1911,42 @@
         {
           "article_id": "proton-lumo-desktop-permissions-20261117",
           "source_url": "https://proton.me/blog/lumo-desktop-features"
+        }
+      ]
+    },
+    {
+      "key": "airbnb",
+      "name": "Airbnb",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "key": "doordash",
+      "name": "DoorDash",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "key": "moonshot-ai",
+      "name": "Moonshot AI",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
         }
       ]
     }
@@ -3834,6 +3874,32 @@
         {
           "article_id": "suno-visuals-music-videos-20261117",
           "source_url": "https://help.suno.com/en/articles/14661249"
+        }
+      ]
+    },
+    {
+      "key": "kimi",
+      "name": "Kimi",
+      "company": "moonshot-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "key": "composer-2",
+      "name": "Composer 2",
+      "company": "cursor",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
         }
       ]
     }
