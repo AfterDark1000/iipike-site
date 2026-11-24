@@ -1663,6 +1663,10 @@
         {
           "article_id": "nebius-45b-microsoft-delay-20261112",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
+        },
+        {
+          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+          "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
         }
       ]
     },
@@ -1955,6 +1959,18 @@
         {
           "article_id": "us-chinese-ai-disclosure-proposal-20261118",
           "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "key": "coreweave",
+      "name": "CoreWeave",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+          "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
         }
       ]
     }
@@ -3542,6 +3558,10 @@
         {
           "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
           "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+        },
+        {
+          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+          "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
         }
       ]
     },
