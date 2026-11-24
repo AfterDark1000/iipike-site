@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 26 · **Готовы:** 0 · **Ждут интервал:** 26 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 219
+**В очереди:** 27 · **Готовы:** 0 · **Ждут интервал:** 27 · **Срочная очередь:** 4 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 219
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -38,12 +38,13 @@
 | **24** | [В городе OpenAI и Anthropic запретили строительство новых дата-центров на 10 месяцев](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/san-francisco-data-center-moratorium-extension-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 16:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/san-francisco-data-center-moratorium-extension-20261117.webp) |
 | **25** | [Нейросети записали школы и машины скорой помощи в список военных целей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/vals-ai-military-targeting-safety-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 17:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/vals-ai-military-targeting-safety-20261117.webp) |
 | **26** | [В Нью-Йорке предложили лишать судей должности за выдумки нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/new-york-judges-ai-fabricated-citations-bill-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 18:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/new-york-judges-ai-fabricated-citations-bill-20261116.webp) |
+| **27** | [Google увеличила срок хранения переписки с Gemini с трёх дней до двух месяцев](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-temporary-chat-retention-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 19:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-temporary-chat-retention-20261116.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| — | Нет проблемных материалов | — | — |
+| [Стартап получил полмиллиарда долларов на обучение роботов с помощью перчаток](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/genesis-ai-robot-gloves-funding-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
