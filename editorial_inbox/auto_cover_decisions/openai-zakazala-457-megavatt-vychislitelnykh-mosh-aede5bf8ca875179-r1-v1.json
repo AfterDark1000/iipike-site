@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+  "text_revision": 1,
+  "text_updated_at": "2026-11-23T14:04:21Z",
+  "cover_version": 1,
+  "cover_blob_sha": "68178690786a375136cb3c3b890318956a8ef5ca",
+  "cover_metadata_blob_sha": "a08b8cc360138b3de4272fab712f10c8404a8f9d",
+  "source_draft_blob_sha": "566965d00f9c50b0ae591744b17814a9c23216f0",
+  "source_text_decision_blob_sha": "0a1ee40bfb255c698247d041bd0bd180b1733314",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-24T04:11:21.691Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
