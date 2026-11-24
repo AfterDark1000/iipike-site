@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261124-work-ordinary-1400-296.json",
+  "request_sha256": "c4ed6f1b19120a69f0370207454909e8a4c5323de34f79148c86c7b93800a767",
+  "status": "reserved",
+  "pool_id": "n-4026a4cf1fa73bf7",
+  "pool_sequence": 296,
+  "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+  "priority": "normal",
+  "title": "Легенду Minecraft отправили соревноваться с ИИ-агентами",
+  "source_url": "https://www.kradle.ai/",
+  "claimed_at": "2026-11-24T09:02:09+00:00",
+  "worker": "hpii-auto-editor"
+}
