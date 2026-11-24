@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "request": "auto-20261124-work-ordinary-1400-296.json",
+  "pool_id": "n-4026a4cf1fa73bf7",
+  "pool_sequence": 296,
+  "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+  "status": "ready_for_review",
+  "revision": 1,
+  "created_at": "2026-11-24T09:02:09+00:00",
+  "updated_at": "2026-11-24T09:03:42Z",
+  "content": {
+    "title": "Игрок в Minecraft обошёл ИИ в торговле пшеницей",
+    "dzen_title": "Игрок в Minecraft обошёл ИИ в торговле пшеницей",
+    "summary": "SethBling выиграл все три матча с продажей пшеницы в KradleBench. В общем зачёте испытаний в Minecraft игрок уступил GPT-6.2 Astra 1,07 балла.",
+    "rubric": "news",
+    "section": "НОВОСТИ ИИ",
+    "topics": [
+      "agents",
+      "models"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "gpt-6"
+    ],
+    "source_url": "https://blog.kradle.ai/p/announcing-kradlebench-a-dynamic",
+    "source_title": "Announcing KradleBench: a dynamic, multi-agent benchmark for AIs and Humans",
+    "event_date": "2026-11-18",
+    "related_dzen_ids": [
+      "6afd522e499f5e349075e078"
+    ],
+    "site_crosslinks": {
+      "6afd522e499f5e349075e078": "openai-gpt-6-2-astra-sol-20261117"
+    },
+    "article_markdown": "В общем зачёте **SethBling** уступил **GPT-6.2 Astra** 1,07 балла.\n\nВ испытании с торговлей пшеницей у четырёх игроков в **Minecraft** по участку и пять минут. Нужно успеть полить грядку, собрать урожай и продать его на рынке за алмазы. Побеждает тот, у кого к концу матча больше алмазов. SethBling выиграл все три своих матча. Состав соперников менялся: в одном матче он играл против трёх копий Gemini 3.8 Flash, в другом против копий Opus 5.5, в третьем против GPT-6.1 Sol.\n\n**Kradle** представила этот тест, **KradleBench**, 18 ноября. Пока модель обдумывает следующий ход, таймер идёт, а остальные игроки продолжают действовать. Модели получают описание состояния мира и управляют персонажем с помощью кода.\n\nAstra набрала 78,28 балла из 100, SethBling получил 77,21. **OpenAI** [выпустила Astra вместе с Sol 17 ноября](https://dzen.ru/a/av1SLkmfXjSQdeB4), за день до презентации теста. Итоговый балл складывается из пяти оценок. Торговля, командная работа и соперничество дают по 30%, ещё по 5% приходятся на головоломки и творческие постройки. В творческом зачёте, где участники строили в том числе Годзиллу и Эйфелеву башню, у Astra 100 баллов, у SethBling 18,29. Всего в таблице у игрока 21 попытка, у Astra 345.\n\nKradle выкладывает повторы попыток, а на открытом сервере можно самому сыграть 16 заданий. В рейтинге этого сервера учитываются четыре категории. Творческие постройки в балл участников сервера не входят.",
+    "threads_text": "Пять минут, грядка пшеницы и рынок, где за урожай платят алмазами. SethBling выиграл в Minecraft все ТРИ таких матча против ИИ.\n\nВ общем зачёте KradleBench первым стал GPT-6.2 Astra. У игрока 77,21 балла, у модели 78,28.\n\nНаконец-то ферма в Minecraft пригодилась для резюме.",
+    "x_text": "@SethBling выиграл все три матча по продаже пшеницы против ИИ в @Minecraft. В общем зачёте @kradleai игрок уступил GPT-6.2 Astra от @OpenAI на 1,07 балла.",
+    "vk_title": "Игрок в Minecraft обошёл ИИ в торговле ПШЕНИЦЕЙ",
+    "vk_summary": "SethBling выиграл все три матча KradleBench, где нужно вырастить пшеницу и продать её за алмазы. В общем зачёте теста в Minecraft игрок набрал 77,21 балла против 78,28 у GPT-6.2 Astra."
+  },
+  "research": {
+    "sources": [
+      {
+        "url": "https://blog.kradle.ai/p/announcing-kradlebench-a-dynamic",
+        "type": "primary",
+        "note": "Датированный анонс Kradle от 18 ноября 2026 года: цель теста, устройство живых миров, доступность повторов."
+      },
+      {
+        "url": "https://www.kradle.ai/bench/sethbling",
+        "type": "primary",
+        "note": "Карточка SethBling: результаты каждого из трёх матчей в экономике, разбивка и общий балл."
+      },
+      {
+        "url": "https://www.kradle.ai/bench/economy",
+        "type": "primary",
+        "note": "Правила Harvest Hustle, условие победы, продолжительность раунда и таблица экономики."
+      },
+      {
+        "url": "https://www.kradle.ai/bench/methodology",
+        "type": "primary",
+        "note": "Методика, состав соперников, доли пяти категорий, передача наблюдений и вывод кода."
+      },
+      {
+        "url": "https://www.kradle.ai/bench/models",
+        "type": "primary",
+        "note": "Общий зачёт и количество попыток человека и модели."
+      },
+      {
+        "url": "https://www.kradle.ai/play",
+        "type": "primary",
+        "note": "Доступные задания открытого сервера и различие между баллом посетителя и общим зачётом."
+      }
+    ],
+    "fact_checks": [
+      "Все три экономических матча SethBling отмечены 1/1; официальные соперники Gemini 3.8 Flash, Opus 5.5 и GPT-6.1 Sol. Модели соперников в каждом матче одинаковы согласно конфигурации формата.",
+      "78,28 − 77,21 = 1,07 балла. Творческая категория целиком: 100,00 и 18,29 соответственно. Официальная таблица считает 21 попытку игрока и 345 попыток Astra.",
+      "Пять категорий с весами 30/30/30/5/5; рейтинг открытого сервера охватывает четыре категории. 16 заданий относятся к открытой версии.",
+      "Проверены аккаунты @SethBling по ссылке его подтверждённого YouTube-канала, @kradleai на kradle.ai/about, @Minecraft в Minecraft Official Channels, @OpenAI в справке OpenAI.",
+      "Проверена опубликованная архивная карточка релиза GPT-6.2 от 17 ноября и её соответствие подтверждённому URL/ID Дзена в news.json. В опубликованном архиве и редакционной очереди не найден сюжет о запуске KradleBench."
+    ],
+    "notes": "Разведены результаты одного задания, общий зачёт и публичная версия испытания. Заголовок о серии игр с пшеницей, первый абзац о разнице в общем зачёте."
+  },
+  "entity_candidates": {
+    "companies": [
+      {
+        "key": "kradle",
+        "name": "Kradle",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+            "source_url": "https://blog.kradle.ai/p/announcing-kradlebench-a-dynamic"
+          }
+        ]
+      },
+      {
+        "key": "mojang-studios",
+        "name": "Mojang Studios",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+            "source_url": "https://www.minecraft.net/en-us/credits"
+          }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "key": "kradlebench",
+        "name": "KradleBench",
+        "company": "kradle",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+            "source_url": "https://blog.kradle.ai/p/announcing-kradlebench-a-dynamic"
+          }
+        ]
+      },
+      {
+        "key": "minecraft",
+        "name": "Minecraft",
+        "company": "mojang-studios",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+            "source_url": "https://www.minecraft.net/en-us/credits"
+          }
+        ]
+      },
+      {
+        "key": "gpt-6-2-astra",
+        "name": "GPT-6.2 Astra",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+            "source_url": "https://www.kradle.ai/bench/models"
+          }
+        ]
+      }
+    ]
+  },
+  "cover_brief": {
+    "fact": "SethBling выиграл три пятиминутных матча с продажей пшеницы за алмазы в KradleBench. GPT-6.2 Astra заняла первое место в общем зачёте с преимуществом 1,07 балла.",
+    "hook": "ПШЕНИЦА ПРОТИВ ИИ",
+    "constraints": "Горизонтальная обложка 16:9. Игровая ферма, пшеница и огранённые алмазы, авторские условные объекты. Без портрета или изображения, которое выглядело бы как подлинный скриншот прогона."
+  },
+  "editor_notes": [
+    "№296. Резерв Work подтверждён квитанцией и записью пула; маршрут full/long, normal, вне групп.",
+    "Датированный запуск 18 ноября; таблица обновлена организаторами 20 ноября. Отдельный результат на торговле и общий зачёт проверены по разным таблицам.",
+    "Ссылка Дзена сверена с опубликованным архивным соответствием, карточка сайта проверена в GitHub. Прямое открытие Дзена недоступно."
+  ]
+}
