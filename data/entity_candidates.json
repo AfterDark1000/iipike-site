@@ -1873,6 +1873,30 @@
           "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
         }
       ]
+    },
+    {
+      "key": "spotify",
+      "name": "Spotify",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "spotify-artist-profile-protection-20261117",
+          "source_url": "https://artists.spotify.com/en/blog/introducing-artist-profile-protection"
+        }
+      ]
+    },
+    {
+      "key": "sony-music",
+      "name": "Sony Music",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "spotify-artist-profile-protection-20261117",
+          "source_url": "https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350"
+        }
+      ]
     }
   ],
   "products": [
@@ -3707,6 +3731,19 @@
         {
           "article_id": "genesis-ai-robot-gloves-funding-20261117",
           "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
+        }
+      ]
+    },
+    {
+      "key": "artist-profile-protection",
+      "name": "Artist Profile Protection",
+      "company": "spotify",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "spotify-artist-profile-protection-20261117",
+          "source_url": "https://artists.spotify.com/en/blog/introducing-artist-profile-protection"
         }
       ]
     }
