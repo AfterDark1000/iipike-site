@@ -7705,12 +7705,12 @@
       "summary": "23 ноября. Попытка решить P против NP; решение не подтверждено.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T03:18:40+00:00",
       "review_started_at": "2026-11-24T04:59:28+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-248f10e3d3a0f226"
+      "closed_at": "2026-11-24T07:09:15Z",
+      "article_id": "pequalnp-public-ai-agent-fleet-million-dollar-problem-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-248f10e3d3a0f226\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/pequalnp-public-ai-agent-fleet-million-dollar-problem-20261123/"
     },
     {
       "id": "n-4f5fe20de68e9dfd",
