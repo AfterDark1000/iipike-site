@@ -8225,5 +8225,28 @@
       "google"
     ],
     "products": []
+  },
+  {
+    "title": "Amazon и eBay требуют убрать ИИ-игрушки с продажи до Рождества",
+    "summary": "Более 155 организаций и экспертов призвали Amazon и eBay остановить продажу игрушек с генеративными чат-ботами для детей младше 16 лет до независимой проверки безопасности.",
+    "published": "2026-11-24",
+    "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf",
+    "cover": "assets/editorial/amazon-ebay-ai-toys-safety-open-letter-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🧸 Amazon и eBay требуют убрать опасные ИИ-ИГРУШКИ до Рождества",
+    "vk_summary": "Более 155 организаций и экспертов призвали маркетплейсы остановить продажу детских игрушек со встроенными чат-ботами. Испытания выявили опасные ответы нейросетей и проблемы с конфиденциальностью.",
+    "published_at_utc": "2026-11-24T08:00:58Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+    "url": "articles/amazon-ebay-ai-toys-safety-open-letter-20261123/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
