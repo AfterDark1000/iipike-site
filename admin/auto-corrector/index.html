@@ -20,14 +20,15 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.65 system-ui,-apple-
 ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-wrap:anywhere}
 @media(max-width:800px){.panes{grid-template-columns:1fr}header{padding:18px}main{padding:12px}.pane{padding:12px}}
 @media(prefers-color-scheme:dark){body{background:#111914;color:#e7ede7}section{background:#1e2922;border-color:#37473a}.notice{background:#21372a;color:#e4ebdf}.pane{background:#172118;border-color:#415045}select{background:#19251d;color:#eee;border-color:#526558}.muted,.meta{color:#a5b6aa}}
+button{font:inherit;border:1px solid #a4b4a8;border-radius:8px;padding:10px 14px;cursor:pointer;background:#fff;color:#254537}button:disabled{opacity:.55;cursor:default}button[hidden]{display:none}#copy-accept{background:#236d50;color:white;border-color:#236d50}#copy-review textarea{width:100%;min-height:85px;font:inherit;padding:9px;border-radius:8px;border:1px solid #a4b4a8;margin:10px 0}#copy-review [data-error=true]{color:#a13e32}html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}#hpii-login-gate[hidden]{display:none!important}#hpii-login-gate{min-height:100vh;display:grid;place-items:center;padding:24px}.hpii-login-card{max-width:480px;padding:24px}.hpii-login-card button{background:#236d50;color:white}
 </style>
 <script type="module" src="/admin/auth/gate.js"></script>
 </head>
 <body>
 <header><a href="/admin/auto-editor/">← Автономный редактор</a>
-<h1>Шеф-корректор · пилот</h1><p>Исходный текст и литературная правка рядом. Только сравнение.</p></header>
+<h1>Шеф-корректор · пилот</h1><p>Исходный текст и литературная правка рядом. Сравнение и выбор версии текста.</p></header>
 <main>
-<div class="notice"><strong>Это НЕ финальное утверждение.</strong> Корректор не меняет исходный автодрафт, не утверждает статью и не отправляет её художнику. В действующей админке пока остаётся оригинал редактора.</div>
+<div class="notice"><strong>Выбор версии текста.</strong> Принятие корректуры переносит её в новую ревизию основного черновика. После этого отдельно утверди текст и обложку в панели редактора.</div>
 <section><div class="tools">
 <label for="choose">Материал</label><select id="choose"><option>Загружаю…</option></select>
 <label for="field">Сравнить</label><select id="field">
@@ -43,6 +44,13 @@ ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-w
 <div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
 <div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
 </div></section>
+<section id="copy-review"><h2>Решение главреда</h2>
+<p id="copy-review-state" role="status">Проверяю актуальность версии…</p>
+<div id="copy-review-controls" hidden>
+<label for="copy-note">Замечания корректору (обязательны для возврата)</label>
+<textarea id="copy-note" maxlength="4000" placeholder="Что исправить?"></textarea>
+<div class="tools"><button type="button" id="copy-accept">Принять версию корректора</button><button type="button" id="copy-keep">Оставить версию редактора</button><button type="button" id="copy-revise">Вернуть корректору</button></div></div>
+<p><a href="/admin/auto-editor/">Перейти к утверждению текста и обложки →</a></p></section>
 <section><h2>Редакторский диагноз</h2>
 <div id="quality" class="meta">—</div></section>
 <section><h2>Что изменено</h2><ul id="changes"><li>Нет записанной корректуры.</li></ul>
@@ -56,7 +64,54 @@ const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/edito
 const names=["title","dzen_title","summary","article_markdown","threads_text","x_text","vk_title","vk_summary"];
 const byId=id=>document.getElementById(id);
 const select=byId("choose"), field=byId("field");
-let rows=[], active=null, version=0;
+let rows=[], active=null, version=0, activeRow=null, reviewReady=false;
+const rawRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/";
+const controls=byId("copy-review-controls"),reviewState=byId("copy-review-state");
+const reviewButtons=["copy-accept","copy-keep","copy-revise"].map(byId);
+async function optionalRecord(path){
+ const r=await fetch(rawRoot+path,{cache:"no-store"});
+ if(r.status===404)return null;
+ if(!r.ok)throw Error("GitHub HTTP "+r.status);
+ return r.json();
+}
+async function loadReview(item,row,token){
+ reviewReady=false;controls.hidden=true;reviewState.dataset.error="false";
+ reviewState.textContent="Проверяю актуальность версии…";
+ try{
+  const [draft,decision,human]=await Promise.all([
+   optionalRecord("auto_drafts/"+item.article_id+".json"),
+   optionalRecord("auto_copyedit_decisions/"+row.name),
+   optionalRecord("auto_decisions/"+item.article_id+"-r"+item.source_revision+".json")
+  ]);
+  if(token!==version)return;
+  if(decision){reviewState.textContent=({accept_copyedit:"Корректура принята, новая ревизия r"+decision.result_revision+" в основной админке.",keep_original:"Оставлена версия редактора.",revise_copyedit:"Замечания переданы корректору: "+decision.note})[decision.action]||"Решение уже сохранено.";return}
+  if(human||!draft||draft.status!=="ready_for_review"||draft.revision!==item.source_revision||draft.updated_at!==item.source_updated_at){reviewState.textContent="Историческая версия: текущая ревизия уже изменилась или по ней принято решение.";return}
+  if(rows.some(x=>x.article_id===row.article_id&&x.revision===row.revision&&x.version>row.version)){reviewState.textContent="Есть более новая корректура. Выбери её.";return}
+  if(!["ready_for_comparison","no_change_recommended"].includes(item.status)){reviewState.textContent="Это запрос или вопрос по фактам, а не готовая литературная правка.";return}
+  reviewButtons[0].hidden=item.status!=="ready_for_comparison";reviewButtons[2].hidden=item.copyedit_version>=5;
+  reviewButtons.forEach(b=>b.disabled=false);byId("copy-note").value="";
+  reviewReady=true;controls.hidden=false;reviewState.textContent="Выбери версию или отправь замечания. Публикация не запускается.";
+ }catch(e){if(token===version){reviewState.dataset.error="true";reviewState.textContent="Не удалось проверить состояние: "+e.message}}
+}
+async function submitReview(action){
+ if(!reviewReady||!active||!activeRow)return;
+ const note=byId("copy-note").value.trim();
+ if(action==="revise_copyedit"&&!note){reviewState.textContent="Напиши, что нужно исправить.";byId("copy-note").focus();return}
+ if(!window.HpiiAdminAuth?.reviewCopyedit){reviewState.textContent="Новый API ещё недоступен. Обнови страницу после развёртывания.";return}
+ const token=version,item=active,row=activeRow;
+ reviewReady=false;reviewButtons.forEach(b=>b.disabled=true);select.disabled=true;
+ reviewState.textContent="Сохраняю решение…";
+ try{
+  const result=await window.HpiiAdminAuth.reviewCopyedit(item,row.sha,action,note);
+  if(token!==version)return;
+  controls.hidden=true;reviewState.dataset.error="false";
+  reviewState.textContent=({copyedit_applied:"✓ Корректура принята. Новая ревизия r"+result.revision+" в основной админке; отдельно утверди текст и обложку.",original_retained:"✓ Оставлена версия редактора.",copyedit_revision_requested:"✓ Замечания переданы корректору."})[result.status]||"Решение сохранено.";
+ }catch(e){if(token===version){reviewState.dataset.error="true";reviewState.textContent="Не подтверждено: "+e.message+". Обнови страницу и проверь сохранённое решение.";controls.hidden=true}}
+ finally{if(token===version)select.disabled=false}
+}
+reviewButtons[0].addEventListener("click",()=>submitReview("accept_copyedit"));
+reviewButtons[1].addEventListener("click",()=>submitReview("keep_original"));
+reviewButtons[2].addEventListener("click",()=>submitReview("revise_copyedit"));
 function show(){
  const key=field.value;
  byId("before").textContent=active?.original_text?.[key]||"—";
@@ -132,6 +187,7 @@ async function loadReply(item, filename, token){
 }
 async function load(index){
  const v=++version;
+ reviewReady=false;controls.hidden=true;activeRow=null;
  select.disabled=true;byId("status").textContent="Читаю сохранённую корректуру…";
  try{
   const r=await fetch(rows[index].download_url,{cache:"no-store"});
@@ -140,10 +196,10 @@ async function load(index){
   if(v!==version)return;
   if(item.schema_version!==2 || item.worker!=="hpii-chief-copyeditor" ||
      !item.quality_review || item.article_id!==rows[index].article_id ||
-     item.copyedit_version!==rows[index].version || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
+     item.copyedit_version!==rows[index].version || item.source_revision!==rows[index].revision || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
     throw Error("Данные корректуры не соответствуют схеме");
-  render(item);
-  await loadReply(item,rows[index].name,v);
+  activeRow=rows[index];render(item);
+  await Promise.all([loadReply(item,rows[index].name,v),loadReview(item,rows[index],v)]);
  }catch(e){byId("status").textContent="Ошибка: "+e.message}
  finally{select.disabled=false}
 }

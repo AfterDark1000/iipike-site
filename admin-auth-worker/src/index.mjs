@@ -253,6 +253,105 @@ async function recordReview(env, body, login) {
 }
 
 
+
+const COPY_FIELDS=["title","dzen_title","summary","article_markdown","threads_text","x_text","vk_title","vk_summary"];
+const COPY_ROOT="editorial_inbox/auto_copyedits/";
+const COPY_DECISIONS="editorial_inbox/auto_copyedit_decisions/";
+const SHA40=/^[a-f0-9]{40}$/;
+function validCopyReview(d){
+  return !!d&&typeof d==="object"&&!Array.isArray(d)&&
+    Object.keys(d).sort().join(",")==="action,article_id,candidate_sha,note,revision,source_sha,version"&&
+    typeof d.article_id==="string"&&d.article_id.length<=80&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(d.article_id)&&
+    Number.isSafeInteger(d.revision)&&d.revision>=1&&d.revision<9999&&
+    Number.isSafeInteger(d.version)&&d.version>=1&&d.version<=5&&
+    SHA40.test(d.candidate_sha)&&SHA40.test(d.source_sha)&&
+    ["accept_copyedit","keep_original","revise_copyedit"].includes(d.action)&&
+    typeof d.note==="string"&&d.note.length<=MAX_NOTE&&
+    (d.action!=="revise_copyedit"||(d.version<5&&d.note.trim().length>0));
+}
+function copyTokens(value,re){
+  return JSON.stringify(Array.from(value.matchAll(re),m=>m[0]).sort());
+}
+function validCopyPackage(draft,candidate,d){
+  if(!draft||!candidate||draft.article_id!==d.article_id||draft.revision!==d.revision||
+     draft.status!=="ready_for_review"||!Array.isArray(draft.editor_notes)||
+     candidate.schema_version!==2||candidate.worker!=="hpii-chief-copyeditor"||
+     candidate.article_id!==d.article_id||candidate.source_revision!==d.revision||
+     candidate.copyedit_version!==d.version||candidate.source_draft_blob_sha!==d.source_sha||
+     candidate.source_updated_at!==draft.updated_at||
+     !["ready_for_comparison","no_change_recommended"].includes(candidate.status)||
+     !Array.isArray(candidate.editor_flags)||candidate.editor_flags.length!==0)return false;
+  const original=candidate.original_text,edited=candidate.edited_text;
+  if(!original||!edited||[original,edited].some(x=>Object.keys(x).sort().join(",")!==COPY_FIELDS.slice().sort().join(",")))return false;
+  for(const k of COPY_FIELDS){
+    if(typeof original[k]!=="string"||original[k]!==draft.content?.[k]||
+       typeof edited[k]!=="string"||!edited[k].trim()||edited[k].length>50000)return false;
+    // Same conservative protection as the Python candidate validator.
+    for(const re of [/\d+(?:[ \u00a0]\d{3})*(?:[.,]\d+)?%?/g,/https?:\/\/[^\s\])>]+/g,/(?<![\p{L}\p{N}_])@[A-Za-z][\p{L}\p{N}_.]{1,30}/gu]){
+      if(copyTokens(original[k],re)!==copyTokens(edited[k],re))return false;
+    }
+  }
+  if(copyTokens(original.article_markdown,/^>\s.+$/gm)!==copyTokens(edited.article_markdown,/^>\s.+$/gm))return false;
+  if(edited.title!==edited.dzen_title||Array.from(edited.threads_text).length>480||
+     Array.from(edited.x_text).length>280||Array.from(edited.vk_title).length>200||
+     Array.from(edited.vk_summary).length>350)return false;
+  if(candidate.status==="no_change_recommended"&&COPY_FIELDS.some(k=>original[k]!==edited[k]))return false;
+  if(candidate.status==="ready_for_comparison"&&original.article_markdown===edited.article_markdown)return false;
+  if(d.action==="accept_copyedit"&&candidate.status!=="ready_for_comparison")return false;
+  return true;
+}
+async function recordCopyReview(env,d,login){
+  if(!validCopyReview(d))return fail(400,"invalid_copyedit_review");
+  // Pin every read to one commit. Both draft and decision are saved in one
+  // non-forced Git ref update; concurrent changes cause conflict, not overwrite.
+  const ref="editorial-intake",head=await githubJson("/git/ref/heads/"+ref,env);
+  const base=head.data?.object?.sha;
+  if(head.status!==200||!SHA40.test(base))return fail(502,"copyedit_branch_unavailable");
+  const at="?ref="+base,stem=d.article_id+"-r"+d.revision+"-v"+d.version;
+  const [dr,cr,td,cd,listing,parent]=await Promise.all([
+    githubJson("/contents/"+pathFor(d.article_id)+at,env),
+    githubJson("/contents/"+COPY_ROOT+stem+".json"+at,env),
+    githubJson("/contents/"+savedPath(d.article_id,d.revision)+at,env),
+    githubJson("/contents/"+COPY_DECISIONS+stem+".json"+at,env),
+    githubJson("/contents/"+COPY_ROOT.replace(/\/$/,"")+at,env),
+    githubJson("/git/commits/"+base,env)
+  ]);
+  if(td.status===200||cd.status===200)return fail(409,"copyedit_decision_exists");
+  if(td.status!==404||cd.status!==404||listing.status!==200||parent.status!==200)return fail(502,"copyedit_lookup_failed");
+  if(dr.status!==200||cr.status!==200||dr.data.sha!==d.source_sha||cr.data.sha!==d.candidate_sha)return fail(409,"copyedit_source_changed");
+  const prefix=d.article_id+"-r"+d.revision+"-v";
+  if(!Array.isArray(listing.data)||listing.data.some(x=>x.name?.startsWith(prefix)&&Number(x.name.slice(prefix.length).replace(/\.json$/,""))>d.version))
+    return fail(409,"copyedit_newer_candidate_exists");
+  let draft,candidate;
+  try{draft=decodeGitHubContent(dr.data);candidate=decodeGitHubContent(cr.data)}catch{return fail(409,"copyedit_invalid")}
+  if(!validCopyPackage(draft,candidate,d))return fail(409,"copyedit_package_invalid");
+  const treeBase=parent.data?.tree?.sha;
+  if(!SHA40.test(treeBase))return fail(502,"copyedit_tree_unavailable");
+  const now=new Date().toISOString(),accept=d.action==="accept_copyedit";
+  const record={schema_version:1,article_id:d.article_id,source_revision:d.revision,copyedit_version:d.version,
+    source_draft_blob_sha:d.source_sha,copyedit_blob_sha:d.candidate_sha,action:d.action,note:d.note.trim(),
+    decided_by:login,decided_at:now,result_revision:accept?d.revision+1:d.revision,
+    channel:"hpii-admin-oauth-gateway"};
+  const path=COPY_DECISIONS+stem+".json";
+  const tree=[{path,mode:"100644",type:"blob",content:JSON.stringify(record,null,2)+"\n"}];
+  if(accept){
+    const next={...draft,revision:d.revision+1,updated_at:now,
+      content:{...draft.content,...candidate.edited_text},
+      editor_notes:[...draft.editor_notes,"copyedit_accepted="+stem+".json; copyedit_sha="+d.candidate_sha]};
+    tree.push({path:pathFor(d.article_id),mode:"100644",type:"blob",content:JSON.stringify(next,null,2)+"\n"});
+  }
+  const post=(p,body)=>githubJson(p,env,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(body)});
+  const tr=await post("/git/trees",{base_tree:treeBase,tree});
+  if(tr.status!==201||!SHA40.test(tr.data?.sha))return fail(502,"copyedit_tree_write_failed");
+  const commit=await post("/git/commits",{message:"review(auto-copyeditor): "+stem+" "+d.action,tree:tr.data.sha,parents:[base]});
+  if(commit.status!==201||!SHA40.test(commit.data?.sha))return fail(502,"copyedit_commit_failed");
+  const write=await githubJson("/git/refs/heads/"+ref,env,{method:"PATCH",headers:{"content-type":"application/json"},body:JSON.stringify({sha:commit.data.sha,force:false})});
+  if(write.status!==200||write.data?.object?.sha!==commit.data.sha)
+    return fail([409,422].includes(write.status)?409:502,"copyedit_ref_conflict_or_write_failed");
+  return send({ok:true,status:accept?"copyedit_applied":d.action==="keep_original"?"original_retained":"copyedit_revision_requested",
+    article_id:d.article_id,revision:record.result_revision,verification_path:path,commit_sha:commit.data.sha});
+}
+
 function validCoverReview(d) {
   if (!d || typeof d!=="object" || Array.isArray(d)) return false;
   if (JSON.stringify(Object.keys(d).sort())!==
@@ -557,7 +656,7 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({
-      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,
       first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
       first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
     });
@@ -617,6 +716,17 @@ export default {
         Object.entries(headers).forEach(([k,v])=>responseHeaders.set(k,v));
         return new Response(result.body,{status:result.status,headers:responseHeaders});
       }
+      if(url.pathname==="/api/copyedit-review" && request.method==="POST"){
+        if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")return fail(415,"json_required",headers);
+        const raw=await request.text();
+        if(raw.length>8000)return fail(413,"request_too_large",headers);
+        let data;
+        try{data=JSON.parse(raw)}catch{return fail(400,"bad_json",headers)}
+        const result=await recordCopyReview(env,data,session.login);
+        const merged=new Headers(result.headers);
+        Object.entries(headers).forEach(([k,v])=>merged.set(k,v));
+        return new Response(result.body,{status:result.status,headers:merged});
+      }
       if(url.pathname==="/api/cover-review" && request.method==="POST"){
         if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")
           return fail(415,"json_required",headers);
@@ -641,4 +751,4 @@ export default {
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview,validCoverReview,webpDimensions};
+export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions};
