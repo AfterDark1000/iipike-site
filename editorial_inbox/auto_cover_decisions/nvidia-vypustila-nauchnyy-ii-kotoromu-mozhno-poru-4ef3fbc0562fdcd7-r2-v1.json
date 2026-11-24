@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7",
+  "text_revision": 2,
+  "text_updated_at": "2026-11-24T08:03:46Z",
+  "cover_version": 1,
+  "cover_blob_sha": "a116783e66eaa5e327b72a706eaab9aa92f1ecc7",
+  "cover_metadata_blob_sha": "bd8a332d99e6ac9f53468f22d0b8e2e407cc9993",
+  "source_draft_blob_sha": "8985e937dfda42e0cded0c1621b4a1505b727c81",
+  "source_text_decision_blob_sha": null,
+  "action": "revise_cover",
+  "note": "Вообще ничего непонятно, полностью переделать с нуля",
+  "status": "cover_revision_requested",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-24T11:32:32.949Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
