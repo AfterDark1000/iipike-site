@@ -37,12 +37,12 @@ ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-w
 <option value="vk_summary">VK текст</option><option value="dzen_title">Дзен заголовок</option>
 </select></div><p id="status" aria-live="polite" class="muted">Проверяю кандидатов в GitHub…</p>
 <div id="info" class="meta"></div></section>
+<section><h2>Ответ редактора корректору</h2>
+<div id="editor-reply" class="result">Нет запроса, требующего ответа.</div></section>
 <section><div class="panes">
 <div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
 <div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
 </div></section>
-<section><h2>Ответ автономного редактора</h2>
-<p id="editor-reply" class="muted">Нет запроса, требующего ответа.</p></section>
 <section><h2>Редакторский диагноз</h2>
 <div id="quality" class="meta">—</div></section>
 <section><h2>Что изменено</h2><ul id="changes"><li>Нет записанной корректуры.</li></ul>
@@ -67,7 +67,8 @@ function render(item){
  const statusName={
   needs_editor_attention:"Требуется внимание журналиста",
   ready_for_comparison:"Готово к сравнению",
-  no_change_recommended:"Корректура не требуется"
+  no_change_recommended:"Корректура не требуется",
+  needs_chief_editor:"Итоговый вопрос главреду"
  };
  byId("status").textContent=(statusName[item.status]||"Неизвестный статус")+" · r"+item.source_revision+" v"+item.copyedit_version;
  byId("info").textContent="Оригинал Git blob: "+item.source_draft_blob_sha+" · Сохранено: "+item.created_at;
@@ -95,7 +96,7 @@ function render(item){
 async function loadReply(item, filename, token){
  const target=byId("editor-reply");
  if(item.status!=="needs_editor_attention"){
-  target.textContent="Обратная проверка фактов не требуется.";
+  target.textContent=item.status==="needs_chief_editor"?"Корректор рассмотрел ответ редактора и передал итоговый нерешаемый вопрос главреду. Причины указаны ниже.":"Обратная проверка фактов для этой версии не требуется.";
   return;
  }
  target.textContent="Проверяю ответ редактора…";
@@ -113,11 +114,18 @@ async function loadReply(item, filename, token){
      reply.copyedit_version!==item.copyedit_version || reply.worker!=="hpii-auto-editor")
      throw Error("Ответ не совпадает с исходным запросом");
   const kind=reply.status==="revised"
-   ?"Редактор проверил вопрос и создал новую ревизию r"+reply.result_revision
+   ?"Редактор проверил вопрос, создал новую ревизию r"+reply.result_revision+" и вернул её корректору"
    :reply.status==="needs_human_decision"
-    ?"Редактор проверил вопрос и передал его главреду"
+    ?"Редактор не смог подтвердить факт. Ответ возвращён корректору для решения"
     :"Неизвестный исход";
-  target.textContent=kind+". "+reply.note;
+  target.replaceChildren();
+  const head=document.createElement("strong");head.textContent=kind+".";
+  const note=document.createElement("p");note.textContent=reply.note;
+  const link=document.createElement("a");link.href="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/auto_copyedit_responses/"+encodeURIComponent(filename);link.textContent="Ответ в GitHub";link.target="_blank";link.rel="noopener noreferrer";
+  target.append(head,note,link);
+  if(reply.checked_sources?.length){
+   const sources=document.createElement("p");sources.className="muted";sources.textContent="Проверено источников: "+reply.checked_sources.length;target.append(sources);
+  }
  }catch(e){
   if(token===version)target.textContent="Ответ редактора пока не удалось проверить: "+e.message;
  }
@@ -147,11 +155,11 @@ try{
  if(!response.ok)throw Error("GitHub HTTP "+response.status);
  const list=await response.json();
  rows=list.filter(x=>/^[a-z0-9-]+-r[1-9]\d*-v[1-9]\d*\.json$/.test(x.name)&&x.download_url)
-  .map(x=>({...x,article_id:x.name.replace(/-r[1-9]\d*-v[1-9]\d*\.json$/,""),version:Number(x.name.match(/-v(\d+)\.json$/)[1])}))
-  .sort((a,b)=>a.article_id.localeCompare(b.article_id));
+  .map(x=>({...x,article_id:x.name.replace(/-r[1-9]\d*-v[1-9]\d*\.json$/,""),version:Number(x.name.match(/-v(\d+)\.json$/)[1]),revision:Number(x.name.match(/-r(\d+)-v\d+\.json$/)[1])}))
+  .sort((a,b)=>a.article_id.localeCompare(b.article_id)||b.revision-a.revision||b.version-a.version);
  select.replaceChildren();
  if(!rows.length){select.add(new Option("Кандидатов ещё нет"));byId("status").textContent="Первые тексты ещё не проверены корректором.";return}
- rows.forEach((x,i)=>select.add(new Option(x.article_id+" (v"+x.version+")",String(i))));
+ rows.forEach((x,i)=>select.add(new Option(x.article_id+" (r"+x.revision+" · v"+x.version+")",String(i))));
  await load(0);
 }catch(e){select.replaceChildren(new Option("Ошибка загрузки"));byId("status").textContent="Не удалось прочитать GitHub: "+e.message}
 })();

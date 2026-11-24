@@ -102,6 +102,12 @@ class CopyeditFeedbackTests(unittest.TestCase):
             paths[f"{DRAFTS}/{self.ident}.json"] = json.dumps(source).encode()
             self.assertEqual(pending("example-branch"), [])
 
+    def test_final_chief_editor_case_is_not_a_new_editor_request(self):
+        terminal = dict(self.copyedit, status="needs_chief_editor")
+        with patch("scripts.check_auto_copyeditor_feedback.files_at", side_effect=lambda ref, folder: [f"{COPIES}/{self.name}"] if folder == COPIES else []), \
+             patch("scripts.check_auto_copyeditor_feedback.read_at", return_value=json.dumps(terminal).encode()):
+            self.assertEqual(pending("example-branch"), [])
+
     def test_answered_feedback_not_pending(self):
         def fake_list(_ref, folder):
             if folder == COPIES:

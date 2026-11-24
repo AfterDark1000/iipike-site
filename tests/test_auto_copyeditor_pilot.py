@@ -191,6 +191,16 @@ class ChiefCopyeditorPilotTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "No-change candidate"):
             self.check(c)
 
+    def test_final_chief_editor_escalation_preserves_original(self):
+        c = copy.deepcopy(self.candidate)
+        c["status"] = "needs_chief_editor"
+        c["edited_text"] = copy.deepcopy(c["original_text"])
+        c["editor_flags"] = ["После ответа журналиста нельзя подтвердить центральный факт статьи."]
+        self.assertEqual(self.check(c)["status"], "needs_chief_editor")
+        c["editor_flags"] = []
+        with self.assertRaisesRegex(ValueError, "Chief-editor escalation"):
+            self.check(c)
+
     def test_escalation_requires_flags_clean_revisions_have_none(self):
         c = copy.deepcopy(self.candidate)
         c["status"] = "needs_editor_attention"
