@@ -8364,5 +8364,29 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Четыре эксперимента с ИИ: создатель Elona сделал игру за три часа, а нейросеть стала стримером",
+    "summary": "Четыре игровых эксперимента: автор Elona сделал игру с Claude за три часа, другой разработчик создал сказку на 14 глав, третий — браузерную игру в духе Dark Souls, а четвёртый — виртуального стримера.",
+    "published": "2026-11-24",
+    "source_url": "https://noanoa.itch.io/echo-noein-battlefront",
+    "cover": "assets/editorial/ai-four-game-experiments-20261115.webp",
+    "rubric": "made-with-ai",
+    "vk_title": "🎮 Четыре ИИ-ЭКСПЕРИМЕНТА: от создания игр за три часа до виртуального стримера",
+    "vk_summary": "Создатель культовой Elona поручил Claude разработать новую игру за три часа. Другие энтузиасты показали рисованную сказку на 14 глав, браузерную игру в духе Dark Souls и ИИ-стримера, который сам выбирает игры и реагирует на зрителей.",
+    "published_at_utc": "2026-11-24T14:45:47Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-15",
+    "id": "ai-four-game-experiments-20261115",
+    "url": "articles/ai-four-game-experiments-20261115/",
+    "topics": [
+      "development"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
