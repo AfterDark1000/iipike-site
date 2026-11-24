@@ -3865,12 +3865,12 @@
       "summary": "18 ноября: продление ограничений строительства дата-центров; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T03:12:00+00:00",
       "review_started_at": "2026-11-24T04:58:19.148Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверено: 17.11 городской совет единогласно одобрил продление 45-дневного моратория на 10 месяцев 15 дней. Карточка №261175 https://sfgov.legistar.com/LegislationDetail.aspx?GUID=51666051-E9F0-4317-9B4D-BDCDAE90399A&ID=8304816 (статус Mayors Office, вступление в силу ещё не подтверждено). Доклад San Francisco Planning 10.11, стр. 20–21: 50 МВт сопоставимы с мощностью для более 25 тыс. новых жилищ, пропускная способность 1000 МВт, пиковая нагрузка в 2025 около 800 МВт, новая ЛЭП после одобрения может занять 8+ лет. The Standard https://sfstandard.com/2026/11/17/data-center-moratorium-september-2027/. Перелинковка подтверждена каталогом: 6ae96ea055a910701b153d93, https://dzen.ru/a/auluoFWpEHAbFT2T. Комплект на утверждении; предлагаемый ID san-francisco-data-center-moratorium-extension-20261117."
+      "closed_at": "2026-11-24T05:10:27.334Z",
+      "article_id": "san-francisco-data-center-moratorium-extension-20261117",
+      "note": "Проверено: 17.11 городской совет единогласно одобрил продление 45-дневного моратория на 10 месяцев 15 дней. Карточка №261175 https://sfgov.legistar.com/LegislationDetail.aspx?GUID=51666051-E9F0-4317-9B4D-BDCDAE90399A&ID=8304816 (статус Mayors Office, вступление в силу ещё не подтверждено). Доклад San Francisco Planning 10.11, стр. 20–21: 50 МВт сопоставимы с мощностью для более 25 тыс. новых жилищ, пропускная способность 1000 МВт, пиковая нагрузка в 2025 около 800 МВт, новая ЛЭП после одобрения может занять 8+ лет. The Standard https://sfstandard.com/2026/11/17/data-center-moratorium-september-2027/. Перелинковка подтверждена каталогом: 6ae96ea055a910701b153d93, https://dzen.ru/a/auluoFWpEHAbFT2T. Комплект на утверждении; предлагаемый ID san-francisco-data-center-moratorium-extension-20261117. Утверждено главредом; комплект сохранён, ждёт обложку."
     },
     {
       "id": "n-de61810a72fcfb07",
