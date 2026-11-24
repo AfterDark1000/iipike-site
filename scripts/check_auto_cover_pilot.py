@@ -3,6 +3,7 @@
 import hashlib
 import json
 import re
+import subprocess
 from pathlib import Path
 from PIL import Image, UnidentifiedImageError
 
@@ -58,18 +59,31 @@ def validate(meta_path: Path) -> None:
         raise ValueError("WebP does not match recorded Git blob")
     draft = ROOT / "auto_drafts" / (article_id + ".json")
     decision = ROOT / "auto_decisions" / (article_id + "-r" + revision + ".json")
-    draft_bytes, decision_bytes = draft.read_bytes(), decision.read_bytes()
-    if git_blob_sha(draft_bytes) != info["source_draft_blob_sha"]:
-        raise ValueError("Text draft changed")
-    if git_blob_sha(decision_bytes) != info["source_decision_blob_sha"]:
-        raise ValueError("Approval decision changed")
-    body, approval = json.loads(draft_bytes), json.loads(decision_bytes)
+    draft_sha = info["source_draft_blob_sha"]
+    if not isinstance(draft_sha, str) or not re.fullmatch(r"[a-f0-9]{40}", draft_sha):
+        raise ValueError("Invalid source draft Git SHA")
+    draft_bytes = draft.read_bytes() if draft.exists() else b""
+    # Historical cover candidates survive later text revisions; audit the exact
+    # historical source blob, never transfer an old candidate to the current rN.
+    if git_blob_sha(draft_bytes) != draft_sha:
+        draft_bytes = subprocess.check_output(["git", "cat-file", "blob", draft_sha])
+    if git_blob_sha(draft_bytes) != draft_sha:
+        raise ValueError("Text draft SHA mismatch")
+    body = json.loads(draft_bytes)
     if (body["article_id"] != article_id or body["revision"] != int(revision)
             or body["updated_at"] != info["text_updated_at"]
-            or approval["status"] != "text_approved_cover_pending"
-            or approval["action"] != "approve_text"
-            or approval["draft_blob_sha"] != info["source_draft_blob_sha"]):
-        raise ValueError("No matching text approval")
+            or body["status"] != "ready_for_review"):
+        raise ValueError("No matching ready text revision")
+    decision_sha = info["source_decision_blob_sha"]
+    if decision_sha is not None:
+        decision_bytes = decision.read_bytes()
+        if git_blob_sha(decision_bytes) != decision_sha:
+            raise ValueError("Approval decision changed")
+        approval = json.loads(decision_bytes)
+        if (approval["status"] != "text_approved_cover_pending"
+                or approval["action"] != "approve_text"
+                or approval["draft_blob_sha"] != draft_sha):
+            raise ValueError("No matching text approval")
     if any(not isinstance(info[k], str) or not info[k].strip() for k in ("concept", "headline", "created_at")):
         raise ValueError("Empty cover content")
 

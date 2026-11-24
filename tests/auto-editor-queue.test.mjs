@@ -53,6 +53,15 @@ test("new ready draft requires an actual owner text decision",async()=>{
  assert.equal((await model()(doc)).group,"review");
  assert.equal((await model()(doc)).label,"Проверить текст");
 });
+test("parallel approvals distinguish both open, cover first and text still needed",async()=>{
+ const base={["auto_covers/"+key+"-v1.json"]:cover(1)};
+ assert.match((await model(base)(doc)).label,/текст и обложку/);
+ const cls=model({...base,["auto_cover_decisions/"+key+"-v1.json"]:coverDecision(1,"approve_cover","cover_approved_handoff_pending")});
+ const state=await cls(doc);assert.equal(state.group,"review");assert.match(state.label,/проверить текст/);
+});
+test("refresh is above growing list",()=>{
+ assert.ok(html.indexOf('id="reload"')<html.indexOf('id="list"'));
+});
 test("drafting and blocked are not falsely marked ready for chief editor review",async()=>{
  assert.equal((await model()({...doc,status:"drafting"})).group,"active");
  assert.equal((await model()({...doc,status:"blocked"})).group,"error");

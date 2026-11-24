@@ -104,6 +104,30 @@ class HandoffTests(unittest.TestCase):
         self.assertEqual(marker["status"],"handed_off_to_site_queue")
         self.assertEqual(marker["social_posts"],"prepared_in_auto_draft_not_dispatched")
         self.assertLess(len(image),800000)
+    def test_cover_first_still_requires_exact_human_text_approval(self):
+        objects,reader,paths=self.fixture()
+        cover=json.loads(objects[paths["cover_meta"]])
+        cover["source_decision_blob_sha"]=None
+        objects[paths["cover_meta"]]=encoded(cover)
+        approval=json.loads(objects[paths["decision"]])
+        approval["source_text_decision_blob_sha"]=None
+        approval["cover_metadata_blob_sha"]=blob_sha(objects[paths["cover_meta"]])
+        objects[paths["decision"]]=encoded(approval)
+        with patch.object(h,"read_git",side_effect=reader):
+            _,_,_,raw=h.build_candidate("origin/editorial-intake",ROOT,ID,REV,VERSION)
+            self.assertEqual(json.loads(raw)["text_decision_blob_sha"],blob_sha(objects[paths["text"]]))
+            text=json.loads(objects[paths["text"]])
+            del objects[paths["text"]]
+            with self.assertRaises(KeyError):
+                h.build_candidate("origin/editorial-intake",ROOT,ID,REV,VERSION)
+            objects[paths["text"]]=encoded(dict(text,action="reject",status="rejected"))
+            with self.assertRaises(ValueError):
+                h.build_candidate("origin/editorial-intake",ROOT,ID,REV,VERSION)
+            objects[paths["text"]]=encoded(text)
+            draft=json.loads(objects[paths["draft"]])
+            objects[paths["draft"]]=encoded(dict(draft,revision=REV+1))
+            with self.assertRaises(ValueError):
+                h.build_candidate("origin/editorial-intake",ROOT,ID,REV,VERSION)
     def test_autonomous_vk_multiline_formatting_does_not_block_handoff(self):
         objects, reader, paths = self.fixture()
         raw = "\n\nМэтт добавил четыре коробки яиц.\n\nПользователь подтвердил заказ."

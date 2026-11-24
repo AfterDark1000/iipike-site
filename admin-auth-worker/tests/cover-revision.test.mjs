@@ -30,7 +30,7 @@ test("v2 cover review accepts only explicitly rejected v1, protects source and w
  const approve={article_id,revision,updated_at:date,action:"approve_text",status:"text_approved_cover_pending",draft_blob_sha:"draft-sha"};
  const cover={schema_version:1,article_id,text_revision:revision,text_updated_at:date,status:"ready_for_cover_review",source_draft_blob_sha:"draft-sha",source_decision_blob_sha:"text-sha",image_path:"editorial_inbox/auto_covers/"+article_id+"-r3-v2.webp",image_blob_sha:sha,width:1600,height:900};
  const parent={article_id,text_revision:3,text_updated_at:date,cover_version:1,action:"revise_cover",status:"cover_revision_requested",note:"Нужен одетый персонаж и другой стиль"};
- let parentStatus="missing",writes=[];
+ let parentStatus="missing",textState="approved",writes=[];
  globalThis.fetch=async(url,options={})=>{
    const u=String(url);
    if(u==="https://github.com/login/oauth/access_token")return Response.json({access_token:"user-token"});
@@ -38,7 +38,7 @@ test("v2 cover review accepts only explicitly rejected v1, protects source and w
    assert.ok(u.startsWith(base),u);
    const p=u.slice(base.length).split("?")[0];
    if(p==="editorial_inbox/auto_drafts/"+article_id+".json")return box(draft,"draft-sha");
-   if(p==="editorial_inbox/auto_decisions/"+article_id+"-r3.json")return box(approve,"text-sha");
+   if(p==="editorial_inbox/auto_decisions/"+article_id+"-r3.json")return textState==="missing"?Response.json({message:"Not Found"},{status:404}):box(textState==="rejected"?{...approve,action:"reject",status:"rejected"}:approve,"text-sha");
    if(p==="editorial_inbox/auto_covers/"+article_id+"-r3-v2.json")return box(cover,"cover-meta-sha");
    if(p==="editorial_inbox/auto_covers/"+article_id+"-r3-v2.webp")return Response.json({type:"file",sha});
    if(p==="editorial_inbox/auto_cover_decisions/"+article_id+"-r3-v1.json")
@@ -71,5 +71,21 @@ test("v2 cover review accepts only explicitly rejected v1, protects source and w
   assert.equal(writes.length,1);
   assert.equal(writes[0].cover_version,2);
   assert.equal(writes[0].status,"cover_approved_handoff_pending");
+  writes.length=0;
+  textState="missing";
+  // Legacy candidate cannot be approved after its bound decision vanishes.
+  res=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+  assert.equal(res.status,409);assert.equal(writes.length,0);
+  cover.source_decision_blob_sha=null;
+  res=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+  assert.equal(res.status,200,await res.clone().text());
+  assert.equal(writes[0].source_text_decision_blob_sha,null);
+  writes.length=0;textState="rejected";
+  res=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+  assert.equal(res.status,409);assert.equal(writes.length,0);
+  textState="approved";
+  res=await call("/api/cover-review",{method:"POST",headers,body:JSON.stringify(payload)});
+  assert.equal(res.status,200,await res.clone().text());
+  assert.equal(writes[0].source_text_decision_blob_sha,"text-sha");
  }finally{globalThis.fetch=original}
 });
