@@ -216,6 +216,12 @@
       "utc_date": "2026-11-23",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
       "source_title": "New in AWS Quick: More capable flows, an updated web experience, and agents that work together"
+    },
+    {
+      "id": "b0689cf87ab570a441c8",
+      "utc_date": "2026-11-24",
+      "source_url": "https://openai.com/index/introducing-shirudo",
+      "source_title": "OpenAI and Cisco introduce Shirudo"
     }
   ]
 }
