@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "article_id": "volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda",
+  "text_revision": 1,
+  "text_updated_at": "2026-11-23T14:59:46Z",
+  "cover_version": 1,
+  "cover_blob_sha": "db36b326c6bdc810463eb27756b4e0e454e063e4",
+  "cover_metadata_blob_sha": "2c6ab998f47186a493ee6a00788d473279a4b921",
+  "source_draft_blob_sha": "82850592b2513e2de89216b06b6dedbbb6a0d61d",
+  "source_text_decision_blob_sha": "b42e4b7f7585fc2f4623cec59fce86223049522e",
+  "action": "approve_cover",
+  "note": "",
+  "status": "cover_approved_handoff_pending",
+  "decided_by": "AfterDark1000",
+  "decided_at": "2026-11-24T04:10:35.670Z",
+  "channel": "hpii-admin-oauth-gateway"
+}
