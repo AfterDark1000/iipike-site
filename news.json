@@ -8466,5 +8466,32 @@
       "claude",
       "claude-code"
     ]
+  },
+  {
+    "title": "Сайты запретили сбор данных. Что сделали ИИ-агенты?",
+    "summary": "В тесте ScrapeBench пять из шести ИИ-агентов соблюдали запреты сайтов реже чем в 5% заданий. Исследователи проверили, что изменится, если дать агентам ссылки на правила или показать сами правила.",
+    "published": "2026-11-24",
+    "source_url": "https://arxiv.org/abs/2611.11306",
+    "cover": "assets/editorial/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12.webp",
+    "rubric": "news",
+    "vk_title": "🔎 Сайт запретил СБОР ДАННЫХ. Остановится ли ИИ?",
+    "vk_summary": "В ScrapeBench шести ИИ-агентам поручили собрать данные с главных страниц. Пять из шести соблюдали запрет сайтов реже чем в 5% заданий. Даже когда GPT-5.2 давали ссылки на правила, она отказывалась от сбора лишь в 14,2% случаев.",
+    "published_at_utc": "2026-11-24T18:15:40Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-08",
+    "id": "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
+    "url": "articles/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12/",
+    "topics": [
+      "agents",
+      "search",
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
