@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "bedba7e18599d660ebdc382c34a1f470ae62d32a",
-  "source_blob_sha": "7f9ff6c3e5340cc66d80c8169e5876272c11373b",
-  "snapshot_date": "2026-11-23",
+  "source_commit": "c92a77aa6989ab8ccb5d6ec9706a4458a3da8c1b",
+  "source_blob_sha": "192bd4abdf983b5253ad874c16f0adb53bd71f88",
+  "snapshot_date": "2026-11-24",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b046b921a98a4173e8040ce",
+      "title": "ИИ-программист случайно выложил секретный ключ в интернет, и хакер скачал чужие запросы к нейросетям",
+      "dzen_url": "https://dzen.ru/a/awRrkhqYpBc-gEDO",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-помощник программиста случайно открыл постороннему человеку доступ к переписке клиентов с нейросетями, а автоматическая защита заметила ошибку слишком поздно. 21 ноября компания Together AI признала утечку пользовательских запросов, отправленных летом 2026 года. Причиной оказался секретный ключ, который ИИ-агент добавил в общедоступный репозиторий с программным кодом на GitHub. Разработчики Together AI работали на",
+      "published_at_utc": "2026-11-24T04:01:08+00:00"
+    },
+    {
+      "dzen_id": "6b046b40a4264217cef1cfd6",
+      "title": "Ваши секреты из чатов с ИИ могли попасть к хакерам: OpenRouter отключила трёх поставщиков",
+      "dzen_url": "https://dzen.ru/a/awRrQKQmQhfO8c_W",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Хакеры перехватывали запросы к нейросетям и пытались использовать найденные в них секретные ключи, даже когда пользователи включали режим повышенной конфиденциальности. 22 ноября OpenRouter, сервис для доступа к моделям разных разработчиков, объявил об отключении трёх поставщиков ИИ. Ещё 125 точек доступа к моделям лишились статуса Zero Data Retention (ZDR), который предполагает отсутствие хранения пользовательских з",
+      "published_at_utc": "2026-11-24T03:02:28+00:00"
+    },
+    {
+      "dzen_id": "6b046aeb9754767e44caa8a8",
+      "title": "Хакер дал ИИ одну команду, и тот нашёл неизвестную дыру за 11 минут",
+      "dzen_url": "https://dzen.ru/a/awRq65dUdn5Eyqio",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "ИИ-агенты взломали университетский сервер, а хакеры оставили собственный пульт управления ими открытым без пароля. 20 ноября Amazon рассказала, как её специалисты обнаружили операцию по взлому университетов Восточной Азии. 10 сентября они нашли доступную из интернета панель Cairn, системы для координации нескольких ИИ-агентов. В ней сохранилась история атак с заданиями оператора и действиями нейросетей. Злоумышленник",
+      "published_at_utc": "2026-11-23T19:30:59+00:00"
+    },
     {
       "dzen_id": "6b046aa5bf87f1605c54cc4f",
       "title": "Google доверила Безосу запуск космических ИИ-серверов после испытания с Маском",
