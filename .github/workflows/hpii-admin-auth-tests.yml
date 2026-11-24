@@ -6,6 +6,7 @@ on:
     paths:
       - 'admin-auth-worker/**'
       - 'admin/auth/hpii-auth-client.js'
+      - 'admin/auth/article-preview.mjs'
       - 'admin/auth/gate.js'
       - '.github/workflows/hpii-admin-auth-tests.yml'
 
