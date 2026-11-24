@@ -6,6 +6,8 @@ on:
     paths:
       - 'admin/index.html'
       - 'admin/auto-editor/**'
+      - 'admin/auto-corrector/**'
+      - 'tests/auto-corrector-picker.test.mjs'
       - 'admin/pool/**'
       - 'tests/pool-view.test.mjs'
       - 'admin/commenting/**'
@@ -37,10 +39,11 @@ jobs:
           node --check admin/pool/pool-data.mjs
           node --test tests/pool-view.test.mjs
           node --test tests/auto-editor-queue.test.mjs
+          node --test tests/auto-corrector-picker.test.mjs
           python3 - <<'PY'
           from pathlib import Path
           import re, subprocess
-          for name in ['admin/index.html', 'admin/auto-editor/index.html', 'admin/commenting/index.html', 'admin/pool/index.html']:
+          for name in ['admin/index.html', 'admin/auto-editor/index.html', 'admin/auto-corrector/index.html', 'admin/commenting/index.html', 'admin/pool/index.html']:
               html=Path(name).read_text(encoding='utf-8')
               assert 'src="/admin/auth/gate.js"' in html, name
               assert 'html:not(.hpii-authorized)' in html, name
