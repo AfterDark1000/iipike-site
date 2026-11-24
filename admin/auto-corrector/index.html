@@ -11,7 +11,18 @@ header{background:#162824;color:white;padding:20px max(18px,calc((100vw - 1250px
 header a{color:#ccebd9}header h1{margin:10px 0 4px;font-size:24px}header p{margin:0;color:#c2d4c9}
 main{max-width:1300px;margin:auto;padding:18px}section{background:#fff;border:1px solid #d8dcd5;border-radius:12px;padding:16px;margin-bottom:16px}
 .notice{padding:12px 14px;border-left:4px solid #517d69;background:#eef4ef;border-radius:6px;margin-bottom:16px}
-.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.tools select{flex:1;min-width:225px}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.picker{display:grid;grid-template-columns:minmax(0,1fr) minmax(160px,220px);gap:14px;align-items:start}
+.picker-group{min-width:0;display:grid;gap:7px}.picker-group label{font-size:13px;font-weight:650;color:inherit}
+.picker select{width:100%;min-width:0;max-width:100%;text-overflow:ellipsis}
+#selected-title{font-size:18px;line-height:1.4;margin:14px 0 8px;overflow-wrap:anywhere}
+.picker-status{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+#status{display:inline-block;margin:0;border-radius:6px;padding:4px 8px;font-weight:650;background:#edf0ed;color:#52645b}
+#status[data-state="ready_for_comparison"]{background:#e2f1e7;color:#24643d}
+#status[data-state="needs_editor_attention"],#status[data-state="needs_chief_editor"]{background:#fff0db;color:#87541b}
+#status[data-state="error"]{background:#fae5e2;color:#9a3028}
+#info{margin-top:8px}#info summary{cursor:pointer}#technical-info{overflow-wrap:anywhere;white-space:pre-wrap;margin:7px 0 0}
+@media(max-width:650px){.picker{grid-template-columns:minmax(0,1fr)}#selected-title{font-size:16px}}
 select{border:1px solid #c5cfc8;background:white;color:#252824;border-radius:8px;padding:10px;font:inherit}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;margin:0}
 .panes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pane{border:1px solid #e0e5e0;border-radius:10px;padding:15px;min-width:0;background:#fcfcfa}
@@ -29,15 +40,17 @@ button{font:inherit;border:1px solid #a4b4a8;border-radius:8px;padding:10px 14px
 <h1>Шеф-корректор · пилот</h1><p>Исходный текст и литературная правка рядом. Сравнение и выбор версии текста.</p></header>
 <main>
 <div class="notice"><strong>Выбор версии текста.</strong> Принятие корректуры переносит её в новую ревизию основного черновика. После этого отдельно утверди текст и обложку в панели редактора.</div>
-<section><div class="tools">
-<label for="choose">Материал</label><select id="choose"><option>Загружаю…</option></select>
-<label for="field">Сравнить</label><select id="field">
+<section><div class="picker">
+<div class="picker-group"><label for="choose">Материал</label><select id="choose" disabled><option>Загружаю…</option></select></div>
+<div class="picker-group"><label for="field">Сравнить</label><select id="field">
 <option value="article_markdown">Статья</option><option value="title">Заголовок</option>
 <option value="summary">Анонс</option><option value="threads_text">Threads</option>
 <option value="x_text">X</option><option value="vk_title">VK заголовок</option>
 <option value="vk_summary">VK текст</option><option value="dzen_title">Дзен заголовок</option>
-</select></div><p id="status" aria-live="polite" class="muted">Проверяю кандидатов в GitHub…</p>
-<div id="info" class="meta"></div></section>
+</select></div></div>
+<h2 id="selected-title" hidden></h2>
+<div class="picker-status"><p id="status" aria-live="polite" class="muted">Проверяю кандидатов в GitHub…</p><span id="selected-version" class="muted"></span></div>
+<details id="info" class="meta" hidden><summary>Технические сведения</summary><p id="technical-info"></p></details></section>
 <section><h2>Ответ редактора корректору</h2>
 <div id="editor-reply" class="result">Нет запроса, требующего ответа.</div></section>
 <section><div class="panes">
@@ -117,16 +130,39 @@ function show(){
  byId("before").textContent=active?.original_text?.[key]||"—";
  byId("after").textContent=active?.edited_text?.[key]||"—";
 }
-function render(item){
- active=item;
- const statusName={
+const statusName={
   needs_editor_attention:"Требуется внимание журналиста",
   ready_for_comparison:"Готово к сравнению",
   no_change_recommended:"Корректура не требуется",
   needs_chief_editor:"Итоговый вопрос главреду"
  };
- byId("status").textContent=(statusName[item.status]||"Неизвестный статус")+" · r"+item.source_revision+" v"+item.copyedit_version;
- byId("info").textContent="Оригинал Git blob: "+item.source_draft_blob_sha+" · Сохранено: "+item.created_at;
+function candidateTitle(item){
+ const edited=item?.edited_text?.title,original=item?.original_text?.title;
+ return typeof edited==="string"&&edited.trim()?edited.trim():typeof original==="string"&&original.trim()?original.trim():"";
+}
+function matchesRow(item,row){
+ return item?.schema_version===2&&item.worker==="hpii-chief-copyeditor"&&item.article_id===row.article_id&&
+  item.source_revision===row.revision&&item.copyedit_version===row.version;
+}
+async function readPickerLabel(row){
+ try{
+  const response=await fetch(row.download_url,{cache:"no-store"});
+  if(!response.ok)throw Error("GitHub HTTP "+response.status);
+  const item=await response.json();
+  if(!matchesRow(item,row))throw Error("Несовпадение версии");
+  return candidateTitle(item);
+ }catch{return ""}
+}
+function render(item){
+ active=item;
+ const heading=byId("selected-title");
+ heading.textContent=candidateTitle(item)||"Материал без заголовка";
+ heading.hidden=false;
+ byId("status").textContent=statusName[item.status]||"Неизвестный статус";
+ byId("status").dataset.state=item.status;
+ byId("selected-version").textContent="r"+item.source_revision+" · v"+item.copyedit_version;
+ byId("technical-info").textContent="ID: "+item.article_id+"\nОригинал Git blob: "+item.source_draft_blob_sha+"\nСохранено: "+item.created_at;
+ byId("info").hidden=false;
  const quality=byId("quality");quality.replaceChildren();
  const headings=[
   ["source_event","Что произошло в оригинале"],
@@ -188,7 +224,7 @@ async function loadReply(item, filename, token){
 async function load(index){
  const v=++version;
  reviewReady=false;controls.hidden=true;activeRow=null;
- select.disabled=true;byId("status").textContent="Читаю сохранённую корректуру…";
+ select.disabled=true;active=null;byId("status").textContent="Читаю сохранённую корректуру…";delete byId("status").dataset.state;byId("selected-title").hidden=true;byId("selected-version").textContent="";byId("info").hidden=true;show();
  try{
   const r=await fetch(rows[index].download_url,{cache:"no-store"});
   if(!r.ok)throw Error("Не удалось прочесть файл: GitHub HTTP "+r.status);
@@ -198,9 +234,9 @@ async function load(index){
      !item.quality_review || item.article_id!==rows[index].article_id ||
      item.copyedit_version!==rows[index].version || item.source_revision!==rows[index].revision || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
     throw Error("Данные корректуры не соответствуют схеме");
-  activeRow=rows[index];render(item);
+  activeRow=rows[index];select.options[index].textContent=(candidateTitle(item)||"Материал "+(index+1))+" · r"+item.source_revision+" v"+item.copyedit_version;render(item);
   await Promise.all([loadReply(item,rows[index].name,v),loadReview(item,rows[index],v)]);
- }catch(e){byId("status").textContent="Ошибка: "+e.message}
+ }catch(e){byId("status").textContent="Ошибка: "+e.message;byId("status").dataset.state="error"}
  finally{select.disabled=false}
 }
 field.addEventListener("change",show);
@@ -215,7 +251,10 @@ try{
   .sort((a,b)=>a.article_id.localeCompare(b.article_id)||b.revision-a.revision||b.version-a.version);
  select.replaceChildren();
  if(!rows.length){select.add(new Option("Кандидатов ещё нет"));byId("status").textContent="Первые тексты ещё не проверены корректором.";return}
- rows.forEach((x,i)=>select.add(new Option(x.article_id+" (r"+x.revision+" · v"+x.version+")",String(i))));
+ // The directory listing only contains filenames. Read the stored candidates
+ // for their human titles; keep SHA/identity bindings and review logic intact.
+ const titles=await Promise.all(rows.map(readPickerLabel));
+ rows.forEach((x,i)=>select.add(new Option((titles[i]||"Материал "+(i+1))+" · r"+x.revision+" v"+x.version,String(i))));
  await load(0);
 }catch(e){select.replaceChildren(new Option("Ошибка загрузки"));byId("status").textContent="Не удалось прочитать GitHub: "+e.message}
 })();
