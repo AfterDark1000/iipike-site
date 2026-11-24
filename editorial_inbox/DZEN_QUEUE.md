@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 245 · **В каталоге Дзена подтверждены:** 210 · **Не подтверждены, уже на сайте:** 9 · **Не подтверждены, ждут сайт:** 26
+**Всего одобренных:** 246 · **В каталоге Дзена подтверждены:** 210 · **Не подтверждены, уже на сайте:** 9 · **Не подтверждены, ждут сайт:** 27
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -56,6 +56,7 @@
 | 24 | [В городе OpenAI и Anthropic запретили строительство новых дата-центров на 10 месяцев](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/san-francisco-data-center-moratorium-extension-20261117.md) | **Не ранее 25.11.2026 16:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/san-francisco-data-center-moratorium-extension-20261117.webp) |
 | 25 | [Нейросети записали школы и машины скорой помощи в список военных целей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/vals-ai-military-targeting-safety-20261117.md) | **Не ранее 25.11.2026 17:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/vals-ai-military-targeting-safety-20261117.webp) |
 | 26 | [В Нью-Йорке предложили лишать судей должности за выдумки нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/new-york-judges-ai-fabricated-citations-bill-20261116.md) | **Не ранее 25.11.2026 18:07 (Усть-Катав)**; пауза до 24.11.2026 11:36 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/new-york-judges-ai-fabricated-citations-bill-20261116.webp) |
+| 27 | [Google увеличила срок хранения переписки с Gemini с трёх дней до двух месяцев](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-temporary-chat-retention-20261116.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/google-gemini-temporary-chat-retention-20261116.webp) |
 
 ## 3. Подтверждены опубликованными в Дзене
 
