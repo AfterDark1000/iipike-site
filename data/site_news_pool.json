@@ -4305,7 +4305,7 @@
       "review_started_at": "2026-11-24T08:34:18.363Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Группа №288+287. Официальный отчёт NVIDIA 17.11.2026 https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx и SEC https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27pr.htm : выручка $115,8 млрд (+103%), GAAP чистая прибыль $65,3 млрд (+105%), дата-центры $107,6 млрд (+110%), остальное $8,2 млрд. Прогноз $130 млрд ±3%, квартал на неделю длиннее, без китайских продаж вычислительных продуктов для дата-центров. №287: начаты поставки Vera Rubin NVL72, стойки работают у CoreWeave, Google Cloud, Azure, OCI, Nebius; 72 GPU и 36 CPU по https://www.nvidia.com/en-us/data-center/dgx-vera-rubin-nvl72/ . Reuters 20.11 о проверке бухгалтерии: https://www.reuters.com/world/us-secs-nvidias-probe-is-examining-potential-accounting-issues-sources-say-2026-11-20/ . Каталог: 6b01845ecd21ad0860e89a65 https://dzen.ru/a/awGEXs0hrQhg6Jpl, 6b0315ac5e16dc5f0883bada https://dzen.ru/a/awMVrF4W3F8Ig7ra. Прямой дубль финансового отчёта не выявлен; №248 отдельный бенчмарк. @NVIDIA подтверждён на nvidia.com/en-us/contact/social/. ID nvidia-q3-fy2027-earnings-vera-rubin-20261117. На утверждении."
     },
     {
       "id": "n-077945a9711f1a20",
