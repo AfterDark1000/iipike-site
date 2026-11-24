@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261124-gpt62-chat-hot-selection.json",
+  "request_sha256": "cedcd0fd861ec961700bd09221062d0704fa9341908226494dd049f316453cef",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 522,
+      "id": "n-3930e8dede7666d8",
+      "title": "GPT-6.2 добралась до обычного ChatGPT. Подписчикам Plus больше не нужен Work для доступа к новой модели"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}

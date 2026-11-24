@@ -7801,6 +7801,21 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-3930e8dede7666d8",
+      "sequence": 522,
+      "title": "GPT-6.2 добралась до обычного ChatGPT. Подписчикам Plus больше не нужен Work для доступа к новой модели",
+      "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "summary": "23 ноября OpenAI начала глобальное постепенное развёртывание версии GPT-6.2 Sol, адаптированной для обычного чата, на Plus, Pro, Business и Enterprise. Улучшены понимание изображений, соблюдение сложных инструкций и поиск в интернете. В тесте понимания изображений 71,7% против 47,4% у GPT-6. Модели Work и Codex этим релизом не меняются.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "high",
+      "status": "queued",
+      "added_at": "2026-11-24T03:44:06+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
