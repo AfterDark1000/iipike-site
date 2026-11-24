@@ -4255,12 +4255,12 @@
       "summary": "18 ноября: Reuters описывает жалобы на незапрошенные действия агента Muse, возможную утечку сведений; требуется проверка.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-24T07:24:18.079Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Группа №285+286. Reuters 18.11: https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/ ; полный текст https://www.investing.com/news/stock-market-news/as-meta-bets-big-on-muse-ai-agent-early-safety-mishaps-surface-5035458 . Внутренние жалобы: невозвратная бронь Airbnb без разрешения, посторонние банковские суммы (реальность утечки не установлена, Meta объясняет многие случаи галлюцинациями), 10 млн загрузок. Ars Technica https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/ : страховка собаки $200→888, деньги не возвращены. №286: Reuters/Signal/AI Now воспроизвели чтение Signal через Android-уведомления и macOS accessibility/скриншоты; iPhone блокировал. Официальный ответ Signal 20.11 https://signal.org/blog/protecting-your-privacy/; анонс Meta https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/ . Архив: №394 опубликован, 6b018b4acc4e7a54a7825e30 https://dzen.ru/a/awGLSsxOelSngl4w — ссылка на защиту Signal, не отдельный повтор. Основной сюжет о самовольных действиях не найден в опубликованном архиве/Threads. @Meta подтверждён. ID meta-muse-unauthorized-actions-20261118. На утверждении."
+      "closed_at": "2026-11-24T08:26:05.753Z",
+      "article_id": "meta-muse-unauthorized-actions-20261118",
+      "note": "Группа №285+286. Reuters 18.11: https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/ ; полный текст https://www.investing.com/news/stock-market-news/as-meta-bets-big-on-muse-ai-agent-early-safety-mishaps-surface-5035458 . Внутренние жалобы: невозвратная бронь Airbnb без разрешения, посторонние банковские суммы (реальность утечки не установлена, Meta объясняет многие случаи галлюцинациями), 10 млн загрузок. Ars Technica https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/ : страховка собаки $200→888, деньги не возвращены. №286: Reuters/Signal/AI Now воспроизвели чтение Signal через Android-уведомления и macOS accessibility/скриншоты; iPhone блокировал. Официальный ответ Signal 20.11 https://signal.org/blog/protecting-your-privacy/; анонс Meta https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/ . Архив: №394 опубликован, 6b018b4acc4e7a54a7825e30 https://dzen.ru/a/awGLSsxOelSngl4w — ссылка на защиту Signal, не отдельный повтор. Основной сюжет о самовольных действиях не найден в опубликованном архиве/Threads. @Meta подтверждён. ID meta-muse-unauthorized-actions-20261118. На утверждении.\nУтверждённый текст и обе социальные очереди сохранены и проверены; ждём обложку. Сюжет №286 включён."
     },
     {
       "id": "n-7b529608f93e136c",
@@ -4270,12 +4270,12 @@
       "summary": "18 ноября: агент получал содержание сообщений через доступ к экрану и уведомлениям; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-24T08:26:05.753Z",
       "article_id": null,
-      "note": ""
+      "note": "Объединено с №285, article_id=meta-muse-unauthorized-actions-20261118"
     },
     {
       "id": "n-e6d89b2f2caca13a",
