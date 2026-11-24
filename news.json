@@ -7972,7 +7972,9 @@
       "society"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b046bc7bd47565203fd9b4a",
+    "site_first_dzen_url": "https://dzen.ru/a/awRrx71HVlID_ZtK"
   },
   {
     "title": "Главный учёный OpenAI предложил притормозить гонку ИИ, и Альтман согласился",
@@ -7995,7 +7997,9 @@
     "companies": [
       "openai"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b046c0ae9dfbb3c778aa612",
+    "site_first_dzen_url": "https://dzen.ru/a/awRsCunfuzx3iqYS"
   },
   {
     "title": "Сценарист «Таксиста» попросил ИИ написать фильм в его стиле и испугался результата",
@@ -8016,7 +8020,9 @@
       "society"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b046c8b5e16dc5f0830c54a",
+    "site_first_dzen_url": "https://dzen.ru/a/awRsi14W3F8IMMVK"
   },
   {
     "title": "Хуанга вернули в NVIDIA через 11 дней после скандальной отставки, хотя совет директоров был против",
@@ -8064,7 +8070,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b053605dc9f1e1d156a9484",
+    "site_first_dzen_url": "https://dzen.ru/a/awU2BdyfHh0VapSE"
   },
   {
     "title": "В Китае открыли биржу нейросетей. Уже 50 миллионов запросов в день",
@@ -8085,7 +8093,9 @@
       "infrastructure"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b05367bcb7610255cd28815",
+    "site_first_dzen_url": "https://dzen.ru/a/awU2e8t2ECVc0ogV"
   },
   {
     "title": "Компания бывшего главы «Яндекса» замахнулась на $45 млрд, но стройка для Microsoft уже буксует",
@@ -8108,7 +8118,9 @@
       "microsoft",
       "meta"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b053730c454d13298487f0a",
+    "site_first_dzen_url": "https://dzen.ru/a/awU3MMRU0TKYSH8K"
   },
   {
     "title": "Для ИИ придумали 2206 мер защиты. Контроль над агентами почти забыли",
@@ -8128,7 +8140,9 @@
       "safety"
     ],
     "companies": [],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b053787cc4e7a54a7ca2c26",
+    "site_first_dzen_url": "https://dzen.ru/a/awU3h8xOelSnyiwm"
   },
   {
     "title": "Anthropic разрешила компаниям поселить ИИ-агентов Claude на своих серверах",
@@ -8153,7 +8167,9 @@
     ],
     "products": [
       "claude"
-    ]
+    ],
+    "site_first_dzen_id": "6b0537c9569eed7d4d93b11a",
+    "site_first_dzen_url": "https://dzen.ru/a/awU3yVae7X1Nk7Ea"
   },
   {
     "title": "Возвращение Хуанга подняло стоимость NVIDIA почти на триллион долларов за день",
@@ -8176,7 +8192,9 @@
     "companies": [
       "nvidia"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b053816dc9f1e1d156fa29c",
+    "site_first_dzen_url": "https://dzen.ru/a/awU4FtyfHh0Vb6Kc"
   },
   {
     "title": "GPT-6.2 наконец добралась до обычного ChatGPT",
@@ -8201,7 +8219,9 @@
     ],
     "products": [
       "chatgpt"
-    ]
+    ],
+    "site_first_dzen_id": "6b05386b872377540054ae1c",
+    "site_first_dzen_url": "https://dzen.ru/a/awU4a4cjd1QAVK4c"
   },
   {
     "title": "Поисковик Google теперь сможет заглянуть в ваш кошелёк",
@@ -8224,7 +8244,9 @@
     "companies": [
       "google"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b0538b5cd21ad08601b2934",
+    "site_first_dzen_url": "https://dzen.ru/a/awU4tc0hrQhgGyk0"
   },
   {
     "title": "Amazon и eBay требуют убрать ИИ-игрушки с продажи до Рождества",
@@ -8247,7 +8269,9 @@
     "companies": [
       "amazon"
     ],
-    "products": []
+    "products": [],
+    "site_first_dzen_id": "6b055aa57f1b565ad2a8f7eb",
+    "site_first_dzen_url": "https://dzen.ru/a/awVapX8bVlrSqPfr"
   },
   {
     "title": "Google устроила научные конференции для нейросетей",
@@ -8272,7 +8296,9 @@
     ],
     "products": [
       "gemini"
-    ]
+    ],
+    "site_first_dzen_id": "6b055b0ab346137d5a21f2d0",
+    "site_first_dzen_url": "https://dzen.ru/a/awVbCrNGE31aIfLQ"
   },
   {
     "title": "Claude теперь может сам писать, проверять и принимать код без программиста",
