@@ -8123,5 +8123,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Anthropic разрешила компаниям поселить ИИ-агентов Claude на своих серверах",
+    "summary": "Anthropic открыла закрытую бету самостоятельного размещения инфраструктуры Claude Managed Agents. Управление и история агентов могут работать на серверах клиента, а модель остаётся у внешнего провайдера.",
+    "published": "2026-11-24",
+    "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+    "cover": "assets/editorial/anthropic-self-hosted-managed-agents-20261112.webp",
+    "rubric": "news",
+    "vk_title": "🏠 Anthropic разрешила запускать ИИ-АГЕНТОВ CLAUDE на своих серверах",
+    "vk_summary": "Anthropic открыла закрытую бету Self-hosted Claude Managed Agents. Компании смогут размещать сервер управления агентами, рабочие среды и историю заданий в собственной инфраструктуре. Сама модель продолжит работать через Anthropic или выбранного облачного провайдера. Установочный пакет доступен по запросу.",
+    "published_at_utc": "2026-11-24T03:15:41Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-12",
+    "id": "anthropic-self-hosted-managed-agents-20261112",
+    "url": "articles/anthropic-self-hosted-managed-agents-20261112/",
+    "topics": [
+      "agents",
+      "infrastructure"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
