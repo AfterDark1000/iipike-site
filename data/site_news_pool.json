@@ -7585,12 +7585,12 @@
       "summary": "22 ноября. Личный эксперимент автора; со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-23T08:48:47+00:00",
       "review_started_at": "2026-11-24T04:59:28+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-8af39869d610a073"
+      "closed_at": "2026-11-24T06:24:09Z",
+      "article_id": "polly-hudson-ai-suggested-replies-husband-20261122",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8af39869d610a073\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/polly-hudson-ai-suggested-replies-husband-20261122/"
     },
     {
       "id": "n-0162d4886027e702",
