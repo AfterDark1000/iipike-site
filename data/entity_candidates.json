@@ -1343,6 +1343,10 @@
         {
           "article_id": "us-879868-ai-chips-china-licenses-20261119",
           "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
+        },
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
         }
       ]
     },
@@ -2031,6 +2035,18 @@
         {
           "article_id": "gallup-youth-ai-friendship-20261117",
           "source_url": "https://digitalwellnesslab.org/wp-content/uploads/BCH_Gallup-Digital-Life-Insights_Report.pdf"
+        }
+      ]
+    },
+    {
+      "key": "synopsys",
+      "name": "Synopsys",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
         }
       ]
     }
@@ -4018,6 +4034,32 @@
         {
           "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
           "source_url": "https://www.pangram.com/"
+        }
+      ]
+    },
+    {
+      "key": "jalapeno",
+      "name": "Jalapeño",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+        }
+      ]
+    },
+    {
+      "key": "gpt-synopsys",
+      "name": "GPT-Synopsys",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
         }
       ]
     }
