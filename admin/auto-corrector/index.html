@@ -41,6 +41,8 @@ ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-w
 <div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
 <div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
 </div></section>
+<section><h2>Ответ автономного редактора</h2>
+<p id="editor-reply" class="muted">Нет запроса, требующего ответа.</p></section>
 <section><h2>Редакторский диагноз</h2>
 <div id="quality" class="meta">—</div></section>
 <section><h2>Что изменено</h2><ul id="changes"><li>Нет записанной корректуры.</li></ul>
@@ -90,6 +92,36 @@ function render(item){
  else{flags.className="muted";flags.textContent="Фактических вопросов редактору не заявлено."}
  show();
 }
+async function loadReply(item, filename, token){
+ const target=byId("editor-reply");
+ if(item.status!=="needs_editor_attention"){
+  target.textContent="Обратная проверка фактов не требуется.";
+  return;
+ }
+ target.textContent="Проверяю ответ редактора…";
+ const url="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_copyedit_responses/"+encodeURIComponent(filename);
+ try{
+  const r=await fetch(url,{cache:"no-store"});
+  if(token!==version)return;
+  if(r.status===404){
+   target.textContent="Ожидает ответа редактора: замечание сохранено, но подтверждения обработки пока нет.";
+   return;
+  }
+  if(!r.ok)throw Error("HTTP "+r.status);
+  const reply=await r.json();
+  if(reply.article_id!==item.article_id || reply.source_revision!==item.source_revision ||
+     reply.copyedit_version!==item.copyedit_version || reply.worker!=="hpii-auto-editor")
+     throw Error("Ответ не совпадает с исходным запросом");
+  const kind=reply.status==="revised"
+   ?"Редактор проверил вопрос и создал новую ревизию r"+reply.result_revision
+   :reply.status==="needs_human_decision"
+    ?"Редактор проверил вопрос и передал его главреду"
+    :"Неизвестный исход";
+  target.textContent=kind+". "+reply.note;
+ }catch(e){
+  if(token===version)target.textContent="Ответ редактора пока не удалось проверить: "+e.message;
+ }
+}
 async function load(index){
  const v=++version;
  select.disabled=true;byId("status").textContent="Читаю сохранённую корректуру…";
@@ -103,6 +135,7 @@ async function load(index){
      item.copyedit_version!==rows[index].version || names.some(x=>typeof item.original_text?.[x]!=="string"||typeof item.edited_text?.[x]!=="string"))
     throw Error("Данные корректуры не соответствуют схеме");
   render(item);
+  await loadReply(item,rows[index].name,v);
  }catch(e){byId("status").textContent="Ошибка: "+e.message}
  finally{select.disabled=false}
 }
