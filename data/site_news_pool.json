@@ -4335,7 +4335,7 @@
       "review_started_at": "2026-11-24T08:45:30.599Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Редактор 36: резерв, проверка судебных документов и архива."
+      "note": "Редактор 36. 18.11.2026 состоялись слушания по апелляции xAI v. Bonta №26-1591: https://knightcolumbia.org/litigation/xai-v-bonta . Апелляция xAI 14.05: https://cdn.knightcolumbia.org/media/documents/ECF-No.-15_2026.05.14_xAI-Opening-Brief.pdf (с. 40–42 документа: аналогия с Coca-Cola, источники, размеры и обработка датасетов как коммерческая тайна; первая поправка, отказ 04.03 в предварительной блокировке). §3111 https://law.justia.com/codes/california/code-civ/division-3/part-4/title-15-2/section-3111/ — с 01.01.2026 краткое описание источников, размеров, наличия персональных и защищённых данных, лицензий, обработки; не публикация самих наборов. Bloomberg 18.11: https://news.bloomberglaw.com/ip-law/ninth-circuit-doubts-x-ai-appeal-of-california-ai-training-law — судья о праве потребителей знать исходные сведения. Решение по апелляции не найдено. Архив 436 записей: прямого дубля и необходимой внутренней ссылки не найдено. @xai подтверждён в docs.x.ai/developers/tools/citations. Компании xai, продукт grok, рубрика news. Предлагаемый ID xai-california-training-data-disclosure-appeal-20261118. На утверждении."
     },
     {
       "id": "n-e87d81ee6e260443",
