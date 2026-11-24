@@ -7815,7 +7815,7 @@
       "review_started_at": "2026-11-24T04:10:05.415Z",
       "closed_at": null,
       "article_id": null,
-      "note": "24.11.2026: по прямому указанию главреда редактор №32 взял горячую новость №522 вне FIFO. Проверить релиз обычного ChatGPT от 23 ноября, условия развёртывания и различия с релизом Astra/Sol от 17 ноября."
+      "note": "24.11.2026: по указанию главреда взята вне FIFO. Подтверждено OpenAI Release Notes от 23.11 https://help.openai.com/en/articles/6825453-chatgpt-release-notes и справкой https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt. Адаптированная GPT-6.2 Sol глобально поэтапно в Chat для Plus/Pro/Business/Enterprise; Instant и Thinking, Pro остаётся GPT-6 Pro; на Plus Medium/High, Extra High не включён. Внутренние тесты: изображения 71,7 против 47,4%; сложные инструкции 78,1 против 62,5%; экспертные задачи при минимальном проверенном усилии 65 против 52%; BrowseComp Extra High 64,5 против 54,4%. Связанный опубликованный материал №261: https://dzen.ru/a/av1SLkmfXjSQdeB4, ID 6afd522e499f5e349075e078. Готовится комплект на утверждение, не опубликован."
     }
   ]
 }
