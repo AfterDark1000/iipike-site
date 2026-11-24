@@ -3985,12 +3985,12 @@
       "summary": "17 ноября: сообщение о привлечении Genesis AI $500 млн для внедрения роботов с особыми перчатками; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T13:05:12+00:00",
       "review_started_at": "2026-11-24T05:55:08.786Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверен пресс-релиз Genesis AI от 17.11: https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html — $500 млн, оценка $3,5 млрд, перчатки для сбора данных о движениях, модель GENE, робот Eno, производственные пилоты. TechCrunch 17.11: более 100 работников, датчики усилия, 30–40 Eno, кисти пока требуют замены через несколько недель; на демонстрации использованы отдельные манипуляторы. №347 о том же раунде (hold/reject_after_verification), Eno публично представлен ещё в июне. Архив проверен на дубли. Комплект на утверждении. ID genesis-ai-robot-gloves-funding-20261117. После утверждения проверить закрытие №347 как дубля."
+      "closed_at": "2026-11-24T06:00:34.303Z",
+      "article_id": "genesis-ai-robot-gloves-funding-20261117",
+      "note": "Проверен пресс-релиз Genesis AI от 17.11: https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html — $500 млн, оценка $3,5 млрд, перчатки для сбора данных о движениях, модель GENE, робот Eno, производственные пилоты. TechCrunch 17.11: более 100 работников, датчики усилия, 30–40 Eno, кисти пока требуют замены через несколько недель; на демонстрации использованы отдельные манипуляторы. №347 о том же раунде (hold/reject_after_verification), Eno публично представлен ещё в июне. Архив проверен на дубли. Комплект на утверждении. ID genesis-ai-robot-gloves-funding-20261117. После утверждения проверить закрытие №347 как дубля. Утверждено главредом; статья и Threads/X сохранены, источники вне тела. Ждём обложку."
     },
     {
       "id": "n-475c880599fcf4e5",
@@ -5185,12 +5185,12 @@
       "summary": "18 ноября. Genesis AI привлекла $500 млн на развитие робототехники и обучение движений по данным людей; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "rejected",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": null,
-      "closed_at": null,
+      "closed_at": "2026-11-24T06:00:34.303Z",
       "article_id": null,
-      "note": ""
+      "note": "Объединено с №267, article_id=genesis-ai-robot-gloves-funding-20261117. Дублирует раунд финансирования Genesis AI $500 млн; утверждённая статья включает обучение по данным движений людей. Утверждение о непоказанном публике роботе некорректно: Eno представлен в июне."
     },
     {
       "id": "n-561fdba2dffc08a0",
