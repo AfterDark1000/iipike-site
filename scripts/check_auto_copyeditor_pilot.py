@@ -25,7 +25,7 @@ from scripts.site_news_pool import utc_time
 
 FIELDS = ("title", "dzen_title", "summary", "article_markdown",
           "threads_text", "x_text", "vk_title", "vk_summary")
-STATUSES = {"ready_for_comparison", "needs_editor_attention", "no_change_recommended"}
+STATUSES = {"ready_for_comparison", "needs_editor_attention", "no_change_recommended", "needs_chief_editor"}
 QUALITY_KEYS = ("source_event", "main_problem", "structural_action", "reader_gain", "fact_integrity")
 CLICHES = re.compile(
     r"\b(?:представьте|суть\s+(?:в\s+том|заключается)|"
@@ -163,6 +163,9 @@ def validate(source_bytes, candidate, *, filename=None):
     if candidate["status"] == "no_change_recommended":
         if edited != original or flags:
             raise ValueError("No-change candidate must preserve original text without editor flags")
+    if candidate["status"] == "needs_chief_editor":
+        if edited != original or not flags:
+            raise ValueError("Chief-editor escalation must preserve original and give specific reasons")
     if candidate["status"] == "needs_editor_attention" and not flags:
         raise ValueError("Escalated copyedit must contain a specific flag")
     if candidate["status"] == "ready_for_comparison" and flags:
