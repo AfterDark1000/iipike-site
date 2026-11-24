@@ -153,7 +153,12 @@ def build_candidate(ref, main_root, id, revision, version):
     exact(cover,"text_revision",revision)
     exact(cover,"text_updated_at",draft["updated_at"])
     exact(cover,"source_draft_blob_sha",draft_sha)
-    exact(cover,"source_decision_blob_sha",text_sha)
+    # A candidate created before text approval is bound to the exact draft,
+    # not a nonexistent decision. Older candidates retain the stronger binding.
+    if "source_decision_blob_sha" not in cover:
+        raise HandoffBlocked("Cover metadata has no approval binding field")
+    if cover["source_decision_blob_sha"] is not None:
+        exact(cover,"source_decision_blob_sha",text_sha)
     exact(cover,"status","ready_for_cover_review")
     exact(cover,"image_path",paths["cover_image"])
     exact(cover,"image_blob_sha",image_sha)
@@ -161,7 +166,14 @@ def build_candidate(ref, main_root, id, revision, version):
     exact(approval,"cover_blob_sha",image_sha)
     exact(approval,"cover_metadata_blob_sha",cover_sha)
     exact(approval,"source_draft_blob_sha",draft_sha)
-    exact(approval,"source_text_decision_blob_sha",text_sha)
+    # Both independent human approvals are still mandatory. A cover approval
+    # recorded first may have null for the then-nonexistent text decision.
+    if "source_text_decision_blob_sha" not in approval:
+        raise HandoffBlocked("Cover decision has no text binding field")
+    if approval["source_text_decision_blob_sha"] is not None:
+        exact(approval,"source_text_decision_blob_sha",text_sha)
+    elif cover["source_decision_blob_sha"] is not None:
+        raise HandoffBlocked("Legacy approved-text cover cannot lose its text approval binding")
     if not 1024<=len(image)<=MAX_IMAGE:raise HandoffBlocked("WebP exceeds size policy")
     if image[:4]!=b"RIFF" or image[8:12]!=b"WEBP":
         raise HandoffBlocked("Not actual WebP bytes")
