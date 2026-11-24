@@ -7770,7 +7770,7 @@
       "review_started_at": "2026-11-24T04:52:00Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Ручной редактор: проверка первоисточников Claude Ship."
+      "note": "Проверены анонс Anthropic 23.11 https://claude.com/resources/articles/introducing-claude-ship и https://claude.com/product/claude-ship. Claude Ship: Code Review уже общедоступен; PR Steward и Claude Approvals — бета для Team/Enterprise с GitHub, оплата по токенам. Одобрение по политике репозитория, права и защита веток сохраняются. Внутренние данные команды Claude Code июнь–сентябрь: число merged PR выросло более чем вдвое, доля reverted упала более чем на 40%; причинность не установлена. Комплект Дзен/Threads/X/VK на утверждении. Предлагаемый ID anthropic-claude-ship-20261123."
     },
     {
       "id": "n-e6e5258b91853da9",
