@@ -7750,12 +7750,12 @@
       "summary": "23 ноября. Агенты искали ускорения квантовых алгоритмов; результаты и числа проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T03:18:40+00:00",
       "review_started_at": "2026-11-24T04:46:17.938Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "24.11.2026: проверены анонс Google DeepMind 23.11 https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/ и препринт https://arxiv.org/html/2611.09822v3 (первая версия 06.11, v3 от 16.11). Gemini 4 Carbon, независимые команды, конференции каждые 4 часа на форуме, Lean-верификация. Сокращение расчётного ресурса 11,8× для задачи синтеза, 8× фотохимия, 2,5× P450, 290× для конкретной реализации arcsin. В трёх научных задачах вклад идей команд 61%, wiki 15%, конференции 24%; это оценка авторов, не измеренное ускорение компьютера. Код https://github.com/google-deepmind/formal-quantum-computation. Связь с ранее опубликованной статьёй Signal: https://dzen.ru/a/avQYA2KopBdIAcFL, ID 6af4180362a8a4174801c14b. Комплект Дзен, Threads, X, VK на утверждении; не опубликовано."
+      "closed_at": "2026-11-24T04:50:00Z",
+      "article_id": "google-gemini-quantum-agent-conferences-20261123",
+      "note": "24.11.2026: проверены анонс Google DeepMind 23.11 https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/ и препринт https://arxiv.org/html/2611.09822v3 (первая версия 06.11, v3 от 16.11). Gemini 4 Carbon, независимые команды, конференции каждые 4 часа на форуме, Lean-верификация. Сокращение расчётного ресурса 11,8× для задачи синтеза, 8× фотохимия, 2,5× P450, 290× для конкретной реализации arcsin. В трёх научных задачах вклад идей команд 61%, wiki 15%, конференции 24%; это оценка авторов, не измеренное ускорение компьютера. Код https://github.com/google-deepmind/formal-quantum-computation. Связь с ранее опубликованной статьёй Signal: https://dzen.ru/a/avQYA2KopBdIAcFL, ID 6af4180362a8a4174801c14b. Комплект Дзен, Threads, X, VK на утверждении; не опубликовано. Утверждено главредом 24.11; комплект сохранён, ждёт обложку."
     },
     {
       "id": "n-6545db87281ad58e",
