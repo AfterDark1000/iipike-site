@@ -2880,6 +2880,10 @@
         {
           "article_id": "openai-gpt-6-2-astra-sol-20261117",
           "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+        },
+        {
+          "article_id": "openai-gpt-6-2-sol-chatgpt-20261123",
+          "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ]
     },
@@ -3604,6 +3608,32 @@
         {
           "article_id": "openai-child-safety-image-classifier-20261116",
           "source_url": "https://openai.com/index/strengthening-online-child-safety/"
+        }
+      ]
+    },
+    {
+      "key": "google-wallet",
+      "name": "Google Wallet",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "google-search-wallet-personal-intelligence-20261123",
+          "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+        }
+      ]
+    },
+    {
+      "key": "google-ai-mode",
+      "name": "Google AI Mode",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "google-search-wallet-personal-intelligence-20261123",
+          "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
         }
       ]
     }
