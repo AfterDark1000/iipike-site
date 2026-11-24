@@ -33,6 +33,18 @@ test("copyedit package protects source, facts, original and social limits",()=>{
  assert.equal(__test.validCopyPackage(draft,{...candidate,original_text:{...original,summary:"not exact"}},data),false);
  assert.equal(__test.validCopyPackage(draft,{...candidate,status:"needs_editor_attention"},data),false);
 });
+test("manual literary edits preserve protected facts and validate article structure",()=>{
+ const long="Модель решает 12 задач.\n\n"+"Подробное описание лабораторного эксперимента. ".repeat(12)+"https://example.com/news";
+ const c={...candidate,edited_text:{...edited,article_markdown:long}};
+ const manual={...c.edited_text,article_markdown:long.replace("Модель решает","Нейросеть выполняет")};
+ assert.equal(__test.validCopyReview({...data,manual_text:manual}),true);
+ assert.equal(__test.validManualEdit(c,{...data,manual_text:manual}),true);
+ for(const article_markdown of [manual.article_markdown.replace("12","13"),manual.article_markdown.replace("https://example.com/news","https://other.test/news"),"# Заголовок\n\n"+manual.article_markdown,">без пробела\n\n"+manual.article_markdown]){
+  assert.equal(__test.validManualEdit(c,{...data,manual_text:{...manual,article_markdown}}),false);
+ }
+ assert.equal(__test.validCopyReview({...data,action:"keep_original",manual_text:manual}),false);
+ assert.equal(__test.validCopyReview({...data,manual_text:{...manual,revision:9}}),false);
+});
 test("authenticated accept is one non-forced Git ref update; keep/return do not change draft",async()=>{
  const saved=globalThis.fetch;let writes=[],human=false,decision=false,newer=false,stale=false,race=false;
  globalThis.fetch=async(url,opts={})=>{
