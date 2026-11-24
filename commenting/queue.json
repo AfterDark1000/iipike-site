@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23T21:17:15.902408Z",
+  "updated_at": "2026-11-24T00:18:33.097351Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T21:17:15.902408Z",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
       "error": null,
-      "fresh_matches": 9
+      "fresh_matches": 8
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T21:17:15.902408Z",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T12:21:22.752682Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "error": null,
+      "fresh_matches": 1
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T21:17:15.902408Z",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T21:17:15.902408Z",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,23 +64,44 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-23T21:17:15.902408Z",
-      "last_success_at": "2026-11-23T21:17:15.902408Z",
+      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "last_success_at": "2026-11-24T00:18:33.097351Z",
       "error": null,
       "fresh_matches": 0
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-24",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "488f8fe9ea417f57d737c81b",
+      "title": "Трамп опубликовал ИИ-картинку, на которой «спасшийся» Хуанг держит в руках красный бюстгальтер",
+      "source_id": "mk",
+      "source_name": "МК",
+      "source_url": "https://www.mk.ru/politics/2026/11/24/tramp-opublikoval-ii-kartinku-na-kotoroy-spasshiysya-khuang-derzhit-v-rukakh-krasnyy-byustgalter.html",
+      "published_at": "2026-11-23T22:28:44Z",
+      "channel_url": "https://dzen.ru/mk.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-24T00:18:33.097351Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Забавно, что для политических высказываний теперь используют генератор картинок с таким странным сюжетом. Интересно, сколько времени ушло на промпт, чтобы получить именно это.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-24T00:18:33.097351Z",
+      "reason": "Комментарий про генерацию политических картинок с помощью ИИ.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T00:18:33.097351Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "9c3b077a23643e74c2efc64a",
       "title": "Маск предупредил о перегреве ИИ-рынка: задержки с запуском дата-центров могут потребовать сотни миллиардов долларов",
@@ -112,10 +133,14 @@
       "first_seen_at": "2026-11-23T21:17:15.902408Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-24T00:18:33.097351Z",
+      "reason": "Не прошёл проверку: В статье указано, что компания усилила защиту, но нет утверждения, что модерацию включили только после жалоб прокуроров.",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-24T00:18:33.097351Z"
     },
     {
       "id": "d2ef91aba1e9be7cc6e1c29b",
@@ -281,10 +306,14 @@
       "first_seen_at": "2026-11-23T12:21:22.752682Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Утренний сбой в начале рабочей недели — худшее время для сервиса, которым пользуются тысячи людей. Надеюсь, разработчики быстро поднимут сервера.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-24T00:18:33.097351Z",
+      "reason": "Реплика о неудачном времени падения сервиса.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T00:18:33.097351Z"
     },
     {
       "id": "a9319a2f80c12e9df2a2c569",
