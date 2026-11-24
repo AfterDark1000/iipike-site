@@ -7720,12 +7720,12 @@
       "summary": "23 ноября. Персонализация AI Mode через добровольное подключение Wallet; детали проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T03:18:40+00:00",
       "review_started_at": "2026-11-24T04:19:04.673Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "24.11.2026: подтверждено официальным анонсом Google от 23.11 https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/ (Wallet разворачивается сейчас, Drive и Gemini — в ближайшие недели; подключение добровольное, доступ Wallet только на чтение, без перевода и инвестирования денег). Список стран для нового подключения в анонсе не указан. Проверена связь с опубликованной статьёй Tasks in Gemini https://dzen.ru/a/av7OgTllOE0PrqNu, Dzen ID 6afece813965384d0faea36e. Дзен, Threads, X и VK предложены на утверждение. Не опубликовано."
+      "closed_at": "2026-11-24T04:28:47.179Z",
+      "article_id": "google-search-wallet-personal-intelligence-20261123",
+      "note": "24.11.2026: подтверждено официальным анонсом Google от 23.11 https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/ (Wallet разворачивается сейчас, Drive и Gemini — в ближайшие недели; подключение добровольное, доступ Wallet только на чтение, без перевода и инвестирования денег). Список стран для нового подключения в анонсе не указан. Проверена связь с опубликованной статьёй Tasks in Gemini https://dzen.ru/a/av7OgTllOE0PrqNu, Dzen ID 6afece813965384d0faea36e. Дзен, Threads, X и VK предложены на утверждение. Не опубликовано.\n24.11.2026: главред утвердил. Дзен, Threads, X и VK сохранены под ID google-search-wallet-personal-intelligence-20261123; site_queue priority. Ожидает обложку."
     },
     {
       "id": "n-9c941a0db1d61b4a",
@@ -7810,12 +7810,12 @@
       "summary": "23 ноября OpenAI начала глобальное постепенное развёртывание версии GPT-6.2 Sol, адаптированной для обычного чата, на Plus, Pro, Business и Enterprise. Улучшены понимание изображений, соблюдение сложных инструкций и поиск в интернете. В тесте понимания изображений 71,7% против 47,4% у GPT-6. Модели Work и Codex этим релизом не меняются.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T03:44:06+00:00",
       "review_started_at": "2026-11-24T04:10:05.415Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "24.11.2026: по указанию главреда взята вне FIFO. Подтверждено OpenAI Release Notes от 23.11 https://help.openai.com/en/articles/6825453-chatgpt-release-notes и справкой https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt. Адаптированная GPT-6.2 Sol глобально поэтапно в Chat для Plus/Pro/Business/Enterprise; Instant и Thinking, Pro остаётся GPT-6 Pro; на Plus Medium/High, Extra High не включён. Внутренние тесты: изображения 71,7 против 47,4%; сложные инструкции 78,1 против 62,5%; экспертные задачи при минимальном проверенном усилии 65 против 52%; BrowseComp Extra High 64,5 против 54,4%. Связанный опубликованный материал №261: https://dzen.ru/a/av1SLkmfXjSQdeB4, ID 6afd522e499f5e349075e078. Готовится комплект на утверждение, не опубликован."
+      "closed_at": "2026-11-24T04:28:47.176Z",
+      "article_id": "openai-gpt-6-2-sol-chatgpt-20261123",
+      "note": "24.11.2026: по указанию главреда взята вне FIFO. Подтверждено OpenAI Release Notes от 23.11 https://help.openai.com/en/articles/6825453-chatgpt-release-notes и справкой https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt. Адаптированная GPT-6.2 Sol глобально поэтапно в Chat для Plus/Pro/Business/Enterprise; Instant и Thinking, Pro остаётся GPT-6 Pro; на Plus Medium/High, Extra High не включён. Внутренние тесты: изображения 71,7 против 47,4%; сложные инструкции 78,1 против 62,5%; экспертные задачи при минимальном проверенном усилии 65 против 52%; BrowseComp Extra High 64,5 против 54,4%. Связанный опубликованный материал №261: https://dzen.ru/a/av1SLkmfXjSQdeB4, ID 6afd522e499f5e349075e078. Готовится комплект на утверждение, не опубликован.\n24.11.2026: главред утвердил. Дзен, Threads, X и VK сохранены под ID openai-gpt-6-2-sol-chatgpt-20261123; site_queue priority. Ожидает обложку."
     }
   ]
 }
