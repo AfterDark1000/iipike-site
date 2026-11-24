@@ -2,87 +2,71 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/av_qZDSbeXmeeyVf",
-      "title": "Claude Code помог собрать умные песочные часы, которые блокируют приложения",
-      "published_at": "2026-11-23T08:56:32.000Z",
+      "url": "https://dzen.ru/a/avxwbuHxvGkzOm75",
+      "title": "Нейросеть для дизайна интерьера: как изменить комнату по фото",
+      "published_at": "2026-11-24T09:00:46.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-23T14:06:27.883Z",
+      "first_seen_at": "2026-11-24T14:37:52.628Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awP3V1ae7X1NLojU",
-      "title": "Как создать ИИ-агента для ВК и Дзена в ChatGPT: готовый промпт для создания и инструкция",
-      "published_at": "2026-11-23T08:30:19.000Z",
+      "url": "https://dzen.ru/a/av_qK-ulsFH9SrIe",
+      "title": "Claude помог старому Jeep пройти техосмотр с Arduino за $3",
+      "published_at": "2026-11-24T07:02:42.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-24T14:37:52.628Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/awUdMGTjQnOXg6Bp",
+      "title": "Claude Opus 4.7 сдал 10 экзаменов юрфака и вошёл в топ-10% в семи",
+      "published_at": "2026-11-24T05:16:30.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-24T14:37:52.628Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/awUPD14W3F8IJiaw",
+      "title": "Как улучшить ИИ-текст: 2 промпта против лексического скудоумия, примитивности и воды",
+      "published_at": "2026-11-24T04:22:36.000Z",
       "source_name": "Наташа Нагорнова",
-      "first_seen_at": "2026-11-23T14:06:29.299Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/av_n2-TBFG07fit1",
-      "title": "Microsoft представила свои ИИ-модели: зачем компании собственный искусственный интеллект",
-      "published_at": "2026-11-23T07:04:11.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-23T14:06:27.883Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/avxwQHJPa2vllJGK",
-      "title": "Нейросеть для решения задач: что попробовать бесплатно и где ждать подвоха",
-      "published_at": "2026-11-23T05:02:09.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-23T14:06:27.883Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/aqLwD8T5vn8qYQoT",
-      "title": "Реферат или большая статья с ChatGPT: способ, который экономит время и избавляет от переделок",
-      "published_at": "2026-11-23T03:25:22.000Z",
-      "source_name": "У Марии. Приручаем нейросети",
-      "first_seen_at": "2026-11-23T14:06:28.296Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/avxw5lZVY01i4DTx",
-      "title": "Нейросеть для создания рабочих листов: как сократить подготовку",
-      "published_at": "2026-11-23T03:01:50.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-23T14:06:27.883Z",
+      "first_seen_at": "2026-11-24T14:37:53.756Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-23T14:06:26.728Z",
+      "attempted_at": "2026-11-24T14:37:51.453Z",
       "failures": 0,
-      "next_at": "2026-11-23T15:06:26.728Z"
+      "next_at": "2026-11-24T15:37:51.453Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-23T14:06:27.883Z",
+      "attempted_at": "2026-11-24T14:37:52.628Z",
       "failures": 0,
-      "next_at": "2026-11-23T15:06:27.883Z"
+      "next_at": "2026-11-24T15:37:52.628Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-23T14:06:28.296Z",
+      "attempted_at": "2026-11-24T14:37:53.049Z",
       "failures": 0,
-      "next_at": "2026-11-23T15:06:28.296Z"
+      "next_at": "2026-11-24T15:37:53.049Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-23T14:06:28.900Z",
+      "attempted_at": "2026-11-24T14:37:53.445Z",
       "failures": 0,
-      "next_at": "2026-11-23T15:06:28.900Z"
+      "next_at": "2026-11-24T15:37:53.445Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-23T14:06:29.299Z",
+      "attempted_at": "2026-11-24T14:37:53.756Z",
       "failures": 0,
-      "next_at": "2026-11-23T15:06:29.299Z"
+      "next_at": "2026-11-24T15:37:53.756Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 45190598616,
+    "id": 45416215064,
     "requests": 5,
     "processed": 5,
     "errors": 0,
-    "added": 6
+    "added": 4
   }
 }
