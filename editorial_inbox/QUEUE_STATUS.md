@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 31 · **Готовы:** 0 · **Ждут интервал:** 31 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 221
+**В очереди:** 32 · **Готовы:** 0 · **Ждут интервал:** 32 · **Срочная очередь:** 2 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 221
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -43,12 +43,13 @@
 | **29** | [Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/proton-lumo-desktop-permissions-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 00:07 (Усть-Катав)**; пауза до 24.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/proton-lumo-desktop-permissions-20261117.webp) |
 | **30** | [Suno научилась снимать музыкальные клипы на песни, которые сама же и сочинила](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-visuals-music-videos-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 07:07 (Усть-Катав)**; пауза до 24.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-visuals-music-videos-20261117.webp) |
 | **31** | [«Извинись!» В США заставят признаваться за использование китайских нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/us-chinese-ai-disclosure-proposal-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 08:07 (Усть-Катав)**; пауза до 24.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/us-chinese-ai-disclosure-proposal-20261118.webp) |
+| **32** | [ИИ-агент Meta бронирует жильё без спроса, читает личные переписки и пугает даже собственных разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-unauthorized-actions-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 09:07 (Усть-Катав)**; пауза до 24.11.2026 14:00 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-unauthorized-actions-20261118.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [ИИ-агент Meta бронирует жильё без спроса, читает личные переписки и пугает даже собственных разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-unauthorized-actions-20261118.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [NVIDIA заработала $65 млрд чистыми за три месяца, а дата-центры принесли ей 93% выручки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-q3-fy2027-earnings-vera-rubin-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
