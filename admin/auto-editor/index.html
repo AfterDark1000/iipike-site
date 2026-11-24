@@ -56,7 +56,7 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 <div class="grid"><aside class="card"><h2>Редакторские материалы</h2><p id="queue-summary" aria-live="polite">Сверяю статусы с GitHub…</p>
 <div id="views" aria-label="Фильтр материалов"><button type="button" data-view="all" aria-pressed="true">Все</button><button type="button" data-view="review" aria-pressed="false">Нужно решение</button><button type="button" data-view="active" aria-pressed="false">В работе</button><button type="button" data-view="done" aria-pressed="false">Завершено</button></div>
 <label for="queue-search" class="muted" style="font-size:13px">Найти по названию, ID или номеру</label><input id="queue-search" type="search" placeholder="Поиск по материалам">
-<div id="list">Загружаю список…</div><button id="reload" type="button">↻ Обновить список</button><p class="muted" id="loaded"></p>
+<button id="reload" type="button" style="width:100%;margin:0 0 8px">↻ Обновить список</button><p class="muted" id="loaded"></p><div id="list">Загружаю список…</div>
 <p class="muted" style="font-size:12px">Здесь только сохранённые черновики. Резерв без текста появится после первого сохранения редактором.</p></aside>
 <section class="card" id="detail" aria-live="polite"><h2>Выбери материал слева</h2></section></div>
 <p class="muted">Источник: ветка <a href="https://github.com/AfterDark1000/iipike-site/tree/editorial-intake/editorial_inbox/auto_drafts">editorial-intake / auto_drafts</a>. При недоступности GitHub данные не заменяются образцами.</p>
@@ -198,7 +198,8 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
  add(wrap,"h3","Решение главреда по обложке");
  const actions=add(wrap,"div",undefined,"actionbar");
  const approve=add(actions,"button","Утвердить обложку");
- const redo=add(actions,"button","Переделать");
+ const redo=add(actions,"button","Переделать обложку");
+ const both=add(actions,"button","Утвердить всё");both.hidden=true;
  const p=add(wrap,"p","Проверяю, не было ли уже принято решение…","cover-result");
  p.setAttribute("role","status");
  p.setAttribute("aria-live","polite");
@@ -213,18 +214,23 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
  note.setAttribute("aria-label","Замечания по обложке");
  note.maxLength=4000;
  let decisionState="checking";
- const buttons=[approve,redo];
+ const buttons=[approve,redo,both];
+ let textApproved=false,textOpen=false;
  const setDisabled=(value)=>buttons.forEach(b=>b.disabled=value);
  setDisabled(true);
  const checkValid=()=>image.dataset.hpiiValid==="1"&&current()&&decisionState==="open";
  const decisionUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/"+
    doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
  try{
-  const r=await fetchGitHubRecord(decisionUrl);
+  const [r,textRecord]=await Promise.all([fetchGitHubRecord(decisionUrl),readOptionalJson(decisionRoot+doc.article_id+"-r"+doc.revision+".json")]);
   if(!current())return;
+  textOpen=!textRecord&&doc.status==="ready_for_review";
+  textApproved=!!textRecord&&sameText(textRecord,doc)&&textRecord.action==="approve_text"&&textRecord.status==="text_approved_cover_pending";
+  if(!textOpen&&!textApproved){decisionState="error";feedback("Текущая версия текста больше не доступна для утверждения обложки.","error");actions.hidden=true;note.hidden=true;return}
+  both.hidden=!textOpen;
   if(r.status===404){
     decisionState="open";
-    feedback("Обложка ещё не утверждена. Посмотри изображение перед выбором действия.");
+    feedback(textOpen?"Текст и обложка ждут независимых решений. Можно утвердить оба сразу.":"Обложка ещё не утверждена. Посмотри изображение перед выбором действия.");
     setDisabled(!checkValid());
   }else if(r.ok){
     const saved=await r.json();
@@ -234,6 +240,10 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
       throw Error("Сохранённое решение не совпадает с обложкой.");
     decisionState="saved";
     if(saved.status==="cover_approved_handoff_pending"){
+      if(!textApproved){
+        feedback("✓ Обложка утверждена. Ожидается утверждение именно этой ревизии текста.","success");
+        setDisabled(true);actions.hidden=true;note.hidden=true;return;
+      }
       const handoff="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/"+
         doc.article_id+"-r"+doc.revision+"-v"+cover.cover_version+".json?v="+Date.now();
       try{
@@ -280,17 +290,28 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
    if(decisionState==="open"&&current())setDisabled(!checkValid());
  });
  image.addEventListener("error",()=>setDisabled(true));
- const submit=async(action)=>{
+ const submit=async(action,approveBoth=false)=>{
    if(!checkValid()){feedback("Невозможно подтвердить обложку: проверь загрузку и размер.","error",true);return}
    if(action==="revise_cover"&&!note.value.trim()){feedback("Сначала напиши, что нужно переделать.","error");note.focus();return}
    if(!window.HpiiAdminAuth){feedback("Нет активного входа в админку.","error");return}
    decisionState="saving";setDisabled(true);feedback("Записываю решение через защищённый сервер…","pending",true);
+   if(approveBoth)detail.querySelectorAll("button").forEach(b=>b.disabled=true);
+   let coverSaved=false;
    try{
       const result=await window.HpiiAdminAuth.reviewCover(doc,cover,action,note.value.trim());
+      coverSaved=action==="approve_cover"&&result.status==="cover_approved_handoff_pending";
+      if(approveBoth){
+        if(!coverSaved)throw Error("Утверждение обложки не подтверждено");
+        // Two authenticated revision-locked operations requested by one human click.
+        // If text approval fails, the cover-only decision remains safe.
+        const textResult=await window.HpiiAdminAuth.review(doc,"approve_text","");
+        if(textResult.status!=="text_approved_cover_pending")throw Error("Утверждение текста не подтверждено");
+        textApproved=true;textOpen=false;
+      }
       if(!current())return;
       decisionState="saved";setDisabled(true);note.disabled=true;
       feedback(result.status==="cover_approved_handoff_pending"?
-       "✓ Обложка утверждена и решение сохранено в GitHub. Передача в очередь автоматическая — обнови страницу для проверки её статуса.":
+       (textApproved?"✓ Текст и обложка утверждены. Передача в очередь автоматическая — обнови страницу для проверки статуса.":"✓ Обложка утверждена. Теперь требуется решение по тексту.") :
        "↺ Решение о переделке сохранено в GitHub. Новая версия обложки пока не создана.",
        result.status==="cover_approved_handoff_pending"?"success":"pending",true);
       actions.hidden=true;
@@ -298,11 +319,12 @@ async function showCoverReviewControls(doc,cover,region,image,topState){
       void load();
    }catch(e){
       if(current()){decisionState="error";setDisabled(true);
-       feedback("Решение НЕ подтверждено: "+e.message+". Обнови страницу, чтобы проверить состояние.","error",true)}
+       feedback((coverSaved?"Обложка утверждена; второе решение не подтверждено: ":"Решение НЕ подтверждено: ")+e.message+". Обнови страницу, чтобы проверить состояние.","error",true)}
    }
  };
  approve.addEventListener("click",()=>submit("approve_cover"));
  redo.addEventListener("click",()=>submit("revise_cover"));
+ both.addEventListener("click",()=>{if(textOpen)void submit("approve_cover",true)});
 }
 
 async function showCoverCandidate(doc,region,topState){
@@ -310,7 +332,11 @@ async function showCoverCandidate(doc,region,topState){
  const stem=doc.article_id+"-r"+doc.revision;
  const current=()=>selected===doc.article_id+".json"&&region.isConnected;
  const label=add(region,"p","Проверяю, сохранил ли художник WebP…","muted");
+ if(doc.status!=="ready_for_review"){label.textContent="Обложка создаётся после готового черновика.";topState.textContent="Текст ещё не готов.";return}
  try{
+  const textRecord=await readOptionalJson(decisionRoot+stem+".json");
+  if(!current())return;
+  if(textRecord&&(!sameText(textRecord,doc)||textRecord.action!=="approve_text"||textRecord.status!=="text_approved_cover_pending")){label.textContent="Обложка для возвращённой или отклонённой версии не утверждается.";topState.textContent="Ожидается актуальная версия текста.";return}
   let coverVersion=1,previousFeedback="";
   const decisionBase="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/";
   while(coverVersion<5){
@@ -354,7 +380,7 @@ async function showCoverCandidate(doc,region,topState){
   if(cover.article_id!==doc.article_id||cover.text_revision!==doc.revision||
      cover.text_updated_at!==doc.updated_at||cover.status!=="ready_for_cover_review"||
      cover.image_path!==expected||!Number.isSafeInteger(cover.width)||!Number.isSafeInteger(cover.height)||
-     !/^[0-9a-f]{40}$/.test(cover.image_blob_sha||""))throw Error("Кандидат не соответствует утверждённой версии текста");
+     !/^[0-9a-f]{40}$/.test(cover.image_blob_sha||""))throw Error("Кандидат не соответствует текущей версии текста");
   cover.cover_version=coverVersion;
   label.textContent="Кандидат WebP v"+coverVersion+" найден. Проверяю решение главреда…";
   topState.textContent="WebP загружен. Проверяю статус утверждения…";
@@ -379,7 +405,7 @@ async function showCoverCandidate(doc,region,topState){
   if(previousFeedback)field(region,"Замечания к предыдущей версии",previousFeedback);
   if(cover.concept)field(region,"Концепция",cover.concept);
   if(cover.headline)field(region,"Заголовок",cover.headline);
-  paragraph(region,"Для передачи в публикационную очередь ещё требуется отдельное утверждение обложки главредом.");
+  paragraph(region,"В очередь сайта комплект поступит только после независимого утверждения текста и обложки одной актуальной ревизии.");
   const p=add(region,"p");link(p,"Файл обложки v"+coverVersion,base+stem+"-v"+coverVersion+".webp");
   void showCoverReviewControls(doc,cover,region,image,topState);
  }catch(e){if(current()){label.textContent="Не удалось подтвердить наличие кандидата: "+e.message;topState.textContent="Не удалось проверить обложку.";}}
@@ -544,22 +570,23 @@ async function classify(doc,publishedIds=new Set()){
  if(doc.status!=="ready_for_review")return rowStatus("error","Неизвестный статус: "+doc.status);
  const key=doc.article_id+"-r"+doc.revision;
  const decided=await readOptionalJson(decisionRoot+key+".json");
- if(!decided)return rowStatus("review","Проверить текст");
- if(!sameText(decided,doc))throw Error("Решение не совпадает с редакцией текста");
- if(decided.status==="feedback_pending_revision")return rowStatus("active","Текст возвращён на доработку");
- if(decided.status==="rejected")return rowStatus("done","Текст отклонён");
- if(decided.status!=="text_approved_cover_pending" || decided.action!=="approve_text")
-  throw Error("Неизвестное решение по тексту");
+ if(decided){
+  if(!sameText(decided,doc))throw Error("Решение не совпадает с редакцией текста");
+  if(decided.status==="feedback_pending_revision")return rowStatus("active","Текст возвращён на доработку");
+  if(decided.status==="rejected")return rowStatus("done","Текст отклонён");
+  if(decided.status!=="text_approved_cover_pending" || decided.action!=="approve_text")
+   throw Error("Неизвестное решение по тексту");
+ }
  for(let version=1;version<=5;version++){
   const coverKey=key+"-v"+version;
   const cover=await readOptionalJson(coverRoot+coverKey+".json");
-  if(!cover)return rowStatus("active",version===1?"Текст утверждён · у художника":"Ждёт переделанную обложку v"+version);
+  if(!cover)return decided?rowStatus("active",version===1?"Текст утверждён · у художника":"Ждёт переделанную обложку v"+version):rowStatus("review",version===1?"Проверить текст":"Проверить текст · обложка на переделке");
   if(cover.article_id!==doc.article_id||cover.text_revision!==doc.revision||
     cover.text_updated_at!==doc.updated_at||cover.status!=="ready_for_cover_review"||
     cover.image_path!=="editorial_inbox/auto_covers/"+coverKey+".webp")
    throw Error("Метаданные обложки v"+version+" не совпадают");
   const decision=await readOptionalJson(coverDecisionRoot+coverKey+".json");
-  if(!decision)return rowStatus("review","Проверить обложку v"+version);
+  if(!decision)return rowStatus("review",decided?"Проверить обложку v"+version:"Проверить текст и обложку v"+version);
   if(decision.article_id!==doc.article_id||decision.text_revision!==doc.revision||
     decision.text_updated_at!==doc.updated_at||decision.cover_version!==version||
     decision.cover_blob_sha!==cover.image_blob_sha)
@@ -569,6 +596,7 @@ async function classify(doc,publishedIds=new Set()){
    continue;
   }
   if(decision.action==="approve_cover"&&decision.status==="cover_approved_handoff_pending"){
+   if(!decided)return rowStatus("review","Обложка утверждена · проверить текст");
    const handoff=await readOptionalJson(handoffRoot+coverKey+".json");
    if(!handoff){
     if(publishedIds.has(doc.article_id))return rowStatus("done","Опубликовано на сайте");
