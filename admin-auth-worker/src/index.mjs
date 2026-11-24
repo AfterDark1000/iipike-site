@@ -294,17 +294,20 @@ async function recordCoverReview(env, data, login) {
        pv.action!=="revise_cover"||pv.status!=="cover_revision_requested"||!pv.note?.trim())
       return fail(409,"previous_cover_revision_not_requested");
   }
-  if([draft,text,cover,image].some(x=>x.status!==200))return fail(409,"cover_or_approval_unavailable");
-  let dv,tv,cv;
-  try{dv=decodeGitHubContent(draft.data);tv=decodeGitHubContent(text.data);cv=decodeGitHubContent(cover.data)}
+  if([draft,cover,image].some(x=>x.status!==200)||![200,404].includes(text.status))return fail(409,"cover_or_approval_unavailable");
+  let dv,tv=null,cv;
+  try{dv=decodeGitHubContent(draft.data);if(text.status===200)tv=decodeGitHubContent(text.data);cv=decodeGitHubContent(cover.data)}
   catch{return fail(409,"cover_or_approval_invalid")}
+  const textSha=tv?text.data.sha:null;
+  if(tv&&(tv.article_id!==data.article_id||tv.revision!==data.revision||tv.updated_at!==data.text_updated_at||
+      tv.status!=="text_approved_cover_pending"||tv.action!=="approve_text"||tv.draft_blob_sha!==draft.data.sha))
+    return fail(409,"text_revision_or_approval_changed");
   if(dv.article_id!==data.article_id||dv.revision!==data.revision||dv.updated_at!==data.text_updated_at||
      dv.status!=="ready_for_review"||
-     tv.article_id!==data.article_id||tv.revision!==data.revision||tv.updated_at!==data.text_updated_at||
-     tv.status!=="text_approved_cover_pending"||tv.action!=="approve_text"||tv.draft_blob_sha!==draft.data.sha||
      cv.schema_version!==1||cv.article_id!==data.article_id||cv.text_revision!==data.revision||
      cv.text_updated_at!==data.text_updated_at||cv.status!=="ready_for_cover_review"||
-     cv.source_draft_blob_sha!==draft.data.sha||cv.source_decision_blob_sha!==text.data.sha||
+     cv.source_draft_blob_sha!==draft.data.sha||
+     (cv.source_decision_blob_sha!==null&&(!textSha||cv.source_decision_blob_sha!==textSha))||
      cv.image_path!==imagePath||cv.image_blob_sha!==data.image_blob_sha||
      image.data.sha!==data.image_blob_sha||
      !Number.isSafeInteger(cv.width)||!Number.isSafeInteger(cv.height)||
@@ -315,7 +318,7 @@ async function recordCoverReview(env, data, login) {
     schema_version:1,article_id:data.article_id,text_revision:data.revision,
     text_updated_at:data.text_updated_at,cover_version:data.cover_version,
     cover_blob_sha:image.data.sha,cover_metadata_blob_sha:cover.data.sha,
-    source_draft_blob_sha:draft.data.sha,source_text_decision_blob_sha:text.data.sha,
+    source_draft_blob_sha:draft.data.sha,source_text_decision_blob_sha:textSha,
     action:data.action,note:data.note.trim(),status,decided_by:login,
     decided_at:new Date().toISOString(),channel:"hpii-admin-oauth-gateway"
   };
@@ -392,13 +395,13 @@ async function receiveCover(env, request, login) {
   const ref="editorial-intake";
   const draft=await githubJson("/contents/"+pathFor(article_id)+"?ref="+ref,env);
   const decision=await githubJson("/contents/"+savedPath(article_id,revision)+"?ref="+ref,env);
-  if(draft.status!==200 || decision.status!==200)return fail(409,"approved_text_unavailable");
-  let body,approve;
-  try{body=decodeGitHubContent(draft.data);approve=decodeGitHubContent(decision.data)}catch{return fail(409,"approval_invalid")}
+  if(draft.status!==200||![200,404].includes(decision.status))return fail(409,"approved_text_unavailable");
+  let body,approve=null;
+  try{body=decodeGitHubContent(draft.data);if(decision.status===200)approve=decodeGitHubContent(decision.data)}catch{return fail(409,"approval_invalid")}
   if(body.article_id!==article_id||body.revision!==revision||body.updated_at!==updated_at||
-     body.status!=="ready_for_review"||approve.article_id!==article_id||approve.revision!==revision||
+     body.status!=="ready_for_review"||(approve&&(approve.article_id!==article_id||approve.revision!==revision||
      approve.updated_at!==updated_at||approve.action!=="approve_text"||
-     approve.status!=="text_approved_cover_pending"||approve.draft_blob_sha!==draft.data.sha)
+     approve.status!=="text_approved_cover_pending"||approve.draft_blob_sha!==draft.data.sha)))
     return fail(409,"text_revision_or_approval_changed");
   if(cover_version>1){
     const previous="editorial_inbox/auto_cover_decisions/"+article_id+"-r"+revision+"-v"+(cover_version-1)+".json";
@@ -433,7 +436,7 @@ async function receiveCover(env, request, login) {
   }else return fail(502,"cover_image_lookup_failed");
   const meta={
     schema_version:1,article_id,text_revision:revision,text_updated_at:updated_at,
-    source_draft_blob_sha:draft.data.sha,source_decision_blob_sha:decision.data.sha,
+    source_draft_blob_sha:draft.data.sha,source_decision_blob_sha:approve?decision.data.sha:null,
     status:"ready_for_cover_review",image_path,image_blob_sha:sha,
     width:size.width,height:size.height,concept:concept.trim(),headline:headline.trim(),
     artist_notes:"Загружено вручную через защищённую админку; требуется просмотр главреда. Загрузил "+login+".",
@@ -554,7 +557,7 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({
-      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,
       first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
       first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
     });
