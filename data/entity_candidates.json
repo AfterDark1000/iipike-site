@@ -1897,6 +1897,18 @@
           "source_url": "https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350"
         }
       ]
+    },
+    {
+      "key": "proton",
+      "name": "Proton",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "proton-lumo-desktop-permissions-20261117",
+          "source_url": "https://proton.me/blog/lumo-desktop-features"
+        }
+      ]
     }
   ],
   "products": [
@@ -3783,6 +3795,19 @@
         {
           "article_id": "instagram-content-protection-ai-copies-20261117",
           "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
+        }
+      ]
+    },
+    {
+      "key": "lumo-desktop",
+      "name": "Lumo Desktop",
+      "company": "proton",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "proton-lumo-desktop-permissions-20261117",
+          "source_url": "https://proton.me/blog/lumo-desktop-features"
         }
       ]
     }
