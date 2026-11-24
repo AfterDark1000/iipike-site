@@ -4135,12 +4135,12 @@
       "summary": "18 ноября: администрация обсуждает требование раскрывать использование китайских моделей, включая Qwen и DeepSeek; пока предложение.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T14:52:43+00:00",
       "review_started_at": "2026-11-24T07:14:21.742Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Reuters 18.11.2026 (оригинал в поисковой выдаче, полный текст в синдикации https://www.investing.com/news/stock-market-news/exclusivetrump-administration-weighs-forcing-us-firms-to-disclose-chinese-ai-use-5035455): обсуждение Минфином США и OSTP публикации сведений на сайтах, три источника, официального решения нет. Датированный первоисточник USCC 18.11 https://www.uscc.gov/annual-report/2026/chapter-8-silicon-to-sovereignty-chinas-bid-to-control-the-ai-tech-stack: отдельная рекомендация Конгрессу о сайтах, документации, отчётности SEC. Доклад комитетов Палаты 20.11 https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/ подтверждает использование Alibaba у Airbnb, Moonshot у Anysphere, китайских моделей у DoorDash. Каталог подтверждает связанный материал о дистилляции 6afeb458eb5aac0b021d90ac https://dzen.ru/a/av60WOtarAsCHZCs. Прямого дубля в пуле, каталоге и Threads не выявлено. №459 отдельный сюжет об отказе Cursor. ID us-chinese-ai-disclosure-proposal-20261118. На утверждении."
+      "closed_at": "2026-11-24T07:23:10.169Z",
+      "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+      "note": "Reuters 18.11.2026 (оригинал в поисковой выдаче, полный текст в синдикации https://www.investing.com/news/stock-market-news/exclusivetrump-administration-weighs-forcing-us-firms-to-disclose-chinese-ai-use-5035455): обсуждение Минфином США и OSTP публикации сведений на сайтах, три источника, официального решения нет. Датированный первоисточник USCC 18.11 https://www.uscc.gov/annual-report/2026/chapter-8-silicon-to-sovereignty-chinas-bid-to-control-the-ai-tech-stack: отдельная рекомендация Конгрессу о сайтах, документации, отчётности SEC. Доклад комитетов Палаты 20.11 https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/ подтверждает использование Alibaba у Airbnb, Moonshot у Anysphere, китайских моделей у DoorDash. Каталог подтверждает связанный материал о дистилляции 6afeb458eb5aac0b021d90ac https://dzen.ru/a/av60WOtarAsCHZCs. Прямого дубля в пуле, каталоге и Threads не выявлено. №459 отдельный сюжет об отказе Cursor. ID us-chinese-ai-disclosure-proposal-20261118. На утверждении.\nУтверждённый текст и обе социальные очереди сохранены и проверены; ждём обложку."
     },
     {
       "id": "n-29e7b0bd1f83d595",
