@@ -8148,5 +8148,28 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "Возвращение Хуанга подняло стоимость NVIDIA почти на триллион долларов за день",
+    "summary": "Акции NVIDIA выросли на 31,48% по итогам торгов 23 ноября после возвращения Дженсена Хуанга. Капитализация увеличилась примерно на $952 млрд.",
+    "published": "2026-11-24",
+    "source_url": "https://uk.marketscreener.com/news/wall-street-rebounds-as-jensen-huang-returns-as-nvidia-ceo-ce7851dadf8cf126",
+    "cover": "assets/editorial/nvidia-huang-return-stock-rally-20261123.webp",
+    "rubric": "news",
+    "vk_title": "💰 Хуанг вернулся, и NVIDIA подорожала почти на ТРИЛЛИОН долларов за день",
+    "vk_summary": "Акции NVIDIA взлетели на 31,48% после возвращения Дженсена Хуанга. Компания показала крупнейший суточный рост за 23 года и потянула за собой рынок ИИ-акций.",
+    "published_at_utc": "2026-11-24T04:30:50Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "nvidia-huang-return-stock-rally-20261123",
+    "url": "articles/nvidia-huang-return-stock-rally-20261123/",
+    "topics": [
+      "finance",
+      "infrastructure"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
