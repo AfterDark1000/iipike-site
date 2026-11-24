@@ -4120,9 +4120,9 @@
       "summary": "18 ноября: Suno Visuals предлагает обложки и видео до 15 секунд с синхронизацией губ; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T14:52:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T06:56:57.785Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
