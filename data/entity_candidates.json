@@ -2009,6 +2009,30 @@
           "source_url": "https://www.pangram.com/"
         }
       ]
+    },
+    {
+      "key": "gallup",
+      "name": "Gallup",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "gallup-youth-ai-friendship-20261117",
+          "source_url": "https://news.gallup.com/poll/716486/youth-wellbeing-matters-online-off.aspx"
+        }
+      ]
+    },
+    {
+      "key": "digital-wellness-lab",
+      "name": "Digital Wellness Lab",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "gallup-youth-ai-friendship-20261117",
+          "source_url": "https://digitalwellnesslab.org/wp-content/uploads/BCH_Gallup-Digital-Life-Insights_Report.pdf"
+        }
+      ]
     }
   ],
   "products": [
