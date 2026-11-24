@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 16 · **Готовы:** 0 · **Ждут интервал:** 16 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 217
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 1 · **Опубликованы через site-first:** 217
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -28,12 +28,15 @@
 | **14** | [Французские газеты разрешили ChatGPT пересказывать их статьи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-french-press-lvmh-figaro-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 22:22 (Усть-Катав)**; пауза до 24.11.2026 09:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-french-press-lvmh-figaro-20261118.webp) |
 | **15** | [OpenAI выпустила ИИ для поиска запрещённых изображений детей и ужесточила блокировки ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-child-safety-image-classifier-20261116.json) | ⏳ Ждёт часовой интервал | **Не ранее 24.11.2026 23:22 (Усть-Катав)**; пауза до 24.11.2026 09:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-child-safety-image-classifier-20261116.webp) |
 | **16** | [Даже один ИИ-дата-центр оказался слишком мощным для электросетей половины исследованных стран](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ebrd-ai-data-center-power-limits-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 00:22 (Усть-Катав)**; пауза до 24.11.2026 09:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ebrd-ai-data-center-power-limits-20261117.webp) |
+| **17** | [«Волк с Уолл-стрит» запустил ИИ для звонков. Справится ли он с продажами?](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 07:07 (Усть-Катав)**; пауза до 24.11.2026 09:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda.webp) |
+| **18** | [OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 08:07 (Усть-Катав)**; пауза до 24.11.2026 09:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [В США испытали роботов, которые сами ищут военные цели](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/darpa-racer-autonomous-targets-20261015.json) | ⛔ Заблокирована: ошибка статьи | Ошибка проверки статьи: Unknown topic key: only the controlled HPII vocabulary is accepted | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/darpa-racer-autonomous-targets-20261015.webp) |
+| [Возвращение Хуанга подняло стоимость NVIDIA почти на триллион долларов за день](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-huang-return-stock-rally-20261123.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
