@@ -4120,12 +4120,12 @@
       "summary": "18 ноября: Suno Visuals предлагает обложки и видео до 15 секунд с синхронизацией губ; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T14:52:43+00:00",
       "review_started_at": "2026-11-24T06:56:57.785Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверен официальный анонс Suno от 17.11.2026 (https://suno.com/blog/introducing-visuals), справка https://help.suno.com/en/articles/14662785 и https://help.suno.com/en/articles/14661249: web/iOS/Android, 5–15 с, lip sync, монтаж, 480p/720p, H3 Move на базе MiniMax, отдельные кредиты, пробные для Pro/Premier, купленные не истекают. Каталог подтвердил связь с иском Элвиса: 6afeb5cc3965384d0f0843a4, https://dzen.ru/a/av61zDllOE0PCEOk. В пуле №417 — повтор того же запуска, №521 требует отдельной проверки. В опубликованном архиве и Threads прямого дубля не найдено. ID suno-visuals-music-videos-20261117. Комплект на утверждении."
+      "closed_at": "2026-11-24T06:59:33.596Z",
+      "article_id": "suno-visuals-music-videos-20261117",
+      "note": "Проверен официальный анонс Suno от 17.11.2026 (https://suno.com/blog/introducing-visuals), справка https://help.suno.com/en/articles/14662785 и https://help.suno.com/en/articles/14661249: web/iOS/Android, 5–15 с, lip sync, монтаж, 480p/720p, H3 Move на базе MiniMax, отдельные кредиты, пробные для Pro/Premier, купленные не истекают. Каталог подтвердил связь с иском Элвиса: 6afeb5cc3965384d0f0843a4, https://dzen.ru/a/av61zDllOE0PCEOk. В пуле №417 — повтор того же запуска, №521 требует отдельной проверки. В опубликованном архиве и Threads прямого дубля не найдено. ID suno-visuals-music-videos-20261117. Комплект на утверждении.\nУтверждённый текст и обе социальные очереди сохранены и проверены; ждём обложку."
     },
     {
       "id": "n-0e4751bbdf8f56f7",
