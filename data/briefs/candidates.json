@@ -1548,6 +1548,71 @@
       "source": "Пэрис Маркс, интервью TechCrunch от 22 ноября 2026 года",
       "source_url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
       "fact_check": "Первичное интервью журналиста Paris Marx изданию TechCrunch (Anthony Ha) от 22.11.2026. Автор книги Hyperscale сказал, что масштаб строительства дата-центров 'fundamentally unsustainable', затраты на энергоснабжение и воду и шум охлаждения могут влиять на соседние сообщества. Он лично вошёл в дата-центр Новой Зеландии, описал громкие вентиляторы (захотелось бы беруши). Это авторская позиция и рассказ о собственном посещении, не установленное исследовательское доказательство вреда всех дата-центров. Сюжет скорее интервью-мнение, чем новое промышленное событие. Прямой источник: https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/ ."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 503,
+      "pool_id": "n-c8455da0e0380bda",
+      "slug": "tether-agent-recorded-run-tests-mcp-20261122",
+      "headline": "Tether позволяет проверять ошибки ИИ-агентов без повторной оплаты модели",
+      "body": "В открытом инструменте Tether 0.4.0 появилась автоматическая проверка записанных сеансов ИИ-агентов. Можно выяснить, какие программы вызывал агент, что он записал в файлы и уложился ли в заданный бюджет. Для воспроизведения старого сеанса новые запросы к модели не нужны. Уже 22 ноября вышла версия 0.5.0 с поддержкой внешних инструментов через MCP.",
+      "topic": "Технологии",
+      "event_date": "2026-11-22",
+      "source": "Tether, журнал изменений версий 0.4.0 и 0.5.0",
+      "source_url": "https://github.com/chizy7/tether/blob/v0.5.0/CHANGELOG.md",
+      "fact_check": "Проверены официальные CHANGELOG v0.4.0 (дата записи 21.11.2026) и v0.5.0 (22.11), обе версии CLI выпущены в GitHub 22.11.2026. В v0.3 есть offline replay, в v0.4 появился suite runner assertions tool usage/outcome/cost/files; при изменении модели или промпта возможны новые платные вызовы. v0.5 external MCP servers stdio/HTTP, recorded results. https://github.com/chizy7/tether/releases/tag/v0.4.0 ; https://github.com/chizy7/tether/releases/tag/v0.5.0 . Не обещать устранение ошибки или полноценную проверку нового поведения без модели."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 506,
+      "pool_id": "n-d47fa605e2a81a6a",
+      "slug": "victoria-liberal-party-ai-condolence-molly-meldrum-20261123",
+      "headline": "Австралийские политики поручили ИИ подготовить соболезнование",
+      "body": "Либеральная партия штата Виктория признала участие ИИ в подготовке соболезнования по поводу смерти музыкального журналиста Молли Мелдрама. Текст от имени Джесс Уилсон сотрудники партии проверили и отредактировали.",
+      "topic": "Общество",
+      "event_date": "2026-11-23",
+      "source": "The Guardian, прямой ответ представителя Либеральной партии Виктории",
+      "source_url": "https://www.theguardian.com/australia-news/2026/nov/23/victorian-liberal-party-uses-ai-to-write-jess-wilsons-tribute-to-molly-meldrum",
+      "fact_check": "The Guardian 23.11.2026 получил прямое подтверждение от представителя партии: initial draft used search and AI; human fact checking/editing before leader approval. Мелдрам — музыкальный журналист, телеведущий и продюсер; умер 23.11 в 83 года. Не утверждать, что весь финальный текст написан ИИ, или что детектор доказал авторство. Первоисточник признания — прямой ответ партии изданию."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 507,
+      "pool_id": "n-8af39869d610a073",
+      "slug": "polly-hudson-ai-suggested-replies-husband-20261122",
+      "headline": "Журналистка отвечала мужу подсказками ИИ, а он ничего не заметил",
+      "body": "Колумнистка The Guardian Полли Хадсон начала отправлять мужу ответы, предложенные телефоном. По её рассказу, он не заметил подмены, а одна подсказка даже содержала прозвище, которым жена обычно его называет.",
+      "topic": "Общество",
+      "event_date": "2026-11-22",
+      "source": "Полли Хадсон, авторская колонка The Guardian",
+      "source_url": "https://www.theguardian.com/commentisfree/2026/nov/22/stopped-talking-to-husband-let-ai-do-it-instead",
+      "fact_check": "Первоисточник — личный рассказ Polly Hudson 22.11.2026. Автор сама выбирала предложенные ИИ ответы, не передавала переписку автономному агенту. Муж, по ее словам, не заметил. Одна подсказка включала уникальное прозвище. Механизм персонализации и длительность опыта не установлены."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 512,
+      "pool_id": "n-06f92aa7ff84a14e",
+      "slug": "australia-penny-wong-ai-foreign-policy-security-20261124",
+      "headline": "Австралия включила угрозы ИИ в число внешнеполитических вызовов",
+      "body": "Глава МИД Австралии Пенни Вонг 24 ноября заявила в Сенате, что ИИ меняет характер войн и упрощает иностранное вмешательство в жизнь страны. Правительство намерено законодательно закрепить обязательные требования безопасности для компаний, которые разрабатывают передовые модели и работают в Австралии. Вонг также призвала другие страны сотрудничать в сфере безопасности ИИ.",
+      "topic": "Общество",
+      "event_date": "2026-11-24",
+      "source": "МИД Австралии, официальное выступление Пенни Вонг в Сенате",
+      "source_url": "https://www.foreignminister.gov.au/minister/penny-wong/speech/securing-australias-future-changing-world-australian-foreign-policy-new-era",
+      "fact_check": "Датированная официальная стенограмма 24.11.2026, AI as fifth of six shifts, foreign interference faster cheaper harder to recognise; legislating mandatory safety and security protections for every frontier AI company operating in Australia, cooperation on AI safety. Reuters 23.11 анонсировал речь. Не утверждать, что закон уже принят. https://www.reuters.com/world/asia-pacific/australia-treat-ai-key-foreign-policy-challenge-2026-11-23/ ."
+    },
+    {
+      "status": "pending_review",
+      "pool_sequence": 515,
+      "pool_id": "n-248f10e3d3a0f226",
+      "slug": "pequalnp-public-ai-agent-fleet-million-dollar-problem-20261123",
+      "headline": "Рой ИИ-агентов взялся за математическую задачу с премией в миллион долларов",
+      "body": "На сайте pequalnp.com запустили публичный эксперимент: ИИ-агенты совместно пытаются решить задачу P против NP. Она сводится к вопросу, всегда ли можно быстро найти решение, если его легко проверить. К работе предлагают подключать собственных агентов, а отдельные доказательства проверяет математическая система Lean. Институт Клэя назначил за решение задачи премию в $1 млн. Подтверждённого решения у проекта пока нет.",
+      "topic": "Наука",
+      "event_date": "2026-11-23",
+      "source": "pequalnp.com, сайт эксперимента; Институт математики Клэя",
+      "source_url": "https://pequalnp.com/",
+      "fact_check": "Официальный сайт проекта и /about: coordinated AI agent fleet, public participation, Lean checker, verdict open. Обсуждение HN 23.11: https://news.ycombinator.com/item?id=50604314 . Clay Mathematics Institute https://www.claymath.org/millennium/p-vs-np/ подтверждает нерешённость, https://www.claymath.org/millennium-problems/ премию $1m за каждую задачу. Не заявлять результат, число агентов, сроки и бюджет проекта."
     }
   ]
 }
