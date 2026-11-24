@@ -9,6 +9,9 @@ const article_id="example-copyedit",revision=2,version=1,source_sha="a".repeat(4
 const stem=article_id+"-r2-v1",draftPath="editorial_inbox/auto_drafts/"+article_id+".json",candidatePath="editorial_inbox/auto_copyedits/"+stem+".json",decisionPath="editorial_inbox/auto_copyedit_decisions/"+stem+".json";
 const original={title:"Заголовок",dzen_title:"Заголовок",summary:"Факт",article_markdown:"Новая модель решает 12 задач.\n\nСсылка https://example.com/news",threads_text:"Факт",x_text:"Факт @example",vk_title:"🌍 Заголовок",vk_summary:"Факт"};
 const edited={...original,title:"Новый заголовок",dzen_title:"Новый заголовок",article_markdown:"Модель решает 12 задач.\n\nПодробности https://example.com/news"};
+// Use a complete article for the owner-edit route preflight.
+original.article_markdown+="\n\n"+"Лабораторный эксперимент описан в исходном материале. ".repeat(10);
+edited.article_markdown+="\n\n"+"Лабораторный эксперимент описан в исходном материале. ".repeat(10);
 const draft={article_id,revision,status:"ready_for_review",updated_at:"2026-11-24T08:03:46Z",content:{...original,topics:["science"],related_dzen_ids:[]},editor_notes:["original"],cover_brief:{fact:"original"}};
 const candidate={schema_version:2,worker:"hpii-chief-copyeditor",article_id,source_revision:revision,copyedit_version:version,source_draft_blob_sha:source_sha,source_updated_at:draft.updated_at,status:"ready_for_comparison",original_text:original,edited_text:edited,editor_flags:[]};
 const data={article_id,revision,version,source_sha,candidate_sha,action:"accept_copyedit",note:""};
@@ -87,6 +90,14 @@ test("authenticated accept is one non-forced Git ref update; keep/return do not 
   const next=JSON.parse(entries.find(x=>x.path===draftPath).content),record=JSON.parse(entries.find(x=>x.path===decisionPath).content);
   assert.equal(next.revision,3);assert.equal(next.status,"ready_for_review");assert.equal(next.content.title,edited.title);assert.deepEqual(next.cover_brief,draft.cover_brief);assert.deepEqual(next.content.topics,draft.content.topics);assert.equal(record.action,"accept_copyedit");
   assert.ok(next.editor_notes.at(-1).includes(candidate_sha));assert.equal(writes[2].body.force,false);assert.deepEqual(writes[1].body.parents,[base]);
+  writes=[];
+  const manual={...edited,article_markdown:edited.article_markdown.replace("Модель решает","Нейросеть выполняет")};
+  r=await submit({...data,manual_text:manual});assert.equal(r.status,200,await r.clone().text());
+  const manualEntries=writes[0].body.tree;
+  assert.equal(JSON.parse(manualEntries.find(x=>x.path===draftPath).content).content.article_markdown,manual.article_markdown);
+  assert.equal(JSON.parse(manualEntries.find(x=>x.path===decisionPath).content).manual_edit,true);
+  writes=[];r=await submit({...data,manual_text:{...manual,article_markdown:manual.article_markdown.replace("12","13")}});
+  assert.equal(r.status,400);assert.equal(writes.length,0);
   for(const action of ["keep_original","revise_copyedit"]){writes=[];r=await submit({...data,action,note:"Уточни начало"});assert.equal(r.status,200,await r.clone().text());assert.equal(writes[0].body.tree.length,1);assert.equal(writes[0].body.tree[0].path,decisionPath)}
   writes=[];race=true;r=await submit(data);assert.equal(r.status,409);assert.equal(writes[2].body.force,false);
  }finally{globalThis.fetch=saved}
