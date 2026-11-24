@@ -55,6 +55,10 @@ schema_version (2), article_id, source_revision, source_updated_at, source_draft
 
 Страница только для сравнения: https://iipike.ru/admin/auto-corrector/
 
+## Обратная передача вопросов редактору
+
+Если корректор сохраняет `needs_editor_attention`, это **не отправленное автоматически личное сообщение**. Это запрос в `editorial_inbox/auto_copyedits/<id>-rN-v1.json`. Его читает автономный редактор по [`AUTO_COPYEDITOR_FEEDBACK.md`](AUTO_COPYEDITOR_FEEDBACK.md). Редактор перепроверяет факт, записывает ответ в `editorial_inbox/auto_copyedit_responses/` и, если нашёл решение, создаёт новую ревизию своей статьи. Ответ `needs_human_decision` означает, что редактор факт проверить не сумел и требует решения главреда. Корректор не создаёт человеческих `auto_decisions`, не подменяет главреда и не переписывает факты.
+
 ## Порядок каждого фонового прохода
 
 1. Подтверди ChatGPT Work и GitHub, прочитай этот регламент; без действительного доступа остановись честно. Не имитируй проверку.
