@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T17:36:27.558696Z",
+  "updated_at": "2026-11-24T20:52:01.676805Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,21 +9,21 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T17:36:27.558696Z",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
       "error": null,
-      "fresh_matches": 8
+      "fresh_matches": 7
     },
     {
       "id": "overclockers",
       "name": "Overclockers.ru",
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T10:23:23.007058Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "error": null,
+      "fresh_matches": 0
     },
     {
       "id": "mk",
@@ -31,10 +31,10 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T17:36:27.558696Z",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
       "error": null,
-      "fresh_matches": 1
+      "fresh_matches": 0
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T17:36:27.558696Z",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T17:36:27.558696Z",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T17:36:27.558696Z",
-      "last_success_at": "2026-11-24T17:36:27.558696Z",
+      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "last_success_at": "2026-11-24T20:52:01.676805Z",
       "error": null,
       "fresh_matches": 2
     }
@@ -76,8 +76,8 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-24",
-    "attempted": 15
+    "date": "2026-11-25",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -135,10 +135,14 @@
       "first_seen_at": "2026-11-24T17:36:27.558696Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Шесть тысяч только за выпуск виртуального пластика — кусачая цена ради пары подписок на модели. Хотелось бы посмотреть на реальный курс конвертации, когда закидываешь рубли через СБП.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-24T20:52:01.676805Z",
+      "reason": "Обратил внимание на стоимость выпуска карты и скрытые затраты на конвертацию.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T20:52:01.676805Z"
     },
     {
       "id": "db31f02c3e45cf4f0df8388f",
@@ -258,12 +262,14 @@
       "first_seen_at": "2026-11-24T10:23:23.007058Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-24T10:23:23.007058Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что старые модели врали в половине случаев, а в базах научных статей этот шлейф до сих пор разгребают. Интересно, сколько времени пройдет, пока свежие тексты полностью очистятся от такого мусора.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-24T20:52:01.676805Z",
+      "reason": "Зацепился за цифру по галлюцинациям старых моделей и их отражение в реальных научных базах.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T20:52:01.676805Z"
     },
     {
       "id": "51c9c8b7096051d82c1c40fe",
@@ -277,12 +283,14 @@
       "first_seen_at": "2026-11-24T10:23:23.007058Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-24T10:23:23.007058Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "attempts": 2,
+      "last_attempt_at": "2026-11-24T20:52:01.676805Z",
+      "reason": "Не прошёл проверку: В статье нет данных о стоимости одного автоматического запуска через API Gemini, а комментарий вводит это как допущение/вопрос о конкретной цене в центах, хотя",
+      "link_status": "dzen_link_missing",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-24T20:52:01.676805Z"
     },
     {
       "id": "a4254a24013bff661151d8d3",
