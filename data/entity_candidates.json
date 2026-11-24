@@ -2049,6 +2049,18 @@
           "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
         }
       ]
+    },
+    {
+      "key": "kpmg",
+      "name": "KPMG",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "kpmg-ai-agents-parallel-audit-20261118",
+          "source_url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05"
+        }
+      ]
     }
   ],
   "products": [
