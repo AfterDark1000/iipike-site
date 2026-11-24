@@ -8,11 +8,15 @@ import json
 import re
 import subprocess
 from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scripts.check_auto_copyeditor_pilot import blob_sha
 from scripts.site_news_pool import utc_time
 
-ROOT = Path(__file__).resolve().parents[1]
 COPIES = "editorial_inbox/auto_copyedits"
 RESPONSES = "editorial_inbox/auto_copyedit_responses"
 DRAFTS = "editorial_inbox/auto_drafts"
