@@ -8202,5 +8202,28 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Поисковик Google теперь сможет заглянуть в ваш кошелёк",
+    "summary": "Google начала подключать Wallet к AI Mode: поисковый ИИ с разрешения пользователя сможет анализировать расходы и бонусы банковских карт. Доступ только на чтение.",
+    "published": "2026-11-24",
+    "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+    "cover": "assets/editorial/google-search-wallet-personal-intelligence-20261123.webp",
+    "rubric": "news",
+    "vk_title": "💳 Google-поисковик научился заглядывать в ваш КОШЕЛЁК",
+    "vk_summary": "ИИ-поиск Google получил возможность анализировать расходы и бонусы банковских карт через Google Wallet. В ближайшие недели к нему подключат личные документы и переписки с Gemini.",
+    "published_at_utc": "2026-11-24T06:45:42Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "google-search-wallet-personal-intelligence-20261123",
+    "url": "articles/google-search-wallet-personal-intelligence-20261123/",
+    "topics": [
+      "search",
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": []
   }
 ]
