@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 30 · **Готовы:** 0 · **Ждут интервал:** 30 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 220
+**В очереди:** 31 · **Готовы:** 0 · **Ждут интервал:** 31 · **Срочная очередь:** 3 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 220
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -42,12 +42,13 @@
 | **28** | [Spotify разрешила музыкантам блокировать поддельные песни, выпущенные под их именем](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/spotify-artist-profile-protection-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 21:07 (Усть-Катав)**; пауза до 24.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/spotify-artist-profile-protection-20261117.webp) |
 | **29** | [Instagram научится ловить нейросети на воровстве чужих шуток и видеороликов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/instagram-content-protection-ai-copies-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 22:07 (Усть-Катав)**; пауза до 24.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/instagram-content-protection-ai-copies-20261117.webp) |
 | **30** | [Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/proton-lumo-desktop-permissions-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 25.11.2026 23:07 (Усть-Катав)**; пауза до 24.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/proton-lumo-desktop-permissions-20261117.webp) |
+| **31** | [Suno научилась снимать музыкальные клипы на песни, которые сама же и сочинила](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-visuals-music-videos-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 00:07 (Усть-Катав)**; пауза до 24.11.2026 12:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/suno-visuals-music-videos-20261117.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Suno научилась снимать музыкальные клипы на песни, которые сама же и сочинила](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/suno-visuals-music-videos-20261117.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Опубликованы через site-first — новые сверху
 
