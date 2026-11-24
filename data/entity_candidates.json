@@ -3810,6 +3810,32 @@
           "source_url": "https://proton.me/blog/lumo-desktop-features"
         }
       ]
+    },
+    {
+      "key": "suno-visuals",
+      "name": "Suno Visuals",
+      "company": "suno",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "suno-visuals-music-videos-20261117",
+          "source_url": "https://suno.com/blog/introducing-visuals"
+        }
+      ]
+    },
+    {
+      "key": "h3-move",
+      "name": "H3 Move",
+      "company": "suno",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "suno-visuals-music-videos-20261117",
+          "source_url": "https://help.suno.com/en/articles/14661249"
+        }
+      ]
     }
   ]
 }
