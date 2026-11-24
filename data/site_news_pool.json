@@ -3945,7 +3945,7 @@
       "review_started_at": "2026-11-24T05:21:54.325Z",
       "closed_at": null,
       "article_id": null,
-      "note": "Ручной редактор: проверка официальной политики хранения чатов Gemini."
+      "note": "Проверен официальный анонс Google 16.11 https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/ и Privacy Hub 19.11 https://support.google.com/gemini/answer/13594961?hl=en&visualEditor=convert. Срок для временных чатов и чатов с выключенной историей увеличивается с 72 ч примерно до 2 месяцев; глобальное развёртывание в течение нескольких недель. Отдельные настройки истории и обучения; временные чаты не используются для обучения, при отключённой истории исключение связано с отправкой обратной связи. Возможна проверка людьми в целях безопасности; проверенные чаты до 3 лет. Комментарий Google https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/. Архив проверен, прямой связи не добавлено. Комплект на утверждении. ID google-gemini-temporary-chat-retention-20261116."
     },
     {
       "id": "n-d34ce25785fdf87b",
