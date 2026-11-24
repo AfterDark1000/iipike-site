@@ -1861,6 +1861,18 @@
           "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
         }
       ]
+    },
+    {
+      "key": "genesis-ai",
+      "name": "Genesis AI",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "genesis-ai-robot-gloves-funding-20261117",
+          "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
+        }
+      ]
     }
   ],
   "products": [
@@ -3682,6 +3694,19 @@
         {
           "article_id": "google-search-wallet-personal-intelligence-20261123",
           "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+        }
+      ]
+    },
+    {
+      "key": "eno",
+      "name": "Eno",
+      "company": "genesis-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "genesis-ai-robot-gloves-funding-20261117",
+          "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
         }
       ]
     }
