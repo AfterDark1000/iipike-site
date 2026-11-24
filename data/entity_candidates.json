@@ -1997,6 +1997,18 @@
           "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
         }
       ]
+    },
+    {
+      "key": "pangram-labs",
+      "name": "Pangram Labs",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
+          "source_url": "https://www.pangram.com/"
+        }
+      ]
     }
   ],
   "products": [
@@ -3969,6 +3981,19 @@
         {
           "article_id": "will-wright-mymems-ai-memory-game-20261118",
           "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+        }
+      ]
+    },
+    {
+      "key": "pangram",
+      "name": "Pangram",
+      "company": "pangram-labs",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
+          "source_url": "https://www.pangram.com/"
         }
       ]
     }
