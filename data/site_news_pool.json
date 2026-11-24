@@ -4135,9 +4135,9 @@
       "summary": "18 ноября: администрация обсуждает требование раскрывать использование китайских моделей, включая Qwen и DeepSeek; пока предложение.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T14:52:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T07:14:21.742Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
