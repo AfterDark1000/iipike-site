@@ -21,7 +21,7 @@ jobs:
       - name: Checkout trusted validation code from main
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.event.pull_request.head.sha || 'main' }}
           fetch-depth: 0
           persist-credentials: false
       - name: Install WebP decoder
