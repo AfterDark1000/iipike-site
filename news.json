@@ -8493,5 +8493,26 @@
     "products": [
       "claude"
     ]
+  },
+  {
+    "title": "В Гонконге включили распознавание лиц на городских камерах. Данные будут хранить до полугода",
+    "summary": "Полиция Гонконга внедрила распознавание лиц в сеть SmartView: поиск подозреваемых и пропавших, планы расширения до 60 тысяч камер и хранение лицевых данных до 180 дней.",
+    "published": "2026-11-25",
+    "source_url": "https://www.police.gov.hk/ppp_en/11_useful_info/cctv.html",
+    "cover": "assets/editorial/hong-kong-smartview-facial-recognition-20261116.webp",
+    "rubric": "news",
+    "vk_title": "📹 В Гонконге включили РАСПОЗНАВАНИЕ ЛИЦ на городских камерах",
+    "vk_summary": "Полиция Гонконга запустила распознавание лиц в системе SmartView. Нейросеть помогает искать подозреваемых и пропавших людей. К 2028 году сеть хотят расширить до 60 тысяч камер. Данные о лицах могут храниться до 180 дней, а подключённые торговые центры не обязаны отдельно предупреждать посетителей о передаче видео полиции.",
+    "published_at_utc": "2026-11-24T19:15:42Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "hong-kong-smartview-facial-recognition-20261116",
+    "url": "articles/hong-kong-smartview-facial-recognition-20261116/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
