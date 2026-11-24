@@ -4495,12 +4495,12 @@
       "summary": "17–18 ноября: разбирательства из-за выдуманных цитат и передачи материалов ИИ-системе.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T03:35:29+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T09:28:44.711Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Редактор 36: резерв, проверка первоисточников и архива."
     },
     {
       "id": "n-be466738ec1cd018",
