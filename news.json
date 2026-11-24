@@ -8248,5 +8248,30 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "Google устроила научные конференции для нейросетей",
+    "summary": "Команды ИИ-агентов Gemini на виртуальных конференциях совместно улучшали алгоритмы для квантовых компьютеров, а корректность решений проверяли математически.",
+    "published": "2026-11-24",
+    "source_url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+    "cover": "assets/editorial/google-gemini-quantum-agent-conferences-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🧑‍🔬 Google устроила НАУЧНЫЕ КОНФЕРЕНЦИИ для нейросетей",
+    "vk_summary": "Команды ИИ-агентов Gemini каждые четыре часа собирались на виртуальных конференциях и обсуждали научные задачи. Нейросети нашли новые способы сократить вычислительные затраты в исследованиях термоядерного синтеза, химии и лекарств.",
+    "published_at_utc": "2026-11-24T09:01:02Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "google-gemini-quantum-agent-conferences-20261123",
+    "url": "articles/google-gemini-quantum-agent-conferences-20261123/",
+    "topics": [
+      "agents",
+      "science"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
