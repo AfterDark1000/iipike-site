@@ -26,7 +26,18 @@ main{max-width:1300px;margin:auto;padding:18px}section{background:#fff;border:1p
 select{border:1px solid #c5cfc8;background:white;color:#252824;border-radius:8px;padding:10px;font:inherit}
 pre{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;margin:0}
 .panes{display:grid;grid-template-columns:1fr 1fr;gap:16px}.pane{border:1px solid #e0e5e0;border-radius:10px;padding:15px;min-width:0;background:#fcfcfa}
-.pane h3{margin:0 0 12px;font-size:16px}.original{border-top:4px solid #b6bcc0}.edited{border-top:4px solid #4b8c70}
+.pane>h3{margin:0 0 12px;font-size:16px}
+.article-preview{font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;overflow-wrap:anywhere}
+.article-preview p{margin:0 0 1em}.article-preview .lead{font-weight:650}
+.article-preview h2,.article-preview h3{line-height:1.35;margin:1.25em 0 .65em}
+.article-preview h2{font-size:1.3em}.article-preview h3{font-size:1.15em}
+.article-preview a{color:#16716a;text-decoration:underline;text-underline-offset:2px}
+.article-preview blockquote{margin:1em 0;padding:8px 13px;border-left:3px solid #4b8c70;background:#4b8c7010}
+.article-preview blockquote p:last-child{margin-bottom:0}.article-preview footer{font-size:.9em}
+.article-preview ul,.article-preview ol{padding-left:1.5em;margin:0 0 1em}.article-preview figure{margin:1em 0}.article-preview img{max-width:100%;height:auto}
+.article-preview[data-plain=true]{white-space:pre-wrap}
+#manual-tools{margin:0 0 12px}#manual-editor{width:100%;min-height:250px;resize:vertical;padding:12px;border:1px solid #9cad9f;border-radius:8px;font:15px/1.55 system-ui,sans-serif;background:transparent;color:inherit;margin-bottom:10px}#manual-editor[hidden],#manual-tools[hidden],#manual-hint[hidden]{display:none!important}
+#manual-hint{font-size:13px;margin:0 0 12px;line-height:1.5}.manual-dirty{color:#9a641c;font-weight:600}.original{border-top:4px solid #b6bcc0}.edited{border-top:4px solid #4b8c70}
 .muted{color:#65766d;font-size:13px}.flags{color:#8b3f1f;font-weight:600}.result{font-weight:600}
 ul{line-height:1.6}.meta{font-size:13px;color:#64726b;margin-top:10px;overflow-wrap:anywhere}
 @media(max-width:800px){.panes{grid-template-columns:1fr}header{padding:18px}main{padding:12px}.pane{padding:12px}}
@@ -54,8 +65,10 @@ button{font:inherit;border:1px solid #a4b4a8;border-radius:8px;padding:10px 14px
 <section><h2>Ответ редактора корректору</h2>
 <div id="editor-reply" class="result">Нет запроса, требующего ответа.</div></section>
 <section><div class="panes">
-<div class="pane original"><h3>Было · автономный редактор</h3><pre id="before">—</pre></div>
-<div class="pane edited"><h3>Стало · шеф-корректор</h3><pre id="after">—</pre></div>
+<div class="pane original"><h3>Было · автономный редактор</h3><div id="before" class="article-preview">—</div></div>
+<div class="pane edited"><h3>Стало · шеф-корректор</h3><div id="manual-tools" class="tools" hidden><button type="button" id="manual-toggle">✎ Править вручную</button><button type="button" id="manual-reset" hidden>Сбросить мои правки</button><span id="manual-dirty" class="manual-dirty"></span></div>
+<p id="manual-hint" class="muted" hidden>Правь выбранное поле. Под редактором сразу отображается результат. Заголовки сайта и Дзена синхронизируются. Цифры, цитаты, ссылки и @аккаунты защищены. Для сохранения всех правок нажми «Сохранить мои правки» ниже.</p>
+<textarea id="manual-editor" hidden spellcheck="true" aria-label="Ручная правка выбранного поля"></textarea><div id="after" class="article-preview">—</div></div>
 </div></section>
 <section id="copy-review"><h2>Решение главреда</h2>
 <p id="copy-review-state" role="status">Проверяю актуальность версии…</p>
@@ -78,6 +91,43 @@ const names=["title","dzen_title","summary","article_markdown","threads_text","x
 const byId=id=>document.getElementById(id);
 const select=byId("choose"), field=byId("field");
 let rows=[], active=null, version=0, activeRow=null, reviewReady=false;
+let manualText=null,manualOpen=false,manualAllowed=false;
+const editor=byId("manual-editor"),manualTools=byId("manual-tools"),manualToggle=byId("manual-toggle"),manualReset=byId("manual-reset"),manualHint=byId("manual-hint");
+const {renderArticle,parseArticle}=await import("/admin/auth/article-preview.mjs");
+function changed(){return !!manualText&&!!active&&names.some(k=>manualText[k]!==active.edited_text[k])}
+function updateManualUI(){
+ const dirty=changed();
+ manualTools.hidden=!manualAllowed;manualToggle.textContent=manualOpen?"Закрыть редактор":"✎ Править вручную";
+ editor.hidden=!manualOpen||!manualAllowed;manualHint.hidden=editor.hidden;
+ manualReset.hidden=!dirty;byId("manual-dirty").textContent=dirty?"Есть несохранённые правки":"";
+ reviewButtons[0].textContent=dirty?"Сохранить мои правки":"Принять версию корректора";
+ if(active)reviewButtons[0].hidden=!dirty&&active.status!=="ready_for_comparison";
+ // Keep/revise are not allowed to silently discard the owner's changes.
+ reviewButtons[1].disabled=dirty||!reviewReady;reviewButtons[2].disabled=dirty||!reviewReady;
+}
+function resetManual(){manualText=null;manualOpen=false;manualAllowed=false;editor.value="";updateManualUI()}
+function showField(parent,value,key){
+ parent.dataset.plain=String(key!=="article_markdown");parent.replaceChildren();
+ if(key!=="article_markdown"){parent.textContent=value||"—";return}
+ try{renderArticle(parent,value||"",{articleId:active?.article_id})}
+ catch(e){const p=document.createElement("p");p.textContent="Ошибка оформления: "+e.message;parent.append(p);const pre=document.createElement("pre");pre.textContent=value;parent.append(pre)}
+}
+manualToggle.addEventListener("click",()=>{
+ if(!manualAllowed)return;
+ manualOpen=!manualOpen;
+ if(manualOpen&&!manualText)manualText={...active.edited_text};
+ if(manualOpen)editor.value=manualText[field.value];
+ updateManualUI();if(manualOpen)editor.focus();
+});
+manualReset.addEventListener("click",()=>{if(!confirm("Сбросить все несохранённые ручные правки этого материала?"))return;manualText={...active.edited_text};editor.value=manualText[field.value];show();updateManualUI()});
+editor.addEventListener("input",()=>{
+ if(!manualOpen||!manualText||!manualAllowed)return;
+ const k=field.value;manualText[k]=editor.value;
+ if(k==="title")manualText.dzen_title=editor.value;
+ if(k==="dzen_title")manualText.title=editor.value;
+ show();updateManualUI();
+});
+window.addEventListener("beforeunload",event=>{if(changed()){event.preventDefault();event.returnValue=""}});
 const rawRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/";
 const controls=byId("copy-review-controls"),reviewState=byId("copy-review-state");
 const reviewButtons=["copy-accept","copy-keep","copy-revise"].map(byId);
@@ -88,7 +138,7 @@ async function optionalRecord(path){
  return r.json();
 }
 async function loadReview(item,row,token){
- reviewReady=false;controls.hidden=true;reviewState.dataset.error="false";
+ reviewReady=false;manualAllowed=false;controls.hidden=true;reviewState.dataset.error="false";updateManualUI();
  reviewState.textContent="Проверяю актуальность версии…";
  try{
   const [draft,decision,human]=await Promise.all([
@@ -103,7 +153,7 @@ async function loadReview(item,row,token){
   if(!["ready_for_comparison","no_change_recommended"].includes(item.status)){reviewState.textContent="Это запрос или вопрос по фактам, а не готовая литературная правка.";return}
   reviewButtons[0].hidden=item.status!=="ready_for_comparison";reviewButtons[2].hidden=item.copyedit_version>=5;
   reviewButtons.forEach(b=>b.disabled=false);byId("copy-note").value="";
-  reviewReady=true;controls.hidden=false;reviewState.textContent="Выбери версию или отправь замечания. Публикация не запускается.";
+  reviewReady=true;manualAllowed=true;controls.hidden=false;updateManualUI();reviewState.textContent="Выбери версию, исправь текст вручную или отправь замечания. Публикация не запускается.";
  }catch(e){if(token===version){reviewState.dataset.error="true";reviewState.textContent="Не удалось проверить состояние: "+e.message}}
 }
 async function submitReview(action){
@@ -112,14 +162,20 @@ async function submitReview(action){
  if(action==="revise_copyedit"&&!note){reviewState.textContent="Напиши, что нужно исправить.";byId("copy-note").focus();return}
  if(!window.HpiiAdminAuth?.reviewCopyedit){reviewState.textContent="Новый API ещё недоступен. Обнови страницу после развёртывания.";return}
  const token=version,item=active,row=activeRow;
- reviewReady=false;reviewButtons.forEach(b=>b.disabled=true);select.disabled=true;
+ const manual=action==="accept_copyedit"&&changed()?{...manualText}:null;
+ if(manual){
+  try{parseArticle(manual.article_markdown,{articleId:item.article_id});for(const [k,max] of Object.entries({title:500,dzen_title:500,threads_text:480,x_text:280,vk_title:200,vk_summary:350})){if(!manual[k].trim()||Array.from(manual[k]).length>max)throw Error(k+": превышен лимит или пустой текст")}}
+  catch(e){reviewState.textContent="Исправь оформление: "+e.message;return}
+ }
+ reviewReady=false;manualAllowed=false;updateManualUI();reviewButtons.forEach(b=>b.disabled=true);select.disabled=true;
  reviewState.textContent="Сохраняю решение…";
  try{
-  const result=await window.HpiiAdminAuth.reviewCopyedit(item,row.sha,action,note);
+  const result=await window.HpiiAdminAuth.reviewCopyedit(item,row.sha,action,note,manual);
   if(token!==version)return;
   controls.hidden=true;reviewState.dataset.error="false";
+  if(manual){active={...active,edited_text:manual};manualText=null;manualOpen=false;show();updateManualUI()}
   reviewState.textContent=({copyedit_applied:"✓ Корректура принята. Новая ревизия r"+result.revision+" в основной админке; отдельно утверди текст и обложку.",original_retained:"✓ Оставлена версия редактора.",copyedit_revision_requested:"✓ Замечания переданы корректору."})[result.status]||"Решение сохранено.";
- }catch(e){if(token===version){reviewState.dataset.error="true";reviewState.textContent="Не подтверждено: "+e.message+". Обнови страницу и проверь сохранённое решение.";controls.hidden=true}}
+ }catch(e){if(token===version){reviewState.dataset.error="true";reviewState.textContent=e.message==="manual_edit_invalid_or_protected_facts_changed"?"Правки не сохранены: проверь цифры, ссылки, цитаты, @упоминания и оформление. Текст сохранён в редакторе.":"Не подтверждено: "+e.message+". Обнови страницу и проверь сохранённое решение.";if(manual&&e.message==="manual_edit_invalid_or_protected_facts_changed"){reviewReady=true;manualAllowed=true;reviewButtons.forEach(b=>b.disabled=false);updateManualUI()}else{controls.hidden=true}}}
  finally{if(token===version)select.disabled=false}
 }
 reviewButtons[0].addEventListener("click",()=>submitReview("accept_copyedit"));
@@ -127,8 +183,8 @@ reviewButtons[1].addEventListener("click",()=>submitReview("keep_original"));
 reviewButtons[2].addEventListener("click",()=>submitReview("revise_copyedit"));
 function show(){
  const key=field.value;
- byId("before").textContent=active?.original_text?.[key]||"—";
- byId("after").textContent=active?.edited_text?.[key]||"—";
+ showField(byId("before"),active?.original_text?.[key]||"",key);
+ showField(byId("after"),(manualText||active?.edited_text)?.[key]||"",key);
 }
 const statusName={
   needs_editor_attention:"Требуется внимание журналиста",
@@ -223,7 +279,7 @@ async function loadReply(item, filename, token){
 }
 async function load(index){
  const v=++version;
- reviewReady=false;controls.hidden=true;activeRow=null;
+ reviewReady=false;controls.hidden=true;activeRow=null;resetManual();
  select.disabled=true;active=null;byId("status").textContent="Читаю сохранённую корректуру…";delete byId("status").dataset.state;byId("selected-title").hidden=true;byId("selected-version").textContent="";byId("info").hidden=true;show();
  try{
   const r=await fetch(rows[index].download_url,{cache:"no-store"});
@@ -239,8 +295,8 @@ async function load(index){
  }catch(e){byId("status").textContent="Ошибка: "+e.message;byId("status").dataset.state="error"}
  finally{select.disabled=false}
 }
-field.addEventListener("change",show);
-select.addEventListener("change",()=>load(select.selectedIndex));
+field.addEventListener("change",()=>{if(manualOpen&&manualText)editor.value=manualText[field.value];show()});
+select.addEventListener("change",()=>{if(changed()&&!confirm("Отбросить несохранённые правки?")){select.selectedIndex=rows.indexOf(activeRow);return}load(select.selectedIndex)});
 try{
  const response=await fetch(api,{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
  if(response.status===404){select.replaceChildren(new Option("Пилот ещё не запущен"));byId("status").textContent="Кандидатов пока нет.";return}
