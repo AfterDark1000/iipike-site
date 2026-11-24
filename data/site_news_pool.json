@@ -7765,12 +7765,12 @@
       "summary": "23 ноября. Сообщение о Claude Ship; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T03:18:40+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T04:52:00Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Ручной редактор: проверка первоисточников Claude Ship."
     },
     {
       "id": "n-e6e5258b91853da9",
