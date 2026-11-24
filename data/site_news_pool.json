@@ -1570,12 +1570,12 @@
       "summary": "14 ноября: по сообщению о препринте, шесть агентов проверены на соблюдение ограничений сбора данных на 1895 сайтах.",
       "origin": "ХПИИ — добытчик новостей (утренний проход 15.11.2026)",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-15T03:19:00.000Z",
       "review_started_at": "2026-11-23T08:00:56+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-007.json; article_id=scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12"
+      "closed_at": "2026-11-24T18:15:40Z",
+      "article_id": "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
+      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-007.json; article_id=scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12\nОпубликовано на сайте: https://iipike.ru/articles/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12/\nПервоначальный источник сохранён; редактор заменил обзор CASRAI на первоисточник https://arxiv.org/abs/2611.11306. Идентичность проверена по квитанции, автодрафту r2, утверждённому handoff и опубликованному HTML (Issue #425)."
     },
     {
       "id": "n-2ff83c781f8ed399",
