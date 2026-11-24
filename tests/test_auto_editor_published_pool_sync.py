@@ -1,5 +1,8 @@
 """Reconcile only proven published autonomous full articles into their raw pool."""
 import copy
+import hashlib
+import json
+import subprocess
 from pathlib import Path
 import tempfile
 import unittest
@@ -72,6 +75,77 @@ class AutoEditorPublishedSyncTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "source differs"):
             sync.reconcile(self.pool, [bad], root=self.root)
         self.assertEqual(self.pool["items"][0]["status"], "in_review")
+
+
+    def test_source_upgrade_requires_exact_receipt_and_approved_handoff(self):
+        request = "pilot-20261119-001.json"
+        source = "https://arxiv.org/abs/2611.11306"
+        upgraded = dict(self.article, source_url=source)
+        def git(*args):
+            return subprocess.check_output(["git", *args], cwd=self.root, stderr=subprocess.PIPE).decode().strip()
+        def save(path, obj):
+            p = self.root / path
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(json.dumps(obj) + "\n", encoding="utf-8")
+            return p
+        git("init", "-q")
+        req = save("data/auto_editor/requests/" + request,
+                   {"schema_version": 1, "action": "claim_ordinary", "worker": "hpii-auto-editor"})
+        receipt = {
+            "schema_version": 1, "request": request, "status": "reserved",
+            "pool_id": POOL_ID, "pool_sequence": 44, "article_id": ID,
+            "worker": "hpii-auto-editor", "claimed_at": self.item["review_started_at"],
+            "request_sha256": hashlib.sha256(req.read_bytes()).hexdigest(),
+            "source_url": SOURCE,
+        }
+        save("data/auto_editor/receipts/" + request, receipt)
+        content = {"title": "Проверенный материал", "article_markdown": "Текст утверждённого материала.", "source_url": source}
+        draft_path = f"editorial_inbox/auto_drafts/{ID}.json"
+        save(draft_path, {"request": request, "pool_id": POOL_ID, "pool_sequence": 44,
+                         "article_id": ID, "revision": 2, "status": "ready_for_review",
+                         "updated_at": STAMP, "content": content})
+        draft_sha = git("hash-object", "-w", draft_path)
+        decision_path = f"editorial_inbox/auto_decisions/{ID}-r2.json"
+        decision = {"article_id": ID, "revision": 2, "draft_blob_sha": draft_sha,
+                    "action": "approve_text", "status": "text_approved_cover_pending",
+                    "decided_by": "AfterDark1000", "updated_at": STAMP, "decided_at": STAMP}
+        save(decision_path, decision)
+        decision_sha = git("hash-object", "-w", decision_path)
+        story_path = f"editorial_inbox/stories/{ID}.json"
+        save(story_path, dict(content, id=ID, status="editor_approved", approved_by="human_editor"))
+        marker_path = f"editorial_inbox/auto_handoffs/{ID}-r2-v1.json"
+        marker = {"schema_version": 1, "article_id": ID, "text_revision": 2, "cover_version": 1,
+                  "status": "handed_off_to_site_queue", "story_path": story_path,
+                  "source_draft_blob_sha": draft_sha, "text_decision_blob_sha": decision_sha,
+                  "text_approved_at": STAMP}
+        save(marker_path, marker)
+        approved_path = f"content/approved/{ID}.json"
+        save(approved_path, dict(content, slug=ID, status="approved", published_at_utc=STAMP))
+        def pin():
+            git("add", ".")
+            git("-c", "user.name=Test", "-c", "user.email=test@example.org", "commit", "-qm", "fixture")
+            git("update-ref", "refs/remotes/origin/editorial-intake", "HEAD")
+        pin()
+        result, changes = sync.reconcile(self.pool, [upgraded], root=self.root)
+        self.assertEqual(len(changes), 1)
+        self.assertEqual(result["items"][0]["source_url"], SOURCE)
+        self.assertEqual(result["items"][0]["closed_at"], STAMP)
+        self.assertIn(source, result["items"][0]["note"])
+        # A modified receipt cannot authenticate a different claim.
+        save("data/auto_editor/receipts/" + request, dict(receipt, pool_sequence=45))
+        with self.assertRaisesRegex(ValueError, "source differs"):
+            sync.reconcile(self.pool, [upgraded], root=self.root)
+        save("data/auto_editor/receipts/" + request, receipt)
+        # Matching ID + URL without the exact owner-approved text is insufficient.
+        save(approved_path, dict(content, article_markdown="Другой текст", slug=ID,
+                                 status="approved", published_at_utc=STAMP))
+        with self.assertRaisesRegex(ValueError, "source differs"):
+            sync.reconcile(self.pool, [upgraded], root=self.root)
+        save(approved_path, dict(content, slug=ID, status="approved", published_at_utc=STAMP))
+        save(decision_path, dict(decision, action="reject"))
+        pin()
+        with self.assertRaisesRegex(ValueError, "source differs"):
+            sync.reconcile(self.pool, [upgraded], root=self.root)
 
     def test_wrong_url_or_missing_publication_time_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "unexpected path"):
