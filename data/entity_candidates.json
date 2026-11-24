@@ -3746,6 +3746,45 @@
           "source_url": "https://artists.spotify.com/en/blog/introducing-artist-profile-protection"
         }
       ]
+    },
+    {
+      "key": "instagram",
+      "name": "Instagram",
+      "company": "meta",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "instagram-content-protection-ai-copies-20261117",
+          "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
+        }
+      ]
+    },
+    {
+      "key": "facebook",
+      "name": "Facebook",
+      "company": "meta",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "instagram-content-protection-ai-copies-20261117",
+          "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
+        }
+      ]
+    },
+    {
+      "key": "instagram-content-protection",
+      "name": "Content Protection",
+      "company": "meta",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "instagram-content-protection-ai-copies-20261117",
+          "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
+        }
+      ]
     }
   ]
 }
