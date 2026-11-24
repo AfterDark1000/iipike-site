@@ -14,7 +14,20 @@ button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible{
 #list .story-button{padding:11px 13px;display:flex;flex-direction:column;align-items:flex-start;gap:5px;line-height:1.38}
 .story-title{display:block;font-size:14px;font-weight:660;color:#20303a}
 .story-meta{display:block;font-size:12px;color:#65747b}
-.story-stage{display:block;font-size:12px;color:#35625a}
+.story-stage{display:block;font-size:12px;color:var(--stage-ink,#35625a);font-weight:650}
+[data-stage="review"]{--stage-ink:#885b09;--stage-bg:#fff6e2;--stage-line:#c58c24}
+[data-stage="error"]{--stage-ink:#9a2d28;--stage-bg:#fcefeb;--stage-line:#c45d54}
+[data-stage="active"]{--stage-ink:#23588d;--stage-bg:#edf4ff;--stage-line:#548bc7}
+[data-stage="transfer"]{--stage-ink:#65428d;--stage-bg:#f3edfa;--stage-line:#916abb}
+[data-stage="done"]{--stage-ink:#25623d;--stage-bg:#edf7ef;--stage-line:#59a376}
+#list .story-button[data-stage]{border-left:4px solid var(--stage-line);background:var(--stage-bg)}
+#list .story-button[data-stage][aria-current=true]{border-color:var(--stage-line);outline:2px solid var(--stage-line);outline-offset:1px}
+#list .story-heading[data-stage]{background:var(--stage-bg);color:var(--stage-ink);border:0;border-left:4px solid var(--stage-line);border-radius:6px;padding:9px 10px}
+.archive-nav{display:flex;align-items:center;justify-content:space-between;gap:5px;margin:14px 0}
+#list .archive-nav button{width:auto;min-width:0;font-size:12px;padding:7px 9px;margin:0}
+.archive-nav span{font-size:12px;color:#586c69;text-align:center}
+#views button[data-view="done"]{color:#25623d;border-color:#a8ccb3}
+#views button[data-view="done"][aria-pressed=true]{background:#edf7ef;border-color:#59a376}
 .story-heading{font-size:14px;font-weight:700;margin:21px 0 7px;padding-top:10px;border-top:1px solid #d9dfdc}
 #views{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
 #views button{padding:7px 9px;font-size:12px;margin:0}
@@ -54,7 +67,7 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 <main>
 <div class="notice"><strong>Редакционная проверка, не публикация.</strong> Рабочая панель требует входа через GitHub. Решения отправляются напрямую на защищённый сервер без создания GitHub Issue. Публикацию это не запускает. Исходные JSON в публичном репозитории остаются общедоступными.</div>
 <div class="grid"><aside class="card"><h2>Редакторские материалы</h2><p id="queue-summary" aria-live="polite">Сверяю статусы с GitHub…</p>
-<div id="views" aria-label="Фильтр материалов"><button type="button" data-view="all" aria-pressed="true">Все</button><button type="button" data-view="review" aria-pressed="false">Нужно решение</button><button type="button" data-view="active" aria-pressed="false">В работе</button><button type="button" data-view="done" aria-pressed="false">Завершено</button></div>
+<div id="views" aria-label="Фильтр материалов"><button type="button" data-view="all" aria-pressed="true">Рабочие</button><button type="button" data-view="review" aria-pressed="false">Нужно решение</button><button type="button" data-view="active" aria-pressed="false">В работе</button><button type="button" data-view="done" aria-pressed="false" title="Архив завершённых и отклонённых материалов">Завершено · 0</button></div>
 <label for="queue-search" class="muted" style="font-size:13px">Найти по названию, ID или номеру</label><input id="queue-search" type="search" placeholder="Поиск по материалам">
 <button id="reload" type="button" style="width:100%;margin:0 0 8px">↻ Обновить список</button><p class="muted" id="loaded"></p><div id="list">Загружаю список…</div>
 <p class="muted" style="font-size:12px">Здесь только сохранённые черновики. Резерв без текста появится после первого сохранения редактором.</p></aside>
@@ -67,7 +80,8 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/editorial_inbox/auto_drafts?ref=editorial-intake";
 const raw="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_drafts/";
 const list=document.getElementById("list"),detail=document.getElementById("detail");
-let selected="", names=[], storyRows=[], activeView="all", loadVersion=0;
+let selected="", names=[], storyRows=[], activeView="all", loadVersion=0, archivePage=0;
+const ARCHIVE_PAGE_SIZE=20;
 function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n}
 function add(parent,tag,text,cls){return parent.appendChild(node(tag,text,cls))}
 function paragraph(parent,text){add(parent,"p",text)}
@@ -613,14 +627,40 @@ async function classify(doc,publishedIds=new Set()){
  }
  return rowStatus("error","Нужно ручное решение по версиям");
 }
+function queueRows(rows,view,term=""){
+ const query=term.trim().toLocaleLowerCase("ru-RU");
+ return rows.filter(row=>{
+  if(view==="all"&&row.group==="done")return false;
+  if(view==="review"&&row.group!=="review"&&row.group!=="error")return false;
+  if(view==="active"&&row.group!=="active"&&row.group!=="transfer")return false;
+  if(view==="done"&&row.group!=="done")return false;
+  return !query||[row.title,row.name,String(row.doc?.pool_sequence||"")].join(" ").toLocaleLowerCase("ru-RU").includes(query);
+ }).sort((a,b)=>groupOrder.indexOf(a.group)-groupOrder.indexOf(b.group)||
+  (b.doc?.pool_sequence||0)-(a.doc?.pool_sequence||0)||a.name.localeCompare(b.name));
+}
+function archiveSlice(rows,page){
+ const pages=Math.max(1,Math.ceil(rows.length/ARCHIVE_PAGE_SIZE));
+ const current=Math.max(0,Math.min(page,pages-1));
+ return {page:current,pages,total:rows.length,rows:rows.slice(current*ARCHIVE_PAGE_SIZE,(current+1)*ARCHIVE_PAGE_SIZE)};
+}
+function matchingRows(){
+ return queueRows(storyRows,activeView,document.getElementById("queue-search").value);
+}
 function visibleRows(){
- const term=document.getElementById("queue-search").value.trim().toLocaleLowerCase("ru-RU");
- return storyRows.filter(row=>{
-  if(activeView==="review"&&row.group!=="review"&&row.group!=="error")return false;
-  if(activeView==="active"&&row.group!=="active"&&row.group!=="transfer")return false;
-  if(activeView==="done"&&row.group!=="done")return false;
-  return !term || [row.title,row.name,String(row.doc?.pool_sequence||"")].join(" ").toLocaleLowerCase("ru-RU").includes(term);
- });
+ const rows=matchingRows();
+ if(activeView!=="done")return rows;
+ const slice=archiveSlice(rows,archivePage);
+ archivePage=slice.page;
+ return slice.rows;
+}
+function selectVisible(){
+ const shown=visibleRows();
+ if(shown.length){
+  if(!shown.some(x=>x.name===selected))void choose(shown[0].name);
+ }else{
+  selected="";
+  detail.replaceChildren();add(detail,"p","В выбранном разделе нет материалов.","muted");
+ }
 }
 function renderList(){
  list.replaceChildren();
@@ -630,23 +670,38 @@ function renderList(){
  document.getElementById("queue-summary").textContent=
   "Нужно решение: "+counts.review+
   (counts.error?" · проверить статус: "+counts.error:"")+
-  " · в работе: "+(counts.active+counts.transfer)+
+  " · в работе: "+counts.active+
+  " · в очереди: "+counts.transfer+
   " · завершено: "+counts.done;
+ const archiveTab=document.querySelector('#views button[data-view="done"]');
+ if(archiveTab)archiveTab.textContent="Завершено · "+counts.done;
  if(!rows.length){paragraph(list,"В выбранном разделе материалов нет.");return}
  for(const group of groupOrder){
-  const items=rows.filter(x=>x.group===group).sort((a,b)=>
-   (b.doc?.pool_sequence||0)-(a.doc?.pool_sequence||0)||a.name.localeCompare(b.name));
+  const items=rows.filter(x=>x.group===group);
   if(!items.length)continue;
-  add(list,"h3",groupTitles[group]+" · "+items.length,"story-heading");
+  const total=group==="done"?matchingRows().length:items.length;
+  const heading=add(list,"h3",groupTitles[group]+" · "+total,"story-heading");
+  heading.dataset.stage=group;
   items.forEach(item=>{
    const b=add(list,"button",undefined,"story-button");
-   b.type="button";b.dataset.file=item.name;
+   b.type="button";b.dataset.file=item.name;b.dataset.stage=group;
    b.setAttribute("aria-current",String(item.name===selected));
    add(b,"span",item.title,"story-title");
    add(b,"span",item.label,"story-stage");
    if(item.doc)add(b,"span","Пул №"+item.doc.pool_sequence+" · текст r"+item.doc.revision,"story-meta");
    b.addEventListener("click",()=>choose(item.name));
   });
+ }
+ if(activeView==="done"){
+  const slice=archiveSlice(matchingRows(),archivePage);
+  if(slice.pages>1){
+   const nav=add(list,"div",undefined,"archive-nav");
+   const prev=add(nav,"button","← Назад");prev.type="button";prev.disabled=slice.page===0;
+   add(nav,"span",(slice.page*ARCHIVE_PAGE_SIZE+1)+"–"+Math.min((slice.page+1)*ARCHIVE_PAGE_SIZE,slice.total)+" из "+slice.total);
+   const next=add(nav,"button","Далее →");next.type="button";next.disabled=slice.page===slice.pages-1;
+   prev.addEventListener("click",()=>{archivePage--;renderList();selectVisible()});
+   next.addEventListener("click",()=>{archivePage++;renderList();selectVisible()});
+  }
  }
 }
 async function choose(name){
@@ -715,17 +770,16 @@ async function load(){
 
 document.getElementById("reload").addEventListener("click",load);
 document.getElementById("queue-search").addEventListener("input",()=>{
+ archivePage=0;
  renderList();
- const shown=visibleRows();
- if(shown.length&&!shown.some(x=>x.name===selected))void choose(shown[0].name);
+ selectVisible();
 });
 document.querySelectorAll("#views button").forEach(b=>b.addEventListener("click",()=>{
  activeView=b.dataset.view;
+ archivePage=0;
  document.querySelectorAll("#views button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
  renderList();
- const shown=visibleRows();
- if(shown.length&&!shown.some(x=>x.name===selected))void choose(shown[0].name);
- else if(!shown.length){detail.replaceChildren();add(detail,"p","Здесь пока нет материалов.","muted")}
+ selectVisible();
 }));
 window.addEventListener('hpii-admin-authorized',load);
 })();

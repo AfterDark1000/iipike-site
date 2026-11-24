@@ -6,7 +6,7 @@ import vm from "node:vm";
 const html=fs.readFileSync(new URL("../admin/auto-editor/index.html",import.meta.url),"utf8");
 const script=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)?.[1];
 assert.ok(script,"Inline auto-editor script must exist");
-const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify,fetchGitHubRecord,readPublishedIds};})();");
+const executable=script.replace(/\}\)\(\);\s*$/, "globalThis.__queueTests={classify,fetchGitHubRecord,readPublishedIds,queueRows,archiveSlice};})();");
 assert.notEqual(executable,script,"Expected explicit IIFE ending");
 
 const slug="example-ai-story-1234567890abcdef", revision=3;
@@ -46,6 +46,8 @@ function model(attachments={},apiAttachments={},newsRows=null){
  vm.runInNewContext(executable,ctx,{timeout:2000});
  const classify=(draft,published=[])=>ctx.__queueTests.classify(draft,new Set(published));
  classify.readPublishedIds=ctx.__queueTests.readPublishedIds;
+ classify.queueRows=ctx.__queueTests.queueRows;
+ classify.archiveSlice=ctx.__queueTests.archiveSlice;
  return classify;
 }
 
@@ -174,4 +176,28 @@ test("handoff and verified publication means completed, not still in queue",asyn
  const status=await cls(doc,[slug]);
  assert.equal(status.group,"done");
  assert.equal(status.label,"Опубликовано на сайте");
+});
+
+test("working view keeps pending transfers and errors but excludes completed archive",()=>{
+ const m=model();
+ const rows=["done","transfer","active","review","error"].map((group,i)=>({group,name:"id-"+i,title:"Статья "+i,doc:{pool_sequence:i}}));
+ assert.equal(Array.from(m.queueRows(rows,"all"),x=>x.group).join(","),"review,error,active,transfer");
+ assert.equal(Array.from(m.queueRows(rows,"done"),x=>x.group).join(","),"done");
+});
+test("archive search reaches every completed row; pages contain at most 20 and newest pool sequence first",()=>{
+ const m=model();
+ const rows=Array.from({length:53},(_,i)=>({group:"done",name:"id-"+(i+1),title:"Архив "+(i+1),doc:{pool_sequence:i+1}}));
+ const ordered=m.queueRows(rows,"done");
+ const first=m.archiveSlice(ordered,0), last=m.archiveSlice(ordered,99);
+ assert.equal(first.total,53);assert.equal(first.pages,3);assert.equal(first.rows.length,20);
+ assert.equal(first.rows[0].doc.pool_sequence,53);
+ assert.equal(last.page,2);assert.equal(last.rows.length,13);
+ assert.equal(last.rows.at(-1).doc.pool_sequence,1);
+ assert.equal(m.queueRows(rows,"done","Архив 1").some(x=>x.name==="id-1"),true);
+ assert.equal(m.archiveSlice([],9).rows.length,0);
+});
+test("each queue stage has a distinct visual color and archive is a separate view",()=>{
+ for(const stage of ["review","error","active","transfer","done"])assert.ok(html.includes('[data-stage="'+stage+'"]'));
+ assert.ok(html.includes('data-view="all" aria-pressed="true">Рабочие'));
+ assert.ok(html.includes('data-view="done"'));
 });
