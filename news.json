@@ -8339,5 +8339,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Четыре необычных эксперимента с ИИ: от проектирования дома до управления роботом",
+    "summary": "Четыре авторских эксперимента с ИИ: агенты проектируют дом, камеры наблюдают за рестораном, Claude пишет код для роборуки и нажимает аппаратную кнопку перезагрузки.",
+    "published": "2026-11-24",
+    "source_url": "https://www.whatpeoplemade.com/i/ai-plans-examiner-rejects-ai-designed-house-twice-291238.html",
+    "cover": "assets/editorial/ai-four-physical-experiments-20261115.webp",
+    "rubric": "made-with-ai",
+    "vk_title": "🏠 ЧЕТЫРЕ ЭКСПЕРИМЕНТА С ИИ: дом, робот и кнопка перезагрузки",
+    "vk_summary": "Шесть ИИ-агентов участвовали в проектировании дома, но проверяющий одобрил результат только с третьей попытки. Ещё три необычных эксперимента: нейросеть следит за рестораном, пишет код для промышленной роборуки и физически нажимает кнопку питания зависшего устройства.",
+    "published_at_utc": "2026-11-24T13:45:44Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-15",
+    "id": "ai-four-physical-experiments-20261115",
+    "url": "articles/ai-four-physical-experiments-20261115/",
+    "topics": [
+      "agents",
+      "engineering"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude"
+    ]
   }
 ]
