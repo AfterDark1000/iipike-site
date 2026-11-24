@@ -1973,6 +1973,30 @@
           "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
         }
       ]
+    },
+    {
+      "key": "gallium-studios",
+      "name": "Gallium Studios",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+        }
+      ]
+    },
+    {
+      "key": "artificial-agency",
+      "name": "Artificial Agency",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+        }
+      ]
     }
   ],
   "products": [
@@ -3932,6 +3956,19 @@
         {
           "article_id": "us-chinese-ai-disclosure-proposal-20261118",
           "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+        }
+      ]
+    },
+    {
+      "key": "mymems",
+      "name": "MyMems",
+      "company": "gallium-studios",
+      "status": "candidate",
+      "first_seen": "2026-11-24",
+      "evidence": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
         }
       ]
     }
