@@ -8273,5 +8273,31 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Claude теперь может сам писать, проверять и принимать код без программиста",
+    "summary": "Anthropic представила Claude Ship: ИИ-агенты проверяют и исправляют изменения в программном коде и могут одобрять их по правилам команды разработчиков.",
+    "published": "2026-11-24",
+    "source_url": "https://claude.com/resources/articles/introducing-claude-ship",
+    "cover": "assets/editorial/anthropic-claude-ship-20261123.webp",
+    "rubric": "news",
+    "vk_title": "👨‍💻 Claude теперь может САМ ОДОБРЯТЬ программный код",
+    "vk_summary": "Anthropic представила Claude Ship. ИИ-агенты самостоятельно проверяют изменения в программах, исправляют ошибки и решают, какие изменения можно принять без участия человека. Правила устанавливает команда разработчиков.",
+    "published_at_utc": "2026-11-24T10:15:40Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "anthropic-claude-ship-20261123",
+    "url": "articles/anthropic-claude-ship-20261123/",
+    "topics": [
+      "agents",
+      "development"
+    ],
+    "companies": [
+      "anthropic"
+    ],
+    "products": [
+      "claude",
+      "claude-code"
+    ]
   }
 ]
