@@ -1,30 +1,5 @@
 {
   "schema_version": 1,
-  "items": [
-    {
-      "id": "first-car:av_qZDSbeXmeeyVf",
-      "url": "https://dzen.ru/a/av_qZDSbeXmeeyVf",
-      "published_at": "2026-11-23T08:56:32.000Z",
-      "title": "Claude Code помог собрать умные песочные часы, которые блокируют приложения",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:awP3V1ae7X1NLojU",
-      "url": "https://dzen.ru/a/awP3V1ae7X1NLojU",
-      "published_at": "2026-11-23T08:30:19.000Z",
-      "title": "Как создать ИИ-агента для ВК и Дзена в ChatGPT: готовый промпт для создания и инструкция",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:av_n2-TBFG07fit1",
-      "url": "https://dzen.ru/a/av_n2-TBFG07fit1",
-      "published_at": "2026-11-23T07:04:11.000Z",
-      "title": "Microsoft представила свои ИИ-модели: зачем компании собственный искусственный интеллект",
-      "status": "needs_text",
-      "attempts": 0
-    }
-  ],
+  "items": [],
   "text_blocked": null
 }
