@@ -3940,12 +3940,12 @@
       "summary": "17 ноября: сообщение о расширении периода сохранения временных чатов Gemini даже с отключённой историей; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T13:05:12+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-24T05:21:54.325Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Ручной редактор: проверка официальной политики хранения чатов Gemini."
     },
     {
       "id": "n-d34ce25785fdf87b",
