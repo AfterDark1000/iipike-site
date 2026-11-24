@@ -8413,5 +8413,32 @@
     "products": [
       "qwen"
     ]
+  },
+  {
+    "title": "Четыре эксперимента с ИИ: фильм без камеры, 700 тысяч мазков и японский храм из кода",
+    "summary": "Четыре визуальных эксперимента: cinecode собирает ролики из программных кадров, Claude имитирует 700 тысяч мазков кисти, авторы сняли ретрофантастику и создали интерактивный японский пейзаж.",
+    "published": "2026-11-24",
+    "source_url": "https://github.com/sarpstar/cinecode",
+    "cover": "assets/editorial/ai-four-visual-experiments-20261115.webp",
+    "rubric": "made-with-ai",
+    "vk_title": "🎬 Четыре ИИ-ЭКСПЕРИМЕНТА: фильмы из кода и картина из 700 ТЫСЯЧ мазков",
+    "vk_summary": "Нейросети научились программировать каждый кадр фильма, рисовать картины сотнями тысяч виртуальных мазков и создавать интерактивные 3D-миры. В новой подборке четыре эксперимента: открытый cinecode, виртуальный художник Claude, ретрофантастика на восемь с половиной минут и японский храм с поездом и голубями.",
+    "published_at_utc": "2026-11-24T17:01:02Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-15",
+    "id": "ai-four-visual-experiments-20261115",
+    "url": "articles/ai-four-visual-experiments-20261115/",
+    "topics": [
+      "development",
+      "images"
+    ],
+    "companies": [
+      "anthropic",
+      "bytedance"
+    ],
+    "products": [
+      "claude",
+      "claude-code"
+    ]
   }
 ]
