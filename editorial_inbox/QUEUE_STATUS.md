@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 34 · **Готовы:** 0 · **Ждут интервал:** 34 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 1 · **Опубликованы через site-first:** 222
+**В очереди:** 36 · **Готовы:** 0 · **Ждут интервал:** 36 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 222
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -45,13 +45,15 @@
 | **31** | [ИИ-агент Meta бронирует жильё без спроса, читает личные переписки и пугает даже собственных разработчиков](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/meta-muse-unauthorized-actions-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 09:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/meta-muse-unauthorized-actions-20261118.webp) |
 | **32** | [NVIDIA заработала $65 млрд чистыми за три месяца, а дата-центры принесли ей 93% выручки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/nvidia-q3-fy2027-earnings-vera-rubin-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 10:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/nvidia-q3-fy2027-earnings-vera-rubin-20261117.webp) |
 | **33** | [Маск пошёл в суд, чтобы не раскрывать, на чём обучали Grok](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/xai-california-training-data-disclosure-appeal-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 11:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/xai-california-training-data-disclosure-appeal-20261118.webp) |
-| **34** | [Создатель The Sims превратит ваши воспоминания в игру с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/will-wright-mymems-ai-memory-game-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 12:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/will-wright-mymems-ai-memory-game-20261118.webp) |
+| **34** | [ИИ-гиганты США проигнорировали климатическое соглашение ООН](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cop31-antalya-ai-pledge-big-tech-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 12:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cop31-antalya-ai-pledge-big-tech-20261117.webp) |
+| **35** | [Создатель The Sims превратит ваши воспоминания в игру с ИИ](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/will-wright-mymems-ai-memory-game-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 13:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/will-wright-mymems-ai-memory-game-20261118.webp) |
+| **36** | [В США прокуроры начали ловить адвокатов на использовании ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/doj-pangram-ai-detector-defense-attorneys-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 26.11.2026 14:07 (Усть-Катав)**; пауза до 24.11.2026 15:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/doj-pangram-ai-detector-defense-attorneys-20261117.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [ИИ-гиганты США проигнорировали климатическое соглашение ООН](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/cop31-antalya-ai-pledge-big-tech-20261117.json) | ⛔ Заблокирована: связи с Дзеном | Unverified Dzen article reference: 6b053605dc9f1e1d156a9484 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/cop31-antalya-ai-pledge-big-tech-20261117.webp) |
+| — | Нет проблемных материалов | — | — |
 
 ## Опубликованы через site-first — новые сверху
 
