@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T00:18:33.097351Z",
+  "updated_at": "2026-11-24T05:59:02.417088Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
-      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
+      "last_success_at": "2026-11-24T05:59:02.417088Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
-      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
+      "last_success_at": "2026-11-24T05:59:02.417088Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
+      "status": "error",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
       "last_success_at": "2026-11-24T00:18:33.097351Z",
-      "error": null,
-      "fresh_matches": 1
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
-      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
+      "last_success_at": "2026-11-24T05:59:02.417088Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
-      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
+      "last_success_at": "2026-11-24T05:59:02.417088Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T00:18:33.097351Z",
-      "last_success_at": "2026-11-24T00:18:33.097351Z",
+      "checked_at": "2026-11-24T05:59:02.417088Z",
+      "last_success_at": "2026-11-24T05:59:02.417088Z",
       "error": null,
       "fresh_matches": 0
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-24",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -114,12 +114,14 @@
       "first_seen_at": "2026-11-23T21:17:15.902408Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Маск прямо говорит про кассовый разрыв из-за простаивающих дата-центров, но звучит так, будто железо просто застревает по дороге из магазина. На практике эти сотни миллиардов сгорят еще до того, как успеют охладить первые стойки.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-24T05:59:02.417088Z",
+      "reason": "Оценка Маском будущей нехватки денег из-за задержек с дата-центрами.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T05:59:02.417088Z"
     },
     {
       "id": "9fbb22dcb6643de8d270ab06",
@@ -154,12 +156,14 @@
       "first_seen_at": "2026-11-23T21:17:15.902408Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно представлять человека, который ходит по улице с сорокосантиметровым квадратом наперевес, чтобы камера его потеряла. Главное теперь — не встретить детектор другой версии, который к такому фокусу не готов.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-24T05:59:02.417088Z",
+      "reason": "Забавная деталь с картонкой перед собой и уязвимость конкретного детектора.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-24T05:59:02.417088Z"
     },
     {
       "id": "db2af79a4fddd351a685142f",
@@ -249,12 +253,14 @@
       "first_seen_at": "2026-11-23T12:21:22.752682Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 1,
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-23T21:17:15.902408Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-24T05:59:02.417088Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-24T05:59:02.417088Z"
     },
     {
       "id": "ebd86b210f9414c1cb62f7eb",
@@ -2380,23 +2386,6 @@
       "source_name": "iXBT.com",
       "source_url": "https://www.ixbt.com/news/2026/11/17/oled-ii-i-korpus-47-mm-v-rossii-startovali-prodazi-huawei-matepad-pro-12.html",
       "published_at": "2026-11-17T06:00:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-17T10:38:10.341534Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "a984a60ca2da18d74ade048b",
-      "title": "OpenAI распустила команду по робототехнике ради ChatGPT и Sora",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/17/openai-raspustila-komandu-po-robototexnike-radi-chatgpt-i-sora.html",
-      "published_at": "2026-11-17T05:30:00Z",
       "channel_url": "https://dzen.ru/ixbt.com",
       "dzen_url": null,
       "first_seen_at": "2026-11-17T10:38:10.341534Z",
