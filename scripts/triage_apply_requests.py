@@ -15,7 +15,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts import site_news_pool, editorial_routing
+from scripts import site_news_pool, editorial_routing, editorial_collections
 
 POOL = Path("data/site_news_pool.json")
 ROUTES = editorial_routing.ROUTES
@@ -35,6 +35,9 @@ def read_request(path):
             not NAME.fullmatch(path.name) or path.stat().st_size > 180000):
         raise ValueError("Invalid immutable triage request name/size")
     doc = json.loads(path.read_text(encoding="utf-8"))
+    if isinstance(doc, dict) and doc.get("action") in {
+            "collection_upsert", "collection_release_member"}:
+        return editorial_collections.validate_request(doc)
     if (type(doc) is not dict or
             set(doc) != {"schema_version", "action", "worker", "approval", "items"} or
             doc["schema_version"] != 1 or
@@ -122,7 +125,12 @@ def consume(root=ROOT):
     route = json.loads(route_path.read_text(encoding="utf-8"))
     site_news_pool.validate(pool)
     editorial_routing.validate_document(route, pool, require_all=True)
-    orig_pool, orig_route = copy.deepcopy(pool), copy.deepcopy(route)
+    collections_path = root / editorial_collections.PATH
+    collections = (json.loads(collections_path.read_text(encoding="utf-8"))
+                   if collections_path.exists() else editorial_collections.empty())
+    editorial_collections.validate_document(collections, pool, route)
+    orig_pool, orig_route, orig_collections = (
+        copy.deepcopy(pool), copy.deepcopy(route), copy.deepcopy(collections))
     req_dir, rec_dir = root / REQUESTS, root / RECEIPTS
     outputs = {}
     if not req_dir.exists():
@@ -141,9 +149,19 @@ def consume(root=ROOT):
             continue
         try:
             request = read_request(req_path)
-            pool, route, summary = apply_request(
-                pool, route, request, source=(REQUESTS / req_path.name).as_posix()
-            )
+            source = (REQUESTS / req_path.name).as_posix()
+            if request["action"] in {"collection_upsert", "collection_release_member"}:
+                next_pool, next_route, next_collections, summary = (
+                    editorial_collections.apply_request(
+                        pool, route, collections, request, source=source))
+            else:
+                next_pool, next_route, summary = apply_request(
+                    pool, route, request, source=source)
+                next_collections = collections
+            # Rejected requests cannot leave partial mutations for later requests.
+            editorial_collections.validate_document(
+                next_collections, next_pool, next_route)
+            pool, route, collections = next_pool, next_route, next_collections
             outcome = ("partial_conflict" if summary["skipped"] else
                        "applied" if summary["applied"] else "no_changes")
             receipt = {
@@ -159,6 +177,12 @@ def consume(root=ROOT):
         outputs[req_path.name] = receipt
     site_news_pool.validate(pool)
     editorial_routing.validate_document(route, pool, require_all=True)
+    editorial_collections.validate_document(collections, pool, route)
+    if collections != orig_collections:
+        collections_path.parent.mkdir(parents=True, exist_ok=True)
+        collections_path.write_text(
+            json.dumps(collections, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8")
     if pool != orig_pool:
         pool_path.write_text(json.dumps(pool, ensure_ascii=False, indent=2) + "\n",
                              encoding="utf-8")
@@ -180,7 +204,12 @@ def main():
     if args.check:
         pool = json.loads((ROOT / POOL).read_text(encoding="utf-8"))
         doc = json.loads((ROOT / ROUTES).read_text(encoding="utf-8"))
-        print({"routes": len(editorial_routing.validate_document(doc, pool, require_all=True))})
+        collections_path = ROOT / editorial_collections.PATH
+        collections = (json.loads(collections_path.read_text(encoding="utf-8"))
+                       if collections_path.exists() else editorial_collections.empty())
+        editorial_collections.validate_document(collections, pool, doc)
+        print({"routes": len(editorial_routing.validate_document(doc, pool, require_all=True)),
+               "collections": len(collections["items"])})
         return
     if not args.consume:
         parser.error("Use --consume or --check")
