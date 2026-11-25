@@ -170,6 +170,18 @@ def main():
     if policy.get("schema_version")!=1 or not isinstance(policy.get("holds"),list):
         raise ValueError("Invalid artist hold configuration")
     ticket=build(a.intake,{x["id"] for x in news},policy["holds"],datetime.now(timezone.utc),a.parallel)
+    if ticket["job"]:
+        base = "docs/artist_plugin/"
+        paths = [base+"README.md", base+"skills/hpii-cover/SKILL.md",
+                 *[base+"skills/hpii-cover/references/"+name for name in (
+                     "HPII_Cover_Standard.md", "artistic-toolkit.md", "composition-toolkit.md",
+                     "style-diversity-regression.md")],
+                 base+"skills/hpii-auto-cover/SKILL.md"]
+        files = [{"path":name, "sha":blob(a.main/name)} for name in paths]
+        ticket["art_standard"] = {
+            "fingerprint":hashlib.sha256(json.dumps(files,sort_keys=True).encode()).hexdigest(),
+            "files":files,
+        }
     target=a.intake/DISPATCH/"current.json"
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps(ticket,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
