@@ -8080,11 +8080,11 @@
       "summary": "24 ноября. Сообщается о запрете с 9 декабря; вспомогательное использование ИИ останется разрешённым. Вторичный источник, требует подтверждения Tidal.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T03:07:24+00:00",
       "review_started_at": "2026-11-25T11:55:02.921Z",
-      "closed_at": null,
-      "article_id": null,
+      "closed_at": "2026-11-25T15:34:15.055Z",
+      "article_id": "tidal-ai-music-ban-20261124",
       "note": "Официальная справка Tidal обновлена 24.11: https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy — запрет полностью ИИ-сгенерированных записей с 9.12; текущая политика и форма обжалования описаны. Официальный пост @TIDAL цитирует https://www.musicbusinessworldwide.com/tidal-bans-fully-ai-generated-music-from-its-platform/ : 27 млн уже помечены (6,3%), 43% поставок за 90 дней, 96% помеченных без прослушиваний, 94% связаны с Suno, >65 тыс. удалены за подозрение на подмену имени артиста; Ircam Amplify и метаданные. План 29 млн удалений к 2027, 80–85 тыс. отказов/день — Роберт Андерсен, цитата через https://www.iclarified.com/103779/tidal-to-remove-29-million-fully-ai-generated-tracks и The Verge. Оригинальный пост X не открывается напрямую. Июньский анонс https://tidal.com/magazine/article/were-for-real/1-98742. Архив проверен, прямой связи нет (иски к Suno — отдельный сюжет). Рубрика news, тема entertainment. На утверждении."
     },
     {
