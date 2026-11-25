@@ -7900,12 +7900,12 @@
       "summary": "23 ноября. Демонстрация OpenAI Developers: трёхмерная сцена в духе исторической киноплёнки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:17:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-e740e9ae28d8e83b"
+      "closed_at": "2026-11-25T12:24:12Z",
+      "article_id": "openai-gpt-6-2-blender-1915-world-fair-demo-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e740e9ae28d8e83b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/openai-gpt-6-2-blender-1915-world-fair-demo-20261123/"
     },
     {
       "id": "n-efeb1dd0cef98688",
