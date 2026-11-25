@@ -11,6 +11,8 @@ on:
       - 'rubrics/**/index.html'
       - 'tests/test_site_rubric_order.py'
       - 'scripts/publish_approved_article.py'
+      - 'scripts/site_related_cards.py'
+      - 'tests/test_site_related_cards.py'
       - 'index.html'
       - 'articles/index.html'
       - 'feed.xml'
@@ -28,6 +30,8 @@ on:
       - 'rubrics/**/index.html'
       - 'tests/test_site_rubric_order.py'
       - 'scripts/publish_approved_article.py'
+      - 'scripts/site_related_cards.py'
+      - 'tests/test_site_related_cards.py'
       - 'index.html'
       - 'articles/index.html'
       - 'feed.xml'
@@ -60,6 +64,8 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_homepage.py' -v
       - name: Verify published article template and archive generator
         run: python3 -m unittest discover -s tests -p 'test_approved_publisher.py' -v
+      - name: Verify multi-card editorial crosslinks and unchanged Markdown
+        run: python3 -m unittest discover -s tests -p 'test_site_related_cards.py' -v
       - name: Verify four rubric chronologies and editorial selection
         run: python3 -m unittest discover -s tests -p 'test_site_rubric_order.py' -v
       - name: Verify homepage matches generator
