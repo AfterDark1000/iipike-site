@@ -7975,12 +7975,12 @@
       "summary": "23 ноября. Sarvam Dictate убирает повторы, слова-паразиты и исправленные говорящим фразы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:17:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-ad4552b9cb0c9f2b"
+      "closed_at": "2026-11-25T13:09:24Z",
+      "article_id": "sarvam-dictate-speech-self-corrections-api-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ad4552b9cb0c9f2b\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/sarvam-dictate-speech-self-corrections-api-20261123/"
     },
     {
       "id": "n-ade278c8145c4b2e",
