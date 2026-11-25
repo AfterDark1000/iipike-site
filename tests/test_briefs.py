@@ -137,6 +137,34 @@ class BriefFeedTests(unittest.TestCase):
                 b.validated(root)
         finally:temp.cleanup()
 
+    def test_robotics_is_a_valid_brief_topic(self):
+        temp,root=self.fixture()
+        try:
+            c=copy.deepcopy(self.candidates()[0])
+            c["topic"]="Робототехника"
+            (root/b.CANDIDATES).write_text(json.dumps({
+                "schema_version":1,"items":[c]
+            },ensure_ascii=False),encoding="utf-8")
+            row=self.publish_row(c)
+            (root/b.APPROVED).write_text(json.dumps({
+                "schema_version":1,"items":[row]
+            },ensure_ascii=False),encoding="utf-8")
+            rows=b.validated(root)
+            self.assertEqual(len(rows),1)
+            self.assertEqual(rows[0]["topic"],"Робототехника")
+            self.assertIn("Робототехника",b.card(rows[0]))
+            self.assertIn("Робототехника",b.render_page(rows[0]))
+            c["topic"]=row["topic"]="Несуществующая категория"
+            (root/b.CANDIDATES).write_text(json.dumps({
+                "schema_version":1,"items":[c]
+            },ensure_ascii=False),encoding="utf-8")
+            (root/b.APPROVED).write_text(json.dumps({
+                "schema_version":1,"items":[row]
+            },ensure_ascii=False),encoding="utf-8")
+            with self.assertRaisesRegex(ValueError,"Invalid brief topic"):
+                b.validated(root)
+        finally:temp.cleanup()
+
     def test_approval_sha256_changes_when_text_changes(self):
         row=self.publish_row(self.candidates()[0])
         expected=hashlib.sha256(chr(10).join(row[k] for k in
