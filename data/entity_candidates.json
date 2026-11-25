@@ -2061,6 +2061,18 @@
           "source_url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05"
         }
       ]
+    },
+    {
+      "key": "reliance-jio",
+      "name": "Reliance Jio",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "google-jio-gemini-subscription-cancellations-20261125",
+          "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
+        }
+      ]
     }
   ],
   "products": [
@@ -4072,6 +4084,19 @@
         {
           "article_id": "openai-amd-ai-chip-design-20261118",
           "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+        }
+      ]
+    },
+    {
+      "key": "google-ai-pro",
+      "name": "Google AI Pro",
+      "company": "google",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "google-jio-gemini-subscription-cancellations-20261125",
+          "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
         }
       ]
     }
