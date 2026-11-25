@@ -8560,5 +8560,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Финансовый гигант Apollo замедлит найм сотрудников в 3 раза из-за ИИ",
+    "summary": "Apollo планирует снизить годовой темп роста штата с 12–15% до 3–5% благодаря искусственному интеллекту, сохранив цель роста прибыли на 20%.",
+    "published": "2026-11-25",
+    "source_url": "https://www.businessinsider.com/apollo-exec-plans-to-lower-annual-hiring-ai-2026-11",
+    "cover": "assets/editorial/apollo-ai-hiring-20261116.webp",
+    "rubric": "news",
+    "vk_title": "💼 ИИ ЗАМЕДЛИТ найм сотрудников в Apollo в три раза",
+    "vk_summary": "Apollo планирует снизить ежегодный темп роста штата с 12–15% до 3–5%, связывая это с ИИ. Цель роста прибыли остаётся на уровне 20% в год.",
+    "published_at_utc": "2026-11-25T04:15:45Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "apollo-ai-hiring-20261116",
+    "url": "articles/apollo-ai-hiring-20261116/",
+    "topics": [
+      "business",
+      "finance"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
