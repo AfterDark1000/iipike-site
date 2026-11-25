@@ -7870,12 +7870,12 @@
       "summary": "23 ноября. Около 5,5 млрд активных параметров на токен при 124 млрд общих.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:17:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d2f98570ba045778"
+      "closed_at": "2026-11-25T12:09:12Z",
+      "article_id": "ant-inclusionai-ling-3-2-air-open-weights-mit-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d2f98570ba045778\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/ant-inclusionai-ling-3-2-air-open-weights-mit-20261123/"
     },
     {
       "id": "n-ab3cfedbc20ee112",
