@@ -138,6 +138,10 @@ class RelatedCardTests(unittest.TestCase):
         html = render_article(data, records, catalog_entries(root))
         self.assertEqual(html.count('class="editorial-related-card"'), 4)
         self.assertNotIn('class="related-stories"', html)
+        actual = (root / "articles" / slug / "index.html").read_text(encoding="utf-8")
+        start = '<article class="article-text">'
+        self.assertEqual(actual.split(start, 1)[1].split("</article>", 1)[0],
+                         html.split(start, 1)[1].split("</article>", 1)[0])
         self.assertEqual(data, before)
 
     def test_duplicate_bottom_link_is_suppressed_only_for_same_target(self):
