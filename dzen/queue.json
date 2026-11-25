@@ -2,68 +2,68 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/avxwbuHxvGkzOm75",
-      "title": "Нейросеть для дизайна интерьера: как изменить комнату по фото",
-      "published_at": "2026-11-24T09:00:46.000Z",
+      "url": "https://dzen.ru/a/av_pKetarAsC3hQ1",
+      "title": "OpenAI даст учёным доступ к ChatGPT Plus: чем ИИ поможет науке",
+      "published_at": "2026-11-25T09:01:40.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-24T14:37:52.628Z",
+      "first_seen_at": "2026-11-25T13:57:40.448Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/av_qK-ulsFH9SrIe",
-      "title": "Claude помог старому Jeep пройти техосмотр с Arduino за $3",
-      "published_at": "2026-11-24T07:02:42.000Z",
+      "url": "https://dzen.ru/a/av_nWaQqC2QjzaX3",
+      "title": "GPT‑6.2 Astra и Sol: чем отличаются новые модели OpenAI",
+      "published_at": "2026-11-25T07:13:22.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-24T14:37:52.628Z",
+      "first_seen_at": "2026-11-25T13:57:40.448Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awUdMGTjQnOXg6Bp",
-      "title": "Claude Opus 4.7 сдал 10 экзаменов юрфака и вошёл в топ-10% в семи",
-      "published_at": "2026-11-24T05:16:30.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-24T14:37:52.628Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/awUPD14W3F8IJiaw",
-      "title": "Как улучшить ИИ-текст: 2 промпта против лексического скудоумия, примитивности и воды",
-      "published_at": "2026-11-24T04:22:36.000Z",
+      "url": "https://dzen.ru/a/awZhxEEv-Q3dkmTQ",
+      "title": "Как создать своего ИИ-агента в GrokBot: 7 шагов и готовые промпты",
+      "published_at": "2026-11-25T04:29:41.000Z",
       "source_name": "Наташа Нагорнова",
-      "first_seen_at": "2026-11-24T14:37:53.756Z",
+      "first_seen_at": "2026-11-25T13:57:41.959Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/av_qDSmS9xaxW8-z",
+      "title": "Леброн Джеймс подал в суд из-за ИИ-рекламы приложения",
+      "published_at": "2026-11-25T03:01:38.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-25T13:57:40.448Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-24T14:37:51.453Z",
+      "attempted_at": "2026-11-25T13:57:39.067Z",
       "failures": 0,
-      "next_at": "2026-11-24T15:37:51.453Z"
+      "next_at": "2026-11-25T14:57:39.067Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-24T14:37:52.628Z",
+      "attempted_at": "2026-11-25T13:57:40.448Z",
       "failures": 0,
-      "next_at": "2026-11-24T15:37:52.628Z"
+      "next_at": "2026-11-25T14:57:40.448Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-24T14:37:53.049Z",
+      "attempted_at": "2026-11-25T13:57:40.963Z",
       "failures": 0,
-      "next_at": "2026-11-24T15:37:53.049Z"
+      "next_at": "2026-11-25T14:57:40.963Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-24T14:37:53.445Z",
+      "attempted_at": "2026-11-25T13:57:41.484Z",
       "failures": 0,
-      "next_at": "2026-11-24T15:37:53.445Z"
+      "next_at": "2026-11-25T14:57:41.484Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-24T14:37:53.756Z",
+      "attempted_at": "2026-11-25T13:57:41.959Z",
       "failures": 0,
-      "next_at": "2026-11-24T15:37:53.756Z"
+      "next_at": "2026-11-25T14:57:41.959Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 45416215064,
+    "id": 45628862474,
     "requests": 5,
     "processed": 5,
     "errors": 0,
