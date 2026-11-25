@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "approved_date": "2026-11-25",
-  "source": "data/editorial_triage/requests/hpii-two-collections-20261125-chief-approved-a96b2e.json",
+  "source": "data/editorial_triage/requests/hpii-morning-20261125-523-542-except-collections-approved-4c91d8.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
   "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
@@ -2396,6 +2396,78 @@
       "decision": "reject_after_verification"
     },
     {
+      "sequence": 523,
+      "pool_id": "n-f1db7ce98881d890",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 524,
+      "pool_id": "n-7b9e1527ad48bc87",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 525,
+      "pool_id": "n-0b1f80050cfa5e93",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 526,
+      "pool_id": "n-d2f98570ba045778",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 527,
+      "pool_id": "n-ab3cfedbc20ee112",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 528,
+      "pool_id": "n-e740e9ae28d8e83b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 529,
+      "pool_id": "n-efeb1dd0cef98688",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 530,
+      "pool_id": "n-f1a2a3ccb23bb8e3",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 531,
+      "pool_id": "n-e98ccab84ef9fc2e",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 532,
+      "pool_id": "n-0f4cd9cda08fc0ba",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 533,
+      "pool_id": "n-ad4552b9cb0c9f2b",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 534,
+      "pool_id": "n-ade278c8145c4b2e",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
       "sequence": 535,
       "pool_id": "n-190bd7881fbd9b39",
       "lane": "hold",
@@ -2410,6 +2482,42 @@
       "decision": "linked_secondary",
       "group": "ai_created_worlds_20261125",
       "group_primary": 376
+    },
+    {
+      "sequence": 537,
+      "pool_id": "n-006e05b66d8851bd",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 538,
+      "pool_id": "n-9d8ef44660a0fb71",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 539,
+      "pool_id": "n-cd91e9f9413c550c",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 540,
+      "pool_id": "n-84b73513ac8d3438",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 541,
+      "pool_id": "n-f13f50765ddb35d9",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 542,
+      "pool_id": "n-f61b01f05c8e7332",
+      "lane": "hold",
+      "decision": "reject_after_verification"
     }
   ]
 }

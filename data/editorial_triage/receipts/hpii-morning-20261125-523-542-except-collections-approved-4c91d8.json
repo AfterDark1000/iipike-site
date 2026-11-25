@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "request": "hpii-morning-20261125-523-542-except-collections-approved-4c91d8.json",
+  "request_sha256": "25c805b0ba29fc6cbf400eba85c497da3ed8ba79c5b4a81627b51440b3b76d4e",
+  "status": "applied",
+  "applied": [
+    523,
+    524,
+    525,
+    526,
+    527,
+    528,
+    529,
+    530,
+    531,
+    532,
+    533,
+    534,
+    537,
+    538,
+    539,
+    540,
+    541,
+    542
+  ],
+  "unchanged": [],
+  "skipped": []
+}
