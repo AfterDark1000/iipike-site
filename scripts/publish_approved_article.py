@@ -24,6 +24,7 @@ from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, pub
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home, sorted_published
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
+from scripts.site_dossier import article_marker, load_ids
 from scripts.site_related_cards import select_site_cards, remove_duplicate_related_ids
 from scripts.site_entities import (render_article_entity_nav, load_registry,
                                    validate_editor_entities, append_editor_entities,
@@ -239,8 +240,9 @@ def site_article_sources(blocks, primary_url):
                 return blocks[:-1], ([] if url == primary_url else [(label, url)])
     return blocks, []
 
-def render_article(data, records=None, catalog=None, registry=None):
+def render_article(data, records=None, catalog=None, registry=None, dossier_ids=None):
     slug = data["slug"]
+    dossier_badge = article_marker(slug, load_ids(ROOT) if dossier_ids is None else dossier_ids)
     url = f"{BASE}/articles/{slug}/"
     title, summary = quote(data["title"]), quote(data["summary"])
     cover = f"../../{quote(data['cover'])}"
@@ -354,7 +356,7 @@ def render_article(data, records=None, catalog=None, registry=None):
 <a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
 <nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
 <main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
-<p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a></p><h1>{title}</h1>
+{dossier_badge}<p class="kicker"><a href="../../rubrics/{rubric}/">{rubric_name}</a></p><h1>{title}</h1>
 {summary_display}<p class="date">Опубликовано: {label}</p>{topic_html}{entity_html}</div>
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
 <section class="{section_class}">{source_aside}<article class="article-text">{body}{related_html}</article></section></main>
@@ -430,9 +432,9 @@ def render_feed(records, old_feed):
             '<language>ru-RU</language>' + "".join(items) + '</channel></rss>\n')
 
 
-def render_sitemap(records):
+def render_sitemap(records, *, root=ROOT):
     from xml.sax.saxutils import escape as xml_escape
-    urls = ([BASE + "/", BASE + "/articles/"]
+    urls = ([BASE + "/", BASE + "/articles/"] + ([BASE + "/dossier/"] if (root / "dossier/index.html").is_file() else [])
             + [BASE + "/rubrics/" + key + "/" for key in populated(records)]
             + [BASE + "/topics/"]
             + [BASE + "/topics/" + key + "/" for key in active_topics(records)]
@@ -490,13 +492,14 @@ def publish(root, slug, apply=False):
     if selected:
         validate_public_registry(next_registry, updated)
     catalog = catalog_entries(root) if data.get("dzen_id") or data.get("related_dzen_ids") else {}
+    dossier_ids = load_ids(root)
     outputs = {
-        dest: render_article(data, updated, catalog, registry=next_registry),
+        dest: render_article(data, updated, catalog, registry=next_registry, dossier_ids=dossier_ids),
         entries_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "dzen-rss.xml": render_dzen_rss(root, updated, staged=data),
-        root / "sitemap.xml": render_sitemap(updated),
+        root / "sitemap.xml": render_sitemap(updated, root=root),
         root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated, root=root),
     }
     outputs.update(render_all(updated, root))
@@ -516,7 +519,7 @@ def publish(root, slug, apply=False):
             prior = approved_article(root, old_slug)
             if prior.get("related_dzen_ids") and not catalog:
                 catalog = catalog_entries(root)
-            outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog, registry=next_registry)
+            outputs[root / record["url"] / "index.html"] = render_article(prior, updated, catalog, registry=next_registry, dossier_ids=dossier_ids)
 
     if apply:
         for path, contents in outputs.items():

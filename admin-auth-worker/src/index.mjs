@@ -639,6 +639,55 @@ async function callback(request,env) {
     "content-security-policy":"default-src 'none'; script-src 'nonce-"+nonce+"'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
     "set-cookie":dropCookie}});
 }
+
+const DOSSIER_PATH="/contents/data/dossier.json";
+const DOSSIER_ID=/^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+function validDossierId(id){return typeof id==="string"&&id.length<=72&&DOSSIER_ID.test(id)}
+function validDossierConfig(config){
+  return config&&Object.keys(config).sort().join(",")==="items,schema_version"&&config.schema_version===1&&
+    Array.isArray(config.items)&&config.items.length<=500&&config.items.every(validDossierId)&&
+    new Set(config.items).size===config.items.length;
+}
+function validDossierAction(d){
+  return d&&Object.keys(d).sort().join(",")==="action,article_id,config_sha"&&
+    validDossierId(d.article_id)&&["add","remove"].includes(d.action)&&typeof d.config_sha==="string"&&SHA40.test(d.config_sha);
+}
+async function dossierRead(env){
+  const head=await githubJson("/git/ref/heads/main",env);
+  const sha=head.data?.object?.sha;
+  if(head.status!==200||!SHA40.test(sha))throw Error("dossier_head_unavailable");
+  const [cfg,news]=await Promise.all([githubJson(DOSSIER_PATH+"?ref="+sha,env),githubJson("/contents/news.json?ref="+sha,env)]);
+  if(cfg.status!==200||news.status!==200||!SHA40.test(cfg.data?.sha))throw Error("dossier_catalog_unavailable");
+  const config=decodeGitHubContent(cfg.data),rows=decodeGitHubContent(news.data);
+  if(!validDossierConfig(config)||!Array.isArray(rows))throw Error("dossier_config_invalid");
+  const published=rows.filter(r=>validDossierId(r.id)&&r.url==="articles/"+r.id+"/"&&typeof r.title==="string"&&
+    typeof r.cover==="string"&&/^assets\/[a-z0-9][a-z0-9/_-]*\.(webp|png|jpe?g)$/.test(r.cover))
+    .map(r=>({id:r.id,title:r.title,published:r.published,published_at_utc:r.published_at_utc,rubric:r.rubric}));
+  if(config.items.some(id=>!published.some(r=>r.id===id)))throw Error("dossier_member_not_published");
+  return {config,config_sha:cfg.data.sha,published,head:sha};
+}
+async function dossierAction(env,body,headers){
+  if(!validDossierAction(body))return fail(400,"invalid_dossier_action",headers);
+  try{
+    const state=await dossierRead(env);
+    if(state.config_sha!==body.config_sha)return fail(409,"dossier_config_changed",headers);
+    if(!state.published.some(r=>r.id===body.article_id))return fail(400,"dossier_article_not_published",headers);
+    const exists=state.config.items.includes(body.article_id);
+    if((body.action==="add"&&exists)||(body.action==="remove"&&!exists))
+      return send({ok:true,status:"unchanged",items:state.config.items,config_sha:state.config_sha},200,headers);
+    const items=body.action==="add"?[body.article_id,...state.config.items]:state.config.items.filter(id=>id!==body.article_id);
+    const next={schema_version:1,items};
+    if(!validDossierConfig(next))return fail(400,"dossier_limit",headers);
+    // Compare-and-swap of the exact config blob; no article/queue/approval writes.
+    const write=await githubJson(DOSSIER_PATH,env,{method:"PUT",headers:{"content-type":"application/json"},
+      body:JSON.stringify({branch:"main",sha:state.config_sha,message:"dossier: "+body.action+" "+body.article_id,
+        content:encodeGitHubContent(next)})});
+    if(write.status!==200||!SHA40.test(write.data?.commit?.sha)||!SHA40.test(write.data?.content?.sha))
+      return fail([409,422].includes(write.status)?409:502,"dossier_write_conflict_or_failed",headers);
+    return send({ok:true,status:"saved_pending_site_refresh",items,config_sha:write.data.content.sha,commit_sha:write.data.commit.sha},200,headers);
+  }catch{return fail(502,"dossier_catalog_unavailable",headers)}
+}
+
 async function verifySession(req,env) {
   const header=req.headers.get("Authorization")||"";
   if (!header.startsWith("Bearer ")) return null;
@@ -656,7 +705,7 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({
-      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,dossier_management:true,
       first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
       first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
     });
@@ -681,6 +730,19 @@ export default {
       if (!session) return fail(401,"login_required",headers);
       if (url.pathname==="/api/session" && request.method==="GET") {
         return send({ok:true,login:session.login,exp:session.exp},200,headers);
+      }
+      if(url.pathname==="/api/dossier"&&request.method==="GET"){
+        if(url.search)return fail(400,"unexpected_input",headers);
+        try{const state=await dossierRead(env);return send({ok:true,...state},200,headers)}
+        catch{return fail(502,"dossier_catalog_unavailable",headers)}
+      }
+      if(url.pathname==="/api/dossier"&&request.method==="POST"){
+        if(url.search)return fail(400,"unexpected_input",headers);
+        if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")return fail(415,"json_required",headers);
+        const raw=await request.text();
+        if(raw.length>2000)return fail(413,"request_too_large",headers);
+        let data;try{data=JSON.parse(raw)}catch{return fail(400,"bad_json",headers)}
+        return dossierAction(env,data,headers);
       }
       if (url.pathname==="/api/first-car/collect" && ["GET","POST"].includes(request.method)) {
         return firstCarRun(request,url,env,headers);
@@ -751,4 +813,4 @@ export default {
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions};
+export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions,validDossierConfig,validDossierAction};

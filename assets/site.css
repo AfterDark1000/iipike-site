@@ -282,6 +282,10 @@
 }
 .archive-card img{width:100%;aspect-ratio:16/9;object-fit:cover;}
 @media(max-width:680px){
+  .dossier-card{grid-template-columns:1fr}
+  .dossier-head{align-items:flex-start;flex-wrap:wrap}
+  .dossier-card-copy{padding:16px}
+
   .archive-card{
     grid-template-columns:minmax(0,1fr);
     gap:12px;
@@ -633,3 +637,28 @@
 @media(prefers-reduced-motion:reduce){
   .article-text .editorial-related-card{transition:none}
 }
+
+/* HPII Dossier — separate editorial project; original artwork stays intact. */
+.dossier-home,.dossier-archive{--dossier-ink:#192d32;--dossier-gold:#b58b4b;--dossier-paper:#f8f3e9}
+.dossier-home{margin:32px auto;padding-top:22px;padding-bottom:24px;border-top:3px solid var(--dossier-ink);border-bottom:1px solid #b9b5a9}
+.dossier-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:0 0 18px}
+.dossier-head h1,.dossier-head h2{font-family:Georgia,serif;font-size:clamp(36px,5vw,58px);line-height:1.04;margin:5px 0;color:var(--dossier-ink)}
+.dossier-head p{margin:6px 0;color:#4c5451}
+.dossier-label{font-size:11px;font-weight:800;letter-spacing:.14em;color:#a9864d}
+.dossier-head>a{font-weight:700;white-space:nowrap;color:#315255}
+.dossier-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.dossier-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;border:1px solid #af9161;padding:8px;background:#192d32;color:#faf2e2;text-decoration:none}
+.dossier-card:hover{border-color:#e7bf7c;color:#fff}
+.dossier-card-art{display:block;border:1px solid #bd9e66;background:#192d32}
+.dossier-card-art img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.dossier-card-copy{display:flex;flex-direction:column;justify-content:center;gap:10px;padding:clamp(16px,3vw,32px)}
+.dossier-card-copy strong{font-family:Georgia,serif;font-size:clamp(21px,2.7vw,32px);line-height:1.18}
+.dossier-card-copy .dossier-label,.dossier-read{color:#efc987}
+.dossier-date{font-size:12px;color:#c7cbc6}
+.dossier-summary{font-size:14px;line-height:1.5;color:#ece5d8}
+.dossier-read{font-size:13px;font-weight:700}
+.dossier-archive{padding-top:30px;padding-bottom:50px}
+.dossier-archive .dossier-head{margin:24px 0}
+.dossier-article-marker{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#192d32;color:#efc987;padding:10px 14px;border:1px solid #b58b4b;margin:15px 0 10px;text-decoration:none;font-size:12px;letter-spacing:.1em;font-weight:800}
+.dossier-article-marker span{font-size:11px;font-weight:500;letter-spacing:normal}
+main:has(.dossier-article-marker)>.cover{border:1px solid #b58b4b;padding:8px;background:#192d32;box-sizing:border-box}
