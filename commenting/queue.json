@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T14:16:23.882618Z",
+  "updated_at": "2026-11-25T22:28:52.977287Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
-      "fresh_matches": 8
+      "fresh_matches": 5
     },
     {
       "id": "techinsider",
@@ -53,10 +53,10 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
-      "fresh_matches": 2
+      "fresh_matches": 1
     },
     {
       "id": "iguides",
@@ -64,23 +64,95 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T14:16:23.882618Z",
-      "last_success_at": "2026-11-25T14:16:23.882618Z",
+      "checked_at": "2026-11-25T22:28:52.977287Z",
+      "last_success_at": "2026-11-25T22:28:52.977287Z",
       "error": null,
       "fresh_matches": 1
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-25",
-    "attempted": 15
+    "date": "2026-11-26",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "7d49547e84a731718bd04eca",
+      "title": "OpenAI заявила, что нашла математический предел скорости умножения матриц",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/25/openai-zaiavila-cto-nasla-matematiceskii-predel-skorosti-umnozeniia-matric.html",
+      "published_at": "2026-11-25T19:03:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T22:28:52.977287Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "931fcb34efc07a3173478052",
+      "title": "SpaceX получила разрешение на запуск миллиона спутников для космических ИИ-дата-центров",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/25/spacex-polucila-razresenie-na-zapusk-milliona-sputnikov-dlia-kosmiceskix-ii-data-centrov.html",
+      "published_at": "2026-11-25T18:51:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T22:28:52.977287Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "2f5238fadc4facd45c7c529e",
+      "title": "Claude научился создавать приложения для Windows и macOS. Программировать ничего не нужно",
+      "source_id": "iguides",
+      "source_name": "iGuides",
+      "source_url": "https://www.iguides.ru/main/other/claude_nauchilsya_sozdavat_prilozheniya_dlya_windows_i_macos_programmirovat_nichego_ne_nuzhno/",
+      "published_at": "2026-11-25T15:00:39Z",
+      "channel_url": "https://dzen.ru/iguides",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T22:28:52.977287Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Забавно, что для работы самодельной утилиты всё равно нужен постоянный интернет и запущенный Claude. Настоящим автономным приложением это пока назвать трудно.",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-25T22:28:52.977287Z",
+      "reason": "Зацепился за требование постоянного интернета и авторизации для запущенных из артефактов приложений.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T22:28:52.977287Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "cf8400c7c4ee0908535c5ebb",
+      "title": "Анонс Rogbid Loop Memo: браслет записывает встречи, а ИИ делает конспекты",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161654-rogbid-loop-memo-preview/",
+      "published_at": "2026-11-25T14:15:03Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T22:28:52.977287Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "2ccd07b95f93b004cb55ad0c",
       "title": "NVIDIA открыла доступ к своей новой нейросети для рисования",
@@ -93,12 +165,14 @@
       "first_seen_at": "2026-11-25T14:16:23.882618Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Странный подход с тестами: в сравнении с GPT Image побеждает не сама модель, а целая система с агентом. Любопытно посмотреть на результаты в чистом виде.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-25T22:28:52.977287Z",
+      "reason": "Обращено внимание на нюанс с тестированием, где сравнивают систему целиком, а не отдельную модель.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T22:28:52.977287Z"
     },
     {
       "id": "5d39628048bb42ecbcae802d",
@@ -324,12 +398,14 @@
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-25T12:44:59.073090Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересный масштаб: эксперименты планируют нарастить сразу в десять раз. Похоже, главная сложность тут — найти достаточно физхимиков с нужными навыками.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-25T22:28:52.977287Z",
+      "reason": "Выделен рост числа экспериментов на порядок благодаря роботизированной линии.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T22:28:52.977287Z"
     },
     {
       "id": "49ec01ba76ed55b3412dd308",
@@ -2480,44 +2556,6 @@
       "comment": "",
       "attempts": 0,
       "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "8cd9c8a089efba3269f7fadc",
-      "title": "«Пожалуйста, не разрушайте свою жизнь». По 75 000 долларов за помощь в выявлении случаев списывания с использованием ИИ на самом важном экзамене заплатят в Южной Корее",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/18/pozaluista-ne-razrusaite-svoiu-zizn-po-75-000-dollarov-za-pomoshh-v-vyiavlenii-slucaev-spisyvaniia-s-ispolzovaniem-ii-na-samom-vaznom-ekzamene-zaplatiat-v-iuznoi-koree.html",
-      "published_at": "2026-11-18T20:56:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-19T01:27:32.490715Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "5284dc1cd966eea1058d6cce",
-      "title": "Обзор игрового ноутбука Acer Nitro V 17 AI: AMD Ryzen 7 260, Nvidia GeForce RTX 5060 и с возможностью апгрейда",
-      "source_id": "iguides",
-      "source_name": "iGuides",
-      "source_url": "https://www.iguides.ru/main/reviews/obzor_igrovogo_noutbuka_acer_nitro_v_17_a/",
-      "published_at": "2026-11-18T17:30:00Z",
-      "channel_url": "https://dzen.ru/iguides",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-18T19:22:37.954843Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-19T01:27:32.490715Z",
-      "reason": "Рекламный обзор ноутбука, зацепиться не за что.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "not_requested",
-      "generated_at": "2026-11-19T01:27:32.490715Z"
     }
   ]
 }
