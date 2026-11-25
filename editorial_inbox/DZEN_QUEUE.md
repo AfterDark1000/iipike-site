@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 270 · **В каталоге Дзена подтверждены:** 233 · **Не подтверждены, уже на сайте:** 11 · **Не подтверждены, ждут сайт:** 26
+**Всего одобренных:** 271 · **В каталоге Дзена подтверждены:** 233 · **Не подтверждены, уже на сайте:** 11 · **Не подтверждены, ждут сайт:** 27
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -58,6 +58,7 @@
 | 24 | [Половина молодых людей, ежедневно пользующихся ИИ, уже пробовала с ним дружить](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/gallup-youth-ai-friendship-20261117.md) | **Не ранее 27.11.2026 08:07 (Усть-Катав)**; пауза до 25.11.2026 21:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gallup-youth-ai-friendship-20261117.webp) |
 | 25 | [AMD отправила в производство чип с доработками от нейросети OpenAI](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-amd-ai-chip-design-20261118.md) | **Не ранее 27.11.2026 09:07 (Усть-Катав)**; пауза до 25.11.2026 21:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-amd-ai-chip-design-20261118.webp) |
 | 26 | [Сотня ИИ-агентов местами превзошла профессиональных аудиторов KPMG](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/kpmg-ai-agents-parallel-audit-20261118.md) | **Не ранее 27.11.2026 10:07 (Усть-Катав)**; пауза до 25.11.2026 21:30 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/kpmg-ai-agents-parallel-audit-20261118.webp) |
+| 27 | [Tidal удалит 29 миллионов нейропесен](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/tidal-ai-music-ban-20261124.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
