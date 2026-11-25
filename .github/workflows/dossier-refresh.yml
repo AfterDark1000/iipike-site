@@ -1,0 +1,74 @@
+name: HPII — refresh Dossier (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/dossier.json'
+      - 'scripts/site_dossier.py'
+      - 'scripts/build_dossier.py'
+      - '.github/workflows/dossier-refresh.yml'
+  schedule:
+    - cron: '19,49 * * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/dossier.json'
+      - 'scripts/site_dossier.py'
+      - 'scripts/build_dossier.py'
+      - 'tests/test_site_dossier.py'
+      - '.github/workflows/dossier-refresh.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-dossier-refresh-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: python3 -m unittest discover -s tests -p 'test_site_dossier.py' -v
+      - if: github.event_name == 'pull_request'
+        run: python3 scripts/build_dossier.py --check
+  refresh:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Refresh only Dossier decoration and archive
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/build_dossier.py
+            python3 scripts/build_dossier.py --check
+            git add -- index.html dossier/index.html articles/
+            if git diff --cached --name-only | grep -Ev '^(index\.html|dossier/index\.html|articles/[a-z0-9-]+/index\.html)$'; then
+              echo 'Unexpected path'; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'Dossier is current'; exit 0
+            fi
+            git diff --cached --check
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'site: refresh Dossier presentation [skip ci]'
+            if git push origin HEAD:main; then
+              gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
+              exit 0
+            fi
+          done
+          echo 'Concurrent main updates; retry next run'; exit 1
