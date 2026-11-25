@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-11-25T11:11:33Z",
+  "valid_until": "2026-11-25T12:41:33Z",
+  "status": "idle",
+  "quota": {
+    "used": 1,
+    "limit": 5,
+    "remaining": 4
+  },
+  "parallel_cover_review": false,
+  "job": null,
+  "waiting_for_manual_upload": []
+}
