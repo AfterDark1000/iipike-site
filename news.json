@@ -8717,5 +8717,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ от Meta будет выбивать возвраты денег и торговаться с продавцами за британцев",
+    "summary": "Meta запустила в Великобритании персонального ИИ-агента Muse для покупок, возвратов денег, переговоров и бытовых поручений. Покупки требуют подтверждения пользователя; британские регуляторы начали сбор отзывов о персональных агентах.",
+    "published": "2026-11-25",
+    "source_url": "https://about.fb.com/news/2026/11/introducing-muse-in-the-uk-a-personal-ai-agent-you-control/",
+    "cover": "assets/editorial/meta-muse-uk-personal-agent-20261123.webp",
+    "rubric": "news",
+    "vk_title": "🛒 Meta поручила нейросети ВЫБИВАТЬ ВОЗВРАТЫ денег за покупателей",
+    "vk_summary": "В Великобритании запустили персонального ИИ-агента Muse. Он занимается покупками, продлением страховки и переговорами с компаниями даже после закрытия приложения. Британские регуляторы уже начали собирать отзывы и жалобы на работу таких помощников.",
+    "published_at_utc": "2026-11-25T12:00:58Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "meta-muse-uk-personal-agent-20261123",
+    "url": "articles/meta-muse-uk-personal-agent-20261123/",
+    "topics": [
+      "agents",
+      "apps"
+    ],
+    "companies": [
+      "meta"
+    ],
+    "products": [
+      "muse"
+    ]
   }
 ]
