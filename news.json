@@ -8697,5 +8697,25 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "МТС начала продавать зарубежные карты для оплаты нейросетей прямо из России",
+    "summary": "МТС начала продавать виртуальные долларовые карты иностранных банков за 5 990 рублей. Карта действует три года, пополняется через СБП и российские карты. Совместимость с конкретными зарубежными ИИ-сервисами требует проверки.",
+    "published": "2026-11-25",
+    "source_url": "https://moskva.mts.ru/about/media-centr/soobshheniya-kompanii/novosti-mts-v-rossii-i-mire/2026-11-24/mts-zapustila-prodazhi-virtualnoj-zarubezhnoj-karty-s-vozmozhnostyu-popolneniya",
+    "cover": "assets/editorial/mts-virtual-foreign-card-ai-payments-20261124.webp",
+    "rubric": "news",
+    "vk_title": "💳 МТС выпустила ПОПОЛНЯЕМУЮ зарубежную карту для оплаты нейросетей",
+    "vk_summary": "Долларовая виртуальная карта стоит 5 990 рублей, действует три года и пополняется через СБП. МТС заявляет бесплатное обслуживание и отсутствие комиссий за операции. Перед оформлением стоит уточнить совместимость с нужным ИИ-сервисом.",
+    "published_at_utc": "2026-11-25T10:53:20Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-24",
+    "id": "mts-virtual-foreign-card-ai-payments-20261124",
+    "url": "articles/mts-virtual-foreign-card-ai-payments-20261124/",
+    "topics": [
+      "apps"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
