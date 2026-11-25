@@ -4162,6 +4162,19 @@
           "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
         }
       ]
+    },
+    {
+      "key": "openworks",
+      "name": "OpenWorks",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "openai-openworks-20261123",
+          "source_url": "https://openai.com/openworks/"
+        }
+      ]
     }
   ]
 }
