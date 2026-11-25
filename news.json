@@ -8627,5 +8627,29 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Халява кончилась: Google отключает дешевые подписки Gemini на 18 месяцев",
+    "summary": "Владельцы Google AI Pro по акции индийского оператора Jio жалуются на досрочное отключение подписок на 18 месяцев. При потере 5 ТБ облачного хранилища и превышении оставшейся квоты возникают ограничения Gmail и Google Диска.",
+    "published": "2026-11-25",
+    "source_url": "https://support.google.com/googleone/thread/478387954/",
+    "cover": "assets/editorial/google-jio-gemini-subscription-cancellations-20261125.webp",
+    "rubric": "news",
+    "vk_title": "💸 Дешёвые подписки Gemini начали СЛЕТАТЬ раньше срока",
+    "vk_summary": "Пользователи, оформившие Google AI Pro по акции индийского оператора Jio, жалуются на отключения уже через несколько недель. Особенно рискуют те, кто успел заполнить подарочные 5 ТБ облачного хранилища. При превышении лимита перестаёт работать даже Gmail.",
+    "published_at_utc": "2026-11-25T07:45:41Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-24",
+    "id": "google-jio-gemini-subscription-cancellations-20261125",
+    "url": "articles/google-jio-gemini-subscription-cancellations-20261125/",
+    "topics": [
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
