@@ -471,6 +471,10 @@
         {
           "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
           "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+        },
+        {
+          "article_id": "nvidia-huang-return-polymarket-20261124",
+          "source_url": "https://www.citizen.org/news/prediction-market-bets-on-huangs-reinstatement-at-nvidia-must-be-investigated/"
         }
       ]
     },
@@ -2095,6 +2099,30 @@
         {
           "article_id": "amazon-decart-ai-optimization-20261123",
           "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
+        }
+      ]
+    },
+    {
+      "key": "bubblemaps",
+      "name": "Bubblemaps",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "nvidia-huang-return-polymarket-20261124",
+          "source_url": "https://blog.bubblemaps.io/two-polymarket-clusters-made-350k-betting-on-jensen-huangs-return-to-nvidia/"
+        }
+      ]
+    },
+    {
+      "key": "polymarket",
+      "name": "Polymarket",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "nvidia-huang-return-polymarket-20261124",
+          "source_url": "https://blog.bubblemaps.io/two-polymarket-clusters-made-350k-betting-on-jensen-huangs-return-to-nvidia/"
         }
       ]
     }
