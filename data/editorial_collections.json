@@ -4,7 +4,7 @@
     {
       "group": "ai_created_worlds_20261125",
       "title": "Миры и игры, созданные с ИИ",
-      "state": "collecting",
+      "state": "ready_for_editor",
       "primary_sequence": 376,
       "note": "Собирать разноплановые законченные пользовательские миры; перед выпуском проверить авторские демо, особенно 535/536.",
       "members": [
@@ -29,7 +29,7 @@
     {
       "group": "ai_low_compute_retro_hardware_20261125",
       "title": "ИИ на старом и слабом железе",
-      "state": "collecting",
+      "state": "ready_for_editor",
       "primary_sequence": 481,
       "note": "Показать реальные ограничения слабого железа; IBM PC XT выполняет клиент к удалённой модели, не запускает Claude локально. Перепроверить первоисточник 206.",
       "members": [

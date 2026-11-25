@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collection-release-worlds-20261125-chief-1f7c8a.json",
+  "request_sha256": "d5e200669e674a85c884db117f4391ac035b19ea3212f1e04ab1cca8957471e0",
+  "status": "applied",
+  "applied": [
+    376,
+    482,
+    535,
+    536
+  ],
+  "unchanged": [],
+  "skipped": []
+}

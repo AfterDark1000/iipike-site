@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collection-release-retro-20261125-chief-3c8b61.json",
+  "request_sha256": "2718aa658007f216bd2e6747f5572c0cd52b4269db16bd95d7eb4f6aca315df3",
+  "status": "applied",
+  "applied": [
+    206,
+    326,
+    403,
+    481
+  ],
+  "unchanged": [],
+  "skipped": []
+}

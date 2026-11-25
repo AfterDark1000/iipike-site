@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "approved_date": "2026-11-25",
-  "source": "data/editorial_triage/requests/hpii-collections-hold-20261125-chief-approved-8ca4f2.json",
+  "source": "data/editorial_triage/requests/hpii-collection-release-worlds-20261125-chief-1f7c8a.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
-  "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
+  "note": "Chief-approved collection transition; no publication.",
   "items": [
     {
       "sequence": 55,
@@ -1512,8 +1512,8 @@
     {
       "sequence": 376,
       "pool_id": "n-ac5d6c67687a6569",
-      "lane": "hold",
-      "decision": "defer",
+      "lane": "long",
+      "decision": "linked_primary",
       "group": "ai_created_worlds_20261125",
       "group_primary": 376
     },
@@ -2146,8 +2146,8 @@
     {
       "sequence": 481,
       "pool_id": "n-4fd24093a1461ec1",
-      "lane": "hold",
-      "decision": "defer",
+      "lane": "long",
+      "decision": "linked_primary",
       "group": "ai_low_compute_retro_hardware_20261125",
       "group_primary": 481
     },
