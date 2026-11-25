@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T22:28:52.977287Z",
+  "updated_at": "2026-11-25T23:16:56.811168Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 5
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T22:28:52.977287Z",
-      "last_success_at": "2026-11-25T22:28:52.977287Z",
+      "checked_at": "2026-11-25T23:16:56.811168Z",
+      "last_success_at": "2026-11-25T23:16:56.811168Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-26",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -186,12 +186,14 @@
       "first_seen_at": "2026-11-25T14:16:23.882618Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, как система собирает этот цифровой отпечаток без номера. Если машина грязная или обледенела после метели, визуальных признаков почти не остаётся.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-25T23:16:56.811168Z",
+      "reason": "Зацепился за формирование цифрового отпечатка машины для поиска без номера",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T23:16:56.811168Z"
     },
     {
       "id": "629e5a1c0fb9a6f9e11035e9",
@@ -224,12 +226,14 @@
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Полезный тест, особенно если агент сам решает, лезть ему наружу или нет. Странно только, что прямой запрет приходится прописывать отдельно — казалось бы, базовая логика безопасности.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
-      "reason": "Не удалось подготовить комментарий"
+      "last_attempt_at": "2026-11-25T23:16:56.811168Z",
+      "reason": "Выделил деталь про влияние прямого запрета на попытки агента покинуть среду",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T23:16:56.811168Z"
     },
     {
       "id": "b81df4d05e49634d83e925ee",
@@ -243,12 +247,14 @@
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-25T12:44:59.073090Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что прокуратура сама признаёт: записи ещё не расшифровали, а обвинение уже строится на предположениях. Слишком много неопределённости для громкой истории со шпионажем.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-25T23:16:56.811168Z",
+      "reason": "Взял момент с запросом прокуратуры об отказе в залоге на основе версий",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T23:16:56.811168Z"
     },
     {
       "id": "832f276ae8c2f0f11de1605d",
