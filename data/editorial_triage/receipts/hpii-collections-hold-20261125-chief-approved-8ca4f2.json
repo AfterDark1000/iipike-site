@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collections-hold-20261125-chief-approved-8ca4f2.json",
+  "request_sha256": "37d125d944070ab3470b58b05589119fe97b931422038fd9fc76e780e4832daf",
+  "status": "applied",
+  "applied": [
+    376,
+    481
+  ],
+  "unchanged": [],
+  "skipped": []
+}
