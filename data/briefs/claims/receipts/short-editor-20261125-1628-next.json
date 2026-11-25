@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "request": "short-editor-20261125-1628-next.json",
+  "request_sha256": "1594fe7f700f8f43c069ad22ac907f43510ba0bd983004de089322be556cc51c",
+  "status": "rejected",
+  "error": "Invalid brief topic"
+}
