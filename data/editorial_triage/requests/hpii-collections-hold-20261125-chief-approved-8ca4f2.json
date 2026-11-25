@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "action": "apply_approved_triage",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "items": [
+    {
+      "sequence": 376,
+      "pool_id": "n-ac5d6c67687a6569",
+      "lane": "hold",
+      "decision": "defer",
+      "group": "ai_created_worlds_20261125",
+      "group_primary": 376
+    },
+    {
+      "sequence": 481,
+      "pool_id": "n-4fd24093a1461ec1",
+      "lane": "hold",
+      "decision": "defer",
+      "group": "ai_low_compute_retro_hardware_20261125",
+      "group_primary": 481
+    }
+  ]
+}
