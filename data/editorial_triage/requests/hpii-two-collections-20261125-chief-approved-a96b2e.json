@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "action": "apply_approved_triage",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "items": [
+    {
+      "sequence": 206,
+      "pool_id": "n-e1a95e7aa23bbf8e",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_low_compute_retro_hardware_20261125",
+      "group_primary": 481
+    },
+    {
+      "sequence": 326,
+      "pool_id": "n-9cb421824ca38751",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_low_compute_retro_hardware_20261125",
+      "group_primary": 481
+    },
+    {
+      "sequence": 376,
+      "pool_id": "n-ac5d6c67687a6569",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "ai_created_worlds_20261125",
+      "group_primary": 376
+    },
+    {
+      "sequence": 403,
+      "pool_id": "n-2e0248f14b028b8c",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_low_compute_retro_hardware_20261125",
+      "group_primary": 481
+    },
+    {
+      "sequence": 481,
+      "pool_id": "n-4fd24093a1461ec1",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "ai_low_compute_retro_hardware_20261125",
+      "group_primary": 481
+    },
+    {
+      "sequence": 482,
+      "pool_id": "n-247d76fd241c3756",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_created_worlds_20261125",
+      "group_primary": 376
+    },
+    {
+      "sequence": 535,
+      "pool_id": "n-190bd7881fbd9b39",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_created_worlds_20261125",
+      "group_primary": 376
+    },
+    {
+      "sequence": 536,
+      "pool_id": "n-3b9b5abdc9b748cc",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "ai_created_worlds_20261125",
+      "group_primary": 376
+    }
+  ]
+}
