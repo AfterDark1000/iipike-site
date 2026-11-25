@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-24T20:52:01.676805Z",
+  "updated_at": "2026-11-25T02:22:15.747169Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
-      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "last_success_at": "2026-11-25T02:22:15.747169Z",
       "error": null,
-      "fresh_matches": 7
+      "fresh_matches": 6
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
-      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "last_success_at": "2026-11-25T02:22:15.747169Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
+      "status": "error",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
       "last_success_at": "2026-11-24T20:52:01.676805Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
-      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "last_success_at": "2026-11-25T02:22:15.747169Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
-      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "last_success_at": "2026-11-25T02:22:15.747169Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-24T20:52:01.676805Z",
-      "last_success_at": "2026-11-24T20:52:01.676805Z",
+      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "last_success_at": "2026-11-25T02:22:15.747169Z",
       "error": null,
       "fresh_matches": 2
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-25",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -156,10 +156,14 @@
       "first_seen_at": "2026-11-24T17:36:27.558696Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Самое сложное здесь — заставить ребенка сначала сделать всё самому, а не сразу просить нейросеть выдать готовый ответ.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T02:22:15.747169Z",
+      "reason": "Мысль о главной сложности применения ИИ в учебе — преодолеть соблазн списать.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T02:22:15.747169Z"
     },
     {
       "id": "f568c64117ce1ee217998198",
@@ -207,10 +211,14 @@
       "first_seen_at": "2026-11-24T17:36:27.558696Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, как долго эти тридцать попыток будут оставаться бесплатными. Обычно после запуска такую халяву быстро прикрывают подпиской.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T02:22:15.747169Z",
+      "reason": "Зацепка за лимит бесплатных генераций и вопрос о монетизации функции.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T02:22:15.747169Z"
     },
     {
       "id": "56a3fa5ad821ee23c3c43fa6",
@@ -224,10 +232,14 @@
       "first_seen_at": "2026-11-24T17:36:27.558696Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Полезная функция, если ИИ действительно отслеживает падение цены, а не шлет уведомления о каждой копеечной скидке.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T02:22:15.747169Z",
+      "reason": "Реплика про функцию трекинга цен и надежность уведомлений.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T02:22:15.747169Z"
     },
     {
       "id": "0bd21ac6f1fd998cd192ec80",
