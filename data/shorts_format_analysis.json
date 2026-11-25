@@ -1,211 +1,186 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-23T11:17:33Z",
-  "status": "ok",
+  "generated_at_utc": "2026-11-25T11:44:49Z",
+  "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
     "daily_youtube_search_calls": 4
   },
   "videos": [
     {
-      "id": "ljLy2oDacg4",
-      "url": "https://www.youtube.com/shorts/ljLy2oDacg4",
-      "title": "Store Clerk Mocked Grandpa's Tech Skills 💀📱#shorts #jokes #funny #comedy #relatable #reels",
-      "channel": "Iron Chuckle\n\n",
-      "published_at": "2026-11-19T00:03:19Z",
-      "duration_seconds": 14,
-      "views": 29240,
-      "likes": 272,
-      "subscribers": 2020,
+      "id": "RDCXCrznJfc",
+      "url": "https://www.youtube.com/shorts/RDCXCrznJfc",
+      "title": "تكنولوچيا#shorts #comedy #viral",
+      "channel": "Mahmoud Metwaly99",
+      "published_at": "2026-11-19T20:23:44Z",
+      "duration_seconds": 13,
+      "views": 38076,
+      "likes": 154,
+      "subscribers": 10000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-23T11:17:33Z",
+      "statistics_checked_at": "2026-11-25T11:44:49Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 34.6,
-      "rank_score": 9.95,
+      "growth_views_per_hour": 31.6,
+      "rank_score": 8.99,
       "viral_status": "candidate_verified_stats",
-      "analysis": {
-        "observed_visuals": "На видео показано статичное фоновое видео с вертикальным кадром лесной дороги и деревьев, поверх которого наложен длинный текстовый рассказ о разговоре в магазине телефонов с ехидным финалом про учителя информатики. Изменений сцен или персонажей внутри видеоряда не наблюдается.",
-        "observed_audio": "Фоновая ритмичная электронная музыка, человеческий голос или озвучка не установлены (присутствует только текст на экранах).",
-        "hook_0_3s": "Появление крупного блока текста на фоне лесной дороги с первых секунд.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:13",
-            "visible_action": "Статичное видео лесной дороги и деревьев с непрерывно наложенным текстом истории на весь экран.",
-            "editing": "Без видимых склеек и переходов, единый статический фон.",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Текстовая история (storytime/reddit-story) наложенная на гипнотический фоновый видеоряд (background loop), удерживающая внимание длинным нарративом с неожиданным твистом в конце.",
-        "transfer_to_hpii": "Использовать механику текстового сторителлинга поверх релевантного фонового видеоряда для подачи новости об ИИ с неожиданным финалом (например, столкновение скептика-человека с умной нейросетью).",
-        "what_not_to_copy": "Не копировать сюжет про магазин телефонов и школьного учителя, а также длинный трудночитаемый текст в один блок.",
-        "limitations": "Аудиодорожка содержит только фоновую музыку, речь отсутствует, текст перекрывает весь экран.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-23T11:17:37Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
+      "status": "failed",
+      "failure": "API HTTP 503"
     },
     {
-      "id": "G3Y6EVUStGE",
-      "url": "https://www.youtube.com/shorts/G3Y6EVUStGE",
-      "title": "The Physics Experiment That Defies Your Expectations! 🤯#usashorts#viral",
-      "channel": "Accidental Eureka",
-      "published_at": "2026-11-18T13:30:01Z",
-      "duration_seconds": 25,
-      "views": 5764,
-      "likes": 36,
-      "subscribers": 14,
+      "id": "JP8xuqgMgvE",
+      "url": "https://www.youtube.com/shorts/JP8xuqgMgvE",
+      "title": "Fascinating Experiments With Everyday Materials 🔬 #smart #easy #diy #experiments",
+      "channel": "Beamish DIY",
+      "published_at": "2026-11-24T16:00:13Z",
+      "duration_seconds": 175,
+      "views": 22592,
+      "likes": 511,
+      "subscribers": 705000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-23T11:17:33Z",
+      "statistics_checked_at": "2026-11-25T11:44:49Z",
       "is_confirmed_short": false,
       "search_family": "experiment",
       "format_family_guess": "experiment",
-      "growth_views_per_hour": 7.5,
-      "rank_score": 6.72,
+      "growth_views_per_hour": null,
+      "rank_score": 7.07,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Human hands demonstrate a physics puzzle using two wooden sticks connected by a hinge, attaching a wooden hammer with a red string to show balance without falling, and adding a small panda toy.",
-        "observed_audio": "Voiceover explaining a physics experiment with background music.",
-        "hook_0_3s": "A human hand holds a hinged wooden stick that hangs downward, followed by a voiceover and text prompt introducing a physics experiment.",
+        "observed_visuals": "Набор коротких скетчей-экспериментов с быстрой сменой кадров: демонстрация физических и химических реакций, самодельных приспособлений и трюков с предметами.",
+        "observed_audio": "Фоновая бодрая музыка, звуки зажигалки, шипения жидкостей, ударов капель и стука предметов.",
+        "hook_0_3s": "Крупный план бутылки с водой и зажигалки, подносящейся к горлышку.",
         "timeline": [
           {
-            "time": "00:00",
-            "visible_action": "A hand holds two wooden parts connected by a flexible hinge, one part hangs down.",
-            "editing": "Direct shot",
+            "time": "00:00 - 00:03",
+            "visible_action": "Рука поджигает трубку, вставленную в бутыль с водой.",
+            "editing": "Прямая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:03",
-            "visible_action": "A finger points at the hinge mechanism.",
-            "editing": "Jump cut or continuous shot",
+            "time": "00:18 - 00:20",
+            "visible_action": "Демонстрация ладони с привязанными батарейками и парящей крышкой.",
+            "editing": "Быстрая смена кадров",
             "confidence": "seen"
           },
           {
-            "time": "00:10",
-            "visible_action": "A wooden hammer is suspended from the structure using a red string.",
-            "editing": "Jump cut",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:17",
-            "visible_action": "Hands let go of the structure, and it remains balanced in the air.",
-            "editing": "Jump cut",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:22",
-            "visible_action": "A small panda toy is placed on top of the balanced structure.",
-            "editing": "Jump cut",
+            "time": "00:30 - 00:33",
+            "visible_action": "Падение предметов в стакан с разноцветными слоями жидкости.",
+            "editing": "Монтажная склейка",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Visual physics demonstration with an interactive narrative hook, step-by-step assembly, and suspenseful problem framing leading to a surprising counter-intuitive result.",
-        "transfer_to_hpii": "Demonstrating an unexpected AI feature or breakthrough by first showing an unstable or broken state, then adding a hidden anchor/parameter that brings the whole system into stable balance.",
-        "what_not_to_copy": "Do not copy the exact wooden stick props, physics experiment dialogue, or educational tone about hammers and strings.",
-        "limitations": "The video lacks detailed explanations of the underlying center-of-gravity physics formulas.",
+        "format_mechanic": "Динамичный сборник визуальных трюков и лайфхаков с быстрой сменой контекста для удержания внимания.",
+        "transfer_to_hpii": "Использовать ритмичную нарезку быстрых технологических гипотез об ИИ (например, «ИИ пишет код / ИИ генерирует видео / ИИ ошибается») как хук для динамичных роликов.",
+        "what_not_to_copy": "Не повторять опасные химические и пиротехнические эксперименты.",
+        "limitations": "Высокая плотность независимых сцен затрудняет анализ отдельных причинно-следственных связей.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-23T11:17:41Z",
+      "analyzed_at_utc": "2026-11-25T11:44:59Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "YGA535tXiI8",
-      "url": "https://www.youtube.com/shorts/YGA535tXiI8",
-      "title": "How Mona lisa vanished and nobody Noticed| #3danimation #animation #history #stories #3d",
-      "channel": "PippeYT",
-      "published_at": "2026-11-23T03:47:41Z",
-      "duration_seconds": 34,
-      "views": 1436,
-      "likes": null,
-      "subscribers": 4,
+      "id": "2IRMtB50DFI",
+      "url": "https://www.youtube.com/shorts/2IRMtB50DFI",
+      "title": "Why Do Mosquito Bites Itch? 🦟😱 | 3D Animation #3danimation",
+      "channel": "Hasan ali",
+      "published_at": "2026-11-23T08:17:50Z",
+      "duration_seconds": 50,
+      "views": 8673,
+      "likes": 171,
+      "subscribers": 44800,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-23T11:17:33Z",
+      "statistics_checked_at": "2026-11-25T11:44:49Z",
       "is_confirmed_short": false,
       "search_family": "explanation",
       "format_family_guess": "explanation",
       "growth_views_per_hour": null,
-      "rank_score": 5.97,
+      "rank_score": 5.27,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Animated historical sketch about the theft of the Mona Lisa featuring minimalist cartoon characters and museum settings.",
-        "observed_audio": "Voiceover narration explaining the historical event with upbeat cartoon sound effects.",
-        "hook_0_3s": "A cartoon depiction of the Mona Lisa hanging on a museum wall with text stating the year 1911.",
+        "observed_visuals": "Animated 3D man sitting on a bed, red mark appearing on his arm, transition to 3D diagram of mosquito biting and injecting saliva into layers of skin, animation of blood vessels, histamine release, and a graphic inset showing ice cubes at the end.",
+        "observed_audio": "Voiceover in Hindi explaining the biological process of mosquito bites and itching relief, accompanied by sound effects.",
+        "hook_0_3s": "3D animated man sitting on a bed looking at his arm with an overlaid red text box asking what happens when a mosquito bites.",
         "timeline": [
           {
-            "time": "00:00",
-            "visible_action": "Title frame showing Mona Lisa in a gallery",
-            "editing": "Static camera angle with zoom in",
+            "time": "00:00 - 00:02",
+            "visible_action": "Animated man sitting on the bed, red text box appears overhead.",
+            "editing": "Direct 3D render cut with text overlay.",
             "confidence": "seen"
           },
           {
-            "time": "00:02",
-            "visible_action": "A character walks up to the painting and removes it from the wall",
-            "editing": "Cut to character action",
+            "time": "00:02 - 00:07",
+            "visible_action": "Zoom in on the man's arm showing a red welt.",
+            "editing": "Camera push-in with arrow and text callout graphics.",
             "confidence": "seen"
           },
           {
-            "time": "00:04",
-            "visible_action": "Text reads 26 HOURS while guards walk past the empty wall",
-            "editing": "Jump cut to next scene",
+            "time": "00:07 - 00:15",
+            "visible_action": "Close-up animation of a mosquito and microscopic view of skin layers.",
+            "editing": "Scene transition to a blue grid background showing 3D biological models.",
             "confidence": "seen"
           },
           {
-            "time": "00:07",
-            "visible_action": "Thief hiding in a closet sleeping",
-            "editing": "Cut to closet scene",
+            "time": "00:15 - 00:25",
+            "visible_action": "Saliva injection and blood cell reactions shown via 3D graphics.",
+            "editing": "Continuous animated sequence with text highlights.",
             "confidence": "seen"
           },
           {
-            "time": "00:09",
-            "visible_action": "Thief walking out with the wrapped painting",
-            "editing": "Cut to exit scene",
+            "time": "00:25 - 00:35",
+            "visible_action": "Histamine reaction animation, blood vessels dilating, return to character scratching.",
+            "editing": "Jump cut back to the character on the bed.",
             "confidence": "seen"
           },
           {
-            "time": "00:16",
-            "visible_action": "Newspapers flying around a globe representing global news spread",
-            "editing": "Cut to outdoor city scene with animated globe",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:20",
-            "visible_action": "Crowds of people lining up to look at the empty wall",
-            "editing": "Cut back to gallery",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:23",
-            "visible_action": "Two years later, thief tries to sell it and gets caught",
-            "editing": "Cut to interior room and then arrest scene",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:26",
-            "visible_action": "Painting returned, massive crowds visiting in 2 days",
-            "editing": "Cut to gallery with text overlays",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:31",
-            "visible_action": "Concluding punchline about making a painting famous by stealing it",
-            "editing": "Final static shot of gallery",
+            "time": "00:35 - 00:50",
+            "visible_action": "Nerve signal animation, character touching arm, ice cube graphic inset, ending with profile screen.",
+            "editing": "Cut to graphic inset of ice cubes and final social media callout screen.",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Historical storytelling through minimalist animation combined with quick pacing, text overlays, and humor.",
-        "transfer_to_hpii": "Use the mechanic of explaining an absurd or counterintuitive historical AI breakthrough using simple animated storytelling and bold text callouts.",
-        "what_not_to_copy": "Do not copy the exact cartoon style or historical narrative about art theft.",
-        "limitations": "Audio specifics beyond voiceover and SFX cannot be precisely transcribed without full transcript access.",
+        "format_mechanic": "Explaining a common everyday phenomenon using micro-anatomy 3D animations paired with educational voiceover and practical advice.",
+        "transfer_to_hpii": "Break down an abstract artificial intelligence news story or algorithm update using a metaphorical 3D microscopic breakdown (e.g., how a new LLM token processing mechanism works inside a neural network layer).",
+        "what_not_to_copy": "Do not copy the exact mosquito/skin animation style or the specific topic of insect bites.",
+        "limitations": "Voiceover translation is approximate based on standard terminology; visual components are fully observed.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-23T11:17:45Z",
+      "analyzed_at_utc": "2026-11-25T11:45:13Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
+    },
+    {
+      "id": "Bt8e_HmS3Ho",
+      "url": "https://www.youtube.com/shorts/Bt8e_HmS3Ho",
+      "title": "The Strange Twist in the Flock Camera Story #shorts",
+      "channel": "Danjuma Consult Tech",
+      "published_at": "2026-11-24T06:00:09Z",
+      "duration_seconds": 55,
+      "views": 2,
+      "likes": 0,
+      "subscribers": 13,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-25T11:44:49Z",
+      "is_confirmed_short": false,
+      "search_family": "story",
+      "format_family_guess": "story",
+      "growth_views_per_hour": null,
+      "rank_score": 0.07,
+      "viral_status": "unconfirmed",
+      "status": "failed",
+      "failure": "API HTTP 503"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "video_id": "RDCXCrznJfc",
+      "code": "analysis_failed"
+    },
+    {
+      "video_id": "Bt8e_HmS3Ho",
+      "code": "analysis_failed"
+    }
+  ]
 }
