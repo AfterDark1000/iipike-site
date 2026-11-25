@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261125-jio-google-ai-pro-early-expiry-hot.json",
+  "request_sha256": "249d95c52592cedf4cf7276308319be00a1b21dbfc38db2b8bc9a1af88389d78",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 544,
+      "id": "n-fd2eafba92664bc0",
+      "title": "Пользователи жалуются на досрочное отключение 18-месячных подписок Google AI Pro от Jio"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}

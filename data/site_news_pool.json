@@ -8131,6 +8131,21 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-fd2eafba92664bc0",
+      "sequence": 544,
+      "title": "Пользователи жалуются на досрочное отключение 18-месячных подписок Google AI Pro от Jio",
+      "source_url": "https://support.google.com/googleone/thread/478944991/google-ai-pro-18-month-jio-promo-ended-early",
+      "summary": "17–24 ноября 2026 пользователи форума Google One сообщают о досрочном отключении промоподписок Jio, включая пакет 5 ТБ; 24 ноября появились несколько независимых жалоб с уведомлением об истечении срока. Другие сообщения: https://support.google.com/googleone/thread/478925395/ и https://support.google.com/googleone/thread/478920855/ ; 19 ноября сообщалось и об отмене за suspicious activity: https://support.google.com/googleone/thread/478387954/ . Официальные условия Jio: https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/ — новые подключения закрыты, ранее активированные 18 месяцев сохраняются при непрерывном подходящем тарифе 5G от ₹349. Причина волны и число затронутых неизвестны; не утверждать, что все отключения связаны с антифродом или перепродажей. Редактору: проверить официальные ответы, разницу между законными абонентами и перепроданными промоссылками, последствия потери 5 ТБ, варианты обращения в поддержку. Главред просит горячую полноценную статью.",
+      "origin": "ХПИИ — редакция",
+      "priority": "high",
+      "status": "queued",
+      "added_at": "2026-11-25T06:52:50+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
