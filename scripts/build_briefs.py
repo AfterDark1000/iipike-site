@@ -96,7 +96,7 @@ def validated(root):
         cand=candidates.get(slug)
         if not cand or any(row[k]!=cand[k] for k in ("pool_id","pool_sequence","headline","topic","event_date","source","source_url","body")):
             raise ValueError("Published text must exactly match its reviewed candidate")
-        if row["topic"] not in ("Наука","Бизнес","Общество","Технологии","Культура","Безопасность"):
+        if row["topic"] not in ("Наука","Бизнес","Общество","Технологии","Культура","Безопасность","Робототехника"):
             raise ValueError("Invalid brief topic")
         if not isinstance(row["headline"],str) or not 15<=len(row["headline"])<=120:
             raise ValueError("Bad headline")
