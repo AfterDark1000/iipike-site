@@ -24,7 +24,7 @@ from scripts.site_rubrics import RUBRICS, render_all, populated, navigation, pub
 from scripts.site_related import catalog_entries, validate_reference, validate_links, render_links, explicit_site_crosslinks, canonical_dzen_url
 from scripts.site_home import update_home, sorted_published
 from scripts.site_rich_text import validate_blocks, render_blocks, markdown_to_blocks, safe_href, image_asset, IMAGE_SOURCE
-from scripts.site_dossier import article_marker, load_ids, archive as dossier_archive
+from scripts.site_dossier import article_marker, load_ids
 from scripts.site_related_cards import select_site_cards, remove_duplicate_related_ids
 from scripts.site_entities import (render_article_entity_nav, load_registry,
                                    validate_editor_entities, append_editor_entities,
@@ -432,9 +432,9 @@ def render_feed(records, old_feed):
             '<language>ru-RU</language>' + "".join(items) + '</channel></rss>\n')
 
 
-def render_sitemap(records):
+def render_sitemap(records, *, root=ROOT):
     from xml.sax.saxutils import escape as xml_escape
-    urls = ([BASE + "/", BASE + "/articles/"] + ([BASE + "/dossier/"] if (ROOT / "dossier/index.html").is_file() else [])
+    urls = ([BASE + "/", BASE + "/articles/"] + ([BASE + "/dossier/"] if (root / "dossier/index.html").is_file() else [])
             + [BASE + "/rubrics/" + key + "/" for key in populated(records)]
             + [BASE + "/topics/"]
             + [BASE + "/topics/" + key + "/" for key in active_topics(records)]
@@ -499,11 +499,9 @@ def publish(root, slug, apply=False):
         root / "articles" / "index.html": render_catalog(updated),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "dzen-rss.xml": render_dzen_rss(root, updated, staged=data),
-        root / "sitemap.xml": render_sitemap(updated),
+        root / "sitemap.xml": render_sitemap(updated, root=root),
         root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"), updated, root=root),
     }
-    if (root / "data/dossier.json").is_file():
-        outputs[root / "dossier/index.html"] = dossier_archive(updated, dossier_ids)
     outputs.update(render_all(updated, root))
     outputs.update(render_all_topics(updated, root))
     if selected:
