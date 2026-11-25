@@ -8672,5 +8672,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Французские газеты разрешили ChatGPT пересказывать их статьи",
+    "summary": "OpenAI заключила соглашения с медиаподразделением LVMH и Groupe Figaro: в ответах ChatGPT появятся выдержки из французских изданий, а договор с Le Figaro включает архивы.",
+    "published": "2026-11-25",
+    "source_url": "https://openai.com/index/lvmh-media-division-partnership/",
+    "cover": "assets/editorial/openai-french-press-lvmh-figaro-20261118.webp",
+    "rubric": "news",
+    "vk_title": "📰 Французские газеты открыли ChatGPT доступ к своим АРХИВАМ",
+    "vk_summary": "OpenAI заключила соглашения с медиаподразделением LVMH и Groupe Figaro. В ответах ChatGPT появятся выдержки из публикаций Le Figaro, Le Parisien, Les Echos и других изданий со ссылками на оригиналы. Соглашение с Le Figaro охватывает также архивные материалы.",
+    "published_at_utc": "2026-11-25T09:46:04Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "openai-french-press-lvmh-figaro-20261118",
+    "url": "articles/openai-french-press-lvmh-figaro-20261118/",
+    "topics": [
+      "business",
+      "society"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
