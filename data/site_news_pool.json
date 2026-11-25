@@ -7990,11 +7990,11 @@
       "summary": "24 ноября. Axios сообщает о внутренних спорах вокруг безопасности закрытых моделей; инсайдерская информация.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:18:11.877Z",
-      "closed_at": null,
-      "article_id": null,
+      "closed_at": "2026-11-25T11:25:53.130Z",
+      "article_id": "openai-anthropic-unreleased-ai-safety-20261124",
       "note": "Axios 24.11: https://www.axios.com/2026/11/24/anthropic-openai-unreleased-ai-safety-risks — более двух десятков источников, спор о публичном выпуске и обучении закрытых моделей, комментарии обеих компаний. Решение о прекращении обучения не объявлено. Подтверждающий первоисточник OpenAI 18.11 https://openai.com/index/managing-frontier-ai-risk/ — задержка GPT-6.1 Astra, новые требования безопасности; 22.11 https://openai.com/index/perplexity-and-intelligence/ — предложение общих пределов развития. Anthropic 31.08 https://www.anthropic.com/news/improving-alignment-security-efforts — подтверждены паузы и усиление контроля. Каталог Дзена: связанные опубликованные материалы 6adc5171e6b18e075bdb167d и 6b046c0ae9dfbb3c778aa612, прямое открытие страницы инцидента недоступно, адрес и статус подтверждены каталогом. Рубрика news, тема safety, компании openai/anthropic. Статья на утверждении."
     },
     {
