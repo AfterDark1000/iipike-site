@@ -8080,9 +8080,9 @@
       "summary": "24 ноября. Сообщается о запрете с 9 декабря; вспомогательное использование ИИ останется разрешённым. Вторичный источник, требует подтверждения Tidal.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T03:07:24+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:55:02.921Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
