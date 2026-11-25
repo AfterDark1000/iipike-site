@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "hpii-short-editor-20261125-batch28-fifo-31a8d2.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-475c880599fcf4e5",
+      "pool_sequence": 268,
+      "title": "ИИ научили предсказывать сбои в поставках лекарств за две недели",
+      "source_url": "https://doi.org/10.1007/s44163-026-02606-0",
+      "claimed_at": "2026-11-25T11:17:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-d2f98570ba045778",
+      "pool_sequence": 526,
+      "title": "Ant Group открыла веса Ling-3.2-air под лицензией MIT",
+      "source_url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+      "claimed_at": "2026-11-25T11:17:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-e740e9ae28d8e83b",
+      "pool_sequence": 528,
+      "title": "GPT-6.2 помогла воссоздать Всемирную выставку 1915 года в Blender",
+      "source_url": "https://x.com/OpenAIDevs/status/2124941999782695044",
+      "claimed_at": "2026-11-25T11:17:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-f1a2a3ccb23bb8e3",
+      "pool_sequence": 530,
+      "title": "Турция готова оплатить половину расходов на разработку отечественных человекоподобных роботов",
+      "source_url": "https://www.aa.com.tr/en/turkiye/turkiye-opens-grant-call-to-develop-humanoid-robots-for-industry/4134335",
+      "claimed_at": "2026-11-25T11:17:12+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ad4552b9cb0c9f2b",
+      "pool_sequence": 533,
+      "title": "Индийская нейросеть научилась исправлять оговорки прямо во время диктовки",
+      "source_url": "https://www.sarvam.ai/blogs/sarvam-dictate",
+      "claimed_at": "2026-11-25T11:17:12+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

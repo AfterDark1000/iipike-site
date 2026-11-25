@@ -4000,12 +4000,12 @@
       "summary": "18 ноября: исследование о прогнозе редких сбоев в фармацевтических цепочках с помощью временных графов и разнородных данных.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-18T13:05:12+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:17:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": "Проверена оригинальная статья Springer, 17.11.2026: https://link.springer.com/article/10.1007/s44163-026-02606-0. 14 дней — горизонт прогноза, не гарантированное время предупреждения. Ретроспективная проверка на 36 месяцах данных сети 16 партнёров (764 узла), тест 170 дней 2023 г.; при ежедневном отборе 40 узлов Recall@40=0.903 для положительных наблюдений узел-день, не доля уникальных сбоев. Авторы требуют внешней перспективной проверки до широкого внедрения. Узкая прикладная научная работа, рекомендован короткий формат либо отказ; решение главреда ожидается. Главред согласовал перевод в короткие новости 24.11.2026. Резерв длинного редактора снят для штатной маршрутизации."
+      "note": "SHORT_EDITOR claim=short; pool_id=n-475c880599fcf4e5"
     },
     {
       "id": "n-6c3466d8a199b580",
@@ -7870,12 +7870,12 @@
       "summary": "23 ноября. Около 5,5 млрд активных параметров на токен при 124 млрд общих.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:17:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d2f98570ba045778"
     },
     {
       "id": "n-ab3cfedbc20ee112",
@@ -7900,12 +7900,12 @@
       "summary": "23 ноября. Демонстрация OpenAI Developers: трёхмерная сцена в духе исторической киноплёнки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:17:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e740e9ae28d8e83b"
     },
     {
       "id": "n-efeb1dd0cef98688",
@@ -7930,12 +7930,12 @@
       "summary": "23 ноября. Конкурс проектов промышленных гуманоидов; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:17:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f1a2a3ccb23bb8e3"
     },
     {
       "id": "n-e98ccab84ef9fc2e",
@@ -7975,12 +7975,12 @@
       "summary": "23 ноября. Sarvam Dictate убирает повторы, слова-паразиты и исправленные говорящим фразы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:17:12+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ad4552b9cb0c9f2b"
     },
     {
       "id": "n-ade278c8145c4b2e",
