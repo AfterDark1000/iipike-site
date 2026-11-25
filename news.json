@@ -8806,5 +8806,28 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Сотрудники OpenAI и Anthropic боятся выпускать свои самые мощные нейросети",
+    "summary": "Axios сообщает о внутренних дискуссиях в OpenAI и Anthropic: исследователи обсуждают ограничение публичного доступа к наиболее мощным моделям и возможную остановку обучения новых нейросетей.",
+    "published": "2026-11-25",
+    "source_url": "https://www.axios.com/2026/11/24/anthropic-openai-unreleased-ai-safety-risks",
+    "cover": "assets/editorial/openai-anthropic-unreleased-ai-safety-20261124.webp",
+    "rubric": "news",
+    "vk_title": "🔒 Разработчики боятся ВЫПУСКАТЬ самые мощные нейросети OpenAI и Anthropic",
+    "vk_summary": "Axios поговорил более чем с двумя десятками источников. Внутри двух ИИ-компаний обсуждают ограничение доступа к новым моделям, а некоторые исследователи предлагают вовсе остановить обучение следующих поколений нейросетей.",
+    "published_at_utc": "2026-11-25T15:30:54Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-24",
+    "id": "openai-anthropic-unreleased-ai-safety-20261124",
+    "url": "articles/openai-anthropic-unreleased-ai-safety-20261124/",
+    "topics": [
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "anthropic"
+    ],
+    "products": []
   }
 ]
