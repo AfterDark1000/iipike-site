@@ -33,6 +33,7 @@ class SearchIndexingTests(unittest.TestCase):
         tree = ET.parse(ROOT / "sitemap.xml")
         urls = [p.text for p in tree.findall(".//s:loc", NAMESPACE)]
         expected = ([BASE + "/", BASE + "/articles/"] +
+                    ([BASE + "/dossier/"] if (ROOT / "dossier/index.html").is_file() else []) +
                     [BASE + "/rubrics/" + key + "/" for key in populated(self.records)] +
                     ([BASE + "/topics/"] +
                      [BASE + "/topics/" + key + "/" for key in active_topics(self.records)]
