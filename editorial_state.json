@@ -222,6 +222,12 @@
       "utc_date": "2026-11-24",
       "source_url": "https://openai.com/index/introducing-shirudo",
       "source_title": "OpenAI and Cisco introduce Shirudo"
+    },
+    {
+      "id": "7057a24125f9dd576bee",
+      "utc_date": "2026-11-25",
+      "source_url": "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/",
+      "source_title": "What’s New for Game Developers: AI Animation and RTX Tools"
     }
   ]
 }
