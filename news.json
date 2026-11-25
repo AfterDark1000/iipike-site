@@ -8581,5 +8581,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Голосовой ИИ Haru-4B слушает вас даже во время собственного ответа и работает без облака",
+    "summary": "Японская higurashi открыла Haru-4B, голосовую модель, способную одновременно слушать и говорить. speech.cpp 0.11.0 добавил локальный запуск на Windows, Linux и Mac.",
+    "published": "2026-11-25",
+    "source_url": "https://huggingface.co/higurashi-ai/Haru-4B",
+    "cover": "assets/editorial/higurashi-haru4b-speech-cpp-20261115.webp",
+    "rubric": "news",
+    "vk_title": "🎙️ Голосовой ИИ Haru теперь СЛУШАЕТ И ГОВОРИТ одновременно",
+    "vk_summary": "Японская higurashi открыла голосовую модель Haru-4B, способную слушать собеседника во время собственного ответа. Она поддерживает девять языков, включая русский. Программа speech.cpp позволяет запускать модель локально на Windows, Linux и Mac без Python и CUDA.",
+    "published_at_utc": "2026-11-25T05:30:48Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-15",
+    "id": "higurashi-haru4b-speech-cpp-20261115",
+    "url": "articles/higurashi-haru4b-speech-cpp-20261115/",
+    "topics": [
+      "audio",
+      "models"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
