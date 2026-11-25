@@ -8602,5 +8602,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ChatGPT разобрал многомесячный завал документов в больнице за выходные",
+    "summary": "В CVS Health ИИ-агент за выходные разобрал многомесячную очередь документов. OpenAI представила более 20 медицинских подключений ChatGPT for Healthcare и работу агентов с больничными программами.",
+    "published": "2026-11-25",
+    "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/",
+    "cover": "assets/editorial/openai-chatgpt-healthcare-20-connectors-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🏥 ChatGPT научили разбирать БОЛЬНИЧНЫЕ ДОКУМЕНТЫ",
+    "vk_summary": "OpenAI добавила более 20 медицинских подключений в ChatGPT for Healthcare. ИИ-агенты работают с больничными программами, страховыми заявками и медицинскими записями. В CVS Health агент за выходные разобрал очередь документов, накопившуюся за несколько месяцев.",
+    "published_at_utc": "2026-11-25T06:30:51Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "openai-chatgpt-healthcare-20-connectors-20261116",
+    "url": "articles/openai-chatgpt-healthcare-20-connectors-20261116/",
+    "topics": [
+      "health",
+      "business"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
