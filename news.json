@@ -8765,5 +8765,30 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "OpenAI будет платить до $8 000 в месяц тем, кто научит других пользоваться нейросетями",
+    "summary": "OpenAI запустила OpenWorks в 20 городах США: специалисты по внедрению ИИ в малый бизнес смогут получать до $8 000 в месяц, а предприниматели получат бесплатную помощь и три месяца ChatGPT Business.",
+    "published": "2026-11-25",
+    "source_url": "https://openai.com/openworks/",
+    "cover": "assets/editorial/openai-openworks-20261123.webp",
+    "rubric": "news",
+    "vk_title": "💸 OpenAI заплатит до $8 000 В МЕСЯЦ за обучение людей работе с нейросетями",
+    "vk_summary": "Компания набирает специалистов по внедрению ИИ в малый бизнес. Минимальные обязательства — четыре рабочих дня и один семинар ежемесячно. Предпринимателям достанутся бесплатные консультации и три месяца ChatGPT Business. Программа запущена в 20 городах США.",
+    "published_at_utc": "2026-11-25T14:15:45Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "openai-openworks-20261123",
+    "url": "articles/openai-openworks-20261123/",
+    "topics": [
+      "business",
+      "education"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
