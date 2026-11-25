@@ -8065,9 +8065,9 @@
       "summary": "23 ноября. Автор утверждает, что алгоритм обнаружил аномальные сделки на Polymarket до подтверждения возвращения руководителя. Инсайдерская торговля не доказана.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T03:07:24+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:28:52.870Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
