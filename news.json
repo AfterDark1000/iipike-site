@@ -8742,5 +8742,28 @@
     "products": [
       "muse"
     ]
+  },
+  {
+    "title": "Amazon заплатит $7,5 млрд за технологию ускорения собственных ИИ-чипов",
+    "summary": "Amazon договорилась о покупке технологии Decart Optimization Stack и найме её разработчиков. Bloomberg оценивает сделку в $7,5 млрд; официальная сумма не раскрыта. Сделке предстоит получить одобрение регуляторов.",
+    "published": "2026-11-25",
+    "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization",
+    "cover": "assets/editorial/amazon-decart-ai-optimization-20261123.webp",
+    "rubric": "news",
+    "vk_title": "💰 Amazon собирается ускорить свои ИИ-чипы за $7,5 МИЛЛИАРДА",
+    "vk_summary": "Корпорация договорилась о покупке технологии Decart и найме её разработчиков. Стартап занимается повышением производительности нейросетей на существующих процессорах. Сумму сделки приводит Bloomberg.",
+    "published_at_utc": "2026-11-25T13:00:59Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-23",
+    "id": "amazon-decart-ai-optimization-20261123",
+    "url": "articles/amazon-decart-ai-optimization-20261123/",
+    "topics": [
+      "infrastructure",
+      "finance"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
