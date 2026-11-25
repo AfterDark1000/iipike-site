@@ -2125,6 +2125,30 @@
           "source_url": "https://blog.bubblemaps.io/two-polymarket-clusters-made-350k-betting-on-jensen-huangs-return-to-nvidia/"
         }
       ]
+    },
+    {
+      "key": "tidal",
+      "name": "Tidal",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "tidal-ai-music-ban-20261124",
+          "source_url": "https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy"
+        }
+      ]
+    },
+    {
+      "key": "ircam-amplify",
+      "name": "Ircam Amplify",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "tidal-ai-music-ban-20261124",
+          "source_url": "https://www.musicbusinessworldwide.com/tidal-bans-fully-ai-generated-music-from-its-platform/"
+        }
+      ]
     }
   ],
   "products": [
