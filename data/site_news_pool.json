@@ -8116,6 +8116,21 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-fe345aa4d30e47e6",
+      "sequence": 543,
+      "title": "OpenAI исправила недоучёт лимитов GPT-6.2 в Codex",
+      "source_url": "https://www.reddit.com/r/codex/comments/1y4x2g2/got_email_from_openai_say_62_astrasol_have_less",
+      "summary": "25 ноября. OpenAI в рассылке An update to Codex usage сообщила, что часть запросов GPT-6.2 Astra и Sol, включая Ultrafast, расходовала меньше лимита, чем предусмотрено. После исправления лимит может исчерпываться быстрее; цена подписки не меняется. Масштаб изменения не указан. Публичная ссылка — обсуждение полученного уведомления, не официальный релиз. Главред направил в «Новости коротко».",
+      "origin": "ХПИИ — редакция",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-25T06:44:18+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }

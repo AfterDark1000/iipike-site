@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261125-codex-62-usage-correction.json",
+  "request_sha256": "005dcf4c741e75aa36d9885b01a2b6afca216df44a8f4d76efd44e752665758a",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 543,
+      "id": "n-fe345aa4d30e47e6",
+      "title": "OpenAI исправила недоучёт лимитов GPT-6.2 в Codex"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
