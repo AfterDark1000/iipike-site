@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "action": "collection_upsert",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "collection": {
+    "group": "ai_low_compute_retro_hardware_20261125",
+    "title": "ИИ на старом и слабом железе",
+    "state": "ready_for_editor",
+    "primary_sequence": 481,
+    "note": "Показать реальные ограничения слабого железа; IBM PC XT выполняет клиент к удалённой модели, не запускает Claude локально. Перепроверить первоисточник 206.",
+    "members": [
+      {
+        "sequence": 206,
+        "pool_id": "n-e1a95e7aa23bbf8e"
+      },
+      {
+        "sequence": 326,
+        "pool_id": "n-9cb421824ca38751"
+      },
+      {
+        "sequence": 403,
+        "pool_id": "n-2e0248f14b028b8c"
+      },
+      {
+        "sequence": 481,
+        "pool_id": "n-4fd24093a1461ec1"
+      }
+    ]
+  }
+}
