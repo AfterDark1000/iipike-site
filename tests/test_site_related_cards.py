@@ -3,7 +3,7 @@ import copy
 import unittest
 
 from scripts.site_related_cards import (
-    select_site_card, remove_duplicate_related_ids, _related_fallback,
+    select_site_card, select_site_cards, remove_duplicate_related_ids, _related_fallback,
 )
 from scripts.site_rich_text import render_blocks
 from scripts.publish_approved_article import render_article
@@ -94,6 +94,51 @@ class RelatedCardTests(unittest.TestCase):
         self.assertNotIn('href="' + URL + '"', html)
         self.assertEqual(self.data, before)
         self.assertIn('[расследовании](' + URL + ')', self.data["article_markdown"])
+
+
+    def test_multiple_distinct_cards_preserve_order_and_approved_text(self):
+        url2 = "https://iipike.ru/" + OTHER["url"]
+        self.blocks[2]["text"] = "Сначала [первая](" + URL + "), затем [вторая](" + url2 + ")."
+        self.blocks[3]["text"] = "Снова [первая](" + URL + ") и [источник](https://example.org/)."
+        original = copy.deepcopy(self.blocks)
+        rendered, after, chosen = select_site_cards(self.data, self.blocks, self.records, self.site_links)
+        self.assertEqual([x["id"] for x in chosen], [TARGET_ID, OTHER["id"]])
+        self.assertEqual(self.blocks, original)
+        self.assertEqual(rendered[2]["text"], "Сначала первая, затем вторая.")
+        self.assertEqual(rendered[3], original[3])
+        self.assertEqual(after[2].count('class="editorial-related-card"'), 2)
+        self.assertNotIn(3, after)
+        self.assertLess(after[2].index(TARGET_ID), after[2].index(OTHER["id"]))
+        self.assertIn("https://example.org/", render_blocks(rendered, self.site_links, after))
+        id2 = "0123456789abcdef01234567"
+        unrelated = "0123456789abcdef01234568"
+        self.assertEqual(remove_duplicate_related_ids([TARGET["dzen_id"], id2, unrelated],
+                                                      chosen, {id2: OTHER}), [unrelated])
+
+    def test_separate_paragraphs_get_their_own_cards(self):
+        self.blocks[3]["text"] = "Вторая [статья](https://iipike.ru/" + OTHER["url"] + ")."
+        rendered, after, chosen = select_site_cards(self.data, self.blocks, self.records, self.site_links)
+        self.assertEqual(list(after), [2, 3])
+        self.assertEqual(len(chosen), 2)
+        html = render_blocks(rendered, self.site_links, after)
+        self.assertLess(html.index(TARGET_ID), html.index("Вторая статья"))
+        self.assertLess(html.index("Вторая статья"), html.index(OTHER["id"]))
+
+    def test_gpt7_published_investigation_has_four_verified_cards(self):
+        # Real published fixture: every editor-selected reference has a site counterpart.
+        from pathlib import Path
+        import json
+        from scripts.publish_approved_article import approved_article
+        from scripts.site_related import catalog_entries
+        root = Path(__file__).resolve().parents[1]
+        slug = "openai-gpt-7-rumors-investigation-20261125"
+        records = json.loads((root / "news.json").read_text(encoding="utf-8"))
+        data = approved_article(root, slug)
+        before = copy.deepcopy(data)
+        html = render_article(data, records, catalog_entries(root))
+        self.assertEqual(html.count('class="editorial-related-card"'), 4)
+        self.assertNotIn('class="related-stories"', html)
+        self.assertEqual(data, before)
 
     def test_duplicate_bottom_link_is_suppressed_only_for_same_target(self):
         id_a = TARGET["dzen_id"]
