@@ -2085,6 +2085,18 @@
           "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
         }
       ]
+    },
+    {
+      "key": "decart",
+      "name": "Decart",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "amazon-decart-ai-optimization-20261123",
+          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
+        }
+      ]
     }
   ],
   "products": [
@@ -4122,6 +4134,32 @@
         {
           "article_id": "mts-virtual-foreign-card-ai-payments-20261124",
           "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
+        }
+      ]
+    },
+    {
+      "key": "decart-optimization-stack",
+      "name": "Decart Optimization Stack (DOS)",
+      "company": "decart",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "amazon-decart-ai-optimization-20261123",
+          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
+        }
+      ]
+    },
+    {
+      "key": "trainium",
+      "name": "AWS Trainium",
+      "company": "amazon",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "amazon-decart-ai-optimization-20261123",
+          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
         }
       ]
     }
