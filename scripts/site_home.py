@@ -3,6 +3,7 @@ from html import escape
 import json
 from pathlib import Path
 import re
+from scripts.site_dossier import update_home_dossier
 from scripts.site_rubrics import RUBRICS, publication_date, publication_date_caps, publication_sort_key, publication_label
 
 START = "<!-- HPII_PUBLISHED_SECTION_START -->"
@@ -169,4 +170,5 @@ def update_home(existing_html, records, *, root=None):
     updated = before + START + "\n" + render_home_section(records, focus_items) + "\n" + END + after
     before, rest = updated.split(FOCUS_START, 1)
     _, after = rest.split(FOCUS_END, 1)
-    return before + FOCUS_START + "\n" + render_focus_section(records, focus_items) + "\n" + FOCUS_END + after
+    updated = before + FOCUS_START + "\n" + render_focus_section(records, focus_items) + "\n" + FOCUS_END + after
+    return update_home_dossier(updated, records, root)
