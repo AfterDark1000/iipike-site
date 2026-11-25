@@ -7945,12 +7945,12 @@
       "summary": "23 ноября. Технологии оптимизации ИИ для Trainium и привлечение команды; сумма официально не раскрыта.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T09:20:49.982Z",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Взята следующая горячая новость по FIFO. Проверяю сделку Amazon/Decart, её форму, сумму и первоисточники."
     },
     {
       "id": "n-0f4cd9cda08fc0ba",
