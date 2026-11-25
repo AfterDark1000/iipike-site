@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261125-mts-reloadable-foreign-card-ai.json",
+  "request_sha256": "e159eb532e34b3dfa5c0dff66359b2ff3fb27b437b1b409806ecdaa4c4ccb8a5",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 545,
+      "id": "n-2c5c258077c4193d",
+      "title": "МТС выпустил пополняемую из России зарубежную карту для оплаты нейросетей"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
