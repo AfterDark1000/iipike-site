@@ -86,6 +86,14 @@ jobs:
                    'scripts/editorial_routing.py', 'scripts/release_one_brief.py',
                    'scripts/site_home.py', 'scripts/site_rubrics.py',
                    'scripts/sync_briefs_pool.py', 'tests/test_brief_release_schedule.py',
+                   'scripts/site_related_cards.py', 'tests/test_site_related_cards.py',
+                   '.github/workflows/site-ui-safety.yml',
+                   'data/dossier.json', 'scripts/site_dossier.py', 'scripts/build_dossier.py',
+                   'tests/test_site_dossier.py', 'dossier/index.html', 'assets/site.css',
+                   'admin/dossier/index.html', 'admin/dossier/app.js',
+                   'admin-auth-worker/src/index.mjs', 'admin-auth-worker/tests/dossier.test.mjs',
+                   '.github/workflows/dossier-refresh.yml', '.github/workflows/hpii-admin-gateway-deploy.yml',
+                   '.github/workflows/hpii-admin-ui-safety.yml', 'docs/DOSSIER.md',
                    'tests/test_editorial_routing.py', 'tests/test_publication_times.py'}
           # New approved rubric keys need matching editor validation, regression
           # tests and an editorial evidence policy; still run every read-only
