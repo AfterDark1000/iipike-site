@@ -4000,12 +4000,12 @@
       "summary": "18 ноября: исследование о прогнозе редких сбоев в фармацевтических цепочках с помощью временных графов и разнородных данных.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-18T13:05:12+00:00",
       "review_started_at": "2026-11-25T11:17:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-475c880599fcf4e5"
+      "closed_at": "2026-11-25T11:39:18Z",
+      "article_id": "pharma-supply-chain-ai-disruption-14-day-risk-20261117",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-475c880599fcf4e5\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/pharma-supply-chain-ai-disruption-14-day-risk-20261117/"
     },
     {
       "id": "n-6c3466d8a199b580",
