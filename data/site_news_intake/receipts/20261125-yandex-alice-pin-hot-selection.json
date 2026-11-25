@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261125-yandex-alice-pin-hot-selection.json",
+  "request_sha256": "3be8845f7db8809468e52723ed5a1b366f514ca6ee355420bb039a67a033cb41",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 583,
+      "id": "n-e15226fcff2bf29f",
+      "title": "Яндекс разработал Пин с Алисой AI — личного секретаря в виде носимого ИИ-устройства"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
