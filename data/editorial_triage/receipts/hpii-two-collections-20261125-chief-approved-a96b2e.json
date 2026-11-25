@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "request": "hpii-two-collections-20261125-chief-approved-a96b2e.json",
+  "request_sha256": "021af8b7d13ce987ea6977f702e8ea39588edfece877a58c575354d83260ae1b",
+  "status": "applied",
+  "applied": [
+    206,
+    326,
+    376,
+    403,
+    481,
+    482,
+    535,
+    536
+  ],
+  "unchanged": [],
+  "skipped": []
+}
