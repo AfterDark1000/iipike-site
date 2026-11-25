@@ -2073,6 +2073,18 @@
           "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
         }
       ]
+    },
+    {
+      "key": "mts",
+      "name": "МТС",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "mts-virtual-foreign-card-ai-payments-20261124",
+          "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
+        }
+      ]
     }
   ],
   "products": [
@@ -4097,6 +4109,19 @@
         {
           "article_id": "google-jio-gemini-subscription-cancellations-20261125",
           "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
+        }
+      ]
+    },
+    {
+      "key": "mts-oplata",
+      "name": "МТС Оплата",
+      "company": "mts",
+      "status": "candidate",
+      "first_seen": "2026-11-25",
+      "evidence": [
+        {
+          "article_id": "mts-virtual-foreign-card-ai-payments-20261124",
+          "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
         }
       ]
     }
