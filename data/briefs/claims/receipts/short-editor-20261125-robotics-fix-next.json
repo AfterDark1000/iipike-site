@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request": "short-editor-20261125-robotics-fix-next.json",
+  "request_sha256": "1594fe7f700f8f43c069ad22ac907f43510ba0bd983004de089322be556cc51c",
+  "status": "reserved",
+  "count": 2,
+  "items": [
+    {
+      "pool_id": "n-006e05b66d8851bd",
+      "pool_sequence": 537,
+      "title": "Cohesity отдаст свои продукты на растерзание хакерским моделям OpenAI",
+      "source_url": "https://www.cohesity.com/newsroom/press/cohesity-joins-openai-daybreak-defense-network",
+      "claimed_at": "2026-11-25T11:53:03+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-fe345aa4d30e47e6",
+      "pool_sequence": 543,
+      "title": "OpenAI исправила недоучёт лимитов GPT-6.2 в Codex",
+      "source_url": "https://www.reddit.com/r/codex/comments/1y4x2g2/got_email_from_openai_say_62_astrasol_have_less",
+      "claimed_at": "2026-11-25T11:53:03+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

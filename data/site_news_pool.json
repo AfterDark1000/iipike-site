@@ -8035,12 +8035,12 @@
       "summary": "23 ноября. Cohesity присоединилась к Daybreak Defense Network; планирует использовать GPT Cyber в изолированной среде.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:53:03+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-006e05b66d8851bd"
     },
     {
       "id": "n-9d8ef44660a0fb71",
@@ -8125,12 +8125,12 @@
       "summary": "25 ноября. OpenAI в рассылке An update to Codex usage сообщила, что часть запросов GPT-6.2 Astra и Sol, включая Ultrafast, расходовала меньше лимита, чем предусмотрено. После исправления лимит может исчерпываться быстрее; цена подписки не меняется. Масштаб изменения не указан. Публичная ссылка — обсуждение полученного уведомления, не официальный релиз. Главред направил в «Новости коротко».",
       "origin": "ХПИИ — редакция",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T06:44:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:53:03+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-fe345aa4d30e47e6"
     },
     {
       "id": "n-fd2eafba92664bc0",
