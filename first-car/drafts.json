@@ -1,5 +1,38 @@
 {
   "schema_version": 1,
-  "items": [],
+  "items": [
+    {
+      "id": "first-car:av_pKetarAsC3hQ1",
+      "url": "https://dzen.ru/a/av_pKetarAsC3hQ1",
+      "published_at": "2026-11-25T09:01:40.000Z",
+      "title": "OpenAI даст учёным доступ к ChatGPT Plus: чем ИИ поможет науке",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:av_nWaQqC2QjzaX3",
+      "url": "https://dzen.ru/a/av_nWaQqC2QjzaX3",
+      "published_at": "2026-11-25T07:13:22.000Z",
+      "title": "GPT‑6.2 Astra и Sol: чем отличаются новые модели OpenAI",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:awZhxEEv-Q3dkmTQ",
+      "url": "https://dzen.ru/a/awZhxEEv-Q3dkmTQ",
+      "published_at": "2026-11-25T04:29:41.000Z",
+      "title": "Как создать своего ИИ-агента в GrokBot: 7 шагов и готовые промпты",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:av_qDSmS9xaxW8-z",
+      "url": "https://dzen.ru/a/av_qDSmS9xaxW8-z",
+      "published_at": "2026-11-25T03:01:38.000Z",
+      "title": "Леброн Джеймс подал в суд из-за ИИ-рекламы приложения",
+      "status": "needs_text",
+      "attempts": 0
+    }
+  ],
   "text_blocked": null
 }

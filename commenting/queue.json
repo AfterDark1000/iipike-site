@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T12:44:59.073090Z",
+  "updated_at": "2026-11-25T14:16:23.882618Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
-      "fresh_matches": 7
+      "fresh_matches": 8
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,10 +64,10 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T12:44:59.073090Z",
-      "last_success_at": "2026-11-25T12:44:59.073090Z",
+      "checked_at": "2026-11-25T14:16:23.882618Z",
+      "last_success_at": "2026-11-25T14:16:23.882618Z",
       "error": null,
-      "fresh_matches": 2
+      "fresh_matches": 1
     }
   ],
   "generator": {
@@ -77,10 +77,48 @@
   },
   "usage": {
     "date": "2026-11-25",
-    "attempted": 12
+    "attempted": 15
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "2ccd07b95f93b004cb55ad0c",
+      "title": "NVIDIA открыла доступ к своей новой нейросети для рисования",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161641-nvidia-opublikovala-vesa-modeli-dlya-generatsii-izobrazhenii/",
+      "published_at": "2026-11-25T13:56:00Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T14:16:23.882618Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "5d39628048bb42ecbcae802d",
+      "title": "Закрытый номер не поможет: «Автодор» подключает ИИ к поиску машин с нечитаемыми номерами",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/25/zakrytyi-nomer-ne-pomozet-avtodor-podkliucaet-ii-k-poisku-masin-s-necitaemymi-nomerami.html",
+      "published_at": "2026-11-25T13:35:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T14:16:23.882618Z",
+      "views": null,
+      "comments": null,
+      "status": "generation_error",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
+      "reason": "Не удалось подготовить комментарий",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "629e5a1c0fb9a6f9e11035e9",
       "title": "В Claude можно устанавливать артефакты как приложения для macOS и Windows",
@@ -112,10 +150,12 @@
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "generation_error",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T14:16:23.882618Z",
+      "reason": "Не удалось подготовить комментарий"
     },
     {
       "id": "b81df4d05e49634d83e925ee",
@@ -180,6 +220,23 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "dzen_url": null,
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "2fbe390d18d455315829b94a",
+      "title": "Нейросеть раскрыла авторство альбома рисунков 1808 года за 22 минуты",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161626-nejroset-raskryla-avtorstvo-jelskogo-alboma/",
+      "published_at": "2026-11-25T11:26:51Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-25T14:16:23.882618Z",
       "views": null,
       "comments": null,
       "status": "pending",
@@ -2461,27 +2518,6 @@
       "link_status": "dzen_link_missing",
       "fact_review": "not_requested",
       "generated_at": "2026-11-19T01:27:32.490715Z"
-    },
-    {
-      "id": "921b3c3fa5336b220fe3963d",
-      "title": "В ChatGPT и Codex внедрили две новые ИИ-модели. Они работают лучше и обходятся в разы дешевле",
-      "source_id": "iguides",
-      "source_name": "iGuides",
-      "source_url": "https://www.iguides.ru/main/other/v_chatgpt_i_codex_vnedrili_dve_novye_ii_modeli/",
-      "published_at": "2026-11-18T14:13:18Z",
-      "channel_url": "https://dzen.ru/iguides",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-18T19:22:37.954843Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Забавно, что свежая модель уже сама ускоряет исследования следующих версий. Ско скоро они начнут чинить себя без нашего участия?",
-      "attempts": 2,
-      "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-20T01:13:06.034855Z",
-      "reason": "Зацепился за факт самоулучшения ИИ и задался вопросом о будущем.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-20T01:13:06.034855Z"
     }
   ]
 }
