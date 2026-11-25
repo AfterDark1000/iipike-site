@@ -8539,5 +8539,26 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "США собрали десять стран для защиты ИИ от Китая",
+    "summary": "США и девять партнёров подписали Сан-Францисскую декларацию Pax Silica о совместной защите технологий, инфраструктуры и цепочек поставок ИИ. Новых экспортных ограничений соглашение не вводит.",
+    "published": "2026-11-25",
+    "source_url": "https://www.state.gov/releases/office-of-the-spokesman/2026/11/the-san-francisco-declaration-on-the-secure-foundations-of-enduring-prosperity/",
+    "cover": "assets/editorial/us-ten-countries-ai-supply-security-20261115.webp",
+    "rubric": "news",
+    "vk_title": "🌍 США собрали ИИ-КОАЛИЦИЮ из десяти стран",
+    "vk_summary": "США и девять партнёров подписали Сан-Францисскую декларацию о защите поставок технологий для искусственного интеллекта. В соглашении участвуют Япония, Индия, Великобритания, Южная Корея и другие страны. Планируют защищать чипы, производственные технологии и инфраструктуру. Пока договорились о рабочих группах, новых экспортных запретов нет.",
+    "published_at_utc": "2026-11-25T03:15:43Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-15",
+    "id": "us-ten-countries-ai-supply-security-20261115",
+    "url": "articles/us-ten-countries-ai-supply-security-20261115/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
