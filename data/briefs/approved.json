@@ -2065,6 +2065,38 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/434",
       "approved_at_utc": "2026-11-25T11:25:12Z",
       "published_at_utc": "2026-11-25T11:25:12Z"
+    },
+    {
+      "slug": "cohesity-openai-daybreak-defense-network-20261123",
+      "pool_id": "n-006e05b66d8851bd",
+      "pool_sequence": 537,
+      "headline": "Cohesity поручит хакерским моделям OpenAI искать дыры в собственных продуктах",
+      "topic": "Безопасность",
+      "event_date": "2026-11-23",
+      "source": "Cohesity, официальный пресс-релиз",
+      "source_url": "https://www.cohesity.com/newsroom/press/cohesity-joins-openai-daybreak-defense-network/",
+      "body": "Компания Cohesity, которая занимается защитой данных, 23 ноября сообщила о присоединении к OpenAI Daybreak Defense Network. Она получила доступ к моделям Daybreak Red и Daybreak Blue и планирует испытать их в изолированной среде. Первым под проверку попадёт ПО для обнаружения угроз учётным записям и реагирования на них. Найденные уязвимости инженеры будут проверять и устранять до выхода обновлений.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/435",
+      "approved_at_utc": "2026-11-25T11:56:03Z",
+      "published_at_utc": "2026-11-25T11:56:03Z"
+    },
+    {
+      "slug": "openai-codex-gpt-6-2-usage-correction-20261125",
+      "pool_id": "n-fe345aa4d30e47e6",
+      "pool_sequence": 543,
+      "headline": "OpenAI предупредила, что лимиты GPT-6.2 в Codex будут расходоваться быстрее",
+      "topic": "Технологии",
+      "event_date": "2026-11-25",
+      "source": "OpenAI, письмо An update to Codex usage (публичная копия на Reddit)",
+      "source_url": "https://www.reddit.com/r/OpenAI/comments/1y4yuic/just_received_an_update_to_codex_usage_in_my_email/",
+      "body": "OpenAI 25 ноября разослала пользователям Codex письмо об исправлении ошибки в учёте лимитов. Некоторые запросы к GPT-6.2 Astra и Sol, в том числе в режиме Ultrafast, расходовали меньше лимита, чем предусмотрено. После исправления доступный объём работы может исчерпываться быстрее. Цена подписки остаётся прежней. Насколько изменится расход, компания не уточнила.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/436",
+      "approved_at_utc": "2026-11-25T11:56:05Z",
+      "published_at_utc": "2026-11-25T11:56:05Z"
     }
   ]
 }
