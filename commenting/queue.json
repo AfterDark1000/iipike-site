@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T02:22:15.747169Z",
+  "updated_at": "2026-11-25T04:06:51.133985Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
-      "last_success_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
+      "last_success_at": "2026-11-25T04:06:51.133985Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
-      "last_success_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
+      "last_success_at": "2026-11-25T04:06:51.133985Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,9 +31,9 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "error",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
       "last_success_at": "2026-11-24T20:52:01.676805Z",
-      "error": "Лента недоступна или не распознана (URLError)",
+      "error": "Лента недоступна или не распознана (TimeoutError)",
       "fresh_matches": null
     },
     {
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
-      "last_success_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
+      "last_success_at": "2026-11-25T04:06:51.133985Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
-      "last_success_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
+      "last_success_at": "2026-11-25T04:06:51.133985Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T02:22:15.747169Z",
-      "last_success_at": "2026-11-25T02:22:15.747169Z",
+      "checked_at": "2026-11-25T04:06:51.133985Z",
+      "last_success_at": "2026-11-25T04:06:51.133985Z",
       "error": null,
       "fresh_matches": 2
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-25",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -177,10 +177,14 @@
       "first_seen_at": "2026-11-24T17:36:27.558696Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, что сетка для симулятора гидравлики оказалась такой крошечной. Всего три слоя по 32 нейрона, а пятитонная дура после этого действительно поехала на двух колесах.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T04:06:51.133985Z",
+      "reason": "Удивление крошечным размером нейросети для реальной машины.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T04:06:51.133985Z"
     },
     {
       "id": "f199611f8d6acfce33da2c91",
@@ -316,10 +320,14 @@
       "first_seen_at": "2026-11-24T10:23:23.007058Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T04:06:51.133985Z",
+      "reason": "Не прошёл проверку: В комментарии утверждается, что продажи стартуют «до конца 2026 года» и присутствует «запас времени почти в два года», однако в тексте статьи нет информации о т",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-25T04:06:51.133985Z"
     },
     {
       "id": "7158bb02d08d493d4cecfdc2",
@@ -401,10 +409,14 @@
       "first_seen_at": "2026-11-24T10:23:23.007058Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что помощник без стеснения тащит в цитаты дня всю нецензурщину из разговоров. Представляю удивление людей, когда они заглянут в вечернюю сводку.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-25T04:06:51.133985Z",
+      "reason": "Забавный момент про сохранение мата в цитатах дня.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-25T04:06:51.133985Z"
     },
     {
       "id": "963033d233845808983f84b0",
