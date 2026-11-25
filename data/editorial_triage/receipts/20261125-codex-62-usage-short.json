@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "20261125-codex-62-usage-short.json",
+  "request_sha256": "d1fb775298a23a2a93b4105333238db5200480cb048a0367fac077ab75f98f26",
+  "status": "applied",
+  "applied": [
+    543
+  ],
+  "unchanged": [],
+  "skipped": []
+}
