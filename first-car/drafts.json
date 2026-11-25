@@ -1,38 +1,5 @@
 {
   "schema_version": 1,
-  "items": [
-    {
-      "id": "first-car:avxwbuHxvGkzOm75",
-      "url": "https://dzen.ru/a/avxwbuHxvGkzOm75",
-      "published_at": "2026-11-24T09:00:46.000Z",
-      "title": "Нейросеть для дизайна интерьера: как изменить комнату по фото",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:av_qK-ulsFH9SrIe",
-      "url": "https://dzen.ru/a/av_qK-ulsFH9SrIe",
-      "published_at": "2026-11-24T07:02:42.000Z",
-      "title": "Claude помог старому Jeep пройти техосмотр с Arduino за $3",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:awUdMGTjQnOXg6Bp",
-      "url": "https://dzen.ru/a/awUdMGTjQnOXg6Bp",
-      "published_at": "2026-11-24T05:16:30.000Z",
-      "title": "Claude Opus 4.7 сдал 10 экзаменов юрфака и вошёл в топ-10% в семи",
-      "status": "needs_text",
-      "attempts": 0
-    },
-    {
-      "id": "first-car:awUPD14W3F8IJiaw",
-      "url": "https://dzen.ru/a/awUPD14W3F8IJiaw",
-      "published_at": "2026-11-24T04:22:36.000Z",
-      "title": "Как улучшить ИИ-текст: 2 промпта против лексического скудоумия, примитивности и воды",
-      "status": "needs_text",
-      "attempts": 0
-    }
-  ],
+  "items": [],
   "text_blocked": null
 }
