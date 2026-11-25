@@ -27,6 +27,11 @@ def get_urls():
     if not isinstance(records, list):
         raise ValueError("news.json must be a list of published articles")
     urls = [BASE + "/", BASE + "/articles/"]
+    dossier = ROOT / "dossier/index.html"
+    if dossier.is_file():
+        if f'rel="canonical" href="{BASE}/dossier/"' not in dossier.read_text(encoding="utf-8"):
+            raise ValueError("Invalid Dossier canonical")
+        urls.append(BASE + "/dossier/")
     for key in populated(records):
         if not (ROOT / "rubrics" / key / "index.html").is_file():
             raise ValueError(f"Rubric HTML missing: {key}")
