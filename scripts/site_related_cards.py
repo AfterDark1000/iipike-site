@@ -1,8 +1,8 @@
 """Conservative site-only related cards.
 
 Approved Markdown remains the one unchanged Dzen article. The HTML publisher
-may remove exactly one mapped inline anchor from the displayed paragraph and
-place a card after that paragraph, or choose a rare, topic-grounded fallback.
+may replace each distinct mapped inline reference with a card after its
+paragraph, or choose one rare, topic-grounded fallback.
 Historical Dzen imports remain unchanged.
 """
 from collections import Counter
@@ -186,45 +186,68 @@ def _has_editorial_crosslink(blocks):
     return False
 
 
-def select_site_card(data, blocks, records, site_links):
-    """Return (render-only blocks, after-block HTML, chosen published row).
+def select_site_cards(data, blocks, records, site_links):
+    """Return (render-only blocks, after-block HTML, list of published rows).
 
-    A verified inline link beats any inferred recommendation.
-    Dzen text and metadata are never mutated.
+    Convert each distinct verified editorial reference in a body paragraph,
+    in source order. Repeated destinations keep their remaining text links.
+    Dzen text and metadata are never mutated. Inferred fallback is still
+    limited to one and never overrides an explicit editorial reference.
     """
     if data.get("dzen_id"):
-        return blocks, {}, None
+        return blocks, {}, []
     public = _public_rows(records, data.get("id", data.get("slug")))
-    # First editorial reference inside a normal body paragraph takes priority.
+    modified = list(blocks)
+    insertions = {}
+    chosen = []
+    seen = set()
     for i, block in enumerate(blocks):
         if i < 1 or block["type"] != "p":
             continue
         original = block["text"]
+        parts = []
+        cards = []
+        pos = 0
         for match in LINK.finditer(original):
             row = _target(match.group(2), site_links, public)
-            if row is None:
+            if row is None or row["id"] in seen:
                 continue
-            replaced = original[:match.start()] + match.group(1) + original[match.end():]
-            modified = list(blocks)
-            modified[i] = dict(block, text=replaced)
-            return modified, {i: site_card_html(row)}, row
-    # The editor has already provided a destination (possibly Dzen-only).
-    # Do not replace that judgment with an unrelated auto-selected article.
+            parts.extend((original[pos:match.start()], match.group(1)))
+            pos = match.end()
+            seen.add(row["id"])
+            chosen.append(row)
+            cards.append(site_card_html(row))
+        if cards:
+            parts.append(original[pos:])
+            modified[i] = dict(block, text="".join(parts))
+            insertions[i] = "\n".join(cards)
+    if chosen:
+        return modified, insertions, chosen
     if data.get("related_dzen_ids") or _has_editorial_crosslink(blocks):
-        return blocks, {}, None
+        return blocks, {}, []
     related = _related_fallback(data, blocks, records, public)
     if related:
         row, position = related
-        return blocks, {position: site_card_html(row)}, row
-    return blocks, {}, None
+        return blocks, {position: site_card_html(row)}, [row]
+    return blocks, {}, []
 
 
-def remove_duplicate_related_ids(ids, card_row, explicit_mappings):
-    """Keep other bottom links, but suppress a duplicate of the card."""
-    if not card_row:
+def select_site_card(data, blocks, records, site_links):
+    """Compatibility facade: the singular result is the first chosen row."""
+    modified, after, rows = select_site_cards(data, blocks, records, site_links)
+    return modified, after, rows[0] if rows else None
+
+
+def remove_duplicate_related_ids(ids, card_rows, explicit_mappings):
+    """Suppress bottom-list duplicates for every rendered card, nothing else."""
+    if not card_rows:
         return ids
-    own_ids = {card_row.get("dzen_id"), card_row.get("site_first_dzen_id")}
-    own_ids.discard(None)
+    if isinstance(card_rows, dict):
+        card_rows = [card_rows]
+    targets = {row["id"] for row in card_rows}
+    own_ids = {ident for row in card_rows
+               for ident in (row.get("dzen_id"), row.get("site_first_dzen_id"))
+               if ident}
     own_ids.update(ident for ident, row in explicit_mappings.items()
-                   if row.get("id") == card_row["id"])
+                   if row.get("id") in targets)
     return [ident for ident in ids if ident not in own_ids]
