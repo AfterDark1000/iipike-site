@@ -8035,12 +8035,12 @@
       "summary": "23 ноября. Cohesity присоединилась к Daybreak Defense Network; планирует использовать GPT Cyber в изолированной среде.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:53:03+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-006e05b66d8851bd"
+      "closed_at": "2026-11-25T13:39:22Z",
+      "article_id": "cohesity-openai-daybreak-defense-network-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-006e05b66d8851bd\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/cohesity-openai-daybreak-defense-network-20261123/"
     },
     {
       "id": "n-9d8ef44660a0fb71",
