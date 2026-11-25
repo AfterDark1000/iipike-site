@@ -9,6 +9,11 @@ on:
     paths:
       - 'scripts/triage_apply_requests.py'
       - 'scripts/editorial_routing.py'
+      - 'scripts/editorial_collections.py'
+      - 'data/editorial_collections.json'
+      - 'tests/test_editorial_collections.py'
+      - 'docs/EDITORIAL_COLLECTIONS.md'
+      - 'docs/BRIEFS_MORNING_TRIAGE_AGENT.md'
       - 'tests/test_triage_apply_requests.py'
       - '.github/workflows/hpii-triage-requests.yml'
 permissions:
@@ -27,8 +32,10 @@ jobs:
       - run: |
           python3 scripts/site_news_pool.py --validate
           python3 scripts/triage_apply_requests.py --check
+          python3 scripts/editorial_collections.py --check
           python3 -m unittest discover -s tests -p 'test_triage_apply_requests.py' -v
           python3 -m unittest discover -s tests -p 'test_editorial_routing.py' -v
+          python3 -m unittest discover -s tests -p 'test_editorial_collections.py' -v
   apply:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
@@ -50,11 +57,12 @@ jobs:
             git reset --hard origin/main
             python3 scripts/site_news_pool.py --validate
             python3 scripts/triage_apply_requests.py --check
+            python3 scripts/editorial_collections.py --check
             python3 scripts/triage_apply_requests.py --consume
             python3 scripts/site_news_pool.py --validate
             python3 scripts/triage_apply_requests.py --check
-            git add -- data/site_news_pool.json data/editorial_routing.json data/editorial_triage/receipts/
-            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/editorial_routing\.json|data/editorial_triage/receipts/[a-z0-9._-]+\.json)$'; then
+            git add -- data/site_news_pool.json data/editorial_routing.json data/editorial_collections.json data/editorial_triage/receipts/
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/editorial_routing\.json|data/editorial_collections\.json|data/editorial_triage/receipts/[a-z0-9._-]+\.json)$'; then
               echo 'UNSAFE: unexpected staged file'; exit 1
             fi
             if git diff --cached --quiet; then
