@@ -7945,12 +7945,12 @@
       "summary": "23 ноября. Технологии оптимизации ИИ для Trainium и привлечение команды; сумма официально не раскрыта.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T09:20:49.982Z",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверен официальный анонс Amazon 23.11.2026 https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization : подписано соглашение о покупке технологии DOS и найме команды/трёх сооснователей, закрытие зависит от одобрения регуляторов. Bloomberg https://news.bloomberglaw.com/artificial-intelligence/amazon-is-said-to-pay-7-5-billion-for-ai-startup-decarts-tech оценивает сделку в $7,5 млрд, Amazon цену не раскрыла. Официальный анонс AWS 02.12.2025 подтверждает заявленные 4x скорость генерации видео Decart и половину стоимости относительно GPU; сайт Decart подтверждает поддержку NVIDIA GPU, Google TPU, AWS Trainium. Перелинковка подтверждена каталогом Дзена и news.json: 6ad63e067fa5c9322f68c8cf, amazon-uproschaet-zapusk-ii-na-sobstvennykh-protsessorakh-vmes-8c8cf, TorchNeuron. Прямое открытие Дзена недоступно. @amazon подтверждён профилем X; @DecartAI подтверждён профилем сооснователя. Статья на утверждении."
+      "closed_at": "2026-11-25T11:03:56.042Z",
+      "article_id": "amazon-decart-ai-optimization-20261123",
+      "note": "Утверждено главредом с новым заголовком. Сумма сделки в тексте атрибутирована Bloomberg. Статья в editorial-intake, Threads и X approved; записи перечитаны. Перелинковка подтверждена (TorchNeuron, Dzen 6ad63e067fa5c9322f68c8cf). Приоритетная очередь, ждём обложку."
     },
     {
       "id": "n-0f4cd9cda08fc0ba",
