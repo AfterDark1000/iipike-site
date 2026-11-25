@@ -7930,12 +7930,12 @@
       "summary": "23 ноября. Конкурс проектов промышленных гуманоидов; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": "2026-11-25T11:17:12+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-f1a2a3ccb23bb8e3"
+      "closed_at": "2026-11-25T12:39:12Z",
+      "article_id": "turkiye-industrial-humanoid-robot-50-percent-grants-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-f1a2a3ccb23bb8e3\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/turkiye-industrial-humanoid-robot-50-percent-grants-20261123/"
     },
     {
       "id": "n-e98ccab84ef9fc2e",
