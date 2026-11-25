@@ -130,7 +130,8 @@
         "openai-chatgpt-healthcare-20-connectors-20261116",
         "openai-french-press-lvmh-figaro-20261118",
         "openai-openworks-20261123",
-        "openai-anthropic-unreleased-ai-safety-20261124"
+        "openai-anthropic-unreleased-ai-safety-20261124",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {
@@ -221,7 +222,8 @@
         "ai-four-game-experiments-20261115",
         "ai-four-visual-experiments-20261115",
         "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
-        "openai-anthropic-unreleased-ai-safety-20261124"
+        "openai-anthropic-unreleased-ai-safety-20261124",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {
@@ -816,7 +818,8 @@
         "openai-gpt-6-2-sol-chatgpt-20261123",
         "openai-chatgpt-healthcare-20-connectors-20261116",
         "openai-french-press-lvmh-figaro-20261118",
-        "openai-openworks-20261123"
+        "openai-openworks-20261123",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {
@@ -906,7 +909,8 @@
         "ai-four-physical-experiments-20261115",
         "ai-four-game-experiments-20261115",
         "ai-four-visual-experiments-20261115",
-        "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12"
+        "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {
@@ -932,7 +936,8 @@
         "openai-chatgpt-codex-shared-limits-20261107",
         "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8",
         "bitdefender-github-agent-instructions-malware-20261117",
-        "java4shell-codex-openjdk-20261117"
+        "java4shell-codex-openjdk-20261117",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {
@@ -1027,7 +1032,8 @@
         "gpt-6-cyber-firefox-81-vulnerabilities-20261105",
         "gpt-6-astra-standard-model-craig-20261115",
         "openai-gpt-6-2-astra-sol-20261117",
-        "openai-gpt-hidden-reasoning-defense-20261120"
+        "openai-gpt-hidden-reasoning-defense-20261120",
+        "openai-gpt-7-rumors-investigation-20261125"
       ]
     },
     {

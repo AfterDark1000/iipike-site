@@ -8829,5 +8829,34 @@
       "anthropic"
     ],
     "products": []
+  },
+  {
+    "title": "GPT-7 уже существует? Какого монстра OpenAI выращивает за закрытыми дверями",
+    "summary": "Расследование ХПИИ о слухах вокруг GPT-7, закрытых экспериментальных моделях OpenAI, научных результатах тысяч ИИ-агентов и автоматизации разработки новых нейросетей.",
+    "published": "2026-11-25",
+    "source_url": "https://openai.com/index/perplexity-and-intelligence/",
+    "cover": "assets/editorial/openai-gpt-7-rumors-investigation-20261125.webp",
+    "rubric": "news",
+    "vk_title": "👀 GPT-7 уже существует? Какого МОНСТРА выращивает OpenAI?",
+    "vk_summary": "Секретные проекты Bel и Doug, предполагаемые 10 триллионов параметров, армия из 10 000 ИИ-агентов и нейросети, участвующие в разработке собственных преемников. Собрали утечки, заявления Альтмана и официальные исследования OpenAI.",
+    "published_at_utc": "2026-11-25T16:21:10Z",
+    "site_release_mode": "standard",
+    "id": "openai-gpt-7-rumors-investigation-20261125",
+    "url": "articles/openai-gpt-7-rumors-investigation-20261125/",
+    "topics": [
+      "models",
+      "agents",
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "anthropic"
+    ],
+    "products": [
+      "chatgpt",
+      "gpt-6",
+      "claude",
+      "codex"
+    ]
   }
 ]
