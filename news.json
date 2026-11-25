@@ -8881,5 +8881,28 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Tidal удалит 29 миллионов нейропесен",
+    "summary": "С 9 декабря Tidal запрещает полностью сгенерированные ИИ композиции. К началу 2027 года сервис намерен удалить 29 миллионов записей.",
+    "published": "2026-11-25",
+    "source_url": "https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy",
+    "cover": "assets/editorial/tidal-ai-music-ban-20261124.webp",
+    "rubric": "news",
+    "vk_title": "🎵 Tidal удалит 29 МИЛЛИОНОВ песен, созданных нейросетями",
+    "vk_summary": "С 9 декабря музыкальный сервис перестанет принимать полностью сгенерированные ИИ записи и начнёт очищать каталог. За последние три месяца 96% уже помеченных ИИ-треков не получили ни одного прослушивания. Музыка, созданная с помощью ИИ при участии человека, останется.",
+    "published_at_utc": "2026-11-25T18:45:41Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-24",
+    "id": "tidal-ai-music-ban-20261124",
+    "url": "articles/tidal-ai-music-ban-20261124/",
+    "topics": [
+      "entertainment",
+      "audio"
+    ],
+    "companies": [
+      "suno"
+    ],
+    "products": []
   }
 ]
