@@ -7990,9 +7990,9 @@
       "summary": "24 ноября. Axios сообщает о внутренних спорах вокруг безопасности закрытых моделей; инсайдерская информация.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-24T14:30:26+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-25T11:18:11.877Z",
       "closed_at": null,
       "article_id": null,
       "note": ""
