@@ -20,21 +20,21 @@ const coverDecision=(v,action,status)=>({article_id:slug,text_revision:3,text_up
 const handoff=v=>({article_id:slug,text_revision:3,cover_version:v,cover_blob_sha:"b".repeat(40),status:"handed_off_to_site_queue"});
 function model(attachments={},apiAttachments={},newsRows=null){
  const responses=new Map(Object.entries(attachments).map(([p,value])=>[raw+p,value]));
- const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/";
- const authoritative=new Map(Object.entries(apiAttachments).map(([p,value])=>[api+p,value]));
+ const authoritative=new Map(Object.entries(apiAttachments));
  const noop=()=>{};
  const docStub={getElementById:()=>({addEventListener:noop}),querySelectorAll:()=>[]};
- const ctx={document:docStub,window:{addEventListener:noop},URL,URLSearchParams,Date,JSON,atob,TextDecoder,
+ const ctx={document:docStub,window:{
+  addEventListener:noop,
+  HpiiAdminAuth:{
+   readEditorialRecord:async path=>{
+    const value=authoritative.get(path);
+    if(value==="rate_limited")throw Error("editorial_record_unavailable");
+    return value===undefined?{found:false}:{found:true,record:value};
+   }
+  }
+ },URL,URLSearchParams,Date,JSON,atob,TextDecoder,
   fetch:async(url)=>{
    const key=String(url).split("?")[0];
-   if(key.startsWith(api)){
-    const value=authoritative.get(key);
-    if(value===undefined)return {status:404,ok:false};
-    if(value==="rate_limited")return {status:403,ok:false};
-    return {status:200,ok:true,json:async()=>({
-     type:"file",encoding:"base64",content:Buffer.from(JSON.stringify(value),"utf8").toString("base64")
-    })};
-   }
    if(key==="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/news.json"){
     return newsRows===null?{status:404,ok:false}:{status:200,ok:true,json:async()=>newsRows};
    }
@@ -119,7 +119,7 @@ test("rejected text is not shown as awaiting approval",async()=>{
  assert.equal((await cls(doc)).group,"done");
 });
 
-test("fresh approved cover is visible even when raw.githubusercontent returns stale 404",async()=>{
+test("fresh approved cover is recovered through the authenticated gateway when raw.githubusercontent returns stale 404",async()=>{
  const accepted=model(
   {["auto_decisions/"+key+".json"]:textDecision,
    ["auto_covers/"+key+"-v1.json"]:cover(1)},
@@ -130,15 +130,15 @@ test("fresh approved cover is visible even when raw.githubusercontent returns st
  assert.equal(status.group,"transfer");
  assert.match(status.label,/утверждена/);
 });
-test("a GitHub API outage never becomes a false 'not approved' status",async()=>{
+test("an authenticated GitHub read outage never becomes a false 'not approved' status",async()=>{
  const classify=model(
   {["auto_decisions/"+key+".json"]:textDecision,
    ["auto_covers/"+key+"-v1.json"]:cover(1)},
   {["editorial_inbox/auto_cover_decisions/"+key+"-v1.json"]:"rate_limited"}
  );
- await assert.rejects(classify(doc),/GitHub API HTTP 403/);
+ await assert.rejects(classify(doc),/editorial_record_unavailable/);
 });
-test("fresh text approval is also recovered from official GitHub Contents API",async()=>{
+test("fresh text approval is also recovered from the authenticated gateway",async()=>{
  const classify=model({},{
   ["editorial_inbox/auto_decisions/"+key+".json"]:textDecision
  });
