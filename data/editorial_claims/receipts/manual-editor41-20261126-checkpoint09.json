@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-checkpoint09.json",
+  "request_sha256": "b4078739541a9f347eb2e6fc50da281362133cd0e5509a922ced6c1eebeb9f47",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-dcbfa5b842f13f82",
+  "pool_sequence": 333,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-26T16:19:05.984625+00:00",
+  "note": "Найдена точная статья TechCrunch от 18.11.2026 https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/; первоисточник — интервью DealBook Summit 18.11, официальная запись NYT https://podcasts.apple.com/us/podcast/satya-nadella-on-the-new-algorithm/id1718472373?i=1000803773479, расшифровка https://singjupost.com/transcript-satya-nadella-on-new-algorithm-dealbook-summit-2026/. Наделла привёл пример банковских патчей: прежняя неделя тестирования против срочной установки при активной эксплуатации; часть прошивок систем охлаждения, HVAC и транспорта не обновляется. Это предупреждение о риске, не доказательство ИИ-атаки. Архив: содержательная ссылка на MAI Cyber 2 Flash https://dzen.ru/a/av7PXo_peyRqHS7s, прямого дубля не найдено. @satyanadella подтверждён. На утверждении."
+}
