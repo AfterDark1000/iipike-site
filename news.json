@@ -9018,5 +9018,26 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "В городе OpenAI и Anthropic запретили строительство новых дата-центров на 10 месяцев",
+    "summary": "Городской совет Сан-Франциско одобрил продление моратория на разрешения для новых дата-центров на 10 месяцев и 15 дней из-за ограничений городской инфраструктуры.",
+    "published": "2026-11-26",
+    "source_url": "https://sfgov.legistar.com/LegislationDetail.aspx?GUID=51666051-E9F0-4317-9B4D-BDCDAE90399A&ID=8304816",
+    "cover": "assets/editorial/san-francisco-data-center-moratorium-extension-20261117.webp",
+    "rubric": "news",
+    "vk_title": "⚡ Сан-Франциско решил ЗАПРЕТИТЬ строительство новых дата-центров на 10 месяцев",
+    "vk_summary": "Городской совет Сан-Франциско проголосовал за продление моратория на строительство дата-центров. Власти опасаются, что вычислительные комплексы займут мощности электросетей, необходимые для нового жилья и больниц.",
+    "published_at_utc": "2026-11-26T09:01:10Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "san-francisco-data-center-moratorium-extension-20261117",
+    "url": "articles/san-francisco-data-center-moratorium-extension-20261117/",
+    "topics": [
+      "infrastructure",
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
