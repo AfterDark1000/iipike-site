@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-26T18:13:33Z",
-  "valid_until": "2026-11-26T19:43:33Z",
+  "prepared_at": "2026-11-26T18:14:44Z",
+  "valid_until": "2026-11-26T19:44:44Z",
   "status": "idle",
   "quota": {
     "used": 3,
@@ -11,11 +11,6 @@
   "parallel_cover_review": true,
   "job": null,
   "waiting_for_manual_upload": [
-    {
-      "stem": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7-r2-v1",
-      "title": "SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте",
-      "state": "reserved_or_prior_attempt"
-    },
     {
       "stem": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r3-v1",
       "title": "ИИ NVIDIA взялся писать инструкции для опытов с квантовыми точками",
