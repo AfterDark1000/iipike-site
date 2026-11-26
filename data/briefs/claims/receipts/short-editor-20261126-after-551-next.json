@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-editor-20261126-after-551-next.json",
+  "request_sha256": "1594fe7f700f8f43c069ad22ac907f43510ba0bd983004de089322be556cc51c",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-e589854b841c3717",
+      "pool_sequence": 558,
+      "title": "Компания по разработке ИИ-операторов поддержки Sierra подорожала вдвое за полгода",
+      "source_url": "https://malpass.co/top-ai-stories-2026-11-24",
+      "claimed_at": "2026-11-26T07:22:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-b72fd4d3a758b745",
+      "pool_sequence": 559,
+      "title": "В наследнице FIFA заговорит умерший футбольный комментатор",
+      "source_url": "https://explainx.ai/blog/ea-sports-fc-27-john-motson-ai-voice-tribute-november-2026",
+      "claimed_at": "2026-11-26T07:22:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a8ddd794a6a3c7e9",
+      "pool_sequence": 560,
+      "title": "Baidu открыла веса нейросети ERNIE 5.5 Flash раньше обещанного срока",
+      "source_url": "https://ai.zhudong.net/en",
+      "claimed_at": "2026-11-26T07:22:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-22605844db71e5f7",
+      "pool_sequence": 561,
+      "title": "Китайцы начали перепродавать приглашения к новому ИИ-помощнику ByteDance",
+      "source_url": "https://ai.zhudong.net/en",
+      "claimed_at": "2026-11-26T07:22:15+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-0077e07924e43bf7",
+      "pool_sequence": 562,
+      "title": "IBM создала голосового ИИ-консультанта для индийских фермеров",
+      "source_url": "https://huggingface.co/blog/ibm-research/an-indic-voice-agent-with-cuga",
+      "claimed_at": "2026-11-26T07:22:15+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
