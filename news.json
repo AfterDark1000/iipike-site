@@ -9082,5 +9082,36 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "Нейросети записали школы и машины скорой помощи в список военных целей",
+    "summary": "В испытании Vals AI современные нейросети ошибочно обозначали гражданские объекты и людей как военные цели.",
+    "published": "2026-11-26",
+    "source_url": "https://www.vals.ai/blogs/autonomous-warfare",
+    "cover": "assets/editorial/vals-ai-military-targeting-safety-20261117.webp",
+    "rubric": "skynet",
+    "vk_title": "⚠️ Нейросети записали МИРНЫХ ЖИТЕЛЕЙ в список военных целей",
+    "vk_summary": "Vals AI испытала 14 современных нейросетей. В ходе эксперимента модели обозначали гражданские объекты и людей в качестве военных целей. Исследователи обнаружили пробелы в защитных механизмах и передали результаты разработчикам.",
+    "published_at_utc": "2026-11-26T18:13:49Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "vals-ai-military-targeting-safety-20261117",
+    "url": "articles/vals-ai-military-targeting-safety-20261117/",
+    "topics": [
+      "safety"
+    ],
+    "companies": [
+      "openai",
+      "meta",
+      "deepseek",
+      "anthropic",
+      "google",
+      "xai"
+    ],
+    "products": [
+      "claude",
+      "gemini",
+      "grok"
+    ]
   }
 ]
