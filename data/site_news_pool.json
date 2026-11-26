@@ -8650,12 +8650,12 @@
       "summary": "25 ноября. Сообщается о предварительных результатах мониторинга плантаций и выявления фузариоза.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T18:37:36+00:00",
       "review_started_at": "2026-11-26T09:49:26+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-d8e5196a64c4b578"
+      "closed_at": "2026-11-26T14:39:21Z",
+      "article_id": "philippines-ai-drones-banana-fusarium-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d8e5196a64c4b578\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/philippines-ai-drones-banana-fusarium-20261125/"
     },
     {
       "id": "n-de53a06b95fd4b91",
