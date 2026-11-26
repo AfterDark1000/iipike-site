@@ -1,0 +1,76 @@
+name: HPII — editor dispatcher (NO RESERVATION OR PUBLICATION)
+on:
+  schedule:
+    - cron: '45 * * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['HPII — watchdog (no publishing)']
+    types: [completed]
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/auto_editor_dispatch.py'
+      - 'tests/test_auto_editor_dispatch.py'
+      - '.github/workflows/auto-editor-dispatch.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/auto_editor_dispatch.py'
+      - 'tests/test_auto_editor_dispatch.py'
+      - '.github/workflows/auto-editor-dispatch.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-editor-dispatch-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: |
+          python3 -m unittest discover -s tests -p 'test_auto_editor_dispatch.py' -v
+          python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
+          git fetch origin editorial-intake
+          work="$RUNNER_TEMP/hpii-editor-rehearsal"
+          git worktree add --detach "$work" origin/editorial-intake
+          python3 scripts/auto_editor_dispatch.py --main "$PWD" --intake "$work"
+          git diff --exit-code
+          git -C "$work" diff --exit-code
+          git worktree remove "$work"
+  dispatch:
+    needs: verify
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Prepare one non-publishing editorial assignment
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/hpii-editor-dispatch"
+          for attempt in 1 2 3; do
+            git fetch origin main editorial-intake
+            git reset --hard origin/main
+            git worktree add --detach "$work" origin/editorial-intake
+            python3 scripts/auto_editor_dispatch.py --main "$PWD" --intake "$work" --write | tee -a "$GITHUB_STEP_SUMMARY"
+            git -C "$work" add -- editorial_inbox/auto_editor_dispatch/current.json
+            test "$(git -C "$work" diff --cached --name-only)" = editorial_inbox/auto_editor_dispatch/current.json
+            git -C "$work" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'editor: prepare one non-publishing assignment [skip ci]'
+            if git -C "$work" push origin HEAD:refs/heads/editorial-intake; then
+              git worktree remove "$work"
+              exit 0
+            fi
+            git worktree remove "$work" --force
+          done
+          exit 1

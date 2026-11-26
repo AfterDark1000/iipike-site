@@ -85,7 +85,7 @@ def article_slug(item):
         raise ValueError("Article slug invalid")
     return value
 
-def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=None):
+def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=None, strict_routes=False):
     """Claim only standalone ordinary long stories; skip all linked groups."""
     from scripts.editorial_routing import load_routes, long_allowed, effective_priority
     validate_pool(pool)
@@ -98,7 +98,8 @@ def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=Non
     # the autonomous Work editor should handle only standalone news.
     def standalone(item):
         route = routing.get(item["id"], {})
-        return (route.get("decision") not in ("linked_primary", "linked_secondary")
+        return ((not strict_routes or (route.get("lane") == "long" and route.get("decision") == "full"))
+                and route.get("decision") not in ("linked_primary", "linked_secondary")
                 and "group" not in route and "group_primary" not in route)
 
     pending = [i for i in pool["items"]
@@ -137,6 +138,9 @@ def consume(root=ROOT, *, now=None, paths=None):
     original = json.loads((root / POOL).read_text(encoding="utf-8"))
     validate_pool(original)
     current = original
+    from scripts.editorial_routing import load_routes, ROUTES
+    strict = (root / ROUTES).is_file()
+    routes = load_routes(original, root=root) if strict else None
     outputs = {}
     receipt_directory = root / RECEIPTS
     ordered = request_order(root) if paths is None else [Path(p) for p in paths]
@@ -169,7 +173,7 @@ def consume(root=ROOT, *, now=None, paths=None):
             if len(recent_claims) >= MAX_NEW_CLAIMS_PER_24H:
                 raise ValueError("AUTO_EDITOR_DAILY_CAP_5: rolling 24-hour reservation quota reached")
             updated, ticket = claim_ordinary(current, path.name, now=now,
-                                             used_ids=used_ids)
+                                             used_ids=used_ids, routing=routes, strict_routes=strict)
             current = updated
             receipt = {
                 "schema_version": 1, "request": path.name,

@@ -62,6 +62,18 @@ class AutoEditorClaimTests(unittest.TestCase):
         self.assertEqual([i["status"] for i in updated["items"]],
                          ["queued", "queued", "queued", "in_review"])
 
+    def test_production_requires_explicit_full_long_route(self):
+        src = pool_with(("Unclassified news", "normal"), ("Standalone news", "normal"))
+        item = src["items"][1]
+        routes = {item["id"]: {"sequence": 2, "pool_id": item["id"],
+                                "lane": "long", "decision": "full"}}
+        _, ticket = claim_ordinary(src, "request-strict.json", now=NOW,
+                                   routing=routes, strict_routes=True)
+        self.assertEqual(ticket["pool_sequence"], 2)
+        _, ticket = claim_ordinary(src, "request-strict.json", now=NOW,
+                                   routing={}, strict_routes=True)
+        self.assertIsNone(ticket)
+
     def test_linked_only_returns_no_candidate_without_rewriting_pool(self):
         src = pool_with(("Linked lead", "normal"),
                         ("Linked secondary", "normal"))
