@@ -1,2 +1,2 @@
-Queue validation retry: 2026-11-12 13:19 Asia/Yekaterinburg.
-Reason: verify safe per-article quarantine, continuing regular queue without urgency and preserving the one-hour site-first spacing.
+Queue validation retry: 2026-11-26 23:10 Asia/Yekaterinburg.
+Reason: verify #493 normal scheduled release following repeated staging failures, preserve hourly spacing and quiet hours. No urgent override.
