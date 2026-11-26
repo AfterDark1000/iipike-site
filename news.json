@@ -9039,5 +9039,25 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "В Нью-Йорке предложили лишать судей должности за выдумки нейросетей",
+    "summary": "В сенат штата Нью-Йорк внесли законопроект S10741 о дисциплинарной ответственности судей за использование вымышленных правовых сведений, в том числе созданных ИИ.",
+    "published": "2026-11-26",
+    "source_url": "https://www.nysenate.gov/legislation/bills/2025/S10741",
+    "cover": "assets/editorial/new-york-judges-ai-fabricated-citations-bill-20261116.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ В Нью-Йорке предложили ЛИШАТЬ СУДЕЙ должности за выдумки нейросетей",
+    "vk_summary": "В сенат штата Нью-Йорк внесли законопроект о дисциплинарной ответственности судей за использование вымышленных правовых сведений. В серьёзных случаях нарушения станут основанием для рассмотрения вопроса об импичменте.",
+    "published_at_utc": "2026-11-26T10:15:44Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "new-york-judges-ai-fabricated-citations-bill-20261116",
+    "url": "articles/new-york-judges-ai-fabricated-citations-bill-20261116/",
+    "topics": [
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
