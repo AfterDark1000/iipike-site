@@ -8365,12 +8365,12 @@
       "summary": "25 ноября. Сообщается о синтезе голоса Джона Мотсона для EA Sports FC 27 с согласия семьи. Вторичный источник, требуется проверка.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T14:32:59+00:00",
       "review_started_at": "2026-11-26T07:22:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-b72fd4d3a758b745"
+      "closed_at": "2026-11-26T09:39:16Z",
+      "article_id": "ea-fc-27-john-motson-ai-commentary-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-b72fd4d3a758b745\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/ea-fc-27-john-motson-ai-commentary-20261125/"
     },
     {
       "id": "n-a8ddd794a6a3c7e9",
