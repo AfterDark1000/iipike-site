@@ -8949,5 +8949,27 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "«Волк с Уолл-стрит» запустил ИИ для звонков. Справится ли он с продажами?",
+    "summary": "Tone ведёт телефонные разговоры для бизнеса. Сооснователь Джордан Белфорт рассказал, что агент уже обсуждает условия страховки с клиентами, а лучшие продавцы пока обгоняют его по результатам.",
+    "published": "2026-11-26",
+    "source_url": "https://www.businesswire.com/news/home/20261116378264/en/Jordan-Belfort-and-Shervin-Pishevar-Launch-Tone-Introducing-a-New-Era-of-Goal-Oriented-Voice-AI",
+    "cover": "assets/editorial/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda.webp",
+    "rubric": "news",
+    "vk_title": "📞 «Волк с Уолл-стрит» запустил ИИ для ПРОДАЖ ПО ТЕЛЕФОНУ",
+    "vk_summary": "Голосовой агент Tone обсуждает условия покупки и помогает клиентам по телефону. По данным компании, в половине замеров он начинал отвечать за 650 мс или быстрее. Белфорт считает, что лучшие продавцы пока обгоняют систему.",
+    "published_at_utc": "2026-11-26T05:15:40Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda",
+    "url": "articles/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda/",
+    "topics": [
+      "audio",
+      "agents",
+      "business"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
