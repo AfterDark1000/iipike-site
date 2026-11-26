@@ -126,5 +126,25 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertNotIn('await navigator.clipboard.writeText(text)}', self.html)
 
 
+class AdminEditorialGatewayTests(unittest.TestCase):
+    def test_editorial_panels_do_not_use_the_anonymous_github_api(self):
+        editor = (ROOT / "admin" / "auto-editor" / "index.html").read_text(encoding="utf-8")
+        corrector = (ROOT / "admin" / "auto-corrector" / "index.html").read_text(encoding="utf-8")
+        client = (ROOT / "admin" / "auth" / "hpii-auth-client.js").read_text(encoding="utf-8")
+        worker = (ROOT / "admin-auth-worker" / "src" / "index.mjs").read_text(encoding="utf-8")
+
+        self.assertNotIn("api.github.com/repos/", editor)
+        self.assertNotIn("api.github.com/repos/", corrector)
+        self.assertIn('listEditorialFiles("drafts")', editor)
+        self.assertIn('listEditorialFiles("copyedits")', corrector)
+        self.assertIn('addEventListener("hpii-admin-authorized",loadCandidates)', corrector)
+        self.assertIn("async listEditorialFiles(kind)", client)
+        self.assertIn("async readEditorialRecord(path)", client)
+        self.assertIn('url.pathname==="/api/editorial-files"', worker)
+        self.assertIn('url.pathname==="/api/editorial-record"', worker)
+        self.assertIn('githubJson("/contents/"+config.path+"?ref=editorial-intake",env)', worker)
+        self.assertIn('EDITORIAL_RECORD_FOLDERS.has(match[1])', worker)
+
+
 if __name__ == "__main__":
     unittest.main()
