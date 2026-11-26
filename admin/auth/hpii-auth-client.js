@@ -103,7 +103,7 @@ export class HpiiAdminAuth {
     return result.entries;
   }
   async readEditorialRecord(path){
-    if(typeof path!=="string"||!/^editorial_inbox\/(auto_drafts|auto_decisions|auto_covers|auto_cover_decisions|auto_handoffs|auto_copyedits|auto_copyedit_decisions|auto_copyedit_responses)\/[a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\\d*(?:-v[1-9]\\d*)?)?\.json$/.test(path))
+    if(typeof path!=="string"||!/^editorial_inbox\/(auto_drafts|auto_decisions|auto_covers|auto_cover_decisions|auto_handoffs|auto_copyedits|auto_copyedit_decisions|auto_copyedit_responses)\/[a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\d*(?:-v[1-9]\d*)?)?\.json$/.test(path))
       throw Error("Недопустимый путь редакционного файла");
     return this.fetchApi("/api/editorial-record?path="+encodeURIComponent(path));
   }
