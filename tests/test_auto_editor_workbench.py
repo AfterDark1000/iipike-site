@@ -3,6 +3,7 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -220,6 +221,48 @@ class AutoEditorClaimTests(unittest.TestCase):
             self.assertEqual(report[path.name]["status"], "rejected")
             self.assertIn("AUTO_EDITOR_DAILY_CAP_5", report[path.name]["error"])
             self.assertEqual(json.loads((root / POOL).read_text()), original)
+
+    def test_dispatch_guard_checks_real_git_ticket_and_changed_intake(self):
+        from scripts.auto_editor_workbench import check_dispatch
+        from scripts.site_news_pool import utc_time
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            def git(*args):
+                return subprocess.check_output(["git", "-C", str(root), *args],
+                                               text=True, stderr=subprocess.PIPE).strip()
+            git("init")
+            git("config", "user.name", "Test")
+            git("config", "user.email", "test@example.org")
+            ticket = root / "editorial_inbox/auto_editor_dispatch/current.json"
+            ticket.parent.mkdir(parents=True)
+            paths = ["editorial_inbox/"+x for x in ("auto_drafts", "auto_decisions",
+                     "auto_copyedits", "auto_copyedit_responses")]
+            doc = {"schema_version":1, "status":"ready", "prepared_at":NOW,
+                   "valid_until":"2026-11-17T07:00:00+00:00",
+                   "job":{"kind":"new","request":"dispatch-exact.json",
+                          "candidate":{"id":"n-0123456789abcdef"}},
+                   "intake_guard":{p:None for p in paths}}
+            ticket.write_text(json.dumps(doc), encoding="utf-8")
+            git("add", "."); git("commit", "-m", "ticket")
+            sha=git("rev-parse", "HEAD:editorial_inbox/auto_editor_dispatch/current.json")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            request={"dispatch_sha":sha}
+            self.assertEqual(check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW)),
+                             "n-0123456789abcdef")
+            with self.assertRaisesRegex(ValueError,"DISPATCH_INVALID"):
+                check_dispatch(root,"dispatch-other.json",request,utc_time(NOW))
+            ticket.write_text(json.dumps({"status":"ready","job":{"kind":"await_receipt"}}))
+            git("add",".");git("commit","-m","refresh")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            self.assertEqual(check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW)),
+                             "n-0123456789abcdef")
+            decision=root/paths[1]/"changed.json"
+            decision.parent.mkdir()
+            decision.write_text("{}")
+            git("add",".");git("commit","-m","human decision")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            with self.assertRaisesRegex(ValueError,"DISPATCH_STALE"):
+                check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW))
 
     def test_dispatch_request_never_reserves_substitute(self):
         with tempfile.TemporaryDirectory() as tmp:

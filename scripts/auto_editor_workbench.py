@@ -147,7 +147,13 @@ def check_dispatch(root, name, request, now):
     ref = git("rev-parse", "origin/editorial-intake")
     current = git("rev-parse", ref + ":editorial_inbox/auto_editor_dispatch/current.json")
     if current != sha:
-        raise ValueError("DISPATCH_STALE: refresh assignment, do not duplicate request")
+        # A timer may refresh current.json between request and consumption.
+        # Accept only an exact historic dispatcher blob reachable on intake,
+        # and still require its expiry, current guards and current FIFO below.
+        history = git("log", "-1", "--format=%H", "--find-object="+sha, ref,
+                      "--", "editorial_inbox/auto_editor_dispatch/current.json")
+        if not history:
+            raise ValueError("DISPATCH_STALE: unknown assignment blob")
     ticket = json.loads(git("cat-file", "blob", sha))
     job = ticket.get("job") or {}
     if (ticket.get("schema_version") != 1 or ticket.get("status") != "ready"
