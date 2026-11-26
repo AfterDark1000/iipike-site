@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T15:43:39.566414Z",
+  "updated_at": "2026-11-26T23:49:07.918580Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
-      "fresh_matches": 4
+      "fresh_matches": 6
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -53,10 +53,10 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
-      "fresh_matches": 0
+      "fresh_matches": 1
     },
     {
       "id": "iguides",
@@ -64,10 +64,10 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:43:39.566414Z",
-      "last_success_at": "2026-11-26T15:43:39.566414Z",
+      "checked_at": "2026-11-26T23:49:07.918580Z",
+      "last_success_at": "2026-11-26T23:49:07.918580Z",
       "error": null,
-      "fresh_matches": 2
+      "fresh_matches": 1
     }
   ],
   "generator": {
@@ -76,11 +76,66 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-26",
-    "attempted": 18
+    "date": "2026-11-27",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "88b5bc042884ccfabe7327ab",
+      "title": "Anthropic создала ловушку для ИИ-моделей и проверила, будут ли те нарушать запреты ради доступа к чужим данным",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/26/anthropic-sozdala-lovusku-dlia-ii-modelei-i-proverila-budut-li-te-narusat-zaprety-radi-dostupa-k-cuzim-dannym.html",
+      "published_at": "2026-11-26T19:02:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-26T23:49:07.918580Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "c07c9fb827ee449fbcad69b4",
+      "title": "Canonical показала первую работающую версию ИИ-лаунчера для Ubuntu",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/26/canonical-pokazala-pervuiu-rabotaiushhuiu-versiiu-ii-launcera-dlia-ubuntu.html",
+      "published_at": "2026-11-26T18:47:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-26T23:49:07.918580Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "ef0039172d25bedd13c54164",
+      "title": "Claude и ChatGPT только начали работать с белками и уже бросили вызов специализированным нейросетям",
+      "source_id": "techinsider",
+      "source_name": "TechInsider",
+      "source_url": "https://www.techinsider.ru/news/news-1750341-claude-i-chatgpt-tolko-nachali-rabotat-s-belkami-i-uje-brosili-vyzov-specializirovannym-neirosetyam/",
+      "published_at": "2026-11-26T15:48:00Z",
+      "channel_url": "https://dzen.ru/techinsider",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-26T23:49:07.918580Z",
+      "views": null,
+      "comments": null,
+      "status": "draft_ready",
+      "comment": "Одиннадцать процентов успешных попаданий в реальной лаборатории звучат скромно, но для сгенерированных с нуля молекул это неожиданно много. Интересно, сколько попыток ушло в брак до этого результата?",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-26T23:49:07.918580Z",
+      "reason": "Зацепился за цифру реальных лабораторных тестов белковых конструкций.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T23:49:07.918580Z",
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "6395f91d7b12cfaa3baf7630",
       "title": "Путин обновил состав комиссии по вопросам ИИ",
@@ -93,12 +148,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-26T15:07:35.223132Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Переход чиновника сразу на топ-позицию в главный банк после курирования цифровых проектов выглядит максимально привычно. Видимо, опыт работы с нацпроектами на практике пригодится на новом месте.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-26T23:49:07.918580Z",
+      "reason": "Обсуждаю кадровую перестановку чиновника в Сбер.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T23:49:07.918580Z"
     },
     {
       "id": "bc7d6b971922e1e561c3278f",
@@ -205,12 +262,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-26T15:07:35.223132Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что нейросети теперь продают людям воздух и миниатюрные тряпки быстрее, чем успеваешь заметить подвох. Раньше хоть фотошопили криво, а теперь видеокруассаны такие аппетитные, что обидно даже без доставки.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-26T23:49:07.918580Z",
+      "reason": "Реагирую на деталь про присылаемые дешевые подделки вместо красивой видеорекламы.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T23:49:07.918580Z"
     },
     {
       "id": "5de5abc0dc1f4857e31694e6",
@@ -2274,69 +2333,6 @@
       "reason": "Упомянул изоляцию окон и возможные риски при автозаполнении без контроля.",
       "fact_review": "passed",
       "generated_at": "2026-11-22T03:08:23.266358Z"
-    },
-    {
-      "id": "b31dfa834c2ca405ea58ea3c",
-      "title": "Нейросеть Google Gemma 3 на 270 миллионов параметров запустили на лазерном принтере с 14 МБ памяти",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/19/neiroset-google-gemma-3-na-270-millionov-parametrov-zapustili-na-lazernom-printere-s-14-mb-pamiati.html",
-      "published_at": "2026-11-19T19:10:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-19T21:28:02.041608Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Забавно, что принтер думал почти три минуты, зато выдал фразу про мелкий шрифт. Интересно, сколько еще проживет эта модель PostScript, если на нее уже нейросети вешают.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-19T21:28:02.041608Z",
-      "reason": "Зацепка за время ответа и выбор фразы для печати.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-19T21:28:02.041608Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "808289e667e2bfcb1c863d67",
-      "title": "Европейский облачный провайдер выпустил 55 новых ИИ-продуктов и расширяет инфраструктуру на Blackwell и Rubin",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/19/evropeiskii-oblacnyi-provaider-vypustil-55-novyx-ii-produktov-i-rassiriaet-infrastrukturu-na-blackwell-i-rubin.html",
-      "published_at": "2026-11-19T17:05:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-19T17:39:01.397079Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Из пятидесяти пяти продуктов больше половины пока только в альфе или бете. Похоже, анонс ради красивого заголовка вышел громче самого железа.",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-20T01:13:06.034855Z",
-      "reason": "Обратил внимание на реальный статус запущенных продуктов из статьи.",
-      "link_status": "dzen_link_missing",
-      "fact_review": "passed",
-      "generated_at": "2026-11-20T01:13:06.034855Z"
-    },
-    {
-      "id": "449a831f33a012bd0f6da5c6",
-      "title": "ИИ-модель запустили на оптическом процессоре: немецкая компания Q.ANT представила фотонный процессор NPU Gen 2+",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/19/ii-model-zapustili-na-opticeskom-processore-nemeckaia-kompaniia-qant-predstavila-fotonnyi-processor-npu-gen-2.html",
-      "published_at": "2026-11-19T16:48:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-19T17:39:01.397079Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Интересно выглядит гибрид из фотонного чипа и обычного GPU, но без тестов скорости вся эта красота пока остаётся просто красивой витриной.",
-      "attempts": 1,
-      "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-19T18:38:25.987656Z",
-      "reason": "Зацепился за отсутствие цифр производительности у гибридного процессора.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-19T18:38:25.987656Z"
     }
   ]
 }
