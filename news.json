@@ -9059,5 +9059,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Microsoft выяснила, что ИИ-хакеры способны взломать компанию за считаные минуты",
+    "summary": "Microsoft обнаружила ARTEX в арсенале как минимум шести хакерских группировок. При определённых условиях ИИ-агенты получают расширенные права доступа к корпоративным системам за несколько минут.",
+    "published": "2026-11-26",
+    "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/",
+    "cover": "assets/editorial/microsoft-artex-ai-hackers-20261125.webp",
+    "rubric": "skynet",
+    "vk_title": "⚠️ ИИ-хакеры научились взламывать компании за МИНУТЫ",
+    "vk_summary": "Microsoft обнаружила платформу ARTEX в арсенале как минимум шести хакерских группировок. Команда ИИ-агентов автоматизирует кибератаки, а китайская ThreatBook уже предлагает коммерческий доступ к этой системе.",
+    "published_at_utc": "2026-11-26T11:15:46Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-25",
+    "id": "microsoft-artex-ai-hackers-20261125",
+    "url": "articles/microsoft-artex-ai-hackers-20261125/",
+    "topics": [
+      "cybersecurity",
+      "agents"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": []
   }
 ]
