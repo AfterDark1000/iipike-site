@@ -215,7 +215,7 @@ class PublisherTests(unittest.TestCase):
         # The homepage spotlights RECENT issues, not an arbitrary historical
         # fixture date. This sample remains in the full articles catalog/RSS.
         self.assertIn('class="home-feature-link"', home)
-        self.assertIn("Наши публикации", home)
+        self.assertIn("Свежие публикации", home)
         self.assertIn("Пример &lt;настоящей&gt; новости", catalog)
         rss = ET.fromstring((self.root / "feed.xml").read_text(encoding="utf-8"))
         self.assertEqual(len(rss.findall("./channel/item")), len(records))
