@@ -1,25 +1,134 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-26T06:34:40Z",
-  "valid_until": "2026-11-26T08:04:40Z",
-  "status": "idle",
+  "prepared_at": "2026-11-26T06:40:28Z",
+  "valid_until": "2026-11-26T08:10:28Z",
+  "status": "ready",
   "quota": {
     "used": 3,
     "limit": 5,
     "remaining": 2
   },
   "parallel_cover_review": true,
-  "job": null,
-  "waiting_for_manual_upload": [
-    {
-      "stem": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7-r1-v1",
-      "title": "Игрок в Minecraft обошёл ИИ в торговле пшеницей",
-      "state": "reserved_or_prior_attempt"
+  "job": {
+    "stem": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7-r2-v1",
+    "article_id": "legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7",
+    "revision": 2,
+    "version": 1,
+    "draft_sha": "3d0d5cf24aba6bda6f2620cba33c4106beb68e61",
+    "text_updated_at": "2026-11-26T06:38:15.866Z",
+    "text_decision_sha": null,
+    "pool_sequence": 296,
+    "title": "SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте",
+    "article_markdown": "Пять минут на грядке в Minecraft решают, кто уйдёт с алмазами.\n\nВ каждом матче четыре игрока получают по участку. За пять минут им нужно полить грядку, собрать пшеницу и продать урожай на рынке. Побеждает тот, у кого к концу раунда больше алмазов.\n\n**SethBling** выиграл все три матча. В первом его соперниками были три копии Gemini 3.8 Flash, во втором копии Opus 5.5, в третьем копии GPT-6.1 Sol.\n\n**Kradle** представила тест **KradleBench** 18 ноября. Нейросети получают описание игрового мира и управляют персонажами с помощью кода. Пока одна модель обдумывает ход, остальные игроки продолжают действовать, а таймер не останавливается.\n\nВ общем зачёте **GPT-6.2 Astra** набрала 78,28 балла из 100, SethBling получил 77,21. Разница составила 1,07 балла в пользу модели. **OpenAI** [выпустила Astra вместе с Sol 17 ноября](https://dzen.ru/a/av1SLkmfXjSQdeB4), за день до презентации теста.\n\nИтоговый балл складывается из пяти категорий. Торговля, командная работа и соперничество дают по 30%, головоломки и творческие постройки по 5%. В творческом зачёте участники строили, среди прочего, Годзиллу и Эйфелеву башню. Astra набрала 100 баллов, SethBling 18,29. В таблице у игрока 21 попытка, у Astra 345.\n\nKradle публикует повторы матчей. На открытом сервере можно сыграть 16 заданий и попасть в рейтинг по четырём категориям. Творческие постройки в рейтинг сервера не входят.",
+    "source_url": "https://blog.kradle.ai/p/announcing-kradlebench-a-dynamic",
+    "cover_brief": {
+      "fact": "SethBling выиграл три пятиминутных матча с продажей пшеницы за алмазы в KradleBench. GPT-6.2 Astra заняла первое место в общем зачёте с преимуществом 1,07 балла.",
+      "hook": "ПШЕНИЦА ПРОТИВ ИИ",
+      "constraints": "Горизонтальная обложка 16:9. Игровая ферма, пшеница и огранённые алмазы, авторские условные объекты. Без портрета или изображения, которое выглядело бы как подлинный скриншот прогона."
     },
+    "previous": null,
+    "claim_path": "editorial_inbox/auto_artist_dispatch/claims/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7-r2-v1.json"
+  },
+  "waiting_for_manual_upload": [
     {
       "stem": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r3-v1",
       "title": "ИИ NVIDIA взялся писать инструкции для опытов с квантовыми точками",
       "state": "reserved_or_prior_attempt"
     }
-  ]
+  ],
+  "recent_artwork": [
+    {
+      "stem": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r2-v1",
+      "image_path": "editorial_inbox/auto_covers/nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r2-v1.webp",
+      "headline": "КТО НАПИСАЛ ПРОТОКОЛ",
+      "concept": "Сложенный бумажный протокол выходит из прорези и останавливается над условной лабораторной установкой. Цветовые круги отсылают к свечению квантовых точек.",
+      "artist_notes": "Стиль: рельефный коллаж из цветной бумаги. Центральная композиция, заголовок напечатан на протоколе. Оборудование условное. Контраст и кириллица проверены в миниатюре 320 × 180."
+    },
+    {
+      "stem": "nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r1-v1",
+      "image_path": "editorial_inbox/auto_covers/nvidia-vypustila-nauchnyy-ii-kotoromu-mozhno-poru-4ef3fbc0562fdcd7-r1-v1.webp",
+      "headline": "ИИ И КВАНТОВЫЕ ТОЧКИ",
+      "concept": "Кристаллы разного размера светятся разными цветами. Диагональ показывает это свойство квантовых точек без числовой шкалы.",
+      "artist_notes": "Гуашевая иллюстрация с фактурой грубой бумаги. Заголовок и композиция проверены при 320×180. Сверено с 12 обложками ХПИИ."
+    },
+    {
+      "stem": "volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda-r1-v1",
+      "image_path": "editorial_inbox/auto_covers/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda-r1-v1.webp",
+      "headline": "ВОЛК НА ЛИНИИ",
+      "concept": "Телефонный провод превращается в звуковую волну между стилизованным портретом Джордана Белфорта и крупным динамиком трубки. Подзаголовок на обложке «ИИ ПРОДАЁТ ПО ТЕЛЕФОНУ» уточняет назначение агента.",
+      "artist_notes": "Контрастный плакат с рисунком кистью. Надписи сверены при 320×180, сравнение с 12 обложками ХПИИ."
+    },
+    {
+      "stem": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179-r1-v1",
+      "image_path": "editorial_inbox/auto_covers/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179-r1-v1.webp",
+      "headline": "457 МВт для OpenAI",
+      "concept": "Разветвлённая синяя линия соединяет условные разрезы серверных залов. Композиция показывает распределённую инфраструктуру, запланированную по контракту TensorWave.",
+      "artist_notes": "Архитектурная печатная графика. Разрезы условные, число зданий в рисунке не сообщает число площадок. Заголовок и композиция проверены при 320×180. Сверено с 12 недавними обложками."
+    },
+    {
+      "stem": "scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12-r2-v1",
+      "image_path": "editorial_inbox/auto_covers/scrapebench-proveril-kak-ii-agenty-soblyudayut-za-635d84dfa6ac7b12-r2-v1.webp",
+      "headline": "ИИ И ПРАВИЛА САЙТОВ",
+      "concept": "Медная тележка со штампом везёт карточку с галочкой мимо бумажного запрета. Галочка обозначает запрос правил, а соблюдение запрета остаётся отдельным действием.",
+      "artist_notes": "Предметная сценография. Коралл, тёмная бирюза и медь, низкая точка съёмки, движение по дуге. Заголовок и слово «ЗАПРЕТ» читаются при 320×180. Сверено с 12 недавними обложками."
+    },
+    {
+      "stem": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d-r2-v1",
+      "image_path": "editorial_inbox/auto_covers/ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d-r2-v1.webp",
+      "headline": "ИИ ищет контрразведчиков",
+      "concept": "На собеседовании две фигуры передают друг другу папку «ДОПУСК». Микросхема на обложке папки связывает работу контрразведчика с защитой разработок ИИ.",
+      "artist_notes": "Книжная графика с фактурой сухого карандаша. Диагональ стола, кобальтовые силуэты и фисташковая бумага. Иллюстрация создана в ChatGPT Images."
+    },
+    {
+      "stem": "berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8-r2-v1",
+      "image_path": "editorial_inbox/auto_covers/berkeley-pokazal-cyberbingym-ii-agenty-ispolzuyut-556a3c5f36817ca8-r2-v1.webp",
+      "headline": "ЗАПЛАТКА ВЫДАЛА ДЫРУ",
+      "concept": "Авторская книжная гравюра: металлическая заплатка на каменной стене подчёркивает скрытую трещину, метафора лабораторного поиска уязвимостей по исправленным бинарным файлам.",
+      "artist_notes": "Сатирическая метафора исследования Berkeley CyberBinGym, не изображение реального взлома. 20 из 100 лабораторных атак достигли успеха; изображение не утверждает массовую компрометацию. Проверены читаемость русской надписи, формат 16:9 и отличие от обложек кроссовка и 72 яиц."
+    },
+    {
+      "stem": "ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712-r3-v1",
+      "image_path": "editorial_inbox/auto_covers/ii-agent-po-oshibke-zakazal-polzovatelyu-72-yayts-9d6f7aa40ea4e712-r3-v1.webp",
+      "headline": "72 ЯЙЦА. ЗАЧЕМ?",
+      "concept": "Сатирическая газетная литография: четыре штабеля лотков с яйцами нависают над маленьким списком покупок без яиц; рука покупателя с карандашом подчеркивает нелепость добавленного ИИ товара.",
+      "artist_notes": "Художественная метафора, не документальный снимок. Заказ подтвердил человек; ИИ лишь добавил яйца в корзину. Использовано изображение, созданное в предыдущем проходе, без повторной генерации. WebP 1600×900, качество 76, 344824 байта."
+    }
+  ],
+  "guard": {
+    "covers_tree": "2546e647b145aa14c9634500b134b01b85b3d8e8",
+    "claims_tree": "ca9585dbd8c0d80e4d235a7e91675e245e98aeb6"
+  },
+  "art_standard": {
+    "fingerprint": "438f7cd7fdf6ecabd8e4b9d6c14bcb295115ad5ae4818f026063ea45007539f9",
+    "files": [
+      {
+        "path": "docs/artist_plugin/README.md",
+        "sha": "62338e02bf68bbabbf96ee3d7bbb8ecff9d07f28"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-cover/SKILL.md",
+        "sha": "a76f210efb620089ae9d73247cec1a8c676a2e03"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-cover/references/HPII_Cover_Standard.md",
+        "sha": "9f942ae6d898d2fd28827a6312d141a65bca244f"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-cover/references/artistic-toolkit.md",
+        "sha": "09217274cf2ad2a5806f6c41a2dfc3ab0a993dd8"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-cover/references/composition-toolkit.md",
+        "sha": "dd7802e85781344366e23a54ea7e5b8b93651910"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-cover/references/style-diversity-regression.md",
+        "sha": "78bfd2e6de151ec9523ced2636edd0c540e4448d"
+      },
+      {
+        "path": "docs/artist_plugin/skills/hpii-auto-cover/SKILL.md",
+        "sha": "aa433ca72fb2434b2d919e0f03d42fa04194c8bf"
+      }
+    ]
+  }
 }
