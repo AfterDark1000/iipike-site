@@ -8380,12 +8380,12 @@
       "summary": "24 ноября. Сообщается об открытии весов, 280 млрд параметров, 14 млрд активных, контексте на миллион токенов и Apache 2.0. Возможное продолжение ранее опубликованного анонса модели; конкретную публикацию и параметры уточнить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T14:32:59+00:00",
       "review_started_at": "2026-11-26T07:22:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-a8ddd794a6a3c7e9"
+      "closed_at": "2026-11-26T10:09:16Z",
+      "article_id": "baidu-ernie-5-5-flash-preview-open-weights-20261124",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a8ddd794a6a3c7e9\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/baidu-ernie-5-5-flash-preview-open-weights-20261124/"
     },
     {
       "id": "n-22605844db71e5f7",
