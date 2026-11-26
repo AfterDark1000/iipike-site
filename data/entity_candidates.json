@@ -4292,6 +4292,19 @@
           "source_url": "https://ir.yandex.ru/press-releases?id=24-11-2026-01&year=2026"
         }
       ]
+    },
+    {
+      "key": "starmind",
+      "name": "Starmind",
+      "company": "spacex",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "spacex-starmind-million-ai-satellites-fcc-20261125",
+          "source_url": "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/bltf4cdf2af47159e12/6b071c5f5506bb38bca5b0ec/FCC_report_and_order_on_SpaceX_Starmind_AI_constellation_11-25-2026.pdf"
+        }
+      ]
     }
   ]
 }
