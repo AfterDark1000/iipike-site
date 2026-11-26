@@ -8929,5 +8929,25 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Даже один ИИ-дата-центр оказался слишком мощным для электросетей половины исследованных стран",
+    "summary": "ЕБРР оценил электросети 17 экономик региона: почти половина не может принять один крупный ИИ-дата-центр на 262 МВт без повышения пиковой нагрузки.",
+    "published": "2026-11-26",
+    "source_url": "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/transition-report-archive/Transition%20Report%202026-27/chapters/transition-report-2026-27-ch3.pdf",
+    "cover": "assets/editorial/ebrd-ai-data-center-power-limits-20261117.webp",
+    "rubric": "news",
+    "vk_title": "⚡ Даже один ИИ-ДАТА-ЦЕНТР оказался слишком мощным для электросетей половины исследованных стран",
+    "vk_summary": "ЕБРР проверил возможности электросетей 17 экономик региона. Почти половине не хватает свободной мощности для подключения даже одного крупного ИИ-дата-центра без увеличения пиковой нагрузки. В США расчётный запас позволяет разместить около 265 таких объектов.",
+    "published_at_utc": "2026-11-26T04:15:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "ebrd-ai-data-center-power-limits-20261117",
+    "url": "articles/ebrd-ai-data-center-power-limits-20261117/",
+    "topics": [
+      "infrastructure"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
