@@ -154,8 +154,8 @@ if(!o.dzen){var statusOps=group("action-status");if(marks[o.id]){var revert=appe
 var schedule=append(statusOps,el("button","small","В отложенных"));schedule.addEventListener("click",function(){setMark(o.id,"scheduled")});
 var manual=append(statusOps,el("button","small","Уже опубликована"));manual.addEventListener("click",function(){setMark(o.id,"published_manual")})}}
 var primaryOps=group("action-primary");var b=append(primaryOps,el("button","small primary","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});
-var assetOps=group("action-assets");if(o.cover){var down=append(assetOps,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.sitePublished){var illustrations=append(assetOps,el("button","small","Иллюстрации ↓"));illustrations.addEventListener("click",function(){openIllustrations(o)})}
-if(o.dzen){var linkOps=group("action-link");anchor(linkOps,"Дзен ↗",o.other)}else if(o.other){var siteOps=group("action-link");anchor(siteOps,"На сайте ↗",o.other)}
+if(o.cover||o.sitePublished){var assetOps=group("action-assets");if(o.cover){var down=append(assetOps,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.sitePublished){var illustrations=append(assetOps,el("button","small","Иллюстрации ↓"));illustrations.addEventListener("click",function(){openIllustrations(o)})}}
+if(o.dzen&&href(o.other)){var linkOps=group("action-link");anchor(linkOps,"Дзен ↗",o.other)}else if(o.other&&href(o.other)){var siteOps=group("action-link");anchor(siteOps,"На сайте ↗",o.other)}
 }else{anchor(ops,type==="done"?"Статья ↗":"В GitHub ↗",o.url);if(o.cover)anchor(ops,"Обложка ↗",o.cover)}
 return row}
 function render(){panel.replaceChildren();if(!data){empty(panel,"Нет данных. Попробуй обновить.");return}
