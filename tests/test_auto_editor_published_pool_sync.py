@@ -1,5 +1,8 @@
 """Reconcile only proven published autonomous full articles into their raw pool."""
 import copy
+import hashlib
+import json
+from unittest.mock import patch
 from pathlib import Path
 import tempfile
 import unittest
@@ -71,6 +74,82 @@ class AutoEditorPublishedSyncTests(unittest.TestCase):
         bad = dict(self.article, source_url="https://another.example.org/another-study/")
         with self.assertRaisesRegex(ValueError, "source differs"):
             sync.reconcile(self.pool, [bad], root=self.root)
+        self.assertEqual(self.pool["items"][0]["status"], "in_review")
+
+    def source_upgrade_fixture(self):
+        request = "pilot-20261119-001.json"
+        request_bytes = b'{"action":"claim_ordinary"}'
+        primary = "https://primary.example.org/announcement"
+        public = dict(self.article, source_url=primary, title="Verified primary source article")
+        content = {"title": public["title"], "article_markdown": "Human-reviewed article.", "source_url": primary}
+        receipt = {"request": request, "status": "reserved", "worker": "hpii-auto-editor",
+                   "article_id": ID, "pool_id": POOL_ID, "pool_sequence": 44, "source_url": SOURCE,
+                   "claimed_at": self.item["review_started_at"], "request_sha256": hashlib.sha256(request_bytes).hexdigest()}
+        for sub, data in [("data/auto_editor/requests/" + request, request_bytes),
+                          ("data/auto_editor/receipts/" + request, json.dumps(receipt).encode()),
+                          ("content/approved/" + ID + ".json", json.dumps(dict(content, slug=ID, status="approved", published_at_utc=STAMP)).encode())]:
+            path = self.root / sub
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+        draft_sha, decision_sha, cover_sha = "a"*40, "b"*40, "c"*40
+        stamp = self.item["review_started_at"]
+        stem = ID + "-r1"
+        records = {
+            "editorial_inbox/auto_drafts/" + ID + ".json":
+                (dict(article_id=ID, request=request, pool_id=POOL_ID, pool_sequence=44, status="ready_for_review",
+                      revision=1, created_at=stamp, updated_at=stamp, content=content), draft_sha),
+            "editorial_inbox/auto_decisions/" + stem + ".json":
+                (dict(article_id=ID, revision=1, updated_at=stamp, draft_blob_sha=draft_sha, action="approve_text",
+                      status="text_approved_cover_pending", channel="hpii-admin-oauth-gateway", decided_by="owner", decided_at=stamp), decision_sha),
+            "editorial_inbox/stories/" + ID + ".json":
+                (dict(content, id=ID, status="editor_approved", approved_by="human_editor"), "d"*40),
+            "editorial_inbox/auto_handoffs/" + stem + "-v1.json":
+                (dict(article_id=ID, text_revision=1, cover_version=1, status="handed_off_to_site_queue",
+                      source_draft_blob_sha=draft_sha, text_decision_blob_sha=decision_sha, cover_decision_blob_sha=cover_sha,
+                      cover_blob_sha="e"*40, story_path="editorial_inbox/stories/" + ID + ".json"), "f"*40),
+            "editorial_inbox/auto_cover_decisions/" + stem + "-v1.json":
+                (dict(article_id=ID, text_revision=1, cover_version=1, action="approve_cover",
+                      status="cover_approved_handoff_pending", channel="hpii-admin-oauth-gateway", decided_by="owner",
+                      source_draft_blob_sha=draft_sha, cover_blob_sha="e"*40, decided_at=stamp), cover_sha),
+        }
+        return public, records
+
+    def test_human_approved_source_upgrade_preserves_original_claim(self):
+        public, records = self.source_upgrade_fixture()
+        with patch.object(sync, "intake_record", side_effect=lambda root, ref, path: records.get(path, (None, None))):
+            final, changes = sync.reconcile(self.pool, [public], root=self.root, intake_ref="snapshot")
+        self.assertEqual(len(changes), 1)
+        row = final["items"][0]
+        self.assertEqual(row["status"], "approved")
+        self.assertEqual(row["source_url"], SOURCE)
+        self.assertEqual(row["closed_at"], STAMP)
+        self.assertIn(public["source_url"], row["note"])
+
+    def test_changed_source_requires_every_bound_approval_and_receipt(self):
+        public, records = self.source_upgrade_fixture()
+        for path in records:
+            with self.subTest(missing=path), patch.object(sync, "intake_record",
+                    side_effect=lambda root, ref, name: (None, None) if name == path else records.get(name, (None, None))):
+                with self.assertRaisesRegex(ValueError, "source differs"):
+                    sync.reconcile(self.pool, [public], root=self.root, intake_ref="snapshot")
+        for path, field, invalid in [
+                ("editorial_inbox/auto_drafts/" + ID + ".json", "pool_id", "wrong"),
+                ("editorial_inbox/auto_decisions/" + ID + "-r1.json", "draft_blob_sha", "wrong"),
+                ("editorial_inbox/auto_cover_decisions/" + ID + "-r1-v1.json", "action", "revise_cover"),
+                ("editorial_inbox/auto_handoffs/" + ID + "-r1-v1.json", "source_draft_blob_sha", "wrong")]:
+            bad = copy.deepcopy(records)
+            bad[path][0][field] = invalid
+            with self.subTest(field=field), patch.object(sync, "intake_record",
+                    side_effect=lambda root, ref, name: bad.get(name, (None, None))):
+                with self.assertRaisesRegex(ValueError, "source differs"):
+                    sync.reconcile(self.pool, [public], root=self.root, intake_ref="snapshot")
+        receipt_path = self.root / "data/auto_editor/receipts/pilot-20261119-001.json"
+        receipt = json.loads(receipt_path.read_text())
+        receipt["pool_sequence"] = 999
+        receipt_path.write_text(json.dumps(receipt))
+        with patch.object(sync, "intake_record", side_effect=lambda root, ref, path: records.get(path, (None, None))):
+            with self.assertRaisesRegex(ValueError, "source differs"):
+                sync.reconcile(self.pool, [public], root=self.root, intake_ref="snapshot")
         self.assertEqual(self.pool["items"][0]["status"], "in_review")
 
     def test_wrong_url_or_missing_publication_time_is_rejected(self):
