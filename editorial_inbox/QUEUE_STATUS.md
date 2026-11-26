@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 22 · **Готовы:** 0 · **Ждут интервал:** 22 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 250
+**В очереди:** 23 · **Готовы:** 0 · **Ждут интервал:** 23 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 0 · **Заблокированы:** 0 · **Опубликованы через site-first:** 250
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -34,12 +34,13 @@
 | **20** | [Половина молодых людей, ежедневно пользующихся ИИ, уже пробовала с ним дружить](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/gallup-youth-ai-friendship-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 27.11.2026 12:07 (Усть-Катав)**; пауза до 26.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/gallup-youth-ai-friendship-20261117.webp) |
 | **21** | [AMD отправила в производство чип с доработками от нейросети OpenAI](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-amd-ai-chip-design-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 27.11.2026 13:07 (Усть-Катав)**; пауза до 26.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-amd-ai-chip-design-20261118.webp) |
 | **22** | [Сотня ИИ-агентов местами превзошла профессиональных аудиторов KPMG](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/kpmg-ai-agents-parallel-audit-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 27.11.2026 14:07 (Усть-Катав)**; пауза до 26.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/kpmg-ai-agents-parallel-audit-20261118.webp) |
+| **23** | [Яндекс показал ИИ-секретаря за 20 тысяч рублей, а для поручений Алисе нужна подписка](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/yandex-pin-ai-secretary-20261124.json) | ⏳ Ждёт часовой интервал | **Не ранее 27.11.2026 15:07 (Усть-Катав)**; пауза до 26.11.2026 11:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/yandex-pin-ai-secretary-20261124.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Яндекс показал ИИ-секретаря за 20 тысяч рублей, а для поручений Алисе нужна подписка](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/yandex-pin-ai-secretary-20261124.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| — | Нет проблемных материалов | — | — |
 
 ## Опубликованы через site-first — новые сверху
 
