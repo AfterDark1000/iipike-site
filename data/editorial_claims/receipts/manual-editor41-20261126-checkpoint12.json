@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-checkpoint12.json",
+  "request_sha256": "fe572a7419d240401da9a54ee5f2faaa58216bdee51477668c0bb0177e0b029a",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-a5f8ec5362c29818",
+  "pool_sequence": 345,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-26T17:04:51.280885+00:00",
+  "note": "Проверены анонс Ai2 19.11.2026 https://allenai.org/blog/theorizer-in-asta и научная работа https://aclanthology.org/2026.acl-long.669/. Theorizer доступен в Asta с бесплатным лимитом токенов, код открыт. Онколог Sid Devarakonda узнал собственные идеи, к которым шёл 15 лет; число запросов не указано, несколько итераций для трёх гипотез. 20–30% аденокарцином без известных драйверных изменений; AutoDiscovery и последующий анализ данных указали на возможную зависимость некоторых опухолей от CDK2, необходима экспериментальная проверка. Lecoq получил 50 гипотез, одна согласуется с его взглядом, основная идея уже была в литературе. Каталог: прямого дубля нет, ссылка Isomorphic Labs Dzen ID 6b000b2e4c30af749939460a. @allen_ai подтверждён. На утверждении."
+}
