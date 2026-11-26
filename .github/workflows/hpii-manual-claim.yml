@@ -1,4 +1,4 @@
-name: HPII — manual claim fallback (NO PUBLICATION)
+name: HPII — manual editor transactions (NO PUBLICATION)
 on:
   push:
     branches: [main]
@@ -44,7 +44,8 @@ jobs:
         run: |
           set -euo pipefail
           for attempt in 1 2 3; do
-            git fetch origin main
+            git fetch origin main editorial-intake
+            git fetch origin editorial-intake:refs/remotes/origin/editorial-intake
             git reset --hard origin/main
             git clean -fd -- data/editorial_claims/receipts/
             python3 scripts/site_news_pool.py --validate

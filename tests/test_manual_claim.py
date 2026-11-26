@@ -102,6 +102,42 @@ class ManualClaimTests(unittest.TestCase):
         self.assertEqual(manual_claim.consume(self.root, now=LATER), {})
         self.assertEqual(self.read_pool(),pool)
 
+    def test_probe_never_reserves(self):
+        a = self.request("manual-probe-000001", {**manual_claim.BODY, "action":"probe"})
+        rec = manual_claim.consume(self.root, now=LATER)[a]
+        self.assertEqual(rec["status"], "probe_ok")
+        self.assertTrue(rec["pool_unchanged"])
+        self.assertEqual(self.read_pool(), self.pool)
+
+    def test_bound_checkpoint_return_and_stale_rejection(self):
+        a = self.request("manual-op-000001")
+        claim = manual_claim.consume(self.root, now=LATER)[a]
+        body = {**manual_claim.BODY, "action":"checkpoint", "claim_request":a,
+                **{k:claim[k] for k in ("pool_id","pool_sequence","claimed_at")},
+                "expected_note":"", "note":"Verified primary source"}
+        b = self.request("manual-op-000002",body)
+        self.assertEqual(manual_claim.consume(self.root,now=LATER)[b]["status"], "checkpointed")
+        c = self.request("manual-op-000003",body)
+        self.assertEqual(manual_claim.consume(self.root,now=LATER)[c]["status"], "rejected")
+        d = self.request("manual-op-000004",{**body,"action":"return","human_authorized":True,
+                             "expected_note":body["note"],"note":"Human requested return"})
+        self.assertEqual(manual_claim.consume(self.root,now=LATER)[d]["status"], "returned")
+        self.assertEqual(self.read_pool()["items"][1]["status"],"queued")
+
+    def test_reject_foreign_claim_and_approval_without_story(self):
+        a = self.request("manual-op-000001")
+        claim = manual_claim.consume(self.root, now=LATER)[a]
+        body = {**manual_claim.BODY,"action":"approve","claim_request":a,
+                **{k:claim[k] for k in ("pool_id","pool_sequence","claimed_at")},
+                "expected_note":"", "note":"Human approved", "human_authorized":True,
+                "article_id":"fixture-story", "story_sha":"a"*40}
+        b = self.request("manual-op-000002",body)
+        self.assertEqual(manual_claim.consume(self.root,now=LATER)[b]["status"],"rejected")
+        c = self.request("manual-op-000003",{**body,"action":"reject","claim_request":"manual-fake-000001.json",
+                        "note":"Wrong claim","human_authorized":True})
+        self.assertEqual(manual_claim.consume(self.root,now=LATER)[c]["status"],"rejected")
+        self.assertEqual(self.read_pool()["items"][1]["status"],"in_review")
+
 
 if __name__ == "__main__":
     unittest.main()
