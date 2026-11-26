@@ -8620,12 +8620,12 @@
       "summary": "24 ноября. PrismML представила Ternary Bonsai 2.5 27B для программирования и работы с инструментами; веса Apache 2.0.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T18:37:36+00:00",
       "review_started_at": "2026-11-26T09:19:30+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-57993858eb1cb093"
+      "closed_at": "2026-11-26T13:39:25Z",
+      "article_id": "prismml-bonsai-2-5-27b-20261124",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-57993858eb1cb093\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/prismml-bonsai-2-5-27b-20261124/"
     },
     {
       "id": "n-ac2f786b30f6d457",
