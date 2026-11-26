@@ -8994,5 +8994,29 @@
       "openai"
     ],
     "products": []
+  },
+  {
+    "title": "Семья любовницы Хуанга засветилась в сделках с ИИ-серверами на $270 млн",
+    "summary": "Reuters обнаружило финансовые соглашения об ИИ-серверах и вычислительных модулях на $270 млн у компаний, связанных с родственниками Алисы Хуанг. США внесли Megaspeed в торговый чёрный список.",
+    "published": "2026-11-26",
+    "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792",
+    "cover": "assets/editorial/alice-huang-ai-servers-china-270m-20261125.webp",
+    "rubric": "news",
+    "vk_title": "💰 Семью любовницы главы NVIDIA связали с ИИ-серверами на $270 МЛН",
+    "vk_summary": "Reuters обнаружило в китайском кредитном реестре сотни ИИ-серверов и вычислительных модулей. Финансировавшие их компании связаны с сестрой и мужем Алисы Хуанг. Её бывшая компания Megaspeed уже попала в торговый чёрный список США. Наличие запрещённых к экспорту чипов не доказано.",
+    "published_at_utc": "2026-11-26T07:45:42Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-25",
+    "id": "alice-huang-ai-servers-china-270m-20261125",
+    "url": "articles/alice-huang-ai-servers-china-270m-20261125/",
+    "topics": [
+      "infrastructure",
+      "finance",
+      "society"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
