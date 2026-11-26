@@ -1,5 +1,7 @@
 """Reconcile only proven published autonomous full articles into their raw pool."""
 import copy
+import json
+from unittest.mock import patch
 from pathlib import Path
 import tempfile
 import unittest
@@ -72,6 +74,59 @@ class AutoEditorPublishedSyncTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "source differs"):
             sync.reconcile(self.pool, [bad], root=self.root)
         self.assertEqual(self.pool["items"][0]["status"], "in_review")
+
+    def test_changed_primary_source_requires_human_approved_blob_chain(self):
+        request = "pilot-20261119-001.json"
+        new_source = "https://primary.example.org/announcement"
+        ref, draft_sha, decision_sha = "a"*40, "b"*40, "c"*40
+        story_path = "editorial_inbox/stories/" + ID + ".json"
+        handoff_path = "editorial_inbox/auto_handoffs/" + ID + "-r1-v1.json"
+        receipt_path = self.root / "data/auto_editor/receipts" / request
+        receipt_path.parent.mkdir(parents=True)
+        receipt = {"request": request, "status":"reserved", "worker":"hpii-auto-editor",
+                   "pool_id":POOL_ID,"pool_sequence":44,"article_id":ID,
+                   "source_url":SOURCE,"claimed_at":self.item["review_started_at"]}
+        receipt_path.write_text(json.dumps(receipt))
+        story = {"id":ID,"status":"editor_approved","approved_by":"human_editor",
+                 "approved_at":STAMP,"source_url":new_source}
+        handoff = {"article_id":ID,"status":"handed_off_to_site_queue",
+                   "story_path":story_path,"text_revision":1,
+                   "source_draft_blob_sha":draft_sha,"text_decision_blob_sha":decision_sha,
+                   "text_approved_at":STAMP}
+        draft = {"request":request,"pool_id":POOL_ID,"pool_sequence":44,
+                 "article_id":ID,"revision":1,"status":"ready_for_review",
+                 "content":{"source_url":new_source}}
+        decision = {"article_id":ID,"revision":1,"action":"approve_text",
+                    "draft_blob_sha":draft_sha,"decided_by":"AfterDark1000",
+                    "channel":"hpii-admin-oauth-gateway","decided_at":STAMP}
+        objects = {("show",ref+":"+story_path):story,
+                   ("show",ref+":"+handoff_path):handoff,
+                   ("cat-file","blob",draft_sha):draft,
+                   ("cat-file","blob",decision_sha):decision}
+        def git(root,*args):
+            if args[0] == "rev-parse":
+                return ref
+            if args[0] == "ls-tree":
+                return handoff_path
+            return json.dumps(objects[args])
+        public = dict(self.article,source_url=new_source)
+        with patch.object(sync,"git_text",side_effect=git):
+            final, changed = sync.reconcile(self.pool,[public],root=self.root)
+            self.assertEqual(len(changed),1)
+            self.assertEqual(final["items"][0]["status"],"approved")
+            self.assertEqual(final["items"][0]["source_url"],SOURCE)
+            decision["draft_blob_sha"] = "d"*40
+            with self.assertRaisesRegex(ValueError,"source differs"):
+                sync.reconcile(self.pool,[public],root=self.root)
+            decision["draft_blob_sha"] = draft_sha
+            draft["pool_id"] = "n-0000000000000002"
+            with self.assertRaisesRegex(ValueError,"source differs"):
+                sync.reconcile(self.pool,[public],root=self.root)
+            draft["pool_id"] = POOL_ID
+            receipt["source_url"] = "https://wrong.example.org/other"
+            receipt_path.write_text(json.dumps(receipt))
+            with self.assertRaisesRegex(ValueError,"source differs"):
+                sync.reconcile(self.pool,[public],root=self.root)
 
     def test_wrong_url_or_missing_publication_time_is_rejected(self):
         with self.assertRaisesRegex(ValueError, "unexpected path"):
