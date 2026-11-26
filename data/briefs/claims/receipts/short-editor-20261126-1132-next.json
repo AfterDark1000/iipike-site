@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-editor-20261126-1132-next.json",
+  "request_sha256": "1594fe7f700f8f43c069ad22ac907f43510ba0bd983004de089322be556cc51c",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-c2d1ea57beec1978",
+      "pool_sequence": 546,
+      "title": "Claude самостоятельно написал 70-страничное доказательство математической задачи, которую не могли решить с 1979 года",
+      "source_url": "https://aiweekly.co/ai-news-today/edition/2026-11-24",
+      "claimed_at": "2026-11-26T06:33:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a330d410dad3b534",
+      "pool_sequence": 550,
+      "title": "Nothing превратила футляр беспроводных наушников в ИИ-диктофон",
+      "source_url": "https://www.unite.ai/nothing-previews-ear-note-earbuds-with-ai-recording-and-transcription",
+      "claimed_at": "2026-11-26T06:33:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6d8e79d843eb14cb",
+      "pool_sequence": 551,
+      "title": "Из 58 компаний только две сократили должности из-за ИИ, но две трети замедлили найм",
+      "source_url": "https://aiweekly.co/ai-news-today/edition/2026-11-24",
+      "claimed_at": "2026-11-26T06:33:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a4a12a324bde26f9",
+      "pool_sequence": 552,
+      "title": "В Чехии нейросетями пользуются уже 90% молодёжи",
+      "source_url": "https://www.praguedaily.news/2026/11/25/artificial-intelligence-increasingly-popular-in-the-czech-republic-more-than-half-of-the-population-uses-ai",
+      "claimed_at": "2026-11-26T06:33:50+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a12b4153d56773e0",
+      "pool_sequence": 553,
+      "title": "Trustpilot удалила 7,8 млн фальшивых отзывов. Теперь на них могут попадаться и ИИ-покупатели",
+      "source_url": "https://www.prnewswire.co.uk/news-releases/trustpilot-removed-7-8-million-fake-reviews-in-2025-as-ai-raises-the-stakes-for-online-trust-302948156.html",
+      "claimed_at": "2026-11-26T06:33:50+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}

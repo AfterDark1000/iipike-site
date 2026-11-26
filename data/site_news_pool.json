@@ -8170,12 +8170,12 @@
       "summary": "24 ноября. Заявлено о доказательстве VP ≠ VNP; математическая проверка ещё не завершена. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T06:33:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c2d1ea57beec1978"
     },
     {
       "id": "n-a7dfeb19ef6971cc",
@@ -8230,12 +8230,12 @@
       "summary": "23 ноября. Ear Note записывают и расшифровывают разговоры, составляют краткое содержание. Выход намечен на 8 декабря. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T06:33:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a330d410dad3b534"
     },
     {
       "id": "n-6d8e79d843eb14cb",
@@ -8245,12 +8245,12 @@
       "summary": "23 ноября. Опрос Anthropic среди американских клиентов Claude. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T06:33:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6d8e79d843eb14cb"
     },
     {
       "id": "n-a4a12a324bde26f9",
@@ -8260,12 +8260,12 @@
       "summary": "25 ноября. Доля пользователей ИИ старше 16 лет выросла с 32% до 56% за год; проверить статистику.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T06:33:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a4a12a324bde26f9"
     },
     {
       "id": "n-a12b4153d56773e0",
@@ -8275,12 +8275,12 @@
       "summary": "24 ноября. Отчёт о доверии к отзывам и зависимости торговых агентов от пользовательских оценок.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T06:33:50+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a12b4153d56773e0"
     },
     {
       "id": "n-17ed396e8529fe9e",
