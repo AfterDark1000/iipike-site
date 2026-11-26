@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "action": "apply_approved_triage",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "items": [
+    {
+      "sequence": 548,
+      "pool_id": "n-71bef6b69b5cab19",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 554,
+      "pool_id": "n-17ed396e8529fe9e",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 575,
+      "pool_id": "n-f5390a2aecae5dc0",
+      "lane": "long",
+      "decision": "full"
+    }
+  ]
+}
