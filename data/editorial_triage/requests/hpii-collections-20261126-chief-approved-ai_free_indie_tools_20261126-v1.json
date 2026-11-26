@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "action": "collection_upsert",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "collection": {
+    "group": "ai_free_indie_tools_20261126",
+    "title": "Бесплатные ИИ-инструменты от энтузиастов",
+    "state": "collecting",
+    "primary_sequence": 337,
+    "members": [
+      {
+        "sequence": 149,
+        "pool_id": "n-9c52b68e170321d3"
+      },
+      {
+        "sequence": 337,
+        "pool_id": "n-def7dfc6bcfd4fb9"
+      },
+      {
+        "sequence": 581,
+        "pool_id": "n-c29e6ad33e5b930e"
+      }
+    ],
+    "note": "Практически полезные самостоятельные бесплатные инструменты с открытым исходником или доступным бесплатным запуском, проверяемой демонстрацией и отличающимися задачами. Не включать просто демо без пользы и не задерживать крупные самостоятельные новости. Первый участник VoxaDub: локальный перевод и дубляж видео с клонированием голосов, релиз v0.1.0 от 03.11.2026 (не 17.11), MIT для кода, лицензии моделей отдельно, LatentSync ~18 ГБ VRAM, live экспериментальный. Источники https://github.com/kadirb4rut/voxadub и https://github.com/kadirb4rut/voxadub/releases/tag/v0.1.0. Пополнять при утреннем разборе новых и подходящих отложенных сюжетов; открывать только после согласия главреда. Дополнения 26.11: №149 chaojifeng-video-content-creator — открытый MIT-инструмент для монтажа, прежде всего китайскоязычной речи (https://github.com/mileson/chaojifeng-video-content-creator); №581 OS Studio — локальная музыкальная студия (https://github.com/TheAwaken1/os-studio). Перед выпуском проверить зависимости, лицензии моделей, требования к железу и фактические функции."
+  }
+}
