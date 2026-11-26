@@ -2690,8 +2690,8 @@
     {
       "sequence": 573,
       "pool_id": "n-86266e890e18a6d4",
-      "lane": "short",
-      "decision": "short"
+      "lane": "long",
+      "decision": "full"
     },
     {
       "sequence": 574,

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "return-573-20261126.json",
+  "request_sha256": "46f7326f4582e301b3cc232d83dca1e96eca14829c087fe58c4d8ad2f74efceb",
+  "status": "returned_to_long",
+  "pool_id": "n-86266e890e18a6d4",
+  "pool_sequence": 573,
+  "lane": "long",
+  "decision": "full",
+  "priority": "normal",
+  "pool_status": "queued",
+  "removed_candidate": null
+}
