@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_first_release_pr import (
-    COVER, IMAGE_EXTS, STABLE_ID, STORY, GH_REPO,
+    COVER, IMAGE_EXTS, STABLE_ID, STORY, GH_REPO, ArticleStageRejected,
     exists_at, git, release_one, safe_git_blob_at, verified_manual_reissue,
 )
 from scripts.site_related import catalog_entries, validate_links, explicit_site_crosslinks
@@ -429,7 +429,16 @@ def main():
         git("config", "user.name", "github-actions[bot]")
         git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
         print("SCHEDULED_RELEASE:", item["id"], "urgent=" + str(urgent), flush=True)
-        outcome = release_one(item["id"], source_ref)
+        try:
+            outcome = release_one(item["id"], source_ref)
+        except ArticleStageRejected as exc:
+            from scripts.site_release_quarantine import record_article_error
+            record_article_error(source_ref, item, exc)
+            print("BLOCKED_ARTICLE_ERROR:", item["id"], str(exc), flush=True)
+            if target:
+                raise ValueError("Requested article rejected during final staging; no unrelated release") from exc
+            remaining = [row for row in remaining if row["id"] != item["id"]]
+            continue
         if outcome == "auto_published_rebuild_requested":
             print("ONE_RELEASE_REQUESTED:", item["id"], flush=True)
             print("NOTE: Public page requires a successful subsequent "

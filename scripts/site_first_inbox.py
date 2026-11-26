@@ -365,7 +365,12 @@ def main():
                         print("COVER_AWAITING_ARTICLE: " + item.stem)
             print("INBOX_AUDIT_OK: " + str(len(seen)) + " approved text records")
             return
-        approved = stage(ROOT, args.story_id, apply=args.stage)
+        try:
+            approved = stage(ROOT, args.story_id, apply=args.stage)
+        except (ValueError, KeyError, json.JSONDecodeError) as exc:
+            if args.stage:
+                parser.exit(3, f"Article staging validation rejected: {exc}\n")
+            raise
         if approved is not None and args.publish:
             publish(ROOT, args.story_id, apply=False)
             publish(ROOT, args.story_id, apply=True)

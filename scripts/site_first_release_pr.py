@@ -45,8 +45,13 @@ RETRY_BLOCKING_PATHS = (
     "news.json", "data/entity_registry.json",
     "scripts/site_first_release_pr.py", "scripts/site_publication_queue.py",
     "scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
+    "scripts/site_entities.py", "scripts/site_release_quarantine.py",
     ".github/workflows/site-first-scheduled-release.yml",
 )
+
+
+class ArticleStageRejected(ValueError):
+    """Candidate-specific staging failure before any release commit or push."""
 
 
 class MainMovedDuringRelease(ValueError):
@@ -283,7 +288,7 @@ def auto_publish_site(story_id, base_sha, source_paths):
     if approved_path.is_file():
         approved = json.loads(approved_path.read_text(encoding="utf-8"))
         selected_companies, selected_products = validate_editor_entities(
-            load_registry(), approved.get("companies"), approved.get("products"))
+            load_registry(), approved.get("companies"), approved.get("products"), compiled=True)
         if selected_companies or selected_products:
             expected_files.update(("data/entity_registry.json", "entities/index.html"))
             expected_files.update(
@@ -402,8 +407,22 @@ def release_one(story_id, ref):
             transfer_blob(ref, path)
         # Every retry regenerates from the exact approved editor sources.
         # Rebase/cherry-pick of old RSS or news.json is prohibited.
-        run_checked(sys.executable, "scripts/site_first_inbox.py", story_id,
-                    "--stage", "--publish")
+        try:
+            run_checked(sys.executable, "scripts/site_first_inbox.py", story_id,
+                        "--stage", "--publish")
+        except subprocess.CalledProcessError as exc:
+            if exc.returncode != 3 or not auto:
+                raise
+            # The stage compiler rolls back its own output on rejection.
+            # Remove only the editorial input files this attempt copied.
+            for path in paths:
+                if exists_at(base_sha, path):
+                    raise RuntimeError("Cannot clean a pre-existing editorial input")
+                Path(path).unlink(missing_ok=True)
+            if reissue:
+                git("restore", "--source=" + base_sha, "--worktree", "--", *reissue)
+            git("switch", "--detach", base_sha)
+            raise ArticleStageRejected("Final article staging validation rejected: " + story_id) from exc
         vk_result = subprocess.run([sys.executable, "scripts/build_vk_rss.py"], check=False)
         if vk_result.returncode != 0:
             print("::warning::VK_RSS_GENERATION_FAILED: site publication continues; "

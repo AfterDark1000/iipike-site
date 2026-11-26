@@ -169,7 +169,7 @@ def approved_article(root, slug):
     if "topics" in data:
         validate_topics(data["topics"])
     if "companies" in data or "products" in data:
-        validate_editor_entities(load_registry(ROOT), data.get("companies"), data.get("products"))
+        validate_editor_entities(load_registry(ROOT), data.get("companies"), data.get("products"), compiled=True)
     # Share exactly one schema with the ChatGPT intake validator so that the
     # approved article retains the editor's full inline and block formatting.
     validate_blocks(data.get("paragraphs"))
@@ -483,9 +483,9 @@ def publish(root, slug, apply=False):
                      else infer_topics(data["title"], data["summary"]))
     base_registry = load_registry(root if (root / "data/entity_registry.json").is_file() else ROOT)
     companies, products = validate_editor_entities(
-        base_registry, data.get("companies"), data.get("products"))
+        base_registry, data.get("companies"), data.get("products"), compiled=True)
     selected = bool(companies or products)
-    next_registry = append_editor_entities(base_registry, slug, companies, products)
+    next_registry = append_editor_entities(base_registry, slug, companies, products, compiled=True)
     if "companies" in data or "products" in data:
         row["companies"], row["products"] = companies, products
     updated = entries + [row]
