@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-return10.json",
+  "request_sha256": "d2fec0490234c3e502d493e38a5a2cb8358c731f94284e72fe919554511c32f8",
+  "worker": "hpii-manual-editor",
+  "status": "returned",
+  "pool_id": "n-def7dfc6bcfd4fb9",
+  "pool_sequence": 337,
+  "pool_status": "queued",
+  "claimed_at": null,
+  "note": "По решению главреда вернуть в пул для тематического накопителя бесплатных ИИ-инструментов от энтузиастов. Факты проверены, отдельная статья не утверждена."
+}
