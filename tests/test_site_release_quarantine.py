@@ -1,6 +1,7 @@
 """A faulty approved story is isolated; the next can still publish."""
 import datetime as dt
 import json
+from pathlib import Path
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -88,6 +89,26 @@ class QuarantineTests(unittest.TestCase):
              patch.object(q, "safe_git_blob_at", return_value=json.dumps(record)), \
              patch.object(q, "content_fingerprint", return_value="version-2"):
             self.assertIsNone(q.existing_error("sha", item("bad")))
+
+    def test_preflight_stages_with_verified_catalog_in_disposable_root(self):
+        def copy(ref, path, root):
+            dest = root / path
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            dest.write_text("fixture", encoding="utf-8")
+        def stage(root, sid, *, apply):
+            self.assertTrue(apply)
+            self.assertEqual(sid, "good")
+            self.assertTrue((root / q.CATALOG_PATH).is_file())
+            self.assertTrue((root / "news.json").is_file())
+            self.assertTrue((root / "editorial_inbox/stories/good.json").is_file())
+            return {"slug": sid}
+        with patch.object(q, "story_paths", return_value=["editorial_inbox/stories/good.json"]), \
+             patch.object(q, "copy_blob", side_effect=copy) as transfer, \
+             patch("scripts.site_first_inbox.stage", side_effect=stage):
+            self.assertTrue(q.preflight_article("source", item("good"), []))
+        self.assertEqual(transfer.call_args_list[0].args[:2],
+                         ("origin/main", q.CATALOG_PATH.as_posix()))
+        self.assertFalse(transfer.call_args_list[0].args[2].exists())
 
     def test_marker_is_durable_and_never_writes_the_story_or_main_branch(self):
         with patch.object(q, "content_fingerprint", return_value="abcdef"), \

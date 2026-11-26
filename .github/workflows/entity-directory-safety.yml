@@ -92,7 +92,7 @@ jobs:
                    'tests/test_site_dossier.py', 'dossier/index.html', 'assets/site.css',
                    'tests/test_homepage_focus.py', 'tests/test_homepage.py',
                    'scripts/site_release_quarantine.py', 'scripts/site_publication_queue.py',
-                   'tests/test_site_existing_release_branch.py',
+                   'tests/test_site_existing_release_branch.py', 'tests/test_site_release_quarantine.py',
                    'admin/dossier/index.html', 'admin/dossier/app.js',
                    'admin-auth-worker/src/index.mjs', 'admin-auth-worker/tests/dossier.test.mjs',
                    '.github/workflows/dossier-refresh.yml', '.github/workflows/hpii-admin-gateway-deploy.yml',

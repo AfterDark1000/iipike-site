@@ -17,6 +17,7 @@ import tempfile
 
 from scripts.site_first_release_pr import GH_REPO, STABLE_ID, exists_at, git, safe_git_blob_at
 from scripts.site_rich_text import markdown_to_blocks, IMAGE_SOURCE
+from scripts.site_related import FILE as CATALOG_PATH
 
 PREFIX = "editorial_inbox/release_errors/"
 CODE_PATHS = ("scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
@@ -106,6 +107,10 @@ def preflight_article(ref, item, live):
         root = Path(tmp)
         (root / "news.json").write_text(
             json.dumps(live, ensure_ascii=False), encoding="utf-8")
+        # The approved-source validator reads the verified Dzen catalog from
+        # the staging root. Missing production dependencies are infrastructure
+        # failures, never grounds for quarantining a valid article.
+        copy_blob("origin/main", CATALOG_PATH.as_posix(), root)
         for path in story_paths(ref, item):
             copy_blob(ref, path, root)
         # Stage for real in a disposable tree: this also invokes the
