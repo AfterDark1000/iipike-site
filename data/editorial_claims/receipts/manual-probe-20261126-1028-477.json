@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "request": "manual-probe-20261126-1028-477.json",
+  "request_sha256": "fa5c8e4f8c7348e0b54e2c0931efca9a4470110d1ce4158c6f7d5f1308fc982a",
+  "worker": "hpii-manual-editor",
+  "status": "probe_ok",
+  "pool_unchanged": true,
+  "candidate_available": true
+}
