@@ -2229,6 +2229,18 @@
           "source_url": "https://arxiv.org/abs/2611.22115"
         }
       ]
+    },
+    {
+      "key": "cornell-university",
+      "name": "Cornell University",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "apple-cornell-fastframes-20261117",
+          "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
+        }
+      ]
     }
   ],
   "products": [
@@ -4352,6 +4364,19 @@
         {
           "article_id": "china-telecom-xing4-huawei-20261126",
           "source_url": "https://huggingface.co/XingChen-AGI/Xing4.1-Preview"
+        }
+      ]
+    },
+    {
+      "key": "fastframes",
+      "name": "FastFrames",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "company": "apple",
+      "evidence": [
+        {
+          "article_id": "apple-cornell-fastframes-20261117",
+          "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
         }
       ]
     }
