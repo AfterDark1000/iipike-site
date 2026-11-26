@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "collection-free-indie-tools-20261126.json",
+  "request_sha256": "21c7a3380c9e44f906f06b839906567abc5db6d6209d5a013c6f400d83c26185",
+  "status": "applied",
+  "applied": [
+    337
+  ],
+  "unchanged": [],
+  "skipped": []
+}
