@@ -24,7 +24,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.publish_approved_article import approved_article, publish, validated_vk_fields
 from scripts.site_rubrics import RUBRICS
-from scripts.site_rich_text import validate_blocks, markdown_to_blocks, IMAGE_SOURCE, image_asset
+from scripts.site_rich_text import validate_blocks, markdown_to_blocks, IMAGE_SOURCE, IMAGE_LINE, image_asset
 from scripts.site_related import explicit_site_crosslinks
 from scripts.site_topics import validate_topics, infer_topics
 from scripts.site_entities import load_registry, validate_editor_entities
@@ -45,6 +45,31 @@ def required_text(record, key, limit):
     if not isinstance(val, str) or not val.strip() or len(val) > limit:
         raise ValueError(f"Missing/invalid {key}")
     return val.strip()
+
+
+def published_markdown_matches(original, published, story_id):
+    """Allow only additive, story-local illustrations in published history.
+
+    approved_article() has already checked the published Markdown/blocks and
+    existence of every referenced local asset. Preserve every original block
+    and its order byte-for-byte; no text, link, quote or old image may change.
+    This exception is for the read-only audit of already published articles.
+    """
+    if original == published:
+        return True
+    if not isinstance(original, str) or not isinstance(published, str):
+        return False
+    before = original.split("\n\n")
+    index = 0
+    for block in published.split("\n\n"):
+        if index < len(before) and block == before[index]:
+            index += 1
+            continue
+        image = IMAGE_LINE.fullmatch(block)
+        source = IMAGE_SOURCE.fullmatch(image.group("src")) if image else None
+        if source is None or source.group("story") != story_id:
+            return False
+    return index == len(before)
 
 
 def validate_story(root, story_id, *, today=None, allow_published=False):
@@ -128,7 +153,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
             raise ValueError("Published inbox record has changed since release")
         approved = approved_article(root, story_id)
         if ("article_markdown" in data and
-                approved.get("article_markdown") != data["article_markdown"]):
+                not published_markdown_matches(data["article_markdown"],
+                                               approved.get("article_markdown"), story_id)):
             raise ValueError("Published editor Markdown differs from inbox original")
         if "companies" in data or "products" in data:
             selected = validate_editor_entities(
