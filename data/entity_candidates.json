@@ -4493,6 +4493,19 @@
           "source_url": "https://www.amazon.science/blog/mathematical-proof-powered-by-ai-and-no-hallucinations"
         }
       ]
+    },
+    {
+      "key": "microsoft-decision",
+      "name": "Microsoft Decision",
+      "company": "microsoft",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "microsoft-decision-1-1-20261117",
+          "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/"
+        }
+      ]
     }
   ]
 }
