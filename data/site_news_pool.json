@@ -8560,12 +8560,12 @@
       "summary": "24 ноября. Передача инструкций, длительные задания и запросы подтверждения пользователя в ходе операций.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:19:30+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8befc30ac765ba8a"
     },
     {
       "id": "n-86266e890e18a6d4",
@@ -8575,12 +8575,12 @@
       "summary": "24 ноября. ShellBench основан на реальных взаимодействиях с агентами; показатели по отдельным задачам проверить. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:19:30+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-86266e890e18a6d4"
     },
     {
       "id": "n-48919c55052d9c92",
@@ -8590,12 +8590,12 @@
       "summary": "25 ноября. Сервис индексирует содержимое сайта и предоставляет поисковый интерфейс агентам. Бета доступна на бесплатном тарифе.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:19:30+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-48919c55052d9c92"
     },
     {
       "id": "n-f5390a2aecae5dc0",
@@ -8620,12 +8620,12 @@
       "summary": "24 ноября. PrismML представила Ternary Bonsai 2.5 27B для программирования и работы с инструментами; веса Apache 2.0.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:19:30+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-57993858eb1cb093"
     },
     {
       "id": "n-ac2f786b30f6d457",
@@ -8635,12 +8635,12 @@
       "summary": "24 ноября. Лабораторные испытания подтвердили способность части разработанных белков связываться с заданными мишенями.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:19:30+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-ac2f786b30f6d457"
     },
     {
       "id": "n-d8e5196a64c4b578",

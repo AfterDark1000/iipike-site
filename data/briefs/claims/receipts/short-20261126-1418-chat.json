@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-20261126-1418-chat.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-8befc30ac765ba8a",
+      "pool_sequence": 572,
+      "title": "Anthropic научила MCP-серверы передавать Claude целые профессиональные навыки",
+      "source_url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+      "claimed_at": "2026-11-26T09:19:30+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-86266e890e18a6d4",
+      "pool_sequence": 573,
+      "title": "ИИ-агенты провалили почти 80% испытаний, связанных с необходимостью забрать ребёнка из школы",
+      "source_url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life",
+      "claimed_at": "2026-11-26T09:19:30+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-48919c55052d9c92",
+      "pool_sequence": 574,
+      "title": "Cloudflare разрешила владельцам сайтов открыть внутренний поиск для ИИ-агентов одной кнопкой",
+      "source_url": "https://blog.cloudflare.com/search-for-agents",
+      "claimed_at": "2026-11-26T09:19:30+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-57993858eb1cb093",
+      "pool_sequence": 576,
+      "title": "Нейросеть на 27 миллиардов параметров уместили в 5,9 ГБ",
+      "source_url": "https://prismml.com/news/bonsai-2-5-27b",
+      "claimed_at": "2026-11-26T09:19:30+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-ac2f786b30f6d457",
+      "pool_sequence": 577,
+      "title": "GPT-6 научилась проектировать новые белки без специализированных биологических нейросетей",
+      "source_url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "claimed_at": "2026-11-26T09:19:30+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
