@@ -23,3 +23,26 @@ test("picker uses real candidate titles, never slug as visible label",async()=>{
  assert.match(html,/minmax\(0,1fr\)/);
  assert.doesNotThrow(()=>new vm.Script(script));
 });
+
+test("copyeditor renders article Markdown as safe semantic HTML nodes",()=>{
+ const markdownHelpers=script.slice(script.indexOf("function node("),script.indexOf("function show()"));
+ assert.ok(markdownHelpers.includes("function rich(parent,content)"));
+ class FakeNode{
+  constructor(tag){this.tag=tag;this.children=[];this.textContent="";this.className="";}
+  appendChild(child){this.children.push(child);return child;}
+ }
+ const document={
+  createElement:tag=>new FakeNode(tag),
+  createTextNode:text=>({tag:"#text",textContent:text,children:[]})
+ };
+ const context=vm.createContext({document,URL});
+ vm.runInContext(markdownHelpers,context);
+ const root=new FakeNode("div");
+ context.rich(root,["В **Lila Sciences** поручили Nemotron составлять протоколы.","","## Зачем ИИ квантовые точки","","В [опыте с роботом](https://dzen.ru/a/example) результат был виден сразу."].join("\n"));
+ assert.deepEqual(root.children.map(x=>x.tag),["p","h2","p"]);
+ const first=root.children[0];
+ assert.ok(first.children.some(x=>x.tag==="strong"&&x.textContent==="Lila Sciences"));
+ const last=root.children[2];
+ assert.ok(last.children.some(x=>x.tag==="a"&&x.href==="https://dzen.ru/a/example"));
+ assert.doesNotThrow(()=>new vm.Script(script));
+});

@@ -96,6 +96,19 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn('background:#f1f7f5', self.html)
         self.assertIn('border-right:1px solid var(--line)', self.html)
 
+    def test_copyeditor_handoff_opens_the_exact_revision_and_previews_markdown(self):
+        corrector = (ROOT / "admin" / "auto-corrector" / "index.html").read_text(encoding="utf-8")
+        editor = (ROOT / "admin" / "auto-editor" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="main-editor-link"', corrector)
+        self.assertIn('"/admin/auto-editor/?article="+encodeURIComponent(item.article_id)', corrector)
+        self.assertIn('if(key==="article_markdown")', corrector)
+        self.assertIn('function rich(parent,content)', corrector)
+        self.assertIn('function safeUrl(value)', corrector)
+        self.assertNotIn("innerHTML", corrector)
+        self.assertIn('new URLSearchParams(window.location.search).get("article")', editor)
+        self.assertIn('rows.find(x=>x.doc?.article_id===requestedArticle', editor)
+        self.assertIn('if(requestedRow)void choose(requestedRow.name)', editor)
+
     def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
 
 
