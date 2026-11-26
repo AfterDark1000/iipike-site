@@ -2353,6 +2353,54 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/474",
       "approved_at_utc": "2026-11-26T09:33:31Z",
       "published_at_utc": "2026-11-26T09:33:31Z"
+    },
+    {
+      "pool_sequence": 578,
+      "pool_id": "n-d8e5196a64c4b578",
+      "slug": "philippines-ai-drones-banana-fusarium-20261125",
+      "headline": "На Филиппинах ИИ учат обнаруживать болезни бананов раньше фермеров",
+      "body": "Министерство сельского хозяйства Филиппин 25 ноября сообщило о предварительных результатах испытаний дронов на банановых плантациях. Точность подсчёта растений и выявления болезней в ежемесячных проверках составляла 96–99%. Теперь исследователи совершенствуют систему, чтобы распознавать фузариоз ещё до появления видимых симптомов. В регионе Давао эта болезнь уже поразила около 15 500 гектаров.",
+      "topic": "Технологии",
+      "event_date": "2026-11-25",
+      "source": "Philippine News Agency, заявление регионального управления сельского хозяйства",
+      "source_url": "https://www.pna.gov.ph/article/da-11-drone-ai-project-shows-promise-vs-fusarium-wilt",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/478",
+      "approved_at_utc": "2026-11-26T09:54:03Z",
+      "published_at_utc": "2026-11-26T09:54:03Z"
+    },
+    {
+      "pool_sequence": 582,
+      "pool_id": "n-a287de1f422e01b0",
+      "slug": "drupal-anthropic-scanner-exploited-20261124",
+      "headline": "Хакеры начали использовать уязвимость, обнаруженную ИИ от Anthropic",
+      "body": "Разработчики системы управления сайтами Drupal подтвердили атаки с использованием уязвимости CVE-2026-132165, которую обнаружил ИИ-сканер Anthropic. Первые известные случаи взлома зафиксированы уже на следующий день после выхода исправления. 24 ноября американское агентство кибербезопасности CISA внесло уязвимость в список активно эксплуатируемых и потребовало от федеральных ведомств обновить системы до 27 ноября.",
+      "topic": "Безопасность",
+      "event_date": "2026-11-24",
+      "source": "Drupal, официальный бюллетень безопасности",
+      "source_url": "https://www.drupal.org/sa-core-2026-017",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/479",
+      "approved_at_utc": "2026-11-26T09:54:05Z",
+      "published_at_utc": "2026-11-26T09:54:05Z"
+    },
+    {
+      "pool_sequence": 588,
+      "pool_id": "n-3e6c89c17dd610c9",
+      "slug": "perplexity-time-machine-20261125",
+      "headline": "Perplexity запустила машину времени для интернет-поиска",
+      "body": "Perplexity представила Time Machine, позволяющую искать информацию в интернете такой, какой она была на выбранную дату за последние 365 дней. Система использует сохранённые копии веб-страниц. Можно, например, узнать, сколько стоила подписка на какой-либо сервис несколько месяцев назад или как изменились условия его использования. Функция доступна разработчикам через API без дополнительной наценки.",
+      "topic": "Технологии",
+      "event_date": "2026-11-25",
+      "source": "Perplexity, официальный анонс",
+      "source_url": "https://www.perplexity.ai/en-GB/hub/blog/freeze-the-web-with-perplexity-time-machine",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/480",
+      "approved_at_utc": "2026-11-26T09:54:07Z",
+      "published_at_utc": "2026-11-26T09:54:07Z"
     }
   ]
 }
