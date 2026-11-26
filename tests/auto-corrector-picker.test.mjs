@@ -38,7 +38,7 @@ test("copyeditor renders article Markdown as safe semantic HTML nodes",()=>{
  const context=vm.createContext({document,URL});
  vm.runInContext(markdownHelpers,context);
  const root=new FakeNode("div");
- context.rich(root,"В **Lila Sciences** поручили Nemotron составлять протоколы.\\n\\n## Зачем ИИ квантовые точки\\n\\nВ [опыте с роботом](https://dzen.ru/a/example) результат был виден сразу.");
+ context.rich(root,["В **Lila Sciences** поручили Nemotron составлять протоколы.","","## Зачем ИИ квантовые точки","","В [опыте с роботом](https://dzen.ru/a/example) результат был виден сразу."].join("\n"));
  assert.deepEqual(root.children.map(x=>x.tag),["p","h2","p"]);
  const first=root.children[0];
  assert.ok(first.children.some(x=>x.tag==="strong"&&x.textContent==="Lila Sciences"));
