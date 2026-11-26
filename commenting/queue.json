@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25T23:16:56.811168Z",
+  "updated_at": "2026-11-26T04:59:49.658049Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
-      "fresh_matches": 5
+      "fresh_matches": 4
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-25T23:16:56.811168Z",
-      "last_success_at": "2026-11-25T23:16:56.811168Z",
+      "checked_at": "2026-11-26T04:59:49.658049Z",
+      "last_success_at": "2026-11-26T04:59:49.658049Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-26",
-    "attempted": 6
+    "attempted": 9
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -93,10 +93,14 @@
       "first_seen_at": "2026-11-25T22:28:52.977287Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, что саму рукопись написала внутренняя модель компании, но Lean проверил только частный случай без деления. Посмотрим, что скажут сторонние математики, когда дочитают до конца.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-26T04:59:49.658049Z",
+      "reason": "Задета деталь про ограничение машинной проверки доказательства.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T04:59:49.658049Z"
     },
     {
       "id": "931fcb34efc07a3173478052",
@@ -148,10 +152,14 @@
       "first_seen_at": "2026-11-25T22:28:52.977287Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Памяти хватает на десять часов записи, а вот сколько браслет проживет с включенным диктофоном и датчиком пульса — вопрос открытый. Производитель скромно умалчивает про реальное время работы под нагрузкой.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-26T04:59:49.658049Z",
+      "reason": "Упомянут объем памяти под аудио и поставлен под сомнение реальный расход батареи.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T04:59:49.658049Z"
     },
     {
       "id": "2ccd07b95f93b004cb55ad0c",
@@ -207,12 +215,14 @@
       "first_seen_at": "2026-11-25T12:44:59.073090Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-25T12:44:59.073090Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, что Anthropic разрешает вешать ярлык приложений на любые поделки без проверки, но забывает про элементарную безопасность. Жди теперь слитые базы через чей-нибудь самодельный календарь.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-26T04:59:49.658049Z",
+      "reason": "Выделен факт отсутствия проверки приложений, оценена практическая уязвимость.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T04:59:49.658049Z"
     },
     {
       "id": "c9a41979f13cda136f9b91c7",
@@ -2539,23 +2549,6 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "dzen_url": null,
       "first_seen_at": "2026-11-19T09:28:44.175726Z",
-      "views": null,
-      "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "4a3105c4c646437697d2f471",
-      "title": "ИИ больше не эксклюзив смартфонов с большим объемом памяти: Google адаптировала Gemini для устройств с 2 ГБ ОЗУ",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/19/ii-bolse-ne-ekskliuziv-dorogix-smartfonov-google-adaptirovala-gemini-dlia-smartfonov-s-2-gb-operativnoi-pamiati.html",
-      "published_at": "2026-11-18T23:41:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-19T01:27:32.490715Z",
       "views": null,
       "comments": null,
       "status": "pending",
