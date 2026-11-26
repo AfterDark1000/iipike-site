@@ -42,7 +42,7 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: true
-      - name: Atomic short-only reserve and receipt
+      - name: Atomic short reserve or return and receipt
         shell: bash
         run: |
           set -euo pipefail
@@ -53,16 +53,17 @@ jobs:
             python3 scripts/editorial_routing.py --validate
             python3 scripts/briefs_claim.py --consume --report "$RUNNER_TEMP/hpii-short-claims.json"
             python3 scripts/site_news_pool.py --validate
-            git add -- data/site_news_pool.json data/briefs/claims/receipts/
-            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/briefs/claims/receipts/[a-z0-9._-]+\.json)$'; then
-              echo 'UNSAFE: changed path outside pool and short receipts'; exit 1
+            python3 scripts/editorial_routing.py --validate
+            git add -- data/site_news_pool.json data/editorial_routing.json data/briefs/candidates.json data/briefs/claims/receipts/
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/editorial_routing\.json|data/briefs/candidates\.json|data/briefs/claims/receipts/[a-z0-9._-]+\.json)$'; then
+              echo 'UNSAFE: changed path outside pool, routes, candidates and short receipts'; exit 1
             fi
             if git diff --cached --quiet; then
               echo 'NO_PENDING_SHORT_REQUEST'; exit 0
             fi
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'chore(briefs): reserve one short editorial item and receipt [skip ci]'
+            git commit -m 'chore(briefs): process short editorial requests and receipts [skip ci]'
             if git push origin HEAD:main; then
               echo 'HPII_SHORT_RESERVATION_COMMITTED'
               cat "$RUNNER_TEMP/hpii-short-claims.json"
