@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-pass01.json",
+  "request_sha256": "d494ac20097b67356877fb22b68fc34899b2915a32fe1aa3d8c2a3a80a3da44c",
+  "worker": "hpii-manual-editor",
+  "status": "reserved",
+  "pool_id": "n-ae6a9e994b3a32ff",
+  "pool_sequence": 589,
+  "claimed_at": "2026-11-26T10:40:22.333214+00:00",
+  "effective_priority": "high"
+}
