@@ -673,7 +673,7 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
 .home-v1 .header{background:var(--paper)}
 .home-v1 .bar{padding-block:22px;gap:24px}
 .home-v1 .logo{font-size:18px;letter-spacing:-.025em;gap:12px;line-height:1.05}
-.home-v1 .logo .badge{background:var(--red);color:white;border:0;border-radius:0;padding:9px;font-size:20px}
+.home-v1 .logo .badge{background:var(--red);color:white;border:0;border-radius:0;padding:9px;font-size:20px;transform:none;box-shadow:none;width:auto;height:auto;flex:none}
 .home-v1 .logo small{font-size:9px;letter-spacing:.13em;color:var(--muted);margin-top:6px}
 .home-v1 .home-menu{display:flex;gap:12px 20px;flex-wrap:wrap}
 .home-v1 .home-menu a{font-size:13px;letter-spacing:0;text-transform:none;font-weight:650}
@@ -705,7 +705,7 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
 .home-v1 .home-v1-topgrid>.brief-home{border:0;border-left:1px solid var(--line);padding-left:24px}
 .home-v1 .brief-home-overline{display:none}
 .home-v1 .brief-home-grid{display:block;border:0}
-.home-v1 .brief-home-link{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;min-height:0;padding:12px 0;border:0;border-bottom:1px solid var(--line)}
+.home-v1 .brief-home-grid .brief-home-link{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;min-height:0;padding:12px 0;border:0;border-bottom:1px solid var(--line)}
 .home-v1 .brief-home-link:hover{background:none}
 .home-v1 .brief-home-time{gap:1px}
 .home-v1 .brief-home-time span{font-size:11px;color:var(--muted);font-weight:400}
