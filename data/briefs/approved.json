@@ -2241,6 +2241,54 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/464",
       "approved_at_utc": "2026-11-26T09:03:55Z",
       "published_at_utc": "2026-11-26T09:03:55Z"
+    },
+    {
+      "slug": "taiwan-ntu-efficient-transformer-chips-20261125",
+      "pool_id": "n-80b87172da6a5c5f",
+      "pool_sequence": 563,
+      "headline": "На Тайване изготовили новый чип для нейросетей, работающих без облака",
+      "topic": "Наука",
+      "event_date": "2026-11-25",
+      "source": "Национальный научно-технический совет Тайваня (NSTC)",
+      "source_url": "https://www.nstc.gov.tw/folksonomy/detail/bf85636f-e366-4fee-a801-fc045175506b?l=en",
+      "body": "25 ноября научный совет Тайваня рассказал о разработках Национального университета Тайваня. Два предыдущих экспериментальных чипа ускоряют работу и обучение нейросетей, сокращая лишние вычисления и расход памяти. В октябре команда изготовила уже третий чип по 16-нм техпроцессу: он призван уменьшить объём данных, которые приходится передавать между процессором и памятью.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/466",
+      "approved_at_utc": "2026-11-26T09:15:15Z",
+      "published_at_utc": "2026-11-26T09:15:15Z"
+    },
+    {
+      "slug": "ambarella-liquid-ai-local-agents-20261124",
+      "pool_id": "n-996b7825be6194fd",
+      "pool_sequence": 564,
+      "headline": "Liquid AI и Ambarella хотят поселить ИИ-агентов прямо в камерах наблюдения",
+      "topic": "Технологии",
+      "event_date": "2026-11-24",
+      "source": "Ambarella, официальный пресс-релиз на GlobeNewswire",
+      "source_url": "https://www.globenewswire.com/news-release/2026/11/24/3409866/23306/en/ambarella-and-liquid-ai-partner-to-accelerate-device-native-agentic-ai-for-physical-ai-applications.html",
+      "body": "24 ноября разработчик чипов Ambarella и Liquid AI объявили о сотрудничестве. Они адаптируют модели LFM3 для устройств, которые смогут анализировать видео, принимать решения и проверять результаты своих действий без постоянной связи с облаком. Начнут с систем безопасности и городской инфраструктуры. Модели уже доступны разработчикам на платформе Ambarella, а совместные демонстрации запланированы на CES 2027.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/467",
+      "approved_at_utc": "2026-11-26T09:15:17Z",
+      "published_at_utc": "2026-11-26T09:15:17Z"
+    },
+    {
+      "slug": "malaysia-datacenter-seven-us-blacklisted-firms-20261124",
+      "pool_id": "n-2df7e6787709220a",
+      "pool_sequence": 567,
+      "headline": "Малайзия попросит дата-центры прекратить обслуживать семь компаний из списка США",
+      "topic": "Бизнес",
+      "event_date": "2026-11-24",
+      "source": "Министерство инвестиций, торговли и промышленности Малайзии (MITI), заявление",
+      "source_url": "https://www.miti.gov.my/miti/resources/Media%20Release/THE_ADDITION_OF_MALAYSIAN_ENTITIES_TO_THE_US_ENTITY_LIST_-_UNDER_BUREAU_OF_INDUSTRY_AND_SECURITY_OF_THE_US_DEPARTMENT_OF_COMMERCE.pdf",
+      "body": "Министерство торговли Малайзии 24 ноября сообщило, что местным дата-центрам направят уведомления с рекомендацией не предоставлять услуги и не сдавать площади семи компаниям, попавшим в американский список экспортных ограничений. Среди них сингапурская Megaspeed и её малайзийская дочерняя компания Speedmatrix. Власти хотят пресечь обход ограничений на поставки передовых ИИ-чипов.",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/468",
+      "approved_at_utc": "2026-11-26T09:15:19Z",
+      "published_at_utc": "2026-11-26T09:15:19Z"
     }
   ]
 }

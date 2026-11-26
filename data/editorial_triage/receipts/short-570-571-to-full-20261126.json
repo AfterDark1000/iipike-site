@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "short-570-571-to-full-20261126.json",
+  "request_sha256": "8046264b8965118a1fbc7feb545a1195fbe5d34af6a85f847ce5a558dd03dc5f",
+  "status": "applied",
+  "applied": [
+    570,
+    571
+  ],
+  "unchanged": [],
+  "skipped": []
+}
