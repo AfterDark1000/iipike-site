@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collections-20261126-chief-approved-ai_digital_housekeeping_20261126-v1.json",
+  "request_sha256": "8f3661575fc1f33baa5f1e922238c116f5fe194ba7c95c9c04266959931be0f8",
+  "status": "applied",
+  "applied": [
+    210,
+    216,
+    484
+  ],
+  "unchanged": [],
+  "skipped": []
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collections-20261126-chief-approved-ai_free_indie_tools_20261126-v1.json",
+  "request_sha256": "7cabdb27ee6660e8bbfbe0cdffd7cec918ec0995bfa8f9f4e58b2247b7686fd6",
+  "status": "rejected",
+  "error": "Invalid editorial collection metadata"
+}

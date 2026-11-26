@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collections-20261126-chief-approved-ai_agents_earning_money_20261126-v1.json",
+  "request_sha256": "a4d9942f70e299efbb670da26b12895a4bec269852fa8832a96373d8bd073d8c",
+  "status": "applied",
+  "applied": [
+    496
+  ],
+  "unchanged": [],
+  "skipped": []
+}
