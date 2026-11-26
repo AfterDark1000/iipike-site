@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T15:07:35.223132Z",
+  "updated_at": "2026-11-26T15:43:39.566414Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 4
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -64,20 +64,20 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T15:07:35.223132Z",
-      "last_success_at": "2026-11-26T15:07:35.223132Z",
+      "checked_at": "2026-11-26T15:43:39.566414Z",
+      "last_success_at": "2026-11-26T15:43:39.566414Z",
       "error": null,
       "fresh_matches": 2
     }
   ],
   "generator": {
-    "status": "error",
+    "status": "ok",
     "model": "gemini-3.5-flash-lite",
-    "message": "Модель вернула HTTP 503; повторов и платной подмены нет"
+    "message": "Обработано статей: 3"
   },
   "usage": {
     "date": "2026-11-26",
-    "attempted": 15
+    "attempted": 18
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -112,10 +112,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Глава Anthropic очень удобно разделил рутинную автоматизацию и полный контроль. Только на практике границу между ними провести сложнее всего.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-26T15:43:39.566414Z",
+      "reason": "Зацепился за разницу между автоматизацией задач и передачей контроля, о которой говорит Амодеи.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T15:43:39.566414Z"
     },
     {
       "id": "546926ea33ec080a43835859",
@@ -129,10 +133,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Пункт про работу интерфейса с выключенным ИИ звучит как лучшее описание того, каким должен быть любой современный софт.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-26T15:43:39.566414Z",
+      "reason": "Выделил деталь про сохранение работоспособности системы при отключенном искусственном интеллекте.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-26T15:43:39.566414Z"
     },
     {
       "id": "699cec9dc39b634bf368dd2c",
@@ -269,10 +277,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-26T15:43:39.566414Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-26T15:43:39.566414Z"
     },
     {
       "id": "7d49547e84a731718bd04eca",
