@@ -239,5 +239,70 @@ class RoutingTests(unittest.TestCase):
         self.assertTrue(long_allowed({"id": "n-0000000000000000"}, routes))
 
 
+
+    def test_return_short_to_ordinary_request(self):
+        import json
+        from scripts import briefs_claim
+        pool, routes = fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pool, item = claim_short(pool, routes=routes, root=root, now=NOW)
+            route_doc = {"schema_version": 1, "approved_date": "2026-11-19",
+                         "source": "test", "source_pool_sha": "test", "note": "test",
+                         "items": list(routes.values())}
+            candidate = {"status": "pending_review", "pool_id": item["id"],
+                         "slug": "short-test", "headline": "Short test",
+                         "body": "Draft", "fact_check": "test", "source_url": item["source_url"]}
+            for path, obj in ((briefs_claim.POOL, pool),
+                              (Path("data/editorial_routing.json"), route_doc),
+                              (Path("data/briefs/candidates.json"), {"schema_version": 1, "items": [candidate]})):
+                dest = root / path
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text(json.dumps(obj), encoding="utf-8")
+            req = root / briefs_claim.REQUESTS / "return-short-001.json"
+            req.parent.mkdir(parents=True)
+            req.write_text(json.dumps({"schema_version": 1, "action": "return_to_long",
+                "worker": "hpii-short-editor", "pool_id": item["id"],
+                "pool_sequence": item["sequence"], "claimed_at": NOW}))
+            receipt = briefs_claim.consume(root, now=NOW)[req.name]
+            self.assertEqual(receipt["status"], "returned_to_long")
+            self.assertEqual(receipt["removed_candidate"], "short-test")
+            saved = json.loads((root / briefs_claim.POOL).read_text())
+            target = saved["items"][0]
+            self.assertEqual((target["status"], target["priority"], target["review_started_at"]),
+                             ("queued", "normal", None))
+            self.assertEqual(saved["items"][1:], pool["items"][1:])
+            route_saved = json.loads((root / "data/editorial_routing.json").read_text())
+            self.assertEqual(route_saved["items"][0]["decision"], "full")
+            self.assertEqual(route_saved["items"][1:], route_doc["items"][1:])
+            self.assertEqual(json.loads((root / "data/briefs/candidates.json").read_text())["items"], [])
+            self.assertEqual(briefs_claim.consume(root, now=NOW), {})
+
+    def test_return_rejects_approved_foreign_and_stale(self):
+        from scripts.briefs_claim import return_to_long
+        pool, routes = fixture()
+        with tempfile.TemporaryDirectory() as tmp:
+            pool, item = claim_short(pool, routes=routes, root=Path(tmp), now=NOW)
+        route_doc = {"schema_version": 1, "approved_date": "2026-11-19",
+                     "source": "test", "source_pool_sha": "test", "note": "test",
+                     "items": list(routes.values())}
+        req = {"pool_id": item["id"], "pool_sequence": item["sequence"], "claimed_at": NOW}
+        original = copy.deepcopy(pool)
+        with self.assertRaisesRegex(ValueError, "Approved"):
+            return_to_long(pool, route_doc, {"items": []},
+                           {"items": [{"pool_id": item["id"]}]}, req)
+        with self.assertRaisesRegex(ValueError, "stale"):
+            return_to_long(pool, route_doc, {"items": []}, {"items": []},
+                           {**req, "claimed_at": "2026-11-20T05:00:00+00:00"})
+        with self.assertRaisesRegex(ValueError, "stale"):
+            return_to_long(pool, route_doc, {"items": []}, {"items": []},
+                           {**req, "pool_sequence": 99})
+        foreign = copy.deepcopy(pool)
+        foreign["items"][0]["note"] = "Other editor"
+        with self.assertRaisesRegex(ValueError, "another worker"):
+            return_to_long(foreign, route_doc, {"items": []}, {"items": []}, req)
+        self.assertEqual(pool, original)
+
+
 if __name__ == "__main__":
     unittest.main()
