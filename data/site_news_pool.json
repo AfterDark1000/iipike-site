@@ -5065,12 +5065,12 @@
       "summary": "19 ноября. Компания представила модель для классификации, маршрутизации и быстрых автоматизированных решений.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-26T16:50:22.600831+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверен анонс Microsoft от 17.11.2026 https://commandline.microsoft.com/microsoft-decision-model-ga/ (не 19.11), карточка https://ai.azure.com/catalog/models/Microsoft-Decision-1.1?flight=ModelCatalogIndustryFilters. GA в Foundry, OpenRouter, Vercel; Gemma 4 26B A4B, закрытые варианты с калиброванными вероятностями, без генерации текста/объяснений, вход текст/изображения. Copilot routing по данным Microsoft 2,2x быстрее, 4,4x дешевле при сопоставимой точности; Cowork Auto выбирает reasoning effort. Global Standard $0.042/млн входных, выход бесплатный; 4000+ клиентов с preview. Каталог: прямого дубля нет, подтверждена внутренняя ссылка на GPT-6 Luna Decisions, Dzen ID 6adb23aa40c3ad0e7fe7a95a. @Microsoft проверен. На утверждении."
+      "closed_at": "2026-11-26T16:55:46+00:00",
+      "article_id": "microsoft-decision-1-1-20261117",
+      "note": "Главред утвердил статью с удалением избыточной атрибуции. Статья, внутренняя ссылка, VK, Threads/X сохранены и проверены. Ожидается обложка."
     },
     {
       "id": "n-f0b81ce3c1461288",

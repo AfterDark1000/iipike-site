@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve11.json",
+  "request_sha256": "eedd0d7192f14037b99e20f18867829336539665c1485d39abe5cc79e6533ce1",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-d8c780d9a81b0858",
+  "pool_sequence": 339,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T16:50:22.600831+00:00",
+  "note": "Главред утвердил статью с удалением избыточной атрибуции. Статья, внутренняя ссылка, VK, Threads/X сохранены и проверены. Ожидается обложка."
+}
