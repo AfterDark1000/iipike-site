@@ -43,6 +43,10 @@ class YandexMetrikaTests(unittest.TestCase):
         pages = sorted(ROOT.rglob("index.html"))
         self.assertGreater(len(pages), 200)
         for page in pages:
+            # Isolated, noindex design prototypes are not reader analytics.
+            # Their separate regression test below enforces this boundary.
+            if ROOT / "lab" / "design" in page.parents:
+                continue
             # Campaign shortcuts are redirect-only and must not load the tracker.
             # A tracker on these pages would count a duplicate pageview.
             if page in (ROOT / "dzen" / "index.html",
@@ -61,6 +65,20 @@ class YandexMetrikaTests(unittest.TestCase):
             self.assertEqual(len(matches), 1, str(page.relative_to(ROOT)))
             self.assertEqual((page.parent / matches[0]).resolve(), SHARED.resolve(),
                              str(page.relative_to(ROOT)))
+
+    def test_design_lab_is_noindex_and_tracker_free(self):
+        lab = ROOT / "lab" / "design"
+        pages = sorted(lab.rglob("index.html"))
+        self.assertTrue(pages, "Design laboratory pages missing")
+        for page in pages:
+            with self.subTest(page=str(page.relative_to(ROOT))):
+                html = page.read_text(encoding="utf-8")
+                parser = ScriptSources()
+                parser.feed(html)
+                self.assertFalse(any("social-footer.js" in src for src in parser.script_srcs))
+                self.assertNotIn("mc.yandex.ru", html)
+                self.assertNotIn(COUNTER, html)
+                self.assertRegex(html, r'(?i)<meta\s+name="robots"\s+content="[^"]*\bnoindex\b[^"]*">')
 
     def test_future_generated_templates_reference_shared_file(self):
         for file in ("scripts/publish_approved_article.py", "scripts/site_topics.py",
