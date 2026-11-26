@@ -4467,6 +4467,19 @@
           "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
         }
       ]
+    },
+    {
+      "key": "astra-for-law",
+      "name": "Astra for Law",
+      "company": "openai",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "openai-astra-for-law-20261117",
+          "source_url": "https://openai.com/index/astra-law-6-2/"
+        }
+      ]
     }
   ]
 }
