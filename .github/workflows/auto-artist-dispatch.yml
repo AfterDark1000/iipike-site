@@ -69,7 +69,7 @@ jobs:
           # verified by the successful, recent gateway deployment pipeline.
           # Fail closed unless live health OR a deployment's live-check step
           # was actually successful. No unverified source-code assumption.
-          if GITHUB_TOKEN="\x24{{ secrets.GITHUB_TOKEN }}" python3 - <<'PY'
+          if GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}" python3 - <<'PY'
           import datetime, json, os, urllib.request
           from urllib.error import HTTPError, URLError
 
