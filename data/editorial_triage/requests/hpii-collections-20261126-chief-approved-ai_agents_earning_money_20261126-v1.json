@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "action": "collection_upsert",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "collection": {
+    "group": "ai_agents_earning_money_20261126",
+    "title": "ИИ отправили зарабатывать деньги",
+    "state": "collecting",
+    "primary_sequence": 496,
+    "members": [
+      {
+        "sequence": 496,
+        "pool_id": "n-1e1cbf4c4fc23ccb"
+      }
+    ],
+    "note": "Собирать проверяемые пользовательские эксперименты, где агенты самостоятельно ищут клиентов, продают услуги или ведут бизнес. №496: автор описал эксперимент с тремя агентами и сроком до полуночи (https://news.ycombinator.com/item?id=50593162); финансовый результат не подтверждён. Не выдавать попытки за заработок; искать оригинальные отчёты и подтверждённые итоги. Открывать только после отдельного согласия главреда."
+  }
+}
