@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 from scripts.site_news_pool import add, next_item, validate as validate_pool
 from scripts.auto_editor_workbench import (
@@ -219,6 +220,45 @@ class AutoEditorClaimTests(unittest.TestCase):
             self.assertEqual(report[path.name]["status"], "rejected")
             self.assertIn("AUTO_EDITOR_DAILY_CAP_5", report[path.name]["error"])
             self.assertEqual(json.loads((root / POOL).read_text()), original)
+
+    def test_dispatch_request_never_reserves_substitute(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pool = pool_with(("First ordinary news", "normal"), ("Second ordinary news", "normal"))
+            (root / POOL).parent.mkdir(parents=True)
+            (root / POOL).write_text(json.dumps(pool), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            from scripts.editorial_routing import ROUTES
+            (root / ROUTES).write_text("{}", encoding="utf-8")
+            routes = {i["id"]: {"lane":"long","decision":"full"} for i in pool["items"]}
+            path = root / REQUESTS / "dispatch-exact.json"
+            path.write_text(json.dumps({"schema_version":2,"action":"claim_ordinary",
+                "worker":"hpii-auto-editor","dispatch_sha":"a"*40}), encoding="utf-8")
+            with patch("scripts.editorial_routing.load_routes", return_value=routes), \
+                 patch("scripts.auto_editor_workbench.check_dispatch", return_value=pool["items"][1]["id"]):
+                result = consume(root, now=NOW, paths=[path])
+            self.assertEqual(result[path.name]["status"], "rejected")
+            self.assertIn("DISPATCH_FIFO_CHANGED", result[path.name]["error"])
+            self.assertEqual(json.loads((root / POOL).read_text()), pool)
+
+    def test_dispatch_request_can_reserve_exact_fifo(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pool = pool_with(("First ordinary news", "normal"))
+            (root / POOL).parent.mkdir(parents=True)
+            (root / POOL).write_text(json.dumps(pool), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            from scripts.editorial_routing import ROUTES
+            (root / ROUTES).write_text("{}", encoding="utf-8")
+            routes = {i["id"]: {"lane":"long","decision":"full"} for i in pool["items"]}
+            path = root / REQUESTS / "dispatch-exact.json"
+            path.write_text(json.dumps({"schema_version":2,"action":"claim_ordinary",
+                "worker":"hpii-auto-editor","dispatch_sha":"a"*40}), encoding="utf-8")
+            with patch("scripts.editorial_routing.load_routes", return_value=routes), \
+                 patch("scripts.auto_editor_workbench.check_dispatch", return_value=pool["items"][0]["id"]):
+                result = consume(root, now=NOW, paths=[path])
+            self.assertEqual(result[path.name]["status"],"reserved")
+            self.assertEqual(result[path.name]["pool_id"],pool["items"][0]["id"])
 
     def test_malicious_request_rejected_no_hot_claim(self):
         with tempfile.TemporaryDirectory() as tmp:

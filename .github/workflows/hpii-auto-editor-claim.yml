@@ -54,7 +54,7 @@ jobs:
           set -euo pipefail
           for attempt in 1 2 3; do
             echo "Ordinary-only reservation attempt ${attempt}/3"
-            git fetch origin main
+            git fetch origin main editorial-intake
             git reset --hard origin/main
             python3 -m unittest discover -s tests -p 'test_auto_editor_workbench.py' -q
             python3 scripts/auto_editor_workbench.py --consume \

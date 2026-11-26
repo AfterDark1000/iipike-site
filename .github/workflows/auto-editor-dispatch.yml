@@ -4,7 +4,7 @@ on:
     - cron: '45 * * * *'
   workflow_dispatch:
   workflow_run:
-    workflows: ['HPII — watchdog (no publishing)']
+    workflows: ['HPII — watchdog (no publishing)', 'HPII — auto-editor ordinary-only reservations (NO PUBLICATION)']
     types: [completed]
   push:
     branches: [main]

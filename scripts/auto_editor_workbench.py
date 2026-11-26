@@ -43,6 +43,12 @@ def valid_request(path):
             or path.stat().st_size > 4096):
         raise ValueError("Invalid immutable auto-editor request filename or size")
     data = json.loads(path.read_text(encoding="utf-8"))
+    if (type(data) is dict and set(data) == {"schema_version", "action", "worker", "dispatch_sha"}
+            and type(data["schema_version"]) is int and data["schema_version"] == 2
+            and data["action"] == "claim_ordinary" and data["worker"] == "hpii-auto-editor"
+            and isinstance(data["dispatch_sha"], str)
+            and re.fullmatch(r"[0-9a-f]{40}", data["dispatch_sha"])):
+        return data
     if (type(data) is not dict or set(data) != {"schema_version", "action", "worker"}
             or type(data["schema_version"]) is not int or data["schema_version"] != 1
             or data["action"] != "claim_ordinary"
@@ -130,6 +136,34 @@ def claim_ordinary(pool, request_filename, *, now=None, used_ids=(), routing=Non
     }
     return result, ticket
 
+def check_dispatch(root, name, request, now):
+    """Resolve the immutable dispatcher assignment and check the live intake guards.
+    All Git IO stays server-side; no changes are made by this check.
+    """
+    def git(*args):
+        return subprocess.run(["git", "-C", str(root), *args],
+                              capture_output=True, text=True, check=True).stdout.strip()
+    sha = request["dispatch_sha"]
+    ref = git("rev-parse", "origin/editorial-intake")
+    current = git("rev-parse", ref + ":editorial_inbox/auto_editor_dispatch/current.json")
+    if current != sha:
+        raise ValueError("DISPATCH_STALE: refresh assignment, do not duplicate request")
+    ticket = json.loads(git("cat-file", "blob", sha))
+    job = ticket.get("job") or {}
+    if (ticket.get("schema_version") != 1 or ticket.get("status") != "ready"
+            or job.get("kind") != "new" or job.get("request") != name
+            or not utc_time(ticket["prepared_at"]) <= now <= utc_time(ticket["valid_until"])):
+        raise ValueError("DISPATCH_INVALID: request does not match a current new assignment")
+    for folder in ("auto_drafts", "auto_decisions", "auto_copyedits", "auto_copyedit_responses"):
+        path = "editorial_inbox/" + folder
+        proc = subprocess.run(["git", "-C", str(root), "rev-parse", "--verify", ref+":"+path],
+                              capture_output=True, text=True)
+        actual = proc.stdout.strip() if proc.returncode == 0 else None
+        if path not in ticket["intake_guard"] or actual != ticket["intake_guard"][path]:
+            raise ValueError("DISPATCH_STALE: editorial inputs changed: "+path)
+    return job["candidate"]["id"]
+
+
 def consume(root=ROOT, *, now=None, paths=None):
     """Read latest checkout; update pool and all receipts in one Git commit later."""
     root = Path(root)
@@ -169,11 +203,17 @@ def consume(root=ROOT, *, now=None, paths=None):
                 raise ValueError("Invalid existing receipt")
             continue
         try:
-            valid_request(path)
+            request = valid_request(path)
+            exact = (check_dispatch(root, path.name, request, now_utc)
+                     if request["schema_version"] == 2 else None)
+            if exact is not None and not strict:
+                raise ValueError("DISPATCH_INVALID: explicit routing required")
             if len(recent_claims) >= MAX_NEW_CLAIMS_PER_24H:
                 raise ValueError("AUTO_EDITOR_DAILY_CAP_5: rolling 24-hour reservation quota reached")
             updated, ticket = claim_ordinary(current, path.name, now=now,
                                              used_ids=used_ids, routing=routes, strict_routes=strict)
+            if exact is not None and (ticket is None or ticket["pool_id"] != exact):
+                raise ValueError("DISPATCH_FIFO_CHANGED: no substitute reserved")
             current = updated
             receipt = {
                 "schema_version": 1, "request": path.name,
