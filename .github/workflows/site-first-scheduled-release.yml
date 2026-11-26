@@ -92,7 +92,7 @@ jobs:
           for attempt in 1 2 3; do
             # The release worker may have updated main. Never write against its
             # old checkout; fetch and re-evaluate the latest production catalog.
-            git fetch origin main
+            git fetch origin main refs/heads/editorial-intake:refs/remotes/origin/editorial-intake
             git reset --hard origin/main
             git switch --detach origin/main
             # Raw candidate data is NOT a publishing prerequisite. A malformed
