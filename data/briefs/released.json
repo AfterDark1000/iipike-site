@@ -525,6 +525,10 @@
     {
       "slug": "openai-codex-gpt-6-2-usage-correction-20261125",
       "published_at_utc": "2026-11-25T14:09:16Z"
+    },
+    {
+      "slug": "claude-vp-vnp-proof-unverified-20261123",
+      "published_at_utc": "2026-11-26T07:09:09Z"
     }
   ]
 }
