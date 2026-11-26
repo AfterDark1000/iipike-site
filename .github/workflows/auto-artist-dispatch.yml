@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '45 * * * *'
   workflow_dispatch:
+  # Backup trigger: GitHub may delay or skip scheduled events.
+  # The watchdog runs independently and has no dependency on this dispatcher.
+  workflow_run:
+    workflows: ['HPII — watchdog (no publishing)']
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -49,6 +54,7 @@ jobs:
     timeout-minutes: 8
     permissions:
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
         with:
@@ -59,14 +65,58 @@ jobs:
         run: |
           set -euo pipefail
           parallel=()
-          if python3 - <<'PY'
-          import json, urllib.request
+          # A transient /health failure must not silently disable a feature
+          # verified by the successful, recent gateway deployment pipeline.
+          # Fail closed unless live health OR a deployment's live-check step
+          # was actually successful. No unverified source-code assumption.
+          if GITHUB_TOKEN="\x24{{ secrets.GITHUB_TOKEN }}" python3 - <<'PY'
+          import datetime, json, os, urllib.request
+          from urllib.error import HTTPError, URLError
+
+          health = 'https://hpii-admin-gateway.svuktablet.workers.dev/health'
           try:
-              with urllib.request.urlopen("https://hpii-admin-gateway.svuktablet.workers.dev/health", timeout=10) as r:
-                  j=json.load(r)
-              assert j.get("ok") is True and j.get("parallel_cover_review") is True
-          except Exception:
-              raise SystemExit(1)
+              request = urllib.request.Request(health, headers={'User-Agent': 'HPII-Artist-Dispatcher'})
+              with urllib.request.urlopen(request, timeout=12) as response:
+                  payload = json.load(response)
+              if payload.get('ok') is True and payload.get('parallel_cover_review') is True:
+                  print('ARTIST_PARALLEL_VERIFIED:live_health')
+                  raise SystemExit(0)
+              print('Artist: live health does not confirm parallel review')
+          except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
+              print('Artist: live health unavailable:', type(exc).__name__)
+          # The deploy workflow's last step makes the *same live health
+          # assertion*. Require it to have succeeded, and limit its age.
+          base = 'https://api.github.com/repos/AfterDark1000/iipike-site'
+          token = os.environ.get('GITHUB_TOKEN', '')
+          if not token:
+              raise SystemExit('ARTIST_PARALLEL_UNVERIFIED:no_actions_token')
+          def github(path):
+              request = urllib.request.Request(base + path, headers={
+                  'Authorization': 'Bearer ' + token,
+                  'Accept': 'application/vnd.github+json',
+                  'User-Agent': 'HPII-Artist-Dispatcher'})
+              with urllib.request.urlopen(request, timeout=12) as response:
+                  return json.load(response)
+          try:
+              runs = github('/actions/workflows/hpii-admin-gateway-deploy.yml/runs?status=success&per_page=5')['workflow_runs']
+              cutoff = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=7)
+              for run in runs:
+                  created = datetime.datetime.fromisoformat(run['created_at'].replace('Z', '+00:00'))
+                  if created < cutoff or run.get('head_branch') != 'main':
+                      continue
+                  jobs = github('/actions/runs/' + str(run['id']) + '/jobs?per_page=100')['jobs']
+                  for job in jobs:
+                      if job.get('conclusion') != 'success':
+                          continue
+                      steps = {step.get('name'): step.get('conclusion') for step in job.get('steps', [])}
+                      deploy = 'Deploy ONLY hpii-admin-gateway; retain Cloudflare OAuth runtime secrets'
+                      confirm = 'Confirm live gateway API supports cover versions up to v5 and the First Car binding'
+                      if steps.get(deploy) == 'success' and steps.get(confirm) == 'success':
+                          print('ARTIST_PARALLEL_VERIFIED:successful_live_deploy_run:' + str(run['id']))
+                          raise SystemExit(0)
+          except (HTTPError, URLError, TimeoutError, KeyError, ValueError, OSError) as exc:
+              print('Artist: deployment verification unavailable:', type(exc).__name__)
+          raise SystemExit('ARTIST_PARALLEL_UNVERIFIED:requires_live_health_or_confirmed_deploy')
           PY
           then
             parallel=(--parallel)
