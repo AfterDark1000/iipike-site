@@ -9,6 +9,7 @@ on:
       - 'admin/dossier/**'
       - 'admin/auto-corrector/**'
       - 'tests/auto-corrector-picker.test.mjs'
+      - 'tests/test_admin_dashboard.py'
       - 'admin/pool/**'
       - 'tests/pool-view.test.mjs'
       - 'admin/commenting/**'
@@ -42,6 +43,7 @@ jobs:
           node --test tests/pool-view.test.mjs
           node --test tests/auto-editor-queue.test.mjs
           node --test tests/auto-corrector-picker.test.mjs
+          python3 -m unittest discover -s tests -p 'test_admin_dashboard.py' -v
           python3 - <<'PY'
           from pathlib import Path
           import re, subprocess
