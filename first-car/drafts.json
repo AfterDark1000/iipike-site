@@ -2,18 +2,42 @@
   "schema_version": 1,
   "items": [
     {
-      "id": "first-car:av_pKetarAsC3hQ1",
-      "url": "https://dzen.ru/a/av_pKetarAsC3hQ1",
-      "published_at": "2026-11-25T09:01:40.000Z",
-      "title": "OpenAI даст учёным доступ к ChatGPT Plus: чем ИИ поможет науке",
+      "id": "first-car:awaEuZfe0wYRvFoO",
+      "url": "https://dzen.ru/a/awaEuZfe0wYRvFoO",
+      "published_at": "2026-11-26T09:01:57.000Z",
+      "title": "GPT‑6 Astra записала программу в веса нейросети: что показало исследование",
       "status": "needs_text",
       "attempts": 0
     },
     {
-      "id": "first-car:av_nWaQqC2QjzaX3",
-      "url": "https://dzen.ru/a/av_nWaQqC2QjzaX3",
-      "published_at": "2026-11-25T07:13:22.000Z",
-      "title": "GPT‑6.2 Astra и Sol: чем отличаются новые модели OpenAI",
+      "id": "first-car:awfwUHI030jm4d8s",
+      "url": "https://dzen.ru/a/awfwUHI030jm4d8s",
+      "published_at": "2026-11-26T08:53:23.000Z",
+      "title": "«После 50-ти на нашей вакансии делать нечего» - жалею, что не включила запись телефонного разговора. Эйджизм на госслужбе",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:awfLLlKRtEQ2glJW",
+      "url": "https://dzen.ru/a/awfLLlKRtEQ2glJW",
+      "published_at": "2026-11-26T06:10:34.000Z",
+      "title": "Как автоматизировать ведение ВКонтакте с GrokBot: инструкция и готовый промпт",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:avxwj0mfXjSQaXPO",
+      "url": "https://dzen.ru/a/avxwj0mfXjSQaXPO",
+      "published_at": "2026-11-26T05:01:36.000Z",
+      "title": "Лимиты Gemini: сколько запросов доступно и что учитывать",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:av1apf-lp2QfZVIP",
+      "url": "https://dzen.ru/a/av1apf-lp2QfZVIP",
+      "published_at": "2026-11-26T03:02:02.000Z",
+      "title": "Microsoft представила собственные ИИ-модели: зачем они ей нужны",
       "status": "needs_text",
       "attempts": 0
     }
