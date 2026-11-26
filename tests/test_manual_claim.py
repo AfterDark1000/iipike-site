@@ -133,8 +133,7 @@ class ManualClaimTests(unittest.TestCase):
                 "article_id":"fixture-story", "story_sha":"a"*40}
         b = self.request("manual-op-000002",body)
         self.assertEqual(manual_claim.consume(self.root,now=LATER)[b]["status"],"rejected")
-        c = self.request("manual-op-000003",{**body,"action":"reject","claim_request":"manual-fake-000001.json",
-                        "note":"Wrong claim","human_authorized":True})
+        c = self.request("manual-op-000003",{**{k:v for k,v in body.items() if k not in {"article_id","story_sha","human_authorized"}}, "action":"reject","claim_request":"manual-fake-000001.json", "note":"Wrong claim"})
         self.assertEqual(manual_claim.consume(self.root,now=LATER)[c]["status"],"rejected")
         self.assertEqual(self.read_pool()["items"][1]["status"],"in_review")
 
