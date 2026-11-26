@@ -8350,12 +8350,12 @@
       "summary": "23 ноября. Сообщается о раунде $1,75 млрд при оценке $30 млрд. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T14:32:59+00:00",
       "review_started_at": "2026-11-26T07:22:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-e589854b841c3717"
+      "closed_at": "2026-11-26T09:09:25Z",
+      "article_id": "sierra-ai-series-f-30b-20261123",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-e589854b841c3717\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/sierra-ai-series-f-30b-20261123/"
     },
     {
       "id": "n-b72fd4d3a758b745",
