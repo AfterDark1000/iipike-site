@@ -8560,12 +8560,12 @@
       "summary": "24 ноября. Передача инструкций, длительные задания и запросы подтверждения пользователя в ходе операций.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T18:37:36+00:00",
       "review_started_at": "2026-11-26T09:19:30+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-8befc30ac765ba8a"
+      "closed_at": "2026-11-26T12:54:26Z",
+      "article_id": "anthropic-skills-over-mcp-20261124",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-8befc30ac765ba8a\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/anthropic-skills-over-mcp-20261124/"
     },
     {
       "id": "n-86266e890e18a6d4",
