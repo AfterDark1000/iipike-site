@@ -1763,6 +1763,10 @@
         {
           "article_id": "meituan-longcat-2-5-open-weights-20261116",
           "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
+        },
+        {
+          "article_id": "china-telecom-xing4-huawei-20261126",
+          "source_url": "https://arxiv.org/abs/2611.22115"
         }
       ]
     },
@@ -2211,6 +2215,18 @@
         {
           "article_id": "microsoft-artex-ai-hackers-20261125",
           "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+        }
+      ]
+    },
+    {
+      "key": "china-telecom",
+      "name": "China Telecom",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "china-telecom-xing4-huawei-20261126",
+          "source_url": "https://arxiv.org/abs/2611.22115"
         }
       ]
     }
@@ -3969,6 +3985,10 @@
         {
           "article_id": "meituan-longcat-2-5-open-weights-20261116",
           "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
+        },
+        {
+          "article_id": "china-telecom-xing4-huawei-20261126",
+          "source_url": "https://arxiv.org/abs/2611.22115"
         }
       ]
     },
@@ -4319,6 +4339,19 @@
         {
           "article_id": "spacex-starmind-million-ai-satellites-fcc-20261125",
           "source_url": "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/bltf4cdf2af47159e12/6b071c5f5506bb38bca5b0ec/FCC_report_and_order_on_SpaceX_Starmind_AI_constellation_11-25-2026.pdf"
+        }
+      ]
+    },
+    {
+      "key": "xing4-1-preview",
+      "name": "Xing4.1-Preview",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "company": "china-telecom",
+      "evidence": [
+        {
+          "article_id": "china-telecom-xing4-huawei-20261126",
+          "source_url": "https://huggingface.co/XingChen-AGI/Xing4.1-Preview"
         }
       ]
     }
