@@ -3092,6 +3092,10 @@
         {
           "article_id": "ai-four-visual-experiments-20261115",
           "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
+        },
+        {
+          "article_id": "krea-video-swap-20261120",
+          "source_url": "https://www.krea.ai/apps/video-face-swap"
         }
       ]
     },
@@ -4377,6 +4381,45 @@
         {
           "article_id": "apple-cornell-fastframes-20261117",
           "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
+        }
+      ]
+    },
+    {
+      "key": "krea-video-swap",
+      "name": "Video Swap",
+      "company": "krea",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "krea-video-swap-20261120",
+          "source_url": "https://www.krea.ai/apps/video-face-swap"
+        }
+      ]
+    },
+    {
+      "key": "wan-3-0",
+      "name": "Wan 3.0",
+      "company": "alibaba",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "krea-video-swap-20261120",
+          "source_url": "https://www.krea.ai/apps/video-face-swap"
+        }
+      ]
+    },
+    {
+      "key": "minimax-h3-max",
+      "name": "MiniMax H3 Max",
+      "company": "minimax",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "krea-video-swap-20261120",
+          "source_url": "https://www.krea.ai/apps/video-face-swap"
         }
       ]
     }
