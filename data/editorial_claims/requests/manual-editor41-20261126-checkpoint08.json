@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "action": "checkpoint",
+  "worker": "hpii-manual-editor",
+  "claim_request": "manual-editor41-20261126-pass08.json",
+  "pool_id": "n-41dc3fdcb58bd92d",
+  "pool_sequence": 324,
+  "claimed_at": "2026-11-26T16:07:14.143603+00:00",
+  "expected_note": "",
+  "note": "Проверены датированный анонс Amazon Science 18.11.2026 https://www.amazon.science/blog/mathematical-proof-powered-by-ai-and-no-hallucinations и публичный MIT-репозиторий https://github.com/awslabs/AutoCorrode. I/Q, I/R, Isabelle Assistant подключают агента к Isabelle через MCP; проверка формальных доказательств в процессе генерации. Claude Opus 4.6 исправил ошибку на единицу в предложенном авторами доказательстве, формализовал иррациональность sqrt(2) и интеграл синуса. Не универсальное устранение галлюцинаций. Каталог Дзена: материал про гипотезу Римана тематически близок, прямого дубля не найдено. @AmazonScience подтверждён ссылкой официального сайта. На утверждении."
+}
