@@ -4480,6 +4480,19 @@
           "source_url": "https://openai.com/index/astra-law-6-2/"
         }
       ]
+    },
+    {
+      "key": "autocorrode",
+      "name": "AutoCorrode",
+      "company": "amazon",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "amazon-autocorrode-isabelle-20261118",
+          "source_url": "https://www.amazon.science/blog/mathematical-proof-powered-by-ai-and-no-hallucinations"
+        }
+      ]
     }
   ]
 }
