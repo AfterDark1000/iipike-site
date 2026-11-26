@@ -493,3 +493,72 @@ test("cover-review validation fails closed for unexpected actions and blank rewo
   assert.equal(__test.validCoverReview({...base,cover_version:6}),false);
   assert.equal(__test.validCoverReview({...base,admin:true}),false);
 });
+
+test("editorial admin lists use the server GitHub token and reject anonymous or broad requests",async(t)=>{
+  const {request}=firstCarSession();
+  const sha="a".repeat(40);
+  const calls=[];
+  const github=t.mock.method(globalThis,"fetch",async(input,options={})=>{
+    const url=String(input),path=url.split("/iipike-site")[1];
+    calls.push(path);
+    assert.equal(options.headers.authorization,"Bearer "+env.GITHUB_REPO_TOKEN);
+    assert.equal(options.headers.accept,"application/vnd.github+json");
+    if(path==="/contents/editorial_inbox/auto_drafts?ref=editorial-intake")
+      return Response.json([
+        {name:"draft-one.json",type:"file",sha},
+        {name:"ignore.txt",type:"file",sha},
+        {name:"nested",type:"dir",sha}
+      ]);
+    if(path==="/contents/editorial_inbox/auto_copyedits?ref=editorial-intake")
+      return Response.json([
+        {name:"copy-one-r2-v1.json",type:"file",sha},
+        {name:"bad-r0-v1.json",type:"file",sha}
+      ]);
+    throw Error("Unexpected GitHub request "+path);
+  });
+  const anonymous=await call("/api/editorial-files?kind=drafts",{headers:{Origin:env.ADMIN_ORIGIN}});
+  assert.equal(anonymous.status,401);
+  assert.equal(github.mock.callCount(),0);
+  assert.equal((await request("/api/editorial-files?kind=drafts&ref=main")).status,400);
+  assert.equal((await request("/api/editorial-files?kind=unknown")).status,400);
+  assert.equal(github.mock.callCount(),0);
+  const drafts=await (await request("/api/editorial-files?kind=drafts")).json();
+  assert.deepEqual(drafts.entries,[{
+    name:"draft-one.json",type:"file",sha,
+    download_url:"https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_drafts/draft-one.json"
+  }]);
+  const copies=await (await request("/api/editorial-files?kind=copyedits")).json();
+  assert.deepEqual(copies.entries,[{
+    name:"copy-one-r2-v1.json",type:"file",sha,
+    download_url:"https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_copyedits/copy-one-r2-v1.json"
+  }]);
+  assert.deepEqual(calls,[
+    "/contents/editorial_inbox/auto_drafts?ref=editorial-intake",
+    "/contents/editorial_inbox/auto_copyedits?ref=editorial-intake"
+  ]);
+});
+test("editorial record fallback is path-limited, owner-only and distinguishes missing files from GitHub failures",async(t)=>{
+  const {request}=firstCarSession();
+  const record={article_id:"test-story",revision:2,status:"ready_for_review"};
+  const path="editorial_inbox/auto_decisions/test-story-r2.json";
+  let status=200;
+  const github=t.mock.method(globalThis,"fetch",async(input,options={})=>{
+    assert.equal(String(input),"https://api.github.com/repos/AfterDark1000/iipike-site/contents/"+path+"?ref=editorial-intake");
+    assert.equal(options.headers.authorization,"Bearer "+env.GITHUB_REPO_TOKEN);
+    if(status===404)return Response.json({message:"Not Found"},{status});
+    if(status!==200)return Response.json({message:"GitHub failure"},{status});
+    return Response.json({type:"file",sha:"b".repeat(40),
+      content:Buffer.from(JSON.stringify(record)).toString("base64")});
+  });
+  const bad=await request("/api/editorial-record?path="+encodeURIComponent("../secrets"));
+  assert.equal(bad.status,400);
+  assert.equal(github.mock.callCount(),0);
+  const found=await (await request("/api/editorial-record?path="+encodeURIComponent(path))).json();
+  assert.deepEqual(found,{ok:true,found:true,record});
+  status=404;
+  const missing=await (await request("/api/editorial-record?path="+encodeURIComponent(path))).json();
+  assert.deepEqual(missing,{ok:true,found:false});
+  status=403;
+  assert.equal((await request("/api/editorial-record?path="+encodeURIComponent(path))).status,502);
+  assert.equal(github.mock.callCount(),3);
+});
