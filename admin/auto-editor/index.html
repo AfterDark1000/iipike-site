@@ -753,13 +753,27 @@ async function load(){
   await Promise.all(Array.from({length:Math.min(4,names.length)},()=>worker()));
   if(current!==loadVersion)return;
   storyRows=rows;
+  const requestedArticle=new URLSearchParams(window.location.search).get("article");
+  const requestedRow=requestedArticle
+   ?rows.find(x=>x.doc?.article_id===requestedArticle&&x.name===requestedArticle+".json")
+   :null;
+  if(requestedRow){
+   if(requestedRow.group==="done"){
+    activeView="done";
+    const position=matchingRows().findIndex(x=>x.name===requestedRow.name);
+    archivePage=Math.max(0,Math.floor(Math.max(0,position)/ARCHIVE_PAGE_SIZE));
+   }else activeView="all";
+  }
   renderList();
   document.getElementById("loaded").textContent=
    "Сверено: "+new Date().toLocaleString("ru-RU")+" · записей: "+rows.length+siteStatusWarning;
   if(!rows.length){detail.replaceChildren();add(detail,"p","Сохранённых черновиков пока нет.","muted");return}
-  const visible=visibleRows();
-  if(visible.length)void choose(visible.some(x=>x.name===selected)?selected:visible[0].name);
-  else{detail.replaceChildren();add(detail,"p","В выбранном разделе нет материалов.","muted")}
+  if(requestedRow)void choose(requestedRow.name);
+  else{
+   const visible=visibleRows();
+   if(visible.length)void choose(visible.some(x=>x.name===selected)?selected:visible[0].name);
+   else{detail.replaceChildren();add(detail,"p","В выбранном разделе нет материалов.","muted")}
+  }
  }catch(e){
   if(current!==loadVersion)return;
   list.replaceChildren();add(list,"p","Не удалось получить список: "+e.message,"muted");
