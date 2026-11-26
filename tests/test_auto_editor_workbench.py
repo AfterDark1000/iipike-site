@@ -3,7 +3,9 @@ import copy
 import json
 from pathlib import Path
 import tempfile
+import subprocess
 import unittest
+from unittest.mock import patch
 
 from scripts.site_news_pool import add, next_item, validate as validate_pool
 from scripts.auto_editor_workbench import (
@@ -219,6 +221,87 @@ class AutoEditorClaimTests(unittest.TestCase):
             self.assertEqual(report[path.name]["status"], "rejected")
             self.assertIn("AUTO_EDITOR_DAILY_CAP_5", report[path.name]["error"])
             self.assertEqual(json.loads((root / POOL).read_text()), original)
+
+    def test_dispatch_guard_checks_real_git_ticket_and_changed_intake(self):
+        from scripts.auto_editor_workbench import check_dispatch
+        from scripts.site_news_pool import utc_time
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            def git(*args):
+                return subprocess.check_output(["git", "-C", str(root), *args],
+                                               text=True, stderr=subprocess.PIPE).strip()
+            git("init")
+            git("config", "user.name", "Test")
+            git("config", "user.email", "test@example.org")
+            ticket = root / "editorial_inbox/auto_editor_dispatch/current.json"
+            ticket.parent.mkdir(parents=True)
+            paths = ["editorial_inbox/"+x for x in ("auto_drafts", "auto_decisions",
+                     "auto_copyedits", "auto_copyedit_responses")]
+            doc = {"schema_version":1, "status":"ready", "prepared_at":NOW,
+                   "valid_until":"2026-11-17T07:00:00+00:00",
+                   "job":{"kind":"new","request":"dispatch-exact.json",
+                          "candidate":{"id":"n-0123456789abcdef"}},
+                   "intake_guard":{p:None for p in paths}}
+            ticket.write_text(json.dumps(doc), encoding="utf-8")
+            git("add", "."); git("commit", "-m", "ticket")
+            sha=git("rev-parse", "HEAD:editorial_inbox/auto_editor_dispatch/current.json")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            request={"dispatch_sha":sha}
+            self.assertEqual(check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW)),
+                             "n-0123456789abcdef")
+            with self.assertRaisesRegex(ValueError,"DISPATCH_INVALID"):
+                check_dispatch(root,"dispatch-other.json",request,utc_time(NOW))
+            ticket.write_text(json.dumps({"status":"ready","job":{"kind":"await_receipt"}}))
+            git("add",".");git("commit","-m","refresh")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            self.assertEqual(check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW)),
+                             "n-0123456789abcdef")
+            decision=root/paths[1]/"changed.json"
+            decision.parent.mkdir()
+            decision.write_text("{}")
+            git("add",".");git("commit","-m","human decision")
+            git("update-ref","refs/remotes/origin/editorial-intake","HEAD")
+            with self.assertRaisesRegex(ValueError,"DISPATCH_STALE"):
+                check_dispatch(root,"dispatch-exact.json",request,utc_time(NOW))
+
+    def test_dispatch_request_never_reserves_substitute(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pool = pool_with(("First ordinary news", "normal"), ("Second ordinary news", "normal"))
+            (root / POOL).parent.mkdir(parents=True)
+            (root / POOL).write_text(json.dumps(pool), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            from scripts.editorial_routing import ROUTES
+            (root / ROUTES).write_text("{}", encoding="utf-8")
+            routes = {i["id"]: {"lane":"long","decision":"full"} for i in pool["items"]}
+            path = root / REQUESTS / "dispatch-exact.json"
+            path.write_text(json.dumps({"schema_version":2,"action":"claim_ordinary",
+                "worker":"hpii-auto-editor","dispatch_sha":"a"*40}), encoding="utf-8")
+            with patch("scripts.editorial_routing.load_routes", return_value=routes), \
+                 patch("scripts.auto_editor_workbench.check_dispatch", return_value=pool["items"][1]["id"]):
+                result = consume(root, now=NOW, paths=[path])
+            self.assertEqual(result[path.name]["status"], "rejected")
+            self.assertIn("DISPATCH_FIFO_CHANGED", result[path.name]["error"])
+            self.assertEqual(json.loads((root / POOL).read_text()), pool)
+
+    def test_dispatch_request_can_reserve_exact_fifo(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pool = pool_with(("First ordinary news", "normal"))
+            (root / POOL).parent.mkdir(parents=True)
+            (root / POOL).write_text(json.dumps(pool), encoding="utf-8")
+            (root / REQUESTS).mkdir(parents=True)
+            from scripts.editorial_routing import ROUTES
+            (root / ROUTES).write_text("{}", encoding="utf-8")
+            routes = {i["id"]: {"lane":"long","decision":"full"} for i in pool["items"]}
+            path = root / REQUESTS / "dispatch-exact.json"
+            path.write_text(json.dumps({"schema_version":2,"action":"claim_ordinary",
+                "worker":"hpii-auto-editor","dispatch_sha":"a"*40}), encoding="utf-8")
+            with patch("scripts.editorial_routing.load_routes", return_value=routes), \
+                 patch("scripts.auto_editor_workbench.check_dispatch", return_value=pool["items"][0]["id"]):
+                result = consume(root, now=NOW, paths=[path])
+            self.assertEqual(result[path.name]["status"],"reserved")
+            self.assertEqual(result[path.name]["pool_id"],pool["items"][0]["id"])
 
     def test_malicious_request_rejected_no_hot_claim(self):
         with tempfile.TemporaryDirectory() as tmp:
