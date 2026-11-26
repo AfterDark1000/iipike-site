@@ -2201,6 +2201,18 @@
           "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792"
         }
       ]
+    },
+    {
+      "key": "threatbook",
+      "name": "ThreatBook",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "microsoft-artex-ai-hackers-20261125",
+          "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+        }
+      ]
     }
   ],
   "products": [
@@ -3613,6 +3625,10 @@
         {
           "article_id": "ec-ai-assisted-cyberattack-20261119",
           "source_url": "https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex"
+        },
+        {
+          "article_id": "microsoft-artex-ai-hackers-20261125",
+          "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
         }
       ]
     },
