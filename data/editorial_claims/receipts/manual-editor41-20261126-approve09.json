@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve09.json",
+  "request_sha256": "4484ca5c6e7b8da17cf8c14f9c7fc232f2de7fdbd39faccea438d2e00efc571d",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-dcbfa5b842f13f82",
+  "pool_sequence": 333,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T16:19:05.984625+00:00",
+  "note": "Главред утвердил исправленный лид и две внутренние ссылки. Статья, VK, Threads/X сохранены и проверены. Ожидается обложка."
+}

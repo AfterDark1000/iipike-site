@@ -4975,12 +4975,12 @@
       "summary": "18 ноября. Сообщается о предупреждении Сатьи Наделлы о риске ИИ-кибератак и сложностях обновления инфраструктуры; источник обзорный, требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-26T16:19:05.984625+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Найдена точная статья TechCrunch от 18.11.2026 https://techcrunch.com/2026/11/18/amidst-fears-of-ai-cyberattacks-satya-nadella-says-lots-of-critical-infrastructure-is-unpatchable/; первоисточник — интервью DealBook Summit 18.11, официальная запись NYT https://podcasts.apple.com/us/podcast/satya-nadella-on-the-new-algorithm/id1718472373?i=1000803773479, расшифровка https://singjupost.com/transcript-satya-nadella-on-new-algorithm-dealbook-summit-2026/. Наделла привёл пример банковских патчей: прежняя неделя тестирования против срочной установки при активной эксплуатации; часть прошивок систем охлаждения, HVAC и транспорта не обновляется. Это предупреждение о риске, не доказательство ИИ-атаки. Архив: содержательная ссылка на MAI Cyber 2 Flash https://dzen.ru/a/av7PXo_peyRqHS7s, прямого дубля не найдено. @satyanadella подтверждён. На утверждении."
+      "closed_at": "2026-11-26T16:34:08+00:00",
+      "article_id": "microsoft-nadella-ai-cyber-infrastructure-20261118",
+      "note": "Главред утвердил исправленный лид и две внутренние ссылки. Статья, VK, Threads/X сохранены и проверены. Ожидается обложка."
     },
     {
       "id": "n-a261d2eee241a886",
