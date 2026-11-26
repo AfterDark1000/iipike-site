@@ -216,6 +216,40 @@ function decodeGitHubContent(data) {
   if (!data || data.type!=="file" || !data.sha || typeof data.content!=="string") throw Error("file_missing");
   return JSON.parse(dec.decode(Uint8Array.from(atob(data.content.replace(/\s/g,"")),c=>c.charCodeAt(0))));
 }
+
+const EDITORIAL_LISTS = Object.freeze({
+  drafts: {path:"editorial_inbox/auto_drafts", filename:/^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/},
+  copyedits: {path:"editorial_inbox/auto_copyedits", filename:/^[a-z0-9]+(?:-[a-z0-9]+)*-r[1-9]\d*-v[1-9]\d*\.json$/}
+});
+const EDITORIAL_RECORD_FOLDERS = new Set([
+  "auto_drafts","auto_decisions","auto_covers","auto_cover_decisions","auto_handoffs",
+  "auto_copyedits","auto_copyedit_decisions","auto_copyedit_responses"
+]);
+function validEditorialRecordPath(path) {
+  if(typeof path!=="string"||path.length>240)return false;
+  const match=/^editorial_inbox\/([a-z_]+)\/([a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\\d*(?:-v[1-9]\\d*)?)?)\.json$/.exec(path);
+  return !!match&&EDITORIAL_RECORD_FOLDERS.has(match[1]);
+}
+async function editorialFileList(env,kind) {
+  const config=EDITORIAL_LISTS[kind];
+  if(!config)throw Error("invalid_editorial_list");
+  const result=await githubJson("/contents/"+config.path+"?ref=editorial-intake",env);
+  if(result.status===404)return [];
+  if(result.status!==200||!Array.isArray(result.data))throw Error("editorial_list_unavailable");
+  return result.data.filter(item=>item?.type==="file"&&config.filename.test(item.name||"")&&
+    typeof item.sha==="string"&&SHA40.test(item.sha)).map(item=>({
+      name:item.name,type:"file",sha:item.sha,
+      download_url:"https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/"+config.path+"/"+item.name
+    }));
+}
+async function editorialFileRead(env,path) {
+  if(!validEditorialRecordPath(path))return {status:400,found:false};
+  const result=await githubJson("/contents/"+path+"?ref=editorial-intake",env);
+  if(result.status===404)return {status:200,found:false};
+  if(result.status!==200)return {status:502,found:false};
+  try{return {status:200,found:true,record:decodeGitHubContent(result.data)}}
+  catch{return {status:502,found:false}}
+}
 function encodeGitHubContent(data) {
   return btoa(String.fromCharCode(...enc.encode(JSON.stringify(data,null,2)+"\n")));
 }
@@ -730,6 +764,23 @@ export default {
       if (!session) return fail(401,"login_required",headers);
       if (url.pathname==="/api/session" && request.method==="GET") {
         return send({ok:true,login:session.login,exp:session.exp},200,headers);
+      }
+      if(url.pathname==="/api/editorial-files"&&request.method==="GET"){
+        const kinds=[...url.searchParams.keys()];
+        const kind=url.searchParams.get("kind");
+        if(kinds.length!==1||!["drafts","copyedits"].includes(kind))return fail(400,"invalid_editorial_list",headers);
+        try{
+          const entries=await editorialFileList(env,kind);
+          return send({ok:true,entries},200,headers);
+        }catch{return fail(502,"editorial_files_unavailable",headers)}
+      }
+      if(url.pathname==="/api/editorial-record"&&request.method==="GET"){
+        const kinds=[...url.searchParams.keys()];
+        const path=url.searchParams.get("path");
+        if(kinds.length!==1||!path)return fail(400,"invalid_editorial_path",headers);
+        const result=await editorialFileRead(env,path);
+        if(result.status!==200)return fail(result.status,"editorial_record_unavailable",headers);
+        return send({ok:true,found:result.found,...(result.found?{record:result.record}:{})},200,headers);
       }
       if(url.pathname==="/api/dossier"&&request.method==="GET"){
         if(url.search)return fail(400,"unexpected_input",headers);
