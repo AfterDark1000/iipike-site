@@ -228,6 +228,12 @@
       "utc_date": "2026-11-25",
       "source_url": "https://developer.nvidia.com/blog/whats-new-for-game-developers-ai-animation-and-rtx-tools/",
       "source_title": "What’s New for Game Developers: AI Animation and RTX Tools"
+    },
+    {
+      "id": "c232ab95006f02e0b53c",
+      "utc_date": "2026-11-26",
+      "source_url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+      "source_title": "Verifiable Social Reasoning for LLM Assistants"
     }
   ]
 }

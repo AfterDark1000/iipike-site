@@ -1,5 +1,12 @@
 [
   {
+    "id": "c232ab95006f02e0b53c",
+    "date": "2026-11-26",
+    "title": "Гугл научил нейросети понимать интриги в коллективе через симуляции",
+    "source_name": "Google Research",
+    "source_url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/"
+  },
+  {
     "id": "7057a24125f9dd576bee",
     "date": "2026-11-25",
     "title": "War Thunder примерил DLSS 5, а в Unreal Engine прописался первый ИИ-аниматор",
