@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-25T11:44:49Z",
+  "generated_at_utc": "2026-11-26T11:30:11Z",
   "status": "partial",
   "limits": {
     "maximum_gemini_requests": 4,
@@ -9,145 +9,230 @@
   },
   "videos": [
     {
-      "id": "RDCXCrznJfc",
-      "url": "https://www.youtube.com/shorts/RDCXCrznJfc",
-      "title": "تكنولوچيا#shorts #comedy #viral",
-      "channel": "Mahmoud Metwaly99",
-      "published_at": "2026-11-19T20:23:44Z",
-      "duration_seconds": 13,
-      "views": 38076,
-      "likes": 154,
-      "subscribers": 10000,
+      "id": "NPAgsWWqaY0",
+      "url": "https://www.youtube.com/shorts/NPAgsWWqaY0",
+      "title": "When you have AirPods in 😳😭😂 #shorts #funny #comedy #apple #tech #technology #humor #friend",
+      "channel": "Matt & Justus",
+      "published_at": "2026-11-22T18:36:31Z",
+      "duration_seconds": 57,
+      "views": 785242,
+      "likes": 43938,
+      "subscribers": 5490000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-25T11:44:49Z",
+      "statistics_checked_at": "2026-11-26T11:30:11Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 31.6,
-      "rank_score": 8.99,
-      "viral_status": "candidate_verified_stats",
-      "status": "failed",
-      "failure": "API HTTP 503"
-    },
-    {
-      "id": "JP8xuqgMgvE",
-      "url": "https://www.youtube.com/shorts/JP8xuqgMgvE",
-      "title": "Fascinating Experiments With Everyday Materials 🔬 #smart #easy #diy #experiments",
-      "channel": "Beamish DIY",
-      "published_at": "2026-11-24T16:00:13Z",
-      "duration_seconds": 175,
-      "views": 22592,
-      "likes": 511,
-      "subscribers": 705000,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-25T11:44:49Z",
-      "is_confirmed_short": false,
-      "search_family": "experiment",
-      "format_family_guess": "experiment",
       "growth_views_per_hour": null,
-      "rank_score": 7.07,
+      "rank_score": 9.19,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Набор коротких скетчей-экспериментов с быстрой сменой кадров: демонстрация физических и химических реакций, самодельных приспособлений и трюков с предметами.",
-        "observed_audio": "Фоновая бодрая музыка, звуки зажигалки, шипения жидкостей, ударов капель и стука предметов.",
-        "hook_0_3s": "Крупный план бутылки с водой и зажигалки, подносящейся к горлышку.",
+        "observed_visuals": "Мужчина и женщина сидят на диване под пледом, женщина в кепке и с розовыми волосами говорит о депрессии. На других кадрах мужчина в розовой рубашке и парике за ноутбуком грубо вмешивается в разговор, утверждая, что он разговаривает по AirPods.",
+        "observed_audio": "Диалог с репликами о депрессии, необходимости терапии и грубыми комментариями персонажа в парике, который утверждает, что у него надеты AirPods.",
+        "hook_0_3s": "Женщина на диване говорит о подавленном состоянии, быстрая смена кадров на мужчину за ноутбуком, который резко ее перебивает.",
         "timeline": [
           {
-            "time": "00:00 - 00:03",
-            "visible_action": "Рука поджигает трубку, вставленную в бутыль с водой.",
+            "time": "00:00",
+            "visible_action": "Пара на диване, женщина рассказывает о депрессии",
             "editing": "Прямая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:18 - 00:20",
-            "visible_action": "Демонстрация ладони с привязанными батарейками и парящей крышкой.",
-            "editing": "Быстрая смена кадров",
+            "time": "00:02",
+            "visible_action": "Мужчина в розовой рубашке и парике за ноутбуком грубо отвечает",
+            "editing": "Быстрая склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:30 - 00:33",
-            "visible_action": "Падение предметов в стакан с разноцветными слоями жидкости.",
-            "editing": "Монтажная склейка",
+            "time": "00:07",
+            "visible_action": "Мужчина демонстрирует наушники в ушах",
+            "editing": "Склейка",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Динамичный сборник визуальных трюков и лайфхаков с быстрой сменой контекста для удержания внимания.",
-        "transfer_to_hpii": "Использовать ритмичную нарезку быстрых технологических гипотез об ИИ (например, «ИИ пишет код / ИИ генерирует видео / ИИ ошибается») как хук для динамичных роликов.",
-        "what_not_to_copy": "Не повторять опасные химические и пиротехнические эксперименты.",
-        "limitations": "Высокая плотность независимых сцен затрудняет анализ отдельных причинно-следственных связей.",
+        "format_mechanic": "Комедийная скетчевая сценка с быстрыми перебивками между двумя локациями (диван и рабочий стол) для демонстрации абсурдности ситуации с шумоподавлением и наушниками.",
+        "transfer_to_hpii": "Использовать механику контраста между тем, что ИИ «слышит» или генерирует в фоновом режиме, и реальным контекстом пользователя, показывая комичные баги или недопонимания через мгновенные переключения кадров.",
+        "what_not_to_copy": "Не копировать сюжет про отношения, AirPods и бытовой абьюз, не использовать дословные реплики.",
+        "limitations": "Часть мелких монтажных переходов может пропадать при дискретизации 1 FPS.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-25T11:44:59Z",
+      "analyzed_at_utc": "2026-11-26T11:30:16Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "2IRMtB50DFI",
-      "url": "https://www.youtube.com/shorts/2IRMtB50DFI",
-      "title": "Why Do Mosquito Bites Itch? 🦟😱 | 3D Animation #3danimation",
-      "channel": "Hasan ali",
-      "published_at": "2026-11-23T08:17:50Z",
-      "duration_seconds": 50,
-      "views": 8673,
-      "likes": 171,
-      "subscribers": 44800,
+      "id": "vfQkgHKrN8Y",
+      "url": "https://www.youtube.com/shorts/vfQkgHKrN8Y",
+      "title": "Science Experiments With Unexpected Material Reactions! 🔬 #science #experiments #diy #ideas",
+      "channel": "Beamish",
+      "published_at": "2026-11-26T01:00:31Z",
+      "duration_seconds": 174,
+      "views": 77591,
+      "likes": 1281,
+      "subscribers": 2750000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-25T11:44:49Z",
+      "statistics_checked_at": "2026-11-26T11:30:11Z",
+      "is_confirmed_short": false,
+      "search_family": "experiment",
+      "format_family_guess": "experiment",
+      "growth_views_per_hour": null,
+      "rank_score": 8.93,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Различные физические опыты, сборка самодельных устройств с использованием зажигалок, паяльника, магнитов и бытовых предметов, демонстрация баланса и слоевых жидкостей.",
+        "observed_audio": "Звуки работы с инструментами, шипение горелки, звуки ударов и падений предметов, шуршание.",
+        "hook_0_3s": "Раскаленный паяльник подносится к металлическому ситу с гвоздями, гвозди падают на поверхность.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:04",
+            "visible_action": "Паяльник нагревает сито с гвоздями, гвозди падают.",
+            "editing": "Быстрый монтаж, смена кадра",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:04 - 00:10",
+            "visible_action": "Нагревание вилки паяльником и ее установка.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:10 - 00:16",
+            "visible_action": "Манипуляции с разводным ключом.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:16 - 00:23",
+            "visible_action": "Стакан с разноцветными жидкостями (спирт, масло, вода), бросание предмета внутрь.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:23 - 00:36",
+            "visible_action": "Падение шариков по наклонной через пластиковые стаканчики.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:36 - 00:51",
+            "visible_action": "Сборка конструкции из бруска дерева и лезвий бритвы, погружение в воду.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:51 - 01:05",
+            "visible_action": "Выдавливание лимонного сока на бумагу с порошком, возгорание.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:05 - 01:19",
+            "visible_action": "Демонстрация горения губки с водой и без воды.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:19 - 01:34",
+            "visible_action": "Разборка зажигалки, сборка импровизированной горелки со шприцем.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:34 - 01:49",
+            "visible_action": "Демонстрация подвешенной деревянной конструкции (тенсегрити).",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:49 - 02:02",
+            "visible_action": "Вращение палочки с лимоном и фруктом на концах.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:02 - 02:15",
+            "visible_action": "Батарейки на запястье и движение крышки бутылки на ладони.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:15 - 02:39",
+            "visible_action": "Переворачивание стакана с водой на стакан с темной жидкостью.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:39 - 02:53",
+            "visible_action": "Проплавление крышки бутылки, заливка жидкости и фиксация зажигалки.",
+            "editing": "Склейка",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Подборка динамичных лайфхаков и экспериментов с быстрыми переходами и нарастающим темпом.",
+        "transfer_to_hpii": "Использовать ритмичную нарезку быстрых ИИ-генераций для демонстрации эволюции искусственного интеллекта от простых текстовых запросов к сложным мультимодальным агентам.",
+        "what_not_to_copy": "Не повторять демонстрацию опасных бытовых фокусов с огнем и паяльниками.",
+        "limitations": "Выборка 1 FPS не позволяет детально разобрать каждый шаг пайки и сборки мелких элементов.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-26T11:30:23Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "F4DHLhC-u2c",
+      "url": "https://www.youtube.com/shorts/F4DHLhC-u2c",
+      "title": "Why Did Pirates Wear an Eye Patch Over One Eye? 🏴‍☠️🤯 #shorts",
+      "channel": "Roshan Animated",
+      "published_at": "2026-11-26T05:29:47Z",
+      "duration_seconds": 49,
+      "views": 1492,
+      "likes": 49,
+      "subscribers": 91,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-26T11:30:11Z",
       "is_confirmed_short": false,
       "search_family": "explanation",
       "format_family_guess": "explanation",
       "growth_views_per_hour": null,
-      "rank_score": 5.27,
+      "rank_score": 6.25,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Animated 3D man sitting on a bed, red mark appearing on his arm, transition to 3D diagram of mosquito biting and injecting saliva into layers of skin, animation of blood vessels, histamine release, and a graphic inset showing ice cubes at the end.",
-        "observed_audio": "Voiceover in Hindi explaining the biological process of mosquito bites and itching relief, accompanied by sound effects.",
-        "hook_0_3s": "3D animated man sitting on a bed looking at his arm with an overlaid red text box asking what happens when a mosquito bites.",
+        "observed_visuals": "Animated 2D cartoon characters representing pirates and soldiers in a stylized ship setting, using bright colors and simple vector-style graphics with subtitles.",
+        "observed_audio": "Voiceover narration in Hindi explaining a historical theory accompanied by dramatic background sound effects.",
+        "hook_0_3s": "A cartoon pirate with an eyepatch stands on a ship deck with text appearing on screen.",
         "timeline": [
           {
-            "time": "00:00 - 00:02",
-            "visible_action": "Animated man sitting on the bed, red text box appears overhead.",
-            "editing": "Direct 3D render cut with text overlay.",
+            "time": "00:00 - 00:05",
+            "visible_action": "Animated pirate character standing on a ship deck.",
+            "editing": "Direct shot with dynamic subtitle pop-ups.",
             "confidence": "seen"
           },
           {
-            "time": "00:02 - 00:07",
-            "visible_action": "Zoom in on the man's arm showing a red welt.",
-            "editing": "Camera push-in with arrow and text callout graphics.",
+            "time": "00:06 - 00:08",
+            "visible_action": "Two cartoon ships colliding in rough sea waves.",
+            "editing": "Hard cut to ship collision animation.",
             "confidence": "seen"
           },
           {
-            "time": "00:07 - 00:15",
-            "visible_action": "Close-up animation of a mosquito and microscopic view of skin layers.",
-            "editing": "Scene transition to a blue grid background showing 3D biological models.",
+            "time": "00:09 - 00:23",
+            "visible_action": "Pirate jumps into a dark cabin and defeats confused soldiers.",
+            "editing": "Scene transition to dark cabin interior with character movement.",
             "confidence": "seen"
           },
           {
-            "time": "00:15 - 00:25",
-            "visible_action": "Saliva injection and blood cell reactions shown via 3D graphics.",
-            "editing": "Continuous animated sequence with text highlights.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:25 - 00:35",
-            "visible_action": "Histamine reaction animation, blood vessels dilating, return to character scratching.",
-            "editing": "Jump cut back to the character on the bed.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:35 - 00:50",
-            "visible_action": "Nerve signal animation, character touching arm, ice cube graphic inset, ending with profile screen.",
-            "editing": "Cut to graphic inset of ice cubes and final social media callout screen.",
+            "time": "00:24 - 00:47",
+            "visible_action": "Explanatory animation showing eye adaptation to darkness and switching eyepatch sides.",
+            "editing": "Series of illustrated visual examples and color filters.",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Explaining a common everyday phenomenon using micro-anatomy 3D animations paired with educational voiceover and practical advice.",
-        "transfer_to_hpii": "Break down an abstract artificial intelligence news story or algorithm update using a metaphorical 3D microscopic breakdown (e.g., how a new LLM token processing mechanism works inside a neural network layer).",
-        "what_not_to_copy": "Do not copy the exact mosquito/skin animation style or the specific topic of insect bites.",
-        "limitations": "Voiceover translation is approximate based on standard terminology; visual components are fully observed.",
+        "format_mechanic": "Explaining a counter-intuitive historical fact or lifehack using animated character examples and step-by-step visual breakdowns.",
+        "transfer_to_hpii": "Use the same pedagogical storytelling arc (common myth vs. clever physiological reality) to explain how modern AI vision models handle low-light data processing.",
+        "what_not_to_copy": "Do not copy the pirate theme, cartoon assets, or the specific script and audio track.",
+        "limitations": "Only visual and audio elements from the compressed sample video were analyzed; translations of Hindi speech are inferred contextually.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-25T11:45:13Z",
+      "analyzed_at_utc": "2026-11-26T11:30:26Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
@@ -158,26 +243,22 @@
       "channel": "Danjuma Consult Tech",
       "published_at": "2026-11-24T06:00:09Z",
       "duration_seconds": 55,
-      "views": 2,
+      "views": 6,
       "likes": 0,
       "subscribers": 13,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-25T11:44:49Z",
+      "statistics_checked_at": "2026-11-26T11:30:11Z",
       "is_confirmed_short": false,
       "search_family": "story",
       "format_family_guess": "story",
-      "growth_views_per_hour": null,
-      "rank_score": 0.07,
+      "growth_views_per_hour": 0.2,
+      "rank_score": 0.22,
       "viral_status": "unconfirmed",
       "status": "failed",
       "failure": "API HTTP 503"
     }
   ],
   "errors": [
-    {
-      "video_id": "RDCXCrznJfc",
-      "code": "analysis_failed"
-    },
     {
       "video_id": "Bt8e_HmS3Ho",
       "code": "analysis_failed"
