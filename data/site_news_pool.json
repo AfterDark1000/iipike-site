@@ -8515,12 +8515,12 @@
       "summary": "25 ноября. Сообщается об одобрении FCC орбитальной вычислительной сети Starmind; условия разрешения проверить. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T12:13:36+05:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Ручной редактор: проверка разрешения FCC на Starmind и условий развёртывания."
     },
     {
       "id": "n-6f93dd9d44f94d1e",
