@@ -4735,12 +4735,12 @@
       "summary": "17 ноября: юридическая конфигурация Astra for Law с поиском и испытаниями.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-26T11:41:15.532727+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверены официальный релиз OpenAI 17.11.2026 https://openai.com/index/astra-law-6-2/, первоначальный анонс 17.09 https://openai.com/index/astra-for-law/, справка https://help.openai.com/en/articles/20001528-astra-for-law и независимый Harvey LAB-AA v1.1 https://artificialanalysis.ai/evaluations/harvey-lab-aa. Это обновление конфигурации GPT-6.2 Astra, расширение заявок Enterprise/API Trusted Access (только юристы и работающие под их надзором). Индекс 310+ млн URL, +34% с сентября; по данным OpenAI 99.9+% опубликованных прецедентных решений США. LAB-AA: 120 задач, 24 области, три судьи; доля полных зачётов 20,8% против 15% обычной Astra Max и 13,1% Muse Wonder Full; существенные галлюцинации 0,03 на задачу против 0,59 Claude Opus 5.5. Vals: по анонсу OpenAI 112/208 (53,8%), частичный балл 90,9%; не смешивать тесты. Архив: GPT-6.2 Astra/Sol, подтверждённый Dzen ID 6afd522e499f5e349075e078, дубля Astra for Law нет. Материал на утверждение."
+      "closed_at": "2026-11-26T15:47:43+00:00",
+      "article_id": "openai-astra-for-law-20261117",
+      "note": "Материал утверждён главредом, статья и очереди Threads/X сохранены и проверены."
     },
     {
       "id": "n-a1de396d3910fa2e",

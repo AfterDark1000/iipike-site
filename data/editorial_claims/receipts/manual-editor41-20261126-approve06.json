@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve06.json",
+  "request_sha256": "48f207a8dca27b75239bf67c5fc44dd9bf8eecf8ca272aa45f2d9d5f85015932",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-b43ef08ac3ed4f7a",
+  "pool_sequence": 317,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T11:41:15.532727+00:00",
+  "note": "Материал утверждён главредом, статья и очереди Threads/X сохранены и проверены."
+}
