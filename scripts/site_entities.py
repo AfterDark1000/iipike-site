@@ -131,7 +131,7 @@ def shell(title, description, prefix, canonical, content):
 
 
 
-def validate_editor_entities(registry, companies=None, products=None):
+def validate_editor_entities(registry, companies=None, products=None, *, compiled=False):
     """Validate reviewed keys only; never infer entities from freeform text.
 
     Existing approved stories may omit both arrays. Product ownership is
@@ -144,11 +144,15 @@ def validate_editor_entities(registry, companies=None, products=None):
                              ("products", products, set(product_owners))):
         if raw is None:
             raw = []
-        if (not isinstance(raw, list) or len(raw) > 4 or
+        if (not isinstance(raw, list) or len(raw) > (6 if compiled and kind == "companies" else 4) or
                 any(not isinstance(key, str) or key not in known for key in raw) or
                 len(raw) != len(set(raw))):
             raise ValueError("Unknown, repeated or excessive editorial " + kind)
         normalized[kind] = list(raw)
+    if compiled:
+        owners = {product_owners[key] for key in normalized["products"]}
+        if len(set(normalized["companies"]) - owners) > 4:
+            raise ValueError("Too many explicit companies in compiled editorial metadata")
     for key in normalized["products"]:
         owner = product_owners[key]
         if owner not in normalized["companies"]:
@@ -158,13 +162,13 @@ def validate_editor_entities(registry, companies=None, products=None):
     return normalized["companies"], normalized["products"]
 
 
-def append_editor_entities(registry, slug, companies=None, products=None):
+def append_editor_entities(registry, slug, companies=None, products=None, *, compiled=False):
     """Return a new validated registry; never mutate published history in place."""
     from copy import deepcopy
     if not isinstance(slug, str) or not ENTITY_KEY.fullmatch(slug):
         raise ValueError("Invalid article ID for entity assignment")
     selected_companies, selected_products = validate_editor_entities(
-        registry, companies, products)
+        registry, companies, products, compiled=compiled)
     updated = deepcopy(registry)
     for kind, keys in (("companies", selected_companies),
                        ("products", selected_products)):

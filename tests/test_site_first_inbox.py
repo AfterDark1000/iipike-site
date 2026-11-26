@@ -123,6 +123,15 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Unknown"):
             validate_story(self.root, ID, today=UTC.date())
 
+    def test_stage_accepts_six_companies_after_product_owner_expansion(self):
+        self.story["companies"] = ["openai", "microsoft", "amazon"]
+        self.story["products"] = ["grok", "claude", "gemini"]
+        self.save_story()
+        self.save_cover()
+        staged = stage(self.root, ID, apply=True, now=UTC)
+        self.assertEqual(len(staged["companies"]), 6)
+        self.assertEqual(approved_article(self.root, ID)["companies"], staged["companies"])
+
     def test_empty_entity_arrays_and_legacy_missing_fields_are_valid(self):
         self.story["companies"], self.story["products"] = [], []
         self.save_story()

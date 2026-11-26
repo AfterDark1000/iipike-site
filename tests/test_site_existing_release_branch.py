@@ -9,6 +9,7 @@ import unittest
 from unittest.mock import patch
 
 from scripts.site_publication_queue import main
+from scripts.site_first_release_pr import ArticleStageRejected
 
 
 def row(story_id):
@@ -79,6 +80,31 @@ class ExistingBranchDoesNotBlockQueue(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "refusing to publish an unrelated"):
                 main()
         self.release.assert_called_once_with("blocked", "editorial-sha")
+
+    def test_final_candidate_rejection_is_quarantined_and_next_runs(self):
+        self.release.side_effect = [ArticleStageRejected("candidate invalid"),
+                                    "auto_published_rebuild_requested"]
+        with patch("scripts.site_release_quarantine.record_article_error") as record:
+            main()
+        self.assertEqual([x.args[0] for x in self.release.call_args_list], ["blocked", "next"])
+        self.assertEqual(record.call_args.args[1]["id"], "blocked")
+
+    def test_final_candidate_rejection_does_not_bypass_exact_target(self):
+        self.release.side_effect = ArticleStageRejected("candidate invalid")
+        with patch.dict("os.environ", {"HPII_TARGET_STORY_ID": "blocked"}), \
+             patch("scripts.site_release_quarantine.record_article_error") as record:
+            with self.assertRaisesRegex(ValueError, "no unrelated release"):
+                main()
+        self.release.assert_called_once()
+        record.assert_called_once()
+
+    def test_final_infrastructure_failure_is_not_quarantined(self):
+        self.release.side_effect = OSError("Git unavailable")
+        with patch("scripts.site_release_quarantine.record_article_error") as record:
+            with self.assertRaisesRegex(OSError, "Git unavailable"):
+                main()
+        self.release.assert_called_once()
+        record.assert_not_called()
 
     def test_unknown_release_outcome_still_fails_closed(self):
         self.release.return_value = "waiting"

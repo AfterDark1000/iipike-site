@@ -117,6 +117,15 @@ class PublisherTests(unittest.TestCase):
         self.assertEqual(article["products"], ["firefly"])
         self.assertEqual((ROOT / "data/entity_registry.json").read_bytes(), original_registry)
 
+    def test_compiled_six_companies_publish_without_reapplying_raw_limit(self):
+        self.article["companies"] = ["openai", "microsoft", "amazon", "xai", "anthropic", "google"]
+        self.article["products"] = ["grok", "claude", "gemini"]
+        self.write_article()
+        outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
+        row = json.loads(outputs[self.root / "news.json"])[-1]
+        self.assertEqual(row["companies"], self.article["companies"])
+        self.assertEqual(row["products"], self.article["products"])
+
     def test_regenerated_tagged_article_uses_historical_css_line_layout(self):
         # A release refreshes old approved pages. That re-render must not
         # introduce a same-line CSS link which fails the header-only regression.

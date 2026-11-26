@@ -19,7 +19,8 @@ from scripts.site_first_release_pr import GH_REPO, STABLE_ID, exists_at, git, sa
 from scripts.site_rich_text import markdown_to_blocks, IMAGE_SOURCE
 
 PREFIX = "editorial_inbox/release_errors/"
-CODE_PATHS = ("scripts/site_first_inbox.py", "scripts/publish_approved_article.py")
+CODE_PATHS = ("scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
+              "scripts/site_entities.py", "scripts/site_release_quarantine.py")
 MAX_REASON = 400
 
 
@@ -107,7 +108,9 @@ def preflight_article(ref, item, live):
             json.dumps(live, ensure_ascii=False), encoding="utf-8")
         for path in story_paths(ref, item):
             copy_blob(ref, path, root)
-        result = stage(root, item["id"], apply=False)
+        # Stage for real in a disposable tree: this also invokes the
+        # approved-article validator on compiler-expanded metadata.
+        result = stage(root, item["id"], apply=True)
         if result is None:
             raise ValueError("Article is incomplete despite ready-queue status")
     return True

@@ -35,6 +35,18 @@ class EditorEntityMetadataTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     validate_editor_entities(self.registry, companies, products)
 
+    def test_compiled_product_owners_do_not_consume_explicit_company_limit(self):
+        companies = ["openai", "microsoft", "amazon"]
+        products = ["grok", "claude", "gemini"]
+        expanded, chosen = validate_editor_entities(self.registry, companies, products)
+        self.assertEqual(len(expanded), 6)
+        self.assertEqual(validate_editor_entities(self.registry, expanded, chosen, compiled=True),
+                         (expanded, chosen))
+        with self.assertRaises(ValueError):
+            validate_editor_entities(self.registry, expanded, chosen)
+        with self.assertRaises(ValueError):
+            validate_editor_entities(self.registry, expanded, [], compiled=True)
+
     def test_copy_on_write_never_changes_historical_assignments(self):
         before = deepcopy(self.registry)
         slug = "new-reviewed-article-20261111"
