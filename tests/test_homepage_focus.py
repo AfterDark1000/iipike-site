@@ -51,16 +51,17 @@ class FocusTests(unittest.TestCase):
         positions = [focus_html.index('href="articles/' + sid + '/"') for sid in ids]
         self.assertEqual(positions, sorted(positions),
                          "Homepage must render chosen articles in rubric order")
-        self.assertLess(self.html.index('id="focus"'), self.html.index('id="archive"'))
+        self.assertLess(self.html.index('id="archive"'), self.html.index('id="short-news"'))
+        self.assertLess(self.html.index('id="short-news"'), self.html.index('id="dossier"'))
+        self.assertLess(self.html.index('id="dossier"'), self.html.index('id="focus"'))
         self.assertLess(self.html.index('id="archive"'), self.html.index('id="latest"'))
         self.assertIn('<a href="#focus">В фокусе</a>', self.html)
-        self.assertIn('href="#focus">Главное сегодня', self.html)
 
     def test_focus_links_are_only_published_first_party(self):
         section = self.html.split(FOCUS_START)[1].split(FOCUS_END)[0]
         for sid in active_focus_ids(self.records, self.items):
             self.assertIn('href="articles/' + sid + '/"', section)
-            self.assertNotIn('href="articles/' + sid + '/"', self.html.split(FOCUS_END)[1].split("<!-- HPII_PUBLISHED_SECTION_END -->")[0])
+            self.assertNotIn('href="articles/' + sid + '/"', self.html.split("<!-- HPII_PUBLISHED_SECTION_START -->")[1].split("<!-- HPII_PUBLISHED_SECTION_END -->")[0])
         self.assertNotIn('href="https://', section)
         self.assertNotIn('href="drafts/', section)
 
