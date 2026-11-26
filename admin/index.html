@@ -14,6 +14,17 @@
 main{padding:23px 0 50px}.bar{display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}.hint{font-size:13px;color:var(--muted)}.btn,button{font:inherit}button{background:#fff;color:var(--ink);border:1px solid #cbd5d4;border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:650;font-size:13px}button:hover{border-color:var(--accent);color:var(--accent)}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #e6a435;outline-offset:2px}.primary{background:var(--accent);border-color:var(--accent);color:#fff}.primary:hover{background:#0b5e57;color:#fff}.small{font-size:12px;padding:6px 10px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}.stat{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}.stat small{display:block;color:var(--muted);font-size:12px}.stat strong{display:block;font-size:31px;font-variant-numeric:tabular-nums;line-height:1.3;margin-top:3px}
 .sheet{background:var(--paper);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 3px 16px #273a3320}.tabs{display:flex;gap:2px;flex-wrap:wrap;padding:12px 14px 0;border-bottom:1px solid var(--line)}.tab{border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;padding:13px 16px;margin-bottom:-1px;color:var(--muted)}.tab[aria-selected=true]{color:var(--accent);border-bottom-color:var(--accent)}.body{padding:22px}.body h2{font-size:22px;line-height:1.25;margin:0 0 7px}.body p{margin:5px 0 14px}.notice{background:#e6f5f0;border-left:3px solid var(--accent);padding:9px 12px;font-size:13px;color:#23584f;border-radius:5px;margin:12px 0}.warning{background:#fff4dd;border-left-color:#ca8728;color:#6f4c12}.error{background:#fff0ed;border-left-color:var(--danger);color:var(--danger)}.section-head{margin:22px 0 10px;font-weight:800;font-size:14px;color:#334852}.items{display:grid;gap:9px}.item{border:1px solid var(--line);border-radius:11px;padding:13px 15px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;background:#fff}.item h3{font-size:15px;line-height:1.35;margin:0 0 5px;overflow-wrap:anywhere}.item-meta{font-size:12px;color:var(--muted)}.actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;justify-content:flex-end}.actions a{font-size:12px;white-space:nowrap;padding:6px 2px}.chip{display:inline-block;border-radius:5px;background:#e6f5f0;color:#175f54;font-weight:700;padding:2px 7px;font-size:11px;margin-left:6px}.chip.warn{background:#fff1da;color:#8b580b}.empty{color:var(--muted);border:1px dashed var(--line);border-radius:10px;padding:22px;text-align:center}.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}.toolbar label{font-size:13px}.toolbar input[type=checkbox],.item input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}.toolbar .right{margin-left:auto}.foot{margin-top:20px;color:var(--muted);font-size:12px}.foot a{margin-right:12px}.hidden{display:none!important}.loading{padding:35px;text-align:center;color:var(--muted)}
 dialog{border:1px solid var(--line);border-radius:15px;padding:0;max-width:min(860px,95vw);width:100%;max-height:88vh;box-shadow:0 18px 90px #0006}dialog::backdrop{background:#0b1826aa}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;background:var(--paper);padding:18px 22px;border-bottom:1px solid var(--line)}.modal-head h2{font-size:19px;line-height:1.3;margin:0}.modal-controls{display:flex;gap:6px;flex-wrap:wrap}.article-body{padding:20px 26px;overflow:auto;max-height:66vh}.article-body h2{margin-top:24px}.article-body p{margin:12px 0}.article-body blockquote{border-left:3px solid var(--accent);padding-left:14px;color:#52636c}.article-body a{text-decoration:underline}.article-body li{margin:4px 0}.article-body{user-select:text;-webkit-user-select:text}.copy-feedback{font-size:13px;line-height:1.45;padding:10px 22px;background:#e6f5f0;color:#23584f;border-bottom:1px solid var(--line)}.copy-feedback.warning{background:#fff4dd;color:#6f4c12}.copy-feedback:empty{display:none}
+#illustrationDialog{max-width:min(1040px,95vw)}
+.illustration-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:20px 22px;max-height:62vh;overflow:auto}
+.illustration-card{margin:0;min-width:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:#fff}
+.illustration-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#eef1ef}
+.illustration-caption{padding:10px 12px 4px;min-width:0}
+.illustration-caption strong,.illustration-caption small{display:block;overflow-wrap:anywhere}
+.illustration-caption strong{font-size:12px;line-height:1.35}
+.illustration-caption small{font-size:11px;color:var(--muted);margin-top:4px}
+.illustration-card button{margin:8px 12px 12px}
+@media(max-width:700px){.illustration-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px}}
+@media(max-width:440px){.illustration-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.mast .wrap{align-items:flex-start;flex-direction:column}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.item{grid-template-columns:1fr}.actions{justify-content:flex-start}.body{padding:15px}.tab{padding:11px 9px;font-size:12px}.modal-head{flex-direction:column}.article-body{padding:15px}}
 </style>
 <style id="hpii-auth-style">
@@ -71,13 +82,19 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 <div id="copyFeedback" class="copy-feedback" role="status" aria-live="polite"></div>
 <div class="article-body" id="articlePreview"></div>
 </dialog>
+<dialog id="illustrationDialog" aria-labelledby="illustrationHeading">
+<div class="modal-head"><div><div class="eyebrow" style="color:#59726c">ДОПОЛНИТЕЛЬНЫЕ ИЛЛЮСТРАЦИИ · БЕЗ ОБЛОЖКИ</div><h2 id="illustrationHeading"></h2></div>
+<div class="modal-controls"><button id="downloadAllIllustrations" class="small primary" disabled>Скачать все иллюстрации ZIP</button><button id="closeIllustrationDialog" class="small">Закрыть ×</button></div></div>
+<div id="illustrationFeedback" class="copy-feedback" role="status" aria-live="polite">Проверяю опубликованную версию статьи…</div>
+<div id="illustrationGrid" class="illustration-grid"></div>
+</dialog>
 <script>
 (function(){
 "use strict";
 var ROOT="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/";
 var GIT="https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/";
 var current="queue", data=null, selected=new Set(), activeStory=null;
-var panel=document.getElementById("panel"), dialog=document.getElementById("editorDialog");
+var panel=document.getElementById("panel"), dialog=document.getElementById("editorDialog"), illustrationDialog=document.getElementById("illustrationDialog");
 var MARKS_KEY="hpii:dzen-local-status:v1", marksUnavailable=false, marks=readMarks();
 function readMarks(){try{var v=JSON.parse(localStorage.getItem(MARKS_KEY)||"{}");if(!v||typeof v!=="object"||Array.isArray(v))return {};var good={};Object.keys(v).slice(0,2000).forEach(function(k){if(/^[a-z0-9-]{1,72}$/.test(k)&&["scheduled","published_manual"].includes(v[k]))good[k]=v[k]});return good}catch(_){marksUnavailable=true;return {}}}
 function setMark(id,value){if(!/^[a-z0-9-]{1,72}$/.test(id))return;var next=Object.assign({},marks);if(value)next[id]=value;else delete next[id];
@@ -104,7 +121,7 @@ function siteRows(md,mode){var seg=mode==="queue"?section(md,"## Следующ�
 var n=mode==="done"?3:mode==="attention"?4:5;
 return tableRows(seg,n).map(function(c){var i=mode==="queue"?1:0;var l=linkFrom(c[i]);if(!l)return null;return {title:l.title,url:l.url,status:mode==="queue"?clean(c[2]):mode==="attention"?clean(c[1]):"Опубликована",time:mode==="queue"?clean(c[3]):mode==="done"?clean(c[1]):"",reason:mode==="attention"?clean(c[2]):"",cover:linkFrom(c[n-1])?.url||null}}).filter(Boolean)}
 function dzenRows(md,num){var s=section(md,"## "+num+".");return tableRows(s,5).map(function(c){var l=linkFrom(c[1]);if(!l)return null;var other=linkFrom(c[3]);var cover=linkFrom(c[4]);var match=/\/dzen_texts\/([a-z0-9-]+)\.md/.exec(l.url||"");
-return {id:match?match[1]:"",title:l.title,md:l.url,time:clean(c[2]),other:other?.url||null,cover:cover?.url||null,dzen:num===3}}).filter(Boolean)}
+return {id:match?match[1]:"",title:l.title,md:l.url,time:clean(c[2]),other:other?.url||null,cover:cover?.url||null,dzen:num===3,sitePublished:num===1||num===3}}).filter(Boolean)}
 function stat(md,key){var m=new RegExp("\\*\\*"+key+":\\*\\*\\s*(\\d+)").exec(md);return m?Number(m[1]):0}
 function label(target,title){append(target,el("div","section-head",title))}
 function empty(target,text){append(target,el("div","empty",text))}
@@ -119,7 +136,7 @@ function anchor(text,url){if(!href(url))return;var a=append(ops,el("a",null,text
 if(type==="dzen"){if(!o.dzen){if(marks[o.id]){var revert=append(ops,el("button","small","Вернуть в список"));revert.addEventListener("click",function(){setMark(o.id,null)})}else{
 var schedule=append(ops,el("button","small","В отложенных"));schedule.addEventListener("click",function(){setMark(o.id,"scheduled")});
 var manual=append(ops,el("button","small","Уже опубликована"));manual.addEventListener("click",function(){setMark(o.id,"published_manual")})}}
-var b=append(ops,el("button","small","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});if(o.cover){var down=append(ops,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.dzen){anchor("Дзен ↗",o.other)}else if(o.other){anchor("На сайте ↗",o.other)}}
+var b=append(ops,el("button","small","Текст для Дзена"));b.addEventListener("click",function(){openText(o)});if(o.cover){var down=append(ops,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.sitePublished){var illustrations=append(ops,el("button","small","Иллюстрации ↓"));illustrations.addEventListener("click",function(){openIllustrations(o)})}if(o.dzen){anchor("Дзен ↗",o.other)}else if(o.other){anchor("На сайте ↗",o.other)}}
 else{anchor(type==="done"?"Статья ↗":"В GitHub ↗",o.url);if(o.cover)anchor("Обложка ↗",o.cover)}
 return row}
 function render(){panel.replaceChildren();if(!data){empty(panel,"Нет данных. Попробуй обновить.");return}
@@ -203,6 +220,40 @@ dialog.addEventListener("close",function(){window.getSelection().removeAllRanges
 function save(blob,name){var url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000)}
 async function bytes(o){var url=raw(o.cover);if(!url)throw Error("Некорректная ссылка обложки: "+o.id);var res=await fetch(url+"?v="+Date.now());if(!res.ok)throw Error("Не загружена обложка "+o.id+" (HTTP "+res.status+")");return new Uint8Array(await res.arrayBuffer())}
 async function downloadCover(o){try{var b=await bytes(o);save(new Blob([b]),o.id+"."+o.cover.split(".").pop())}catch(e){alert(e.message)}}
+async function inlineImageBytes(image){var res=await fetch(image.url+"?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw Error("Не удалось скачать "+image.filename+" (HTTP "+res.status+")");return new Uint8Array(await res.arrayBuffer())}
+async function downloadInlineImage(image,button){var old=button.textContent;button.disabled=true;button.textContent="Скачиваю…";try{var b=await inlineImageBytes(image);save(new Blob([b]),image.filename);button.textContent="Скачано ✓"}catch(e){alert(e.message);button.textContent="Ошибка"}finally{setTimeout(function(){button.textContent=old;button.disabled=false},1400)}}
+async function downloadIllustrationsZip(o,images,button){if(!images.length)return;var old=button.textContent;button.disabled=true;try{var files=[];for(var i=0;i<images.length;i++){button.textContent="Иллюстрации "+(i+1)+"/"+images.length+"…";files.push({name:images[i].filename,data:await inlineImageBytes(images[i])})}save(packZip(files),o.id+"-illustrations.zip");button.textContent="ZIP готов ✓"}catch(e){alert("Не удалось собрать архив: "+e.message);button.textContent="Ошибка ZIP"}finally{setTimeout(function(){button.textContent=old;button.disabled=false},1600)}}
+async function openIllustrations(o){
+var heading=document.getElementById("illustrationHeading"),feedback=document.getElementById("illustrationFeedback"),grid=document.getElementById("illustrationGrid"),zip=document.getElementById("downloadAllIllustrations");
+heading.textContent=o.title;feedback.textContent="Проверяю опубликованную версию статьи…";feedback.classList.remove("warning");grid.replaceChildren();zip.disabled=true;zip.textContent="Скачать все иллюстрации ZIP";zip.onclick=null;
+if(!illustrationDialog.open)illustrationDialog.showModal();
+try{
+if(!/^[a-z0-9-]{1,120}$/.test(o.id||""))throw Error("Не удалось проверить идентификатор статьи.");
+var articleUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/articles/"+o.id+"/index.html";
+var response=await fetch(articleUrl+"?v="+Date.now(),{cache:"no-store"});
+if(response.status===404)throw Error("Опубликованная HTML-страница статьи пока не найдена. Для материалов, ещё ожидающих выпуска на сайт, дополнительные иллюстрации появятся после публикации.");
+if(!response.ok)throw Error("GitHub вернул HTTP "+response.status+" при чтении статьи.");
+var articleDoc=new DOMParser().parseFromString(await response.text(),"text/html"),seen=new Set();
+var images=Array.from(articleDoc.querySelectorAll(".article-text img[src]")).map(function(node,index){
+try{var asset=new URL(node.getAttribute("src"),"https://iipike.ru/articles/"+o.id+"/"),prefix="/assets/editorial/inline/"+o.id+"/";
+if(asset.origin!=="https://iipike.ru"||!asset.pathname.startsWith(prefix))return null;
+var filename=decodeURIComponent(asset.pathname.slice(prefix.length));
+if(filename.includes("/")||!/^[a-z0-9][a-z0-9._-]*\.(?:webp|png|jpe?g)$/i.test(filename)||seen.has(filename))return null;
+seen.add(filename);return {url:"https://raw.githubusercontent.com/AfterDark1000/iipike-site/main"+asset.pathname,filename:filename,alt:node.getAttribute("alt")||("Иллюстрация "+(index+1))};
+}catch(_){return null}
+}).filter(Boolean);
+if(!images.length){feedback.textContent="В опубликованной версии статьи дополнительных иллюстраций не найдено. Обложка скачивается отдельно.";return}
+feedback.textContent="Найдено дополнительных иллюстраций: "+images.length+". Обложка в этот список не входит.";
+images.forEach(function(image){
+var card=append(grid,el("article","illustration-card")),preview=append(card,el("img"));
+preview.src=image.url;preview.alt=image.alt;preview.loading="lazy";preview.decoding="async";
+var caption=append(card,el("div","illustration-caption"));append(caption,el("strong",null,image.alt));append(caption,el("small",null,image.filename));
+var down=append(card,el("button","small","Скачать ↓"));down.addEventListener("click",function(){downloadInlineImage(image,down)});
+});
+zip.disabled=false;zip.onclick=function(){downloadIllustrationsZip(o,images,zip)};
+}catch(e){feedback.textContent="Не удалось получить иллюстрации: "+e.message;feedback.classList.add("warning")}
+}
+document.getElementById("closeIllustrationDialog").addEventListener("click",function(){illustrationDialog.close()});
 var crcTable=(function(){var t=[];for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?0xedb88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
 function crc(bytes){var c=0xffffffff;for(var j=0;j<bytes.length;j++)c=(c>>>8)^crcTable[(c^bytes[j])&255];return(c^0xffffffff)>>>0}
 function packZip(files){var encoder=new TextEncoder(),local=[],central=[],offset=0;
