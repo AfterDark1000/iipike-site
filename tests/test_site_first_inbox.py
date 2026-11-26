@@ -6,7 +6,8 @@ import tempfile
 import unittest
 
 from PIL import Image
-from scripts.site_first_inbox import stage, validate_story, cover_info
+from scripts.site_first_inbox import stage, validate_story, cover_info, published_markdown_matches
+from scripts.site_rich_text import markdown_to_blocks
 from scripts.publish_approved_article import approved_article
 
 ID = "sample-chatgpt-editor-story-20261104"
@@ -306,6 +307,55 @@ class SiteFirstInboxTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "differ"):
             validate_story(self.root, ID, today=dt.date(2026, 11, 4),
                            allow_published=True)
+
+    def test_published_audit_allows_only_additive_local_illustrations(self):
+        original = "\n\n".join(p["text"].strip() for p in self.story["paragraphs"])
+        self.story.pop("paragraphs")
+        self.story["article_markdown"] = original
+        self.save_story()
+        self.save_cover()
+        approved = stage(self.root, ID, apply=True, now=UTC)
+        page = self.root / "articles" / ID / "index.html"
+        page.parent.mkdir(parents=True)
+        page.write_text("approved rendered page", encoding="utf-8")
+        (self.root / "news.json").write_text(json.dumps([{
+            "id": ID, "title": self.story["title"], "source_url": self.story["source_url"]
+        }]), encoding="utf-8")
+        image = "![Added illustration](illustrations/" + ID + "/one.webp)"
+        asset = self.root / "assets/editorial/inline" / ID / "one.webp"
+        asset.parent.mkdir(parents=True)
+        self.save_cover(path=asset)
+        first, rest = original.split("\n\n", 1)
+        illustrated = first + "\n\n" + image + "\n\n" + rest
+        approved["article_markdown"] = illustrated
+        approved["paragraphs"] = markdown_to_blocks(illustrated)
+        path = self.root / "content/approved" / (ID + ".json")
+        path.write_text(json.dumps(approved), encoding="utf-8")
+        self.assertEqual(validate_story(self.root, ID, today=UTC.date(),
+                                        allow_published=True)["id"], ID)
+        # The read-only exception does not allow missing images or body edits.
+        asset.unlink()
+        with self.assertRaisesRegex(ValueError, "Missing approved local illustration"):
+            validate_story(self.root, ID, today=UTC.date(), allow_published=True)
+        self.save_cover(path=asset)
+        changed = illustrated.replace(first, first + " Changed claim.", 1)
+        approved["article_markdown"] = changed
+        approved["paragraphs"] = markdown_to_blocks(changed)
+        path.write_text(json.dumps(approved), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "Markdown differs"):
+            validate_story(self.root, ID, today=UTC.date(), allow_published=True)
+
+    def test_historical_markdown_additions_cannot_remove_or_change_original_blocks(self):
+        existing = "![Original](illustrations/" + ID + "/old.webp)"
+        extra = "![Extra](illustrations/" + ID + "/new.webp)"
+        original = "Original first.\n\n" + existing + "\n\nOriginal last."
+        self.assertTrue(published_markdown_matches(original,
+                        original + "\n\n" + extra, ID))
+        for bad in (original.replace(existing, extra),
+                    original.replace("Original last.", "Rewritten."),
+                    original + "\n\n![Extra](illustrations/another-story/new.webp)",
+                    original + "\n\nAnother paragraph."):
+            self.assertFalse(published_markdown_matches(original, bad, ID))
 
     def test_refuse_unapproved_or_tampered_editorial_article(self):
         self.save_cover()
