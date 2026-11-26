@@ -84,7 +84,20 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn("main/articles/", self.html)
         self.assertIn("Опубликованная HTML-страница статьи пока не найдена", self.html)
 
+    def test_dzen_controls_are_grouped_and_illustration_gallery_is_compact(self):
+        for phrase in ('" item-dzen"', '"action-status"', '"action-primary"',
+                       '"action-assets"', '"action-link"', 'Текст для Дзена',
+                       'repeat(5,minmax(0,1fr))', 'height:104px',
+                       'padding:12px 16px', 'max-width:min(1160px,96vw)',
+                       '@media(max-width:900px)', '@media(max-width:560px)'):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.html)
+        self.assertIn('el("button","small primary","Текст для Дзена")', self.html)
+        self.assertIn('background:#f1f7f5', self.html)
+        self.assertIn('border-right:1px solid var(--line)', self.html)
+
     def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
+
 
         for phrase in ('id="copyFeedback"',
                        'role="status"', 'aria-live="polite"',
