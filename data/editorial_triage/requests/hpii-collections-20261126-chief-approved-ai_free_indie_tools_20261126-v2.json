@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "action": "collection_upsert",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "collection": {
+    "group": "ai_free_indie_tools_20261126",
+    "title": "Бесплатные ИИ-инструменты от энтузиастов",
+    "state": "collecting",
+    "primary_sequence": 337,
+    "members": [
+      {
+        "sequence": 149,
+        "pool_id": "n-9c52b68e170321d3"
+      },
+      {
+        "sequence": 337,
+        "pool_id": "n-def7dfc6bcfd4fb9"
+      },
+      {
+        "sequence": 581,
+        "pool_id": "n-c29e6ad33e5b930e"
+      }
+    ],
+    "note": "Бесплатные практические инструменты энтузиастов с проверяемыми исходниками/демо; разные задачи, не задерживать крупные новости. №337 VoxaDub: локальный перевод/дубляж, клонирование голоса; v0.1.0 от 03.11.2026, MIT для кода, лицензии моделей отдельно, LatentSync ~18 ГБ VRAM, live экспериментальный. https://github.com/kadirb4rut/voxadub и https://github.com/kadirb4rut/voxadub/releases/tag/v0.1.0. №149 монтаж, субтитры, удаление повторов, MIT, прежде всего китайскоязычная речь: https://github.com/mileson/chaojifeng-video-content-creator. №581 OS Studio, локальная музыкальная студия: https://github.com/TheAwaken1/os-studio. Перед выпуском проверить зависимости, лицензии моделей, требования к железу и реальные функции. Пополнять при разборе нового и старого пула; открывать только с согласия главреда."
+  }
+}
