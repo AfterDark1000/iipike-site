@@ -8971,5 +8971,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?",
+    "summary": "TensorWave поставит OpenAI выделенные мощности на ускорителях AMD Instinct MI455X. Первые серверы планируют ввести в первой половине 2027 года, а полный объём ожидается к началу 2028-го.",
+    "published": "2026-11-26",
+    "source_url": "https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure",
+    "cover": "assets/editorial/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179.webp",
+    "rubric": "news",
+    "vk_title": "⚡ OpenAI получит 457 МВт под серверы с чипами AMD. Когда ЗАПУСК?",
+    "vk_summary": "TensorWave подписала с OpenAI шестилетний контракт и выделит мощности на нескольких площадках в США. Серверы оснастят ускорителями AMD Instinct MI455X. Первые мощности планируют запустить в первой половине 2027 года и выйти на полную мощность к началу 2028-го.",
+    "published_at_utc": "2026-11-26T06:30:50Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+    "url": "articles/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179/",
+    "topics": [
+      "infrastructure",
+      "business"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": []
   }
 ]
