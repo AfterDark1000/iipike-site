@@ -99,6 +99,10 @@
         {
           "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
           "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
+        },
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
         }
       ]
     },
@@ -2241,6 +2245,30 @@
           "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
         }
       ]
+    },
+    {
+      "key": "hubspot",
+      "name": "HubSpot",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+        }
+      ]
+    },
+    {
+      "key": "neobid",
+      "name": "NeoBid",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+        }
+      ]
     }
   ],
   "products": [
@@ -2915,6 +2943,10 @@
         {
           "article_id": "openai-dots-chatgpt-plus-test-20261119",
           "source_url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot"
+        },
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
         }
       ]
     },
@@ -4420,6 +4452,19 @@
         {
           "article_id": "krea-video-swap-20261120",
           "source_url": "https://www.krea.ai/apps/video-face-swap"
+        }
+      ]
+    },
+    {
+      "key": "chatgpt-for-sales",
+      "name": "ChatGPT for Sales",
+      "status": "candidate",
+      "first_seen": "2026-11-26",
+      "company": "openai",
+      "evidence": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
         }
       ]
     }
