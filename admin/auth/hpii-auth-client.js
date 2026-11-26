@@ -96,6 +96,17 @@ export class HpiiAdminAuth {
     return data;
   }
   async session(){return this.fetchApi("/api/session")}
+  async listEditorialFiles(kind){
+    if(!["drafts","copyedits"].includes(kind))throw Error("Недопустимый список материалов");
+    const result=await this.fetchApi("/api/editorial-files?kind="+encodeURIComponent(kind));
+    if(!Array.isArray(result.entries))throw Error("Сервер вернул неверный список материалов");
+    return result.entries;
+  }
+  async readEditorialRecord(path){
+    if(typeof path!=="string"||!/^editorial_inbox\/(auto_drafts|auto_decisions|auto_covers|auto_cover_decisions|auto_handoffs|auto_copyedits|auto_copyedit_decisions|auto_copyedit_responses)\/[a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\\d*(?:-v[1-9]\\d*)?)?\.json$/.test(path))
+      throw Error("Недопустимый путь редакционного файла");
+    return this.fetchApi("/api/editorial-record?path="+encodeURIComponent(path));
+  }
   async reviewCopyedit(item,candidateSha,action,note=""){
     return this.fetchApi("/api/copyedit-review",{
       method:"POST",headers:{"content-type":"application/json"},
