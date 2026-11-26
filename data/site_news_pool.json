@@ -8650,12 +8650,12 @@
       "summary": "25 ноября. Сообщается о предварительных результатах мониторинга плантаций и выявления фузариоза.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:49:26+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-d8e5196a64c4b578"
     },
     {
       "id": "n-de53a06b95fd4b91",
@@ -8710,12 +8710,12 @@
       "summary": "25 ноября. CISA включила уязвимость Drupal в перечень активно эксплуатируемых; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-25T18:37:36+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:49:26+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-a287de1f422e01b0"
     },
     {
       "id": "n-e15226fcff2bf29f",
@@ -8800,12 +8800,12 @@
       "summary": "Сообщается о функции API для извлечения сохранённых версий страниц за период до 365 дней; требуется подтверждение официальным анонсом.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-26T04:41:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T09:49:26+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "SHORT_EDITOR claim=short; pool_id=n-3e6c89c17dd610c9"
     },
     {
       "id": "n-ae6a9e994b3a32ff",

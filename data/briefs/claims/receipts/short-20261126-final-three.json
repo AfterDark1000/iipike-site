@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "request": "short-20261126-final-three.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 3,
+  "items": [
+    {
+      "pool_id": "n-d8e5196a64c4b578",
+      "pool_sequence": 578,
+      "title": "На Филиппинах дроны с ИИ ищут болезни бананов до появления видимых симптомов",
+      "source_url": "https://www.pna.gov.ph/article/da-11-drone-ai-project-shows-promise-vs-fusarium-wilt",
+      "claimed_at": "2026-11-26T09:49:26+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-a287de1f422e01b0",
+      "pool_sequence": 582,
+      "title": "Хакеры начали эксплуатировать уязвимость, ранее обнаруженную нейросетью Anthropic",
+      "source_url": "https://www.securityweek.com/drupal-flaw-found-by-anthropic-scanner-exploited-in-attacks",
+      "claimed_at": "2026-11-26T09:49:26+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-3e6c89c17dd610c9",
+      "pool_sequence": 588,
+      "title": "Perplexity добавила поисковому ИИ возможность обращаться к прошлым версиям веб-страниц",
+      "source_url": "https://digg.com/ai/d1tal985",
+      "claimed_at": "2026-11-26T09:49:26+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
