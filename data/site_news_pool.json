@@ -4585,12 +4585,12 @@
       "summary": "17–18 ноября: исследование TeleChat/Xing4 с Huawei Ascend 910C.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": "2026-11-26T10:56:24.135641+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверены arXiv:2611.22115 от 17.11, карточка и реальные файлы Xing4.1-Preview на Hugging Face, официальный репозиторий XingChen-AGI. Событие обновилось: к 26.11 открыты веса Apache 2.0 (573 ГБ), модель 285 млрд параметров/17 млрд активных, 8192 Ascend 910C, MindSpore; контекст 1 млн. В собственных тестах SWE-Bench Pro V2 (Hard51) 74,5 против 60,8 DeepSeek-V4-Flash-0731 и 88,2 DeepSeek-V4.1-Flash-1017. Архив: LongCat-2.5 на Huawei, подтверждённый Dzen ID 6b06b90f8229d43dc4b7631d; дубля Xing4 нет. @Huawei подтверждён официальным сайтом, подходящий официальный X China Telecom не установлен. Материал на утверждение."
+      "closed_at": "2026-11-26T11:01:48+00:00",
+      "article_id": "china-telecom-xing4-huawei-20261126",
+      "note": "Главред утвердил материал («берём»). Дословный текст и VK сохранены в editorial-intake, Threads/X approved подтверждены повторным чтением. Ожидается обложка."
     },
     {
       "id": "n-f2e7b028a6ca7225",
