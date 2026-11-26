@@ -74,7 +74,7 @@ class AdminOverviewTests(unittest.TestCase):
 
     def test_dzen_inline_illustrations_are_separate_from_cover(self):
         for phrase in ("Иллюстрации ↓", "ДОПОЛНИТЕЛЬНЫЕ ИЛЛЮСТРАЦИИ · БЕЗ ОБЛОЖКИ",
-                       "Скачать все иллюстрации ZIP", "figure img[src]",
+                       "Скачать все иллюстрации ZIP", ".article-text img[src]",
                        "/assets/editorial/inline/", "downloadIllustrationsZip",
                        "sitePublished:num===1||num===3",
                        "Обложка в этот список не входит"):
@@ -82,7 +82,7 @@ class AdminOverviewTests(unittest.TestCase):
                 self.assertIn(phrase, self.html)
         self.assertIn("if(o.sitePublished)", self.html)
         self.assertIn("main/articles/", self.html)
-        self.assertIn("published HTML", self.html)
+        self.assertIn("Опубликованная HTML-страница статьи пока не найдена", self.html)
 
     def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
 
