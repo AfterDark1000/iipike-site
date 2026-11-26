@@ -3340,12 +3340,12 @@
       "summary": "Соглашение TensorWave о вычислительных мощностях на ускорителях AMD.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": "2026-11-23T14:03:27+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-010.json; article_id=openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179"
+      "closed_at": "2026-11-26T06:30:50Z",
+      "article_id": "openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179",
+      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-010.json; article_id=openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179\nОпубликовано на сайте: https://iipike.ru/articles/openai-zakazala-457-megavatt-vychislitelnykh-mosh-aede5bf8ca875179/"
     },
     {
       "id": "n-a88aae871bc0b36e",
@@ -3400,12 +3400,12 @@
       "summary": "Джордан Белфорт представил голосовой стартап Tone для телефонных продаж; эффективность заявлена основателем.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-17T14:36:23+00:00",
       "review_started_at": "2026-11-23T14:58:49+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-011.json; article_id=volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda"
+      "closed_at": "2026-11-26T05:15:40Z",
+      "article_id": "volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda",
+      "note": "AUTO_EDITOR claim=auto-20261123-work-ordinary-011.json; article_id=volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda\nОпубликовано на сайте: https://iipike.ru/articles/volk-s-uoll-strit-nauchil-ii-prodavat-po-telefonu-b5b8d2f9cb551dda/"
     },
     {
       "id": "n-af037def51a6f595",
