@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-editor-20261126-after-562-next.json",
+  "request_sha256": "1594fe7f700f8f43c069ad22ac907f43510ba0bd983004de089322be556cc51c",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-80b87172da6a5c5f",
+      "pool_sequence": 563,
+      "title": "Тайваньские учёные разработали два поколения экономичных чипов для локальных нейросетей",
+      "source_url": "https://focustaiwan.tw/sci-tech/202611250014",
+      "claimed_at": "2026-11-26T09:08:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-996b7825be6194fd",
+      "pool_sequence": 564,
+      "title": "Liquid AI хочет поселить автономных ИИ-агентов прямо в городских камерах и оборудовании",
+      "source_url": "https://www.traffictechnologytoday.com/news/artificial-intelligence-ai/ces-2027-ambarella-and-liquid-ai-team-up-on-edge-ai-for-smart-infrastructure.html",
+      "claimed_at": "2026-11-26T09:08:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-2df7e6787709220a",
+      "pool_sequence": 567,
+      "title": "Малайзия собирается отключить семь компаний от услуг дата-центров после американских санкций",
+      "source_url": "https://ai.zhudong.net/en",
+      "claimed_at": "2026-11-26T09:08:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6f93dd9d44f94d1e",
+      "pool_sequence": 570,
+      "title": "Бывшие основатели xAI создали для нейросетей машину времени",
+      "source_url": "https://epochal.com/blog/introducing-time-portal",
+      "claimed_at": "2026-11-26T09:08:19+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-88bbd8cc7ba078cb",
+      "pool_sequence": 571,
+      "title": "Claude научился создавать полноценные приложения для Windows и Mac прямо в чате",
+      "source_url": "https://claude.com/fr/resources/articles/install-as-app",
+      "claimed_at": "2026-11-26T09:08:19+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
