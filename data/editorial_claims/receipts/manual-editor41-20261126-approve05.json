@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve05.json",
+  "request_sha256": "795fa6272f31f9a724539ef1b5965b8d3942d28c917f6e45e303cd8f04bc4d5d",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-3047d7657748ea76",
+  "pool_sequence": 316,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T11:28:14.664145+00:00",
+  "note": "Главред утвердил материал («берём»). Последняя редакция статьи с подзаголовками и списком, VK сохранены в editorial-intake; Threads/X approved подтверждены повторным чтением. Ожидается обложка."
+}
