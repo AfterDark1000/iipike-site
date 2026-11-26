@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "title": "Сбер выпустил Kandinsky 6.5. Теперь можно собрать героев из разных фотографий в одном видео",
+      "source_url": "https://novostivoronezha.ru/2026/11/26/369569",
+      "summary": "Сообщается о генерации видео со звуком, сохранении внешности персонажей и создании инфографики; заявлена доступность моделей в ГигаЧате.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В России предложили добавить на смартфоны окно выбора нейросети",
+      "source_url": "https://www.tks.ru/technology/2026/11/26/0008/otechestvennyie-nejroseti-mogut-stat-chastyu-privyichnyih-funktsij-smartfona/",
+      "summary": "На AI Journey предложили предоставить пользователям возможность выбора ИИ-помощника. Пока инициатива, не принятое решение.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "VK научила ИИ-агентов самостоятельно создавать недостающие инструменты",
+      "source_url": "https://www.cnews.ru/news/line/2026-11-25_vk_ai_space_nauchil_ii-agentov",
+      "summary": "Агент может написать недостающий скрипт, запустить его в изолированной среде и проверить результат.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Яндекс научил ИИ-агентов самостоятельно собирать данные для аналитики",
+      "source_url": "https://www.yandex.ru/company/news/26-11-2026-01",
+      "summary": "DataLens поддерживает работу через Алису AI, ChatGPT и Claude Code. Общедоступная облачная версия ожидается в декабре.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Российская платформа Jay Flow открыла коллективный доступ к 50 нейросетям на одном холсте",
+      "source_url": "https://www.cnews.ru/news/line/2026-11-26_just_ai_otkryvaet_komandnyj",
+      "summary": "Командная работа с генеративными моделями и подключение корпоративных сервисов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "В России появился бизнес по спасению пользователей от блокировок Claude",
+      "source_url": "https://www.cnews.ru/news/top/2026-11-26_rossiyane_nachali_zarabatyvat",
+      "summary": "CNews описывает рынок услуг, возникший после проверок аккаунтов Anthropic.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Claude переписал собственный API и сократил нагрузку на процессоры на 70%",
+      "source_url": "https://www.anthropic.com/research/migrating-api-to-rust",
+      "summary": "Свежий отчёт Anthropic о переносе API с Python на Rust при помощи команд ИИ-агентов; первая версия была готова за неделю, проверка заняла месяцы.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "OpenAI начала тестировать конфиденциальную обработку запросов",
+      "source_url": "https://thenextweb.com/news/openai-private-inference-testing-customers",
+      "summary": "Сообщается об ограниченном тестировании Private Inference для корпоративных клиентов; технология защищает данные во время вычислений.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Индия представила собственную языковую и голосовую нейросети Chariot-1",
+      "source_url": "https://www.expresscomputer.in/news/indiaai-mission-backed-chariot-artificial-intelligence-unveils-an-11-billion-parameter-language-model/141773/",
+      "summary": "Языковая модель насчитывает около 11 млрд параметров, голосовая поддерживает английский и десять индийских языков. Заявлено обучение с нуля.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Amazon обсуждает возвращение заблокированного ИИ-покупателя Meta",
+      "source_url": "https://fortune.com/2026/11/25/exclusive-amazon-meta-talks-deal-muse-ai-shopping-agent-blockade/",
+      "summary": "По данным Fortune, переговоры о доступе автономного покупателя затрагивают рекламную модель Amazon.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "900 ИИ-учёных распределили по 35 лабораториям. Люди пока оказались изобретательнее",
+      "source_url": "https://www.timeshighereducation.com/news/society-ai-scientists-outputs-less-novel-human-work",
+      "summary": "Сообщается об исследовании коллективов ИИ-агентов и новизны их результатов относительно человеческих. Уточнить дату исходной работы.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Физик из Стэнфорда привлёк GPT-6 Astra к разработке квантовой теории гравитации",
+      "source_url": "https://theaiinsider.tech/2026/11/26/stanford-physicist-used-openais-gpt-6-astra-in-quantum-gravity-research/",
+      "summary": "ИИ помогал с расчётами и доказательствами. Возможный дубль ранее освещённых математических достижений OpenAI.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Для биологических нейросетей обнаружили новый закон масштабирования",
+      "source_url": "https://www.businesswire.com/news/home/20261126210867/en/Cellular-Intelligence-Announces-Nature-Machine-Intelligence-Publication-Establishing-a-New-Scaling-Law-for-Biological-AI",
+      "summary": "Анализ более 2000 конфигураций моделей указывает на важность качества экспериментальных измерений наряду с размером моделей и объёмом данных.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Дэвида Финчера заподозрили в использовании нейросетей при создании нового фильма",
+      "source_url": "https://www.theverge.com/entertainment/1041417/david-fincher-netflix-cliff-booth-ai-interpositive",
+      "summary": "После предварительных показов фильма о Клиффе Буте возник спор о применении генеративного ИИ. Подозрения пока не доказаны.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Нейросети наследили как минимум в 25 судебных делах Англии и Уэльса",
+      "source_url": "https://www.theguardian.com/technology/2026/nov/26/dozens-of-court-cases-in-england-and-wales-affected-by-undisclosed-ai-use-in-2026",
+      "summary": "Расследование о случаях использования вымышленных судебных прецедентов, законов и сгенерированных свидетельских показаний.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    },
+    {
+      "title": "Американские ограничения могут сорвать выпуск новых китайских нейросетей",
+      "source_url": "https://www.reuters.com/world/china/us-chip-curbs-distillation-crackdown-threaten-chinese-ai-model-development-2026-11-26/",
+      "summary": "Reuters сообщает о возможной отсрочке релиза Z.AI до 2027 года из-за ограничений вычислительных мощностей и противодействия дистилляции.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal"
+    }
+  ]
+}
