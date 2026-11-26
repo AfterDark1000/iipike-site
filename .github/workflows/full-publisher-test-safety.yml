@@ -5,12 +5,16 @@ on:
     branches: [main]
     paths:
       - 'tests/test_homepage_focus.py'
+      - 'tests/test_yandex_metrika.py'
+      - 'lab/design/**'
       - 'data/home_focus.json'
       - '.github/workflows/full-publisher-test-safety.yml'
   pull_request:
     branches: [main]
     paths:
       - 'tests/test_homepage_focus.py'
+      - 'tests/test_yandex_metrika.py'
+      - 'lab/design/**'
       - 'data/home_focus.json'
       - '.github/workflows/full-publisher-test-safety.yml'
 
