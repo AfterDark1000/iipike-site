@@ -4840,9 +4840,9 @@
       "summary": "18 ноября. Amazon представила инструменты AutoCorrode для работы ИИ-агентов с формальной проверкой Isabelle.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-19T13:14:35+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-26T16:07:14.143603+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
