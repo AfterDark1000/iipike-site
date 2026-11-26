@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-26T06:40:28Z",
-  "valid_until": "2026-11-26T08:10:28Z",
+  "prepared_at": "2026-11-26T06:40:57Z",
+  "valid_until": "2026-11-26T08:10:57Z",
   "status": "ready",
   "quota": {
     "used": 3,
