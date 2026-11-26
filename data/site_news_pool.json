@@ -8410,12 +8410,12 @@
       "summary": "25 ноября. Голосовой агент отвечает на родном языке фермера по англоязычному сельскохозяйственному справочнику.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-25T14:32:59+00:00",
       "review_started_at": "2026-11-26T07:22:15+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-0077e07924e43bf7"
+      "closed_at": "2026-11-26T11:09:24Z",
+      "article_id": "ibm-cuga-indic-farm-assistant-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-0077e07924e43bf7\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/ibm-cuga-indic-farm-assistant-20261125/"
     },
     {
       "id": "n-80b87172da6a5c5f",
