@@ -167,7 +167,7 @@ def claim_short_batch(pool, count=5, *, routes=None, now=None, root=ROOT, exclud
     site_news_pool.validate(pool)
     if type(count) is not int or not 1 <= count <= 5:
         raise ValueError("Short-editor batch size must be 1..5")
-    if short_work_in_progress(pool):
+    if short_work_in_progress(pool, root=root):
         return copy.deepcopy(pool), []
     if routes is None:
         routes = load_routes(pool, root=root)
