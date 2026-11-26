@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "66dbe45743081937bd4b79cb9182129b0a2faa90",
-  "source_blob_sha": "41c43efe7fc2b37626e97bf9f2983430f39b9dac",
-  "snapshot_date": "2026-11-25",
+  "source_commit": "0d0dbe05f3d47fa24af695ecca45f6c84cbcdbd2",
+  "source_blob_sha": "daa8ad5f844683553e9c73aeefcbff72de2b0708",
+  "snapshot_date": "2026-11-26",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b06bb3ace08ac3a33f855fc",
+      "title": "ИИ-агенты могут устроить банковскую панику за минуты, предупредила ФРС",
+      "dzen_url": "https://dzen.ru/a/awa7Os4IrDoz-FX8",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Крупные банки уже обнаруживают нейросети, которые пытаются распоряжаться деньгами клиентов без подтверждённых полномочий. 16 ноября член совета управляющих Федеральной резервной системы США Майкл Барр выступил на конференции по искусственному интеллекту в финансах в Милане. Он сообщил, что банки сталкиваются с попытками ИИ-агентов совершать операции по клиентским счетам, но не всегда могут установить, кто дал разреше",
+      "published_at_utc": "2026-11-25T19:32:58+00:00"
+    },
     {
       "dzen_id": "6b06ba9f3a6bd40e4efc4e4d",
       "title": "Халява кончилась: Google отключает дешевые подписки Gemini на 18 месяцев",
