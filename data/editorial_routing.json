@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "approved_date": "2026-11-26",
-  "source": "data/editorial_triage/requests/hpii-collections-20261126-chief-approved-ai_digital_housekeeping_20261126-v1.json",
+  "source": "data/editorial_triage/requests/hpii-collections-20261126-chief-approved-ai_free_indie_tools_20261126-v2.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
   "note": "Chief-approved collection transition; no publication.",
   "items": [
@@ -299,7 +299,9 @@
       "sequence": 149,
       "pool_id": "n-9c52b68e170321d3",
       "lane": "hold",
-      "decision": "defer"
+      "decision": "linked_secondary",
+      "group": "ai_free_indie_tools_20261126",
+      "group_primary": 337
     },
     {
       "sequence": 153,
@@ -2749,7 +2751,9 @@
       "sequence": 581,
       "pool_id": "n-c29e6ad33e5b930e",
       "lane": "hold",
-      "decision": "manual"
+      "decision": "linked_secondary",
+      "group": "ai_free_indie_tools_20261126",
+      "group_primary": 337
     },
     {
       "sequence": 582,

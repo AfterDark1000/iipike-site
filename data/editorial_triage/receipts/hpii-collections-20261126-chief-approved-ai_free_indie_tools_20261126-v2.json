@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "hpii-collections-20261126-chief-approved-ai_free_indie_tools_20261126-v2.json",
+  "request_sha256": "6ddb14dc492b8aaf01002f2e16af0e96b7c93898f181d0e46cf4690e11b4e72e",
+  "status": "applied",
+  "applied": [
+    149,
+    337,
+    581
+  ],
+  "unchanged": [],
+  "skipped": []
+}
