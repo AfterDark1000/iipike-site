@@ -8800,12 +8800,12 @@
       "summary": "Сообщается о функции API для извлечения сохранённых версий страниц за период до 365 дней; требуется подтверждение официальным анонсом.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-26T04:41:35+00:00",
       "review_started_at": "2026-11-26T09:49:26+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-3e6c89c17dd610c9"
+      "closed_at": "2026-11-26T15:39:19Z",
+      "article_id": "perplexity-time-machine-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-3e6c89c17dd610c9\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/perplexity-time-machine-20261125/"
     },
     {
       "id": "n-ae6a9e994b3a32ff",
