@@ -90,7 +90,7 @@ jobs:
                    '.github/workflows/site-ui-safety.yml',
                    'data/dossier.json', 'scripts/site_dossier.py', 'scripts/build_dossier.py',
                    'tests/test_site_dossier.py', 'dossier/index.html', 'assets/site.css',
-                   'tests/test_homepage_focus.py',
+                   'tests/test_homepage_focus.py', 'tests/test_homepage.py',
                    'admin/dossier/index.html', 'admin/dossier/app.js',
                    'admin-auth-worker/src/index.mjs', 'admin-auth-worker/tests/dossier.test.mjs',
                    '.github/workflows/dossier-refresh.yml', '.github/workflows/hpii-admin-gateway-deploy.yml',

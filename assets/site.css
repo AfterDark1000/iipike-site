@@ -725,25 +725,28 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
 .home-v1 .dossier-card-copy strong{font:700 clamp(24px,3vw,36px)/1.15 Georgia,serif}
 .home-v1 .dossier-date{color:#c1c9bc}
 .home-v1 .dossier-summary{color:#e0e5d8;font-size:14px}
-.home-v1 .home-focus{padding-block:38px 0}
-.home-v1 .home-focus-grid[data-count="4"]{gap:18px;grid-template-columns:repeat(4,minmax(0,1fr))}
-.home-v1 .home-focus-grid[data-count="4"] .home-focus-card{border:0;background:none;transform:none}
-.home-v1 .home-focus-grid[data-count="4"] .home-focus-body{padding:10px 0 0;gap:5px}
-.home-v1 .home-focus-grid[data-count="4"] .home-focus-title{font:650 17px/1.3 system-ui,sans-serif;letter-spacing:0}
-.home-v1 .home-focus-grid[data-count="4"] .home-focus-tag{color:var(--red)}
-.home-v1 .home-focus-grid[data-count="4"] .home-focus-arrow{display:none}
+.home-v1 .home-focus{padding-block:38px 38px}
+.home-v1 .home-focus-grid[data-count="4"]{gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));align-items:start}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child{display:block;grid-column:auto;grid-row:auto;min-height:0;border:0;background:none;color:var(--ink);transform:none}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-image,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-image{display:block;width:100%;height:auto;min-height:0;aspect-ratio:16/9}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-body,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-body{display:block;padding:0;margin-top:10px}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-title,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-title{display:block;font:650 17px/1.3 system-ui,sans-serif;letter-spacing:0;margin-top:5px}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-date,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-date{display:block;font:400 11px/1.4 system-ui,sans-serif;color:var(--muted);margin:7px 0 0}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-tag,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-tag{color:var(--red)}
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-arrow,
+.home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-arrow{display:none}
 .home-v1 .home-focus-grid[data-count="4"] .home-focus-card:hover .home-focus-title{color:var(--red)}
-.home-v1 .home-workshop{background:none;padding:38px 0 0}
-.home-v1 .home-workshop-card{min-height:0;padding:20px;background:#fffaf2;border-color:var(--line)}
-.home-v1 .home-workshop-card h3{font-size:24px}
-.home-v1 .home-workshop-symbol{display:none}
-.home-v1 .home-card-arrow{border-bottom:0}
-.home-v1 .home-latest{margin-top:38px;padding:0 0 24px}
-.home-v1 .home-latest .home-section-head{border-color:#f6f0e2}
-.home-v1 .home-latest .home-text-link{color:#f6f0e2}
-.home-v1 .home-endnote{padding-block:18px}
+.home-v1 .home-focus-note{font:750 10px/1.4 system-ui,sans-serif;letter-spacing:.075em;text-transform:uppercase;color:var(--red);max-width:none;margin:0}
 .home-v1 .footer{padding-block:25px}
-.home-v1 .home-footer-content{gap:18px}
+.home-v1 .home-v1-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13px}
+.home-v1 .home-v1-footer nav{display:flex;flex-wrap:wrap;gap:15px}
+
 .hpi-social-section{margin-top:22px;padding-top:20px}
 .hpi-social-heading{margin-bottom:14px}
 .hpi-social-eyebrow{margin-bottom:5px!important}
@@ -775,9 +778,10 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
   .home-v1 .home-site-post h3{margin:0}
   .home-v1 .dossier-home{width:calc(100% - 32px);padding:19px 16px;margin-top:28px}
   .home-v1 .dossier-card{grid-template-columns:1fr;gap:14px}
-  .home-v1 .home-focus{padding-top:28px}
+  .home-v1 .home-focus{padding-block:28px}
   .home-v1 .home-focus-grid[data-count="4"]{gap:16px 12px}
-  .home-v1 .home-focus-grid[data-count="4"] .home-focus-title{font-size:15px}
+  .home-v1 .home-focus-grid[data-count="4"] .home-focus-card .home-focus-title,
+  .home-v1 .home-focus-grid[data-count="4"] .home-focus-card:first-child .home-focus-title{font-size:15px}
   .hpi-social-card{min-height:57px;padding:8px;gap:8px}
   .hpi-social-mark{width:31px;height:31px}
   .hpi-social-copy strong{font-size:12px}

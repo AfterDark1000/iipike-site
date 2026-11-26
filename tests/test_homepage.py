@@ -1,9 +1,7 @@
-"""Offline homepage regression tests: published/draft separation, links and JS safety."""
+"""Offline homepage regression tests: V1 navigation, live published cards and compact footer."""
 from html.parser import HTMLParser
 from pathlib import Path
 import re
-import subprocess
-import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -52,16 +50,13 @@ class HomepageTests(unittest.TestCase):
         self.assertFalse(self.parsed.errors)
         self.assertEqual(self.parsed.headings.count("h1"), 1)
         self.assertEqual(len(self.parsed.ids), len(set(self.parsed.ids)))
-        for key in ("content", "latest", "archive", "home-dzen-list",
-                    "home-dzen-count", "home-draft-live"):
+        for key in ("content", "archive", "short-news", "dossier", "focus"):
             self.assertIn(key, self.parsed.ids)
-        for link in ("#latest", "#archive", "registry/", "drafts/",
-                     "articles/", "feed.xml"):
+        for link in ("registry/", "drafts/", "articles/", "feed.xml", "entities/", "briefs/", "dossier/"):
             self.assertIn(link, self.parsed.links)
-        self.assertIn("Наши публикации", self.html)
+        self.assertIn("Свежие публикации", self.html)
         self.assertIn("HPII_PUBLISHED_SECTION_START", self.html)
         self.assertIn("home-site-posts", self.html)
-        self.assertIn("НЕ ОПУБЛИКОВАНО", self.html)
         self.assertNotIn("https://dzen.ru/iipike", self.html)
 
     def test_homepage_first_party_articles_are_current_and_readable(self):
@@ -81,23 +76,16 @@ class HomepageTests(unittest.TestCase):
         for item in sorted_published(records)[:5]:
             self.assertIn('href="' + item["url"] + '"', self.html)
 
-    def test_dynamic_news_uses_real_published_articles_only(self):
-        self.assertIn('row.status === "published"', self.html)
-        self.assertIn('validDzen(row.dzen_url)', self.html)
-        self.assertIn('url.hostname === "dzen.ru"', self.html)
-        self.assertIn('url.protocol === "https:"', self.html)
-        self.assertIn("textContent", self.html)
-        self.assertIn("replaceChildren", self.html)
-        self.assertNotIn("innerHTML", self.html)
-        self.assertNotIn("document.write", self.html)
-        self.assertIn("latestPublished();", self.html)
-        self.assertIn("newestDraft();", self.html)
-
-    def test_draft_ids_are_limited_to_hex20_and_links_not_publications(self):
-        self.assertIn('item.id', self.html)
-        self.assertIn('link.href = "drafts/" + latest.id + "/"', self.html)
-        self.assertIn('НЕ ОПУБЛИКОВАНО', self.html)
-        self.assertIn("home-draft-live", self.html)
+    def test_v1_menu_and_no_legacy_sections(self):
+        menu = re.search(r'<nav class="menu home-menu"[^>]*>(.*?)</nav>', self.html, re.S).group(1)
+        self.assertEqual(re.findall(r'href="([^"]+)"', menu),
+                         ["articles/", "briefs/", "dossier/", "entities/"])
+        for removed in ("home-workshop", "home-latest", "home-endnote",
+                        "home-draft-live", "home-dzen-list", "latestPublished", "newestDraft"):
+            self.assertNotIn(removed, self.html)
+        self.assertIn('src="assets/social-footer.js"', self.html)
+        self.assertEqual(self.html.count('assets/social-footer.js'), 1)
+        self.assertIn('a, a:hover, a:focus, a:visited, a:active{text-decoration:none!important}', self.css)
 
     def test_homepage_css_only_adds_scoped_rules(self):
         self.assertIn("/* Homepage / editorial front page.", self.css)
@@ -133,15 +121,8 @@ class HomepageTests(unittest.TestCase):
                      "drafts/index.json", "registry/index.html", "feed.xml"):
             self.assertTrue((ROOT / path).is_file(), path)
 
-    def test_inline_script_parses_in_node(self):
-        scripts = re.findall(r"<script>(.*?)</script>", self.html, flags=re.S)
-        self.assertEqual(len(scripts), 1)
-        with tempfile.TemporaryDirectory() as folder:
-            temp = Path(folder) / "home.js"
-            temp.write_text(scripts[0], encoding="utf-8")
-            p = subprocess.run(["node", "--check", str(temp)],
-                               capture_output=True, text=True, timeout=15)
-            self.assertEqual(p.returncode, 0, p.stderr)
+    def test_no_obsolete_inline_scripts(self):
+        self.assertEqual(re.findall(r"<script>(.*?)</script>", self.html, flags=re.S), [])
 
 if __name__ == "__main__":
     unittest.main()
