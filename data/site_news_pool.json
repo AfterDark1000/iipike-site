@@ -5040,7 +5040,7 @@
       "review_started_at": "2026-11-26T16:35:28.008163+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "Проверены README https://github.com/kadirb4rut/voxadub и датированный релиз https://github.com/kadirb4rut/voxadub/releases/tag/v0.1.0 от 03.11.2026 (дата 17.11 из сводки не подтверждена). MIT для кода, модели отдельно; офлайн после скачивания, Whisper/WhisperX, Hy-MT2, VoxCPM2, сохранение фона, LatentSync CUDA ~18 ГБ VRAM, две основные модели 5+4,1 ГБ. Live экспериментальный; качество и задержка не гарантированы. Демо NASA английский/испанский/японский/турецкий. Каталог проверен: дубля нет, ссылка Zyphra ZONOS3-Mini dzen ID 6af6931a500b72359578445d подтверждена. X автора не подтверждён. Рубрика made-with-ai, на утверждении."
     },
     {
       "id": "n-ab8d6d917647d202",
