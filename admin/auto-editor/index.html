@@ -77,7 +77,6 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 <script>
 (function(){
 "use strict";
-const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/editorial_inbox/auto_drafts?ref=editorial-intake";
 const raw="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_drafts/";
 const list=document.getElementById("list"),detail=document.getElementById("detail");
 let selected="", names=[], storyRows=[], activeView="all", loadVersion=0, archivePage=0;
@@ -553,20 +552,14 @@ async function fetchGitHubRecord(url){
   if(networkError)throw networkError;
   return response;
  }
- const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/"+path+
-   "?ref=editorial-intake&v="+Date.now();
- const authoritative=await fetch(api,{cache:"no-store",headers:{Accept:"application/vnd.github+json"}});
- if(authoritative.status===404){
+ if(!window.HpiiAdminAuth?.readEditorialRecord)
+  throw Error("Защищённый доступ к редакционным файлам недоступен");
+ const authoritative=await window.HpiiAdminAuth.readEditorialRecord(path);
+ if(!authoritative.found){
   if(response?.status===404)return response;
-  throw Error("GitHub API не нашёл файл после сетевой ошибки");
+  return {ok:false,status:404,json:async()=>null};
  }
- if(!authoritative.ok)throw Error("GitHub API HTTP "+authoritative.status);
- const record=await authoritative.json();
- if(record.type!=="file"||record.encoding!=="base64"||typeof record.content!=="string")
-  throw Error("GitHub API вернул некорректный формат JSON-файла");
- const decoded=Uint8Array.from(atob(record.content.replace(/\s/g,"")),c=>c.charCodeAt(0));
- const value=JSON.parse(new TextDecoder().decode(decoded));
- return {ok:true,status:200,json:async()=>value};
+ return {ok:true,status:200,json:async()=>authoritative.record};
 }
 async function readOptionalJson(url){
  const response=await fetchGitHubRecord(url+"?v="+Date.now());
@@ -723,10 +716,8 @@ async function load(){
  list.replaceChildren();add(list,"p","Читаю черновики и решения GitHub…");
  document.getElementById("queue-summary").textContent="Обновляю состояние материалов…";
  try{
-  const res=await fetch(api+"&v="+Date.now(),{cache:"no-store"});
-  if(!res.ok)throw Error("HTTP "+res.status);
-  const entries=await res.json();
-  if(!Array.isArray(entries))throw Error("Неверный ответ GitHub");
+  if(!window.HpiiAdminAuth?.listEditorialFiles)throw Error("Защищённый доступ к списку материалов недоступен");
+  const entries=await window.HpiiAdminAuth.listEditorialFiles("drafts");
   let publishedIds=new Set(),siteStatusWarning="";
   try{publishedIds=await readPublishedIds()}
   catch(e){siteStatusWarning=" · публикации сайта не проверены: "+e.message}

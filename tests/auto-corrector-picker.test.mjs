@@ -9,7 +9,7 @@ const row={article_id:"test-long-slug",revision:2,version:1,download_url:"https:
 const item={schema_version:2,worker:"hpii-chief-copyeditor",article_id:row.article_id,source_revision:2,copyedit_version:1,original_text:{title:"Исходный заголовок"},edited_text:{title:"Новый заголовок"}};
 test("picker uses real candidate titles, never slug as visible label",async()=>{
  let response=item;
- const context=vm.createContext({fetch:async()=>({ok:true,json:async()=>response})});
+ const context=vm.createContext({optionalRecord:async()=>response});
  vm.runInContext(helpers,context);
  assert.equal(await context.readPickerLabel(row),"Новый заголовок");
  response={...item,edited_text:{title:" "}};

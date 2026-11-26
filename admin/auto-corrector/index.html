@@ -82,7 +82,6 @@ button{font:inherit;border:1px solid #a4b4a8;border-radius:8px;padding:10px 14px
 <script>
 (async function(){
 "use strict";
-const api="https://api.github.com/repos/AfterDark1000/iipike-site/contents/editorial_inbox/auto_copyedits?ref=editorial-intake";
 const names=["title","dzen_title","summary","article_markdown","threads_text","x_text","vk_title","vk_summary"];
 const byId=id=>document.getElementById(id);
 const select=byId("choose"), field=byId("field");
@@ -92,9 +91,11 @@ const controls=byId("copy-review-controls"),reviewState=byId("copy-review-state"
 const reviewButtons=["copy-accept","copy-keep","copy-revise"].map(byId);
 async function optionalRecord(path){
  const r=await fetch(rawRoot+path,{cache:"no-store"});
- if(r.status===404)return null;
- if(!r.ok)throw Error("GitHub HTTP "+r.status);
- return r.json();
+ if(r.ok)return r.json();
+ if(!window.HpiiAdminAuth?.readEditorialRecord)throw Error("Защищённое чтение редакционного файла недоступно");
+ const result=await window.HpiiAdminAuth.readEditorialRecord("editorial_inbox/"+path);
+ if(!result.found)return null;
+ return result.record;
 }
 async function loadReview(item,row,token){
  reviewReady=false;controls.hidden=true;reviewState.dataset.error="false";
@@ -235,10 +236,8 @@ function matchesRow(item,row){
 }
 async function readPickerLabel(row){
  try{
-  const response=await fetch(row.download_url,{cache:"no-store"});
-  if(!response.ok)throw Error("GitHub HTTP "+response.status);
-  const item=await response.json();
-  if(!matchesRow(item,row))throw Error("Несовпадение версии");
+  const item=await optionalRecord("auto_copyedits/"+row.name);
+  if(!item||!matchesRow(item,row))throw Error("Несовпадение версии");
   return candidateTitle(item);
  }catch{return ""}
 }
@@ -284,14 +283,12 @@ async function loadReply(item, filename, token){
  target.textContent="Проверяю ответ редактора…";
  const url="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_copyedit_responses/"+encodeURIComponent(filename);
  try{
-  const r=await fetch(url,{cache:"no-store"});
+  const reply=await optionalRecord("auto_copyedit_responses/"+filename);
   if(token!==version)return;
-  if(r.status===404){
+  if(!reply){
    target.textContent="Ожидает ответа редактора: замечание сохранено, но подтверждения обработки пока нет.";
    return;
   }
-  if(!r.ok)throw Error("HTTP "+r.status);
-  const reply=await r.json();
   if(reply.article_id!==item.article_id || reply.source_revision!==item.source_revision ||
      reply.copyedit_version!==item.copyedit_version || reply.worker!=="hpii-auto-editor")
      throw Error("Ответ не совпадает с исходным запросом");
@@ -317,9 +314,8 @@ async function load(index){
  reviewReady=false;controls.hidden=true;activeRow=null;
  select.disabled=true;active=null;byId("status").textContent="Читаю сохранённую корректуру…";delete byId("status").dataset.state;byId("selected-title").hidden=true;byId("selected-version").textContent="";byId("info").hidden=true;show();
  try{
-  const r=await fetch(rows[index].download_url,{cache:"no-store"});
-  if(!r.ok)throw Error("Не удалось прочесть файл: GitHub HTTP "+r.status);
-  const item=await r.json();
+  const item=await optionalRecord("auto_copyedits/"+rows[index].name);
+  if(!item)throw Error("Не удалось прочесть сохранённую корректуру");
   if(v!==version)return;
   if(item.schema_version!==2 || item.worker!=="hpii-chief-copyeditor" ||
      !item.quality_review || item.article_id!==rows[index].article_id ||
@@ -332,22 +328,22 @@ async function load(index){
 }
 field.addEventListener("change",show);
 select.addEventListener("change",()=>load(select.selectedIndex));
-try{
- const response=await fetch(api,{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
- if(response.status===404){select.replaceChildren(new Option("Пилот ещё не запущен"));byId("status").textContent="Кандидатов пока нет.";return}
- if(!response.ok)throw Error("GitHub HTTP "+response.status);
- const list=await response.json();
- rows=list.filter(x=>/^[a-z0-9-]+-r[1-9]\d*-v[1-9]\d*\.json$/.test(x.name)&&x.download_url)
-  .map(x=>({...x,article_id:x.name.replace(/-r[1-9]\d*-v[1-9]\d*\.json$/,""),version:Number(x.name.match(/-v(\d+)\.json$/)[1]),revision:Number(x.name.match(/-r(\d+)-v\d+\.json$/)[1])}))
-  .sort((a,b)=>a.article_id.localeCompare(b.article_id)||b.revision-a.revision||b.version-a.version);
- select.replaceChildren();
- if(!rows.length){select.add(new Option("Кандидатов ещё нет"));byId("status").textContent="Первые тексты ещё не проверены корректором.";return}
- // The directory listing only contains filenames. Read the stored candidates
- // for their human titles; keep SHA/identity bindings and review logic intact.
- const titles=await Promise.all(rows.map(readPickerLabel));
- rows.forEach((x,i)=>select.add(new Option((titles[i]||"Материал "+(i+1))+" · r"+x.revision+" v"+x.version,String(i))));
- await load(0);
-}catch(e){select.replaceChildren(new Option("Ошибка загрузки"));byId("status").textContent="Не удалось прочитать GitHub: "+e.message}
+async function loadCandidates(){
+ try{
+  if(!window.HpiiAdminAuth?.listEditorialFiles)throw Error("Защищённый доступ к списку корректур недоступен");
+  const list=await window.HpiiAdminAuth.listEditorialFiles("copyedits");
+  rows=list.filter(x=>/^[a-z0-9-]+-r[1-9]\d*-v[1-9]\d*\.json$/.test(x.name)&&x.download_url)
+   .map(x=>({...x,article_id:x.name.replace(/-r[1-9]\d*-v[1-9]\d*\.json$/,""),version:Number(x.name.match(/-v(\d+)\.json$/)[1]),revision:Number(x.name.match(/-r(\d+)-v\d+\.json$/)[1])}))
+   .sort((a,b)=>a.article_id.localeCompare(b.article_id)||b.revision-a.revision||b.version-a.version);
+  select.replaceChildren();
+  if(!rows.length){select.add(new Option("Кандидатов ещё нет"));byId("status").textContent="Первые тексты ещё не проверены корректором.";return}
+  const titles=await Promise.all(rows.map(readPickerLabel));
+  rows.forEach((x,i)=>select.add(new Option((titles[i]||"Материал "+(i+1))+" · r"+x.revision+" v"+x.version,String(i))));
+  await load(0);
+ }catch(e){select.replaceChildren(new Option("Ошибка загрузки"));byId("status").textContent="Не удалось прочитать GitHub: "+e.message}
+}
+window.addEventListener("hpii-admin-authorized",loadCandidates);
+if(document.documentElement.classList.contains("hpii-authorized"))void loadCandidates();
 })();
 </script>
 </body>
