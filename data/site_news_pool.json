@@ -8245,12 +8245,12 @@
       "summary": "23 ноября. Опрос Anthropic среди американских клиентов Claude. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "queued",
       "added_at": "2026-11-25T14:32:59+00:00",
-      "review_started_at": "2026-11-26T06:33:50+00:00",
+      "review_started_at": null,
       "closed_at": null,
       "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6d8e79d843eb14cb"
+      "note": "Передан в обычную очередь полных статей по решению главреда; короткий черновик снят."
     },
     {
       "id": "n-a4a12a324bde26f9",
