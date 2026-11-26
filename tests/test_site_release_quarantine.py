@@ -1,7 +1,6 @@
 """A faulty approved story is isolated; the next can still publish."""
 import datetime as dt
 import json
-from pathlib import Path
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -104,7 +103,7 @@ class QuarantineTests(unittest.TestCase):
             return {"slug": sid}
         with patch.object(q, "story_paths", return_value=["editorial_inbox/stories/good.json"]), \
              patch.object(q, "copy_blob", side_effect=copy) as transfer, \
-             patch("scripts.site_first_inbox.stage", side_effect=stage):
+             patch.dict("sys.modules", {"scripts.site_first_inbox": SimpleNamespace(stage=stage)}):
             self.assertTrue(q.preflight_article("source", item("good"), []))
         self.assertEqual(transfer.call_args_list[0].args[:2],
                          ("origin/main", q.CATALOG_PATH.as_posix()))
