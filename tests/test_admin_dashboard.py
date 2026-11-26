@@ -109,7 +109,6 @@ class AdminOverviewTests(unittest.TestCase):
         self.assertIn('rows.find(x=>x.doc?.article_id===requestedArticle', editor)
         self.assertIn('if(requestedRow)void choose(requestedRow.name)', editor)
 
-    def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(selfself):
     def test_mobile_rich_copy_has_honest_fallback_and_accessible_feedback(self):
 
 
