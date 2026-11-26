@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "approved_date": "2026-11-26",
-  "source": "data/editorial_triage/requests/hpii-morning-20261126-546-589-approved-except-548-554-575-v1.json",
+  "source": "data/editorial_triage/requests/hpii-morning-20261126-548-554-575-chief-approved-v1.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
   "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
@@ -2538,6 +2538,12 @@
       "decision": "full"
     },
     {
+      "sequence": 548,
+      "pool_id": "n-71bef6b69b5cab19",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
       "sequence": 549,
       "pool_id": "n-3dac9490ed39f049",
       "lane": "hold",
@@ -2566,6 +2572,12 @@
       "pool_id": "n-a12b4153d56773e0",
       "lane": "short",
       "decision": "short"
+    },
+    {
+      "sequence": 554,
+      "pool_id": "n-17ed396e8529fe9e",
+      "lane": "long",
+      "decision": "full"
     },
     {
       "sequence": 555,
@@ -2686,6 +2698,12 @@
       "pool_id": "n-48919c55052d9c92",
       "lane": "short",
       "decision": "short"
+    },
+    {
+      "sequence": 575,
+      "pool_id": "n-f5390a2aecae5dc0",
+      "lane": "long",
+      "decision": "full"
     },
     {
       "sequence": 576,

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "hpii-morning-20261126-548-554-575-chief-approved-v1.json",
+  "request_sha256": "ff251fbb3478796de3ab077cd123b430e5a7e66b4905738fd328fc073d2e9f1a",
+  "status": "applied",
+  "applied": [
+    548,
+    554,
+    575
+  ],
+  "unchanged": [],
+  "skipped": []
+}
