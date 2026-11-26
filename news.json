@@ -8904,5 +8904,30 @@
       "suno"
     ],
     "products": []
+  },
+  {
+    "title": "OpenAI выпустила ИИ для поиска запрещённых изображений детей и ужесточила блокировки ChatGPT",
+    "summary": "OpenAI представила классификатор для выявления запрещённых изображений с участием несовершеннолетних и объявила о предупреждениях и временной блокировке ChatGPT за нарушения.",
+    "published": "2026-11-26",
+    "source_url": "https://openai.com/index/strengthening-online-child-safety/",
+    "cover": "assets/editorial/openai-child-safety-image-classifier-20261116.webp",
+    "rubric": "news",
+    "vk_title": "🛡️ OpenAI научила ИИ находить ЗАПРЕЩЁННЫЕ изображения детей",
+    "vk_summary": "OpenAI представила классификатор для обнаружения запрещённых материалов с участием несовершеннолетних, включая созданные ИИ изображения. В ChatGPT также вводят предупреждения и 24-часовые ограничения доступа за нарушения. Повторные попытки могут привести к закрытию аккаунта.",
+    "published_at_utc": "2026-11-26T03:09:06Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "openai-child-safety-image-classifier-20261116",
+    "url": "articles/openai-child-safety-image-classifier-20261116/",
+    "topics": [
+      "safety",
+      "society"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]

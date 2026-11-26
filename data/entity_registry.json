@@ -131,7 +131,8 @@
         "openai-french-press-lvmh-figaro-20261118",
         "openai-openworks-20261123",
         "openai-anthropic-unreleased-ai-safety-20261124",
-        "openai-gpt-7-rumors-investigation-20261125"
+        "openai-gpt-7-rumors-investigation-20261125",
+        "openai-child-safety-image-classifier-20261116"
       ]
     },
     {
@@ -821,7 +822,8 @@
         "openai-chatgpt-healthcare-20-connectors-20261116",
         "openai-french-press-lvmh-figaro-20261118",
         "openai-openworks-20261123",
-        "openai-gpt-7-rumors-investigation-20261125"
+        "openai-gpt-7-rumors-investigation-20261125",
+        "openai-child-safety-image-classifier-20261116"
       ]
     },
     {
