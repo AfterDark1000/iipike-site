@@ -110,16 +110,23 @@ async function loadReview(item,row,token){
   if(decision){
    if(decision.article_id!==item.article_id||decision.source_revision!==item.source_revision||
       decision.copyedit_version!==item.copyedit_version)throw Error("Решение не совпадает с выбранной корректурой");
+   const statusBadge=byId("status");
    if(decision.action==="accept_copyedit"){
     const marker="copyedit_accepted="+row.name+"; copyedit_sha="+decision.copyedit_blob_sha;
     const applied=!!draft&&draft.revision===decision.result_revision&&
       Array.isArray(draft.editor_notes)&&draft.editor_notes.includes(marker);
+    statusBadge.textContent=applied?"Корректура принята":"Принятие ещё не подтверждено";
+    statusBadge.dataset.state=applied?"ready_for_comparison":"error";
     reviewState.textContent=applied
       ?"Корректура принята, новая ревизия r"+decision.result_revision+" сохранена. Открой именно эту статью в основной админке."
       :"Решение о принятии записано, но новая ревизия r"+decision.result_revision+" пока не подтверждена при чтении черновика. Обнови страницу и проверь GitHub.";
-   }else if(decision.action==="keep_original")reviewState.textContent="Оставлена версия редактора.";
-   else if(decision.action==="revise_copyedit")reviewState.textContent="Замечания переданы корректору: "+decision.note;
-   else reviewState.textContent="Решение уже сохранено.";
+   }else if(decision.action==="keep_original"){
+    statusBadge.textContent="Оригинал оставлен";statusBadge.dataset.state="ready_for_comparison";
+    reviewState.textContent="Оставлена версия редактора. Оригинал можно проверять в основной админке.";
+   }else if(decision.action==="revise_copyedit"){
+    statusBadge.textContent="Возвращена на доработку";statusBadge.dataset.state="needs_editor_attention";
+    reviewState.textContent="Замечания переданы корректору. Эта версия закрыта для повторного выбора; ожидается следующая версия корректуры.\n\n"+decision.note;
+   }else reviewState.textContent="Решение уже сохранено.";
    return;
   }
   if(human||!draft||draft.status!=="ready_for_review"||draft.revision!==item.source_revision||draft.updated_at!==item.source_updated_at){reviewState.textContent="Историческая версия: текущая ревизия уже изменилась или по ней принято решение.";return}
@@ -277,7 +284,7 @@ function render(item){
 async function loadReply(item, filename, token){
  const target=byId("editor-reply");
  if(item.status!=="needs_editor_attention"){
-  target.textContent=item.status==="needs_chief_editor"?"Корректор рассмотрел ответ редактора и передал итоговый нерешаемый вопрос главреду. Причины указаны ниже.":"Обратная проверка фактов для этой версии не требуется.";
+  target.textContent=item.status==="needs_chief_editor"?"Корректор рассмотрел ответ редактора и передал итоговый нерешаемый вопрос главреду. Причины указаны ниже.":"Запросов на проверку фактов для этой версии нет.";
   return;
  }
  target.textContent="Проверяю ответ редактора…";
