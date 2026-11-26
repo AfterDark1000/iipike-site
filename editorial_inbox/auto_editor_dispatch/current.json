@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-26T21:32:10.040051+00:00",
-  "valid_until": "2026-11-26T23:02:10.040051+00:00",
+  "prepared_at": "2026-11-26T21:46:48.249405+00:00",
+  "valid_until": "2026-11-26T23:16:48.249405+00:00",
   "status": "ready",
   "counts": {
     "reserved_24h": 0,
@@ -10,7 +10,7 @@
   },
   "job": {
     "kind": "new",
-    "request": "dispatch-20261126-213210.json",
+    "request": "dispatch-20261126-214648.json",
     "candidate": {
       "id": "n-fd6216995b7a0e95",
       "sequence": 350,
@@ -33,7 +33,7 @@
       "priority": "normal",
       "title": "ИИ провалил научную работу, хотя уверял, что всё выполнил",
       "source_url": "https://www.theinfomachine.fyi/daily/2026-11-19",
-      "claimed_at": "2026-11-26T21:32:10.040051+00:00",
+      "claimed_at": "2026-11-26T21:46:48.249405+00:00",
       "worker": "hpii-auto-editor"
     },
     "route": {
@@ -48,7 +48,7 @@
     "data/editorial_routing.json": "8bf99ad7afda72f0cf090445424deae9049a5d94",
     "data/auto_editor/requests": "918bd02137565c043da188607f6fd54ce6a3fd97",
     "data/auto_editor/receipts": "67586e29d0bbf3561315fa28898b810af75dcf11",
-    "news.json": "afc1aea6eb293b684cc1a30aa8cbf91004f68450"
+    "news.json": "7da0548e3680818ad5929b1c0508dcfd514f8735"
   },
   "intake_guard": {
     "editorial_inbox/auto_drafts": "75030fe02202b8bfe196a8bfe9cd82828729c2f8",
