@@ -227,7 +227,7 @@ const EDITORIAL_RECORD_FOLDERS = new Set([
 ]);
 function validEditorialRecordPath(path) {
   if(typeof path!=="string"||path.length>240)return false;
-  const match=/^editorial_inbox\/([a-z_]+)\/([a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\\d*(?:-v[1-9]\\d*)?)?)\.json$/.exec(path);
+  const match=/^editorial_inbox\/([a-z_]+)\/([a-z0-9]+(?:-[a-z0-9]+)*(?:-r[1-9]\d*(?:-v[1-9]\d*)?)?)\.json$/.exec(path);
   return !!match&&EDITORIAL_RECORD_FOLDERS.has(match[1]);
 }
 async function editorialFileList(env,kind) {
