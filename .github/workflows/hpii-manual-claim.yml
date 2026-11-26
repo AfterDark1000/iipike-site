@@ -1,0 +1,69 @@
+name: HPII — manual editor transactions (NO PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/editorial_claims/requests/manual-*.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/manual_claim.py'
+      - 'tests/test_manual_claim.py'
+      - '.github/workflows/hpii-manual-claim.yml'
+permissions:
+  contents: read
+concurrency:
+  group: hpii-manual-claim-${{ github.event_name }}
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: |
+          python3 scripts/site_news_pool.py --validate
+          python3 scripts/editorial_routing.py --validate
+          python3 -m unittest discover -s tests -p 'test_manual_claim.py' -v
+          python3 -m unittest discover -s tests -p 'test_editorial_routing.py' -v
+  reserve:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Validate and commit claim with receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main editorial-intake:refs/remotes/origin/editorial-intake
+            git reset --hard origin/main
+            git clean -fd -- data/editorial_claims/receipts/
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/editorial_routing.py --validate
+            python3 scripts/manual_claim.py --consume
+            python3 scripts/site_news_pool.py --validate
+            python3 scripts/editorial_routing.py --validate
+            git add -- data/site_news_pool.json data/editorial_claims/receipts/
+            if git diff --cached --name-only | grep -Ev '^(data/site_news_pool\.json|data/editorial_claims/receipts/manual-[a-z0-9_-]+\.json)$'; then
+              echo 'UNSAFE: changed path outside pool and receipts'; exit 1
+            fi
+            if git diff --cached --quiet; then
+              echo 'NO_PENDING_MANUAL_CLAIM'; exit 0
+            fi
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore(pool): validated manual claim and receipt [skip ci]'
+            if git push origin HEAD:main; then
+              echo 'HPII_MANUAL_CLAIM_COMMITTED'; exit 0
+            fi
+          done
+          echo 'Manual claim main changed repeatedly; no unsafe overwrite'; exit 1
