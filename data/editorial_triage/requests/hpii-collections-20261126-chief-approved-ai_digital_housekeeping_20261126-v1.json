@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "action": "collection_upsert",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "collection": {
+    "group": "ai_digital_housekeeping_20261126",
+    "title": "ИИ наводит порядок в цифровом хозяйстве",
+    "state": "collecting",
+    "primary_sequence": 210,
+    "members": [
+      {
+        "sequence": 210,
+        "pool_id": "n-ec4495fd1e81c0db"
+      },
+      {
+        "sequence": 216,
+        "pool_id": "n-5c4bc6a893df28fb"
+      },
+      {
+        "sequence": 484,
+        "pool_id": "n-a57bc798cc95bee6"
+      }
+    ],
+    "note": "Повседневные пользовательские эксперименты с ИИ-агентами: №210 панель памяти и заброшенных задач Muse; №216 автоматизация перелинковки сайта с Claude и Google Search Console; №484 разбор личного фотоархива, включая ошибочную рекомендацию удалить дорогой автору снимок. Результаты со слов авторов; перед выпуском сверить оригиналы, цифры, границы автоматизации и человеческий контроль. Пополнять разноплановыми практическими сценариями; выпуск только по отдельному утверждению."
+  }
+}
