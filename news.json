@@ -9113,5 +9113,29 @@
       "gemini",
       "grok"
     ]
+  },
+  {
+    "title": "Google увеличила срок хранения переписки с Gemini с трёх дней до двух месяцев",
+    "summary": "Google увеличила срок хранения временных разговоров с Gemini с трёх дней до двух месяцев. Изменение затрагивает и пользователей с отключённой историей. Одновременно компания разделила настройки хранения переписок и обучения нейросетей.",
+    "published": "2026-11-27",
+    "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/updated-controls/",
+    "cover": "assets/editorial/google-gemini-temporary-chat-retention-20261116.webp",
+    "rubric": "news",
+    "vk_title": "👀 Google увеличила срок хранения ПРИВАТНЫХ ЧАТОВ Gemini в 20 раз",
+    "vk_summary": "Google увеличила срок хранения временных разговоров с Gemini с трёх дней до двух месяцев. Изменение затрагивает и пользователей с отключённой историей. Одновременно компания разделила настройки хранения переписок и обучения нейросетей.",
+    "published_at_utc": "2026-11-26T19:15:41Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "google-gemini-temporary-chat-retention-20261116",
+    "url": "articles/google-gemini-temporary-chat-retention-20261116/",
+    "topics": [
+      "apps"
+    ],
+    "companies": [
+      "google"
+    ],
+    "products": [
+      "gemini"
+    ]
   }
 ]
