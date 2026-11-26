@@ -428,6 +428,23 @@ function draw(doc){
  const c=doc.content||{};const stateTag=add(detail,"span","Проверяю решение…","tag");
  add(detail,"h2",c.title||doc.article_id);
  add(detail,"p","Пул №"+doc.pool_sequence+" · редакция текста r"+doc.revision,"story-kicker");
+ const queueRow=storyRows.find(x=>x.name===doc.article_id+".json");
+ const copyeditState=queueRow?.copyeditState;
+ if(copyeditState){
+  const panel=add(detail,"section",undefined,"card");
+  add(panel,"strong",copyeditState.label);
+  const message=copyeditState.state==="returned"
+   ?"Главред вернул предыдущую версию. Корректор должен сохранить следующую версию; решения по исходному тексту пока заблокированы."
+   :copyeditState.state==="ready"
+    ?"Сравни и выбери корректуру в отдельной панели. Утверждение исходного текста здесь временно заблокировано."
+    :copyeditState.state==="editor_reply"
+     ?"Корректор ожидает фактический ответ редактора. Не утверждай исходную версию до завершения этого шага."
+     :copyeditState.state==="chief_review"
+      ?"Корректор передал вопрос главреду. Проверь причины в панели корректуры."
+      :"Проверь состояние корректуры перед следующим действием.";
+  paragraph(panel,message);
+  const p=add(panel,"p");link(p,"Открыть шеф-корректора ↗","/admin/auto-corrector/");
+ }
  details(detail,"Технические сведения",d=>{
   field(d,"ID",doc.article_id);field(d,"Ревизия",doc.revision);field(d,"Обновлён",doc.updated_at);
  });
@@ -493,6 +510,18 @@ function draw(doc){
  fetchGitHubRecord(decisionFile+"?v="+Date.now()).then(async r=>{
   if(r.status===404){
    const ready=doc.status==="ready_for_review";
+   if(copyeditState?.holdMainReview){
+    stateTag.textContent=copyeditState.label;
+    status.textContent=copyeditState.state==="returned"
+     ?"Корректор получил замечания и готовит следующую версию. Утверждение исходного текста отключено."
+     :copyeditState.state==="ready"
+      ?"Сначала сравни корректуру и выбери версию в шеф-корректоре. Здесь нельзя утвердить старый текст."
+      :copyeditState.state==="editor_reply"
+       ?"Ожидается ответ редактора на фактический вопрос корректора. Утверждение исходника отключено."
+       :"Сначала разберись с корректурой в отдельной панели. Утверждение исходника отключено.";
+    actions.querySelectorAll("button").forEach(b=>b.disabled=true);
+    return;
+   }
    stateTag.textContent=ready?"Готов к проверке":
      doc.status==="drafting"?"Редактор ещё работает":
      doc.status==="blocked"?"Редактор заблокирован":doc.status;
@@ -521,9 +550,11 @@ const decisionRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/
 const coverRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_covers/";
 const coverDecisionRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_cover_decisions/";
 const handoffRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_handoffs/";
+const copyeditRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_copyedits/";
+const copyeditDecisionRoot="https://raw.githubusercontent.com/AfterDark1000/iipike-site/editorial-intake/editorial_inbox/auto_copyedit_decisions/";
 const groupTitles={review:"Нужно твоё решение",error:"Не удалось проверить",active:"В работе",transfer:"В очереди сайта",done:"Завершено"};
 const groupOrder=["review","error","active","transfer","done"];
-function rowStatus(group,label){return {group,label}}
+function rowStatus(group,label,extra={}){return {group,label,...extra}}
 // main/news.json is the publication record; intake handoff alone is not a release.
 const publishedNewsUrl="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/news.json";
 async function readPublishedIds(){
@@ -571,7 +602,52 @@ function sameText(decision,doc){
  return decision && decision.article_id===doc.article_id &&
   decision.revision===doc.revision && decision.updated_at===doc.updated_at;
 }
-async function classify(doc,publishedIds=new Set()){
+async function readCopyeditState(doc,files=null){
+ const key=doc.article_id+"-r"+doc.revision;
+ let latest=null;
+ for(let version=1;version<=5;version++){
+  const name=key+"-v"+version+".json";
+  if(files instanceof Map&&!files.has(name))break;
+  const candidate=await readOptionalJson(copyeditRoot+name);
+  if(!candidate){
+   if(files instanceof Map&&files.has(name))throw Error("Список корректур содержит файл, но его содержимое недоступно: "+name);
+   break;
+  }
+  if(candidate.article_id!==doc.article_id||candidate.source_revision!==doc.revision||
+     candidate.source_updated_at!==doc.updated_at)
+   throw Error("Корректура относится к другой редакции текста: "+name);
+  const decision=await readOptionalJson(copyeditDecisionRoot+name);
+  if(decision){
+   if(decision.article_id!==doc.article_id||decision.source_revision!==doc.revision||
+      decision.copyedit_version!==version||decision.source_draft_blob_sha!==candidate.source_draft_blob_sha)
+    throw Error("Решение по корректуре не совпадает с кандидатом: "+name);
+   if(!(files instanceof Map)||decision.copyedit_blob_sha!==files.get(name))
+    throw Error("Не удалось подтвердить SHA кандидата по решению: "+name);
+  }
+  latest={candidate,decision,version,name};
+ }
+ if(!latest)return null;
+ const {candidate,decision,version,name}=latest;
+ if(decision){
+  if(decision.action==="revise_copyedit"){
+   if(version===5)return {state:"limit",label:"Лимит корректур исчерпан · нужно решение",holdMainReview:true,version};
+   return {state:"returned",label:"Корректор дорабатывает v"+(version+1),holdMainReview:true,version:version+1,previous:name};
+  }
+  if(decision.action==="keep_original")
+   return {state:"original_retained",label:"Оригинал оставлен · проверить текст",holdMainReview:false,version};
+  if(decision.action==="accept_copyedit")
+   throw Error("Корректура принята, но текущая ревизия черновика не обновилась");
+  throw Error("Неизвестное решение по корректуре: "+name);
+ }
+ if(candidate.status==="ready_for_comparison"||candidate.status==="no_change_recommended")
+  return {state:"ready",label:"Корректура v"+version+" готова к выбору",holdMainReview:true,version};
+ if(candidate.status==="needs_editor_attention")
+  return {state:"editor_reply",label:"Корректор ждёт ответа редактора",holdMainReview:true,version};
+ if(candidate.status==="needs_chief_editor")
+  return {state:"chief_review",label:"Нужно решение по корректуре",holdMainReview:true,version};
+ throw Error("Неизвестный статус корректуры: "+candidate.status);
+}
+async function classify(doc,publishedIds=new Set(),copyeditFiles=null){
  if(doc.status==="drafting")return rowStatus("active","Редактор пишет текст");
  if(doc.status==="blocked")return rowStatus("error","Заблокировано — требуется разбор");
  if(doc.status!=="ready_for_review")return rowStatus("error","Неизвестный статус: "+doc.status);
@@ -583,6 +659,17 @@ async function classify(doc,publishedIds=new Set()){
   if(decided.status==="rejected")return rowStatus("done","Текст отклонён");
   if(decided.status!=="text_approved_cover_pending" || decided.action!=="approve_text")
    throw Error("Неизвестное решение по тексту");
+ }else{
+  const copyeditState=await readCopyeditState(doc,copyeditFiles);
+  if(copyeditState){
+   if(copyeditState.state==="original_retained")
+    return rowStatus("review",copyeditState.label,{copyeditState});
+   if(copyeditState.state==="chief_review")
+    return rowStatus("review",copyeditState.label,{copyeditState});
+   if(copyeditState.state==="limit")
+    return rowStatus("error",copyeditState.label,{copyeditState});
+   return rowStatus("active",copyeditState.label,{copyeditState});
+  }
  }
  for(let version=1;version<=5;version++){
   const coverKey=key+"-v"+version;
@@ -610,8 +697,8 @@ async function classify(doc,publishedIds=new Set()){
     return rowStatus("transfer","Обложка v"+version+" утверждена · передача не подтверждена");
    }
    if(handoff.article_id!==doc.article_id||handoff.text_revision!==doc.revision||
-      handoff.cover_version!==version||handoff.cover_blob_sha!==cover.image_blob_sha||
-      handoff.status!=="handed_off_to_site_queue")
+    handoff.cover_version!==version||handoff.cover_blob_sha!==cover.image_blob_sha||
+    handoff.status!=="handed_off_to_site_queue")
     throw Error("Передача комплекта не подтверждена");
    if(publishedIds.has(doc.article_id))return rowStatus("done","Опубликовано на сайте");
    return rowStatus("transfer","В очереди сайта");
@@ -718,9 +805,13 @@ async function load(){
  try{
   if(!window.HpiiAdminAuth?.listEditorialFiles)throw Error("Защищённый доступ к списку материалов недоступен");
   const entries=await window.HpiiAdminAuth.listEditorialFiles("drafts");
-  let publishedIds=new Set(),siteStatusWarning="";
+  let publishedIds=new Set(),siteStatusWarning="",copyeditFiles=null,copyeditStatusWarning="";
   try{publishedIds=await readPublishedIds()}
   catch(e){siteStatusWarning=" · публикации сайта не проверены: "+e.message}
+  try{
+   const copyedits=await window.HpiiAdminAuth.listEditorialFiles("copyedits");
+   copyeditFiles=new Map(copyedits.filter(x=>x?.name&&x?.sha).map(x=>[x.name,x.sha]));
+  }catch(e){copyeditStatusWarning=" · SHA корректур не проверены: "+e.message}
   names=entries.filter(x=>x.type==="file"&&/^[a-z0-9-]+\.json$/.test(x.name)).map(x=>x.name).sort();
   const rows=new Array(names.length);
   let cursor=0;
@@ -732,7 +823,7 @@ async function load(){
      doc=await readOptionalJson(raw+encodeURIComponent(name));
      if(!doc||doc.article_id+".json"!==name||!doc.content||!doc.status)
       throw Error("Некорректный формат черновика");
-     const stage=await classify(doc,publishedIds);
+     const stage=await classify(doc,publishedIds,copyeditFiles);
      rows[index]={name,doc,title:doc.content.title||doc.article_id,...stage};
     }catch(e){
      rows[index]={name,doc:doc?.content?doc:null,
@@ -757,7 +848,7 @@ async function load(){
   }
   renderList();
   document.getElementById("loaded").textContent=
-   "Сверено: "+new Date().toLocaleString("ru-RU")+" · записей: "+rows.length+siteStatusWarning;
+   "Сверено: "+new Date().toLocaleString("ru-RU")+" · записей: "+rows.length+siteStatusWarning+copyeditStatusWarning;
   if(!rows.length){detail.replaceChildren();add(detail,"p","Сохранённых черновиков пока нет.","muted");return}
   if(requestedRow)void choose(requestedRow.name);
   else{
