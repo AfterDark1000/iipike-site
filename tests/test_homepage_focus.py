@@ -26,6 +26,9 @@ class FocusTests(unittest.TestCase):
         self.assertIn("grid-template-columns:repeat(2,minmax(0,1fr))", css)
         self.assertIn('aspect-ratio:16/9', css)
         self.assertIn("grid-template-columns:1fr", css)
+        v1 = css.split("/* Production V1:", 1)[1]
+        for selector in (".home-focus-body", ".home-focus-title", ".home-focus-date"):
+            self.assertIn(".home-focus-card:first-child " + selector, v1)
 
     def test_four_published_rubric_stories_and_order(self):
         ids = active_focus_ids(self.records, self.items)
@@ -54,8 +57,8 @@ class FocusTests(unittest.TestCase):
         self.assertLess(self.html.index('id="archive"'), self.html.index('id="short-news"'))
         self.assertLess(self.html.index('id="short-news"'), self.html.index('id="dossier"'))
         self.assertLess(self.html.index('id="dossier"'), self.html.index('id="focus"'))
-        self.assertLess(self.html.index('id="archive"'), self.html.index('id="latest"'))
-        self.assertIn('<a href="#focus">В фокусе</a>', self.html)
+        self.assertNotIn('id="latest"', self.html)
+        self.assertNotIn('<a href="#focus">В фокусе</a>', self.html)
 
     def test_focus_links_are_only_published_first_party(self):
         section = self.html.split(FOCUS_START)[1].split(FOCUS_END)[0]

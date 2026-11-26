@@ -86,8 +86,8 @@ def render_focus_section(records, focus_items):
         return ""
     return '''  <section class="home-focus wrap" id="focus" aria-labelledby="home-focus-heading">
     <div class="home-section-head">
-      <div><span class="home-section-index">01 / ВЫБОР РЕДАКЦИИ</span><h2 id="home-focus-heading">В фокусе</h2></div>
-      <span class="home-focus-note">Не всё важное — самое новое.</span>
+      <h2 id="home-focus-heading">В фокусе</h2>
+      <span class="home-focus-note">Выбор редакции</span>
     </div>
     <div class="home-focus-grid" data-count="''' + str(len(cards)) + '''">
 ''' + "\n".join(cards) + '''
@@ -116,13 +116,13 @@ def render_home_section(records, focus_items=()):
         '<span><h3>' + escape(row["title"]) + '</h3>'
         '<small class="date">' + escape(publication_label(row))
         + ' · ' + escape(RUBRICS[row.get("rubric", "news")]["name"]) + '</small>'
-        '<span class="home-site-read">Читать на сайте ↗</span></span></a>'
+        '<span class="home-site-read">Читать материал ↗</span></span></a>'
         for row in others
     )
     count = len(records)
     return f'''  <section class="wrap home-feature" id="archive" aria-labelledby="home-feature-heading">
     <div class="home-section-head home-feature-head">
-      <div><span class="home-section-index">02 / НА САЙТЕ</span><h2 id="home-feature-heading">Наши публикации</h2></div>
+      <h2 id="home-feature-heading">Свежие публикации</h2>
       <a class="home-text-link" href="articles/">Все {count} материалов <span aria-hidden="true">↗</span></a>
     </div>
     <a class="home-feature-link" href="{url}">
@@ -133,13 +133,12 @@ def render_home_section(records, focus_items=()):
         <span class="home-section-index">{label} / {rubric}</span>
         <h3>{title}</h3>
         <p>{brief}</p>
-        <span class="home-feature-cta">Читать на сайте <span aria-hidden="true">↗</span></span>
+        <span class="home-feature-cta">Читать материал <span aria-hidden="true">↗</span></span>
       </div>
     </a>
     <div class="home-site-posts" aria-label="Другие материалы на сайте">
 {related}
     </div>
-    <p class="home-feature-footnote">Свежие статьи из собственного архива ХПИИ. Все материалы доступны прямо на iipike.ru.</p>
   </section>'''
 
 
