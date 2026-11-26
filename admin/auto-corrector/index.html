@@ -125,7 +125,7 @@ async function loadReview(item,row,token){
     reviewState.textContent="Оставлена версия редактора. Оригинал можно проверять в основной админке.";
    }else if(decision.action==="revise_copyedit"){
     statusBadge.textContent="Возвращена на доработку";statusBadge.dataset.state="needs_editor_attention";
-    reviewState.textContent="Замечания переданы корректору. Эта версия закрыта для повторного выбора; ожидается следующая версия корректуры.\n\n"+decision.note;
+    const newer=rows.some(x=>x.article_id===row.article_id&&x.revision===row.revision&&x.version>row.version);\n    reviewState.textContent="Замечания переданы корректору. Эта версия закрыта для повторного выбора. "+(newer?"Следующая версия уже доступна в списке материалов.":"Ожидается следующая версия корректуры.")+"\n\n"+decision.note;
    }else reviewState.textContent="Решение уже сохранено.";
    return;
   }
