@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve08.json",
+  "request_sha256": "4396149626f12be6899c8ce9ae72c8a46ad2abc444dfee3772e116f8771e8980",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-41dc3fdcb58bd92d",
+  "pool_sequence": 324,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T16:07:14.143603+00:00",
+  "note": "Главред утвердил статью. История, VK и очереди Threads/X сохранены и проверены. Ожидается обложка."
+}
