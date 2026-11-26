@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-checkpoint04.json",
+  "request_sha256": "71fe705d93b5b1a9161651b6fb9a6056b936fd6c3254dc326bd6be417857a341",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-4bdcf542f5fd2a88",
+  "pool_sequence": 311,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-26T11:19:01.115316+00:00",
+  "note": "Проверены официальный журнал Krea от 20.11.2026 (https://www.krea.ai/docs/changelog), текущая страница https://www.krea.ai/apps/video-face-swap: Video Swap доступен на платных тарифах от Basic, 1–4 референса, до 30 с и 1080p в зависимости от модели. Сохраняются движения, монтаж, звук; пример производителя — человек заменён пандой. Standard Seedance 2.5 (4–29 с), Lite Wan 3.0 (4–15 с), Recast MiniMax H3 Max только люди (5–30 с, кадр до 15 с). Датированный пост @krea_ai 17.11 найден в зеркалах, оригинал X 403; журнал официально подтверждает 20.11. Архив: Beeble SwitchX 3.0, Dzen ID 6af683d608c95d6913e99465, подтверждённый URL https://dzen.ru/a/avaD1gjJXWkT6ZRl; дубля Video Swap нет. Материал готов к утверждению."
+}
