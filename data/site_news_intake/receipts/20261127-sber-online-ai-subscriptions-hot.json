@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "request": "20261127-sber-online-ai-subscriptions-hot.json",
+  "request_sha256": "3091836ff1e5aa5267d1f8f9685acb20bf9e22c848c5a61cb916e9bf350bf9da",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 618,
+      "id": "n-b0e6c16d3d3929d4",
+      "title": "В СберБанк Онлайн появилась оплата подписок Claude и ChatGPT в рублях"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
