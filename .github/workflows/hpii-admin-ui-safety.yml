@@ -11,6 +11,7 @@ on:
       - 'admin/auto-editor/**'
       - 'admin/dossier/**'
       - 'admin/article-edit/**'
+      - 'tests/article-edit-scroll-browser.mjs'
       - 'admin/auto-corrector/**'
       - 'tests/auto-corrector-picker.test.mjs'
       - 'tests/test_admin_dashboard.py'
@@ -90,3 +91,5 @@ jobs:
           set -euo pipefail
           google-chrome --headless --no-sandbox --disable-dev-shm-usage --allow-file-access-from-files --virtual-time-budget=10000 --dump-dom "file://$PWD/tests/dzen-tables-browser.html" > "$RUNNER_TEMP/dzen-tables-browser.html"
           grep -F 'data-result="passed"' "$RUNNER_TEMP/dzen-tables-browser.html"
+      - name: Test editor pane alignment and paragraph-linked scrolling in Chrome
+        run: node tests/article-edit-scroll-browser.mjs
