@@ -251,7 +251,10 @@ async function editorialFileRead(env,path) {
   catch{return {status:502,found:false}}
 }
 function encodeGitHubContent(data) {
-  return btoa(String.fromCharCode(...enc.encode(JSON.stringify(data,null,2)+"\n")));
+  const bytes=enc.encode(JSON.stringify(data,null,2)+"\n");
+  let binary="";
+  for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));
+  return btoa(binary);
 }
 async function recordReview(env, body, login) {
   if (!validReview(body)) return fail(400,"invalid_decision");
@@ -722,6 +725,57 @@ async function dossierAction(env,body,headers){
   }catch{return fail(502,"dossier_catalog_unavailable",headers)}
 }
 
+
+const ARTICLE_EDIT_DIR="/contents/data/article_edits/";
+function validArticleEdit(body){
+  return body&&Object.keys(body).sort().join(",")==="article_id,article_markdown,base_sha"&&
+    validDossierId(body.article_id)&&typeof body.base_sha==="string"&&SHA40.test(body.base_sha)&&
+    typeof body.article_markdown==="string"&&body.article_markdown.trim().length>0&&
+    enc.encode(body.article_markdown).length<=120000;
+}
+async function articleEditRead(env,id){
+  if(!validDossierId(id))return {status:400,error:"invalid_article_id"};
+  const head=await githubJson("/git/ref/heads/main",env),ref=head.data?.object?.sha;
+  if(head.status!==200||!SHA40.test(ref))throw Error("head_unavailable");
+  const get=path=>githubJson(path+"?ref="+ref,env);
+  const [source,news,request,receipt]=await Promise.all([
+    get("/contents/content/approved/"+id+".json"),get("/contents/news.json"),
+    get(ARTICLE_EDIT_DIR+"requests/"+id+".json"),get(ARTICLE_EDIT_DIR+"receipts/"+id+".json")]);
+  if(news.status!==200)throw Error("catalog_unavailable");
+  const records=decodeGitHubContent(news.data),row=records.find(r=>r.id===id&&r.url==="articles/"+id+"/");
+  if(!row||source.status===404)return {status:404,error:"article_not_editable"};
+  if(source.status!==200||!SHA40.test(source.data.sha)||![200,404].includes(request.status)||![200,404].includes(receipt.status))throw Error("article_unavailable");
+  const doc=decodeGitHubContent(source.data);
+  if(doc.slug!==id||doc.status!=="approved"||doc.dzen_id||typeof doc.article_markdown!=="string")return {status:422,error:"article_not_editable"};
+  const pending=request.status===200?decodeGitHubContent(request.data):null;
+  const result=receipt.status===200?decodeGitHubContent(receipt.data):null;
+  const active=!!pending&&pending.request_id!==result?.request_id;
+  return {status:200,id,title:doc.title,cover:doc.cover,markdown:doc.article_markdown,
+    original:doc.original_article_markdown??doc.article_markdown,base_sha:source.data.sha,
+    revision_id:doc.article_edit_id??null,pending:active,
+    request_id:pending?.request_id??null,request_sha:request.status===200?request.data.sha:null,
+    pending_markdown:active?pending.article_markdown:null,
+    result:active?null:result,dzen_published:!!(row.dzen_id||row.site_first_dzen_id)};
+}
+async function articleEditAction(env,body,headers){
+  if(!validArticleEdit(body))return fail(400,"invalid_article_edit",headers);
+  try{
+    const state=await articleEditRead(env,body.article_id);
+    if(state.status!==200)return fail(state.status,state.error,headers);
+    if(state.pending)return fail(409,"article_edit_pending",headers);
+    if(state.base_sha!==body.base_sha)return fail(409,"article_changed_reload",headers);
+    if(state.markdown===body.article_markdown.trim())return send({ok:true,status:"unchanged"},200,headers);
+    const request_id=Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,"0")).join("");
+    const payload={schema_version:1,article_id:body.article_id,request_id,base_sha:body.base_sha,article_markdown:body.article_markdown.trim()};
+    const write=await githubJson(ARTICLE_EDIT_DIR+"requests/"+body.article_id+".json",env,{
+      method:"PUT",headers:{"content-type":"application/json"},body:JSON.stringify({
+        branch:"main",...(state.request_sha?{sha:state.request_sha}:{}),
+        message:"editorial: request owner article correction "+body.article_id,content:encodeGitHubContent(payload)})});
+    if(![200,201].includes(write.status)||!SHA40.test(write.data?.commit?.sha))return fail([409,422].includes(write.status)?409:502,"article_edit_request_failed",headers);
+    return send({ok:true,status:"queued",request_id},202,headers);
+  }catch{return fail(502,"article_edit_unavailable",headers)}
+}
+
 async function verifySession(req,env) {
   const header=req.headers.get("Authorization")||"";
   if (!header.startsWith("Bearer ")) return null;
@@ -739,7 +793,7 @@ export default {
     if (url.pathname==="/auth/start" && request.method==="GET") return login(env);
     if (url.pathname==="/auth/callback" && request.method==="GET") return callback(request,env);
     if (url.pathname==="/health" && request.method==="GET") return send({
-      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,dossier_management:true,
+      ok:true,service:"hpii-auth-gateway",cover_review_max_version:5,parallel_cover_review:true,copyedit_review:true,dossier_management:true,article_editing:true,
       first_car_text_binding:Boolean(env.FIRST_CAR_TEXT),
       first_car_text_active:Boolean(env.FIRST_CAR_TEXT && firstCarTextArticle(env)),
     });
@@ -781,6 +835,19 @@ export default {
         const result=await editorialFileRead(env,path);
         if(result.status!==200)return fail(result.status,"editorial_record_unavailable",headers);
         return send({ok:true,found:result.found,...(result.found?{record:result.record}:{})},200,headers);
+      }
+      if(url.pathname==="/api/article-edit"&&request.method==="GET"){
+        if([...url.searchParams.keys()].length!==1)return fail(400,"invalid_article_id",headers);
+        try{const state=await articleEditRead(env,url.searchParams.get("article_id"));return state.status===200?send({ok:true,...state},200,headers):fail(state.status,state.error,headers)}
+        catch{return fail(502,"article_edit_unavailable",headers)}
+      }
+      if(url.pathname==="/api/article-edit"&&request.method==="POST"){
+        if(url.search)return fail(400,"unexpected_input",headers);
+        if((request.headers.get("content-type")||"").split(";")[0].trim()!=="application/json")return fail(415,"json_required",headers);
+        const raw=await request.text();
+        if(enc.encode(raw).length>250000)return fail(413,"request_too_large",headers);
+        let data;try{data=JSON.parse(raw)}catch{return fail(400,"bad_json",headers)}
+        return articleEditAction(env,data,headers);
       }
       if(url.pathname==="/api/dossier"&&request.method==="GET"){
         if(url.search)return fail(400,"unexpected_input",headers);
@@ -864,4 +931,4 @@ export default {
   }
 };
 // Test-friendly pure validation exports; no secrets.
-export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions,validDossierConfig,validDossierAction};
+export const __test = {validReview,validCoverReview,validCopyReview,validCopyPackage,webpDimensions,validDossierConfig,validDossierAction,validArticleEdit};

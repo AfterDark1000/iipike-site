@@ -1,0 +1,62 @@
+name: HPII — apply owner article corrections (NO NEW PUBLICATION)
+on:
+  push:
+    branches: [main]
+    paths: ['data/article_edits/requests/**']
+  schedule:
+    - cron: '16,46 * * * *'
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/site_article_edits.py'
+      - 'tests/test_site_article_edits.py'
+      - '.github/workflows/article-edits.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s tests -p 'test_site_article_edits.py' -v
+  apply:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    concurrency:
+      group: hpii-site-first-serial-publication
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: write
+      pages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Validate and commit one correction
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/site_article_edits.py
+            git add -- content/approved/ articles/ dzen-rss.xml data/article_edits/
+            if git diff --cached --name-only | grep -Ev '^(content/approved/[a-z0-9-]+\.json|articles/[a-z0-9-]+/index\.html|dzen-rss\.xml|data/article_edits/(receipts|applied)/[a-z0-9-]+\.json)$'; then
+              echo 'Unexpected edit output'; exit 1
+            fi
+            if git diff --cached --quiet; then echo 'No pending correction'; exit 0; fi
+            git diff --cached --check
+            python3 scripts/build_dzen_rss.py --check
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'editorial: apply validated owner article correction [skip ci]'
+            if git push origin HEAD:main; then
+              gh api -X POST repos/AfterDark1000/iipike-site/pages/builds
+              gh workflow run dzen-reading-queue.yml --ref main
+              exit 0
+            fi
+          done
+          echo 'Concurrent main updates; safe retry on next run'; exit 1

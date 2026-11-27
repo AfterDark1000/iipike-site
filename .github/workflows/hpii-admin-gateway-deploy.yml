@@ -73,7 +73,8 @@ jobs:
                           and payload.get("cover_review_max_version")==5 and payload.get("first_car_text_binding") is True
                           and payload.get("parallel_cover_review") is True
                           and payload.get("copyedit_review") is True
-                          and payload.get("dossier_management") is True):
+                          and payload.get("dossier_management") is True
+                          and payload.get("article_editing") is True):
                       print("LIVE_GATEWAY_COVER_AND_FIRST_CAR_BINDING_READY")
                       break
               except Exception as exc:

@@ -155,7 +155,8 @@ def validate_story(root, story_id, *, today=None, allow_published=False):
         approved = approved_article(root, story_id)
         if ("article_markdown" in data and
                 not published_markdown_matches(data["article_markdown"],
-                                               approved.get("article_markdown"), story_id)):
+                                               approved.get("original_article_markdown",
+                                                            approved.get("article_markdown")), story_id)):
             raise ValueError("Published editor Markdown differs from inbox original")
         if "companies" in data or "products" in data:
             selected = validate_editor_entities(

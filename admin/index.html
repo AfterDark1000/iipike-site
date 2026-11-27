@@ -80,6 +80,7 @@ html:not(.hpii-authorized) body > :not(#hpii-login-gate){display:none!important}
 <button class="tab" role="tab" aria-selected="true" data-tab="queue">Очередь сайта</button>
 <button class="tab" role="tab" aria-selected="false" data-tab="done">Уже на сайте</button>
 <button class="tab" role="tab" aria-selected="false" data-tab="dzen">Для Дзена</button>
+<a class="tab" href="/admin/article-edit/">Редактирование статей ↗</a>
 <a class="tab" href="/admin/dossier/">Досье ↗</a>
 <a class="tab" href="/admin/pool/">Пул новостей ↗</a>
 <a class="tab" href="/admin/auto-editor/">Автономный редактор ↗</a>
@@ -165,6 +166,7 @@ var primaryOps=group("action-primary");var b=append(primaryOps,el("button","smal
 if(o.cover||o.sitePublished){var assetOps=group("action-assets");if(o.cover){var down=append(assetOps,el("button","small","Обложка ↓"));down.addEventListener("click",function(){downloadCover(o)})}if(o.sitePublished){var illustrations=append(assetOps,el("button","small","Иллюстрации ↓"));illustrations.addEventListener("click",function(){openIllustrations(o)})}}
 if(o.dzen&&href(o.other)){var linkOps=group("action-link");anchor(linkOps,"Дзен ↗",o.other)}else if(o.other&&href(o.other)){var siteOps=group("action-link");anchor(siteOps,"На сайте ↗",o.other)}
 }else{anchor(ops,type==="done"?"Статья ↗":"В GitHub ↗",o.url);if(o.cover)anchor(ops,"Обложка ↗",o.cover)}
+if(type==="done"||type==="dzen"&&o.sitePublished){var editId=o.id||(/\/articles\/([a-z0-9-]+)\//.exec(o.url||"")||[])[1];if(editId&&/^[a-z0-9-]+$/.test(editId)){var edit=append(ops,el("a",null,"✎ Править статью"));edit.href="/admin/article-edit/?id="+encodeURIComponent(editId)}}
 return row}
 function render(){panel.replaceChildren();if(!data){empty(panel,"Нет данных. Попробуй обновить.");return}
 if(current==="queue"){append(panel,el("h2",null,"Следующие публикации"));append(panel,el("p","hint","Плановый выпуск: с 07:00 до 01:00 по Усть-Катаву. С 01:00 до 07:00 — ночная пауза, статьи ждут утра. Время — прогноз, не обещание точной минуты."));var list=append(panel,el("div","items"));data.q.forEach(function(r){item(list,r,"queue")});if(!data.q.length)empty(list,"Очередь пуста — сейчас нет запланированных материалов.");label(panel,"Требуют внимания");var b=append(panel,el("div","items"));data.problem.forEach(function(r){item(b,r,"problem")});if(!data.problem.length)empty(b,"Не обнаружено проблемных материалов.");}
@@ -243,6 +245,18 @@ parsed.errors.forEach(function(error){append(panel,el("small","warning",error))}
 async function openText(o){var url=raw(o.md);if(!url){alert("Ссылка на исходный текст недоступна");return}
 try{var res=await fetch(url+"?v="+Date.now(),{cache:"no-store"});if(!res.ok)throw Error("HTTP "+res.status);
 var txt=await res.text();var parts=/^# (.+)\r?\n\r?\n/.exec(txt);var title=parts?parts[1]:o.title;var body=parts?txt.slice(parts[0].length):txt;
+var revision=/^<!-- hpii-revision: ([a-f0-9]{32}) -->\r?\n\r?\n/.exec(body);
+if(revision)body=body.slice(revision[0].length);
+if(o.sitePublished&&/^[a-z0-9-]+$/.test(o.id||"")){
+  var base="https://raw.githubusercontent.com/AfterDark1000/iipike-site/main/data/article_edits/";
+  var marker=await fetch(base+"applied/"+o.id+".json?v="+Date.now(),{cache:"no-store"});
+  if(marker.ok){var currentRevision=(await marker.json()).request_id;if(!revision||revision[1]!==currentRevision)throw Error("Текст для Дзена ещё не обновился после правки. Обнови список и повтори позже.")}
+  else if(marker.status!==404)throw Error("Не удалось проверить актуальность редакции");
+  else if(revision)throw Error("Не удалось подтвердить редакцию текста");
+  var request=await fetch(base+"requests/"+o.id+".json?v="+Date.now(),{cache:"no-store"});
+  if(request.ok){var pending=await request.json();var receipt=await fetch(base+"receipts/"+o.id+".json?v="+Date.now(),{cache:"no-store"});if(!receipt.ok||(await receipt.json()).request_id!==pending.request_id)throw Error("Правка статьи ещё обрабатывается. Не копируй старую версию.")}
+  else if(request.status!==404)throw Error("Не удалось проверить наличие ожидающей правки");
+}
 activeStory={id:o.id,title:title,markdown:body,html:blocks(body)};
 showTableDownloads(activeStory);
 document.getElementById("articleHeading").textContent=title;document.getElementById("articlePreview").innerHTML=activeStory.html;showCopyFeedback("");
