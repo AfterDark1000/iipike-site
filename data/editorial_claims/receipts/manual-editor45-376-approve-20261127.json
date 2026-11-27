@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-376-approve-20261127.json",
+  "request_sha256": "ca32dc06b9c05318ce272019a3249ad0a62132a5295912bfcc5fbafb632f8490",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-ac5d6c67687a6569",
+  "pool_sequence": 376,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T17:29:28.293207+00:00",
+  "note": "Главред утвердил полную подборку накопителя №376, 482, 535, 536. Все четыре сюжета включены; ограничения проверки 535/536 сообщены главреду. Статья без служебного блока источников, Threads/X и ВК сохранены и перечитаны. Ожидается обложка."
+}
