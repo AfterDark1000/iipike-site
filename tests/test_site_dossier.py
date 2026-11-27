@@ -46,3 +46,16 @@ class DossierTests(unittest.TestCase):
             self.assertEqual(d.update_home_dossier(new,[self.row],root),new)
             path.write_text(json.dumps({"schema_version":1,"items":[]}))
             self.assertEqual(d.update_home_dossier(new,[self.row],root),"BEFORE"+d.START+"\n\n"+d.END+"AFTER")
+
+    def test_home_manual_showcase_keeps_six_and_archive_keeps_all(self):
+        rows=[dict(self.row,id=f"story-{i}",url=f"articles/story-{i}/") for i in range(8)]
+        ids=[r["id"] for r in rows]
+        markup=d.home_section(rows,ids)
+        self.assertEqual(markup.count('class="dossier-slide"'),6)
+        self.assertEqual(markup.count('class="dossier-thumb"'),6)
+        self.assertIn('1 / 6',markup)
+        self.assertIn('src="assets/dossier-showcase.js"',markup)
+        self.assertNotIn('href="articles/story-6/"',markup)
+        self.assertNotIn('dossier-controls',d.home_section(rows,ids[:1]))
+        self.assertIn('data-count="8"',d.archive(rows,ids))
+        self.assertEqual(d.archive(rows,ids).count('class="dossier-card"'),8)
