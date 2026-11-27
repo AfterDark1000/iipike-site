@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 24 · **Готовы:** 0 · **Ждут интервал:** 24 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 264
+**В очереди:** 25 · **Готовы:** 0 · **Ждут интервал:** 25 · **Срочная очередь:** 1 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 264
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -36,6 +36,7 @@
 | **22** | [Глава Microsoft предупредил о сбоях из-за борьбы с ИИ-хакерами](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-nadella-ai-cyber-infrastructure-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 17:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-nadella-ai-cyber-infrastructure-20261118.webp) |
 | **23** | [Microsoft выпустила нейросеть, которая не умеет болтать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-decision-1-1-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 18:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-decision-1-1-20261117.webp) |
 | **24** | [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai2-theorizer-scientific-hypotheses-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 19:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
+| **25** | [SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 20:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
