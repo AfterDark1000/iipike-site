@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "action": "approve",
+  "worker": "hpii-manual-editor",
+  "claim_request": "manual-editor41-20261127-pass13.json",
+  "pool_id": "n-b0e6c16d3d3929d4",
+  "pool_sequence": 618,
+  "claimed_at": "2026-11-27T02:29:19.030186+00:00",
+  "expected_note": "По редзаданию расширен обзор. Сбер: каталог подтверждён главредом; https://vc.ru/ai/3265459-sposoby-oplaty-nevrosyeti-bez-riska-bana 19.11 приводит Claude Pro 2364,13 ₽, Max 5x/20x; официальный анонс/оферта банка и активация не подтверждены. Ozon: описание App Store, https://embedded.multitransfer.ru/ozon/ и оферта /ozon/documents/offer-agreement/ (претензия о передаче 24ч), B2B /ozon-business/. СберМобайл анонс 20.08 и Pay Digital, МегаФон та же витрина; МТС payment.mts.ru/spa/pay/21591 и /24982 (цены/наличие не подтверждены). RuStore 27.11: https://www.rustore.ru/kiosk/chatgpt Plus 2984 ₽, /kiosk/claude недоступен. Альфа: официальный анонс 25.11 зарубежных подписок для премиум-привилегий, список ChatGPT/Midjourney по premiumbanking.info 22.11; Т-Банк/ВТБ наличие ИИ в витрине не подтверждено. OpenAI supported countries, Anthropic supported-regions 12.11 исключают РФ; успешная оплата не проверена. Перелинковка МТС 6b06c437b346137d5a37531f, Claude паспорт 6ae328f22b80bf7f06102483. На утверждении.",
+  "note": "Главред утвердил собственное исследование девяти приложений от 27.11.2026, текст с удалённой фразой-штампом, две таблицы, шесть обезличенных доказательных иллюстраций WebP (SHA сверены), соцтексты, X со ссылкой на будущую страницу. Горячая очередь. Художнику: обложка, до двух дополнительных иллюстраций/инфографик (лимит 8 inline), не перерисовывать доказательные скриншоты; таблицы для Дзена генерируются админкой. После публикации главреду включить в Досье через админку. Контрольных покупок не проводили.",
+  "human_authorized": true,
+  "article_id": "russian-ai-subscriptions-investigation-20261127",
+  "story_sha": "8002eccf404b8428e591695081646afcdb20edae"
+}
