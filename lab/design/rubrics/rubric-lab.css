@@ -36,3 +36,5 @@ main{padding-block:30px 48px}.rubric-head{display:flex;align-items:flex-end;just
   .r2 .row .copy{grid-column:2;grid-row:2;padding:4px 12px 12px 0;align-self:start}
   .r2 .row h3{font-size:18px}
 }
+
+@media(max-width:360px){.r2 .wrap{padding-inline:12px}.r2 .row .copy{padding-inline:12px}.r2 .row .time{padding-inline:12px}.r2 .row h3{font-size:18px}}

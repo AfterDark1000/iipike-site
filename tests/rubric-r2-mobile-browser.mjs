@@ -69,10 +69,13 @@ try{
     assert.ok(!s.overflow&&s.dates>0&&s.columns===1&&s.img>=s.card-3&&s.img>=320&&s.ct>=s.ib&&s.title>=19&&s.radius>=8,"full-width readable mobile card");
   }
   const tiny=await check("skynet",320);
-  assert.ok(!tiny.overflow&&tiny.img>=285&&tiny.ct>=tiny.ib,"small phone fits");
+  console.log("small phone",tiny);
+  assert.ok(!tiny.overflow&&tiny.img>=tiny.card-3&&tiny.img>=275&&tiny.ct>=tiny.ib,"small phone fits including scrollbar");
   const tablet=await check("skynet",650);
+  console.log("tablet",tablet);
   assert.ok(!tablet.overflow&&tablet.columns===2&&tablet.img>200,"compact tablet row");
   const desktop=await check("skynet",1440);
+  console.log("desktop",desktop);
   assert.ok(!desktop.overflow&&desktop.columns===4&&Math.abs(desktop.img-156)<=2&&desktop.title===17,"original desktop R2");
   console.log("PASS: all five R2 rubrics on phones, tablet and unchanged desktop");
 }finally{
