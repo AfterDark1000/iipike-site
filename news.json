@@ -9431,5 +9431,30 @@
     "products": [
       "grok"
     ]
+  },
+  {
+    "title": "ИИ-гиганты США проигнорировали климатическое соглашение ООН",
+    "summary": "На COP31 представили добровольное соглашение о сокращении воздействия ИИ на окружающую среду. К 24 ноября из крупных технологических компаний его подписала только Alibaba.",
+    "published": "2026-11-27",
+    "source_url": "https://www.itu.int/ru/mediacentre/Pages/PR-2026-11-16-COP31-Antalya-AI-Pledge.aspx",
+    "cover": "assets/editorial/cop31-antalya-ai-pledge-big-tech-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🌍 ИИ-гиганты США оставили климатическое соглашение ООН БЕЗ ПОДПИСЕЙ",
+    "vk_summary": "Из крупнейших технологических компаний только китайская Alibaba согласилась взять на себя добровольные обязательства по сокращению экологического вреда от ИИ.",
+    "published_at_utc": "2026-11-27T14:00:58Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "cop31-antalya-ai-pledge-big-tech-20261117",
+    "url": "articles/cop31-antalya-ai-pledge-big-tech-20261117/",
+    "topics": [
+      "society",
+      "science",
+      "infrastructure"
+    ],
+    "companies": [
+      "alibaba",
+      "amazon"
+    ],
+    "products": []
   }
 ]
