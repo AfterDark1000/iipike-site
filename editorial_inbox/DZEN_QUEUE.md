@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 298 · **В каталоге Дзена подтверждены:** 254 · **Не подтверждены, уже на сайте:** 17 · **Не подтверждены, ждут сайт:** 27
+**Всего одобренных:** 299 · **В каталоге Дзена подтверждены:** 254 · **Не подтверждены, уже на сайте:** 17 · **Не подтверждены, ждут сайт:** 28
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -59,12 +59,13 @@
 | 19 | [Claude переписал собственный API и сократил нагрузку на процессоры на 70%](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/anthropic-claude-api-rust-migration-20261125.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 | 20 | [Google придумала, как снизить расходы на работу ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-gemini-tool-retrieval-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 | 21 | [Школы США готовы отказаться от Google из-за навязанных нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/google-school-search-ai-petition-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 22 | [John Deere купила нейросеть, которая пересчитает все яблоки в саду](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/john-deere-orchard-ai-acquisition-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 23 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/minimax-data-retention-leak-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 24 | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-performance-factory-codex-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 25 | [Сбер научил Kandinsky собирать людей с разных фотографий в одном видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/sber-kandinsky-6-5-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 26 | [Нейросети добрались до британских судов. Юристы ссылаются на выдуманные законы, а полиция генерирует показания](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/uk-courts-ai-fabricated-evidence-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
-| 27 | [США сбивают темп китайской ИИ-гонки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/us-china-ai-chip-distillation-curbs-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 22 | [Ideogram обошла Google и OpenAI в редактировании фотографий](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ideogram-4-6-image-editing-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 23 | [John Deere купила нейросеть, которая пересчитает все яблоки в саду](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/john-deere-orchard-ai-acquisition-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 24 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/minimax-data-retention-leak-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 25 | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/openai-performance-factory-codex-20261119.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 26 | [Сбер научил Kandinsky собирать людей с разных фотографий в одном видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/sber-kandinsky-6-5-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 27 | [Нейросети добрались до британских судов. Юристы ссылаются на выдуманные законы, а полиция генерирует показания](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/uk-courts-ai-fabricated-evidence-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 28 | [США сбивают темп китайской ИИ-гонки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/us-china-ai-chip-distillation-curbs-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
