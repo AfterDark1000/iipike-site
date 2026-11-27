@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 17 · **Готовы:** 0 · **Ждут интервал:** 17 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 12 · **Заблокированы:** 0 · **Опубликованы через site-first:** 273
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 12 · **Заблокированы:** 0 · **Опубликованы через site-first:** 273
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -29,12 +29,14 @@
 | **15** | [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai2-theorizer-scientific-hypotheses-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 20:07 (Усть-Катав)**; пауза до 28.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
 | **16** | [SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 21:07 (Усть-Катав)**; пауза до 28.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.webp) |
 | **17** | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-performance-factory-codex-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 22:07 (Усть-Катав)**; пауза до 28.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-performance-factory-codex-20261119.webp) |
+| **18** | [Ubisoft научит игровых персонажей помнить вас](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ubisoft-motherbrain-npc-memory-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 23:07 (Усть-Катав)**; пауза до 28.11.2026 00:30 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ubisoft-motherbrain-npc-memory-20261119.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
 | [Четыре необычных мира, которые энтузиасты создали с помощью нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-four-created-worlds-20261124.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Нейросети экономят фармацевтам годы исследований](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai-pharma-drug-discovery-20261120.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Claude переписал собственный API и сократил нагрузку на процессоры на 70%](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-api-rust-migration-20261125.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Google придумала, как снизить расходы на работу ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-tool-retrieval-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Школы США готовы отказаться от Google из-за навязанных нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-school-search-ai-petition-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
@@ -43,7 +45,6 @@
 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/minimax-data-retention-leak-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Сбер научил Kandinsky собирать людей с разных фотографий в одном видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/sber-kandinsky-6-5-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Китайцы выпустили нейросеть в 20 раз дешевле своего флагмана](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/tencent-hy4-flash-open-weights-20261118.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
-| [Ubisoft научит игровых персонажей помнить вас](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ubisoft-motherbrain-npc-memory-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Нейросети добрались до британских судов. Юристы ссылаются на выдуманные законы, а полиция генерирует показания](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/uk-courts-ai-fabricated-evidence-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [США сбивают темп китайской ИИ-гонки](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/us-china-ai-chip-distillation-curbs-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
