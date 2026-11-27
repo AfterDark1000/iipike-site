@@ -59,7 +59,7 @@ try{
   const layout=()=>evaluate('(()=>{if(document.readyState!=="complete")return null;const card=document.querySelector(".rubric-r2 .archive-card");if(!card)return null;const r=card.getBoundingClientRect(),im=card.querySelector("img").getBoundingClientRect(),copy=card.querySelector(".rubric-copy").getBoundingClientRect(),time=card.querySelector(".rubric-time").getBoundingClientRect();return {url:location.href,viewport:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,card:r.width,img:im.width,ib:im.bottom,ct:copy.top,cw:copy.width,time:time.top,title:parseFloat(getComputedStyle(card.querySelector("h3")).fontSize),radius:parseFloat(getComputedStyle(card).borderTopLeftRadius),dates:document.querySelectorAll(".rubric-day-title").length,columns:getComputedStyle(card).gridTemplateColumns.split(" ").length}})()');
   async function check(rubric,width){
     await call("Emulation.setDeviceMetricsOverride",{width,height:844,deviceScaleFactor:1,mobile:false});
-    const url=pathToFileURL(resolve("rubrics/"+rubric+"/index.html")).href;
+    const url=pathToFileURL(resolve(rubric==="archive"?"articles/index.html":"rubrics/"+rubric+"/index.html")).href;
     await call("Page.navigate",{url});
     return until("R2 "+rubric+" at "+width,async()=>{const s=await layout();return s?.url===url&&s.viewport===width?s:null});
   }
@@ -77,7 +77,17 @@ try{
   const desktop=await check("skynet",1440);
   console.log("desktop",desktop);
   assert.ok(!desktop.overflow&&desktop.columns===4&&Math.abs(desktop.img-156)<=2&&desktop.title===17,"approved desktop R2");
-  console.log("PASS: all five R2 rubrics on phones, tablet and approved desktop");
+  for(const width of [320,390,650,1440]){
+    const a=await check("archive",width);
+    console.log("all articles archive",width,a);
+    assert.ok(!a.overflow&&a.dates>0,"archive fits viewport");
+    const labels=await evaluate('Array.from(document.querySelectorAll(".archive-r2 .archive-card")).every(c=>c.querySelector(".archive-rubric")?.textContent.trim())');
+    assert.ok(labels,"every article has a rubric label");
+    if(width<=540)assert.ok(a.columns===1&&a.img>=a.card-3&&a.ct>=a.ib,"archive mobile full-width cover");
+    else if(width<=700)assert.equal(a.columns,2);
+    else assert.ok(a.columns===4&&Math.abs(a.img-156)<=2,"archive desktop R2");
+  }
+  console.log("PASS: five rubrics and full article archive R2 responsive layout");
 }finally{
   ws?.close();
   chrome.kill();
