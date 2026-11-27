@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T08:02:07.096059+00:00",
-  "valid_until": "2026-11-27T09:32:07.096059+00:00",
+  "prepared_at": "2026-11-27T08:17:22.557793+00:00",
+  "valid_until": "2026-11-27T09:47:22.557793+00:00",
   "status": "ready",
   "counts": {
     "reserved_24h": 1,
@@ -92,7 +92,7 @@
     "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
     "data/auto_editor/requests": "f8c3de11e6800fe8036ce04aa96a0150985fbbc6",
     "data/auto_editor/receipts": "d139b65d78be00cb31af4e3a02e07a997f016ddf",
-    "news.json": "4036011eb2902925909f7f9cb97a0fcbda6adaf0"
+    "news.json": "ffc9c2fc34bb16bc1d7629149640e9bc2a57abe7"
   },
   "intake_guard": {
     "editorial_inbox/auto_drafts": "75030fe02202b8bfe196a8bfe9cd82828729c2f8",
