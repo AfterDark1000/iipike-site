@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request": "short-20261127-last-two-chat.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 2,
+  "items": [
+    {
+      "pool_id": "n-c0168a121974176e",
+      "pool_sequence": 614,
+      "title": "Для биологических нейросетей обнаружили новый закон масштабирования",
+      "source_url": "https://www.businesswire.com/news/home/20261126210867/en/Cellular-Intelligence-Announces-Nature-Machine-Intelligence-Publication-Establishing-a-New-Scaling-Law-for-Biological-AI",
+      "claimed_at": "2026-11-27T07:28:38+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-fca2908174a065f7",
+      "pool_sequence": 620,
+      "title": "В Пензе пытаются победить пробки при помощи искусственного интеллекта",
+      "source_url": "https://penzavzglyad.ru/news/212758/v-penze-reshayut-problemu-probok-s-pomoschyu-iskusstvennogo-intellekta",
+      "claimed_at": "2026-11-27T07:28:38+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
