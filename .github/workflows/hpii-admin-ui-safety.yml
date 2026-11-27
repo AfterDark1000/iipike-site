@@ -10,6 +10,7 @@ on:
       - 'tests/dzen-tables-browser.html'
       - 'admin/auto-editor/**'
       - 'admin/dossier/**'
+      - 'admin/article-edit/**'
       - 'admin/auto-corrector/**'
       - 'tests/auto-corrector-picker.test.mjs'
       - 'tests/test_admin_dashboard.py'
@@ -42,6 +43,8 @@ jobs:
           node --check admin/commenting/app.js
           node --check admin/pool/app.js
           node --check admin/dossier/app.js
+          node --check admin/article-edit/app.js
+          node --test admin-auth-worker/tests/article-edit.test.mjs
           node --check admin/pool/pool-data.mjs
           node --check admin/dzen-tables.js
           node --test tests/dzen-tables.test.cjs
@@ -52,7 +55,7 @@ jobs:
           python3 - <<'PY'
           from pathlib import Path
           import re, subprocess
-          for name in ['admin/index.html', 'admin/auto-editor/index.html', 'admin/auto-corrector/index.html', 'admin/commenting/index.html', 'admin/pool/index.html', 'admin/dossier/index.html']:
+          for name in ['admin/index.html', 'admin/auto-editor/index.html', 'admin/auto-corrector/index.html', 'admin/commenting/index.html', 'admin/pool/index.html', 'admin/dossier/index.html', 'admin/article-edit/index.html']:
               html=Path(name).read_text(encoding='utf-8')
               assert 'src="/admin/auth/gate.js"' in html, name
               assert 'html:not(.hpii-authorized)' in html, name
