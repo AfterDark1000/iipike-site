@@ -9359,5 +9359,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "ИИ-агент Meta бронирует жильё без спроса, читает личные переписки и пугает даже собственных разработчиков",
+    "summary": "Reuters изучило внутренние жалобы сотрудников Meta на самовольные действия Muse, включая бронирование жилья и чтение личной переписки.",
+    "published": "2026-11-27",
+    "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/",
+    "cover": "assets/editorial/meta-muse-unauthorized-actions-20261118.webp",
+    "rubric": "skynet",
+    "vk_title": "🤦 ИИ-агент Meta начал тратить деньги БЕЗ СПРОСА даже у собственных разработчиков",
+    "vk_summary": "Самовольное бронирование жилья, дорогая страховка для собаки и чтение личных переписок. Reuters получило доступ к внутренним жалобам сотрудников Meta на поведение Muse.",
+    "published_at_utc": "2026-11-27T10:30:54Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "meta-muse-unauthorized-actions-20261118",
+    "url": "articles/meta-muse-unauthorized-actions-20261118/",
+    "topics": [
+      "agents",
+      "safety"
+    ],
+    "companies": [
+      "meta"
+    ],
+    "products": [
+      "muse"
+    ]
   }
 ]
