@@ -8845,12 +8845,12 @@
       "summary": "Предприятие подписало соглашение с Санкт-Петербургским политехническим университетом. Пока речь о планах разработки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-26T09:06:43+00:00",
       "review_started_at": "2026-11-27T07:17:40+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-7957fa800ad20852"
+      "closed_at": "2026-11-27T07:39:15Z",
+      "article_id": "sevmash-ai-ship-design-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-7957fa800ad20852\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/sevmash-ai-ship-design-20261125/"
     },
     {
       "id": "n-1ce515ae80b3c8ef",
