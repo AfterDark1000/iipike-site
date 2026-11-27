@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-369-approve-f6.json",
+  "request_sha256": "0bd0c0afde73a8387cbe152ade230352c8f5c431c1224ac4413c69da1923f03d",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-a38aa49b586de75a",
+  "pool_sequence": 369,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T15:58:41.247559+00:00",
+  "note": "Главред утвердил разговорную редакцию. Статья, таблица, две перелинковки и соцтексты сохранены и проверены; ожидается обложка."
+}
