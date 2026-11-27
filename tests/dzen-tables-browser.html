@@ -1,0 +1,23 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Local PNG fixture</title></head><body data-result="pending"><script src="../admin/dzen-tables.js"></script><script>
+(async()=>{
+ const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
+ try{
+ const parsed=HpiiDzenTables.splitMarkdown("Лид.\n\n| Модель | Результат |\n| --- | ---: |\n| **Альфа** | 42 |\n| Бета | 37 |\n\nКонец.");
+ const table=parsed.tables[0],c=document.createElement("canvas"),p=HpiiDzenTables.layout(table,c.getContext("2d"));
+ HpiiDzenTables.draw(table,p,0,c);
+ assert(c.width===1600&&c.height>200,"bitmap dimensions");
+ const ctx=c.getContext("2d");
+ const dark=ctx.getImageData(50,120,1,1).data;
+ assert(dark[0]===35&&dark[1]===59&&dark[2]===48,"actual green table header");
+ const png=c.toDataURL("image/png");
+ assert(png.startsWith("data:image/png;base64,iVBORw0KGgo"),"PNG signature");
+ // Confirm downloadable blob bytes, not just a data URL.
+ const files=await HpiiDzenTables.pngFiles(table,"fixture");
+ assert(files.length===1&&files[0].name==="fixture-table-01.png","download name");
+ const bytes=new Uint8Array(await files[0].blob.arrayBuffer());
+ assert(bytes[0]===137&&bytes[1]===80&&bytes[2]===78&&bytes[3]===71,"PNG bytes");
+ assert(files[0].blob.size>1000,"nonempty image");
+ document.body.dataset.result="passed";
+ }catch(e){document.body.dataset.result="failed";document.body.append(document.createTextNode(e.message))}
+})();
+</script></body></html>

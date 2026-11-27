@@ -99,7 +99,9 @@ jobs:
                    '.github/workflows/hpii-admin-ui-safety.yml', 'docs/DOSSIER.md',
                    'tests/test_editorial_routing.py', 'tests/test_publication_times.py',
                    'scripts/site_rich_text.py', 'tests/test_site_rich_text.py',
-                   'editorial_inbox/RICH_TEXT_FORMAT.md'}
+                   'editorial_inbox/RICH_TEXT_FORMAT.md', 'admin/dzen-tables.js',
+                   'tests/test_admin_dashboard.py', 'tests/dzen-tables.test.cjs',
+                   'tests/dzen-tables-browser.html'}
           # New approved rubric keys need matching editor validation, regression
           # tests and an editorial evidence policy; still run every read-only
           # site/publisher test above before allowing this *exact* file set.

@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - 'admin/index.html'
+      - 'admin/dzen-tables.js'
+      - 'tests/dzen-tables.test.cjs'
+      - 'tests/dzen-tables-browser.html'
       - 'admin/auto-editor/**'
       - 'admin/dossier/**'
       - 'admin/auto-corrector/**'
@@ -40,6 +43,8 @@ jobs:
           node --check admin/pool/app.js
           node --check admin/dossier/app.js
           node --check admin/pool/pool-data.mjs
+          node --check admin/dzen-tables.js
+          node --test tests/dzen-tables.test.cjs
           node --test tests/pool-view.test.mjs
           node --test tests/auto-editor-queue.test.mjs
           node --test tests/auto-corrector-picker.test.mjs
@@ -76,3 +81,9 @@ jobs:
           assert 'hpii-admin-authorized' in Path('admin/commenting/app.js').read_text(encoding='utf-8')
           print('Admin gate, code parsing and authenticated actions: OK')
           PY
+      - name: Render real PNG in headless Chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          google-chrome --headless --no-sandbox --disable-dev-shm-usage --allow-file-access-from-files --virtual-time-budget=10000 --dump-dom "file://$PWD/tests/dzen-tables-browser.html" > "$RUNNER_TEMP/dzen-tables-browser.html"
+          grep -F 'data-result="passed"' "$RUNNER_TEMP/dzen-tables-browser.html"
