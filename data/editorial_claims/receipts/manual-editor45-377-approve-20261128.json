@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-377-approve-20261128.json",
+  "request_sha256": "860a40a2a37e3706dad0deb3d698e3e5db9ad7f80508c791d40887856f2d4ad6",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-710522c426ed8052",
+  "pool_sequence": 377,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T18:54:08.458902+00:00",
+  "note": "Главред утвердил заголовок «Нейросети экономят фармацевтам годы исследований». Статья без служебного блока источников, Threads/X и ВК сохранены и перечитаны. Ожидается обложка."
+}
