@@ -130,7 +130,14 @@ jobs:
               const headSha = refInfo.data.object.sha;
               const files = await directory('editorial_inbox/stories', branch);
               const covers = await directory('editorial_inbox/covers', branch);
-              const news = JSON.parse(await getText(owner, repo, 'news.json', 'main'));
+              const mainRef=(await github.rest.git.getRef({owner,repo,ref:'heads/main'})).data.object.sha;
+              const news = JSON.parse(await getText(owner, repo, 'news.json', mainRef));
+              const revised=new Set();
+              try{
+                for(const f of await directory('data/article_edits/applied',mainRef)){
+                  if(f.type==='file'&&/^[a-z0-9-]+\.json$/.test(f.name))revised.add(f.name.slice(0,-5));
+                }
+              }catch(e){if(e.status!==404)throw e}
               // Use the *existing* website publication forecast as the single source of truth
               // for ordering unreleased Dzen drafts. Never guess from editorial approval dates.
               const queueStatus = await getText(owner, repo, 'editorial_inbox/QUEUE_STATUS.md', branch);
@@ -218,6 +225,18 @@ jobs:
                     throw new Error('Unsupported legacy text block in ' + id + ': ' + block.type);
                   }).join('\n\n');
                 }
+                let revision=null;
+                if(revised.has(id)){
+                  if(!byId.has(id))throw new Error('Revision without published article: '+id);
+                  const canonical=JSON.parse(await getText(owner,repo,'content/approved/'+id+'.json',mainRef));
+                  const marker=JSON.parse(await getText(owner,repo,'data/article_edits/applied/'+id+'.json',mainRef));
+                  if(canonical.slug!==id||canonical.status!=='approved'||typeof canonical.article_markdown!=='string'||
+                     marker.article_id!==id||marker.request_id!==canonical.article_edit_id||
+                     !/^[a-f0-9]{32}$/.test(marker.request_id)||
+                     crypto.createHash('sha256').update(canonical.article_markdown,'utf8').digest('hex')!==marker.edited_sha256)
+                    throw new Error('Invalid owner article revision: '+id);
+                  articleBody=canonical.article_markdown;revision=marker.request_id;
+                }
                 if (!articleBody || !articleBody.trim()) throw new Error('Empty article body: ' + id);
                 const title = story.dzen_title || story.title;
                 if (typeof title !== 'string' || title.includes('\n') || title.includes('\r')) {
@@ -230,7 +249,7 @@ jobs:
                 const prepared = rewriteDzenLinks(articleBody);
                 if (prepared.unresolved.length) core.warning('DZEN_CROSSLINK_REVIEW: ' + id +
                   ' -> ' + prepared.unresolved.join(', '));
-                desired.set(mdPath, '# ' + title + '\n\n' + prepared.text + '\n');
+                desired.set(mdPath, '# ' + title + '\n\n' + (revision?'<!-- hpii-revision: '+revision+' -->\n\n':'') + prepared.text + '\n');
                 const siteRow = byId.get(id);
                 const same = byTitle.get(normalize(title)) || [];
                 let dzenUrl = null, dzenDate = null, ambiguous = false;

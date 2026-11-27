@@ -213,3 +213,23 @@
   if (choice === "yes") startTracking();
   else if (choice !== "no") showPanel();
 })();
+
+// Owner shortcut on a published article, visible only after server verifies session.
+(function(){
+  "use strict";
+  if(typeof location==="undefined"||!location.pathname)return;
+  var id=/^\/articles\/([a-z0-9-]+)\/(?:index\.html)?$/.exec(location.pathname);
+  if(!id)return;
+  var token;
+  try{token=window.localStorage.getItem("hpii-admin-session-v2")}catch(_){return}
+  if(!token||!/^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(token))return;
+  import("/admin/auth/hpii-auth-client.js").then(async function(m){
+    var auth=new m.HpiiAdminAuth("https://hpii-admin-gateway.svuktablet.workers.dev");
+    var session=await auth.session();
+    if(session.login!=="AfterDark1000")return;
+    var host=document.querySelector(".article-title");if(!host)return;
+    var a=document.createElement("a");a.href="/admin/article-edit/?id="+encodeURIComponent(id[1]);
+    a.textContent="✎ Редактировать статью";a.style.cssText="display:inline-block;margin:8px 12px;padding:8px 14px;background:#e6ece2;border:1px solid #9baa98;border-radius:8px;color:#233b30;font:600 14px system-ui,sans-serif";
+    host.prepend(a);
+  }).catch(function(){});
+})();
