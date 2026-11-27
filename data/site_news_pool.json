@@ -9190,12 +9190,12 @@
       "summary": "Анализ более 2000 конфигураций моделей указывает на важность качества экспериментальных измерений наряду с размером моделей и объёмом данных.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-26T18:06:11+00:00",
       "review_started_at": "2026-11-27T07:28:38+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-c0168a121974176e"
+      "closed_at": "2026-11-27T10:24:13Z",
+      "article_id": "cellular-intelligence-measurement-noise-20261126",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c0168a121974176e\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/cellular-intelligence-measurement-noise-20261126/"
     },
     {
       "id": "n-ee49075fab924212",
