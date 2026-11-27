@@ -59,7 +59,7 @@ try{
   const layout=()=>evaluate('(()=>{if(document.readyState!=="complete")return null;const card=document.querySelector(".rubric-r2 .archive-card");if(!card)return null;const r=card.getBoundingClientRect(),im=card.querySelector("img").getBoundingClientRect(),copy=card.querySelector(".rubric-copy").getBoundingClientRect(),time=card.querySelector(".rubric-time").getBoundingClientRect();return {url:location.href,viewport:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,card:r.width,img:im.width,ib:im.bottom,ct:copy.top,cw:copy.width,time:time.top,title:parseFloat(getComputedStyle(card.querySelector("h3")).fontSize),radius:parseFloat(getComputedStyle(card).borderTopLeftRadius),dates:document.querySelectorAll(".rubric-day-title").length,columns:getComputedStyle(card).gridTemplateColumns.split(" ").length}})()');
   async function check(rubric,width){
     await call("Emulation.setDeviceMetricsOverride",{width,height:844,deviceScaleFactor:1,mobile:false});
-    const url=pathToFileURL(resolve(rubric==="archive"?"articles/index.html":rubric.startsWith("entities/")?rubric+"/index.html":"rubrics/"+rubric+"/index.html")).href;
+    const url=pathToFileURL(resolve(rubric==="archive"?"articles/index.html":(rubric.startsWith("entities/")||rubric.startsWith("topics/"))?rubric+"/index.html":"rubrics/"+rubric+"/index.html")).href;
     await call("Page.navigate",{url});
     return until("R2 "+rubric+" at "+width,async()=>{const s=await layout();return s?.url===url&&s.viewport===width?s:null});
   }
@@ -87,7 +87,7 @@ try{
     else if(width<=700)assert.equal(a.columns,2);
     else assert.ok(a.columns===4&&Math.abs(a.img-156)<=2,"archive desktop R2");
   }
-  for(const page of ["entities/companies/openai","entities/products/chatgpt"]){
+  for(const page of ["entities/companies/openai","entities/products/chatgpt","topics/ai-in-russia","topics/agents"]){
     for(const width of [320,390,650,1440]){
       const s=await check(page,width);
       console.log(page,width,s);
@@ -97,7 +97,18 @@ try{
       else assert.ok(s.columns===4&&Math.abs(s.img-156)<=2,"entity desktop R2");
     }
   }
-  console.log("PASS: rubrics, archive and entity R2 responsive layout");
+  for(const width of [320,390,650,1440]){
+    await call("Emulation.setDeviceMetricsOverride",{width,height:844,deviceScaleFactor:1,mobile:false});
+    const url=pathToFileURL(resolve("topics/index.html")).href;
+    await call("Page.navigate",{url});
+    const s=await until("topic directory",async()=>{
+      const result=await evaluate('(()=>{const g=document.querySelector(".topic-r2 .topic-index-grid");if(document.readyState!=="complete"||!g)return null;return {url:location.href,width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,columns:getComputedStyle(g).gridTemplateColumns.split(" ").length,tiles:g.querySelectorAll(".topic-index-link").length}})()');
+      return result?.url===url&&result.width===width?result:null;
+    });
+    assert.ok(!s.overflow&&s.tiles>0,"topic directory fits");
+    assert.equal(s.columns,width<=560?1:width<=900?2:3);
+  }
+  console.log("PASS: rubrics, archive, entities and topic R2 layouts");
 }finally{
   ws?.close();
   chrome.kill();

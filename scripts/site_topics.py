@@ -9,7 +9,8 @@ to a plausible but wrong subject label.
 from html import escape
 import re
 from pathlib import Path
-from scripts.site_rubrics import RUBRICS, publication_date
+from itertools import groupby
+from scripts.site_rubrics import RUBRICS, publication_sort_key, publication_label, navigation
 from scripts.site_topic_registry import load_extensions
 
 BASE = "https://iipike.ru"
@@ -117,63 +118,76 @@ def active_topics(records):
     return [key for key in TOPICS if any(key in topics_for_record(x) for x in records)]
 
 
-def render_topics_index(records):
-    count = {key: sum(key in topics_for_record(row) for row in records) for key in TOPICS}
-    links = "".join(
-        '<a class="topic-index-link" href="' + key + '/"><strong>' + escape(TOPICS[key][0])
-        + '</strong><span>' + str(count[key]) + ' материалов</span></a>'
-        for key in TOPICS if count[key]
-    )
+def topic_shell(title, description, prefix, canonical, content, robots=""):
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Темы новостей об искусственном интеллекте: ИИ-агенты, безопасность, модели, разработка, видео и другие направления.">
-<link rel="canonical" href="{BASE}/topics/"><title>Темы — ХПИИ</title>
-<link rel="stylesheet" href="../assets/site.css"></head>
-<body><header class="header"><div class="wrap bar">
-<a class="logo" href="../"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
-<nav class="menu"><a href="../articles/">Все статьи</a><a href="../">Главная</a></nav></div></header>
-<main class="wrap"><div class="overline">ХПИИ / Темы</div><h1>Темы новостей</h1>
-<p class="summary">Одна тема может встречаться в разных рубриках. Выбирайте, что интересно.</p>
-<nav class="topic-index-grid" aria-label="Все темы">{links}</nav></main>
-<footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
-<script defer src="../assets/social-footer.js"></script></body></html>
+<meta name="theme-color" content="#f6f3eb">
+<meta name="description" content="{escape(description, quote=True)}">
+<link rel="canonical" href="{canonical}">{robots}
+<title>{escape(title)}</title><link rel="icon" href="{prefix}assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css"></head>
+<body class="home-v1 rubric-r2 topic-r2"><header class="header"><div class="wrap bar">
+<a class="logo" href="{prefix}" aria-label="Хроники Пикирующего ИИ — главная"><span class="badge" aria-hidden="true">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu home-menu" aria-label="Основное меню"><a href="{prefix}articles/">Все статьи</a><a href="{prefix}briefs/">Коротко</a><a href="{prefix}dossier/">Досье</a><a href="{prefix}entities/">Компании и продукты</a></nav></div></header>
+<div class="home-v1-rubrics"><div class="wrap"><nav class="rubric-navigation" aria-label="Рубрики">{navigation(prefix)}</nav></div></div>
+<main class="wrap rubric-main">{content}</main>
+<footer class="footer"><div class="wrap home-v1-footer"><span>Хроники Пикирующего ИИ · Новости без истерики</span><nav><a href="{prefix}registry/">Архив Дзена</a><a href="{prefix}drafts/">Лаборатория редакции</a><a href="{prefix}feed.xml">RSS</a></nav></div></footer>
+<script defer src="{prefix}assets/social-footer.js"></script></body></html>
 '''
+
+
+def render_topics_index(records):
+    count = {key: sum(key in topics_for_record(row) for row in records) for key in TOPICS}
+    active = sum(bool(n) for n in count.values())
+    links = "".join(
+        '<a class="topic-index-link" href="' + key + '/"><strong>' + escape(TOPICS[key][0]) +
+        '</strong><p>' + escape(TOPICS[key][1]) + '</p><span class="topic-tile-meta">Материалов: ' +
+        str(count[key]) + ' <span aria-hidden="true">↗</span></span></a>'
+        for key in TOPICS if count[key]
+    )
+    content = (
+        f'<div class="rubric-head"><div><span class="rubric-kicker">ХПИИ / Темы</span><h1>Темы новостей</h1><p class="rubric-deck">Одна тема может встречаться в разных рубриках. Выбирайте, что интересно.</p></div><span class="rubric-count">Тем: {active}</span></div>'
+        '<nav class="topic-index-grid" aria-label="Все темы">' + links + '</nav>'
+    )
+    return topic_shell("Темы — ХПИИ", "Темы новостей об искусственном интеллекте: ИИ-агенты, безопасность, модели, разработка, видео и другие направления.",
+                       "../", BASE + "/topics/", content)
 
 
 def render_topic_page(key, records):
     if key not in TOPICS:
         raise ValueError("Unknown topic")
     name, description = TOPICS[key]
-    articles = sorted(
-        (r for r in records if key in topics_for_record(r)),
-        key=lambda r: (r["published"], r["id"]), reverse=True
-    )
-    cards = "\n".join(
-        '<a class="archive-card" href="../../' + escape(r["url"], quote=True) + '">'
-        '<img loading="lazy" src="../../' + escape(r["cover"], quote=True) + '" alt="Обложка статьи">'
-        '<span><small class="date">' + escape(publication_date(r["published"]))
-        + ' · ' + escape(RUBRICS[r.get("rubric", "news")]["name"]) + '</small>'
-        '<h3>' + escape(r["title"]) + '</h3>'
-        '<p>' + escape(r["summary"]) + '</p></span>'
-        '<span aria-hidden="true">↗</span></a>'
-        for r in articles
-    ) or '<p class="summary">Публикаций на эту тему пока нет.</p>'
+    articles = sorted((r for r in records if key in topics_for_record(r)),
+                      key=publication_sort_key, reverse=True)
+
+    def card(row):
+        label = publication_label(row)
+        _, _, time = label.partition(" · ")
+        rubric = row.get("rubric", "news")
+        return (
+            f'<a class="archive-card" href="../../{escape(row["url"], quote=True)}">'
+            f'<span class="rubric-time" aria-label="{escape(label, quote=True)}">{escape(time)}</span>'
+            f'<img loading="lazy" src="../../{escape(row["cover"], quote=True)}" alt="Обложка статьи">'
+            f'<div class="rubric-copy"><h3>{escape(row["title"])}</h3>'
+            f'<small class="date"><span class="archive-rubric" data-rubric="{escape(rubric)}">{escape(RUBRICS[rubric]["name"])}</span></small>'
+            f'<p>{escape(row["summary"])}</p></div>'
+            '<span class="rubric-arrow" aria-hidden="true">↗</span></a>'
+        )
+
+    days = []
+    for day, group in groupby(articles, key=lambda r: publication_label(r).partition(" · ")[0]):
+        days.append('<section class="rubric-day"><h2 class="rubric-day-title">' +
+                    escape(day) + '</h2><div class="rubric-day-list">' +
+                    "\n".join(card(row) for row in group) + '</div></section>')
+    cards = "\n".join(days) or '<p class="rubric-empty">Публикаций на эту тему пока нет.</p>'
     robots = "" if articles else '<meta name="robots" content="noindex, follow">'
-    return f'''<!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="{escape(description, quote=True)}">
-<link rel="canonical" href="{BASE}/topics/{key}/">{robots}
-<title>{escape(name)} — Темы ХПИИ</title><link rel="stylesheet" href="../../assets/site.css"></head>
-<body><header class="header"><div class="wrap bar">
-<a class="logo" href="../../"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
-<nav class="menu"><a href="../">Все темы</a><a href="../../articles/">Все статьи</a></nav></div></header>
-<main class="wrap"><div class="overline">ХПИИ / Тема</div><h1>{escape(name)}</h1>
-<p class="summary">{escape(description)}</p><p class="date">{len(articles)} материалов</p>
-<a href="../">← Все темы</a>
-<section class="archive"><h2>Публикации</h2>{cards}</section></main>
-<footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
-<script defer src="../../assets/social-footer.js"></script></body></html>
-'''
+    content = (
+        '<div class="rubric-head topic-detail-head"><div><a class="topic-back" href="../">← Все темы</a>'
+        '<span class="rubric-kicker">ХПИИ / Тема</span><h1>' + escape(name) +
+        '</h1><p class="rubric-deck">' + escape(description) + '</p></div>'
+        '<span class="rubric-count">Материалов: ' + str(len(articles)) + '</span></div>' + cards
+    )
+    return topic_shell(name + " — Темы ХПИИ", description, "../../",
+                       BASE + "/topics/" + key + "/", content, robots)
 
 
 def render_all_topics(records, root):
