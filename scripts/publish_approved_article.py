@@ -343,7 +343,10 @@ def render_article(data, records=None, catalog=None, registry=None, dossier_ids=
     # topic-grounded fallback, without changing the approved JSON/RSS for Dzen.
     site_blocks, after_blocks, card_rows = select_site_cards(
         data, display_blocks, records or [], site_links)
-    body = render_blocks(site_blocks, site_links=site_links, after_blocks=after_blocks)
+    body = render_blocks(site_blocks, site_links=site_links, after_blocks=after_blocks,
+                         carousels=True)
+    carousel_script = ('<script defer src="../../assets/article-carousel.js"></script>'
+                       if '<section class="editorial-carousel"' in body else "")
     linked_ids = remove_duplicate_related_ids(
         data.get("related_dzen_ids", []), card_rows, site_crosslinks)
     related_html = render_links(linked_ids, records or [], catalog or {},
@@ -369,7 +372,7 @@ def render_article(data, records=None, catalog=None, registry=None, dossier_ids=
 <figure class="cover"><img src="{cover}" alt="Обложка: {title}" width="1600" height="900"></figure>
 <section class="{section_class}">{source_aside}<article class="article-text">{body}{related_html}</article></section></main>
 <footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
-<script defer src="../../assets/social-footer.js"></script></body></html>
+{carousel_script}<script defer src="../../assets/social-footer.js"></script></body></html>
 '''
 
 

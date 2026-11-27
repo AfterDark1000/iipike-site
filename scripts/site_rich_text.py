@@ -199,12 +199,61 @@ def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
     return blocks
 
 
-def render_blocks(blocks, site_links=None, after_blocks=None):
+def _image_html(block):
+    src = "../../" + image_asset(block["src"])
+    return ('<img loading="lazy" decoding="async" src="' +
+            html.escape(src, quote=True) + '" alt="' +
+            html.escape(block["alt"], quote=True) + '">')
+
+
+def _carousel_html(images):
+    slides = []
+    for i, block in enumerate(images, 1):
+        src = "../../" + image_asset(block["src"])
+        slides.append(
+            '<figure class="editorial-carousel-slide" role="group" aria-label="' +
+            str(i) + ' из ' + str(len(images)) + '">' +
+            '<a href="' + html.escape(src, quote=True) +
+            '" target="_blank" rel="noopener noreferrer" aria-label="Открыть оригинал: ' +
+            html.escape(block["alt"], quote=True) + '">' + _image_html(block) +
+            '</a><figcaption>' + html.escape(block["alt"], quote=True) +
+            '</figcaption></figure>'
+        )
+    return (
+        '<section class="editorial-carousel" aria-label="Галерея иллюстраций">' +
+        '<div class="editorial-carousel-track" tabindex="0" aria-label="Листайте изображения">' +
+        "".join(slides) + '</div>' +
+        '<div class="editorial-carousel-controls" hidden>' +
+        '<button type="button" data-carousel-prev aria-label="Предыдущая иллюстрация">←</button>' +
+        '<span class="editorial-carousel-count" aria-live="polite">1 / ' + str(len(images)) +
+        '</span><button type="button" data-carousel-next aria-label="Следующая иллюстрация">→</button>' +
+        '</div></section>'
+    )
+
+
+def render_blocks(blocks, site_links=None, after_blocks=None, *, carousels=False):
     """Render the exact approved block sequence into semantic safe HTML."""
     validate_blocks(blocks)
     rendered = []
+    skip_until = 0
     for index, block in enumerate(blocks):
+        if index < skip_until:
+            continue
         kind = block["type"]
+        # Site-only presentation: contiguous image blocks share one gallery.
+        # Preserve individual approved image records, assets, and order. Never
+        # group across intervening prose or internally inserted related cards.
+        if carousels and kind == "image":
+            end = index + 1
+            while (end < len(blocks) and blocks[end]["type"] == "image"
+                   and not (after_blocks and end - 1 in after_blocks)):
+                end += 1
+            if end - index > 1:
+                rendered.append(_carousel_html(blocks[index:end]))
+                if after_blocks and end - 1 in after_blocks:
+                    rendered.append(after_blocks[end - 1])
+                skip_until = end
+                continue
         if kind == "lead":
             rendered.append('<p class="lead">' + inline_html(block["text"], site_links) + "</p>")
         elif kind == "p":
@@ -229,12 +278,8 @@ def render_blocks(blocks, site_links=None, after_blocks=None):
                             "".join(row_html(row, "td") for row in block["rows"]) +
                             '</tbody></table></div>')
         elif kind == "image":
-            src = "../../" + image_asset(block["src"])
-            rendered.append(
-                '<figure class="editorial-inline-figure"><img loading="lazy" decoding="async" src="' +
-                html.escape(src, quote=True) + '" alt="' +
-                html.escape(block["alt"], quote=True) + '"></figure>'
-            )
+            rendered.append('<figure class="editorial-inline-figure">' +
+                            _image_html(block) + '</figure>')
         else:
             quote_body = '<blockquote class="editorial-quote"><p>' + inline_html(block["text"], site_links) + "</p>"
             if block.get("attribution"):

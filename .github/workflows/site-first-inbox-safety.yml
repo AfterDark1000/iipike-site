@@ -54,6 +54,8 @@ on:
       - 'tests/test_sync_site_first_dzen.py'
       - '.github/workflows/site-first-dzen-links.yml'
       - 'tests/test_site_rich_text.py'
+      - 'tests/test_site_inline_illustrations.py'
+      - 'assets/article-carousel.js'
       - 'tests/test_approved_publisher.py'
       - 'tests/test_site_first_inbox.py'
       - 'tests/test_site_first_release_pr.py'
@@ -79,6 +81,8 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_site_topic_registry.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_inbox.py' -v
           python3 -m unittest discover -s tests -p 'test_site_rich_text.py' -v
+          python3 -m unittest discover -s tests -p 'test_site_inline_illustrations.py' -v
+          node --check assets/article-carousel.js
           python3 -m unittest discover -s tests -p 'test_site_topics.py' -v
           python3 -m unittest discover -s tests -p 'test_sync_site_first_dzen.py' -v
           python3 -m unittest discover -s tests -p 'test_site_first_release_pr.py' -v
@@ -125,6 +129,8 @@ jobs:
               + '\n\n1. Сначала сайт\n2. Потом Дзен'
               + '\n\n> Это цитата без потери *интонации*.\n> — Редактор ХПИИ'
               + '\n\n| Модель | Результат |\n| --- | ---: |\n| **A** | 42 |\n| B | 37 |'
+              + '\n\n![Первый кадр](illustrations/'+slug+'/first.webp)\n'
+              + '![Второй кадр](illustrations/'+slug+'/second.webp)'
               + '\n\n### Технические выводы\n\n'
               + 'Проверяем на настоящем генераторе сайта, без внешней публикации.'
             )
@@ -133,6 +139,10 @@ jobs:
           target.write_text(json.dumps(incoming,ensure_ascii=False),encoding='utf-8')
           Image.effect_noise((1024,576),68).convert('RGB').save(
             root/'editorial_inbox/covers'/f'{slug}.webp','WEBP',quality=88)
+          gallery=root/'editorial_inbox/illustrations'/slug
+          gallery.mkdir(parents=True)
+          for name in ('first.webp','second.webp'):
+              Image.effect_noise((960,540),68).convert('RGB').save(gallery/name,'WEBP',quality=88)
           PY
           python3 scripts/site_first_inbox.py site-first-ci-smoke-20261104 --stage --publish
           python3 - <<'PY'
@@ -151,6 +161,9 @@ jobs:
           assert '<h2>Раздел новой статьи</h2>' in page
           assert '<h3>Технические выводы</h3>' in page
           assert '<table class="editorial-table">' in page
+          assert page.count('class="editorial-carousel-slide"') == 2
+          assert 'src="../../assets/article-carousel.js"' in page
+          assert 'Первый кадр' in page and 'Второй кадр' in page
           assert '<td class="table-align-right">42</td>' in page
           assert '<td class="table-align-left"><strong>A</strong></td>' in page
           approved=json.loads((root/'content/approved'/f'{slug}.json').read_text())
@@ -172,3 +185,37 @@ jobs:
           print('PASS: Dzen full-text RSS exported atomically with site publication')
           print('PASS: site-first HTML, RSS, rubrics and Sitemap compiled without any external publication')
           PY
+      - name: Verify real gallery navigation in headless Chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('articles/site-first-ci-smoke-20261104/index.html')
+          html=p.read_text()
+          # Disposable page only: test both arrow and keyboard navigation
+          # after layout, with reduced motion for deterministic assertions.
+          probe="""<script>
+          addEventListener('load',()=>{
+            const g=document.querySelector('.editorial-carousel');
+            const t=g.querySelector('.editorial-carousel-track');
+            const c=g.querySelector('.editorial-carousel-count');
+            const next=g.querySelector('[data-carousel-next]');
+            const prev=g.querySelector('[data-carousel-prev]');
+            const wait=()=>new Promise(r=>setTimeout(r,150));
+            (async()=>{
+              if(!prev.disabled||next.disabled||c.textContent!=='1 / 2')throw Error('initial state');
+              next.click();await wait();
+              if(c.textContent!=='2 / 2'||!next.disabled||prev.disabled)throw Error('next state');
+              t.dispatchEvent(new KeyboardEvent('keydown',{key:'Home',bubbles:true}));
+              await wait();
+              if(c.textContent!=='1 / 2'||!prev.disabled)throw Error('keyboard state');
+              if(t.scrollWidth<=t.clientWidth||document.documentElement.scrollWidth>innerWidth)throw Error('overflow');
+              document.body.dataset.galleryTest='passed';
+            })().catch(e=>{document.body.dataset.galleryTest='failed';document.body.append(e.message)});
+          });
+          </script>"""
+          p.write_text(html.replace('</body>',probe+'</body>'))
+          PY
+          google-chrome --headless --no-sandbox --disable-dev-shm-usage --allow-file-access-from-files --force-prefers-reduced-motion --window-size=390,844 --virtual-time-budget=10000 --dump-dom "file://$PWD/articles/site-first-ci-smoke-20261104/index.html" > "$RUNNER_TEMP/hpii-carousel.html"
+          grep -F 'data-gallery-test="passed"' "$RUNNER_TEMP/hpii-carousel.html"
