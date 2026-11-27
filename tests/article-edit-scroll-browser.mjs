@@ -16,7 +16,7 @@ const server=createServer(async(req,res)=>{
  try{
   if(path==="/admin/auth/gate.js"){
    res.setHeader("content-type","application/javascript");
-   res.end("window.HpiiAdminAuth={fetchApi:async()=>"+JSON.stringify(fixture)+"};document.documentElement.classList.add('hpii-authorized');window.dispatchEvent(new CustomEvent('hpii-admin-authorized'));");
+   res.end("window.HpiiAdminAuth={fetchApi:async()=>("+JSON.stringify(fixture)+")};document.documentElement.classList.add('hpii-authorized');window.dispatchEvent(new CustomEvent('hpii-admin-authorized'));");
   }else if(path.endsWith(".png")){
    res.setHeader("content-type","image/svg+xml");res.end('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000"><rect width="600" height="1000" fill="#a5b29f"/></svg>');
   }else if(["/admin/article-edit/","/admin/article-edit/app.js","/admin/dzen-tables.js"].includes(path)){
@@ -73,10 +73,12 @@ try{
     if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));
     return r.result.value;
   }
+  await call("Runtime.enable");
+  ws.addEventListener("message",e=>{const m=JSON.parse(e.data);if(m.method==="Runtime.exceptionThrown")console.log("Browser exception",JSON.stringify(m.params.exceptionDetails));});
   await call("Emulation.setDeviceMetricsOverride",{width:1440,height:900,deviceScaleFactor:1,mobile:false});
   await call("Page.navigate",{url:base+"/admin/article-edit/?id=fixture"});
   const snapshot=()=>evaluate('(()=>{const l=document.getElementById("body"),r=document.getElementById("previewPane");if(!l||!r||document.getElementById("editor").hidden)return null;return {lt:l.getBoundingClientRect().top,rt:r.getBoundingClientRect().top,lh:l.clientHeight,rh:r.clientHeight,l:l.scrollTop,r:r.scrollTop,lmax:l.scrollHeight-l.clientHeight,rmax:r.scrollHeight-r.clientHeight,blocks:document.querySelectorAll("#preview > *").length}})()');
-  let s=await until("editor loaded",async()=>{const v=await snapshot();return v?.blocks>20&&v.lmax>0&&v.rmax>0?v:null});
+  let s=await until("editor loaded",async()=>{const v=await snapshot();const ready=await evaluate('document.getElementById("sourceMirror")?.querySelectorAll("span").length>20');return ready&&v?.blocks>20&&v.lmax>0&&v.rmax>0?v:null});
   assert.ok(Math.abs(s.lt-s.rt)<=1&&Math.abs(s.lh-s.rh)<=2,"same top and viewport height");
   assert.equal(s.l,0);assert.equal(s.r,0);
   await evaluate('document.getElementById("body").scrollTop=600');
