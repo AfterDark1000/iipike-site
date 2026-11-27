@@ -61,7 +61,7 @@ def home_section(records,ids):
         thumbs="\n".join(
             '<a class="dossier-thumb" href="#dossier-slide-'+str(i)+'" data-dossier-index="'+str(i-1)+
             '" aria-label="Показать: '+escape(row["title"],quote=True)+'">'+
-            '<img loading="lazy" src="'+escape(row["cover"],quote=True)+'" alt="">'+
+            '<img loading="lazy" src="'+escape(row["cover"],quote=True)+'" alt="Обложка: '+escape(row["title"],quote=True)+'">'+
             '<span>'+escape(row["title"])+'</span></a>'
             for i,row in enumerate(visible,1))
         navigation=(
