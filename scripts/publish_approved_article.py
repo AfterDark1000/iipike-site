@@ -185,7 +185,15 @@ def approved_article(root, slug):
     if "article_markdown" in data:
         # Never silently publish content altered during JSON transformation:
         # the verbatim editor-approved Markdown must reproduce these blocks.
-        if markdown_to_blocks(data["article_markdown"]) != data["paragraphs"]:
+        # Older approved records may contain tables flattened by the pre-table
+        # parser. Accept only an exact match to that deterministic legacy parser;
+        # new site-first compilation always produces structured table blocks.
+        try:
+            parsed = markdown_to_blocks(data["article_markdown"])
+        except ValueError:
+            parsed = None
+        if (parsed != data["paragraphs"] and
+                markdown_to_blocks(data["article_markdown"], tables=False) != data["paragraphs"]):
             raise ValueError("Approved paragraphs differ from original article_markdown")
     return data
 

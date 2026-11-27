@@ -21,7 +21,8 @@ from scripts.site_related import FILE as CATALOG_PATH
 
 PREFIX = "editorial_inbox/release_errors/"
 CODE_PATHS = ("scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
-              "scripts/site_entities.py", "scripts/site_release_quarantine.py")
+              "scripts/site_entities.py", "scripts/site_release_quarantine.py",
+              "scripts/site_rich_text.py")
 MAX_REASON = 400
 
 

@@ -10,7 +10,11 @@ from urllib.parse import urlsplit
 
 TEXT_TYPES = frozenset({"lead", "p", "h2", "h3", "quote"})
 LIST_TYPES = frozenset({"ul", "ol"})
-BLOCK_TYPES = TEXT_TYPES | LIST_TYPES | {"image"}
+BLOCK_TYPES = TEXT_TYPES | LIST_TYPES | {"image", "table"}
+TABLE_ALIGN = frozenset({"left", "center", "right"})
+TABLE_SEPARATOR = re.compile(r":?-{3,}:?\Z")
+MAX_TABLE_COLUMNS = 12
+MAX_TABLE_ROWS = 100
 # Standalone Markdown illustrations are immutable, local, story-scoped assets.
 # No remote URLs, traversal, SVG, HTML, data: URLs, or user-chosen paths.
 IMAGE_SOURCE = re.compile(
@@ -93,6 +97,62 @@ def _text(value, label, limit=12000):
     return value
 
 
+def _table_cells(line):
+    """Split unescaped pipes, with optional outer pipes and literal escaped pipes."""
+    cells, cell = [], []
+    separators = 0
+    line = line.strip()
+    i = 0
+    while i < len(line):
+        char = line[i]
+        if char == "\\" and i + 1 < len(line) and line[i + 1] in ("|", "\\"):
+            cell.append(line[i + 1])
+            i += 2
+            continue
+        if char == "|":
+            cells.append("".join(cell).strip())
+            cell = []
+            separators += 1
+        else:
+            cell.append(char)
+        i += 1
+    cells.append("".join(cell).strip())
+    if not separators:
+        return None
+    if line.startswith("|"):
+        cells.pop(0)
+    if not cells[-1] and not cell:
+        cells.pop()
+    return cells
+
+
+def _validate_table(block):
+    if set(block) != {"type", "headers", "align", "rows"}:
+        raise ValueError("Table requires headers, align and rows")
+    headers, align, rows = block["headers"], block["align"], block["rows"]
+    if not isinstance(headers, list) or not 1 <= len(headers) <= MAX_TABLE_COLUMNS:
+        raise ValueError("Table must have 1–12 columns")
+    n = len(headers)
+    if (not isinstance(align, list) or len(align) != n
+            or not all(isinstance(x, str) and x in TABLE_ALIGN for x in align)):
+        raise ValueError("Invalid table column alignment")
+    if not isinstance(rows, list) or not 1 <= len(rows) <= MAX_TABLE_ROWS:
+        raise ValueError("Table must have 1–100 data rows")
+    total = 0
+    for row in [headers, *rows]:
+        if not isinstance(row, list) or len(row) != n:
+            raise ValueError("Table row column count does not match header")
+        for cell in row:
+            if (not isinstance(cell, str) or len(cell) > 2000
+                    or any(ord(ch) < 32 for ch in cell)):
+                raise ValueError("Invalid table cell")
+            inline_html(cell)
+            total += len(cell)
+    if not any(x.strip() for x in headers):
+        raise ValueError("Table needs a nonempty header")
+    return total
+
+
 def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
     """Validate equally at ChatGPT inbox and approved-article publication."""
     if not isinstance(blocks, list) or len(blocks) < 2:
@@ -117,6 +177,8 @@ def validate_blocks(blocks, *, max_blocks=None, min_chars=0):
                 raise ValueError("Attribution is supported only in quote blocks")
             if "items" in block:
                 raise ValueError("Text blocks must not contain list items")
+        elif kind == "table":
+            total_chars += _validate_table(block)
         elif kind == "image":
             if set(block) != {"type", "src", "alt"}:
                 raise ValueError("Image block requires only src and alt")
@@ -152,6 +214,20 @@ def render_blocks(blocks, site_links=None, after_blocks=None):
         elif kind in LIST_TYPES:
             body = "".join("<li>" + inline_html(item, site_links) + "</li>" for item in block["items"])
             rendered.append(f'<{kind} class="editorial-list">' + body + f"</{kind}>")
+        elif kind == "table":
+            def row_html(row, tag):
+                return "<tr>" + "".join(
+                    f'<{tag} class="table-align-{alignment}"' +
+                    (' scope="col"' if tag == "th" else "") + ">" +
+                    inline_html(cell, site_links) + f"</{tag}>"
+                    for cell, alignment in zip(row, block["align"])
+                ) + "</tr>"
+            rendered.append('<div class="editorial-table-scroll" role="region" '
+                            'aria-label="Таблица в статье" tabindex="0">'
+                            '<table class="editorial-table"><thead>' +
+                            row_html(block["headers"], "th") + '</thead><tbody>' +
+                            "".join(row_html(row, "td") for row in block["rows"]) +
+                            '</tbody></table></div>')
         elif kind == "image":
             src = "../../" + image_asset(block["src"])
             rendered.append(
@@ -170,7 +246,7 @@ def render_blocks(blocks, site_links=None, after_blocks=None):
     return "\n".join(rendered)
 
 
-def markdown_to_blocks(source):
+def markdown_to_blocks(source, *, tables=True):
     """Parse the VERBATIM human-approved Dzen body, without a second rewrite.
 
     One Markdown source is authoritative. It is saved intact in the inbox and
@@ -218,8 +294,34 @@ def markdown_to_blocks(source):
         flush_list()
         flush_quote()
 
-    for number, line in enumerate(source.split("\n"), 1):
+    lines = source.split("\n")
+    table_end = 0
+    for number, line in enumerate(lines, 1):
+        if number <= table_end:
+            continue
         clean = line.strip()
+        if tables and number < len(lines):
+            header = _table_cells(clean)
+            separator = _table_cells(lines[number]) if header else None
+            if separator and all(TABLE_SEPARATOR.fullmatch(x) for x in separator):
+                if len(header) != len(separator):
+                    raise ValueError(f"Table header/separator column mismatch at line {number}")
+                flush_all()
+                align = ["center" if x.startswith(":") and x.endswith(":")
+                         else "right" if x.endswith(":") else "left" for x in separator]
+                rows = []
+                j = number + 1
+                while j < len(lines) and lines[j].strip():
+                    cells = _table_cells(lines[j])
+                    if cells is None:
+                        break
+                    if len(cells) != len(header):
+                        raise ValueError(f"Table row column mismatch at line {j+1}")
+                    rows.append(cells)
+                    j += 1
+                blocks.append({"type": "table", "headers": header, "align": align, "rows": rows})
+                table_end = j
+                continue
         if not clean:
             flush_all()
             continue
