@@ -4,6 +4,7 @@ from datetime import date, datetime
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from itertools import groupby
+import re
 
 BASE = "https://iipike.ru"
 RUBRICS = {
@@ -138,9 +139,95 @@ def render_page(key, records):
 '''
 
 
+
+LISTING_PAGE_SIZE = 20
+_LISTING_SECTION = re.compile(
+    r'<section class="(?P<kind>rubric|brief)-day"><h2 class="(?P=kind)-day-title">'
+    r'(?P<day>[^<]+)</h2><div class="(?P=kind)-day-list">(?P<cards>.*?)</div></section>', re.S)
+_LISTING_CARD = {
+    "rubric": re.compile(r'<a class="archive-card" href="[^"]+">.*?</a>', re.S),
+    "brief": re.compile(r'<article class="brief-item" id="[^"]+">.*?</article>', re.S),
+}
+_LISTING_NEXT = re.compile(r'<a class="listing-more" data-listing-next href="(page-[0-9]+\.html)">')
+_LISTING_FILENAME = re.compile(r'page-([2-9]|[1-9][0-9]+)\.html\Z')
+
+
+def paginate_listing(index_path, html):
+    """Partition only canonical generated day sections into real crawlable pages."""
+    sections = list(_LISTING_SECTION.finditer(html))
+    if not sections:
+        return {index_path: html}
+    kind = sections[0]["kind"]
+    rows = []
+    for section in sections:
+        if section["kind"] != kind:
+            raise ValueError("Mixed listing kinds")
+        cards = _LISTING_CARD[kind].findall(section["cards"])
+        if "\n".join(cards) != section["cards"]:
+            raise ValueError("Unexpected generated listing markup")
+        rows.extend((section["day"], card) for card in cards)
+    if len(rows) <= LISTING_PAGE_SIZE:
+        return {index_path: html}
+    first, last = sections[0].start(), sections[-1].end()
+    if "\n".join(s.group(0) for s in sections) != html[first:last]:
+        raise ValueError("Unexpected markup between listing days")
+    canonical = re.search(r'<link rel="canonical" href="(https://iipike\.ru/[^"]+/)">', html)
+    if canonical is None:
+        raise ValueError("Missing listing canonical")
+    base_url = canonical.group(1)
+    result = {}
+    for start in range(0, len(rows), LISTING_PAGE_SIZE):
+        number = start // LISTING_PAGE_SIZE + 1
+        filename = "index.html" if number == 1 else f"page-{number}.html"
+        days = []
+        for day, group in groupby(rows[start:start+LISTING_PAGE_SIZE], key=lambda item: item[0]):
+            days.append(f'<section class="{kind}-day"><h2 class="{kind}-day-title">{day}</h2>'
+                        f'<div class="{kind}-day-list">' +
+                        "\n".join(card for _, card in group) + '</div></section>')
+        block = '<div data-listing-content>' + "\n".join(days) + '</div>'
+        if start + LISTING_PAGE_SIZE < len(rows):
+            block += (f'<div class="listing-more-wrap"><a class="listing-more" data-listing-next '
+                      f'href="page-{number+1}.html">Показать ещё</a></div>')
+        rendered = html[:first] + block + html[last:]
+        if number > 1:
+            rendered = rendered.replace(f'href="{base_url}"', f'href="{base_url}{filename}"', 1)
+            rendered = rendered.replace(f'content="{base_url}"', f'content="{base_url}{filename}"', 1)
+        result[index_path.with_name(filename)] = rendered
+    return result
+
+
+def read_listing_pages(index_path):
+    current, pages, seen = index_path, [], set()
+    while True:
+        if current in seen:
+            raise ValueError("Listing cycle")
+        seen.add(current)
+        html = current.read_text(encoding="utf-8")
+        pages.append(html)
+        links = _LISTING_NEXT.findall(html)
+        if not links:
+            return pages
+        if len(links) != 1 or not _LISTING_FILENAME.fullmatch(links[0]):
+            raise ValueError("Invalid listing continuation")
+        current = current.with_name(links[0])
+
+
+def listing_markup(index_path):
+    return "\n".join(read_listing_pages(index_path))
+
+
+def listing_days(labels):
+    return [day for i in range(0, len(labels), LISTING_PAGE_SIZE)
+            for day, _ in groupby(labels[i:i+LISTING_PAGE_SIZE],
+                                  key=lambda label: label.partition(" · ")[0])]
+
+
 def render_all(records, root):
-    return {root / "rubrics" / key / "index.html": render_page(key, records)
-            for key in RUBRICS}
+    outputs = {}
+    for key in RUBRICS:
+        outputs.update(paginate_listing(root / "rubrics" / key / "index.html",
+                                        render_page(key, records)))
+    return outputs
 
 
 def populated(records):

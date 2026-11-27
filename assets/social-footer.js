@@ -313,3 +313,8 @@
   if (sources) rail.appendChild(sources);
   section.appendChild(rail);
 })();
+
+/* Load only for paginated first-party listings. Ordinary href remains usable. */
+if (typeof document.querySelector === "function" && document.querySelector("[data-listing-next]")) {
+  import("./listing-more.js").catch(function () {});
+}

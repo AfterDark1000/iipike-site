@@ -14,7 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts.site_rubrics import publication_label, render_all
 from scripts.site_home import update_home
-from scripts.publish_approved_article import render_catalog
+from scripts.publish_approved_article import render_catalog_pages
 
 DATE = re.compile(r'(<p class="date">Опубликовано: )([^<]*)(</p>)')
 
@@ -23,7 +23,7 @@ def output_map(root):
     root = Path(root)
     rows = json.loads((root / "news.json").read_text(encoding="utf-8"))
     results = {
-        root / "articles/index.html": render_catalog(rows),
+        **render_catalog_pages(rows, root),
         root / "index.html": update_home((root / "index.html").read_text(encoding="utf-8"),
                                        rows, root=root)
     }

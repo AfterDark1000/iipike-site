@@ -231,8 +231,9 @@ def outputs(root):
     item_html=day_groups(rows) if rows else (
       '<p class="brief-empty">Пока короткие новости готовятся к редакционному утверждению. '
       'Здесь будут только проверенные и одобренные заметки.</p>')
+    from scripts.site_rubrics import paginate_listing
     output={
-      root/SITE:swap(index,BEGIN,END,item_html),
+      **paginate_listing(root/SITE, swap(index,BEGIN,END,item_html)),
       root/HOME:swap(home,HBEGIN,HEND,home_strip(rows)),
       root/"briefs/feed.xml":feed(rows),
       root/"briefs/sitemap.xml":sitemap(rows)

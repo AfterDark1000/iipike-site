@@ -8,6 +8,7 @@ from scripts.site_entities import entity_urls, load_registry
 import shutil
 import tempfile
 import unittest
+from scripts.site_rubrics import listing_markup, listing_days
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,7 +166,7 @@ class PublisherTests(unittest.TestCase):
         import re
         from scripts.site_home import sorted_published
         records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
-        page = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        page = listing_markup(ROOT / "articles/index.html")
         ids = re.findall(r'<a class="archive-card" href="([^"/]+)/">', page)
         self.assertEqual(ids, [r["id"] for r in sorted_published(records)])
 
@@ -198,7 +199,9 @@ class PublisherTests(unittest.TestCase):
     def test_preflight_never_writes_anything(self):
         prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml", self.root / "index.html")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
-        self.assertEqual(len(outputs), 8 + len(RUBRICS) + len(TOPICS))
+        # Continuations are generated in addition to the original index set.
+        self.assertEqual(sum(not p.name.startswith("page-") for p in outputs), 8 + len(RUBRICS) + len(TOPICS))
+        self.assertTrue(any(p.name == "page-2.html" for p in outputs))
         self.assertFalse((self.root / "articles").exists())
         self.assertFalse((self.root / "sitemap.xml").exists())
         self.assertFalse((self.root / "dzen-rss.xml").exists())
@@ -217,7 +220,7 @@ class PublisherTests(unittest.TestCase):
         records = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
         self.assertEqual(len(records), len(json.loads((ROOT / "news.json").read_text(encoding="utf-8"))) + 1)
         self.assertEqual(records[-1]["id"], "sample-verified-news")
-        catalog = (self.root / "articles" / "index.html").read_text(encoding="utf-8")
+        catalog = listing_markup(self.root / "articles" / "index.html")
         self.assertIn('href="sample-verified-news/"', catalog)
         self.assertIn('href="google-search-ai-links/"', catalog)
         home = (self.root / "index.html").read_text(encoding="utf-8")
@@ -470,7 +473,7 @@ class PublisherTests(unittest.TestCase):
     def test_public_repo_catalog_links_are_static(self):
         content = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="articles/"', content)
-        catalog = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
+        catalog = listing_markup(ROOT / "articles" / "index.html")
         self.assertIn('href="google-search-ai-links/"', catalog)
         self.assertIn('rel="canonical" href="https://iipike.ru/articles/"', catalog)
         self.assertNotIn("НЕ ОПУБЛИКОВАНО", catalog)
@@ -481,11 +484,12 @@ class PublisherTests(unittest.TestCase):
         import re
         from scripts.site_home import sorted_published
         from scripts.site_rubrics import publication_label, RUBRICS
-        html = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        html = listing_markup(ROOT / "articles/index.html")
         records = sorted_published(json.loads((ROOT / "news.json").read_text(encoding="utf-8")))
-        self.assertEqual(html, PUBLISHER.render_catalog(records))
+        for path, page in PUBLISHER.render_catalog_pages(records, ROOT).items():
+            self.assertEqual(path.read_text(encoding="utf-8"), page)
         labels = [publication_label(r) for r in records]
-        days = [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])]
+        days = listing_days(labels)
         self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html), days)
         self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
                          [(label, label.partition(" · ")[2]) for label in labels])

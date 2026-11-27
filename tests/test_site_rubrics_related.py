@@ -6,7 +6,7 @@ import shutil
 import tempfile
 import unittest
 
-from scripts.site_rubrics import RUBRICS, populated, render_all
+from scripts.site_rubrics import RUBRICS, populated, render_all, listing_markup
 from scripts.site_related import (catalog_entries, verified, validate_reference,
                                   validate_links, render_links, suggest)
 
@@ -45,7 +45,7 @@ class RubricAndArchiveTests(unittest.TestCase):
             key for key in RUBRICS if any(row.get("rubric", "news") == key for row in self.records)
         ])
         expected = render_all(self.records, ROOT)
-        self.assertEqual(len(expected), 5)
+        self.assertEqual(sum(p.name == 'index.html' for p in expected), 5)
         for path, markup in expected.items():
             self.assertEqual(path.read_text(encoding="utf-8"), markup, str(path))
             self.assertIn('rel="canonical" href="https://iipike.ru/rubrics/', markup)
@@ -54,8 +54,7 @@ class RubricAndArchiveTests(unittest.TestCase):
                 self.assertNotIn('name="robots" content="noindex', markup)
             else:
                 self.assertIn('name="robots" content="noindex, follow"', markup)
-            if path.parent.name == "news":
-                self.assertIn("google-search-ai-links", markup)
+        self.assertIn("google-search-ai-links", listing_markup(ROOT / "rubrics/news/index.html"))
 
     def test_new_rubric_stays_empty_and_out_of_sitemap_until_real_publication(self):
         from scripts.site_rubrics import render_page, navigation

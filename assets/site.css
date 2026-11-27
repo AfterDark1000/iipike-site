@@ -1071,3 +1071,11 @@ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) mai
 .topic-atlas .row-arrow{color:var(--tone);text-align:right}
 @media(max-width:900px){.topic-atlas .directory-section{grid-template-columns:160px minmax(0,1fr);gap:14px}}
 @media(max-width:560px){.topic-atlas .directory-section{display:block;padding:19px 0}.topic-atlas .section-label h2{font-size:23px;margin:5px 0 10px}.topic-atlas .directory-row{grid-template-columns:36px minmax(0,1fr) 48px;gap:9px;padding:12px 0}.topic-atlas .directory-row .symbol{width:34px;height:34px}.topic-atlas .symbol svg{width:21px;height:21px}.topic-atlas .row-copy strong{font-size:17px}.topic-atlas .row-copy>span{font-size:12px}.topic-atlas .row-count{font-size:21px}.topic-atlas .row-count small{font-size:9px}.topic-atlas .row-arrow{display:none}}
+
+/* Static archive continuation: one ordinary link, enhanced only on click. */
+.listing-more-wrap{display:flex;justify-content:center;padding:24px 0 12px}
+.listing-more{display:inline-flex;align-items:center;justify-content:center;min-height:46px;min-width:210px;padding:12px 25px;border:1px solid #a3b1a4;border-radius:10px;background:#fffdf8;color:#38675a;font:750 15px/1.4 system-ui,sans-serif;text-decoration:none}
+.listing-more:hover{background:#e7eee4;border-color:#38675a;color:#263c33}
+.listing-more:focus-visible{outline:2px solid #38675a;outline-offset:3px}
+.listing-more[aria-busy="true"]{opacity:.65;cursor:progress}
+@media(max-width:560px){.listing-more-wrap{padding:20px 0 10px}.listing-more{width:100%;min-width:0}}

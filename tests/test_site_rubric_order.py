@@ -6,6 +6,7 @@ import unittest
 
 from scripts.site_rubrics import RUBRICS, render_page, publication_sort_key, publication_label
 from itertools import groupby
+from scripts.site_rubrics import paginate_listing, listing_markup, listing_days, read_listing_pages
 from scripts.site_home import load_focus_items, update_home
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,15 +22,14 @@ class RubricOrderingTests(unittest.TestCase):
             with self.subTest(rubric=key):
                 file = ROOT / "rubrics" / key / "index.html"
                 stored = file.read_text(encoding="utf-8")
-                expected = render_page(key, self.records)
+                expected = paginate_listing(file, render_page(key, self.records))[file]
                 self.assertEqual(stored, expected,
                                  "Rubric page must be rebuilt by generator")
 
     def test_all_rubric_cards_sorted_by_real_publication_time(self):
         for key in RUBRICS:
             with self.subTest(rubric=key):
-                html = (ROOT / "rubrics" / key / "index.html").read_text(
-                    encoding="utf-8")
+                html = listing_markup(ROOT / "rubrics" / key / "index.html")
                 got = re.findall(
                     r'<a class="archive-card" href="../../articles/([^/]+)/">',
                     html)
@@ -44,15 +44,16 @@ class RubricOrderingTests(unittest.TestCase):
     def test_rubric_groups_and_real_times_match_complete_chronology(self):
         for key in RUBRICS:
             with self.subTest(rubric=key):
-                html = (ROOT / "rubrics" / key / "index.html").read_text(encoding="utf-8")
+                html = listing_markup(ROOT / "rubrics" / key / "index.html")
                 records = sorted((r for r in self.records if r.get("rubric", "news") == key),
                                  key=publication_sort_key, reverse=True)
                 labels = [publication_label(r) for r in records]
-                days = [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])]
+                days = listing_days(labels)
                 self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html), days)
                 self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
                                  [(label, label.partition(" · ")[2]) for label in labels])
-                self.assertEqual(html.count('aria-current="page"'), 1)
+                self.assertTrue(all(p.count('aria-current="page"') == 1 for p in
+                                    read_listing_pages(ROOT / "rubrics" / key / "index.html")))
                 self.assertIn(f"Материалов: {len(records)}", html)
                 self.assertNotIn("Демонстрационный снимок", html)
 

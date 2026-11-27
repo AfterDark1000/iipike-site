@@ -230,14 +230,16 @@ class BriefFeedTests(unittest.TestCase):
         import re
         from itertools import groupby
         rows = b.released_rows(ROOT)
-        html = (ROOT/"briefs/index.html").read_text(encoding="utf-8")
-        self.assertEqual(html, b.outputs(ROOT)[ROOT/"briefs/index.html"])
+        from scripts.site_rubrics import listing_markup, listing_days
+        html = listing_markup(ROOT/"briefs/index.html")
+        for path, page in b.outputs(ROOT).items():
+            self.assertEqual(path.read_text(encoding="utf-8"), page)
         self.assertIn('class="home-v1 brief-page brief-wire-page"', html)
         self.assertEqual(re.findall(r'<article class="brief-item" id="([^"]+)">', html),
                          [r["slug"] for r in rows])
         labels = [b.date_label(r["published_at_utc"]) for r in rows]
         self.assertEqual(re.findall(r'<h2 class="brief-day-title">([^<]+)</h2>', html),
-                         [day for day, _ in groupby(labels, key=lambda s: s.partition(" · ")[0])])
+                         listing_days(labels))
         self.assertEqual(re.findall(r'<time class="brief-clock" datetime="([^"]+)" aria-label="([^"]+)">([^<]+)</time>', html),
                          [(r["published_at_utc"], label, label.partition(" · ")[2]) for r, label in zip(rows, labels)])
         self.assertNotIn('<img', html)

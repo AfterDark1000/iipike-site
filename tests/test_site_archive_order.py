@@ -6,6 +6,7 @@ import unittest
 import xml.etree.ElementTree as ET
 
 from scripts.site_home import sorted_published
+from scripts.site_rubrics import listing_markup, read_listing_pages, LISTING_PAGE_SIZE
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -17,10 +18,15 @@ class FirstPartyChronologyTests(unittest.TestCase):
         cls.expected = [row["id"] for row in sorted_published(cls.records)]
 
     def test_all_materials_page_uses_actual_publication_utc(self):
-        html = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
+        html = listing_markup(ROOT / "articles" / "index.html")
         ids = re.findall(r'<a class="archive-card" href="([^"/]+)/">', html)
         self.assertEqual(len(ids), len(self.records))
         self.assertEqual(ids, self.expected)
+        pages = read_listing_pages(ROOT / "articles" / "index.html")
+        self.assertTrue(all(p.count('class="archive-card"') <= LISTING_PAGE_SIZE for p in pages))
+        self.assertEqual(pages[0].count('class="archive-card"'), min(LISTING_PAGE_SIZE, len(ids)))
+        self.assertTrue(all("Показать ещё" in p for p in pages[:-1]))
+        self.assertNotIn("Показать ещё", pages[-1])
 
     def test_public_rss_order_matches_the_site_archive(self):
         xml = ET.fromstring((ROOT / "feed.xml").read_text(encoding="utf-8"))
@@ -41,7 +47,7 @@ class FirstPartyChronologyTests(unittest.TestCase):
         self.assertIn("object-fit:contain", rules)
 
     def test_archive_cards_put_headline_before_metadata_and_summary(self):
-        html = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
+        html = listing_markup(ROOT / "articles" / "index.html")
         cards = re.findall(r'<a class="archive-card".*?</a>', html)
         self.assertEqual(len(cards), len(self.records))
         for card in cards:
