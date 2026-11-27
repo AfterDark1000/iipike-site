@@ -9289,5 +9289,29 @@
       "claude",
       "grok"
     ]
+  },
+  {
+    "title": "Suno научилась снимать музыкальные клипы на песни, которые сама же и сочинила",
+    "summary": "Suno запустила Visuals — генератор изображений и музыкальных видео с синхронизацией губ и монтажным редактором.",
+    "published": "2026-11-27",
+    "source_url": "https://suno.com/blog/introducing-visuals",
+    "cover": "assets/editorial/suno-visuals-music-videos-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🎬 Suno теперь сама СНИМАЕТ КЛИПЫ на свои песни",
+    "vk_summary": "Музыкальная нейросеть обзавелась генератором видео с синхронизацией губ, монтажным редактором и возможностью создавать собственных виртуальных исполнителей.",
+    "published_at_utc": "2026-11-27T07:15:39Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "suno-visuals-music-videos-20261117",
+    "url": "articles/suno-visuals-music-videos-20261117/",
+    "topics": [
+      "video",
+      "audio"
+    ],
+    "companies": [
+      "suno",
+      "minimax"
+    ],
+    "products": []
   }
 ]
