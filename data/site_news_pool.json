@@ -9100,9 +9100,9 @@
       "summary": "Свежий отчёт Anthropic о переносе API с Python на Rust при помощи команд ИИ-агентов; первая версия была готова за неделю, проверка заняла месяцы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-26T18:06:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T09:22:06.572778+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
