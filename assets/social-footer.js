@@ -233,3 +233,43 @@
     host.prepend(a);
   }).catch(function(){});
 })();
+
+
+// Published article A4: build real navigation from existing H2 headings.
+// No editorial text, links, metadata, publication state or analytics changed.
+(function () {
+  "use strict";
+  if (typeof document.querySelector !== "function") return;
+  var canonical = document.querySelector('head link[rel="canonical"]');
+  if (!canonical || !/^https:\/\/iipike\.ru\/articles\/[a-z0-9-]+\/$/.test(canonical.href)) return;
+  var main = document.querySelector("main.wrap");
+  if (!main || !main.querySelector(":scope > .article-title + .cover + .article-body")) return;
+  var section = main.querySelector(":scope > .article-body");
+  var article = section.querySelector(":scope > .article-text");
+  if (!article || section.querySelector(":scope > .article-a4-rail")) return;
+  var headings = Array.from(article.querySelectorAll(":scope > h2")).filter(function (h) { return h.textContent.trim(); });
+  if (headings.length < 2) return;
+  var rail = document.createElement("div");
+  rail.className = "article-a4-rail";
+  var nav = document.createElement("nav");
+  nav.className = "article-a4-toc";
+  nav.setAttribute("aria-label", "Содержание статьи");
+  var label = document.createElement("h3");
+  label.textContent = "В статье";
+  nav.appendChild(label);
+  headings.forEach(function (heading, index) {
+    if (!heading.id) {
+      var id = "hpii-section-" + (index + 1);
+      while (document.getElementById(id)) id += "-";
+      heading.id = id;
+    }
+    var a = document.createElement("a");
+    a.href = "#" + encodeURIComponent(heading.id);
+    a.textContent = heading.textContent.trim();
+    nav.appendChild(a);
+  });
+  rail.appendChild(nav);
+  var sources = section.querySelector(":scope > .sources");
+  if (sources) rail.appendChild(sources);
+  section.appendChild(rail);
+})();
