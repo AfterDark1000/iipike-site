@@ -38,6 +38,7 @@ ALLOWED_FIELDS = {
     "event_date", "related_dzen_ids", "site_crosslinks", "paragraphs", "article_markdown", "topics", "companies", "products", "site_publish_at", "site_queue", "threads_queue_id", "x_queue_id",
 }
 MAX_IMAGE_BYTES = 16 * 1024 * 1024
+MAX_INLINE_ILLUSTRATIONS = 24
 
 
 def required_text(record, key, limit):
@@ -235,8 +236,8 @@ def illustrations_info(root, story_id, blocks):
         dest = root / image_asset(src)
         if (source, dest) not in found:
             found.append((source, dest))
-    if len(found) + len(missing) > 8:
-        raise ValueError("At most eight editorial illustrations per article")
+    if len(found) + len(missing) > MAX_INLINE_ILLUSTRATIONS:
+        raise ValueError(f"At most {MAX_INLINE_ILLUSTRATIONS} editorial illustrations per article")
     return found, missing
 
 
