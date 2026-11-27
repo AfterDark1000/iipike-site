@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "20261127-sber-online-ai-subscriptions-hot.json",
+  "request_sha256": "650d0dcedfacf6b66d6590e1c6a2c9c3080ad30a0e4443872840acdc45ed40e3",
+  "status": "applied",
+  "applied": [
+    618
+  ],
+  "unchanged": [],
+  "skipped": []
+}

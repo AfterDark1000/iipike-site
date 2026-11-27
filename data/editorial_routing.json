@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "approved_date": "2026-11-26",
-  "source": "data/editorial_triage/requests/hpii-collections-20261126-chief-approved-ai_free_indie_tools_20261126-v2.json",
+  "approved_date": "2026-11-27",
+  "source": "data/editorial_triage/requests/20261127-sber-online-ai-subscriptions-hot.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
-  "note": "Chief-approved collection transition; no publication.",
+  "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
     {
       "sequence": 55,
@@ -2794,6 +2794,12 @@
     {
       "sequence": 589,
       "pool_id": "n-ae6a9e994b3a32ff",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 618,
+      "pool_id": "n-b0e6c16d3d3929d4",
       "lane": "long",
       "decision": "hot"
     }
