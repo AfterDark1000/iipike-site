@@ -135,18 +135,69 @@ def topic_shell(title, description, prefix, canonical, content, robots=""):
 '''
 
 
+# Presentation only: topic taxonomy and editorial assignments stay independent.
+_TOPIC_ATLAS_GROUPS = (
+    ("Технологии и исследования", ("agents", "models", "development", "infrastructure", "engineering", "science")),
+    ("Творчество и инструменты", ("video", "images", "audio", "apps", "search", "entertainment")),
+    ("Люди, безопасность и экономика", ("safety", "cybersecurity", "society", "business", "finance", "crypto", "health", "education", "ai-in-russia")),
+)
+_TOPIC_ATLAS_ICONS = {
+    "agents": ("--tone:#38675a;--tint:#dce9df", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"5\" r=\"2.5\"/><circle cx=\"5\" cy=\"19\" r=\"2.5\"/><circle cx=\"19\" cy=\"19\" r=\"2.5\"/><path d=\"M12 8v4M5 16v-4h14v4\"/></svg>"),
+    "models": ("--tone:#536c49;--tint:#e4ead6", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 3 9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5\"/></svg>"),
+    "development": ("--tone:#465f74;--tint:#dce9ee", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18\"/></svg>"),
+    "infrastructure": ("--tone:#7b6140;--tint:#eee3ce", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"7\" rx=\"2\"/><rect x=\"3\" y=\"14\" width=\"18\" height=\"7\" rx=\"2\"/><path d=\"M7 6.5h.1M7 17.5h.1M12 6.5h5M12 17.5h5\"/></svg>"),
+    "engineering": ("--tone:#635b7b;--tint:#e9e1ee", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M9 2h6l1 4 4 1 2 5-3 3 1 4-5 3-3-3-3 3-5-3 1-4-3-3 2-5 4-1z\"/></svg>"),
+    "science": ("--tone:#527342;--tint:#e1ecd9", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\" transform=\"rotate(60 12 12)\"/><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\" transform=\"rotate(-60 12 12)\"/><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\"/><circle cx=\"12\" cy=\"12\" r=\"1\"/></svg>"),
+    "video": ("--tone:#93544e;--tint:#f3dfdb", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"m10 9 5 3-5 3z\"/></svg>"),
+    "images": ("--tone:#886431;--tint:#f1e7cf", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"8\" cy=\"8\" r=\"1.5\"/><path d=\"m3 18 6-6 4 4 3-3 5 5\"/></svg>"),
+    "audio": ("--tone:#66517c;--tint:#e9e1f0", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 10v4M7 6v12M12 3v18M17 7v10M21 10v4\"/></svg>"),
+    "apps": ("--tone:#53617e;--tint:#e1e6f0", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/></svg>"),
+    "search": ("--tone:#456e81;--tint:#dce9ee", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"10\" cy=\"10\" r=\"6\"/><path d=\"m15 15 6 6\"/></svg>"),
+    "entertainment": ("--tone:#925b66;--tint:#f0dfe4", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18v15H3zM3 6l3-4 5 4 3-4 5 4M3 10h18\"/><path d=\"m10 13 5 3-5 3z\"/></svg>"),
+    "safety": ("--tone:#91513b;--tint:#f1ded0", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3 21 7v5c0 5-5 8-9 10-4-2-9-5-9-10V7z\"/><path d=\"m8 12 3 3 5-6\"/></svg>"),
+    "cybersecurity": ("--tone:#4b5d78;--tint:#e0e6ed", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"10\" width=\"16\" height=\"11\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3M12 14v3\"/></svg>"),
+    "society": ("--tone:#8a5e43;--tint:#ede2d5", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3v18M5 21h14M3 7h18M6 7l-4 8h8zM18 7l-4 8h8z\"/></svg>"),
+    "business": ("--tone:#3b7164;--tint:#dcece5", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"7\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M8 7V3h8v4M3 12h18M10 12v3h4v-3\"/></svg>"),
+    "finance": ("--tone:#80622e;--tint:#eee7d2", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 20V4M3 20h18M7 16l5-6 4 3 5-8M16 5h5v5\"/></svg>"),
+    "crypto": ("--tone:#8c683a;--tint:#f0e3ce", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m12 2 9 5v10l-9 5-9-5V7zM3 7l9 5 9-5M12 12v10\"/></svg>"),
+    "health": ("--tone:#4c776b;--tint:#dcebe2", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 3h6v6h6v6h-6v6H9v-6H3V9h6z\"/></svg>"),
+    "education": ("--tone:#6b597e;--tint:#e9e1ee", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m2 8 10-5 10 5-10 5zM6 10v7c3 3 9 3 12 0v-7M22 8v9\"/></svg>"),
+    "ai-in-russia": ("--tone:#9b482a;--tint:#f0dfd1", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 22V3m0 1h15l-3 5 3 5H5\"/><path d=\"M5 8h12M5 11h13\"/></svg>"),
+}
+_TOPIC_ATLAS_DEFAULT = ("--tone:#53617e;--tint:#e1e6f0", "<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><path d=\"M8 9h8M8 15h8\"/></svg>")
+
+
 def render_topics_index(records):
     count = {key: sum(key in topics_for_record(row) for row in records) for key in TOPICS}
     active = sum(bool(n) for n in count.values())
-    links = "".join(
-        '<a class="topic-index-link" href="' + key + '/"><strong>' + escape(TOPICS[key][0]) +
-        '</strong><p>' + escape(TOPICS[key][1]) + '</p><span class="topic-tile-meta">Материалов: ' +
-        str(count[key]) + ' <span aria-hidden="true">↗</span></span></a>'
-        for key in TOPICS if count[key]
-    )
+    grouped = {key for _, keys in _TOPIC_ATLAS_GROUPS for key in keys}
+    groups = list(_TOPIC_ATLAS_GROUPS) + [
+        ("Другие темы", tuple(key for key in TOPICS if key not in grouped))
+    ]
+
+    def row(key):
+        name, description = TOPICS[key]
+        style, icon = _TOPIC_ATLAS_ICONS.get(key, _TOPIC_ATLAS_DEFAULT)
+        return (
+            f'<a class="directory-row" href="{escape(key, quote=True)}/" style="{style}">'
+            '<span class="symbol">' + icon + '</span><span class="row-copy"><strong>' +
+            escape(name) + '</strong><span>' + escape(description) + '</span></span>' +
+            f'<span class="row-count">{count[key]}<small>материалов</small></span>' +
+            '<span class="row-arrow" aria-hidden="true">↗</span></a>'
+        )
+
+    sections = []
+    for name, keys in groups:
+        links = "\n".join(row(key) for key in keys if count.get(key))
+        if links:
+            sections.append(
+                f'<section class="directory-section"><div class="section-label"><span>{len(sections)+1:02d}</span>'
+                '<h2>' + escape(name) + '</h2></div><div class="directory-list">' +
+                links + '</div></section>'
+            )
     content = (
         f'<div class="rubric-head"><div><span class="rubric-kicker">ХПИИ / Темы</span><h1>Темы новостей</h1><p class="rubric-deck">Одна тема может встречаться в разных рубриках. Выбирайте, что интересно.</p></div><span class="rubric-count">Тем: {active}</span></div>'
-        '<nav class="topic-index-grid" aria-label="Все темы">' + links + '</nav>'
+        '<nav class="topic-atlas" aria-label="Все темы">' + "\n".join(sections) + '</nav>'
     )
     return topic_shell("Темы — ХПИИ", "Темы новостей об искусственном интеллекте: ИИ-агенты, безопасность, модели, разработка, видео и другие направления.",
                        "../", BASE + "/topics/", content)

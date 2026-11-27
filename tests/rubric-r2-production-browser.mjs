@@ -102,11 +102,11 @@ try{
     const url=pathToFileURL(resolve("topics/index.html")).href;
     await call("Page.navigate",{url});
     const s=await until("topic directory",async()=>{
-      const result=await evaluate('(()=>{const g=document.querySelector(".topic-r2 .topic-index-grid");if(document.readyState!=="complete"||!g)return null;return {url:location.href,width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,columns:getComputedStyle(g).gridTemplateColumns.split(" ").length,tiles:g.querySelectorAll(".topic-index-link").length}})()');
+      const result=await evaluate('(()=>{const g=document.querySelector(".topic-atlas");if(document.readyState!=="complete"||!g)return null;return {url:location.href,width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,columns:getComputedStyle(g.querySelector(".directory-row")).gridTemplateColumns.split(" ").length,tiles:g.querySelectorAll(".directory-row").length,groups:g.querySelectorAll(".directory-section").length,icons:g.querySelectorAll(".symbol svg").length,sectionDisplay:getComputedStyle(g.querySelector(".directory-section")).display}})()');
       return result?.url===url&&result.width===width?result:null;
     });
     assert.ok(!s.overflow&&s.tiles>0,"topic directory fits");
-    assert.equal(s.columns,width<=560?1:width<=900?2:3);
+    assert.equal(s.columns,width<=560?3:4);assert.ok(s.groups>=3&&s.icons===s.tiles);assert.equal(s.sectionDisplay,width<=560?"block":"grid");
   }
   console.log("PASS: rubrics, archive, entities and topic R2 layouts");
 }finally{
