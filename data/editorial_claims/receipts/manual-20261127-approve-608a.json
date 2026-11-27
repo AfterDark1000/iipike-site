@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-20261127-approve-608a.json",
+  "request_sha256": "6f9c1ddf535be4510e74068ab43deb607499c655f17b4a69b6e773d146d6ae18",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-69fbec9981f84b43",
+  "pool_sequence": 608,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T09:22:06.572778+00:00",
+  "note": "Утверждено главредом: статья, перелинковка и социальные тексты сохранены."
+}

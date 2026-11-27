@@ -9100,12 +9100,12 @@
       "summary": "Свежий отчёт Anthropic о переносе API с Python на Rust при помощи команд ИИ-агентов; первая версия была готова за неделю, проверка заняла месяцы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-26T18:06:11+00:00",
       "review_started_at": "2026-11-27T09:22:06.572778+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": ""
+      "closed_at": "2026-11-27T09:26:59+00:00",
+      "article_id": "anthropic-claude-api-rust-migration-20261125",
+      "note": "Утверждено главредом: статья, перелинковка и социальные тексты сохранены."
     },
     {
       "id": "n-fbde4a33d01a6302",
