@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "action": "approve",
+  "worker": "hpii-manual-editor",
+  "claim_request": "manual-editor44-next-20261127-c3.json",
+  "pool_id": "n-bed8fe2e85117580",
+  "pool_sequence": 360,
+  "claimed_at": "2026-11-27T13:45:02.508913+00:00",
+  "expected_note": "Подтверждено: John Deere 19.11 объявила о приобретении Orchard Robotics (Orchard AI), сумма не раскрыта. Официальный сайт Orchard: FruitScope Vision ставится на имеющуюся технику, скорость 1–12 mph (~1,6–19 км/ч), результаты на следующее утро, FruitScope OS и Canary AI, подписка за акр в год. Связь с материалом ХПИИ об ИИ-проверке прогнозов урожая USDA (Dzen ID 6af82913c6c38d2040b17329, сайт usda-ai-crop-forecast-validation-20261110) сверена. Комплект на утверждение.",
+  "note": "Главред утвердил материал. Статья, соцтексты и перелинковка сохранены и проверены; ожидается обложка.",
+  "human_authorized": true,
+  "article_id": "john-deere-orchard-ai-acquisition-20261119",
+  "story_sha": "9f3a56250bd629273eebf4ea195878b75842aa28"
+}
