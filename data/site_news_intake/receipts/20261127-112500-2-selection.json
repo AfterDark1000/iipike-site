@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request": "20261127-112500-2-selection.json",
+  "request_sha256": "3b0154587d67f36de284a77540d8507dffe7ea6e35ccada32a1539c73ec9d2cc",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 619,
+      "id": "n-1898b18fe11669de",
+      "title": "В России хотят разработать отдельные правила для ИИ-агентов"
+    },
+    {
+      "sequence": 620,
+      "id": "n-fca2908174a065f7",
+      "title": "В Пензе пытаются победить пробки при помощи искусственного интеллекта"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
