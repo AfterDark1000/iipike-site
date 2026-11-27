@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-357-approve-b2.json",
+  "request_sha256": "84dd1446e3aa12b912e3c9443de3811663f013e9ac97823721754e7ec23e18db",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-280f95c3ca779d43",
+  "pool_sequence": 357,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T10:08:06.135424+00:00",
+  "note": "Главред утвердил материал №357 + №332. Статья, соцтексты и перелинковка с china-ai-schools-20261116 сохранены, ожидается обложка."
+}
