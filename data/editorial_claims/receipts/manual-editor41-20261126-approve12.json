@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261126-approve12.json",
+  "request_sha256": "2a3ecf643423be1cb4caac1850ad16d2cbc1fcce9de7f8fd6d2c2bac372104e9",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-a5f8ec5362c29818",
+  "pool_sequence": 345,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-26T17:04:51.280885+00:00",
+  "note": "Главред утвердил статью с новым заголовком. Статья, внутренняя ссылка, VK, Threads/X сохранены и проверены. Ожидается обложка."
+}
