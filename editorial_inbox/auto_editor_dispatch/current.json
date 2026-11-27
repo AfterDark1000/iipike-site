@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T14:17:05.927927+00:00",
-  "valid_until": "2026-11-27T15:47:05.927927+00:00",
+  "prepared_at": "2026-11-27T14:32:06.700959+00:00",
+  "valid_until": "2026-11-27T16:02:06.700959+00:00",
   "status": "ready",
   "counts": {
     "reserved_24h": 2,
@@ -105,7 +105,7 @@
     "kind": "resume"
   },
   "main_guard": {
-    "data/site_news_pool.json": "bd5e90ffb81891139704201d0800f1a181afb295",
+    "data/site_news_pool.json": "2c8f10d9f83bfff8ce5376c4c957de0438aad861",
     "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
     "data/auto_editor/requests": "b5641ec3d0e846403a9f8038c4a06277976bae06",
     "data/auto_editor/receipts": "c1b7c9ac944e1ae4644d45a25495a4601be75e1a",
