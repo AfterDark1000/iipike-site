@@ -9313,5 +9313,30 @@
       "minimax"
     ],
     "products": []
+  },
+  {
+    "title": "«Извинись!» В США заставят признаваться за использование китайских нейросетей",
+    "summary": "В США обсуждают требование публично раскрывать использование китайских нейросетей американскими компаниями.",
+    "published": "2026-11-27",
+    "source_url": "https://www.reuters.com/world/china/trump-administration-weighs-forcing-us-firms-disclose-chinese-ai-use-2026-11-18/",
+    "cover": "assets/editorial/us-chinese-ai-disclosure-proposal-20261118.webp",
+    "rubric": "news",
+    "vk_title": "🇺🇸 США готовят обязательную МАРКИРОВКУ китайских нейросетей",
+    "vk_summary": "Китайский ИИ уже работает в крупных американских сервисах. Вашингтон обсуждает обязательное раскрытие информации об использовании таких нейросетей.",
+    "published_at_utc": "2026-11-27T08:15:51Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "us-chinese-ai-disclosure-proposal-20261118",
+    "url": "articles/us-chinese-ai-disclosure-proposal-20261118/",
+    "topics": [
+      "society",
+      "business"
+    ],
+    "companies": [
+      "alibaba"
+    ],
+    "products": [
+      "qwen"
+    ]
   }
 ]
