@@ -234,6 +234,12 @@
       "utc_date": "2026-11-26",
       "source_url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
       "source_title": "Verifiable Social Reasoning for LLM Assistants"
+    },
+    {
+      "id": "a734da9d3a1d876054f8",
+      "utc_date": "2026-11-27",
+      "source_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
+      "source_title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon"
     }
   ]
 }

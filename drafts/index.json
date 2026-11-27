@@ -1,5 +1,12 @@
 [
   {
+    "id": "a734da9d3a1d876054f8",
+    "date": "2026-11-27",
+    "title": "Hugging Face запустила панель для замера скорости llama.cpp на чипах AMD Ryzen и Radeon",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench"
+  },
+  {
     "id": "c232ab95006f02e0b53c",
     "date": "2026-11-26",
     "title": "Гугл научил нейросети понимать интриги в коллективе через симуляции",
