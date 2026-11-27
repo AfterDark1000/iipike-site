@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-next-20261128-k11.json",
+  "request_sha256": "d494ac20097b67356877fb22b68fc34899b2915a32fe1aa3d8c2a3a80a3da44c",
+  "worker": "hpii-manual-editor",
+  "status": "reserved",
+  "pool_id": "n-ab23a7fa21e24fb3",
+  "pool_sequence": 70,
+  "claimed_at": "2026-11-27T19:41:47.016963+00:00",
+  "effective_priority": "normal"
+}
