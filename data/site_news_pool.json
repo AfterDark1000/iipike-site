@@ -5500,12 +5500,12 @@
       "summary": "19 ноября. Google рассказала о Tool Retrieval для подгрузки описаний инструментов по необходимости.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": "2026-11-27T15:51:14.554005+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "Проверено: Google 19.11, Introducing Tool Retrieval in the Gemini API, официальная документация https://aistudio.google.com/docs/tool-retrieval. Preview, Interactions API v1beta, Gemini 3.6+ включая Gemini 4; модель видит имена и краткие описания инструментов, полные схемы параметров загружает по необходимости, загруженные схемы оплачиваются как входные токены до конца разговора, отдельной платы нет. Экономия зависит от доли неиспользуемых инструментов, проценты не заявлены. Перелинковка: google-gemini-tasks-free-calls-shopping-20261117, Dzen ID 6afece813965384d0faea36e, соответствие подтверждено; пример развития агентных возможностей, не утверждать использование Tool Retrieval в Tasks. Комплект на утверждение."
+      "closed_at": "2026-11-27T15:56:46+00:00",
+      "article_id": "google-gemini-tool-retrieval-20261119",
+      "note": "Главред утвердил материал. Статья, соцтексты и перелинковка сохранены и проверены; ожидается обложка."
     },
     {
       "id": "n-a38aa49b586de75a",
