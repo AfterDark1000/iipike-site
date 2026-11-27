@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-372-checkpoint-g7.json",
+  "request_sha256": "7c23a6e877daf697bc43ae982d04484f4f8bbc6423e12e5f5f2509b9cc30f4e1",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-2191c000c7dbd2ad",
+  "pool_sequence": 372,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T16:43:41.865854+00:00",
+  "note": "Проверено: Tencent анонс 16.11 (пресс-релиз PRNewswire 17.11), открытие весов 18.11 @TencentHunyuan, официальный GitHub https://github.com/Tencent-Hunyuan/Hy4-flash и Hugging Face. В пресс-релизе 224 млрд параметров, в актуальном README 220 млрд (округляем до ~220 млрд), активных ~12 млрд на токен, контекст 1 млн, текст и изображения на входе, текст на выходе. WorkIndex внутренний: 42,1 против 51,4 Hy4, цена задачи в 20 раз ниже Hy4 и в 8 раз ниже DeepSeek V4.1 Flash Max по пиковому тарифу; слепой тест 85 сотрудников, 259 задач, удовлетворённость 2,79/4 против 2,81 Claude Haiku 5.5. Стандартная цена API $0,070/$0,281 за 1 млн входных/выходных токенов; до 30.11 скидка 50% TokenHub. Веса instruct, FP8, base, Tencent Hy License; официальный пример vLLM использует 8 GPU. Архив: meituan-longcat-2-5-open-weights-20261116, Dzen ID 6b06b90f8229d43dc4b7631d подтверждён. №430 о другом Hy4 не объединял. Комплект на утверждение."
+}
