@@ -85,5 +85,24 @@ class PublicEntityCatalogTests(unittest.TestCase):
         self.assertIn('content="noindex,nofollow,noarchive"', lab)
 
 
+    def test_detail_pages_keep_curated_membership_and_real_dates(self):
+        from scripts.site_rubrics import publication_sort_key, publication_label
+        from itertools import groupby
+        by_id = {r["id"]: r for r in self.records}
+        for kind in ("companies", "products"):
+            for entry in self.registry[kind]:
+                html = (ROOT / "entities" / kind / entry["key"] / "index.html").read_text(encoding="utf-8")
+                records = sorted((by_id[x] for x in entry["article_ids"]), key=publication_sort_key, reverse=True)
+                self.assertEqual(re.findall(r'<a class="archive-card" href="../../../articles/([^/]+)/">', html),
+                                 [r["id"] for r in records])
+                labels = [publication_label(r) for r in records]
+                self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html),
+                                 [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])])
+                self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
+                                 [(x, x.partition(" · ")[2]) for x in labels])
+                self.assertIn('class="home-v1 rubric-r2 entity-r2"', html)
+                self.assertIn(f"Материалов: {len(records)}", html)
+
+
 if __name__ == "__main__":
     unittest.main()
