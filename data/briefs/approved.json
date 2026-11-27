@@ -2481,6 +2481,38 @@
       "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/509",
       "approved_at_utc": "2026-11-27T07:27:09Z",
       "published_at_utc": "2026-11-27T07:27:09Z"
+    },
+    {
+      "pool_sequence": 614,
+      "pool_id": "n-c0168a121974176e",
+      "slug": "cellular-intelligence-measurement-noise-20261126",
+      "headline": "Учёные выяснили, что мешает нейросетям лучше понимать живые клетки",
+      "body": "26 ноября в журнале Nature Machine Intelligence вышло исследование, авторы которого проанализировали более 2 000 конфигураций ИИ-моделей. Выяснилось, что при изучении отдельных клеток повышение точности лабораторных измерений может принести больше пользы, чем увеличение объёма обучающих данных. Результаты помогут разработчикам нейросетей для поиска новых лекарств эффективнее планировать эксперименты.",
+      "topic": "Наука",
+      "event_date": "2026-11-26",
+      "source": "Nature Machine Intelligence; Cellular Intelligence",
+      "source_url": "https://www.nature.com/articles/s42256-026-01332-7",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/510",
+      "approved_at_utc": "2026-11-27T08:23:28Z",
+      "published_at_utc": "2026-11-27T08:23:28Z"
+    },
+    {
+      "pool_sequence": 620,
+      "pool_id": "n-fca2908174a065f7",
+      "slug": "penza-ai-traffic-lights-20261126",
+      "headline": "В Пензе искусственный интеллект разгоняет пробки",
+      "body": "По словам губернатора Пензенской области Олега Мельниченко, благодаря ИИ скорость движения транспорта в Пензе в часы пик выросла примерно на 34%. Система анализирует поток автомобилей и автоматически регулирует работу светофоров. На 14 центральных улицах уже действует «зелёная волна». До конца года умным оборудованием оснастят ещё 12 светофорных объектов Пензенской агломерации.",
+      "topic": "Технологии",
+      "event_date": "2026-11-26",
+      "source": "Пенза-Взгляд, прямая линия губернатора",
+      "source_url": "https://penzavzglyad.ru/news/212758/v-penze-reshayut-problemu-probok-s-pomoschyu-iskusstvennogo-intellekta",
+      "status": "editor_approved",
+      "approved_by": "human_editor",
+      "approval_ref": "https://github.com/AfterDark1000/iipike-site/issues/511",
+      "approved_at_utc": "2026-11-27T08:23:30Z",
+      "published_at_utc": "2026-11-27T08:23:30Z"
     }
   ]
 }
