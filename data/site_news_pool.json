@@ -5275,12 +5275,12 @@
       "summary": "19 ноября. Сообщается о Streaming DiLoCo в MaxText для распределённого обучения; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T06:55:54+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=dispatch-20261127-064651.json; article_id=google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1"
     },
     {
       "id": "n-ed80d1bd7d710065",

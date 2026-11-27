@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "dispatch-20261127-064651.json",
+  "request_sha256": "60fe267907f54d2a98dd6fd3d4ade553d997a7f370cc37cfcb0ed17a671eea2e",
+  "status": "reserved",
+  "pool_id": "n-5b0dcaf377b0a4d1",
+  "pool_sequence": 353,
+  "article_id": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1",
+  "priority": "normal",
+  "title": "Google предложила обучать большие нейросети на компьютерах в разных частях мира",
+  "source_url": "https://ainewsbites.com/google-streaming-diloco-distributed-llm-training",
+  "claimed_at": "2026-11-27T06:55:54+00:00",
+  "worker": "hpii-auto-editor"
+}
