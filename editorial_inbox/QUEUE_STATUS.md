@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 9 · **Заблокированы:** 0 · **Опубликованы через site-first:** 271
+**В очереди:** 18 · **Готовы:** 0 · **Ждут интервал:** 18 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 10 · **Заблокированы:** 0 · **Опубликованы через site-first:** 271
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -38,6 +38,7 @@
 | [Claude переписал собственный API и сократил нагрузку на процессоры на 70%](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/anthropic-claude-api-rust-migration-20261125.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Google придумала, как снизить расходы на работу ИИ-агентов](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-gemini-tool-retrieval-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Школы США готовы отказаться от Google из-за навязанных нейросетей](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/google-school-search-ai-petition-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Ideogram обошла Google и OpenAI в редактировании фотографий](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ideogram-4-6-image-editing-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [John Deere купила нейросеть, которая пересчитает все яблоки в саду](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/john-deere-orchard-ai-acquisition-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/minimax-data-retention-leak-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-performance-factory-codex-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
