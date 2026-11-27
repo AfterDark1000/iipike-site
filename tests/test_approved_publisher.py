@@ -199,7 +199,9 @@ class PublisherTests(unittest.TestCase):
     def test_preflight_never_writes_anything(self):
         prev = {p: p.read_bytes() for p in (self.root / "news.json", self.root / "feed.xml", self.root / "index.html")}
         outputs = PUBLISHER.publish(self.root, "sample-verified-news", apply=False)
-        self.assertEqual(len(outputs), 8 + len(RUBRICS) + len(TOPICS))
+        # Continuations are generated in addition to the original index set.
+        self.assertEqual(sum(not p.name.startswith("page-") for p in outputs), 8 + len(RUBRICS) + len(TOPICS))
+        self.assertTrue(any(p.name == "page-2.html" for p in outputs))
         self.assertFalse((self.root / "articles").exists())
         self.assertFalse((self.root / "sitemap.xml").exists())
         self.assertFalse((self.root / "dzen-rss.xml").exists())
@@ -218,7 +220,7 @@ class PublisherTests(unittest.TestCase):
         records = json.loads((self.root / "news.json").read_text(encoding="utf-8"))
         self.assertEqual(len(records), len(json.loads((ROOT / "news.json").read_text(encoding="utf-8"))) + 1)
         self.assertEqual(records[-1]["id"], "sample-verified-news")
-        catalog = (self.root / "articles" / "index.html").read_text(encoding="utf-8")
+        catalog = listing_markup(self.root / "articles" / "index.html")
         self.assertIn('href="sample-verified-news/"', catalog)
         self.assertIn('href="google-search-ai-links/"', catalog)
         home = (self.root / "index.html").read_text(encoding="utf-8")
@@ -471,7 +473,7 @@ class PublisherTests(unittest.TestCase):
     def test_public_repo_catalog_links_are_static(self):
         content = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="articles/"', content)
-        catalog = (ROOT / "articles" / "index.html").read_text(encoding="utf-8")
+        catalog = listing_markup(ROOT / "articles" / "index.html")
         self.assertIn('href="google-search-ai-links/"', catalog)
         self.assertIn('rel="canonical" href="https://iipike.ru/articles/"', catalog)
         self.assertNotIn("НЕ ОПУБЛИКОВАНО", catalog)

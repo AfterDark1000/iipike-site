@@ -215,6 +215,7 @@ jobs:
               exact.update({
                   'scripts/site_topics.py', 'scripts/upgrade_article_navigation.py',
                   'scripts/site_first_release_pr.py', 'tests/test_site_archive_order.py',
+                  'assets/listing-more.js',
                   'tests/test_site_topics.py', '.github/workflows/topic-navigation-upgrade.yml',
               })
               exact.update(str(p) for p in {

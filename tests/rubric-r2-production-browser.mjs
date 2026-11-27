@@ -139,8 +139,8 @@ try{
     for(const pathname of ["/articles/","/rubrics/skynet/","/topics/agents/","/entities/companies/openai/","/briefs/"]){
       const url=origin+pathname;
       await call("Page.navigate",{url});
-      const state=()=>evaluate('(()=>{const rows=[...document.querySelectorAll("[data-listing-content] .archive-card,[data-listing-content] .brief-item")];const link=document.querySelector("[data-listing-next]");return {url:location.href,ready:document.readyState==="complete",count:rows.length,unique:new Set(rows.map(r=>r.id||r.getAttribute("href"))).size,href:link?.getAttribute("href"),text:link?.textContent.trim()}})()');
-      const initial=await until("initial 20 "+pathname,async()=>{const s=await state();return s.url===url&&s.ready&&s.count===20?s:null});
+      const state=()=>evaluate('(()=>{const rows=[...document.querySelectorAll("[data-listing-content] .archive-card,[data-listing-content] .brief-item")];const link=document.querySelector("[data-listing-next]");return {url:location.href,ready:document.readyState==="complete",count:rows.length,unique:new Set(rows.map(r=>r.id||r.getAttribute("href"))).size,href:link?.getAttribute("href"),text:link?.textContent.trim(),wired:link?.dataset.listingReady==="true"}})()');
+      const initial=await until("initial 20 "+pathname,async()=>{const s=await state();return s.url===url&&s.ready&&s.wired&&s.count===20?s:null});
       assert.equal(initial.text,"Показать ещё");assert.equal(initial.href,"page-2.html");
       await evaluate('document.querySelector("[data-listing-next]").click()');
       const loaded=await until("append 20 "+pathname,async()=>{const s=await state();return s.url===url&&s.count===40?s:null});

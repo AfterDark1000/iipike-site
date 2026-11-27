@@ -44,7 +44,7 @@ class RubricOrderingTests(unittest.TestCase):
     def test_rubric_groups_and_real_times_match_complete_chronology(self):
         for key in RUBRICS:
             with self.subTest(rubric=key):
-                html = (ROOT / "rubrics" / key / "index.html").read_text(encoding="utf-8")
+                html = listing_markup(ROOT / "rubrics" / key / "index.html")
                 records = sorted((r for r in self.records if r.get("rubric", "news") == key),
                                  key=publication_sort_key, reverse=True)
                 labels = [publication_label(r) for r in records]
