@@ -9010,9 +9010,9 @@
       "summary": "Сообщается о генерации видео со звуком, сохранении внешности персонажей и создании инфографики; заявлена доступность моделей в ГигаЧате.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-26T18:06:11+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T09:00:53.130197+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
