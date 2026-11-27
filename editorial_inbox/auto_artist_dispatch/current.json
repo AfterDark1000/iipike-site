@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T05:46:51Z",
-  "valid_until": "2026-11-27T07:16:51Z",
+  "prepared_at": "2026-11-27T06:02:09Z",
+  "valid_until": "2026-11-27T07:32:09Z",
   "status": "idle",
   "quota": {
-    "used": 2,
+    "used": 1,
     "limit": 5,
-    "remaining": 3
+    "remaining": 4
   },
   "parallel_cover_review": true,
   "job": null,
