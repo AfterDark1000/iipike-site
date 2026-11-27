@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-373-checkpoint-h8.json",
+  "request_sha256": "15da2d523dd25f69d96c5325fbc5b7262da9057a7f25cd91dc0aa2fd390ae7e9",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-a1429146f3f2b49f",
+  "pool_sequence": 373,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T17:10:17.122439+00:00",
+  "note": "Проверено: финансовый отчёт Ubisoft 19.11 на GlobeNewswire подтверждает создание дочерней компании Motherbrain на основе команды Teammates. Направления: NPC с памятью, ИИ-режиссёры игровых миров, собственные технологии для внутренних и внешних студий. Официальный блог Ubisoft 21.11.2025 подтверждает прототип Teammates, голосовые команды напарникам Софии и Пабло, ассистент Jaspar, закрытый тест на нескольких сотнях игроков; NEO NPC 2024. Конкретные игры, дата релиза и длительность памяти не названы. Перелинковка google-genie4-worlds, Dzen ID 6ae18fd1d73786100df5c71d подтверждён каталогом и news.json. @Ubisoft подтверждён публичными профилями. Комплект на утверждение."
+}
