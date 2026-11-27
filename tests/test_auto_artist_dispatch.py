@@ -100,6 +100,48 @@ class DispatchTests(unittest.TestCase):
         self.draft("bad-return",6) # changes source blob: old return cannot be reused
         self.draft("good",7)
         self.assertEqual(self.build(published=["published"])["job"]["article_id"],"good")
+    def fail_no_start(self,k,sha,at=NOW,decision_sha=None):
+        claim_path=self.inbox/"auto_artist_dispatch"/"claims"/(k+".json")
+        claim_obj=json.loads(claim_path.read_text(encoding="utf-8"))
+        self.put("auto_artist_dispatch/failures",k,{"schema_version":1,"stem":k,
+            "state":"generation_not_started","error":"Image generation has not started",
+            "image_created":False,"attempt":1,"claim_blob_sha":d.blob(claim_path),
+            "source_draft_blob_sha":sha,"source_text_decision_blob_sha":decision_sha,
+            "reported_at":d.iso(at)})
+
+    def test_no_start_retry_requires_receipt_and_two_hour_cooldown(self):
+        sha=self.draft("failed",1)
+        self.claim("failed-r1-v1",NOW-timedelta(hours=3))
+        self.assertIsNone(self.build()["job"])
+        self.fail_no_start("failed-r1-v1",sha,at=NOW-timedelta(hours=1))
+        self.assertIsNone(self.build()["job"])
+        b=d.build(self.root,set(),[],NOW+timedelta(hours=1,minutes=1),True)
+        self.assertEqual(b["job"]["attempt"],2)
+        self.assertEqual(b["job"]["claim_path"],"editorial_inbox/auto_artist_dispatch/claims/failed-r1-v1-retry-1.json")
+        self.assertEqual(b["quota"]["used"],1)
+        self.put("auto_artist_dispatch/claims","failed-r1-v1-retry-1",
+            {"schema_version":1,"stem":"failed-r1-v1","state":"generation_reserved",
+             "attempt":2,"reserved_at":d.iso(NOW)})
+        end=self.build()
+        self.assertIsNone(end["job"])
+        self.assertEqual(end["quota"]["used"],2)
+
+    def test_no_start_failure_wrong_sha_fails_closed(self):
+        sha=self.draft("failed",1)
+        self.claim("failed-r1-v1",NOW-timedelta(hours=3))
+        self.fail_no_start("failed-r1-v1",sha,at=NOW-timedelta(hours=1))
+        path=self.inbox/"auto_artist_dispatch/failures/failed-r1-v1.json"
+        bad=json.loads(path.read_text())
+        bad["claim_blob_sha"]="0"*40
+        self.put("auto_artist_dispatch/failures","failed-r1-v1",bad)
+        with self.assertRaises(ValueError):
+            self.build()
+    def test_no_start_retry_not_allowed_after_draft_change(self):
+        sha=self.draft("failed",1)
+        self.claim("failed-r1-v1",NOW-timedelta(hours=4))
+        self.fail_no_start("failed-r1-v1",sha,at=NOW-timedelta(hours=3))
+        self.draft("failed",2)
+        self.assertIsNone(self.build()["job"])
     def test_invalid_ledger_fails_closed(self):
         self.put("auto_artist_dispatch/claims","bad",{"reserved_at":d.iso(NOW)})
         with self.assertRaises(ValueError):

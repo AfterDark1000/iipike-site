@@ -13,6 +13,8 @@ STEM = re.compile(r"([a-z0-9]+(?:-[a-z0-9]+)*)-r([1-9]\d*)-v([1-5])")
 ROOT = "editorial_inbox/"
 DISPATCH = ROOT + "auto_artist_dispatch/"
 LIMIT = 5
+RETRY_DELAY = timedelta(hours=2)
+RETRY_SUFFIX = '-retry-1'
 
 def read(path):
     obj = json.loads(path.read_text(encoding="utf-8"))
@@ -51,6 +53,7 @@ def build(root, published, holds, now, parallel):
     reviews = records(inbox/"auto_cover_decisions")
     handoffs = records(inbox/"auto_handoffs")
     claims = records(inbox/"auto_artist_dispatch"/"claims")
+    failures = records(inbox/"auto_artist_dispatch"/"failures")
     legacy = records(inbox/"auto_covers"/"attempts")
     quota = {}
     for key, (obj, _) in covers.items():
@@ -58,11 +61,29 @@ def build(root, published, holds, now, parallel):
             raise ValueError("Invalid candidate filename: "+key)
         quota[key] = stamp(obj["created_at"])
     for key, (obj, _) in claims.items():
-        if (not STEM.fullmatch(key) or obj.get("stem") != key or
-                obj.get("schema_version") != 1 or obj.get("state") != "generation_reserved"):
+        is_retry = key.endswith(RETRY_SUFFIX)
+        stem = key[:-len(RETRY_SUFFIX)] if is_retry else key
+        if (not STEM.fullmatch(stem) or obj.get("stem") != stem or
+                obj.get("schema_version") != 1 or obj.get("state") != "generation_reserved" or
+                (is_retry and obj.get("attempt") != 2) or
+                (not is_retry and obj.get("attempt", 1) != 1)):
             raise ValueError("Invalid artist claim: "+key)
         t = stamp(obj["reserved_at"])
-        quota[key] = max(t, quota.get(key, t))
+        quota_key = "retry:"+stem if is_retry else stem
+        quota[quota_key] = max(t, quota.get(quota_key, t))
+    # Failure receipts never erase historical claims or quota. They only
+    # authorize a single separately-reserved retry when the image did not start.
+    for key, (obj, _) in failures.items():
+        original = claims.get(key)
+        if (not STEM.fullmatch(key) or original is None or
+                obj.get("schema_version") != 1 or obj.get("stem") != key or
+                obj.get("state") != "generation_not_started" or
+                obj.get("error") != "Image generation has not started" or
+                obj.get("image_created") is not False or obj.get("attempt") != 1 or
+                obj.get("claim_blob_sha") != original[1]):
+            raise ValueError("Invalid artist failure receipt: "+key)
+        if stamp(obj["reported_at"]) < stamp(original[0]["reserved_at"]):
+            raise ValueError("Failure receipt predates reservation: "+key)
     # Old attempts may represent a genuinely separate generation; count them conservatively.
     for key, (obj, _) in legacy.items():
         quota["legacy:"+key] = stamp(obj["created_at"])
@@ -130,9 +151,24 @@ def build(root, published, holds, now, parallel):
         key=f"{prefix}-v{ver}"
         if key in covers or (inbox/"auto_covers"/(key+".webp")).exists() or key in reviews:
             continue
-        if key in claims or key in hold_keys:
+        retry = False
+        failure_sha = None
+        original_sha = None
+        if key in hold_keys or key+RETRY_SUFFIX in claims:
             result["waiting_for_manual_upload"].append({"stem":key,"title":draft.get("content",{}).get("title"),"state":"reserved_or_prior_attempt"})
             continue
+        if key in claims:
+            failure, failure_sha = failures.get(key, (None, None))
+            original, original_sha = claims[key]
+            # No inferred failures, no retry of a changed text or decision,
+            # and no repeated automatic retries after the second reservation.
+            if (failure is None or failure.get("source_draft_blob_sha") != dsha or
+                    failure.get("source_text_decision_blob_sha") != tsha or
+                    original.get("source_draft_blob_sha") != dsha or
+                    stamp(failure["reported_at"])+RETRY_DELAY > now):
+                result["waiting_for_manual_upload"].append({"stem":key,"title":draft.get("content",{}).get("title"),"state":"reserved_or_prior_attempt"})
+                continue
+            retry = True
         content=draft.get("content",{})
         if not isinstance(content,dict) or not all(isinstance(content.get(k),str) and content[k].strip() for k in ("title","article_markdown")):
             continue
@@ -144,19 +180,25 @@ def build(root, published, holds, now, parallel):
              "title":content["title"],"article_markdown":content["article_markdown"],
              "source_url":content.get("source_url"),"cover_brief":draft["cover_brief"],
              "previous":previous}
+        if retry:
+            job.update({"attempt":2,"retry_of_claim_sha":original_sha,
+                        "retry_failure_sha":failure_sha})
         eligible.append((0 if previous else 1,draft["pool_sequence"],sid,job))
     if used>=LIMIT:
         result["status"]="quota_full"
     elif eligible:
         result["status"]="ready"
         result["job"]=min(eligible,key=lambda v:v[:3])[3]
-        result["job"]["claim_path"]=DISPATCH+"claims/"+result["job"]["stem"]+".json"
+        job = result["job"]
+        result["job"]["claim_path"]=DISPATCH+"claims/"+job["stem"]+(
+            RETRY_SUFFIX if job.get("attempt") == 2 else "")+".json"
         recent=sorted(covers.items(),key=lambda kv:stamp(kv[1][0]["created_at"]),reverse=True)[:8]
         result["recent_artwork"]=[{"stem":k,"image_path":v[0].get("image_path"),
             "headline":v[0].get("headline"),"concept":v[0].get("concept"),
             "artist_notes":v[0].get("artist_notes")} for k,v in recent]
         result["guard"]={"covers_tree":tree_sha(root,ROOT+"auto_covers"),
-                         "claims_tree":tree_sha(root,DISPATCH+"claims")}
+                         "claims_tree":tree_sha(root,DISPATCH+"claims"),
+                         "failures_tree":tree_sha(root,DISPATCH+"failures")}
     return result
 
 def main():
