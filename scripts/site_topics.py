@@ -244,8 +244,8 @@ def render_topic_page(key, records):
 def render_all_topics(records, root):
     root = Path(root)
     outputs = {root / "topics" / "index.html": render_topics_index(records)}
-    outputs.update({
-        root / "topics" / key / "index.html": render_topic_page(key, records)
-        for key in TOPICS
-    })
+    from scripts.site_rubrics import paginate_listing
+    for key in TOPICS:
+        outputs.update(paginate_listing(root / "topics" / key / "index.html",
+                                        render_topic_page(key, records)))
     return outputs

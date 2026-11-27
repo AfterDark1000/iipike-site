@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts.publish_approved_article import render_catalog, render_sitemap
+from scripts.publish_approved_article import render_catalog_pages, render_sitemap
 from scripts.site_topics import (
     validate_topics, infer_topics, render_topic_links, render_all_topics
 )
@@ -93,7 +93,7 @@ def plan(root=ROOT):
     # Don't change titles, HTML bodies or publication timestamps during this
     # navigation-only upgrade. Only the archive index and sitemap are rebuilt.
     generated = {
-        root / "articles" / "index.html": render_catalog(updated),
+        **render_catalog_pages(updated, root),
         root / "sitemap.xml": render_sitemap(updated),
         **render_all_topics(updated, root),
     }

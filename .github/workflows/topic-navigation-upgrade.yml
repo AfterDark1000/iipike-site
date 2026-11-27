@@ -64,7 +64,13 @@ jobs:
           news=json.loads(Path('news.json').read_text(encoding='utf-8'))
           article_files={r['url']+'index.html' for r in news}
           topic_files={'topics/index.html'} | {'topics/'+x+'/index.html' for x in TOPICS}
-          allowed={'news.json','articles/index.html','sitemap.xml'}|article_files|topic_files
+          from scripts.publish_approved_article import render_catalog_pages
+          from scripts.site_topics import render_all_topics
+          generated = set(str(p) for p in {
+              **render_catalog_pages(news, Path('.')),
+              **render_all_topics(news, Path('.')),
+          })
+          allowed={'news.json','articles/index.html','sitemap.xml'}|article_files|topic_files|generated
           changed=set(subprocess.check_output(['git','status','--porcelain','--untracked-files=all'],text=True)
                       .splitlines())
           paths={x[3:] for x in changed if not x[3:].startswith(('__pycache__/', 'scripts/__pycache__/', 'tests/__pycache__/'))}

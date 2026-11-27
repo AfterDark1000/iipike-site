@@ -315,9 +315,10 @@ def render_all_entities(records, root=ROOT, registry=None):
     outputs = {root / "entities" / "index.html": render_index(registry)}
     for kind in ("companies", "products"):
         for entry in registry[kind]:
-            outputs[root / "entities" / kind / entry["key"] / "index.html"] = (
-                render_entity(kind, entry, known, companies)
-            )
+            from scripts.site_rubrics import paginate_listing
+            outputs.update(paginate_listing(
+                root / "entities" / kind / entry["key"] / "index.html",
+                render_entity(kind, entry, known, companies)))
     return outputs
 
 

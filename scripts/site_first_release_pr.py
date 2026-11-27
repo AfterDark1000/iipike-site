@@ -323,6 +323,27 @@ def auto_publish_site(story_id, base_sha, source_paths):
     # change an otherwise valid Dzen export.
     optional_files = {"dzen-rss.xml", "vk-rss.xml", f"assets/vk/{story_id}.jpg"}
     unexpected = changed - expected_files - optional_files - rubric_files - topic_files
+    # Continuations must be exact generator outputs for compiler-approved listings.
+    from scripts.site_rubrics import _LISTING_FILENAME
+    continuation = {path for path in unexpected
+                    if _LISTING_FILENAME.fullmatch(Path(path).name)}
+    if continuation:
+        from scripts.publish_approved_article import render_catalog_pages
+        from scripts.site_rubrics import render_all
+        from scripts.site_topics import render_all_topics
+        from scripts.site_entities import render_all_entities
+        root = Path(".")
+        records = json.loads((root / "news.json").read_text(encoding="utf-8"))
+        allowed_parents = {Path(p).parent for p in expected_files | rubric_files | topic_files
+                           if p == "articles/index.html" or p.startswith(("rubrics/", "topics/", "entities/"))}
+        generated = {**render_catalog_pages(records, root), **render_all(records, root),
+                     **render_all_topics(records, root), **render_all_entities(records, root)}
+        for path in continuation:
+            target = root / path
+            if (target.parent not in allowed_parents or target not in generated
+                    or not target.is_file() or target.read_text(encoding="utf-8") != generated[target]):
+                raise ValueError("Refusing invalid listing continuation: " + path)
+        unexpected -= continuation
     for path in unexpected:
         match = re.fullmatch(r"articles/([a-z0-9]+(?:-[a-z0-9]+)*)/index\.html", path)
         if not match:

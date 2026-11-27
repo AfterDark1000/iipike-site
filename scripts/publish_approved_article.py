@@ -426,6 +426,11 @@ def render_catalog(records):
 '''
 
 
+def render_catalog_pages(records, root):
+    from scripts.site_rubrics import paginate_listing
+    return paginate_listing(root / "articles" / "index.html", render_catalog(records))
+
+
 def render_feed(records, old_feed):
     import xml.sax.saxutils as sx
     old = {}
@@ -525,7 +530,7 @@ def publish(root, slug, apply=False):
     outputs = {
         dest: render_article(data, updated, catalog, registry=next_registry, dossier_ids=dossier_ids),
         entries_path: json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
-        root / "articles" / "index.html": render_catalog(updated),
+        **render_catalog_pages(updated, root),
         root / "feed.xml": render_feed(updated, (root / "feed.xml").read_text(encoding="utf-8")),
         root / "dzen-rss.xml": render_dzen_rss(root, updated, staged=data),
         root / "sitemap.xml": render_sitemap(updated, root=root),
