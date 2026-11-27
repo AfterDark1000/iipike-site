@@ -244,6 +244,46 @@
   if (!canonical || !/^https:\/\/iipike\.ru\/articles\/[a-z0-9-]+\/$/.test(canonical.href)) return;
   var main = document.querySelector("main.wrap");
   if (!main || !main.querySelector(":scope > .article-title + .cover + .article-body")) return;
+
+  // Apply the same V1 masthead and five-rubric navigation as the published rubrics.
+  // Scope the existing V1 rules to this header only, not the article or footer.
+  var header = document.querySelector("body > header.header");
+  if (header && !document.querySelector(".article-site-nav")) {
+    var menu = header.querySelector("nav.menu");
+    var logo = header.querySelector("a.logo");
+    if (menu && logo) {
+      var chrome = document.createElement("div");
+      chrome.className = "home-v1 article-site-nav";
+      header.before(chrome);
+      chrome.appendChild(header);
+      logo.href = "../../index.html";
+      logo.setAttribute("aria-label", "Хроники Пикирующего ИИ — главная");
+      var badge = logo.querySelector(".badge");
+      if (badge) badge.setAttribute("aria-hidden", "true");
+      menu.classList.add("home-menu");
+      menu.setAttribute("aria-label", "Основное меню");
+      menu.replaceChildren();
+      [["../../articles/","Все статьи"],["../../briefs/","Коротко"],["../../dossier/","Досье"],["../../entities/","Компании и продукты"]].forEach(function (item) {
+        var a = document.createElement("a");
+        a.href = item[0]; a.textContent = item[1]; menu.appendChild(a);
+      });
+      var strip = document.createElement("div");
+      strip.className = "home-v1-rubrics";
+      var wrap = document.createElement("div");
+      wrap.className = "wrap";
+      var rubricNav = document.createElement("nav");
+      rubricNav.className = "rubric-navigation";
+      rubricNav.setAttribute("aria-label", "Рубрики ХПИИ");
+      var current = main.querySelector(".article-title .kicker a");
+      [["../../rubrics/news/","Новости ИИ"],["../../rubrics/skynet/","Скайнет просыпается"],["../../rubrics/what-are-you-doing/","ИИ, ты чего творишь?"],["../../rubrics/quotes/","Громко сказано"],["../../rubrics/made-with-ai/","Сделано с ИИ"]].forEach(function (item) {
+        var a = document.createElement("a");
+        a.href = item[0]; a.textContent = item[1];
+        if (current && a.href === current.href) a.setAttribute("aria-current", "true");
+        rubricNav.appendChild(a);
+      });
+      wrap.appendChild(rubricNav); strip.appendChild(wrap); chrome.appendChild(strip);
+    }
+  }
   var section = main.querySelector(":scope > .article-body");
   var article = section.querySelector(":scope > .article-text");
   if (!article || section.querySelector(":scope > .article-a4-rail")) return;

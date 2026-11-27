@@ -1005,3 +1005,13 @@ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) mai
  html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-title,html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-text{overflow-wrap:anywhere}
  html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-title .topic-links a,html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-entity-links a{max-width:100%;white-space:normal;overflow-wrap:anywhere}
 }
+
+/* Published article masthead: use shared V1 header rules, including mobile,
+   without putting home-v1 on body and affecting article content. */
+.article-site-nav.home-v1{background:var(--paper);color:var(--ink)}
+.article-site-nav.home-v1 .rubric-navigation{padding:12px 0 0}
+.article-site-nav.home-v1 .rubric-navigation a{padding:0 0 9px;border-bottom:3px solid transparent}
+.article-site-nav.home-v1 .rubric-navigation a[aria-current="true"]{color:#386d63;border-color:#386d63}
+.article-site-nav.home-v1 .bar{gap:24px}
+@media(max-width:700px){.article-site-nav.home-v1 .bar{gap:13px}.article-site-nav.home-v1 .home-menu{min-width:0}}
+@media(max-width:360px){.article-site-nav.home-v1 .wrap{padding-inline:14px}.article-site-nav.home-v1 .bar{gap:10px}.article-site-nav.home-v1 .home-menu{gap:8px 12px}}
