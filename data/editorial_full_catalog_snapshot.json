@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "034a60f0e46a792dd608493d04207c6dc71bb991",
-  "source_blob_sha": "0f930e623ab1cf1029d03fe1e297413f82f20b95",
+  "source_commit": "0e3a9bf43258642dd1f24f16ce4ad62c9e0a5fa0",
+  "source_blob_sha": "97cdb3fe2d8744e5b7500fe825e787b316b6e344",
   "snapshot_date": "2026-11-27",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b0924106439085d02821aca",
+      "title": "Сбер и Т-Банк торгуют ChatGPT и Claude. Мы проверили 9 приложений и выяснили, кто за этим стоит",
+      "dzen_url": "https://dzen.ru/a/awkkEGQ5CF0CghrK",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "До копейки одинаковые цены, одинаковые описания подписок и даже один и тот же бот поддержки в Telegram. Именно это мы обнаружили, сравнив предложения Сбера и бывшего Тинькофф. 27 ноября редакция ХПИИ изучила девять приложений российских банков, маркетплейсов и цифровых магазинов. Оказывается, рынок оплаты зарубежных нейросетей уже вовсю освоили крупнейшие российские компании. Причем некоторые из них предлагают весьма",
+      "published_at_utc": "2026-11-27T07:00:01+00:00"
+    },
+    {
+      "dzen_id": "6b08067f3fce9862d741e24d",
+      "title": "В городе OpenAI и Anthropic запретили строительство новых дата-центров на 10 месяцев",
+      "dzen_url": "https://dzen.ru/a/awgGfz_OmGLXQeJN",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Один крупный дата-центр может потребовать столько же электрической мощности, сколько 25 тысяч новых квартир. 17 ноября городской совет Сан-Франциско единогласно проголосовал за продление моратория на выдачу разрешений для новых дата-центров на 10 месяцев и 15 дней. Первоначальный запрет сроком на 45 дней ввели ещё в октябре. И это в городе, где расположены штаб-квартиры OpenAI и Anthropic. В 2025 году пиковая нагрузк",
+      "published_at_utc": "2026-11-27T04:01:38+00:00"
+    },
+    {
+      "dzen_id": "6b08063a548e162bfa705da9",
+      "title": "Семья любовницы Хуанга засветилась в сделках с ИИ-серверами на $270 млн",
+      "dzen_url": "https://dzen.ru/a/awgGOlSOFiv6cF2p",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "В апреле китайская компания заложила банку 252 вычислительных модуля для ИИ под кредит на 70 миллионов долларов. До начала 2026 года контрольный пакет этой компании принадлежал сестре Алисы Хуанг. Той самой китайской бизнесвумен, роман с которой стоил Дженсену Хуангу кресла генерального директора NVIDIA на целых 11 дней. 25 ноября Reuters опубликовало результаты расследования. Журналисты изучили китайский кредитный р",
+      "published_at_utc": "2026-11-27T03:01:47+00:00"
+    },
     {
       "dzen_id": "6b0805fd8d30374391e462f1",
       "title": "OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?",
