@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "action": "apply_approved_triage",
+  "worker": "hpii-morning-triage",
+  "approval": "explicit_chief_editor_chat_command",
+  "items": [
+    {
+      "sequence": 618,
+      "pool_id": "n-b0e6c16d3d3929d4",
+      "lane": "long",
+      "decision": "hot"
+    }
+  ]
+}
