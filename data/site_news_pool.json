@@ -5635,9 +5635,9 @@
       "summary": "20 ноября. Reuters сообщил о примерах применения ИИ у Sanofi и Novartis для ускорения этапов поиска лекарств. Вторичный источник, цифры и условия уточнить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T18:54:08.458902+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
