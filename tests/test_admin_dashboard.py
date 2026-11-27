@@ -72,6 +72,19 @@ class AdminOverviewTests(unittest.TestCase):
         for removed_id in ('id="copySelected"', 'id="copyPlain"'):
             self.assertNotIn(removed_id, self.html)
 
+    def test_dzen_table_downloads_are_local_and_separate_from_clipboard(self):
+        for phrase in ('src="/admin/dzen-tables.js"', 'id="tableDownloads"',
+                       "Скачать таблицу ", "Скачать все таблицы ZIP",
+                       "HpiiDzenTables.splitMarkdown", "HpiiDzenTables.pngFiles",
+                       "showTableDownloads(activeStory)", "HpiiDzenTables.tableHtml"):
+            self.assertIn(phrase, self.html)
+        renderer = (ROOT / "admin/dzen-tables.js").read_text(encoding="utf-8")
+        self.assertIn('canvas.toBlob', renderer)
+        self.assertIn('"image/png"', renderer)
+        self.assertNotIn("fetch(", renderer)
+        self.assertNotIn("http://", renderer)
+        self.assertNotIn("https://", renderer)
+
     def test_dzen_inline_illustrations_are_separate_from_cover(self):
         for phrase in ("Иллюстрации ↓", "ДОПОЛНИТЕЛЬНЫЕ ИЛЛЮСТРАЦИИ · БЕЗ ОБЛОЖКИ",
                        "Скачать все иллюстрации ZIP", ".article-text img[src]",
