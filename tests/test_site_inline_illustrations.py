@@ -8,7 +8,7 @@ import unittest
 from PIL import Image
 
 from scripts.site_rich_text import markdown_to_blocks, render_blocks
-from scripts.site_first_inbox import stage, validate_story
+from scripts.site_first_inbox import stage, validate_story, MAX_INLINE_ILLUSTRATIONS, illustrations_info
 from scripts.publish_approved_article import approved_article, render_article
 
 
@@ -139,6 +139,37 @@ class InlineIllustrationsTests(unittest.TestCase):
                 else:
                     with self.assertRaises(ValueError):
                         markdown_to_blocks(test)
+
+    def test_twenty_four_images_stage_and_render_in_three_carousels(self):
+        self.assertEqual(MAX_INLINE_ILLUSTRATIONS, 24)
+        self.save_image(self.cover, (960, 540))
+        self.save_image(self.image, (480, 480))
+        raw = self.image.read_bytes()
+        groups = []
+        for group in range(3):
+            lines = []
+            for i in range(group * 8, (group + 1) * 8):
+                name = f"gallery-{i:02d}.webp"
+                (self.image.parent / name).write_bytes(raw)
+                lines.append(f"![Кадр {i+1}](illustrations/{ID}/{name})")
+            groups.append("\n".join(lines))
+        self.data["article_markdown"] = LEAD + "\n\n" + "\n\nСледующий тематический раздел.\n\n".join(groups)
+        self.save_story()
+        result = stage(self.root, ID, now=STAMP, apply=True)
+        self.assertIsNotNone(result)
+        self.assertEqual(approved_article(self.root, ID)["article_markdown"],
+                         self.data["article_markdown"])
+        page = render_article(result)
+        self.assertEqual(page.count('class="editorial-carousel-slide"'), 24)
+        self.assertEqual(page.count('<section class="editorial-carousel"'), 3)
+        self.assertEqual(len(list((self.root / "assets/editorial/inline" / ID).glob("*.webp"))), 24)
+
+    def test_twenty_fifth_image_is_rejected_even_when_assets_are_missing(self):
+        body = LEAD + "\n\n" + "\n".join(
+            f"![Кадр {i+1}](illustrations/{ID}/missing-{i:02d}.webp)"
+            for i in range(25))
+        with self.assertRaisesRegex(ValueError, "At most 24 editorial illustrations"):
+            illustrations_info(self.root, ID, markdown_to_blocks(body))
 
     def test_non_image_bytes_fail_closed(self):
         self.save_image(self.cover, (960, 540))

@@ -56,6 +56,7 @@ on:
       - 'tests/test_site_rich_text.py'
       - 'tests/test_site_inline_illustrations.py'
       - 'assets/article-carousel.js'
+      - 'tests/article-carousel-browser.mjs'
       - 'tests/test_approved_publisher.py'
       - 'tests/test_site_first_inbox.py'
       - 'tests/test_site_first_release_pr.py'
@@ -185,37 +186,8 @@ jobs:
           print('PASS: Dzen full-text RSS exported atomically with site publication')
           print('PASS: site-first HTML, RSS, rubrics and Sitemap compiled without any external publication')
           PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Verify real gallery navigation in headless Chrome
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 - <<'PY'
-          from pathlib import Path
-          p=Path('articles/site-first-ci-smoke-20261104/index.html')
-          html=p.read_text()
-          # Disposable page only: test both arrow and keyboard navigation
-          # after layout, with reduced motion for deterministic assertions.
-          probe="""<script>
-          addEventListener('load',()=>{
-            const g=document.querySelector('.editorial-carousel');
-            const t=g.querySelector('.editorial-carousel-track');
-            const c=g.querySelector('.editorial-carousel-count');
-            const next=g.querySelector('[data-carousel-next]');
-            const prev=g.querySelector('[data-carousel-prev]');
-            const wait=()=>new Promise(r=>setTimeout(r,150));
-            (async()=>{
-              if(!prev.disabled||next.disabled||c.textContent!=='1 / 2')throw Error('initial state');
-              next.click();await wait();
-              if(c.textContent!=='2 / 2'||!next.disabled||prev.disabled)throw Error('next state');
-              t.dispatchEvent(new KeyboardEvent('keydown',{key:'Home',bubbles:true}));
-              await wait();
-              if(c.textContent!=='1 / 2'||!prev.disabled)throw Error('keyboard state');
-              if(t.scrollWidth<=t.clientWidth||document.documentElement.scrollWidth>innerWidth)throw Error('overflow');
-              document.body.dataset.galleryTest='passed';
-            })().catch(e=>{document.body.dataset.galleryTest='failed';document.body.append(e.message)});
-          });
-          </script>"""
-          p.write_text(html.replace('</body>',probe+'</body>'))
-          PY
-          google-chrome --headless --no-sandbox --disable-dev-shm-usage --allow-file-access-from-files --force-prefers-reduced-motion --window-size=390,844 --virtual-time-budget=10000 --dump-dom "file://$PWD/articles/site-first-ci-smoke-20261104/index.html" > "$RUNNER_TEMP/hpii-carousel.html"
-          grep -F 'data-gallery-test="passed"' "$RUNNER_TEMP/hpii-carousel.html"
+        run: node tests/article-carousel-browser.mjs articles/site-first-ci-smoke-20261104/index.html

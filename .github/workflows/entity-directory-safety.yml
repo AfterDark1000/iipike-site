@@ -102,7 +102,7 @@ jobs:
                    'editorial_inbox/RICH_TEXT_FORMAT.md', 'admin/dzen-tables.js',
                    'tests/test_admin_dashboard.py', 'tests/dzen-tables.test.cjs',
                    'tests/dzen-tables-browser.html', 'assets/article-carousel.js',
-                   'tests/test_site_inline_illustrations.py'}
+                   'tests/test_site_inline_illustrations.py', 'tests/article-carousel-browser.mjs'}
           # New approved rubric keys need matching editor validation, regression
           # tests and an editorial evidence policy; still run every read-only
           # site/publisher test above before allowing this *exact* file set.
