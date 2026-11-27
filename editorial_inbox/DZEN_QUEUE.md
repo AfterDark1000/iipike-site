@@ -2,7 +2,7 @@
 
 > Рабочая страница GitHub. **Репозиторий публичный**; это не закрытый кабинет.
 
-**Всего одобренных:** 289 · **В каталоге Дзена подтверждены:** 254 · **Не подтверждены, уже на сайте:** 10 · **Не подтверждены, ждут сайт:** 25
+**Всего одобренных:** 292 · **В каталоге Дзена подтверждены:** 254 · **Не подтверждены, уже на сайте:** 10 · **Не подтверждены, ждут сайт:** 28
 
 **Как пользоваться:** открой название статьи → получишь отдельный читаемый Markdown с заголовком и утверждённым текстом для Дзена. Выдели текст на странице или используй кнопку GitHub «Copy raw file» (она копирует Markdown-разметку). Обложка открывается отдельно. Подтверждённые ссылки на другие статьи ХПИИ в этой копии автоматически ведут в Дзен. Оригинальный Markdown и сайт не меняются. Ссылки без подтверждённого соответствия помечаются для ручной проверки.
 
@@ -55,7 +55,10 @@
 | 22 | [Глава Microsoft предупредил о сбоях из-за борьбы с ИИ-хакерами](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-nadella-ai-cyber-infrastructure-20261118.md) | **Не ранее 28.11.2026 17:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-nadella-ai-cyber-infrastructure-20261118.webp) |
 | 23 | [Microsoft выпустила нейросеть, которая не умеет болтать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/microsoft-decision-1-1-20261117.md) | **Не ранее 28.11.2026 18:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-decision-1-1-20261117.webp) |
 | 24 | [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/ai2-theorizer-scientific-hypotheses-20261119.md) | **Не ранее 28.11.2026 19:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
-| 25 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/minimax-data-retention-leak-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 25 | [SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.md) | **Не ранее 28.11.2026 20:07 (Усть-Катав)**; пауза до 27.11.2026 14:15 (Усть-Катав) | Пока в очереди сайта | [Открыть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.webp) |
+| 26 | [Claude переписал собственный API и сократил нагрузку на процессоры на 70%](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/anthropic-claude-api-rust-migration-20261125.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 27 | [Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/minimax-data-retention-leak-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
+| 28 | [Сбер научил Kandinsky собирать людей с разных фотографий в одном видео](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/dzen_texts/sber-kandinsky-6-5-20261126.md) | Нет в последнем прогнозе сайта | Пока в очереди сайта | Нет |
 
 ## 3. Подтверждены опубликованными в Дзене
 
