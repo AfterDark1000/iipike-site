@@ -239,6 +239,7 @@
 // No editorial text, links, metadata, publication state or analytics changed.
 (function () {
   "use strict";
+  if (typeof document.querySelector !== "function") return;
   var canonical = document.querySelector('head link[rel="canonical"]');
   if (!canonical || !/^https:\/\/iipike\.ru\/articles\/[a-z0-9-]+\/$/.test(canonical.href)) return;
   var main = document.querySelector("main.wrap");
