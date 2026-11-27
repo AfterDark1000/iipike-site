@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-373-approve-20261127.json",
+  "request_sha256": "d60bfdceef788edf4d868bceadf18005430df8b1201e343ff941041fbba5c9af",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-a1429146f3f2b49f",
+  "pool_sequence": 373,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T17:10:17.122439+00:00",
+  "note": "Главред утвердил заголовок «Ubisoft научит игровых персонажей помнить вас» и удаление слова «Причём». Статья и очереди Threads/X сохранены и перечитаны; ожидается обложка."
+}
