@@ -9384,5 +9384,28 @@
     "products": [
       "muse"
     ]
+  },
+  {
+    "title": "NVIDIA заработала $65 млрд чистыми за три месяца, а дата-центры принесли ей 93% выручки",
+    "summary": "NVIDIA получила $115,8 млрд квартальной выручки и $65,3 млрд чистой прибыли, начала поставки Vera Rubin NVL72.",
+    "published": "2026-11-27",
+    "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx",
+    "cover": "assets/editorial/nvidia-q3-fy2027-earnings-vera-rubin-20261117.webp",
+    "rubric": "news",
+    "vk_title": "💰 NVIDIA заработала $65 млрд ЧИСТЫМИ всего за три месяца",
+    "vk_summary": "Компания удвоила квартальную выручку и начала поставки нового поколения вычислительных систем Vera Rubin NVL72.",
+    "published_at_utc": "2026-11-27T11:45:40Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+    "url": "articles/nvidia-q3-fy2027-earnings-vera-rubin-20261117/",
+    "topics": [
+      "finance",
+      "infrastructure"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
