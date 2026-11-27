@@ -195,6 +195,9 @@ def approved_article(root, slug):
         if (parsed != data["paragraphs"] and
                 markdown_to_blocks(data["article_markdown"], tables=False) != data["paragraphs"]):
             raise ValueError("Approved paragraphs differ from original article_markdown")
+    if "original_article_markdown" in data or "article_edit_id" in data:
+        from scripts.site_article_edits import original_markdown
+        original_markdown(root, data)
     return data
 
 
