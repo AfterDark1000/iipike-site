@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-20261127-approve-593a.json",
+  "request_sha256": "c2fc571adc5d0b2169bc848da5db756b3d7da5f698b321920c8091940df0444e",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-5b76b957ab1d0f60",
+  "pool_sequence": 593,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T08:31:50.166290+00:00",
+  "note": "Утверждено главредом: статья, цитата, перелинковка и социальные тексты сохранены."
+}
