@@ -11,6 +11,8 @@ on:
       - 'rubrics/**/index.html'
       - 'tests/test_site_rubric_order.py'
       - 'tests/rubric-r2-production-browser.mjs'
+      - 'tests/article-a4-production-browser.mjs'
+      - 'assets/social-footer.js'
       - 'scripts/publish_approved_article.py'
       - 'scripts/site_related_cards.py'
       - 'tests/test_site_related_cards.py'
@@ -31,6 +33,8 @@ on:
       - 'rubrics/**/index.html'
       - 'tests/test_site_rubric_order.py'
       - 'tests/rubric-r2-production-browser.mjs'
+      - 'tests/article-a4-production-browser.mjs'
+      - 'assets/social-footer.js'
       - 'scripts/publish_approved_article.py'
       - 'scripts/site_related_cards.py'
       - 'tests/test_site_related_cards.py'
@@ -77,3 +81,5 @@ jobs:
           node-version: '22'
       - name: Verify actual rubric R2 layout in Chrome
         run: node tests/rubric-r2-production-browser.mjs
+      - name: Verify published A4 article layout on desktop and phones
+        run: node tests/article-a4-production-browser.mjs
