@@ -2281,6 +2281,18 @@
           "source_url": "https://allenai.org/blog/theorizer-in-asta"
         }
       ]
+    },
+    {
+      "key": "sber",
+      "name": "Сбер",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "sber-gigachat-4-20261126",
+          "source_url": "https://giga.chat/blog/posts/gigachat-4"
+        }
+      ]
     }
   ],
   "products": [
@@ -4529,6 +4541,19 @@
         {
           "article_id": "ai2-theorizer-scientific-hypotheses-20261119",
           "source_url": "https://allenai.org/blog/theorizer-in-asta"
+        }
+      ]
+    },
+    {
+      "key": "gigachat",
+      "name": "GigaChat",
+      "company": "sber",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "sber-gigachat-4-20261126",
+          "source_url": "https://giga.chat/blog/posts/gigachat-4"
         }
       ]
     }
