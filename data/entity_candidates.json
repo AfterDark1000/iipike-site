@@ -2305,6 +2305,30 @@
           "source_url": "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=04e81e59-e42a-4bce-b4bd-7400fc372b26&regionID=77&type=NEWS"
         }
       ]
+    },
+    {
+      "key": "john-deere",
+      "name": "John Deere",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "john-deere-orchard-ai-acquisition-20261119",
+          "source_url": "https://www.deere.com/en-us/john-deere-news/john-deere-acquires-orchard-ai"
+        }
+      ]
+    },
+    {
+      "key": "orchard-ai",
+      "name": "Orchard AI",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "john-deere-orchard-ai-acquisition-20261119",
+          "source_url": "https://www.deere.com/en-us/john-deere-news/john-deere-acquires-orchard-ai"
+        }
+      ]
     }
   ],
   "products": [
@@ -4583,6 +4607,32 @@
         {
           "article_id": "sber-kandinsky-6-5-20261126",
           "source_url": "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=04e81e59-e42a-4bce-b4bd-7400fc372b26&regionID=77&type=NEWS"
+        }
+      ]
+    },
+    {
+      "key": "fruitscope-vision",
+      "name": "FruitScope Vision",
+      "company": "orchard-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "john-deere-orchard-ai-acquisition-20261119",
+          "source_url": "https://www.orchard.ai/"
+        }
+      ]
+    },
+    {
+      "key": "canary-ai",
+      "name": "Canary AI",
+      "company": "orchard-ai",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "john-deere-orchard-ai-acquisition-20261119",
+          "source_url": "https://www.orchard.ai/"
         }
       ]
     }
