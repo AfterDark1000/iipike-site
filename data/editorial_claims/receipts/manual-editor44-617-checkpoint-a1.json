@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-617-checkpoint-a1.json",
+  "request_sha256": "dcc08de7f1b0928eca2946faa966d125f137500f8e94b0c7160a653627c471eb",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-92a9dea02f472d08",
+  "pool_sequence": 617,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T09:55:37.475582+00:00",
+  "note": "Проверено: Reuters 26.11 (полный текст в Daily Maverick), BIS 16.11 / правила с 19.11, Anthropic 12.10. GLM-5.5 рискует сдвинуться на I квартал 2027 или позже; Kimi K4 — к середине 2027 по оценке источника при утрате зарубежных мощностей. Каталог Дзена: связанная статья 6afeb458eb5aac0b021d90ac о дистилляции. Готовится комплект на утверждение, официальных дат переноса компании не объявили."
+}
