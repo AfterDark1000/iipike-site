@@ -107,7 +107,7 @@ jobs:
                    'tests/test_site_article_edits.py', '.github/workflows/article-edits.yml',
                    'data/article_edits/.gitkeep', '.github/workflows/dzen-reading-queue.yml',
                    'assets/social-footer.js', 'admin/article-edit/index.html', 'admin/article-edit/app.js',
-                   'admin-auth-worker/tests/article-edit.test.mjs', 'docs/ARTICLE_EDITS.md', 'tests/article-edit-scroll-browser.mjs'}
+                   'admin-auth-worker/tests/article-edit.test.mjs', 'docs/ARTICLE_EDITS.md', 'tests/article-edit-scroll-browser.mjs', 'tests/rubric-r2-production-browser.mjs'}
           # New approved rubric keys need matching editor validation, regression
           # tests and an editorial evidence policy; still run every read-only
           # site/publisher test above before allowing this *exact* file set.
