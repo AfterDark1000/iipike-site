@@ -993,3 +993,15 @@ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) mai
  html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) main.wrap:has(> .article-title + .cover + .article-body) .article-text .editorial-table{min-width:520px;font-size:13px}
  html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) main.wrap:has(> .article-title + .cover + .article-body) .article-text .editorial-table th,html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) main.wrap:has(> .article-title + .cover + .article-body) .article-text .editorial-table td{padding:9px 8px}
 }
+
+/* Fit the shared header, footer and consent controls on the smallest article screens. */
+@media(max-width:360px){
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .header .bar{flex-wrap:wrap;gap:10px;padding:12px 14px}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .header .menu{flex-wrap:wrap;gap:8px 12px}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .header .logo{min-width:0;gap:12px}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .footer .hpi-social-grid{grid-template-columns:minmax(0,1fr)}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .hpi-consent-actions{flex-wrap:wrap}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .hpi-consent-actions button{min-width:0;padding:10px}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-title,html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-text{overflow-wrap:anywhere}
+ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-title .topic-links a,html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) body:has(>main.wrap > .article-title + .cover + .article-body) .article-entity-links a{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+}
