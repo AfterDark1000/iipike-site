@@ -42,6 +42,29 @@
           "source_url": "https://www.thewrap.com/industry-news/tech/ai-film-gods-dont-give-gifts-youtube-grimes-gossip-goblin/"
         }
       ]
+    },
+    {
+      "key": "ai-in-russia",
+      "name": "ИИ в России",
+      "description": "Российские разработки и исследования ИИ, применение нейросетей в России, местное регулирование, доступность и оплата зарубежных ИИ-сервисов для российских пользователей. Не включать международные сюжеты с мимолётным упоминанием России или российского происхождения участника.",
+      "why_not_existing": "Модели, приложения, финансы и законы описывают технологии и отрасли. Здесь самостоятельный сквозной контекст — российский рынок, разработки, внедрение и практические условия использования ИИ в России, независимо от страны происхождения сервиса.",
+      "evidence": [
+        {
+          "article_id": "sber-gigachat-4-20261126"
+        },
+        {
+          "article_id": "russian-ai-subscriptions-investigation-20261127"
+        },
+        {
+          "article_id": "russian-courts-ai-hallucinations"
+        },
+        {
+          "article_id": "na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc"
+        },
+        {
+          "article_id": "mts-virtual-foreign-card-ai-payments-20261124"
+        }
+      ]
     }
   ]
 }
