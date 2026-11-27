@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "stem": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1-r1-v1",
+  "state": "generation_reserved",
+  "reserved_at": "2026-11-27T15:02:53.638Z",
+  "ticket_sha": "c8e082444fd60ae64c3d38301aecb0e6e246f184",
+  "article_id": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1",
+  "revision": 1,
+  "version": 1,
+  "source_draft_blob_sha": "2c7bdd6e4d4c11ee6ef68e01f534cc801dbf60c3",
+  "attempt": 2,
+  "retry_of_claim_sha": "4e640598313bffcc9adabb7c72150d4d029d419b",
+  "retry_failure_sha": "e6492c3369aa5b58b6d17922a8f3b3f0988ce790"
+}
