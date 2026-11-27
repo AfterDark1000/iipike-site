@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26T23:49:07.918580Z",
+  "updated_at": "2026-11-27T00:32:13.262376Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 6
     },
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 8
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 1
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-26T23:49:07.918580Z",
-      "last_success_at": "2026-11-26T23:49:07.918580Z",
+      "checked_at": "2026-11-27T00:32:13.262376Z",
+      "last_success_at": "2026-11-27T00:32:13.262376Z",
       "error": null,
       "fresh_matches": 1
     }
@@ -77,7 +77,7 @@
   },
   "usage": {
     "date": "2026-11-27",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
@@ -93,10 +93,14 @@
       "first_seen_at": "2026-11-26T23:49:07.918580Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-27T00:32:13.262376Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-27T00:32:13.262376Z"
     },
     {
       "id": "c07c9fb827ee449fbcad69b4",
@@ -211,10 +215,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "pending",
+      "status": "skipped_by_editor",
       "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-27T00:32:13.262376Z",
+      "reason": "Статья представляет собой водянистую инструкцию по устранению неполадок с кучей повторов, обсуждать тут нечего.",
+      "fact_review": "not_requested",
+      "generated_at": "2026-11-27T00:32:13.262376Z"
     },
     {
       "id": "faaa68d073191fee44505e7d",
@@ -317,12 +325,14 @@
       "first_seen_at": "2026-11-26T15:07:35.223132Z",
       "views": null,
       "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-26T15:07:35.223132Z",
-      "reason": "Не удалось подготовить комментарий",
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, как у них выходит с анимацией переходов между разными кадрами. На словах звучит бодро, но обычно на стыках такие мутанты вылезают, что лучше бы их и не было.",
+      "attempts": 2,
+      "last_attempt_at": "2026-11-27T00:32:13.262376Z",
+      "reason": "Зацепился за деталь про склейку разных снимков в одно видео и сомневаюсь в качестве переходов.",
+      "link_status": "dzen_link_missing",
+      "fact_review": "passed",
+      "generated_at": "2026-11-27T00:32:13.262376Z"
     },
     {
       "id": "ac030ed1cfeedabaa100e0c8",
