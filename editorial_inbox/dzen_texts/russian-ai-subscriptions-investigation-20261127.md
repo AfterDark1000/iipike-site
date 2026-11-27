@@ -25,15 +25,9 @@
 
 Совпадает всё. Даже копейки.
 
-![Сбер и Т-Банк: одинаковая стоимость ChatGPT Plus, скриншоты ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/01-sber-tbank-chatgpt.webp)
-
-![Сбер и Т-Банк: одинаковая стоимость Claude Pro, скриншоты ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/02-sber-tbank-claude.webp)
-
 Заглядываем в информацию о поставщике услуг в приложении Т-Банка и обнаруживаем ООО «Международный платежный оператор» с ИНН 9909718772.
 
 А в инструкциях обоих банков фигурирует один и тот же сервис PLATI VEZDE. Именно его служба поддержки должна помочь покупателю, если после оплаты не придёт письмо с инструкцией по активации.
-
-![Реквизиты поставщика в Т-Банке, скриншот ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/03-tbank-provider.webp)
 
 Ассортимент у обоих банков приличный. Помимо популярных чат-ботов, в каталогах есть генераторы изображений и видео, инструменты для программирования и озвучивания.
 
@@ -55,8 +49,6 @@
 
 Картой можно расплачиваться в зарубежных интернет-сервисах, однако действует она всего 30 дней. Возврат неиспользованных средств условиями предложения не предусмотрен.
 
-![Альфа-Банк: подарочные коды ChatGPT и условия предоплаченной карты](illustrations/russian-ai-subscriptions-investigation-20261127/04-alfa-codes-and-card.webp)
-
 ## Ozon и Wildberries тоже в деле
 
 Похоже, конкурировать маркетплейсы теперь решили ещё и на рынке нейросетей.
@@ -67,15 +59,11 @@
 
 ChatGPT Go стоит 1 200 рублей в месяц, Plus — 2 760 рублей, а Pro 100 — 12 837 рублей.
 
-![Ozon Банк: цены ChatGPT и условия оплаты](illustrations/russian-ai-subscriptions-investigation-20261127/08-ozon-bank.webp)
-
 В Wildberries месячный ChatGPT Plus стоит немного дешевле: 2 626 рублей.
 
 Причём покупателю предлагают два варианта: цифровой ваучер или реквизиты виртуальной карты для самостоятельной оплаты подписки.
 
 Некоторые позиции уже помечены надписью «Раскупили». На момент нашей проверки оформить Claude Pro через витрину Wildberries было невозможно.
-
-![Wildberries: два способа оплаты ChatGPT и недоступные предложения Claude](illustrations/russian-ai-subscriptions-investigation-20261127/09-wildberries.webp)
 
 Заглянули мы и в договор оферты веб-витрины Ozon. Её владельцем указана компания Digitalwallet FZE, зарегистрированная в Объединённых Арабских Эмиратах, а оператором денежных переводов выступает Мурманский расчётный банк.
 
@@ -119,6 +107,18 @@ ChatGPT Go стоит 1 200 рублей в месяц, Plus — 2 760 рубл�
 *Цена не проверена. Прочерк означает, что отдельное предложение не обнаружено при проверке.*
 
 Особняком стоит Альфа-Банк с подарочной картой ChatGPT номиналом 20 долларов за 2 141 рубль.
+
+![Сбер и Т-Банк: одинаковая стоимость ChatGPT Plus, скриншоты ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/01-sber-tbank-chatgpt.webp)
+
+![Сбер и Т-Банк: одинаковая стоимость Claude Pro, скриншоты ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/02-sber-tbank-claude.webp)
+
+![Реквизиты поставщика в Т-Банке, скриншот ХПИИ](illustrations/russian-ai-subscriptions-investigation-20261127/03-tbank-provider.webp)
+
+![Альфа-Банк: подарочные коды ChatGPT и условия предоплаченной карты](illustrations/russian-ai-subscriptions-investigation-20261127/04-alfa-codes-and-card.webp)
+
+![Ozon Банк: цены ChatGPT и условия оплаты](illustrations/russian-ai-subscriptions-investigation-20261127/08-ozon-bank.webp)
+
+![Wildberries: два способа оплаты ChatGPT и недоступные предложения Claude](illustrations/russian-ai-subscriptions-investigation-20261127/09-wildberries.webp)
 
 ## Деньги-то возьмут. А аккаунт не заблокируют?
 
