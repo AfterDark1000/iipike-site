@@ -142,5 +142,24 @@ class TopicNavigationTests(unittest.TestCase):
                              [(x, x.partition(" · ")[2]) for x in labels])
 
 
+    def test_topic_atlas_preserves_all_active_topics_and_future_extensions(self):
+        import re
+        from unittest.mock import patch
+        from scripts.site_topics import render_topics_index
+        records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+        html = render_topics_index(records)
+        links = re.findall(r'<a class="directory-row" href="([^/]+)/"', html)
+        active = [key for key in TOPICS if any(key in r.get("topics", []) for r in records)]
+        self.assertEqual(len(links), len(active))
+        self.assertCountEqual(links, active)
+        self.assertEqual(html.count('<svg aria-hidden="true"'), len(active))
+        self.assertEqual(re.findall(r'<span class="row-count">(\d+)<small>', html),
+                         [str(sum(key in r.get("topics", []) for r in records)) for key in links])
+        with patch.dict(TOPICS, {"new-demo-topic": ("Новая тема", "Описание")}):
+            new_html = render_topics_index([{"topics": ["new-demo-topic"]}])
+            self.assertIn("Другие темы", new_html)
+            self.assertIn('href="new-demo-topic/"', new_html)
+
+
 if __name__ == "__main__":
     unittest.main()
