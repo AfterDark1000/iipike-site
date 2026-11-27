@@ -9513,5 +9513,25 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "Два юриста Минюста США рискуют карьерой из-за нейросетей",
+    "summary": "Один сотрудник ведомства представил суду выдуманные цитаты, другой передал искусственному интеллекту конфиденциальные документы и медицинские данные коллег.",
+    "published": "2026-11-27",
+    "source_url": "https://www.justice.gov/opr/2026-investigative-summary-5",
+    "cover": "assets/editorial/doj-lawyers-ai-misconduct-20261117.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ Два юриста Минюста США рискуют КАРЬЕРОЙ из-за нейросетей",
+    "vk_summary": "Один сотрудник ведомства представил суду выдуманные цитаты, другой передал искусственному интеллекту конфиденциальные документы и медицинские данные коллег.",
+    "published_at_utc": "2026-11-27T17:15:44Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "doj-lawyers-ai-misconduct-20261117",
+    "url": "articles/doj-lawyers-ai-misconduct-20261117/",
+    "topics": [
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
