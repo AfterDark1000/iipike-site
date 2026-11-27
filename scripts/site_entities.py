@@ -8,6 +8,7 @@ from html import escape
 import json
 from pathlib import Path
 from datetime import date
+from itertools import groupby
 import re
 
 ENTITY_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
@@ -76,7 +77,7 @@ def validate_public_registry(registry, records):
             raise ValueError("Product must refer to a registered company")
     return known
 
-from scripts.site_rubrics import publication_date, RUBRICS
+from scripts.site_rubrics import publication_sort_key, publication_label, navigation, RUBRICS
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
@@ -108,27 +109,9 @@ def icon_markup(key, prefix, *, large=False):
 
 
 def shell(title, description, prefix, canonical, content):
-    return (
-        '<!doctype html><html lang="ru"><head><meta charset="utf-8">'
-        '<meta name="viewport" content="width=device-width,initial-scale=1">'
-        '<meta name="description" content="' + e(description) + '">'
-        '<link rel="canonical" href="' + e(canonical) + '">'
-        '<meta property="og:title" content="' + e(title) + ' — ХПИИ">'
-        '<meta property="og:url" content="' + e(canonical) + '">'
-        '<title>' + e(title) + ' — ХПИИ</title>'
-        '<link rel="stylesheet" href="' + prefix + 'assets/site.css">'
-        '<link rel="stylesheet" href="' + prefix + 'assets/entities.css">'
-        '</head><body><header class="header"><div class="wrap bar">'
-        '<a class="logo" href="' + prefix + '"><span class="badge">ХПИ</span>'
-        '<span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>'
-        '<nav class="menu"><a href="' + prefix + '">Главная</a>'
-        '<a href="' + prefix + 'articles/">Все статьи</a></nav></div></header>'
-        '<main class="wrap">' + content + '</main>'
-        '<footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>'
-        '<script defer src="' + prefix + 'assets/social-footer.js"></script>'
-        '</body></html>\n'
-    )
-
+    current = ' aria-current="page"' if canonical == BASE + "/entities/" else ''
+    return f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6f3eb"><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><meta property="og:title" content="{e(title)} — ХПИИ"><meta property="og:url" content="{e(canonical)}"><title>{e(title)} — ХПИИ</title><link rel="icon" href="{prefix}assets/icon.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css"><link rel="stylesheet" href="{prefix}assets/entities.css"></head><body class="home-v1 rubric-r2 entity-r2"><header class="header"><div class="wrap bar"><a class="logo" href="{prefix}" aria-label="Хроники Пикирующего ИИ — главная"><span class="badge" aria-hidden="true">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a><nav class="menu home-menu" aria-label="Основное меню"><a href="{prefix}articles/">Все статьи</a><a href="{prefix}briefs/">Коротко</a><a href="{prefix}dossier/">Досье</a><a href="{prefix}entities/"{current}>Компании и продукты</a></nav></div></header><div class="home-v1-rubrics"><div class="wrap"><nav class="rubric-navigation" aria-label="Рубрики">{navigation(prefix)}</nav></div></div><main class="wrap rubric-main">{content}</main><footer class="footer"><div class="wrap home-v1-footer"><span>Хроники Пикирующего ИИ · Новости без истерики</span><nav><a href="{prefix}registry/">Архив Дзена</a><a href="{prefix}drafts/">Лаборатория редакции</a><a href="{prefix}feed.xml">RSS</a></nav></div></footer><script defer src="{prefix}assets/social-footer.js"></script></body></html>
+'''
 
 
 def validate_editor_entities(registry, companies=None, products=None, *, compiled=False):
@@ -260,11 +243,11 @@ def render_index(registry):
         )
     total = len(registry["companies"]) + len(registry["products"])
     content = (
-        '<div class="overline">ХПИИ / Каталог</div>'
+        '<div class="rubric-head"><div><span class="rubric-kicker">ХПИИ / Каталог</span>'
         '<h1>Компании и продукты</h1>'
-        '<p class="summary">Новости об участниках индустрии ИИ. '
+        '<p class="rubric-deck">Новости об участниках индустрии ИИ. '
         'В каталог попадают только материалы с подтверждённой редакцией связью; '
-        'подборки пополняются постепенно.</p>'
+        'подборки пополняются постепенно.</p></div><span class="rubric-count">Названий: ' + str(total) + '</span></div>'
         '<div class="entity-search" role="search">'
         '<label for="entity-filter">Найти компанию или продукт</label>'
         '<input id="entity-filter" type="search" autocomplete="off" '
@@ -281,34 +264,42 @@ def render_entity(kind, entry, records, companies):
     if kind not in ("companies", "products"):
         raise ValueError("Invalid entity type")
     prefix = "../../../"
-    rows = sorted(
-        (records[article_id] for article_id in entry["article_ids"]),
-        key=lambda row: (row.get("published_at_utc", row["published"]), row["id"]),
-        reverse=True,
-    )
-    cards = "".join(
-        '<a class="archive-card" href="' + prefix + e(row["url"]) + '">'
-        '<img loading="lazy" src="' + prefix + e(row["cover"]) + '" alt="Обложка статьи">'
-        '<span><small class="date">' + e(publication_date(row["published"])) +
-        ' · ' + e(RUBRICS[row.get("rubric", "news")]["name"]) + '</small>'
-        '<h3>' + e(row["title"]) + '</h3><p>' + e(row["summary"]) + '</p></span>'
-        '<span aria-hidden="true">↗</span></a>'
-        for row in rows
-    )
+    rows = sorted((records[article_id] for article_id in entry["article_ids"]),
+                  key=publication_sort_key, reverse=True)
+
+    def card(row):
+        label = publication_label(row)
+        _, _, time = label.partition(" · ")
+        rubric = row.get("rubric", "news")
+        return (
+            f'<a class="archive-card" href="{prefix}{e(row["url"])}">'
+            f'<span class="rubric-time" aria-label="{e(label)}">{e(time)}</span>'
+            f'<img loading="lazy" src="{prefix}{e(row["cover"])}" alt="Обложка статьи">'
+            f'<div class="rubric-copy"><h3>{e(row["title"])}</h3>'
+            f'<small class="date"><span class="archive-rubric" data-rubric="{e(rubric)}">{e(RUBRICS[rubric]["name"])}</span></small>'
+            f'<p>{e(row["summary"])}</p></div>'
+            '<span class="rubric-arrow" aria-hidden="true">↗</span></a>'
+        )
+
+    days = []
+    for day, group in groupby(rows, key=lambda r: publication_label(r).partition(" · ")[0]):
+        days.append('<section class="rubric-day"><h2 class="rubric-day-title">' +
+                    e(day) + '</h2><div class="rubric-day-list">' +
+                    "\n".join(card(row) for row in group) + '</div></section>')
+    cards = "\n".join(days)
     owner = (
-        '<p class="date">Разработчик: <a href="../../companies/' +
+        '<p class="entity-owner">Разработчик: <a href="../../companies/' +
         e(entry["company"]) + '/">' + e(companies[entry["company"]]) + '</a></p>'
         if kind == "products" else ""
     )
+    category = "Компания" if kind == "companies" else "Продукт"
     content = (
-        '<div class="overline">ХПИИ / Каталог / ' +
-        ("Компании" if kind == "companies" else "Продукты") + '</div>'
+        '<div class="rubric-head entity-detail-head"><div><a class="entity-back" href="../../">← Компании и продукты</a>'
+        '<span class="rubric-kicker">ХПИИ / ' + category + '</span>'
         '<div class="entity-hero">' + icon_markup(entry["key"], prefix, large=True) +
-        '<div><h1>' + e(entry["name"]) + '</h1>'
-        '<p class="summary">' + e(entry["description"]) + '</p></div></div>' + owner +
-        '<p class="date">' + str(len(rows)) + ' материалов в редакционной подборке</p>'
-        '<p><a href="../../">← Компании и продукты</a></p>'
-        '<section class="archive"><h2>Публикации</h2>' + cards + '</section>'
+        '<div><h1>' + e(entry["name"]) + '</h1><p class="rubric-deck">' + e(entry["description"]) +
+        '</p>' + owner + '</div></div></div><span class="rubric-count">Материалов: ' +
+        str(len(rows)) + '</span></div>' + cards
     )
     url = BASE + "/entities/" + kind + "/" + entry["key"] + "/"
     return shell(entry["name"], entry["description"], prefix, url, content)

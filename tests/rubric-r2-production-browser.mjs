@@ -59,7 +59,7 @@ try{
   const layout=()=>evaluate('(()=>{if(document.readyState!=="complete")return null;const card=document.querySelector(".rubric-r2 .archive-card");if(!card)return null;const r=card.getBoundingClientRect(),im=card.querySelector("img").getBoundingClientRect(),copy=card.querySelector(".rubric-copy").getBoundingClientRect(),time=card.querySelector(".rubric-time").getBoundingClientRect();return {url:location.href,viewport:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,card:r.width,img:im.width,ib:im.bottom,ct:copy.top,cw:copy.width,time:time.top,title:parseFloat(getComputedStyle(card.querySelector("h3")).fontSize),radius:parseFloat(getComputedStyle(card).borderTopLeftRadius),dates:document.querySelectorAll(".rubric-day-title").length,columns:getComputedStyle(card).gridTemplateColumns.split(" ").length}})()');
   async function check(rubric,width){
     await call("Emulation.setDeviceMetricsOverride",{width,height:844,deviceScaleFactor:1,mobile:false});
-    const url=pathToFileURL(resolve(rubric==="archive"?"articles/index.html":"rubrics/"+rubric+"/index.html")).href;
+    const url=pathToFileURL(resolve(rubric==="archive"?"articles/index.html":rubric.startsWith("entities/")?rubric+"/index.html":"rubrics/"+rubric+"/index.html")).href;
     await call("Page.navigate",{url});
     return until("R2 "+rubric+" at "+width,async()=>{const s=await layout();return s?.url===url&&s.viewport===width?s:null});
   }
@@ -87,7 +87,17 @@ try{
     else if(width<=700)assert.equal(a.columns,2);
     else assert.ok(a.columns===4&&Math.abs(a.img-156)<=2,"archive desktop R2");
   }
-  console.log("PASS: five rubrics and full article archive R2 responsive layout");
+  for(const page of ["entities/companies/openai","entities/products/chatgpt"]){
+    for(const width of [320,390,650,1440]){
+      const s=await check(page,width);
+      console.log(page,width,s);
+      assert.ok(!s.overflow&&s.dates>0,"entity R2 fits viewport");
+      if(width<=540)assert.ok(s.columns===1&&s.img>=s.card-3&&s.ct>=s.ib,"entity mobile cover");
+      else if(width<=700)assert.equal(s.columns,2);
+      else assert.ok(s.columns===4&&Math.abs(s.img-156)<=2,"entity desktop R2");
+    }
+  }
+  console.log("PASS: rubrics, archive and entity R2 responsive layout");
 }finally{
   ws?.close();
   chrome.kill();
