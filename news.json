@@ -9407,5 +9407,29 @@
       "nvidia"
     ],
     "products": []
+  },
+  {
+    "title": "Маск пошёл в суд, чтобы не раскрывать, на чём обучали Grok",
+    "summary": "xAI оспаривает закон Калифорнии о раскрытии сведений об обучающих данных нейросетей. Апелляционный суд провёл слушания 18 ноября.",
+    "published": "2026-11-27",
+    "source_url": "https://knightcolumbia.org/litigation/xai-v-bonta",
+    "cover": "assets/editorial/xai-california-training-data-disclosure-appeal-20261118.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ Маск через суд защищает СЕКРЕТЫ обучения Grok",
+    "vk_summary": "Калифорния требует от разработчиков нейросетей раскрывать источники обучающих данных. Юристы xAI сравнили эту информацию с секретным рецептом Coca-Cola.",
+    "published_at_utc": "2026-11-27T12:45:42Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "xai-california-training-data-disclosure-appeal-20261118",
+    "url": "articles/xai-california-training-data-disclosure-appeal-20261118/",
+    "topics": [
+      "society"
+    ],
+    "companies": [
+      "xai"
+    ],
+    "products": [
+      "grok"
+    ]
   }
 ]
