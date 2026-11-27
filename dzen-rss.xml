@@ -1,5 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Хроники Пикирующего ИИ</title><link>https://iipike.ru/</link><description>Полные утверждённые статьи ХПИИ для RSS-трансляции в Дзен</description><language>ru-RU</language><item><title>Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность</title><link>https://iipike.ru/articles/proton-lumo-desktop-permissions-20261117/</link><guid isPermaLink="true">https://iipike.ru/articles/proton-lumo-desktop-permissions-20261117/</guid><pubDate>Fri, 27 Nov 2026 05:30:52 GMT</pubDate><description>Proton выпустила Lumo Desktop для Windows, macOS и Linux с отдельными разрешениями на действия ИИ и поддержкой заданий по расписанию.</description><enclosure url="https://iipike.ru/assets/editorial/proton-lumo-desktop-permissions-20261117.webp" length="462632" type="image/webp"/><content:encoded><![CDATA[<p><img src="https://iipike.ru/assets/editorial/proton-lumo-desktop-permissions-20261117.webp" alt="Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность"></p>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Хроники Пикирующего ИИ</title><link>https://iipike.ru/</link><description>Полные утверждённые статьи ХПИИ для RSS-трансляции в Дзен</description><language>ru-RU</language><item><title>Сбер и Т-Банк торгуют ChatGPT и Claude. Мы проверили 9 приложений и выяснили, кто за этим стоит</title><link>https://iipike.ru/articles/russian-ai-subscriptions-investigation-20261127/</link><guid isPermaLink="true">https://iipike.ru/articles/russian-ai-subscriptions-investigation-20261127/</guid><pubDate>Fri, 27 Nov 2026 06:14:28 GMT</pubDate><description>Редакция ХПИИ проверила девять российских приложений: цены, ассортимент и условия приобретения зарубежных ИИ-подписок. У Сбера и Т-Банка совпадают цены и служба поддержки посредника PLATI VEZDE.</description><enclosure url="https://iipike.ru/assets/editorial/russian-ai-subscriptions-investigation-20261127.webp" length="493850" type="image/webp"/><content:encoded><![CDATA[<p><img src="https://iipike.ru/assets/editorial/russian-ai-subscriptions-investigation-20261127.webp" alt="Сбер и Т-Банк торгуют ChatGPT и Claude. Мы проверили 9 приложений и выяснили, кто за этим стоит"></p>
+<p>До копейки одинаковые цены, одинаковые описания подписок и даже один и тот же бот поддержки в Telegram.</p>
+<p>Именно это мы обнаружили, сравнив предложения Сбера и бывшего Тинькофф.</p>
+<p>27 ноября редакция ХПИИ изучила девять приложений российских банков, маркетплейсов и цифровых магазинов. Оказывается, рынок оплаты зарубежных нейросетей уже вовсю освоили крупнейшие российские компании.</p>
+<p>Причём некоторые из них предлагают весьма неожиданные способы оплаты.</p>
+<h2>Сбер и Тинькофф: найдите десять отличий</h2>
+<p>В СберБанк Онлайн зарубежные подписки спрятались в разделе «Платежи» → «Отдых и развлечения» → «Подписки».</p>
+<p>В Т-Банке для них предусмотрен раздел «Онлайн-сервисы».</p>
+<p>Сравниваем цены:</p>
+<div role="region" aria-label="Таблица в статье" tabindex="0"><table><thead><tr><th scope="col">Подписка на месяц</th><th scope="col">Сбер</th><th scope="col">Т-Банк</th></tr></thead><tbody><tr><td>ChatGPT Plus</td><td>2 348,82 ₽</td><td>2 348,82 ₽</td></tr><tr><td>Claude Pro</td><td>2 348,82 ₽</td><td>2 348,82 ₽</td></tr><tr><td>Grok Premium</td><td>3 523,23 ₽</td><td>3 523,23 ₽</td></tr><tr><td>Midjourney Standard</td><td>3 523,23 ₽</td><td>3 523,23 ₽</td></tr></tbody></table></div>
+<p>Совпадает всё. Даже копейки.</p>
+<p>Заглядываем в информацию о поставщике услуг в приложении Т-Банка и обнаруживаем ООО «Международный платежный оператор» с ИНН 9909718772.</p>
+<p>А в инструкциях обоих банков фигурирует один и тот же сервис PLATI VEZDE. Именно его служба поддержки должна помочь покупателю, если после оплаты не придёт письмо с инструкцией по активации.</p>
+<p>Ассортимент у обоих банков приличный. Помимо популярных чат-ботов, в каталогах есть генераторы изображений и видео, инструменты для программирования и озвучивания.</p>
+<h2>Альфа-Банк оказался дешевле</h2>
+<p>В обычном каталоге Альфа-Банка выбор нейросетей гораздо скромнее. Зато подарочные карты ChatGPT предлагаются по весьма интересным ценам:</p>
+<ul><li>$20 — 2 141 рубль.</li><li>$100 — 10 707 рублей.</li><li>$200 — 21 414 рублей.</li></ul>
+<p>Указанный в приложении ИНН принадлежит московскому ООО «Софикс».</p>
+<p>Правда, у подарочных кодов есть существенные ограничения по региону аккаунта, валюте предыдущих платежей и способу оформления подписки.</p>
+<p>Но гораздо интереснее другое предложение Альфы: предоплаченные зарубежные банковские карты номиналом от 20 до 500 долларов.</p>
+<p>Карта на 20 долларов обойдётся в 2 312 рублей, на 100 долларов — в 11 563 рубля.</p>
+<p>Картой можно расплачиваться в зарубежных интернет-сервисах, однако действует она всего 30 дней. Возврат неиспользованных средств условиями предложения не предусмотрен.</p>
+<h2>Ozon и Wildberries тоже в деле</h2>
+<p>Похоже, конкурировать маркетплейсы теперь решили ещё и на рынке нейросетей.</p>
+<p>В Ozon Банке мы обнаружили Gemini, Grok, DeepSeek, OpenRouter, Z.ai, Suno, Midjourney и десятки других инструментов.</p>
+<p>Есть отдельные предложения для разработчиков, желающих пополнить баланс OpenAI.</p>
+<p>ChatGPT Go стоит 1 200 рублей в месяц, Plus — 2 760 рублей, а Pro 100 — 12 837 рублей.</p>
+<p>В Wildberries месячный ChatGPT Plus стоит немного дешевле: 2 626 рублей.</p>
+<p>Причём покупателю предлагают два варианта: цифровой ваучер или реквизиты виртуальной карты для самостоятельной оплаты подписки.</p>
+<p>Некоторые позиции уже помечены надписью «Раскупили». На момент нашей проверки оформить Claude Pro через витрину Wildberries было невозможно.</p>
+<p>Заглянули мы и в договор оферты веб-витрины Ozon. Её владельцем указана компания Digitalwallet FZE, зарегистрированная в Объединённых Арабских Эмиратах, а оператором денежных переводов выступает Мурманский расчётный банк.</p>
+<p>Поддержка покупателей осуществляется через сервис Pay Digital. Этот же сервис мы обнаружили в приложении ещё одного крупного российского банка.</p>
+<h2>ВТБ, Газпромбанк и МТС</h2>
+<p>В Газпромбанке ChatGPT одиноко обосновался в разделе «Платежи» → «Развлечения».</p>
+<p>За месяц Plus просят 2 674 рубля. В случае возникновения проблем покупателя направляют в поддержку Pay Digital.</p>
+<p>У ВТБ выбор заметно шире. Помимо ChatGPT, присутствуют Midjourney, ElevenLabs, Suno, Lovable и другие нейросети. Месячный ваучер ChatGPT Plus стоит 2 695 рублей.</p>
+<p>В приложении «МТС Деньги» ChatGPT Plus предлагается за 2 576 рублей. Есть даже комбинированные подписки: например, ChatGPT Plus и Midjourney Standard вместе стоят 5 696 рублей.</p>
+<p>А совсем недавно МТС <a href="https://dzen.ru/a/awbEN7NGE31aN1Mf">начала продавать зарубежные банковские карты, которые можно пополнять из России</a>.</p>
+<h2>А что в RuStore?</h2>
+<p>В российском магазине приложений тоже появился солидный ассортимент зарубежных нейросетей.</p>
+<p>Правда, ChatGPT и Claude на момент нашей проверки в приложении обнаружить не удалось.</p>
+<p>Зато месяц Midjourney Standard стоит 4 281 рубль, ElevenLabs Creator — 3 373 рубля, а за 20 долларов на балансе OpenAI API просят 2 984 рубля.</p>
+<h2>Где дешевле?</h2>
+<p>Вот что получилось по итогам проверки 27 ноября.</p>
+<div role="region" aria-label="Таблица в статье" tabindex="0"><table><thead><tr><th scope="col">Площадка</th><th scope="col">ChatGPT Plus, месяц</th><th scope="col">Claude Pro, месяц</th><th scope="col">Midjourney Standard, месяц</th></tr></thead><tbody><tr><td>Сбер</td><td>2 349 ₽</td><td>2 349 ₽</td><td>3 523 ₽</td></tr><tr><td>Т-Банк</td><td>2 349 ₽</td><td>2 349 ₽</td><td>3 523 ₽</td></tr><tr><td>МТС Деньги</td><td>2 576 ₽</td><td>—</td><td>—</td></tr><tr><td>Wildberries</td><td>2 626 ₽</td><td>Раскупили</td><td>3 746 ₽</td></tr><tr><td>Газпромбанк</td><td>2 674 ₽</td><td>—</td><td>—</td></tr><tr><td>ВТБ</td><td>2 695 ₽</td><td>—</td><td>Есть*</td></tr><tr><td>Ozon Банк</td><td>2 760 ₽</td><td>—</td><td>Есть*</td></tr><tr><td>RuStore</td><td>—</td><td>—</td><td>4 281 ₽</td></tr></tbody></table></div>
+<p><em>Цена не проверена. Прочерк означает, что отдельное предложение не обнаружено при проверке.</em></p>
+<p>Особняком стоит Альфа-Банк с подарочной картой ChatGPT номиналом 20 долларов за 2 141 рубль.</p>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/01-sber-tbank-chatgpt.webp" alt="Сбер и Т-Банк: одинаковая стоимость ChatGPT Plus, скриншоты ХПИИ"></figure>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/02-sber-tbank-claude.webp" alt="Сбер и Т-Банк: одинаковая стоимость Claude Pro, скриншоты ХПИИ"></figure>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/03-tbank-provider.webp" alt="Реквизиты поставщика в Т-Банке, скриншот ХПИИ"></figure>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/04-alfa-codes-and-card.webp" alt="Альфа-Банк: подарочные коды ChatGPT и условия предоплаченной карты"></figure>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/08-ozon-bank.webp" alt="Ozon Банк: цены ChatGPT и условия оплаты"></figure>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/09-wildberries.webp" alt="Wildberries: два способа оплаты ChatGPT и недоступные предложения Claude"></figure>
+<h2>Деньги-то возьмут. А аккаунт не заблокируют?</h2>
+<p>Россия по-прежнему отсутствует в списках поддерживаемых стран OpenAI и Anthropic.</p>
+<p>Более того, 12 ноября Anthropic обновила правила, прямо указав, что её сервисами нельзя пользоваться, физически находясь в неподдерживаемой стране.</p>
+<p>Мы уже рассказывали, как <a href="https://dzen.ru/a/auMo8iuAv38GECSD">российский пользователь предъявил Claude паспорт и лишился аккаунта</a>.</p>
+<p>При этом российские банковские приложения спокойно предлагают оплатить подписку на тот самый Claude.</p>
+<p>Покупка через известный банк не отменяет ограничений разработчика нейросети. А вернуть деньги за уже отправленный цифровой код, судя по условиям некоторых продавцов, может оказаться непросто.</p>
+<p>Все девять приложений мы проверили самостоятельно. Изучили каталоги, цены, условия и сведения о поставщиках. Контрольных покупок не проводили.</p>
+<p>Поэтому прежде чем отдавать несколько десятков тысяч рублей за годовую подписку, стоит выяснить, что именно вам продают и кто будет отвечать, если воспользоваться покупкой не получится.</p>
+<figure><img loading="lazy" decoding="async" src="../../assets/editorial/inline/russian-ai-subscriptions-investigation-20261127/10-chatgpt-plus-prices.webp" alt="Сколько стоит месяц ChatGPT Plus: цены в семи приложениях и отдельно подарочная карта Альфа-Банка"></figure>]]></content:encoded></item><item><title>Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность</title><link>https://iipike.ru/articles/proton-lumo-desktop-permissions-20261117/</link><guid isPermaLink="true">https://iipike.ru/articles/proton-lumo-desktop-permissions-20261117/</guid><pubDate>Fri, 27 Nov 2026 05:30:52 GMT</pubDate><description>Proton выпустила Lumo Desktop для Windows, macOS и Linux с отдельными разрешениями на действия ИИ и поддержкой заданий по расписанию.</description><enclosure url="https://iipike.ru/assets/editorial/proton-lumo-desktop-permissions-20261117.webp" length="462632" type="image/webp"/><content:encoded><![CDATA[<p><img src="https://iipike.ru/assets/editorial/proton-lumo-desktop-permissions-20261117.webp" alt="Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность"></p>
 <p>По умолчанию новый ИИ-помощник Proton может даже удалять письма из подключённого почтового ящика без ведома владельца.</p>
 <p>17 ноября швейцарская компания <strong>Proton</strong> выпустила <strong>Lumo Desktop</strong> для Windows, macOS и Linux. Нейросеть умеет работать с файлами на компьютере, выполнять системные команды, подключаться к электронной почте, <strong>Google Drive</strong> и другим сервисам.</p>
 <p>При подключении можно самостоятельно распределить полномочия ИИ:</p>

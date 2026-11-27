@@ -9263,5 +9263,31 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Сбер и Т-Банк торгуют ChatGPT и Claude. Мы проверили 9 приложений и выяснили, кто за этим стоит",
+    "summary": "Редакция ХПИИ проверила девять российских приложений: цены, ассортимент и условия приобретения зарубежных ИИ-подписок. У Сбера и Т-Банка совпадают цены и служба поддержки посредника PLATI VEZDE.",
+    "published": "2026-11-27",
+    "source_url": "https://embedded.multitransfer.ru/ozon/documents/offer-agreement/",
+    "cover": "assets/editorial/russian-ai-subscriptions-investigation-20261127.webp",
+    "rubric": "news",
+    "vk_title": "🔥 Сбер и Тинькофф торгуют зарубежными нейросетями. Кто за этим стоит?",
+    "vk_summary": "Собственное исследование ХПИИ: проверили девять приложений, сравнили реальные цены на ChatGPT, Claude и Midjourney, изучили платёжных посредников и условия покупки.",
+    "published_at_utc": "2026-11-27T06:14:28Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-27",
+    "id": "russian-ai-subscriptions-investigation-20261127",
+    "url": "articles/russian-ai-subscriptions-investigation-20261127/",
+    "topics": [],
+    "companies": [
+      "openai",
+      "anthropic",
+      "xai"
+    ],
+    "products": [
+      "chatgpt",
+      "claude",
+      "grok"
+    ]
   }
 ]
