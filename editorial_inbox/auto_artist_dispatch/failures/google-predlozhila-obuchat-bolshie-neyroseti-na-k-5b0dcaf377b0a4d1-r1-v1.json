@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "stem": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1-r1-v1",
+  "state": "generation_not_started",
+  "error": "Image generation has not started",
+  "image_created": false,
+  "attempt": 1,
+  "claim_blob_sha": "4e640598313bffcc9adabb7c72150d4d029d419b",
+  "source_draft_blob_sha": "2c7bdd6e4d4c11ee6ef68e01f534cc801dbf60c3",
+  "source_text_decision_blob_sha": null,
+  "reported_at": "2026-11-27T11:57:13Z"
+}
