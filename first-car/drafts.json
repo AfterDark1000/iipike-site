@@ -2,10 +2,34 @@
   "schema_version": 1,
   "items": [
     {
-      "id": "first-car:awaEuZfe0wYRvFoO",
-      "url": "https://dzen.ru/a/awaEuZfe0wYRvFoO",
-      "published_at": "2026-11-26T09:01:57.000Z",
-      "title": "GPT‑6 Astra записала программу в веса нейросети: что показало исследование",
+      "id": "first-car:awbN7T7f80f2GNQA",
+      "url": "https://dzen.ru/a/awbN7T7f80f2GNQA",
+      "published_at": "2026-11-27T09:03:10.000Z",
+      "title": "Из-за Grok подали в суд: штаты обвиняют ИИ в создании интимных изображений без согласия",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:awbNu8nf31f2MdFx",
+      "url": "https://dzen.ru/a/awbNu8nf31f2MdFx",
+      "published_at": "2026-11-27T07:08:33.000Z",
+      "title": "Tesla показала ИИ-визуализацию дороги, похожую на вид из видеоигры",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:awbMrpAwxGjapFcE",
+      "url": "https://dzen.ru/a/awbMrpAwxGjapFcE",
+      "published_at": "2026-11-27T07:05:52.000Z",
+      "title": "ChatGPT не работает: что проверить, прежде чем менять настройки",
+      "status": "needs_text",
+      "attempts": 0
+    },
+    {
+      "id": "first-car:awkV7PlcjEzEh9fK",
+      "url": "https://dzen.ru/a/awkV7PlcjEzEh9fK",
+      "published_at": "2026-11-27T05:41:44.000Z",
+      "title": "Как объяснить сложное простыми словами: 7 приемов для экспертного контента",
       "status": "needs_text",
       "attempts": 0
     }
