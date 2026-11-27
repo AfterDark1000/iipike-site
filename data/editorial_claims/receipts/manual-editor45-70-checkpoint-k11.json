@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-70-checkpoint-k11.json",
+  "request_sha256": "533176a6ee1c101730cc5d85c0082e0c17f647b29b448607760c1b8a46f9b440",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-ab23a7fa21e24fb3",
+  "pool_sequence": 70,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T19:41:47.016963+00:00",
+  "note": "12.11.2026 Meta объявила о доступности исходящих звонков Muse в США для платных подписчиков после теста сентября. Посты @Muse https://x.com/Muse/status/2120931418654089392 и @alexandr_wang https://x.com/alexandr_wang/status/2120930586827391350 напрямую 403, подтверждены воспроизведением в датированных TechCrunch, Tom's Guide, VetTV. Официальная справка Meta https://www.meta.com/help/subscriptions/1021145227643680/ обновлена на прошлой неделе: Power $20/мес. 10 звонков/день; Maximum $100/мес. 20 звонков/день. https://www.meta.com/help/superintelligence/4532990443643263/ подтверждает звонки по публичным номерам и форму отказа для бизнеса. Перелинковка google-gemini-tasks-free-calls-shopping-20261117, Dzen ID 6afece813965384d0faea36e, проверена по каталогу и news.json. @Meta, @Muse, @alexandr_wang подтверждены. Отдельная новость, дубля звонков Muse в каталоге и соцочередях не найдено; в прошлую подборку не вошла. Комплект на утверждении."
+}
