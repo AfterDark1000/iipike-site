@@ -2,6 +2,7 @@
 // virtual clock, which can advance timers before the compositor scrolls.
 import assert from "node:assert/strict";
 import {spawn} from "node:child_process";
+import {createServer} from "node:http";
 import {mkdtemp,readFile,rm} from "node:fs/promises";
 import {tmpdir} from "node:os";
 import {join,resolve} from "node:path";
@@ -121,7 +122,42 @@ try{
     assert.equal(s.dayDisplay,width<=700?"block":"grid");
     assert.deepEqual(s.menu,["Все статьи","Коротко","Досье","Компании и продукты"]);
   }
-  console.log("PASS: rubrics, archive, entities, topic and short news layouts");
+  const server=createServer(async(req,res)=>{
+    try{
+      const pathname=new URL(req.url,"http://localhost").pathname;
+      const path=resolve("."+decodeURIComponent(pathname)+(pathname.endsWith("/")?"index.html":""));
+      if(!path.startsWith(resolve(".")+"/"))throw Error("outside root");
+      const content=await readFile(path);
+      res.writeHead(200,{"Content-Type":path.endsWith(".html")?"text/html; charset=utf-8":path.endsWith(".js")?"application/javascript":path.endsWith(".css")?"text/css":path.endsWith(".webp")?"image/webp":"application/octet-stream"});
+      res.end(content);
+    }catch{res.writeHead(404);res.end()}
+  });
+  await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
+  try{
+    await call("Network.setBlockedURLs",{urls:["https://*"]});
+    const origin="http://127.0.0.1:"+server.address().port;
+    for(const pathname of ["/articles/","/rubrics/skynet/","/topics/agents/","/entities/companies/openai/","/briefs/"]){
+      const url=origin+pathname;
+      await call("Page.navigate",{url});
+      const state=()=>evaluate('(()=>{const rows=[...document.querySelectorAll("[data-listing-content] .archive-card,[data-listing-content] .brief-item")];const link=document.querySelector("[data-listing-next]");return {url:location.href,ready:document.readyState==="complete",count:rows.length,unique:new Set(rows.map(r=>r.id||r.getAttribute("href"))).size,href:link?.getAttribute("href"),text:link?.textContent.trim()}})()');
+      const initial=await until("initial 20 "+pathname,async()=>{const s=await state();return s.url===url&&s.ready&&s.count===20?s:null});
+      assert.equal(initial.text,"Показать ещё");assert.equal(initial.href,"page-2.html");
+      await evaluate('document.querySelector("[data-listing-next]").click()');
+      const loaded=await until("append 20 "+pathname,async()=>{const s=await state();return s.url===url&&s.count===40?s:null});
+      assert.equal(loaded.unique,40);
+      if(pathname==="/rubrics/skynet/"){
+        let previous=loaded;
+        while(previous.href){
+          await evaluate('document.querySelector("[data-listing-next]").click()');
+          const n=previous.count;
+          previous=await until("next or final",async()=>{const s=await state();return s.url===url&&s.count>n?s:null});
+          assert.equal(previous.unique,previous.count);assert.ok(previous.count<=n+20);
+        }
+      }
+      console.log("PASS click-driven static continuation",pathname,loaded.count);
+    }
+  }finally{server.closeAllConnections();await new Promise(ok=>server.close(ok))}
+  console.log("PASS: all listing layouts and real network pagination");
 }finally{
   ws?.close();
   chrome.kill();

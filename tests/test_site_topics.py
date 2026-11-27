@@ -130,14 +130,15 @@ class TopicNavigationTests(unittest.TestCase):
             self.assertEqual(path.read_text(encoding="utf-8"), generated, str(path))
             self.assertIn('class="home-v1 rubric-r2 topic-r2"', generated)
         for key in TOPICS:
-            html = pages[ROOT / "topics" / key / "index.html"]
+            from scripts.site_rubrics import listing_markup, listing_days
+            html = listing_markup(ROOT / "topics" / key / "index.html")
             selected = sorted((r for r in records if key in r.get("topics", [])),
                               key=publication_sort_key, reverse=True)
             self.assertEqual(re.findall(r'<a class="archive-card" href="../../articles/([^/]+)/">', html),
                              [r["id"] for r in selected])
             labels = [publication_label(r) for r in selected]
             self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html),
-                             [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])])
+                             listing_days(labels))
             self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
                              [(x, x.partition(" · ")[2]) for x in labels])
 

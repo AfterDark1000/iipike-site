@@ -27,7 +27,7 @@ class PublicEntityCatalogTests(unittest.TestCase):
 
     def test_generated_pages_are_current_indexable_and_canonical(self):
         pages = render_all_entities(self.records, ROOT)
-        self.assertEqual(len(pages), 86)
+        self.assertEqual(sum(p.name == 'index.html' for p in pages), 86)
         self.assertIn(ROOT / "entities/index.html", pages)
         for path, text in pages.items():
             self.assertTrue(path.is_file(), str(path))
@@ -91,13 +91,14 @@ class PublicEntityCatalogTests(unittest.TestCase):
         by_id = {r["id"]: r for r in self.records}
         for kind in ("companies", "products"):
             for entry in self.registry[kind]:
-                html = (ROOT / "entities" / kind / entry["key"] / "index.html").read_text(encoding="utf-8")
+                from scripts.site_rubrics import listing_markup, listing_days
+                html = listing_markup(ROOT / "entities" / kind / entry["key"] / "index.html")
                 records = sorted((by_id[x] for x in entry["article_ids"]), key=publication_sort_key, reverse=True)
                 self.assertEqual(re.findall(r'<a class="archive-card" href="../../../articles/([^/]+)/">', html),
                                  [r["id"] for r in records])
                 labels = [publication_label(r) for r in records]
                 self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html),
-                                 [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])])
+                                 listing_days(labels))
                 self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
                                  [(x, x.partition(" · ")[2]) for x in labels])
                 self.assertIn('class="home-v1 rubric-r2 entity-r2"', html)

@@ -8,6 +8,7 @@ from scripts.site_entities import entity_urls, load_registry
 import shutil
 import tempfile
 import unittest
+from scripts.site_rubrics import listing_markup, listing_days
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,7 +166,7 @@ class PublisherTests(unittest.TestCase):
         import re
         from scripts.site_home import sorted_published
         records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
-        page = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        page = listing_markup(ROOT / "articles/index.html")
         ids = re.findall(r'<a class="archive-card" href="([^"/]+)/">', page)
         self.assertEqual(ids, [r["id"] for r in sorted_published(records)])
 
@@ -481,11 +482,12 @@ class PublisherTests(unittest.TestCase):
         import re
         from scripts.site_home import sorted_published
         from scripts.site_rubrics import publication_label, RUBRICS
-        html = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        html = listing_markup(ROOT / "articles/index.html")
         records = sorted_published(json.loads((ROOT / "news.json").read_text(encoding="utf-8")))
-        self.assertEqual(html, PUBLISHER.render_catalog(records))
+        for path, page in PUBLISHER.render_catalog_pages(records, ROOT).items():
+            self.assertEqual(path.read_text(encoding="utf-8"), page)
         labels = [publication_label(r) for r in records]
-        days = [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])]
+        days = listing_days(labels)
         self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html), days)
         self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
                          [(label, label.partition(" · ")[2]) for label in labels])
