@@ -108,7 +108,20 @@ try{
     assert.ok(!s.overflow&&s.tiles>0,"topic directory fits");
     assert.equal(s.columns,width<=560?3:4);assert.ok(s.groups>=3&&s.icons===s.tiles);assert.equal(s.sectionDisplay,width<=560?"block":"grid");
   }
-  console.log("PASS: rubrics, archive, entities and topic R2 layouts");
+  for(const width of [320,390,650,1440]){
+    await call("Emulation.setDeviceMetricsOverride",{width,height:844,deviceScaleFactor:1,mobile:false});
+    const url=pathToFileURL(resolve("briefs/index.html")).href;
+    await call("Page.navigate",{url});
+    const s=await until("short news wire",async()=>{
+      const result=await evaluate('(()=>{const day=document.querySelector(".brief-wire .brief-day"),row=day?.querySelector(".brief-item");if(document.readyState!=="complete"||!row)return null;return {url:location.href,width:innerWidth,overflow:document.documentElement.scrollWidth>innerWidth,dayDisplay:getComputedStyle(day).display,columns:getComputedStyle(row).gridTemplateColumns.split(" ").length,bodySize:parseFloat(getComputedStyle(row.querySelector("p")).fontSize),groups:document.querySelectorAll(".brief-day").length,stories:document.querySelectorAll(".brief-item").length,images:document.querySelectorAll(".brief-items img").length,menu:[...document.querySelectorAll(".home-menu a")].map(a=>a.textContent)}})()');
+      return result?.url===url&&result.width===width?result:null;
+    });
+    assert.ok(!s.overflow&&s.groups>0&&s.stories>0&&s.images===0&&s.bodySize>=14,"short news wire readable without overflow");
+    assert.equal(s.columns,width<=700?1:2);
+    assert.equal(s.dayDisplay,width<=700?"block":"grid");
+    assert.deepEqual(s.menu,["Все статьи","Коротко","Досье","Компании и продукты"]);
+  }
+  console.log("PASS: rubrics, archive, entities, topic and short news layouts");
 }finally{
   ws?.close();
   chrome.kill();
