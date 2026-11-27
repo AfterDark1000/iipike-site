@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "request": "dispatch-20261127-094650.json",
+  "request_sha256": "1bb887b93b10ef59eb2e3e701fa96725c68d82b10a98bcccf62963b16412176c",
+  "status": "reserved",
+  "pool_id": "n-ed80d1bd7d710065",
+  "pool_sequence": 354,
+  "article_id": "issledovateli-mit-svyazali-data-tsentry-s-zagryaz-ed80d1bd7d710065",
+  "priority": "normal",
+  "title": "Исследователи MIT связали дата-центры с загрязнением воздуха далеко за их пределами",
+  "source_url": "https://ainewsbites.com/mit-data-centers-distant-air-pollution",
+  "claimed_at": "2026-11-27T09:59:52+00:00",
+  "worker": "hpii-auto-editor"
+}

@@ -5290,12 +5290,12 @@
       "summary": "19 ноября. Сообщается об исследовании косвенного воздействия дата-центров на загрязнение воздуха; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T09:59:52+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=dispatch-20261127-094650.json; article_id=issledovateli-mit-svyazali-data-tsentry-s-zagryaz-ed80d1bd7d710065"
     },
     {
       "id": "n-efdbd6c83627cffe",
