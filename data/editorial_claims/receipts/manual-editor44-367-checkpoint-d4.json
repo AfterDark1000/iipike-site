@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-367-checkpoint-d4.json",
+  "request_sha256": "cc4092e6007431c9f68278b96350b81dad8bd5341c742d06144242362a021a5a",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-9342dbf934e428aa",
+  "pool_sequence": 367,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T13:54:50.819585+00:00",
+  "note": "Проверено: OpenAI 19.11, Performance Factory на базе Codex; за чуть более 3 месяцев 1700+ расследований, причины найдены в 600+ случаях, 17 расследований в сутки; 70 из 100 диагнозов точны при ручной оценке. VentureBeat 19.11 со слов команды: ~400 предложенных исправлений, ~50 выпущенных с учётом предложений агента, ~15 непосредственно в виде PR Codex. Выпуск пока одобряет инженер. Архив: codex-git-server, Dzen ID 6ae9af0cc44bda2203fe42ae подтверждён. Комплект на утверждение."
+}
