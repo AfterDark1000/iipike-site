@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T06:32:07.575347+00:00",
-  "valid_until": "2026-11-27T08:02:07.575347+00:00",
+  "prepared_at": "2026-11-27T06:46:51.646127+00:00",
+  "valid_until": "2026-11-27T08:16:51.646127+00:00",
   "status": "ready",
   "counts": {
     "reserved_24h": 0,
@@ -10,7 +10,7 @@
   },
   "job": {
     "kind": "new",
-    "request": "dispatch-20261127-063207.json",
+    "request": "dispatch-20261127-064651.json",
     "candidate": {
       "id": "n-5b0dcaf377b0a4d1",
       "sequence": 353,
@@ -33,7 +33,7 @@
       "priority": "normal",
       "title": "Google предложила обучать большие нейросети на компьютерах в разных частях мира",
       "source_url": "https://ainewsbites.com/google-streaming-diloco-distributed-llm-training",
-      "claimed_at": "2026-11-27T06:32:07.575347+00:00",
+      "claimed_at": "2026-11-27T06:46:51.646127+00:00",
       "worker": "hpii-auto-editor"
     },
     "route": {
@@ -44,8 +44,8 @@
     }
   },
   "main_guard": {
-    "data/site_news_pool.json": "cd3aa64230372db4281e5de865eede19899c6c01",
-    "data/editorial_routing.json": "a3610d74988ab6f350213528ae6ecfd2cdc6369b",
+    "data/site_news_pool.json": "905d5ed712886e2d6b2a7fdc3f9b4f8932d5ac26",
+    "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
     "data/auto_editor/requests": "918bd02137565c043da188607f6fd54ce6a3fd97",
     "data/auto_editor/receipts": "67586e29d0bbf3561315fa28898b810af75dcf11",
     "news.json": "8253f4f47f3faaf60dc234aaf0338392c218bbf8"
