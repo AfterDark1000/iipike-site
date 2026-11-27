@@ -2269,6 +2269,18 @@
           "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
         }
       ]
+    },
+    {
+      "key": "ai2",
+      "name": "Ai2 (Allen Institute for AI)",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "ai2-theorizer-scientific-hypotheses-20261119",
+          "source_url": "https://allenai.org/blog/theorizer-in-asta"
+        }
+      ]
     }
   ],
   "products": [
@@ -4504,6 +4516,19 @@
         {
           "article_id": "microsoft-decision-1-1-20261117",
           "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/"
+        }
+      ]
+    },
+    {
+      "key": "theorizer",
+      "name": "Theorizer",
+      "company": "ai2",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "ai2-theorizer-scientific-hypotheses-20261119",
+          "source_url": "https://allenai.org/blog/theorizer-in-asta"
         }
       ]
     }
