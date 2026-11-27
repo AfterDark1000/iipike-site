@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "request": "20261127-180100-3-deduplicated.json",
+  "request_sha256": "5d2d0ab33fbd494d2975aa1c5e0f4a486331a90e3866412256bc03b8ed9c2812",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 621,
+      "id": "n-3e2210888d08ff89",
+      "title": "Роскосмос разработал ИИ-помощника для космонавтов на МКС"
+    },
+    {
+      "sequence": 622,
+      "id": "n-212dca9dfc7ef653",
+      "title": "Google DeepMind доверила ИИ-агентам часть работы над следующим Gemini"
+    },
+    {
+      "sequence": 623,
+      "id": "n-cb782b6b9192ce1f",
+      "title": "Глава Anthropic выступил против передачи управления развитием ИИ самим нейросетям"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}
