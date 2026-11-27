@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MiniMax признала сохранение ссылок из запросов в режиме нулевого хранения данных. Reuters сообщило о новых подробностях расследования Dragos, а Atlas Cloud прекратила отправлять запросы на серверы MiniMax."><meta property="og:type" content="article">
+<meta property="og:title" content="Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять"><meta property="og:description" content="MiniMax признала сохранение ссылок из запросов в режиме нулевого хранения данных. Reuters сообщило о новых подробностях расследования Dragos, а Atlas Cloud прекратила отправлять запросы на серверы MiniMax.">
+<meta property="og:image" content="https://iipike.ru/assets/editorial/minimax-data-retention-leak-20261126.webp">
+<meta property="og:url" content="https://iipike.ru/articles/minimax-data-retention-leak-20261126/"><meta property="article:published_time" content="2026-11-27T19:45:41Z">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять", "mainEntityOfPage": "https://iipike.ru/articles/minimax-data-retention-leak-20261126/", "inLanguage": "ru", "publisher": {"@type": "Organization", "name": "Хроники Пикирующего ИИ"}, "datePublished": "2026-11-27T19:45:41Z", "image": "https://iipike.ru/assets/editorial/minimax-data-retention-leak-20261126.webp"}</script>
+<link rel="canonical" href="https://iipike.ru/articles/minimax-data-retention-leak-20261126/"><title>Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять — ХПИИ</title>
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/entities.css">
+<link rel="alternate" type="application/rss+xml" href="../../feed.xml" title="Новости ХПИИ">
+<link rel="icon" href="../../assets/icon.svg" type="image/svg+xml"></head>
+<body><header class="header"><div class="wrap bar">
+<a class="logo" href="../../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu"><a href="../">Статьи</a><a href="../../index.html">Главная</a></nav></div></header>
+<main class="wrap"><div class="article-title"><a href="../">← Все статьи</a>
+<p class="kicker"><a href="../../rubrics/news/">Новости ИИ</a></p><h1>Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять</h1>
+<p class="summary">MiniMax признала сохранение ссылок из запросов в режиме нулевого хранения данных. Reuters сообщило о новых подробностях расследования Dragos, а Atlas Cloud прекратила отправлять запросы на серверы MiniMax.</p><p class="date">Опубликовано: 28 ноября 2026 · 00:45</p><nav class="topic-links" aria-label="Темы статьи"><a href="../../topics/cybersecurity/">Кибербезопасность</a><a href="../../topics/safety/">Безопасность и контроль</a></nav><nav class="article-entity-links" aria-label="Компании и продукты статьи"><span class="article-entity-links-label">Компании и продукты</span><a href="../../entities/companies/minimax/"><img src="../../assets/entity-icons/minimax.svg" alt="" loading="lazy">MiniMax</a></nav></div>
+<figure class="cover"><img src="../../assets/editorial/minimax-data-retention-leak-20261126.webp" alt="Обложка: Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять" width="1600" height="900"></figure>
+<section class="article-body"><aside class="sources"><h3>Первоисточник</h3>
+<a href="https://www.minimax.io/blog/update-on-url-access-in-forwarded-api-requests-20261124" target="_blank" rel="noopener noreferrer">Официальное заявление MiniMax о проверке ссылок ↗</a>
+</aside><article class="article-text"><p class="lead">Секретная ссылка, которую исследователи отправили нейросети MiniMax, спустя несколько недель обнаружилась в корпоративном мессенджере Feishu.</p>
+<p>Её открывали с устройств в Пекине и Шанхае.</p>
+<p>26 ноября руководитель исследовательского подразделения компании <strong>Dragos</strong> Эйч Ди Мур рассказал Reuters, что именно китайская <strong>MiniMax</strong> фигурировала в недавнем расследовании утечек данных пользователей нейросетей.</p>
+<p>По результатам этого расследования OpenRouter отключила трёх поставщиков ИИ, а ещё 125 точек доступа к нейросетям лишились статуса, гарантирующего отсутствие хранения запросов.</p>
+<a class="editorial-related-card" href="https://iipike.ru/articles/openrouter-provider-data-leak-20261123/" aria-label="По теме: Ваши секреты из чатов с ИИ могли попасть к хакерам: OpenRouter отключила трёх поставщиков"><img loading="lazy" decoding="async" src="../../assets/editorial/openrouter-provider-data-leak-20261123.webp" alt=""><span class="editorial-related-card-copy"><span class="editorial-related-card-eyebrow">По теме</span><span class="editorial-related-card-title">Ваши секреты из чатов с ИИ могли попасть к хакерам: OpenRouter отключила трёх поставщиков</span><span class="editorial-related-card-meta">Новости ИИ · 23 ноября 2026</span></span></a>
+<p>Исследователи также зафиксировали попытки скачать закрытые репозитории с программным кодом, ссылки на которые отправляли MiniMax.</p>
+<h2>В MiniMax объяснили, что произошло</h2>
+<p>24 ноября компания признала, что её система безопасности извлекала интернет-адреса из пользовательских запросов, сохраняла их в журналах и впоследствии открывала для проверки.</p>
+<blockquote class="editorial-quote"><p>Эта активность затрагивала и запросы, для которых был заявлен режим нулевого хранения данных.</p><footer><cite>Из официального заявления MiniMax (перевод)</cite></footer></blockquote>
+<p>Компания утверждает, что целиком переписки не сохранялись. Механизм проверки ссылок отключили, накопленные адреса удалили.</p>
+<p>Появление секретной ссылки в корпоративном мессенджере и попытки скачать закрытый программный код в заявлении MiniMax не объяснили.</p>
+<p>Американский поставщик доступа к нейросетям <strong>Atlas Cloud</strong> прекратил отправлять запросы на серверы MiniMax и рекомендовал клиентам, пользовавшимся моделями M3, M2.7 и M3.1 Flash через его сервис, заменить переданные нейросетям пароли и ключи доступа.</p></article></section></main>
+<footer class="footer"><div class="wrap"><strong>Хроники Пикирующего ИИ</strong><p>Проверяем факты и указываем первоисточники.</p></div></footer>
+<script defer src="../../assets/social-footer.js"></script></body></html>

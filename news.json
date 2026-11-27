@@ -9558,5 +9558,28 @@
     "products": [
       "muse"
     ]
+  },
+  {
+    "title": "Китайская MiniMax попалась на хранении секретных данных, которые обещала не сохранять",
+    "summary": "MiniMax признала сохранение ссылок из запросов в режиме нулевого хранения данных. Reuters сообщило о новых подробностях расследования Dragos, а Atlas Cloud прекратила отправлять запросы на серверы MiniMax.",
+    "published": "2026-11-28",
+    "source_url": "https://www.minimax.io/blog/update-on-url-access-in-forwarded-api-requests-20261124",
+    "cover": "assets/editorial/minimax-data-retention-leak-20261126.webp",
+    "rubric": "news",
+    "vk_title": "🔓 MiniMax попалась на хранении СЕКРЕТНЫХ ДАННЫХ",
+    "vk_summary": "Исследователи обнаружили отправленную китайской нейросети секретную ссылку в корпоративном мессенджере. Разработчик признал, что его система безопасности сохраняла адреса из запросов даже при включённом режиме нулевого хранения данных.",
+    "published_at_utc": "2026-11-27T19:45:41Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-26",
+    "id": "minimax-data-retention-leak-20261126",
+    "url": "articles/minimax-data-retention-leak-20261126/",
+    "topics": [
+      "cybersecurity",
+      "safety"
+    ],
+    "companies": [
+      "minimax"
+    ],
+    "products": []
   }
 ]
