@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-20261127-1217-chat.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-7957fa800ad20852",
+      "pool_sequence": 591,
+      "title": "На «Севмаше» хотят привлечь ИИ к проектированию судов",
+      "source_url": "https://www.korabel.ru/news/comments/sevmash_osk_budet_ispolzovat_iskusstvennyy_intellekt_pri_sozdanii_novyh_sudov.html",
+      "claimed_at": "2026-11-27T07:17:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-1ce515ae80b3c8ef",
+      "pool_sequence": 592,
+      "title": "В «Т-Технологиях» заявили, что даже айтишники пока не умеют полноценно пользоваться ИИ-агентами",
+      "source_url": "https://eanews.ru/ekaterinburg/20261126112637/it-spetsialistov-i-biznes-upreknuli-v-neumenii-polzovatsya-iskusstvennym-intellektom",
+      "claimed_at": "2026-11-27T07:17:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9f0a38e7728de7cf",
+      "pool_sequence": 606,
+      "title": "Российская платформа Jay Flow открыла коллективный доступ к 50 нейросетям на одном холсте",
+      "source_url": "https://www.cnews.ru/news/line/2026-11-26_just_ai_otkryvaet_komandnyj",
+      "claimed_at": "2026-11-27T07:17:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-c346a0bbaf06a03d",
+      "pool_sequence": 610,
+      "title": "Индия представила собственную языковую и голосовую нейросети Chariot-1",
+      "source_url": "https://www.expresscomputer.in/news/indiaai-mission-backed-chariot-artificial-intelligence-unveils-an-11-billion-parameter-language-model/141773",
+      "claimed_at": "2026-11-27T07:17:40+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-4442885bf03f06b2",
+      "pool_sequence": 611,
+      "title": "Amazon обсуждает возвращение заблокированного ИИ-покупателя Meta",
+      "source_url": "https://fortune.com/2026/11/25/exclusive-amazon-meta-talks-deal-muse-ai-shopping-agent-blockade",
+      "claimed_at": "2026-11-27T07:17:40+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
