@@ -4,7 +4,8 @@ from pathlib import Path
 import re
 import unittest
 
-from scripts.site_rubrics import RUBRICS, render_page, publication_sort_key
+from scripts.site_rubrics import RUBRICS, render_page, publication_sort_key, publication_label
+from itertools import groupby
 from scripts.site_home import load_focus_items, update_home
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,15 +41,20 @@ class RubricOrderingTests(unittest.TestCase):
                 self.assertEqual(got, expected)
                 self.assertEqual(len(got), len(set(got)))
 
-    def test_each_rubric_article_has_title_then_date_then_summary(self):
+    def test_rubric_groups_and_real_times_match_complete_chronology(self):
         for key in RUBRICS:
             with self.subTest(rubric=key):
-                html = (ROOT / "rubrics" / key / "index.html").read_text(
-                    encoding="utf-8")
-                cards = re.findall(r'<a class="archive-card".*?</a>', html)
-                for card in cards:
-                    self.assertLess(card.index("<h3>"), card.index('<small class="date">'))
-                    self.assertLess(card.index('<small class="date">'), card.index("<p>"))
+                html = (ROOT / "rubrics" / key / "index.html").read_text(encoding="utf-8")
+                records = sorted((r for r in self.records if r.get("rubric", "news") == key),
+                                 key=publication_sort_key, reverse=True)
+                labels = [publication_label(r) for r in records]
+                days = [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])]
+                self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html), days)
+                self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
+                                 [(label, label.partition(" · ")[2]) for label in labels])
+                self.assertEqual(html.count('aria-current="page"'), 1)
+                self.assertIn(f"Материалов: {len(records)}", html)
+                self.assertNotIn("Демонстрационный снимок", html)
 
     def test_editorial_selection_is_published_one_per_rubric(self):
         config = load_focus_items(ROOT)

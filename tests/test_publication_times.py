@@ -31,7 +31,10 @@ class PublicationTimesTests(unittest.TestCase):
                "published": "2026-11-19",
                "published_at_utc": "2026-11-19T07:30:00Z", "rubric": "news"}
         html = render_page("news", [row])
-        self.assertIn("19 ноября 2026 · 12:30", html)
+        self.assertIn('<h2 class="rubric-day-title">19 ноября 2026</h2>', html)
+        self.assertIn('<span class="rubric-time" aria-label="19 ноября 2026 · 12:30">12:30</span>', html)
+        day_only = dict(row, publication_date_precision="day")
+        self.assertIn('<span class="rubric-time" aria-label="19 ноября 2026"></span>', render_page("news", [day_only]))
 
     def test_existing_article_metadata_only_and_idempotent_backfill(self):
         with tempfile.TemporaryDirectory() as temp:
