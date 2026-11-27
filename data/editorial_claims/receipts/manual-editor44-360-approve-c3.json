@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-360-approve-c3.json",
+  "request_sha256": "3e1380446da79dc03e915de5b5dedbd85005ad1658bfe88443097c3ea9ed683b",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-bed8fe2e85117580",
+  "pool_sequence": 360,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-27T13:45:02.508913+00:00",
+  "note": "Главред утвердил материал. Статья, соцтексты и перелинковка сохранены и проверены; ожидается обложка."
+}
