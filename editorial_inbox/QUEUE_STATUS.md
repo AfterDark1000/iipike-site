@@ -2,7 +2,7 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 23 · **Готовы:** 0 · **Ждут интервал:** 23 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 263
+**В очереди:** 24 · **Готовы:** 0 · **Ждут интервал:** 24 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 1 · **Заблокированы:** 0 · **Опубликованы через site-first:** 263
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
@@ -35,12 +35,13 @@
 | **21** | [Amazon нашла способ избавить ИИ от выдумок в математике](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/amazon-autocorrode-isabelle-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 15:07 (Усть-Катав)**; пауза до 27.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-autocorrode-isabelle-20261118.webp) |
 | **22** | [Глава Microsoft предупредил о сбоях из-за борьбы с ИИ-хакерами](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-nadella-ai-cyber-infrastructure-20261118.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 16:07 (Усть-Катав)**; пауза до 27.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-nadella-ai-cyber-infrastructure-20261118.webp) |
 | **23** | [Microsoft выпустила нейросеть, которая не умеет болтать](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/microsoft-decision-1-1-20261117.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 17:07 (Усть-Катав)**; пауза до 27.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-decision-1-1-20261117.webp) |
+| **24** | [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai2-theorizer-scientific-hypotheses-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 18:07 (Усть-Катав)**; пауза до 27.11.2026 13:15 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
 | Материал | Состояние | Причина | Обложка |
 |---|---|---|---|
-| [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai2-theorizer-scientific-hypotheses-20261119.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
+| [Сбер выпустил GigaChat 4 и замахнулся на конкуренцию с DeepSeek. Что получилось?](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/sber-gigachat-4-20261126.json) | 🖼️ Ждёт обложку | Текст или обложка ещё не готовы | Нет |
 
 ## Опубликованы через site-first — новые сверху
 
