@@ -17,6 +17,9 @@ on:
       - 'scripts/site_dossier.py'
       - 'scripts/build_dossier.py'
       - 'tests/test_site_dossier.py'
+      - 'assets/dossier-showcase.js'
+      - 'tests/dossier-browser.mjs'
+      - 'assets/site.css'
       - '.github/workflows/dossier-refresh.yml'
 permissions:
   contents: read
@@ -34,6 +37,14 @@ jobs:
       - run: python3 -m unittest discover -s tests -p 'test_site_dossier.py' -v
       - if: github.event_name == 'pull_request'
         run: python3 scripts/build_dossier.py --check
+      - uses: actions/setup-node@v4
+        if: github.event_name == 'pull_request'
+        with:
+          node-version: '22'
+      - if: github.event_name == 'pull_request'
+        run: |
+          node --check assets/dossier-showcase.js
+          node tests/dossier-browser.mjs index.html dossier/index.html
   refresh:
     if: github.event_name != 'pull_request'
     needs: verify
