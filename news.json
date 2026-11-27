@@ -9171,5 +9171,28 @@
     "products": [
       "gemini"
     ]
+  },
+  {
+    "title": "Стартап получил полмиллиарда долларов на обучение роботов с помощью перчаток",
+    "summary": "Genesis AI обучает роботов на движениях настоящих работников, оснащённых перчатками с датчиками. Среди инвесторов компании оказались NVIDIA, AMD и Samsung Next.",
+    "published": "2026-11-27",
+    "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html",
+    "cover": "assets/editorial/genesis-ai-robot-gloves-funding-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🧤 Стартап получил $500 млн на обучение роботов РУЧНОМУ ТРУДУ",
+    "vk_summary": "Genesis AI обучает роботов на движениях настоящих работников, оснащённых перчатками с датчиками. Среди инвесторов компании оказались NVIDIA, AMD и Samsung Next.",
+    "published_at_utc": "2026-11-27T02:00:58Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "genesis-ai-robot-gloves-funding-20261117",
+    "url": "articles/genesis-ai-robot-gloves-funding-20261117/",
+    "topics": [
+      "engineering",
+      "finance"
+    ],
+    "companies": [
+      "nvidia"
+    ],
+    "products": []
   }
 ]
