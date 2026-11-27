@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "2c3d200603e150dcb736e2940d9f9696799fba9a",
-  "source_blob_sha": "68cebd13f334a49ecf896e11bd4215ff7491defc",
-  "snapshot_date": "2026-11-26",
+  "source_commit": "034a60f0e46a792dd608493d04207c6dc71bb991",
+  "source_blob_sha": "0f930e623ab1cf1029d03fe1e297413f82f20b95",
+  "snapshot_date": "2026-11-27",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b0805fd8d30374391e462f1",
+      "title": "OpenAI получит 457 МВт на чипах AMD. Когда заработают серверы?",
+      "dzen_url": "https://dzen.ru/a/awgF_Y0wN0OR5GLx",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "TensorWave подписала с OpenAI контракт на шесть лет и выделит ей мощности на нескольких площадках в США. Условия сделки TensorWave раскрыла 16 ноября. По плану серверное оборудование на этих площадках сможет одновременно получать до 457 МВт. В серверные стойки AMD Helios установят ускорители AMD Instinct MI455X. На этих серверах OpenAI сможет обучать модели и запускать их для пользователей. В октябре 2025 года AMD и",
+      "published_at_utc": "2026-11-27T02:01:58+00:00"
+    },
     {
       "dzen_id": "6b0805bb548e162bfa6ef6ce",
       "title": "«Волк с Уолл-стрит» запустил ИИ для звонков. Справится ли он с продажами?",
