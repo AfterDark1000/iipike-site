@@ -9242,5 +9242,26 @@
       "meta"
     ],
     "products": []
+  },
+  {
+    "title": "Создатели Proton Mail выпустили ИИ-помощника, которому можно запретить самодеятельность",
+    "summary": "Proton выпустила Lumo Desktop для Windows, macOS и Linux с отдельными разрешениями на действия ИИ и поддержкой заданий по расписанию.",
+    "published": "2026-11-27",
+    "source_url": "https://proton.me/blog/lumo-desktop-features",
+    "cover": "assets/editorial/proton-lumo-desktop-permissions-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🔐 Создатели Proton Mail выпустили ИИ-помощника, которому можно ЗАПРЕТИТЬ лишнее",
+    "vk_summary": "Lumo Desktop умеет работать с почтой, файлами и выполнять поручения по расписанию. Пользователь сам определяет, куда нейросети можно соваться и какие действия ей запрещены.",
+    "published_at_utc": "2026-11-27T05:30:52Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "proton-lumo-desktop-permissions-20261117",
+    "url": "articles/proton-lumo-desktop-permissions-20261117/",
+    "topics": [
+      "agents",
+      "safety"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
