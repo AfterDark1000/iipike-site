@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor41-20261127-checkpoint13.json",
+  "request_sha256": "70d3596feffec06e1caf81c4560ecce7979d3b218387480650426e82a2c5ef45",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-b0e6c16d3d3929d4",
+  "pool_sequence": 618,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T02:29:19.030186+00:00",
+  "note": "По редзаданию расширен обзор. Сбер: каталог подтверждён главредом; https://vc.ru/ai/3265459-sposoby-oplaty-nevrosyeti-bez-riska-bana 19.11 приводит Claude Pro 2364,13 ₽, Max 5x/20x; официальный анонс/оферта банка и активация не подтверждены. Ozon: описание App Store, https://embedded.multitransfer.ru/ozon/ и оферта /ozon/documents/offer-agreement/ (претензия о передаче 24ч), B2B /ozon-business/. СберМобайл анонс 20.08 и Pay Digital, МегаФон та же витрина; МТС payment.mts.ru/spa/pay/21591 и /24982 (цены/наличие не подтверждены). RuStore 27.11: https://www.rustore.ru/kiosk/chatgpt Plus 2984 ₽, /kiosk/claude недоступен. Альфа: официальный анонс 25.11 зарубежных подписок для премиум-привилегий, список ChatGPT/Midjourney по premiumbanking.info 22.11; Т-Банк/ВТБ наличие ИИ в витрине не подтверждено. OpenAI supported countries, Anthropic supported-regions 12.11 исключают РФ; успешная оплата не проверена. Перелинковка МТС 6b06c437b346137d5a37531f, Claude паспорт 6ae328f22b80bf7f06102483. На утверждении."
+}
