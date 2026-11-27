@@ -1,11 +1,21 @@
 {
   "schema_version": 1,
   "source": "AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json",
-  "source_commit": "0e3a9bf43258642dd1f24f16ce4ad62c9e0a5fa0",
-  "source_blob_sha": "97cdb3fe2d8744e5b7500fe825e787b316b6e344",
+  "source_commit": "9c18927f7ab31f47da8b9529b9ad65fb0842005c",
+  "source_blob_sha": "acfde817bdf02fa01c49000fe49e898f82b97ff7",
   "snapshot_date": "2026-11-27",
   "purpose": "Read-only verified Dzen links. Retain previously proven links if upstream later loses titles; never promote derived or unverified URLs.",
   "entries": [
+    {
+      "dzen_id": "6b09e028e47a6210555b1bb9",
+      "title": "В Нью-Йорке предложили лишать судей должности за выдумки нейросетей",
+      "dzen_url": "https://dzen.ru/a/awngKOR6YhBVWxu5",
+      "url_evidence": "recorded_in_editorial_archive",
+      "title_evidence": "recorded",
+      "source": "editorial_archive.json",
+      "excerpt": "Американские судьи уже выносят решения со ссылками на законы и судебные дела, которых никогда не существовало. 16 ноября сенатор штата Нью-Йорк Мишель Хинчи внесла законопроект S10741, предусматривающий дисциплинарную ответственность судей за сознательное или грубо неосторожное использование вымышленных правовых сведений. В особо серьёзных случаях дело дойдёт до рассмотрения вопроса об импичменте. В прошлом году двое",
+      "published_at_utc": "2026-11-27T19:57:12+00:00"
+    },
     {
       "dzen_id": "6b0924106439085d02821aca",
       "title": "Сбер и Т-Банк торгуют ChatGPT и Claude. Мы проверили 9 приложений и выяснили, кто за этим стоит",
