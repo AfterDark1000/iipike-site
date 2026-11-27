@@ -802,3 +802,19 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
 .article-text .editorial-table .table-align-right{text-align:right}
 .article-text .editorial-table-scroll:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 @media(max-width:600px){.article-text .editorial-table-scroll{margin:20px 0 26px}.article-text .editorial-table{font-size:13px;min-width:320px}.article-text .editorial-table th,.article-text .editorial-table td{padding:10px 11px}}
+
+/* In-article galleries. Native horizontal scroll works even without JS. */
+.article-text .editorial-carousel{margin:28px 0 34px;max-width:100%;min-width:0;border:1px solid var(--line);border-radius:10px;background:#fffcf5;overflow:hidden}
+.article-text .editorial-carousel-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#a5a99f #e9e4d9}
+.article-text .editorial-carousel-slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
+.article-text .editorial-carousel-slide>a{display:block;background:#e9e4d9;aspect-ratio:16/11}
+.article-text .editorial-carousel-slide img{display:block;width:100%;height:100%;object-fit:contain}
+.article-text .editorial-carousel-slide figcaption{padding:11px 15px;font:14px/1.5 system-ui,sans-serif;color:var(--muted);overflow-wrap:anywhere}
+.article-text .editorial-carousel-controls{display:flex;justify-content:center;align-items:center;gap:18px;padding:10px 15px;border-top:1px solid var(--line)}
+.article-text .editorial-carousel-controls[hidden]{display:none}
+.article-text .editorial-carousel-controls button{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font:700 22px/1 system-ui,sans-serif;cursor:pointer}
+.article-text .editorial-carousel-controls button:disabled{opacity:.35;cursor:default}
+.article-text .editorial-carousel-controls button:not(:disabled):hover{background:#233b30;color:white}
+.article-text .editorial-carousel-count{font:650 13px/1.4 system-ui,sans-serif;color:var(--muted);min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
+.article-text .editorial-carousel-track:focus-visible,.article-text .editorial-carousel-controls button:focus-visible,.article-text .editorial-carousel-slide>a:focus-visible{outline:2px solid var(--red);outline-offset:-3px}
+@media(max-width:600px){.article-text .editorial-carousel{margin:22px 0 28px}.article-text .editorial-carousel-slide figcaption{font-size:13px;padding:9px 11px}}

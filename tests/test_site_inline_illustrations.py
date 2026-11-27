@@ -65,6 +65,40 @@ class InlineIllustrationsTests(unittest.TestCase):
         self.assertLess(html.index("<h2>"), html.index('<figure class='))
         self.assertLess(html.index('<figure class='), html.index("Проверьте сообщение"))
 
+    def test_adjacent_images_group_only_in_site_html_and_keep_assets(self):
+        second = f"illustrations/{ID}/second.webp"
+        self.data["article_markdown"] = BODY.replace(
+            "\n\nПроверьте", "\n\n![Вторая памятка](" + second + ")\n\nПроверьте")
+        self.save_story()
+        blocks = markdown_to_blocks(self.data["article_markdown"])
+        self.assertEqual([x["type"] for x in blocks], ["lead","h2","image","image","p"])
+        self.assertNotIn("editorial-carousel", render_blocks(blocks))
+        self.assertNotIn("editorial-carousel", render_blocks(blocks, carousels=True,
+                                                            after_blocks={2:"<aside>Разделитель</aside>"}))
+        self.save_image(self.cover, (960,540))
+        self.save_image(self.image, (700,810))
+        self.assertIsNone(stage(self.root, ID, now=STAMP, apply=True))
+        other = self.root / "editorial_inbox" / second
+        self.save_image(other, (960,540))
+        approved = stage(self.root, ID, now=STAMP, apply=True)
+        self.assertEqual(approved["article_markdown"], self.data["article_markdown"])
+        result = render_article(approved)
+        self.assertEqual(result.count('class="editorial-carousel-slide"'), 2)
+        self.assertIn('src="../../assets/article-carousel.js"', result)
+        self.assertIn('aria-label="2 из 2"', result)
+        self.assertIn('<figcaption>Вторая памятка</figcaption>', result)
+        self.assertLess(result.index(NAME), result.index("second.webp"))
+        self.assertTrue((self.root / "assets/editorial/inline" / ID / "second.webp").is_file())
+
+    def test_separated_images_remain_individual_and_escape_caption(self):
+        other = f"illustrations/{ID}/other.webp"
+        blocks = markdown_to_blocks(BODY+"\n\n![<script>](%s)" % other)
+        result = render_blocks(blocks, carousels=True)
+        self.assertNotIn("editorial-carousel",result)
+        self.assertEqual(result.count('class="editorial-inline-figure"'),2)
+        self.assertIn("&lt;script&gt;",result)
+        self.assertNotIn("<script>",result)
+
     def test_missing_image_blocks_release_even_with_real_cover(self):
         self.save_image(self.cover, (960, 540))
         self.assertIsNone(stage(self.root, ID, now=STAMP, apply=True))
