@@ -44,8 +44,12 @@ class DispatchTests(unittest.TestCase):
                 "cover_metadata_blob_sha":m,"cover_blob_sha":image,"note":"Different concept"})
         return k
     def claim(self,k,when):
+        sid=k.rsplit("-r",1)[0]
+        draft_path=self.inbox/"auto_drafts"/(sid+".json")
+        draft_sha=d.blob(draft_path) if draft_path.is_file() else None
         self.put("auto_artist_dispatch/claims",k,{"schema_version":1,"stem":k,
-            "state":"generation_reserved","reserved_at":d.iso(when)})
+            "state":"generation_reserved","reserved_at":d.iso(when),
+            "source_draft_blob_sha":draft_sha})
     def build(self,holds=(),parallel=True,published=()):
         return d.build(self.root,set(published),list(holds),NOW,parallel)
     def test_fifo_and_return_priority(self):
