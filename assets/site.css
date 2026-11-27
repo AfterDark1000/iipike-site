@@ -1015,3 +1015,17 @@ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) mai
 .article-site-nav.home-v1 .bar{gap:24px}
 @media(max-width:700px){.article-site-nav.home-v1 .bar{gap:13px}.article-site-nav.home-v1 .home-menu{min-width:0}}
 @media(max-width:360px){.article-site-nav.home-v1 .wrap{padding-inline:14px}.article-site-nav.home-v1 .bar{gap:10px}.article-site-nav.home-v1 .home-menu{gap:8px 12px}}
+
+/* All-articles archive: use approved R2 layout with visible rubric labels.
+   Scoped exclusively to the archive, not the five rubric pages. */
+.archive-r2 .home-menu [aria-current="page"]{color:var(--red)}
+.archive-r2 .archive-tools{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;padding:13px 0;border-bottom:1px solid var(--line);font:650 13px/1.5 system-ui,sans-serif;color:var(--muted)}
+.archive-r2 .archive-tools a:hover{color:var(--accent)}
+.archive-r2 .rubric-copy .date{display:block;margin:5px 0 0;font:650 11px/1.35 system-ui,sans-serif}
+.archive-r2 .archive-rubric{display:inline-block;color:var(--muted)}
+.archive-r2 .archive-rubric[data-rubric="news"]{color:#386d63}
+.archive-r2 .archive-rubric[data-rubric="skynet"]{color:#a74434}
+.archive-r2 .archive-rubric[data-rubric="what-are-you-doing"]{color:#94631b}
+.archive-r2 .archive-rubric[data-rubric="quotes"]{color:#52637b}
+.archive-r2 .archive-rubric[data-rubric="made-with-ai"]{color:#765384}
+@media(max-width:700px){.archive-r2 .rubric-copy .date{font-size:12px;margin-top:8px}.archive-r2 .archive-tools{font-size:12px;gap:8px 15px}}

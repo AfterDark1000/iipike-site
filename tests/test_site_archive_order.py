@@ -49,5 +49,23 @@ class FirstPartyChronologyTests(unittest.TestCase):
             self.assertLess(card.index('<small class="date">'), card.index('<p>'))
 
 
+    def test_archive_matches_generator_and_uses_real_local_dates(self):
+        from itertools import groupby
+        from scripts.publish_approved_article import render_catalog
+        from scripts.site_rubrics import publication_label, RUBRICS
+        html = (ROOT / "articles/index.html").read_text(encoding="utf-8")
+        records = sorted_published(self.records)
+        self.assertEqual(html, render_catalog(records))
+        labels = [publication_label(r) for r in records]
+        days = [day for day, _ in groupby(labels, key=lambda v: v.partition(" · ")[0])]
+        self.assertEqual(re.findall(r'<h2 class="rubric-day-title">(.*?)</h2>', html), days)
+        self.assertEqual(re.findall(r'<span class="rubric-time" aria-label="([^"]+)">([^<]*)</span>', html),
+                         [(label, label.partition(" · ")[2]) for label in labels])
+        self.assertEqual(re.findall(r'<span class="archive-rubric" data-rubric="([^"]+)">([^<]*)</span>', html),
+                         [(r.get("rubric", "news"), RUBRICS[r.get("rubric", "news")]["name"]) for r in records])
+        self.assertIn(f"Материалов: {len(records)}", html)
+        self.assertIn('class="home-v1 rubric-r2 archive-r2"', html)
+
+
 if __name__ == "__main__":
     unittest.main()

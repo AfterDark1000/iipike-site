@@ -380,33 +380,48 @@ def render_article(data, records=None, catalog=None, registry=None, dossier_ids=
 
 
 def render_catalog(records):
+    from itertools import groupby
     ordered = sorted_published(records)
-    cards = "\n".join(
-        f'<a class="archive-card" href="{quote(row["id"])}/">'
-        f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
-        f'<span><h3>{quote(row["title"])}</h3>'
-        f'<small class="date">{quote(publication_label(row))}'
-        f' · {quote(RUBRICS[row.get("rubric", "news")]["name"])}</small>'
-        f'<p>{quote(row["summary"])}</p></span>'
-        '<span aria-hidden="true">↗</span></a>' for row in ordered
-    )
+
+    def card(row):
+        label = publication_label(row)
+        _, _, time = label.partition(" · ")
+        rubric = row.get("rubric", "news")
+        return (
+            f'<a class="archive-card" href="{quote(row["id"])}/">'
+            f'<span class="rubric-time" aria-label="{quote(label)}">{quote(time)}</span>'
+            f'<img loading="lazy" src="../{quote(row["cover"])}" alt="Обложка статьи">'
+            f'<div class="rubric-copy"><h3>{quote(row["title"])}</h3>'
+            f'<small class="date"><span class="archive-rubric" data-rubric="{quote(rubric)}">{quote(RUBRICS[rubric]["name"])}</span></small>'
+            f'<p>{quote(row["summary"])}</p></div>'
+            '<span class="rubric-arrow" aria-hidden="true">↗</span></a>'
+        )
+
+    days = []
+    for day, group in groupby(ordered, key=lambda r: publication_label(r).partition(" · ")[0]):
+        days.append('<section class="rubric-day"><h2 class="rubric-day-title">' +
+                    quote(day) + '</h2><div class="rubric-day-list">' +
+                    "\n".join(card(row) for row in group) + '</div></section>')
+    cards = "\n".join(days) or '<p class="rubric-empty">Публикации скоро появятся.</p>'
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f3eb">
 <meta name="description" content="Проверенные публикации Хроник Пикирующего ИИ с первоисточниками.">
 <meta property="og:title" content="Все статьи — Хроники Пикирующего ИИ">
 <meta property="og:url" content="{BASE}/articles/">
 <link rel="canonical" href="{BASE}/articles/">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../assets/site.css"><title>Все статьи — ХПИИ</title></head>
-<body><header class="header"><div class="wrap bar">
-<a class="logo" href="../index.html"><span class="badge">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
-<nav class="menu"><a href="../index.html">Главная</a><a href="../feed.xml">RSS</a></nav></div></header>
-<main class="wrap"><div class="overline"><span>ХПИИ / Редакционная лента</span></div>
-<h1>Все статьи</h1><p class="summary">Опубликованные материалы с проверенными источниками. Черновики здесь не появляются.</p>
-<nav class="rubric-navigation" aria-label="Рубрики">{navigation("../")}</nav>
-<p class="topic-directory"><a href="../topics/">Все темы материалов →</a></p>
-<p class="topic-directory"><a href="../entities/">Компании и продукты →</a></p>
-<section class="archive"><h2>Публикации</h2>{cards}</section></main>
-<footer class="footer"><div class="wrap">Хроники Пикирующего ИИ</div></footer>
+<body class="home-v1 rubric-r2 archive-r2"><header class="header"><div class="wrap bar">
+<a class="logo" href="../index.html" aria-label="Хроники Пикирующего ИИ — главная"><span class="badge" aria-hidden="true">ХПИ</span><span>ХРОНИКИ<br>ПИКИРУЮЩЕГО ИИ<small>НОВОСТИ БЕЗ ИСТЕРИКИ</small></span></a>
+<nav class="menu home-menu" aria-label="Основное меню"><a href="./" aria-current="page">Все статьи</a><a href="../briefs/">Коротко</a><a href="../dossier/">Досье</a><a href="../entities/">Компании и продукты</a></nav></div></header>
+<div class="home-v1-rubrics"><div class="wrap"><nav class="rubric-navigation" aria-label="Рубрики">{navigation("../")}</nav></div></div>
+<main class="wrap rubric-main"><div class="rubric-head"><div><span class="rubric-kicker">ХПИИ / Редакционная лента</span>
+<h1>Все статьи</h1><p class="rubric-deck">Полный архив опубликованных материалов ХПИИ в порядке выхода.</p></div>
+<span class="rubric-count">Материалов: {len(ordered)}</span></div>
+<nav class="archive-tools" aria-label="Навигация по архиву"><a href="../topics/">Все темы материалов ↗</a><a href="../entities/">Компании и продукты ↗</a><a href="../feed.xml">RSS ↗</a></nav>
+{cards}</main>
+<footer class="footer"><div class="wrap home-v1-footer"><span>Хроники Пикирующего ИИ · Новости без истерики</span><nav><a href="../registry/">Архив Дзена</a><a href="../drafts/">Лаборатория редакции</a><a href="../feed.xml">RSS</a></nav></div></footer>
 <script defer src="../assets/social-footer.js"></script></body></html>
 '''
 
