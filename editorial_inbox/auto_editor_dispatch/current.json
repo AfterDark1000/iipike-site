@@ -1,16 +1,29 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T06:46:51.646127+00:00",
-  "valid_until": "2026-11-27T08:16:51.646127+00:00",
+  "prepared_at": "2026-11-27T06:56:27.959847+00:00",
+  "valid_until": "2026-11-27T08:26:27.959847+00:00",
   "status": "ready",
   "counts": {
-    "reserved_24h": 0,
+    "reserved_24h": 1,
     "waiting_review": 0,
     "limit": 5
   },
   "job": {
-    "kind": "new",
-    "request": "dispatch-20261127-064651.json",
+    "kind": "resume",
+    "receipt": {
+      "schema_version": 1,
+      "request": "dispatch-20261127-064651.json",
+      "request_sha256": "60fe267907f54d2a98dd6fd3d4ade553d997a7f370cc37cfcb0ed17a671eea2e",
+      "status": "reserved",
+      "pool_id": "n-5b0dcaf377b0a4d1",
+      "pool_sequence": 353,
+      "article_id": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1",
+      "priority": "normal",
+      "title": "Google предложила обучать большие нейросети на компьютерах в разных частях мира",
+      "source_url": "https://ainewsbites.com/google-streaming-diloco-distributed-llm-training",
+      "claimed_at": "2026-11-27T06:55:54+00:00",
+      "worker": "hpii-auto-editor"
+    },
     "candidate": {
       "id": "n-5b0dcaf377b0a4d1",
       "sequence": 353,
@@ -19,35 +32,66 @@
       "summary": "19 ноября. Сообщается о Streaming DiLoCo в MaxText для распределённого обучения; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T06:55:54+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=dispatch-20261127-064651.json; article_id=google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1"
     },
-    "preview": {
+    "draft": {
+      "schema_version": 1,
+      "request": "dispatch-20261127-064651.json",
       "pool_id": "n-5b0dcaf377b0a4d1",
       "pool_sequence": 353,
       "article_id": "google-predlozhila-obuchat-bolshie-neyroseti-na-k-5b0dcaf377b0a4d1",
-      "priority": "normal",
-      "title": "Google предложила обучать большие нейросети на компьютерах в разных частях мира",
-      "source_url": "https://ainewsbites.com/google-streaming-diloco-distributed-llm-training",
-      "claimed_at": "2026-11-27T06:46:51.646127+00:00",
-      "worker": "hpii-auto-editor"
+      "status": "drafting",
+      "revision": 1,
+      "created_at": "2026-11-27T06:55:54+00:00",
+      "updated_at": "2026-11-27T06:55:54+00:00",
+      "content": {
+        "title": "",
+        "dzen_title": "",
+        "summary": "",
+        "rubric": "",
+        "section": "",
+        "topics": [],
+        "companies": [],
+        "products": [],
+        "source_url": "",
+        "source_title": "",
+        "event_date": null,
+        "related_dzen_ids": [],
+        "site_crosslinks": {},
+        "article_markdown": "",
+        "threads_text": "",
+        "x_text": "",
+        "vk_title": "",
+        "vk_summary": ""
+      },
+      "research": {
+        "sources": [],
+        "fact_checks": [],
+        "notes": ""
+      },
+      "entity_candidates": {
+        "companies": [],
+        "products": []
+      },
+      "cover_brief": {
+        "fact": "",
+        "hook": "",
+        "constraints": ""
+      },
+      "editor_notes": []
     },
-    "route": {
-      "sequence": 353,
-      "pool_id": "n-5b0dcaf377b0a4d1",
-      "lane": "long",
-      "decision": "full"
-    }
+    "draft_sha": null
   },
   "main_guard": {
-    "data/site_news_pool.json": "905d5ed712886e2d6b2a7fdc3f9b4f8932d5ac26",
+    "data/site_news_pool.json": "b2847565d77916e724f497efb7a4bd21303213e8",
     "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
-    "data/auto_editor/requests": "918bd02137565c043da188607f6fd54ce6a3fd97",
-    "data/auto_editor/receipts": "67586e29d0bbf3561315fa28898b810af75dcf11",
+    "data/auto_editor/requests": "f8c3de11e6800fe8036ce04aa96a0150985fbbc6",
+    "data/auto_editor/receipts": "d139b65d78be00cb31af4e3a02e07a997f016ddf",
     "news.json": "8253f4f47f3faaf60dc234aaf0338392c218bbf8"
   },
   "intake_guard": {
