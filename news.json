@@ -9476,5 +9476,29 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "В США прокуроры начали ловить адвокатов на использовании ChatGPT",
+    "summary": "Федеральные прокуроры в Техасе проверили ходатайства защиты ИИ-детектором Pangram и представили результаты суду. Адвокаты признали использование нейросети, а судья предупредил о санкциях за ошибки в документах.",
+    "published": "2026-11-27",
+    "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.txnd.426626/gov.uscourts.txnd.426626.83.0.pdf",
+    "cover": "assets/editorial/doj-pangram-ai-detector-defense-attorneys-20261117.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ Прокуроры США начали ловить адвокатов на использовании НЕЙРОСЕТЕЙ",
+    "vk_summary": "Результаты проверки судебных документов ИИ-детектором Pangram приложили к материалам уголовного дела. Судья пригрозил адвокатам запретом на юридическую практику в округе.",
+    "published_at_utc": "2026-11-27T16:01:12Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "doj-pangram-ai-detector-defense-attorneys-20261117",
+    "url": "articles/doj-pangram-ai-detector-defense-attorneys-20261117/",
+    "topics": [
+      "society"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
