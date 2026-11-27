@@ -188,6 +188,45 @@ class SiteRichTextTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Quote needs"):
             markdown_to_blocks(malformed)
 
+    def test_markdown_table_preserves_order_alignment_links_and_empty_cells(self):
+        intro = "Проверенный текст статьи перед таблицей с результатами. " * 10
+        source = (intro + "\n\n## Сравнение\n\n"
+                  "| Модель | Результат | Примечание |\n"
+                  "| :--- | ---: | :---: |\n"
+                  "| **A** | 42 | [Источник](https://example.org/data) |\n"
+                  "| B \\| C | 12 | |\n\nПосле таблицы.")
+        blocks = markdown_to_blocks(source)
+        self.assertEqual([x["type"] for x in blocks], ["lead", "h2", "table", "p"])
+        self.assertEqual(blocks[2]["align"], ["left","right","center"])
+        self.assertEqual(blocks[2]["rows"][1], ["B | C","12",""])
+        result = render_blocks(blocks)
+        self.assertIn('<table class="editorial-table">', result)
+        self.assertIn('<th class="table-align-right" scope="col">Результат</th>', result)
+        self.assertIn('<td class="table-align-left"><strong>A</strong></td>', result)
+        self.assertIn('href="https://example.org/data"', result)
+        self.assertIn("B | C", result)
+        self.assertLess(result.index("</table>"),result.index("После таблицы"))
+        self.assertNotIn("table", [x["type"] for x in markdown_to_blocks(source,tables=False)])
+
+    def test_tables_without_outer_pipes_and_adjacent_blocks(self):
+        intro = "Проверенный текст статьи перед таблицей с результатами. " * 10
+        source = intro + "\n\nИмя | Значение\n--- | ---:\nA | 12\n## Дальше\nНовый абзац."
+        blocks = markdown_to_blocks(source)
+        self.assertEqual([x["type"] for x in blocks],["lead","table","h2","p"])
+        self.assertEqual(blocks[1]["rows"],[["A","12"]])
+
+    def test_table_rejects_ragged_rows_and_unsafe_links_escapes_html(self):
+        intro = "Проверенный текст статьи перед таблицей с результатами. " * 10
+        for bad in ("| A | B |\n| --- | --- |\n| x | y | z |",
+                    "| A | B |\n| --- | --- |\n| [x](javascript:alert(1)) | y |",
+                    "| A | B |\n| --- |",
+                    "| A | B |\n| --- | --- |"):
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                markdown_to_blocks(intro+"\n\n"+bad)
+        result=render_blocks(markdown_to_blocks(intro+"\n\n| A | B |\n| --- | --- |\n| <script>x</script> | y |"))
+        self.assertIn("&lt;script&gt;x&lt;/script&gt;",result)
+        self.assertNotIn("<script>",result)
+
     def test_old_plain_text_article_blocks_still_work(self):
         old = [{"type": "lead", "text": "Первый обычный абзац."},
                {"type": "p", "text": "Второй без форматирования."},

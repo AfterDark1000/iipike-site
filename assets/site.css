@@ -788,3 +788,17 @@ a:focus-visible{outline:2px solid #b65b35;outline-offset:3px}
   .hpi-social-copy small{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.home-v1 a,.home-v1 img{transition:none}}
+
+/* Article tables: semantic markup, local overflow, responsive editorial type. */
+.article-text{min-width:0}
+.article-text .editorial-table-scroll{max-width:100%;min-width:0;overflow-x:auto;margin:26px 0 32px;border:1px solid var(--line);border-radius:8px;background:#fffcf5;overscroll-behavior-x:contain}
+.article-text .editorial-table{width:100%;min-width:360px;border-collapse:collapse;font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums}
+.article-text .editorial-table th,.article-text .editorial-table td{min-width:88px;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.article-text .editorial-table th{background:#e9e4d9;color:var(--ink);font-weight:750}
+.article-text .editorial-table tbody tr:nth-child(even){background:#f2eee5}
+.article-text .editorial-table tbody tr:last-child td{border-bottom:0}
+.article-text .editorial-table .table-align-left{text-align:left}
+.article-text .editorial-table .table-align-center{text-align:center}
+.article-text .editorial-table .table-align-right{text-align:right}
+.article-text .editorial-table-scroll:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+@media(max-width:600px){.article-text .editorial-table-scroll{margin:20px 0 26px}.article-text .editorial-table{font-size:13px;min-width:320px}.article-text .editorial-table th,.article-text .editorial-table td{padding:10px 11px}}

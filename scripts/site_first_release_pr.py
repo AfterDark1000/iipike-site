@@ -46,6 +46,7 @@ RETRY_BLOCKING_PATHS = (
     "scripts/site_first_release_pr.py", "scripts/site_publication_queue.py",
     "scripts/site_first_inbox.py", "scripts/publish_approved_article.py",
     "scripts/site_entities.py", "scripts/site_release_quarantine.py",
+    "scripts/site_rich_text.py",
     ".github/workflows/site-first-scheduled-release.yml",
 )
 

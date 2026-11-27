@@ -124,6 +124,7 @@ jobs:
               + '\n\n- **Первый** проверенный пункт\n- Второй пункт'
               + '\n\n1. Сначала сайт\n2. Потом Дзен'
               + '\n\n> Это цитата без потери *интонации*.\n> — Редактор ХПИИ'
+              + '\n\n| Модель | Результат |\n| --- | ---: |\n| **A** | 42 |\n| B | 37 |'
               + '\n\n### Технические выводы\n\n'
               + 'Проверяем на настоящем генераторе сайта, без внешней публикации.'
             )
@@ -149,6 +150,9 @@ jobs:
           assert '<em>реальные</em>' in page
           assert '<h2>Раздел новой статьи</h2>' in page
           assert '<h3>Технические выводы</h3>' in page
+          assert '<table class="editorial-table">' in page
+          assert '<td class="table-align-right">42</td>' in page
+          assert '<td class="table-align-left"><strong>A</strong></td>' in page
           approved=json.loads((root/'content/approved'/f'{slug}.json').read_text())
           incoming=json.loads((root/'editorial_inbox/stories'/f'{slug}.json').read_text())
           assert approved['article_markdown']==incoming['article_markdown']
