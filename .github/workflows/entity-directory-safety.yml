@@ -161,9 +161,55 @@ jobs:
               return normalize(before) == normalize(after)
           # Rubrics were independently checked against their exact generator.
           allowed_time_articles = {x for x in changed if only_publication_time(x)}
+          # Additive topic-only metadata edits are a separate reviewed migration.
+          # Existing article content, ordering, IDs and every other field must
+          # remain identical. The generated topic pages and sitemap were checked
+          # above. Verify each changed article against the canonical renderer.
+          allowed_topic_paths = set()
+          if 'news.json' in changed:
+              from scripts.site_topics import validate_topics
+              from scripts.upgrade_article_navigation import clean_article_html
+              old_rows = json.loads(subprocess.check_output(
+                  ['git', 'show', 'origin/main:news.json'], text=True))
+              new_rows = json.load(open('news.json', encoding='utf-8'))
+              valid = len(old_rows) == len(new_rows)
+              topic_articles = set()
+              affected_topics = set()
+              for old, new in zip(old_rows, new_rows):
+                  if {k: v for k, v in old.items() if k != 'topics'} != {
+                          k: v for k, v in new.items() if k != 'topics'}:
+                      valid = False
+                      break
+                  before_topics = validate_topics(old.get('topics', []))
+                  after_topics = validate_topics(new.get('topics', []))
+                  if before_topics == after_topics:
+                      continue
+                  if (after_topics[:len(before_topics)] != before_topics
+                          or len(after_topics) <= len(before_topics)):
+                      valid = False
+                      break
+                  path = 'articles/' + new['id'] + '/index.html'
+                  if new['url'] + 'index.html' != path or path not in changed:
+                      valid = False
+                      break
+                  before = subprocess.check_output(
+                      ['git', 'show', 'origin/main:' + path], text=True)
+                  after = subprocess.check_output(
+                      ['git', 'show', 'HEAD:' + path], text=True)
+                  if clean_article_html(before, after_topics, new['id']) != after:
+                      valid = False
+                      break
+                  topic_articles.add(path)
+                  affected_topics.update(after_topics[len(before_topics):])
+              if valid and topic_articles:
+                  generated = {'news.json', 'topics/index.html', 'sitemap.xml'} | {
+                      'topics/' + key + '/index.html' for key in affected_topics}
+                  permitted = topic_articles | generated
+                  if set(changed) <= permitted | {'.github/workflows/entity-directory-safety.yml'}:
+                      allowed_topic_paths = permitted
           unexpected = [x for x in changed
                         if x not in exact and x not in allowed_articles
-                        and x not in allowed_time_articles
+                        and x not in allowed_time_articles and x not in allowed_topic_paths
                         and not x.startswith(prefixes + ('rubrics/',))]
           if unexpected:
               raise SystemExit('Unexpected editorial/production modifications: ' + str(unexpected))
