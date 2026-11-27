@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T15:46:57.223253+00:00",
-  "valid_until": "2026-11-27T17:16:57.223253+00:00",
+  "prepared_at": "2026-11-27T16:02:51.832580+00:00",
+  "valid_until": "2026-11-27T17:32:51.832580+00:00",
   "status": "ready",
   "counts": {
     "reserved_24h": 2,
@@ -127,11 +127,11 @@
     "kind": "resume"
   },
   "main_guard": {
-    "data/site_news_pool.json": "d4f1707eeeb61e9934321288b7915c9f33e614de",
+    "data/site_news_pool.json": "e80ac47e29d4b84e8ee28a5af19ed9a04be00d38",
     "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
     "data/auto_editor/requests": "b5641ec3d0e846403a9f8038c4a06277976bae06",
     "data/auto_editor/receipts": "c1b7c9ac944e1ae4644d45a25495a4601be75e1a",
-    "news.json": "59c36d24eb03d443c7f18cc7c1fb0cb57d1f2350"
+    "news.json": "65d81efb879865eba6b5d51eaa17d2057eadfc3d"
   },
   "intake_guard": {
     "editorial_inbox/auto_drafts": "a300a295ad4a4b0c82ec3a82ec0a1b4c0da8ff14",
@@ -143,6 +143,6 @@
     "docs/AUTO_EDITOR_INSTRUCTIONS.md": "7dca25eb13924ff4a2b48d7856c0e2456a71f8a1",
     "docs/AUTO_EDITOR_STAGE2.md": "974245625b6671c909dac07d3d259de7161628ab",
     "docs/AUTO_COPYEDITOR_FEEDBACK.md": "8f4f0c49a0997f0309cd29becf22bda6fc0889b0",
-    "editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md": "f0050a88fb0673ac29d3829a6150bc7418e43e49"
+    "editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md": "ecb7a56be2ee8d5d83097ac5aa41c0bf145ef0a2"
   }
 }
