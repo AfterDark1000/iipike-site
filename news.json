@@ -9456,5 +9456,25 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "Создатель The Sims превратит ваши воспоминания в игру с ИИ",
+    "summary": "Уилл Райт и Gallium Studios вместе с Artificial Agency разрабатывают MyMems — игру с ИИ-персонажами и виртуальным миром на основе личных воспоминаний. Выпуск намечен на 2027 год.",
+    "published": "2026-11-27",
+    "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html",
+    "cover": "assets/editorial/will-wright-mymems-ai-memory-game-20261118.webp",
+    "rubric": "news",
+    "vk_title": "🎮 Создатель The Sims делает игру ПРО ВАС",
+    "vk_summary": "Нейросеть превратит ваши воспоминания в виртуальный мир, населённый персонажами из вашей собственной жизни. Выход MyMems запланирован на 2027 год.",
+    "published_at_utc": "2026-11-27T15:01:03Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "will-wright-mymems-ai-memory-game-20261118",
+    "url": "articles/will-wright-mymems-ai-memory-game-20261118/",
+    "topics": [
+      "entertainment"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
