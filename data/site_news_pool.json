@@ -8875,9 +8875,9 @@
       "summary": "Reuters сообщает об инциденте со ссылкой на исследователя безопасности. Масштаб и характер данных требуют уточнения.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-26T09:06:43+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T08:31:50.166290+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
