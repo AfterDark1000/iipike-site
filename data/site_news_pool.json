@@ -5380,9 +5380,9 @@
       "summary": "19 ноября. John Deere объявила о приобретении Orchard AI с системой агрономического наблюдения за растениями.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T13:45:02.508913+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
