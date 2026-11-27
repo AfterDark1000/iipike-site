@@ -391,7 +391,9 @@
     "dzen_url": "https://dzen.ru/a/auMo8iuAv38GECSD",
     "id": "russian-claude-passport-ban",
     "url": "articles/russian-claude-passport-ban/",
-    "topics": []
+    "topics": [
+      "ai-in-russia"
+    ]
   },
   {
     "title": "ElevenLabs возвращает голоса людям с БАС — бесплатно",
@@ -624,7 +626,8 @@
     "id": "russian-courts-ai-hallucinations",
     "url": "articles/russian-courts-ai-hallucinations/",
     "topics": [
-      "society"
+      "society",
+      "ai-in-russia"
     ]
   },
   {
@@ -2851,7 +2854,8 @@
     "id": "na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc",
     "url": "articles/na-rossiyskie-ii-chipy-predlozhili-15-mlrd-rubley-chto-realno-3c3dc/",
     "topics": [
-      "infrastructure"
+      "infrastructure",
+      "ai-in-russia"
     ]
   },
   {
@@ -3193,7 +3197,9 @@
     "dzen_url": "https://dzen.ru/a/asxXuA4opiCVbhEe",
     "id": "alisa-novoe-razvitie-krupnogo-sboya-e111e",
     "url": "articles/alisa-novoe-razvitie-krupnogo-sboya-e111e/",
-    "topics": []
+    "topics": [
+      "ai-in-russia"
+    ]
   },
   {
     "title": "Claude отправил 20 заявлений на американские визы",
@@ -6362,7 +6368,8 @@
     "id": "un-autonomous-weapons-us-russia-20261117",
     "url": "articles/un-autonomous-weapons-us-russia-20261117/",
     "topics": [
-      "society"
+      "society",
+      "ai-in-russia"
     ],
     "companies": [],
     "products": [],
@@ -8743,7 +8750,8 @@
     "id": "mts-virtual-foreign-card-ai-payments-20261124",
     "url": "articles/mts-virtual-foreign-card-ai-payments-20261124/",
     "topics": [
-      "apps"
+      "apps",
+      "ai-in-russia"
     ],
     "companies": [],
     "products": [],
@@ -9278,7 +9286,9 @@
     "event_date": "2026-11-27",
     "id": "russian-ai-subscriptions-investigation-20261127",
     "url": "articles/russian-ai-subscriptions-investigation-20261127/",
-    "topics": [],
+    "topics": [
+      "ai-in-russia"
+    ],
     "companies": [
       "openai",
       "anthropic",
@@ -9355,7 +9365,8 @@
     "url": "articles/sber-gigachat-4-20261126/",
     "topics": [
       "models",
-      "agents"
+      "agents",
+      "ai-in-russia"
     ],
     "companies": [],
     "products": []
