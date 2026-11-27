@@ -2,79 +2,71 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/awaEuZfe0wYRvFoO",
-      "title": "GPT‑6 Astra записала программу в веса нейросети: что показало исследование",
-      "published_at": "2026-11-26T09:01:57.000Z",
+      "url": "https://dzen.ru/a/awbN7T7f80f2GNQA",
+      "title": "Из-за Grok подали в суд: штаты обвиняют ИИ в создании интимных изображений без согласия",
+      "published_at": "2026-11-27T09:03:10.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-26T13:36:56.810Z",
+      "first_seen_at": "2026-11-27T13:32:23.824Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awfwUHI030jm4d8s",
-      "title": "«После 50-ти на нашей вакансии делать нечего» - жалею, что не включила запись телефонного разговора. Эйджизм на госслужбе",
-      "published_at": "2026-11-26T08:53:23.000Z",
-      "source_name": "Блог НЕгуры",
-      "first_seen_at": "2026-11-26T13:36:57.514Z",
+      "url": "https://dzen.ru/a/awbNu8nf31f2MdFx",
+      "title": "Tesla показала ИИ-визуализацию дороги, похожую на вид из видеоигры",
+      "published_at": "2026-11-27T07:08:33.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-27T13:32:23.824Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awfLLlKRtEQ2glJW",
-      "title": "Как автоматизировать ведение ВКонтакте с GrokBot: инструкция и готовый промпт",
-      "published_at": "2026-11-26T06:10:34.000Z",
+      "url": "https://dzen.ru/a/awbMrpAwxGjapFcE",
+      "title": "ChatGPT не работает: что проверить, прежде чем менять настройки",
+      "published_at": "2026-11-27T07:05:52.000Z",
+      "source_name": "GPTнул",
+      "first_seen_at": "2026-11-27T13:32:23.824Z",
+      "source": "dzen_launcher_more"
+    },
+    {
+      "url": "https://dzen.ru/a/awkV7PlcjEzEh9fK",
+      "title": "Как объяснить сложное простыми словами: 7 приемов для экспертного контента",
+      "published_at": "2026-11-27T05:41:44.000Z",
       "source_name": "Наташа Нагорнова",
-      "first_seen_at": "2026-11-26T13:36:57.852Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/avxwj0mfXjSQaXPO",
-      "title": "Лимиты Gemini: сколько запросов доступно и что учитывать",
-      "published_at": "2026-11-26T05:01:36.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-26T13:36:56.810Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/av1apf-lp2QfZVIP",
-      "title": "Microsoft представила собственные ИИ-модели: зачем они ей нужны",
-      "published_at": "2026-11-26T03:02:02.000Z",
-      "source_name": "GPTнул",
-      "first_seen_at": "2026-11-26T13:36:56.810Z",
+      "first_seen_at": "2026-11-27T13:32:24.899Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-26T13:36:55.506Z",
+      "attempted_at": "2026-11-27T13:32:22.741Z",
       "failures": 0,
-      "next_at": "2026-11-26T14:36:55.506Z"
+      "next_at": "2026-11-27T14:32:22.741Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-26T13:36:56.810Z",
+      "attempted_at": "2026-11-27T13:32:23.825Z",
       "failures": 0,
-      "next_at": "2026-11-26T14:36:56.810Z"
+      "next_at": "2026-11-27T14:32:23.825Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-26T13:36:57.165Z",
+      "attempted_at": "2026-11-27T13:32:24.260Z",
       "failures": 0,
-      "next_at": "2026-11-26T14:36:57.165Z"
+      "next_at": "2026-11-27T14:32:24.260Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-26T13:36:57.514Z",
+      "attempted_at": "2026-11-27T13:32:24.566Z",
       "failures": 0,
-      "next_at": "2026-11-26T14:36:57.514Z"
+      "next_at": "2026-11-27T14:32:24.566Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-26T13:36:57.852Z",
+      "attempted_at": "2026-11-27T13:32:24.899Z",
       "failures": 0,
-      "next_at": "2026-11-26T14:36:57.852Z"
+      "next_at": "2026-11-27T14:32:24.899Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 45830822137,
+    "id": 46007940091,
     "requests": 5,
     "processed": 5,
     "errors": 0,
-    "added": 5
+    "added": 4
   }
 }
