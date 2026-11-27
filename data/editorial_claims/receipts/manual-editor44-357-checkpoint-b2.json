@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor44-357-checkpoint-b2.json",
+  "request_sha256": "8a542a83fcae3ec48497462796816b6bb4ca7f93a3e79cecf7a3d5e4e56ae16d",
+  "worker": "hpii-manual-editor",
+  "status": "checkpointed",
+  "pool_id": "n-280f95c3ca779d43",
+  "pool_sequence": 357,
+  "pool_status": "in_review",
+  "claimed_at": "2026-11-27T10:08:06.135424+00:00",
+  "note": "Проверено: официальный блог Google 03.11 (новые настройки школьных аккаунтов), Bloomberg 19.11 (540+ сотрудников и подрядчиков, со слов профсоюза), AP 26.11 (LAUSD подтвердил отключение AI Overviews на школьных устройствах; AI Mode отключён ранее), The Verge 18–19.11 (школьные округа рассматривают альтернативы). Петиция Let Students Search цитируется в AP, прямой файл недоступен. Объединённый сюжет №357 + №332; каталог Дзена проверен, прямой содержательной связи не найдено. Комплект на утверждение."
+}
