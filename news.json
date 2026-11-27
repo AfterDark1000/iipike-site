@@ -9533,5 +9533,30 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Meta приняла собственный ИИ за хакера, а тот помог подать на неё в суд на 75 тысяч долларов",
+    "summary": "Предприниматель из Южной Каролины требует от Meta 75 тысяч долларов после блокировки бизнес-аккаунтов. По его словам, иск подготовил ИИ-агент Muse.",
+    "published": "2026-11-27",
+    "source_url": "https://www.404media.co/a-man-and-his-muse-ai-agent-sue-meta/",
+    "cover": "assets/editorial/meta-muse-agent-lawsuit-20261116.webp",
+    "rubric": "what-are-you-doing",
+    "vk_title": "⚖️ Meta приняла собственный ИИ за ХАКЕРА и получила иск на $75 000",
+    "vk_summary": "Нейросеть Muse помогла предпринимателю составить судебный иск против своего разработчика после блокировки его бизнеса в Facebook.",
+    "published_at_utc": "2026-11-27T18:30:54Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-16",
+    "id": "meta-muse-agent-lawsuit-20261116",
+    "url": "articles/meta-muse-agent-lawsuit-20261116/",
+    "topics": [
+      "agents",
+      "society"
+    ],
+    "companies": [
+      "meta"
+    ],
+    "products": [
+      "muse"
+    ]
   }
 ]
