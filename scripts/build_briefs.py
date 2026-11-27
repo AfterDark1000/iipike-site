@@ -143,14 +143,27 @@ def date_label(iso):
 
 def card(r):
     slug=r["slug"]
+    label=date_label(r["published_at_utc"])
+    _, _, clock=label.partition(" · ")
+    topic=escape(r["topic"],quote=True)
     return ('<article class="brief-item" id="'+escape(slug)+'">'
-            '<div class="brief-meta"><time datetime="'+escape(r["published_at_utc"])+'">'+
-            date_label(r["published_at_utc"])+'</time><span>'+escape(r["topic"])+'</span></div>'
-            '<h2><a href="'+escape(slug)+'/">'+escape(r["headline"])+'</a></h2>'
+            '<time class="brief-clock" datetime="'+escape(r["published_at_utc"])+'" aria-label="'+escape(label)+'">'+clock+'</time>'
+            '<div class="brief-copy"><div class="brief-meta"><span class="brief-topic" data-topic="'+topic+'">'+topic+'</span></div>'
+            '<h3><a href="'+escape(slug)+'/">'+escape(r["headline"])+'</a></h3>'
             '<p>'+escape(r["body"])+'</p><div class="brief-links">'
             '<a href="'+escape(slug)+'/">Постоянная ссылка ↗</a>'
             '<a href="'+escape(r["source_url"],quote=True)+'" target="_blank" rel="noopener noreferrer">'
-            'Первоисточник: '+escape(r["source"])+' ↗</a></div></article>')
+            'Первоисточник: '+escape(r["source"])+' ↗</a></div></div></article>')
+
+
+def day_groups(rows):
+    from itertools import groupby
+    return "\n".join(
+        '<section class="brief-day"><h2 class="brief-day-title">'+escape(day)+'</h2>'
+        '<div class="brief-day-list">'+"\n".join(map(card, group))+'</div></section>'
+        for day, group in groupby(rows, key=lambda r: date_label(r["published_at_utc"]).partition(" · ")[0])
+    )
+
 
 def home_strip(rows):
     """Compact, factual publication wire. Never label an unreleased story live."""
@@ -215,7 +228,7 @@ def outputs(root):
     rows=released_rows(root)
     index=(root/SITE).read_text(encoding="utf-8")
     home=(root/HOME).read_text(encoding="utf-8")
-    item_html="\n".join(map(card,rows)) if rows else (
+    item_html=day_groups(rows) if rows else (
       '<p class="brief-empty">Пока короткие новости готовятся к редакционному утверждению. '
       'Здесь будут только проверенные и одобренные заметки.</p>')
     output={

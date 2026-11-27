@@ -225,5 +225,22 @@ class BriefFeedTests(unittest.TestCase):
         # Outputs are restricted to briefs and the homepage strip, not the full-article catalog.
         self.assertTrue(all(p.name=="index.html" or "/briefs/" in p.as_posix()
                             for p in b.outputs(ROOT)))
+
+    def test_wire_groups_released_briefs_by_actual_local_day(self):
+        import re
+        from itertools import groupby
+        rows = b.released_rows(ROOT)
+        html = (ROOT/"briefs/index.html").read_text(encoding="utf-8")
+        self.assertEqual(html, b.outputs(ROOT)[ROOT/"briefs/index.html"])
+        self.assertIn('class="home-v1 brief-page brief-wire-page"', html)
+        self.assertEqual(re.findall(r'<article class="brief-item" id="([^"]+)">', html),
+                         [r["slug"] for r in rows])
+        labels = [b.date_label(r["published_at_utc"]) for r in rows]
+        self.assertEqual(re.findall(r'<h2 class="brief-day-title">([^<]+)</h2>', html),
+                         [day for day, _ in groupby(labels, key=lambda s: s.partition(" · ")[0])])
+        self.assertEqual(re.findall(r'<time class="brief-clock" datetime="([^"]+)" aria-label="([^"]+)">([^<]+)</time>', html),
+                         [(r["published_at_utc"], label, label.partition(" · ")[2]) for r, label in zip(rows, labels)])
+        self.assertNotIn('<img', html)
+
 if __name__=="__main__":
     unittest.main()
