@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "action": "approve",
+  "worker": "hpii-manual-editor",
+  "claim_request": "manual-editor44-next-20261127-e5.json",
+  "pool_id": "n-056cf0b58a3dbace",
+  "pool_sequence": 368,
+  "claimed_at": "2026-11-27T15:51:14.554005+00:00",
+  "expected_note": "Проверено: Google 19.11, Introducing Tool Retrieval in the Gemini API, официальная документация https://aistudio.google.com/docs/tool-retrieval. Preview, Interactions API v1beta, Gemini 3.6+ включая Gemini 4; модель видит имена и краткие описания инструментов, полные схемы параметров загружает по необходимости, загруженные схемы оплачиваются как входные токены до конца разговора, отдельной платы нет. Экономия зависит от доли неиспользуемых инструментов, проценты не заявлены. Перелинковка: google-gemini-tasks-free-calls-shopping-20261117, Dzen ID 6afece813965384d0faea36e, соответствие подтверждено; пример развития агентных возможностей, не утверждать использование Tool Retrieval в Tasks. Комплект на утверждение.",
+  "note": "Главред утвердил материал. Статья, соцтексты и перелинковка сохранены и проверены; ожидается обложка.",
+  "human_authorized": true,
+  "article_id": "google-gemini-tool-retrieval-20261119",
+  "story_sha": "950ae5d52beb61285ed75ba7fe9c1d8f1fecd05a"
+}
