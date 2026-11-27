@@ -1029,3 +1029,25 @@ html:has(>head > link[rel="canonical"][href^="https://iipike.ru/articles/"]) mai
 .archive-r2 .archive-rubric[data-rubric="quotes"]{color:#52637b}
 .archive-r2 .archive-rubric[data-rubric="made-with-ai"]{color:#765384}
 @media(max-width:700px){.archive-r2 .rubric-copy .date{font-size:12px;margin-top:8px}.archive-r2 .archive-tools{font-size:12px;gap:8px 15px}}
+
+/* Topics: R2 chronology with readable topic directory cards. */
+.topic-r2 .topic-detail-head>div{min-width:0}
+.topic-r2 .topic-back{display:inline-block;font-size:13px;color:var(--muted);margin-bottom:12px}
+.topic-r2 .rubric-head h1{overflow-wrap:anywhere}
+.topic-r2 .topic-index-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0 28px}
+.topic-r2 .topic-index-link{min-width:0;min-height:154px;padding:20px;border-radius:12px;background:#fffdf7;gap:9px;transition:border-color .16s,background .16s}
+.topic-r2 .topic-index-link strong{font:750 19px/1.25 system-ui,sans-serif;overflow-wrap:anywhere}
+.topic-r2 .topic-index-link p{font:400 14px/1.5 system-ui,sans-serif;color:var(--muted);margin:0}
+.topic-r2 .topic-tile-meta{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:9px;font:700 12px/1.4 system-ui,sans-serif;color:#386d63}
+.topic-r2 .topic-tile-meta span{color:#386d63;font-size:16px}
+.topic-r2 .topic-index-link:hover{border-color:#386d63;background:#f4f6ef}
+.topic-r2 .rubric-copy .date{display:block;margin:5px 0 0;font:650 11px/1.35 system-ui,sans-serif}
+.topic-r2 .archive-rubric[data-rubric="news"]{color:#386d63}
+.topic-r2 .archive-rubric[data-rubric="skynet"]{color:#a74434}
+.topic-r2 .archive-rubric[data-rubric="what-are-you-doing"]{color:#94631b}
+.topic-r2 .archive-rubric[data-rubric="quotes"]{color:#52637b}
+.topic-r2 .archive-rubric[data-rubric="made-with-ai"]{color:#765384}
+@media(max-width:900px){.topic-r2 .topic-index-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.topic-r2 .rubric-copy .date{font-size:12px;margin-top:8px}}
+@media(max-width:560px){.topic-r2 .topic-index-grid{grid-template-columns:minmax(0,1fr);gap:10px}.topic-r2 .topic-index-link{min-height:0;padding:16px}.topic-r2 .topic-index-link strong{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.topic-r2 .topic-index-link{transition:none}}
