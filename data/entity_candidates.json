@@ -2291,6 +2291,10 @@
         {
           "article_id": "sber-gigachat-4-20261126",
           "source_url": "https://giga.chat/blog/posts/gigachat-4"
+        },
+        {
+          "article_id": "sber-kandinsky-6-5-20261126",
+          "source_url": "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=04e81e59-e42a-4bce-b4bd-7400fc372b26&regionID=77&type=NEWS"
         }
       ]
     }
@@ -4554,6 +4558,19 @@
         {
           "article_id": "sber-gigachat-4-20261126",
           "source_url": "https://giga.chat/blog/posts/gigachat-4"
+        }
+      ]
+    },
+    {
+      "key": "kandinsky",
+      "name": "Kandinsky",
+      "company": "sber",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "sber-kandinsky-6-5-20261126",
+          "source_url": "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=04e81e59-e42a-4bce-b4bd-7400fc372b26&regionID=77&type=NEWS"
         }
       ]
     }
