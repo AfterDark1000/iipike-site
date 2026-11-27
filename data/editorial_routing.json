@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "approved_date": "2026-11-27",
-  "source": "data/editorial_triage/requests/20261127-sber-online-ai-subscriptions-hot.json",
+  "source": "data/editorial_triage/requests/20261127-morning-triage-590-620.json",
   "source_pool_sha": "671e8558d5622afb1e66c93b1d4889c9b67faad2",
   "note": "Approved decisions merged by immutable GitHub triage request; no publishing.",
   "items": [
@@ -2798,10 +2798,194 @@
       "decision": "hot"
     },
     {
+      "sequence": 590,
+      "pool_id": "n-b3d89edd58d3bd18",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 591,
+      "pool_id": "n-7957fa800ad20852",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 592,
+      "pool_id": "n-1ce515ae80b3c8ef",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 593,
+      "pool_id": "n-5b76b957ab1d0f60",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 594,
+      "pool_id": "n-b582209a734afa3f",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 595,
+      "pool_id": "n-ac030ed1cfeedaba",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 596,
+      "pool_id": "n-b56ca7ad86e600b2",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 597,
+      "pool_id": "n-a38a13ef446659f2",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 598,
+      "pool_id": "n-8af76e99a2656b61",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 599,
+      "pool_id": "n-d6dec39eb04e2cc1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 600,
+      "pool_id": "n-4f5d561c717c59f9",
+      "lane": "hold",
+      "decision": "reject_after_verification"
+    },
+    {
+      "sequence": 601,
+      "pool_id": "n-16bb08d3e649b87a",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 602,
+      "pool_id": "n-06050f101b97e5bf",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 603,
+      "pool_id": "n-3dfeef75f5a74dcf",
+      "lane": "hold",
+      "decision": "linked_secondary",
+      "group": "russia_ai_agent_regulation_20261126",
+      "group_primary": 619
+    },
+    {
+      "sequence": 604,
+      "pool_id": "n-e7270a05e0125982",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 605,
+      "pool_id": "n-6c25b867447623a1",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 606,
+      "pool_id": "n-9f0a38e7728de7cf",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 607,
+      "pool_id": "n-d0670d09ee678763",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 608,
+      "pool_id": "n-69fbec9981f84b43",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 609,
+      "pool_id": "n-fbde4a33d01a6302",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 610,
+      "pool_id": "n-c346a0bbaf06a03d",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 611,
+      "pool_id": "n-4442885bf03f06b2",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 612,
+      "pool_id": "n-d81b283963b86dd4",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 613,
+      "pool_id": "n-ed828116a8a94542",
+      "lane": "hold",
+      "decision": "manual"
+    },
+    {
+      "sequence": 614,
+      "pool_id": "n-c0168a121974176e",
+      "lane": "short",
+      "decision": "short"
+    },
+    {
+      "sequence": 615,
+      "pool_id": "n-ee49075fab924212",
+      "lane": "long",
+      "decision": "full"
+    },
+    {
+      "sequence": 616,
+      "pool_id": "n-0b032116e10466e0",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
+      "sequence": 617,
+      "pool_id": "n-92a9dea02f472d08",
+      "lane": "long",
+      "decision": "hot"
+    },
+    {
       "sequence": 618,
       "pool_id": "n-b0e6c16d3d3929d4",
       "lane": "long",
       "decision": "hot"
+    },
+    {
+      "sequence": 619,
+      "pool_id": "n-1898b18fe11669de",
+      "lane": "long",
+      "decision": "linked_primary",
+      "group": "russia_ai_agent_regulation_20261126",
+      "group_primary": 619
+    },
+    {
+      "sequence": 620,
+      "pool_id": "n-fca2908174a065f7",
+      "lane": "short",
+      "decision": "short"
     }
   ]
 }
