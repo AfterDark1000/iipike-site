@@ -2005,11 +2005,11 @@
       "summary": "14 ноября: обзор сообщает о расширении Muse для работы с веб-страницами и приложениями.",
       "origin": "ХПИИ — добытчик новостей (вечерний проход 15.11.2026); пользователь: «В пул»",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-15T14:19:00.000Z",
       "review_started_at": null,
       "closed_at": "2026-11-21T16:57:26.374Z",
-      "article_id": null,
+      "article_id": "meta-muse-chrome-login-20261120",
       "note": "Вторичный источник; проверить карточку Chrome Web Store и дату; отдельная функция от Muse на часах.\n17.11.2026, решение главреда после полной ревизии: Сопоставить с №61: объединять только при тематической и фактической совместимости, не считать автоматическим дублем.\n2026-11-18, решение главреда: СОГЛАСОВАНО ОБЪЕДИНЕНИЕ с №61; основной новостной повод №134. Один материал о способах доступа к Muse: часы и боковая панель Chrome. №70 (звонки компаниям) самостоятельная новость. Оба кандидата сохраняются в очереди до утверждения общей статьи; затем вторичный закрыть с указанием ID.\n21.11.2026: Объединено с №61, article_id=meta-muse-chrome-login-20261120. Подтверждённое расширение Chrome вошло в утверждённую статью, отдельная не нужна. №70 о звонках остаётся самостоятельной."
     },
     {
@@ -2860,11 +2860,11 @@
       "summary": "16 ноября: OpenAI представила компьютерных агентов для медицинских систем и оформления документов. Важные действия требуют контроля человека.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-23T11:34:36.146Z",
-      "article_id": null,
+      "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
       "note": "17.11.2026, решение главреда после полной ревизии: Сопоставить с №192: объединять только при тематической и фактической совместимости, не считать автоматическим дублем.\n2026-11-18, решение главреда: СОГЛАСОВАНО ОБЪЕДИНЕНИЕ с №192; основной новостной повод №192. Одно событие: работа с больничными системами и более 20 подключений. Исправить исходную формулировку №191 «вместо медперсонала». Оба кандидата сохраняются в очереди до утверждения общей статьи; затем вторичный закрыть с указанием ID.\n23.11.2026: Объединено с №192, article_id=openai-chatgpt-healthcare-20-connectors-20261116. Отдельная статья не создаётся."
     },
     {
@@ -3160,11 +3160,11 @@
       "summary": "15 ноября: новый открытый инструмент локального запуска Haru-4B на Mac, Windows и Linux, с одновременным прослушиванием и ответом. Отдельно от новости о самой модели.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-16T15:59:40+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-23T11:21:22.311Z",
-      "article_id": null,
+      "article_id": "higurashi-haru4b-speech-cpp-20261115",
       "note": "17.11.2026, решение главреда после полной ревизии: Сопоставить с №187: объединять только при тематической и фактической совместимости, не считать автоматическим дублем.\n2026-11-18, решение главреда: СОГЛАСОВАНО ОБЪЕДИНЕНИЕ с №187; основной новостной повод №211. Одна новость о голосовой модели Haru-4B и локальном запуске через speech.cpp. Оба кандидата сохраняются в очереди до утверждения общей статьи; затем вторичный закрыть с указанием ID.\n23.11.2026: Объединено с №187, article_id=higurashi-haru4b-speech-cpp-20261115; самостоятельная публикация отменена после утверждения общей статьи."
     },
     {
@@ -3280,11 +3280,11 @@
       "summary": "Оценка выбросов 403 дата-центров; не только ИИ-нагрузки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-17T03:33:51+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-23T07:14:20.716Z",
-      "article_id": null,
+      "article_id": "nvidia-greenpeace-datacenter-emissions-20261116",
       "note": "17.11.2026, решение главреда после полной ревизии: Вторая волна повышения приоритета — кандидат после первичной проверки; текущий normal пока сохраняется.\n17.11.2026, решение главреда после полной ревизии: Сопоставить с №95: объединять только при тематической и фактической совместимости, не считать автоматическим дублем.\n23.11.2026: Объединено с №95, article_id=nvidia-greenpeace-datacenter-emissions-20261116. Все факты №219 включены в утверждённую статью. Самостоятельная публикация не требуется."
     },
     {
@@ -3460,11 +3460,11 @@
       "summary": "Предупреждения и ограничения аккаунтов за попытки создания запрещённых изображений детей.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-17T14:36:23+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-23T15:12:09.912Z",
-      "article_id": null,
+      "article_id": "openai-child-safety-image-classifier-20261116",
       "note": "2026-11-18, решение главреда: СОГЛАСОВАНО ОБЪЕДИНЕНИЕ с №231; основной новостной повод №231. Один пакет мер OpenAI по защите детей: поиск запрещённых изображений и предупреждения пользователям. Соблюдать точность и осторожность. Оба кандидата сохраняются в очереди до утверждения общей статьи; затем вторичный закрыть с указанием ID.\n23.11.2026: объединено с №231, утверждённая статья article_id=openai-child-safety-image-classifier-20261116. Отдельная статья не выпускается."
     },
     {
@@ -4270,11 +4270,11 @@
       "summary": "18 ноября: агент получал содержание сообщений через доступ к экрану и уведомлениям; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-24T08:26:05.753Z",
-      "article_id": null,
+      "article_id": "meta-muse-unauthorized-actions-20261118",
       "note": "Объединено с №285, article_id=meta-muse-unauthorized-actions-20261118"
     },
     {
@@ -4285,11 +4285,11 @@
       "summary": "17 ноября: поставки NVL72 партнёрам, согласно отчёту NVIDIA.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-24T08:40:28.534Z",
-      "article_id": null,
+      "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
       "note": "Объединено с №288, article_id=nvidia-q3-fy2027-earnings-vera-rubin-20261117"
     },
     {
@@ -4750,11 +4750,11 @@
       "summary": "18 ноября: партнёрство OpenAI и Le Figaro по контенту и архивам.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-19T03:35:29+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-23T11:48:25.521Z",
-      "article_id": null,
+      "article_id": "openai-french-press-lvmh-figaro-20261118",
       "note": "\n23.11.2026: объединено с №196, article_id=openai-french-press-lvmh-figaro-20261118; отдельная статья не создаётся."
     },
     {
@@ -4825,11 +4825,11 @@
       "summary": "17 ноября. Сообщается о предварительном проспекте IPO и диапазоне цены $70–78; вторичный источник, проверить.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-19T13:14:35+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-20T06:51:41.639Z",
-      "article_id": null,
+      "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
       "note": "Объединено с №361, article_id=anthropic-record-ipo-81b-nasdaq-20261119. Факты: первоначальный диапазон $70–78 и документы регистрации 17 ноября. Самостоятельная публикация не нужна; source_url сохранён."
     },
     {
@@ -4960,12 +4960,12 @@
       "summary": "18–19 ноября. Сообщается о поиске школьными округами альтернатив Google Search из-за встроенного ИИ; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": null,
-      "closed_at": null,
-      "article_id": null,
-      "note": ""
+      "closed_at": "2026-11-27T13:42:21+00:00",
+      "article_id": "google-school-search-ai-petition-20261126",
+      "note": "Объединено с №357, article_id=google-school-search-ai-petition-20261126"
     },
     {
       "id": "n-dcbfa5b842f13f82",
@@ -5005,11 +5005,11 @@
       "summary": "18 ноября. Google продемонстрировала проект The Life of Ants с виртуальной прогулкой по муравьиной колонии на базе Genie 4.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-20T12:44:34.833Z",
-      "article_id": null,
+      "article_id": "google-genie4-project-genie-access-20261118",
       "note": "Объединено с №334, article_id=google-genie4-project-genie-access-20261118. Демонстрация The Life of Ants вошла в утверждённую статью, отдельную публикацию не делать."
     },
     {
@@ -5095,11 +5095,11 @@
       "summary": "18 ноября. Сообщается об окончательной цене предполагаемого IPO в $83 за акцию. Отдельный этап после предварительной подачи документов.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-20T04:03:18+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-20T06:51:41.639Z",
-      "article_id": null,
+      "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
       "note": "Объединено с №361, article_id=anthropic-record-ipo-81b-nasdaq-20261119. Факты: цена размещения $83 и 980 млн акций 18 ноября. Самостоятельная публикация не нужна; source_url сохранён."
     },
     {
@@ -6220,11 +6220,11 @@
       "summary": "20 ноября: сообщение о падении акций после дебюта; факт IPO требует проверки.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "rejected",
+      "status": "approved",
       "added_at": "2026-11-21T03:51:43+00:00",
       "review_started_at": null,
       "closed_at": "2026-11-21T15:03:12.322Z",
-      "article_id": null,
+      "article_id": "nvidia-sec-anthropic-market-selloff-20261120",
       "note": "21.11.2026: Объединено с №415, article_id=nvidia-sec-anthropic-market-selloff-20261120. В утверждённую статью вошли падение акций Anthropic после IPO 20.11, цены $83/$112/~$89, розничные инвесторы и данные Vanda Research. Отдельной статьи и соцпостов по №416 не создавать. Исходный источник и номер сохранены."
     },
     {
@@ -7210,12 +7210,12 @@
       "summary": "21 ноября. Автор Reddit показал интерактивный 3D-город в единственном HTML-файле, созданный при помощи Claude Code. Со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "approved",
       "added_at": "2026-11-22T18:28:16+00:00",
       "review_started_at": null,
-      "closed_at": null,
-      "article_id": null,
-      "note": ""
+      "closed_at": "2026-11-27T18:47:12+00:00",
+      "article_id": "ai-four-created-worlds-20261124",
+      "note": "Объединено с №376, article_id=ai-four-created-worlds-20261124"
     },
     {
       "id": "n-b9d1ddbff2a1f270",
@@ -8005,12 +8005,12 @@
       "summary": "24 ноября. Inkling Plane Racing в подборке проектов; характер игры, автономность ИИ и результат требуют проверки, со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": null,
-      "closed_at": null,
-      "article_id": null,
-      "note": ""
+      "closed_at": "2026-11-27T18:47:12+00:00",
+      "article_id": "ai-four-created-worlds-20261124",
+      "note": "Объединено с №376, article_id=ai-four-created-worlds-20261124"
     },
     {
       "id": "n-3b9b5abdc9b748cc",
@@ -8020,12 +8020,12 @@
       "summary": "24 ноября. CORPUS в подборке проектов; медицинская точность не подтверждена, со слов автора.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "approved",
       "added_at": "2026-11-24T14:30:26+00:00",
       "review_started_at": null,
-      "closed_at": null,
-      "article_id": null,
-      "note": ""
+      "closed_at": "2026-11-27T18:47:12+00:00",
+      "article_id": "ai-four-created-worlds-20261124",
+      "note": "Объединено с №376, article_id=ai-four-created-worlds-20261124"
     },
     {
       "id": "n-006e05b66d8851bd",

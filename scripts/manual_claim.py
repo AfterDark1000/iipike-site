@@ -16,7 +16,8 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-from scripts import site_news_pool, editorial_routing
+from scripts import site_news_pool, editorial_routing, editorial_collections
+import copy
 
 POOL = Path("data/site_news_pool.json")
 REQUESTS = Path("data/editorial_claims/requests")
@@ -48,10 +49,78 @@ def approved_story(root, req):
         raise ValueError("Story not explicitly human-approved")
 
 
+def close_collection_members(root, current, primary, req, now):
+    """Resolve membership from the current server-side registry, not free-text notes."""
+    routes_doc = json.loads((root / editorial_routing.ROUTES).read_text(encoding="utf-8"))
+    routes = editorial_routing.validate_document(routes_doc, current)
+    route = routes.get(primary["id"], {})
+    supplied = req.get("included_pool_ids")
+    if "included_pool_ids" in req and (type(supplied) is not list or
+            any(type(x) is not str for x in supplied) or len(set(supplied)) != len(supplied)):
+        raise ValueError("Invalid included_pool_ids")
+    group = route.get("group")
+    if not group:
+        if supplied:
+            raise ValueError("Standalone article cannot close other candidates")
+        return current, []
+    if (route.get("group_primary") != primary["sequence"] or
+            route.get("lane") != "long" or route.get("decision") not in {"linked_primary", "hot"}):
+        raise ValueError("Only the collection primary may approve the group")
+    path = root / editorial_collections.PATH
+    doc = json.loads(path.read_text(encoding="utf-8")) if path.is_file() else editorial_collections.empty()
+    editorial_collections.validate_document(doc, current, routes_doc)
+    col = next((c for c in doc["items"] if c["group"] == group), None)
+    members = {r["pool_id"]: r for r in routes.values() if r.get("group") == group
+               and r["pool_id"] != primary["id"]}
+    if any(r.get("group_primary") != primary["sequence"] or
+           r["decision"] != "linked_secondary" or r["lane"] != "hold" for r in members.values()):
+        raise ValueError("Inconsistent collection secondary route")
+    if col is not None:
+        if col["state"] != "ready_for_editor":
+            raise ValueError("Collection is not ready for editor")
+        selected = set(members)
+        if supplied is not None and set(supplied) != selected:
+            raise ValueError("Ready collection approval requires all registered members")
+    else:
+        # Legacy groups were sometimes only suggestions to combine. Never infer
+        # that all related topics were actually included in the approved story.
+        if supplied is None:
+            raise ValueError("Legacy group approval requires explicit included_pool_ids")
+        selected = set(supplied)
+        if not selected <= set(members):
+            raise ValueError("Included candidate is not a member of this group")
+    result = copy.deepcopy(current)
+    closed = []
+    stamp = now or site_news_pool.stamp()
+    for item in result["items"]:
+        if item["id"] not in selected:
+            continue
+        if item["status"] == "approved" and item["article_id"] == req["article_id"]:
+            continue
+        if item["status"] != "queued":
+            raise ValueError("Collection secondary is reserved or already closed: " + str(item["sequence"]))
+        if item["priority"] == "high":
+            raise ValueError("Refusing to absorb standalone high-priority candidate")
+        marker = f'Объединено с №{primary["sequence"]}, article_id={req["article_id"]}'
+        note = item["note"]
+        if note:
+            note += "\n"
+        if len(note + marker) > 1500:
+            raise ValueError("Collection note too long; preserve history before approval")
+        item.update(status="approved", closed_at=stamp, article_id=req["article_id"], note=note+marker)
+        closed.append({"pool_id": item["id"], "pool_sequence": item["sequence"],
+                       "article_id": item["article_id"]})
+    site_news_pool.validate(result)
+    editorial_collections.validate_document(doc, result, routes_doc)
+    return result, closed
+
+
 def bound_action(root, current, req, base, now):
     action = req["action"]
     fields = BOUND | ({"article_id", "story_sha", "human_authorized"} if action == "approve"
                       else {"human_authorized"} if action == "return" else set())
+    if action == "approve" and "included_pool_ids" in req:
+        fields = fields | {"included_pool_ids"}
     if set(req) != fields or (action in {"return", "approve"} and req.get("human_authorized") is not True):
         raise ValueError("Invalid bound request or missing human authorization")
     name = req["claim_request"]
@@ -78,6 +147,7 @@ def bound_action(root, current, req, base, now):
         raise ValueError("Invalid checkpoint or decision note")
     if note.startswith(("AUTO_EDITOR claim=", "SHORT_EDITOR claim=")):
         raise ValueError("Foreign worker marker forbidden")
+    merged = []
     if action == "checkpoint":
         changed, target = site_news_pool.checkpoint(current, item["id"], note)
         status = "checkpointed"
@@ -86,10 +156,13 @@ def bound_action(root, current, req, base, now):
             approved_story(root, req)
         changed, target = site_news_pool.transition(current, item["id"], action,
             article_id=req.get("article_id"), note=note, now=now)
+        if action == "approve":
+            changed, merged = close_collection_members(root, changed, target, req, now)
         status = {"return": "returned", "reject": "closed_rejected", "approve": "closed_approved"}[action]
     return changed, {**base, "status": status, "pool_id": target["id"],
                      "pool_sequence": target["sequence"], "pool_status": target["status"],
-                     "claimed_at": target["review_started_at"], "note": target["note"]}
+                     "claimed_at": target["review_started_at"], "note": target["note"],
+                     **({"merged_members": merged} if action == "approve" else {})}
 
 
 def dump(path, obj):
