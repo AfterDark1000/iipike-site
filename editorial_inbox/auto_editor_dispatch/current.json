@@ -1,16 +1,29 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-27T09:46:50.442886+00:00",
-  "valid_until": "2026-11-27T11:16:50.442886+00:00",
+  "prepared_at": "2026-11-27T10:00:23.778394+00:00",
+  "valid_until": "2026-11-27T11:30:23.778394+00:00",
   "status": "ready",
   "counts": {
-    "reserved_24h": 1,
+    "reserved_24h": 2,
     "waiting_review": 1,
     "limit": 5
   },
   "job": {
-    "kind": "new",
-    "request": "dispatch-20261127-094650.json",
+    "kind": "resume",
+    "receipt": {
+      "schema_version": 1,
+      "request": "dispatch-20261127-094650.json",
+      "request_sha256": "1bb887b93b10ef59eb2e3e701fa96725c68d82b10a98bcccf62963b16412176c",
+      "status": "reserved",
+      "pool_id": "n-ed80d1bd7d710065",
+      "pool_sequence": 354,
+      "article_id": "issledovateli-mit-svyazali-data-tsentry-s-zagryaz-ed80d1bd7d710065",
+      "priority": "normal",
+      "title": "Исследователи MIT связали дата-центры с загрязнением воздуха далеко за их пределами",
+      "source_url": "https://ainewsbites.com/mit-data-centers-distant-air-pollution",
+      "claimed_at": "2026-11-27T09:59:52+00:00",
+      "worker": "hpii-auto-editor"
+    },
     "candidate": {
       "id": "n-ed80d1bd7d710065",
       "sequence": 354,
@@ -19,35 +32,66 @@
       "summary": "19 ноября. Сообщается об исследовании косвенного воздействия дата-центров на загрязнение воздуха; вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T04:03:18+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-27T09:59:52+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "AUTO_EDITOR claim=dispatch-20261127-094650.json; article_id=issledovateli-mit-svyazali-data-tsentry-s-zagryaz-ed80d1bd7d710065"
     },
-    "preview": {
+    "draft": {
+      "schema_version": 1,
+      "request": "dispatch-20261127-094650.json",
       "pool_id": "n-ed80d1bd7d710065",
       "pool_sequence": 354,
       "article_id": "issledovateli-mit-svyazali-data-tsentry-s-zagryaz-ed80d1bd7d710065",
-      "priority": "normal",
-      "title": "Исследователи MIT связали дата-центры с загрязнением воздуха далеко за их пределами",
-      "source_url": "https://ainewsbites.com/mit-data-centers-distant-air-pollution",
-      "claimed_at": "2026-11-27T09:46:50.442886+00:00",
-      "worker": "hpii-auto-editor"
+      "status": "drafting",
+      "revision": 1,
+      "created_at": "2026-11-27T09:59:52+00:00",
+      "updated_at": "2026-11-27T09:59:52+00:00",
+      "content": {
+        "title": "",
+        "dzen_title": "",
+        "summary": "",
+        "rubric": "",
+        "section": "",
+        "topics": [],
+        "companies": [],
+        "products": [],
+        "source_url": "",
+        "source_title": "",
+        "event_date": null,
+        "related_dzen_ids": [],
+        "site_crosslinks": {},
+        "article_markdown": "",
+        "threads_text": "",
+        "x_text": "",
+        "vk_title": "",
+        "vk_summary": ""
+      },
+      "research": {
+        "sources": [],
+        "fact_checks": [],
+        "notes": ""
+      },
+      "entity_candidates": {
+        "companies": [],
+        "products": []
+      },
+      "cover_brief": {
+        "fact": "",
+        "hook": "",
+        "constraints": ""
+      },
+      "editor_notes": []
     },
-    "route": {
-      "sequence": 354,
-      "pool_id": "n-ed80d1bd7d710065",
-      "lane": "long",
-      "decision": "full"
-    }
+    "draft_sha": null
   },
   "main_guard": {
-    "data/site_news_pool.json": "1c3bab5766444dc51f31e2ced7048ce90f4a2281",
+    "data/site_news_pool.json": "3235ca587c66231d1077ce03451e78eafbe1f1e3",
     "data/editorial_routing.json": "f0928ce1739f3222dab31279d30e9de6695c807b",
-    "data/auto_editor/requests": "f8c3de11e6800fe8036ce04aa96a0150985fbbc6",
-    "data/auto_editor/receipts": "d139b65d78be00cb31af4e3a02e07a997f016ddf",
+    "data/auto_editor/requests": "b5641ec3d0e846403a9f8038c4a06277976bae06",
+    "data/auto_editor/receipts": "c1b7c9ac944e1ae4644d45a25495a4601be75e1a",
     "news.json": "a181e97699ed4cf3469821a54b0907bbaee3fc29"
   },
   "intake_guard": {
