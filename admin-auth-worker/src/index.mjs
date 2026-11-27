@@ -251,7 +251,10 @@ async function editorialFileRead(env,path) {
   catch{return {status:502,found:false}}
 }
 function encodeGitHubContent(data) {
-  return btoa(String.fromCharCode(...enc.encode(JSON.stringify(data,null,2)+"\n")));
+  const bytes=enc.encode(JSON.stringify(data,null,2)+"\n");
+  let binary="";
+  for(let i=0;i<bytes.length;i+=8192)binary+=String.fromCharCode(...bytes.subarray(i,i+8192));
+  return btoa(binary);
 }
 async function recordReview(env, body, login) {
   if (!validReview(body)) return fail(400,"invalid_decision");
