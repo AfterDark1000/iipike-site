@@ -9215,5 +9215,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Instagram научится ловить нейросети на воровстве чужих шуток и видеороликов",
+    "summary": "Instagram внедряет защиту авторских видео от копирования и готовится тестировать распознавание украденных монологов и шуток в роликах, созданных нейросетями.",
+    "published": "2026-11-27",
+    "source_url": "https://creators.instagram.com/blog/introducing-content-protection/",
+    "cover": "assets/editorial/instagram-content-protection-ai-copies-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🎙️ Instagram научится искать УКРАДЕННЫЕ ШУТКИ в ИИ-роликах",
+    "vk_summary": "Instagram внедряет защиту авторских видео от копирования и готовится тестировать распознавание украденных монологов и шуток в роликах, созданных нейросетями.",
+    "published_at_utc": "2026-11-27T04:15:43Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "instagram-content-protection-ai-copies-20261117",
+    "url": "articles/instagram-content-protection-ai-copies-20261117/",
+    "topics": [
+      "apps",
+      "society"
+    ],
+    "companies": [
+      "meta"
+    ],
+    "products": []
   }
 ]
