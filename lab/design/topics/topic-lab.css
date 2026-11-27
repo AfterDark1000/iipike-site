@@ -1,0 +1,23 @@
+@import url("../rubrics/rubric-lab.css");
+.tiles,.journal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.topic-tile{display:flex;flex-direction:column;min-width:0;min-height:210px;padding:20px 22px;background:#fffdf8;border:1px solid var(--line);border-radius:14px;gap:10px;border-top:3px solid var(--tone);transition:background .15s,border-color .15s}
+.topic-tile:hover{background:var(--tint);border-color:var(--tone);color:var(--ink)}
+.symbol{display:grid;place-items:center;flex:none;width:48px;height:48px;border-radius:11px;background:var(--tint);color:var(--tone)}
+.symbol svg{width:27px;height:27px}.topic-tile h2{font:750 21px/1.2 system-ui,sans-serif;letter-spacing:-.02em}.topic-tile p,.journal-copy p{font:14px/1.5 system-ui,sans-serif;color:var(--muted)}
+.tile-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:7px;color:var(--tone)}
+.topic-count{font-weight:800;font-size:17px}.topic-count span{font-size:12px;font-weight:600}
+.journal-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.journal-tile{grid-column:span 2;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fffdf8;color:var(--ink);min-width:0}
+.journal-tile.feature{grid-column:span 3}
+.journal-tile .cover{position:relative;min-width:0;background:var(--tint);border-bottom:4px solid var(--tone)}
+.journal-tile .cover img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.journal-number{position:absolute;bottom:10px;left:10px;background:#fffdf8;border-radius:6px;padding:5px 9px;color:var(--tone);font-size:12px;font-weight:750}
+.journal-copy{padding:16px 18px;display:flex;flex:1;flex-direction:column;gap:8px}.journal-copy h2{font:750 21px/1.22 system-ui,sans-serif;letter-spacing:-.025em}.feature .journal-copy h2{font-size:26px}.journal-read{margin-top:auto;color:var(--tone);font-size:12px;font-weight:750;padding-top:5px}.journal-tile:hover{border-color:var(--tone);color:var(--tone)}
+.directory-section{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;padding:23px 0;border-bottom:1px solid var(--line)}
+.section-label span{font:750 12px/1.3 system-ui,sans-serif;color:var(--accent);letter-spacing:.12em}.section-label h2{font:700 27px/1.14 Georgia,serif;margin-top:8px;letter-spacing:-.025em}
+.directory-row{display:grid;grid-template-columns:46px minmax(0,1fr) 85px 20px;gap:16px;align-items:center;padding:14px 10px;border-bottom:1px solid var(--line);min-width:0}.directory-row:last-child{border:0}.directory-row:hover{background:#fffdf8;color:var(--tone)}
+.directory-row .symbol{width:42px;height:42px;border-radius:9px}.directory-row .symbol svg{width:23px;height:23px}.row-copy{min-width:0;display:grid;gap:4px}.row-copy strong{font:750 19px/1.25 system-ui,sans-serif;letter-spacing:-.015em}.row-copy>span{font:13px/1.45 system-ui,sans-serif;color:var(--muted)}.row-count{font:750 24px/1.1 system-ui,sans-serif;color:var(--tone);text-align:right}.row-count small{display:block;font:600 10px/1.4 system-ui,sans-serif;color:var(--muted);margin-top:3px}.row-arrow{color:var(--tone);text-align:right}
+.lab-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.lab-choice{padding:20px;background:#fffdf8;border:1px solid var(--line);border-radius:12px}.lab-choice h2{font:750 23px/1.2 system-ui,sans-serif;margin:10px 0}.lab-choice p{font:14px/1.5 system-ui,sans-serif;color:var(--muted)}.lab-choice a{display:block;color:var(--accent);font-weight:700;margin-top:16px}
+@media(max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.journal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journal-tile,.journal-tile.feature{grid-column:span 1}.directory-section{grid-template-columns:160px minmax(0,1fr);gap:14px}.lab-choices{grid-template-columns:1fr}}
+@media(max-width:560px){.tiles,.journal-grid{grid-template-columns:minmax(0,1fr);gap:11px}.topic-tile{min-height:0;padding:16px;gap:8px}.topic-tile .symbol{width:42px;height:42px}.topic-tile h2{font-size:19px}.journal-copy{padding:14px 16px}.feature .journal-copy h2{font-size:22px}.directory-section{display:block;padding:19px 0}.section-label h2{font-size:23px;margin:5px 0 10px}.directory-row{grid-template-columns:36px minmax(0,1fr) 48px;gap:9px;padding:12px 0}.directory-row .symbol{width:34px;height:34px}.directory-row .symbol svg{width:21px;height:21px}.row-copy strong{font-size:17px}.row-copy>span{font-size:12px}.row-count{font-size:21px}.row-count small{font-size:9px}.row-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.topic-tile{transition:none}}
