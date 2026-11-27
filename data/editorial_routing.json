@@ -52,10 +52,8 @@
     {
       "sequence": 70,
       "pool_id": "n-ab23a7fa21e24fb3",
-      "lane": "hold",
-      "decision": "linked_secondary",
-      "group": "muse_features",
-      "group_primary": 61
+      "lane": "long",
+      "decision": "full"
     },
     {
       "sequence": 74,

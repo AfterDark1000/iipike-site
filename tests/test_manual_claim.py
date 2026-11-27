@@ -138,5 +138,78 @@ class ManualClaimTests(unittest.TestCase):
         self.assertEqual(self.read_pool()["items"][1]["status"],"in_review")
 
 
+    def collection_fixture(self, registered=True):
+        # Primary #2 is already a long-lane hot fixture; turn it into a
+        # verified ready collection, with two held, unreserved secondaries.
+        self.pool["items"][1]["priority"] = "normal"
+        members = []
+        for n in (2, 3, 4):
+            item = self.pool["items"][n-1]
+            item["priority"] = "normal"
+            route = next(r for r in self.routes["items"] if r["sequence"] == n)
+            route.update(lane="long" if n == 2 else "hold",
+                         decision="linked_primary" if n == 2 else "linked_secondary",
+                         group="fixture_collection", group_primary=2)
+            members.append({"sequence": n, "pool_id": item["id"]})
+        # Keep #2 first in ordinary FIFO rather than unrelated hot #6.
+        self.pool["items"][0].update(status="in_review", review_started_at=NOW)
+        self.pool["items"][5].update(status="in_review", review_started_at=NOW)
+        manual_claim.dump(self.root / manual_claim.POOL, self.pool)
+        manual_claim.dump(self.root / editorial_routing.ROUTES, self.routes)
+        if registered:
+            from scripts import editorial_collections
+            manual_claim.dump(self.root / editorial_collections.PATH, {
+                "schema_version": 1, "items": [{"group": "fixture_collection",
+                "title": "Fixture collection", "state": "ready_for_editor",
+                "primary_sequence": 2, "members": members, "note": "Fixture only"}]})
+        name = self.request("manual-group-000001")
+        claim = manual_claim.consume(self.root, now=LATER)[name]
+        self.assertEqual(claim["pool_sequence"], 2)
+        return {**manual_claim.BODY, "action": "approve", "claim_request": name,
+                **{k:claim[k] for k in ("pool_id","pool_sequence","claimed_at")},
+                "expected_note": "", "note": "Human approved full collection",
+                "human_authorized": True, "article_id": "fixture-collection", "story_sha": "a"*40}
+
+    def test_approve_ready_collection_closes_all_members_atomically(self):
+        from unittest.mock import patch
+        body = self.collection_fixture()
+        name = self.request("manual-group-000002", body)
+        with patch("scripts.manual_claim.approved_story"):
+            result = manual_claim.consume(self.root, now=LATER)[name]
+        self.assertEqual(result["status"], "closed_approved")
+        self.assertEqual([m["pool_sequence"] for m in result["merged_members"]], [3,4])
+        after = self.read_pool()
+        for n in (2,3,4):
+            self.assertEqual(after["items"][n-1]["status"], "approved")
+            self.assertEqual(after["items"][n-1]["article_id"], "fixture-collection")
+        self.assertIn("Объединено с №2", after["items"][2]["note"])
+        self.assertEqual(after["items"][4], self.pool["items"][4])
+        self.assertEqual(manual_claim.consume(self.root, now=LATER), {})
+
+    def test_approve_collection_conflicting_member_does_not_close_primary(self):
+        from unittest.mock import patch
+        body = self.collection_fixture()
+        before = self.read_pool()
+        before["items"][3].update(status="in_review", review_started_at=NOW)
+        manual_claim.dump(self.root / manual_claim.POOL, before)
+        name = self.request("manual-group-000002", body)
+        with patch("scripts.manual_claim.approved_story"):
+            result = manual_claim.consume(self.root, now=LATER)[name]
+        self.assertEqual(result["status"], "rejected")
+        self.assertEqual(self.read_pool(), before)
+
+    def test_legacy_group_requires_explicit_members_and_preserves_other_candidate(self):
+        from unittest.mock import patch
+        body = self.collection_fixture(registered=False)
+        before = self.read_pool()
+        a = self.request("manual-group-000002", body)
+        b = self.request("manual-group-000003", {**body, "included_pool_ids": [self.pool["items"][2]["id"]]})
+        with patch("scripts.manual_claim.approved_story"):
+            result = manual_claim.consume(self.root, now=LATER)
+        self.assertEqual(result[a]["status"], "rejected")
+        self.assertEqual(result[b]["status"], "closed_approved")
+        self.assertEqual(self.read_pool()["items"][3], before["items"][3])
+
+
 if __name__ == "__main__":
     unittest.main()
