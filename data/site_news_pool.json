@@ -9130,12 +9130,12 @@
       "summary": "Языковая модель насчитывает около 11 млрд параметров, голосовая поддерживает английский и десять индийских языков. Заявлено обучение с нуля.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-26T18:06:11+00:00",
       "review_started_at": "2026-11-27T07:17:40+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-c346a0bbaf06a03d"
+      "closed_at": "2026-11-27T09:09:22Z",
+      "article_id": "india-chariot-1-models-20261126",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-c346a0bbaf06a03d\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/india-chariot-1-models-20261126/"
     },
     {
       "id": "n-4442885bf03f06b2",
