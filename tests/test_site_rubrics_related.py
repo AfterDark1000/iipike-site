@@ -68,7 +68,7 @@ class RubricAndArchiveTests(unittest.TestCase):
         empty = render_page("made-with-ai", without_made)
         self.assertIn("<h1>Сделано с ИИ</h1>", empty)
         self.assertIn('name="robots" content="noindex, follow"', empty)
-        self.assertIn("Публикации — 0", empty)
+        self.assertIn("Материалов: 0", empty)
         self.assertIn('href="../../rubrics/made-with-ai/"', navigation("../../"))
         # The first published row makes the new rubric indexable and
         # eligible for the sitemap; don't freeze that transition in tests.
@@ -77,7 +77,7 @@ class RubricAndArchiveTests(unittest.TestCase):
         self.assertIn("made-with-ai", populated(with_made))
         populated_page = render_page("made-with-ai", with_made)
         self.assertNotIn('name="robots" content="noindex', populated_page)
-        self.assertIn("Публикации — 1", populated_page)
+        self.assertIn("Материалов: 1", populated_page)
         self.assertIn('../../' + public["url"], populated_page)
 
     def test_mobile_archive_cards_have_full_width_covers_and_clamped_teasers(self):

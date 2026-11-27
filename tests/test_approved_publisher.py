@@ -269,7 +269,7 @@ class PublisherTests(unittest.TestCase):
             sum(row.get("rubric", "news") == "made-with-ai" for row in records),
             expected_count)
         rubric_page = (self.root / "rubrics/made-with-ai/index.html").read_text(encoding="utf-8")
-        self.assertIn(f"Публикации — {expected_count}", rubric_page)
+        self.assertIn(f"Материалов: {expected_count}", rubric_page)
         self.assertIn("sample-verified-news", rubric_page)
         self.assertNotIn('name="robots" content="noindex', rubric_page)
         sitemap = ET.fromstring((self.root / "sitemap.xml").read_text(encoding="utf-8"))
