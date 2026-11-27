@@ -4660,6 +4660,19 @@
           "source_url": "https://ideogram.ai/models/4.6/"
         }
       ]
+    },
+    {
+      "key": "hy4-flash",
+      "name": "Hy4 flash",
+      "company": "tencent",
+      "status": "candidate",
+      "first_seen": "2026-11-27",
+      "evidence": [
+        {
+          "article_id": "tencent-hy4-flash-open-weights-20261118",
+          "source_url": "https://github.com/Tencent-Hunyuan/Hy4-flash"
+        }
+      ]
     }
   ]
 }
