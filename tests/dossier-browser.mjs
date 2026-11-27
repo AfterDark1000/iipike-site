@@ -111,7 +111,8 @@ try{
   assert.ok(desktop.height<500&&!desktop.wide,"desktop showcase must be compact");
   await call("Page.navigate",{url:pathToFileURL(resolve(process.argv[3])).href});
   const archiveExpr='(()=>{const g=document.querySelector(".dossier-archive .dossier-grid");if(!g)return null;const cards=Array.from(g.querySelectorAll(".dossier-card"));return {n:cards.length,columns:getComputedStyle(g).gridTemplateColumns.split(" ").length,empty:cards.map(c=>{const art=c.querySelector(".dossier-card-art");return Math.abs(art.clientHeight-art.querySelector("img").clientHeight)})}})()';
-  const archive=await until("archive layout",()=>evaluate(archiveExpr));
+  await until("archive document and stylesheet loaded",async()=>evaluate('document.readyState==="complete" && !!document.querySelector(".dossier-archive .dossier-grid")'));
+  const archive=await evaluate(archiveExpr);
   console.log("archive desktop",archive);
   assert.ok(archive.n>=2&&archive.columns===2&&archive.empty.every(x=>x<=2),"archive images must not have empty bands");
   await call("Emulation.setDeviceMetricsOverride",{width:390,height:844,deviceScaleFactor:1,mobile:false});
