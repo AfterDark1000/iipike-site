@@ -9338,5 +9338,26 @@
     "products": [
       "qwen"
     ]
+  },
+  {
+    "title": "Сбер выпустил GigaChat 4 и замахнулся на конкуренцию с DeepSeek. Что получилось?",
+    "summary": "Сбер представил GigaChat 4 на 708 и 37 млрд параметров с контекстом в миллион токенов. Сравниваем результаты испытаний с DeepSeek и GLM, условия доступа и лицензии.",
+    "published": "2026-11-27",
+    "source_url": "https://giga.chat/blog/posts/gigachat-4-tech-report",
+    "cover": "assets/editorial/sber-gigachat-4-20261126.webp",
+    "rubric": "news",
+    "vk_title": "🔥 ГИГАЧАТ 4 уже сравнивают с DeepSeek",
+    "vk_summary": "Сбер представил две новые нейросети, способные работать над многоэтапными заданиями. Сравнили результаты испытаний с китайскими конкурентами и разобрались, где российская модель выигрывает, а где пока отстаёт.",
+    "published_at_utc": "2026-11-27T09:30:51Z",
+    "site_release_mode": "priority",
+    "event_date": "2026-11-26",
+    "id": "sber-gigachat-4-20261126",
+    "url": "articles/sber-gigachat-4-20261126/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
