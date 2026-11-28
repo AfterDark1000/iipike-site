@@ -9355,9 +9355,9 @@
       "summary": "Компания отрицает обязательность генеративного ИИ; СМИ сообщают о необходимости обосновывать отказ. Требуется оригинал заявления.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "high",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-27T14:18:55+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-28T07:51:12.826333+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
