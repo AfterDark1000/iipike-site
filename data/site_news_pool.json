@@ -9400,12 +9400,12 @@
       "summary": "Проект Next-X Humanoid Challenge планируется на 2027 год; предлагаемый пятилетний бюджет 53,5 млрд вон требует утверждения. Вторичный источник.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-27T14:18:55+00:00",
       "review_started_at": "2026-11-28T07:51:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9b2813103d2672ca"
+      "closed_at": "2026-11-28T08:24:22Z",
+      "article_id": "korea-next-x-humanoid-challenge-20261124",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9b2813103d2672ca\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/korea-next-x-humanoid-challenge-20261124/"
     },
     {
       "id": "n-c14bf41c312079c6",
