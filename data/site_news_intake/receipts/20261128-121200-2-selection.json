@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "request": "20261128-121200-2-selection.json",
+  "request_sha256": "93d9fd46b6847e8cc327ecf02654f0741befda9d44a2e7358e6f66f636d3476e",
+  "status": "imported",
+  "added": [
+    {
+      "sequence": 641,
+      "id": "n-fa0ea4c49b766f60",
+      "title": "Российским нейросетям хотят присваивать статус суверенных и национальных"
+    },
+    {
+      "sequence": 642,
+      "id": "n-6150fcc960b8d04e",
+      "title": "В Гонконге хотят создать институт наблюдения за самостоятельной экономической деятельностью ИИ"
+    }
+  ],
+  "duplicates": [],
+  "error": null
+}

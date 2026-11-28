@@ -9586,6 +9586,36 @@
       "closed_at": null,
       "article_id": null,
       "note": ""
+    },
+    {
+      "id": "n-fa0ea4c49b766f60",
+      "sequence": 641,
+      "title": "Российским нейросетям хотят присваивать статус суверенных и национальных",
+      "source_url": "https://expert.ru/news/mintsifry-razrabotalo-pravila-dlya-razvitiya-ii",
+      "summary": "27 ноября. Минцифры совместно с представителями отрасли разработало пакет документов, предусматривающий процедуру присвоения статусов. Пока предложения, не действующие правила. Связанный сюжет №598 — заявление о происхождении моделей и планах регистрации; проверить, есть ли новое содержание в пакете документов.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-28T07:13:22+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
+    },
+    {
+      "id": "n-6150fcc960b8d04e",
+      "sequence": 642,
+      "title": "В Гонконге хотят создать институт наблюдения за самостоятельной экономической деятельностью ИИ",
+      "source_url": "https://www.asiaresearchnews.com/content/four-universities-co-host-international-workshop-technologies-ai-governance-lingnan",
+      "summary": "27 ноября. Университет Линнань планирует исследовать деятельность автономных агентов и её влияние на финансовые рынки. Уточнить дату объявления инициативы.",
+      "origin": "ХПИИ — добытчик новостей",
+      "priority": "normal",
+      "status": "queued",
+      "added_at": "2026-11-28T07:13:22+00:00",
+      "review_started_at": null,
+      "closed_at": null,
+      "article_id": null,
+      "note": ""
     }
   ]
 }
