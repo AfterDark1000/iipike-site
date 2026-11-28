@@ -483,7 +483,8 @@
         "us-879868-ai-chips-china-licenses-20261119",
         "china-ai-schools-20261116",
         "us-chinese-ai-disclosure-proposal-20261118",
-        "cop31-antalya-ai-pledge-big-tech-20261117"
+        "cop31-antalya-ai-pledge-big-tech-20261117",
+        "krea-video-swap-20261120"
       ]
     },
     {
@@ -561,7 +562,8 @@
         "minimax-vypustila-ii-v-tri-raza-bystree-i-na-70-deshevle-4c5d3",
         "ai-eight-unusual-experiments-20261115",
         "suno-visuals-music-videos-20261117",
-        "minimax-data-retention-leak-20261126"
+        "minimax-data-retention-leak-20261126",
+        "krea-video-swap-20261120"
       ]
     },
     {
@@ -1494,7 +1496,8 @@
       "name": "Bank of America",
       "description": "Исследования рынка ИИ и применение ИИ в банковских сервисах Bank of America.",
       "article_ids": [
-        "bofa-fund-managers-ai-bubble-baidu-20261117"
+        "bofa-fund-managers-ai-bubble-baidu-20261117",
+        "citibank-ai-agent-liability-20261120"
       ]
     },
     {
@@ -1640,6 +1643,134 @@
       "description": "Открытая платформа и экосистема автономного вождения Autoware Foundation.",
       "article_ids": [
         "tier-iv-autoware-five-models-20261111"
+      ]
+    },
+    {
+      "key": "shaanxi-bosuan",
+      "name": "Shaanxi Bosuan Network Technology",
+      "description": "Поставщик вычислительного оборудования Shaanxi Bosuan Network Technology.",
+      "article_ids": [
+        "nwpu-nvidia-h200-blacklist-20261111"
+      ]
+    },
+    {
+      "key": "easycall",
+      "name": "EasyCall",
+      "description": "Телефонные сервисы и внедрение голосового ИИ EasyCall.",
+      "article_ids": [
+        "poland-anna-ai-patient-calls-20261111"
+      ]
+    },
+    {
+      "key": "dataone",
+      "name": "DataOne",
+      "description": "Инфраструктура и эксплуатация центров обработки данных DataOne.",
+      "article_ids": [
+        "nebius-45b-microsoft-delay-20261112"
+      ]
+    },
+    {
+      "key": "cvs-health",
+      "name": "CVS Health",
+      "description": "Применение искусственного интеллекта в здравоохранении CVS Health.",
+      "article_ids": [
+        "openai-chatgpt-healthcare-20-connectors-20261116"
+      ]
+    },
+    {
+      "key": "cigna-healthcare",
+      "name": "Cigna Healthcare",
+      "description": "Применение ИИ в медицинском страховании и сервисах Cigna Healthcare.",
+      "article_ids": [
+        "openai-chatgpt-healthcare-20-connectors-20261116"
+      ]
+    },
+    {
+      "key": "asml",
+      "name": "ASML",
+      "description": "Оборудование для производства микросхем и связанные с отраслью ИИ проекты ASML.",
+      "article_ids": [
+        "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d"
+      ]
+    },
+    {
+      "key": "bubblemaps",
+      "name": "Bubblemaps",
+      "description": "Аналитика блокчейна и расследования Bubblemaps.",
+      "article_ids": [
+        "nvidia-huang-return-polymarket-20261124"
+      ]
+    },
+    {
+      "key": "threatbook",
+      "name": "ThreatBook",
+      "description": "Кибербезопасность и ИИ-инструменты ThreatBook.",
+      "article_ids": [
+        "microsoft-artex-ai-hackers-20261125"
+      ]
+    },
+    {
+      "key": "century-litong",
+      "name": "Century Litong",
+      "description": "Облачная инфраструктура и аренда ИИ-серверов Century Litong.",
+      "article_ids": [
+        "alice-huang-ai-servers-china-270m-20261125"
+      ]
+    },
+    {
+      "key": "century-longteng",
+      "name": "Shanghai Century Longteng",
+      "description": "Инвестиции в инфраструктуру и компании, связанные с ИИ-серверами Century Longteng.",
+      "article_ids": [
+        "alice-huang-ai-servers-china-270m-20261125"
+      ]
+    },
+    {
+      "key": "pnc",
+      "name": "PNC",
+      "description": "Банковские сервисы и политика доступа ИИ-агентов PNC.",
+      "article_ids": [
+        "citibank-ai-agent-liability-20261120"
+      ]
+    },
+    {
+      "key": "wells-fargo",
+      "name": "Wells Fargo",
+      "description": "Банковские сервисы и политика доступа ИИ-агентов Wells Fargo.",
+      "article_ids": [
+        "citibank-ai-agent-liability-20261120"
+      ]
+    },
+    {
+      "key": "graphic-india",
+      "name": "Graphic India",
+      "description": "Кино и развлекательные проекты Graphic India, связанные с ИИ.",
+      "article_ids": [
+        "answr-dark-sky-films-ai-thriller-20261112"
+      ]
+    },
+    {
+      "key": "sya-concept",
+      "name": "S’YA Concept",
+      "description": "Кинопроизводство S’YA Concept и проекты, связанные с ИИ.",
+      "article_ids": [
+        "answr-dark-sky-films-ai-thriller-20261112"
+      ]
+    },
+    {
+      "key": "elvis-presley-enterprises",
+      "name": "Elvis Presley Enterprises",
+      "description": "Права на образ и голос Элвиса Пресли в спорах об использовании ИИ.",
+      "article_ids": [
+        "suno-elvis-seven-songs-lawsuit-20261113"
+      ]
+    },
+    {
+      "key": "wpic",
+      "name": "WPIC Marketing + Technologies",
+      "description": "Исследования электронной торговли и продвижение товаров с помощью ИИ WPIC.",
+      "article_ids": [
+        "china-ai-shopping-doubao-dongdong-20261111"
       ]
     }
   ],
@@ -2874,6 +3005,60 @@
         "will-wright-mymems-ai-memory-game-20261118"
       ],
       "company": "gallium-studios"
+    },
+    {
+      "key": "douyin",
+      "name": "Douyin",
+      "description": "Социальная и торговая платформа Douyin.",
+      "article_ids": [
+        "china-ai-shopping-doubao-dongdong-20261111"
+      ],
+      "company": "bytedance"
+    },
+    {
+      "key": "openai-o1",
+      "name": "OpenAI o1",
+      "description": "Семейство моделей OpenAI o1 для задач с рассуждением.",
+      "article_ids": [
+        "china-openai-distillation-reuters-20261117"
+      ],
+      "company": "openai"
+    },
+    {
+      "key": "wan",
+      "name": "Wan",
+      "description": "Семейство моделей генерации видео Wan.",
+      "article_ids": [
+        "krea-video-swap-20261120"
+      ],
+      "company": "alibaba"
+    },
+    {
+      "key": "minimax-h3",
+      "name": "MiniMax H3",
+      "description": "Семейство видеомоделей MiniMax H3.",
+      "article_ids": [
+        "krea-video-swap-20261120"
+      ],
+      "company": "minimax"
+    },
+    {
+      "key": "starmind",
+      "name": "Starmind",
+      "description": "Проект орбитальной вычислительной инфраструктуры SpaceX.",
+      "article_ids": [
+        "spacex-starmind-million-ai-satellites-fcc-20261125"
+      ],
+      "company": "spacex"
+    },
+    {
+      "key": "openai-csam-image-classifier",
+      "name": "OpenAI CSAM Image Classifier",
+      "description": "Модель выявления материалов сексуального насилия над детьми.",
+      "article_ids": [
+        "openai-child-safety-image-classifier-20261116"
+      ],
+      "company": "openai"
     }
   ]
 }
