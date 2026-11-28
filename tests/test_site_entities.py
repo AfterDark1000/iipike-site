@@ -72,6 +72,26 @@ class PublicEntityCatalogTests(unittest.TestCase):
             p = ROOT / "entities" / "companies" / company / "index.html"
             self.assertIn(disney, p.read_text(encoding="utf-8"))
 
+    def test_company_product_links_are_exact_reciprocal_and_local(self):
+        for company in self.registry["companies"]:
+            key = company["key"]
+            path = ROOT / "entities" / "companies" / key / "index.html"
+            html = path.read_text(encoding="utf-8")
+            owned = sorted((p for p in self.registry["products"] if p["company"] == key),
+                           key=lambda p: (p["name"].casefold(), p["key"]))
+            actual = re.findall(r'class="entity-product-link" href="../../products/([a-z0-9-]+)/"', html)
+            self.assertEqual(actual, [p["key"] for p in owned], key)
+            self.assertEqual(html.count('id="company-products-title"'), int(bool(owned)), key)
+            for product in owned:
+                page = ROOT / "entities" / "products" / product["key"] / "index.html"
+                self.assertTrue(page.is_file())
+                reverse = page.read_text(encoding="utf-8")
+                self.assertIn('href="../../companies/' + key + '/"', reverse)
+                self.assertNotIn('id="company-products-title"', reverse)
+        openai = (ROOT / "entities/companies/openai/index.html").read_text(encoding="utf-8")
+        self.assertIn('href="../../products/chatgpt/"', openai)
+        self.assertNotIn('href="../../products/claude/"', openai)
+
     def test_navigation_and_sitemap(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         archive = (ROOT / "articles/index.html").read_text(encoding="utf-8")
