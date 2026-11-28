@@ -1,0 +1,32 @@
+name: Company product navigation build (temporary)
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  generate:
+    if: github.head_ref == 'tech/entity-product-navigation-20261128' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tech/entity-product-navigation-20261128
+      - name: Rebuild only company and product directory pages
+        run: |
+          python3 -m scripts.site_entities
+          python3 -m scripts.site_entities --check
+          python3 scripts/build_sitemap.py --check
+      - name: Full regression tests
+        run: |
+          python3 -m pip install --disable-pip-version-check pillow
+          python3 -m unittest discover -s tests -p 'test_*.py' -q
+      - name: Commit only regenerated company pages
+        run: |
+          git diff --name-only | python3 -c "import sys; paths=sys.stdin.read().splitlines(); assert paths and all(p.startswith('entities/companies/') for p in paths),paths"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add entities/companies
+          git commit -m 'Generate reciprocal company product navigation'
+          git push origin HEAD:tech/entity-product-navigation-20261128
