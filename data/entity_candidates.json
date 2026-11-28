@@ -3,90 +3,6 @@
   "note": "Внутренняя очередь кандидатов редакции ХПИИ (не публичный реестр). Запись здесь не создаёт страницы, не разрешает ключи в companies/products и не запускает публикацию. Продвижение в data/entity_registry.json — отдельная проверенная операция.",
   "companies": [
     {
-      "key": "zyphra",
-      "name": "Zyphra",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "zyphra-zonos3-mini-voice-cloning-20261109",
-          "source_url": "https://www.zyphra.com/our-work/zonos3-mini"
-        }
-      ]
-    },
-    {
-      "key": "apptronik",
-      "name": "Apptronik",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "google-gemini-robotics-2-5-mercedes-20261110",
-          "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
-        }
-      ]
-    },
-    {
-      "key": "mercedes-benz",
-      "name": "Mercedes-Benz",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "google-gemini-robotics-2-5-mercedes-20261110",
-          "source_url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
-        }
-      ]
-    },
-    {
-      "key": "beeble",
-      "name": "Beeble",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
-          "source_url": "https://beeble.ai/research/switchx-3-0"
-        }
-      ]
-    },
-    {
-      "key": "helsing",
-      "name": "Helsing",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "helsing-european-military-ai-palantir-20261110",
-          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
-        }
-      ]
-    },
-    {
-      "key": "palantir",
-      "name": "Palantir",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "helsing-european-military-ai-palantir-20261110",
-          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
-        }
-      ]
-    },
-    {
-      "key": "mercor",
-      "name": "Mercor",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "mercor-series-d-750m-20b-valuation-20261110",
-          "source_url": "https://www.mercor.com/blog/series-d/"
-        }
-      ]
-    },
-    {
       "key": "salesforce",
       "name": "Salesforce",
       "status": "candidate",
@@ -107,18 +23,6 @@
       ]
     },
     {
-      "key": "bay",
-      "name": "Bay",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "bay-ai-agent-security-50m-20261110",
-          "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2"
-        }
-      ]
-    },
-    {
       "key": "battery-ventures",
       "name": "Battery Ventures",
       "status": "candidate",
@@ -131,18 +35,6 @@
       ]
     },
     {
-      "key": "path-robotics",
-      "name": "Path Robotics",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "path-robotics-series-e-300m-20261110",
-          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
-        }
-      ]
-    },
-    {
       "key": "georgian",
       "name": "Georgian",
       "status": "candidate",
@@ -151,34 +43,6 @@
         {
           "article_id": "path-robotics-series-e-300m-20261110",
           "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
-        }
-      ]
-    },
-    {
-      "key": "higgsfield",
-      "name": "Higgsfield",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
-          "source_url": "https://higgsfield.ai/miracle"
-        },
-        {
-          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
-          "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
-        }
-      ]
-    },
-    {
-      "key": "jd-com",
-      "name": "JD.com",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
-          "source_url": "https://www.reuters.com/business/retail-consumer/chinas-singles-day-shopping-festival-puts-ai-selling-power-test-2026-11-11/"
         }
       ]
     },
@@ -203,30 +67,6 @@
         {
           "article_id": "france-cianum-ai-flattery-20261110",
           "source_url": "https://www.conseil-ia-numerique.fr/nos-travaux/proteger-sans-empecher-nos-vulnerabilites-lere-de-lia-generative"
-        }
-      ]
-    },
-    {
-      "key": "kora-systems",
-      "name": "KORA Systems",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "kora-linux-ai-os-cyanogen-20261110",
-          "source_url": "https://press.kora.fun/"
-        }
-      ]
-    },
-    {
-      "key": "humain",
-      "name": "HUMAIN",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "kora-linux-ai-os-cyanogen-20261110",
-          "source_url": "https://press.kora.fun/"
         }
       ]
     },
@@ -283,30 +123,6 @@
       ]
     },
     {
-      "key": "t-head",
-      "name": "T-Head",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "alibaba-t-head-ipo-hong-kong-20261110",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
-        }
-      ]
-    },
-    {
-      "key": "graphon-labs",
-      "name": "Graphon Labs",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "graphon-labs-persistent-memory-35m-20261110",
-          "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
-        }
-      ]
-    },
-    {
       "key": "rre-ventures",
       "name": "RRE Ventures",
       "status": "candidate",
@@ -327,18 +143,6 @@
         {
           "article_id": "usda-ai-crop-forecast-validation-20261110",
           "source_url": "https://www.reuters.com/technology/usda-launch-ai-tool-check-crop-production-data-after-errors-2026-11-06/"
-        }
-      ]
-    },
-    {
-      "key": "cisco",
-      "name": "Cisco",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "cisco-claude-mythos-ai-defense-20261109",
-          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
         }
       ]
     },
@@ -419,18 +223,6 @@
       ]
     },
     {
-      "key": "tier-iv",
-      "name": "TIER IV",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "tier-iv-autoware-five-models-20261111",
-          "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
-        }
-      ]
-    },
-    {
       "key": "autoware-foundation",
       "name": "Autoware Foundation",
       "status": "candidate",
@@ -439,30 +231,6 @@
         {
           "article_id": "tier-iv-autoware-five-models-20261111",
           "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
-        }
-      ]
-    },
-    {
-      "key": "united-airlines",
-      "name": "United Airlines",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "united-airlines-ai-agents-booking-ban-20261111",
-          "source_url": "https://united.mediaroom.com/news-releases?item=125496"
-        }
-      ]
-    },
-    {
-      "key": "claroc-research",
-      "name": "Claroc Research",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "grok-build-ghostshares-exposed-apps-20261110",
-          "source_url": "https://blog.claroc.io/ghostshares-grok-build-apps"
         }
       ]
     },
@@ -515,42 +283,6 @@
         {
           "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
           "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
-        }
-      ]
-    },
-    {
-      "key": "whoop",
-      "name": "WHOOP",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "whoop-humans-heartbeat-social-network-20261112",
-          "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
-        }
-      ]
-    },
-    {
-      "key": "podqi",
-      "name": "Podqi",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "podqi-ai-shopping-fake-stores-20261112",
-          "source_url": "https://podqi.com/research/ai-search-brand-risk"
-        }
-      ]
-    },
-    {
-      "key": "samsung",
-      "name": "Samsung",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
-          "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
         }
       ]
     },
@@ -675,18 +407,6 @@
       ]
     },
     {
-      "key": "databricks",
-      "name": "Databricks",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "databricks-genie-unvarnished-truth-20261111",
-          "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
-        }
-      ]
-    },
-    {
       "key": "office-for-students",
       "name": "Office for Students",
       "status": "candidate",
@@ -795,18 +515,6 @@
       ]
     },
     {
-      "key": "agile-robots",
-      "name": "Agile Robots",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "agile-robots-series-f-500m-20261112",
-          "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
-        }
-      ]
-    },
-    {
       "key": "softbank-group",
       "name": "SoftBank Group",
       "status": "candidate",
@@ -867,18 +575,6 @@
       ]
     },
     {
-      "key": "truleo",
-      "name": "Truleo",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "truleo-ai-police-report-arizona-20261116",
-          "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
-        }
-      ]
-    },
-    {
       "key": "cursor",
       "name": "Cursor",
       "status": "candidate",
@@ -891,18 +587,6 @@
         {
           "article_id": "us-chinese-ai-disclosure-proposal-20261118",
           "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
-        }
-      ]
-    },
-    {
-      "key": "fireworks-ai",
-      "name": "Fireworks AI",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "cursor-fireworks-key-incident-20261113",
-          "source_url": "https://cursor.com/blog/security-incident-update"
         }
       ]
     },
@@ -939,18 +623,6 @@
         {
           "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
           "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
-        }
-      ]
-    },
-    {
-      "key": "fractile",
-      "name": "Fractile",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "fractile-ai-chips-720m-funding-20261111",
-          "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
         }
       ]
     },
@@ -995,30 +667,6 @@
       ]
     },
     {
-      "key": "recraft",
-      "name": "Recraft",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "recraft-v4-1-flash-v2-20261113",
-          "source_url": "https://feedback.recraft.ai/changelog"
-        }
-      ]
-    },
-    {
-      "key": "air-space-intelligence",
-      "name": "Air Space Intelligence",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "faa-smart-ground-stop-20261113",
-          "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
-        }
-      ]
-    },
-    {
       "key": "l3harris",
       "name": "L3Harris",
       "status": "candidate",
@@ -1055,18 +703,6 @@
       ]
     },
     {
-      "key": "sabre",
-      "name": "Sabre Corporation",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "sabre-grok-bot-travel-connector-20261117",
-          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
-        }
-      ]
-    },
-    {
       "key": "artificial-analysis",
       "name": "Artificial Analysis",
       "status": "candidate",
@@ -1099,54 +735,6 @@
         {
           "article_id": "openai-gpt-6-2-astra-sol-20261117",
           "source_url": "https://zapier.com/benchmarks"
-        }
-      ]
-    },
-    {
-      "key": "apollo-research",
-      "name": "Apollo Research",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-apollo-embedded-evaluations-20261116",
-          "source_url": "https://apolloresearch.ai/blog/pilot-towards-embedded-evaluations"
-        }
-      ]
-    },
-    {
-      "key": "metr",
-      "name": "METR",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-apollo-embedded-evaluations-20261116",
-          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
-        }
-      ]
-    },
-    {
-      "key": "transluce",
-      "name": "Transluce",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-apollo-embedded-evaluations-20261116",
-          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
-        }
-      ]
-    },
-    {
-      "key": "goodfire",
-      "name": "Goodfire",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-apollo-embedded-evaluations-20261116",
-          "source_url": "https://openai.com/index/our-first-phase-of-embedded-assessments/"
         }
       ]
     },
@@ -1219,18 +807,6 @@
       ]
     },
     {
-      "key": "heygen",
-      "name": "HeyGen",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "heygen-avatar-6-contextual-gestures-20261117",
-          "source_url": "https://www.heygen.com/research/avatar-6-model"
-        }
-      ]
-    },
-    {
       "key": "nato",
       "name": "NATO",
       "status": "candidate",
@@ -1255,22 +831,6 @@
       ]
     },
     {
-      "key": "megaspeed",
-      "name": "Megaspeed International",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
-          "source_url": "https://www.justice.gov/opa/pr/joint-statement-department-commerce-and-department-justice-megaspeed-investigation"
-        },
-        {
-          "article_id": "alice-huang-ai-servers-china-270m-20261125",
-          "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792"
-        }
-      ]
-    },
-    {
       "key": "supermicro",
       "name": "Supermicro",
       "status": "candidate",
@@ -1279,18 +839,6 @@
         {
           "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
           "source_url": "https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/"
-        }
-      ]
-    },
-    {
-      "key": "isomorphic-labs",
-      "name": "Isomorphic Labs",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
-          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
         }
       ]
     },
@@ -1327,18 +875,6 @@
         {
           "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
           "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
-        }
-      ]
-    },
-    {
-      "key": "omnilert",
-      "name": "Omnilert",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
-          "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/"
         }
       ]
     },
@@ -1395,30 +931,6 @@
         {
           "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
           "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
-        }
-      ]
-    },
-    {
-      "key": "bitdefender",
-      "name": "Bitdefender",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "bitdefender-github-agent-instructions-malware-20261117",
-          "source_url": "https://www.bitdefender.com/en-us/blog/labs/how-ai-agents-become-new-targets-in-github-malware-campaign"
-        }
-      ]
-    },
-    {
-      "key": "wiz",
-      "name": "Wiz",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "microsoft-agent-framework-pypi-stealer-20261117",
-          "source_url": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi"
         }
       ]
     },
@@ -1547,18 +1059,6 @@
       ]
     },
     {
-      "key": "artcraft",
-      "name": "ArtCraft",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
-          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
-        }
-      ]
-    },
-    {
       "key": "mansa",
       "name": "Mansa",
       "status": "candidate",
@@ -1607,18 +1107,6 @@
       ]
     },
     {
-      "key": "character-ai",
-      "name": "Character.AI",
-      "status": "candidate",
-      "first_seen": "2026-11-22",
-      "evidence": [
-        {
-          "article_id": "character-ai-bankruptcy-private-chats-20261120",
-          "source_url": "https://www.ag.state.mn.us/Office/Communications/2026/11/20_CharacterAI.asp"
-        }
-      ]
-    },
-    {
       "key": "apollo-global-management",
       "name": "Apollo Global Management",
       "status": "candidate",
@@ -1643,18 +1131,6 @@
         {
           "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
           "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
-        }
-      ]
-    },
-    {
-      "key": "blue-origin",
-      "name": "Blue Origin",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
-          "source_url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
         }
       ]
     },
@@ -1699,18 +1175,6 @@
       ]
     },
     {
-      "key": "riverside",
-      "name": "Riverside",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "riverside-tonality-audio-word-edit-20261112",
-          "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
-        }
-      ]
-    },
-    {
       "key": "latent-physics",
       "name": "Latent Physics",
       "status": "candidate",
@@ -1735,58 +1199,6 @@
         {
           "article_id": "us-china-ai-chip-distillation-curbs-20261126",
           "source_url": "https://www.reuters.com/world/china/us-chip-curbs-distillation-crackdown-threaten-chinese-ai-model-development-2026-11-26"
-        }
-      ]
-    },
-    {
-      "key": "midjourney-inc",
-      "name": "Midjourney, Inc.",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "ai-four-visual-experiments-20261115",
-          "source_url": "https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service"
-        }
-      ]
-    },
-    {
-      "key": "meituan",
-      "name": "Meituan",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "meituan-longcat-2-5-open-weights-20261116",
-          "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5"
-        }
-      ]
-    },
-    {
-      "key": "huawei",
-      "name": "Huawei",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "meituan-longcat-2-5-open-weights-20261116",
-          "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
-        },
-        {
-          "article_id": "china-telecom-xing4-huawei-20261126",
-          "source_url": "https://arxiv.org/abs/2611.22115"
-        }
-      ]
-    },
-    {
-      "key": "higurashi-ai",
-      "name": "higurashi",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "higurashi-haru4b-speech-cpp-20261115",
-          "source_url": "https://huggingface.co/higurashi-ai/Haru-4B"
         }
       ]
     },
@@ -1899,30 +1311,6 @@
       ]
     },
     {
-      "key": "genesis-ai",
-      "name": "Genesis AI",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "genesis-ai-robot-gloves-funding-20261117",
-          "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
-        }
-      ]
-    },
-    {
-      "key": "spotify",
-      "name": "Spotify",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "spotify-artist-profile-protection-20261117",
-          "source_url": "https://artists.spotify.com/en/blog/introducing-artist-profile-protection"
-        }
-      ]
-    },
-    {
       "key": "sony-music",
       "name": "Sony Music",
       "status": "candidate",
@@ -1931,18 +1319,6 @@
         {
           "article_id": "spotify-artist-profile-protection-20261117",
           "source_url": "https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350"
-        }
-      ]
-    },
-    {
-      "key": "proton",
-      "name": "Proton",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "proton-lumo-desktop-permissions-20261117",
-          "source_url": "https://proton.me/blog/lumo-desktop-features"
         }
       ]
     },
@@ -2027,18 +1403,6 @@
       ]
     },
     {
-      "key": "pangram-labs",
-      "name": "Pangram Labs",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
-          "source_url": "https://www.pangram.com/"
-        }
-      ]
-    },
-    {
       "key": "gallup",
       "name": "Gallup",
       "status": "candidate",
@@ -2075,54 +1439,6 @@
       ]
     },
     {
-      "key": "kpmg",
-      "name": "KPMG",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "kpmg-ai-agents-parallel-audit-20261118",
-          "source_url": "https://www.ft.com/content/5168b3e9-75d0-4be0-9ccd-d327d6b16c05"
-        }
-      ]
-    },
-    {
-      "key": "reliance-jio",
-      "name": "Reliance Jio",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "google-jio-gemini-subscription-cancellations-20261125",
-          "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
-        }
-      ]
-    },
-    {
-      "key": "mts",
-      "name": "МТС",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "mts-virtual-foreign-card-ai-payments-20261124",
-          "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
-        }
-      ]
-    },
-    {
-      "key": "decart",
-      "name": "Decart",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "amazon-decart-ai-optimization-20261123",
-          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
-        }
-      ]
-    },
-    {
       "key": "bubblemaps",
       "name": "Bubblemaps",
       "status": "candidate",
@@ -2135,30 +1451,6 @@
       ]
     },
     {
-      "key": "polymarket",
-      "name": "Polymarket",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "nvidia-huang-return-polymarket-20261124",
-          "source_url": "https://blog.bubblemaps.io/two-polymarket-clusters-made-350k-betting-on-jensen-huangs-return-to-nvidia/"
-        }
-      ]
-    },
-    {
-      "key": "tidal",
-      "name": "Tidal",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "tidal-ai-music-ban-20261124",
-          "source_url": "https://support.tidal.com/hc/en-us/articles/48031883413521-AI-Policy"
-        }
-      ]
-    },
-    {
       "key": "ircam-amplify",
       "name": "Ircam Amplify",
       "status": "candidate",
@@ -2167,18 +1459,6 @@
         {
           "article_id": "tidal-ai-music-ban-20261124",
           "source_url": "https://www.musicbusinessworldwide.com/tidal-bans-fully-ai-generated-music-from-its-platform/"
-        }
-      ]
-    },
-    {
-      "key": "yandex",
-      "name": "Яндекс",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "evidence": [
-        {
-          "article_id": "yandex-pin-ai-secretary-20261124",
-          "source_url": "https://ir.yandex.ru/press-releases?id=24-11-2026-01&year=2026"
         }
       ]
     },
@@ -2227,18 +1507,6 @@
         {
           "article_id": "microsoft-artex-ai-hackers-20261125",
           "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
-        }
-      ]
-    },
-    {
-      "key": "china-telecom",
-      "name": "China Telecom",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "evidence": [
-        {
-          "article_id": "china-telecom-xing4-huawei-20261126",
-          "source_url": "https://arxiv.org/abs/2611.22115"
         }
       ]
     },
@@ -2369,110 +1637,6 @@
   ],
   "products": [
     {
-      "key": "zonos3-mini",
-      "name": "ZONOS3-Mini",
-      "company": "zyphra",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "zyphra-zonos3-mini-voice-cloning-20261109",
-          "source_url": "https://www.zyphra.com/our-work/zonos3-mini"
-        }
-      ]
-    },
-    {
-      "key": "switchx-3",
-      "name": "SwitchX 3.0",
-      "company": "beeble",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "beeble-switchx-3-dynamic-video-backgrounds-20261110",
-          "source_url": "https://beeble.ai/research/switchx-3-0"
-        }
-      ]
-    },
-    {
-      "key": "maven-smart-system",
-      "name": "Maven Smart System",
-      "company": "palantir",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "helsing-european-military-ai-palantir-20261110",
-          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
-        }
-      ]
-    },
-    {
-      "key": "altra",
-      "name": "Altra",
-      "company": "helsing",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "helsing-european-military-ai-palantir-20261110",
-          "source_url": "https://www.reuters.com/business/media-telecom/germanys-helsing-unveil-ai-based-military-software-rival-palantir-2026-11-10/"
-        }
-      ]
-    },
-    {
-      "key": "seedream-5-5",
-      "name": "Seedream 5.5",
-      "company": "bytedance",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "bytedance-seedream-5-5-100-edits-20261109",
-          "source_url": "https://seed.bytedance.com/en/blog/more-realistic-images-more-stable-editing-across-100-rounds-introducing-seedream-5-5"
-        }
-      ]
-    },
-    {
-      "key": "obsidian",
-      "name": "Obsidian",
-      "company": "path-robotics",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "path-robotics-series-e-300m-20261110",
-          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
-        }
-      ]
-    },
-    {
-      "key": "rove",
-      "name": "Rove",
-      "company": "path-robotics",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "path-robotics-series-e-300m-20261110",
-          "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
-        }
-      ]
-    },
-    {
-      "key": "miracle",
-      "name": "Miracle",
-      "company": "higgsfield",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "higgsfield-miracle-realtime-video-editing-20261106",
-          "source_url": "https://higgsfield.ai/miracle"
-        }
-      ]
-    },
-    {
       "key": "douyin",
       "name": "Douyin",
       "company": "bytedance",
@@ -2482,49 +1646,6 @@
         {
           "article_id": "china-ai-shopping-doubao-dongdong-20261111",
           "source_url": "https://www.linkedin.com/company/wpic/"
-        }
-      ]
-    },
-    {
-      "key": "doubao",
-      "name": "Doubao",
-      "company": "bytedance",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
-          "source_url": "https://www.linkedin.com/company/wpic/"
-        },
-        {
-          "article_id": "china-ai-schools-20261116",
-          "source_url": "https://www.reuters.com/world/china/inside-chinas-drive-build-an-ai-native-generation-2026-11-16"
-        }
-      ]
-    },
-    {
-      "key": "dongdong",
-      "name": "Dongdong",
-      "company": "jd-com",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
-          "source_url": "https://www.reuters.com/business/retail-consumer/chinas-singles-day-shopping-festival-puts-ai-selling-power-test-2026-11-11/"
-        }
-      ]
-    },
-    {
-      "key": "kora",
-      "name": "KORA",
-      "company": "kora-systems",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "kora-linux-ai-os-cyanogen-20261110",
-          "source_url": "https://press.kora.fun/"
         }
       ]
     },
@@ -2542,57 +1663,6 @@
       ]
     },
     {
-      "key": "humain-os",
-      "name": "HUMAIN OS",
-      "company": "humain",
-      "status": "candidate",
-      "first_seen": "2026-11-11",
-      "evidence": [
-        {
-          "article_id": "kora-linux-ai-os-cyanogen-20261110",
-          "source_url": "https://press.kora.fun/"
-        }
-      ]
-    },
-    {
-      "key": "nvidia-h200",
-      "name": "NVIDIA H200",
-      "company": "nvidia",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
-          "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
-        },
-        {
-          "article_id": "nvidia-china-chip-tariff-congress-probe-20261112",
-          "source_url": "https://www.finance.senate.gov/ranking-members-news/wyden-and-neal-begin-to-investigate-administration-scheme-to-take-cut-of-nvidia-ai-chip-sales-to-chinese-companies-trump-and-commerce-department-reportedly-ignored-warnings-about-former-ceos/"
-        },
-        {
-          "article_id": "nvidia-china-hopper-shipments-halt-20261118",
-          "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/"
-        },
-        {
-          "article_id": "us-879868-ai-chips-china-licenses-20261119",
-          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
-        }
-      ]
-    },
-    {
-      "key": "zhenwu-v900",
-      "name": "Zhenwu V900",
-      "company": "t-head",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "alibaba-t-head-ipo-hong-kong-20261110",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1577552/000110465926124859/tm2629456d1_ex99-1.htm"
-        }
-      ]
-    },
-    {
       "key": "persistent-intelligence",
       "name": "Persistent Intelligence",
       "company": "graphon-labs",
@@ -2602,110 +1672,6 @@
         {
           "article_id": "graphon-labs-persistent-memory-35m-20261110",
           "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
-        }
-      ]
-    },
-    {
-      "key": "claude-meetings",
-      "name": "Claude Meetings",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "anthropic-claude-meetings-20261110",
-          "source_url": "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors"
-        }
-      ]
-    },
-    {
-      "key": "claude-sheets",
-      "name": "Claude Sheets",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
-          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
-        }
-      ]
-    },
-    {
-      "key": "claude-whiteboards",
-      "name": "Claude Whiteboards",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
-          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
-        }
-      ]
-    },
-    {
-      "key": "claude-data",
-      "name": "Claude Data",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "anthropic-claude-sheets-whiteboards-data-20261110",
-          "source_url": "https://claude.com/resources/articles/sheets-whiteboards-data"
-        }
-      ]
-    },
-    {
-      "key": "cisco-ai-defense",
-      "name": "Cisco AI Defense",
-      "company": "cisco",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "cisco-claude-mythos-ai-defense-20261109",
-          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
-        }
-      ]
-    },
-    {
-      "key": "claude-mythos",
-      "name": "Claude Mythos",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "cisco-claude-mythos-ai-defense-20261109",
-          "source_url": "https://blogs.cisco.com/ai/cisco-ai-defense-to-add-anthropics-claude-mythos-for-ai-red-teaming"
-        }
-      ]
-    },
-    {
-      "key": "alphagenome-2",
-      "name": "AlphaGenome 2",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "google-alphagenome-2-cell-variants-20261111",
-          "source_url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/"
-        }
-      ]
-    },
-    {
-      "key": "sensorwm",
-      "name": "SensorWM",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-12",
-      "evidence": [
-        {
-          "article_id": "google-sensorwm-wearables-health-20261111",
-          "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
         }
       ]
     },
@@ -2840,32 +1806,6 @@
       ]
     },
     {
-      "key": "qwen4-max-preview",
-      "name": "Qwen4-Max-Preview",
-      "company": "alibaba",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "alibaba-qwen4-max-preview-20261111",
-          "source_url": "https://www.alibabacloud.com/help/en/model-studio/newly-released-models"
-        }
-      ]
-    },
-    {
-      "key": "gemini-decision-1",
-      "name": "Gemini Decision 1",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "google-gemini-decision-1-20261111",
-          "source_url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
-        }
-      ]
-    },
-    {
       "key": "tabletop",
       "name": "Tabletop",
       "company": "google",
@@ -2879,127 +1819,6 @@
       ]
     },
     {
-      "key": "elevenai",
-      "name": "ElevenAI",
-      "company": "elevenlabs",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "elevenlabs-elevenai-meeting-assistant-20261111",
-          "source_url": "https://elevenlabs.io/blog/nyc-summit"
-        }
-      ]
-    },
-    {
-      "key": "scribe-v3",
-      "name": "Scribe v3",
-      "company": "elevenlabs",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "elevenlabs-elevenai-meeting-assistant-20261111",
-          "source_url": "https://elevenlabs.io/blog/scribe-v3"
-        }
-      ]
-    },
-    {
-      "key": "elevenagents",
-      "name": "ElevenAgents",
-      "company": "elevenlabs",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "elevenlabs-elevenagents-memory-routines-20261111",
-          "source_url": "https://elevenlabs.io/blog/nyc-summit"
-        }
-      ]
-    },
-    {
-      "key": "fish-audio-live-3",
-      "name": "Live 3",
-      "company": "fish-audio",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "fish-audio-live-3-interruptions-20261110",
-          "source_url": "https://fish.audio/blog/introducing-live-3/"
-        }
-      ]
-    },
-    {
-      "key": "apple-carplay",
-      "name": "Apple CarPlay",
-      "company": "apple",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "google-gemini-live-apple-carplay-20261111",
-          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay"
-        }
-      ]
-    },
-    {
-      "key": "grok-build",
-      "name": "Grok Build",
-      "company": "xai",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "grok-build-ghostshares-exposed-apps-20261110",
-          "source_url": "https://blog.claroc.io/ghostshares-grok-build-apps"
-        }
-      ]
-    },
-    {
-      "key": "gemini-4-hydrogen",
-      "name": "Gemini 4 Hydrogen",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-13",
-      "evidence": [
-        {
-          "article_id": "google-gemini-4-hydrogen-20261112",
-          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
-        },
-        {
-          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
-          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
-        }
-      ]
-    },
-    {
-      "key": "sfr-autord",
-      "name": "SFR-AutoR&D",
-      "company": "salesforce",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
-          "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
-        }
-      ]
-    },
-    {
-      "key": "whoop-humans",
-      "name": "WHOOP Humans",
-      "company": "whoop",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "whoop-humans-heartbeat-social-network-20261112",
-          "source_url": "https://www.whoop.com/us/en/press-center/whoop-launches-whoop-humans-the-most-verifiably-human-social-network/"
-        }
-      ]
-    },
-    {
       "key": "intelligent-eyewear",
       "name": "Intelligent Eyewear",
       "company": "google",
@@ -3009,19 +1828,6 @@
         {
           "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
           "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
-        }
-      ]
-    },
-    {
-      "key": "chatgpt-wallet",
-      "name": "ChatGPT Wallet",
-      "company": "openai",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "openai-chatgpt-wallet-dots-20261113",
-          "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
         }
       ]
     },
@@ -3043,19 +1849,6 @@
         {
           "article_id": "openai-chatgpt-for-sales-20261117",
           "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
-        }
-      ]
-    },
-    {
-      "key": "databricks-genie",
-      "name": "Databricks Genie",
-      "company": "databricks",
-      "status": "candidate",
-      "first_seen": "2026-11-14",
-      "evidence": [
-        {
-          "article_id": "databricks-genie-unvarnished-truth-20261111",
-          "source_url": "https://www.databricks.com/company/newsroom/press-releases/databricks-launches-new-always-genie-autonomous-ai-complex"
         }
       ]
     },
@@ -3112,19 +1905,6 @@
       ]
     },
     {
-      "key": "agile-one",
-      "name": "Agile ONE",
-      "company": "agile-robots",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "agile-robots-series-f-500m-20261112",
-          "source_url": "https://www.agile-robots.com/en/news/detail/agile-robots-launches-humanoid-robot-for-industry-agile-one/"
-        }
-      ]
-    },
-    {
       "key": "llama-cpp",
       "name": "llama.cpp",
       "company": "ggml-org",
@@ -3147,62 +1927,6 @@
         {
           "article_id": "llama-cpp-1-0-versioning-20261113",
           "source_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
-        }
-      ]
-    },
-    {
-      "key": "praxis-1",
-      "name": "Praxis-1",
-      "company": "runway",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "runway-praxis-1-open-weights-20261111",
-          "source_url": "https://runway.com/news/company-news/praxis-1-is-now-available"
-        }
-      ]
-    },
-    {
-      "key": "grok-imagine",
-      "name": "Grok Imagine",
-      "company": "xai",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "grok-imagine-60-layoffs-20261113",
-          "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
-        }
-      ]
-    },
-    {
-      "key": "grok-bot",
-      "name": "Grok Bot",
-      "company": "xai",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "grok-imagine-60-layoffs-20261113",
-          "source_url": "https://www.theinformation.com/articles/elon-musks-ai-group-guts-grok-video-generation-team/"
-        },
-        {
-          "article_id": "sabre-grok-bot-travel-connector-20261117",
-          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
-        }
-      ]
-    },
-    {
-      "key": "seedance-2-5-flash",
-      "name": "Seedance 2.5 Flash",
-      "company": "bytedance",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "bytedance-seedance-2-5-flash-20261115",
-          "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
         }
       ]
     },
@@ -3237,19 +1961,6 @@
         {
           "article_id": "bytedance-seedance-2-5-flash-20261115",
           "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
-        }
-      ]
-    },
-    {
-      "key": "truleo-ai",
-      "name": "Truleo AI",
-      "company": "truleo",
-      "status": "candidate",
-      "first_seen": "2026-11-16",
-      "evidence": [
-        {
-          "article_id": "truleo-ai-police-report-arizona-20261116",
-          "source_url": "https://help.truleo.co/report-writing-data-retention-and-audit-log"
         }
       ]
     },
@@ -3293,27 +2004,6 @@
       ]
     },
     {
-      "key": "claude-fable-5-2",
-      "name": "Claude Fable 5.2",
-      "company": "anthropic",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "claude-saltline-shooter-eight-hours-20261109",
-          "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
-        },
-        {
-          "article_id": "openai-gpt-6-2-astra-sol-20261117",
-          "source_url": "https://artificialanalysis.ai/leaderboards/models"
-        },
-        {
-          "article_id": "ai-four-visual-experiments-20261115",
-          "source_url": "https://aishow.dev/p/photo-like-painting-in-700k-strokes"
-        }
-      ]
-    },
-    {
       "key": "listen-to-meh",
       "name": "Listen to MEH",
       "company": "purga-studio",
@@ -3340,140 +2030,6 @@
       ]
     },
     {
-      "key": "recraft-v4-1-flash-v2",
-      "name": "Recraft V4.1 Flash V2",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "company": "recraft",
-      "evidence": [
-        {
-          "article_id": "recraft-v4-1-flash-v2-20261113",
-          "source_url": "https://feedback.recraft.ai/changelog"
-        }
-      ]
-    },
-    {
-      "key": "qwen4-max",
-      "name": "Qwen4-Max",
-      "company": "alibaba",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "alibaba-qwen4-max-cybersecurity-20261116",
-          "source_url": "https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max"
-        }
-      ]
-    },
-    {
-      "key": "smart-air-traffic",
-      "name": "SMART (Air Space Intelligence)",
-      "company": "air-space-intelligence",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "faa-smart-ground-stop-20261113",
-          "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
-        }
-      ]
-    },
-    {
-      "key": "google-maps",
-      "name": "Google Maps",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "google-ask-maps-booking-europe-20261116",
-          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026"
-        }
-      ]
-    },
-    {
-      "key": "google-ask-maps",
-      "name": "Ask Maps",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-17",
-      "evidence": [
-        {
-          "article_id": "google-ask-maps-booking-europe-20261116",
-          "source_url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026"
-        }
-      ]
-    },
-    {
-      "key": "sabre-mosaic-travel-connector",
-      "name": "Sabre Mosaic Travel Connector",
-      "company": "sabre",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "sabre-grok-bot-travel-connector-20261117",
-          "source_url": "https://sabre.gcs-web.com/news-releases/news-release-details/sabre-accelerates-agentic-travel-leadership-first-mover-travel"
-        }
-      ]
-    },
-    {
-      "key": "gpt-6-2-astra",
-      "name": "GPT-6.2 Astra",
-      "company": "openai",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-gpt-6-2-astra-sol-20261117",
-          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
-        }
-      ]
-    },
-    {
-      "key": "gpt-6-2-sol",
-      "name": "GPT-6.2 Sol",
-      "company": "openai",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-gpt-6-2-astra-sol-20261117",
-          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
-        },
-        {
-          "article_id": "openai-gpt-6-2-sol-chatgpt-20261123",
-          "source_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-        }
-      ]
-    },
-    {
-      "key": "gemini-4-carbon",
-      "name": "Gemini 4 Carbon",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "openai-gpt-6-2-astra-sol-20261117",
-          "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
-        }
-      ]
-    },
-    {
-      "key": "macos",
-      "name": "macOS",
-      "company": "apple",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "apple-macos-27-3-ai-agent-permissions-20261116",
-          "source_url": "https://developer.apple.com/news/?id=oqng0zjk"
-        }
-      ]
-    },
-    {
       "key": "openai-o1",
       "name": "OpenAI o1",
       "company": "openai",
@@ -3483,36 +2039,6 @@
         {
           "article_id": "china-openai-distillation-reuters-20261117",
           "source_url": "https://arxiv.org/abs/2411.16489"
-        }
-      ]
-    },
-    {
-      "key": "heygen-avatar-6",
-      "name": "Avatar 6",
-      "company": "heygen",
-      "status": "candidate",
-      "first_seen": "2026-11-18",
-      "evidence": [
-        {
-          "article_id": "heygen-avatar-6-contextual-gestures-20261117",
-          "source_url": "https://www.heygen.com/research/avatar-6-model"
-        }
-      ]
-    },
-    {
-      "key": "tasks-in-gemini",
-      "name": "Tasks in Gemini",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
-          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
-        },
-        {
-          "article_id": "google-gemini-mac-computer-use-20261119",
-          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac"
         }
       ]
     },
@@ -3530,45 +2056,6 @@
       ]
     },
     {
-      "key": "mai-code-2",
-      "name": "MAI Code 2",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "microsoft-mai-code-2-20261117",
-          "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
-        }
-      ]
-    },
-    {
-      "key": "mai-code-2-flash",
-      "name": "MAI Code 2 Flash",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "microsoft-mai-code-2-20261117",
-          "source_url": "https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/"
-        }
-      ]
-    },
-    {
-      "key": "mai-cyber-2-flash",
-      "name": "MAI Cyber 2 Flash",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "microsoft-mai-cyber-2-flash-20261117",
-          "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
-        }
-      ]
-    },
-    {
       "key": "codename-mdash",
       "name": "Codename MDASH",
       "company": "microsoft",
@@ -3578,97 +2065,6 @@
         {
           "article_id": "microsoft-mai-cyber-2-flash-20261117",
           "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
-        }
-      ]
-    },
-    {
-      "key": "openai-daybreak",
-      "name": "Daybreak",
-      "company": "openai",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
-          "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
-        }
-      ]
-    },
-    {
-      "key": "isodde",
-      "name": "IsoDDE",
-      "company": "isomorphic-labs",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
-          "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
-        }
-      ]
-    },
-    {
-      "key": "gemini-4-neon",
-      "name": "Gemini 4 Neon",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-19",
-      "evidence": [
-        {
-          "article_id": "google-gemini-4-neon-20261118",
-          "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
-        }
-      ]
-    },
-    {
-      "key": "omnilert-gun-detect",
-      "name": "Omnilert Gun Detect",
-      "company": "omnilert",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "omnilert-doritos-school-police-lawsuit-20261117",
-          "source_url": "https://www.lawyerscommittee.org/lawyers-committee-files-lawsuit-on-behalf-of-black-students-detained-and-searched-due-to-ai-alert-falsely-identifying-a-bag-of-chips-as-a-firearm/"
-        }
-      ]
-    },
-    {
-      "key": "microsoft-agent-framework",
-      "name": "Microsoft Agent Framework",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "microsoft-agent-framework-pypi-stealer-20261117",
-          "source_url": "https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi"
-        }
-      ]
-    },
-    {
-      "key": "google-ai-studio",
-      "name": "Google AI Studio",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "google-ai-studio-android-firebase-play-20261117",
-          "source_url": "https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/"
-        }
-      ]
-    },
-    {
-      "key": "firebase",
-      "name": "Firebase",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "google-ai-studio-android-firebase-play-20261117",
-          "source_url": "https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration"
         }
       ]
     },
@@ -3699,45 +2095,6 @@
       ]
     },
     {
-      "key": "microsoft-foundry",
-      "name": "Microsoft Foundry",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
-          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
-        }
-      ]
-    },
-    {
-      "key": "foundry-autopilot",
-      "name": "Autopilot",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
-          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
-        }
-      ]
-    },
-    {
-      "key": "microsoft-agent-365",
-      "name": "Agent 365",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-20",
-      "evidence": [
-        {
-          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
-          "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
-        }
-      ]
-    },
-    {
       "key": "microsoft-entra",
       "name": "Microsoft Entra",
       "company": "microsoft",
@@ -3760,19 +2117,6 @@
         {
           "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
           "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
-        }
-      ]
-    },
-    {
-      "key": "gemini-computer-use",
-      "name": "Computer Use",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "google-gemini-mac-computer-use-20261119",
-          "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac"
         }
       ]
     },
@@ -3806,32 +2150,6 @@
       ]
     },
     {
-      "key": "agentcore-payments",
-      "name": "Amazon Bedrock AgentCore payments",
-      "company": "amazon",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
-          "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
-        }
-      ]
-    },
-    {
-      "key": "amd-mi325x",
-      "name": "AMD Instinct MI325X",
-      "company": "amd",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "us-879868-ai-chips-china-licenses-20261119",
-          "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
-        }
-      ]
-    },
-    {
       "key": "signal-messenger",
       "name": "Signal Messenger",
       "company": "signal",
@@ -3845,58 +2163,6 @@
         {
           "article_id": "meta-muse-unauthorized-actions-20261118",
           "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
-        }
-      ]
-    },
-    {
-      "key": "photocraft",
-      "name": "PhotoCraft",
-      "company": "artcraft",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
-          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
-        }
-      ]
-    },
-    {
-      "key": "filmcraft",
-      "name": "FilmCraft",
-      "company": "artcraft",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
-          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
-        }
-      ]
-    },
-    {
-      "key": "pdfcraft",
-      "name": "PdfCraft",
-      "company": "artcraft",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
-          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
-        }
-      ]
-    },
-    {
-      "key": "autocraft",
-      "name": "AutoCraft",
-      "company": "artcraft",
-      "status": "candidate",
-      "first_seen": "2026-11-21",
-      "evidence": [
-        {
-          "article_id": "artcraft-photocraft-ai-photoshop-prototype-20261112",
-          "source_url": "https://ai.engineer/code/2026/talks/brandon-thomas"
         }
       ]
     },
@@ -3940,49 +2206,6 @@
       ]
     },
     {
-      "key": "microsoft-edge",
-      "name": "Microsoft Edge",
-      "company": "microsoft",
-      "status": "candidate",
-      "first_seen": "2026-11-22",
-      "evidence": [
-        {
-          "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
-          "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
-        }
-      ]
-    },
-    {
-      "key": "nvidia-vera-rubin",
-      "name": "NVIDIA Vera Rubin",
-      "company": "nvidia",
-      "status": "candidate",
-      "first_seen": "2026-11-22",
-      "evidence": [
-        {
-          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
-          "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
-        },
-        {
-          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
-          "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
-        }
-      ]
-    },
-    {
-      "key": "new-glenn",
-      "name": "New Glenn",
-      "company": "blue-origin",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
-          "source_url": "https://www.blueorigin.com/news/google-selects-new-glenn-for-project-suncatcher"
-        }
-      ]
-    },
-    {
       "key": "project-suncatcher",
       "name": "Project Suncatcher",
       "company": "google",
@@ -4009,18 +2232,6 @@
       ]
     },
     {
-      "key": "ernie-5-5-flash",
-      "name": "ERNIE 5.5 Flash Preview",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "baidu-token-exchange-ernie-55-20261112",
-          "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html"
-        }
-      ]
-    },
-    {
       "key": "token-exchange",
       "name": "Token Exchange",
       "status": "candidate",
@@ -4033,30 +2244,6 @@
       ]
     },
     {
-      "key": "claude-managed-agents",
-      "name": "Claude Managed Agents",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "anthropic-self-hosted-managed-agents-20261112",
-          "source_url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents"
-        }
-      ]
-    },
-    {
-      "key": "riverside-tonality",
-      "name": "Tonality",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "riverside-tonality-audio-word-edit-20261112",
-          "source_url": "https://x.com/NadavKeyson/status/2120938261875147169"
-        }
-      ]
-    },
-    {
       "key": "cinecode",
       "name": "cinecode",
       "status": "candidate",
@@ -4065,19 +2252,6 @@
         {
           "article_id": "ai-four-visual-experiments-20261115",
           "source_url": "https://github.com/sarpstar/cinecode"
-        }
-      ]
-    },
-    {
-      "key": "midjourney",
-      "name": "Midjourney",
-      "company": "midjourney-inc",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "ai-four-visual-experiments-20261115",
-          "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
         }
       ]
     },
@@ -4107,49 +2281,6 @@
       ]
     },
     {
-      "key": "longcat-2-5",
-      "name": "LongCat-2.5",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "company": "meituan",
-      "evidence": [
-        {
-          "article_id": "meituan-longcat-2-5-open-weights-20261116",
-          "source_url": "https://huggingface.co/meituan-longcat/LongCat-2.5"
-        }
-      ]
-    },
-    {
-      "key": "huawei-ascend",
-      "name": "Huawei Ascend",
-      "company": "huawei",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "meituan-longcat-2-5-open-weights-20261116",
-          "source_url": "https://github.com/meituan-longcat/SGLang-FluentLLM/blob/longcat-2.5-npu/npu_test/ReadMe.md"
-        },
-        {
-          "article_id": "china-telecom-xing4-huawei-20261126",
-          "source_url": "https://arxiv.org/abs/2611.22115"
-        }
-      ]
-    },
-    {
-      "key": "haru-4b",
-      "name": "Haru-4B",
-      "company": "higurashi-ai",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "higurashi-haru4b-speech-cpp-20261115",
-          "source_url": "https://huggingface.co/higurashi-ai/Haru-4B"
-        }
-      ]
-    },
-    {
       "key": "speech-cpp",
       "name": "speech.cpp",
       "status": "candidate",
@@ -4158,19 +2289,6 @@
         {
           "article_id": "higurashi-haru4b-speech-cpp-20261115",
           "source_url": "https://github.com/nyosegawa/speech.cpp/releases/tag/v0.11.0"
-        }
-      ]
-    },
-    {
-      "key": "chatgpt-for-healthcare",
-      "name": "ChatGPT for Healthcare",
-      "company": "openai",
-      "status": "candidate",
-      "first_seen": "2026-11-23",
-      "evidence": [
-        {
-          "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
-          "source_url": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare/"
         }
       ]
     },
@@ -4184,32 +2302,6 @@
         {
           "article_id": "openai-child-safety-image-classifier-20261116",
           "source_url": "https://openai.com/index/strengthening-online-child-safety/"
-        }
-      ]
-    },
-    {
-      "key": "google-wallet",
-      "name": "Google Wallet",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "google-search-wallet-personal-intelligence-20261123",
-          "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
-        }
-      ]
-    },
-    {
-      "key": "google-ai-mode",
-      "name": "Google AI Mode",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "google-search-wallet-personal-intelligence-20261123",
-          "source_url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
         }
       ]
     },
@@ -4240,19 +2332,6 @@
       ]
     },
     {
-      "key": "instagram",
-      "name": "Instagram",
-      "company": "meta",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "instagram-content-protection-ai-copies-20261117",
-          "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
-        }
-      ]
-    },
-    {
       "key": "facebook",
       "name": "Facebook",
       "company": "meta",
@@ -4262,45 +2341,6 @@
         {
           "article_id": "instagram-content-protection-ai-copies-20261117",
           "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
-        }
-      ]
-    },
-    {
-      "key": "instagram-content-protection",
-      "name": "Content Protection",
-      "company": "meta",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "instagram-content-protection-ai-copies-20261117",
-          "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
-        }
-      ]
-    },
-    {
-      "key": "lumo-desktop",
-      "name": "Lumo Desktop",
-      "company": "proton",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "proton-lumo-desktop-permissions-20261117",
-          "source_url": "https://proton.me/blog/lumo-desktop-features"
-        }
-      ]
-    },
-    {
-      "key": "suno-visuals",
-      "name": "Suno Visuals",
-      "company": "suno",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "suno-visuals-music-videos-20261117",
-          "source_url": "https://suno.com/blog/introducing-visuals"
         }
       ]
     },
@@ -4361,19 +2401,6 @@
       ]
     },
     {
-      "key": "pangram",
-      "name": "Pangram",
-      "company": "pangram-labs",
-      "status": "candidate",
-      "first_seen": "2026-11-24",
-      "evidence": [
-        {
-          "article_id": "doj-pangram-ai-detector-defense-attorneys-20261117",
-          "source_url": "https://www.pangram.com/"
-        }
-      ]
-    },
-    {
       "key": "jalapeno",
       "name": "Jalapeño",
       "company": "openai",
@@ -4400,58 +2427,6 @@
       ]
     },
     {
-      "key": "google-ai-pro",
-      "name": "Google AI Pro",
-      "company": "google",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "google-jio-gemini-subscription-cancellations-20261125",
-          "source_url": "https://www.jio.com/help/faq/mobile/offers/google-gemini-offer/what-is-the-google-gemini-offer-from-jio/"
-        }
-      ]
-    },
-    {
-      "key": "mts-oplata",
-      "name": "МТС Оплата",
-      "company": "mts",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "mts-virtual-foreign-card-ai-payments-20261124",
-          "source_url": "https://payment.mts.ru/tools/virtualnaya-karta"
-        }
-      ]
-    },
-    {
-      "key": "decart-optimization-stack",
-      "name": "Decart Optimization Stack (DOS)",
-      "company": "decart",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "amazon-decart-ai-optimization-20261123",
-          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
-        }
-      ]
-    },
-    {
-      "key": "trainium",
-      "name": "AWS Trainium",
-      "company": "amazon",
-      "status": "candidate",
-      "first_seen": "2026-11-25",
-      "evidence": [
-        {
-          "article_id": "amazon-decart-ai-optimization-20261123",
-          "source_url": "https://www.aboutamazon.com/news/company-news/amazon-decart-ai-optimization"
-        }
-      ]
-    },
-    {
       "key": "openworks",
       "name": "OpenWorks",
       "company": "openai",
@@ -4465,19 +2440,6 @@
       ]
     },
     {
-      "key": "yandex-pin",
-      "name": "Яндекс Пин",
-      "company": "yandex",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "evidence": [
-        {
-          "article_id": "yandex-pin-ai-secretary-20261124",
-          "source_url": "https://ir.yandex.ru/press-releases?id=24-11-2026-01&year=2026"
-        }
-      ]
-    },
-    {
       "key": "starmind",
       "name": "Starmind",
       "company": "spacex",
@@ -4487,45 +2449,6 @@
         {
           "article_id": "spacex-starmind-million-ai-satellites-fcc-20261125",
           "source_url": "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/bltf4cdf2af47159e12/6b071c5f5506bb38bca5b0ec/FCC_report_and_order_on_SpaceX_Starmind_AI_constellation_11-25-2026.pdf"
-        }
-      ]
-    },
-    {
-      "key": "xing4-1-preview",
-      "name": "Xing4.1-Preview",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "company": "china-telecom",
-      "evidence": [
-        {
-          "article_id": "china-telecom-xing4-huawei-20261126",
-          "source_url": "https://huggingface.co/XingChen-AGI/Xing4.1-Preview"
-        }
-      ]
-    },
-    {
-      "key": "fastframes",
-      "name": "FastFrames",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "company": "apple",
-      "evidence": [
-        {
-          "article_id": "apple-cornell-fastframes-20261117",
-          "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
-        }
-      ]
-    },
-    {
-      "key": "krea-video-swap",
-      "name": "Video Swap",
-      "company": "krea",
-      "status": "candidate",
-      "first_seen": "2026-11-26",
-      "evidence": [
-        {
-          "article_id": "krea-video-swap-20261120",
-          "source_url": "https://www.krea.ai/apps/video-face-swap"
         }
       ]
     },
@@ -4617,19 +2540,6 @@
         {
           "article_id": "ai2-theorizer-scientific-hypotheses-20261119",
           "source_url": "https://allenai.org/blog/theorizer-in-asta"
-        }
-      ]
-    },
-    {
-      "key": "gigachat",
-      "name": "GigaChat",
-      "company": "sber",
-      "status": "candidate",
-      "first_seen": "2026-11-27",
-      "evidence": [
-        {
-          "article_id": "sber-gigachat-4-20261126",
-          "source_url": "https://giga.chat/blog/posts/gigachat-4"
         }
       ]
     },
