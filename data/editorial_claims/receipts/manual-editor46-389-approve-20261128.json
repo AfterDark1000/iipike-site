@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor46-389-approve-20261128.json",
+  "request_sha256": "605a076051aa82cbea62482540fcbd633033e5ff06230f59fdd5d57c23981936",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-f78ef7f2a476c891",
+  "pool_sequence": 389,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-28T07:29:16.080541+00:00",
+  "note": "Главред утвердил материал №389 с перелинковкой на опубликованную статью о голосовом ИИ в Польше. Статья и отдельные Threads/X сохранены и перечитаны.",
+  "merged_members": []
+}
