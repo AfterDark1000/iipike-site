@@ -886,7 +886,8 @@
       "name": "Salesforce",
       "description": "Корпоративные ИИ-агенты и исследования Salesforce.",
       "article_ids": [
-        "salesforce-sfr-autord-ai-model-improvement-20261111"
+        "salesforce-sfr-autord-ai-model-improvement-20261111",
+        "openai-chatgpt-for-sales-20261117"
       ]
     },
     {
@@ -1047,7 +1048,8 @@
       "name": "Cursor",
       "description": "ИИ-среда программирования Cursor и связанные события.",
       "article_ids": [
-        "cursor-fireworks-key-incident-20261113"
+        "cursor-fireworks-key-incident-20261113",
+        "us-chinese-ai-disclosure-proposal-20261118"
       ]
     },
     {
@@ -1128,7 +1130,8 @@
       "description": "ИИ-модели и сервисы Baidu.",
       "article_ids": [
         "us-879868-ai-chips-china-licenses-20261119",
-        "baidu-token-exchange-ernie-55-20261112"
+        "baidu-token-exchange-ernie-55-20261112",
+        "bofa-fund-managers-ai-bubble-baidu-20261117"
       ]
     },
     {
@@ -1372,6 +1375,271 @@
       "description": "ИИ-модели и сервисы Сбера.",
       "article_ids": [
         "sber-gigachat-4-20261126"
+      ]
+    },
+    {
+      "key": "qualcomm",
+      "name": "Qualcomm",
+      "description": "Процессоры и локальные ИИ-разработки Qualcomm.",
+      "article_ids": [
+        "kora-linux-ai-os-cyanogen-20261110"
+      ]
+    },
+    {
+      "key": "warby-parker",
+      "name": "Warby Parker",
+      "description": "Очки и совместные разработки носимых ИИ-устройств Warby Parker.",
+      "article_ids": [
+        "google-intelligent-eyewear-gemini-preorders-20261112"
+      ]
+    },
+    {
+      "key": "gentle-monster",
+      "name": "Gentle Monster",
+      "description": "Дизайн очков и совместные проекты носимых ИИ-устройств Gentle Monster.",
+      "article_ids": [
+        "google-intelligent-eyewear-gemini-preorders-20261112"
+      ]
+    },
+    {
+      "key": "american-express",
+      "name": "American Express",
+      "description": "Платёжные решения American Express для ИИ-агентов.",
+      "article_ids": [
+        "openai-chatgpt-wallet-dots-20261113"
+      ]
+    },
+    {
+      "key": "mastercard",
+      "name": "Mastercard",
+      "description": "Платёжная инфраструктура Mastercard для ИИ-агентов.",
+      "article_ids": [
+        "openai-chatgpt-wallet-dots-20261113"
+      ]
+    },
+    {
+      "key": "visa",
+      "name": "Visa",
+      "description": "Платёжная инфраструктура Visa для ИИ-агентов.",
+      "article_ids": [
+        "openai-chatgpt-wallet-dots-20261113"
+      ]
+    },
+    {
+      "key": "dark-sky-films",
+      "name": "Dark Sky Films",
+      "description": "Кинопрокат и фильмы об искусственном интеллекте Dark Sky Films.",
+      "article_ids": [
+        "answr-dark-sky-films-ai-thriller-20261112"
+      ]
+    },
+    {
+      "key": "bazelevs",
+      "name": "Bazelevs",
+      "description": "Кинопроизводство Bazelevs и проекты, связанные с ИИ.",
+      "article_ids": [
+        "answr-dark-sky-films-ai-thriller-20261112"
+      ]
+    },
+    {
+      "key": "house-house",
+      "name": "House House",
+      "description": "Игровые проекты House House и применение ИИ в разработке.",
+      "article_ids": [
+        "big-walk-ai-code-igf-20261115"
+      ]
+    },
+    {
+      "key": "wowpoint",
+      "name": "WOWPOINT",
+      "description": "Кино и сериалы WOWPOINT, связанные с ИИ.",
+      "article_ids": [
+        "yeon-sang-ho-paradise-lost-ai-son-20261116"
+      ]
+    },
+    {
+      "key": "cj-enm",
+      "name": "CJ ENM",
+      "description": "Кино и развлекательные проекты CJ ENM, связанные с ИИ.",
+      "article_ids": [
+        "yeon-sang-ho-paradise-lost-ai-son-20261116"
+      ]
+    },
+    {
+      "key": "ggml-org",
+      "name": "ggml-org (команда открытого проекта)",
+      "description": "Команда открытых проектов ggml и llama.cpp для локального запуска моделей.",
+      "article_ids": [
+        "llama-cpp-1-0-versioning-20261113"
+      ]
+    },
+    {
+      "key": "byteplus",
+      "name": "BytePlus",
+      "description": "Облачные платформы и доступ к ИИ-моделям BytePlus.",
+      "article_ids": [
+        "bytedance-seedance-2-5-flash-20261115"
+      ]
+    },
+    {
+      "key": "purga-studio",
+      "name": "PURGA Studio",
+      "description": "Творческие проекты PURGA Studio с использованием генеративного ИИ.",
+      "article_ids": [
+        "listen-to-meh-higgsfield-film-prize-20261110"
+      ]
+    },
+    {
+      "key": "bank-of-america",
+      "name": "Bank of America",
+      "description": "Исследования рынка ИИ и применение ИИ в банковских сервисах Bank of America.",
+      "article_ids": [
+        "bofa-fund-managers-ai-bubble-baidu-20261117"
+      ]
+    },
+    {
+      "key": "supermicro",
+      "name": "Supermicro",
+      "description": "Серверное оборудование и инфраструктура ИИ Supermicro.",
+      "article_ids": [
+        "nvidia-megaspeed-chips-export-investigation-20261117"
+      ]
+    },
+    {
+      "key": "calif",
+      "name": "Calif",
+      "description": "Исследования кибербезопасности и программных уязвимостей Calif.",
+      "article_ids": [
+        "java4shell-codex-openjdk-20261117"
+      ]
+    },
+    {
+      "key": "citibank",
+      "name": "Citibank",
+      "description": "ИИ-агенты и банковские сервисы Citi.",
+      "article_ids": [
+        "citibank-ai-agent-liability-20261120"
+      ]
+    },
+    {
+      "key": "nous-research",
+      "name": "Nous Research",
+      "description": "Открытые языковые модели и агенты Nous Research.",
+      "article_ids": [
+        "microsoft-foundry-autopilot-ai-employees-20261119"
+      ]
+    },
+    {
+      "key": "mansa",
+      "name": "Mansa",
+      "description": "Кино и сериалы Mansa с использованием ИИ.",
+      "article_ids": [
+        "mansa-ai-zombie-series-no-actors-20261113"
+      ]
+    },
+    {
+      "key": "apollo-global-management",
+      "name": "Apollo Global Management",
+      "description": "Применение ИИ и инвестиции в ИИ-инфраструктуру Apollo Global Management.",
+      "article_ids": [
+        "spacex-nvidia-gpu-orbit-financing-20261120",
+        "apollo-ai-hiring-20261116"
+      ]
+    },
+    {
+      "key": "lvmh",
+      "name": "LVMH",
+      "description": "Медиапроекты и партнёрства LVMH в области ИИ.",
+      "article_ids": [
+        "openai-french-press-lvmh-figaro-20261118"
+      ]
+    },
+    {
+      "key": "groupe-figaro",
+      "name": "Groupe Figaro",
+      "description": "Медиа и соглашения об использовании контента Groupe Figaro.",
+      "article_ids": [
+        "openai-french-press-lvmh-figaro-20261118"
+      ]
+    },
+    {
+      "key": "ebay",
+      "name": "eBay",
+      "description": "ИИ и безопасность электронной торговли eBay.",
+      "article_ids": [
+        "amazon-ebay-ai-toys-safety-open-letter-20261123"
+      ]
+    },
+    {
+      "key": "airbnb",
+      "name": "Airbnb",
+      "description": "Применение ИИ в сервисах Airbnb.",
+      "article_ids": [
+        "us-chinese-ai-disclosure-proposal-20261118"
+      ]
+    },
+    {
+      "key": "doordash",
+      "name": "DoorDash",
+      "description": "Применение ИИ в сервисах DoorDash.",
+      "article_ids": [
+        "us-chinese-ai-disclosure-proposal-20261118"
+      ]
+    },
+    {
+      "key": "moonshot-ai",
+      "name": "Moonshot AI",
+      "description": "Языковые модели и сервисы Moonshot AI.",
+      "article_ids": [
+        "us-chinese-ai-disclosure-proposal-20261118"
+      ]
+    },
+    {
+      "key": "gallium-studios",
+      "name": "Gallium Studios",
+      "description": "Разработка игр с ИИ в Gallium Studios.",
+      "article_ids": [
+        "will-wright-mymems-ai-memory-game-20261118"
+      ]
+    },
+    {
+      "key": "artificial-agency",
+      "name": "Artificial Agency",
+      "description": "ИИ-системы для игровых персонажей Artificial Agency.",
+      "article_ids": [
+        "will-wright-mymems-ai-memory-game-20261118"
+      ]
+    },
+    {
+      "key": "synopsys",
+      "name": "Synopsys",
+      "description": "Инструменты проектирования микросхем и ИИ-разработки Synopsys.",
+      "article_ids": [
+        "openai-amd-ai-chip-design-20261118"
+      ]
+    },
+    {
+      "key": "ircam-amplify",
+      "name": "Ircam Amplify",
+      "description": "ИИ-инструменты анализа аудиозаписей Ircam Amplify.",
+      "article_ids": [
+        "tidal-ai-music-ban-20261124"
+      ]
+    },
+    {
+      "key": "hubspot",
+      "name": "HubSpot",
+      "description": "Корпоративные ИИ-инструменты и CRM-интеграции HubSpot.",
+      "article_ids": [
+        "openai-chatgpt-for-sales-20261117"
+      ]
+    },
+    {
+      "key": "autoware-foundation",
+      "name": "Autoware Foundation",
+      "description": "Открытая платформа и экосистема автономного вождения Autoware Foundation.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
       ]
     }
   ],
@@ -1969,7 +2237,8 @@
       "description": "Персональные агенты Dots от OpenAI.",
       "article_ids": [
         "openai-chatgpt-wallet-dots-20261113",
-        "openai-dots-chatgpt-plus-test-20261119"
+        "openai-dots-chatgpt-plus-test-20261119",
+        "openai-chatgpt-for-sales-20261117"
       ],
       "company": "openai"
     },
@@ -2416,6 +2685,195 @@
         "sber-gigachat-4-20261126"
       ],
       "company": "sber"
+    },
+    {
+      "key": "autoware",
+      "name": "Autoware",
+      "description": "Открытая платформа автономного вождения Autoware.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
+      ],
+      "company": "autoware-foundation"
+    },
+    {
+      "key": "alpamayo",
+      "name": "Alpamayo",
+      "description": "Модели NVIDIA для автономного вождения.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
+      ],
+      "company": "nvidia"
+    },
+    {
+      "key": "oneplanner",
+      "name": "OnePlanner",
+      "description": "Модель планирования движения TIER IV.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
+      ],
+      "company": "tier-iv"
+    },
+    {
+      "key": "latentdrive",
+      "name": "LatentDrive",
+      "description": "Модель автономного вождения TIER IV.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
+      ],
+      "company": "tier-iv"
+    },
+    {
+      "key": "tabletop",
+      "name": "Tabletop",
+      "description": "ИИ-инструмент Google Tabletop.",
+      "article_ids": [
+        "google-tabletop-20261111"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "intelligent-eyewear",
+      "name": "Intelligent Eyewear",
+      "description": "Умные очки с Gemini.",
+      "article_ids": [
+        "google-intelligent-eyewear-gemini-preorders-20261112"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "llama-cpp",
+      "name": "llama.cpp",
+      "description": "Открытый инструмент локального запуска языковых моделей.",
+      "article_ids": [
+        "llama-cpp-1-0-versioning-20261113"
+      ],
+      "company": "ggml-org"
+    },
+    {
+      "key": "ggml",
+      "name": "ggml",
+      "description": "Библиотека для эффективных вычислений и запуска моделей.",
+      "article_ids": [
+        "llama-cpp-1-0-versioning-20261113"
+      ],
+      "company": "ggml-org"
+    },
+    {
+      "key": "modelark",
+      "name": "ModelArk",
+      "description": "Платформа доступа к ИИ-моделям BytePlus.",
+      "article_ids": [
+        "bytedance-seedance-2-5-flash-20261115"
+      ],
+      "company": "byteplus"
+    },
+    {
+      "key": "google-pay",
+      "name": "Google Pay",
+      "description": "Платёжный сервис Google и его интеграции с ИИ.",
+      "article_ids": [
+        "google-gemini-tasks-free-calls-shopping-20261117"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "microsoft-entra",
+      "name": "Microsoft Entra",
+      "description": "Управление идентификацией и доступом, включая ИИ-агентов.",
+      "article_ids": [
+        "microsoft-foundry-autopilot-ai-employees-20261119"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "hermes",
+      "name": "Hermes",
+      "description": "Модели и агентные разработки Hermes.",
+      "article_ids": [
+        "microsoft-foundry-autopilot-ai-employees-20261119"
+      ],
+      "company": "nous-research"
+    },
+    {
+      "key": "aws-marketplace",
+      "name": "AWS Marketplace",
+      "description": "Облачная площадка AWS и интеграции ИИ-агентов.",
+      "article_ids": [
+        "amazon-aws-marketplace-agentic-payments-20261119"
+      ],
+      "company": "amazon"
+    },
+    {
+      "key": "aion-instruct",
+      "name": "Aion Instruct",
+      "description": "Локальная модель Microsoft для браузера Edge.",
+      "article_ids": [
+        "microsoft-edge-aion-instruct-local-ai-20261119"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "project-suncatcher",
+      "name": "Project Suncatcher",
+      "description": "Проект вычислительной инфраструктуры Google в космосе.",
+      "article_ids": [
+        "google-blue-origin-suncatcher-new-glenn-20261119"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "token-exchange",
+      "name": "Token Exchange",
+      "description": "Площадка Baidu для доступа к ИИ-моделям.",
+      "article_ids": [
+        "baidu-token-exchange-ernie-55-20261112"
+      ],
+      "company": "baidu"
+    },
+    {
+      "key": "eno",
+      "name": "Eno",
+      "description": "Робототехнические разработки Eno.",
+      "article_ids": [
+        "genesis-ai-robot-gloves-funding-20261117"
+      ],
+      "company": "genesis-ai"
+    },
+    {
+      "key": "artist-profile-protection",
+      "name": "Artist Profile Protection",
+      "description": "Защита профилей музыкантов от поддельных публикаций.",
+      "article_ids": [
+        "spotify-artist-profile-protection-20261117"
+      ],
+      "company": "spotify"
+    },
+    {
+      "key": "kimi",
+      "name": "Kimi",
+      "description": "Языковые модели и ассистент Kimi.",
+      "article_ids": [
+        "us-chinese-ai-disclosure-proposal-20261118"
+      ],
+      "company": "moonshot-ai"
+    },
+    {
+      "key": "composer",
+      "name": "Composer",
+      "description": "Семейство моделей Cursor для программирования.",
+      "article_ids": [
+        "us-chinese-ai-disclosure-proposal-20261118"
+      ],
+      "company": "cursor"
+    },
+    {
+      "key": "mymems",
+      "name": "MyMems",
+      "description": "Игра с ИИ-персонажами и мирами на основе личных воспоминаний.",
+      "article_ids": [
+        "will-wright-mymems-ai-memory-game-20261118"
+      ],
+      "company": "gallium-studios"
     }
   ]
 }
