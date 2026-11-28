@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-28T01:55:15.242488Z",
+  "updated_at": "2026-11-28T10:18:29.366218Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,8 +9,8 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
-      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
+      "last_success_at": "2026-11-28T10:18:29.366218Z",
       "error": null,
       "fresh_matches": 11
     },
@@ -19,11 +19,11 @@
       "name": "Overclockers.ru",
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
-      "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "status": "error",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
       "last_success_at": "2026-11-28T01:55:15.242488Z",
-      "error": null,
-      "fresh_matches": 0
+      "error": "Лента недоступна или не распознана (URLError)",
+      "fresh_matches": null
     },
     {
       "id": "mk",
@@ -31,8 +31,8 @@
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
-      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
+      "last_success_at": "2026-11-28T10:18:29.366218Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -42,10 +42,10 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
-      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
+      "last_success_at": "2026-11-28T10:18:29.366218Z",
       "error": null,
-      "fresh_matches": 3
+      "fresh_matches": 4
     },
     {
       "id": "techinsider",
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
-      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
+      "last_success_at": "2026-11-28T10:18:29.366218Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-28T01:55:15.242488Z",
-      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "checked_at": "2026-11-28T10:18:29.366218Z",
+      "last_success_at": "2026-11-28T10:18:29.366218Z",
       "error": null,
       "fresh_matches": 2
     }
@@ -77,10 +77,69 @@
   },
   "usage": {
     "date": "2026-11-28",
-    "attempted": 3
+    "attempted": 6
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "55a8c0948ddcc002e5c24caf",
+      "title": "Шадаев допустил создание ИИ-агента на базе «Госуслуг»",
+      "source_id": "hi-tech-mail",
+      "source_name": "Hi-Tech Mail",
+      "source_url": "https://hi-tech.mail.ru/news/161921-shadaev-dopustil-sozdanie-ii-agenta-na-baze-gosuslug/",
+      "published_at": "2026-11-28T08:33:32Z",
+      "channel_url": "https://dzen.ru/hi-tech.mail.ru",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T10:18:29.366218Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-28T10:18:29.366218Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-28T10:18:29.366218Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "6c2106c24c041070bc451172",
+      "title": "Фотонный процессор Q.ANT начал пилотную работу в облаке провайдера: ИИ-вычисления выполняют с помощью света",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/28/fotonnyi-processor-qant-nacal-pilotnuiu-rabotu-v-oblake-provaidera-ii-vycisleniia-vypolniaiut-s-pomoshhiu-sveta.html",
+      "published_at": "2026-11-28T07:50:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T10:18:29.366218Z",
+      "views": null,
+      "comments": null,
+      "status": "skipped_by_editor",
+      "comment": "",
+      "attempts": 1,
+      "last_attempt_at": "2026-11-28T10:18:29.366218Z",
+      "reason": "Модель не дала точную опору на текст статьи",
+      "fact_review": "rejected",
+      "generated_at": "2026-11-28T10:18:29.366218Z",
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "2798e73e4afa6035ea2dc81a",
+      "title": "ИИ-агенты покупают поддельные скидки в 37% случаев: просьба найти самую выгодную цену повышает риск обмана",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/28/ii-agenty-pokupaiut-poddelnye-skidki-v-37-slucaev-prosba-naiti-samuiu-vygodnuiu-cenu-povysaet-risk-obmana.html",
+      "published_at": "2026-11-28T07:19:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T10:18:29.366218Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "f0f6135ea14126457e65e5fc",
       "title": "HMD представила смартфон за $110, и в нем даже есть ИИ. HMD Rise получил батарею 5000 мАч и Android 16 Go Edition",
@@ -398,10 +457,14 @@
       "first_seen_at": "2026-11-27T18:53:46.451143Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Интересно, сколько ушло попыток, пока робот научился держать равновесие под музыку. Обычно на льду даже люди падают, а тут целая инженерная постановка.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-28T10:18:29.366218Z",
+      "reason": "Зацепился за выступление робота на льду и сложность сохранения равновесия.",
+      "fact_review": "passed",
+      "generated_at": "2026-11-28T10:18:29.366218Z"
     },
     {
       "id": "0fa5ae43e242d0def3539bd2",
@@ -2226,69 +2289,6 @@
       "link_status": "dzen_link_missing",
       "fact_review": "passed",
       "generated_at": "2026-11-22T01:14:06.328658Z"
-    },
-    {
-      "id": "3198beb6ab633bc378fadf57",
-      "title": "20 ГБ и ноутбук: Thinking Machines выпустила ИИ-модель для слабого компьютера",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/21/20-gb-i-noutbuk-thinking-machines-vypustila-ii-model-dlia-slabogo-kompiutera.html",
-      "published_at": "2026-11-21T10:16:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-21T15:17:21.987893Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Двадцать гигабайт для модели, которая шустро крутится на ноутбуке — приятный формат. Жаль только, что 32 ГБ оперативки на борту всё равно обязательны.",
-      "attempts": 2,
-      "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-22T01:14:06.328658Z",
-      "reason": "Упоминание веса модели и требований к памяти для локального запуска.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-22T01:14:06.328658Z"
-    },
-    {
-      "id": "47471a6d96fad922ec9214d6",
-      "title": "Акции Anthropic рухнули на 13% на следующий день после рекордного IPO",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/21/akcii-anthropic-ruxnuli-na-13-na-sleduiushhii-den-posle-rekordnogo-ipo.html",
-      "published_at": "2026-11-21T10:05:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-21T15:17:21.987893Z",
-      "views": null,
-      "comments": null,
-      "status": "skipped_by_editor",
-      "comment": "",
-      "attempts": 1,
-      "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-21T21:05:44.019393Z",
-      "reason": "Модель не дала точную опору на текст статьи",
-      "fact_review": "rejected",
-      "generated_at": "2026-11-21T21:05:44.019393Z"
-    },
-    {
-      "id": "0f77eab1dd8347b430bd0a85",
-      "title": "Для телескопа Argus разрабатывают ИИ-систему обработки 100 млн астрономических событий за ночь",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/21/dlia-teleskopa-argus-razrabatyvaiut-ii-sistemu-obrabotki-100-mln-astronomiceskix-sobytii-za-noc.html",
-      "published_at": "2026-11-21T08:24:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-21T09:42:33.573039Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Сто миллионов оповещений за ночь — это впечатляющий поток. Интересно, сколько из них окажутся банальным шумом, который фильтрам придётся отсекать на лету.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-21T09:42:33.573039Z",
-      "reason": "Зацепился за масштаб потока данных для телескопа.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-21T09:42:33.573039Z",
-      "link_status": "dzen_link_missing"
     }
   ]
 }
