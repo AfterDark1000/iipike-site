@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Ручная редакционная разметка опубликованного архива на 11 ноября 2026. Метки присвоены главным участникам события; исследования, общие обзоры и случайные упоминания не размечаются. Новые статьи пока не размечаются автоматически.",
+  "note": "Редакционная разметка опубликованного архива ХПИИ. Только проверенные связи с главными участниками и продуктами; случайные упоминания не размечаются.",
   "companies": [
     {
       "key": "google",
@@ -523,7 +523,8 @@
         "china-ai-shopping-doubao-dongdong-20261111",
         "bytedance-seedance-2-5-flash-20261115",
         "china-ai-schools-20261116",
-        "ai-four-visual-experiments-20261115"
+        "ai-four-visual-experiments-20261115",
+        "krea-video-swap-20261120"
       ]
     },
     {
@@ -822,6 +823,555 @@
       "article_ids": [
         "odin-zapros-k-ii-i-chuzhie-agenty-perepiski-i-paroli-okazalis-a14ad"
       ]
+    },
+    {
+      "key": "zyphra",
+      "name": "Zyphra",
+      "description": "Голосовые модели и технологии синтеза речи Zyphra.",
+      "article_ids": [
+        "zyphra-zonos3-mini-voice-cloning-20261109"
+      ]
+    },
+    {
+      "key": "apptronik",
+      "name": "Apptronik",
+      "description": "Гуманоидные роботы и робототехнические проекты Apptronik.",
+      "article_ids": [
+        "google-gemini-robotics-2-5-mercedes-20261110"
+      ]
+    },
+    {
+      "key": "mercedes-benz",
+      "name": "Mercedes-Benz",
+      "description": "Внедрение ИИ и робототехники на предприятиях Mercedes-Benz.",
+      "article_ids": [
+        "google-gemini-robotics-2-5-mercedes-20261110"
+      ]
+    },
+    {
+      "key": "beeble",
+      "name": "Beeble",
+      "description": "ИИ-инструменты для изменения освещения и декораций в видео.",
+      "article_ids": [
+        "beeble-switchx-3-dynamic-video-backgrounds-20261110"
+      ]
+    },
+    {
+      "key": "helsing",
+      "name": "Helsing",
+      "description": "Новости ИИ-разработок Helsing.",
+      "article_ids": [
+        "helsing-european-military-ai-palantir-20261110"
+      ]
+    },
+    {
+      "key": "palantir",
+      "name": "Palantir",
+      "description": "ИИ и аналитические платформы Palantir.",
+      "article_ids": [
+        "helsing-european-military-ai-palantir-20261110"
+      ]
+    },
+    {
+      "key": "mercor",
+      "name": "Mercor",
+      "description": "Инструменты и услуги Mercor для обучения ИИ.",
+      "article_ids": [
+        "mercor-series-d-750m-20b-valuation-20261110"
+      ]
+    },
+    {
+      "key": "salesforce",
+      "name": "Salesforce",
+      "description": "Корпоративные ИИ-агенты и исследования Salesforce.",
+      "article_ids": [
+        "salesforce-sfr-autord-ai-model-improvement-20261111"
+      ]
+    },
+    {
+      "key": "bay",
+      "name": "Bay",
+      "description": "Разработки Bay для защиты ИИ-агентов.",
+      "article_ids": [
+        "bay-ai-agent-security-50m-20261110"
+      ]
+    },
+    {
+      "key": "path-robotics",
+      "name": "Path Robotics",
+      "description": "Промышленная робототехника и автоматизация сварки.",
+      "article_ids": [
+        "path-robotics-series-e-300m-20261110"
+      ]
+    },
+    {
+      "key": "higgsfield",
+      "name": "Higgsfield",
+      "description": "ИИ для генерации и редактирования видео от Higgsfield.",
+      "article_ids": [
+        "higgsfield-miracle-realtime-video-editing-20261106",
+        "listen-to-meh-higgsfield-film-prize-20261110"
+      ]
+    },
+    {
+      "key": "jd-com",
+      "name": "JD.com",
+      "description": "ИИ-инструменты электронной торговли JD.com.",
+      "article_ids": [
+        "china-ai-shopping-doubao-dongdong-20261111"
+      ]
+    },
+    {
+      "key": "kora-systems",
+      "name": "KORA Systems",
+      "description": "Операционная система KORA и встроенные ИИ-инструменты.",
+      "article_ids": [
+        "kora-linux-ai-os-cyanogen-20261110"
+      ]
+    },
+    {
+      "key": "humain",
+      "name": "HUMAIN",
+      "description": "ИИ-проекты и программные платформы HUMAIN.",
+      "article_ids": [
+        "kora-linux-ai-os-cyanogen-20261110"
+      ]
+    },
+    {
+      "key": "tsmc",
+      "name": "TSMC",
+      "description": "Производство чипов и инвестиции TSMC в индустрию ИИ.",
+      "article_ids": [
+        "tsmc-openai-anthropic-investment-20261110"
+      ]
+    },
+    {
+      "key": "t-head",
+      "name": "T-Head",
+      "description": "Процессоры и ускорители ИИ T-Head.",
+      "article_ids": [
+        "alibaba-t-head-ipo-hong-kong-20261110"
+      ]
+    },
+    {
+      "key": "graphon-labs",
+      "name": "Graphon Labs",
+      "description": "Разработки Graphon Labs в области памяти ИИ.",
+      "article_ids": [
+        "graphon-labs-persistent-memory-35m-20261110"
+      ]
+    },
+    {
+      "key": "cisco",
+      "name": "Cisco",
+      "description": "Корпоративная кибербезопасность и ИИ-инструменты Cisco.",
+      "article_ids": [
+        "cisco-claude-mythos-ai-defense-20261109"
+      ]
+    },
+    {
+      "key": "tier-iv",
+      "name": "TIER IV",
+      "description": "ИИ и технологии автономного вождения TIER IV.",
+      "article_ids": [
+        "tier-iv-autoware-five-models-20261111"
+      ]
+    },
+    {
+      "key": "united-airlines",
+      "name": "United Airlines",
+      "description": "Новости использования ИИ в сервисах United Airlines.",
+      "article_ids": [
+        "united-airlines-ai-agents-booking-ban-20261111"
+      ]
+    },
+    {
+      "key": "claroc-research",
+      "name": "Claroc Research",
+      "description": "Исследования безопасности ИИ от Claroc Research.",
+      "article_ids": [
+        "grok-build-ghostshares-exposed-apps-20261110"
+      ]
+    },
+    {
+      "key": "whoop",
+      "name": "WHOOP",
+      "description": "Носимые устройства и сервисы WHOOP.",
+      "article_ids": [
+        "whoop-humans-heartbeat-social-network-20261112"
+      ]
+    },
+    {
+      "key": "podqi",
+      "name": "Podqi",
+      "description": "Исследования рисков ИИ-поиска и защиты брендов Podqi.",
+      "article_ids": [
+        "podqi-ai-shopping-fake-stores-20261112"
+      ]
+    },
+    {
+      "key": "samsung",
+      "name": "Samsung",
+      "description": "Устройства и ИИ-проекты Samsung.",
+      "article_ids": [
+        "google-intelligent-eyewear-gemini-preorders-20261112"
+      ]
+    },
+    {
+      "key": "databricks",
+      "name": "Databricks",
+      "description": "Корпоративные платформы данных и ИИ Databricks.",
+      "article_ids": [
+        "databricks-genie-unvarnished-truth-20261111"
+      ]
+    },
+    {
+      "key": "agile-robots",
+      "name": "Agile Robots",
+      "description": "Промышленная робототехника Agile Robots.",
+      "article_ids": [
+        "agile-robots-series-f-500m-20261112"
+      ]
+    },
+    {
+      "key": "truleo",
+      "name": "Truleo",
+      "description": "ИИ-инструменты Truleo для работы полиции.",
+      "article_ids": [
+        "truleo-ai-police-report-arizona-20261116"
+      ]
+    },
+    {
+      "key": "cursor",
+      "name": "Cursor",
+      "description": "ИИ-среда программирования Cursor и связанные события.",
+      "article_ids": [
+        "cursor-fireworks-key-incident-20261113"
+      ]
+    },
+    {
+      "key": "fireworks-ai",
+      "name": "Fireworks AI",
+      "description": "Инфраструктура для запуска моделей Fireworks AI.",
+      "article_ids": [
+        "cursor-fireworks-key-incident-20261113"
+      ]
+    },
+    {
+      "key": "fractile",
+      "name": "Fractile",
+      "description": "Разработки ускорителей ИИ Fractile.",
+      "article_ids": [
+        "fractile-ai-chips-720m-funding-20261111"
+      ]
+    },
+    {
+      "key": "recraft",
+      "name": "Recraft",
+      "description": "Генерация и редактирование изображений Recraft.",
+      "article_ids": [
+        "recraft-v4-1-flash-v2-20261113"
+      ]
+    },
+    {
+      "key": "air-space-intelligence",
+      "name": "Air Space Intelligence",
+      "description": "ИИ-инструменты управления воздушным движением.",
+      "article_ids": [
+        "faa-smart-ground-stop-20261113"
+      ]
+    },
+    {
+      "key": "sabre",
+      "name": "Sabre Corporation",
+      "description": "ИИ-интеграции в туристических сервисах Sabre.",
+      "article_ids": [
+        "sabre-grok-bot-travel-connector-20261117"
+      ]
+    },
+    {
+      "key": "apollo-research",
+      "name": "Apollo Research",
+      "description": "Исследования безопасности и поведения моделей Apollo Research.",
+      "article_ids": [
+        "openai-apollo-embedded-evaluations-20261116"
+      ]
+    },
+    {
+      "key": "metr",
+      "name": "METR",
+      "description": "Оценка возможностей и рисков ИИ от METR.",
+      "article_ids": [
+        "openai-apollo-embedded-evaluations-20261116"
+      ]
+    },
+    {
+      "key": "transluce",
+      "name": "Transluce",
+      "description": "Исследования поведения и безопасности ИИ Transluce.",
+      "article_ids": [
+        "openai-apollo-embedded-evaluations-20261116"
+      ]
+    },
+    {
+      "key": "goodfire",
+      "name": "Goodfire",
+      "description": "Исследования интерпретируемости моделей Goodfire.",
+      "article_ids": [
+        "openai-apollo-embedded-evaluations-20261116"
+      ]
+    },
+    {
+      "key": "baidu",
+      "name": "Baidu",
+      "description": "ИИ-модели и сервисы Baidu.",
+      "article_ids": [
+        "us-879868-ai-chips-china-licenses-20261119",
+        "baidu-token-exchange-ernie-55-20261112"
+      ]
+    },
+    {
+      "key": "heygen",
+      "name": "HeyGen",
+      "description": "Генеративное видео и аватары HeyGen.",
+      "article_ids": [
+        "heygen-avatar-6-contextual-gestures-20261117"
+      ]
+    },
+    {
+      "key": "megaspeed",
+      "name": "Megaspeed International",
+      "description": "Новости поставок ИИ-оборудования Megaspeed.",
+      "article_ids": [
+        "nvidia-megaspeed-chips-export-investigation-20261117",
+        "alice-huang-ai-servers-china-270m-20261125"
+      ]
+    },
+    {
+      "key": "isomorphic-labs",
+      "name": "Isomorphic Labs",
+      "description": "ИИ для разработки лекарств Isomorphic Labs.",
+      "article_ids": [
+        "isomorphic-labs-5b-ai-medicines-20261117"
+      ]
+    },
+    {
+      "key": "omnilert",
+      "name": "Omnilert",
+      "description": "ИИ-системы безопасности Omnilert.",
+      "article_ids": [
+        "omnilert-doritos-school-police-lawsuit-20261117"
+      ]
+    },
+    {
+      "key": "amd",
+      "name": "AMD",
+      "description": "Ускорители и ИИ-разработки AMD.",
+      "article_ids": [
+        "us-879868-ai-chips-china-licenses-20261119",
+        "openai-amd-ai-chip-design-20261118"
+      ]
+    },
+    {
+      "key": "bitdefender",
+      "name": "Bitdefender",
+      "description": "Исследования кибербезопасности и ИИ Bitdefender.",
+      "article_ids": [
+        "bitdefender-github-agent-instructions-malware-20261117"
+      ]
+    },
+    {
+      "key": "wiz",
+      "name": "Wiz",
+      "description": "Исследования облачной безопасности и ИИ Wiz.",
+      "article_ids": [
+        "microsoft-agent-framework-pypi-stealer-20261117"
+      ]
+    },
+    {
+      "key": "signal",
+      "name": "Signal",
+      "description": "Защита переписок и взаимодействие мессенджера Signal с ИИ.",
+      "article_ids": [
+        "signal-ai-screenshot-protection-20261120"
+      ]
+    },
+    {
+      "key": "artcraft",
+      "name": "ArtCraft",
+      "description": "Генеративные инструменты для творческих задач ArtCraft.",
+      "article_ids": [
+        "artcraft-photocraft-ai-photoshop-prototype-20261112"
+      ]
+    },
+    {
+      "key": "character-ai",
+      "name": "Character.AI",
+      "description": "Чат-боты Character.AI и связанные события.",
+      "article_ids": [
+        "character-ai-bankruptcy-private-chats-20261120"
+      ]
+    },
+    {
+      "key": "blue-origin",
+      "name": "Blue Origin",
+      "description": "Космические проекты Blue Origin, связанные с инфраструктурой ИИ.",
+      "article_ids": [
+        "google-blue-origin-suncatcher-new-glenn-20261119"
+      ]
+    },
+    {
+      "key": "nebius",
+      "name": "Nebius",
+      "description": "Облачная инфраструктура и дата-центры ИИ Nebius.",
+      "article_ids": [
+        "nebius-45b-microsoft-delay-20261112"
+      ]
+    },
+    {
+      "key": "riverside",
+      "name": "Riverside",
+      "description": "ИИ-инструменты обработки аудио и видео Riverside.",
+      "article_ids": [
+        "riverside-tonality-audio-word-edit-20261112"
+      ]
+    },
+    {
+      "key": "midjourney-inc",
+      "name": "Midjourney, Inc.",
+      "description": "Генерация изображений и видео Midjourney.",
+      "article_ids": [
+        "ai-four-visual-experiments-20261115"
+      ]
+    },
+    {
+      "key": "meituan",
+      "name": "Meituan",
+      "description": "ИИ-модели и сервисы Meituan.",
+      "article_ids": [
+        "meituan-longcat-2-5-open-weights-20261116"
+      ]
+    },
+    {
+      "key": "huawei",
+      "name": "Huawei",
+      "description": "Ускорители, инфраструктура и ИИ-разработки Huawei.",
+      "article_ids": [
+        "meituan-longcat-2-5-open-weights-20261116",
+        "china-telecom-xing4-huawei-20261126"
+      ]
+    },
+    {
+      "key": "higurashi-ai",
+      "name": "higurashi",
+      "description": "Голосовые модели и локальный ИИ higurashi.",
+      "article_ids": [
+        "higurashi-haru4b-speech-cpp-20261115"
+      ]
+    },
+    {
+      "key": "genesis-ai",
+      "name": "Genesis AI",
+      "description": "Робототехника и обучение роботов Genesis AI.",
+      "article_ids": [
+        "genesis-ai-robot-gloves-funding-20261117"
+      ]
+    },
+    {
+      "key": "spotify",
+      "name": "Spotify",
+      "description": "ИИ и защита музыкального контента в Spotify.",
+      "article_ids": [
+        "spotify-artist-profile-protection-20261117"
+      ]
+    },
+    {
+      "key": "proton",
+      "name": "Proton",
+      "description": "ИИ-ассистенты и конфиденциальность сервисов Proton.",
+      "article_ids": [
+        "proton-lumo-desktop-permissions-20261117"
+      ]
+    },
+    {
+      "key": "pangram-labs",
+      "name": "Pangram Labs",
+      "description": "Инструменты выявления ИИ-текстов Pangram Labs.",
+      "article_ids": [
+        "doj-pangram-ai-detector-defense-attorneys-20261117"
+      ]
+    },
+    {
+      "key": "kpmg",
+      "name": "KPMG",
+      "description": "Применение ИИ в аудите и профессиональных услугах KPMG.",
+      "article_ids": [
+        "kpmg-ai-agents-parallel-audit-20261118"
+      ]
+    },
+    {
+      "key": "reliance-jio",
+      "name": "Reliance Jio",
+      "description": "ИИ-сервисы и партнёрства Reliance Jio.",
+      "article_ids": [
+        "google-jio-gemini-subscription-cancellations-20261125"
+      ]
+    },
+    {
+      "key": "mts",
+      "name": "МТС",
+      "description": "ИИ-сервисы и инструменты оплаты МТС.",
+      "article_ids": [
+        "mts-virtual-foreign-card-ai-payments-20261124"
+      ]
+    },
+    {
+      "key": "decart",
+      "name": "Decart",
+      "description": "Разработки Decart для оптимизации ИИ.",
+      "article_ids": [
+        "amazon-decart-ai-optimization-20261123"
+      ]
+    },
+    {
+      "key": "polymarket",
+      "name": "Polymarket",
+      "description": "Новости применения ИИ и рынков прогнозов Polymarket.",
+      "article_ids": [
+        "nvidia-huang-return-polymarket-20261124"
+      ]
+    },
+    {
+      "key": "tidal",
+      "name": "Tidal",
+      "description": "Политика Tidal в отношении музыки, созданной ИИ.",
+      "article_ids": [
+        "tidal-ai-music-ban-20261124"
+      ]
+    },
+    {
+      "key": "yandex",
+      "name": "Яндекс",
+      "description": "ИИ-модели, устройства и сервисы Яндекса.",
+      "article_ids": [
+        "yandex-pin-ai-secretary-20261124"
+      ]
+    },
+    {
+      "key": "china-telecom",
+      "name": "China Telecom",
+      "description": "ИИ-модели и инфраструктура China Telecom.",
+      "article_ids": [
+        "china-telecom-xing4-huawei-20261126"
+      ]
+    },
+    {
+      "key": "sber",
+      "name": "Сбер",
+      "description": "ИИ-модели и сервисы Сбера.",
+      "article_ids": [
+        "sber-gigachat-4-20261126"
+      ]
     }
   ],
   "products": [
@@ -1078,7 +1628,8 @@
         "gpt-6-astra-standard-model-craig-20261115",
         "openai-gpt-6-2-astra-sol-20261117",
         "openai-gpt-hidden-reasoning-defense-20261120",
-        "openai-gpt-7-rumors-investigation-20261125"
+        "openai-gpt-7-rumors-investigation-20261125",
+        "openai-gpt-6-2-sol-chatgpt-20261123"
       ]
     },
     {
@@ -1189,6 +1740,680 @@
         "google-genie4-worlds",
         "google-genie4-project-genie-access-20261118"
       ]
+    },
+    {
+      "key": "zonos",
+      "name": "Zonos",
+      "description": "Голосовые модели семейства Zonos.",
+      "article_ids": [
+        "zyphra-zonos3-mini-voice-cloning-20261109"
+      ],
+      "company": "zyphra"
+    },
+    {
+      "key": "switchx",
+      "name": "SwitchX",
+      "description": "ИИ для изменения декораций в видео.",
+      "article_ids": [
+        "beeble-switchx-3-dynamic-video-backgrounds-20261110"
+      ],
+      "company": "beeble"
+    },
+    {
+      "key": "maven-smart-system",
+      "name": "Maven Smart System",
+      "description": "Аналитическая платформа Maven Smart System.",
+      "article_ids": [
+        "helsing-european-military-ai-palantir-20261110"
+      ],
+      "company": "palantir"
+    },
+    {
+      "key": "altra",
+      "name": "Altra",
+      "description": "Программная платформа Helsing Altra.",
+      "article_ids": [
+        "helsing-european-military-ai-palantir-20261110"
+      ],
+      "company": "helsing"
+    },
+    {
+      "key": "seedream",
+      "name": "Seedream",
+      "description": "Модели генерации и редактирования изображений Seedream.",
+      "article_ids": [
+        "bytedance-seedream-5-5-100-edits-20261109"
+      ],
+      "company": "bytedance"
+    },
+    {
+      "key": "obsidian",
+      "name": "Obsidian",
+      "description": "Робототехнические разработки Path Robotics Obsidian.",
+      "article_ids": [
+        "path-robotics-series-e-300m-20261110"
+      ],
+      "company": "path-robotics"
+    },
+    {
+      "key": "rove",
+      "name": "Rove",
+      "description": "Робототехнические разработки Path Robotics Rove.",
+      "article_ids": [
+        "path-robotics-series-e-300m-20261110"
+      ],
+      "company": "path-robotics"
+    },
+    {
+      "key": "miracle",
+      "name": "Miracle",
+      "description": "ИИ-инструмент редактирования видео Miracle.",
+      "article_ids": [
+        "higgsfield-miracle-realtime-video-editing-20261106"
+      ],
+      "company": "higgsfield"
+    },
+    {
+      "key": "doubao",
+      "name": "Doubao",
+      "description": "ИИ-модели и ассистент Doubao.",
+      "article_ids": [
+        "china-ai-shopping-doubao-dongdong-20261111",
+        "china-ai-schools-20261116"
+      ],
+      "company": "bytedance"
+    },
+    {
+      "key": "dongdong",
+      "name": "Dongdong",
+      "description": "ИИ-помощник для покупок JD.com.",
+      "article_ids": [
+        "china-ai-shopping-doubao-dongdong-20261111"
+      ],
+      "company": "jd-com"
+    },
+    {
+      "key": "kora",
+      "name": "KORA",
+      "description": "Операционная система KORA.",
+      "article_ids": [
+        "kora-linux-ai-os-cyanogen-20261110"
+      ],
+      "company": "kora-systems"
+    },
+    {
+      "key": "humain-os",
+      "name": "HUMAIN OS",
+      "description": "Операционная система HUMAIN OS.",
+      "article_ids": [
+        "kora-linux-ai-os-cyanogen-20261110"
+      ],
+      "company": "humain"
+    },
+    {
+      "key": "nvidia-h200",
+      "name": "NVIDIA H200",
+      "description": "ИИ-ускоритель NVIDIA H200.",
+      "article_ids": [
+        "nwpu-nvidia-h200-blacklist-20261111",
+        "nvidia-china-chip-tariff-congress-probe-20261112",
+        "nvidia-china-hopper-shipments-halt-20261118",
+        "us-879868-ai-chips-china-licenses-20261119"
+      ],
+      "company": "nvidia"
+    },
+    {
+      "key": "zhenwu-v900",
+      "name": "Zhenwu V900",
+      "description": "ИИ-ускоритель Zhenwu V900.",
+      "article_ids": [
+        "alibaba-t-head-ipo-hong-kong-20261110"
+      ],
+      "company": "t-head"
+    },
+    {
+      "key": "cisco-ai-defense",
+      "name": "Cisco AI Defense",
+      "description": "Платформа защиты ИИ-систем Cisco.",
+      "article_ids": [
+        "cisco-claude-mythos-ai-defense-20261109"
+      ],
+      "company": "cisco"
+    },
+    {
+      "key": "alphagenome",
+      "name": "AlphaGenome",
+      "description": "Модели анализа генома AlphaGenome.",
+      "article_ids": [
+        "google-alphagenome-2-cell-variants-20261111"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "sensorwm",
+      "name": "SensorWM",
+      "description": "Модель анализа данных носимых датчиков SensorWM.",
+      "article_ids": [
+        "google-sensorwm-wearables-health-20261111"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "elevenai",
+      "name": "ElevenAI",
+      "description": "ИИ-помощник ElevenAI.",
+      "article_ids": [
+        "elevenlabs-elevenai-meeting-assistant-20261111"
+      ],
+      "company": "elevenlabs"
+    },
+    {
+      "key": "scribe",
+      "name": "Scribe",
+      "description": "Модели распознавания речи Scribe.",
+      "article_ids": [
+        "elevenlabs-elevenai-meeting-assistant-20261111"
+      ],
+      "company": "elevenlabs"
+    },
+    {
+      "key": "elevenagents",
+      "name": "ElevenAgents",
+      "description": "Платформа голосовых ИИ-агентов ElevenAgents.",
+      "article_ids": [
+        "elevenlabs-elevenagents-memory-routines-20261111"
+      ],
+      "company": "elevenlabs"
+    },
+    {
+      "key": "fish-audio-live",
+      "name": "Fish Audio Live",
+      "description": "Голосовые модели Fish Audio Live.",
+      "article_ids": [
+        "fish-audio-live-3-interruptions-20261110"
+      ],
+      "company": "fish-audio"
+    },
+    {
+      "key": "apple-carplay",
+      "name": "Apple CarPlay",
+      "description": "Автомобильная платформа Apple CarPlay.",
+      "article_ids": [
+        "google-gemini-live-apple-carplay-20261111"
+      ],
+      "company": "apple"
+    },
+    {
+      "key": "sfr-autord",
+      "name": "SFR-AutoR&D",
+      "description": "ИИ для улучшения моделей Salesforce.",
+      "article_ids": [
+        "salesforce-sfr-autord-ai-model-improvement-20261111"
+      ],
+      "company": "salesforce"
+    },
+    {
+      "key": "whoop-humans",
+      "name": "WHOOP Humans",
+      "description": "Социальная платформа WHOOP Humans.",
+      "article_ids": [
+        "whoop-humans-heartbeat-social-network-20261112"
+      ],
+      "company": "whoop"
+    },
+    {
+      "key": "dots",
+      "name": "Dots",
+      "description": "Персональные агенты Dots от OpenAI.",
+      "article_ids": [
+        "openai-chatgpt-wallet-dots-20261113",
+        "openai-dots-chatgpt-plus-test-20261119"
+      ],
+      "company": "openai"
+    },
+    {
+      "key": "databricks-genie",
+      "name": "Databricks Genie",
+      "description": "ИИ-агент для анализа корпоративных данных.",
+      "article_ids": [
+        "databricks-genie-unvarnished-truth-20261111"
+      ],
+      "company": "databricks"
+    },
+    {
+      "key": "agile-one",
+      "name": "Agile ONE",
+      "description": "Гуманоидный робот Agile ONE.",
+      "article_ids": [
+        "agile-robots-series-f-500m-20261112"
+      ],
+      "company": "agile-robots"
+    },
+    {
+      "key": "praxis",
+      "name": "Praxis",
+      "description": "Модели Runway для робототехники.",
+      "article_ids": [
+        "runway-praxis-1-open-weights-20261111"
+      ],
+      "company": "runway"
+    },
+    {
+      "key": "seedance",
+      "name": "Seedance",
+      "description": "Модели генерации видео Seedance.",
+      "article_ids": [
+        "bytedance-seedance-2-5-flash-20261115",
+        "krea-video-swap-20261120"
+      ],
+      "company": "bytedance"
+    },
+    {
+      "key": "truleo-ai",
+      "name": "Truleo AI",
+      "description": "ИИ-инструмент анализа полицейских записей.",
+      "article_ids": [
+        "truleo-ai-police-report-arizona-20261116"
+      ],
+      "company": "truleo"
+    },
+    {
+      "key": "recraft",
+      "name": "Recraft",
+      "description": "Модели генерации и редактирования изображений Recraft.",
+      "article_ids": [
+        "recraft-v4-1-flash-v2-20261113"
+      ],
+      "company": "recraft"
+    },
+    {
+      "key": "smart-air-traffic",
+      "name": "SMART",
+      "description": "Система управления воздушным движением SMART.",
+      "article_ids": [
+        "faa-smart-ground-stop-20261113"
+      ],
+      "company": "air-space-intelligence"
+    },
+    {
+      "key": "google-maps",
+      "name": "Google Maps",
+      "description": "Картографический сервис и ИИ-функции Google Maps.",
+      "article_ids": [
+        "google-ask-maps-booking-europe-20261116"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "sabre-mosaic",
+      "name": "Sabre Mosaic",
+      "description": "Туристическая платформа Sabre Mosaic.",
+      "article_ids": [
+        "sabre-grok-bot-travel-connector-20261117"
+      ],
+      "company": "sabre"
+    },
+    {
+      "key": "macos",
+      "name": "macOS",
+      "description": "Операционная система macOS и её ИИ-функции.",
+      "article_ids": [
+        "apple-macos-27-3-ai-agent-permissions-20261116"
+      ],
+      "company": "apple"
+    },
+    {
+      "key": "heygen-avatar",
+      "name": "HeyGen Avatar",
+      "description": "Модели генерации цифровых аватаров HeyGen.",
+      "article_ids": [
+        "heygen-avatar-6-contextual-gestures-20261117"
+      ],
+      "company": "heygen"
+    },
+    {
+      "key": "mai-code",
+      "name": "MAI Code",
+      "description": "Модели Microsoft для программирования.",
+      "article_ids": [
+        "microsoft-mai-code-2-20261117"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "mai-cyber",
+      "name": "MAI Cyber",
+      "description": "Модели Microsoft для кибербезопасности.",
+      "article_ids": [
+        "microsoft-mai-cyber-2-flash-20261117"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "openai-daybreak",
+      "name": "Daybreak",
+      "description": "Разработки OpenAI для кибербезопасности.",
+      "article_ids": [
+        "openai-nato-cyber-defense-daybreak-20261117"
+      ],
+      "company": "openai"
+    },
+    {
+      "key": "isodde",
+      "name": "IsoDDE",
+      "description": "ИИ-модель Isomorphic Labs для разработки лекарств.",
+      "article_ids": [
+        "isomorphic-labs-5b-ai-medicines-20261117"
+      ],
+      "company": "isomorphic-labs"
+    },
+    {
+      "key": "omnilert-gun-detect",
+      "name": "Omnilert Gun Detect",
+      "description": "Система визуального обнаружения оружия Omnilert.",
+      "article_ids": [
+        "omnilert-doritos-school-police-lawsuit-20261117"
+      ],
+      "company": "omnilert"
+    },
+    {
+      "key": "microsoft-agent-framework",
+      "name": "Microsoft Agent Framework",
+      "description": "Инструменты разработки ИИ-агентов Microsoft.",
+      "article_ids": [
+        "microsoft-agent-framework-pypi-stealer-20261117"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "google-ai-studio",
+      "name": "Google AI Studio",
+      "description": "Среда разработки приложений с моделями Google.",
+      "article_ids": [
+        "google-ai-studio-android-firebase-play-20261117"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "firebase",
+      "name": "Firebase",
+      "description": "Платформа Firebase и её ИИ-интеграции.",
+      "article_ids": [
+        "google-ai-studio-android-firebase-play-20261117"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "microsoft-foundry",
+      "name": "Microsoft Foundry",
+      "description": "Платформа разработки и управления ИИ Microsoft Foundry.",
+      "article_ids": [
+        "microsoft-foundry-autopilot-ai-employees-20261119"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "microsoft-agent-365",
+      "name": "Agent 365",
+      "description": "Средства управления корпоративными ИИ-агентами Microsoft.",
+      "article_ids": [
+        "microsoft-foundry-autopilot-ai-employees-20261119"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "agentcore",
+      "name": "Amazon Bedrock AgentCore",
+      "description": "Инфраструктура для ИИ-агентов Amazon Bedrock AgentCore.",
+      "article_ids": [
+        "amazon-aws-marketplace-agentic-payments-20261119"
+      ],
+      "company": "amazon"
+    },
+    {
+      "key": "amd-instinct",
+      "name": "AMD Instinct",
+      "description": "Семейство ускорителей AMD Instinct.",
+      "article_ids": [
+        "us-879868-ai-chips-china-licenses-20261119"
+      ],
+      "company": "amd"
+    },
+    {
+      "key": "signal-messenger",
+      "name": "Signal Messenger",
+      "description": "Мессенджер Signal и защита переписок.",
+      "article_ids": [
+        "signal-ai-screenshot-protection-20261120"
+      ],
+      "company": "signal"
+    },
+    {
+      "key": "artcraft",
+      "name": "ArtCraft",
+      "description": "Семейство творческих ИИ-инструментов ArtCraft.",
+      "article_ids": [
+        "artcraft-photocraft-ai-photoshop-prototype-20261112"
+      ],
+      "company": "artcraft"
+    },
+    {
+      "key": "microsoft-edge",
+      "name": "Microsoft Edge",
+      "description": "Браузер Microsoft Edge и его ИИ-функции.",
+      "article_ids": [
+        "microsoft-edge-aion-instruct-local-ai-20261119"
+      ],
+      "company": "microsoft"
+    },
+    {
+      "key": "nvidia-vera-rubin",
+      "name": "NVIDIA Vera Rubin",
+      "description": "Вычислительная платформа NVIDIA Vera Rubin.",
+      "article_ids": [
+        "spacex-nvidia-gpu-orbit-financing-20261120",
+        "nvidia-q3-fy2027-earnings-vera-rubin-20261117"
+      ],
+      "company": "nvidia"
+    },
+    {
+      "key": "new-glenn",
+      "name": "New Glenn",
+      "description": "Ракета New Glenn в проектах космической ИИ-инфраструктуры.",
+      "article_ids": [
+        "google-blue-origin-suncatcher-new-glenn-20261119"
+      ],
+      "company": "blue-origin"
+    },
+    {
+      "key": "ernie",
+      "name": "ERNIE",
+      "description": "Семейство ИИ-моделей ERNIE.",
+      "article_ids": [
+        "baidu-token-exchange-ernie-55-20261112"
+      ],
+      "company": "baidu"
+    },
+    {
+      "key": "riverside-tonality",
+      "name": "Tonality",
+      "description": "Инструмент редактирования речи Riverside.",
+      "article_ids": [
+        "riverside-tonality-audio-word-edit-20261112"
+      ],
+      "company": "riverside"
+    },
+    {
+      "key": "midjourney",
+      "name": "Midjourney",
+      "description": "Генеративные модели и сервис Midjourney.",
+      "article_ids": [
+        "ai-four-visual-experiments-20261115"
+      ],
+      "company": "midjourney-inc"
+    },
+    {
+      "key": "longcat",
+      "name": "LongCat",
+      "description": "Семейство ИИ-моделей LongCat.",
+      "article_ids": [
+        "meituan-longcat-2-5-open-weights-20261116"
+      ],
+      "company": "meituan"
+    },
+    {
+      "key": "huawei-ascend",
+      "name": "Huawei Ascend",
+      "description": "Семейство ИИ-ускорителей Huawei Ascend.",
+      "article_ids": [
+        "meituan-longcat-2-5-open-weights-20261116",
+        "china-telecom-xing4-huawei-20261126"
+      ],
+      "company": "huawei"
+    },
+    {
+      "key": "haru",
+      "name": "Haru",
+      "description": "Голосовые модели Haru.",
+      "article_ids": [
+        "higurashi-haru4b-speech-cpp-20261115"
+      ],
+      "company": "higurashi-ai"
+    },
+    {
+      "key": "google-wallet",
+      "name": "Google Wallet",
+      "description": "Платёжный сервис Google Wallet и его ИИ-интеграции.",
+      "article_ids": [
+        "google-search-wallet-personal-intelligence-20261123"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "google-ai-mode",
+      "name": "Google AI Mode",
+      "description": "ИИ-режим поиска Google.",
+      "article_ids": [
+        "google-search-wallet-personal-intelligence-20261123"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "instagram",
+      "name": "Instagram",
+      "description": "ИИ-функции и защита контента Instagram.",
+      "article_ids": [
+        "instagram-content-protection-ai-copies-20261117"
+      ],
+      "company": "meta"
+    },
+    {
+      "key": "lumo",
+      "name": "Lumo",
+      "description": "ИИ-ассистент Proton Lumo.",
+      "article_ids": [
+        "proton-lumo-desktop-permissions-20261117"
+      ],
+      "company": "proton"
+    },
+    {
+      "key": "suno-visuals",
+      "name": "Suno Visuals",
+      "description": "Генерация видеоклипов в Suno.",
+      "article_ids": [
+        "suno-visuals-music-videos-20261117"
+      ],
+      "company": "suno"
+    },
+    {
+      "key": "pangram",
+      "name": "Pangram",
+      "description": "Инструменты выявления ИИ-текстов Pangram.",
+      "article_ids": [
+        "doj-pangram-ai-detector-defense-attorneys-20261117"
+      ],
+      "company": "pangram-labs"
+    },
+    {
+      "key": "google-ai-pro",
+      "name": "Google AI Pro",
+      "description": "Подписка Google AI Pro.",
+      "article_ids": [
+        "google-jio-gemini-subscription-cancellations-20261125"
+      ],
+      "company": "google"
+    },
+    {
+      "key": "mts-oplata",
+      "name": "МТС Оплата",
+      "description": "Сервис оплаты МТС.",
+      "article_ids": [
+        "mts-virtual-foreign-card-ai-payments-20261124"
+      ],
+      "company": "mts"
+    },
+    {
+      "key": "decart-optimization-stack",
+      "name": "Decart Optimization Stack",
+      "description": "Технология оптимизации вычислений ИИ Decart.",
+      "article_ids": [
+        "amazon-decart-ai-optimization-20261123"
+      ],
+      "company": "decart"
+    },
+    {
+      "key": "trainium",
+      "name": "AWS Trainium",
+      "description": "Семейство ИИ-ускорителей AWS Trainium.",
+      "article_ids": [
+        "amazon-decart-ai-optimization-20261123"
+      ],
+      "company": "amazon"
+    },
+    {
+      "key": "yandex-pin",
+      "name": "Яндекс Пин",
+      "description": "Носимое ИИ-устройство Яндекса.",
+      "article_ids": [
+        "yandex-pin-ai-secretary-20261124"
+      ],
+      "company": "yandex"
+    },
+    {
+      "key": "xing4",
+      "name": "Xing4",
+      "description": "Семейство ИИ-моделей Xing4.",
+      "article_ids": [
+        "china-telecom-xing4-huawei-20261126"
+      ],
+      "company": "china-telecom"
+    },
+    {
+      "key": "fastframes",
+      "name": "FastFrames",
+      "description": "Модель генерации видео FastFrames.",
+      "article_ids": [
+        "apple-cornell-fastframes-20261117"
+      ],
+      "company": "apple"
+    },
+    {
+      "key": "krea-video-swap",
+      "name": "Video Swap",
+      "description": "Инструмент замены актёров в видео Krea.",
+      "article_ids": [
+        "krea-video-swap-20261120"
+      ],
+      "company": "krea"
+    },
+    {
+      "key": "gigachat",
+      "name": "GigaChat",
+      "description": "Семейство моделей и сервисов GigaChat.",
+      "article_ids": [
+        "sber-gigachat-4-20261126"
+      ],
+      "company": "sber"
     }
   ]
 }

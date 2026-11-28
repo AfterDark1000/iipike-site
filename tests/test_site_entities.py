@@ -18,8 +18,8 @@ class PublicEntityCatalogTests(unittest.TestCase):
 
     def test_curated_registry_references_only_published_rows(self):
         validate_public_registry(self.registry, self.records)
-        self.assertEqual(len(self.registry["companies"]), 61)
-        self.assertEqual(len(self.registry["products"]), 24)
+        self.assertGreaterEqual(len(self.registry["companies"]), 61)
+        self.assertGreaterEqual(len(self.registry["products"]), 24)
         self.assertGreaterEqual(len(set(
             article for kind in ("companies", "products")
             for entity in self.registry[kind] for article in entity["article_ids"]
@@ -27,7 +27,7 @@ class PublicEntityCatalogTests(unittest.TestCase):
 
     def test_generated_pages_are_current_indexable_and_canonical(self):
         pages = render_all_entities(self.records, ROOT)
-        self.assertEqual(sum(p.name == 'index.html' for p in pages), 86)
+        self.assertEqual(sum(p.name == 'index.html' for p in pages), 1 + len(self.registry['companies']) + len(self.registry['products']))
         self.assertIn(ROOT / "entities/index.html", pages)
         for path, text in pages.items():
             self.assertTrue(path.is_file(), str(path))
@@ -45,9 +45,9 @@ class PublicEntityCatalogTests(unittest.TestCase):
         html = (ROOT / "entities/index.html").read_text(encoding="utf-8")
         self.assertIn('id="entity-filter"', html)
         self.assertIn('assets/entity-search.js', html)
-        self.assertIn("Компании — 61", html)
-        self.assertIn("Продукты — 24", html)
-        self.assertEqual(html.count('class="topic-index-link entity-tile"'), 85)
+        self.assertIn(f"Компании — {len(self.registry['companies'])}", html)
+        self.assertIn(f"Продукты — {len(self.registry['products'])}", html)
+        self.assertEqual(html.count('class="topic-index-link entity-tile"'), len(self.registry['companies']) + len(self.registry['products']))
         self.assertTrue((ROOT / "assets/entity-search.js").is_file())
 
     def test_all_icons_exist_and_are_local_svg(self):
