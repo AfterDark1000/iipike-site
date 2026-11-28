@@ -1,0 +1,4111 @@
+{
+  "schema_version": 1,
+  "reviewed_on": "2026-11-28",
+  "description": "Архив второго и третьего проходов по кандидатам. Исходные сведения и доказательства сохранены; решения относятся к указанным материалам, не являются вечным запретом на добавление сущности. Не используется генератором публичного каталога.",
+  "registry_commit": "60b905b35fd7fa3e18d5d838191fb53eb6927f2a",
+  "reason_labels": {
+    "registered": "Связь подтверждена публичным реестром.",
+    "merged_family": "Материал уже связан с карточкой семейства или основного продукта.",
+    "organization": "Организация, регулятор, университет, общественная инициатива или мероприятие вне текущего справочника компаний; сохранить для возможного отдельного каталога.",
+    "finance_or_market": "Инвестор, финансирование или рыночное упоминание; не самостоятельный участник ИИ-события в данном материале.",
+    "context": "Контекст, пример, сравнение или второстепенное упоминание; не самостоятельная карточка по этому материалу.",
+    "covered_by_parent": "Подразделение уже представленной компании; не создавать отдельную карточку на основании этой связи.",
+    "needs_confirmation": "Отложено: не подтверждена необходимая связь, точное название или разработчик; возможно повторное рассмотрение.",
+    "research_or_noncommercial": "Научный, открытый или государственный проект вне текущего справочника продуктов; сохранить для дальнейшего рассмотрения.",
+    "creative_work": "Творческое произведение, персонаж или результат использования ИИ, а не самостоятельный ИИ-инструмент.",
+    "not_standalone_product": "Концепция, внутренняя разработка или программа, а не отдельный продукт."
+  },
+  "companies": [
+    {
+      "candidate": {
+        "key": "salesforce",
+        "name": "Salesforce",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "mercor-series-d-750m-20b-valuation-20261110",
+            "source_url": "https://www.mercor.com/blog/series-d/"
+          },
+          {
+            "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
+            "source_url": "https://www.salesforce.com/news/stories/agents-that-improve-ai-models"
+          },
+          {
+            "article_id": "openai-chatgpt-for-sales-20261117",
+            "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mercor-series-d-750m-20b-valuation-20261110",
+          "decision": "finance_or_market"
+        },
+        {
+          "article_id": "salesforce-sfr-autord-ai-model-improvement-20261111",
+          "decision": "registered",
+          "registry_key": "salesforce"
+        },
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "decision": "registered",
+          "registry_key": "salesforce"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "battery-ventures",
+        "name": "Battery Ventures",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "bay-ai-agent-security-50m-20261110",
+            "source_url": "https://www.bay.io/blog/bay-emerges-from-stealth-with-50m-after-fortune-100-companies-used-its-platform-to-triple-autonomous-ai-agent-use-2"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bay-ai-agent-security-50m-20261110",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "georgian",
+        "name": "Georgian",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "path-robotics-series-e-300m-20261110",
+            "source_url": "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "path-robotics-series-e-300m-20261110",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "wpic",
+        "name": "WPIC Marketing + Technologies",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+            "source_url": "https://www.linkedin.com/company/wpic/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "decision": "registered",
+          "registry_key": "wpic"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cianum",
+        "name": "Conseil de l'IA et du numérique (CIANum)",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "france-cianum-ai-flattery-20261110",
+            "source_url": "https://www.conseil-ia-numerique.fr/nos-travaux/proteger-sans-empecher-nos-vulnerabilites-lere-de-lia-generative"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "france-cianum-ai-flattery-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "qualcomm",
+        "name": "Qualcomm",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "kora-linux-ai-os-cyanogen-20261110",
+            "source_url": "https://press.kora.fun/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "decision": "registered",
+          "registry_key": "qualcomm"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "tsmc",
+        "name": "TSMC",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "tsmc-openai-anthropic-investment-20261110",
+            "source_url": "https://pr.tsmc.com/english/news/3352"
+          },
+          {
+            "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tsmc-openai-anthropic-investment-20261110",
+          "decision": "registered",
+          "registry_key": "tsmc"
+        },
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "northwestern-polytechnical-university",
+        "name": "Northwestern Polytechnical University (NWPU)",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+            "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "shaanxi-bosuan",
+        "name": "Shaanxi Bosuan Network Technology",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+            "source_url": "https://web.archive.org/web/20261111052318/https://som.nwpu.edu.cn/info/1013/88690.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nwpu-nvidia-h200-blacklist-20261111",
+          "decision": "registered",
+          "registry_key": "shaanxi-bosuan"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "rre-ventures",
+        "name": "RRE Ventures",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "graphon-labs-persistent-memory-35m-20261110",
+            "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "graphon-labs-persistent-memory-35m-20261110",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "usda",
+        "name": "U.S. Department of Agriculture (USDA)",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "usda-ai-crop-forecast-validation-20261110",
+            "source_url": "https://www.reuters.com/technology/usda-launch-ai-tool-check-crop-production-data-after-errors-2026-11-06/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "usda-ai-crop-forecast-validation-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "tu-graz",
+        "name": "Graz University of Technology (TU Graz)",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "clara-bioreactor-10000x-20261111",
+            "source_url": "https://www.tugraz.at/en/news/article/ai-tool-clara-accelerates-the-development-of-bioreactors"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "clara-bioreactor-10000x-20261111",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "university-of-michigan",
+        "name": "University of Michigan",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "umich-prism-robot-motion-20261110",
+            "source_url": "https://news.engin.umich.edu/2026/11/prism-a-neural-network-component-for-better-robotic-motor-control/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "umich-prism-robot-motion-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mit",
+        "name": "Massachusetts Institute of Technology (MIT)",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mit-workspace-models-robot-memory-20261110",
+            "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "carnegie-mellon-university",
+        "name": "Carnegie Mellon University",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mit-workspace-models-robot-memory-20261110",
+            "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+          },
+          {
+            "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+            "source_url": "https://daehwakim.com/oat/index.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "decision": "organization"
+        },
+        {
+          "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mbzuai",
+        "name": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mbzuai-pan2-world-model-20261110",
+            "source_url": "https://ifm.ai/pan2/press-release/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "institute-of-foundation-models",
+        "name": "Institute of Foundation Models (IFM)",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mbzuai-pan2-world-model-20261110",
+            "source_url": "https://ifm.ai/pan2/press-release/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "autoware-foundation",
+        "name": "Autoware Foundation",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "registered",
+          "registry_key": "autoware-foundation"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "public-citizen",
+        "name": "Public Citizen",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+            "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+          },
+          {
+            "article_id": "nvidia-huang-return-polymarket-20261124",
+            "source_url": "https://www.citizen.org/news/prediction-market-bets-on-huangs-reinstatement-at-nvidia-must-be-investigated/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "decision": "organization"
+        },
+        {
+          "article_id": "nvidia-huang-return-polymarket-20261124",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "irreplaceable-education-fund",
+        "name": "Irreplaceable Education Fund",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+            "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "heat-initiative",
+        "name": "Heat Initiative",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+            "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "alliance-for-secure-ai",
+        "name": "Alliance for Secure AI",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+            "source_url": "https://www.citizen.org/news/coalition-of-nonprofits-files-landmark-lawsuit-to-stop-development-of-advanced-ai-systems-at-anthropic-google-meta-openai-and-spacexsi-that-proliferate-bioweapons-and-cyberattacks/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-google-anthropic-frontier-ai-lawsuit-20261112",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "warby-parker",
+        "name": "Warby Parker",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+            "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "decision": "registered",
+          "registry_key": "warby-parker"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "gentle-monster",
+        "name": "Gentle Monster",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+            "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "decision": "registered",
+          "registry_key": "gentle-monster"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "american-express",
+        "name": "American Express",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-wallet-dots-20261113",
+            "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "decision": "registered",
+          "registry_key": "american-express"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mastercard",
+        "name": "Mastercard",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-wallet-dots-20261113",
+            "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "decision": "registered",
+          "registry_key": "mastercard"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "visa",
+        "name": "Visa",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-wallet-dots-20261113",
+            "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "decision": "registered",
+          "registry_key": "visa"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "gdc-festival-of-gaming",
+        "name": "GDC Festival of Gaming",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "gdc-game-industry-ai-use-opinions-20261112",
+            "source_url": "https://gdconf.com/state-of-the-game-industry-november-2026"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "gdc-game-industry-ai-use-opinions-20261112",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "dark-sky-films",
+        "name": "Dark Sky Films",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+            "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "decision": "registered",
+          "registry_key": "dark-sky-films"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "bazelevs",
+        "name": "Bazelevs",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+            "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "decision": "registered",
+          "registry_key": "bazelevs"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "graphic-india",
+        "name": "Graphic India",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+            "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "decision": "registered",
+          "registry_key": "graphic-india"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "sya-concept",
+        "name": "S’YA Concept",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+            "source_url": "https://deadline.com/2026/11/answr-dark-sky-films-afm-stephen-kay-1237221677/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "answr-dark-sky-films-ai-thriller-20261112",
+          "decision": "registered",
+          "registry_key": "sya-concept"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "office-for-students",
+        "name": "Office for Students",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "uk-ofs-ai-free-assessments-20261111",
+            "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "uk-ofs-ai-free-assessments-20261111",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "advance-he",
+        "name": "Advance HE",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "uk-ofs-ai-free-assessments-20261111",
+            "source_url": "https://www.officeforstudents.org.uk/news-blog-and-events/press-and-media/universities-should-help-students-develop-ai-skills-while-protecting-confidence-in-degrees"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "uk-ofs-ai-free-assessments-20261111",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "easycall",
+        "name": "EasyCall",
+        "status": "candidate",
+        "first_seen": "2026-11-15",
+        "evidence": [
+          {
+            "article_id": "poland-anna-ai-patient-calls-20261111",
+            "source_url": "https://elevenlabs.io/blog/nvidia"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "poland-anna-ai-patient-calls-20261111",
+          "decision": "registered",
+          "registry_key": "easycall"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "penn-state",
+        "name": "Pennsylvania State University (Penn State)",
+        "status": "candidate",
+        "first_seen": "2026-11-15",
+        "evidence": [
+          {
+            "article_id": "haart-human-ai-asymmetric-relationships-20261110",
+            "source_url": "https://www.psu.edu/news/bellisario-college-communications/story/faculty-member-addresses-artificial-intelligence"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "haart-human-ai-asymmetric-relationships-20261110",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "vast-ai",
+        "name": "VAST AI Inc.",
+        "status": "candidate",
+        "first_seen": "2026-11-15",
+        "evidence": [
+          {
+            "article_id": "ai-eight-unusual-experiments-20261115",
+            "source_url": "https://www.vastworld.ai/about"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "house-house",
+        "name": "House House",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "big-walk-ai-code-igf-20261115",
+            "source_url": "https://bigwalk.game/faq/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "big-walk-ai-code-igf-20261115",
+          "decision": "registered",
+          "registry_key": "house-house"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "wowpoint",
+        "name": "WOWPOINT",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+            "source_url": "https://newsroom.cj.net/?p=10654"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "decision": "registered",
+          "registry_key": "wowpoint"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cj-enm",
+        "name": "CJ ENM",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+            "source_url": "https://newsroom.cj.net/?p=10654"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "decision": "registered",
+          "registry_key": "cj-enm"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "uc-berkeley",
+        "name": "University of California, Berkeley (UC Berkeley)",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "ai-ecg-sudden-cardiac-death-risk-20261116",
+            "source_url": "https://news.berkeley.edu/2026/06/24/with-ai-researchers-discover-new-way-to-detect-sudden-cardiac-death-risk/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-ecg-sudden-cardiac-death-risk-20261116",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "softbank-group",
+        "name": "SoftBank Group",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "agile-robots-series-f-500m-20261112",
+            "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "hitachi-group",
+        "name": "Hitachi Group",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "agile-robots-series-f-500m-20261112",
+            "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "t-capital",
+        "name": "T.Capital",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "agile-robots-series-f-500m-20261112",
+            "source_url": "https://www.agile-robots.com/en/news/detail/physical-ai-leader-agile-robots-raises-500-million-series-f-funding/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "agile-robots-series-f-500m-20261112",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ggml-org",
+        "name": "ggml-org (команда открытого проекта)",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "llama-cpp-1-0-versioning-20261113",
+            "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "decision": "registered",
+          "registry_key": "ggml-org"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "byteplus",
+        "name": "BytePlus",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "bytedance-seedance-2-5-flash-20261115",
+            "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "decision": "registered",
+          "registry_key": "byteplus"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cursor",
+        "name": "Cursor",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "cursor-fireworks-key-incident-20261113",
+            "source_url": "https://cursor.com/blog/security-incident-update"
+          },
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "cursor-fireworks-key-incident-20261113",
+          "decision": "registered",
+          "registry_key": "cursor"
+        },
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "registered",
+          "registry_key": "cursor"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "sonic-intelligence-academy",
+        "name": "Sonic Intelligence Academy (SIQA)",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "xania-monet-ai-music-awards-20261113",
+            "source_url": "https://awards.thesiqa.com/nominees"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "hallwood-media",
+        "name": "Hallwood Media",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "xania-monet-ai-music-awards-20261113",
+            "source_url": "https://awards.thesiqa.com/nominees"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "purga-studio",
+        "name": "PURGA Studio",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+            "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+          "decision": "registered",
+          "registry_key": "purga-studio"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "balderton-capital",
+        "name": "Balderton Capital",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "fractile-ai-chips-720m-funding-20261111",
+            "source_url": "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "fractile-ai-chips-720m-funding-20261111",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "childlight",
+        "name": "Childlight Global Child Safety Institute",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+            "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ncmec",
+        "name": "National Center for Missing & Exploited Children (NCMEC)",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+            "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+          },
+          {
+            "article_id": "openai-child-safety-image-classifier-20261116",
+            "source_url": "https://openai.com/index/strengthening-online-child-safety/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "decision": "organization"
+        },
+        {
+          "article_id": "openai-child-safety-image-classifier-20261116",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "l3harris",
+        "name": "L3Harris",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "faa-smart-ground-stop-20261113",
+            "source_url": "https://apnews.com/article/08af345749c81fd8364299cd75275fa6"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "faa-smart-ground-stop-20261113",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "unesco",
+        "name": "UNESCO",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+            "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ucl",
+        "name": "University College London (UCL)",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+            "source_url": "https://www.unesco.org/en/articles/ai-models-abandon-climate-facts-first-sign-user-push-back-unesco-ucl-report-shows"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "unesco-ucl-ai-climate-sycophancy-20261116",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "artificial-analysis",
+        "name": "Artificial Analysis",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "openai-gpt-6-2-astra-sol-20261117",
+            "source_url": "https://artificialanalysis.ai/leaderboards/models"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cognition",
+        "name": "Cognition",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "openai-gpt-6-2-astra-sol-20261117",
+            "source_url": "https://cognition.com/frontiercode"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "zapier",
+        "name": "Zapier",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "openai-gpt-6-2-astra-sol-20261117",
+            "source_url": "https://zapier.com/benchmarks"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-gpt-6-2-astra-sol-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "shanghai-jiao-tong-university",
+        "name": "Shanghai Jiao Tong University",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "china-openai-distillation-reuters-20261117",
+            "source_url": "https://arxiv.org/abs/2411.16489"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "china-openai-distillation-reuters-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "elvis-presley-enterprises",
+        "name": "Elvis Presley Enterprises",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "suno-elvis-seven-songs-lawsuit-20261113",
+            "source_url": "https://www.musicbusinessworldwide.com/files/2026/11/Elvis-Presley-Enterprises-v-Suno-amended-complaint-1.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "suno-elvis-seven-songs-lawsuit-20261113",
+          "decision": "registered",
+          "registry_key": "elvis-presley-enterprises"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "bank-of-america",
+        "name": "Bank of America",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+            "source_url": "https://www.reuters.com/business/global-markets-bofa-survey-2026-11-17/"
+          },
+          {
+            "article_id": "citibank-ai-agent-liability-20261120",
+            "source_url": "https://web.bankofamerica.com/en/security/library/agentic-ai"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+          "decision": "registered",
+          "registry_key": "bank-of-america"
+        },
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "decision": "registered",
+          "registry_key": "bank-of-america"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "baidu",
+        "name": "Baidu",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+            "source_url": "https://www.reuters.com/business/media-telecom/baidu-ceo-says-ai-investment-must-deliver-profits-avoid-bubble-2026-11-17/"
+          },
+          {
+            "article_id": "us-879868-ai-chips-china-licenses-20261119",
+            "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bofa-fund-managers-ai-bubble-baidu-20261117",
+          "decision": "registered",
+          "registry_key": "baidu"
+        },
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "decision": "registered",
+          "registry_key": "baidu"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mandiant",
+        "name": "Mandiant",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "google-gtig-exploit-agent-autonomous-attacks-20261116",
+            "source_url": "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-gtig-exploit-agent-autonomous-attacks-20261116",
+          "decision": "covered_by_parent"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "nato",
+        "name": "NATO",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+            "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ncia",
+        "name": "NATO Communications and Information Agency (NCIA)",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+            "source_url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-nato-cyber-defense-daybreak-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "supermicro",
+        "name": "Supermicro",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
+            "source_url": "https://www.mha.gov.sg/media-room/newsroom/singapore-investigations-into-alice-huang-huang-le-and-megaspeed-international-pte-ltd/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nvidia-megaspeed-chips-export-investigation-20261117",
+          "decision": "registered",
+          "registry_key": "supermicro"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "greenoaks",
+        "name": "Greenoaks",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+            "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "sequoia-capital",
+        "name": "Sequoia Capital",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+            "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "andreessen-horowitz",
+        "name": "Andreessen Horowitz",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+            "source_url": "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "isomorphic-labs-5b-ai-medicines-20261117",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "amd",
+        "name": "AMD",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+          },
+          {
+            "article_id": "us-879868-ai-chips-china-licenses-20261119",
+            "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
+          },
+          {
+            "article_id": "openai-amd-ai-chip-design-20261118",
+            "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "decision": "finance_or_market"
+        },
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "decision": "registered",
+          "registry_key": "amd"
+        },
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "decision": "registered",
+          "registry_key": "amd"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "broadcom",
+        "name": "Broadcom",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "micron",
+        "name": "Micron",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074937/anthropicpbc-fwppricing.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "nasdaq",
+        "name": "Nasdaq",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074342/anthropic-8xa12b.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "anthropic-record-ipo-81b-nasdaq-20261119",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "calif",
+        "name": "Calif",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "java4shell-codex-openjdk-20261117",
+            "source_url": "https://calif.io/java4shell"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "java4shell-codex-openjdk-20261117",
+          "decision": "registered",
+          "registry_key": "calif"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "common-sense-media",
+        "name": "Common Sense Media",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
+            "source_url": "https://about.commonsensemedia.org/press-room/press-releases/chatgpt-for-teens-poses-unacceptable-risk-to-kids-common-sense-media-finds"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "oregon-openai-chatgpt-child-safety-lawsuit-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "citibank",
+        "name": "Citibank",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "citibank-ai-agent-liability-20261120",
+            "source_url": "https://www.citi.com/tandc/view-printable-version"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "decision": "registered",
+          "registry_key": "citibank"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "pnc",
+        "name": "PNC",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "citibank-ai-agent-liability-20261120",
+            "source_url": "https://www.pnc.com/content/dam/digital-assets/en/documents/digital_services_agreement_UPDATE.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "decision": "registered",
+          "registry_key": "pnc"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "wells-fargo",
+        "name": "Wells Fargo",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "citibank-ai-agent-liability-20261120",
+            "source_url": "https://www.wellsfargo.com/online-banking/online-access-agreement/upcoming/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "citibank-ai-agent-liability-20261120",
+          "decision": "registered",
+          "registry_key": "wells-fargo"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "nous-research",
+        "name": "Nous Research",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+            "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "decision": "registered",
+          "registry_key": "nous-research"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "european-commission",
+        "name": "European Commission",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "ec-ai-assisted-cyberattack-20261119",
+            "source_url": "https://audiovisual.ec.europa.eu/en/media/video/I-298222"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ec-ai-assisted-cyberattack-20261119",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cert-eu",
+        "name": "CERT-EU",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "ec-ai-assisted-cyberattack-20261119",
+            "source_url": "https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ec-ai-assisted-cyberattack-20261119",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "byd",
+        "name": "BYD",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "us-879868-ai-chips-china-licenses-20261119",
+            "source_url": "https://foreignaffairs.house.gov/news/press-releases/chairman-brian-mast-exercises-legislative-authority-to-publicly-release-ai-chip-license-information-for-china"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-879868-ai-chips-china-licenses-20261119",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "signal",
+        "name": "Signal",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "signal-ai-screenshot-protection-20261120",
+            "source_url": "https://signal.org/blog/protecting-your-privacy/"
+          },
+          {
+            "article_id": "meta-muse-unauthorized-actions-20261118",
+            "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "signal-ai-screenshot-protection-20261120",
+          "decision": "registered",
+          "registry_key": "signal"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mansa",
+        "name": "Mansa",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "mansa-ai-zombie-series-no-actors-20261113",
+            "source_url": "https://www.mansa.com/they-left-us-to-die"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mansa-ai-zombie-series-no-actors-20261113",
+          "decision": "registered",
+          "registry_key": "mansa"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "lean-fro",
+        "name": "Lean Focused Research Organization",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "claude-riemann-hypothesis-proof-20261122",
+            "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mathlib-initiative",
+        "name": "Mathlib Initiative",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "claude-riemann-hypothesis-proof-20261122",
+            "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "asml",
+        "name": "ASML",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+            "source_url": "https://www.asml.com/en/careers/find-your-job/regional-intelligence-liaison-officer-south-east-asia-sea-j00341630"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ii-kompanii-nanimayut-byvshikh-razvedchikov-za-za-8e599f8fd3fc906d",
+          "decision": "registered",
+          "registry_key": "asml"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "apollo-global-management",
+        "name": "Apollo Global Management",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+            "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+          },
+          {
+            "article_id": "apollo-ai-hiring-20261116",
+            "source_url": "https://www.businessinsider.com/apollo-exec-plans-to-lower-annual-hiring-ai-2026-11"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+          "decision": "registered",
+          "registry_key": "apollo-global-management"
+        },
+        {
+          "article_id": "apollo-ai-hiring-20261116",
+          "decision": "registered",
+          "registry_key": "apollo-global-management"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "goldman-sachs",
+        "name": "Goldman Sachs",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+            "source_url": "https://ir.apollo.com/news-events/press-releases/detail/662/apollo-and-goldman-sachs-announce-pricing-of-44-billion"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "spacex-nvidia-gpu-orbit-financing-20261120",
+          "decision": "finance_or_market"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "project-monai",
+        "name": "Project MONAI",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "amazon-cairn-monai-zero-day-20261120",
+            "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-cairn-monai-zero-day-20261120",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "nebius",
+        "name": "Nebius",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "nebius-45b-microsoft-delay-20261112",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
+          },
+          {
+            "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+            "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nebius-45b-microsoft-delay-20261112",
+          "decision": "registered",
+          "registry_key": "nebius"
+        },
+        {
+          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "dataone",
+        "name": "DataOne",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "nebius-45b-microsoft-delay-20261112",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926126008/tm2629571d1_ex99-2.htm"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nebius-45b-microsoft-delay-20261112",
+          "decision": "registered",
+          "registry_key": "dataone"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "latent-physics",
+        "name": "Latent Physics",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "ai-four-physical-experiments-20261115",
+            "source_url": "https://www.whatpeoplemade.com/i/robot-arm-learned-a-precision-machining-task-from-fable-420351.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-four-physical-experiments-20261115",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "z-ai",
+        "name": "Z.AI",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "china-ai-schools-20261116",
+            "source_url": "https://www.reuters.com/world/china/inside-chinas-drive-build-an-ai-native-generation-2026-11-16"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "china-ai-schools-20261116",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cvs-health",
+        "name": "CVS Health",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
+            "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
+          "decision": "registered",
+          "registry_key": "cvs-health"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cigna-healthcare",
+        "name": "Cigna Healthcare",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
+            "source_url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-healthcare-20-connectors-20261116",
+          "decision": "registered",
+          "registry_key": "cigna-healthcare"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "lvmh",
+        "name": "LVMH",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-french-press-lvmh-figaro-20261118",
+            "source_url": "https://openai.com/index/lvmh-media-division-partnership/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-french-press-lvmh-figaro-20261118",
+          "decision": "registered",
+          "registry_key": "lvmh"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "groupe-figaro",
+        "name": "Groupe Figaro",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-french-press-lvmh-figaro-20261118",
+            "source_url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-french-press-lvmh-figaro-20261118",
+          "decision": "registered",
+          "registry_key": "groupe-figaro"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ebrd",
+        "name": "European Bank for Reconstruction and Development (ЕБРР)",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "ebrd-ai-data-center-power-limits-20261117",
+            "source_url": "https://www.ebrd.com/content/dam/ebrd_dxp/assets/pdfs/office-of-the-chief-economist/transition-report-archive/Transition%20Report%202026-27/chapters/transition-report-2026-27-ch3.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ebrd-ai-data-center-power-limits-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ebay",
+        "name": "eBay",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+            "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "decision": "registered",
+          "registry_key": "ebay"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "fairplay",
+        "name": "Fairplay",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+            "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "alliance-4-children",
+        "name": "Alliance 4 Children",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+            "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "set-at-16",
+        "name": "Set@16",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+            "source_url": "https://fairplayforkids.org/wp-content/uploads/2026/11/Amazon-eBay-AI-Toys-Open-Letter.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-ebay-ai-toys-safety-open-letter-20261123",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "sony-music",
+        "name": "Sony Music",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "spotify-artist-profile-protection-20261117",
+            "source_url": "https://www.ft.com/content/51aed058-f8e0-4426-b92a-790b7863d350"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "spotify-artist-profile-protection-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "airbnb",
+        "name": "Airbnb",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          },
+          {
+            "article_id": "meta-muse-unauthorized-actions-20261118",
+            "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "registered",
+          "registry_key": "airbnb"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "doordash",
+        "name": "DoorDash",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "registered",
+          "registry_key": "doordash"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "moonshot-ai",
+        "name": "Moonshot AI",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "registered",
+          "registry_key": "moonshot-ai"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "coreweave",
+        "name": "CoreWeave",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+            "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nvidia-q3-fy2027-earnings-vera-rubin-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "gallium-studios",
+        "name": "Gallium Studios",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "will-wright-mymems-ai-memory-game-20261118",
+            "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "decision": "registered",
+          "registry_key": "gallium-studios"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "artificial-agency",
+        "name": "Artificial Agency",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "will-wright-mymems-ai-memory-game-20261118",
+            "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "decision": "registered",
+          "registry_key": "artificial-agency"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "gallup",
+        "name": "Gallup",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "gallup-youth-ai-friendship-20261117",
+            "source_url": "https://news.gallup.com/poll/716486/youth-wellbeing-matters-online-off.aspx"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "gallup-youth-ai-friendship-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "digital-wellness-lab",
+        "name": "Digital Wellness Lab",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "gallup-youth-ai-friendship-20261117",
+            "source_url": "https://digitalwellnesslab.org/wp-content/uploads/BCH_Gallup-Digital-Life-Insights_Report.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "gallup-youth-ai-friendship-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "synopsys",
+        "name": "Synopsys",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "openai-amd-ai-chip-design-20261118",
+            "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "decision": "registered",
+          "registry_key": "synopsys"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "bubblemaps",
+        "name": "Bubblemaps",
+        "status": "candidate",
+        "first_seen": "2026-11-25",
+        "evidence": [
+          {
+            "article_id": "nvidia-huang-return-polymarket-20261124",
+            "source_url": "https://blog.bubblemaps.io/two-polymarket-clusters-made-350k-betting-on-jensen-huangs-return-to-nvidia/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "nvidia-huang-return-polymarket-20261124",
+          "decision": "registered",
+          "registry_key": "bubblemaps"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ircam-amplify",
+        "name": "Ircam Amplify",
+        "status": "candidate",
+        "first_seen": "2026-11-25",
+        "evidence": [
+          {
+            "article_id": "tidal-ai-music-ban-20261124",
+            "source_url": "https://www.musicbusinessworldwide.com/tidal-bans-fully-ai-generated-music-from-its-platform/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tidal-ai-music-ban-20261124",
+          "decision": "registered",
+          "registry_key": "ircam-amplify"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "century-litong",
+        "name": "Century Litong",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "alice-huang-ai-servers-china-270m-20261125",
+            "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "alice-huang-ai-servers-china-270m-20261125",
+          "decision": "registered",
+          "registry_key": "century-litong"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "century-longteng",
+        "name": "Shanghai Century Longteng",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "alice-huang-ai-servers-china-270m-20261125",
+            "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "alice-huang-ai-servers-china-270m-20261125",
+          "decision": "registered",
+          "registry_key": "century-longteng"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "wuhu-century-longteng",
+        "name": "Wuhu Century Longteng",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "alice-huang-ai-servers-china-270m-20261125",
+            "source_url": "https://www.investing.com/news/stock-market-news/exclusivealice-huanglinked-firms-listed-270-million-in-ai-servers-in-china-records-show-5049792"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "alice-huang-ai-servers-china-270m-20261125",
+          "decision": "needs_confirmation"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "threatbook",
+        "name": "ThreatBook",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "microsoft-artex-ai-hackers-20261125",
+            "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-artex-ai-hackers-20261125",
+          "decision": "registered",
+          "registry_key": "threatbook"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cornell-university",
+        "name": "Cornell University",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "apple-cornell-fastframes-20261117",
+            "source_url": "https://apple-aiml-research.github.io/ml-fastframes/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "apple-cornell-fastframes-20261117",
+          "decision": "organization"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "hubspot",
+        "name": "HubSpot",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-for-sales-20261117",
+            "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "decision": "registered",
+          "registry_key": "hubspot"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "neobid",
+        "name": "NeoBid",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-for-sales-20261117",
+            "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "sber",
+        "name": "Сбер",
+        "status": "candidate",
+        "first_seen": "2026-11-27",
+        "evidence": [
+          {
+            "article_id": "sber-gigachat-4-20261126",
+            "source_url": "https://giga.chat/blog/posts/gigachat-4"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "sber-gigachat-4-20261126",
+          "decision": "registered",
+          "registry_key": "sber"
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "candidate": {
+        "key": "douyin",
+        "name": "Douyin",
+        "company": "bytedance",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+            "source_url": "https://www.linkedin.com/company/wpic/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "china-ai-shopping-doubao-dongdong-20261111",
+          "decision": "registered",
+          "registry_key": "douyin"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cortex-kora",
+        "name": "Cortex",
+        "company": "kora-systems",
+        "status": "candidate",
+        "first_seen": "2026-11-11",
+        "evidence": [
+          {
+            "article_id": "kora-linux-ai-os-cyanogen-20261110",
+            "source_url": "https://press.kora.fun/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "kora-linux-ai-os-cyanogen-20261110",
+          "decision": "merged_family",
+          "registry_key": "kora"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "persistent-intelligence",
+        "name": "Persistent Intelligence",
+        "company": "graphon-labs",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "graphon-labs-persistent-memory-35m-20261110",
+            "source_url": "https://www.businesswire.com/news/home/20261110959095/en/Graphon-Labs-Raises-$35M-Series-A-to-Accelerate-AGI-with-Persistent-Intelligence"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "graphon-labs-persistent-memory-35m-20261110",
+          "decision": "not_standalone_product"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "clara-bioreactor",
+        "name": "CLARA",
+        "company": "tu-graz",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "clara-bioreactor-10000x-20261111",
+            "source_url": "https://www.tugraz.at/en/news/article/ai-tool-clara-accelerates-the-development-of-bioreactors"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "clara-bioreactor-10000x-20261111",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "prism-robot-motion",
+        "name": "PRISM",
+        "company": "university-of-michigan",
+        "status": "candidate",
+        "first_seen": "2026-11-12",
+        "evidence": [
+          {
+            "article_id": "umich-prism-robot-motion-20261110",
+            "source_url": "https://news.engin.umich.edu/2026/11/prism-a-neural-network-component-for-better-robotic-motor-control/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "umich-prism-robot-motion-20261110",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "workspace-models",
+        "name": "Workspace Models",
+        "company": "mit",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mit-workspace-models-robot-memory-20261110",
+            "source_url": "https://www.csail.mit.edu/news/new-form-memory-helps-robots-learn-complex-skills"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mit-workspace-models-robot-memory-20261110",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "pan-2",
+        "name": "PAN 2",
+        "company": "institute-of-foundation-models",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "mbzuai-pan2-world-model-20261110",
+            "source_url": "https://ifm.ai/pan2/press-release/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "mbzuai-pan2-world-model-20261110",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "autoware",
+        "name": "Autoware",
+        "company": "autoware-foundation",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "registered",
+          "registry_key": "autoware"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "alpamayo-2-edge",
+        "name": "Alpamayo 2 Edge",
+        "company": "nvidia",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "merged_family",
+          "registry_key": "alpamayo"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "autoe2e",
+        "name": "AutoE2E",
+        "company": "autoware-foundation",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "merged_family",
+          "registry_key": "autoware"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "meteor-autoware",
+        "name": "METEOR",
+        "company": "autoware-foundation",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "merged_family",
+          "registry_key": "autoware"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "oneplanner",
+        "name": "OnePlanner",
+        "company": "tier-iv",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "registered",
+          "registry_key": "oneplanner"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "latentdrive",
+        "name": "LatentDrive",
+        "company": "tier-iv",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "tier-iv-autoware-five-models-20261111",
+            "source_url": "https://tier4.co.jp/en/updates/press-release/20261111-tieriv-unveils-e2e-autonomous-driving"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "tier-iv-autoware-five-models-20261111",
+          "decision": "registered",
+          "registry_key": "latentdrive"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "tabletop",
+        "name": "Tabletop",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-13",
+        "evidence": [
+          {
+            "article_id": "google-tabletop-20261111",
+            "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-tabletop-20261111",
+          "decision": "registered",
+          "registry_key": "tabletop"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "intelligent-eyewear",
+        "name": "Intelligent Eyewear",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+            "source_url": "https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-intelligent-eyewear-gemini-preorders-20261112",
+          "decision": "registered",
+          "registry_key": "intelligent-eyewear"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "dots",
+        "name": "dots",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-14",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-wallet-dots-20261113",
+            "source_url": "https://openai.com/index/introducing-chatgpt-wallet/"
+          },
+          {
+            "article_id": "openai-dots-chatgpt-plus-test-20261119",
+            "source_url": "https://help.openai.com/en/articles/20001530-getting-started-with-your-dot"
+          },
+          {
+            "article_id": "openai-chatgpt-for-sales-20261117",
+            "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-wallet-dots-20261113",
+          "decision": "registered",
+          "registry_key": "dots"
+        },
+        {
+          "article_id": "openai-dots-chatgpt-plus-test-20261119",
+          "decision": "registered",
+          "registry_key": "dots"
+        },
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "decision": "registered",
+          "registry_key": "dots"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "tripo",
+        "name": "Tripo",
+        "company": "vast-ai",
+        "status": "candidate",
+        "first_seen": "2026-11-15",
+        "evidence": [
+          {
+            "article_id": "ai-eight-unusual-experiments-20261115",
+            "source_url": "https://www.whatpeoplemade.com/i/drum-performance-animation-from-a-generated-character-936661.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "google-antigravity",
+        "name": "Google Antigravity",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-15",
+        "evidence": [
+          {
+            "article_id": "ai-eight-unusual-experiments-20261115",
+            "source_url": "https://www.whatpeoplemade.com/i/one-prompt-spins-up-22-agents-to-build-16-mini-apps-550409.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-eight-unusual-experiments-20261115",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "big-walk",
+        "name": "Big Walk",
+        "company": "house-house",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "big-walk-ai-code-igf-20261115",
+            "source_url": "https://bigwalk.game/faq/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "big-walk-ai-code-igf-20261115",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "paradise-lost-film-2026",
+        "name": "Paradise Lost (2026 film)",
+        "company": "wowpoint",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+            "source_url": "https://cplicense-front-org.cjenm.com/en/featured-contents/paradise-lost/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "yeon-sang-ho-paradise-lost-ai-son-20261116",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "llama-cpp",
+        "name": "llama.cpp",
+        "company": "ggml-org",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "llama-cpp-1-0-versioning-20261113",
+            "source_url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "decision": "registered",
+          "registry_key": "llama-cpp"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "ggml",
+        "name": "ggml",
+        "company": "ggml-org",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "llama-cpp-1-0-versioning-20261113",
+            "source_url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "llama-cpp-1-0-versioning-20261113",
+          "decision": "registered",
+          "registry_key": "ggml"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "seedance-2-5",
+        "name": "Seedance 2.5",
+        "company": "bytedance",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "bytedance-seedance-2-5-flash-20261115",
+            "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+          },
+          {
+            "article_id": "ai-four-visual-experiments-20261115",
+            "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
+          },
+          {
+            "article_id": "krea-video-swap-20261120",
+            "source_url": "https://www.krea.ai/apps/video-face-swap"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "decision": "merged_family",
+          "registry_key": "seedance"
+        },
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "decision": "context"
+        },
+        {
+          "article_id": "krea-video-swap-20261120",
+          "decision": "merged_family",
+          "registry_key": "seedance"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "modelark",
+        "name": "ModelArk",
+        "company": "byteplus",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "bytedance-seedance-2-5-flash-20261115",
+            "source_url": "https://ai.byteplus.com/ark/region:ap-southeast-1/docs/model-release-announcement"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "bytedance-seedance-2-5-flash-20261115",
+          "decision": "registered",
+          "registry_key": "modelark"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "oats-object-agent-twins",
+        "name": "OATs (Object-Agent Twins)",
+        "company": "carnegie-mellon-university",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+            "source_url": "https://daehwakim.com/oat/index.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "cmu-oats-ai-tamagotchi-objects-20261115",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "xania-monet",
+        "name": "Xania Monet",
+        "company": "",
+        "status": "candidate",
+        "first_seen": "2026-11-16",
+        "evidence": [
+          {
+            "article_id": "xania-monet-ai-music-awards-20261113",
+            "source_url": "https://awards.thesiqa.com/nominees"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "xania-monet-ai-music-awards-20261113",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "saltline",
+        "name": "Saltline",
+        "company": "anthropic",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "claude-saltline-shooter-eight-hours-20261109",
+            "source_url": "https://x.com/felixrieseberg/status/2119925633564463609"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "claude-saltline-shooter-eight-hours-20261109",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "listen-to-meh",
+        "name": "Listen to MEH",
+        "company": "purga-studio",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+            "source_url": "https://higgsfield.ai/contests/higgsfield-global-film-festival?tab=winners"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "listen-to-meh-higgsfield-film-prize-20261110",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cybertipline",
+        "name": "CyberTipline",
+        "company": "ncmec",
+        "status": "candidate",
+        "first_seen": "2026-11-17",
+        "evidence": [
+          {
+            "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+            "source_url": "https://www.childlight.org/uploads/publications/intothelight2026/Childlight-Into-the-Light-2026-STAR-Report_Digital-Hi-res_FINAL.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "childlight-ai-child-safety-reports-85x-20261116",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "openai-o1",
+        "name": "OpenAI o1",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-18",
+        "evidence": [
+          {
+            "article_id": "china-openai-distillation-reuters-20261117",
+            "source_url": "https://arxiv.org/abs/2411.16489"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "china-openai-distillation-reuters-20261117",
+          "decision": "registered",
+          "registry_key": "openai-o1"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "google-pay",
+        "name": "Google Pay",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
+            "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-gemini-tasks-free-calls-shopping-20261117",
+          "decision": "registered",
+          "registry_key": "google-pay"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "codename-mdash",
+        "name": "Codename MDASH",
+        "company": "microsoft",
+        "status": "candidate",
+        "first_seen": "2026-11-19",
+        "evidence": [
+          {
+            "article_id": "microsoft-mai-cyber-2-flash-20261117",
+            "source_url": "https://microsoft.ai/news/introducing-mai-cyber-2-flash/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-mai-cyber-2-flash-20261117",
+          "decision": "merged_family",
+          "registry_key": "mai-cyber"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "google-play",
+        "name": "Google Play",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "google-ai-studio-android-firebase-play-20261117",
+            "source_url": "https://support.google.com/googleplay/android-developer/answer/18765789?hl=en"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-ai-studio-android-firebase-play-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "openjdk",
+        "name": "OpenJDK",
+        "company": "oracle",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "java4shell-codex-openjdk-20261117",
+            "source_url": "https://github.com/openjdk/jdk/pull/32781"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "java4shell-codex-openjdk-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "microsoft-entra",
+        "name": "Microsoft Entra",
+        "company": "microsoft",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+            "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "decision": "registered",
+          "registry_key": "microsoft-entra"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "hermes",
+        "name": "Hermes",
+        "company": "nous-research",
+        "status": "candidate",
+        "first_seen": "2026-11-20",
+        "evidence": [
+          {
+            "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+            "source_url": "https://devblogs.microsoft.com/foundry/build-trusted-autonomous-agents-for-your-team-with-microsoft-foundry"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-foundry-autopilot-ai-employees-20261119",
+          "decision": "registered",
+          "registry_key": "hermes"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "artex",
+        "name": "ARTEX",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "ec-ai-assisted-cyberattack-20261119",
+            "source_url": "https://www.cert.europa.eu/blog/from-penetration-testing-to-cyber-threat-beware-of-artex"
+          },
+          {
+            "article_id": "microsoft-artex-ai-hackers-20261125",
+            "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ec-ai-assisted-cyberattack-20261119",
+          "decision": "needs_confirmation"
+        },
+        {
+          "article_id": "microsoft-artex-ai-hackers-20261125",
+          "decision": "needs_confirmation"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "aws-marketplace",
+        "name": "AWS Marketplace",
+        "company": "amazon",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
+            "source_url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-aws-marketplace-agentic-payments-20261119",
+          "decision": "registered",
+          "registry_key": "aws-marketplace"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "signal-messenger",
+        "name": "Signal Messenger",
+        "company": "signal",
+        "status": "candidate",
+        "first_seen": "2026-11-21",
+        "evidence": [
+          {
+            "article_id": "signal-ai-screenshot-protection-20261120",
+            "source_url": "https://signal.org/blog/protecting-your-privacy/"
+          },
+          {
+            "article_id": "meta-muse-unauthorized-actions-20261118",
+            "source_url": "https://www.reuters.com/investigations/meta-bets-big-muse-ai-agent-early-safety-mishaps-surface-2026-11-18/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "signal-ai-screenshot-protection-20261120",
+          "decision": "registered",
+          "registry_key": "signal-messenger"
+        },
+        {
+          "article_id": "meta-muse-unauthorized-actions-20261118",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "lean",
+        "name": "Lean",
+        "company": "lean-fro",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "claude-riemann-hypothesis-proof-20261122",
+            "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mathlib",
+        "name": "Mathlib",
+        "company": "mathlib-initiative",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "claude-riemann-hypothesis-proof-20261122",
+            "source_url": "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "claude-riemann-hypothesis-proof-20261122",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "aion-instruct",
+        "name": "Aion Instruct",
+        "company": "microsoft",
+        "status": "candidate",
+        "first_seen": "2026-11-22",
+        "evidence": [
+          {
+            "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
+            "source_url": "https://blogs.windows.com/msedgedev/2026/11/19/hybrid-intelligence-on-the-web-introducing-aion-instruct-and-prompt-api-in-microsoft-edge/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "microsoft-edge-aion-instruct-local-ai-20261119",
+          "decision": "registered",
+          "registry_key": "aion-instruct"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "project-suncatcher",
+        "name": "Project Suncatcher",
+        "company": "google",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+            "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "google-blue-origin-suncatcher-new-glenn-20261119",
+          "decision": "registered",
+          "registry_key": "project-suncatcher"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "monai-label",
+        "name": "MONAI Label",
+        "company": "project-monai",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "amazon-cairn-monai-zero-day-20261120",
+            "source_url": "https://github.com/Project-MONAI/MONAILabel/security/advisories/GHSA-qc22-rmgc-vg94"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "amazon-cairn-monai-zero-day-20261120",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "token-exchange",
+        "name": "Token Exchange",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "baidu-token-exchange-ernie-55-20261112",
+            "source_url": "https://www.prnewswire.com/news-releases/baidu-unveils-latest-ernie-models-amid-broader-full-stack-ai-lineup-and-debuts-token-exchange-to-power-intelligent-organizations-302937959.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "baidu-token-exchange-ernie-55-20261112",
+          "decision": "registered",
+          "registry_key": "token-exchange"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "cinecode",
+        "name": "cinecode",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "ai-four-visual-experiments-20261115",
+            "source_url": "https://github.com/sarpstar/cinecode"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "decision": "creative_work"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "dreamina",
+        "name": "Dreamina",
+        "company": "bytedance",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "ai-four-visual-experiments-20261115",
+            "source_url": "https://x.com/ChrisGwinnLA/status/2121834058267156701"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "ai-four-visual-experiments-20261115",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "smartview",
+        "name": "SmartView",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "hong-kong-smartview-facial-recognition-20261116",
+            "source_url": "https://www.police.gov.hk/ppp_en/11_useful_info/cctv.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "hong-kong-smartview-facial-recognition-20261116",
+          "decision": "research_or_noncommercial"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "speech-cpp",
+        "name": "speech.cpp",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "higurashi-haru4b-speech-cpp-20261115",
+            "source_url": "https://github.com/nyosegawa/speech.cpp/releases/tag/v0.11.0"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "higurashi-haru4b-speech-cpp-20261115",
+          "decision": "needs_confirmation"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "openai-csam-image-classifier",
+        "name": "OpenAI CSAM Image Classifier",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-23",
+        "evidence": [
+          {
+            "article_id": "openai-child-safety-image-classifier-20261116",
+            "source_url": "https://openai.com/index/strengthening-online-child-safety/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-child-safety-image-classifier-20261116",
+          "decision": "registered",
+          "registry_key": "openai-csam-image-classifier"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "eno",
+        "name": "Eno",
+        "company": "genesis-ai",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "genesis-ai-robot-gloves-funding-20261117",
+            "source_url": "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "genesis-ai-robot-gloves-funding-20261117",
+          "decision": "registered",
+          "registry_key": "eno"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "artist-profile-protection",
+        "name": "Artist Profile Protection",
+        "company": "spotify",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "spotify-artist-profile-protection-20261117",
+            "source_url": "https://artists.spotify.com/en/blog/introducing-artist-profile-protection"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "spotify-artist-profile-protection-20261117",
+          "decision": "registered",
+          "registry_key": "artist-profile-protection"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "facebook",
+        "name": "Facebook",
+        "company": "meta",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "instagram-content-protection-ai-copies-20261117",
+            "source_url": "https://creators.instagram.com/blog/introducing-content-protection/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "instagram-content-protection-ai-copies-20261117",
+          "decision": "context"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "h3-move",
+        "name": "H3 Move",
+        "company": "suno",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "suno-visuals-music-videos-20261117",
+            "source_url": "https://help.suno.com/en/articles/14661249"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "suno-visuals-music-videos-20261117",
+          "decision": "merged_family",
+          "registry_key": "suno-visuals"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "kimi",
+        "name": "Kimi",
+        "company": "moonshot-ai",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "registered",
+          "registry_key": "kimi"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "composer-2",
+        "name": "Composer 2",
+        "company": "cursor",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+            "source_url": "https://homeland.house.gov/2026/11/20/chairmen-garbarino-moolenaar-release-joint-investigative-report-urging-removal-of-prc-open-weight-models-from-federal-systems-high-risk-critical-infrastructure/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "us-chinese-ai-disclosure-proposal-20261118",
+          "decision": "merged_family",
+          "registry_key": "composer"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "mymems",
+        "name": "MyMems",
+        "company": "gallium-studios",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "will-wright-mymems-ai-memory-game-20261118",
+            "source_url": "https://www.globenewswire.com/news-release/2026/11/18/3405705/0/en/gallium-studios-founded-by-the-sims-creator-will-wright-partners-with-artificial-agency-to-power-characters-in-new-simulation-game.html"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "will-wright-mymems-ai-memory-game-20261118",
+          "decision": "registered",
+          "registry_key": "mymems"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "jalapeno",
+        "name": "Jalapeño",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "openai-amd-ai-chip-design-20261118",
+            "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "decision": "not_standalone_product"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "gpt-synopsys",
+        "name": "GPT-Synopsys",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-24",
+        "evidence": [
+          {
+            "article_id": "openai-amd-ai-chip-design-20261118",
+            "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-amd-ai-chip-design-20261118",
+          "decision": "not_standalone_product"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "openworks",
+        "name": "OpenWorks",
+        "company": "openai",
+        "status": "candidate",
+        "first_seen": "2026-11-25",
+        "evidence": [
+          {
+            "article_id": "openai-openworks-20261123",
+            "source_url": "https://openai.com/openworks/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-openworks-20261123",
+          "decision": "not_standalone_product"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "starmind",
+        "name": "Starmind",
+        "company": "spacex",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "spacex-starmind-million-ai-satellites-fcc-20261125",
+            "source_url": "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/bltf4cdf2af47159e12/6b071c5f5506bb38bca5b0ec/FCC_report_and_order_on_SpaceX_Starmind_AI_constellation_11-25-2026.pdf"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "spacex-starmind-million-ai-satellites-fcc-20261125",
+          "decision": "registered",
+          "registry_key": "starmind"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "wan-3-0",
+        "name": "Wan 3.0",
+        "company": "alibaba",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "krea-video-swap-20261120",
+            "source_url": "https://www.krea.ai/apps/video-face-swap"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "krea-video-swap-20261120",
+          "decision": "merged_family",
+          "registry_key": "wan"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "minimax-h3-max",
+        "name": "MiniMax H3 Max",
+        "company": "minimax",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "evidence": [
+          {
+            "article_id": "krea-video-swap-20261120",
+            "source_url": "https://www.krea.ai/apps/video-face-swap"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "krea-video-swap-20261120",
+          "decision": "merged_family",
+          "registry_key": "minimax-h3"
+        }
+      ]
+    },
+    {
+      "candidate": {
+        "key": "chatgpt-for-sales",
+        "name": "ChatGPT for Sales",
+        "status": "candidate",
+        "first_seen": "2026-11-26",
+        "company": "openai",
+        "evidence": [
+          {
+            "article_id": "openai-chatgpt-for-sales-20261117",
+            "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/"
+          }
+        ]
+      },
+      "decisions": [
+        {
+          "article_id": "openai-chatgpt-for-sales-20261117",
+          "decision": "merged_family",
+          "registry_key": "chatgpt"
+        }
+      ]
+    }
+  ]
+}
