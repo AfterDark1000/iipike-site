@@ -5,7 +5,8 @@ from pathlib import Path
 import unittest
 from scripts.site_entities import (append_editor_entities,
                                    load_registry, validate_editor_entities,
-                                   validate_public_registry)
+                                   validate_public_registry, build_entity_lookup,
+                                   load_entity_lookup, resolve_entity_name)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -15,6 +16,39 @@ class EditorEntityMetadataTests(unittest.TestCase):
     def setUpClass(cls):
         cls.registry = load_registry()
         cls.records = json.loads((ROOT / "news.json").read_text(encoding="utf-8"))
+
+    def test_reviewed_aliases_resolve_to_canonical_keys(self):
+        lookup = load_entity_lookup(ROOT, self.registry)
+        for kind, name, expected in (
+            ("companies", "  AWS  ", "amazon"),
+            ("companies", "Google DeepMind", "google"),
+            ("companies", "СБЕР", "sber"),
+            ("products", "GPT-6.2 Sol", "gpt-6"),
+            ("products", "claude-fable-5-2", "claude"),
+            ("products", "Seedance 2.5 Flash", "seedance"),
+            ("products", "GigaChat 4", "gigachat"),
+            ("products", "ZONOS3-Mini", "zonos"),
+            ("products", "ChatGPT for Sales", "chatgpt"),
+            ("products", "Claude Code", "claude-code"),
+            ("products", "Google Wallet", "google-wallet"),
+        ):
+            with self.subTest(name=name):
+                self.assertEqual(resolve_entity_name(lookup, kind, name), expected)
+        for name in ("Sol", "Astra", "Gemini 999", "Live 3", "unknown"):
+            self.assertIsNone(resolve_entity_name(lookup, "products", name))
+        self.assertIsNone(resolve_entity_name(lookup, "companies", "GigaChat 4"))
+        # The editor resolves before writing; the publisher accepts only keys.
+        with self.assertRaises(ValueError):
+            validate_editor_entities(self.registry, [], ["gpt-6-2-sol"])
+
+    def test_aliases_reject_unknown_targets_and_canonical_collisions(self):
+        aliases = json.loads((ROOT / "data/entity_aliases.json").read_text(encoding="utf-8"))
+        for alias, target in (("new name", "missing-key"), ("Grok", "claude"),
+                              (" Claude Code ", "claude")):
+            bad = deepcopy(aliases)
+            bad["products"][alias] = target
+            with self.assertRaises(ValueError):
+                build_entity_lookup(self.registry, bad)
 
     def test_known_company_product_and_parent_link(self):
         self.assertEqual(validate_editor_entities(self.registry, ["adobe", "disney"], ["firefly"]),
