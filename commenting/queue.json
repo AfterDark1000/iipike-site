@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27T18:53:46.451143Z",
+  "updated_at": "2026-11-28T01:55:15.242488Z",
   "max_age_hours": 48,
   "sources": [
     {
@@ -9,10 +9,10 @@
       "channel_url": "https://dzen.ru/ixbt.com",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T18:53:46.451143Z",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
       "error": null,
-      "fresh_matches": 12
+      "fresh_matches": 11
     },
     {
       "id": "overclockers",
@@ -20,8 +20,8 @@
       "channel_url": "https://dzen.ru/overclockers.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T18:53:46.451143Z",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
       "error": null,
       "fresh_matches": 0
     },
@@ -30,11 +30,11 @@
       "name": "МК",
       "channel_url": "https://dzen.ru/mk.ru",
       "mode": "publisher_rss",
-      "status": "error",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T09:00:57.626967Z",
-      "error": "Лента недоступна или не распознана (URLError)",
-      "fresh_matches": null
+      "status": "ok",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
+      "error": null,
+      "fresh_matches": 0
     },
     {
       "id": "hi-tech-mail",
@@ -42,8 +42,8 @@
       "channel_url": "https://dzen.ru/hi-tech.mail.ru",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T18:53:46.451143Z",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
       "error": null,
       "fresh_matches": 3
     },
@@ -53,8 +53,8 @@
       "channel_url": "https://dzen.ru/techinsider",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T18:53:46.451143Z",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
       "error": null,
       "fresh_matches": 2
     },
@@ -64,8 +64,8 @@
       "channel_url": "https://dzen.ru/iguides",
       "mode": "publisher_rss",
       "status": "ok",
-      "checked_at": "2026-11-27T18:53:46.451143Z",
-      "last_success_at": "2026-11-27T18:53:46.451143Z",
+      "checked_at": "2026-11-28T01:55:15.242488Z",
+      "last_success_at": "2026-11-28T01:55:15.242488Z",
       "error": null,
       "fresh_matches": 2
     }
@@ -76,11 +76,79 @@
     "message": "Обработано статей: 3"
   },
   "usage": {
-    "date": "2026-11-27",
-    "attempted": 15
+    "date": "2026-11-28",
+    "attempted": 3
   },
   "collection_mode": "publisher_rss",
   "items": [
+    {
+      "id": "f0f6135ea14126457e65e5fc",
+      "title": "HMD представила смартфон за $110, и в нем даже есть ИИ. HMD Rise получил батарею 5000 мАч и Android 16 Go Edition",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/28/hmd-predstavila-smartfon-za-110-i-v-nem-daze-est-ii-hmd-rise-polucil-batareiu-5000-mac-i-android-16-go-edition.html",
+      "published_at": "2026-11-27T22:16:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T01:55:15.242488Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "f5465a208d260fdca6024f02",
+      "title": "Samsung научит смартфоны Galaxy менять ракурс уже сделанных фотографий с помощью ИИ — функция уже реализована в One UI 9.5 Beta",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/28/samsung-naucit-smartfony-galaxy-meniat-rakurs-uze-sdelannyx-fotografii-s-pomoshhiu-ii-funkciia-uze-realizovana-v-one-ui-95-beta.html",
+      "published_at": "2026-11-27T22:11:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T01:55:15.242488Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "65c8c5bf75134bab8101065f",
+      "title": "«Госуслуги» могут выйти за пределы портала и стать национальным российским ИИ-помощником",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/27/gosuslugi-mogut-vyiti-za-predely-portala-i-stat-nacionalnym-rossiiskim-ii-pomoshhnikom.html",
+      "published_at": "2026-11-27T19:38:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T01:55:15.242488Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
+    {
+      "id": "573c7e804468011d2fb7e812",
+      "title": "Anthropic заблокировала работу главы Epic Games в Claude",
+      "source_id": "ixbt",
+      "source_name": "iXBT.com",
+      "source_url": "https://www.ixbt.com/news/2026/11/27/anthropic-zablokirovala-rabotu-glavy-epic-games-v-claude.html",
+      "published_at": "2026-11-27T19:09:00Z",
+      "channel_url": "https://dzen.ru/ixbt.com",
+      "dzen_url": null,
+      "first_seen_at": "2026-11-28T01:55:15.242488Z",
+      "views": null,
+      "comments": null,
+      "status": "pending",
+      "comment": "",
+      "attempts": 0,
+      "link_status": "dzen_link_missing"
+    },
     {
       "id": "2ed9be45fe9a64050a47ce17",
       "title": "Может ли ИИ взломать шифры интернета",
@@ -114,10 +182,14 @@
       "first_seen_at": "2026-11-27T18:53:46.451143Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Забавно, как разговоры про спасение человечества сводятся к посиделкам под пиво. Интересно, сколько таких теоретиков потом идут писать код безопасности.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-28T01:55:15.242488Z",
+      "reason": "Забавная деталь про пьяные разговоры исследователей о захвате мира",
+      "fact_review": "passed",
+      "generated_at": "2026-11-28T01:55:15.242488Z"
     },
     {
       "id": "cf96edecf66028d3202a71ed",
@@ -288,10 +360,14 @@
       "first_seen_at": "2026-11-27T18:53:46.451143Z",
       "views": null,
       "comments": null,
-      "status": "pending",
-      "comment": "",
-      "attempts": 0,
-      "link_status": "dzen_link_missing"
+      "status": "draft_ready",
+      "comment": "Создать компанию под сделку за день до аукциона выглядит подозрительно. Вот и доверяй после этого ботам свои секреты.",
+      "attempts": 1,
+      "link_status": "dzen_link_missing",
+      "last_attempt_at": "2026-11-28T01:55:15.242488Z",
+      "reason": "Странная скорость регистрации покупателя перед аукционом данных",
+      "fact_review": "passed",
+      "generated_at": "2026-11-28T01:55:15.242488Z"
     },
     {
       "id": "3a95dcc80b9bedc9132b78d7",
@@ -499,12 +575,14 @@
       "first_seen_at": "2026-11-26T23:49:07.918580Z",
       "views": null,
       "comments": null,
-      "status": "read_error",
-      "comment": "",
-      "attempts": 1,
+      "status": "draft_ready",
+      "comment": "Хороший подход: запускать всё локально и без раздувания дистрибутива. Посмотрим, насколько шустро это будет работать на обычном железе.",
+      "attempts": 2,
       "link_status": "dzen_link_missing",
-      "last_attempt_at": "2026-11-27T08:18:50.390205Z",
-      "reason": "Не удалось прочитать статью целиком (TimeoutError)"
+      "last_attempt_at": "2026-11-28T01:55:15.242488Z",
+      "reason": "Локальный запуск моделей без раздувания системы",
+      "fact_review": "passed",
+      "generated_at": "2026-11-28T01:55:15.242488Z"
     },
     {
       "id": "ef0039172d25bedd13c54164",
@@ -2210,67 +2288,6 @@
       "reason": "Зацепился за масштаб потока данных для телескопа.",
       "fact_review": "passed",
       "generated_at": "2026-11-21T09:42:33.573039Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "b1ce134599434bb3e8021bb8",
-      "title": "Китайская Trina Storage создала гибридную электростанцию для ИИ-дата-центров: аккумуляторы и газовые турбины выдают до 1 ГВт мощности",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/20/kitaiskaia-trina-storage-sozdala-gibridnuiu-elektrostanciiu-dlia-ii-data-centrov-akkumuliatory-i-gazovye-turbiny-vydaiut-do-1-gvt-moshhnosti.html",
-      "published_at": "2026-11-20T20:58:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-20T23:57:20.122407Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Батареи должны сглаживать скачки, пока турбины набирают обороты. Интересно, на сколько минут автономности этих аккумуляторов вообще рассчитан такой комплекс при резком отключении внешней сети.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-20T23:57:20.122407Z",
-      "reason": "Зацепился за гибридную схему с аккумуляторами и газовыми генераторами.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-20T23:57:20.122407Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "dbc916b3e59578d0bdcb0410",
-      "title": "Первое изображение чёрной дыры M87* независимо подтвердили с помощью ИИ",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/20/pervoe-izobrazenie-cernoi-dyry-m87-nezavisimo-podtverdili-s-pomoshhiu-ii.html",
-      "published_at": "2026-11-20T20:23:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-20T23:57:20.122407Z",
-      "views": null,
-      "comments": null,
-      "status": "draft_ready",
-      "comment": "Нейросеть прогнали по старым радиоданным телескопов и получили ровно то же кольцо без подсказок о его форме. Приятно, когда ИИ не придумывает лишнего, а подтверждает чужие измерения.",
-      "attempts": 1,
-      "last_attempt_at": "2026-11-20T23:57:20.122407Z",
-      "reason": "Использование алгоритма для независимой проверки снимка черной дыры.",
-      "fact_review": "passed",
-      "generated_at": "2026-11-20T23:57:20.122407Z",
-      "link_status": "dzen_link_missing"
-    },
-    {
-      "id": "b14a125cfc368e7c84704995",
-      "title": "ИИ спроектировал роботов для реальной полосы препятствий. Учёные MIT вручную собрали и протестировали 135 из них",
-      "source_id": "ixbt",
-      "source_name": "iXBT.com",
-      "source_url": "https://www.ixbt.com/news/2026/11/20/ii-sproektiroval-robotov-dlia-realnoi-polosy-prepiatstvii-ucenye-mit-vrucnuiu-sobrali-i-protestirovali-135-iz-nix.html",
-      "published_at": "2026-11-20T19:47:00Z",
-      "channel_url": "https://dzen.ru/ixbt.com",
-      "dzen_url": null,
-      "first_seen_at": "2026-11-20T20:06:44.444588Z",
-      "views": null,
-      "comments": null,
-      "status": "generation_error",
-      "comment": "",
-      "attempts": 2,
-      "last_attempt_at": "2026-11-21T06:57:02.445698Z",
-      "reason": "Не удалось подготовить комментарий",
       "link_status": "dzen_link_missing"
     }
   ]
