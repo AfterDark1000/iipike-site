@@ -67,3 +67,16 @@
 .entity-r2 .entity-tile .entity-tile__copy strong{font:700 17px/1.3 system-ui,sans-serif;overflow-wrap:anywhere}
 @media(max-width:700px){.entity-r2 .rubric-copy .date{font-size:12px;margin-top:8px}.entity-r2 .entity-hero{gap:12px}.entity-r2 .entity-hero .rubric-deck{font-size:14px}.entity-r2 .entity-search{max-width:100%}}
 @media(max-width:560px){.entity-r2 .topic-index-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Registered products on company detail pages only; no article layout changes. */
+.entity-r2 .entity-company-products{margin:20px 0 32px}
+.entity-r2 .entity-company-products h2{font:700 22px/1.3 system-ui,sans-serif;margin:0 0 12px}
+.entity-r2 .entity-product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px}
+.entity-r2 .entity-product-link{display:flex;align-items:center;gap:10px;min-width:0;min-height:60px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#fffdf7;text-decoration:none;color:var(--ink);font:650 15px/1.3 system-ui,sans-serif;overflow-wrap:anywhere}
+.entity-r2 .entity-product-link span:last-child{min-width:0}
+.entity-r2 .entity-product-link .entity-emblem{width:36px;height:36px;border-radius:10px}
+.entity-r2 .entity-product-link .entity-emblem img{width:23px;height:23px}
+.entity-r2 .entity-product-link:hover,.entity-r2 .entity-product-link:focus-visible{border-color:var(--red);color:var(--red)}
+.entity-r2 .entity-product-link:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+@media(max-width:560px){.entity-r2 .entity-company-products{margin:16px 0 24px}.entity-r2 .entity-company-products h2{font-size:19px}.entity-r2 .entity-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.entity-r2 .entity-product-link{padding:8px;gap:7px;font-size:13px;min-height:56px}.entity-r2 .entity-product-link .entity-emblem{width:30px;height:30px}.entity-r2 .entity-product-link .entity-emblem img{width:20px;height:20px}}
+@media(max-width:340px){.entity-r2 .entity-product-grid{grid-template-columns:minmax(0,1fr)}}

@@ -314,7 +314,23 @@ def render_index(registry):
                  "Новости компаний и продуктов ИИ: Google, OpenAI, Anthropic, Adobe, Disney, Grok и другие.",
                  "../", BASE + "/entities/", content)
 
-def render_entity(kind, entry, records, companies):
+def render_company_products(entry, products, prefix):
+    """Only registered products belonging to this exact company."""
+    owned = sorted((p for p in products if p["company"] == entry["key"]),
+                   key=lambda p: (p["name"].casefold(), p["key"]))
+    if not owned:
+        return ""
+    links = "".join(
+        '<a class="entity-product-link" href="../../products/' + e(p["key"]) + '/">'
+        + icon_markup(p["key"], prefix) + '<span>' + e(p["name"]) + '</span></a>'
+        for p in owned)
+    return ('<section class="entity-company-products" aria-labelledby="company-products-title">'
+            '<h2 id="company-products-title">Продукты компании</h2>'
+            '<nav class="entity-product-grid" aria-label="Продукты компании">'
+            + links + '</nav></section>')
+
+
+def render_entity(kind, entry, records, companies, products=()):
     if kind not in ("companies", "products"):
         raise ValueError("Invalid entity type")
     prefix = "../../../"
@@ -346,6 +362,7 @@ def render_entity(kind, entry, records, companies):
         e(entry["company"]) + '/">' + e(companies[entry["company"]]) + '</a></p>'
         if kind == "products" else ""
     )
+    owned_products = render_company_products(entry, products, prefix) if kind == "companies" else ""
     category = "Компания" if kind == "companies" else "Продукт"
     content = (
         '<div class="rubric-head entity-detail-head"><div><a class="entity-back" href="../../">← Компании и продукты</a>'
@@ -353,7 +370,7 @@ def render_entity(kind, entry, records, companies):
         '<div class="entity-hero">' + icon_markup(entry["key"], prefix, large=True) +
         '<div><h1>' + e(entry["name"]) + '</h1><p class="rubric-deck">' + e(entry["description"]) +
         '</p>' + owner + '</div></div></div><span class="rubric-count">Материалов: ' +
-        str(len(rows)) + '</span></div>' + cards
+        str(len(rows)) + '</span></div>' + owned_products + cards
     )
     url = BASE + "/entities/" + kind + "/" + entry["key"] + "/"
     return shell(entry["name"], entry["description"], prefix, url, content)
@@ -372,7 +389,7 @@ def render_all_entities(records, root=ROOT, registry=None):
             from scripts.site_rubrics import paginate_listing
             outputs.update(paginate_listing(
                 root / "entities" / kind / entry["key"] / "index.html",
-                render_entity(kind, entry, known, companies)))
+                render_entity(kind, entry, known, companies, registry["products"])))
     return outputs
 
 
