@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "action": "approve",
+  "worker": "hpii-manual-editor",
+  "claim_request": "manual-editor46-next-20261128-a1.json",
+  "pool_id": "n-d43c05d18d700866",
+  "pool_sequence": 625,
+  "claimed_at": "2026-11-28T07:51:12.826333+00:00",
+  "expected_note": "Vertical Slice, 25.11, оригинал с прямым комментарием Ubisoft https://www.verticalslice.news/ubisofts-internal-pitching-process-is-becoming-increasingly-ai-pilled/ ; ответ 26.11 подтверждает VGC https://www.videogameschronicle.com/news/ubisoft-denies-requiring-developers-to-use-generative-ai/. Сотрудники анонимно утверждают, что при питче требуют обосновывать применение или отказ от GenAI; без этого якобы не дают одобрение. Ubisoft отрицает обязательное использование, вопрос обоснования отказа не раскрывает. Часть оригинала платная; открытый фрагмент и Nintendo Life/VGC подтверждают факты. В оригинале опечатка в месяце обновления, VGC датирует ответ 26.11. Перелинковка GDC: dzen_id 6af93383f8ad2a1742de3c4d, https://dzen.ru/a/avkzg_itKhdC3jxN, каталог подтверждает опубликованную статью; сайт подтверждает 40% и 55%; сам Дзен недоступен. Motherbrain — отдельная ранее утверждённая история, в каталоге опубликованных не найдена; без ссылки. Повтора текущей новости в каталоге/news.json/названиях intake не найдено. @Ubisoft подтверждён по открытым копиям профиля. Комплект на утверждении.",
+  "note": "Главред утвердил переработанную разговорную редакцию №625. Статья, Threads/X и перелинковка с GDC сохранены и перечитаны. При финальной проверке уточнена формулировка выборки GDC: более 2600 специалистов, 40% опрошенных.",
+  "human_authorized": true,
+  "article_id": "ubisoft-generative-ai-pitch-pressure-20261126",
+  "story_sha": "1beb9244c3463dd2dd73b00b8a915c61c754b8b4"
+}
