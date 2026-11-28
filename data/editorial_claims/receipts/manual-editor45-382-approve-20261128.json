@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-382-approve-20261128.json",
+  "request_sha256": "a272d310583799a90ecf9e59bcad675cb3f8183e9c4eb147000bd0d128795a06",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-f42026462c33c209",
+  "pool_sequence": 382,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-28T07:13:25.679694+00:00",
+  "note": "Главред утвердил статью «Microsoft превращает документы Word и PDF в полноценные видеоролики». Статья, Threads/X и ВК сохранены и перечитаны; источники отдельно, подходящей подтверждённой перелинковки нет. Ожидается обложка.",
+  "merged_members": []
+}
