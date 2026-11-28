@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "request": "short-20261128-1250-chat.json",
+  "request_sha256": "1b1b7cad6a1f10189fc5d0806f12a7a2cde4ba4537d06af5ee7df42f4ec23789",
+  "status": "reserved",
+  "count": 5,
+  "items": [
+    {
+      "pool_id": "n-cb782b6b9192ce1f",
+      "pool_sequence": 623,
+      "title": "Глава Anthropic выступил против передачи управления развитием ИИ самим нейросетям",
+      "source_url": "https://nhip.verai.vn/en/2026-11-27",
+      "claimed_at": "2026-11-28T07:51:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-6ba0e9af7144e10c",
+      "pool_sequence": 624,
+      "title": "Российские клиники протестируют ИИ-переводчика для общения с иностранными пациентами",
+      "source_url": "https://asi.ru/news/207761",
+      "claimed_at": "2026-11-28T07:51:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9b2813103d2672ca",
+      "pool_sequence": 628,
+      "title": "Южная Корея готовит национальное соревнование человекоподобных роботов",
+      "source_url": "https://robotics.world/daily/2026-11-27",
+      "claimed_at": "2026-11-28T07:51:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-9233d3a77a3e63d5",
+      "pool_sequence": 631,
+      "title": "Together AI предложила вычислительные мощности за полцены, но с правом прервать работу",
+      "source_url": "https://ainews.mavenotics.com/2026-11-27",
+      "claimed_at": "2026-11-28T07:51:04+00:00",
+      "worker": "hpii-short-editor"
+    },
+    {
+      "pool_id": "n-65a381c9fe2032c6",
+      "pool_sequence": 632,
+      "title": "Для исследовательских ИИ-агентов придумали экзамен на полноту знаний",
+      "source_url": "https://arxiv.org/abs/2611.34852",
+      "claimed_at": "2026-11-28T07:51:04+00:00",
+      "worker": "hpii-short-editor"
+    }
+  ]
+}
