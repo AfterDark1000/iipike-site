@@ -9827,5 +9827,28 @@
       "openai"
     ],
     "products": []
+  },
+  {
+    "title": "Amazon нашла способ избавить ИИ от выдумок в математике",
+    "summary": "AWS представила инструменты AutoCorrode, позволяющие ИИ-агентам проверять формальные математические доказательства в Isabelle прямо в процессе работы.",
+    "published": "2026-11-28",
+    "source_url": "https://www.amazon.science/blog/mathematical-proof-powered-by-ai-and-no-hallucinations",
+    "cover": "assets/editorial/amazon-autocorrode-isabelle-20261118.webp",
+    "rubric": "news",
+    "vk_title": "🧮 Amazon нашла управу на математические ГАЛЛЮЦИНАЦИИ нейросетей",
+    "vk_summary": "ИИ-агентов подключили к программе, которая проверяет математические доказательства прямо во время их написания и позволяет исправлять обнаруженные ошибки.",
+    "published_at_utc": "2026-11-28T14:15:41Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "amazon-autocorrode-isabelle-20261118",
+    "url": "articles/amazon-autocorrode-isabelle-20261118/",
+    "topics": [
+      "models",
+      "development"
+    ],
+    "companies": [
+      "amazon"
+    ],
+    "products": []
   }
 ]
