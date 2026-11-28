@@ -9850,5 +9850,28 @@
       "amazon"
     ],
     "products": []
+  },
+  {
+    "title": "Глава Microsoft предупредил о сбоях из-за борьбы с ИИ-хакерами",
+    "summary": "Сатья Наделла предупредил, что ускорение ИИ-атак сокращает время на тестирование обновлений безопасности, а часть оборудования критической инфраструктуры не поддаётся обновлению.",
+    "published": "2026-11-28",
+    "source_url": "https://podcasts.apple.com/us/podcast/satya-nadella-on-the-new-algorithm/id1718472373?i=1000803773479",
+    "cover": "assets/editorial/microsoft-nadella-ai-cyber-infrastructure-20261118.webp",
+    "rubric": "news",
+    "vk_title": "⚠️ Глава Microsoft предупредил о новых СБОЯХ из-за ИИ-хакеров",
+    "vk_summary": "Компании вынуждены устанавливать обновления безопасности всё быстрее, рискуя нарушить работу собственных систем. При этом часть критической инфраструктуры вообще невозможно обновить.",
+    "published_at_utc": "2026-11-28T15:30:53Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "microsoft-nadella-ai-cyber-infrastructure-20261118",
+    "url": "articles/microsoft-nadella-ai-cyber-infrastructure-20261118/",
+    "topics": [
+      "cybersecurity",
+      "infrastructure"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": []
   }
 ]
