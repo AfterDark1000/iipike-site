@@ -9581,5 +9581,25 @@
       "minimax"
     ],
     "products": []
+  },
+  {
+    "title": "Половина молодых людей, ежедневно пользующихся ИИ, уже пробовала с ним дружить",
+    "summary": "Gallup и Digital Wellness Lab опросили 15 925 молодых людей в 16 странах. Среди ежедневных пользователей ИИ половина уже общалась с ним как с другом.",
+    "published": "2026-11-28",
+    "source_url": "https://news.gallup.com/poll/716486/youth-wellbeing-matters-online-off.aspx",
+    "cover": "assets/editorial/gallup-youth-ai-friendship-20261117.webp",
+    "rubric": "news",
+    "vk_title": "💬 Половина молодых ежедневных пользователей ИИ уже пробовала с ним ДРУЖИТЬ",
+    "vk_summary": "Gallup опросила почти 16 тысяч молодых людей из 16 стран. Даже наличие близких друзей в реальной жизни практически не влияло на желание общаться с нейросетью.",
+    "published_at_utc": "2026-11-28T02:00:55Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "gallup-youth-ai-friendship-20261117",
+    "url": "articles/gallup-youth-ai-friendship-20261117/",
+    "topics": [
+      "society"
+    ],
+    "companies": [],
+    "products": []
   }
 ]
