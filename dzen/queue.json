@@ -2,71 +2,63 @@
   "schema_version": 1,
   "articles": [
     {
-      "url": "https://dzen.ru/a/awbN7T7f80f2GNQA",
-      "title": "Из-за Grok подали в суд: штаты обвиняют ИИ в создании интимных изображений без согласия",
-      "published_at": "2026-11-27T09:03:10.000Z",
+      "url": "https://dzen.ru/a/awbOSHI030jmtETg",
+      "title": "Сотрудники OpenAI и Anthropic сомневаются, что новые модели можно безопасно выпускать",
+      "published_at": "2026-11-28T09:00:33.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-27T13:32:23.824Z",
+      "first_seen_at": "2026-11-28T12:46:02.943Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awbNu8nf31f2MdFx",
-      "title": "Tesla показала ИИ-визуализацию дороги, похожую на вид из видеоигры",
-      "published_at": "2026-11-27T07:08:33.000Z",
+      "url": "https://dzen.ru/a/awbNVDUPSiJpo0-4",
+      "title": "Claude помог математику с гипотезой Римана: доказательство проверили независимые системы",
+      "published_at": "2026-11-28T07:00:53.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-27T13:32:23.824Z",
+      "first_seen_at": "2026-11-28T12:46:02.943Z",
       "source": "dzen_launcher_more"
     },
     {
-      "url": "https://dzen.ru/a/awbMrpAwxGjapFcE",
-      "title": "ChatGPT не работает: что проверить, прежде чем менять настройки",
-      "published_at": "2026-11-27T07:05:52.000Z",
+      "url": "https://dzen.ru/a/awbNK9uO1SJj1k7H",
+      "title": "Нейросети для соцсетей: как готовить посты, а не штампы",
+      "published_at": "2026-11-28T05:00:47.000Z",
       "source_name": "GPTнул",
-      "first_seen_at": "2026-11-27T13:32:23.824Z",
-      "source": "dzen_launcher_more"
-    },
-    {
-      "url": "https://dzen.ru/a/awkV7PlcjEzEh9fK",
-      "title": "Как объяснить сложное простыми словами: 7 приемов для экспертного контента",
-      "published_at": "2026-11-27T05:41:44.000Z",
-      "source_name": "Наташа Нагорнова",
-      "first_seen_at": "2026-11-27T13:32:24.899Z",
+      "first_seen_at": "2026-11-28T12:46:02.943Z",
       "source": "dzen_launcher_more"
     }
   ],
   "polls": {
     "https://dzen.ru/gptnul": {
-      "attempted_at": "2026-11-27T13:32:22.741Z",
+      "attempted_at": "2026-11-28T12:46:01.978Z",
       "failures": 0,
-      "next_at": "2026-11-27T14:32:22.741Z"
+      "next_at": "2026-11-28T13:46:01.978Z"
     },
     "https://dzen.ru/neirospecialist": {
-      "attempted_at": "2026-11-27T13:32:23.825Z",
+      "attempted_at": "2026-11-28T12:46:02.943Z",
       "failures": 0,
-      "next_at": "2026-11-27T14:32:23.825Z"
+      "next_at": "2026-11-28T13:46:02.943Z"
     },
     "https://dzen.ru/negura": {
-      "attempted_at": "2026-11-27T13:32:24.260Z",
+      "attempted_at": "2026-11-28T12:46:03.238Z",
       "failures": 0,
-      "next_at": "2026-11-27T14:32:24.260Z"
+      "next_at": "2026-11-28T13:46:03.238Z"
     },
     "https://dzen.ru/id/657ac898254ced4086f33eda": {
-      "attempted_at": "2026-11-27T13:32:24.566Z",
+      "attempted_at": "2026-11-28T12:46:03.542Z",
       "failures": 0,
-      "next_at": "2026-11-27T14:32:24.566Z"
+      "next_at": "2026-11-28T13:46:03.542Z"
     },
     "https://dzen.ru/neyrosetiya": {
-      "attempted_at": "2026-11-27T13:32:24.899Z",
+      "attempted_at": "2026-11-28T12:46:03.858Z",
       "failures": 0,
-      "next_at": "2026-11-27T14:32:24.899Z"
+      "next_at": "2026-11-28T13:46:03.858Z"
     }
   },
   "blocked": null,
   "last_run": {
-    "id": 46007940091,
+    "id": 46146262135,
     "requests": 5,
     "processed": 5,
     "errors": 0,
-    "added": 4
+    "added": 3
   }
 }
