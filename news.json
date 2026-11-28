@@ -9779,5 +9779,30 @@
     "products": [
       "chatgpt"
     ]
+  },
+  {
+    "title": "OpenAI выпустила обновлённого ИИ-юриста, который ошибается в 20 раз реже Claude",
+    "summary": "Обновлённая Astra for Law 6.2 получила 20,8% полных зачётов в юридическом тесте Harvey LAB-AA и допустила почти в 20 раз меньше существенных галлюцинаций, чем Claude Opus 5.5.",
+    "published": "2026-11-28",
+    "source_url": "https://openai.com/index/astra-law-6-2/",
+    "cover": "assets/editorial/openai-astra-for-law-20261117.webp",
+    "rubric": "news",
+    "vk_title": "⚖️ ИИ-юрист OpenAI стал галлюцинировать в 20 раз реже Claude",
+    "vk_summary": "Обновлённая Astra for Law 6.2 заняла первое место в независимом юридическом тестировании. Модель получила расширенную базу правовых источников, насчитывающую более 310 миллионов интернет-адресов.",
+    "published_at_utc": "2026-11-28T12:01:05Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "openai-astra-for-law-20261117",
+    "url": "articles/openai-astra-for-law-20261117/",
+    "topics": [
+      "models",
+      "business"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "gpt-6"
+    ]
   }
 ]
