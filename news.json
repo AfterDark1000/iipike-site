@@ -9754,5 +9754,30 @@
       "krea"
     ],
     "products": []
+  },
+  {
+    "title": "OpenAI выпустила бесплатного ИИ-помощника для менеджеров по продажам",
+    "summary": "OpenAI представила ChatGPT for Sales — бесплатный плагин для поиска клиентов, подготовки предложений и работы с CRM. Более 30 новых и обновлённых подключений к сторонним сервисам; их собственные подписки оплачиваются отдельно.",
+    "published": "2026-11-28",
+    "source_url": "https://openai.com/index/introducing-chatgpt-for-sales/",
+    "cover": "assets/editorial/openai-chatgpt-for-sales-20261117.webp",
+    "rubric": "news",
+    "vk_title": "💼 ChatGPT получил БЕСПЛАТНЫЙ плагин для менеджеров по продажам",
+    "vk_summary": "OpenAI представила Sales для поиска покупателей, подготовки коммерческих предложений и работы с клиентскими базами. Нейросеть поддерживает более 30 новых и обновлённых подключений к сторонним сервисам.",
+    "published_at_utc": "2026-11-28T11:01:03Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "openai-chatgpt-for-sales-20261117",
+    "url": "articles/openai-chatgpt-for-sales-20261117/",
+    "topics": [
+      "apps",
+      "agents"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": [
+      "chatgpt"
+    ]
   }
 ]
