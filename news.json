@@ -9873,5 +9873,30 @@
       "microsoft"
     ],
     "products": []
+  },
+  {
+    "title": "Microsoft выпустила нейросеть, которая не умеет болтать",
+    "summary": "Microsoft выпустила Decision-1.1 для быстрых решений без генерации текста. Модель распределяет запросы в Copilot и помогает выбирать объём вычислений для Cowork.",
+    "published": "2026-11-28",
+    "source_url": "https://commandline.microsoft.com/microsoft-decision-model-ga/",
+    "cover": "assets/editorial/microsoft-decision-1-1-20261117.webp",
+    "rubric": "news",
+    "vk_title": "🤐 Microsoft выпустила ИИ, который НЕ УМЕЕТ болтать",
+    "vk_summary": "Decision-1.1 выбирает между предложенными вариантами и распределяет задания между другими нейросетями. В Copilot она уже помогает экономить время и деньги.",
+    "published_at_utc": "2026-11-28T16:45:46Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-17",
+    "id": "microsoft-decision-1-1-20261117",
+    "url": "articles/microsoft-decision-1-1-20261117/",
+    "topics": [
+      "models",
+      "agents"
+    ],
+    "companies": [
+      "microsoft"
+    ],
+    "products": [
+      "copilot"
+    ]
   }
 ]
