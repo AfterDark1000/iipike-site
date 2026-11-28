@@ -2341,6 +2341,18 @@
           "source_url": "https://ideogram.ai/models/4.6/"
         }
       ]
+    },
+    {
+      "key": "university-of-bristol",
+      "name": "University of Bristol",
+      "status": "candidate",
+      "first_seen": "2026-11-28",
+      "evidence": [
+        {
+          "article_id": "bristol-smart-walker-saw-20261118",
+          "source_url": "https://www.bristol.ac.uk/news/2026/november/bristol-researchers-develop-pioneering-technology-to-support-independent-living.html"
+        }
+      ]
     }
   ],
   "products": [
@@ -4671,6 +4683,19 @@
         {
           "article_id": "tencent-hy4-flash-open-weights-20261118",
           "source_url": "https://github.com/Tencent-Hunyuan/Hy4-flash"
+        }
+      ]
+    },
+    {
+      "key": "saw-smart-walker",
+      "name": "SAW",
+      "company": "university-of-bristol",
+      "status": "candidate",
+      "first_seen": "2026-11-28",
+      "evidence": [
+        {
+          "article_id": "bristol-smart-walker-saw-20261118",
+          "source_url": "https://www.bristol.ac.uk/news/2026/november/bristol-researchers-develop-pioneering-technology-to-support-independent-living.html"
         }
       ]
     }
