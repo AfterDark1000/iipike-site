@@ -9340,12 +9340,12 @@
       "summary": "27 ноября: сервис медицинских коммуникаций поддерживает десять языков. Пока речь о пилотном внедрении.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-27T14:18:55+00:00",
       "review_started_at": "2026-11-28T07:51:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-6ba0e9af7144e10c"
+      "closed_at": "2026-11-28T08:09:20Z",
+      "article_id": "russia-ai-medical-communications-20261127",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-6ba0e9af7144e10c\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/russia-ai-medical-communications-20261127/"
     },
     {
       "id": "n-d43c05d18d700866",
