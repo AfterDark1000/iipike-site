@@ -2353,6 +2353,18 @@
           "source_url": "https://www.bristol.ac.uk/news/2026/november/bristol-researchers-develop-pioneering-technology-to-support-independent-living.html"
         }
       ]
+    },
+    {
+      "key": "ubisoft",
+      "name": "Ubisoft",
+      "status": "candidate",
+      "first_seen": "2026-11-28",
+      "evidence": [
+        {
+          "article_id": "ubisoft-generative-ai-pitch-pressure-20261126",
+          "source_url": "https://www.verticalslice.news/ubisofts-internal-pitching-process-is-becoming-increasingly-ai-pilled/"
+        }
+      ]
     }
   ],
   "products": [
