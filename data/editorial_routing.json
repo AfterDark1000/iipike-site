@@ -3004,8 +3004,8 @@
     {
       "sequence": 623,
       "pool_id": "n-cb782b6b9192ce1f",
-      "lane": "short",
-      "decision": "short"
+      "lane": "long",
+      "decision": "full"
     },
     {
       "sequence": 624,

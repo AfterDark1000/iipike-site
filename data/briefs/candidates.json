@@ -2045,19 +2045,6 @@
     },
     {
       "status": "pending_review",
-      "pool_sequence": 623,
-      "pool_id": "n-cb782b6b9192ce1f",
-      "slug": "amodei-human-control-ai-self-improvement-20261125",
-      "headline": "Глава Anthropic выступил против бесконтрольного саморазвития ИИ",
-      "body": "25 ноября Дарио Амодеи публично отверг обвинения в том, что он хочет передать управление обществом искусственному интеллекту. Глава Anthropic также высказался за возможное ограничение самостоятельного развития нейросетей. По его мнению, полностью автономное создание следующих поколений Claude без участия человека может оказаться небезопасным.",
-      "topic": "Общество",
-      "event_date": "2026-11-25",
-      "source": "Дарио Амодеи, заявление в X (зеркало)",
-      "source_url": "https://www.nitter.cf/DarioAmodei/status/2125656399392690605",
-      "fact_check": "Оригинал X вернул 403; полный текст публичного заявления доступен на зеркале, дата и контекст подтверждены Axios https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios и TechCrunch https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/. Это заявление 25 ноября, не интервью 27 ноября."
-    },
-    {
-      "status": "pending_review",
       "pool_sequence": 624,
       "pool_id": "n-6ba0e9af7144e10c",
       "slug": "russia-ai-medical-communications-20261127",

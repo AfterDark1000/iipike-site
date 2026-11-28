@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "return-623-20261128.json",
+  "request_sha256": "23ad8c97459af11d9823b1c121283edb7c4cd5c1f1ca2b542fea6cb9f63d0565",
+  "status": "returned_to_long",
+  "pool_id": "n-cb782b6b9192ce1f",
+  "pool_sequence": 623,
+  "lane": "long",
+  "decision": "full",
+  "priority": "normal",
+  "pool_status": "queued",
+  "removed_candidate": "amodei-human-control-ai-self-improvement-20261125"
+}
