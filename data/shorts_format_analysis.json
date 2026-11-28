@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mode": "daily",
-  "generated_at_utc": "2026-11-27T11:26:28Z",
+  "generated_at_utc": "2026-11-28T10:54:20Z",
   "status": "ok",
   "limits": {
     "maximum_gemini_requests": 4,
@@ -9,312 +9,242 @@
   },
   "videos": [
     {
-      "id": "JP8xuqgMgvE",
-      "url": "https://www.youtube.com/shorts/JP8xuqgMgvE",
-      "title": "Fascinating Experiments With Everyday Materials 🔬 #smart #easy #diy #experiments",
-      "channel": "Beamish DIY",
-      "published_at": "2026-11-24T16:00:13Z",
-      "duration_seconds": 175,
-      "views": 49696,
-      "likes": 954,
-      "subscribers": 707000,
+      "id": "NPAgsWWqaY0",
+      "url": "https://www.youtube.com/shorts/NPAgsWWqaY0",
+      "title": "When you have AirPods in 😳😭😂 #shorts #funny #comedy #apple #tech #technology #humor #friend",
+      "channel": "Matt & Justus",
+      "published_at": "2026-11-22T18:36:31Z",
+      "duration_seconds": 57,
+      "views": 891016,
+      "likes": 47701,
+      "subscribers": 5490000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-27T11:26:28Z",
-      "is_confirmed_short": false,
-      "search_family": "experiment",
-      "format_family_guess": "experiment",
-      "growth_views_per_hour": 445.3,
-      "rank_score": 10.32,
-      "viral_status": "unconfirmed",
-      "analysis": {
-        "observed_visuals": "Руки человека демонстрируют серию самодельных бытовых трюков, лайфхаков и физических экспериментов с использованием бутылок, батареек, магнитов, зажигалок и подручных средств.",
-        "observed_audio": "Фоновая музыка в жанре поп-рок и звуки щелчков, зажигания огня, переливания жидкостей и стука.",
-        "hook_0_3s": "Крупный план рук, поджигающих самодельную конструкцию из крышки и трубки на большой бутылке воды с воронкой дыма.",
-        "timeline": [
-          {
-            "time": "00:00 - 00:03",
-            "visible_action": "Руки поджигают фитиль/трубку в крышке большой бутылки с водой.",
-            "editing": "динамичная нарезка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:17 - 00:20",
-            "visible_action": "Ладонь с привязанными батарейками и металлической крышкой парит/поднимается за счет невидимых сил.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:29 - 00:32",
-            "visible_action": "В стакан с послойно залитыми жидкостями опускают мелкие предметы.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:41 - 00:44",
-            "visible_action": "Человек проводит монетой по бетонной плите, поджигая бумагу рядом.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:49 - 00:52",
-            "visible_action": "Нагрев монеты горелкой и помещение в патрон станка.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:56 - 00:59",
-            "visible_action": "Переливание жидкости через каскад пластиковых стаканчиков со шпажкой и шариками.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "01:08 - 01:11",
-            "visible_action": "Пайка лезвий бритвы на деревянной основе с подключением провода.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "01:21 - 01:24",
-            "visible_action": "Сравнение горения двух губок — сухой и смоченной водой под воздействием горелки.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "01:33 - 01:36",
-            "visible_action": "Лимон посыпают солью и поджигают смятую бумагу.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "01:45 - 01:48",
-            "visible_action": "Демонстрация подвешенной деревянной конструкции на нитях (тенсегрити).",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "01:59 - 02:02",
-            "visible_action": "Заполнение двух стаканов вином и водой.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "02:18 - 02:21",
-            "visible_action": "Вращение палочки с фруктами на концах на веревке.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "02:30 - 02:33",
-            "visible_action": "Просверливание отверстия в пластиковой крышке паяльником и сборка зажигалки.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "02:43 - 02:46",
-            "visible_action": "Заправка зажигалки газом из баллона.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "02:46 - 02:54",
-            "visible_action": "Использование зажигалки для нанесения краски/метки на стену и замер рулеткой.",
-            "editing": "склейка",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Компиляция быстрых DIY-экспериментов и фокусов с наглядной демонстрацией результата без слов.",
-        "transfer_to_hpii": "Использование каскадного монтажа быстрой сборки сложных конструкций для иллюстрации концепции самообучающихся ИИ-агентов, решающих задачи по шагам.",
-        "what_not_to_copy": "Копирование конкретных физических опытов с зажигалками, кислотами и бутылками, а также текстов дисклеймеров.",
-        "limitations": "Высокая плотность разнородных кадров затрудняет детальный анализ каждого отдельного фокуса.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-27T11:26:37Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
-    },
-    {
-      "id": "IPWWegvlQsc",
-      "url": "https://www.youtube.com/shorts/IPWWegvlQsc",
-      "title": "technology 😂😁 #shorts #shortvideo #viral #funny #trending #comedy #reaction #reach #tamil #reels",
-      "channel": "Karthik04kzr",
-      "published_at": "2026-11-26T08:24:00Z",
-      "duration_seconds": 15,
-      "views": 6995,
-      "likes": 26,
-      "subscribers": 1390,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-27T11:26:28Z",
+      "statistics_checked_at": "2026-11-28T10:54:20Z",
       "is_confirmed_short": false,
       "search_family": "humor",
       "format_family_guess": "humor",
-      "growth_views_per_hour": 215.8,
-      "rank_score": 10.22,
+      "growth_views_per_hour": 1877.9,
+      "rank_score": 13.43,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Мужчина сидит на фоне деревянной стены со смартфоном в руке, затем чередуются кадры с мышью/крысой на столе у фена, мужчина указывает на розетку, и резкое движение грызуна со смешной реакцией.",
-        "observed_audio": "Звуки свиста, щелчки, звуковые эффекты испуга и смех.",
-        "hook_0_3s": "Мужчина смотрит в телефон, появляется текст 'Technology ha' с эмодзи смеха, звучит свист.",
+        "observed_visuals": "In a home setting, a couple sits on a couch while a man wearing a grey wig and pink shirt sits nearby at a table with a laptop, pretending to be on a phone call with AirPods, constantly interrupting and dismissing the couple's conversation.",
+        "observed_audio": "Dialogue featuring an interaction between a couple discussing personal feelings and a third person pretending to be on the phone who inserts rude comments and opinions.",
+        "hook_0_3s": "Text overlay reading \"When you have AirPods in\" appears while a man and woman sit on a couch, immediately followed by cutaways to a man wearing a grey wig talking loudly.",
         "timeline": [
           {
-            "time": "00:00-00:01",
-            "visible_action": "Мужчина сидит с телефоном, появляется надпись с текстом и смехом.",
-            "editing": "склейка",
+            "time": "00:00",
+            "visible_action": "Couple sitting on the couch; text overlay on screen.",
+            "editing": "Direct cut to the scene with title card text.",
             "confidence": "seen"
           },
           {
-            "time": "00:02-00:05",
-            "visible_action": "Крыса на столе взаимодействует с феном.",
-            "editing": "склейка",
+            "time": "00:02",
+            "visible_action": "Cut to a man in a pink shirt and grey wig sitting at a table with a laptop.",
+            "editing": "Jump cut between the couch and the table.",
             "confidence": "seen"
           },
           {
-            "time": "00:06-00:09",
-            "visible_action": "Мужчина сидит в комнате, жестикулирует и указывает на розетку.",
-            "editing": "склейка",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:10-00:14",
-            "visible_action": "Крыса резко подпрыгивает от фена, мужчина смеется.",
-            "editing": "склейка",
+            "time": "00:07",
+            "visible_action": "Man points to his ear indicating AirPods.",
+            "editing": "Close-up cut on the ear.",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Монтажная склейка-реакция между человеком, наблюдающим за ситуацией, и абсурдным действием животного с неожиданным финалом.",
-        "transfer_to_hpii": "Использовать контрастную склейку: человек удивленно смотрит на экран, а в следующем кадре нейросеть выдает комичный или абсурдный результат задачи.",
-        "what_not_to_copy": "Не копировать сюжет с животными и феном, не использовать чужие звуковые эффекты смеха.",
-        "limitations": "Часть мелких движений крысы видна не полностью из-за низкого кадрового резерва видеоряда.",
+        "format_mechanic": "Skit-based comedy focusing on situational absurdity and passive-aggressive interruptions mediated by wearable tech (AirPods).",
+        "transfer_to_hpii": "Demonstrating how AI tools or autonomous assistants can act inappropriately or overhear private conversations while pretending not to listen.",
+        "what_not_to_copy": "Excessive repetition of the same comedic beats and crude insults.",
+        "limitations": "Audio contains rapid cuts and overlapping dialogue, making exact word-for-word transcriptions secondary to the structural mechanic.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-27T11:26:41Z",
+      "analyzed_at_utc": "2026-11-28T10:54:24Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     },
     {
-      "id": "jAQiW86Zigk",
-      "url": "https://www.youtube.com/shorts/jAQiW86Zigk",
-      "title": "Why Is Slurping Noodles NOT Rude in Japan?! 🍜🤯",
-      "channel": "Wait, That's Weird!",
-      "published_at": "2026-11-26T18:18:17Z",
-      "duration_seconds": 25,
-      "views": 2745,
-      "likes": 34,
-      "subscribers": 31,
+      "id": "vfQkgHKrN8Y",
+      "url": "https://www.youtube.com/shorts/vfQkgHKrN8Y",
+      "title": "Science Experiments With Unexpected Material Reactions! 🔬 #science #experiments #diy #ideas",
+      "channel": "Beamish",
+      "published_at": "2026-11-26T01:00:31Z",
+      "duration_seconds": 174,
+      "views": 314624,
+      "likes": 4048,
+      "subscribers": 2750000,
       "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-27T11:26:28Z",
+      "statistics_checked_at": "2026-11-28T10:54:20Z",
       "is_confirmed_short": false,
-      "search_family": "explanation",
-      "format_family_guess": "explanation",
-      "growth_views_per_hour": null,
-      "rank_score": 6.14,
+      "search_family": "experiment",
+      "format_family_guess": "experiment",
+      "growth_views_per_hour": 672.0,
+      "rank_score": 12.59,
       "viral_status": "unconfirmed",
       "analysis": {
-        "observed_visuals": "Animated stick figure video showing people eating ramen noodles in a Japanese restaurant, with text captions at the bottom explaining cultural habits and scientific reasons for slurping.",
-        "observed_audio": "Voiceover narration explaining why slurping ramen is normal, accompanied by sound effects like slurping noises.",
-        "hook_0_3s": "A stick figure sitting at a ramen counter with text stating parents telling not to slurp, while others around are slurping loudly.",
+        "observed_visuals": "Различные DIY-эксперименты и лайфхаки с инструментами, металлом, магнитами, жидкостями, горелками и трюками физики (уровни, слои жидкостей, парящие конструкции, левитация предметов).",
+        "observed_audio": "Звуки работы с инструментами, пайки, капель, переливания жидкостей, шуршания и фоновая музыка.",
+        "hook_0_3s": "Панорама на сито с гвоздями, куда подносят нагретый паяльник.",
         "timeline": [
           {
             "time": "00:00",
-            "visible_action": "Stick figures eating ramen at a counter with Japanese menu signs in the background.",
-            "editing": "Static animated frame with large bold captions appearing sequentially.",
+            "visible_action": "Показ сита с гвоздями, поднесение паяльника",
+            "editing": "Быстрая склейка уровня",
             "confidence": "seen"
           },
           {
             "time": "00:05",
-            "visible_action": "Main character eats quietly while others slurp loudly.",
-            "editing": "Cut to close-up stick figure action with animated sound effect text boxes.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:10",
-            "visible_action": "Diagrams showing ramen, soba, and udon noodles with acceptance labels.",
-            "editing": "Transition to instructional list format with icons.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:14",
-            "visible_action": "Demonstration of air flow cooling hot noodles during slurping.",
-            "editing": "Animated graphic overlay with thermometer and directional arrows.",
-            "confidence": "seen"
-          },
-          {
-            "time": "00:22",
-            "visible_action": "Main character attempts a giant slurp and fails, getting noodles stuck across his face.",
-            "editing": "Punchline comedic cut with impact text 'SPLAT!'.",
-            "confidence": "seen"
-          }
-        ],
-        "format_mechanic": "Educational animated explainer using simple stick figures, text overlays, and humor to answer a counter-intuitive cultural question.",
-        "transfer_to_hpii": "Explain a complex or counter-intuitive AI news topic (e.g., why AI hallucinations happen or why AI models sometimes output gibberish) using simple animated analogies, humorous contrast, and step-by-step logical breakdown.",
-        "what_not_to_copy": "Do not copy the ramen theme, stick figure art style, or exact audio jokes about noodles.",
-        "limitations": "Video is animated, so real-world human reactions cannot be evaluated directly.",
-        "evidence_quality": "observed"
-      },
-      "analyzed_at_utc": "2026-11-27T11:26:45Z",
-      "model": "gemini-3.5-flash-lite",
-      "status": "analyzed"
-    },
-    {
-      "id": "Bt8e_HmS3Ho",
-      "url": "https://www.youtube.com/shorts/Bt8e_HmS3Ho",
-      "title": "The Strange Twist in the Flock Camera Story #shorts",
-      "channel": "Danjuma Consult Tech",
-      "published_at": "2026-11-24T06:00:09Z",
-      "duration_seconds": 55,
-      "views": 6,
-      "likes": 0,
-      "subscribers": 13,
-      "statistics_source": "YouTube Data API v3",
-      "statistics_checked_at": "2026-11-27T11:26:28Z",
-      "is_confirmed_short": false,
-      "search_family": "story",
-      "format_family_guess": "story",
-      "growth_views_per_hour": 0.0,
-      "rank_score": 0.08,
-      "viral_status": "unconfirmed",
-      "analysis": {
-        "observed_visuals": "На протяжении всего видео используется статичное изображение ночной улицы с крыльцом старого дома, на которое накладываются плашки с текстом субтитров.",
-        "observed_audio": "Мужской закадровый голос, озвучивающий утренний новостной дайджест на английском языке.",
-        "hook_0_3s": "Статичный кадр ночного дома с приглушенным освещением, плашка 'Morning Brief' и 'A strange twist', закадровое приветствие.",
-        "timeline": [
-          {
-            "time": "00:00",
-            "visible_action": "Статичное изображение ночного дома, появление плашки 'Morning Brief'.",
-            "editing": "Статичный кадр с наложением анимированного текста субтитров.",
+            "visible_action": "Нагрев вилки горелкой",
+            "editing": "Склейка на новый объект",
             "confidence": "seen"
           },
           {
             "time": "00:11",
-            "visible_action": "Тот же кадр дома, смена плашки на 'Stockholm, October'.",
-            "editing": "Без видимой склейки видеоряда, смена плашек и текста.",
+            "visible_action": "Манипуляции с разводным ключом",
+            "editing": "Склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:21",
-            "visible_action": "Тот же кадр дома, смена плашки на 'Ten days later' и 'Montreal - Halloween night'.",
-            "editing": "Без видимой склейки видеоряда, смена плашек.",
+            "time": "00:16",
+            "visible_action": "Демонстрация слоев жидкостей в стакане",
+            "editing": "Склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:33",
-            "visible_action": "Тот же кадр дома, смена плашки на 'Industry responds'.",
-            "editing": "Без видимой склейки видеоряда, смена плашек.",
+            "time": "00:23",
+            "visible_action": "Падение шариков через чашки на деревянный стержень",
+            "editing": "Склейка",
             "confidence": "seen"
           },
           {
-            "time": "00:43",
-            "visible_action": "Тот же кадр дома, появление белого информационного блока с выводами.",
-            "editing": "Появление плавающего UI-элемента со списком пунктов.",
+            "time": "00:36",
+            "visible_action": "Сборка конструкции с лезвиями",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:51",
+            "visible_action": "Лимон с содой капает на скомканную бумагу, вызывая возгорание",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:05",
+            "visible_action": "Сравнение губок с водой и без под горелкой",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:19",
+            "visible_action": "Сборка импровизированной мини-зажигалки шприца",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:34",
+            "visible_action": "Демонстрация деревянной тенсегрити-конструкции",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "01:49",
+            "visible_action": "Вращение лимона и фрукта на палке с цепью",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:03",
+            "visible_action": "Магнитные батарейки держат металлическую крышку",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:16",
+            "visible_action": "Переворачивание стакана с водой поверх темной жидкости",
+            "editing": "Склейка",
+            "confidence": "seen"
+          },
+          {
+            "time": "02:39",
+            "visible_action": "Сверление пробки бутылки и фиксация зажигалки",
+            "editing": "Склейка",
             "confidence": "seen"
           }
         ],
-        "format_mechanic": "Использование единого атмосферного фона (loop-видео) с последовательным появлением текстовых плашек и инфографики под закадровый аналитический голос.",
-        "transfer_to_hpii": "Разбор последствий внедрения технологии (на примере ИИ или систем слежки): демонстрация контраста между корпоративными решениями и негативной реакцией общества через структурированный сторителлинг с выводами.",
-        "what_not_to_copy": "Статичный и неизменный фон на протяжении всего ролика без смены локаций и живой хроники.",
-        "limitations": "Отсутствие видеодоказательств самих новостных событий, использование статичной иллюстрации вместо репортажных кадров.",
+        "format_mechanic": "Компиляция коротких демонстраций «уровней» или лайфхаков с быстрыми визуальными хуками и постоянной сменой динамичных кадров каждые 3–5 секунд.",
+        "transfer_to_hpii": "Использовать динамичный формат нарезки быстрых «уровней сложности» для подачи новостей об искусственном интеллекте (например, Уровень 1 — базовые промпты, Уровень 2 — сложные агенты, Уровень 3 — автономные ИИ-системы).",
+        "what_not_to_copy": "Не копировать физические эксперименты с паяльниками, зажигалками и химикатами, не относящиеся к теме ИИ.",
+        "limitations": "Быстрые переходы между разнородными лайфхаками затрудняют детальный анализ каждого отдельного физического процесса.",
         "evidence_quality": "observed"
       },
-      "analyzed_at_utc": "2026-11-27T11:26:50Z",
+      "analyzed_at_utc": "2026-11-28T10:54:31Z",
+      "model": "gemini-3.5-flash-lite",
+      "status": "analyzed"
+    },
+    {
+      "id": "2IRMtB50DFI",
+      "url": "https://www.youtube.com/shorts/2IRMtB50DFI",
+      "title": "Why Do Mosquito Bites Itch? 🦟😱 | 3D Animation #3danimation",
+      "channel": "Hasan ali",
+      "published_at": "2026-11-23T08:17:50Z",
+      "duration_seconds": 50,
+      "views": 8972,
+      "likes": 176,
+      "subscribers": 45200,
+      "statistics_source": "YouTube Data API v3",
+      "statistics_checked_at": "2026-11-28T10:54:20Z",
+      "is_confirmed_short": false,
+      "search_family": "explanation",
+      "format_family_guess": "explanation",
+      "growth_views_per_hour": 2.9,
+      "rank_score": 5.27,
+      "viral_status": "unconfirmed",
+      "analysis": {
+        "observed_visuals": "Анимационное 3D-видео с участием персонажа-человека на кровати, демонстрирующего укус комара и процесс впрыскивания слюны, а также работу кровеносной и нервной систем в разрезе. Присутствуют плашки с текстом на английском языке и стрелки-указатели.",
+        "observed_audio": "Голос за кадром на хинди, объясняющий биологические процессы укуса комара и реакцию организма, сопровождающийся динамичным звуковым оформлением.",
+        "hook_0_3s": "Крупный план руки человека с красным пятном укуса и текстовая плашка на английском о том, что происходит при укусе комара.",
+        "timeline": [
+          {
+            "time": "00:00 - 00:03",
+            "visible_action": "Персонаж сидит на кровати, показывая на руку, наложен крупный план с текстом.",
+            "editing": "Быстрая смена кадров, добавление графических плашек.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:03 - 00:07",
+            "visible_action": "Приближение камеры к руке, появление красного волдыря и анимированной стрелки.",
+            "editing": "Зум-ин, появление графических элементов.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:07 - 00:13",
+            "visible_action": "Анимация комара, демонстрирующая микро-иглы, проникающие под кожу.",
+            "editing": "Переход к 3D-моделированию процесса.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:13 - 00:20",
+            "visible_action": "Макро-анимация слоев кожи и впрыскивания слюны.",
+            "editing": "Анимированные вставки работы тканей.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:20 - 00:30",
+            "visible_action": "Демонстрация кровеносных сосудов, реакции иммунной системы и выделения гистамина.",
+            "editing": "3D-визуализация внутренних процессов организма.",
+            "confidence": "seen"
+          },
+          {
+            "time": "00:30 - 00:50",
+            "visible_action": "Возврат к персонажу на кровати, демонстрация нервных импульсов к мозгу и совет использовать лед.",
+            "editing": "Монтаж с инфографикой и финальным экраном подписки.",
+            "confidence": "seen"
+          }
+        ],
+        "format_mechanic": "Научно-популярный 3D-эксплейнер с визуализацией микропроцессов внутри тела и практическим советом в конце.",
+        "transfer_to_hpii": "Использовать 3D-анимацию «в разрезе» для демонстрации влияния ИИ-алгоритмов на бизнес-процессы компании или мозг человека при обработке информации.",
+        "what_not_to_copy": "Не копировать тему насекомых, медицинские подробности и конкретный текст сценария про укусы.",
+        "limitations": "Анализ выполнен по визуальному ряду и звуковой дорожке без учета скрытых метаданных.",
+        "evidence_quality": "observed"
+      },
+      "analyzed_at_utc": "2026-11-28T10:54:35Z",
       "model": "gemini-3.5-flash-lite",
       "status": "analyzed"
     }
