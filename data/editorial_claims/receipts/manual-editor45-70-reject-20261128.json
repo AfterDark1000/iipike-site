@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor45-70-reject-20261128.json",
+  "request_sha256": "4634dc556db51d71823a937aede5b22df31cdfe29f363e937be9f64887e6fd42",
+  "worker": "hpii-manual-editor",
+  "status": "closed_rejected",
+  "pool_id": "n-ab23a7fa21e24fb3",
+  "pool_sequence": 70,
+  "pool_status": "rejected",
+  "claimed_at": "2026-11-27T19:41:47.016963+00:00",
+  "note": "Главред явно согласовал пропуск. Новость от 12.11 о платных телефонных звонках Muse не является точным дублем, но потеряла актуальность и самостоятельную читательскую ценность после материала о бесплатных звонках Gemini от 17.11 (google-gemini-tasks-free-calls-shopping-20261117). Не публиковать, не создавать соцочереди."
+}
