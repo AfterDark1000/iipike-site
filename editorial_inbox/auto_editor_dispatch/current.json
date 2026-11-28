@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "prepared_at": "2026-11-28T06:46:44.151206+00:00",
-  "valid_until": "2026-11-28T08:16:44.151206+00:00",
+  "prepared_at": "2026-11-28T07:02:17.605401+00:00",
+  "valid_until": "2026-11-28T08:32:17.605401+00:00",
   "status": "ready",
   "counts": {
-    "reserved_24h": 2,
+    "reserved_24h": 1,
     "waiting_review": 1,
     "limit": 5
   },
