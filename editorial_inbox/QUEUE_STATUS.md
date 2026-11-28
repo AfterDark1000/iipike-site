@@ -2,20 +2,19 @@
 
 > Служебный журнал GitHub, не страница iipike.ru. **Репозиторий публичный, поэтому содержимое журнала не является конфиденциальным.**
 
-**В очереди:** 4 · **Готовы:** 0 · **Ждут интервал:** 4 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 14 · **Заблокированы:** 0 · **Опубликованы через site-first:** 288
+**В очереди:** 3 · **Готовы:** 0 · **Ждут интервал:** 3 · **Срочная очередь:** 0 · **Назначено время:** 0 · **Ночная пауза:** 0 · **Ждут обложку:** 14 · **Заблокированы:** 0 · **Опубликованы через site-first:** 289
 
 Проверка каждые 15 минут; не более одной статьи за запуск. Срочная очередь впереди обычной, вместе они делят часовые слоты. Выпуск по назначенному времени не сдвигает очередь. Стандартный интервал — 60 минут. Автоматический выпуск приостанавливается ежедневно с 01:00 до 07:00 (Усть-Катав), очередь сохраняется и продолжается утром. Порядок — по времени готовности текста и обложки, если не назначено более позднее время. **Прогноз — не обещание публикации в указанную минуту:** GitHub Actions, Pages, ручные срочные выпуски и новые материалы могут его изменить.
 
-Последний выпуск на сайте из редакционной очереди: **28.11.2026 21:45 (Усть-Катав)**.
+Последний выпуск на сайте из редакционной очереди: **28.11.2026 23:01 (Усть-Катав)**.
 
 ## Следующие выпуски — прогноз по текущей очереди
 
 | № | Материал | Статус | Ориентир / ограничение | Обложка |
 |---:|---|---|---|---|
-| **1** | [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ai2-theorizer-scientific-hypotheses-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 22:52 (Усть-Катав)**; пауза до 28.11.2026 22:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
-| **2** | [SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.json) | ⏳ Ждёт часовой интервал | **Не ранее 28.11.2026 23:52 (Усть-Катав)**; пауза до 28.11.2026 22:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.webp) |
-| **3** | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-performance-factory-codex-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 29.11.2026 00:52 (Усть-Катав)**; пауза до 28.11.2026 22:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-performance-factory-codex-20261119.webp) |
-| **4** | [Ubisoft научит игровых персонажей помнить вас](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ubisoft-motherbrain-npc-memory-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 29.11.2026 07:07 (Усть-Катав)**; пауза до 28.11.2026 22:45 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ubisoft-motherbrain-npc-memory-20261119.webp) |
+| **1** | [SethBling трижды обыграл ИИ в Minecraft, но уступил Astra в общем зачёте](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.json) | ⏳ Ждёт часовой интервал | **Не ранее 29.11.2026 00:07 (Усть-Катав)**; пауза до 29.11.2026 00:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/legendu-minecraft-otpravili-sorevnovatsya-s-ii-ag-4026a4cf1fa73bf7.webp) |
+| **2** | [OpenAI поручила нейросетям чинить тормоза ChatGPT](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/openai-performance-factory-codex-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 29.11.2026 07:07 (Усть-Катав)**; пауза до 29.11.2026 00:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/openai-performance-factory-codex-20261119.webp) |
+| **3** | [Ubisoft научит игровых персонажей помнить вас](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/stories/ubisoft-motherbrain-npc-memory-20261119.json) | ⏳ Ждёт часовой интервал | **Не ранее 29.11.2026 08:07 (Усть-Катав)**; пауза до 29.11.2026 00:01 (Усть-Катав) | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ubisoft-motherbrain-npc-memory-20261119.webp) |
 
 ## Требуют внимания — не участвуют в выборе
 
@@ -40,6 +39,7 @@
 
 | Материал | Время выхода (Усть-Катав) | Обложка |
 |---|---|---|
+| [Онколог 15 лет шёл к своим выводам, а нейросеть выдала ему те же идеи](https://iipike.ru/articles/ai2-theorizer-scientific-hypotheses-20261119/) | 28.11.2026 23:01 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/ai2-theorizer-scientific-hypotheses-20261119.webp) |
 | [Microsoft выпустила нейросеть, которая не умеет болтать](https://iipike.ru/articles/microsoft-decision-1-1-20261117/) | 28.11.2026 21:45 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-decision-1-1-20261117.webp) |
 | [Глава Microsoft предупредил о сбоях из-за борьбы с ИИ-хакерами](https://iipike.ru/articles/microsoft-nadella-ai-cyber-infrastructure-20261118/) | 28.11.2026 20:30 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/microsoft-nadella-ai-cyber-infrastructure-20261118.webp) |
 | [Amazon нашла способ избавить ИИ от выдумок в математике](https://iipike.ru/articles/amazon-autocorrode-isabelle-20261118/) | 28.11.2026 19:15 | [Есть](https://github.com/AfterDark1000/iipike-site/blob/editorial-intake/editorial_inbox/covers/amazon-autocorrode-isabelle-20261118.webp) |
