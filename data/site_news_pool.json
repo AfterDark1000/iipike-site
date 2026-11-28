@@ -9460,12 +9460,12 @@
       "summary": "Препринт DRBench Pro от 25 ноября 18:25 UTC оценивает полноту и глубину раскрытия исследовательской темы.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-27T14:18:55+00:00",
       "review_started_at": "2026-11-28T07:51:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-65a381c9fe2032c6"
+      "closed_at": "2026-11-28T09:09:10Z",
+      "article_id": "drbench-pro-research-agents-20261125",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-65a381c9fe2032c6\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/drbench-pro-research-agents-20261125/"
     },
     {
       "id": "n-f360680399445da1",
