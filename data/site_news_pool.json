@@ -5710,9 +5710,9 @@
       "summary": "20 ноября — публикация обзора, предварительный доступ указан с 17 ноября. Clipchamp и Copilot якобы создают видео из документов Word, PDF и PowerPoint. Вторичный источник, проверить дату события.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "queued",
+      "status": "in_review",
       "added_at": "2026-11-20T14:34:56+00:00",
-      "review_started_at": null,
+      "review_started_at": "2026-11-28T07:13:25.679694+00:00",
       "closed_at": null,
       "article_id": null,
       "note": ""
