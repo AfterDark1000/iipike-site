@@ -10,6 +10,7 @@ from pathlib import Path
 from datetime import date
 from itertools import groupby
 import re
+import unicodedata
 
 ENTITY_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 ARTICLE_PATH = re.compile(r"articles/[a-z0-9]+(?:-[a-z0-9]+)*/\Z")
@@ -82,10 +83,63 @@ from scripts.site_rubrics import publication_sort_key, publication_label, naviga
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "https://iipike.ru"
 REGISTRY = "data/entity_registry.json"
+ALIASES = "data/entity_aliases.json"
 
 
 def load_registry(root=ROOT):
     return json.loads((Path(root) / REGISTRY).read_text(encoding="utf-8"))
+
+
+def normalize_entity_name(value):
+    """Exact, case-insensitive Unicode match; no guessing or fuzzy inference."""
+    if not isinstance(value, str):
+        raise ValueError("Entity name must be a string")
+    return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
+
+
+def build_entity_lookup(registry, aliases):
+    """Editorial lookup only. Approved metadata still requires canonical keys."""
+    if (not isinstance(aliases, dict) or aliases.get("schema_version") != 1
+            or set(aliases) != {"schema_version", "note", "companies", "products"}
+            or not isinstance(aliases["note"], str) or not aliases["note"].strip()):
+        raise ValueError("Invalid entity alias schema")
+    lookup = {}
+    for kind in ("companies", "products"):
+        known = {row["key"] for row in registry[kind]}
+        names = {}
+        def add(name, target):
+            normalized = normalize_entity_name(name)
+            if not normalized or target not in known:
+                raise ValueError("Invalid entity alias target or name")
+            if normalized in names and names[normalized] != target:
+                raise ValueError("Ambiguous entity alias: " + name)
+            names[normalized] = target
+        for row in registry[kind]:
+            add(row["key"], row["key"])
+            add(row["name"], row["key"])
+        if not isinstance(aliases[kind], dict):
+            raise ValueError("Invalid entity alias list")
+        for name, target in aliases[kind].items():
+            if not isinstance(target, str):
+                raise ValueError("Invalid entity alias target")
+            add(name, target)
+        lookup[kind] = names
+    return lookup
+
+
+def load_entity_lookup(root=ROOT, registry=None):
+    root = Path(root)
+    if registry is None:
+        registry = load_registry(root)
+    aliases = json.loads((root / ALIASES).read_text(encoding="utf-8"))
+    return build_entity_lookup(registry, aliases)
+
+
+def resolve_entity_name(lookup, kind, value):
+    """Return a canonical key or None. Never alter a story or candidate queue."""
+    if kind not in ("companies", "products"):
+        raise ValueError("Invalid entity kind")
+    return lookup[kind].get(normalize_entity_name(value))
 
 
 def entity_urls(registry):

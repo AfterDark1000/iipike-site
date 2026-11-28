@@ -19,7 +19,7 @@
 - **Пул и FIFO:** docs/SITE_NEWS_POOL.md, data/site_news_pool.json, scripts/site_news_pool.py в ветке main репозитория AfterDark1000/iipike-site.
 - **Контракт статьи:** editorial_inbox/README.md, editorial_inbox/CHATGPT_EDITOR_INSTRUCTIONS.md, editorial_inbox/RICH_TEXT_FORMAT.md, editorial_inbox/SITE_PUBLICATION_QUEUE.md из актуального main; при необходимости сверять реальный контракт в ветке editorial-intake и валидатор scripts/site_first_inbox.py.
 - **Рубрики, темы:** scripts/site_topics.py, data/topic_extensions.json, editorial_inbox/TOPIC_REGISTRY.md.
-- **Компании и продукты:** data/entity_registry.json и data/entity_candidates.json из main.
+- **Компании и продукты:** data/entity_registry.json, data/entity_aliases.json и data/entity_candidates.json из main.
 - **Перелинковка, дубли:** news.json, реальные статьи iipike.ru, каталог Дзена AfterDark1000/dzen-telegram-crosspost/editorial_full_catalog.json и data/editorial_full_catalog_snapshot.json (свежесть проверять), существующие записи editorial-intake.
 - **Threads и X:** AfterDark1000/dzen-telegram-crosspost/THREADS_EDITORIAL_PROCESS.md и действующие форматы threads_editorial_queue.json / x_editorial_queue.json, **но до утверждения эти очереди только читать**.
 - **ВК:** docs/VK_RSS_IMPORT.md. ВКонтакте импортирует сайт через vk-rss.xml; прямой VK-постинг и старый Dzen→VK не включать.
@@ -197,6 +197,8 @@
 **Карточка «По теме»** — только в HTML сайта, если действительно есть содержательная проверенная внутренняя связь. В canonical article_markdown оставлять обычную встроенную текстовую ссылку для Дзена; не писать код карточки. В Дзене позже возможно вручную преобразовать эту ссылку в плашку. Не придумывать дополнительный абзац «Ранее мы писали» ради карточки.
 
 ## 7. Кандидаты в справочник: подготовить сейчас, коммит только после утверждения
+
+Перед выбором ключей и кандидатов прочитать свежий `data/entity_aliases.json` вместе с реестром. Явный псевдоним/версия (например GPT-6.2 Sol → gpt-6, Claude Fable 5.2 → claude, GigaChat 4 → gigachat) не создаёт нового кандидата. Сверять тип сущности, владельца и роль в новости; только точное совпадение или редакционно подтверждённое семейство, без угадывания по подстроке. В утверждённые массивы записываются только канонические ключи. Новые варианты названий передавать техштабу для проверяемого обновления таблицы; не изменять её самостоятельно. В случае сомнения оставить метку пустой или описать сомнение в досье.
 
 На стадии **автодрафта** проверять каждый значимый бренд/продукт и готовить список предлагаемых кандидатов; не откладывать проверку на человека. Ищем в реестре, затем в уже существующей очереди кандидатов, чтобы не плодить дубли. Если кандидат есть — записать в досье тот же ключ и новое доказательство, но не создавать дубль.
 
