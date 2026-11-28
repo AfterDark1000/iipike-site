@@ -9804,5 +9804,28 @@
     "products": [
       "gpt-6"
     ]
+  },
+  {
+    "title": "В OpenAI готовы променять 40% команды на ИИ",
+    "summary": "В гипотетическом опросе исследователей OpenAI медианный ответ составил 40% численности собственной команды ради восстановления доступа к передовым ИИ-агентам.",
+    "published": "2026-11-28",
+    "source_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+    "cover": "assets/editorial/openai-research-acceleration-20261118.webp",
+    "rubric": "news",
+    "vk_title": "🤖 В OpenAI готовы променять 40% КОМАНДЫ на нейросети",
+    "vk_summary": "Компания опросила своих исследователей и выяснила, чем они готовы пожертвовать ради доступа к продвинутым ИИ-агентам. Коллегам результаты вряд ли понравятся.",
+    "published_at_utc": "2026-11-28T13:15:38Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "openai-research-acceleration-20261118",
+    "url": "articles/openai-research-acceleration-20261118/",
+    "topics": [
+      "agents",
+      "models"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": []
   }
 ]
