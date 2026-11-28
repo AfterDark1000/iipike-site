@@ -9601,5 +9601,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "AMD отправила в производство чип с доработками от нейросети OpenAI",
+    "summary": "OpenAI сообщила об улучшении параметров отдельных схем графических процессоров AMD до 14%. Часть предложенных нейросетью изменений вошла в проект чипа, отправленный на изготовление.",
+    "published": "2026-11-28",
+    "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+    "cover": "assets/editorial/openai-amd-ai-chip-design-20261118.webp",
+    "rubric": "news",
+    "vk_title": "⚙️ AMD отправила в производство чип, улучшенный НЕЙРОСЕТЬЮ",
+    "vk_summary": "ИИ OpenAI менее чем за пять месяцев нашёл способы улучшить электронные схемы, которые инженеры AMD оптимизировали годами.",
+    "published_at_utc": "2026-11-28T03:01:02Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-18",
+    "id": "openai-amd-ai-chip-design-20261118",
+    "url": "articles/openai-amd-ai-chip-design-20261118/",
+    "topics": [
+      "engineering",
+      "infrastructure"
+    ],
+    "companies": [
+      "openai"
+    ],
+    "products": []
   }
 ]
