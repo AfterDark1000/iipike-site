@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request": "manual-editor46-625-approve-20261128.json",
+  "request_sha256": "996c170f44d3d906881e09c25bbd1350ebfba2db21a541e844a65b6244304e57",
+  "worker": "hpii-manual-editor",
+  "status": "closed_approved",
+  "pool_id": "n-d43c05d18d700866",
+  "pool_sequence": 625,
+  "pool_status": "approved",
+  "claimed_at": "2026-11-28T07:51:12.826333+00:00",
+  "note": "Главред утвердил переработанную разговорную редакцию №625. Статья, Threads/X и перелинковка с GDC сохранены и перечитаны. При финальной проверке уточнена формулировка выборки GDC: более 2600 специалистов, 40% опрошенных.",
+  "merged_members": []
+}
