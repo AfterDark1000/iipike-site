@@ -1,5 +1,12 @@
 [
   {
+    "id": "c2bd7953104652e48b06",
+    "date": "2026-11-28",
+    "title": "Как Hugging Face заставила железо AWS генерировать видео с помощью LTX-2.5",
+    "source_name": "Hugging Face",
+    "source_url": "https://huggingface.co/blog/video-trainium3"
+  },
+  {
     "id": "a734da9d3a1d876054f8",
     "date": "2026-11-27",
     "title": "Hugging Face запустила панель для замера скорости llama.cpp на чипах AMD Ryzen и Radeon",

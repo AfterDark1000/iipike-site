@@ -240,6 +240,12 @@
       "utc_date": "2026-11-27",
       "source_url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
       "source_title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon"
+    },
+    {
+      "id": "c2bd7953104652e48b06",
+      "utc_date": "2026-11-28",
+      "source_url": "https://huggingface.co/blog/video-trainium3",
+      "source_title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5"
     }
   ]
 }
