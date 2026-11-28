@@ -9666,5 +9666,28 @@
     ],
     "companies": [],
     "products": []
+  },
+  {
+    "title": "Илон Маск запустит миллион спутников для ИИ",
+    "summary": "FCC одобрила развёртывание орбитальной вычислительной сети Starmind компании SpaceX численностью до миллиона спутников. Полное развёртывание предусмотрено к 2040 году.",
+    "published": "2026-11-28",
+    "source_url": "https://eu-assets.contentstack.com/v3/assets/blt23eb5bbc4124baa6/bltf4cdf2af47159e12/6b071c5f5506bb38bca5b0ec/FCC_report_and_order_on_SpaceX_Starmind_AI_constellation_11-25-2026.pdf",
+    "cover": "assets/editorial/spacex-starmind-million-ai-satellites-fcc-20261125.webp",
+    "rubric": "news",
+    "vk_title": "🚀 Маску разрешили отправить МИЛЛИОН ИИ-спутников в космос",
+    "vk_summary": "Вычислительные модули Starmind будут питаться солнечной энергией и обмениваться данными через лазерную сеть Starlink. США отвели SpaceX 14 лет на полное развёртывание группировки. Против проекта выступили Amazon, Viasat и астрономы.",
+    "published_at_utc": "2026-11-28T06:15:56Z",
+    "site_release_mode": "standard",
+    "event_date": "2026-11-25",
+    "id": "spacex-starmind-million-ai-satellites-fcc-20261125",
+    "url": "articles/spacex-starmind-million-ai-satellites-fcc-20261125/",
+    "topics": [
+      "infrastructure",
+      "engineering"
+    ],
+    "companies": [
+      "spacex"
+    ],
+    "products": []
   }
 ]
