@@ -5715,7 +5715,7 @@
       "review_started_at": "2026-11-28T07:13:25.679694+00:00",
       "closed_at": null,
       "article_id": null,
-      "note": ""
+      "note": "MC1560920 (20.11, обновлено 24.11) https://mc.merill.net/message/MC1560920 подтверждает public preview с 17.11, Word/PDF/PowerPoint, правки через чат, MP4, watermark отключается администратором, GA ожидается в феврале. Официальное руководство https://www.microsoft.com/licensing/guidance/CopilotCreditsGuide подтверждает новую функцию, 1 кредит $0.01 PAYG; оценки <200 / 200–450 / >500 кредитов для простого до 30 сек, среднего до 2 мин, сложного до 5 мин; правки расходуют дополнительные кредиты, не фиксированный тариф. MC1566260 и Microsoft Support подтверждают, что старый режим создания видео из PowerPoint существовал раньше и перенесён в Clipchamp Home. Новый режим требует корпоративной лицензии, Frontier, разрешённых Anthropic models и spending policy. Дублей в news.json, каталоге и Threads не найдено; Synthesia №384 уже утверждена, но точная подтверждённая Dzen-ссылка пока не найдена. Не добавлена слабая перелинковка. @Microsoft подтверждён; @Clipchamp не подтверждён. Комплект на утверждении."
     },
     {
       "id": "n-a40ba9db1dfa0ca3",
