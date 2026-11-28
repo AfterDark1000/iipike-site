@@ -9445,12 +9445,12 @@
       "summary": "Сообщается о тарифе со скидкой 50% и пятиминутным предупреждением перед освобождением ресурсов. Требуется официальный анонс.",
       "origin": "ХПИИ — добытчик новостей",
       "priority": "normal",
-      "status": "in_review",
+      "status": "approved",
       "added_at": "2026-11-27T14:18:55+00:00",
       "review_started_at": "2026-11-28T07:51:04+00:00",
-      "closed_at": null,
-      "article_id": null,
-      "note": "SHORT_EDITOR claim=short; pool_id=n-9233d3a77a3e63d5"
+      "closed_at": "2026-11-28T08:54:07Z",
+      "article_id": "together-ai-preemptible-compute-20261124",
+      "note": "SHORT_EDITOR claim=short; pool_id=n-9233d3a77a3e63d5\nОпубликовано в «Новости коротко»: https://iipike.ru/briefs/together-ai-preemptible-compute-20261124/"
     },
     {
       "id": "n-65a381c9fe2032c6",
